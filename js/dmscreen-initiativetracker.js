@@ -835,7 +835,7 @@ class InitiativeTracker {
 			const displayName = nameOrMeta instanceof Object ? nameOrMeta.displayName : null;
 			const name = nameOrMeta instanceof Object ? nameOrMeta.name : nameOrMeta;
 
-			const $wrpRow = $(`<div class="dm-init-row ${isActive ? "dm-init-row-active" : ""}"/>`);
+			const $wrpRow = $(`<div class="dm-init-row ${isActive ? "dm-init-row-active" : ""} overflow-hidden"/>`);
 
 			const $wrpLhs = $(`<div class="dm-init-row-lhs"/>`).appendTo($wrpRow);
 			const $iptName = $(`<input class="form-control input-sm name dm-init-name dm-init-lockable dm-init-row-input ${isMon ? "hidden" : ""}" placeholder="Name">`)
@@ -939,7 +939,7 @@ class InitiativeTracker {
 
 					const conds = InitiativeTrackerUtil.CONDITIONS;
 					for (let i = 0; i < conds.length; i += 3) {
-						const $row = $(`<div class="row mb-2"/>`).appendTo($wrpRows);
+						const $row = $(`<div class="flex-v-center mb-2"/>`).appendTo($wrpRows);
 						const populateCol = (cond) => {
 							const $col = $(`<div class="col-4 text-center"/>`).appendTo($row);
 							if (cond) {
@@ -954,13 +954,13 @@ class InitiativeTracker {
 
 					$wrpRows.append(`<hr>`);
 
-					$(`<div class="row mb-2">
-						<div class="col-5">Name (optional)</div>
+					$(`<div class="flex-v-center mb-2">
+						<div class="col-5 pr-2">Name (optional)</div>
 						<div class="col-2 text-center">Color</div>
-						<div class="col-5">Duration (optional)</div>
+						<div class="col-5 pl-2">Duration (optional)</div>
 					</div>`).appendTo($wrpRows);
-					const $controls = $(`<div class="row mb-2"/>`).appendTo($wrpRows);
-					const [$wrpName, $wrpColor, $wrpTurns] = [...new Array(3)].map((it, i) => $(`<div class="col-${i === 1 ? 2 : 5} text-center"/>`).appendTo($controls));
+					const $controls = $(`<div class="flex-v-center mb-2"/>`).appendTo($wrpRows);
+					const [$wrpName, $wrpColor, $wrpTurns] = ["pr-2", "", "pl-2"].map(it => $(`<div class="col-${it ? 5 : 2} ${it} text-center"/>`).appendTo($controls));
 					const $iptName = $(`<input class="form-control">`)
 						.on("keydown", (e) => {
 							if (e.which === 13) $btnAdd.click();
@@ -972,7 +972,7 @@ class InitiativeTracker {
 							if (e.which === 13) $btnAdd.click();
 						})
 						.appendTo($wrpTurns);
-					const $wrpAdd = $(`<div class="row">`).appendTo($wrpRows);
+					const $wrpAdd = $(`<div class="flex-v-center">`).appendTo($wrpRows);
 					const $wrpAddInner = $(`<div class="col-12 text-center">`).appendTo($wrpAdd);
 					const $btnAdd = $(`<button class="btn btn-primary">Set Condition</button>`)
 						.click(() => {

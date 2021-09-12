@@ -16,8 +16,7 @@ class StatGenUi extends BaseComponent {
 		super();
 		opts = opts || {};
 
-		if (opts.isFvttMode) TabUiUtil.decorate(this);
-		else TabUiUtilSide.decorate(this);
+		TabUiUtilSide.decorate(this);
 
 		this.__meta = {};
 		this._meta = null;
@@ -176,7 +175,25 @@ class StatGenUi extends BaseComponent {
 
 		const tabMetas = this._renderTabs(iptTabMetas, {$parent: this._isFvttMode ? null : $parent});
 		if (this._isFvttMode) {
-			$$`<div class="flex-v-center w-100 no-shrink ui-tab__wrp-tab-heads--border">${tabMetas.map(it => it.$btnTab)}</div>`.appendTo($parent);
+			if (!this._isLevelUp) {
+				const {propActive: propActiveTab, propProxy: propProxyTabs} = this._getTabProps();
+				const $selMode = ComponentUiUtil.$getSelEnum(
+					this,
+					propActiveTab,
+					{
+						values: iptTabMetas.map((_, ix) => ix),
+						fnDisplay: ix => iptTabMetas[ix].name,
+						propProxy: propProxyTabs,
+					},
+				)
+					.addClass("max-w-200p");
+				$$`<div class="flex-v-center statgen-shared__wrp-header">
+					<div class="mr-2"><b>Mode</b></div>
+					${$selMode}
+				</div>
+				<hr class="hr-2">`.appendTo($parent);
+			}
+
 			tabMetas.forEach(it => it.$wrpTab.appendTo($parent));
 		}
 

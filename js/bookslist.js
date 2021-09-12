@@ -24,8 +24,10 @@ class BooksList {
 	}
 
 	async pOnPageLoad () {
-		ExcludeUtil.pInitialise(); // don't await, as this is only used for search
-		const data = await DataUtil.loadJSON(`${Renderer.get().baseUrl}${this._contentsUrl}`);
+		const [data] = await Promise.all([
+			await DataUtil.loadJSON(`${Renderer.get().baseUrl}${this._contentsUrl}`),
+			await ExcludeUtil.pInitialise(),
+		]);
 
 		const $iptSearch = $(`#search`);
 
@@ -40,8 +42,9 @@ class BooksList {
 		});
 		SortUtil.initBtnSortHandlers($(`#filtertools`), this._list);
 
+		const $wrpBookshelf = $(".books--alt");
 		this._listAlt = new List({
-			$wrpList: $(".books--alt"),
+			$wrpList: $wrpBookshelf,
 			$iptSearch,
 			fnSort,
 			sortByInitial: this._sortByInitial,
@@ -65,6 +68,8 @@ class BooksList {
 		this._list.init();
 		this._listAlt.init();
 
+		if (ExcludeUtil.isAllContentExcluded(this._list)) $wrpBookshelf.append(ExcludeUtil.getAllContentBlacklistedHtml());
+
 		window.dispatchEvent(new Event("toolsLoaded"));
 	}
 
@@ -76,6 +81,8 @@ class BooksList {
 		for (; this._dataIx < this._dataList.length; this._dataIx++) {
 			const it = this._dataList[this._dataIx];
 			if (this._enhanceRowDataFn) this._enhanceRowDataFn(it);
+
+			const isExcluded = ExcludeUtil.isExcluded(UrlUtil.URL_TO_HASH_BUILDER[this._rootPage](it), this._dataProp, it.source);
 
 			const $elesContents = [];
 			it.contents.map((chapter, ixChapter) => {
@@ -115,7 +122,7 @@ class BooksList {
 				});
 
 			const $eleLi = $$`<div class="flex-col w-100">
-				<a href="${this._rootPage}#${UrlUtil.encodeForHash(it.id)}" class="split-v-center lst--border lst__row-inner lst__row">
+				<a href="${this._rootPage}#${UrlUtil.encodeForHash(it.id)}" class="split-v-center lst--border lst__row-inner lst__row ${isExcluded ? `lst__row--blacklisted` : ""}">
 					<span class="w-100 flex">${this._rowBuilderFn(it)}</span>
 					${$btnToggleExpand}
 				</a>
@@ -133,7 +140,7 @@ class BooksList {
 			this._list.addItem(listItem);
 
 			// region Alt list (covers/thumbnails)
-			const eleLiAlt = $(`<a href="${this._rootPage}#${UrlUtil.encodeForHash(it.id)}" class="flex-col flex-v-center m-3 bks__wrp-bookshelf-item py-3 px-2 ${Parser.sourceJsonToColor(it.source)}" ${BrewUtil.sourceJsonToStyle(it.source)}>
+			const eleLiAlt = $(`<a href="${this._rootPage}#${UrlUtil.encodeForHash(it.id)}" class="flex-col flex-v-center m-3 bks__wrp-bookshelf-item ${isExcluded ? `bks__wrp-bookshelf-item--blacklisted` : ""} py-3 px-2 ${Parser.sourceJsonToColor(it.source)}" ${BrewUtil.sourceJsonToStyle(it.source)}>
 				<img src="${it.coverUrl || `${Renderer.get().baseMediaUrls["img"] || Renderer.get().baseUrl}img/covers/blank.png`}" class="mb-2 bks__bookshelf-image" loading="lazy" alt="Cover Image: ${(it.name || "").qq()}">
 				<div class="bks__bookshelf-item-name flex-vh-center text-center">${it.name}</div>
 			</a>`)[0];

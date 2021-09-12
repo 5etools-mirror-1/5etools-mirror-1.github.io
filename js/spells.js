@@ -223,7 +223,7 @@ class SpellsPage extends ListPage {
 			this._pPostLoad.bind(this),
 		);
 		if (Hist.lastLoadedId == null) Hist._freshLoad();
-		ExcludeUtil.checkShowAllExcluded(this._dataList, this._$pgContent);
+		ListPage._checkShowAllExcluded(this._dataList, this._$pgContent);
 
 		window.dispatchEvent(new Event("toolsLoaded"));
 	}

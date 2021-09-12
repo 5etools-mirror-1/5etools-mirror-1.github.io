@@ -296,7 +296,7 @@ class BestiaryPage extends ListPage {
 			this._listSub,
 		);
 		if (Hist.lastLoadedId == null) Hist._freshLoad();
-		ExcludeUtil.checkShowAllExcluded(this._dataList, this._$pgContent);
+		ListPage._checkShowAllExcluded(this._dataList, this._$pgContent);
 		this.handleFilterChange();
 		this._bindProfDiceHandlers();
 		encounterBuilder.initState();

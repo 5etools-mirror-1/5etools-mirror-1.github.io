@@ -53,28 +53,9 @@
 	<script type="text/javascript" src="js/browsercheck.js"></script>
 
 	<style>
-		.intro {
-			padding: 0 2em;
-			margin-top: 2em;
-		}
-
-		.intro p:last-child {
-			margin-bottom: 0;
-		}
-
-		.subtitle {
-			margin-top: -10px;
-			margin-bottom: 10px;
-		}
-
-		.source,
-		.category,
-		.name {
-			line-height: 22px;
-		}
-
-		.btn-offset {
-			margin-left: 1em;
+		.btn-icon {
+			width: 21px;
+			height: 21px;
 		}
 	</style>
 </head>
@@ -95,13 +76,13 @@
 <div class="cancer__wrp-sidebar-rhs cancer__wrp-sidebar-rhs--scrolling-page cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--top"><!--5ETOOLS_AD_RIGHT_1--></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--bottom"><!--5ETOOLS_AD_RIGHT_2--></div></div>
 
 <main class="container" id="main_content">
-	<div class="row intro">
+	<div class="px-4 mt-4">
 		<p>
 			This page allows you to create configurations which &quot;blacklist&quot; site content, hiding it from list pages.
 			This can be used, for example, in conjunction with homebrew content, to create a campaign JSON file containing additions to the base game,
 			as well as the removal of extraneous content.
 		</p>
-		<p><i class="text-muted">
+		<p class="mb-0"><i class="text-muted">
 			With great power comes great responsibility. If you are a DM intending to use this system to remove parts of the game you
 			consider broken; inconvenient; or otherwise in need of adjustment, please first consider the needs and expectations of your players,
 			as well as the extensive playtesting and design iteration of which 5th Edition was the result.
@@ -111,59 +92,14 @@
 
 	<hr>
 
-	<div class="row">
-		<div class="form-group col-12">
-			<button class="btn btn-default mr-2" onclick="Blacklist.addAllUa()">Exclude All UA/etc.</button>
-			<button class="btn btn-default help mr-2" onclick="Blacklist.removeAllUa()" title="Removes entries added by the &quot;Exclude All UA/etc.&quot; button.">Include All UA/etc.</button>
-			<button class="btn btn-default mr-2" onclick="Blacklist.addAllSources()">Exclude All Sources</button>
-			<button class="btn btn-default help" onclick="Blacklist.removeAllSources()" title="Removes entries added by the &quot;Exclude All Sources&quot; button.">Include All Sources</button>
-		</div>
-	</div>
-
-	<div class="row flex-v-center">
-		<div class="form-group col-3 pr-2">
-			<label for="bl-source">Source</label>
-			<select class="loading form-control form-inline" id="bl-source" disabled>
-				<option class="loading-temp" value="loading">Loading...</option>
-				<option value="*">*</option>
-			</select>
-		</div>
-
-		<div class="form-group col-3 px-2">
-			<label for="bl-category">Category</label>
-			<select class="loading form-control form-inline" id="bl-category" disabled>
-				<option class="loading-temp" value="loading">Loading...</option>
-				<option value="*">*</option>
-			</select>
-		</div>
-
-		<div class="form-group col-3 px-2">
-			<label for="bl-name">Name</label>
-			<select class="loading form-control form-inline" id="bl-name" disabled>
-				<option class="loading-temp" value="loading">Loading...</option>
-				<option value="*">*</option>
-			</select>
-		</div>
-
-		<div class="form-group col-3 pl-2">
-			<div style="padding-top: 21px;">
-				<button class="loading btn btn-default" onclick="Blacklist.add()" disabled>Add Exclusion</button>
-			</div>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="form-group col-12">
-			<button class="btn btn-default" onclick="Blacklist.export()">Export List</button>
-			<button class="btn btn-default" onclick="Blacklist.pImport(event)" title="SHIFT for Add Only">Import List</button>
-			<button class="btn btn-danger btn-offset" onclick="window.confirm('Are you sure?') && Blacklist.reset()">Reset List</button>
-		</div>
+	<div id="blacklist-controls" class="bg-solid py-5 px-3 shadow-big b-1p">
+		<div class="py-2 flex-vh-center initial-message">Loading...</div>
 	</div>
 
 	<hr>
 
-	<h4>Exclusion List</h4>
-	<div class="text-muted subtitle"><i>Rows marked with a star (*) in a field match everything in that field</i></div>
+	<h4 class="mb-0">Exclusion List</h4>
+	<div class="text-muted mb-3"><i>Rows marked with an asterisk (*) in a field match everything in that field.</i></div>
 	<div class="row" id="listcontainer">
 
 		<div class="lst__form-top" id="filter-search-group">

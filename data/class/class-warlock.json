@@ -83,7 +83,9 @@
 			"optionalfeatureProgression": [
 				{
 					"name": "Eldritch Invocations",
-					"featureType": "EI",
+					"featureType": [
+						"EI"
+					],
 					"progression": [
 						0,
 						2,
@@ -860,9 +862,9 @@
 			"page": 139,
 			"additionalSpells": [
 				{
-					"prepared": {
+					"innate": {
 						"1": [
-							"spare the dying"
+							"spare the dying#c"
 						]
 					},
 					"expanded": {
@@ -1067,10 +1069,10 @@
 			"page": 54,
 			"additionalSpells": [
 				{
-					"prepared": {
+					"innate": {
 						"1": [
-							"sacred flame",
-							"light"
+							"sacred flame#c",
+							"light#c"
 						]
 					},
 					"expanded": {

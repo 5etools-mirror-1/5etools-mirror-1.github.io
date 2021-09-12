@@ -293,6 +293,8 @@ PropOrder._BOOK = [
 	"id",
 	"source",
 
+	"group",
+
 	"coverUrl",
 	"published",
 	"author",

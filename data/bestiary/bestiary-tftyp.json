@@ -6455,7 +6455,10 @@
 							"flags": "i"
 						},
 						{
-							"mode": "replaceName",
+							"mode": "replaceTxt",
+							"props": [
+								"name"
+							],
 							"replace": "Tiger",
 							"with": "Jaguar"
 						}

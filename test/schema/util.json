@@ -4,7 +4,7 @@
 
 	"title": "Util",
 	"description": "Utility definitions to be used in other schemas.",
-	"version": "1.6.1",
+	"version": "1.7.0",
 
 	"definitions" : {
 		"metaBlock": {
@@ -1404,7 +1404,12 @@
 						"mode": {"const": "replaceTxt"},
 						"replace": {"type":  "string"},
 						"with": {"type":  "string"},
-						"flags":  {"type":  "string"}
+						"flags":  {"type":  "string"},
+						"props": {
+							"description": "If unspecified, defaults to `[null, \"entries\", \"headerEntries\", \"footerEntries\"]`. To apply to _any_ string, including those outside of sub-properties (for instance, when trying to replace text in an array of plain strings), include `null` as one of the props (i.e. `\"props\": [null]`)",
+							"type": "array",
+							"items": {"type": ["string", "null"]}
+						}
 					},
 					"required": ["replace", "with"],
 					"additionalProperties": false

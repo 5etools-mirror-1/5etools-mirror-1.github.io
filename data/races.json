@@ -172,7 +172,7 @@
 				{
 					"innate": {
 						"1": [
-							"light"
+							"light#c"
 						],
 						"3": {
 							"daily": {
@@ -288,7 +288,7 @@
 				{
 					"innate": {
 						"1": [
-							"light"
+							"light#c"
 						]
 					},
 					"ability": "cha"
@@ -1630,28 +1630,7 @@
 			"feats": 1,
 			"skillProficiencies": [
 				{
-					"choose": {
-						"from": [
-							"athletics",
-							"acrobatics",
-							"sleight of hand",
-							"stealth",
-							"arcana",
-							"history",
-							"investigation",
-							"nature",
-							"religion",
-							"animal handling",
-							"insight",
-							"medicine",
-							"perception",
-							"survival",
-							"deception",
-							"intimidation",
-							"performance",
-							"persuasion"
-						]
-					}
+					"any": 1
 				}
 			],
 			"languageProficiencies": [
@@ -2875,7 +2854,7 @@
 						{
 							"innate": {
 								"1": [
-									"dancing lights"
+									"dancing lights#c"
 								],
 								"3": {
 									"daily": {
@@ -3052,10 +3031,10 @@
 						{
 							"innate": {
 								"1": [
-									"friends",
-									"chill touch",
-									"minor illusion",
-									"fire bolt"
+									"friends#c",
+									"chill touch#c",
+									"minor illusion#c",
+									"fire bolt#c"
 								]
 							}
 						}
@@ -3382,7 +3361,7 @@
 						{
 							"innate": {
 								"1": [
-									"minor illusion"
+									"minor illusion#c"
 								],
 								"3": {
 									"daily": {
@@ -3493,7 +3472,7 @@
 						{
 							"innate": {
 								"1": [
-									"light"
+									"light#c"
 								],
 								"3": {
 									"daily": {
@@ -3712,7 +3691,7 @@
 						{
 							"innate": {
 								"1": [
-									"chill touch"
+									"chill touch#c"
 								]
 							},
 							"ability": "cha"
@@ -3720,7 +3699,7 @@
 						{
 							"innate": {
 								"1": [
-									"spare the dying"
+									"spare the dying#c"
 								]
 							},
 							"ability": "cha"
@@ -3728,7 +3707,7 @@
 						{
 							"innate": {
 								"1": [
-									"thaumaturgy"
+									"thaumaturgy#c"
 								]
 							},
 							"ability": "cha"
@@ -4196,7 +4175,7 @@
 						{
 							"innate": {
 								"1": [
-									"chill touch"
+									"chill touch#c"
 								],
 								"3": {
 									"daily": {
@@ -4307,7 +4286,7 @@
 				{
 					"innate": {
 						"1": [
-							"druidcraft",
+							"druidcraft#c",
 							"faerie fire"
 						]
 					},
@@ -4733,7 +4712,7 @@
 						{
 							"innate": {
 								"1": [
-									"produce flame"
+									"produce flame#c"
 								],
 								"3": {
 									"daily": {
@@ -4794,7 +4773,7 @@
 						{
 							"innate": {
 								"1": [
-									"shape water|xge"
+									"shape water|xge#c"
 								],
 								"3": {
 									"daily": {
@@ -4934,7 +4913,7 @@
 						{
 							"innate": {
 								"1": [
-									"mage hand"
+									"mage hand#c"
 								],
 								"3": {
 									"daily": {
@@ -5007,7 +4986,7 @@
 						{
 							"innate": {
 								"1": [
-									"mage hand"
+									"mage hand#c"
 								],
 								"3": {
 									"daily": {
@@ -5134,7 +5113,7 @@
 						{
 							"innate": {
 								"1": [
-									"mage hand"
+									"mage hand#c"
 								],
 								"3": {
 									"daily": {
@@ -5201,7 +5180,7 @@
 						{
 							"innate": {
 								"1": [
-									"mage hand"
+									"mage hand#c"
 								],
 								"3": {
 									"daily": {
@@ -5548,7 +5527,7 @@
 						{
 							"innate": {
 								"1": [
-									"minor illusion"
+									"minor illusion#c"
 								]
 							},
 							"ability": "int"
@@ -5601,7 +5580,7 @@
 										]
 									},
 									"_": [
-										"message"
+										"message#c"
 									]
 								},
 								"3": {
@@ -6612,29 +6591,7 @@
 			],
 			"skillProficiencies": [
 				{
-					"choose": {
-						"from": [
-							"athletics",
-							"acrobatics",
-							"sleight of hand",
-							"stealth",
-							"arcana",
-							"history",
-							"investigation",
-							"nature",
-							"religion",
-							"animal handling",
-							"insight",
-							"medicine",
-							"perception",
-							"survival",
-							"deception",
-							"intimidation",
-							"performance",
-							"persuasion"
-						],
-						"count": 2
-					}
+					"any": 2
 				}
 			],
 			"languageProficiencies": [
@@ -6737,29 +6694,7 @@
 			],
 			"skillProficiencies": [
 				{
-					"choose": {
-						"from": [
-							"athletics",
-							"acrobatics",
-							"sleight of hand",
-							"stealth",
-							"arcana",
-							"history",
-							"investigation",
-							"nature",
-							"religion",
-							"animal handling",
-							"insight",
-							"medicine",
-							"perception",
-							"survival",
-							"deception",
-							"intimidation",
-							"performance",
-							"persuasion"
-						],
-						"count": 2
-					}
+					"any": 2
 				}
 			],
 			"languageProficiencies": [
@@ -6832,29 +6767,7 @@
 					"speed": 30,
 					"skillProficiencies": [
 						{
-							"choose": {
-								"from": [
-									"athletics",
-									"acrobatics",
-									"sleight of hand",
-									"stealth",
-									"arcana",
-									"history",
-									"investigation",
-									"nature",
-									"religion",
-									"animal handling",
-									"insight",
-									"medicine",
-									"perception",
-									"survival",
-									"deception",
-									"intimidation",
-									"performance",
-									"persuasion"
-								],
-								"count": 2
-							}
+							"any": 2
 						}
 					],
 					"entries": [
@@ -6899,36 +6812,14 @@
 					"page": 116,
 					"skillProficiencies": [
 						{
-							"choose": {
-								"from": [
-									"athletics",
-									"acrobatics",
-									"sleight of hand",
-									"stealth",
-									"arcana",
-									"history",
-									"investigation",
-									"nature",
-									"religion",
-									"animal handling",
-									"insight",
-									"medicine",
-									"perception",
-									"survival",
-									"deception",
-									"intimidation",
-									"performance",
-									"persuasion"
-								],
-								"count": 2
-							}
+							"any": 2
 						}
 					],
 					"additionalSpells": [
 						{
 							"innate": {
 								"1": [
-									"dancing lights"
+									"dancing lights#c"
 								],
 								"3": {
 									"daily": {
@@ -7141,7 +7032,7 @@
 						{
 							"innate": {
 								"1": [
-									"gust|xge"
+									"gust|xge#c"
 								]
 							},
 							"expanded": {
@@ -7245,29 +7136,7 @@
 					"page": 116,
 					"skillProficiencies": [
 						{
-							"choose": {
-								"from": [
-									"athletics",
-									"acrobatics",
-									"sleight of hand",
-									"stealth",
-									"arcana",
-									"history",
-									"investigation",
-									"nature",
-									"religion",
-									"animal handling",
-									"insight",
-									"medicine",
-									"perception",
-									"survival",
-									"deception",
-									"intimidation",
-									"performance",
-									"persuasion"
-								],
-								"count": 2
-							}
+							"any": 2
 						}
 					],
 					"weaponProficiencies": [
@@ -7341,29 +7210,7 @@
 					"page": 116,
 					"skillProficiencies": [
 						{
-							"choose": {
-								"from": [
-									"athletics",
-									"acrobatics",
-									"sleight of hand",
-									"stealth",
-									"arcana",
-									"history",
-									"investigation",
-									"nature",
-									"religion",
-									"animal handling",
-									"insight",
-									"medicine",
-									"perception",
-									"survival",
-									"deception",
-									"intimidation",
-									"performance",
-									"persuasion"
-								],
-								"count": 2
-							}
+							"any": 2
 						}
 					],
 					"weaponProficiencies": [
@@ -7834,7 +7681,7 @@
 						{
 							"innate": {
 								"1": [
-									"druidcraft"
+									"druidcraft#c"
 								],
 								"3": {
 									"daily": {
@@ -8009,7 +7856,7 @@
 						{
 							"innate": {
 								"1": [
-									"prestidigitation",
+									"prestidigitation#c",
 									"purify food and drink",
 									"unseen servant"
 								]
@@ -9020,7 +8867,7 @@
 						{
 							"innate": {
 								"1": [
-									"mending",
+									"mending#c",
 									"magic weapon"
 								]
 							},
@@ -9375,28 +9222,7 @@
 					"feats": 1,
 					"skillProficiencies": [
 						{
-							"choose": {
-								"from": [
-									"athletics",
-									"acrobatics",
-									"sleight of hand",
-									"stealth",
-									"arcana",
-									"history",
-									"investigation",
-									"nature",
-									"religion",
-									"animal handling",
-									"insight",
-									"medicine",
-									"perception",
-									"survival",
-									"deception",
-									"intimidation",
-									"performance",
-									"persuasion"
-								]
-							}
+							"any": 1
 						}
 					],
 					"entries": [
@@ -9446,28 +9272,7 @@
 			"feats": 1,
 			"skillProficiencies": [
 				{
-					"choose": {
-						"from": [
-							"athletics",
-							"acrobatics",
-							"sleight of hand",
-							"stealth",
-							"arcana",
-							"history",
-							"investigation",
-							"nature",
-							"religion",
-							"animal handling",
-							"insight",
-							"medicine",
-							"perception",
-							"survival",
-							"deception",
-							"intimidation",
-							"performance",
-							"persuasion"
-						]
-					}
+					"any": 1
 				}
 			],
 			"languageProficiencies": [
@@ -13999,7 +13804,7 @@
 				{
 					"innate": {
 						"1": [
-							"friends"
+							"friends#c"
 						]
 					}
 				}
@@ -14255,7 +14060,7 @@
 				{
 					"innate": {
 						"1": [
-							"thaumaturgy"
+							"thaumaturgy#c"
 						],
 						"3": {
 							"daily": {
@@ -14354,12 +14159,12 @@
 						{
 							"innate": {
 								"1": [
-									"dancing lights",
-									"true strike",
-									"light",
-									"message",
-									"spare the dying",
-									"prestidigitation"
+									"dancing lights#c",
+									"true strike#c",
+									"light#c",
+									"message#c",
+									"spare the dying#c",
+									"prestidigitation#c"
 								],
 								"3": {
 									"daily": {
@@ -14502,7 +14307,7 @@
 						{
 							"innate": {
 								"1": [
-									"thaumaturgy"
+									"thaumaturgy#c"
 								],
 								"3": {
 									"daily": {
@@ -14545,7 +14350,7 @@
 						{
 							"innate": {
 								"1": [
-									"thaumaturgy"
+									"thaumaturgy#c"
 								],
 								"3": {
 									"daily": {
@@ -14592,7 +14397,7 @@
 						{
 							"innate": {
 								"1": [
-									"thaumaturgy"
+									"thaumaturgy#c"
 								],
 								"3": {
 									"daily": {
@@ -14644,7 +14449,7 @@
 						{
 							"innate": {
 								"1": [
-									"thaumaturgy"
+									"thaumaturgy#c"
 								],
 								"3": {
 									"daily": {
@@ -14694,7 +14499,7 @@
 						{
 							"innate": {
 								"1": [
-									"friends"
+									"friends#c"
 								],
 								"3": {
 									"daily": {
@@ -14746,7 +14551,7 @@
 						{
 							"innate": {
 								"1": [
-									"friends"
+									"friends#c"
 								],
 								"3": {
 									"daily": {
@@ -14796,7 +14601,7 @@
 						{
 							"innate": {
 								"1": [
-									"minor illusion"
+									"minor illusion#c"
 								],
 								"3": {
 									"daily": {
@@ -14848,7 +14653,7 @@
 						{
 							"innate": {
 								"1": [
-									"minor illusion"
+									"minor illusion#c"
 								],
 								"3": {
 									"daily": {
@@ -14898,7 +14703,7 @@
 						{
 							"innate": {
 								"1": [
-									"ray of frost"
+									"ray of frost#c"
 								],
 								"3": {
 									"daily": {
@@ -14950,7 +14755,7 @@
 						{
 							"innate": {
 								"1": [
-									"ray of frost"
+									"ray of frost#c"
 								],
 								"3": {
 									"daily": {
@@ -14994,7 +14799,7 @@
 						{
 							"innate": {
 								"1": [
-									"mage hand"
+									"mage hand#c"
 								],
 								"3": {
 									"daily": {
@@ -15037,7 +14842,7 @@
 						{
 							"innate": {
 								"1": [
-									"mage hand"
+									"mage hand#c"
 								],
 								"3": {
 									"daily": {
@@ -15078,7 +14883,7 @@
 						{
 							"innate": {
 								"1": [
-									"mage hand"
+									"mage hand#c"
 								],
 								"3": {
 									"daily": {
@@ -15121,7 +14926,7 @@
 						{
 							"innate": {
 								"1": [
-									"mage hand"
+									"mage hand#c"
 								],
 								"3": {
 									"daily": {
@@ -15175,7 +14980,7 @@
 						{
 							"innate": {
 								"1": [
-									"vicious mockery"
+									"vicious mockery#c"
 								],
 								"3": {
 									"daily": {
@@ -15239,7 +15044,7 @@
 						{
 							"innate": {
 								"1": [
-									"thaumaturgy"
+									"thaumaturgy#c"
 								],
 								"3": {
 									"daily": {
@@ -15303,7 +15108,7 @@
 						{
 							"innate": {
 								"1": [
-									"thaumaturgy"
+									"thaumaturgy#c"
 								],
 								"3": {
 									"daily": {
@@ -15399,7 +15204,7 @@
 						{
 							"innate": {
 								"1": [
-									"thaumaturgy"
+									"thaumaturgy#c"
 								],
 								"3": {
 									"daily": {
@@ -15451,7 +15256,7 @@
 						{
 							"innate": {
 								"1": [
-									"thaumaturgy"
+									"thaumaturgy#c"
 								],
 								"3": {
 									"daily": {
@@ -16444,28 +16249,7 @@
 			],
 			"skillProficiencies": [
 				{
-					"choose": {
-						"from": [
-							"athletics",
-							"acrobatics",
-							"sleight of hand",
-							"stealth",
-							"arcana",
-							"history",
-							"investigation",
-							"nature",
-							"religion",
-							"animal handling",
-							"insight",
-							"medicine",
-							"perception",
-							"survival",
-							"deception",
-							"intimidation",
-							"performance",
-							"persuasion"
-						]
-					}
+					"any": 1
 				}
 			],
 			"languageProficiencies": [
@@ -16766,28 +16550,7 @@
 					],
 					"skillProficiencies": [
 						{
-							"choose": {
-								"from": [
-									"athletics",
-									"acrobatics",
-									"sleight of hand",
-									"stealth",
-									"arcana",
-									"history",
-									"investigation",
-									"nature",
-									"religion",
-									"animal handling",
-									"insight",
-									"medicine",
-									"perception",
-									"survival",
-									"deception",
-									"intimidation",
-									"performance",
-									"persuasion"
-								]
-							}
+							"any": 1
 						}
 					],
 					"entries": [
@@ -16917,7 +16680,7 @@
 				{
 					"innate": {
 						"1": [
-							"poison spray",
+							"poison spray#c",
 							"animal friendship"
 						],
 						"3": {

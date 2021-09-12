@@ -59,7 +59,9 @@ class MultiSource {
 	 * (e.g. spell data objects for the spell page) which were found in the `this._prop` list
 	 */
 	async pMultisourceLoad (jsonDir, filterBox, pPageInit, addFn, pOptional) {
-		const src2UrlMap = await DataUtil.loadJSON(`${jsonDir}index.json`);
+		const src2UrlMap = Object.entries(await DataUtil.loadJSON(`${jsonDir}index.json`))
+			.filter(([source]) => !ExcludeUtil.isExcluded("*", "*", source, {isNoCount: true}))
+			.mergeMap(([source, filename]) => ({[source]: filename}));
 
 		// track loaded sources
 		Object.keys(src2UrlMap).forEach(src => this._loadedSources[src] = {url: jsonDir + src2UrlMap[src], loaded: false});
@@ -78,8 +80,7 @@ class MultiSource {
 		// add any sources from the user's saved filters, provided they have URLs and haven't already been added
 		if (userSel) {
 			userSel
-				.filter(src => src2UrlMap[src])
-				.filter(src => $.inArray(src, allSources) === -1)
+				.filter(src => src2UrlMap[src] && !allSources.includes(src))
 				.forEach(src => allSources.push(src));
 		}
 

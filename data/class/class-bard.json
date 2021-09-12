@@ -113,29 +113,7 @@
 				],
 				"skills": [
 					{
-						"choose": {
-							"from": [
-								"athletics",
-								"acrobatics",
-								"sleight of hand",
-								"stealth",
-								"arcana",
-								"history",
-								"investigation",
-								"nature",
-								"religion",
-								"animal handling",
-								"insight",
-								"medicine",
-								"perception",
-								"survival",
-								"deception",
-								"intimidation",
-								"performance",
-								"persuasion"
-							],
-							"count": 3
-						}
+						"any": 3
 					}
 				]
 			},
@@ -1177,7 +1155,7 @@
 				{
 					"innate": {
 						"3": [
-							"guidance"
+							"guidance#c"
 						]
 					}
 				}

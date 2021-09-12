@@ -517,8 +517,21 @@ function Renderer () {
 		return out.join(" ");
 	};
 
-	this._renderImage_getUrl = function (entry) { return Renderer.utils.getMediaUrl(entry, "href", "img"); };
-	this._renderImage_getUrlThumbnail = function (entry) { return Renderer.utils.getMediaUrl(entry, "hrefThumbnail", "img"); };
+	this._renderImage_getUrl = function (entry) {
+		let url = Renderer.utils.getMediaUrl(entry, "href", "img");
+		for (const plugin of this._getPlugins(`image_urlPostProcess`)) {
+			url = plugin(entry, url) || plugin(entry, url);
+		}
+		return url;
+	};
+
+	this._renderImage_getUrlThumbnail = function (entry) {
+		let url = Renderer.utils.getMediaUrl(entry, "hrefThumbnail", "img");
+		for (const plugin of this._getPlugins(`image_urlThumbnailPostProcess`)) {
+			url = plugin(entry, url) || plugin(entry, url);
+		}
+		return url;
+	};
 
 	this._renderList_getListCssClasses = function (entry, textStack, meta, options) {
 		const out = [`rd__list`];
@@ -2400,10 +2413,16 @@ Renderer.utils = {
 	isDisplayPage (page) { return page != null && ((!isNaN(page) && page > 0) || isNaN(page)); },
 
 	getExcludedTr (it, dataProp, page) {
+		const excludedHtml = Renderer.utils.getExcludedHtml(it, dataProp, page);
+		if (!excludedHtml) return "";
+		return `<tr><td colspan="6" class="pt-3">${excludedHtml}</td></tr>`;
+	},
+
+	getExcludedHtml (it, dataProp, page) {
 		if (!ExcludeUtil.isInitialised) return "";
 		const hash = page ? UrlUtil.URL_TO_HASH_BUILDER[page](it) : UrlUtil.autoEncodeHash(it);
 		const isExcluded = ExcludeUtil.isExcluded(hash, dataProp, it.source);
-		return isExcluded ? `<tr><td colspan="6" class="pt-3 text-center text-danger"><b><i>Warning: This content has been <a href="blacklist.html">blacklisted</a>.</i></b></td></tr>` : "";
+		return isExcluded ? `<div class="text-center text-danger"><b><i>Warning: This content has been <a href="blacklist.html">blacklisted</a>.</i></b></div>` : "";
 	},
 
 	getSourceAndPageTrHtml (it) {
@@ -4130,7 +4149,6 @@ Renderer.race = {
 		renderStack.push(`
 			${Renderer.utils.getExcludedTr(race, "race", UrlUtil.PG_RACES)}
 			${Renderer.utils.getNameTr(race, {page: UrlUtil.PG_RACES})}
-			${!race._isBaseRace ? `
 			<tr><td colspan="6">
 				<table class="summary stripe-even-table">
 					<tr>
@@ -4144,7 +4162,7 @@ Renderer.race = {
 						<td class="text-center">${Parser.getSpeedString(race)}</td>
 					</tr>
 				</table>
-			</td></tr>` : ""}
+			</td></tr>
 			<tr class="text"><td colspan="6">
 		`);
 		race._isBaseRace

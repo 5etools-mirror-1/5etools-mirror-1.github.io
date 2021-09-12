@@ -7,7 +7,7 @@ if (IS_NODE) require("./parser.js");
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 IS_DEPLOYED = undefined;
-VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.135.0"/* 5ETOOLS_VERSION__CLOSE */;
+VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.136.0"/* 5ETOOLS_VERSION__CLOSE */;
 DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 // for the roll20 script to set
 IS_VTT = false;
@@ -2057,7 +2057,9 @@ UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RACES] = (it) => UrlUtil.encodeForHash([i
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_REWARDS] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_VARIANTRULES] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ADVENTURE] = (it) => UrlUtil.encodeForHash(it.id);
+UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ADVENTURES] = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ADVENTURE];
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BOOK] = (it) => UrlUtil.encodeForHash(it.id);
+UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BOOKS] = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BOOK];
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_DEITIES] = (it) => UrlUtil.encodeForHash([it.name, it.pantheon, it.source]);
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CULTS_BOONS] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_OBJECTS] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
@@ -2191,7 +2193,7 @@ if (!IS_DEPLOYED && !IS_VTT && typeof window !== "undefined") {
 		if (EventUtil.noModifierKeys(e) && typeof d20 === "undefined") {
 			if (e.key === "#") {
 				const spl = window.location.href.split("/");
-				window.prompt("Copy to clipboard: Ctrl+C, Enter", `https://noads.5e.tools/${spl[spl.length - 1]}`);
+				window.prompt("Copy to clipboard: Ctrl+C, Enter", `https://5etools-mirror-1.github.io/${spl[spl.length - 1]}`);
 			}
 		}
 	});
@@ -2352,6 +2354,18 @@ SortUtil = {
 				list.sort($btnSort.data("sort"), direction);
 			});
 		});
+	},
+
+	ascSortAdventure (a, b) {
+		return SortUtil.ascSortDateString(b.published, a.published)
+			|| SortUtil.ascSortLower(a.storyline, b.storyline)
+			|| SortUtil.ascSort(a.level?.start ?? 20, b.level?.start ?? 20)
+			|| SortUtil.ascSortLower(a.name, b.name);
+	},
+
+	ascSortBook (a, b) {
+		return SortUtil.ascSortDateString(b.published, a.published)
+			|| SortUtil.ascSortLower(a.name, b.name);
 	},
 };
 
@@ -2847,16 +2861,22 @@ DataUtil = {
 				const re = getRegexFromReplaceModInfo(modInfo.replace, modInfo.flags);
 				const handlers = {string: doReplaceStringHandler.bind(null, re, modInfo.with)};
 
-				// Handle any pure strings, e.g. `"legendaryHeader"`
-				copyTo[prop] = copyTo[prop].map(it => {
-					if (typeof it !== "string") return it;
-					return DataUtil.generic._walker_replaceTxt.walk(it, handlers);
-				});
+				const props = modInfo.props || [null, "entries", "headerEntries", "footerEntries"];
+				if (!props.length) return;
+
+				if (props.includes(null)) {
+					// Handle any pure strings, e.g. `"legendaryHeader"`
+					copyTo[prop] = copyTo[prop].map(it => {
+						if (typeof it !== "string") return it;
+						return DataUtil.generic._walker_replaceTxt.walk(it, handlers);
+					});
+				}
 
 				copyTo[prop].forEach(it => {
-					if (it.entries) it.entries = DataUtil.generic._walker_replaceTxt.walk(it.entries, handlers);
-					if (it.headerEntries) it.headerEntries = DataUtil.generic._walker_replaceTxt.walk(it.headerEntries, handlers);
-					if (it.footerEntries) it.footerEntries = DataUtil.generic._walker_replaceTxt.walk(it.footerEntries, handlers);
+					props.forEach(prop => {
+						if (prop == null) return;
+						if (it[prop]) it[prop] = DataUtil.generic._walker_replaceTxt.walk(it[prop], handlers);
+					});
 				});
 			}
 
@@ -6092,6 +6112,15 @@ Array.prototype.pSerialAwaitMap = Array.prototype.pSerialAwaitMap || async funct
 	return out;
 };
 
+Array.prototype.pSerialAwaitFind = Array.prototype.pSerialAwaitFind || async function (fnFind) {
+	for (let i = 0, len = this.length; i < len; ++i) if (await fnFind(this[i], i, this)) return this[i];
+};
+
+Array.prototype.pSerialAwaitSome = Array.prototype.pSerialAwaitSome || async function (fnSome) {
+	for (let i = 0, len = this.length; i < len; ++i) if (await fnSome(this[i], i, this)) return true;
+	return false;
+};
+
 Array.prototype.unique = Array.prototype.unique || function (fnGetProp) {
 	const seen = new Set();
 	return this.filter((...args) => {
@@ -6382,15 +6411,8 @@ ExcludeUtil = {
 		return out;
 	},
 
-	checkShowAllExcluded (list, $pagecontent) {
-		if ((!list.length && ExcludeUtil._excludeCount) || (list.length > 0 && list.length === ExcludeUtil._excludeCount)) {
-			$pagecontent.html(`
-				<tr><th class="border" colspan="6"></th></tr>
-				<tr><td colspan="6" class="initial-message">(Content <a href="blacklist.html">blacklisted</a>)</td></tr>
-				<tr><th class="border" colspan="6"></th></tr>
-			`);
-		}
-	},
+	isAllContentExcluded (list) { return (!list.length && ExcludeUtil._excludeCount) || (list.length > 0 && list.length === ExcludeUtil._excludeCount); },
+	getAllContentBlacklistedHtml () { return `<div class="initial-message">(All content <a href="blacklist.html">blacklisted</a>)</div>`; },
 
 	addExclude (displayName, hash, category, source) {
 		if (!ExcludeUtil._excludes.find(row => row.source === source && row.category === category && row.hash === hash)) {

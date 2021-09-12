@@ -886,8 +886,9 @@ class TabUiUtilBase {
 	static decorate (obj) {
 		obj.__tabState = {};
 
-		obj.__getTabProps = function ({propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP}) {
+		obj._getTabProps = function ({propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP} = {}) {
 			return {
+				propProxy,
 				_propProxy: `_${propProxy}`,
 				__propProxy: `__${propProxy}`,
 				propActive: `ixActiveTab__${tabGroup}`,
@@ -901,7 +902,7 @@ class TabUiUtilBase {
 
 			const isSingleTab = tabMetas.length === 1;
 
-			const {propActive, _propProxy, __propProxy} = obj.__getTabProps({propProxy, tabGroup});
+			const {propActive, _propProxy, __propProxy} = obj._getTabProps({propProxy, tabGroup});
 
 			this[__propProxy][propActive] = this[__propProxy][propActive] || 0;
 
@@ -980,7 +981,7 @@ class TabUiUtilBase {
 		};
 
 		obj.__hasTab = function ({propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP, offset}) {
-			const {propActive, _propProxy} = obj.__getTabProps({propProxy, tabGroup});
+			const {propActive, _propProxy} = obj._getTabProps({propProxy, tabGroup});
 			const ixActive = obj[_propProxy][propActive];
 			return !!(obj.__tabState[tabGroup]?.tabMetasOut && obj.__tabState[tabGroup]?.tabMetasOut[ixActive + offset]);
 		};
@@ -994,22 +995,22 @@ class TabUiUtilBase {
 
 		obj.__doSwitchToTab = function ({propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP, offset}) {
 			if (!obj.__hasTab({propProxy, tabGroup, offset})) return;
-			const {propActive, _propProxy} = obj.__getTabProps({propProxy, tabGroup});
+			const {propActive, _propProxy} = obj._getTabProps({propProxy, tabGroup});
 			obj[_propProxy][propActive] = obj[_propProxy][propActive] + offset;
 		};
 
 		obj._addHookActiveTab = function (hook, {propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP} = {}) {
-			const {propActive} = obj.__getTabProps({propProxy, tabGroup});
+			const {propActive} = obj._getTabProps({propProxy, tabGroup});
 			this._addHook(propProxy, propActive, hook);
 		};
 
 		obj._getIxActiveTab = function ({propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP} = {}) {
-			const {propActive, _propProxy} = obj.__getTabProps({propProxy, tabGroup});
+			const {propActive, _propProxy} = obj._getTabProps({propProxy, tabGroup});
 			return obj[_propProxy][propActive];
 		};
 
 		obj._setIxActiveTab = function ({propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP, ixActiveTab} = {}) {
-			const {propActive, _propProxy} = obj.__getTabProps({propProxy, tabGroup});
+			const {propActive, _propProxy} = obj._getTabProps({propProxy, tabGroup});
 			obj[_propProxy][propActive] = ixActiveTab;
 		};
 
@@ -1083,7 +1084,7 @@ class TabUiUtilSide extends TabUiUtilBase {
 		};
 
 		obj.__$getWrpTab = function () {
-			return $(`<div class="flex-col w-100 min-h-100 h-100 ui-tab-side__wrp-tab px-3 py-2 overflow-y-auto"></div>`);
+			return $(`<div class="flex-col w-100 h-100 ui-tab-side__wrp-tab px-3 py-2 overflow-y-auto"></div>`);
 		};
 
 		obj.__renderTypedTabMeta = function ({tabMeta, ixTab}) {
@@ -1134,7 +1135,12 @@ class SearchUiUtil {
 
 		const availContent = {};
 
-		const data = Omnidexer.decompressIndex(await DataUtil.loadJSON(`${Renderer.get().baseUrl}search/index.json`));
+		const [searchIndexRaw] = await Promise.all([
+			DataUtil.loadJSON(`${Renderer.get().baseUrl}search/index.json`),
+			ExcludeUtil.pInitialise(),
+		]);
+
+		const data = Omnidexer.decompressIndex(searchIndexRaw);
 
 		const additionalData = {};
 		if (options.additionalIndices) {
@@ -1180,7 +1186,11 @@ class SearchUiUtil {
 		};
 
 		const handleDataItem = (d, isAlternate) => {
-			if (SearchUiUtil._isNoHoverCat(d.c) || fromDeepIndex(d)) return;
+			if (
+				SearchUiUtil._isNoHoverCat(d.c)
+				|| fromDeepIndex(d)
+				|| ExcludeUtil.isExcluded(d.h, Parser.pageCategoryToProp(d.c), d.s, {isNoCount: true})
+			) return;
 			d.cf = d.c === Parser.CAT_ID_CREATURE ? "Creature" : Parser.pageCategoryToFull(d.c);
 			if (isAlternate) d.cf = `alt_${d.cf}`;
 			initIndexForFullCat(d);
@@ -3957,38 +3967,39 @@ class ComponentUiUtil {
 	 * @param [opts.fnDisplay] Value display function.
 	 * @param [opts.displayNullAs] If null values are allowed, display them as this string.
 	 * @param [opts.asMeta] If a meta-object should be returned containing the hook and the select.
+	 * @param [opts.propProxy] Proxy prop.
 	 */
-	static $getSelEnum (component, prop, opts) {
-		opts = opts || {};
+	static $getSelEnum (component, prop, {values, $ele, html, isAllowNull, fnDisplay, displayNullAs, asMeta, propProxy = "state"} = {}) {
+		const _propProxy = `_${propProxy}`
 
-		let values;
+		let values_;
 
-		let $sel = opts.$ele ? opts.$ele : opts.html ? $(opts.html) : null;
+		let $sel = $ele || (html ? $(html) : null);
 		// Use native API, if we can, for performance
 		if (!$sel) { const sel = document.createElement("select"); sel.className = "form-control input-xs"; $sel = $(sel); }
 
 		$sel.change(() => {
 			const ix = Number($sel.val());
-			if (~ix) component._state[prop] = values[ix];
+			if (~ix) component[_propProxy][prop] = values_[ix];
 			else {
-				if (opts.isAllowNull) component._state[prop] = null;
-				else component._state[prop] = values[0];
+				if (isAllowNull) component[_propProxy][prop] = null;
+				else component[_propProxy][prop] = values_[0];
 			}
 		});
 
 		const setValues = (nxtValues, {isResetOnMissing = false} = {}) => {
-			if (CollectionUtil.deepEquals(values, nxtValues)) return;
-			values = nxtValues;
+			if (CollectionUtil.deepEquals(values_, nxtValues)) return;
+			values_ = nxtValues;
 			$sel.empty();
 			// Use native API for performance
-			if (opts.isAllowNull) { const opt = document.createElement("option"); opt.value = "-1"; opt.text = opts.displayNullAs || "\u2014"; $sel.append(opt); }
-			values.forEach((it, i) => { const opt = document.createElement("option"); opt.value = `${i}`; opt.text = opts.fnDisplay ? opts.fnDisplay(it) : it; $sel.append(opt); });
+			if (isAllowNull) { const opt = document.createElement("option"); opt.value = "-1"; opt.text = displayNullAs || "\u2014"; $sel.append(opt); }
+			values_.forEach((it, i) => { const opt = document.createElement("option"); opt.value = `${i}`; opt.text = fnDisplay ? fnDisplay(it) : it; $sel.append(opt); });
 
 			if (isResetOnMissing) {
 				// If the new value list doesn't contain our current value, reset our current value
-				if (component._state[prop] != null && !nxtValues.includes(component._state[prop])) {
-					if (opts.isAllowNull) return component._state[prop] = null;
-					else return component._state[prop] = nxtValues[0];
+				if (component[_propProxy][prop] != null && !nxtValues.includes(component[_propProxy][prop])) {
+					if (isAllowNull) return component[_propProxy][prop] = null;
+					else return component[_propProxy][prop] = nxtValues[0];
 				}
 			}
 
@@ -3996,16 +4007,16 @@ class ComponentUiUtil {
 		};
 
 		const hook = () => {
-			const searchFor = component._state[prop] === undefined ? null : component._state[prop];
+			const searchFor = component[_propProxy][prop] === undefined ? null : component[_propProxy][prop];
 			// Null handling is done in change handler
-			const ix = values.indexOf(searchFor);
+			const ix = values_.indexOf(searchFor);
 			$sel.val(`${ix}`);
 		};
 		component._addHookBase(prop, hook);
 
-		setValues(opts.values);
+		setValues(values);
 
-		if (!opts.asMeta) return $sel;
+		if (!asMeta) return $sel;
 
 		return {
 			$sel,

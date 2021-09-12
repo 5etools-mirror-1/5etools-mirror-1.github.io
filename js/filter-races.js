@@ -823,6 +823,8 @@ class PageFilterRaces extends PageFilter {
 	}
 
 	static mutateForFilters (race) {
+		race._fSize = race.size ? [...race.size] : [];
+		if (race._fSize.length > 1) race._fSize.push("V");
 		race._fSpeed = race.speed ? race.speed.walk ? [race.speed.climb ? "Climb" : null, race.speed.fly ? "Fly" : null, race.speed.swim ? "Swim" : null, PageFilterRaces.getSpeedRating(race.speed.walk)].filter(it => it) : [PageFilterRaces.getSpeedRating(race.speed)] : [];
 		race._fTraits = [
 			race.darkvision === 120 ? "Superior Darkvision" : race.darkvision ? "Darkvision" : null,
@@ -864,7 +866,7 @@ class PageFilterRaces extends PageFilter {
 		if (isExcluded) return;
 
 		this._sourceFilter.addItem(race._fSources);
-		this._sizeFilter.addItem(race.size);
+		this._sizeFilter.addItem(race._fSize);
 		this._asiFilter.addItem(race.ability);
 		this._baseRaceFilter.addItem(race._baseName);
 		this._creatureTypeFilter.addItem(race._fCreatureTypes);
@@ -893,7 +895,7 @@ class PageFilterRaces extends PageFilter {
 			values,
 			r._fSources,
 			r.ability,
-			r.size,
+			r._fSize,
 			r._fSpeed,
 			r._fTraits,
 			r._fLangs,

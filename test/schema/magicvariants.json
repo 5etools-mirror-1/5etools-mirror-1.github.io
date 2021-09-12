@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "magicvariants.json",
-	"version": "1.4.3",
+	"version": "1.4.4",
 	"type": "object",
 	"properties": {
 		"variant": {
@@ -27,36 +27,17 @@
 						"items": {
 							"type": "object",
 							"properties": {
-								"ammunition": {
-									"type": "boolean"
-								},
-								"armor": {
-									"type": "boolean"
-								},
-								"axe": {
-									"type": "boolean"
-								},
-								"sword": {
-									"type": "boolean"
-								},
-								"weapon": {
-									"type": "boolean"
-								},
-								"dmgType": {
-									"type": "string"
-								},
-								"name": {
-									"type": "string"
-								},
-								"type": {
-									"type": "string"
-								},
-								"scfType": {
-									"type": "string"
-								},
-								"net": {
-									"type": "boolean"
-								}
+								"ammunition": {"type": "boolean"},
+								"armor": {"type": "boolean"},
+								"axe": {"type": "boolean"},
+								"sword": {"type": "boolean"},
+								"weapon": {"type": "boolean"},
+								"dmgType": {"type": "string"},
+								"name": {"type": "string"},
+								"source": {"type": "string"},
+								"type": {"type": "string"},
+								"scfType": {"type": "string"},
+								"net": {"type": "boolean"}
 							},
 							"additionalProperties": false
 						}

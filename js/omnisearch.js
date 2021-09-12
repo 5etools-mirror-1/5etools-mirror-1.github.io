@@ -210,16 +210,7 @@ class Omnisearch {
 	// region Search
 	static async _pDoSearch () {
 		const results = await this.pGetResults(this._$iptSearch.val());
-
-		if (results.length) {
-			this._pDoSearch_renderLinks(results);
-		} else {
-			if (this._$btnToggleUa) this._$btnToggleUa.detach();
-			if (this._$btnToggleBlacklisted) this._$btnToggleBlacklisted.detach();
-
-			this._$searchOut.empty();
-			this._$searchOutWrapper.hide();
-		}
+		this._pDoSearch_renderLinks(results);
 	}
 
 	static _renderLink_getHoverString (category, url, src) {
@@ -317,8 +308,12 @@ class Omnisearch {
 			this._$searchOut.append($pgControls);
 		}
 
-		if (this._clickFirst) {
+		if (this._clickFirst && results.length) {
 			this._$searchOut.find(`a.omni__lnk-name`).first()[0].click();
+		}
+
+		if (!results.length) {
+			this._$searchOut.append(`<div class="ve-muted"><i>No results found.</i></div>`)
 		}
 	}
 	// endregion
@@ -508,6 +503,7 @@ Omnisearch._$btnToggleBlacklisted = null;
 Omnisearch._$searchOut = null;
 Omnisearch._$searchOutWrapper = null;
 Omnisearch._$searchInputWrapper = null;
+Omnisearch._$wrpNoResultsFound = null;
 
 Omnisearch._clickFirst = false;
 Omnisearch._MAX_RESULTS = 15;

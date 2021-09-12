@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "2.6.2",
+	"version": "2.7.0",
 	"$id": "class.json",
 
 	"type": "object",
@@ -563,7 +563,10 @@
 						"type": "object",
 						"properties": {
 							"name": {"type": "string"},
-							"featureType": {"$ref": "util.json#/definitions/dataOptionalfeatureType"},
+							"featureType": {
+								"type": "array",
+								"items": {"$ref": "util.json#/definitions/dataOptionalfeatureType"}
+							},
 							"progression": {
 								"type": "array",
 								"items": {"type": "integer"},

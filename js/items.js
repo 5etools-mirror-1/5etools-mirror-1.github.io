@@ -437,7 +437,7 @@ class ItemsPage extends ListPage {
 				this._listSub.init();
 
 				Hist.init(true);
-				ExcludeUtil.checkShowAllExcluded(this._dataList, this._$pgContent);
+				ListPage._checkShowAllExcluded(this._dataList, this._$pgContent);
 
 				window.dispatchEvent(new Event("toolsLoaded"));
 			});

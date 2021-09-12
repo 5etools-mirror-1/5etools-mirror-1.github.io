@@ -126,7 +126,7 @@ class BookUtil {
 					BookUtil._renderer.recursiveRender(d, textStack);
 				});
 			} else BookUtil._renderer.recursiveRender(data[ixChapter], textStack);
-			BookUtil.$dispBook.append(`<tr class="text"><td colspan="6" style="padding: 5px 20px;">${textStack.join("")}</td></tr>`);
+			BookUtil.$dispBook.append(`<tr class="text"><td colspan="6" class="py-2 px-y">${Renderer.utils.getExcludedHtml(fromIndex, BookUtil.contentType, UrlUtil.getCurrentPage())}${textStack.join("")}</td></tr>`);
 			Renderer.initLazyImageLoaders();
 			BookUtil._renderer.setLazyImages(false);
 			this._showBookContent_renderNavButtons({ixChapter, bookId, data});

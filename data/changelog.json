@@ -1776,5 +1776,11 @@
 		"date": "2021-08-31",
 		"title": "Dark Side of the Moon",
 		"txt": "- Added \"Class Level\" scaler to Tasha's Cauldron of Everything creature statblocks which reference the summoner's class\n- Expanded Plane Shift: Amonkhet fluff (thanks to @ darthbeep for the text, and @ spappz for image dump)\n- Added \"Artificer\" to Items page Spellcasting Focus filter\n- Added \"Has Recharge\" filter to Bestiary page Miscellaneous filter\n- Fixed J/K list navigation failing when there was no visible item selected\n- Fixed various rendering issues in the Classes page, including (but not limited to) rendering unwanted UA: Strixhaven headers, and adding unwanted UA: Class Feature Variant content to TCE's Artificer\n- Fixed base races failing to load when hovered\n- (Brew) Reworked skill/tool/language proficiencies on some races and feats, to better support \"any skill or any tool\" choices\n- (Brew) Added `_copy` support to `itemGroup` entities\n- (Fixed typos/added tags)\n"
+	},
+	{
+		"ver": "1.136.0",
+		"date": "2021-09-12",
+		"title": "Purity",
+		"txt": "- Blacklist is now applied to adventure/book navbar sections and adventure/book pages, allowing unwanted publications to be removed from both lists\n- Blacklist is now applied to Bestiary/Spells page Source filters, allowing unwanted sources to be hidden (other pages should already have this functionality present)\n- Overhauled Blacklist page controls, making dropdowns searchable, and adding more quick exclude/include buttons (for \"comedy\" sources, and \"non-FR\" content) [these lists are both opinionated and not final; feedback welcome]\n- Races page \"Size: Varies\" filter now includes \"choose your size\" races\n- Added a \"No results found\" placeholder to Omnisearch, allowing the help/etc. controls to be accessible when a search returns no results\n- (Fixed typos/added tags)"
 	}
 ]

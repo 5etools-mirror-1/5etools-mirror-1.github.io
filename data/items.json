@@ -954,7 +954,7 @@
 					"type": "entries",
 					"name": "Alchemical Crafting",
 					"entries": [
-						"You can use this tool proficiency to create alchemical items. A character can spend money to collect raw materials, which weigh 1 pound for every 50 gp spent. The DM can allow a character to make a check using the indicated skill with advantage. As part of a long rest, you can use alchemist's supplies to make one dose of acid, alchemist's fire, antitoxin, oil, perfume, or soap. Subtract half the value of the created item from the total gp worth of raw materials you are carrying."
+						"You can use this tool proficiency to create alchemical items. A character can spend money to collect raw materials, which weigh 1 pound for every 50 gp spent. The DM can allow a character to make a check using the indicated skill with advantage. As part of a long rest, you can use alchemist's supplies to make one dose of {@item acid (vial)|phb|acid}, {@item alchemist's fire (flask)|phb|alchemist's fire}, {@item antitoxin (vial)|phb|antitoxin}, {@item oil (flask)|phb|oil}, {@item perfume (vial)|phb|perfume}, or {@item soap|phb}. Subtract half the value of the created item from the total gp worth of raw materials you are carrying."
 					]
 				},
 				{
@@ -19896,61 +19896,6 @@
 			]
 		},
 		{
-			"name": "Molten Bronze Skin (Breastplate)",
-			"source": "MOT",
-			"page": 197,
-			"baseItem": "breastplate|phb",
-			"type": "MA",
-			"resist": [
-				"fire"
-			],
-			"rarity": "rare",
-			"reqAttune": true,
-			"weight": 20,
-			"ac": 14,
-			"entries": [
-				"This magical armor appears as a jug of molten bronze. When you attune to it, the bronze adheres and contours to your skin. The armor can be worn under normal clothes, but it doesn't impede bodily functions. Once you put it on, it can't be removed unless you choose to do so.",
-				"While wearing the armor, you have resistance to fire damage. The armor also doesn't impose disadvantage on Dexterity ({@skill Stealth}) checks."
-			]
-		},
-		{
-			"name": "Molten Bronze Skin (Half Plate)",
-			"source": "MOT",
-			"page": 197,
-			"baseItem": "half plate armor|phb",
-			"type": "MA",
-			"resist": [
-				"fire"
-			],
-			"rarity": "rare",
-			"reqAttune": true,
-			"weight": 40,
-			"ac": 15,
-			"entries": [
-				"This magical armor appears as a jug of molten bronze. When you attune to it, the bronze adheres and contours to your skin. The armor can be worn under normal clothes, but it doesn't impede bodily functions. Once you put it on, it can't be removed unless you choose to do so.",
-				"While wearing the armor, you have resistance to fire damage. The armor also doesn't impose disadvantage on Dexterity ({@skill Stealth}) checks."
-			]
-		},
-		{
-			"name": "Molten Bronze Skin (Plate)",
-			"source": "MOT",
-			"page": 197,
-			"baseItem": "plate armor|phb",
-			"type": "HA",
-			"resist": [
-				"fire"
-			],
-			"rarity": "rare",
-			"reqAttune": true,
-			"weight": 65,
-			"ac": 18,
-			"strength": "15",
-			"entries": [
-				"This magical armor appears as a jug of molten bronze. When you attune to it, the bronze adheres and contours to your skin. The armor can be worn under normal clothes, but it doesn't impede bodily functions. Once you put it on, it can't be removed unless you choose to do so.",
-				"While wearing the armor, you have resistance to fire damage. The armor also doesn't impose disadvantage on Dexterity ({@skill Stealth}) checks."
-			]
-		},
-		{
 			"name": "Monster Hunter's Pack",
 			"source": "CoS",
 			"page": 209,
@@ -37387,19 +37332,6 @@
 				"Magic Item Table H"
 			],
 			"hasFluffImages": true
-		},
-		{
-			"name": "Molten Bronze Skin",
-			"source": "MOT",
-			"page": 197,
-			"type": "GV",
-			"rarity": "rare",
-			"reqAttune": true,
-			"items": [
-				"Molten Bronze Skin (Breastplate)|MOT",
-				"Molten Bronze Skin (Half Plate)|MOT",
-				"Molten Bronze Skin (Plate)|MOT"
-			]
 		},
 		{
 			"name": "Musical Instrument",

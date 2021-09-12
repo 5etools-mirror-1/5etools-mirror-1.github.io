@@ -185,6 +185,8 @@ class Board {
 		this.doAdjust$creenCss();
 		this.doShowLoading();
 
+		await ExcludeUtil.pInitialise();
+
 		await Promise.all([
 			TIME_TRACKER_MOON_SPRITE_LOADER,
 			this.pLoadIndex(),
@@ -268,61 +270,25 @@ class Board {
 		// region adventures/books
 		const adventureOrBookIdToSource = {};
 
-		async function pDoBuildAdventureOrAdventureIndex (dataPath, dataProp, indexStorage, indexIdField) {
-			const brew = await BrewUtil.pAddBrewData();
-
-			const data = await DataUtil.loadJSON(dataPath);
-			adventureOrBookIdToSource[dataProp] = adventureOrBookIdToSource[dataProp] || {};
-
-			indexStorage.ALL = elasticlunr(function () {
-				this.addField(indexIdField);
-				this.addField("c");
-				this.addField("n");
-				this.addField("p");
-				this.addField("o");
-				this.setRef("id");
-			});
-			SearchUtil.removeStemmer(indexStorage.ALL);
-
-			let bookOrAdventureId = 0;
-			const handleAdventureOrBook = (adventureOrBook, isBrew) => {
-				adventureOrBookIdToSource[dataProp][adventureOrBook.id] = adventureOrBook.source;
-
-				indexStorage[adventureOrBook.id] = elasticlunr(function () {
-					this.addField(indexIdField);
-					this.addField("c");
-					this.addField("n");
-					this.addField("p");
-					this.addField("o");
-					this.setRef("id");
-				});
-				SearchUtil.removeStemmer(indexStorage[adventureOrBook.id]);
-
-				adventureOrBook.contents.forEach((chap, i) => {
-					const chapDoc = {
-						[indexIdField]: adventureOrBook.id,
-						n: adventureOrBook.name,
-						c: chap.name,
-						p: i,
-						id: bookOrAdventureId++,
-					};
-					if (chap.ordinal) chapDoc.o = Parser.bookOrdinalToAbv(chap.ordinal, true);
-					if (isBrew) chapDoc.w = true;
-
-					indexStorage.ALL.addDoc(chapDoc);
-					indexStorage[adventureOrBook.id].addDoc(chapDoc);
-				});
-			};
-
-			data[dataProp].forEach(adventureOrBook => handleAdventureOrBook(adventureOrBook));
-			(brew[dataProp] || []).forEach(adventureOrBook => handleAdventureOrBook(adventureOrBook, true));
-		}
-
 		// adventures
-		await pDoBuildAdventureOrAdventureIndex(`data/adventures.json`, "adventure", this.availAdventures, "a");
+		await this._pDoBuildAdventureOrBookIndex({
+			adventureOrBookIdToSource,
+			dataPath: `data/adventures.json`,
+			dataProp: "adventure",
+			page: UrlUtil.PG_ADVENTURE,
+			indexStorage: this.availAdventures,
+			indexIdField: "a",
+		});
 
 		// books
-		await pDoBuildAdventureOrAdventureIndex(`data/books.json`, "book", this.availBooks, "b");
+		await this._pDoBuildAdventureOrBookIndex({
+			adventureOrBookIdToSource,
+			dataPath: `data/books.json`,
+			dataProp: "book",
+			page: UrlUtil.PG_BOOK,
+			indexStorage: this.availBooks,
+			indexIdField: "b",
+		});
 		// endregion
 
 		// search
@@ -351,6 +317,67 @@ class Board {
 		this.sideMenu.render();
 
 		this.doHideLoading();
+	}
+
+	async _pDoBuildAdventureOrBookIndex (
+		{
+			adventureOrBookIdToSource,
+			dataPath,
+			dataProp,
+			page,
+			indexStorage,
+			indexIdField,
+		},
+	) {
+		const brew = await BrewUtil.pAddBrewData();
+
+		const data = await DataUtil.loadJSON(dataPath);
+		adventureOrBookIdToSource[dataProp] = adventureOrBookIdToSource[dataProp] || {};
+
+		indexStorage.ALL = elasticlunr(function () {
+			this.addField(indexIdField);
+			this.addField("c");
+			this.addField("n");
+			this.addField("p");
+			this.addField("o");
+			this.setRef("id");
+		});
+		SearchUtil.removeStemmer(indexStorage.ALL);
+
+		let bookOrAdventureId = 0;
+		const handleAdventureOrBook = (adventureOrBook, isBrew) => {
+			if (ExcludeUtil.isExcluded(UrlUtil.URL_TO_HASH_BUILDER[page](adventureOrBook), dataProp, adventureOrBook.source, {isNoCount: true})) return;
+
+			adventureOrBookIdToSource[dataProp][adventureOrBook.id] = adventureOrBook.source;
+
+			indexStorage[adventureOrBook.id] = elasticlunr(function () {
+				this.addField(indexIdField);
+				this.addField("c");
+				this.addField("n");
+				this.addField("p");
+				this.addField("o");
+				this.setRef("id");
+			});
+			SearchUtil.removeStemmer(indexStorage[adventureOrBook.id]);
+
+			adventureOrBook.contents.forEach((chap, i) => {
+				const chapDoc = {
+					[indexIdField]: adventureOrBook.id,
+					n: adventureOrBook.name,
+					c: chap.name,
+					p: i,
+					id: bookOrAdventureId++,
+				};
+				if (chap.ordinal) chapDoc.o = Parser.bookOrdinalToAbv(chap.ordinal, true);
+				if (isBrew) chapDoc.w = true;
+
+				indexStorage.ALL.addDoc(chapDoc);
+				indexStorage[adventureOrBook.id].addDoc(chapDoc);
+			});
+		};
+
+		data[dataProp].forEach(adventureOrBook => handleAdventureOrBook(adventureOrBook));
+		(brew[dataProp] || []).forEach(adventureOrBook => handleAdventureOrBook(adventureOrBook, true));
 	}
 
 	getPanel (x, y) {
@@ -3601,7 +3628,6 @@ class AdventureOrBookView {
 }
 
 window.addEventListener("load", () => {
-	ExcludeUtil.pInitialise(); // don't await, as this is only used for search
 	// expose it for dbg purposes
 	window.DM_SCREEN = new Board();
 	Renderer.hover.bindDmScreen(window.DM_SCREEN);

@@ -37,7 +37,7 @@ class InitiativeTrackerUtil {
 			if (state.turns == null) return fnOnStateChange && fnOnStateChange();
 			else state.turns--;
 			if (state.turns <= 0) doRemove();
-			else doRender(fromClick);
+			else doRender();
 			fnOnStateChange && fnOnStateChange();
 		};
 
@@ -46,13 +46,13 @@ class InitiativeTrackerUtil {
 			if (fromClick && state.turns == null) state.turns = 0; // convert permanent condition
 			if (state.turns == null) return fnOnStateChange && fnOnStateChange();
 			else state.turns++;
-			doRender(fromClick);
+			doRender();
 			fnOnStateChange && fnOnStateChange();
 		};
 
-		const doRemove = () => $cond.tooltip("destroy").remove();
+		const doRemove = () => $cond.remove();
 
-		const doRender = (fromClick) => {
+		const doRender = () => {
 			const turnsText = `${state.turns} turn${state.turns > 1 ? "s" : ""} remaining`;
 			const ttpText = state.name && state.turns ? `${state.name.escapeQuotes()} (${turnsText})` : state.name ? state.name.escapeQuotes() : state.turns ? turnsText : "";
 			const getBar = () => {
@@ -71,13 +71,6 @@ class InitiativeTrackerUtil {
 
 			$cond.title(ttpText);
 
-			$cond.tooltip({trigger: "hover", placement: "auto-x"});
-			if (ttpText) {
-				// update tooltips
-				$cond.tooltip("enable").tooltip("fixTitle");
-				if (fromClick) $cond.tooltip("show");
-			} else $cond.tooltip("disable");
-
 			$cond.html(inner);
 			fnOnStateChange && fnOnStateChange();
 		};
@@ -85,7 +78,8 @@ class InitiativeTrackerUtil {
 		const styleStack = [];
 		if (opts.width) styleStack.push(`width: ${opts.width}px;`);
 		if (opts.height) styleStack.push(`height: ${opts.height}px;`);
-		const $cond = $(`<div class="init__cond" ${styleStack.length ? `style="${styleStack.join(" ")}"` : ""}/>`)
+
+		const $cond = $$`<div class="init__cond relative" ${styleStack.length ? `style="${styleStack.join(" ")}"` : ""}></div>`
 			.data("doTickDown", tickDown)
 			.data("getState", () => JSON.parse(JSON.stringify(state)))
 			.on("contextmenu", (e) => e.preventDefault() || tickDown(true))

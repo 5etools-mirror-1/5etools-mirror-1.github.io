@@ -127,7 +127,7 @@ class ListPage {
 		this._listSub.init();
 
 		Hist.init(true);
-		ExcludeUtil.checkShowAllExcluded(this._dataList, this._$pgContent);
+		ListPage._checkShowAllExcluded(this._dataList, this._$pgContent);
 		window.dispatchEvent(new Event("toolsLoaded"));
 	}
 
@@ -279,6 +279,14 @@ class ListPage {
 
 	_getSearchCache_handleString (ptrOut, str) {
 		ptrOut._ += `${Renderer.stripTags(str).toLowerCase()} -- `;
+	}
+
+	static _checkShowAllExcluded (list, $pagecontent) {
+		if (!ExcludeUtil.isAllContentExcluded(list)) return;
+
+		$pagecontent.html(`<tr><th class="border" colspan="6"></th></tr>
+			<tr><td colspan="6">${ExcludeUtil.getAllContentBlacklistedHtml()}</td></tr>
+			<tr><th class="border" colspan="6"></th></tr>`);
 	}
 
 	getListItem () { throw new Error(`Unimplemented!`); }

@@ -107,7 +107,7 @@ class ClassesPage extends BaseComponent {
 
 		await this._pInitAndRunRender();
 
-		ExcludeUtil.checkShowAllExcluded(this._dataList, this._$pgContent);
+		ListPage._checkShowAllExcluded(this._dataList, this._$pgContent);
 		this._initLinkGrabbers();
 		UrlUtil.bindLinkExportButton(this.filterBox, $(`#btn-link-export`));
 

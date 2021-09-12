@@ -4251,29 +4251,7 @@
 			"entryData": {
 				"skillProficiencies": [
 					{
-						"choose": {
-							"from": [
-								"athletics",
-								"acrobatics",
-								"sleight of hand",
-								"stealth",
-								"arcana",
-								"history",
-								"investigation",
-								"nature",
-								"religion",
-								"animal handling",
-								"insight",
-								"medicine",
-								"perception",
-								"survival",
-								"deception",
-								"intimidation",
-								"performance",
-								"persuasion"
-							],
-							"count": 3
-						}
+						"any": 3
 					}
 				]
 			}
@@ -4631,9 +4609,9 @@
 					"name": "Natural Armor",
 					"changes": [
 						{
-							"key": "data.attributes.ac.value",
-							"mode": "UPGRADE",
-							"value": "13 + @abilities.dex.mod"
+							"key": "data.attributes.ac.calc",
+							"mode": "OVERRIDE",
+							"value": "draconic"
 						}
 					]
 				},

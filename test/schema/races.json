@@ -69,6 +69,9 @@
 				"skillToolLanguageProficiencies": {
 					"$ref": "util.json#/definitions/skillToolLanguageProficiencies"
 				},
+				"expertise": {
+					"$ref": "util.json#/definitions/expertise"
+				},
 				"weaponProficiencies": {
 					"$ref": "util.json#/definitions/weaponProficiencies"
 				},
@@ -231,6 +234,9 @@
 				},
 				"skillToolLanguageProficiencies": {
 					"$ref": "util.json#/definitions/skillToolLanguageProficiencies"
+				},
+				"expertise": {
+					"$ref": "util.json#/definitions/expertise"
 				},
 				"weaponProficiencies": {
 					"$ref": "util.json#/definitions/weaponProficiencies"

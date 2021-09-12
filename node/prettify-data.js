@@ -99,9 +99,8 @@ function getFnListSort (prop) {
 			|| SortUtil.ascSort(a.header || 0, b.header || 0)
 			|| SortUtil.ascSortLower(a.name, b.name)
 			|| SortUtil.ascSortLower(a.source, b.source);
-		case "adventure":
-		case "book":
-			return (a, b) => SortUtil.ascSortDate(new Date(b.published), new Date(a.published) || SortUtil.ascSortLower(a.name, b.name));
+		case "adventure": return (a, b) => SortUtil.ascSortAdventure(a, b);
+		case "book": return (a, b) => SortUtil.ascSortBook(a, b);
 		default: throw new Error(`Unhandled prop "${prop}"`);
 	}
 }

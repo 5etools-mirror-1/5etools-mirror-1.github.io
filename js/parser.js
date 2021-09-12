@@ -814,6 +814,12 @@ Parser.senseToExplanation = function (senseType) {
 
 Parser.skillProficienciesToFull = function (skillProficiencies) {
 	function renderSingle (skProf) {
+		if (skProf.any) {
+			skProf = MiscUtil.copy(skProf);
+			skProf.choose = {"from": Object.keys(Parser.SKILL_TO_ATB_ABV), "count": skProf.any};
+			delete skProf.any;
+		}
+
 		const keys = Object.keys(skProf).sort(SortUtil.ascSortLower);
 
 		const ixChoose = keys.indexOf("choose");
@@ -2977,7 +2983,10 @@ Parser.SOURCES_NON_STANDARD_WOTC = new Set([
 	SRC_AitFR_DN,
 	SRC_AitFR_FCD,
 ]);
-Parser.SOURCES_VANILLA = new Set([ // An opinionated set of source that could be considered "core-core"
+// region Source categories
+
+// An opinionated set of source that could be considered "core-core"
+Parser.SOURCES_VANILLA = new Set([
 	SRC_DMG,
 	SRC_MM,
 	SRC_PHB,
@@ -2993,6 +3002,32 @@ Parser.SOURCES_VANILLA = new Set([ // An opinionated set of source that could be
 	SRC_SCREEN,
 	SRC_SCREEN_WILDERNESS_KIT,
 ]);
+
+// Any opinionated set of sources that are """hilarious, dude"""
+Parser.SOURCES_COMEDY = new Set([
+	SRC_AI,
+	SRC_OoW,
+	SRC_RMR,
+	SRC_RMBRE,
+	SRC_HftT,
+]);
+
+// Any opinionated set of sources that are "other settings"
+Parser.SOURCES_NON_FR = new Set([
+	SRC_GGR,
+	SRC_KKW,
+	SRC_ERLW,
+	SRC_EFR,
+	SRC_UAWGE,
+	SRC_EGW,
+	SRC_EGW_ToR,
+	SRC_EGW_DD,
+	SRC_EGW_FS,
+	SRC_EGW_US,
+	SRC_MOT,
+]);
+
+// endregion
 Parser.SOURCES_AVAILABLE_DOCS_BOOK = {};
 [
 	SRC_PHB,
