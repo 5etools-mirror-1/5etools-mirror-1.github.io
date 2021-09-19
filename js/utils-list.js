@@ -338,7 +338,7 @@ const ListUtil = {
 			const action = new ContextUtil.Action(
 				"Upload Pinned List (SHIFT for Add Only)",
 				async evt => {
-					const files = await DataUtil.pUserUpload({expectedFileType: ListUtil._getDownloadName()});
+					const [files, ] = await DataUtil.pUserUpload({expectedFileType: ListUtil._getDownloadName()});
 					if (!files?.length) return;
 
 					const json = files[0];

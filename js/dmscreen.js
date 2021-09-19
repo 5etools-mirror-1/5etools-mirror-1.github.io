@@ -643,7 +643,7 @@ class SideMenu {
 		});
 		const $btnLoadFile = $(`<button class="btn btn-primary">Load from File</button>`).appendTo($wrpSaveLoadFile);
 		$btnLoadFile.on("click", async () => {
-			const jsons = await DataUtil.pUserUpload({expectedFileType: "dm-screen"});
+			const [jsons, ] = await DataUtil.pUserUpload({expectedFileType: "dm-screen"});
 			if (!jsons?.length) return;
 			this.board.doReset();
 			await this.board.pDoLoadStateFrom(jsons[0]);

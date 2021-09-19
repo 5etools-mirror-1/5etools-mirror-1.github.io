@@ -444,7 +444,7 @@ class Blacklist {
 	}
 
 	static async _pImport (evt) {
-		const files = await DataUtil.pUserUpload({expectedFileType: "content-blacklist"});
+		const [files, ] = await DataUtil.pUserUpload({expectedFileType: "content-blacklist"});
 
 		if (!files?.length) return;
 
