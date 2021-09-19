@@ -2555,7 +2555,7 @@ DataUtil = {
 
 	/** Always returns an array of files, even in "single" mode. */
 	pUserUpload ({isMultiple = false, expectedFileType = null, propVersion = "siteVersion"} = {}) {
-		return new Promise(resolve => {
+		return new Promise((resolve, reject) => {
 			const $iptAdd = $(`<input type="file" ${isMultiple ? "multiple" : ""} accept=".json" style="position: fixed; top: -100px; left: -100px; display: none;">`).on("change", (evt) => {
 				const input = evt.target;
 
@@ -2564,9 +2564,18 @@ DataUtil = {
 				const out = [];
 				reader.onload = async () => {
 					const name = input.files[readIndex - 1].name;
-
 					const text = reader.result;
-					const json = JSON.parse(text);
+
+					let json;
+					try {
+						json = JSON.parse(text);
+					} catch (e) {
+						// In case multiple files were passed, let the caller
+						// know which file failed to parse.
+						e.filename = name;
+						reject(e);
+						return;
+					}
 
 					const isSkipFile = expectedFileType != null && json.fileType && json.fileType !== expectedFileType && !(await InputUiUtil.pGetUserBoolean({
 						textYes: "Yes",
@@ -4467,8 +4476,17 @@ BrewUtil = {
 
 		const $btnLoadFromFile = $(`<button class="btn btn-default btn-sm mr-2">Upload File</button>`)
 			.click(async () => {
-				const files = await DataUtil.pUserUpload({isMultiple: true});
-				if (!files) return;
+				let files;
+				try {
+					files = await DataUtil.pUserUpload({isMultiple: true});
+				} catch (e) {
+					JqueryUtil.doToast({
+						content: `Could not load homebrew from ${e.filename}: <code>${e.message}</code>`,
+						type: "danger",
+					});
+					return;
+				}
+
 				for (const json of files) {
 					await DataUtil.pDoMetaMerge(CryptUtil.uid(), json);
 
