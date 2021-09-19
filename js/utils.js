@@ -2555,44 +2555,39 @@ DataUtil = {
 
 	/** Always returns an array of files, even in "single" mode. */
 	pUserUpload ({isMultiple = false, expectedFileType = null, propVersion = "siteVersion"} = {}) {
-		return new Promise((resolve, reject) => {
+		return new Promise(resolve => {
 			const $iptAdd = $(`<input type="file" ${isMultiple ? "multiple" : ""} accept=".json" style="position: fixed; top: -100px; left: -100px; display: none;">`).on("change", (evt) => {
 				const input = evt.target;
 
 				const reader = new FileReader();
 				let readIndex = 0;
-				const out = [];
+				const out = [], errs = [];
 				reader.onload = async () => {
 					const name = input.files[readIndex - 1].name;
 					const text = reader.result;
 
-					let json;
 					try {
-						json = JSON.parse(text);
+						const json = JSON.parse(text);
+
+						const isSkipFile = expectedFileType != null && json.fileType && json.fileType !== expectedFileType && !(await InputUiUtil.pGetUserBoolean({
+							textYes: "Yes",
+							textNo: "Cancel",
+							title: "File Type Mismatch",
+							htmlDescription: `The file "${name}" has the type "${json.fileType}" when the expected file type was "${expectedFileType}".<br>Are you sure you want to upload this file?`,
+						}));
+
+						if (!isSkipFile) {
+							delete json.fileType;
+							delete json[propVersion];
+
+							out.push(json);
+						}
 					} catch (e) {
-						// In case multiple files were passed, let the caller
-						// know which file failed to parse.
-						e.filename = name;
-						reject(e);
-						return;
-					}
-
-					const isSkipFile = expectedFileType != null && json.fileType && json.fileType !== expectedFileType && !(await InputUiUtil.pGetUserBoolean({
-						textYes: "Yes",
-						textNo: "Cancel",
-						title: "File Type Mismatch",
-						htmlDescription: `The file "${name}" has the type "${json.fileType}" when the expected file type was "${expectedFileType}".<br>Are you sure you want to upload this file?`,
-					}));
-
-					if (!isSkipFile) {
-						delete json.fileType;
-						delete json[propVersion];
-
-						out.push(json);
+						errs.push({filename: name, message: e.message});
 					}
 
 					if (input.files[readIndex]) reader.readAsText(input.files[readIndex++]);
-					else resolve(out);
+					else resolve([out, errs]);
 				};
 
 				reader.readAsText(input.files[readIndex++]);
@@ -4476,15 +4471,13 @@ BrewUtil = {
 
 		const $btnLoadFromFile = $(`<button class="btn btn-default btn-sm mr-2">Upload File</button>`)
 			.click(async () => {
-				let files;
-				try {
-					files = await DataUtil.pUserUpload({isMultiple: true});
-				} catch (e) {
+				const [files, errs] = await DataUtil.pUserUpload({isMultiple: true});
+
+				for (const err of errs) {
 					JqueryUtil.doToast({
-						content: `Could not load homebrew from ${e.filename}: <code>${e.message}</code>`,
+						content: `Could not load homebrew from ${err.filename}: <code>${err.message}</code>`,
 						type: "danger",
 					});
-					return;
 				}
 
 				for (const json of files) {
