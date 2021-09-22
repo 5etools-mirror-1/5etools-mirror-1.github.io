@@ -763,17 +763,37 @@ class ListUiUtil {
 		evt.stopPropagation();
 
 		nxtText = nxtText ?? btnShowHidePreview.innerHTML.trim() === this.HTML_GLYPHICON_EXPAND ? this.HTML_GLYPHICON_CONTRACT : this.HTML_GLYPHICON_EXPAND;
+		const isHidden = nxtText === this.HTML_GLYPHICON_EXPAND;
+		const isFluff = !!evt.shiftKey;
 
-		elePreviewWrp.classList.toggle("ve-hidden", nxtText === this.HTML_GLYPHICON_EXPAND);
+		elePreviewWrp.classList.toggle("ve-hidden", isHidden);
 		btnShowHidePreview.innerHTML = nxtText;
 
 		const elePreviewWrpInner = elePreviewWrp.lastElementChild;
 
-		if (elePreviewWrpInner.innerHTML) return;
+		const isForce = (elePreviewWrp.dataset.dataType === "stats" && isFluff) || (elePreviewWrp.dataset.dataType === "fluff" && !isFluff);
+		if (!isForce && elePreviewWrpInner.innerHTML) return;
 
-		elePreviewWrpInner.addEventListener("click", evt => { evt.stopPropagation(); });
-		$(elePreviewWrpInner).empty();
-		Renderer.hover.$getHoverContent_stats(page, entity).appendTo(elePreviewWrpInner);
+		$(elePreviewWrpInner).empty().off("click").on("click", evt => { evt.stopPropagation(); });
+
+		if (isHidden) return;
+
+		elePreviewWrp.dataset.dataType = isFluff ? "fluff" : "stats";
+
+		if (!evt.shiftKey) {
+			Renderer.hover.$getHoverContent_stats(page, entity).appendTo(elePreviewWrpInner);
+			return;
+		}
+
+		Renderer.hover.pGetHoverableFluff(page, entity.source, UrlUtil.URL_TO_HASH_BUILDER[page](entity))
+			.then(fluffEntity => {
+				// Avoid clobbering existing elements, as other events might have updated the preview area while we were
+				//  loading the fluff.
+				if (elePreviewWrpInner.innerHTML) return;
+
+				if (!fluffEntity) return Renderer.hover.$getHoverContent_stats(page, entity).appendTo(elePreviewWrpInner);
+				Renderer.hover.$getHoverContent_fluff(page, fluffEntity).appendTo(elePreviewWrpInner);
+			});
 	}
 
 	static getOrAddListItemPreviewLazy (item) {

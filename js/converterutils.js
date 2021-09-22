@@ -161,7 +161,7 @@ class TagCondition {
 	}
 
 	static _getConvertedEntry (mon, entry, inflictedSet) {
-		const walker = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+		const walker = MiscUtil.getWalker({keyBlacklist: TagCondition._KEY_BLACKLIST});
 		const nameStack = [];
 		const walkerHandlers = {
 			preObject: (obj) => nameStack.push(obj.name),
@@ -283,7 +283,7 @@ class TagCondition {
 
 	// region Run basic tagging
 	static tryRunBasic (it) {
-		const walker = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+		const walker = MiscUtil.getWalker({keyBlacklist: TagCondition._KEY_BLACKLIST});
 		return walker.walk(
 			it,
 			{
@@ -306,6 +306,10 @@ class TagCondition {
 	}
 	// endregion
 }
+TagCondition._KEY_BLACKLIST = new Set([
+	...MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+	"conditionImmune",
+]);
 TagCondition._ALL_LEGENDARY_GROUPS = null;
 TagCondition._ALL_SPELLS = null;
 TagCondition._CONDITIONS = [
@@ -392,7 +396,13 @@ class DiceConvert {
 
 	static _getConvertedEntry (entry, isTagHits = false) {
 		if (!DiceConvert._walker) {
-			DiceConvert._walker = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+			DiceConvert._walker = MiscUtil.getWalker({
+				keyBlacklist: new Set([
+					...MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+					"dmg1",
+					"dmg2",
+				]),
+			});
 			DiceConvert._walkerHandlers = {string: DiceConvert._walkerStringHandler.bind(DiceConvert, isTagHits)};
 		}
 		entry = MiscUtil.copy(entry);

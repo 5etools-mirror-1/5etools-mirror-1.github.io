@@ -100,7 +100,10 @@ class InitiativeTracker {
 			new ContextUtil.Action(
 				"From Bestiary Encounter File",
 				async () => {
-					const jsons = await DataUtil.pUserUpload();
+					const {jsons, errors} = await DataUtil.pUserUpload();
+
+					DataUtil.doHandleFileLoadErrorsGeneric(errors);
+
 					if (jsons?.length) await pConvertAndLoadBestiaryList(jsons[0]);
 				},
 			),

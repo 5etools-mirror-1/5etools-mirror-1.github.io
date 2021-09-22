@@ -119,7 +119,11 @@ class AcConvert {
 						case "badge of the watch": froms.push("{@item Badge of the Watch|wdh}"); break;
 						case "ring of protection": froms.push("{@item ring of protection}"); break;
 						case "robe of the archmagi": froms.push("{@item robe of the archmagi}"); break;
+						case "robe of the archmage": froms.push("{@item robe of the archmagi}"); break;
 						case "staff of power": froms.push("{@item staff of power}"); break;
+
+						// literally nothing
+						case "unarmored": break;
 
 						// everything else
 						default: {
@@ -290,6 +294,13 @@ class TagDc {
 class AlignmentConvert {
 	static tryConvertAlignment (stats, cbMan) {
 		if (!stats.alignment.trim()) return delete stats.alignment;
+
+		// region Support WBtW and onwards formatting
+		stats.alignment = stats.alignment.trim().replace(/^typically\s+/, () => {
+			stats.alignmentPrefix = "typically ";
+			return "";
+		});
+		// endregion
 
 		const orParts = (stats.alignment || "").split(/ or /g).map(it => it.trim().replace(/[.,;]$/g, "").trim());
 		const out = [];

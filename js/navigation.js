@@ -552,7 +552,10 @@ NavBar.InteractionManager = class {
 
 	static async _pOnClick_button_loadStateFile (evt) {
 		evt.preventDefault();
-		const jsons = await DataUtil.pUserUpload({expectedFileType: "5etools"});
+		const {jsons, errors} = await DataUtil.pUserUpload({expectedFileType: "5etools"});
+
+		DataUtil.doHandleFileLoadErrorsGeneric(errors);
+
 		if (!jsons?.length) return;
 		const dump = jsons[0];
 

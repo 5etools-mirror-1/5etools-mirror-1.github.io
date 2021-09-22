@@ -1,9 +1,5 @@
 "use strict";
 
-function filterTypeSort (a, b) {
-	return SortUtil.ascSortLower(Parser.trapHazTypeToFull(a.item), Parser.trapHazTypeToFull(b.item));
-}
-
 class TrapsHazardsPage extends ListPage {
 	constructor () {
 		const pageFilter = new PageFilterTrapsHazards();

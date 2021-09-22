@@ -162,12 +162,17 @@ $rgb-inset-border: #656565;
 		}
 
 		&image-title-inner {
-			border-bottom: 1px solid $rgb-border-grey;
-			display: inline;
+			display: inline-block;
+			text-decoration: underline;
+			margin: 2px 0; // Align with map viewer buttons, which are padded + bordered on all sides
 		}
 
 		&image-btn-viewer {
+			// Style the button text to match normal image title labels
 			font-style: initial;
+			white-space: normal;
+			font-size: inherit;
+			line-height: 1.7;
 		}
 
 		// Thicker scrollbars for viewer

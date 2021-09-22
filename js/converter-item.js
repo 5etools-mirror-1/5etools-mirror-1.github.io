@@ -6,6 +6,7 @@ if (typeof module !== "undefined") {
 	const cvItem = require("./converterutils-item.js");
 	Object.assign(global, cvItem);
 	global.PropOrder = require("./utils-proporder.js");
+	Object.assign(global, require("./converterutils-entries.js"));
 }
 
 class ItemParser extends BaseParser {
@@ -117,11 +118,11 @@ class ItemParser extends BaseParser {
 		BonusTag.tryRun(stats);
 		ItemMiscTag.tryRun(stats);
 		ItemSpellcastingFocusTag.tryRun(stats);
-		DamageResistanceTag.tryRun(stats);
-		DamageImmunityTag.tryRun(stats);
-		DamageVulnerabilityTag.tryRun(stats);
-		ConditionImmunityTag.tryRun(stats);
-		ReqAttuneTagTag.tryRun(stats);
+		DamageResistanceTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Damage resistance tagging requires manual conversion`)});
+		DamageImmunityTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Damage immunity tagging requires manual conversion`)});
+		DamageVulnerabilityTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Damage vulnerability tagging requires manual conversion`)});
+		ConditionImmunityTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Condition immunity tagging requires manual conversion`)});
+		ReqAttuneTagTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Attunement requirement tagging requires manual conversion`)});
 		TagJsons.mutTagObject(stats, {keySet: new Set(["entries"]), isOptimistic: false});
 		AttachedSpellTag.tryRun(stats);
 

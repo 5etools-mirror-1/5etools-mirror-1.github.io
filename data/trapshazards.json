@@ -6,9 +6,9 @@
 			"page": 113,
 			"trapHazType": "SMPL",
 			"tier": 1,
-			"threat": 2,
+			"threat": "dangerous",
 			"effect": [
-				"Melee weapon attack: {@hit 8} to hit, triggering creature. Hit: 5 ({@dice 1d10}) piercing damage. This attack can't gain advantage or disadvantage. A creature hit by the trap has its speed reduced to 0. It can't move until it breaks free of the trap, which requires a successful DC 15 Strength check by the creature or another creature adjacent to the trap."
+				"{@atk mw} {@hit 8} to hit, triggering creature. Hit: 5 ({@dice 1d10}) piercing damage. This attack can't gain advantage or disadvantage. A creature hit by the trap has its speed reduced to 0. It can't move until it breaks free of the trap, which requires a successful DC 15 Strength check by the creature or another creature adjacent to the trap."
 			],
 			"trigger": [
 				"A creature that steps on the bear trap triggers it."
@@ -40,9 +40,9 @@
 			"page": 113,
 			"trapHazType": "SMPL",
 			"tier": 1,
-			"threat": 2,
+			"threat": "dangerous",
 			"effect": [
-				"The trap makes two attacks against the triggering creature. Ranged Weapon Attack +8 to hit, two attacks; Hit: 5 ({@dice 1d10}) piercing damage on a hit. This attack can't gain advantage or disadvantage."
+				"The trap makes two attacks against the triggering creature. {@atk rw} {@hit 8} to hit, two attacks; Hit: 5 ({@dice 1d10}) piercing damage on a hit. This attack can't gain advantage or disadvantage."
 			],
 			"trigger": [
 				"A creature that walks through the trip wire triggers the trap."
@@ -74,7 +74,7 @@
 			"page": 113,
 			"trapHazType": "SMPL",
 			"tier": 1,
-			"threat": 1,
+			"threat": "moderate",
 			"effect": [
 				"An iron portcullis drops from the ceiling, blocking an exit or a passageway."
 			],
@@ -94,7 +94,7 @@
 			"page": 113,
 			"trapHazType": "SMPL",
 			"tier": 2,
-			"threat": 2,
+			"threat": "dangerous",
 			"effect": [
 				"A 15-foot cube of fire erupts, covering the pressure plate and the area around it. Each creature in the area must make a DC 15 Dexterity saving throw, taking 24 ({@dice 7d6}) fire damage on a failed save, or half as much damage on a successful one."
 			],
@@ -127,7 +127,7 @@
 			"page": 113,
 			"trapHazType": "SMPL",
 			"tier": 1,
-			"threat": 2,
+			"threat": "dangerous",
 			"effect": [
 				"A net covering a 10-foot-by-10-foot area centered on the trip wire falls to the floor as a bell rings. Any creature fully within this area must succeed on a DC 15 Dexterity saving throw or be {@condition restrained}. A creature can use its action to make a DC 10 Strength check to try to free itself or another creature in the net. Dealing 5 slashing damage to the net (AC 10, 20hp) also frees a creature without harming the creature."
 			],
@@ -147,7 +147,7 @@
 			"page": 118,
 			"trapHazType": "CMPX",
 			"tier": 1,
-			"threat": 2,
+			"threat": "dangerous",
 			"trigger": [
 				"This trap activates as soon as a non-undead creature enters the hallway, and it remains active while any non-undead creature is within the hall."
 			],
@@ -263,7 +263,7 @@
 			"page": 114,
 			"trapHazType": "SMPL",
 			"tier": 1,
-			"threat": 1,
+			"threat": "moderate",
 			"effect": [
 				"The triggering creature must make a DC 10 Dexterity saving throw. On a successful save, the creature catches itself on the pit's edge or instinctively steps back. On a failed save, the creature falls into the pit and takes 3 ({@dice 1d6}) bludgeoning damage from the fall."
 			],
@@ -350,7 +350,7 @@
 			"page": 114,
 			"trapHazType": "SMPL",
 			"tier": 1,
-			"threat": 3,
+			"threat": "deadly",
 			"effect": [
 				"The triggering creature must make a DC 20 Constitution saving throw. On a failed save, the creature takes 14 ({@dice 4d6}) poison damage and is {@condition poisoned} for 10 minutes. While {@condition poisoned} in this way, the creature is {@condition paralyzed}. On a successful save, the creature takes half as much damage and isn't {@condition poisoned}."
 			],
@@ -370,7 +370,7 @@
 			"page": 120,
 			"trapHazType": "CMPX",
 			"tier": 3,
-			"threat": 3,
+			"threat": "deadly",
 			"trigger": [
 				"This trap activates when a ruby is pried from one of the statues. Each statue's mouth slides open, revealing a 1-foot-wide pipe that runs down its throat."
 			],
@@ -498,7 +498,7 @@
 			"page": 114,
 			"trapHazType": "SMPL",
 			"tier": 2,
-			"threat": 2,
+			"threat": "dangerous",
 			"effect": [
 				"Each Medium or larger creature in a 5-foot-wide, 20-foot-long area must make a DC 15 Dexterity saving throw, taking 14 ({@dice 4d6}) slashing damage on a failed save, or half as much damage on a successful one."
 			],
@@ -518,7 +518,7 @@
 			"page": 114,
 			"trapHazType": "SMPL",
 			"tier": 3,
-			"threat": 3,
+			"threat": "deadly",
 			"effect": [
 				"When activated, this trap casts a {@spell sleep} spell centered on the pressure plate, using a 9th-level spell slot."
 			],
@@ -550,7 +550,7 @@
 			"page": 119,
 			"trapHazType": "CMPX",
 			"tier": 2,
-			"threat": 3,
+			"threat": "deadly",
 			"trigger": [
 				"This trap activates as soon as the door leading to the jester's coffin is opened. A magic portal opens at the northern end of the hallway and disgorges an enormous steel sphere, which hurtles down the slope. When it reaches the bottom of the slope, a second portal briefly appears and teleports the sphere back to the top of the slope to begin the process again."
 			],

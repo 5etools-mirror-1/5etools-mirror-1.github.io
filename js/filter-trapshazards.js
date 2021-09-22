@@ -1,6 +1,12 @@
 "use strict";
 
 class PageFilterTrapsHazards extends PageFilter {
+	// region static
+	static sortFilterType (a, b) {
+		return SortUtil.ascSortLower(Parser.trapHazTypeToFull(a.item), Parser.trapHazTypeToFull(b.item));
+	}
+	// endregion
+
 	constructor () {
 		super();
 
@@ -19,7 +25,7 @@ class PageFilterTrapsHazards extends PageFilter {
 				"GEN",
 			],
 			displayFn: Parser.trapHazTypeToFull,
-			itemSortFn: filterTypeSort,
+			itemSortFn: PageFilterTrapsHazards.sortFilterType.bind(PageFilterTrapsHazards),
 		});
 	}
 

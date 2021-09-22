@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.16.7",
+	"version": "1.16.8",
 	"title": "Bestiary Schema",
 	"$id": "bestiary.json",
 	"type": "object",
@@ -219,6 +219,7 @@
 						"$ref": "#/definitions/align"
 					}
 				},
+				"alignmentPrefix": {"type": "string"},
 				"ac": {
 					"type": "array",
 					"items": {

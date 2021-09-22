@@ -4,7 +4,7 @@
 
 	"title": "Util",
 	"description": "Utility definitions to be used in other schemas.",
-	"version": "1.7.0",
+	"version": "1.8.0",
 
 	"definitions" : {
 		"metaBlock": {
@@ -1877,6 +1877,10 @@
 					},
 					"innate": {
 						"description": "Spells which can be innately cast, without expending normal spell resources",
+						"$ref": "#/definitions/_additionalSpellObject"
+					},
+					"known": {
+						"description": "Spells which are always known",
 						"$ref": "#/definitions/_additionalSpellObject"
 					},
 					"prepared": {

@@ -6957,6 +6957,198 @@
 			"hasFluff": true
 		},
 		{
+			"name": "Feylost",
+			"source": "WBtW",
+			"skillProficiencies": [
+				{
+					"deception": true,
+					"survival": true
+				}
+			],
+			"languageProficiencies": [
+				{
+					"anyStandard": 1,
+					"choose": {
+						"from": [
+							"elvish",
+							"gnomish",
+							"goblin",
+							"sylvan"
+						]
+					}
+				}
+			],
+			"toolProficiencies": [
+				{
+					"musical instrument": true
+				}
+			],
+			"startingEquipment": [
+				{
+					"_": [
+						{
+							"equipmentType": "instrumentMusical"
+						},
+						"traveler's clothes|phb",
+						{
+							"item": "feywild trinket|wbtw",
+							"quantity": 3
+						},
+						{
+							"item": "pouch|phb",
+							"containsValue": 800
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Skill Proficiencies",
+							"entry": "{@skill Deception}, {@skill Survival}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiencies",
+							"entry": "One type of {@filter musical instrument|items|source=phb|miscellaneous=mundane|type=instrument}"
+						},
+						{
+							"type": "item",
+							"name": "Languages",
+							"entry": "One of your choice of {@language Elvish}, {@language Gnomish}, {@language Goblin}, or {@language Sylvan}"
+						},
+						{
+							"type": "item",
+							"name": "Equipment",
+							"entry": "A {@filter musical instrument|items|source=phb|miscellaneous=mundane|type=instrument} (one of your choice), a {@item Traveler's Clothes|PHB|set of traveler's clothes}, three trinkets (each determined by rolling on the {@item Feywild Trinket|WBtW|Feywild Trinkets} table), and a {@item pouch|phb} containing 8 gp"
+						}
+					]
+				},
+				{
+					"name": "Feature: Feywild Connection",
+					"type": "entries",
+					"entries": [
+						"Your mannerisms and knowledge of fey customs are recognized by natives of the Feywild, who see you as one of their own. Because of this, friendly Fey creatures are inclined to come to your aid if you are lost or need help in the Feywild."
+					],
+					"data": {
+						"isFeature": true
+					}
+				},
+				{
+					"type": "entries",
+					"name": "Fey Mark",
+					"entries": [
+						"You were transformed in some small way by your stay in the Feywild and gained a fey mark, determined by rolling on the Fey Mark table.",
+						{
+							"type": "table",
+							"caption": "Fey Mark",
+							"colLabels": [
+								"d8",
+								"Fey Mark"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"rows": [
+								[
+									"1",
+									"Your eyes swirl with iridescent colors."
+								],
+								[
+									"2",
+									"You have a sweet scent, like that of nectar or honey."
+								],
+								[
+									"3",
+									"You have long whiskers like those of a cat."
+								],
+								[
+									"4",
+									"Your ears are covered with soft tufts of fur."
+								],
+								[
+									"5",
+									"Your skin sparkles in moonlight."
+								],
+								[
+									"6",
+									"Flowers either bloom or wilt (your choice) in your presence."
+								],
+								[
+									"7",
+									"Your hair is made of vines or brambles and grows back to normal length within 1 hour of being cut."
+								],
+								[
+									"8",
+									"You have a tail like that of a dog or another animal."
+								]
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Feywild Visitor",
+					"entries": [
+						"Whenever you're sound asleep or in a deep trance during a long rest, a spirit of the Feywild might pay you a visit, if the DM wishes it. Determine the spirit's form by rolling on the Feywild Visitor table. No harm ever comes to you as a result of such visits, which can last for minutes or hours, and you remember each visit when you wake up. Conversations that occur with a visitor can contain any number of things, from messages and insights to nonsense and red herrings, at the DM's discretion. Such conversations are always conducted in a language you can understand, even if the Feywild visitor can't speak that language normally.",
+						{
+							"type": "table",
+							"caption": "Feywild Visitor",
+							"colLabels": [
+								"d8",
+								"Visitor"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"rows": [
+								[
+									"1",
+									"Awakened creature (a Beast or an ordinary plant that has had the {@spell awaken} spell cast on it)"
+								],
+								[
+									"2",
+									"{@creature Centaur}"
+								],
+								[
+									"3",
+									"{@creature Dryad}"
+								],
+								[
+									"4",
+									"{@creature Faerie Dragon (Violet)||Faerie dragon}"
+								],
+								[
+									"5",
+									"{@creature Pixie}"
+								],
+								[
+									"6",
+									"{@creature Satyr}"
+								],
+								[
+									"7",
+									"{@creature Sprite}"
+								],
+								[
+									"8",
+									"{@creature Unicorn}"
+								]
+							]
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"name": "Fisher",
 			"source": "GoS",
 			"page": 29,
@@ -21071,6 +21263,150 @@
 				}
 			],
 			"hasFluff": true
+		},
+		{
+			"name": "Witchlight Hand",
+			"source": "WBtW",
+			"skillProficiencies": [
+				{
+					"deception": true,
+					"survival": true
+				}
+			],
+			"languageProficiencies": [
+				{
+					"anyStandard": 1
+				}
+			],
+			"toolProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"disguise kit",
+							"musical instrument"
+						]
+					}
+				}
+			],
+			"startingEquipment": [
+				{
+					"a": [
+						"disguise kit|phb"
+					],
+					"b": [
+						{
+							"equipmentType": "instrumentMusical"
+						}
+					]
+				},
+				{
+					"_": [
+						{
+							"special": "deck of cards"
+						},
+						"costume clothes|phb",
+						"feywild trinket|wbtw",
+						{
+							"item": "pouch|phb",
+							"containsValue": 800
+						}
+					]
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Skill Proficiencies",
+							"entry": "{@skill Performance}, {@skill Sleight of Hand}"
+						},
+						{
+							"type": "item",
+							"name": "Tool Proficiencies",
+							"entry": "{@item Disguise kit|phb} or one type of {@filter musical Instrument|items|source=phb|miscellaneous=mundane|type=instrument}"
+						},
+						{
+							"type": "item",
+							"name": "Languages",
+							"entry": "One of your choice"
+						},
+						{
+							"type": "item",
+							"name": "Equipment",
+							"entry": "A {@item disguise kit|PHB} or a {@filter musical instrument|items|source=phb|miscellaneous=mundane|type=instrument} of your choice, a deck of cards, a carnival uniform or {@item costume clothes|phb|costume}, one trinket (determined by rolling on the {@item Feywild Trinket|WBtW|Feywild Trinkets}), and a {@item pouch|phb} containing 8 gp"
+						}
+					]
+				},
+				{
+					"name": "Feature: Carnival Fixture",
+					"type": "entries",
+					"entries": [
+						"The Witchlight Carnival provides you with free, modest lodging and food. In addition, you may wander about the carnival and partake of its many wonders at no cost to you, provided you don't disrupt its shows or cause any other trouble."
+					],
+					"data": {
+						"isFeature": true
+					}
+				},
+				{
+					"type": "entries",
+					"name": "Carnival Companion",
+					"entries": [
+						"Over the years, you have earned the friendship of another carnival fixture. Roll a {@dice d8} and consult the Carnival Companion table to determine whom or what you've befriended, or you can choose an option that you like. Work with your DM to flesh out this friendship. This companion hangs around you while you're in the carnival, but it won't voluntarily leave the carnival.",
+						"The DM can use the {@creature Witchlight Hand (Medium)|WBtW|Witchlight hand} stat block in {@adventure chapter 1|WBtW|1} to represent hands, performers, and animal trainers who serve as carnival companions. Statistics for the other companions appear in the {@book Monster Manual|MM}.",
+						{
+							"type": "table",
+							"caption": "Carnival Companion",
+							"colLabels": [
+								"d8",
+								"Companion"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"rows": [
+								[
+									"1",
+									"Old, cantankerous Witchlight hand"
+								],
+								[
+									"2",
+									"Young, impressionable Witchlight hand"
+								],
+								[
+									"3",
+									"Performer (such as an acrobat, a clown, or a musician)"
+								],
+								[
+									"4",
+									"Retired performer"
+								],
+								[
+									"5",
+									"Seasoned animal trainer"
+								],
+								[
+									"6",
+									"Old {@creature blink dog}"
+								],
+								[
+									"7",
+									"Cheery {@creature sprite}"
+								],
+								[
+									"8",
+									"Harmless, magical wisp of light (no stat block required) that has a flying speed of 30 feet, can hover, and sheds bright light in a 5-foot radius and dim light for an additional 5 feet"
+								]
+							]
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		}
 	]
 }

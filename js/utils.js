@@ -7,7 +7,7 @@ if (IS_NODE) require("./parser.js");
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 IS_DEPLOYED = undefined;
-VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.136.0"/* 5ETOOLS_VERSION__CLOSE */;
+VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.137.0"/* 5ETOOLS_VERSION__CLOSE */;
 DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 // for the roll20 script to set
 IS_VTT = false;
@@ -2337,23 +2337,45 @@ SortUtil = {
 	},
 
 	initBtnSortHandlers ($wrpBtnsSort, list) {
-		function addCaret ($btnSort, direction) {
-			$wrpBtnsSort.find(".caret").removeClass("caret");
-			$btnSort.find(".caret_wrp").addClass("caret").toggleClass("caret--reverse", direction === "asc");
-		}
-
-		const $btnSort = $wrpBtnsSort.find(`.sort[data-sort="${list.sortBy}"]`);
-		addCaret($btnSort, list.sortDir);
+		let $dispCaretInitial = null;
+		const $dispCarets = [];
 
 		$wrpBtnsSort.find(".sort").each((i, e) => {
 			const $btnSort = $(e);
+			const $dispCaret = SortUtil._initBtnSortHandlers_getAddCaret($btnSort);
+
+			$dispCarets.push($dispCaret);
+
+			if ($btnSort.data("sort") === list.sortBy) $dispCaretInitial = $dispCaret;
+
 			$btnSort.click(evt => {
 				evt.stopPropagation();
 				const direction = list.sortDir === "asc" ? "desc" : "asc";
-				addCaret($btnSort, direction);
+				SortUtil._initBtnSortHandlers_showCaret({$dispCarets, $dispCaret, direction});
 				list.sort($btnSort.data("sort"), direction);
 			});
 		});
+
+		$dispCaretInitial = $dispCaretInitial || $dispCarets[0]; // Fall back on displaying the first caret
+
+		SortUtil._initBtnSortHandlers_showCaret({$dispCaret: $dispCaretInitial, $dispCarets, direction: list.sortDir});
+	},
+
+	_initBtnSortHandlers_getAddCaret ($btnSort) {
+		const $existing = $btnSort.find(`.lst__caret`);
+		if ($existing.length) return $existing;
+		return $(`<span class="lst__caret"></span>`).appendTo($btnSort);
+	},
+
+	_initBtnSortHandlers_showCaret (
+		{
+			$dispCaret,
+			$dispCarets,
+			direction,
+		},
+	) {
+		$dispCarets.forEach($it => $it.removeClass("lst__caret--active"));
+		$dispCaret.addClass("lst__caret--active").toggleClass("lst__caret--reverse", direction === "asc");
 	},
 
 	ascSortAdventure (a, b) {
@@ -2562,33 +2584,48 @@ DataUtil = {
 				const reader = new FileReader();
 				let readIndex = 0;
 				const out = [];
+				const errs = [];
 				reader.onload = async () => {
 					const name = input.files[readIndex - 1].name;
-
 					const text = reader.result;
-					const json = JSON.parse(text);
 
-					const isSkipFile = expectedFileType != null && json.fileType && json.fileType !== expectedFileType && !(await InputUiUtil.pGetUserBoolean({
-						textYes: "Yes",
-						textNo: "Cancel",
-						title: "File Type Mismatch",
-						htmlDescription: `The file "${name}" has the type "${json.fileType}" when the expected file type was "${expectedFileType}".<br>Are you sure you want to upload this file?`,
-					}));
+					try {
+						const json = JSON.parse(text);
 
-					if (!isSkipFile) {
-						delete json.fileType;
-						delete json[propVersion];
+						const isSkipFile = expectedFileType != null && json.fileType && json.fileType !== expectedFileType && !(await InputUiUtil.pGetUserBoolean({
+							textYes: "Yes",
+							textNo: "Cancel",
+							title: "File Type Mismatch",
+							htmlDescription: `The file "${name}" has the type "${json.fileType}" when the expected file type was "${expectedFileType}".<br>Are you sure you want to upload this file?`,
+						}));
 
-						out.push(json);
+						if (!isSkipFile) {
+							delete json.fileType;
+							delete json[propVersion];
+
+							out.push(json);
+						}
+					} catch (e) {
+						errs.push({filename: name, message: e.message});
 					}
 
 					if (input.files[readIndex]) reader.readAsText(input.files[readIndex++]);
-					else resolve(out);
+					else resolve({jsons: out, errors: errs});
 				};
 
 				reader.readAsText(input.files[readIndex++]);
 			}).appendTo(document.body);
 			$iptAdd.click();
+		});
+	},
+
+	doHandleFileLoadErrorsGeneric (errors) {
+		if (!errors) return;
+		errors.forEach(err => {
+			JqueryUtil.doToast({
+				content: `Could not load file "${err.filename}": <code>${err.message}</code>. ${VeCt.STR_SEE_CONSOLE}`,
+				type: "danger",
+			});
 		});
 	},
 
@@ -4467,9 +4504,11 @@ BrewUtil = {
 
 		const $btnLoadFromFile = $(`<button class="btn btn-default btn-sm mr-2">Upload File</button>`)
 			.click(async () => {
-				const files = await DataUtil.pUserUpload({isMultiple: true});
-				if (!files) return;
-				for (const json of files) {
+				const {jsons, errors} = await DataUtil.pUserUpload({isMultiple: true});
+
+				DataUtil.doHandleFileLoadErrorsGeneric(errors);
+
+				for (const json of jsons) {
 					await DataUtil.pDoMetaMerge(CryptUtil.uid(), json);
 
 					await BrewUtil.pDoHandleBrewJson(json, page, BrewUtil._pRenderBrewScreen_pRefreshBrewList.bind(this, $brewList));
@@ -4968,6 +5007,7 @@ BrewUtil = {
 			$wrpList,
 			isUseJquery: true,
 			isFuzzy: true,
+			sortByInitial: "source",
 		});
 
 		const $lst = $$`

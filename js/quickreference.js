@@ -5,7 +5,7 @@ const JSON_URL = "data/generated/bookref-quick.json";
 
 let reference;
 
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
 	BookUtil.$dispBook = $(`#pagecontent`);
 
 	if (!window.location.hash.length) {
@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
 			.append(Renderer.utils.getBorderTr());
 	}
 
-	ExcludeUtil.pInitialise(); // don't await, as this is only used for search
+	await ExcludeUtil.pInitialise();
 	DataUtil.loadJSON(JSON_URL).then(onJsonLoad);
 });
 

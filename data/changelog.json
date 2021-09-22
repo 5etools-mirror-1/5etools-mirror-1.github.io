@@ -1782,5 +1782,11 @@
 		"date": "2021-09-12",
 		"title": "Purity",
 		"txt": "- Blacklist is now applied to adventure/book navbar sections and adventure/book pages, allowing unwanted publications to be removed from both lists\n- Blacklist is now applied to Bestiary/Spells page Source filters, allowing unwanted sources to be hidden (other pages should already have this functionality present)\n- Overhauled Blacklist page controls, making dropdowns searchable, and adding more quick exclude/include buttons (for \"comedy\" sources, and \"non-FR\" content) [these lists are both opinionated and not final; feedback welcome]\n- Races page \"Size: Varies\" filter now includes \"choose your size\" races\n- Added a \"No results found\" placeholder to Omnisearch, allowing the help/etc. controls to be accessible when a search returns no results\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.137.0",
+		"date": "2021-09-22",
+		"title": "Even Further Beyond",
+		"txt": "- Added The Wild Beyond the Witchlight (an adventure, two backgrounds, two races, and a variety of creatures and items)\n- Added player maps to CoS's Castle Ravenloft chapter\n- (Brew) Generalised Trap schema and rendering\n- (Brew) Error notifications are now shown when attempting to upload non-JSON files (thanks @ cum pope)\n- (Fixed typos/added tags)"
 	}
 ]

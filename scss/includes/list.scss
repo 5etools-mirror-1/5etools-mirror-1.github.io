@@ -1,0 +1,49 @@
+@import "vars";
+
+.lst__ {
+	&wrp-search-glass {
+		position: absolute;
+		z-index: 3; // Bootstrap"s form control "focused" z-index
+		top: 0;
+		bottom: 2px;
+		left: 6px;
+		opacity: 0.5;
+	}
+
+	&wrp-search-visible {
+		position: absolute;
+		z-index: 3; // Bootstrap"s form control "focused" z-index
+		top: 0;
+		right: 6px;
+		bottom: 0;
+		opacity: 0.5;
+	}
+
+	&caret {
+		&--active {
+			display: inline-block;
+			width: 0;
+			height: 0;
+			vertical-align: middle;
+			border-top: 4px dashed;
+			border-right: 4px solid transparent;
+			border-left: 4px solid transparent;
+			margin-left: 2px;
+		}
+
+		&--reverse {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+input.lst__ {
+	&search {
+		padding-left: 23px;
+	}
+
+	&search--no-border-h {
+		border-radius: 0;
+		border-right: 0;
+	}
+}

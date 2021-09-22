@@ -79,7 +79,10 @@ class EncounterBuilder extends ProxyBase {
 		});
 		$(`.ecgen__sv_file`).click(() => DataUtil.userDownload(`encounter`, this.getSaveableState(), {fileType: "encounter"}));
 		$(`.ecgen__ld_file`).click(async () => {
-			const jsons = await DataUtil.pUserUpload({expectedFileType: "encounter"});
+			const {jsons, errors} = await DataUtil.pUserUpload({expectedFileType: "encounter"});
+
+			DataUtil.doHandleFileLoadErrorsGeneric(errors);
+
 			if (jsons?.length && jsons[0].items && jsons[0].sources) { // if it's a bestiary sublist
 				jsons.l = {
 					items: jsons.items,

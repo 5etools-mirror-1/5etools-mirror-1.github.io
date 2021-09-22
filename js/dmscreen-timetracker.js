@@ -2167,16 +2167,20 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 					break;
 				}
 				case 2: {
-					const jsons = await DataUtil.pUserUpload({expectedFileType: "encounter"});
-					if (jsons?.length) {
-						const json = jsons[0];
-						const name = await InputUiUtil.pGetUserString({
-							title: "Enter Encounter Name",
-							default: EncounterUtil.getEncounterName(json),
-						});
-						nuEncounter.name = name || "(Unnamed Encounter)";
-						nuEncounter.data = json;
-					} else return;
+					const {jsons, errors} = await DataUtil.pUserUpload({expectedFileType: "encounter"});
+
+					DataUtil.doHandleFileLoadErrorsGeneric(errors);
+
+					if (!jsons?.length) return;
+
+					const json = jsons[0];
+					const name = await InputUiUtil.pGetUserString({
+						title: "Enter Encounter Name",
+						default: EncounterUtil.getEncounterName(json),
+					});
+					nuEncounter.name = name || "(Unnamed Encounter)";
+					nuEncounter.data = json;
+
 					break;
 				}
 			}

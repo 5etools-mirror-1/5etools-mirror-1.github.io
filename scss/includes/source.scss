@@ -42,6 +42,7 @@
 	$rgb-source-CM: #e6585e;
 	$rgb-source-VRGR: #bd000f;
 	$rgb-source-AitFR: #6e5ab9;
+	$rgb-source-WBtW: #7151b6;
 
 	&PHB {
 		color: $rgb-source-PHB !important;
@@ -319,6 +320,12 @@
 			border-color: $rgb-source-AitFR !important;
 			text-decoration-color: $rgb-source-AitFR !important;
 		}
+	}
+
+	&WBtW {
+		color: $rgb-source-WBtW !important;
+		border-color: $rgb-source-WBtW !important;
+		text-decoration-color: $rgb-source-WBtW !important;
 	}
 }
 

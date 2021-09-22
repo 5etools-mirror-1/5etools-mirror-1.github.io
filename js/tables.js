@@ -14,6 +14,9 @@ class TablesPage extends ListPage {
 			},
 
 			sublistClass: "subtablesdata",
+			sublistOptions: {
+				sortByInitial: "sortName",
+			},
 
 			dataProps: ["table", "tableGroup"],
 		});

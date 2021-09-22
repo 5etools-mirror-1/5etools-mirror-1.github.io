@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "trapshazards.json",
-	"version": "1.1.2",
+	"version": "1.2.0",
 	"type": "object",
 
 	"definitions": {
@@ -44,14 +44,18 @@
 					]
 				},
 				{
-					"description": "XGE \"Traps Revisited\" Simple traps",
+					"description": "XGE \"Traps Revisited\" Simple/Complex traps",
 					"type": "object",
 					"properties": {
 						"name": {
 							"type": "string"
 						},
 						"trapHazType": {
-							"const": "SMPL"
+							"type": "string",
+							"enum": [
+								"SMPL",
+								"CMPX"
+							]
 						},
 						"source": {
 							"type": "string"
@@ -70,74 +74,17 @@
 							"minimum": 1,
 							"maximum": 4
 						},
-						"threat": {
-							"type": "integer",
-							"minimum": 1,
-							"maximum": 3
-						},
-						"trigger": {
-							"type": "array",
-							"items": {
-								"$ref": "entry.json"
+						"level": {
+							"description": "Alternative to \"tier\" which allows for non-standard level ranges.",
+							"type": "object",
+							"properties": {
+								"min": {"type": "integer"},
+								"max": {"type": "integer"}
 							}
-						},
-						"effect": {
-							"type": "array",
-							"items": {
-								"$ref": "entry.json"
-							}
-						},
-						"countermeasures": {
-							"type": "array",
-							"items": {
-								"$ref": "entry.json"
-							}
-						},
-						"srd": {"$ref": "util.json#/definitions/srd"}
-					},
-					"additionalProperties": false,
-					"required": [
-						"name",
-						"trapHazType",
-						"source",
-						"entries",
-						"threat",
-						"trigger",
-						"effect",
-						"countermeasures"
-					]
-				},
-				{
-					"description": "XGE \"Traps Revisited\" Complex traps",
-					"type": "object",
-					"properties": {
-						"name": {
-							"type": "string"
-						},
-						"trapHazType": {
-							"const": "CMPX"
-						},
-						"source": {
-							"type": "string"
-						},
-						"page": {
-							"type": "integer"
-						},
-						"entries": {
-							"type": "array",
-							"items": {
-								"$ref": "entry.json"
-							}
-						},
-						"tier": {
-							"type": "integer",
-							"minimum": 1,
-							"maximum": 4
 						},
 						"threat": {
-							"type": "integer",
-							"minimum": 1,
-							"maximum": 3
+							"type": "string",
+							"enum": ["moderate", "dangerous", "deadly"]
 						},
 						"trigger": {
 							"type": "array",
@@ -146,12 +93,26 @@
 							}
 						},
 						"initiative": {
-							"type": "integer",
-							"minimum": 1,
-							"maximum": 3
+							"oneOf": [
+								{
+									"type": "integer",
+									"minimum": 1,
+									"maximum": 3
+								},
+								{
+									"description": "Custom initiative, for homebrew only.",
+									"type": "string"
+								}
+							]
 						},
 						"initiativeNote": {
 							"$ref": "entry.json"
+						},
+						"effect": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
 						},
 						"eActive": {
 							"type": "array",
@@ -185,10 +146,8 @@
 						"trapHazType",
 						"source",
 						"entries",
-						"tier",
 						"threat",
 						"trigger",
-						"initiative",
 						"countermeasures"
 					]
 				}

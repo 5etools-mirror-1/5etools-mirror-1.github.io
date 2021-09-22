@@ -136,6 +136,7 @@ PropOrder._MONSTER = [
 	"sizeNote",
 	"type",
 	"alignment",
+	"alignmentPrefix",
 
 	"ac",
 	"hp",

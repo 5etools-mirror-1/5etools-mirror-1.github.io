@@ -98,7 +98,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Aarakocra.png"
+						"path": "races/EEPC/Aarakocra.png"
 					}
 				}
 			]
@@ -256,7 +256,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Aasimar.png"
+						"path": "races/VGM/Aasimar.png"
 					}
 				}
 			]
@@ -440,7 +440,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Bugbear.png"
+						"path": "races/VGM/Bugbear.png"
 					}
 				}
 			]
@@ -505,6 +505,15 @@
 							]
 						}
 					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "races/GGR/Centaur.png"
+					}
 				}
 			]
 		},
@@ -659,15 +668,6 @@
 							]
 						}
 					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "races/Centaur.png"
-					}
 				}
 			]
 		},
@@ -1059,7 +1059,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Dragonborn.png"
+						"path": "races/PHB/Dragonborn.png"
 					}
 				}
 			]
@@ -1229,7 +1229,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Dwarf.png"
+						"path": "races/PHB/Dwarf.png"
 					}
 				}
 			]
@@ -1424,7 +1424,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Elf.png"
+						"path": "races/PHB/Elf.png"
 					}
 				}
 			]
@@ -2030,6 +2030,60 @@
 			]
 		},
 		{
+			"name": "Fairy",
+			"source": "WBtW",
+			"entries": [
+				"The Feywild is home to many fantastic peoples, including fairies. Fairies are a wee folk, but not nearly as much so as their pixie and sprite friends. The first fairies spoke Elvish, Goblin, or Sylvan, and encounters with human visitors prompted many of them to learn Common as well.",
+				"Infused with the magic of the Feywild, most fairies look like Small elves with insectile wings, but each fairy has a special physical characteristic that sets the fairy apart. For your fairy, roll on the Fey Characteristics table or choose an option from it. You're also free to come up with your own characteristic if none of the suggestions below fit your character.",
+				{
+					"type": "table",
+					"caption": "Fey Characteristics",
+					"colLabels": [
+						"d8",
+						"Characteristic"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"Your wings are like those of a bird."
+						],
+						[
+							"2",
+							"You have shimmering, multicolored skin."
+						],
+						[
+							"3",
+							"You have exceptionally large ears."
+						],
+						[
+							"4",
+							"A glittering mist constantly surrounds you."
+						],
+						[
+							"5",
+							"You have a small spectral horn on your forehead, like a little unicorn horn."
+						],
+						[
+							"6",
+							"Your legs are insectile."
+						],
+						[
+							"7",
+							"You smell like fresh brownies."
+						],
+						[
+							"8",
+							"A noticeable, harmless chill surrounds you."
+						]
+					]
+				}
+			]
+		},
+		{
 			"name": "Firbolg",
 			"source": "VGM",
 			"entries": [
@@ -2154,7 +2208,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Firbolg.png"
+						"path": "races/VGM/Firbolg.png"
 					}
 				}
 			]
@@ -2226,7 +2280,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Genasi.png"
+						"path": "races/EEPC/Genasi.png"
 					}
 				}
 			]
@@ -2373,7 +2427,7 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "races/Githyanki.png"
+								"path": "races/MTF/Githyanki.png"
 							}
 						}
 					}
@@ -2498,7 +2552,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Gnome.png"
+						"path": "races/PHB/Gnome.png"
 					}
 				}
 			]
@@ -2707,7 +2761,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Goblin.png"
+						"path": "races/VGM/Goblin.png"
 					}
 				}
 			]
@@ -2909,7 +2963,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Goliath.png"
+						"path": "races/VGM/Goliath.png"
 					}
 				}
 			]
@@ -2965,7 +3019,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Half-Elf.png"
+						"path": "races/PHB/Half-Elf.png"
 					}
 				}
 			]
@@ -3038,7 +3092,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Half-Orc.png"
+						"path": "races/PHB/Half-Orc.png"
 					}
 				}
 			]
@@ -3160,7 +3214,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Halfling.png"
+						"path": "races/PHB/Halfling.png"
 					}
 				}
 			]
@@ -3268,6 +3322,14 @@
 					}
 				}
 			}
+		},
+		{
+			"name": "Harengon",
+			"source": "WBtW",
+			"entries": [
+				"Harengons originated in the Feywild, where they spoke Sylvan and embodied the spirit of freedom and travel. In time, these rabbitfolk hopped into other worlds, bringing the fey realm's exuberance with them and learning new languages as they went.",
+				"Harengons are bipedal, with the characteristic long feet of the rabbits they resemble and fur in a variety of colors. They share the keen senses and powerful legs of leporine creatures and are full of energy, like a wound-up spring. Harengons are blessed with a little fey luck, and they often find themselves a few fortunate feet away from dangers during adventures."
+			]
 		},
 		{
 			"name": "Hexblood",
@@ -3436,7 +3498,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Hobgoblin.png"
+						"path": "races/VGM/Hobgoblin.png"
 					}
 				}
 			]
@@ -3680,7 +3742,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Human.png"
+						"path": "races/PHB/Human.png"
 					}
 				}
 			]
@@ -3982,7 +4044,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Kenku.png"
+						"path": "races/VGM/Kenku.png"
 					}
 				}
 			]
@@ -4052,7 +4114,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Kobold.png"
+						"path": "races/VGM/Kobold.png"
 					}
 				}
 			]
@@ -4338,7 +4400,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Lizardfolk.png"
+						"path": "races/VGM/Lizardfolk.png"
 					}
 				}
 			]
@@ -4364,7 +4426,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Locathah.png"
+						"path": "races/LR/Locathah.png"
 					}
 				}
 			]
@@ -4437,6 +4499,15 @@
 						}
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "races/GGR/Loxodon.png"
+					}
+				}
 			]
 		},
 		{
@@ -4506,15 +4577,6 @@
 							]
 						}
 					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "races/Loxodon.png"
-					}
 				}
 			]
 		},
@@ -4692,7 +4754,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Minotaur.png"
+						"path": "races/GGR/Minotaur.png"
 					}
 				}
 			]
@@ -4922,7 +4984,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Orc.png"
+						"path": "races/VGM/Orc.png"
 					}
 				}
 			]
@@ -5523,6 +5585,15 @@
 						}
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "races/GGR/Simic Hybrid.png"
+					}
+				}
 			]
 		},
 		{
@@ -5555,15 +5626,6 @@
 							]
 						}
 					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "races/Simic Hybrid.png"
-					}
 				}
 			]
 		},
@@ -5769,7 +5831,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Tabaxi.png"
+						"path": "races/VGM/Tabaxi.png"
 					}
 				}
 			]
@@ -5846,7 +5908,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Tiefling.png"
+						"path": "races/PHB/Tiefling.png"
 					}
 				}
 			]
@@ -6056,7 +6118,7 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "races/Feral Tiefling.png"
+								"path": "races/SCAG/Feral Tiefling.png"
 							}
 						}
 					}
@@ -6165,7 +6227,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Tortle.png"
+						"path": "races/TTP/Tortle.png"
 					}
 				}
 			]
@@ -6391,7 +6453,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Triton.png"
+						"path": "races/VGM/Triton.png"
 					}
 				}
 			]
@@ -6478,6 +6540,15 @@
 						}
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "races/GGR/Vedalken.png"
+					}
+				}
 			]
 		},
 		{
@@ -6539,15 +6610,6 @@
 							]
 						}
 					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "races/Vedalken.png"
-					}
 				}
 			]
 		},
@@ -6645,7 +6707,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Verdan.png"
+						"path": "races/AI/Verdan.png"
 					},
 					"title": "Varieties of Adult Verdan"
 				}
@@ -6832,7 +6894,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/Yuan-ti Pureblood.png"
+						"path": "races/VGM/Yuan-ti Pureblood.png"
 					}
 				}
 			]

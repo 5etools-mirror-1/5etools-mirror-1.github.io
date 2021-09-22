@@ -51,12 +51,14 @@ TagJsons.OPTIMISTIC = true;
 
 TagJsons._BLACKLIST_FILE_PREFIXES = null;
 
+TagJsons.WALKER_KEY_BLACKLIST = new Set([
+	...MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+	"dataCreature",
+	"dataObject",
+]);
+
 TagJsons.WALKER = MiscUtil.getWalker({
-	keyBlacklist: new Set([
-		...MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
-		"dataCreature",
-		"dataObject",
-	]),
+	keyBlacklist: TagJsons.WALKER_KEY_BLACKLIST,
 });
 
 class SpellTag {
@@ -177,6 +179,14 @@ class ItemTag {
 }
 ItemTag._ITEM_NAMES_TOOLS = {};
 ItemTag._ITEM_NAMES_REGEX_TOOLS = null;
+
+ItemTag._WALKER = MiscUtil.getWalker({
+	keyBlacklist: new Set([
+		...TagJsons.WALKER_KEY_BLACKLIST,
+		"packContents", // Avoid tagging item pack contents
+		"items", // Avoid tagging item group item lists
+	]),
+});
 
 class TableTag {
 	static tryRun (it) {

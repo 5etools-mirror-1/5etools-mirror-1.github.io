@@ -1825,6 +1825,15 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Chromatic Rose",
+			"source": "WBtW",
+			"entriesTemplate": [
+				"While a this rose is held, it {{item.detail1}} as a harmless visual effect.",
+				"While holding the rose by its stem, you gain resistance to {{item.resist}} damage. If you would take more than 10 {{item.resist}} damage from a single source (after applying the resistance), the rose disintegrates, and you take no damage instead.",
+				"As an action, you can blow the petals from the rose to produce a 20-foot cone of {{item.resist}}. Each creature in the cone must make a DC 15 Constitution saving throw, taking {@damage 3d10} {{item.resist}} damage on a failed save, or half as much damage on a successful one. Using this property destroys the rose."
+			]
 		}
 	],
 	"itemTypeAdditionalEntries": [

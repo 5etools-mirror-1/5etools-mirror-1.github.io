@@ -451,7 +451,7 @@ class RendererMarkdown {
 
 		const unbreakablePart = `___
 >## ${mon._displayName || mon.name}
->*${mon.level ? `${Parser.getOrdinalForm(mon.level)}-level ` : ""}${Parser.sizeAbvToFull(mon.size)} ${monTypes.asText}${mon.alignment ? `, ${Parser.alignmentListToFull(mon.alignment)}` : ""}*
+>*${mon.level ? `${Parser.getOrdinalForm(mon.level)}-level ` : ""}${Parser.sizeAbvToFull(mon.size)} ${monTypes.asText}${mon.alignment ? `, ${mon.alignmentPrefix ? RendererMarkdown.get().render(mon.alignmentPrefix) : ""}${Parser.alignmentListToFull(mon.alignment)}` : ""}*
 >___
 >- **Armor Class** ${acPart}
 >- **Hit Points** ${Renderer.monster.getRenderedHp(mon.hp, true)}
@@ -1615,8 +1615,9 @@ class MarkdownConverter {
 		(function doCheckDiceOrNumericCol0 () {
 			// check if first column is all strictly number-like
 			tbl.rows.forEach(r => {
+				const r0Clean = Renderer.stripTags((r[0] || "").trim());
 				// u2012 = figure dash; u2013 = en-dash
-				if (!/^[-+*/×÷x^.,0-9\u2012\u2013]+$/i.exec((r[0] || "").trim())) return isDiceCol0 = false;
+				if (!/^[-+*/×÷x^.,0-9\u2012\u2013]+$/i.exec(r0Clean)) return isDiceCol0 = false;
 			});
 		})();
 
@@ -1714,7 +1715,7 @@ class MarkdownConverter {
 
 				tbl.rows.forEach(r => {
 					if (typeof r[i] !== "string") return counts.text++;
-					const clean = r[i]
+					const clean = Renderer.stripTags(r[i])
 						.replace(/[.,]/g, "") // Remove number separators
 						.replace(/(^| )(cp|sp|gp|pp|lb\.|ft\.)( |$)/g, "") // Remove units
 						.trim();

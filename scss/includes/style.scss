@@ -1614,31 +1614,8 @@ img.token:hover {
 		}
 	}
 
-	&wrp-search-glass {
-		position: absolute;
-		z-index: 3; // Bootstrap"s form control "focused" z-index
-		top: 0;
-		bottom: 2px;
-		left: 6px;
-		opacity: 0.5;
-	}
-
-	&wrp-search-visible {
-		position: absolute;
-		z-index: 3; // Bootstrap"s form control "focused" z-index
-		top: 0;
-		right: 6px;
-		bottom: 0;
-		opacity: 0.5;
-	}
-
 	&search {
 		padding-left: 23px;
-	}
-
-	&search--no-border-h {
-		border-radius: 0;
-		border-right: 0;
 	}
 
 	&list {
@@ -1699,7 +1676,7 @@ img.token:hover {
 	}
 }
 
-*:first-child > .lst__search--no-border-h {
+*:first-child > input.lst__search--no-border-h {
 	border-top-left-radius: 4px;
 }
 

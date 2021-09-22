@@ -95,7 +95,7 @@ class ModalFilterBackgrounds extends ModalFilter {
 			<div class="col-0-5 pl-0 flex-vh-center">${this._isRadio ? `<input type="radio" name="radio" class="no-events">` : `<input type="checkbox" class="no-events">`}</div>
 
 			<div class="col-0-5 px-1 flex-vh-center">
-				<div class="ui-list__btn-inline px-2" title="Toggle Preview">[+]</div>
+				<div class="ui-list__btn-inline px-2" title="Toggle Preview (SHIFT to Toggle Info Preview)">[+]</div>
 			</div>
 
 			<div class="col-4 ${this._getNameStyle()}">${bg.name}</div>

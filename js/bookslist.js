@@ -68,7 +68,7 @@ class BooksList {
 		this._list.init();
 		this._listAlt.init();
 
-		if (ExcludeUtil.isAllContentExcluded(this._list)) $wrpBookshelf.append(ExcludeUtil.getAllContentBlacklistedHtml());
+		if (ExcludeUtil.isAllContentExcluded(this._dataList)) $wrpBookshelf.append(ExcludeUtil.getAllContentBlacklistedHtml());
 
 		window.dispatchEvent(new Event("toolsLoaded"));
 	}

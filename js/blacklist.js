@@ -444,15 +444,17 @@ class Blacklist {
 	}
 
 	static async _pImport (evt) {
-		const files = await DataUtil.pUserUpload({expectedFileType: "content-blacklist"});
+		const {jsons, errors} = await DataUtil.pUserUpload({expectedFileType: "content-blacklist"});
 
-		if (!files?.length) return;
+		DataUtil.doHandleFileLoadErrorsGeneric(errors);
+
+		if (!jsons?.length) return;
 
 		// clear list display
 		Blacklist._list.removeAllItems();
 		Blacklist._list.update();
 
-		const json = files[0];
+		const json = jsons[0];
 
 		// update storage
 		if (!evt.shiftKey) await ExcludeUtil.pSetList(json.blacklist || []);

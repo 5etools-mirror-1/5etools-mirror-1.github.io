@@ -19336,6 +19336,680 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "The Wild Beyond the Witchlight",
+			"id": "WBtW",
+			"source": "WBtW",
+			"coverUrl": "img/covers/WBtW.png",
+			"published": "2021-09-21",
+			"storyline": "The Wild Beyond the Witchlight",
+			"level": {
+				"start": 1,
+				"end": 8
+			},
+			"contents": [
+				{
+					"name": "Into the Feywild",
+					"headers": [
+						"Adventure Summary",
+						"Running the Adventure",
+						"Feywild Trinkets",
+						"Backgrounds",
+						"Races",
+						"Character Traits",
+						"Beginning the Adventure",
+						"Pronunciation Guide"
+					]
+				},
+				{
+					"name": "Witchlight Carnival",
+					"headers": [
+						"Running This Chapter",
+						"Carnival Owners",
+						"Witchlight Hands",
+						"Carnival Overview",
+						"Carnival Locations",
+						"Carnival Events"
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 1
+					}
+				},
+				{
+					"name": "Hither",
+					"headers": [
+						"Running This Chapter",
+						"Prismeer Overview",
+						"Features of Hither",
+						"Arrival in Hither",
+						"Locations in Hither",
+						"Downfall",
+						"Where's Bavlorna?",
+						"The Soggy Court",
+						"Downfall Locations",
+						{
+							"depth": 1,
+							"header": "D1. Channel"
+						},
+						{
+							"depth": 1,
+							"header": "D2. Damaged Balloon"
+						},
+						{
+							"depth": 1,
+							"header": "D3. Stepstone Crossing"
+						},
+						{
+							"depth": 1,
+							"header": "D4. Burned-out Balloon Factory"
+						},
+						{
+							"depth": 1,
+							"header": "D5. Chattering Heads"
+						},
+						{
+							"depth": 1,
+							"header": "D6. His Royal Majesty Gullop XIX"
+						},
+						{
+							"depth": 1,
+							"header": "D7. Murky Lake"
+						},
+						{
+							"depth": 1,
+							"header": "D8. Holding Cells"
+						},
+						{
+							"depth": 1,
+							"header": "D9. Proving Grounds"
+						},
+						{
+							"depth": 1,
+							"header": "D10. Trinket, Bauble, and Charm's"
+						},
+						{
+							"depth": 1,
+							"header": "D11. Sinking Palace"
+						},
+						{
+							"depth": 1,
+							"header": "D12. Bavlorna's Cottage"
+						},
+						{
+							"depth": 1,
+							"header": "D13. Big Barkless"
+						},
+						{
+							"depth": 1,
+							"header": "D14. Toadstool Patch"
+						},
+						{
+							"depth": 1,
+							"header": "D15. Bullywug Hut"
+						},
+						{
+							"depth": 1,
+							"header": "D16. Bullywug Hut"
+						},
+						{
+							"depth": 1,
+							"header": "D17. King's Mount"
+						},
+						{
+							"depth": 1,
+							"header": "D18. Bavlorna's Cauldron"
+						},
+						{
+							"depth": 1,
+							"header": "D19. Watch Tower"
+						},
+						"Bavlorna's Cottage",
+						{
+							"depth": 1,
+							"header": "B1. Preservation Pool"
+						},
+						{
+							"depth": 1,
+							"header": "B2. Taxidermy Workshop"
+						},
+						{
+							"depth": 1,
+							"header": "B3. Fabric Storage Room"
+						},
+						{
+							"depth": 1,
+							"header": "B4. Rickety Stairs"
+						},
+						{
+							"depth": 1,
+							"header": "B5. Trove of Lesser Goodies"
+						},
+						{
+							"depth": 1,
+							"header": "B6. Balcony"
+						},
+						{
+							"depth": 1,
+							"header": "B7. Hallway"
+						},
+						{
+							"depth": 1,
+							"header": "B8. Guest Room"
+						},
+						{
+							"depth": 1,
+							"header": "B9. Secret Passage"
+						},
+						{
+							"depth": 1,
+							"header": "B10. Study"
+						},
+						{
+							"depth": 1,
+							"header": "B11. Aviary"
+						},
+						{
+							"depth": 1,
+							"header": "B12. Meat Locker"
+						},
+						{
+							"depth": 1,
+							"header": "B13. Kitchen"
+						},
+						{
+							"depth": 1,
+							"header": "B14. Cages"
+						},
+						{
+							"depth": 1,
+							"header": "B15. Pantry"
+						},
+						{
+							"depth": 1,
+							"header": "B16. Dining Room"
+						},
+						{
+							"depth": 1,
+							"header": "B17. Hooch Distillery"
+						},
+						{
+							"depth": 1,
+							"header": "B18. Bavlorna's Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "B19. Bavlorna's Hoard"
+						},
+						"From Hither to Thither"
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 2
+					}
+				},
+				{
+					"name": "Thither",
+					"headers": [
+						"Running This Chapter",
+						"Features of Thither",
+						"Arrival in Thither",
+						"Locations in Thither",
+						"Loomlurch",
+						"Approaching Loomlurch",
+						"Where's Skabatha?",
+						"Skabatha's Minions",
+						"Lost Children",
+						"Loomlurch Locations",
+						{
+							"depth": 1,
+							"header": "L1. Root Bridges"
+						},
+						{
+							"depth": 1,
+							"header": "L2. Goblin Market"
+						},
+						{
+							"depth": 1,
+							"header": "L3. Parlor"
+						},
+						{
+							"depth": 1,
+							"header": "L4. Workshop"
+						},
+						{
+							"depth": 1,
+							"header": "L5. Granny Nightshade's Garden"
+						},
+						{
+							"depth": 1,
+							"header": "L6. Rocking Horse"
+						},
+						{
+							"depth": 1,
+							"header": "L7. Tin Soldier Barracks"
+						},
+						{
+							"depth": 1,
+							"header": "L8. Workhouse Dormitory"
+						},
+						{
+							"depth": 1,
+							"header": "L9. Sewing Room"
+						},
+						{
+							"depth": 1,
+							"header": "L10. Cupboards"
+						},
+						{
+							"depth": 1,
+							"header": "L11. Family Tree"
+						},
+						{
+							"depth": 1,
+							"header": "L12. Textile Mill"
+						},
+						{
+							"depth": 1,
+							"header": "L13. Granny Nightshade's Kitchen"
+						},
+						{
+							"depth": 1,
+							"header": "L14. Study"
+						},
+						{
+							"depth": 1,
+							"header": "L15. Redcap Patch"
+						},
+						{
+							"depth": 1,
+							"header": "L16. Granny Nightshade's Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "L17. Aviary"
+						},
+						"From Thither to Yon"
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 3
+					}
+				},
+				{
+					"name": "Yon",
+					"headers": [
+						"Running This Chapter",
+						"Features of Yon",
+						"Arrival in Yon",
+						"Locations in Yon",
+						"Motherhorn",
+						"Entering Motherhorn",
+						"Approaching Motherhorn",
+						"Where's Endelyn?",
+						"A Tragedy in the Making",
+						"Motherhorn Locations",
+						{
+							"depth": 1,
+							"header": "M1. Main Entrance"
+						},
+						{
+							"depth": 1,
+							"header": "M2. Amphitheater"
+						},
+						{
+							"depth": 1,
+							"header": "M3. Stage Left"
+						},
+						{
+							"depth": 1,
+							"header": "M4. Prop Storage"
+						},
+						{
+							"depth": 1,
+							"header": "M5. Dressing Room"
+						},
+						{
+							"depth": 1,
+							"header": "M6. Performers' Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "M7. Oracular Library"
+						},
+						{
+							"depth": 1,
+							"header": "M8. Endelyn's Mask Collection"
+						},
+						{
+							"depth": 1,
+							"header": "M9. Backdrop Hallway"
+						},
+						{
+							"depth": 1,
+							"header": "M10. Shadow Theater"
+						},
+						{
+							"depth": 1,
+							"header": "M11. Stage Workshop"
+						},
+						{
+							"depth": 1,
+							"header": "M12. Parts Storage"
+						},
+						{
+							"depth": 1,
+							"header": "M13. Worker Cells"
+						},
+						{
+							"depth": 1,
+							"header": "M14. Orrery of Tragedies"
+						},
+						{
+							"depth": 1,
+							"header": "M15. Theater Boxes"
+						},
+						{
+							"depth": 1,
+							"header": "M16. Darkling Balloon Dock"
+						},
+						{
+							"depth": 1,
+							"header": "M17. Prison"
+						},
+						{
+							"depth": 1,
+							"header": "M18. Audience Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "M19. Viewing Gallery"
+						},
+						{
+							"depth": 1,
+							"header": "M20. Paper Birds and Hidden Belfry"
+						},
+						{
+							"depth": 1,
+							"header": "M21. Ornithopter Pad"
+						},
+						{
+							"depth": 1,
+							"header": "M22. Endelyn's Room"
+						},
+						"Leaving Yon"
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 4
+					}
+				},
+				{
+					"name": "Palace of Heart's Desire",
+					"headers": [
+						"Running This Chapter",
+						"Arrival at the Palace",
+						"Exploring the Palace",
+						"Lower Palace Locations",
+						{
+							"depth": 1,
+							"header": "P1. Front Gate"
+						},
+						{
+							"depth": 1,
+							"header": "P2. Palace Garden"
+						},
+						{
+							"depth": 1,
+							"header": "P3. Pavilion"
+						},
+						{
+							"depth": 1,
+							"header": "P4. Standing Stones"
+						},
+						{
+							"depth": 1,
+							"header": "P5. Fountain of Awakening"
+						},
+						{
+							"depth": 1,
+							"header": "P6. Woodcutter's Axe"
+						},
+						{
+							"depth": 1,
+							"header": "P7. Rose Garden"
+						},
+						{
+							"depth": 1,
+							"header": "P8. Maiden's Pond"
+						},
+						{
+							"depth": 1,
+							"header": "P9. Envy's Tower"
+						},
+						{
+							"depth": 1,
+							"header": "P10. Wrath's Tower"
+						},
+						{
+							"depth": 1,
+							"header": "P11. Carriage House"
+						},
+						{
+							"depth": 1,
+							"header": "P12. Hall of Stars"
+						},
+						{
+							"depth": 1,
+							"header": "P13. Court of Storms"
+						},
+						{
+							"depth": 1,
+							"header": "P14. Spiral Staircases"
+						},
+						{
+							"depth": 1,
+							"header": "P15. Servants' Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "P16. Palace Kitchen"
+						},
+						{
+							"depth": 1,
+							"header": "P17. Base of the Beanstalk"
+						},
+						{
+							"depth": 1,
+							"header": "P18. Banquet Hall"
+						},
+						{
+							"depth": 1,
+							"header": "P19. Dining Terrace"
+						},
+						{
+							"depth": 1,
+							"header": "P20. Aviary"
+						},
+						{
+							"depth": 1,
+							"header": "P21. Records Room"
+						},
+						{
+							"depth": 1,
+							"header": "P22. Ballroom"
+						},
+						{
+							"depth": 1,
+							"header": "P23. Round Table"
+						},
+						{
+							"depth": 1,
+							"header": "P24. Ruined Staterooms"
+						},
+						{
+							"depth": 1,
+							"header": "P25. Bathing Room"
+						},
+						{
+							"depth": 1,
+							"header": "P26. Changing Room"
+						},
+						{
+							"depth": 1,
+							"header": "P27. Armory"
+						},
+						{
+							"depth": 1,
+							"header": "P28. Library"
+						},
+						{
+							"depth": 1,
+							"header": "P29. Rug of White Roses"
+						},
+						{
+							"depth": 1,
+							"header": "P30. Sludge-Filled Tower"
+						},
+						{
+							"depth": 1,
+							"header": "P31. Throne Room"
+						},
+						"Upper Palace Locations",
+						{
+							"depth": 1,
+							"header": "P32. Minstrels' Gallery"
+						},
+						{
+							"depth": 1,
+							"header": "P33. Glass Statues"
+						},
+						{
+							"depth": 1,
+							"header": "P34. Hall of Hatches"
+						},
+						{
+							"depth": 1,
+							"header": "P35. Flooded Hall"
+						},
+						{
+							"depth": 1,
+							"header": "P36. Costume Room"
+						},
+						{
+							"depth": 1,
+							"header": "P37. Dretch Nursery"
+						},
+						{
+							"depth": 1,
+							"header": "P38. Secret Library"
+						},
+						{
+							"depth": 1,
+							"header": "P39. Roost"
+						},
+						{
+							"depth": 1,
+							"header": "P40. Guest Wing"
+						},
+						{
+							"depth": 1,
+							"header": "P41. Talking Door"
+						},
+						{
+							"depth": 1,
+							"header": "P42. Laboratory"
+						},
+						{
+							"depth": 1,
+							"header": "P43. Mirror of Heart's Desire"
+						},
+						{
+							"depth": 1,
+							"header": "P44. Jars of Time"
+						},
+						{
+							"depth": 1,
+							"header": "P45. Zybilna's Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "P46. Dressing Room"
+						},
+						{
+							"depth": 1,
+							"header": "P47. Destroyed Study"
+						},
+						{
+							"depth": 1,
+							"header": "P48. Turrets"
+						},
+						{
+							"depth": 1,
+							"header": "P49. Black Book"
+						},
+						{
+							"depth": 1,
+							"header": "P50. Vault"
+						},
+						{
+							"depth": 1,
+							"header": "P51. Beanstalk Tower"
+						},
+						"Ending the Story",
+						"Zybilna Comes Alive",
+						"Zybilna's Gifts"
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 5
+					}
+				},
+				{
+					"name": "Magic Items",
+					"ordinal": {
+						"type": "appendix",
+						"identifier": "A"
+					}
+				},
+				{
+					"name": "Factions",
+					"headers": [
+						"Hourglass Coven",
+						"League of Malevolence",
+						"Valor's Call"
+					],
+					"ordinal": {
+						"type": "appendix",
+						"identifier": "B"
+					}
+				},
+				{
+					"name": "Creatures",
+					"ordinal": {
+						"type": "appendix",
+						"identifier": "C"
+					}
+				},
+				{
+					"name": "Roleplaying Cards",
+					"ordinal": {
+						"type": "appendix",
+						"identifier": "D"
+					}
+				},
+				{
+					"name": "Stagefright's Lines",
+					"ordinal": {
+						"type": "appendix",
+						"identifier": "E"
+					}
+				},
+				{
+					"name": "Story Tracker"
+				}
+			]
 		}
 	]
 }

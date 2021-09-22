@@ -2420,6 +2420,7 @@ Renderer.utils = {
 
 	getExcludedHtml (it, dataProp, page) {
 		if (!ExcludeUtil.isInitialised) return "";
+		if (page && !UrlUtil.URL_TO_HASH_BUILDER[page]) return "";
 		const hash = page ? UrlUtil.URL_TO_HASH_BUILDER[page](it) : UrlUtil.autoEncodeHash(it);
 		const isExcluded = ExcludeUtil.isExcluded(hash, dataProp, it.source);
 		return isExcluded ? `<div class="text-center text-danger"><b><i>Warning: This content has been <a href="blacklist.html">blacklisted</a>.</i></b></div>` : "";
@@ -4571,80 +4572,84 @@ Renderer.object = {
 Renderer.traphazard = {
 	getSubtitle (it) {
 		const type = it.trapHazType || "HAZ";
-		switch (type) {
-			case "GEN":
-				return null;
-			case "SMPL":
-			case "CMPX":
-				return `${Parser.trapHazTypeToFull(type)} (${Parser.tierToFullLevel(it.tier)}, ${Parser.threatToFull(it.threat)} threat)`;
-			default:
-				return Parser.trapHazTypeToFull(type);
-		}
+		if (type === "GEN") return null;
+
+		const parenPart = [
+			it.tier ? Parser.tierToFullLevel(it.tier) : null,
+			Renderer.traphazard.getTrapLevelPart(it),
+			it.threat ? `${it.threat} threat` : null,
+		].filter(Boolean).join(", ");
+
+		return parenPart ? `${Parser.trapHazTypeToFull(type)} (${parenPart})` : Parser.trapHazTypeToFull(type);
 	},
 
-	getSimplePart (renderer, it) {
-		if (it.trapHazType === "SMPL") {
-			return renderer.render({
-				entries: [
-					{
-						type: "entries",
-						name: "Trigger",
-						entries: it.trigger,
-					},
-					{
-						type: "entries",
-						name: "Effect",
-						entries: it.effect,
-					},
-					{
-						type: "entries",
-						name: "Countermeasures",
-						entries: it.countermeasures,
-					},
-				],
-			}, 1);
-		}
-		return "";
+	getTrapLevelPart (it) {
+		return it.level?.min != null && it.level?.max != null
+			? `level ${it.level.min}${it.level.min !== it.level.max ? `\u2013${it.level.max}` : ""}`
+			: null;
 	},
 
-	getComplexPart (renderer, it) {
-		if (it.trapHazType === "CMPX") {
-			return renderer.render({
-				entries: [
-					{
-						type: "entries",
-						name: "Trigger",
-						entries: it.trigger,
-					},
-					{
-						type: "entries",
-						name: "Initiative",
-						entries: [`The trap acts on ${Parser.trapInitToFull(it.initiative)}${it.initiativeNote ? ` (${it.initiativeNote})` : ""}.`],
-					},
-					it.eActive ? {
-						type: "entries",
-						name: "Active Elements",
-						entries: it.eActive,
-					} : null,
-					it.eDynamic ? {
-						type: "entries",
-						name: "Dynamic Elements",
-						entries: it.eDynamic,
-					} : null,
-					it.eConstant ? {
-						type: "entries",
-						name: "Constant Elements",
-						entries: it.eConstant,
-					} : null,
-					{
-						type: "entries",
-						name: "Countermeasures",
-						entries: it.countermeasures,
-					},
-				].filter(it => it),
-			}, 1);
-		}
-		return "";
+	_getTrapEntries (it) {
+		return [
+			// region Shared between simple/complex
+			it.trigger ? {
+				type: "entries",
+				name: "Trigger",
+				entries: it.trigger,
+			} : null,
+			// endregion
+
+			// region Simple traps
+			it.effect ? {
+				type: "entries",
+				name: "Effect",
+				entries: it.effect,
+			} : null,
+			// endregion
+
+			// region Complex traps
+			it.initiative ? {
+				type: "entries",
+				name: "Initiative",
+				entries: Renderer.traphazard.getTrapInitiativeEntries(it),
+			} : null,
+			it.eActive ? {
+				type: "entries",
+				name: "Active Elements",
+				entries: it.eActive,
+			} : null,
+			it.eDynamic ? {
+				type: "entries",
+				name: "Dynamic Elements",
+				entries: it.eDynamic,
+			} : null,
+			it.eConstant ? {
+				type: "entries",
+				name: "Constant Elements",
+				entries: it.eConstant,
+			} : null,
+			// endregion
+
+			// region Shared between simple/complex
+			it.countermeasures ? {
+				type: "entries",
+				name: "Countermeasures",
+				entries: it.countermeasures,
+			} : null,
+			// endregion
+		].filter(Boolean);
+	},
+
+	getTrapInitiativeEntries (it) { return [`The trap acts on ${Parser.trapInitToFull(it.initiative)}${it.initiativeNote ? ` (${it.initiativeNote})` : ""}.`]; },
+
+	getRenderedTrapPart (renderer, it) {
+		const trapEntries = Renderer.traphazard._getTrapEntries(it);
+
+		if (!trapEntries.length) return "";
+
+		return renderer.render({
+			entries: trapEntries,
+		}, 1);
 	},
 
 	getCompactRenderedString (it, opts) {
@@ -4658,14 +4663,9 @@ Renderer.traphazard = {
 			${subtitle ? `<tr class="text"><td colspan="6"><i>${subtitle}</i></td></tr>` : ""}
 			<tr class="text"><td colspan="6">
 			${renderer.render({entries: it.entries}, 2)}
-			${Renderer.traphazard.getSimplePart(renderer, it)}${Renderer.traphazard.getComplexPart(renderer, it)}
+			${Renderer.traphazard.getRenderedTrapPart(renderer, it)}
 			</td></tr>
 		`;
-	},
-
-	_trapTypes: new Set(["MECH", "MAG", "SMPL", "CMPX"]),
-	isTrap (trapHazType) {
-		return Renderer.traphazard._trapTypes.has(trapHazType);
 	},
 };
 
@@ -5006,7 +5006,7 @@ Renderer.monster = {
 		</td></tr>`;
 	},
 
-	getTypeAlignmentPart (mon) { return `${mon.level ? `${Parser.getOrdinalForm(mon.level)}-level ` : ""}${Parser.sizeAbvToFull(mon.size)}${mon.sizeNote ? ` ${mon.sizeNote}` : ""} ${Parser.monTypeToFullObj(mon.type).asText}${mon.alignment ? `, ${Parser.alignmentListToFull(mon.alignment)}` : ""}`; },
+	getTypeAlignmentPart (mon) { return `${mon.level ? `${Parser.getOrdinalForm(mon.level)}-level ` : ""}${Parser.sizeAbvToFull(mon.size)}${mon.sizeNote ? ` ${mon.sizeNote}` : ""} ${Parser.monTypeToFullObj(mon.type).asText}${mon.alignment ? `, ${mon.alignmentPrefix ? Renderer.get().render(mon.alignmentPrefix) : ""}${Parser.alignmentListToFull(mon.alignment)}` : ""}`; },
 	getSavesPart (mon) { return `${Object.keys(mon.save).sort(SortUtil.ascSortAtts).map(s => Renderer.monster.getSave(Renderer.get(), s, mon.save[s])).join(", ")}` },
 	getSensesPart (mon) { return `${mon.senses ? `${Renderer.monster.getRenderedSenses(mon.senses)}, ` : ""}passive Perception ${mon.passive || "\u2014"}`; },
 
@@ -5156,7 +5156,7 @@ Renderer.monster = {
 			<tr class="text"><td colspan="6">
 			${allTraits.map(it => it.rendered || renderer.render(it, 2)).join("")}
 			</td></tr>` : ""}
-			${Renderer.monster.getCompactRenderedStringSection({action: allActions}, renderer, "Actions", "action", 2)}
+			${Renderer.monster.getCompactRenderedStringSection({...mon, action: allActions}, renderer, "Actions", "action", 2)}
 			${Renderer.monster.getCompactRenderedStringSection(mon, renderer, "Bonus Actions", "bonus", 2)}
 			${Renderer.monster.getCompactRenderedStringSection(mon, renderer, "Reactions", "reaction", 2)}
 			${Renderer.monster.getCompactRenderedStringSection(mon, renderer, "Legendary Actions", "legendary", 2)}
@@ -5680,10 +5680,10 @@ Renderer.item = {
 				attunement = "(attunement optional)"
 			} else if (item[prop].toLowerCase().startsWith("by")) {
 				attunementCat = "Requires Attunement By...";
-				attunement = `(requires attunement ${item[prop]})`;
+				attunement = `(requires attunement ${Renderer.get().render(item[prop])})`;
 			} else {
 				attunementCat = "Requires Attunement"; // throw any weird ones in the "Yes" category (e.g. "outdoors at night")
-				attunement = `(requires attunement ${item[prop]})`;
+				attunement = `(requires attunement ${Renderer.get().render(item[prop])})`;
 			}
 		}
 		return [attunement, attunementCat]
@@ -7387,22 +7387,8 @@ Renderer.hover = {
 				}
 			}
 		} else {
-			if (meta.isFluff) {
-				// Try to fetch the fluff directly
-				toRender = await Renderer.hover.pCacheAndGet(`fluff__${page}`, source, hash);
-				// Fall back on fluff attached to the object itself
-				const entity = await Renderer.hover.pCacheAndGet(page, source, hash);
-				const pFnGetFluff = Renderer.hover._pageToFluffFn(page);
-				toRender = await pFnGetFluff(entity);
-
-				// For inline homebrew fluff, populate the name/source
-				if (!toRender.name || !toRender.source) {
-					const toRenderParent = await Renderer.hover.pCacheAndGet(page, source, hash);
-					toRender = MiscUtil.copy(toRender);
-					toRender.name = toRenderParent.name;
-					toRender.source = toRenderParent.source;
-				}
-			} else toRender = await Renderer.hover.pCacheAndGet(page, source, hash);
+			if (meta.isFluff) toRender = await Renderer.hover.pGetHoverableFluff(page, source, hash);
+			else toRender = await Renderer.hover.pCacheAndGet(page, source, hash);
 		}
 
 		meta.isLoading = false;
@@ -7473,6 +7459,27 @@ Renderer.hover = {
 				}
 			}
 		}
+	},
+
+	async pGetHoverableFluff (page, source, hash) {
+		// Try to fetch the fluff directly
+		let toRender = await Renderer.hover.pCacheAndGet(`fluff__${page}`, source, hash);
+		// Fall back on fluff attached to the object itself
+		const entity = await Renderer.hover.pCacheAndGet(page, source, hash);
+		const pFnGetFluff = Renderer.hover._pageToFluffFn(page);
+		toRender = await pFnGetFluff(entity);
+
+		if (!toRender) return toRender;
+
+		// For inline homebrew fluff, populate the name/source
+		if (toRender && (!toRender.name || !toRender.source)) {
+			const toRenderParent = await Renderer.hover.pCacheAndGet(page, source, hash);
+			toRender = MiscUtil.copy(toRender);
+			toRender.name = toRenderParent.name;
+			toRender.source = toRenderParent.source;
+		}
+
+		return toRender;
 	},
 
 	// (Baked into render strings)

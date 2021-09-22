@@ -25,11 +25,6 @@
 					"ability": "con",
 					"innate": {
 						"_": {
-							"_": [
-								{
-									"choose": "level=0|class=Sorcerer"
-								}
-							],
 							"rest": {
 								"1": [
 									{
@@ -38,6 +33,13 @@
 								]
 							}
 						}
+					},
+					"known": {
+						"_": [
+							{
+								"choose": "level=0|class=Sorcerer"
+							}
+						]
 					}
 				}
 			],
@@ -247,15 +249,17 @@
 				{
 					"innate": {
 						"_": {
-							"_": [
-								"prestidigitation#c"
-							],
 							"daily": {
 								"1": [
 									"detect magic"
 								]
 							}
 						}
+					},
+					"known": {
+						"_": [
+							"prestidigitation#c"
+						]
 					}
 				}
 			],
@@ -284,11 +288,6 @@
 					"ability": "int",
 					"innate": {
 						"_": {
-							"_": [
-								{
-									"choose": "level=0|class=Artificer"
-								}
-							],
 							"daily": {
 								"1": [
 									{
@@ -297,6 +296,13 @@
 								]
 							}
 						}
+					},
+					"known": {
+						"_": [
+							{
+								"choose": "level=0|class=Artificer"
+							}
+						]
 					}
 				}
 			],
@@ -326,11 +332,6 @@
 					"ability": "int",
 					"innate": {
 						"_": {
-							"_": [
-								{
-									"choose": "level=0|class=Artificer"
-								}
-							],
 							"daily": {
 								"1": [
 									{
@@ -339,6 +340,13 @@
 								]
 							}
 						}
+					},
+					"known": {
+						"_": [
+							{
+								"choose": "level=0|class=Artificer"
+							}
+						]
 					}
 				}
 			],
@@ -944,13 +952,15 @@
 								"1": [
 									"detect magic"
 								]
-							},
-							"_": [
-								"mage hand#c"
-							]
+							}
 						}
 					},
-					"ability": "wis"
+					"ability": "wis",
+					"known": {
+						"_": [
+							"mage hand#c"
+						]
+					}
 				}
 			],
 			"entries": [
@@ -1017,13 +1027,15 @@
 								"1": [
 									"identify"
 								]
-							},
-							"_": [
-								"mage hand#c"
-							]
+							}
 						}
 					},
-					"ability": "wis"
+					"ability": "wis",
+					"known": {
+						"_": [
+							"mage hand#c"
+						]
+					}
 				}
 			],
 			"entries": [
@@ -1087,13 +1099,15 @@
 								"1": [
 									"speak with animals"
 								]
-							},
-							"_": [
-								"druidcraft#c"
-							]
+							}
 						}
 					},
-					"ability": "wis"
+					"ability": "wis",
+					"known": {
+						"_": [
+							"druidcraft#c"
+						]
+					}
 				}
 			],
 			"entries": [
@@ -1157,13 +1171,15 @@
 								"1": [
 									"cure wounds"
 								]
-							},
-							"_": [
-								"spare the dying#c"
-							]
+							}
 						}
 					},
-					"ability": "wis"
+					"ability": "wis",
+					"known": {
+						"_": [
+							"spare the dying#c"
+						]
+					}
 				}
 			],
 			"entries": [
@@ -1227,13 +1243,15 @@
 								"1": [
 									"unseen servant"
 								]
-							},
-							"_": [
-								"friends#c"
-							]
+							}
 						}
 					},
-					"ability": "cha"
+					"ability": "cha",
+					"known": {
+						"_": [
+							"friends#c"
+						]
+					}
 				}
 			],
 			"entries": [
@@ -1297,13 +1315,15 @@
 								"1": [
 									"identify"
 								]
-							},
-							"_": [
-								"mending#c"
-							]
+							}
 						}
 					},
-					"ability": "wis"
+					"ability": "wis",
+					"known": {
+						"_": [
+							"mending#c"
+						]
+					}
 				}
 			],
 			"entries": [
@@ -1367,13 +1387,15 @@
 								"1": [
 									"expeditious retreat"
 								]
-							},
-							"_": [
-								"light#c"
-							]
+							}
 						}
 					},
-					"ability": "wis"
+					"ability": "wis",
+					"known": {
+						"_": [
+							"light#c"
+						]
+					}
 				}
 			],
 			"entries": [
@@ -1437,13 +1459,15 @@
 								"1": [
 									"comprehend languages"
 								]
-							},
-							"_": [
-								"message#c"
-							]
+							}
 						}
 					},
-					"ability": "wis"
+					"ability": "wis",
+					"known": {
+						"_": [
+							"message#c"
+						]
+					}
 				}
 			],
 			"entries": [
@@ -1507,13 +1531,15 @@
 								"1": [
 									"compelled duel"
 								]
-							},
-							"_": [
-								"blade ward#c"
-							]
+							}
 						}
 					},
-					"ability": "wis"
+					"ability": "wis",
+					"known": {
+						"_": [
+							"blade ward#c"
+						]
+					}
 				}
 			],
 			"entries": [
@@ -1577,13 +1603,15 @@
 								"1": [
 									"dancing lights#c"
 								]
-							},
-							"_": [
-								"disguise self"
-							]
+							}
 						}
 					},
-					"ability": "wis"
+					"ability": "wis",
+					"known": {
+						"_": [
+							"disguise self"
+						]
+					}
 				}
 			],
 			"entries": [
@@ -1647,13 +1675,15 @@
 								"1": [
 									"fog cloud"
 								]
-							},
-							"_": [
-								"shocking grasp#c"
-							]
+							}
 						}
 					},
-					"ability": "wis"
+					"ability": "wis",
+					"known": {
+						"_": [
+							"shocking grasp#c"
+						]
+					}
 				}
 			],
 			"entries": [
@@ -1717,13 +1747,15 @@
 								"1": [
 									"alarm"
 								]
-							},
-							"_": [
-								"resistance#c"
-							]
+							}
 						}
 					},
-					"ability": "wis"
+					"ability": "wis",
+					"known": {
+						"_": [
+							"resistance#c"
+						]
+					}
 				}
 			],
 			"entries": [
@@ -3072,12 +3104,6 @@
 					"ability": "cha",
 					"innate": {
 						"_": {
-							"_": [
-								{
-									"choose": "level=0|class=Bard",
-									"count": 2
-								}
-							],
 							"daily": {
 								"1": [
 									{
@@ -3086,6 +3112,14 @@
 								]
 							}
 						}
+					},
+					"known": {
+						"_": [
+							{
+								"choose": "level=0|class=Bard",
+								"count": 2
+							}
+						]
 					}
 				},
 				{
@@ -3093,12 +3127,6 @@
 					"ability": "wis",
 					"innate": {
 						"_": {
-							"_": [
-								{
-									"choose": "level=0|class=Cleric",
-									"count": 2
-								}
-							],
 							"daily": {
 								"1": [
 									{
@@ -3107,6 +3135,14 @@
 								]
 							}
 						}
+					},
+					"known": {
+						"_": [
+							{
+								"choose": "level=0|class=Cleric",
+								"count": 2
+							}
+						]
 					}
 				},
 				{
@@ -3114,12 +3150,6 @@
 					"ability": "wis",
 					"innate": {
 						"_": {
-							"_": [
-								{
-									"choose": "level=0|class=Druid",
-									"count": 2
-								}
-							],
 							"daily": {
 								"1": [
 									{
@@ -3128,6 +3158,14 @@
 								]
 							}
 						}
+					},
+					"known": {
+						"_": [
+							{
+								"choose": "level=0|class=Druid",
+								"count": 2
+							}
+						]
 					}
 				},
 				{
@@ -3135,12 +3173,6 @@
 					"ability": "cha",
 					"innate": {
 						"_": {
-							"_": [
-								{
-									"choose": "level=0|class=Sorcerer",
-									"count": 2
-								}
-							],
 							"daily": {
 								"1": [
 									{
@@ -3149,6 +3181,14 @@
 								]
 							}
 						}
+					},
+					"known": {
+						"_": [
+							{
+								"choose": "level=0|class=Sorcerer",
+								"count": 2
+							}
+						]
 					}
 				},
 				{
@@ -3156,12 +3196,6 @@
 					"ability": "cha",
 					"innate": {
 						"_": {
-							"_": [
-								{
-									"choose": "level=0|class=Warlock",
-									"count": 2
-								}
-							],
 							"daily": {
 								"1": [
 									{
@@ -3170,6 +3204,14 @@
 								]
 							}
 						}
+					},
+					"known": {
+						"_": [
+							{
+								"choose": "level=0|class=Warlock",
+								"count": 2
+							}
+						]
 					}
 				},
 				{
@@ -3177,12 +3219,6 @@
 					"ability": "int",
 					"innate": {
 						"_": {
-							"_": [
-								{
-									"choose": "level=0|class=Wizard",
-									"count": 2
-								}
-							],
 							"daily": {
 								"1": [
 									{
@@ -3191,6 +3227,14 @@
 								]
 							}
 						}
+					},
+					"known": {
+						"_": [
+							{
+								"choose": "level=0|class=Wizard",
+								"count": 2
+							}
+						]
 					}
 				}
 			],
@@ -3476,15 +3520,17 @@
 				{
 					"innate": {
 						"_": {
-							"_": [
-								"druidcraft#c"
-							],
 							"daily": {
 								"1": [
 									"detect poison and disease"
 								]
 							}
 						}
+					},
+					"known": {
+						"_": [
+							"druidcraft#c"
+						]
 					}
 				}
 			],
@@ -4690,8 +4736,8 @@
 				{
 					"name": "Bard Spells",
 					"ability": "cha",
-					"innate": {
-						"1": [
+					"known": {
+						"_": [
 							{
 								"choose": "level=0|class=Bard|spell attack=m;r;o",
 								"count": 1
@@ -4702,8 +4748,8 @@
 				{
 					"name": "Cleric Spells",
 					"ability": "wis",
-					"innate": {
-						"1": [
+					"known": {
+						"_": [
 							{
 								"choose": "level=0|class=Cleric|spell attack=m;r;o",
 								"count": 1
@@ -4714,8 +4760,8 @@
 				{
 					"name": "Druid Spells",
 					"ability": "wis",
-					"innate": {
-						"1": [
+					"known": {
+						"_": [
 							{
 								"choose": "level=0|class=Druid|spell attack=m;r;o",
 								"count": 1
@@ -4726,8 +4772,8 @@
 				{
 					"name": "Sorcerer Spells",
 					"ability": "cha",
-					"innate": {
-						"1": [
+					"known": {
+						"_": [
 							{
 								"choose": "level=0|class=Sorcerer|spell attack=m;r;o",
 								"count": 1
@@ -4738,8 +4784,8 @@
 				{
 					"name": "Warlock Spells",
 					"ability": "cha",
-					"innate": {
-						"1": [
+					"known": {
+						"_": [
 							{
 								"choose": "level=0|class=Warlock|spell attack=m;r;o",
 								"count": 1
@@ -4750,8 +4796,8 @@
 				{
 					"name": "Wizard Spells",
 					"ability": "int",
-					"innate": {
-						"1": [
+					"known": {
+						"_": [
 							{
 								"choose": "level=0|class=Wizard|spell attack=m;r;o",
 								"count": 1
@@ -5045,8 +5091,8 @@
 			"additionalSpells": [
 				{
 					"ability": "inherit",
-					"innate": {
-						"1": [
+					"known": {
+						"_": [
 							"mage hand#c"
 						]
 					}
@@ -5087,8 +5133,8 @@
 			"additionalSpells": [
 				{
 					"ability": "inherit",
-					"innate": {
-						"1": [
+					"known": {
+						"_": [
 							"mage hand#c"
 						]
 					}
@@ -5116,8 +5162,8 @@
 			],
 			"additionalSpells": [
 				{
-					"innate": {
-						"1": [
+					"known": {
+						"_": [
 							"mage hand#c"
 						]
 					}
@@ -5271,15 +5317,17 @@
 				{
 					"innate": {
 						"_": {
-							"_": [
-								"thaumaturgy#c"
-							],
 							"daily": {
 								"1": [
 									"detect evil and good"
 								]
 							}
 						}
+					},
+					"known": {
+						"_": [
+							"thaumaturgy#c"
+						]
 					}
 				}
 			],
@@ -5617,11 +5665,6 @@
 					"ability": "wis",
 					"innate": {
 						"_": {
-							"_": [
-								{
-									"choose": "level=0|class=Druid"
-								}
-							],
 							"daily": {
 								"1e": [
 									"longstrider",
@@ -5629,6 +5672,13 @@
 								]
 							}
 						}
+					},
+					"known": {
+						"_": [
+							{
+								"choose": "level=0|class=Druid"
+							}
+						]
 					}
 				}
 			],

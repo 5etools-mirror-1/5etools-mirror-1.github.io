@@ -614,13 +614,17 @@
 			"additionalSpells": [
 				{
 					"innate": {
-						"3": [
-							"beast sense",
-							"speak with animals"
-						],
-						"10": [
-							"commune with nature"
-						]
+						"3": {
+							"ritual": [
+								"beast sense",
+								"speak with animals"
+							]
+						},
+						"10": {
+							"ritual": [
+								"commune with nature"
+							]
+						}
 					}
 				}
 			],
@@ -1031,7 +1035,7 @@
 			"level": 8,
 			"entries": [
 				"When you reach 8th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-				"If your DM uses the optional Feats, you can instead take a feat."
+				"If your DM allows the use of feats, you may instead take a {@5etools feat|feats.html}."
 			]
 		},
 		{
@@ -1096,7 +1100,7 @@
 			"level": 12,
 			"entries": [
 				"When you reach 12th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-				"If your DM uses the optional Feats, you can instead take a feat."
+				"If your DM allows the use of feats, you may instead take a {@5etools feat|feats.html}."
 			]
 		},
 		{
@@ -1160,7 +1164,7 @@
 			"level": 16,
 			"entries": [
 				"When you reach 16th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-				"If your DM uses the optional Feats, you can instead take a feat."
+				"If your DM allows the use of feats, you may instead take a {@5etools feat|feats.html}."
 			]
 		},
 		{
@@ -1211,7 +1215,7 @@
 			"level": 19,
 			"entries": [
 				"When you reach 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
-				"If your DM uses the optional Feats, you can instead take a feat."
+				"If your DM allows the use of feats, you may instead take a {@5etools feat|feats.html}."
 			]
 		},
 		{
@@ -1622,7 +1626,7 @@
 				"Known as Kuldjargh (literally \"axe idiot\") in Dwarvish, battleragers are dwarf followers of the gods of war and take the Path of the Battlerager. They specialize in wearing bulky, {@item spiked armor|scag} and throwing themselves into combat, striking with their body itself and giving themselves over to the fury of battle.",
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Restriction - Dwarves Only|Barbarian||Battlerager|SCAG|3"
+					"subclassFeature": "Restriction\u2014Dwarves Only|Barbarian||Battlerager|SCAG|3"
 				},
 				{
 					"type": "refSubclassFeature",
@@ -1647,7 +1651,7 @@
 			]
 		},
 		{
-			"name": "Restriction - Dwarves Only",
+			"name": "Restriction\u2014Dwarves Only",
 			"source": "SCAG",
 			"page": 121,
 			"className": "Barbarian",

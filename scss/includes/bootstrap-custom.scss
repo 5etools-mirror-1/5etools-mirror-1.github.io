@@ -268,10 +268,6 @@ body::-webkit-scrollbar {
 	transform: rotate(270deg);
 }
 
-.caret--reverse {
-	transform: rotate(180deg);
-}
-
 // region Override defaults to better implement filter UI
 .input-group {
 	> input.form-control,

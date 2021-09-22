@@ -591,7 +591,52 @@
 						"If a humanoid spends at least 1 hour within 1 mile of the passage, that creature must succeed on a {@dc 22} Wisdom saving throw or descend into a type of madness (see \"Madness of Dyrrn\" below). A creature that succeeds on this saving throw can't be affected by this regional effect again for 24 hours."
 					]
 				},
-				"If Dyrrn dies, these effects fade away after {@dice 1d10} days."
+				"If Dyrrn dies, these effects fade away after {@dice 1d10} days.",
+				{
+					"type": "entries",
+					"name": "Madness of Dyrrn",
+					"entries": [
+						"If a creature goes mad in Dyrrn's lair or while it can see the daelkyr, it gains a form of indefinite madness. Roll on the Madness of Dyrrn table to determine the nature of this madness, which takes the form of a character flaw that lasts until cured. Chapter 8 of the {@book Dungeon Master's Guide|DMG} has more information on madness.",
+						{
+							"type": "table",
+							"caption": "Madness of Dyrrn",
+							"colLabels": [
+								"d6",
+								"Flaw (lasts until cured)"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"rows": [
+								[
+									"1",
+									"\"There's an illithid parasite living in my brain!\""
+								],
+								[
+									"2",
+									"\"I can feel myself evolving into an aberration.\""
+								],
+								[
+									"3",
+									"\"Aberrations are the only natural things.\""
+								],
+								[
+									"4",
+									"\"A part of me has become a conscious entity.\""
+								],
+								[
+									"5",
+									"\"My opponents must bow down to a mind flayer!\""
+								],
+								[
+									"6",
+									"\"Dyrrn and the mind flayers simply want to unite all sentient creatures in collective consciousness. And I receive messages from the group mind!\""
+								]
+							]
+						}
+					]
+				}
 			]
 		},
 		{

@@ -1967,19 +1967,10 @@ Parser.tierToFullLevel = function (tier) {
 };
 
 Parser.TIER_TO_FULL_LEVEL = {};
-Parser.TIER_TO_FULL_LEVEL[1] = "level 1\u20144";
-Parser.TIER_TO_FULL_LEVEL[2] = "level 5\u201410";
-Parser.TIER_TO_FULL_LEVEL[3] = "level 11\u201416";
-Parser.TIER_TO_FULL_LEVEL[4] = "level 17\u201420";
-
-Parser.threatToFull = function (threat) {
-	return Parser._parse_aToB(Parser.THREAT_TO_FULL, threat);
-};
-
-Parser.THREAT_TO_FULL = {};
-Parser.THREAT_TO_FULL[1] = "moderate";
-Parser.THREAT_TO_FULL[2] = "dangerous";
-Parser.THREAT_TO_FULL[3] = "deadly";
+Parser.TIER_TO_FULL_LEVEL[1] = "level 1\u20134";
+Parser.TIER_TO_FULL_LEVEL[2] = "level 5\u201310";
+Parser.TIER_TO_FULL_LEVEL[3] = "level 11\u201316";
+Parser.TIER_TO_FULL_LEVEL[4] = "level 17\u201320";
 
 Parser.trapInitToFull = function (init) {
 	return Parser._parse_aToB(Parser.TRAP_INIT_TO_FULL, init);
@@ -2353,6 +2344,7 @@ SRC_AitFR_THP = "AitFR-THP";
 SRC_AitFR_AVT = "AitFR-AVT";
 SRC_AitFR_DN = "AitFR-DN";
 SRC_AitFR_FCD = "AitFR-FCD";
+SRC_WBtW = "WBtW";
 SRC_SCREEN = "Screen";
 SRC_SCREEN_WILDERNESS_KIT = "ScreenWildernessKit";
 SRC_HEROES_FEAST = "HF";
@@ -2527,6 +2519,7 @@ Parser.SOURCE_JSON_TO_FULL[SRC_AitFR_THP] = `${AitFR_NAME}: The Hidden Page`;
 Parser.SOURCE_JSON_TO_FULL[SRC_AitFR_AVT] = `${AitFR_NAME}: A Verdant Tomb`;
 Parser.SOURCE_JSON_TO_FULL[SRC_AitFR_DN] = `${AitFR_NAME}: Deepest Night`;
 Parser.SOURCE_JSON_TO_FULL[SRC_AitFR_FCD] = `${AitFR_NAME}: From Cyan Depths`;
+Parser.SOURCE_JSON_TO_FULL[SRC_WBtW] = `The Wild Beyond the Witchlight`;
 Parser.SOURCE_JSON_TO_FULL[SRC_SCREEN] = "Dungeon Master's Screen";
 Parser.SOURCE_JSON_TO_FULL[SRC_SCREEN_WILDERNESS_KIT] = "Dungeon Master's Screen: Wilderness Kit";
 Parser.SOURCE_JSON_TO_FULL[SRC_HEROES_FEAST] = "Heroes' Feast";
@@ -2681,6 +2674,7 @@ Parser.SOURCE_JSON_TO_ABV[SRC_AitFR_THP] = "AitFR-THP";
 Parser.SOURCE_JSON_TO_ABV[SRC_AitFR_AVT] = "AitFR-AVT";
 Parser.SOURCE_JSON_TO_ABV[SRC_AitFR_DN] = "AitFR-DN";
 Parser.SOURCE_JSON_TO_ABV[SRC_AitFR_FCD] = "AitFR-FCD";
+Parser.SOURCE_JSON_TO_ABV[SRC_WBtW] = "WBtW";
 Parser.SOURCE_JSON_TO_ABV[SRC_SCREEN] = "Screen";
 Parser.SOURCE_JSON_TO_ABV[SRC_SCREEN_WILDERNESS_KIT] = "Wild";
 Parser.SOURCE_JSON_TO_ABV[SRC_HEROES_FEAST] = "HF";
@@ -2834,6 +2828,7 @@ Parser.SOURCE_JSON_TO_DATE[SRC_AitFR_THP] = "2021-07-07";
 Parser.SOURCE_JSON_TO_DATE[SRC_AitFR_AVT] = "2021-07-14";
 Parser.SOURCE_JSON_TO_DATE[SRC_AitFR_DN] = "2021-07-21";
 Parser.SOURCE_JSON_TO_DATE[SRC_AitFR_FCD] = "2021-07-28";
+Parser.SOURCE_JSON_TO_DATE[SRC_WBtW] = "2021-09-21";
 Parser.SOURCE_JSON_TO_DATE[SRC_SCREEN] = "2015-01-20";
 Parser.SOURCE_JSON_TO_DATE[SRC_SCREEN_WILDERNESS_KIT] = "2020-11-17";
 Parser.SOURCE_JSON_TO_DATE[SRC_HEROES_FEAST] = "2020-10-27";
@@ -2964,6 +2959,7 @@ Parser.SOURCES_ADVENTURES = new Set([
 	SRC_AitFR_AVT,
 	SRC_AitFR_DN,
 	SRC_AitFR_FCD,
+	SRC_WBtW,
 
 	SRC_AWM,
 ]);
@@ -3095,6 +3091,7 @@ Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE = {};
 	SRC_AitFR_AVT,
 	SRC_AitFR_DN,
 	SRC_AitFR_FCD,
+	SRC_WBtW,
 ].forEach(src => {
 	Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE[src] = src;
 	Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE[src.toLowerCase()] = src;

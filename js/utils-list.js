@@ -338,10 +338,13 @@ const ListUtil = {
 			const action = new ContextUtil.Action(
 				"Upload Pinned List (SHIFT for Add Only)",
 				async evt => {
-					const files = await DataUtil.pUserUpload({expectedFileType: ListUtil._getDownloadName()});
-					if (!files?.length) return;
+					const {jsons, errors} = await DataUtil.pUserUpload({expectedFileType: ListUtil._getDownloadName()});
 
-					const json = files[0];
+					DataUtil.doHandleFileLoadErrorsGeneric(errors);
+
+					if (!jsons?.length) return;
+
+					const json = jsons[0];
 
 					if (typeof opts.upload === "object" && opts.upload.pFnPreLoad) await opts.upload.pFnPreLoad(json);
 					await ListUtil.pDoJsonLoad(json, evt.shiftKey);
