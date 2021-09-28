@@ -761,6 +761,7 @@ class ListUiUtil {
 
 	static handleClickBtnShowHideListPreview (evt, page, entity, btnShowHidePreview, elePreviewWrp, nxtText = null) {
 		evt.stopPropagation();
+		evt.preventDefault();
 
 		nxtText = nxtText ?? btnShowHidePreview.innerHTML.trim() === this.HTML_GLYPHICON_EXPAND ? this.HTML_GLYPHICON_CONTRACT : this.HTML_GLYPHICON_EXPAND;
 		const isHidden = nxtText === this.HTML_GLYPHICON_EXPAND;
