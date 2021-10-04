@@ -62,7 +62,7 @@ class ProxyBase {
 				if (!(prop in object)) return true;
 				const prevValue = object[prop];
 				delete object[prop];
-				if (this.__hooksAll[hookProp]) this.__hooksAll[hookProp].forEach(hook => hook(prop, undefined, prevValue));
+				this._doFireHooksAll(hookProp, prop, undefined, prevValue);
 				if (this.__hooks[hookProp] && this.__hooks[hookProp][prop]) this.__hooks[hookProp][prop].forEach(hook => hook(prop, undefined, prevValue));
 				return true;
 			},
@@ -73,7 +73,7 @@ class ProxyBase {
 		if (object[prop] === value) return true;
 		const prevValue = object[prop];
 		object[prop] = value;
-		if (this.__hooksAll[hookProp]) this.__hooksAll[hookProp].forEach(hook => hook(prop, value, prevValue));
+		this._doFireHooksAll(hookProp, prop, value, prevValue);
 		if (this.__hooks[hookProp] && this.__hooks[hookProp][prop]) this.__hooks[hookProp][prop].forEach(hook => hook(prop, value, prevValue));
 		return true;
 	}
@@ -86,6 +86,16 @@ class ProxyBase {
 		if (this.__hooksAll[hookProp]) for (const hook of this.__hooksAll[hookProp]) await hook(prop, value, prevValue);
 		if (this.__hooks[hookProp] && this.__hooks[hookProp][prop]) for (const hook of this.__hooks[hookProp][prop]) await hook(prop, value, prevValue);
 		return true;
+	}
+
+	_doFireHooksAll (hookProp, prop, value, prevValue) {
+		if (this.__hooksAll[hookProp]) this.__hooksAll[hookProp].forEach(hook => hook(prop, undefined, prevValue));
+	}
+
+	// ...Not to be confused with...
+
+	_doFireAllHooks (hookProp) {
+		if (this.__hooks[hookProp]) Object.entries(this.__hooks[hookProp]).forEach(([prop, hk]) => hk(prop));
 	}
 
 	/**
@@ -168,28 +178,31 @@ class ProxyBase {
 	_proxyAssign (hookProp, proxyProp, underProp, toObj, isOverwrite) {
 		const oldKeys = Object.keys(this[proxyProp]);
 		const nuKeys = new Set(Object.keys(toObj));
-		const dirtyKeys = new Set();
+		const dirtyKeyValues = {};
 
 		if (isOverwrite) {
 			oldKeys.forEach(k => {
 				if (!nuKeys.has(k) && this[underProp] !== undefined) {
+					const prevValue = this[proxyProp][k];
 					delete this[underProp][k];
-					dirtyKeys.add(k);
+					dirtyKeyValues[k] = prevValue;
 				}
 			});
 		}
 
 		nuKeys.forEach(k => {
 			if (!CollectionUtil.deepEquals(this[underProp][k], toObj[k])) {
+				const prevValue = this[proxyProp][k];
 				this[underProp][k] = toObj[k];
-				dirtyKeys.add(k);
+				dirtyKeyValues[k] = prevValue;
 			}
 		});
 
-		dirtyKeys.forEach(k => {
-			if (this.__hooksAll[hookProp]) this.__hooksAll[hookProp].forEach(hk => hk(k, this[underProp][k]));
-			if (this.__hooks[hookProp] && this.__hooks[hookProp][k]) this.__hooks[hookProp][k].forEach(hk => hk(k, this[underProp][k]));
-		});
+		Object.entries(dirtyKeyValues)
+			.forEach(([k, prevValue]) => {
+				this._doFireHooksAll(hookProp, k, this[underProp][k], prevValue);
+				if (this.__hooks[hookProp] && this.__hooks[hookProp][k]) this.__hooks[hookProp][k].forEach(hk => hk(k, this[underProp][k], prevValue));
+			});
 	}
 
 	_proxyAssignSimple (hookProp, toObj, isOverwrite) {
@@ -1117,7 +1130,7 @@ class TabUiUtilSide extends TabUiUtilBase {
 
 		obj.__renderTypedTabMeta_buttons = function ({tabMeta, ixTab}) {
 			const $btns = tabMeta.buttons.map((meta, j) => {
-				const $btn = $(`<button class="btn btn-primary btn-sm" ${meta.title ? `title="${meta.title.qq()}"` : ""}>${meta.html}</button>`)
+				const $btn = $(`<button class="btn ${meta.type ? `btn-${meta.type}` : "btn-primary"} btn-sm" ${meta.title ? `title="${meta.title.qq()}"` : ""}>${meta.html}</button>`)
 					.click(evt => meta.pFnClick(evt, $btn));
 
 				if (j === tabMeta.buttons.length - 1) $btn.addClass(`br-0 btr-0 bbr-0`);
@@ -3432,6 +3445,56 @@ const MixinComponentHistory = compClass => class extends compClass {
 	}
 };
 
+// region Globally-linked state components
+const MixinComponentGlobalState = compClass => class extends compClass {
+	constructor () {
+		super(...arguments);
+
+		// Point our proxy at the singleton `__stateGlobal` object
+		this._stateGlobal = this._getProxy("stateGlobal", MixinComponentGlobalState._Singleton.__stateGlobal);
+
+		// Load the singleton's state, then fire all our hooks once it's ready
+		MixinComponentGlobalState._Singleton._pLoadState()
+			.then(() => {
+				this._doFireHooksAll("stateGlobal");
+				this._doFireAllHooks("stateGlobal");
+				this._addHookAll("stateGlobal", MixinComponentGlobalState._Singleton._pSaveStateDebounced);
+			});
+	}
+
+	get __stateGlobal () { return MixinComponentGlobalState._Singleton.__stateGlobal; }
+
+	_addHookGlobal (prop, hook) {
+		return this._addHook("stateGlobal", prop, hook);
+	}
+};
+
+MixinComponentGlobalState._Singleton = class {
+	static async _pSaveState () {
+		return StorageUtil.pSet(VeCt.STORAGE_GLOBAL_COMPONENT_STATE, MiscUtil.copy(MixinComponentGlobalState._Singleton.__stateGlobal));
+	}
+
+	static async _pLoadState () {
+		if (MixinComponentGlobalState._Singleton._pLoadingState) return MixinComponentGlobalState._Singleton._pLoadingState;
+		return MixinComponentGlobalState._Singleton._pLoadingState = MixinComponentGlobalState._Singleton._pLoadState_();
+	}
+
+	static async _pLoadState_ () {
+		Object.assign(MixinComponentGlobalState._Singleton.__stateGlobal, (await StorageUtil.pGet(VeCt.STORAGE_GLOBAL_COMPONENT_STATE)) || {});
+	}
+
+	static _getDefaultStateGlobal () {
+		return {
+			isUseSpellPoints: false,
+		};
+	}
+}
+MixinComponentGlobalState._Singleton.__stateGlobal = {...MixinComponentGlobalState._Singleton._getDefaultStateGlobal()};
+MixinComponentGlobalState._Singleton._pSaveStateDebounced = MiscUtil.debounce(MixinComponentGlobalState._Singleton._pSaveState.bind(MixinComponentGlobalState._Singleton), 100);
+MixinComponentGlobalState._Singleton._pLoadingState = null;
+
+// endregion
+
 class ComponentUiUtil {
 	static trackHook (hooks, prop, hook) {
 		hooks[prop] = hooks[prop] || [];
@@ -4386,6 +4449,8 @@ class ComponentUiUtil {
 	 * @param opts.propCurMin
 	 * @param [opts.propCurMax]
 	 * @param [opts.fnDisplay] Value display function.
+	 * @param [opts.fnDisplayTooltip]
+	 * @param [opts.sparseValues]
 	 */
 	static $getSliderRange (comp, opts) {
 		opts = opts || {};
@@ -4402,6 +4467,8 @@ ComponentUiUtil.RangeSlider = class {
 			propCurMin,
 			propCurMax,
 			fnDisplay,
+			fnDisplayTooltip,
+			sparseValues,
 		},
 	) {
 		this._comp = comp;
@@ -4410,6 +4477,8 @@ ComponentUiUtil.RangeSlider = class {
 		this._propCurMin = propCurMin;
 		this._propCurMax = propCurMax;
 		this._fnDisplay = fnDisplay;
+		this._fnDisplayTooltip = fnDisplayTooltip;
+		this._sparseValues = sparseValues;
 
 		this._isSingle = !this._propCurMax;
 
@@ -4518,49 +4587,66 @@ ComponentUiUtil.RangeSlider = class {
 
 		// region Hooks
 		const hkChangeValue = () => {
-			const min = this._compCpy._state[this._propMin]; const max = this._compCpy._state[this._propMax];
-
 			const curMin = this._compCpy._state[this._propCurMin];
-			const pctMin = ((curMin - min) / (max - min)) * 100;
+			const pctMin = this._getLeftPositionPercentage({value: curMin});
 			this._thumbLow.style.left = `calc(${pctMin}% - ${this.constructor._W_THUMB_PX / 2}px)`;
 			const toDisplayLeft = this._fnDisplay ? `${this._fnDisplay(curMin)}`.qq() : curMin;
-			if (!this._isSingle) dispValueLeft.html(toDisplayLeft);
+			const toDisplayLeftTooltip = this._fnDisplayTooltip ? `${this._fnDisplayTooltip(curMin)}`.qq() : null;
+			if (!this._isSingle) {
+				dispValueLeft
+					.html(toDisplayLeft)
+					.tooltip(toDisplayLeftTooltip);
+			}
 
 			if (!this._isSingle) {
 				this._dispTrackInner.style.left = `${pctMin}%`;
 
 				const curMax = this._compCpy._state[this._propCurMax];
-				const pctMax = ((curMax - min) / (max - min)) * 100;
+				const pctMax = this._getLeftPositionPercentage({value: curMax});
 				this._dispTrackInner.style.right = `${100 - pctMax}%`;
 				this._thumbHigh.style.left = `calc(${pctMax}% - ${this.constructor._W_THUMB_PX / 2}px)`;
-				dispValueRight.html(this._fnDisplay ? `${this._fnDisplay(curMax)}`.qq() : curMax);
+				dispValueRight
+					.html(this._fnDisplay ? `${this._fnDisplay(curMax)}`.qq() : curMax)
+					.tooltip(this._fnDisplayTooltip ? `${this._fnDisplayTooltip(curMax)}`.qq() : null);
 			} else {
-				dispValueRight.html(toDisplayLeft);
+				dispValueRight
+					.html(toDisplayLeft)
+					.tooltip(toDisplayLeftTooltip);
 			}
 		};
 
 		const hkChangeLimit = () => {
 			const pips = [];
 
-			const numPips = this._compCpy._state[this._propMax] - this._compCpy._state[this._propMin];
-			let pipIncrement = 1;
-			// Cap the number of pips
-			if (numPips > ComponentUiUtil.RangeSlider._MAX_PIPS) pipIncrement = Math.ceil(numPips / ComponentUiUtil.RangeSlider._MAX_PIPS);
+			if (!this._sparseValues) {
+				const numPips = this._compCpy._state[this._propMax] - this._compCpy._state[this._propMin];
+				let pipIncrement = 1;
+				// Cap the number of pips
+				if (numPips > ComponentUiUtil.RangeSlider._MAX_PIPS) pipIncrement = Math.ceil(numPips / ComponentUiUtil.RangeSlider._MAX_PIPS);
 
-			let i, len;
-			for (
-				i = this._compCpy._state[this._propMin], len = this._compCpy._state[this._propMax] + 1;
-				i < len;
-				i += pipIncrement
-			) {
-				pips.push(this._getWrpPip({
-					isMajor: i === this._compCpy._state[this._propMin] || i === (len - 1),
-					value: i,
-				}));
+				let i, len;
+				for (
+					i = this._compCpy._state[this._propMin], len = this._compCpy._state[this._propMax] + 1;
+					i < len;
+					i += pipIncrement
+				) {
+					pips.push(this._getWrpPip({
+						isMajor: i === this._compCpy._state[this._propMin] || i === (len - 1),
+						value: i,
+					}));
+				}
+
+				// Ensure the last pip is always rendered, even if we're reducing pips
+				if (i !== this._compCpy._state[this._propMax]) pips.push(this._getWrpPip({isMajor: true, value: this._compCpy._state[this._propMax]}));
+			} else {
+				const len = this._sparseValues.length;
+				this._sparseValues.forEach((val, i) => {
+					pips.push(this._getWrpPip({
+						isMajor: i === 0 || i === (len - 1),
+						value: val,
+					}));
+				})
 			}
-
-			// Ensure the last pip is always rendered, even if we're reducing pips
-			if (i !== this._compCpy._state[this._propMax]) pips.push(this._getWrpPip({isMajor: true, value: this._compCpy._state[this._propMax]}));
 
 			wrpPips.empty();
 			e_({
@@ -4621,10 +4707,7 @@ ComponentUiUtil.RangeSlider = class {
 	}
 
 	_getWrpPip ({isMajor, value} = {}) {
-		const min = this._compCpy._state[this._propMin]; const max = this._compCpy._state[this._propMax];
-		const pctValue = ((value - min) / (max - min)) * 100;
-		const posLeft = `${pctValue}%`;
-		const styleLeft = `left: ${posLeft};`;
+		const style = this._getWrpPip_getStyle({value});
 
 		const pip = e_({
 			tag: "div",
@@ -4635,6 +4718,7 @@ ComponentUiUtil.RangeSlider = class {
 			tag: "div",
 			clazz: "absolute ui-slidr__pip-label flex-vh-center ve-small no-wrap",
 			html: isMajor ? this._fnDisplay ? `${this._fnDisplay(value)}`.qq() : value : "",
+			title: isMajor && this._fnDisplayTooltip ? `${this._fnDisplayTooltip(value)}`.qq() : null,
 		});
 
 		return e_({
@@ -4644,8 +4728,23 @@ ComponentUiUtil.RangeSlider = class {
 				pip,
 				dispLabel,
 			],
-			style: styleLeft,
+			style,
 		});
+	}
+
+	_getWrpPip_getStyle ({value}) {
+		return `left: ${this._getLeftPositionPercentage({value})}%`;
+	}
+
+	_getLeftPositionPercentage ({value}) {
+		if (this._sparseValues) {
+			const ix = this._sparseValues.sort(SortUtil.ascSort).indexOf(value);
+			if (!~ix) throw new Error(`Value "${value}" was not in the list of sparse values!`);
+			return (ix / (this._sparseValues.length - 1)) * 100;
+		}
+
+		const min = this._compCpy._state[this._propMin]; const max = this._compCpy._state[this._propMax];
+		return ((value - min) / (max - min)) * 100;
 	}
 
 	/**
@@ -4660,9 +4759,16 @@ ComponentUiUtil.RangeSlider = class {
 	 * ```
 	 */
 	_getRelativeValue (evt, {trackOriginX, trackWidth}) {
+		const xEvt = EventUtil.getClientX(evt) - trackOriginX;
+
+		if (this._sparseValues) {
+			const ixMax = this._sparseValues.length - 1;
+			const rawVal = Math.round((xEvt / trackWidth) * ixMax);
+			return this._sparseValues[Math.min(ixMax, Math.max(0, rawVal))];
+		}
+
 		const min = this._compCpy._state[this._propMin]; const max = this._compCpy._state[this._propMax];
 
-		const xEvt = EventUtil.getClientX(evt) - trackOriginX;
 		const rawVal = min
 			+ Math.round(
 				(xEvt / trackWidth) * (max - min),
@@ -4727,7 +4833,7 @@ ComponentUiUtil.RangeSlider = class {
 		};
 		// endregion
 
-		this._handleMouseMove(evt)
+		this._handleMouseMove(evt);
 	}
 
 	_handleMouseUp () {

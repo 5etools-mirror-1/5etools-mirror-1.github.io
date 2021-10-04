@@ -43,6 +43,7 @@
 	$rgb-source-VRGR: #bd000f;
 	$rgb-source-AitFR: #6e5ab9;
 	$rgb-source-WBtW: #7151b6;
+	$rgb-source-DoD: #fe4935;
 
 	&PHB {
 		color: $rgb-source-PHB !important;
@@ -326,6 +327,12 @@
 		color: $rgb-source-WBtW !important;
 		border-color: $rgb-source-WBtW !important;
 		text-decoration-color: $rgb-source-WBtW !important;
+	}
+
+	&DoD {
+		color: $rgb-source-DoD !important;
+		border-color: $rgb-source-DoD !important;
+		text-decoration-color: $rgb-source-DoD !important;
 	}
 }
 

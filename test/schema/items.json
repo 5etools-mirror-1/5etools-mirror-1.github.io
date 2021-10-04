@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "items.json",
-	"version": "1.10.6",
+	"version": "1.10.7",
 	"type": "object",
 	"definitions": {
 		"itemData": {
@@ -350,6 +350,9 @@
 				},
 				"bonusProficiencyBonus": {
 					"type": "string"
+				},
+				"modifySpeed": {
+					"$ref": "util.json#/definitions/itemModifySpeed"
 				},
 				"otherSources": {
 					"$ref": "util.json#/definitions/otherSources"

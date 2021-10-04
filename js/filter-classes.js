@@ -1,6 +1,6 @@
 "use strict";
 
-class PageFilterClasses extends PageFilter {
+class PageFilterClassesBase extends PageFilter {
 	constructor () {
 		super({
 			sourceFilterOpts: {
@@ -121,41 +121,45 @@ class PageFilterClasses extends PageFilter {
 	isClassNaturallyDisplayed (values, cls) {
 		return this._filterBox.toDisplay(
 			values,
-			cls._fSources,
-			cls._fMisc,
+			...this.constructor._getIsClassNaturallyDisplayedToDisplayParams(cls),
 		);
 	}
 
-	isAnySubclassDisplayed (values, cls) {
-		return values[this._optionsFilter.header].isDisplayClassIfSubclassActive && (cls.subclasses || []).some(sc => {
-			if (this._filterBox.toDisplay(
-				values,
-				sc.source,
-				sc._fMisc,
-			)) return true;
+	static _getIsClassNaturallyDisplayedToDisplayParams (cls) { return [cls._fSources, cls._fMisc]; }
 
-			return sc.otherSources?.length && sc.otherSources.some(src => this._filterBox.toDisplay(
-				values,
-				src.source,
-				sc._fMisc,
-			))
-		});
+	isAnySubclassDisplayed (values, cls) {
+		return values[this._optionsFilter.header].isDisplayClassIfSubclassActive && (cls.subclasses || [])
+			.some(sc => {
+				if (this._filterBox.toDisplay(
+					values,
+					...this.constructor._getIsSubclassDisplayedToDisplayParams(cls, sc),
+				)) return true;
+
+				return sc.otherSources?.length && sc.otherSources.some(src => this._filterBox.toDisplay(
+					values,
+					...this.constructor._getIsSubclassDisplayedToDisplayParams(cls, sc, src),
+				))
+			});
 	}
 
-	isSubclassVisible (f, sc) {
+	static _getIsSubclassDisplayedToDisplayParams (cls, sc, otherSourcesSource) { return [otherSourcesSource || sc.source, sc._fMisc]; }
+
+	isSubclassVisible (f, cls, sc) {
 		if (this.filterBox.toDisplay(
 			f,
-			sc.source,
-			sc._fMisc,
-			null,
+			...this.constructor._getIsSubclassVisibleToDisplayParams(cls, sc),
 		)) return true;
+
 		if (!sc.otherSources?.length) return false;
+
 		return sc.otherSources.some(src => this.filterBox.toDisplay(
 			f,
-			src.source,
-			sc._fMisc,
-			null,
+			...this.constructor._getIsSubclassVisibleToDisplayParams(cls, sc, src.source),
 		));
+	}
+
+	static _getIsSubclassVisibleToDisplayParams (cls, sc, otherSourcesSource) {
+		return [otherSourcesSource || sc.source, sc._fMisc, null];
 	}
 
 	/** Return the first active source we find; use this as a fake source for things we want to force-display. */
@@ -168,10 +172,87 @@ class PageFilterClasses extends PageFilter {
 	toDisplay (values, it) {
 		return this._filterBox.toDisplay(
 			values,
-			this.isAnySubclassDisplayed(values, it)
-				? it._fSourceSubclass
-				: (it._fSources ?? it.source),
-			it._fMisc,
+			...this._getToDisplayParams(values, it),
 		)
+	}
+
+	_getToDisplayParams (values, cls) {
+		return [
+			this.isAnySubclassDisplayed(values, cls)
+				? cls._fSourceSubclass
+				: (cls._fSources ?? cls.source),
+			cls._fMisc,
+		];
+	}
+}
+
+class PageFilterClasses extends PageFilterClassesBase {
+	static _getClassSubclassLevelArray (it) {
+		return it.classFeatures.map((_, i) => i + 1);
+	}
+
+	constructor () {
+		super();
+
+		this._levelFilter = new RangeFilter({
+			header: "Feature Level",
+			min: 1,
+			max: 20,
+		});
+	}
+
+	get levelFilter () { return this._levelFilter; }
+
+	static mutateForFilters (cls) {
+		super.mutateForFilters(cls);
+
+		cls._fLevelRange = this._getClassSubclassLevelArray(cls);
+	}
+
+	/**
+	 * @param cls
+	 * @param isExcluded
+	 * @param opts Options object.
+	 * @param [opts.subclassExclusions] Map of `source:name:bool` indicating if each subclass is excluded or not.
+	 */
+	addToFilters (cls, isExcluded, opts) {
+		super.addToFilters(cls, isExcluded, opts);
+
+		if (isExcluded) return;
+
+		this._levelFilter.addItem(cls._fLevelRange);
+	}
+
+	async _pPopulateBoxOptions (opts) {
+		await super._pPopulateBoxOptions(opts);
+
+		opts.filters = [
+			this._sourceFilter,
+			this._miscFilter,
+			this._levelFilter,
+			this._optionsFilter,
+		];
+	}
+
+	static _getIsClassNaturallyDisplayedToDisplayParams (cls) {
+		return [cls._fSources, cls._fMisc, cls._fLevelRange];
+	}
+
+	static _getIsSubclassDisplayedToDisplayParams (cls, sc, otherSourcesSource) {
+		return [otherSourcesSource || sc.source, sc._fMisc, cls._fLevelRange];
+	}
+
+	static _getIsSubclassVisibleToDisplayParams (cls, sc, otherSourcesSource) {
+		return [otherSourcesSource || sc.source, sc._fMisc, cls._fLevelRange, null];
+	}
+
+	_getToDisplayParams (values, cls) {
+		return [
+			this.isAnySubclassDisplayed(values, cls)
+				? cls._fSourceSubclass
+				: (cls._fSources ?? cls.source),
+			cls._fMisc,
+			cls._fLevelRange,
+		];
 	}
 }

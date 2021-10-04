@@ -140,9 +140,8 @@ class ItemsPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (item, pinId, addCount) {
+	getSublistItem (item, ix, {count = 1} = {}) {
 		const hash = UrlUtil.autoEncodeHash(item);
-		const count = addCount || 1;
 
 		const $dispCount = $(`<span class="text-center col-2 pr-0">${count}</span>`);
 		const $ele = $$`<div class="lst__row lst__row--sublist flex-col">
@@ -157,7 +156,7 @@ class ItemsPage extends ListPage {
 			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
-			pinId,
+			ix,
 			$ele,
 			item.name,
 			{
@@ -165,9 +164,9 @@ class ItemsPage extends ListPage {
 				source: Parser.sourceJsonToAbv(item.source),
 				weight: Parser.weightValueToNumber(item.weight),
 				cost: item.value || 0,
-				count,
 			},
 			{
+				count,
 				$elesCount: [$dispCount],
 			},
 		);
@@ -236,8 +235,8 @@ class ItemsPage extends ListPage {
 		ListUtil.sublist.items.forEach(it => {
 			const item = this._dataList[it.ix];
 			if (item.currencyConversion) availConversions.add(item.currencyConversion);
-			const count = it.values.count;
-			cntItems += it.values.count;
+			const count = it.data.count;
+			cntItems += it.data.count;
 			if (item.weight) weight += Number(item.weight) * count;
 			if (item.value) value += item.value * count;
 		});
@@ -396,7 +395,7 @@ class ItemsPage extends ListPage {
 		this._listSub = ListUtil.initSublist({
 			listClass: "subitems",
 			fnSort: PageFilterItems.sortItems,
-			getSublistRow: this.getSublistItem.bind(this),
+			pGetSublistRow: this.getSublistItem.bind(this),
 			onUpdate: this.onSublistChange.bind(this),
 		});
 		SortUtil.initBtnSortHandlers($("#sublistsort"), this._listSub);
@@ -473,7 +472,7 @@ class ItemsPage extends ListPage {
 
 		ListUtil.setOptions({
 			itemList: this._dataList,
-			getSublistRow: this.getSublistItem.bind(this),
+			pGetSublistRow: this.getSublistItem.bind(this),
 			primaryLists: [this._mundaneList, this._magicList],
 		});
 		ListUtil.bindAddButton();

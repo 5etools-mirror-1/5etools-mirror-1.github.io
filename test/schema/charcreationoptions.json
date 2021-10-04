@@ -30,6 +30,7 @@
 					"type": "integer"
 				},
 				"optionType": {
+					"$comment": "Note that this field supports arbitrary strings for homebrew usage.",
 					"oneOf": [
 						{
 							"$ref": "#/definitions/optionType"

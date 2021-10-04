@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.16.8",
+	"version": "1.16.9",
 	"title": "Bestiary Schema",
 	"$id": "bestiary.json",
 	"type": "object",
@@ -865,6 +865,7 @@
 					"items": {
 						"type": "string",
 						"enum": [
+							"Breath Weapon",
 							"Frightful Presence",
 							"Multiattack",
 							"Parry",

@@ -1695,7 +1695,13 @@
 					]
 				}
 			],
-			"conditionInflict": [
+			"damageImmune": [
+				"fire",
+				"poison",
+				"radiant",
+				"necrotic"
+			],
+			"conditionImmune": [
 				"charmed",
 				"poisoned"
 			],

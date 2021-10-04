@@ -66,7 +66,7 @@ class PageFilterBestiary extends PageFilter {
 			itemSortFn: null,
 		});
 		this._speedFilter = new RangeFilter({header: "Speed", min: 30, max: 30, suffix: " ft"});
-		this._speedTypeFilter = new Filter({header: "Speed Type", items: ["walk", "burrow", "climb", "fly", "hover", "swim"], displayFn: StrUtil.uppercaseFirst});
+		this._speedTypeFilter = new Filter({header: "Speed Type", items: [...Parser.SPEED_MODES], displayFn: StrUtil.uppercaseFirst});
 		this._strengthFilter = new RangeFilter({header: "Strength", min: 1, max: 30});
 		this._dexterityFilter = new RangeFilter({header: "Dexterity", min: 1, max: 30});
 		this._constitutionFilter = new RangeFilter({header: "Constitution", min: 1, max: 30});
@@ -272,6 +272,9 @@ class PageFilterBestiary extends PageFilter {
 			if (spellcasterMeta.spellLevels.size) mon._fSpellSlotLevels = [...spellcasterMeta.spellLevels];
 			if (spellcasterMeta.spellSet.size) mon._fSpellsKnown = [...spellcasterMeta.spellSet];
 		}
+
+		if (mon.languageTags) mon._fLanguageTags = mon.languageTags;
+		else mon._fLanguageTags = ["None"];
 	}
 
 	static _getSpellcasterMeta (mon) {
@@ -349,6 +352,7 @@ class PageFilterBestiary extends PageFilter {
 		Object.entries(Parser.MON_LANGUAGE_TAG_TO_FULL)
 			.sort(([, vA], [, vB]) => SortUtil.ascSortLower(vA, vB))
 			.forEach(([k]) => this._languageFilter.addItem(k));
+		this._languageFilter.addItem("None");
 
 		opts.filters = [
 			this._sourceFilter,
@@ -408,7 +412,7 @@ class PageFilterBestiary extends PageFilter {
 			m._fSkill,
 			m.senseTags,
 			m._fPassive,
-			m.languageTags,
+			m._fLanguageTags,
 			m.damageTags,
 			[
 				m.conditionInflict,

@@ -284,7 +284,52 @@ class BonusTag {
 			delete obj.bonusWeaponDamage;
 		}
 
+		// region Speed bonus
+		this._mutSpeedBonus({obj, strEntries});
+		// endregion
+
 		obj.entries = JSON.parse(strEntries);
+	}
+
+	static _mutSpeedBonus ({obj, strEntries}) {
+		strEntries.replace(BonusTag._RE_SPEED_MULTIPLE, (...m) => {
+			const {mode, factor} = m.last();
+			obj.modifySpeed = {multiplier: {[this._getSpeedKey(mode)]: Parser.textToNumber(factor)}};
+		});
+
+		[BonusTag._RE_SPEED_BECOMES, BonusTag._RE_SPEED_GAIN, BonusTag._RE_SPEED_GAIN__EXPEND_CHARGE, BonusTag._RE_SPEED_GIVE_YOU].forEach(re => {
+			strEntries.replace(re, (...m) => {
+				const {mode, value} = m.last();
+				obj.modifySpeed = MiscUtil.merge(obj.modifySpeed || {}, {static: {[this._getSpeedKey(mode)]: Number(value)}})
+			});
+		});
+
+		strEntries.replace(BonusTag._RE_SPEED_EQUAL_WALKING, (...m) => {
+			const {mode} = m.last();
+			obj.modifySpeed = MiscUtil.merge(obj.modifySpeed || {}, {equal: {[this._getSpeedKey(mode)]: "walk"}});
+		});
+
+		strEntries.replace(BonusTag._RE_SPEED_BONUS_ALL, (...m) => {
+			const {value} = m.last();
+			obj.modifySpeed = MiscUtil.merge(obj.modifySpeed || {}, {bonus: {"*": Number(value)}});
+		});
+
+		strEntries.replace(BonusTag._RE_SPEED_BONUS_SPECIFIC, (...m) => {
+			const {mode, value} = m.last();
+			obj.modifySpeed = MiscUtil.merge(obj.modifySpeed || {}, {bonus: {[this._getSpeedKey(mode)]: Number(value)}});
+		});
+	}
+
+	static _getSpeedKey (speedText) {
+		speedText = speedText.toLowerCase().trim();
+		switch (speedText) {
+			case "walking":
+			case "burrowing":
+			case "climbing":
+			case "flying": return speedText.replace(/ing$/, "");
+			case "swimming": return "swim";
+			default: throw new Error(`Unhandled speed text "${speedText}"`);
+		}
 	}
 
 	static tryRun (it, opts) {
@@ -294,6 +339,16 @@ class BonusTag {
 }
 BonusTag._RE_BASIC_WEAPONS = new RegExp(`\\+\\s*(\\d)(\\s+(?:${ConverterUtilsItem.BASIC_WEAPONS.join("|")}|weapon))`);
 BonusTag._RE_BASIC_ARMORS = new RegExp(`\\+\\s*(\\d)(\\s+(?:${ConverterUtilsItem.BASIC_ARMORS.join("|")}|armor))`);
+BonusTag._PT_SPEEDS = `(?<mode>walking|flying|swimming|climbing|burrowing)`;
+BonusTag._PT_SPEED_VALUE = `(?<value>\\d+)`;
+BonusTag._RE_SPEED_MULTIPLE = new RegExp(`(?<factor>double|triple|quadruple) your ${BonusTag._PT_SPEEDS} speed`, "gi");
+BonusTag._RE_SPEED_BECOMES = new RegExp(`your ${BonusTag._PT_SPEEDS} speed becomes ${BonusTag._PT_SPEED_VALUE} feet`, "gi");
+BonusTag._RE_SPEED_GAIN = new RegExp(`you (?:gain|have) a ${BonusTag._PT_SPEEDS} speed of ${BonusTag._PT_SPEED_VALUE} feet`, "gi");
+BonusTag._RE_SPEED_GAIN__EXPEND_CHARGE = new RegExp(`expend (?:a|\\d+) charges? to gain a ${BonusTag._PT_SPEEDS} speed of ${BonusTag._PT_SPEED_VALUE} feet`, "gi");
+BonusTag._RE_SPEED_GIVE_YOU = new RegExp(`give you a ${BonusTag._PT_SPEEDS} speed of ${BonusTag._PT_SPEED_VALUE} feet`, "gi");
+BonusTag._RE_SPEED_EQUAL_WALKING = new RegExp(`you (?:gain|have) a ${BonusTag._PT_SPEEDS} speed equal to your walking speed`, "gi");
+BonusTag._RE_SPEED_BONUS_ALL = new RegExp(`you (?:gain|have) a bonus to speed of ${BonusTag._PT_SPEED_VALUE} feet`, "gi");
+BonusTag._RE_SPEED_BONUS_SPECIFIC = new RegExp(`increas(?:ing|e) your ${BonusTag._PT_SPEEDS} by ${BonusTag._PT_SPEED_VALUE} feet`, "gi");
 
 class BasicTextClean {
 	static tryRun (it, opts) {

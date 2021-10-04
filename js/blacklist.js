@@ -435,7 +435,7 @@ class Blacklist {
 
 	static _remove (ix, hash, category, source, {isSkipListUpdate = false} = {}) {
 		ExcludeUtil.removeExclude(hash, category, source);
-		Blacklist._list.removeItem(ix);
+		Blacklist._list.removeItemByIndex(ix);
 		if (!isSkipListUpdate) Blacklist._list.update();
 	}
 

@@ -78,6 +78,10 @@
 					"wis": 1
 				}
 			],
+			"age": {
+				"mature": 3,
+				"max": 30
+			},
 			"traitTags": [
 				"Unarmed Strike"
 			],
@@ -153,6 +157,10 @@
 					"cha": 2
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"darkvision": 60,
 			"languageProficiencies": [
 				{
@@ -270,6 +278,10 @@
 				"heightMod": "2d10",
 				"baseWeight": 110,
 				"weightMod": "2d4"
+			},
+			"age": {
+				"mature": 20,
+				"max": 160
 			},
 			"darkvision": 60,
 			"languageProficiencies": [
@@ -448,6 +460,10 @@
 					}
 				}
 			],
+			"age": {
+				"mature": 0,
+				"max": 3
+			},
 			"darkvision": 60,
 			"skillProficiencies": [
 				{
@@ -542,6 +558,10 @@
 					"dex": 2
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"languageProficiencies": [
 				{
 					"common": true,
@@ -652,6 +672,10 @@
 					"wis": 2
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"skillProficiencies": [
 				{
 					"perception": true
@@ -727,6 +751,10 @@
 				"heightMod": "2d12",
 				"baseWeight": 200,
 				"weightMod": "2d6"
+			},
+			"age": {
+				"mature": 16,
+				"max": 80
 			},
 			"darkvision": 60,
 			"traitTags": [
@@ -835,6 +863,10 @@
 				"heightMod": "2d12",
 				"baseWeight": 200,
 				"weightMod": "2d6"
+			},
+			"age": {
+				"mature": 16,
+				"max": 80
 			},
 			"darkvision": 60,
 			"traitTags": [
@@ -1007,6 +1039,10 @@
 				"baseWeight": 600,
 				"weightMod": "2d12"
 			},
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"traitTags": [
 				"Powerful Build",
 				"Unarmed Strike"
@@ -1165,6 +1201,10 @@
 					"wis": 1
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"traitTags": [
 				"Powerful Build",
 				"Unarmed Strike"
@@ -1281,6 +1321,10 @@
 				"heightMod": "2d4",
 				"baseWeight": 115,
 				"weightMod": "2d4"
+			},
+			"age": {
+				"mature": 20,
+				"max": 100
 			},
 			"skillProficiencies": [
 				{
@@ -1425,6 +1469,10 @@
 					}
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"traitTags": [
 				"Tool Proficiency"
 			],
@@ -1608,6 +1656,7 @@
 			"name": "Custom Lineage",
 			"source": "TCE",
 			"page": 8,
+			"lineage": true,
 			"size": [
 				"S",
 				"M"
@@ -1845,6 +1894,10 @@
 				"heightMod": "2d8",
 				"baseWeight": 175,
 				"weightMod": "2d6"
+			},
+			"age": {
+				"mature": 15,
+				"max": 80
 			},
 			"traitTags": [
 				"Uncommon Race"
@@ -2241,6 +2294,10 @@
 					"con": 2
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 350
+			},
 			"darkvision": 60,
 			"traitTags": [
 				"Tool Proficiency"
@@ -2622,6 +2679,10 @@
 					"wis": 1
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 350
+			},
 			"darkvision": 60,
 			"traitTags": [
 				"Tool Proficiency"
@@ -2715,6 +2776,10 @@
 					"dex": 2
 				}
 			],
+			"age": {
+				"mature": 100,
+				"max": 750
+			},
 			"darkvision": 60,
 			"traitTags": [
 				"Improved Resting"
@@ -3894,6 +3959,10 @@
 					"wis": 1
 				}
 			],
+			"age": {
+				"mature": 100,
+				"max": 750
+			},
 			"darkvision": 60,
 			"traitTags": [
 				"Improved Resting"
@@ -4054,6 +4123,10 @@
 					"wis": 2
 				}
 			],
+			"age": {
+				"mature": 100,
+				"max": 750
+			},
 			"darkvision": 60,
 			"skillProficiencies": [
 				{
@@ -4352,6 +4425,7 @@
 		{
 			"name": "Fairy",
 			"source": "WBtW",
+			"page": 12,
 			"lineage": "VRGR",
 			"creatureTypes": [
 				"fey"
@@ -4448,6 +4522,10 @@
 				"heightMod": "2d12",
 				"baseWeight": 175,
 				"weightMod": "2d6"
+			},
+			"age": {
+				"mature": 30,
+				"max": 500
 			},
 			"traitTags": [
 				"Powerful Build"
@@ -4672,6 +4750,10 @@
 				"heightMod": "2d10",
 				"baseWeight": 110,
 				"weightMod": "2d4"
+			},
+			"age": {
+				"mature": 20,
+				"max": 120
 			},
 			"languageProficiencies": [
 				{
@@ -4932,6 +5014,10 @@
 					"int": 1
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"languageProficiencies": [
 				{
 					"common": true,
@@ -5149,6 +5235,10 @@
 					"int": 1
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"languageProficiencies": [
 				{
 					"common": true,
@@ -5393,6 +5483,10 @@
 				"heightMod": "2d4",
 				"baseWeight": 35
 			},
+			"age": {
+				"mature": 40,
+				"max": 500
+			},
 			"darkvision": 60,
 			"traitTags": [
 				"Uncommon Race"
@@ -5461,6 +5555,10 @@
 							"dex": 1
 						}
 					],
+					"age": {
+						"mature": 25,
+						"max": 250
+					},
 					"darkvision": 120,
 					"languageProficiencies": [
 						{
@@ -5547,6 +5645,10 @@
 							"dex": 1
 						}
 					],
+					"age": {
+						"mature": 25,
+						"max": 250
+					},
 					"darkvision": 120,
 					"languageProficiencies": [
 						{
@@ -6085,6 +6187,10 @@
 				"heightMod": "2d4",
 				"baseWeight": 35
 			},
+			"age": {
+				"mature": 8,
+				"max": 60
+			},
 			"darkvision": 60,
 			"traitTags": [
 				"Monstrous Race"
@@ -6208,6 +6314,10 @@
 					"dex": 2
 				}
 			],
+			"age": {
+				"mature": 12,
+				"max": 50
+			},
 			"darkvision": 60,
 			"languageProficiencies": [
 				{
@@ -6273,6 +6383,10 @@
 					"con": 2
 				}
 			],
+			"age": {
+				"mature": 12,
+				"max": 50
+			},
 			"darkvision": 60,
 			"traitTags": [
 				"Natural Armor"
@@ -6414,6 +6528,10 @@
 				"heightMod": "2d10",
 				"baseWeight": 200,
 				"weightMod": "2d6"
+			},
+			"age": {
+				"mature": 20,
+				"max": 100
 			},
 			"traitTags": [
 				"Powerful Build"
@@ -6568,6 +6686,10 @@
 					"con": 1
 				}
 			],
+			"age": {
+				"mature": 1,
+				"max": 50
+			},
 			"traitTags": [
 				"Amphibious"
 			],
@@ -6691,6 +6813,10 @@
 				"baseWeight": 110,
 				"weightMod": "2d4"
 			},
+			"age": {
+				"mature": 20,
+				"max": 180
+			},
 			"darkvision": 60,
 			"traitTags": [
 				"Uncommon Race"
@@ -6793,6 +6919,10 @@
 				"heightMod": "2d8",
 				"baseWeight": 110,
 				"weightMod": "2d4"
+			},
+			"age": {
+				"mature": 20,
+				"max": 180
 			},
 			"darkvision": 60,
 			"traitTags": [
@@ -7402,6 +7532,10 @@
 				"baseWeight": 140,
 				"weightMod": "2d6"
 			},
+			"age": {
+				"mature": 14,
+				"max": 75
+			},
 			"darkvision": 60,
 			"traitTags": [
 				"Uncommon Race"
@@ -7507,6 +7641,10 @@
 				"heightMod": "2d10",
 				"baseWeight": 140,
 				"weightMod": "2d6"
+			},
+			"age": {
+				"mature": 14,
+				"max": 75
 			},
 			"darkvision": 60,
 			"traitTags": [
@@ -7671,6 +7809,10 @@
 				"baseHeight": 31,
 				"heightMod": "2d4",
 				"baseWeight": 35
+			},
+			"age": {
+				"mature": 20,
+				"max": 250
 			},
 			"languageProficiencies": [
 				{
@@ -8083,6 +8225,7 @@
 		{
 			"name": "Harengon",
 			"source": "WBtW",
+			"page": 13,
 			"lineage": "VRGR",
 			"size": [
 				"S",
@@ -8501,6 +8644,10 @@
 				"baseWeight": 110,
 				"weightMod": "2d4"
 			},
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"darkvision": 60,
 			"traitTags": [
 				"Monstrous Race"
@@ -8593,6 +8740,10 @@
 				"baseWeight": 110,
 				"weightMod": "2d4"
 			},
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"languageProficiencies": [
 				{
 					"common": true,
@@ -8657,6 +8808,10 @@
 							"con": 1
 						}
 					],
+					"age": {
+						"mature": 20,
+						"max": 100
+					},
 					"skillProficiencies": [
 						{
 							"athletics": true
@@ -9440,6 +9595,10 @@
 					}
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"feats": 1,
 			"skillProficiencies": [
 				{
@@ -9514,6 +9673,10 @@
 				"M"
 			],
 			"speed": 30,
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"languageProficiencies": [
 				{
 					"common": true,
@@ -9707,6 +9870,10 @@
 					"cha": 1
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"languageProficiencies": [
 				{
 					"common": true,
@@ -9808,6 +9975,10 @@
 				"baseWeight": 110,
 				"weightMod": "1d6"
 			},
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"languageProficiencies": [
 				{
 					"common": true,
@@ -9905,6 +10076,10 @@
 					}
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"languageProficiencies": [
 				{
 					"common": true,
@@ -10059,6 +10234,10 @@
 				"baseWeight": 50,
 				"weightMod": "1d6"
 			},
+			"age": {
+				"mature": 12,
+				"max": 60
+			},
 			"skillProficiencies": [
 				{
 					"choose": {
@@ -10150,6 +10329,10 @@
 					"str": 1
 				}
 			],
+			"age": {
+				"mature": 13,
+				"max": 60
+			},
 			"languageProficiencies": [
 				{
 					"common": true,
@@ -10334,6 +10517,10 @@
 				"heightMod": "2d4",
 				"baseWeight": 25
 			},
+			"age": {
+				"mature": 6,
+				"max": 120
+			},
 			"darkvision": 60,
 			"traitTags": [
 				"Monstrous Race",
@@ -10423,6 +10610,10 @@
 					"wis": 1
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"skillProficiencies": [
 				{
 					"athletics": true,
@@ -10582,6 +10773,10 @@
 				"baseWeight": 180,
 				"weightMod": "2d6"
 			},
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"darkvision": 60,
 			"traitTags": [
 				"Unarmed Strike"
@@ -10738,6 +10933,10 @@
 				"baseWeight": 120,
 				"weightMod": "2d6"
 			},
+			"age": {
+				"mature": 14,
+				"max": 60
+			},
 			"traitTags": [
 				"Natural Armor",
 				"Unarmed Strike"
@@ -10861,6 +11060,10 @@
 					"dex": 1
 				}
 			],
+			"age": {
+				"mature": 10,
+				"max": 80
+			},
 			"traitTags": [
 				"Amphibious",
 				"Natural Armor"
@@ -10957,6 +11160,10 @@
 				"heightMod": "2d10",
 				"baseWeight": 295,
 				"weightMod": "2d4"
+			},
+			"age": {
+				"mature": 20,
+				"max": 450
 			},
 			"traitTags": [
 				"Natural Armor",
@@ -11058,6 +11265,10 @@
 					"wis": 1
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 450
+			},
 			"traitTags": [
 				"Natural Armor",
 				"Powerful Build"
@@ -11202,6 +11413,10 @@
 					"cha": 1
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"traitTags": [
 				"Amphibious"
 			],
@@ -11345,6 +11560,10 @@
 					"cha": 1
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"traitTags": [
 				"Amphibious"
 			],
@@ -11664,6 +11883,10 @@
 				"baseWeight": 175,
 				"weightMod": "2d6"
 			},
+			"age": {
+				"mature": 17,
+				"max": 150
+			},
 			"traitTags": [
 				"Unarmed Strike"
 			],
@@ -11805,6 +12028,10 @@
 					"con": 1
 				}
 			],
+			"age": {
+				"mature": 17,
+				"max": 150
+			},
 			"traitTags": [
 				"Unarmed Strike"
 			],
@@ -11905,6 +12132,10 @@
 					"con": 1
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 40
+			},
 			"traitTags": [
 				"Unarmed Strike"
 			],
@@ -12001,6 +12232,10 @@
 					}
 				}
 			],
+			"age": {
+				"mature": 17,
+				"max": 150
+			},
 			"traitTags": [
 				"Tool Proficiency",
 				"Unarmed Strike"
@@ -12097,6 +12332,10 @@
 					"int": 1
 				}
 			],
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"traitTags": [
 				"Tool Proficiency",
 				"Unarmed Strike"
@@ -12317,6 +12556,10 @@
 				"baseWeight": 175,
 				"weightMod": "2d6"
 			},
+			"age": {
+				"mature": 12,
+				"max": 50
+			},
 			"darkvision": 60,
 			"traitTags": [
 				"Powerful Build"
@@ -12422,6 +12665,10 @@
 				"baseWeight": 175,
 				"weightMod": "2d6"
 			},
+			"age": {
+				"mature": 12,
+				"max": 50
+			},
 			"darkvision": 60,
 			"traitTags": [
 				"Monstrous Race",
@@ -12524,6 +12771,10 @@
 					"con": 1
 				}
 			],
+			"age": {
+				"mature": 14,
+				"max": 75
+			},
 			"darkvision": 60,
 			"skillProficiencies": [
 				{
@@ -12988,6 +13239,10 @@
 				"baseWeight": 100,
 				"weightMod": "2d4"
 			},
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"traitTags": [
 				"Magic Resistance",
 				"Unarmed Strike"
@@ -13096,6 +13351,10 @@
 				"heightMod": "2d8",
 				"baseWeight": 90,
 				"weightMod": "2d4"
+			},
+			"age": {
+				"mature": 10,
+				"max": 70
 			},
 			"darkvision": 60,
 			"languageProficiencies": [
@@ -13480,6 +13739,10 @@
 					"dex": 1
 				}
 			],
+			"age": {
+				"mature": 10,
+				"max": 70
+			},
 			"darkvision": 60,
 			"skillProficiencies": [
 				{
@@ -14108,6 +14371,10 @@
 				"baseWeight": 90,
 				"weightMod": "2d4"
 			},
+			"age": {
+				"mature": 20,
+				"max": 100
+			},
 			"darkvision": 60,
 			"traitTags": [
 				"Unarmed Strike"
@@ -14209,6 +14476,10 @@
 				"heightMod": "2d8",
 				"baseWeight": 110,
 				"weightMod": "2d4"
+			},
+			"age": {
+				"mature": 20,
+				"max": 100
 			},
 			"darkvision": 60,
 			"traitTags": [
@@ -15529,6 +15800,10 @@
 					"wis": 1
 				}
 			],
+			"age": {
+				"mature": 15,
+				"max": 50
+			},
 			"traitTags": [
 				"Natural Armor",
 				"Unarmed Strike"
@@ -15667,6 +15942,10 @@
 				"heightMod": "2d10",
 				"baseWeight": 90,
 				"weightMod": "2d4"
+			},
+			"age": {
+				"mature": 15,
+				"max": 200
 			},
 			"darkvision": 60,
 			"traitTags": [
@@ -16036,6 +16315,10 @@
 				"baseWeight": 110,
 				"weightMod": "2d4"
 			},
+			"age": {
+				"mature": 40,
+				"max": 500
+			},
 			"skillProficiencies": [
 				{
 					"choose": {
@@ -16131,6 +16414,10 @@
 					"wis": 1
 				}
 			],
+			"age": {
+				"mature": 40,
+				"max": 500
+			},
 			"languageProficiencies": [
 				{
 					"common": true,
@@ -16196,6 +16483,10 @@
 					"wis": 1
 				}
 			],
+			"age": {
+				"mature": 40,
+				"max": 500
+			},
 			"languageProficiencies": [
 				{
 					"common": true
@@ -16262,6 +16553,10 @@
 					"cha": 2
 				}
 			],
+			"age": {
+				"mature": 24,
+				"max": 200
+			},
 			"skillProficiencies": [
 				{
 					"persuasion": true
@@ -16349,6 +16644,10 @@
 					"str": 1
 				}
 			],
+			"age": {
+				"mature": 13,
+				"max": 60
+			},
 			"traitTags": [
 				"Unarmed Strike"
 			],
@@ -16455,6 +16754,10 @@
 				"heightMod": "2d6",
 				"baseWeight": 270,
 				"weightMod": "4"
+			},
+			"age": {
+				"mature": 2,
+				"max": 30
 			},
 			"traitTags": [
 				"Improved Resting",
@@ -16632,6 +16935,10 @@
 					"con": 1
 				}
 			],
+			"age": {
+				"mature": 2,
+				"max": 30
+			},
 			"traitTags": [
 				"Improved Resting",
 				"Natural Armor"
@@ -16870,6 +17177,10 @@
 				"heightMod": "2d10",
 				"baseWeight": 110,
 				"weightMod": "2d4"
+			},
+			"age": {
+				"mature": 20,
+				"max": 100
 			},
 			"darkvision": 60,
 			"traitTags": [

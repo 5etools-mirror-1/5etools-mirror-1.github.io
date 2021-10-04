@@ -2998,36 +2998,44 @@
 									"caption": "Gnoll War Band Name",
 									"colLabels": [
 										"d6",
-										"Name"
+										"Name Part 1",
+										"Name Part 2"
 									],
 									"colStyles": [
 										"col-2 text-center",
-										"col-10"
+										"col-5",
+										"col-5"
 									],
 									"rows": [
 										[
 											"1",
-											"Abyssal"
+											"Abyssal",
+											"Harbingers"
 										],
 										[
 											"2",
-											"Dire"
+											"Dire",
+											"Hunters"
 										],
 										[
 											"3",
-											"Howling"
+											"Howling",
+											"Mongrels"
 										],
 										[
 											"4",
-											"Rabid"
+											"Rabid",
+											"Mutilators"
 										],
 										[
 											"5",
-											"Rotted"
+											"Rotted",
+											"Ravagers"
 										],
 										[
 											"6",
-											"Screaming"
+											"Screaming",
+											"Slayers"
 										]
 									]
 								},
@@ -3070,24 +3078,29 @@
 									"caption": "War Band Leadership",
 									"colLabels": [
 										"d6",
-										"Leader"
+										"Leader",
+										"Number Appearing Modifier"
 									],
 									"colStyles": [
 										"col-2 text-center",
-										"col-10"
+										"col-5",
+										"col-5"
 									],
 									"rows": [
 										[
 											"1",
-											"Gnoll War Band Flind Leader"
+											"Gnoll War Band Flind Leader",
+											"Double"
 										],
 										[
 											"2-4",
-											"Gnoll War Band Gnoll Pack Lord Leader"
+											"Gnoll War Band Gnoll Pack Lord Leader",
+											"None"
 										],
 										[
 											"5-6",
-											"No Leader"
+											"No Leader",
+											"Halve"
 										]
 									]
 								},
@@ -3105,43 +3118,43 @@
 									"rows": [
 										[
 											"1",
-											"{@creature Barlgura}"
+											"1 {@creature Barlgura}"
 										],
 										[
 											"2-5",
-											"{@creature Dretch||Dretches}"
+											"{@dice 3d6} {@creature Dretch||Dretches}"
 										],
 										[
 											"6-8",
-											"{@creature Ghoul||Ghouls}"
+											"{@dice 2d6} {@creature Ghoul||Ghouls}"
 										],
 										[
 											"9-10",
-											"{@creature Gnoll Witherling|VGM|Gnoll Witherlings}"
+											"{@dice 2d6} {@creature Gnoll Witherling|VGM|Gnoll Witherlings}"
 										],
 										[
 											"11",
-											"{@creature Hezrou}"
+											"1 {@creature Hezrou}"
 										],
 										[
 											"12-13",
-											"{@creature Leucrotta|VGM|Leucrottas}"
+											"{@dice 1d4} {@creature Leucrotta|VGM|Leucrottas}"
 										],
 										[
 											"14-16",
-											"{@creature Manes}"
+											"{@dice 2d6} {@creature Manes}"
 										],
 										[
 											"17-18",
-											"{@creature Maw Demon|VGM|Maw Demons}"
+											"{@dice 2d4} {@creature Maw Demon|VGM|Maw Demons}"
 										],
 										[
 											"19",
-											"{@creature Shoosuva|VGM}"
+											"1 {@creature Shoosuva|VGM}"
 										],
 										[
 											"20",
-											"{@creature Troll||Trolls}"
+											"{@dice 1d3} {@creature Troll||Trolls}"
 										]
 									]
 								},

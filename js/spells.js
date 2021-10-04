@@ -108,7 +108,7 @@ class SpellsPage extends ListPage {
 		this._multiSource.onFilterChangeMulti(this._dataList, f);
 	}
 
-	getSublistItem (spell, pinId) {
+	getSublistItem (spell, ix) {
 		const hash = UrlUtil.autoEncodeHash(spell);
 		const school = Parser.spSchoolAndSubschoolsAbvsShort(spell.school, spell.subschools);
 		const time = PageFilterSpells.getTblTimeStr(spell.time[0]);
@@ -129,7 +129,7 @@ class SpellsPage extends ListPage {
 			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
-			pinId,
+			ix,
 			$ele,
 			spell.name,
 			{
@@ -215,7 +215,7 @@ class SpellsPage extends ListPage {
 			ExcludeUtil.pInitialise(),
 		]);
 		Object.assign(SUBCLASS_LOOKUP, subclassLookup);
-		await spellsPage._multiSource.pMultisourceLoad(
+		await this._multiSource.pMultisourceLoad(
 			JSON_DIR,
 			this._pageFilter.filterBox,
 			this._pPageInit.bind(this),
@@ -271,7 +271,7 @@ class SpellsPage extends ListPage {
 		await this._handleBrew(homebrew);
 		BrewUtil.bind({list: this._list, pHandleBrew: this._handleBrew.bind(this)});
 		BrewUtil.makeBrewButton("manage-brew");
-		BrewUtil.bind({filterBox: spellsPage._pageFilter.filterBox, sourceFilter: spellsPage._pageFilter.sourceFilter});
+		BrewUtil.bind({filterBox: this._pageFilter.filterBox, sourceFilter: this._pageFilter.sourceFilter});
 		await ListUtil.pLoadState();
 
 		ListUtil.bindShowTableButton(
@@ -310,8 +310,8 @@ class SpellsPage extends ListPage {
 
 	async _pPageInit (loadedSources) {
 		Object.keys(loadedSources)
-			.map(src => new FilterItem({item: src, pFnChange: spellsPage._multiSource.pLoadSource.bind(spellsPage._multiSource)}))
-			.forEach(fi => spellsPage._pageFilter.sourceFilter.addItem(fi));
+			.map(src => new FilterItem({item: src, pFnChange: this._multiSource.pLoadSource.bind(this._multiSource)}))
+			.forEach(fi => this._pageFilter.sourceFilter.addItem(fi));
 
 		this._list = ListUtil.initList({
 			listClass: "spells",
@@ -328,9 +328,9 @@ class SpellsPage extends ListPage {
 		});
 
 		// filtering function
-		spellsPage._pageFilter.filterBox.on(
+		this._pageFilter.filterBox.on(
 			FilterBox.EVNT_VALCHANGE,
-			spellsPage.handleFilterChange.bind(spellsPage),
+			this.handleFilterChange.bind(this),
 		);
 
 		this._listSub = ListUtil.initSublist({
@@ -473,18 +473,18 @@ class SpellsPage extends ListPage {
 
 		for (; this._ixData < this._dataList.length; this._ixData++) {
 			const spell = this._dataList[this._ixData];
-			const listItem = spellsPage.getListItem(spell, this._ixData);
+			const listItem = this.getListItem(spell, this._ixData);
 			if (!listItem) continue;
 			this._list.addItem(listItem);
 		}
 		this._list.update();
 
-		spellsPage._pageFilter.filterBox.render();
-		spellsPage.handleFilterChange();
+		this._pageFilter.filterBox.render();
+		this.handleFilterChange();
 
 		ListUtil.setOptions({
 			itemList: this._dataList,
-			getSublistRow: spellsPage.getSublistItem.bind(spellsPage),
+			pGetSublistRow: this.getSublistItem.bind(this),
 			primaryLists: [this._list],
 		});
 		ListUtil.bindPinButton();
@@ -497,7 +497,7 @@ class SpellsPage extends ListPage {
 				title: "Popout Window (SHIFT for Source Data; CTRL for Markdown Render)",
 			},
 		);
-		UrlUtil.bindLinkExportButton(spellsPage._pageFilter.filterBox);
+		UrlUtil.bindLinkExportButton(this._pageFilter.filterBox);
 		ListUtil.bindOtherButtons({
 			download: true,
 			upload: {
@@ -522,23 +522,23 @@ class SpellsPage extends ListPage {
 	}
 
 	async pPreloadSublistSources (json) {
-		const loaded = Object.keys(spellsPage._multiSource.loadedSources)
-			.filter(it => spellsPage._multiSource.loadedSources[it].loaded);
+		const loaded = Object.keys(this._multiSource.loadedSources)
+			.filter(it => this._multiSource.loadedSources[it].loaded);
 		const lowerSources = json.sources.map(it => it.toLowerCase());
-		const toLoad = Object.keys(spellsPage._multiSource.loadedSources)
+		const toLoad = Object.keys(this._multiSource.loadedSources)
 			.filter(it => !loaded.includes(it))
 			.filter(it => lowerSources.includes(it.toLowerCase()));
 		const loadTotal = toLoad.length;
 		if (loadTotal) {
-			await Promise.all(toLoad.map(src => spellsPage._multiSource.pLoadSource(src, "yes")));
+			await Promise.all(toLoad.map(src => this._multiSource.pLoadSource(src, "yes")));
 		}
 	}
 
 	async pHandleUnknownHash (link, sub) {
-		const src = Object.keys(spellsPage._multiSource.loadedSources)
+		const src = Object.keys(this._multiSource.loadedSources)
 			.find(src => src.toLowerCase() === (UrlUtil.decodeHash(link)[1] || "").toLowerCase());
 		if (src) {
-			await spellsPage._multiSource.pLoadSource(src, "yes");
+			await this._multiSource.pLoadSource(src, "yes");
 			Hist.hashChange();
 		}
 	}

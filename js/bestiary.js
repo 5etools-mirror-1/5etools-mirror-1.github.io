@@ -29,7 +29,14 @@ class BestiaryPage extends ListPage {
 		this._lastRendered = {mon: null, isScaledCr: false, isScaledSpellSummon: false, isScaledClassSummon: false};
 
 		this._profDicMode = PROF_MODE_BONUS;
+
+		this._encounterBuilder = null;
 	}
+
+	// region Expose for encounter builder
+	get list_ () { return this._list; }
+	get dataList_ () { return this._dataList; }
+	// endregion
 
 	getListItem (mon, mI) {
 		const hash = UrlUtil.autoEncodeHash(mon);
@@ -57,7 +64,7 @@ class BestiaryPage extends ListPage {
 					clazz: "lst--border lst__row-inner",
 					click: evt => this._handleBestiaryLinkClick(evt),
 					children: [
-						EncounterBuilder.getButtons(mI),
+						this._encounterBuilder.getButtons(mI),
 						e_({tag: "span", clazz: `ecgen__name bold col-4-2 pl-0`, text: mon.name}),
 						e_({tag: "span", clazz: `col-4-1`, text: type}),
 						e_({tag: "span", clazz: `col-1-7 text-center`, text: cr}),
@@ -103,15 +110,7 @@ class BestiaryPage extends ListPage {
 			return this._pageFilter.toDisplay(f, m);
 		});
 		this._multiSource.onFilterChangeMulti(this._dataList, f);
-		encounterBuilder.resetCache();
-	}
-
-	async _pGetModifiedMon (monRaw, metadata) {
-		if (!metadata?.customHashId) return monRaw;
-		const {_scaledCr, _scaledSpellSummonLevel, _scaledClassSummonLevel} = Renderer.monster.getUnpackedCustomHashId(metadata.customHashId);
-		if (_scaledCr) return ScaleCreature.scale(monRaw, _scaledCr);
-		if (_scaledSpellSummonLevel) return ScaleSpellSummonedCreature.scale(monRaw, _scaledSpellSummonLevel);
-		if (_scaledClassSummonLevel) return ScaleClassSummonedCreature.scale(monRaw, _scaledClassSummonLevel);
+		this._encounterBuilder.resetCache();
 	}
 
 	static _getUrlSubhashes (mon, {isAddLeadingSep = true} = {}) {
@@ -125,21 +124,19 @@ class BestiaryPage extends ListPage {
 		return `${isAddLeadingSep ? HASH_PART_SEP : ""}${subhashesRaw.join(HASH_PART_SEP)}`
 	}
 
-	async pGetSublistItem (monRaw, pinId, addCount, metadata) {
-		metadata = metadata || {};
-
-		const mon = await this._pGetModifiedMon(monRaw, metadata);
+	async pGetSublistItem (monRaw, ix, {count = 1, customHashId = null, initialData} = {}) {
+		const mon = await Renderer.monster.pGetModifiedCreature(monRaw, customHashId);
 		Renderer.monster.updateParsed(mon);
 		const subHash = this.constructor._getUrlSubhashes(mon);
 
 		const name = mon._displayName || mon.name;
 		const hash = `${UrlUtil.autoEncodeHash(mon)}${subHash}`;
 		const type = mon._pTypes.asText.uppercaseFirst();
-		const count = addCount || 1;
 		const cr = mon._pCr;
+		const isLocked = !!initialData?.isLocked; // If e.g. reloading from a save
 
 		const $hovStatblock = $(`<span class="col-1-4 help help--hover ecgen__visible">Statblock</span>`)
-			.mouseover(evt => EncounterBuilder.doStatblockMouseOver(evt, $hovStatblock[0], pinId, metadata))
+			.mouseover(evt => this._encounterBuilder.doStatblockMouseOver(evt, $hovStatblock[0], ix, customHashId))
 			.mousemove(evt => Renderer.hover.handleLinkMouseMove(evt, $hovStatblock[0]))
 			.mouseleave(evt => Renderer.hover.handleLinkMouseLeave(evt, $hovStatblock[0]));
 
@@ -150,14 +147,14 @@ class BestiaryPage extends ListPage {
 			.mouseleave(evt => hovTokenMeta.mouseLeave(evt, $hovToken[0]));
 
 		const $hovImage = $(`<span class="col-1-2 ecgen__visible help help--hover">Image</span>`)
-			.mouseover(evt => EncounterBuilder.handleImageMouseOver(evt, $hovImage, pinId));
+			.mouseover(evt => this._encounterBuilder.handleImageMouseOver(evt, $hovImage, ix));
 
 		const $ptCr = (() => {
 			if (!ScaleCreature.isCrInScaleRange(mon)) return $(`<span class="col-1-2 text-center">${cr}</span>`);
 
 			const $iptCr = $(`<input value="${cr}" class="ecgen__cr_input form-control form-control--minimal input-xs">`)
 				.click(() => $iptCr.select())
-				.change(() => encounterBuilder.pDoCrChange($iptCr, pinId, mon._scaledCr));
+				.change(() => this._encounterBuilder.pDoCrChange($iptCr, ix, mon._scaledCr));
 
 			return $$`<span class="col-1-2 text-center">${$iptCr}</span>`;
 		})();
@@ -165,7 +162,31 @@ class BestiaryPage extends ListPage {
 		const $eleCount1 = $(`<span class="col-2 text-center">${count}</span>`);
 		const $eleCount2 = $(`<span class="col-2 pr-0 text-center">${count}</span>`);
 
-		const $ele = $$`<div class="lst__row lst__row--sublist flex-col lst__row--bestiary-sublist">
+		const listItem = new ListItem(
+			ix,
+			null,
+			name,
+			{
+				hash,
+				source: Parser.sourceJsonToAbv(mon.source),
+				type,
+				cr,
+			},
+			{
+				count,
+				customHashId,
+				approxHp: this._getApproxHp(mon),
+				approxAc: this._getApproxAc(mon),
+				isLocked,
+				$elesCount: [$eleCount1, $eleCount2],
+				fnsUpdate: [],
+			},
+		);
+
+		const sublistButtonsMeta = this._encounterBuilder.getSublistButtonsMeta(listItem);
+		listItem.data.fnsUpdate.push(sublistButtonsMeta.fnUpdate);
+
+		listItem.ele = $$`<div class="lst__row lst__row--sublist flex-col lst__row--bestiary-sublist">
 			<a href="#${hash}" draggable="false" class="ecgen__hidden lst--border lst__row-inner">
 				<span class="bold col-5 pl-0">${name}</span>
 				<span class="col-3-8">${type}</span>
@@ -174,7 +195,7 @@ class BestiaryPage extends ListPage {
 			</a>
 
 			<div class="lst__wrp-cells ecgen__visible--flex lst--border lst__row-inner">
-				${EncounterBuilder.$getSublistButtons(pinId, Renderer.monster.getCustomHashId(mon))}
+				${sublistButtonsMeta.$wrp}
 				<span class="ecgen__name--sub col-3-5">${name}</span>
 				${$hovStatblock}
 				${$hovToken}
@@ -185,26 +206,6 @@ class BestiaryPage extends ListPage {
 		</div>`
 			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
 			.click(evt => this._handleBestiaryLinkClickSub(evt, listItem));
-
-		const listItem = new ListItem(
-			pinId,
-			$ele,
-			name,
-			{
-				hash,
-				source: Parser.sourceJsonToAbv(mon.source),
-				type,
-				cr,
-				count,
-			},
-			{
-				uniqueId: metadata.uniqueId || "",
-				customHashId: Renderer.monster.getCustomHashId(mon),
-				$elesCount: [$eleCount1, $eleCount2],
-				approxHp: this._getApproxHp(mon),
-				approxAc: this._getApproxAc(mon),
-			},
-		);
 
 		return listItem;
 	}
@@ -264,7 +265,7 @@ class BestiaryPage extends ListPage {
 			}
 		}
 
-		encounterBuilder.handleSubhash(sub);
+		this._encounterBuilder.handleSubhash(sub);
 	}
 
 	async pOnLoad () {
@@ -280,8 +281,8 @@ class BestiaryPage extends ListPage {
 			$btnReset: $(`#reset`),
 		});
 
-		encounterBuilder = new EncounterBuilder(this);
-		encounterBuilder.initUi();
+		this._encounterBuilder = new EncounterBuilder(this);
+		this._encounterBuilder.initUi();
 		await Promise.all([
 			ExcludeUtil.pInitialise(),
 			DataUtil.monster.pPreloadMeta(),
@@ -299,7 +300,7 @@ class BestiaryPage extends ListPage {
 		ListPage._checkShowAllExcluded(this._dataList, this._$pgContent);
 		this.handleFilterChange();
 		this._bindProfDiceHandlers();
-		encounterBuilder.initState();
+		this._encounterBuilder.initState();
 		window.dispatchEvent(new Event("toolsLoaded"));
 	}
 
@@ -409,12 +410,19 @@ class BestiaryPage extends ListPage {
 				if (_scaledClassSummonLevel != null) return ScaleClassSummonedCreature.scale(mon, _scaledClassSummonLevel);
 				return mon;
 			},
-			customHashUnpacker: Renderer.monster.getUnpackedCustomHashId.bind(BestiaryPage),
+			fnSerializePinnedItemData: data => ({l: data.isLocked ? data.isLocked : undefined}),
+			fnDeserializePinnedItemData: serialData => ({isLocked: !!serialData.l}),
 		});
 		SortUtil.initBtnSortHandlers($("#sublistsort"), this._listSub);
 
-		ListUtil.bindAddButton(this._getFnHandleClickSublistAdd.bind(this), BestiaryPage._SUBLIST_CLICK_HANDLER_OPTIONS);
-		ListUtil.bindSubtractButton(this._getFnHandleClickSublistSubtract.bind(this), BestiaryPage._SUBLIST_CLICK_HANDLER_OPTIONS);
+		ListUtil.bindAddButton({
+			fnGetCustomHashId: this._getCurrentPinListCustomHashId.bind(this),
+			shiftCount: BestiaryPage._SUBLIST_CLICK_HANDLER_SHIFT_COUNT,
+		});
+		ListUtil.bindSubtractButton({
+			fnGetCustomHashId: this._getCurrentPinListCustomHashId.bind(this),
+			shiftCount: BestiaryPage._SUBLIST_CLICK_HANDLER_SHIFT_COUNT,
+		});
 		ListUtil.initGenericAddable();
 
 		this._pPageInit_printBookView();
@@ -430,7 +438,7 @@ class BestiaryPage extends ListPage {
 			$eleNoneVisible: $(`<span class="initial-message">If you wish to view multiple creatures, please first make a list</span>`),
 			pageTitle: "Bestiary Printer View",
 			popTblGetNumShown: async ($wrpContent, $dispName, $wrpControlsToPass) => {
-				const toShow = await Promise.all(ListUtil.genericPinKeyMapper());
+				const toShow = await ListUtil.pGetPinnedEntities();
 
 				toShow.sort((a, b) => SortUtil.ascSort(a._displayName || a.name, b._displayName || b.name));
 
@@ -502,21 +510,7 @@ class BestiaryPage extends ListPage {
 		});
 	}
 
-	_getFnHandleClickSublistAdd () {
-		return (evt, proxyEvt) => {
-			evt = proxyEvt || evt;
-			ListUtil.genericAddButtonHandler(evt, BestiaryPage._SUBLIST_CLICK_HANDLER_OPTIONS, this._getSublistData());
-		};
-	}
-
-	_getFnHandleClickSublistSubtract () {
-		return (evt, proxyEvt) => {
-			evt = proxyEvt || evt;
-			ListUtil.genericSubtractButtonHandler(evt, BestiaryPage._SUBLIST_CLICK_HANDLER_OPTIONS, this._getSublistData());
-		};
-	}
-
-	static get _SUBLIST_CLICK_HANDLER_OPTIONS () { return {shiftCount: 5}; }
+	static get _SUBLIST_CLICK_HANDLER_SHIFT_COUNT () { return {shiftCount: 5}; }
 
 	async _pPostLoad () {
 		const homebrew = await BrewUtil.pAddBrewData();
@@ -534,7 +528,7 @@ class BestiaryPage extends ListPage {
 	}
 
 	_handleBestiaryLiClick (evt, listItem) {
-		if (encounterBuilder.isActive()) Renderer.hover.doPopoutCurPage(evt, this._dataList[listItem.ix]);
+		if (this._encounterBuilder.isActive()) Renderer.hover.doPopoutCurPage(evt, this._dataList[listItem.ix]);
 		else this._list.doSelect(listItem, evt);
 	}
 
@@ -543,11 +537,11 @@ class BestiaryPage extends ListPage {
 	}
 
 	_handleBestiaryLinkClick (evt) {
-		if (encounterBuilder.isActive()) evt.preventDefault();
+		if (this._encounterBuilder.isActive()) evt.preventDefault();
 	}
 
 	_handleBestiaryLinkClickSub (evt, listItem) {
-		if (encounterBuilder.isActive()) evt.preventDefault();
+		if (this._encounterBuilder.isActive()) evt.preventDefault();
 		else this._listSub.doSelect(listItem, evt);
 	}
 
@@ -571,7 +565,7 @@ class BestiaryPage extends ListPage {
 
 		ListUtil.setOptions({
 			itemList: this._dataList,
-			getSublistRow: this.pGetSublistItem.bind(this),
+			pGetSublistRow: this.pGetSublistItem.bind(this),
 			primaryLists: [this._list],
 		});
 
@@ -1006,19 +1000,17 @@ class BestiaryPage extends ListPage {
 		return ptrOut._;
 	}
 
-	_getSublistData () {
-		const customHashId = Renderer.monster.getCustomHashId(this._lastRendered.mon);
-		if (!customHashId) return null;
-		return {customHashId};
+	_getCurrentPinListCustomHashId () {
+		return Renderer.monster.getCustomHashId(this._lastRendered.mon);
 	}
 
 	_onSublistChange () {
 		this._$dispCrTotal = this._$dispCrTotal || $(`#totalcr`);
-		const xp = EncounterBuilderUtils.calculateListEncounterXp(encounterBuilder.lastPartyMeta);
-		const monCount = ListUtil.sublist.items.map(it => it.values.count).reduce((a, b) => a + b, 0);
+		const xp = EncounterBuilderUtils.calculateListEncounterXp(this._encounterBuilder.lastPartyMeta);
+		const monCount = ListUtil.sublist.items.map(it => it.data.count).reduce((a, b) => a + b, 0);
 		this._$dispCrTotal.html(`${monCount} creature${monCount === 1 ? "" : "s"}; ${xp.baseXp.toLocaleString()} XP (<span class="help" title="Adjusted Encounter XP">Enc</span>: ${(xp.adjustedXp).toLocaleString()} XP)`);
-		if (encounterBuilder.isActive()) encounterBuilder.updateDifficulty();
-		else encounterBuilder.doSaveState();
+		if (this._encounterBuilder.isActive()) this._encounterBuilder.updateDifficulty();
+		else this._encounterBuilder.doSaveState();
 	}
 
 	async pPreloadSublistSources (json) {
@@ -1063,13 +1055,11 @@ BestiaryPage._INDEXABLE_PROPS_LEG_GROUP = [
 	"mythicEncounter",
 ];
 
-let encounterBuilder;
-
 class EncounterBuilderUtils {
 	static getSublistedEncounter () {
 		return ListUtil.sublist.items
 			.map(it => {
-				const mon = bestiaryPage._dataList[it.ix];
+				const mon = bestiaryPage.dataList_[it.ix];
 				if (!mon.cr) return null;
 
 				// (N.b.: we don't handle scaled summon creatures here, as they *shouldn't* have CRs.)
@@ -1079,16 +1069,19 @@ class EncounterBuilderUtils {
 				return {
 					cr: it.values.cr,
 					crNumber: Parser.crToNumber(it.values.cr),
-					count: Number(it.values.count),
+					count: Number(it.data.count),
 
 					approxHp: it.data.approxHp,
 					approxAc: it.data.approxAc,
+
+					isLocked: it.data.isLocked,
 
 					// used for encounter adjuster
 					crScaled: crScaled,
 					customHashId: it.data.customHashId,
 					hash: UrlUtil.autoEncodeHash(mon),
-				}
+					baseCreature: mon,
+				};
 			})
 			.filter(it => it && it.crNumber < VeCt.CR_CUSTOM)
 			.sort((a, b) => SortUtil.ascSort(b.crNumber, a.crNumber));

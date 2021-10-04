@@ -56,6 +56,18 @@
 		&stripe-odd:nth-child(odd) {
 			background: lightgrey;
 		}
+
+		&cell-spell-progression--spell-points-enabled {
+			display: none !important;
+		}
+
+		&cell-spell-points {
+			display: none !important;
+
+			&--spell-points-enabled {
+				display: table-cell !important;
+			}
+		}
 	}
 }
 

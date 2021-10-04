@@ -1,6 +1,6 @@
 "use strict";
 
-class ClassesPage extends BaseComponent {
+class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 	static _ascSortSubclasses (scA, scB) {
 		return SortUtil.ascSortLower(scA.name, scB.name);
 	}
@@ -110,6 +110,7 @@ class ClassesPage extends BaseComponent {
 		ListPage._checkShowAllExcluded(this._dataList, this._$pgContent);
 		this._initLinkGrabbers();
 		UrlUtil.bindLinkExportButton(this.filterBox, $(`#btn-link-export`));
+		this._doBindBtnSettingsSidebar();
 
 		Hist.initialLoad = false;
 
@@ -419,6 +420,19 @@ class ClassesPage extends BaseComponent {
 		});
 	}
 
+	_doBindBtnSettingsSidebar () {
+		const menu = ContextUtil.getMenu([
+			new ContextUtil.Action(
+				"Toggle Spell Points Mode",
+				() => {
+					this._stateGlobal.isUseSpellPoints = !this._stateGlobal.isUseSpellPoints;
+				},
+			),
+		]);
+
+		$(`#btn-sidebar-settings`).click(evt => ContextUtil.pOpenMenu(evt, menu));
+	}
+
 	getListItem (cls, clsI, isExcluded) {
 		const hash = UrlUtil.autoEncodeHash(cls);
 		const source = Parser.sourceJsonToAbv(cls.source);
@@ -460,7 +474,7 @@ class ClassesPage extends BaseComponent {
 
 		const isUseSubclassSources = !this._pageFilter.isClassNaturallyDisplayed(f, cpyCls) && this._pageFilter.isAnySubclassDisplayed(f, cpyCls);
 
-		cpyCls.classFeatures = cpyCls.classFeatures.map(lvlFeatures => {
+		cpyCls.classFeatures = cpyCls.classFeatures.map((lvlFeatures, ixLvl) => {
 			return walker.walk(
 				lvlFeatures,
 				{
@@ -476,6 +490,10 @@ class ClassesPage extends BaseComponent {
 									value: isUseSubclassSources && src === cpyCls.source
 										? this._pageFilter.getActiveSource(f)
 										: src,
+								},
+								{
+									filter: this._pageFilter.levelFilter,
+									value: ixLvl + 1,
 								},
 								{
 									filter: this._pageFilter.optionsFilter,
@@ -494,6 +512,8 @@ class ClassesPage extends BaseComponent {
 
 		(cpyCls.subclasses || []).forEach(sc => {
 			sc.subclassFeatures = sc.subclassFeatures.map(lvlFeatures => {
+				const level = CollectionUtil.bfs(lvlFeatures, "level");
+
 				return walker.walk(
 					lvlFeatures,
 					{
@@ -508,6 +528,10 @@ class ClassesPage extends BaseComponent {
 									{
 										filter: this._pageFilter.sourceFilter,
 										value: src,
+									},
+									{
+										filter: this._pageFilter.levelFilter,
+										value: level,
 									},
 									{
 										filter: this._pageFilter.optionsFilter,
@@ -549,7 +573,7 @@ class ClassesPage extends BaseComponent {
 			"_state",
 			"__state",
 			this.activeClass.subclasses
-				.filter(sc => !this._pageFilter.isSubclassVisible(f, sc))
+				.filter(sc => !this._pageFilter.isSubclassVisible(f, this.activeClass, sc))
 				.map(sc => UrlUtil.getStateKeySubclass(sc))
 				.filter(stateKey => this._state[stateKey])
 				.mergeMap(stateKey => ({[stateKey]: false})),
@@ -714,51 +738,149 @@ class ClassesPage extends BaseComponent {
 		const $tblGroupHeaders = [];
 		const $tblHeaders = [];
 
-		const renderTableGroupHeader = (tableGroup, stateKey) => {
-			// Render titles (top section)
-			let $thGroupHeader;
-			if (tableGroup.title) {
-				$thGroupHeader = $(`<th class="cls-tbl__col-group" colspan="${tableGroup.colLabels.length}">${tableGroup.title}</th>`);
-			} else {
-				// if there's no title, add a spacer
-				$thGroupHeader = $(`<th colspan="${tableGroup.colLabels.length}"/>`);
-			}
-			$tblGroupHeaders.push($thGroupHeader);
-
-			// Render column headers (bottom section)
-			const $tblHeadersGroup = [];
-			tableGroup.colLabels.forEach(lbl => {
-				const $tblHeader = $(`<th class="cls-tbl__col-generic-center"><div class="cls__squash_header"/></th>`)
-					.fastSetHtml(Renderer.get().render(lbl));
-				$tblHeadersGroup.push($tblHeader);
-				$tblHeaders.push($tblHeader);
-			});
-
-			// If there is a state key, this is a subclass table group, and may therefore need to be hidden
-			if (!stateKey) return;
-			const hkShowHide = () => {
-				$thGroupHeader.toggleVe(!!this._state[stateKey]);
-				$tblHeadersGroup.forEach($tblHeader => $tblHeader.toggleVe(!!this._state[stateKey]))
-			};
-			this._addHookBase(stateKey, hkShowHide);
-			MiscUtil.pDefer(hkShowHide);
-		};
-
 		if (cls.classTableGroups) {
-			cls.classTableGroups.forEach(tableGroup => renderTableGroupHeader(tableGroup));
+			cls.classTableGroups.forEach(tableGroup => this._render_renderClassTable_renderTableGroupHeader({$tblGroupHeaders, $tblHeaders, tableGroup}));
 		}
 
 		cls.subclasses.forEach(sc => {
 			if (!sc.subclassTableGroups) return;
 			const stateKey = UrlUtil.getStateKeySubclass(sc);
-			sc.subclassTableGroups.forEach(tableGroup => renderTableGroupHeader(tableGroup, stateKey));
+			sc.subclassTableGroups.forEach(tableGroup => this._render_renderClassTable_renderTableGroupHeader({$tblGroupHeaders, $tblHeaders, tableGroup, stateKey}));
 		});
 
-		const metasTblRows = cls.classFeatures.map((lvlFeatures, ixLvl) => {
+		const metasTblRows = this._render_renderClassTable_getMetasTblRows({
+			cls,
+		});
+
+		this._fnTableHandleFilterChange = (f) => {
+			const cpyCls = MiscUtil.copy(this.activeClassRaw);
+			const isUseSubclassSources = !this._pageFilter.isClassNaturallyDisplayed(f, cpyCls) && this._pageFilter.isAnySubclassDisplayed(f, cpyCls);
+
+			metasTblRows.forEach(metaTblRow => {
+				metaTblRow.metasFeatureLinks.forEach(metaFeatureLink => {
+					if (metaFeatureLink.source) {
+						const isHidden = ![metaFeatureLink.source, ...(metaFeatureLink.otherSources || []).map(it => it.source)]
+							.some(src => this.filterBox.toDisplayByFilters(
+								f,
+								{
+									filter: this._pageFilter.sourceFilter,
+									value: isUseSubclassSources && src === cpyCls.source
+										? this._pageFilter.getActiveSource(f)
+										: src,
+								},
+								{
+									filter: this._pageFilter.levelFilter,
+									value: metaTblRow.level,
+								},
+							));
+						metaFeatureLink.isHidden = isHidden;
+						metaFeatureLink.$wrpLink.toggleVe(!isHidden);
+					}
+				});
+
+				metaTblRow.metasFeatureLinks.forEach(metaFeatureLink => metaFeatureLink.$dispComma.toggleVe(true));
+				const lastVisible = metaTblRow.metasFeatureLinks.filter(metaFeatureLink => !metaFeatureLink.isHidden).last();
+				if (lastVisible) lastVisible.$dispComma.hideVe();
+			});
+		};
+
+		$$`<table class="cls-tbl shadow-big w-100 mb-2">
+			<tbody>
+			<tr><th class="border" colspan="15"></th></tr>
+			<tr><th class="cls-tbl__disp-name" colspan="15">${cls.name}</th></tr>
+			<tr>
+				<th colspan="3"/> <!-- spacer to match the 3 default cols (level, prof, features) -->
+				${$tblGroupHeaders}
+			</tr>
+			<tr>
+				<th class="cls-tbl__col-level">Level</th>
+				<th class="cls-tbl__col-prof-bonus">Proficiency Bonus</th>
+				<th>Features</th>
+				${$tblHeaders}
+			</tr>
+			${metasTblRows.map(it => it.$row)}
+			<tr><th class="border" colspan="15"></th></tr>
+			</tbody>
+		</table>`.appendTo($wrpTblClass);
+		$wrpTblClass.showVe();
+	}
+
+	_render_renderClassTable_renderTableGroupHeader (
+		{
+			$tblGroupHeaders,
+			$tblHeaders,
+			tableGroup,
+			stateKey,
+		},
+	) {
+		const colLabels = tableGroup.colLabels;
+
+		// Render titles (top section)
+		const $thGroupHeader = tableGroup.title
+			? $(`<th class="cls-tbl__col-group" colspan="${colLabels.length}">${tableGroup.title}</th>`)
+			// if there's no title, add a spacer
+			: $(`<th colspan="${colLabels.length}"/>`);
+		$tblGroupHeaders.push($thGroupHeader);
+
+		// Render column headers (bottom section)
+		const $tblHeadersGroup = colLabels
+			.map(lbl => {
+				const $tblHeader = $(`<th class="cls-tbl__col-generic-center"><div class="cls__squash_header"></div></th>`)
+					.fastSetHtml(Renderer.get().render(lbl));
+				$tblHeaders.push($tblHeader);
+				return $tblHeader;
+			});
+
+		// region If it's a "spell progression" group, i.e. one that can be switched for a "Spell Points" column, add
+		//   appropriate handling.
+		let $thGroupHeaderSpellPoints = null;
+		let $tblHeaderSpellPoints = null;
+		if (tableGroup.rowsSpellProgression) {
+			// This is always a "spacer"
+			$thGroupHeaderSpellPoints = $(`<th colspan="1" class="cls-tbl__cell-spell-points"></th>`);
+			$tblGroupHeaders.push($thGroupHeaderSpellPoints);
+
+			$tblHeaderSpellPoints = $(`<th class="cls-tbl__col-generic-center cls-tbl__cell-spell-points"><div class="cls__squash_header"></div></th>`)
+				.fastSetHtml(Renderer.get().render(`{@variantrule Spell Points}`));
+			$tblHeaders.push($tblHeaderSpellPoints);
+
+			const $elesDefault = [$thGroupHeader, ...$tblHeadersGroup];
+			const $elesSpellPoints = [$thGroupHeaderSpellPoints, $tblHeaderSpellPoints];
+
+			const hkSpellPoints = () => {
+				$elesDefault.forEach($it => $it.toggleClass(`cls-tbl__cell-spell-progression--spell-points-enabled`, this._stateGlobal.isUseSpellPoints));
+				$elesSpellPoints.forEach($it => $it.toggleClass(`cls-tbl__cell-spell-points--spell-points-enabled`, this._stateGlobal.isUseSpellPoints));
+			};
+			this._addHookGlobal("isUseSpellPoints", hkSpellPoints);
+			hkSpellPoints();
+		}
+		// endregion
+
+		// If there is a state key, this is a subclass table group, and may therefore need to be hidden
+		if (!stateKey) return;
+		const $elesSubclass = [
+			$thGroupHeader,
+			...$tblHeadersGroup,
+			$thGroupHeaderSpellPoints,
+			$tblHeaderSpellPoints,
+		].filter(Boolean);
+
+		const hkShowHide = () => $elesSubclass.forEach($ele => $ele.toggleVe(!!this._state[stateKey]));
+		this._addHookBase(stateKey, hkShowHide);
+		MiscUtil.pDefer(hkShowHide);
+	}
+
+	_render_renderClassTable_getMetasTblRows (
+		{
+			cls,
+		},
+	) {
+		return cls.classFeatures.map((lvlFeatures, ixLvl) => {
 			const pb = Math.ceil((ixLvl + 1) / 4) + 1;
 
 			const lvlFeaturesFilt = lvlFeatures
 				.filter(it => it.name && it.type !== "inset"); // don't add inset entry names to class table
+
 			const metasFeatureLinks = lvlFeaturesFilt
 				.map((it, ixFeature) => {
 					const featureId = `${ixLvl}-${ixFeature}`;
@@ -796,26 +918,20 @@ class ClassesPage extends BaseComponent {
 
 			const $ptTableGroups = [];
 
-			const renderTableGroupRow = (tableGroup, stateKey) => {
-				const row = tableGroup.rows[ixLvl] || [];
-				const $cells = row.map(cell => $(`<td class="cls-tbl__col-generic-center"/>`).fastSetHtml(cell === 0 ? "\u2014" : Renderer.get().render(cell)));
-				$ptTableGroups.push(...$cells);
-
-				// If there is a state key, this is a subclass table group, and may therefore need to be hidden
-				if (!stateKey) return;
-				const hkShowHide = () => $cells.forEach($cell => $cell.toggleVe(!!this._state[stateKey]));
-				this._addHookBase(stateKey, hkShowHide);
-				MiscUtil.pDefer(hkShowHide); // saves ~10ms
-			};
-
 			if (cls.classTableGroups) {
-				cls.classTableGroups.forEach(tableGroup => renderTableGroupRow(tableGroup));
+				const $cells = cls.classTableGroups
+					.map(tableGroup => this._render_renderClassTable_renderTableGroupRow({tableGroup, ixLvl}))
+					.flat();
+				Array.prototype.push.apply($ptTableGroups, $cells);
 			}
 
 			cls.subclasses.forEach(sc => {
 				if (!sc.subclassTableGroups) return;
 				const stateKey = UrlUtil.getStateKeySubclass(sc);
-				sc.subclassTableGroups.forEach(tableGroup => renderTableGroupRow(tableGroup, stateKey));
+				const $cells = sc.subclassTableGroups
+					.map(tableGroup => this._render_renderClassTable_renderTableGroupRow({tableGroup, stateKey, ixLvl}))
+					.flat();
+				Array.prototype.push.apply($ptTableGroups, $cells);
 			});
 
 			return {
@@ -826,56 +942,88 @@ class ClassesPage extends BaseComponent {
 					${$ptTableGroups}
 				</tr>`,
 				metasFeatureLinks,
-			}
+				level: ixLvl + 1,
+			};
+		});
+	}
+
+	_render_renderClassTable_renderTableGroupRow (
+		{
+			ixLvl,
+			tableGroup,
+			stateKey,
+		},
+	) {
+		const $cells = tableGroup.rowsSpellProgression?.[ixLvl]
+			? this._render_renderClassTable_$getSpellProgressionCells({ixLvl, tableGroup})
+			: this._render_renderClassTable_$getGenericRowCells({ixLvl, tableGroup});
+
+		if (!stateKey) return $cells;
+
+		// If there is a state key, this is a subclass table group, and may therefore need to be hidden
+		const hkShowHide = () => $cells.forEach($cell => $cell.toggleVe(!!this._state[stateKey]));
+		this._addHookBase(stateKey, hkShowHide);
+		MiscUtil.pDefer(hkShowHide); // saves ~10ms
+
+		return $cells;
+	}
+
+	_render_renderClassTable_$getGenericRowCells (
+		{
+			ixLvl,
+			tableGroup,
+			propRows = "rows",
+		},
+	) {
+		const row = tableGroup[propRows][ixLvl] || [];
+		return row.map(cell => {
+			const td = e_({
+				tag: "td",
+				clazz: "cls-tbl__col-generic-center",
+				html: cell === 0 ? "\u2014" : Renderer.get().render(cell),
+			});
+			return $(td);
+		});
+	}
+
+	_render_renderClassTable_$getSpellProgressionCells (
+		{
+			ixLvl,
+			tableGroup,
+		},
+	) {
+		const $cellsDefault = this._render_renderClassTable_$getGenericRowCells({
+			ixLvl,
+			tableGroup,
+			propRows: "rowsSpellProgression",
 		});
 
-		this._fnTableHandleFilterChange = (f) => {
-			const cpyCls = MiscUtil.copy(this.activeClassRaw);
-			const isUseSubclassSources = !this._pageFilter.isClassNaturallyDisplayed(f, cpyCls) && this._pageFilter.isAnySubclassDisplayed(f, cpyCls);
+		const row = tableGroup.rowsSpellProgression[ixLvl] || [];
 
-			metasTblRows.forEach(metaTblRow => {
-				metaTblRow.metasFeatureLinks.forEach(metaFeatureLink => {
-					if (metaFeatureLink.source) {
-						const isHidden = ![metaFeatureLink.source, ...(metaFeatureLink.otherSources || []).map(it => it.source)]
-							.some(src => this.filterBox.toDisplayByFilters(
-								f,
-								{
-									filter: this._pageFilter.sourceFilter,
-									value: isUseSubclassSources && src === cpyCls.source
-										? this._pageFilter.getActiveSource(f)
-										: src,
-								},
-							));
-						metaFeatureLink.isHidden = isHidden;
-						metaFeatureLink.$wrpLink.toggleVe(!isHidden);
-					}
-				});
+		const spellPoints = row
+			.map((countSlots, ix) => {
+				const spellLevel = ix + 1;
+				return Parser.spLevelToSpellPoints(spellLevel) * countSlots;
+			})
+			.sum();
 
-				metaTblRow.metasFeatureLinks.forEach(metaFeatureLink => metaFeatureLink.$dispComma.toggleVe(true));
-				const lastVisible = metaTblRow.metasFeatureLinks.filter(metaFeatureLink => !metaFeatureLink.isHidden).last();
-				if (lastVisible) lastVisible.$dispComma.hideVe();
-			});
+		const $cellSpellPoints = $(e_({
+			tag: "td",
+			clazz: "cls-tbl__col-generic-center cls-tbl__cell-spell-points",
+			html: spellPoints === 0 ? "\u2014" : spellPoints,
+		}));
+
+		const hkSpellPoints = () => {
+			$cellsDefault.forEach($it => $it.toggleClass(`cls-tbl__cell-spell-progression--spell-points-enabled`, this._stateGlobal.isUseSpellPoints));
+			$cellSpellPoints.toggleClass(`cls-tbl__cell-spell-points--spell-points-enabled`, this._stateGlobal.isUseSpellPoints);
 		};
+		this._addHookGlobal("isUseSpellPoints", hkSpellPoints);
+		hkSpellPoints();
 
-		$$`<table class="cls-tbl shadow-big w-100 mb-2">
-			<tbody>
-			<tr><th class="border" colspan="15"></th></tr>
-			<tr><th class="cls-tbl__disp-name" colspan="15">${cls.name}</th></tr>
-			<tr>
-				<th colspan="3"/> <!-- spacer to match the 3 default cols (level, prof, features) -->
-				${$tblGroupHeaders}
-			</tr>
-			<tr>
-				<th class="cls-tbl__col-level">Level</th>
-				<th class="cls-tbl__col-prof-bonus">Proficiency Bonus</th>
-				<th>Features</th>
-				${$tblHeaders}
-			</tr>
-			${metasTblRows.map(it => it.$row)}
-			<tr><th class="border" colspan="15"></th></tr>
-			</tbody>
-		</table>`.appendTo($wrpTblClass);
-		$wrpTblClass.showVe();
+		return [
+			...$cellsDefault,
+			$cellSpellPoints,
+		];
 	}
 
 	_render_renderSidebar () {
@@ -1225,10 +1373,9 @@ class ClassesPage extends BaseComponent {
 
 	_handleSubclassFilterChange () {
 		const f = this.filterBox.getValues();
-		const cls = this.activeClass;
 		this._listSubclass.filter(li => {
 			if (li.values.isAlwaysVisible) return true;
-			return this._pageFilter.isSubclassVisible(f, li.data.entity);
+			return this._pageFilter.isSubclassVisible(f, this.activeClass, li.data.entity);
 		});
 	}
 
@@ -1605,6 +1752,10 @@ class ClassesPage extends BaseComponent {
 															value: isAnySubclassDisplayed ? cpyCls._fSourceSubclass : obj.source,
 														},
 														{
+															filter: this._pageFilter.levelFilter,
+															value: lvl,
+														},
+														{
 															filter: this._pageFilter.optionsFilter,
 															value: fText,
 														},
@@ -1973,6 +2124,7 @@ ClassesPage._DEFAULT_STATE = {
 	isViewActiveScComp: false,
 	isViewActiveBook: false,
 	isHideOutline: false,
+	isUseSpellPoints: false,
 	// N.b. ensure none of these start with the string "sub" as this prefix is used for subclass state keys e.g.
 	// `"sub Berserker": false`
 };
@@ -2088,7 +2240,7 @@ ClassesPage.ClassBookView = class {
 
 				const $btnToggleSc = $(`<span class="cls-bkmv__btn-tab ${sc.isReprinted ? "cls__btn-sc--reprinted" : ""}" title="${ClassesPage.getBtnTitleSubclass(sc)}">${name}</span>`)
 					.on("click", () => this._parent.set(stateKey, !this._parent.get(stateKey)));
-				const isVisible = this._pageFilter.isSubclassVisible(filterValues, sc);
+				const isVisible = this._pageFilter.isSubclassVisible(filterValues, cls, sc);
 				if (!isVisible) $btnToggleSc.hideVe();
 
 				const hkShowHide = () => {

@@ -81,6 +81,17 @@ class StatGenPage {
 					},
 				],
 			}),
+			new TabUiUtil.TabMeta({
+				type: "buttons",
+				buttons: [
+					{
+						html: `<span class="glyphicon glyphicon-refresh"></span>`,
+						title: "Reset All",
+						type: "danger",
+						pFnClick: () => this._statGenUi.doResetAll(),
+					},
+				],
+			}),
 		];
 	}
 

@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "magicvariants.json",
-	"version": "1.4.4",
+	"version": "1.4.5",
 	"type": "object",
 	"properties": {
 		"variant": {
@@ -69,6 +69,9 @@
 							},
 							"bonusAbilityCheck": {
 								"type": "string"
+							},
+							"modifySpeed": {
+								"$ref": "util.json#/definitions/itemModifySpeed"
 							},
 							"tier": {
 								"type": "string"

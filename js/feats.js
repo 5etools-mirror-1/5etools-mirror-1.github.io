@@ -67,7 +67,7 @@ class FeatsPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (feat, pinId) {
+	getSublistItem (feat, ix) {
 		const hash = UrlUtil.autoEncodeHash(feat);
 
 		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
@@ -81,7 +81,7 @@ class FeatsPage extends ListPage {
 			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
-			pinId,
+			ix,
 			$ele,
 			feat.name,
 			{

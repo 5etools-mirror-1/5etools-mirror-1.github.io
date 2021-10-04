@@ -294,7 +294,12 @@ class List {
 		if (this._isFuzzy) this._fuzzySearch.addDoc({ix: listItem.ix, s: listItem.searchText});
 	}
 
-	removeItem (ix, ixItem) {
+	removeItem (listItem) {
+		const ixItem = this._items.indexOf(listItem);
+		return this.removeItemByIndex(listItem.ix, ixItem);
+	}
+
+	removeItemByIndex (ix, ixItem) {
 		ixItem = ixItem ?? this._items.findIndex(it => it.ix === ix);
 		if (!~ixItem) return;
 
@@ -308,12 +313,12 @@ class List {
 
 	removeItemBy (valueName, value) {
 		const ixItem = this._items.findIndex(it => it.values[valueName] === value);
-		return this.removeItem(ixItem, ixItem);
+		return this.removeItemByIndex(ixItem, ixItem);
 	}
 
 	removeItemByData (dataName, value) {
 		const ixItem = this._items.findIndex(it => it.data[dataName] === value);
-		return this.removeItem(ixItem, ixItem);
+		return this.removeItemByIndex(ixItem, ixItem);
 	}
 
 	removeAllItems () {

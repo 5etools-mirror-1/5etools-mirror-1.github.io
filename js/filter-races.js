@@ -819,59 +819,72 @@ class PageFilterRaces extends PageFilter {
 			displayFn: StrUtil.toTitleCase,
 			itemSortFn: SortUtil.ascSortLower,
 		});
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Base Race", "Key Race", "Modified Copy", "SRD", "Has Images", "Has Info"], isSrdFilter: true});
+		this._ageFilter = new RangeFilter({
+			header: "Adult Age",
+			isRequireFullRangeMatch: true,
+			isSparse: true,
+			displayFn: it => `${it} y.o.`,
+			displayFnTooltip: it => `${it} year${it === 1 ? "" : "s"} old`,
+		});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Base Race", "Key Race", "Lineage", "Modified Copy", "SRD", "Has Images", "Has Info"], isSrdFilter: true});
 	}
 
-	static mutateForFilters (race) {
-		race._fSize = race.size ? [...race.size] : [];
-		if (race._fSize.length > 1) race._fSize.push("V");
-		race._fSpeed = race.speed ? race.speed.walk ? [race.speed.climb ? "Climb" : null, race.speed.fly ? "Fly" : null, race.speed.swim ? "Swim" : null, PageFilterRaces.getSpeedRating(race.speed.walk)].filter(it => it) : [PageFilterRaces.getSpeedRating(race.speed)] : [];
-		race._fTraits = [
-			race.darkvision === 120 ? "Superior Darkvision" : race.darkvision ? "Darkvision" : null,
-			race.resist ? "Damage Resistance" : null,
-			race.immune ? "Damage Immunity" : null,
-			race.conditionImmune ? "Condition Immunity" : null,
-			race.skillProficiencies ? "Skill Proficiency" : null,
-			race.toolProficiencies ? "Tool Proficiency" : null,
-			race.feats ? "Feat" : null,
-			race.additionalSpells ? "Spellcasting" : null,
-			race.armorProficiencies ? "Armor Proficiency" : null,
-			race.weaponProficiencies ? "Weapon Proficiency" : null,
+	static mutateForFilters (r) {
+		r._fSize = r.size ? [...r.size] : [];
+		if (r._fSize.length > 1) r._fSize.push("V");
+		r._fSpeed = r.speed ? r.speed.walk ? [r.speed.climb ? "Climb" : null, r.speed.fly ? "Fly" : null, r.speed.swim ? "Swim" : null, PageFilterRaces.getSpeedRating(r.speed.walk)].filter(it => it) : [PageFilterRaces.getSpeedRating(r.speed)] : [];
+		r._fTraits = [
+			r.darkvision === 120 ? "Superior Darkvision" : r.darkvision ? "Darkvision" : null,
+			r.resist ? "Damage Resistance" : null,
+			r.immune ? "Damage Immunity" : null,
+			r.conditionImmune ? "Condition Immunity" : null,
+			r.skillProficiencies ? "Skill Proficiency" : null,
+			r.toolProficiencies ? "Tool Proficiency" : null,
+			r.feats ? "Feat" : null,
+			r.additionalSpells ? "Spellcasting" : null,
+			r.armorProficiencies ? "Armor Proficiency" : null,
+			r.weaponProficiencies ? "Weapon Proficiency" : null,
 		].filter(it => it);
-		race._fTraits.push(...(race.traitTags || []));
-		race._fSources = SourceFilter.getCompleteFilterSources(race);
-		race._fLangs = PageFilterRaces.getLanguageProficiencyTags(race.languageProficiencies);
-		race._fCreatureTypes = race.creatureTypes ? race.creatureTypes.map(it => it.choose || it).flat() : ["humanoid"];
-		race._fMisc = race.srd ? ["SRD"] : [];
-		if (race._isBaseRace) race._fMisc.push("Base Race");
-		if (race._isBaseRace || !race._isSubRace) race._fMisc.push("Key Race");
-		if (race._isCopy) race._fMisc.push("Modified Copy");
-		if (race.hasFluff) race._fMisc.push("Has Info");
-		if (race.hasFluffImages) race._fMisc.push("Has Images");
+		r._fTraits.push(...(r.traitTags || []));
+		r._fSources = SourceFilter.getCompleteFilterSources(r);
+		r._fLangs = PageFilterRaces.getLanguageProficiencyTags(r.languageProficiencies);
+		r._fCreatureTypes = r.creatureTypes ? r.creatureTypes.map(it => it.choose || it).flat() : ["humanoid"];
+		r._fMisc = r.srd ? ["SRD"] : [];
+		if (r._isBaseRace) r._fMisc.push("Base Race");
+		if (r._isBaseRace || !r._isSubRace) r._fMisc.push("Key Race");
+		if (r._isCopy) r._fMisc.push("Modified Copy");
+		if (r.hasFluff) r._fMisc.push("Has Info");
+		if (r.hasFluffImages) r._fMisc.push("Has Images");
+		if (r.lineage) r._fMisc.push("Lineage");
 
-		if (race.ability) {
-			const abils = PageFilterRaces.getAbilityObjs(race.ability);
-			race._fAbility = abils.map(a => PageFilterRaces.mapAbilityObjToFull(a));
+		if (r.ability) {
+			const abils = PageFilterRaces.getAbilityObjs(r.ability);
+			r._fAbility = abils.map(a => PageFilterRaces.mapAbilityObjToFull(a));
 			const increases = {};
 			abils.filter(it => it.amount > 0).forEach(it => increases[it.asi] = true);
-			Object.keys(increases).forEach(it => race._fAbility.push(`Any ${Parser.attAbvToFull(it)} Increase`));
-			if (race.ability.some(it => it.choose)) race._fAbility.push("Player Choice");
-		} else race._fAbility = [];
+			Object.keys(increases).forEach(it => r._fAbility.push(`Any ${Parser.attAbvToFull(it)} Increase`));
+			if (r.ability.some(it => it.choose)) r._fAbility.push("Player Choice");
+		} else r._fAbility = [];
 
-		const ability = race.ability ? Renderer.getAbilityData(race.ability) : {asTextShort: "None"};
-		race._slAbility = ability.asTextShort;
+		const ability = r.ability ? Renderer.getAbilityData(r.ability) : {asTextShort: "None"};
+		r._slAbility = ability.asTextShort;
+
+		if (r.age?.mature != null && r.age?.max != null) r._fAge = [r.age.mature, r.age.max]
+		else if (r.age?.mature != null) r._fAge = r.age.mature;
+		else if (r.age?.max != null) r._fAge = r.age.max;
 	}
 
-	addToFilters (race, isExcluded) {
+	addToFilters (r, isExcluded) {
 		if (isExcluded) return;
 
-		this._sourceFilter.addItem(race._fSources);
-		this._sizeFilter.addItem(race._fSize);
-		this._asiFilter.addItem(race.ability);
-		this._baseRaceFilter.addItem(race._baseName);
-		this._creatureTypeFilter.addItem(race._fCreatureTypes);
-		this._traitFilter.addItem(race._fTraits);
-		this._asiFilterLegacy.addItem(race._fAbility);
+		this._sourceFilter.addItem(r._fSources);
+		this._sizeFilter.addItem(r._fSize);
+		this._asiFilter.addItem(r.ability);
+		this._baseRaceFilter.addItem(r._baseName);
+		this._creatureTypeFilter.addItem(r._fCreatureTypes);
+		this._traitFilter.addItem(r._fTraits);
+		this._asiFilterLegacy.addItem(r._fAbility);
+		this._ageFilter.addItem(r._fAge);
 	}
 
 	async _pPopulateBoxOptions (opts) {
@@ -885,6 +898,7 @@ class PageFilterRaces extends PageFilter {
 			this._baseRaceFilter,
 			this._creatureTypeFilter,
 			this._miscFilter,
+			this._ageFilter,
 
 			this._asiFilterLegacy,
 		];
@@ -902,6 +916,7 @@ class PageFilterRaces extends PageFilter {
 			r._baseName,
 			r._fCreatureTypes,
 			r._fMisc,
+			r._fAge,
 
 			r._fAbility,
 		)

@@ -1,7 +1,7 @@
 "use strict";
 
 // TODO refactor the "feature" parts of this to a `PageFilterFeatures`
-class PageFilterClassesRaw extends PageFilterClasses {
+class PageFilterClassesRaw extends PageFilterClassesBase {
 	async _pPopulateBoxOptions (opts) {
 		await super._pPopulateBoxOptions(opts);
 		opts.isCompact = false;

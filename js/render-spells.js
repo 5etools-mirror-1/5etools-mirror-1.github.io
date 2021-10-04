@@ -55,10 +55,27 @@ class RenderSpells {
 			}
 		}
 
+		const fromSubclassVariant = Renderer.spell.getCombinedClasses(sp, "fromSubclassVariant");
+		if (fromSubclassVariant.length) {
+			const [current, legacy] = Parser.spVariantSubclassesToCurrentAndLegacyFull(sp, subclassLookup);
+			if (current.length) {
+				stackFroms.push(`<div><span class="bold">Optional/Variant Subclasses: </span>${current}</div>`);
+			}
+			if (legacy.length) {
+				stackFroms.push(`<div class="text-muted"><span class="bold">Subclasses (legacy): </span>${legacy}</div>`);
+			}
+		}
+
 		const fromRaces = Renderer.spell.getCombinedRaces(sp);
 		if (fromRaces.length) {
 			fromRaces.sort((a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source));
 			stackFroms.push(`<div><span class="bold">Races: </span>${fromRaces.map(r => `${SourceUtil.isNonstandardSource(r.source) ? `<span class="text-muted">` : ``}${renderer.render(`{@race ${r.name}|${r.source}}`)}${SourceUtil.isNonstandardSource(r.source) ? `</span>` : ``}`).join(", ")}</div>`);
+		}
+
+		const fromRacesVariant = Renderer.spell.getCombinedRaces(sp, {prop: "racesVariant", propTmp: "_tmpRacesVariant"});
+		if (fromRacesVariant.length) {
+			fromRacesVariant.sort((a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source));
+			stackFroms.push(`<div><span class="bold">Optional/Variant Races: </span>${fromRacesVariant.map(r => `<span ${SourceUtil.isNonstandardSource(r.source) ? `class="text-muted"` : ``} title="From a class sSpell list defined in: ${Parser.sourceJsonToFull(r.classDefinedInSource)}">${renderer.render(`{@race ${r.name}|${r.source}}`)}</span>`).join(", ")}</div>`);
 		}
 
 		const fromBackgrounds = Renderer.spell.getCombinedBackgrounds(sp);

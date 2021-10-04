@@ -156,7 +156,7 @@ class MakeCards extends BaseComponent {
 				async () => {
 					const sel = getSelCards();
 					if (!sel) return;
-					sel.forEach(it => this._list.removeItem(it.ix));
+					sel.forEach(it => this._list.removeItemByIndex(it.ix));
 					this._list.update();
 					this._doSaveStateDebounced();
 				},
@@ -365,7 +365,7 @@ class MakeCards extends BaseComponent {
 			});
 		const $btnDelete = $(`<button class="btn btn-danger btn-xs" title="Remove"><span class="glyphicon glyphicon-trash"/></button>`)
 			.click(() => {
-				this._list.removeItem(uid);
+				this._list.removeItemByIndex(uid);
 				this._list.update();
 				this._doSaveStateDebounced();
 			});

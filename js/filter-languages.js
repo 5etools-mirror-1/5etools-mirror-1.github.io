@@ -11,7 +11,8 @@ class PageFilterLanguages extends PageFilter {
 	}
 
 	static mutateForFilters (it) {
-		it._fMisc = it.fonts ? ["Has Fonts"] : [];
+		it._fMisc = []
+		if (it.fonts || it._fonts) it._fMisc.push("Has Fonts");
 		if (it.srd) it._fMisc.push("SRD");
 		if (it.hasFluff) it._fMisc.push("Has Info");
 		if (it.hasFluffImages) it._fMisc.push("Has Images");

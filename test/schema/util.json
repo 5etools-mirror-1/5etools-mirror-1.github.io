@@ -4,7 +4,7 @@
 
 	"title": "Util",
 	"description": "Utility definitions to be used in other schemas.",
-	"version": "1.8.0",
+	"version": "1.8.1",
 
 	"definitions" : {
 		"metaBlock": {
@@ -741,6 +741,64 @@
 			]
 		},
 
+		"_itemModifySpeedEqual": {
+			"type": "string",
+			"enum": ["walk", "burrow", "climb", "fly", "swim"]
+		},
+
+		"itemModifySpeed": {
+			"type": "object",
+			"properties": {
+				"multiply": {
+					"type": "object",
+					"properties": {
+						"walk": {"type": "number"},
+						"burrow": {"type": "number"},
+						"climb":  {"type": "number"},
+						"fly": {"type": "number"},
+						"swim":  {"type": "number"},
+						"*":  {"type": "number"}
+					},
+					"additionalProperties": false
+				},
+				"static": {
+					"type": "object",
+					"properties": {
+						"walk": {"type": "number"},
+						"burrow": {"type": "number"},
+						"climb":  {"type": "number"},
+						"fly": {"type": "number"},
+						"swim":  {"type": "number"},
+						"*":  {"type": "number"}
+					},
+					"additionalProperties": false
+				},
+				"equal": {
+					"type": "object",
+					"properties": {
+							"walk": {"$ref": "#/definitions/_itemModifySpeedEqual"},
+						"burrow": {"$ref": "#/definitions/_itemModifySpeedEqual"},
+						"climb":  {"$ref": "#/definitions/_itemModifySpeedEqual"},
+						"fly": {"$ref": "#/definitions/_itemModifySpeedEqual"},
+						"swim":  {"$ref": "#/definitions/_itemModifySpeedEqual"}
+					},
+					"additionalProperties": false
+				},
+				"bonus": {
+					"type": "object",
+					"properties": {
+						"walk": {"type": "number"},
+						"burrow": {"type": "number"},
+						"climb":  {"type": "number"},
+						"fly": {"type": "number"},
+						"swim":  {"type": "number"},
+						"*":  {"type": "number"}
+					},
+					"additionalProperties": false
+				}
+			},
+			"additionalProperties": false
+		},
 		"prerequisite": {
 			"type": "array",
 			"items": {

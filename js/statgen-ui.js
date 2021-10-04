@@ -309,6 +309,10 @@ class StatGenUi extends BaseComponent {
 		this._proxyAssignSimple("state", nxtState);
 	}
 
+	doResetAll () {
+		this._proxyAssignSimple("state", this._getDefaultState(), true);
+	}
+
 	_render_$getStgPbHeader () {
 		const $iptBudget = ComponentUiUtil.$getIptInt(
 			this,

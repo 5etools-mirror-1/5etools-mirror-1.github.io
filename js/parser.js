@@ -78,9 +78,9 @@ Parser.textToNumber = function (str) {
 	switch (str) {
 		case "zero": return 0;
 		case "one": case "a": case "an": return 1;
-		case "two": return 2;
-		case "three": return 3;
-		case "four": return 4;
+		case "two": case "double": return 2;
+		case "three": case "triple": return 3;
+		case "four": case "quadruple": return 4;
 		case "five": return 5;
 		case "six": return 6;
 		case "seven": return 7;
@@ -233,11 +233,7 @@ Parser.getSpeedString = (it) => {
 	const stack = [];
 	if (typeof it.speed === "object") {
 		let joiner = ", ";
-		procSpeed("walk");
-		procSpeed("burrow");
-		procSpeed("climb");
-		procSpeed("fly");
-		procSpeed("swim");
+		Parser.SPEED_MODES.forEach(mode => procSpeed(mode));
 		if (it.speed.choose) {
 			joiner = "; ";
 			stack.push(`${it.speed.choose.from.sort().joinConjunct(", ", " or ")} ${it.speed.choose.amount} ft.${it.speed.choose.note ? ` ${it.speed.choose.note}` : ""}`);
@@ -247,6 +243,8 @@ Parser.getSpeedString = (it) => {
 		return it.speed + (it.speed === "Varies" ? "" : " ft. ");
 	}
 };
+
+Parser.SPEED_MODES = ["walk", "burrow", "climb", "fly", "swim"];
 
 Parser.SPEED_TO_PROGRESSIVE = {
 	"walk": "walking",
@@ -906,7 +904,7 @@ Parser.spLevelToFull = function (level) {
 Parser.getArticle = function (str) {
 	str = `${str}`;
 	str = str.replace(/\d+/g, (...m) => Parser.numberToText(m[0]));
-	return /^[aeiou]/.test(str) ? "an" : "a";
+	return /^[aeiou]/i.test(str) ? "an" : "a";
 };
 
 Parser.spLevelToFullLevelText = function (level, dash) {
@@ -1244,16 +1242,16 @@ Parser.spSubclassesToFull = function (fromSubclassList, textOnly, subclassLookup
 			const byName = SortUtil.ascSort(a.class.name, b.class.name);
 			return byName || SortUtil.ascSort(a.subclass.name, b.subclass.name);
 		})
-		.map(c => Parser._spSubclassItem(c, textOnly, subclassLookup))
+		.map(c => Parser._spSubclassItem({fromSubclass: c, textOnly, subclassLookup}))
 		.join(", ") || "";
 };
 
-Parser._spSubclassItem = function (fromSubclass, textOnly, subclassLookup) {
+Parser._spSubclassItem = function ({fromSubclass, textOnly, subclassLookup}) {
 	const c = fromSubclass.class;
 	const sc = fromSubclass.subclass;
 	const text = `${sc.name}${sc.subSubclass ? ` (${sc.subSubclass})` : ""}`;
 	if (textOnly) return text;
-	const classPart = `<a href="${UrlUtil.PG_CLASSES}#${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](c)}" title="Source: ${Parser.sourceJsonToFull(c.source)}">${c.name}</a>`;
+	const classPart = `<a href="${UrlUtil.PG_CLASSES}#${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](c)}" title="Source: ${Parser.sourceJsonToFull(c.source)}${c.definedInSource ? ` From a class spell list defined in: ${Parser.sourceJsonToFull(c.definedInSource)}` : ""}">${c.name}</a>`;
 	const fromLookup = subclassLookup ? MiscUtil.get(subclassLookup, c.source, c.name, sc.source, sc.name) : null;
 	if (fromLookup) return `<a class="italic" href="${UrlUtil.PG_CLASSES}#${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](c)}${HASH_PART_SEP}${UrlUtil.getClassesPageStatePart({subclass: {shortName: sc.name, source: sc.source}})}" title="Source: ${Parser.sourceJsonToFull(fromSubclass.subclass.source)}">${text}</a> ${classPart}`;
 	else return `<span class="italic" title="Source: ${Parser.sourceJsonToFull(fromSubclass.subclass.source)}">${text}</span> ${classPart}`;
@@ -1856,10 +1854,19 @@ Parser.spClassesToCurrentAndLegacy = function (fromClassList) {
  * all the legacy/superseded subclasses
  */
 Parser.spSubclassesToCurrentAndLegacyFull = function (sp, subclassLookup) {
-	const fromSubclass = Renderer.spell.getCombinedClasses(sp, "fromSubclass");
+	return Parser._spSubclassesToCurrentAndLegacyFull({sp, subclassLookup, prop: "fromSubclass"});
+};
+
+Parser.spVariantSubclassesToCurrentAndLegacyFull = function (sp, subclassLookup) {
+	return Parser._spSubclassesToCurrentAndLegacyFull({sp, subclassLookup, prop: "fromSubclassVariant"});
+};
+
+Parser._spSubclassesToCurrentAndLegacyFull = ({sp, subclassLookup, prop}) => {
+	const fromSubclass = Renderer.spell.getCombinedClasses(sp, prop);
 	if (!fromSubclass.length) return ["", ""];
 
-	const out = [[], []];
+	const current = [];
+	const legacy = [];
 	const curNames = new Set();
 	const toCheck = [];
 	fromSubclass
@@ -1868,6 +1875,7 @@ Parser.spSubclassesToCurrentAndLegacyFull = function (sp, subclassLookup) {
 				UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES]({name: c.class.name, source: c.class.source}),
 				"class",
 				c.class.source,
+				{isNoCount: true},
 			);
 			if (excludeClass) return false;
 
@@ -1876,8 +1884,11 @@ Parser.spSubclassesToCurrentAndLegacyFull = function (sp, subclassLookup) {
 				UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES]({name: (fromLookup || {}).name || c.subclass.name, source: c.subclass.source}),
 				"subclass",
 				c.subclass.source,
+				{isNoCount: true},
 			);
-			return !excludeSubclass;
+			if (excludeSubclass) return false;
+
+			return !Renderer.spell.isExcludedSubclassVariantSource({classDefinedInSource: c.class.definedInSource});
 		})
 		.sort((a, b) => {
 			const byName = SortUtil.ascSort(a.subclass.name, b.subclass.name);
@@ -1886,7 +1897,8 @@ Parser.spSubclassesToCurrentAndLegacyFull = function (sp, subclassLookup) {
 		.forEach(c => {
 			const nm = c.subclass.name;
 			const src = c.subclass.source;
-			const toAdd = Parser._spSubclassItem(c, false, subclassLookup);
+
+			const toAdd = Parser._spSubclassItem({fromSubclass: c, textOnly: false, subclassLookup});
 
 			const fromLookup = MiscUtil.get(
 				subclassLookup,
@@ -1897,38 +1909,39 @@ Parser.spSubclassesToCurrentAndLegacyFull = function (sp, subclassLookup) {
 			);
 
 			if (fromLookup && fromLookup.isReprinted) {
-				out[1].push(toAdd);
-			} else if (Parser.sourceJsonToFull(src).startsWith(UA_PREFIX) || Parser.sourceJsonToFull(src).startsWith(PS_PREFIX)) {
-				const cleanName = mapClassShortNameToMostRecent(nm.split("(")[0].trim().split(/v\d+/)[0].trim());
+				legacy.push(toAdd);
+			} else if (SourceUtil.isNonstandardSource(src)) {
+				const cleanName = Parser._spSubclassesToCurrentAndLegacyFull.mapClassShortNameToMostRecent(
+					nm.split("(")[0].trim().split(/v\d+/)[0].trim(),
+				);
 				toCheck.push({"name": cleanName, "ele": toAdd});
 			} else {
-				out[0].push(toAdd);
+				current.push(toAdd);
 				curNames.add(nm);
 			}
 		});
+
 	toCheck.forEach(n => {
 		if (curNames.has(n.name)) {
-			out[1].push(n.ele);
+			legacy.push(n.ele);
 		} else {
-			out[0].push(n.ele);
+			current.push(n.ele);
 		}
 	});
-	return [out[0].join(", "), out[1].join(", ")];
 
-	/**
-	 * Get the most recent iteration of a subclass name
-	 */
-	function mapClassShortNameToMostRecent (shortName) {
-		switch (shortName) {
-			case "Favored Soul":
-				return "Divine Soul";
-			case "Undying Light":
-				return "Celestial";
-			case "Deep Stalker":
-				return "Gloom Stalker";
-		}
-		return shortName;
+	return [current.join(", "), legacy.join(", ")];
+};
+
+/**
+ * Get the most recent iteration of a subclass name.
+ */
+Parser._spSubclassesToCurrentAndLegacyFull.mapClassShortNameToMostRecent = (shortName) => {
+	switch (shortName) {
+		case "Favored Soul": return "Divine Soul";
+		case "Undying Light": return "Celestial";
+		case "Deep Stalker": return "Gloom Stalker";
 	}
+	return shortName;
 };
 
 Parser.spVariantClassesToCurrentAndLegacy = function (fromVariantClassList) {
@@ -2345,6 +2358,7 @@ SRC_AitFR_AVT = "AitFR-AVT";
 SRC_AitFR_DN = "AitFR-DN";
 SRC_AitFR_FCD = "AitFR-FCD";
 SRC_WBtW = "WBtW";
+SRC_DoD = "DoD";
 SRC_SCREEN = "Screen";
 SRC_SCREEN_WILDERNESS_KIT = "ScreenWildernessKit";
 SRC_HEROES_FEAST = "HF";
@@ -2520,6 +2534,7 @@ Parser.SOURCE_JSON_TO_FULL[SRC_AitFR_AVT] = `${AitFR_NAME}: A Verdant Tomb`;
 Parser.SOURCE_JSON_TO_FULL[SRC_AitFR_DN] = `${AitFR_NAME}: Deepest Night`;
 Parser.SOURCE_JSON_TO_FULL[SRC_AitFR_FCD] = `${AitFR_NAME}: From Cyan Depths`;
 Parser.SOURCE_JSON_TO_FULL[SRC_WBtW] = `The Wild Beyond the Witchlight`;
+Parser.SOURCE_JSON_TO_FULL[SRC_DoD] = `Domains of Delight`;
 Parser.SOURCE_JSON_TO_FULL[SRC_SCREEN] = "Dungeon Master's Screen";
 Parser.SOURCE_JSON_TO_FULL[SRC_SCREEN_WILDERNESS_KIT] = "Dungeon Master's Screen: Wilderness Kit";
 Parser.SOURCE_JSON_TO_FULL[SRC_HEROES_FEAST] = "Heroes' Feast";
@@ -2675,6 +2690,7 @@ Parser.SOURCE_JSON_TO_ABV[SRC_AitFR_AVT] = "AitFR-AVT";
 Parser.SOURCE_JSON_TO_ABV[SRC_AitFR_DN] = "AitFR-DN";
 Parser.SOURCE_JSON_TO_ABV[SRC_AitFR_FCD] = "AitFR-FCD";
 Parser.SOURCE_JSON_TO_ABV[SRC_WBtW] = "WBtW";
+Parser.SOURCE_JSON_TO_ABV[SRC_DoD] = "DoD";
 Parser.SOURCE_JSON_TO_ABV[SRC_SCREEN] = "Screen";
 Parser.SOURCE_JSON_TO_ABV[SRC_SCREEN_WILDERNESS_KIT] = "Wild";
 Parser.SOURCE_JSON_TO_ABV[SRC_HEROES_FEAST] = "HF";
@@ -2829,6 +2845,7 @@ Parser.SOURCE_JSON_TO_DATE[SRC_AitFR_AVT] = "2021-07-14";
 Parser.SOURCE_JSON_TO_DATE[SRC_AitFR_DN] = "2021-07-21";
 Parser.SOURCE_JSON_TO_DATE[SRC_AitFR_FCD] = "2021-07-28";
 Parser.SOURCE_JSON_TO_DATE[SRC_WBtW] = "2021-09-21";
+Parser.SOURCE_JSON_TO_DATE[SRC_DoD] = "2021-09-21";
 Parser.SOURCE_JSON_TO_DATE[SRC_SCREEN] = "2015-01-20";
 Parser.SOURCE_JSON_TO_DATE[SRC_SCREEN_WILDERNESS_KIT] = "2020-11-17";
 Parser.SOURCE_JSON_TO_DATE[SRC_HEROES_FEAST] = "2020-10-27";
@@ -2978,6 +2995,7 @@ Parser.SOURCES_NON_STANDARD_WOTC = new Set([
 	SRC_AitFR_AVT,
 	SRC_AitFR_DN,
 	SRC_AitFR_FCD,
+	SRC_DoD,
 ]);
 // region Source categories
 
@@ -3041,6 +3059,7 @@ Parser.SOURCES_AVAILABLE_DOCS_BOOK = {};
 	SRC_MOT,
 	SRC_TCE,
 	SRC_VRGR,
+	SRC_DoD,
 ].forEach(src => {
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src] = src;
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src.toLowerCase()] = src;

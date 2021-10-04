@@ -59,7 +59,7 @@ class ObjectsPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (obj, pinId) {
+	getSublistItem (obj, ix) {
 		const hash = UrlUtil.autoEncodeHash(obj);
 		const size = Parser.sizeAbvToFull(obj.size);
 
@@ -73,7 +73,7 @@ class ObjectsPage extends ListPage {
 			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
-			pinId,
+			ix,
 			$ele,
 			obj.name,
 			{

@@ -2,7 +2,7 @@
 
 Visit the [main site](https://5e.tools/index.html) or go to the unofficial GitHub [mirror](index.html).
 
-[Join the 5etools Discord here!](https://discord.gg/nGvRCDs)
+[Join the 5etools Discord here!](https://discord.gg/5etools)
 
 ## Help and Support
 

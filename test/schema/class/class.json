@@ -1,54 +1,94 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "2.7.0",
+	"version": "2.8.0",
 	"$id": "class.json",
 
 	"type": "object",
 
 	"definitions": {
-		"classTableGroup": {
-			"type": "object",
-			"properties": {
-				"title": {
-					"type": "string"
-				},
-				"subclasses": {
-					"type": "array",
-					"items": {
-						"type": "object",
-						"properties": {
-							"name": {
-								"type": "string"
-							},
-							"source": {
-								"type": "string"
-							}
-						},
-						"required": ["name", "source"],
-						"additionalProperties": false
-					}
-				},
-				"colLabels": {
-					"type": "array",
-					"items": {
+		"_classTableGroupSubclass": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"source": {
 						"type": "string"
 					}
 				},
-				"rows": {
-					"type": "array",
-					"items": {
-						"type": "array",
-						"items": {
-							"$ref": "entry.json"
+				"required": ["name", "source"],
+				"additionalProperties": false
+			}
+		},
+
+		"classTableGroup": {
+			"oneOf": [
+				{
+					"type": "object",
+					"properties": {
+						"title": {
+							"type": "string"
+						},
+						"subclasses": {
+							"$ref": "#/definitions/_classTableGroupSubclass"
+						},
+						"colLabels": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"rows": {
+							"type": "array",
+							"items": {
+								"type": "array",
+								"items": {
+									"$ref": "entry.json"
+								}
+							}
 						}
-					}
+					},
+					"required": [
+						"colLabels",
+						"rows"
+					],
+					"additionalProperties": false
+				},
+				{
+					"type": "object",
+					"properties": {
+						"title": {
+							"type": "string"
+						},
+						"subclasses": {
+							"$ref": "#/definitions/_classTableGroupSubclass"
+						},
+						"colLabels": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"rowsSpellProgression": {
+							"description": "A count of spell points, starting with 1st-level spells at array index 0, to (n+1)th-level spells at array index n",
+							"type": "array",
+							"items": {
+								"type": "array",
+								"items": {"type": "integer"},
+								"minItems": 1,
+								"maxItems": 9
+							}
+						}
+					},
+					"required": [
+						"colLabels",
+						"rowsSpellProgression"
+					],
+					"additionalProperties": false
 				}
-			},
-			"required": [
-				"colLabels",
-				"rows"
-			],
-			"additionalProperties": false
+			]
 		},
 
 		"classFeature": {

@@ -65,7 +65,7 @@ class DeitiesPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (g, pinId) {
+	getSublistItem (g, ix) {
 		const hash = UrlUtil.autoEncodeHash(g);
 
 		const alignment = g.alignment ? g.alignment.join("") : "\u2014";
@@ -83,7 +83,7 @@ class DeitiesPage extends ListPage {
 			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
-			pinId,
+			ix,
 			$ele,
 			g.name,
 			{

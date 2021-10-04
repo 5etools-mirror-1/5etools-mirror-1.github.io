@@ -2443,13 +2443,17 @@ class RangeFilter extends FilterBase {
 	 * @param [opts.headerHelp] Filter header help text (tooltip)
 	 * @param [opts.min] Minimum slider value.
 	 * @param [opts.max] Maximum slider value.
+	 * @param [opts.isSparse] If this slider should only display known values, rather than a continual range.
 	 * @param [opts.isLabelled] If this slider has labels.
 	 * @param [opts.labels] Initial labels to populate this filter with.
 	 * @param [opts.isAllowGreater] If this slider should allow all items greater than its max.
+	 * @param [opts.isRequireFullRangeMatch] If range values, e.g. `[1, 5]`, must be entirely within the slider's
+	 * selected range in order to be produce a positive `toDisplay` result.
 	 * @param [opts.suffix] Suffix to add to number displayed above slider.
 	 * @param [opts.labelSortFn] Function used to sort labels if new labels are added. Defaults to ascending alphabetical.
 	 * @param [opts.labelDisplayFn] Function which converts a label to a display value.
 	 * @param [opts.displayFn] Function which converts a (non-label) value to a display value.
+	 * @param [opts.displayFnTooltip] Function which converts a (non-label) value to a tooltip display value.
 	 */
 	constructor (opts) {
 		super(opts);
@@ -2463,10 +2467,13 @@ class RangeFilter extends FilterBase {
 		this._hasPredefinedMax = opts.max != null;
 		this._labels = opts.isLabelled ? opts.labels : null;
 		this._isAllowGreater = !!opts.isAllowGreater;
+		this._isRequireFullRangeMatch = !!opts.isRequireFullRangeMatch;
+		this._sparseValues = opts.isSparse ? [] : null;
 		this._suffix = opts.suffix;
 		this._labelSortFn = opts.labelSortFn === undefined ? SortUtil.ascSort : opts.labelSortFn;
 		this._labelDisplayFn = opts.labelDisplayFn;
 		this._displayFn = opts.displayFn;
+		this._displayFnTooltip = opts.displayFnTooltip;
 
 		this._filterBox = null;
 		Object.assign(
@@ -2480,7 +2487,7 @@ class RangeFilter extends FilterBase {
 		);
 		this.__$wrpFilter = null;
 		this.__$wrpMini = null;
-		this._$slider = null;
+		this._slider = null;
 
 		this._labelSearchCache = null;
 
@@ -2655,8 +2662,8 @@ class RangeFilter extends FilterBase {
 		</div>`;
 	}
 
-	_getDisplayText (value, {isBeyondMax = false} = {}) {
-		value = `${this._labels ? this._labelDisplayFn ? this._labelDisplayFn(value) : value : this._displayFn ? this._displayFn(value) : value}${isBeyondMax ? "+" : ""}`;
+	_getDisplayText (value, {isBeyondMax = false, isTooltip = false} = {}) {
+		value = `${this._labels ? this._labelDisplayFn ? this._labelDisplayFn(value) : value : (isTooltip && this._displayFnTooltip) ? this._displayFnTooltip(value) : this._displayFn ? this._displayFn(value) : value}${isBeyondMax ? "+" : ""}`;
 		if (this._suffix) value += this._suffix;
 		return value;
 	}
@@ -2687,38 +2694,43 @@ class RangeFilter extends FilterBase {
 		// region Slider
 		// prepare slider options
 		const getSliderOpts = () => {
+			const fnDisplay = (val, {isTooltip = false} = {}) => {
+				let out;
+
+				if (this._labels) {
+					if (this._labelSortFn) this._labels.sort(this._labelSortFn);
+
+					const labels = this._labelDisplayFn ? this._labels.map(it => this._labelDisplayFn(it)) : this._labels;
+
+					out = labels[val] ?? val;
+				} else {
+					out = this._getDisplayText(val, {isBeyondMax: this._isAllowGreater && val === this._state.max, isTooltip});
+				}
+
+				return out;
+			};
+
 			return {
 				propMin: "min",
 				propMax: "max",
 				propCurMin: "curMin",
 				propCurMax: "curMax",
-				fnDisplay: (val) => {
-					let out;
-
-					if (this._labels) {
-						if (this._labelSortFn) this._labels.sort(this._labelSortFn);
-
-						const labels = this._labelDisplayFn ? this._labels.map(it => this._labelDisplayFn(it)) : this._labels;
-
-						out = labels[val] ?? val;
-					} else {
-						out = this._getDisplayText(val, {isBeyondMax: this._isAllowGreater && val === this._state.max});
-					}
-
-					return out;
-				},
+				fnDisplay: (val) => fnDisplay(val),
+				fnDisplayTooltip: (val) => fnDisplay(val, {isTooltip: true}),
+				sparseValues: this._sparseValues,
 			};
 		};
 
 		const hkUpdateLabelSearchCache = () => {
-			if (!this._labels) return this._labelSearchCache = null;
-			this._labelSearchCache = (this._labelDisplayFn ? this._labels.map(it => this._labelDisplayFn(it)) : this._labels).join(" -- ").toLowerCase();
+			if (this._labels) return this._doUpdateLabelSearchCache();
+			this._labelSearchCache = null;
 		};
 		this._addHook("state", "curMin", hkUpdateLabelSearchCache);
 		this._addHook("state", "curMax", hkUpdateLabelSearchCache);
 		hkUpdateLabelSearchCache();
 
-		this._$slider = ComponentUiUtil.$getSliderRange(this, getSliderOpts()).appendTo($wrpSlider);
+		this._slider = new ComponentUiUtil.RangeSlider({comp: this, ...getSliderOpts()})
+		$wrpSlider.append(this._slider.get());
 		// endregion
 
 		// region Dropdowns
@@ -2765,7 +2777,7 @@ class RangeFilter extends FilterBase {
 		handleLimitUpdate();
 
 		if (opts.isMulti) {
-			this._$slider.addClass("ve-grow");
+			this._slider.get().classList.add("ve-grow");
 			$wrpSlider.addClass("ve-grow");
 			$wrpDropdowns.addClass("ve-grow");
 
@@ -2912,14 +2924,16 @@ class RangeFilter extends FilterBase {
 
 		if (this._labels) {
 			const slice = this._labels.slice(filterState.min, filterState.max + 1);
-			if (entryVal instanceof Array) {
-				return !!entryVal.find(it => slice.includes(it));
-			} else {
-				return slice.includes(entryVal);
-			}
+			if (entryVal instanceof Array) return !!entryVal.find(it => slice.includes(it));
+			return slice.includes(entryVal);
 		} else {
-			// If any of the item's values are in the range, return true
-			if (entryVal instanceof Array) return entryVal.some(ev => this._toDisplay_isToDisplayEntry(filterState, ev));
+			if (entryVal instanceof Array) {
+				// If we require a full match on the range, take the lowest/highest input and test them against our min/max
+				if (this._isRequireFullRangeMatch) return filterState.min <= entryVal[0] && filterState.max >= entryVal.last();
+
+				// Otherwise, If any of the item's values are in the range, return true
+				return entryVal.some(ev => this._toDisplay_isToDisplayEntry(filterState, ev));
+			}
 			return this._toDisplay_isToDisplayEntry(filterState, entryVal);
 		}
 	}
@@ -2936,21 +2950,46 @@ class RangeFilter extends FilterBase {
 		if (item instanceof Array) return item.forEach(it => this.addItem(it));
 
 		if (this._labels) {
-			if (!this._labels.some(it => it === item)) {
-				this._labels.push(item);
-				// Fake an update to trigger label handling
-			}
+			if (!this._labels.some(it => it === item)) this._labels.push(item);
 
-			this._labelSearchCache = this._labels.join(" -- ").toLowerCase();
+			this._doUpdateLabelSearchCache();
 
+			// Fake an update to trigger label handling
 			this._addItem_addNumber(this._labels.length - 1);
 		} else {
 			this._addItem_addNumber(item);
 		}
+
+		/* FIXME remove
+		else if (this._sparseValues) {
+			if (!this._sparseValues.some(it => it === item)) this._sparseValues.push(item);
+
+			this._doUpdateLabelSearchCache();
+
+			// Fake an update to trigger label handling
+			this._addItem_addNumber(this._sparseValues.length - 1);
+		}
+
+		 */
+	}
+
+	_doUpdateLabelSearchCache () {
+		this._labelSearchCache = [...new Array(Math.max(0, this._max - this._min))]
+			.map((_, i) => i + this._min)
+			.map(val => this._getDisplayText(val, {isBeyondMax: this._isAllowGreater && val === this._state.max, isTooltip: true}))
+			.join(" -- ")
+			.toLowerCase();
 	}
 
 	_addItem_addNumber (number) {
 		if (number == null || isNaN(number)) return;
+
+		if (this._sparseValues && !this._sparseValues.includes(number)) {
+			this._sparseValues.push(number);
+			this._sparseValues.sort(SortUtil.ascSort);
+			// TODO might need to trigger some update here?
+		}
+
 		if (number >= this._state.min && number <= this._state.max) return; // it's already in the range
 		if (this._state.min == null && this._state.max == null) this._state.min = this._state.max = number;
 		else {

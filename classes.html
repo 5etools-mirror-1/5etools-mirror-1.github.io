@@ -47,6 +47,9 @@
 	<!-- macOS Safari Pinned Tab and Touch Bar -->
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
 
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
 	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");</script>
 
 	<script type="text/javascript" src="js/styleswitch.js"></script>
@@ -100,10 +103,13 @@
 	<hr class="mt-0">
 	<div class="row flex mobile__flex-col">
 		<div class="col-md-3">
-			<div class="text-center wrp-btn-readmode mb-3">
-				<button class="btn btn-default btn-xs no-print" id="btn-comparemode" title="A pop-up table which can be used to compare subclass features.">Subclass Comparison</button>
-				<button class="btn btn-default btn-xs no-print" id="btn-readmode" title="A pop-up reading mode with a layout and content order matching that of the books.">Book View</button>
-				<button class="btn btn-default btn-xs" id="btn-link-export" title="Get Link to Filters (SHIFT adds List)"><span class="glyphicon glyphicon-magnet"></span></button>
+			<div class="flex-vh-center text-center wrp-btn-readmode mb-3">
+				<button class="btn btn-default btn-xs no-print mr-1" id="btn-comparemode" title="A pop-up table which can be used to compare subclass features.">Subclass Comparison</button>
+				<button class="btn btn-default btn-xs no-print mr-1" id="btn-readmode" title="A pop-up reading mode with a layout and content order matching that of the books.">Book View</button>
+				<div class=" flex-v-center btn-group">
+					<button class="btn btn-default btn-xs" id="btn-link-export" title="Get Link to Filters (SHIFT adds List)"><span class="glyphicon glyphicon-magnet"></span></button>
+					<button class="btn btn-default btn-xs" id="btn-sidebar-settings" title="Settings"><span class="glyphicon glyphicon-cog"></span></button>
+				</div>
 			</div>
 
 			<div id="statsprof"></div>

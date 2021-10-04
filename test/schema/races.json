@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "races.json",
-	"version": "1.8.1",
+	"version": "1.8.3",
 	"type": "object",
 
 	"definitions": {
@@ -145,6 +145,7 @@
 						}
 					]
 				},
+				"age": {"$ref": "#/definitions/age"},
 				"hasFluff": {"type": "boolean"},
 				"hasFluffImages": {"type": "boolean"}
 			},
@@ -309,8 +310,7 @@
 					"$ref": "util.json#/definitions/conditionImmunityArrayPlayer"
 				},
 				"lineage": {
-					"type": "string",
-					"enum": ["UA1", "VRGR"]
+					"$ref": "#/definitions/lineage"
 				},
 				"creatureTypes": {
 					"type": "array",
@@ -335,6 +335,7 @@
 						]
 					}
 				},
+				"age": {"$ref": "#/definitions/age"},
 				"hasFluff": {"type": "boolean"},
 				"hasFluffImages": {"type": "boolean"}
 			},
@@ -443,6 +444,29 @@
 				"baseWeight"
 			],
 			"additionalProperties": false
+		},
+
+		"lineage": {
+			"oneOf": [
+				{
+					"description": "For lineages that should be filterable using the \"Lineage\" filter, but should not have any modifications applied.",
+					"type": "boolean",
+					"const": true
+				},
+				{
+					"description": "For lineages which modify the race with e.g. specific ability score modes.",
+					"type": "string",
+					"enum": ["UA1", "VRGR"]
+				}
+			]
+		},
+
+		"age": {
+			"type": "object",
+			"properties": {
+				"mature": {"type": "integer"},
+				"max": {"type": "integer"}
+			}
 		},
 
 		"race": {

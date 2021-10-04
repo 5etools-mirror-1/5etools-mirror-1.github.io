@@ -1989,8 +1989,8 @@
 				"source": "PHB",
 				"_mod": {
 					"entries": {
-						"mode": "insertArr",
-						"index": 2,
+						"mode": "replaceArr",
+						"replace": "Feature: Position of Privilege",
 						"items": {
 							"name": "Baldur's Gate Feature: Patriar",
 							"type": "entries",
@@ -6959,6 +6959,7 @@
 		{
 			"name": "Feylost",
 			"source": "WBtW",
+			"page": 9,
 			"skillProficiencies": [
 				{
 					"deception": true,
@@ -21267,10 +21268,11 @@
 		{
 			"name": "Witchlight Hand",
 			"source": "WBtW",
+			"page": 11,
 			"skillProficiencies": [
 				{
-					"deception": true,
-					"survival": true
+					"performance": true,
+					"sleight of hand": true
 				}
 			],
 			"languageProficiencies": [

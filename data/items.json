@@ -4826,6 +4826,11 @@
 			"rarity": "rare",
 			"reqAttune": true,
 			"wondrous": true,
+			"modifySpeed": {
+				"multiply": {
+					"walk": 2
+				}
+			},
 			"entries": [
 				"While you wear these boots, you can use a bonus action and click the boots' heels together. If you do, the boots double your walking speed, and any creature that makes an opportunity attack against you has disadvantage on the attack roll. If you click your heels together again, you end the effect.",
 				"When the boots' property has been used for a total of 10 minutes, the magic ceases to function until you finish a long rest."
@@ -4844,6 +4849,11 @@
 			"rarity": "uncommon",
 			"reqAttune": true,
 			"wondrous": true,
+			"modifySpeed": {
+				"static": {
+					"walk": 30
+				}
+			},
 			"entries": [
 				"While you wear these boots, your walking speed becomes 30 feet, unless your walking speed is higher, and your speed isn't reduced if you are encumbered or wearing heavy armor. In addition, you can jump three times the normal distance, though you can't jump farther than your remaining movement would allow."
 			],
@@ -6511,6 +6521,11 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"grantsProficiency": true,
+			"modifySpeed": {
+				"static": {
+					"burrow": 20
+				}
+			},
 			"entries": [
 				"These heavy gauntlets of brown iron are forged in the shape of an {@creature umber hulk||umber hulk's} claws, and they fit the wearer's hands and forearms all the way up to the elbow. While wearing both claws, you gain a burrowing speed of 20 feet, and you can tunnel through solid rock at a rate of 1 foot per round.",
 				"You can use a claw as a melee weapon while wearing it. You have proficiency with it, and it deals {@damage 1d8} slashing damage on a hit (your Strength modifier applies to the attack and damage rolls, as normal).",
@@ -6559,6 +6574,11 @@
 			"rarity": "very rare",
 			"reqAttune": true,
 			"wondrous": true,
+			"modifySpeed": {
+				"equal": {
+					"climb": "walk"
+				}
+			},
 			"entries": [
 				"This fine garment is made of black silk interwoven with faint silvery threads. While wearing it, you gain the following benefits:",
 				{
@@ -6700,6 +6720,11 @@
 			"tier": "minor",
 			"rarity": "uncommon",
 			"wondrous": true,
+			"modifySpeed": {
+				"static": {
+					"swim": 60
+				}
+			},
 			"entries": [
 				"While wearing this cloak with its hood up, you can breathe underwater, and you have a swimming speed of 60 feet. Pulling the hood up or down requires an action."
 			],
@@ -7379,7 +7404,7 @@
 								],
 								[
 									"71-80",
-									"1 arcanoloth, 1 {@creature night hag}, and 1 {@creature rakshasa} appear."
+									"1 {@creature arcanaloth}, 1 {@creature night hag}, and 1 {@creature rakshasa} appear."
 								],
 								[
 									"81-85",
@@ -9229,6 +9254,11 @@
 			"dmgType": "P",
 			"dmg2": "1d8",
 			"bonusWeapon": "+3",
+			"modifySpeed": {
+				"static": {
+					"swim": 60
+				}
+			},
 			"weapon": true,
 			"entries": [
 				"Thassa wields Dekella, a two-pronged weapon gifted to her by Purphoros. When the god of the sea bestows her weapon on a mortal, it's often so they might work her will far from the ocean, right some wrong affecting those she'd prefer not to harm, or give a mortal a glimpse of her terrible responsibilities.",
@@ -10624,6 +10654,14 @@
 			"rarity": "rare",
 			"wondrous": true,
 			"weight": 1,
+			"modifySpeed": {
+				"equal": {
+					"fly": "walk"
+				},
+				"multiply": {
+					"fly": 2
+				}
+			},
 			"entries": [
 				"While you blow an eagle whistle continuously, you can fly twice as fast as your walking speed. You can blow the whistle continuously for a number of rounds equal to 5 + five times your Constitution modifier (minimum of 1 round) or until you talk, hold your breath, or start suffocating. A use of the whistle also ends if you land. If you are aloft when you stop blowing the whistle, you fall. The whistle has three uses. It regains expended uses daily at dawn."
 			]
@@ -11922,6 +11960,7 @@
 		{
 			"name": "Feywild Trinket",
 			"source": "WBtW",
+			"page": 7,
 			"type": "G",
 			"rarity": "none",
 			"entries": [
@@ -13967,6 +14006,11 @@
 			"dmgType": "B",
 			"dmg2": "1d10",
 			"bonusWeapon": "+1",
+			"modifySpeed": {
+				"equal": {
+					"burrow": "walk"
+				}
+			},
 			"weapon": true,
 			"entries": [
 				"Crafted from a single piece of obsidian, this warhammer of Torog hums with magical energy and is carved with the images of faces screaming in pain.",
@@ -14896,6 +14940,11 @@
 			"rarity": "uncommon",
 			"reqAttune": true,
 			"wondrous": true,
+			"modifySpeed": {
+				"static": {
+					"swim": 30
+				}
+			},
 			"entries": [
 				"While wearing this brass helmet, you can breathe underwater, you gain {@sense darkvision} with a range of 60 feet, and you gain a swimming speed of 30 feet."
 			]
@@ -22601,6 +22650,11 @@
 			"rarity": "very rare",
 			"reqAttune": true,
 			"wondrous": true,
+			"modifySpeed": {
+				"bonus": {
+					"*": 5
+				}
+			},
 			"entries": [
 				"This blue pennant is crafted from silk and is five feet long and whips about as if buffeted by a wind. The vind (wind) rune appears on its surface, looking almost like a cloud. The pennant has the following properties, which work only while it's on your person.",
 				{
@@ -22732,6 +22786,11 @@
 			"rarity": "very rare",
 			"reqAttune": true,
 			"wondrous": true,
+			"modifySpeed": {
+				"static": {
+					"fly": 60
+				}
+			},
 			"entries": [
 				"While wearing this winged helm, you have a flying speed of 60 feet. In addition, you have advantage on initiative rolls."
 			],
@@ -23503,6 +23562,11 @@
 			"page": 197,
 			"type": "P",
 			"rarity": "rare",
+			"modifySpeed": {
+				"static": {
+					"swim": 30
+				}
+			},
 			"entries": [
 				"When you drink this potion, you transform into a pool of water. You return to your true form after 10 minutes or if you are {@condition incapacitated} or die.",
 				"You're under the following effects while in this form:",
@@ -23555,6 +23619,11 @@
 			"type": "P",
 			"tier": "minor",
 			"rarity": "common",
+			"modifySpeed": {
+				"equal": {
+					"climb": "walk"
+				}
+			},
 			"entries": [
 				"When you drink this potion, you gain a climbing speed equal to your walking speed for 1 hour. During this time, you have advantage on Strength ({@skill Athletics}) checks you make to climb. The potion is separated into brown, silver, and gray layers resembling bands of stone. Shaking the bottle fails to mix the colors."
 			],
@@ -23686,6 +23755,11 @@
 			"type": "P",
 			"tier": "minor",
 			"rarity": "very rare",
+			"modifySpeed": {
+				"equal": {
+					"fly": "walk"
+				}
+			},
 			"entries": [
 				"When you drink this potion, you gain a flying speed equal to your walking speed for 1 hour and can hover. If you're in the air when the potion wears off, you fall unless you have some other means of staying aloft. This potion's clear liquid floats at the top of its container and has cloudy white impurities drifting in it."
 			],
@@ -25343,6 +25417,11 @@
 			"tier": "major",
 			"rarity": "legendary",
 			"reqAttune": true,
+			"modifySpeed": {
+				"equal": {
+					"fly": "walk"
+				}
+			},
 			"recharge": "dawn",
 			"charges": 5,
 			"entries": [
@@ -25895,6 +25974,11 @@
 			"type": "RG",
 			"tier": "minor",
 			"rarity": "uncommon",
+			"modifySpeed": {
+				"static": {
+					"swim": 40
+				}
+			},
 			"entries": [
 				"You have a swimming speed of 40 feet while wearing this ring."
 			],
@@ -28135,6 +28219,11 @@
 			"dmg1": "1d8",
 			"dmgType": "P",
 			"bonusWeapon": "+1",
+			"modifySpeed": {
+				"equal": {
+					"climb": "walk"
+				}
+			},
 			"sword": true,
 			"weapon": true,
 			"entries": [
@@ -28563,6 +28652,11 @@
 			"rarity": "uncommon",
 			"reqAttune": true,
 			"wondrous": true,
+			"modifySpeed": {
+				"equal": {
+					"climb": "walk"
+				}
+			},
 			"entries": [
 				"While you wear these light shoes, you can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free. You have a climbing speed equal to your walking speed. However, the slippers don't allow you to move this way on a slippery surface, such as one covered by ice or oil."
 			],
@@ -31030,6 +31124,11 @@
 					"str": 21
 				}
 			},
+			"modifySpeed": {
+				"static": {
+					"fly": 30
+				}
+			},
 			"entries": [
 				"A Stormgirdle is a wide belt made of thick leather branded with the symbol of Kord. The girdle's clasps are made from dragon ivory.",
 				{
@@ -32115,6 +32214,11 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"bonusAc": "+2",
+			"modifySpeed": {
+				"static": {
+					"fly": 30
+				}
+			},
 			"recharge": "dawn",
 			"charges": 8,
 			"entries": [
@@ -32483,6 +32587,11 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"bonusWeaponAttack": "+1",
+			"modifySpeed": {
+				"static": {
+					"fly": 150
+				}
+			},
 			"entries": [
 				"This strange device was once thought to have been built by gods long forgotten and to have survived the eons since their passing, for it is incredibly ancient and crafted by means unlike anything known today. However, its true origins derive from a planar craft that crashed in the Barrier Peaks, for the Infernal Machine once functioned as this craft's central command console.",
 				"Explorers who discovered the crash site removed the command console and brought it back to civilization, not understanding its true purpose or powers. In later years, the console came into the possession of Baron Lum. By experimenting with its many controls, he was able to achieve astounding and destructive magical effects in the building of his empire, and so the artifact came to be known as the Infernal Machine of Lum the Mad. Yet with Lum's eventual defeat, his great machine was destroyed.",
@@ -35361,6 +35470,11 @@
 			"rarity": "legendary",
 			"reqAttune": true,
 			"wondrous": true,
+			"modifySpeed": {
+				"equal": {
+					"climb": "walk"
+				}
+			},
 			"entries": [
 				"This patchy cloak was pieced together from the pelts of rats found feasting on the dead in Blightshore and is dotted with the bloated corpses of magically preserved insects along its seams.",
 				{
@@ -37079,6 +37193,11 @@
 			"rarity": "uncommon",
 			"reqAttune": true,
 			"wondrous": true,
+			"modifySpeed": {
+				"equal": {
+					"fly": "walk"
+				}
+			},
 			"entries": [
 				"While you wear these boots, you have a flying speed equal to your walking speed. You can use the boots to fly for up to 4 hours, all at once or in several shorter flights, each one using a minimum of 1 minute from the duration. If you are flying when the duration expires, you descend at a rate of 30 feet per round until you land.",
 				"The boots regain 2 hours of flying capability for every 12 hours they aren't in use."
@@ -37097,6 +37216,11 @@
 			"rarity": "rare",
 			"reqAttune": true,
 			"wondrous": true,
+			"modifySpeed": {
+				"static": {
+					"fly": 60
+				}
+			},
 			"entries": [
 				"While wearing this cloak, you can use an action to speak its command word. This turns the cloak into a pair of bat wings or bird wings on your back for 1 hour or until you repeat the command word as an action. The wings give you a flying speed of 60 feet. When they disappear, you can't use them again for {@dice 1d12} hours."
 			],
@@ -37112,6 +37236,11 @@
 			"rarity": "uncommon",
 			"reqAttune": true,
 			"wondrous": true,
+			"modifySpeed": {
+				"static": {
+					"fly": 30
+				}
+			},
 			"charges": 3,
 			"entries": [
 				"This snug uniform has symbols of air stitched into it and leathery flaps that stretch along the arms, waist, and legs to create wings for gliding. A suit of wingwear has 3 charges. While you wear the suit, you can use a bonus action and expend 1 charge to gain a flying speed of 30 feet until you land. At the end of each of your turns, your altitude drops by 5 feet. Your altitude drops instantly to 0 feet at the end of your turn if you didn't fly at least 30 feet horizontally on that turn. When your altitude drops to 0 feet, you land (or fall), and you must expend another charge to use the suit again.",

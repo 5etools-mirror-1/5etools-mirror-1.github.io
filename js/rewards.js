@@ -58,7 +58,7 @@ class RewardsPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (reward, pinId) {
+	getSublistItem (reward, ix) {
 		const hash = UrlUtil.autoEncodeHash(reward);
 
 		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
@@ -71,7 +71,7 @@ class RewardsPage extends ListPage {
 			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
-			pinId,
+			ix,
 			$ele,
 			reward.name,
 			{

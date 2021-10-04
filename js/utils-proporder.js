@@ -240,6 +240,7 @@ PropOrder._SPELL = [
 	"damageResist",
 	"damageImmune",
 	"damageVulnerable",
+	"conditionImmune",
 
 	"damageInflict",
 	"conditionInflict",
@@ -856,6 +857,7 @@ PropOrder._ITEM = [
 	"bonusSavingThrow",
 	"bonusAbilityCheck",
 	"bonusProficiencyBonus",
+	"modifySpeed",
 
 	"recharge",
 	"charges",
@@ -1052,6 +1054,7 @@ PropOrder._RACE = [
 	"ability",
 
 	"heightAndWeight",
+	"age",
 
 	"darkvision",
 	"feats",

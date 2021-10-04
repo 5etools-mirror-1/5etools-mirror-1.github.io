@@ -12901,6 +12901,10 @@
 					"source": "EGW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
+				},
+				{
+					"name": "Fairy",
+					"source": "WBtW"
 				}
 			],
 			"backgrounds": [
@@ -13572,6 +13576,10 @@
 					"source": "MTF",
 					"baseName": "Dwarf",
 					"baseSource": "PHB"
+				},
+				{
+					"name": "Fairy",
+					"source": "WBtW"
 				}
 			],
 			"backgrounds": [
@@ -14545,6 +14553,10 @@
 					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
+				},
+				{
+					"name": "Fairy",
+					"source": "WBtW"
 				}
 			]
 		},
@@ -16967,6 +16979,10 @@
 			"entries": [
 				"You touch a willing creature. For the duration, the target's movement is unaffected by difficult terrain, and spells and other magical effects can neither reduce the target's speed nor cause the target to be {@condition paralyzed} or {@condition restrained}.",
 				"The target can also spend 5 feet of movement to automatically escape from nonmagical restraints, such as manacles or a creature that has it {@condition grappled}. Finally, being underwater imposes no penalties on the target's movement or attacks."
+			],
+			"conditionImmune": [
+				"paralyzed",
+				"restrained"
 			],
 			"areaTags": [
 				"ST"
@@ -20379,6 +20395,9 @@
 			"damageImmune": [
 				"poison"
 			],
+			"conditionImmune": [
+				"frightened"
+			],
 			"areaTags": [
 				"MT"
 			],
@@ -20451,6 +20470,9 @@
 						"When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
 					]
 				}
+			],
+			"conditionImmune": [
+				"frightened"
 			],
 			"miscTags": [
 				"THP"
@@ -25786,6 +25808,9 @@
 			],
 			"damageImmune": [
 				"psychic"
+			],
+			"conditionImmune": [
+				"charmed"
 			],
 			"classes": {
 				"fromClassList": [
