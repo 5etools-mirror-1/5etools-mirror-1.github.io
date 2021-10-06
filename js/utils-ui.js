@@ -4612,7 +4612,18 @@ ComponentUiUtil.RangeSlider = class {
 
 		// region Hooks
 		const hkChangeValue = () => {
-			const curMin = this._compCpy._state[this._propCurMin];
+			let curMin = this._compCpy._state[this._propCurMin];
+
+			// If the current minimum is not included in the array of allowed
+			// values, set it to the closest value that is.
+			if (this._sparseValues && !this._sparseValues.includes(curMin)) {
+				curMin = this._sparseValues
+					.sort(SortUtil.ascSort)
+					.reduce((prev, curr) =>
+						Math.abs(curr - curMin) < Math.abs(prev - curMin) ? curr : prev
+					);
+			};
+
 			const pctMin = this._getLeftPositionPercentage({value: curMin});
 			this._thumbLow.style.left = `calc(${pctMin}% - ${this.constructor._W_THUMB_PX / 2}px)`;
 			const toDisplayLeft = this._fnDisplay ? `${this._fnDisplay(curMin)}`.qq() : curMin;
