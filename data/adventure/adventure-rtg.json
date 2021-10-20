@@ -1,0 +1,3155 @@
+{
+	"data": [
+		{
+			"type": "section",
+			"name": "Adventure Primer",
+			"page": 2,
+			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "adventure/RtG/001.webp"
+					}
+				},
+				"This adventure is designed for four to six ORC characters, levels 6 to 8, and is optimized for five characters with an average party level (APL) of 6. Characters outside this level range shouldn't participate in this adventure without heavy modification to the difficulty of the encounters. This adventure takes place in the Forgotten Realms near Turmish, in the western Orsraun Mountains just north of the Flooded Forest. To run this adventure, you need the fifth edition Player's Handbook, Dungeon Master's Guide, and Monster Manual. Stat Blocks. The Monster Manual contains stat blocks for most of the monsters and nonplayer characters (NPCs) found in this adventure. Whenever this adventure presents a new monster or NPC, you'll find its stat block near the encounter in which it appears, or in appendix A. When a creature's name appears in bold type, that's a visual cue pointing you to the creature's stat block in the Monster Manual.",
+				{
+					"type": "section",
+					"name": "Background",
+					"page": 2,
+					"entries": [
+						"The stories say that at one time your people dominated everything south of the mountains; that you had the greatest, most advanced underground stronghold ever known to orc-kind. Then the cataclysm happened. You don't recall what it was, but it scattered the unified tribes to the four winds, and as you fought to survive, all that you once knew, all that you once had, was lost. Centuries have passed, and only a few of the tribes have survived and assembled under the banner of one cause!",
+						{
+							"type": "entries",
+							"name": "Overview",
+							"page": 2,
+							"entries": [
+								"This adventure is essentially a dungeon crawl beneath the mountains west of Turmish. Ideally, characters will begin the adventure at 6th level and advance to 9th level by the end of adventure. It's likely to take many days for the orc heroes to fully explore and clear out the underground complex. It's conceivable that they could return to a secure camp outside to take their rest each evening if they so choose.",
+								{
+									"type": "entries",
+									"name": "Boneyard (APL 6)",
+									"page": 2,
+									"entries": [
+										"Champions from the orcs' history are interred in this part of the complex. However, with nobody tending their halls over the years, undead creatures gravitated here and await the characters."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Eroding Ones (APL 6)",
+									"page": 2,
+									"entries": [
+										"In the past, this area of the city was used for celebrations and ceremonies. It housed the ancestors' history and the vows of treaties, held their weddings, and honored those they viewed in high regard. A pair of flameskulls have taken refuge here."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Chambers of the Overlox (APL 6)",
+									"page": 2,
+									"entries": [
+										"This area contained the personal chambers of the Overlox (the orc sovereign) as well as the throne room, council chamber, and various other rooms. Through a twist of fate, it is now controlled by a red slaad from Limbo that has set this area up as a breeding area."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Found Fortunate (APL 7)",
+									"page": 2,
+									"entries": [
+										"Orcs known as the Found Fortunate were responsible for implementing numerous infrastructure innovations in the city, including converting these caverns into an aqueduct. It has since been taken over by kuo-toa refugees."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Watchful Eye (APL 7)",
+									"page": 2,
+									"entries": [
+										"Orcs known as the Watchful Eye were tasked with guarding the city. They cultivated their talents of perception and mindfulness to better protect the communities of the city. Adventurers may rediscover magical orb called the Eye of Gruumsh within."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Song Trackers (APL 7)",
+									"page": 2,
+									"entries": [
+										"The Song Trackers are a group of orcs renowned for their warriors' ability to follow a creature, even if all they have to go on is a whisper of sound. They also have a history of producing bards, famous for their voices. Unfortunately, their musical demesne has become haunted."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Lake of the Ancestors (APL 7)",
+									"page": 2,
+									"entries": [
+										"These caves were once holy to Yurtrus the White Hand and his followers. It was here, at the edge of the city, that his followers memorialized those heroes worthy of an afterlife in Gruumsh's horde. A heroic effort will be required to make a way through."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Rotting Root (APL 8)",
+									"page": 2,
+									"entries": [
+										"Shortly before the fall, Dirt-Under-Nails, a dwarf druid, claimed this area as his home. While on an excursion into the Underdark, he happened upon a strange, sapient fungus which made him an offer he couldn't refuse. The druid was infected by its spores, returned home, and has been here ever since."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Red Wardens (APL 8)",
+									"page": 3,
+									"entries": [
+										"This cavernous area was once a subterranean garden that served as a font of flora used for both medicinal and dietary needs. Also called the Red Falls, this area gets that name from the stream that flows through it. The rocky sediment along the bottom of the stream, combined with the light from above, gives the water a reddish hue."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Luthic's Zealots (APL 8)",
+									"page": 3,
+									"entries": [
+										"A small shrine to Luthic, the orc goddess of medicine, still stands in this area, which originally housed the hospice caring for those who once lived here. Unfortunately, a host of undead as well as a diabolical fiend is housed here now."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Fang Trust (APL 8)",
+									"page": 3,
+									"entries": [
+										"A community of orcs known as the Fang Trust looked after the city's worgs here. The Great Claw resides within, and it isn't likely to be tamed."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Quill Keepers (APL 8)",
+									"page": 3,
+									"entries": [
+										"The Quill Keepers were the city's scholars who recorded histories and taught young citizens how to read and write. Wizards and sorcerers performed experiments and created orc magic here as well, and so members of that tribe will be eager to reclaim this area. Hopefully they remember something of what was once taught."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "False Hope, Dark Promises (APL 9)",
+									"page": 3,
+									"entries": [
+										"As you're preparing to play this adventure, you'll want to ask each of the players about their characters hopes and dreams for this expedition. This should occur before they even begin wandering around the dungeon, and can happen as part of a ‘sending-off' ritual held by the elders that set them on this task. You will need this information to effectively utilize the reality warping ability of the balhannoth that makes its lair in this area."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Omens and Superstitions",
+							"page": 3,
+							"entries": [
+								"Orcs live in constant awe of their gods, and their behavior is rooted in that mentality. They believe that they can see the influence of the gods everywhere in the world around them, and the priests of a tribe are entrusted with the responsibility of identifying these signs and omens\u2014both good and bad\u2014and deciding how the tribe should react to them.",
+								"Orcs believe that any seemingly unimportant discovery or event\u2014a bear's claw marks on a tree, a flock of crows, or a sudden gust of wind\u2014might be a communication from the gods. If the tribe has encountered a similar omen before, the priests understand how to interpret it, but if a sign from the gods has no clear explanation, the priests might have to meditate for hours or days to get a vision of its meaning.",
+								"Every group of orcs has particular superstitions and recognizes certain omens. These tenets vary from tribe to tribe, and are often based in events that the tribe has experienced. Each tribe detailed herein also has particular omens and superstitions to which they adhere. As your players build their orc characters, have them choose from one of the tribes detailed in this adventure and then provide them with a listing or have them take notes on their particular tribes' omens and superstitions. Feel free to award inspiration any time these are appropriately roleplayed as you play through this adventure."
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"name": "Boneyard",
+					"page": 4,
+					"entries": [
+						"Champions from the orcs' history are interred in this part of the complex. However, with nobody tending their halls over the years, undead creatures gravitated here and await the characters.",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "adventure/RtG/002.webp"
+							}
+						},
+						{
+							"type": "entries",
+							"name": "Boneyard Omens",
+							"page": 4,
+							"entries": [
+								{
+									"type": "list",
+									"items": [
+										"When faced with glory, fortune, or faith, choose all three and accept no substitutes.",
+										"Elf wizard at night, scout's delight. Elf wizard at dawn, danger comes.",
+										"The howling owlbear channels the primal drives of our ancestors. Heed its call and honor the hunt."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Features",
+							"page": 4,
+							"entries": [
+								"The Boneyard has the following features:",
+								{
+									"type": "entries",
+									"entries": [
+										{
+											"type": "entries",
+											"name": "Illumination",
+											"page": 4,
+											"entries": [
+												"There is no light in the Boneyard except where noted."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Ceilings",
+											"page": 4,
+											"entries": [
+												"The ceiling in each space is ten feet above the floor, and covered in orc sigils for Ganash, Yurtriel, and Klannk (see area 5). A few of Ilneval's (see area 3) sigils are present, but have been scratched out."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Doors",
+											"page": 4,
+											"entries": [
+												"The doors are stone and quite heavy; over the years they have become stuck in their frames and require a successful DC 16 Strength ({@skill Athletics}) check to force open. They aren't locked."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Smells",
+											"page": 4,
+											"entries": [
+												"The Boneyard has a scent like burning bones. Occasionally, a creature may also detect the scent of rotting flesh."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Sounds",
+											"page": 4,
+											"entries": [
+												"A number of undead creatures dwell here, and a careful group of characters may hear them shuffling and groaning in the rooms ahead."
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Locations",
+							"page": 4,
+							"entries": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "adventure/RtG/003.webp"
+									},
+									"title": "Map 1"
+								},
+								"The following locations are keyed to map 1.",
+								{
+									"type": "entries",
+									"name": "1. Magic Mouth",
+									"page": 4,
+									"entries": [
+										"The passage continues north, back into the recesses of the complex. Once the characters draw within 5 feet of the plain stone door, a magic mouth manifests, and in gravelly Orc states, \"When faced with glory, fortune, or faith, choose all three and accept no substitutes.\" The door itself is unlocked, and the message doesn't repeat."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "2. The Three Burdens",
+									"page": 4,
+									"entries": [
+										"Three orcish champions are entombed within this section of the complex, and this hallway memorializes their achievements. Each alcove in this hallway sports trophies from earlier remarkable victories.",
+										{
+											"type": "entries",
+											"entries": [
+												{
+													"type": "entries",
+													"name": "Illumination",
+													"page": 4,
+													"entries": [
+														"Each alcove's treasures emit dim light in a 5-foot radius."
+													]
+												},
+												{
+													"type": "entries",
+													"name": "Northern Alcove",
+													"page": 4,
+													"entries": [
+														"The bust of the icy countenance of Ganash, Tusk of the North scowls from the wall. A thin layer of frost covers the trophies kept here, which include human-crafted arrows, a silvered elven warhammer, and a variety of gnomish polyhedral objects covered in numbers ranging from 1 to 20."
+													]
+												},
+												{
+													"type": "entries",
+													"name": "Central Alcove",
+													"page": 4,
+													"entries": [
+														"A bust of Yurtriel, the Primal Scream, stands on a small pedestal. Creatures that draw close hear a muted howling coming from her mouth. She wears a necklace made of carved igneous stones and opals. It is worth 225 gp."
+													]
+												},
+												{
+													"type": "entries",
+													"name": "Southern Alcove",
+													"page": 4,
+													"entries": [
+														"A bust of Klannk, Defiler of Wizards, stands atop a pile of tattered spellbooks. The books have been defaced and are unusable, and the bust looks immensely pleased with itself. The bust's septum is pierced with a pearl ring; the pearl bears the orc sigils for \"consume\" and \"remove magic\" upon it. If the pearl is consumed, you gain the effect of the {@spell dispel magic} spell (+7 to ability checks). It tastes like salty bones."
+													]
+												},
+												{
+													"type": "entries",
+													"name": "Trap",
+													"page": 4,
+													"entries": [
+														"If the characters see these treasures and don't take them, they are subjected to bestow curse (DC 17) for the duration of their stay in these dungeons. If they take at least one, but not all, of the treasures, the DC is 15. If the characters take all the treasures, they each instead gain one blessing of your choice, chosen from chapter 7 of the Dungeon Master's Guide; this blessing expires ten minutes after is granted and a character may only benefit from a single blessing in this manner."
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "3. The Five Furies",
+									"page": 5,
+									"entries": [
+										"Upon entering this space, a low howl of rage sounds from the western alcove. One round after the characters arrive, and for the two rounds following, a {@creature wight} crawls from a space below the broken altar to challenge any living creatures present on initiative count 20.",
+										"The characters may be hard-pressed to fight here due to the number of foes. They should be encouraged to use the terrain to their advantage. If the characters are in view of the statue and use interesting tactics, consider granting them advantage on their attacks or saving throws as Ilneval shows favor on their efforts.",
+										{
+											"type": "entries",
+											"name": "Broken Altar",
+											"page": 5,
+											"entries": [
+												"Once consecrated to Ilneval, the altar has been broken. The space beneath is hollowed out, and three wights have been lairing here for some time."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Pillars",
+											"page": 5,
+											"entries": [
+												"The pillars are covered in geometric patterns, but have no hidden function. They aren't connected to the ceiling, and can be pushed over with a successful DC 14 Strength ({@skill Athletics}) check. A creature hit by a falling pillar takes 11 ({@damage 2d10}) bludgeoning damage."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Statue",
+											"page": 5,
+											"entries": [
+												"The statue is of Ilneval, \"the War Maker.\" It wields a jagged longsword that appears bloody at all times. Ilneval is the orc deity of warfare and tactics."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 5,
+											"entries": [
+												"The space below the altar holds scraps of the wights' former lives. The only usable remnants are two vials of holy water and a ruby brooch worth 125 gp."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "4. The Four Glories",
+									"page": 5,
+									"entries": [
+										"Each pillar in this room commemorates a significant victory in combat. One shows carvings of the orcs defeating a horde of ogres, one shows the orcs defeating a beholder, one shows an orc druid freezing dwarves in ice, and one shows an orc standing atop a pile of defeated wizards. If the characters remain here for more than a few moments, they hear curious scratching noises coming from inside the pillars. One minute after the characters enter this room, even if they have left, several undead creatures burst free, destroying the pillars (one {@creature beholder zombie}, one {@creature ogre zombie}, and two dwarf {@creature zombie||zombies}, one of which is dressed in tattered wizard's robes).",
+										"The four pillars denote victories, but if the characters aren't careful, they may be a promise of defeat.",
+										{
+											"type": "entries",
+											"name": "Door",
+											"page": 5,
+											"entries": [
+												"The door to the west is magically locked. It automatically unlocks when all four zombies are destroyed."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "North and South Hallways",
+											"page": 5,
+											"entries": [
+												"These hallways are roughhewn, and aren't part of the original construction. Close inspection shows that they were dug by hand without tools; a character proficient in {@skill Religion} recalls that some undead creatures, usually zombies, are known to do this."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Central Hallway",
+											"page": 5,
+											"entries": [
+												"Once unlocked, the characters can enter this space. At the end stands a statue of a mighty orc leader, whose name is unfortunately lost to history."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 5,
+											"entries": [
+												"The statue at the end of the central hallway wears +1 leather armor and wields a silvered battleaxe. If a character wears both of these pieces in view of the statue, they gain inspiration; this effect only happens once."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "5. Tombs",
+									"page": 5,
+									"entries": [
+										"This room once held services in respect of powerful orc warriors and leaders, whose bodies were sealed behind the walls upon their death. Unlike standard orcish funerary services, which often involve complete immolation or a traditional burial, these highly respected members of society were interred here so that their spirits would remain in the world for guidance and leadership. Now, however, two of the spirits have become {@creature wraith||wraiths} and the third is a {@creature banshee}; maddened by many years of silence, they have developed a hunger for life that far surpasses any desire for glory that they held in life\u2014but should they be appeased, they may provide boons to those that come here.",
+										"The tombs belong to well-known orc legends, so no ability checks are needed. The sigils of these orc legends are outside the three indicated areas, and once the characters have spent one minute here, they emerge, intent on attacking unless the characters can appease them.",
+										{
+											"type": "entries",
+											"name": "Illumination",
+											"page": 5,
+											"entries": [
+												"A collection of quartz crystals embedded into the ceiling emit a natural glow. They bathe the room in dim light."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Appeasing the Spirits",
+											"page": 5,
+											"entries": [
+												"These spirits are angry but can be appeased through reasonable creative solutions. Consult their tomb descriptions below, call for a DC 12 ability check (encourage the players to choose an appropriate skill and describe its use in the matter), and consider the following potential options or craft your own:",
+												"Regale the orc spirits with tales of their own glory in life.",
+												{
+													"type": "list",
+													"items": [
+														"Please the undead orcs with tales of the characters' exploits in their honor or stead.",
+														"Demonstrate physical traits or qualities of the undead orcs, such as emitting primal screams or conjuring frost magic and effects."
+													]
+												}
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Tomb of Ganash, Tusk of the North",
+											"page": 6,
+											"entries": [
+												"A druid of immense power, Ganash channeled the pure, frozen rage of the northern blizzards. Rumored to be permanently coated in primal ice, he wielded the greatclub Frostshock, carved from the heart of an ancient glacier. He has become a wraith."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Tomb of Yurtriel, the Primal Scream",
+											"page": 6,
+											"entries": [
+												"Yurtriel led raid after raid with her clan of skilled warriors. Time and time again, they clashed with and annihilated elves and humans alike, pushing back those that would encroach upon sacred orc lands. She and her troops would emit terrifying primal screams for the entire duration of battle, sowing panic and discord among their foes. She has become a banshee."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Tomb of Klannk, Defiler of Wizards",
+											"page": 6,
+											"entries": [
+												"In life, Klannk reputedly had an extreme desire to find and eliminate any wizards among the enemies' ranks. Some say that he could \"smell the magic,\" and demonstrated no small amount of glee when engaged in melee with an arcanist. He has become a wraith."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 6,
+											"entries": [
+												"If the undead are appeased, they offer special rewards to the characters:"
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Ganash, Tusk of the North",
+											"page": 6,
+											"entries": [
+												"Ganash offers Frostshock, his +1 greatclub to the characters. Crafted from ice, it's been enchanted to never melt, regardless of temperature."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Yurtriel, the Primal Scream",
+											"page": 6,
+											"entries": [
+												"Yurtriel screams in the faces of the characters, but this effect emboldens them and grants the benefits of a {@spell bless} spell for 1 minute."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Klannk, Defiler of Wizards",
+											"page": 6,
+											"entries": [
+												"Klannk traces the Orc sign for \"power\" on the floor. Each character that views it has advantage on their next attack roll. This effect only works once per character."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "6. Bridge",
+									"page": 6,
+									"entries": [
+										"The water below the bridge churns wildly, and the stonework in this area is very slick. There is a five-foot drop from the bridge to the water. Creatures that step on the bridge slip and fall in a random direction unless they succeed on a DC 10 Dexterity ({@skill Acrobatics}) check. Should a character fall into the river, they can regain their footing in the shallow, but fast-moving, water with a successful DC 14 Strength ({@skill Athletics}) check; Small or smaller creatures have disadvantage on this check. A few owlbear feathers are plainly visible on the southern landing, just outside the door to area 7."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "7. Owlbear Lair",
+									"page": 6,
+									"entries": [
+										"Yesterday, three elven adventurers used this room as their lair. Unfortunately for them, a young pair of hungry owlbears also wanted to be here. When the characters first enter the room, the owlbears are fast asleep, having gorged on the hapless elves; should they awaken, they are neutral to friendly in their initial reactions due to their recent feeding. If the characters are cautious and respectful of the owlbears, they may follow them for a time in the hopes of finding another easy meal or two.",
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 6,
+											"entries": [
+												"The dead elves weren't well equipped, and the damage caused by the owlbears was significant. Even so, a few valuables remain. Any character with a passive Wisdom ({@skill Perception}) score of 12 or higher spots a silver necklace with an ebony brooch that is worth 45 gp, and a {@item spell scroll} of awaken. If the characters spend ten minutes searching the room and corpses and succeed on a DC 15 Intelligence ({@skill Investigation}) check, they find a gore-covered {@item orb of time|XGE} hidden beneath a pile of detritus."
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"name": "Eroding Ones",
+					"page": 6,
+					"entries": [
+						"The Eroding Ones celebrate a culture of change, eroding their old selves, and revealing the new. Senior members teach the young, \"Don't dwell on the wrongs of your past, it confuses you and the gods-to-come. Instead, turn your back on what you want to leave behind and stride toward who you wish to become.\"",
+						"Their awareness, openness, and fluidity may be the reason numerous well-known diviners have been born into this community\u2014Ishi the Listener, Laylia Ghost-Walker, and Romdar, the Boy Who Speaks to Lightning.",
+						{
+							"type": "entries",
+							"name": "Eroding Ones Omens",
+							"page": 6,
+							"entries": [
+								"With an abundance of spellcaster influence came many spell-related sayings and beliefs.",
+								{
+									"type": "list",
+									"items": [
+										"Save the last egg in the basket for the soothsayer, \"Eating the soothsayer's egg curses you with a bellyache of lost possibilities.\" Whether the indigestion happens is irrelevant at this point, it is understood to be rude to eat the last egg.",
+										"It is believed that if you \"prepare a spell but do not cast, lose a memory from your past.\" Most Eroding Ones are resigned to the possibility of their memories eroding in time. Those genuinely concerned let the spell fly and face the consequences rather than risk losing the memory of a favorite moment or long-lost love.",
+										"Even those not gifted as seers may receive prophecies from time to time. When injured prey dares to flee toward the hunter, it's an omen that the hunter is being hunted by a hidden enemy. Seniors warn, \"Let the prey pass; killing them foretells your fate.\" Even those who don't put stock in the omen may let the prey pass out of respect for their bravery or concern for the game's health."
+									]
+								},
+								"The Eroding Ones pass down this way of thinking from generation to generation, but their attitude toward change leaves these sayings vulnerable to revision and elimination. The Eroding Ones are taught not to fear being proven wrong, nor do they run from the task of improvement."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Northeastern Corridors",
+							"page": 6,
+							"entries": [
+								"In the past, this area of the city was used for celebrations and ceremonies. It housed the ancestors' history and the vows of treaties, held their weddings, and honored those they viewed in high regard."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Features",
+							"page": 7,
+							"entries": [
+								"The northeastern corridors have the following features:",
+								{
+									"type": "entries",
+									"entries": [
+										{
+											"type": "entries",
+											"name": "Dimensions and Terrain",
+											"page": 7,
+											"entries": [
+												"The 330-by-30-foot Histories Hall is carved from stone and decorated with representations of its peoples' history. The wave-textured convex ceiling rises to 50 feet at its highest point and lends the hall beautiful acoustics. Sound carries along the length of the Histories Hall, and characters from the Song Trackers community have advantage on Charisma ({@skill Performance}) checks while here. The northeastern-most door leads to a natural, downward-sloping tunnel with 10-foot-high ceilings. The northwestern-most door opens to a carved-out corridor."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Light",
+											"page": 7,
+											"entries": [
+												"Darkness. Having been out of use for some time, this area has no magical or mundane lighting."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Sounds and Smells",
+											"page": 7,
+											"entries": [
+												"The air is crisp and musty. Footfalls echo though the hollow and hallowed hall. The sound of dripping water comes from area 12."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Histories Hall Carvings",
+											"page": 7,
+											"entries": [
+												"These carvings tell the story of the orc ancestors' community, its oldest stories beginning on the southern wall, running east to west and wrapping around to the northern wall, west to east (for descriptions see \"What Do They Know?,\" area 8a, and area 8b below)."
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Locations",
+							"page": 7,
+							"entries": [
+								"The following locations are keyed to map 2.",
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "adventure/RtG/004.webp"
+									},
+									"title": "Map 2"
+								},
+								{
+									"type": "entries",
+									"name": "8. Histories Hall",
+									"page": 7,
+									"entries": [
+										"This long passage is littered with broken tables and chairs. It is partially illuminated by the {@spell light} spell Audra, a teenage Eroding One, has cast on a broken table leg to help her study the carvings along the walls.",
+										"A curious eight-year-old teenage orc, Audra, is often impatient with the pace of her education; she wonders why adults can't seem to get to the point. She stands within the Histories Hall, studying the carvings that tell of her people's past, most of which she's never been taught.",
+										{
+											"type": "entries",
+											"name": "What Do They Want",
+											"page": 7,
+											"entries": [
+												"She wants to learn about and understand the world around her in the hidden hope it will help her understand herself, the magical abilities she keeps secret, and the messages she receives from the gods."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "What Do They Know",
+											"page": 7,
+											"entries": [
+												"She isn't supposed to be wandering inside the ancestors' settlement. She told her parents she would go around the encamped families, collecting soothsayer eggs and deliver them to Shiff the Irritable. She'll do as she promised, but not before she does some exploring along the way.",
+												"On a successful DC 15 Intelligence ({@skill History}) or ({@skill Religion}) check, characters interpret the hall's carvings. On a failure, Audra describes what she's learned. Ages ago, the cave entrance was found by a small group of displaced orcs. In time, there were wars and treaties with other orc groups, and the community grew. Infighting within the united community saw leaders rise and fall. One leader among many makes repeated appearances at the front line of conflicts, portrayed as the hero of some clashes and as the instigator of others. It appears his obsession with fighting elves led to frivolous losses. The likeness and circumstances make Curgain Bloodsplatter (\"Lake of the Ancestors,\" area 41) the most likely name of this overlox. The last scene shows orc healers (Hinsha from \"The Healing Quarters\"), the military, and worgs, preparing for some battle or calamity. It seems none of the ancestors returned to immortalize the outcome in stone. (More descriptions in areas 8a and 8b.)",
+												"She follows the characters as they travel through the ancestral home. Audra conceals her spellcasting while assisting the characters. She shares divine insights without revealing their source, making excuses as to how she knows the information. With a successful DC 12 Wisdom ({@skill Insight} or {@skill Perception}) check, characters realize she is a diviner, a soothsayer. They know someday she will be gifted an epithet, like \"the Listener,\" \"Ghost-Walker,\" or \"the Boy Who Speaks to Lightning.\" In their time with her, the characters can suggest such an epithet."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "8a. Infighting Mural",
+									"page": 8,
+									"entries": [
+										"Along the southern wall, a section of carved mural immortalizes a warning, cautioning actions not to repeat. A battle is fought between community members, utilizing backstabbing, lies, and manipulation. Families are driven out or killed. Areas of the city are destroyed. This is a history the ancestors wanted to move away from."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "8b. Triggered Door",
+									"page": 8,
+									"entries": [
+										"Within a carving depicting a crowd of proud orcs stood shoulder to shoulder, is a door. It is locked, with no doorknob or keyhole, and appears to slide into the wall. To open it, characters turn their backs on the carved mural at area 8a and walk toward door area 8b, the door slides open. \"Turn your back on what you want to leave behind and stride toward who you wish to become.\""
+									]
+								},
+								{
+									"type": "entries",
+									"name": "9. Broken Storage Vault",
+									"page": 8,
+									"entries": [
+										"The door to this vault has been smashed in.",
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"entries": [
+												"Looking around, the room holds broken spear shafts, decayed cabinets, dried-up potion vials, and {@item mason's tools|PHB}."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "10. Dead Adventurers' Cavern",
+									"page": 8,
+									"entries": [
+										"This cavern is empty except for an ancient, tarnished greatsword and the bodies of eight adventurers in various stages of decomposition\u2014three mummified and five skeletal. One adventurer still wears their cloak (really a cloaker). If the characters succeed on a DC 20 Intelligence ({@skill Nature}) check, they notice the cloak is in pristine condition and that there are six skulls, but only five skeletons. They realize one {@creature cloaker} and one {@creature flameskull} lie among the bodies. If the characters touch the greatsword, the cloaker and flameskull awaken and attack shouting, \"You dare interfere with the Fang Trust-Eroding Ones treaty?! Inter it in its rightful place!\" If characters promise to rebury the weapon, the cloaker and flameskull cease hostilities and lead them to area 11."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "11. Treaty Archive",
+									"page": 8,
+									"entries": [
+										"This natural cave has a dirt floor with a noticeable divot where the dead adventurers dug up the weapon ages ago. With a successful DC 15 Intelligence ({@skill History} or {@skill Religion}) check, characters know weapons are buried as part of a treaty, and digging them up is a bad omen for the aligned groups. They may rebury the greatsword without being attacked.",
+										"If a character digs up any of the remaining buried treaty weapons (battleaxe, club, greataxe, glaive, javelin, longbow, maul, pike, shortsword), a guardian {@creature cloaker} and {@creature flameskull} rise up from each disturbed burial and attack the characters."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "12. Wedding Cove",
+									"page": 8,
+									"entries": [
+										"Hot spring water bubbles up from the bottom of this cove, which slopes to a depth of 10 feet. Cold water drips from the ceiling, causing a steam cloud to hang over the surface of the stone and pool. The water isn't stagnant; a slow current carries it out to the adjoining tunnel. This cave is covered in brilliant, multicolored paints, now flaked and faded. Any orc knows this is a site for wedding ceremonies; partners are united within the waters.",
+										"Characters willingly entering the pool together receive the benefits from the wedding mode of a {@spell ceremony|XGE} spell (from XGE). For the next 7 days, these characters gain a +2 bonus to their AC while they are within 30 feet of each other. No benefits occur if a character coerces, manipulates, or threatens others to enter the pool,",
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 8,
+											"entries": [
+												"If a character investigates the bottom of this cove, they find a {@item ring of mind shielding}."
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"name": "Chambers of the Overlox",
+					"page": 8,
+					"entries": [
+						"This area contained the personal chambers of the Overlox (the orc sovereign) as well as the throne room, council chamber, and various other rooms.",
+						"In the years since the city fell, various creatures have occupied this area. For many years, it was dominated by the sorcerer Ignatia, who subdued the local duergar and conducted experiments here. A few days ago, she summoned Brolgalgeld, a {@creature red slaad} from Limbo, but her magic circle was imperfectly drawn, and the vile creature escaped and killed her. The slaad now controls the duergar and has set this location up as a breeding area.",
+						{
+							"type": "entries",
+							"name": "Overlox Omens",
+							"page": 8,
+							"entries": [
+								"There are two old orcish superstitions the characters may encounter:",
+								{
+									"type": "list",
+									"items": [
+										"A piece of coal suspended above a doorway protects against intruders.",
+										"A frog worn around the neck brings luck."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Features",
+							"page": 8,
+							"entries": [
+								{
+									"type": "entries",
+									"entries": [
+										{
+											"type": "entries",
+											"name": "Construction",
+											"page": 8,
+											"entries": [
+												"The walls are made of well-fitted stone blocks that are cracked and worn with age. Well-made, though grimy, cobblestones cover the floor."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Dimensions",
+											"page": 8,
+											"entries": [
+												"The tunnel ceilings arch slightly and peak 10 feet above the floor. The ceilings in the rooms are domed and peak 13 feet above the floor, unless specified otherwise."
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Locations",
+							"page": 9,
+							"entries": [
+								"The following locations are keyed to map 3.",
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "adventure/RtG/005.webp"
+									},
+									"title": "Map 3"
+								},
+								{
+									"type": "entries",
+									"name": "13. Waiting Room",
+									"page": 9,
+									"entries": [
+										{
+											"type": "insetReadaloud",
+											"page": 9,
+											"entries": [
+												"A jagged fissure divides the floor in two. Crumbling stone benches line the walls, with the northern wall also covered by an enormous mosaic."
+											]
+										},
+										"There are three {@creature duergar} (40 hit points) on the east side of the fissure, all in in their enlarged state. They each have 4 javelins, which they use while the adventurers are on the opposite side of the fissure.",
+										{
+											"type": "entries",
+											"name": "Fissure",
+											"page": 9,
+											"entries": [
+												"The fissure is about 5 feet wide on average and 30 feet deep. If the characters find themselves with their backs to the fissure during melee, the duergar attempt to shove them into it."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Mosaic",
+											"page": 9,
+											"entries": [
+												"A successful DC 12 Intelligence ({@skill Religion}) check reveals that the mosaic depicts the orc god Gruumsh in furious combat with the elf god Corellon. Anyone who makes a successful DC 13 Wisdom ({@skill Perception}) check notices that Gruumsh's eye can be removed from the mosaic."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 9,
+											"entries": [
+												"Pushing Gruumsh's eye causes it to pop out, revealing a small cavity with a purse holding 50 gp and a stone bottle containing a {@item potion of heroism}."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "14. Vestibule",
+									"page": 9,
+									"entries": [
+										{
+											"type": "insetReadaloud",
+											"page": 9,
+											"entries": [
+												"This octagonal chamber is piled high with debris, including broken stonework, splintered furniture, ironmongery, and a few bones as well. There are doors in four of the walls, and a large freestanding gong near the southeastern corner."
+											]
+										},
+										"This room served as a communal junk heap for many years. An {@creature otyugh} (168 hit points) crawls about beneath the mess, which varies between 3 to 7 feet in height.",
+										"The creature begins stalking the characters once they enter\u2014the characters see and hear the junk shuffling around. It attacks after {@dice 1d4 + 2} rounds. Using an action to bang gong loudly causes the otyugh to dive beneath a tall pile of junk and lie still for 1 minute.",
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 9,
+											"entries": [
+												"Anyone who spends 5 minutes searching the junk pile and makes a successful DC 12 Wisdom ({@skill Perception}) check finds a random item worth less than 10 gp from the Equipment table in the Player's Handbook. Each subsequent search takes double the time of the previous search (the second search takes 10 minutes, the third takes 20 minutes, etc.)"
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "15. Chapel",
+									"page": 10,
+									"entries": [
+										{
+											"type": "insetReadaloud",
+											"page": 10,
+											"entries": [
+												"An imposing statue of a one-eyed orc stands against the west end of this chamber, while slender stone pillars line the northern and southern walls."
+											]
+										},
+										"There is a {@creature brown bear} chained to the base of the statue. Initially, it rears up and growls at the party but, assuming they don't leave, it suddenly begins trying to communicate to them via increasingly sophisticated sign language. It tells the story of an arrogant young prince who angered a witch one day and was transformed into a beast until he can find true love...",
+										{
+											"type": "entries",
+											"name": "Azarlea",
+											"page": 10,
+											"entries": [
+												"The bear suddenly transforms into a succubus who roars with laughter. Her name is Azarlea and she was summoned to this plane by the sorcerer Ignatia, who freed her after she had performed certain services. Azarlea has been exploring the world outside but returns to this area regularly, regarding it as a home base. She tells them to \"beware of the horrid toad in the throne room,\" before disappearing into the Ethereal Plane. She then follows the party in ethereal form, occasionally reappearing to offer an ironic assessment of their efforts."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "16. Barracks",
+									"page": 10,
+									"entries": [
+										"The stone arch to the north of this room is sculpted with skulls and bones. The words, \"Hail the Overlox!\" are inscribed in Orc above the arch. Anyone who walks through the arch without reciting these words sees a great flash and must succeed on a DC 15 Constitution saving throw or be {@condition blinded} for 1 hour.",
+										{
+											"type": "entries",
+											"name": "Cots",
+											"page": 10,
+											"entries": [
+												"The room contains fourteen ancient stone cots and is full of dust and rubble."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Illusion",
+											"page": 10,
+											"entries": [
+												"Part of the eastern wall of the room is illusory, hiding the alcove that contains the east door. Anyone who touches the wall feels their hand pass right through it. A piece of coal is suspended from the roof in front of the illusion."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "17. Pantry and Well",
+									"page": 10,
+									"entries": [
+										{
+											"type": "insetReadaloud",
+											"page": 10,
+											"entries": [
+												"Small alcoves and stone shelves line the walls, holding the broken remnants of old barrels, crates, and boxes. A low wall of ancient bricks circles a well in the center of the room."
+											]
+										},
+										"A {@creature black pudding} lurks at the bottom of the well, about 20 feet down. If anyone looks down the well, shines a light down it, or throws something in it, the creature surges up and attacks.",
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 10,
+											"entries": [
+												"A character who searches the shelves and make a successful DC 15 Wisdom ({@skill Perception}) check locates a human statuette made of silver with jade eyes. It is worth 250 gp."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "18. Study",
+									"page": 10,
+									"entries": [
+										{
+											"type": "insetReadaloud",
+											"page": 10,
+											"entries": [
+												"Dull and chipped frescos decorate two of the walls. Stone shelves hold several ancient tomes while a large wooden desk lies in a broken heap to one side."
+											]
+										},
+										"A human {@creature bandit} named Aleth Yewick is chained to the back wall. He has 4 levels of {@condition exhaustion} and 1 hit point remaining. He entered the dungeon a few days ago seeking treasure but was captured by the duergar and chained here. His chains can be unlocked with a successful DC 12 Dexterity check made with {@item thieves' tools|PHB}.",
+										{
+											"type": "entries",
+											"name": "Awful Truth",
+											"page": 10,
+											"entries": [
+												"Aleth recalls a monster \"like a great red toad\" approaching him and then he fainted. He awoke later with huge, painful blisters on his arm and back. Aleth doesn't know, but Brolgalgeld the {@creature red slaad} has implanted its eggs in him. See the Monster Manual for more details."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Fresco",
+											"page": 10,
+											"entries": [
+												"The fresco contains two panels. The first depicts a royal (orcish) birth, while the second depicts the victory of an orcish army over a horde of gnolls."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 10,
+											"entries": [
+												"Anyone who examines the shelves and makes a successful DC 12 Wisdom ({@skill Perception}) check finds several valuable items:",
+												{
+													"type": "list",
+													"items": [
+														"A {@item potion of superior healing}.",
+														"A {@item spell scroll} of polymorph.",
+														"A kaleidoscope of memory. This magic device consists of a short brass tube with an eye piece at one end and a button on top. Anyone who looks into it after the button has been pressed sees a visual summary of the orc city's history. The entire presentation takes 20 hours, but pressing the button again skips forward an hour. The final scene shows how the orcish sages led the people to abandon the worship of Gruumsh, who sent a terrible plague to wipe out the city as punishment."
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "19. Vestry",
+									"page": 10,
+									"entries": [
+										{
+											"type": "insetReadaloud",
+											"page": 10,
+											"entries": [
+												"Several decaying stone wardrobes line whitewashed walls which are filthy with dirt and ash. Primitive straw mattresses lie scattered around the room and there are several barrels in one corner."
+											]
+										},
+										"There are ten {@creature duergar} (40 hit points) in this room, all cowed into serving Brolgalgeld.",
+										{
+											"type": "entries",
+											"name": "Barrels",
+											"page": 10,
+											"entries": [
+												"The barrels contain water and salted meat of dubious origin."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 10,
+											"entries": [
+												"The duergar have stashed a good amount of loot in their mattresses, which amounts to 380 gp."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "20. Guardroom",
+									"page": 11,
+									"entries": [
+										"Both east and west doors are locked and lack door handles and keyholes. Both doors have small copper skulls embedded on their outer faces.",
+										{
+											"type": "entries",
+											"name": "Opening the Door",
+											"page": 11,
+											"entries": [
+												"Touching the door from the outside causes the skull to say, \"Eye will let you in!\" Placing a finger in each eye socket of the skull causes the door to open. Otherwise, the door can be forced open with a successful DC 18 Strength check, with the character taking 2 bludgeoning damage on a failure. From the inside, the doors can be simply pushed open.",
+												"When the characters enter, read the following:"
+											]
+										},
+										{
+											"type": "insetReadaloud",
+											"page": 11,
+											"entries": [
+												"Broken and crumbling stone bunks line two walls while old stone benches lie toppled over in the corner. The air smells clean and fresh here, in contrast to the other chambers."
+											]
+										},
+										"This old guardroom was enchanted to help the guards recuperate rapidly after combat. Anyone who finishes a short rest here recovers an additional {@dice 1d6} hit points.",
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 11,
+											"entries": [
+												"A successful DC 15 Wisdom ({@skill Perception}) check locates a {@item robe of eyes} buried in the rubble of an old bunk."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "21. Sovereign Bedchamber",
+									"page": 11,
+									"entries": [
+										"The western door has a silver plaque with \"Beware!\" engraved on it. The door is protected by an {@condition invisible} ward, and anyone who touches it without saying \"Hail the Overlox!\" must make a DC 15 Constitution saving throw, taking 21 ({@damage 6d6}) force damage on a failed save, or half as much on a successful one.",
+										"When the characters enter, read the following:",
+										{
+											"type": "insetReadaloud",
+											"page": 11,
+											"entries": [
+												"This is a spacious chamber with tiled walls, several dusty tapestries, and a worn carpet on the floor. A large, dilapidated stone bed frame sits against a wall, while the carpet has been torn up in one corner of the room."
+											]
+										},
+										"There is a bloody pile next to the bed\u2014this is all that remains of the sorcerer Ignatia. As the characters watch, the ruined body begins jerking around on the carpet. After a few moments, the body explodes and thirty {@creature slaad tadpole||slaad tadpoles} emerge.",
+										{
+											"type": "entries",
+											"name": "Ripped Carpet",
+											"page": 11,
+											"entries": [
+												"The carpet has been ripped up in the corner in order to engrave a magic circle on the floor."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Secret Door",
+											"page": 11,
+											"entries": [
+												"Anyone who searches for secret doors and makes a successful DC 12 Wisdom ({@skill Perception}) check finds the secret passage behind a tapestry on the southern wall. The first 30 feet of this passage has a permanent {@spell darkness} spell cast on it."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 11,
+											"entries": [
+												"A purse on Ignatia's body contains 250 gp and four glittering sapphires worth 100 gp each."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "22. Council Chamber",
+									"page": 11,
+									"entries": [
+										{
+											"type": "insetReadaloud",
+											"page": 11,
+											"entries": [
+												"A long, wide stone table runs down the middle of this room, surrounded by a score of stone chairs, all deteriorating. The north wall is covered by a bas-relief engraving of a battle scene between orcs and gnolls."
+											]
+										},
+										"The ceiling is 15 feet high. This entire room is subjected to a reverse gravity effect, as per the spell. Crouching in a pile of rubble near the eastern wall are two {@creature grell||grells} (90 hit points) that floated in a few days ago.",
+										{
+											"type": "entries",
+											"name": "Gravity Switch",
+											"page": 11,
+											"entries": [
+												"Anyone who searches the table and succeeds on a DC 15 Wisdom ({@skill Perception}) check locates a button on the underside near the eastern end. Pressing the button toggles the gravity effect on and off."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Secret Door",
+											"page": 11,
+											"entries": [
+												"Anyone who searches the walls and succeeds on a DC 15 Wisdom ({@skill Perception}) check notices a discolored piece of stone in the bas-relief sculpture. Pushing that opens the secret door in the northern wall (which can be simply pushed open from inside the secret corridor)."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "23. Throne Room",
+									"page": 11,
+									"entries": [
+										{
+											"type": "insetReadaloud",
+											"page": 11,
+											"entries": [
+												"This grand hall has polished flagstones, decorative relief carving spreading across the walls, and a double row of dark marble pillars. At the end of the room, a dark throne sits on a dais of polished stone, held 10 feet above the floor by four strong pillars of iron."
+											]
+										},
+										"The ceiling is 20 feet high. Standing on the edge of the dais is Brolgalgeld, the {@creature red slaad}. It is armed with a fully charged {@item wand of lightning bolts} and attacks the characters immediately with it.",
+										{
+											"type": "entries",
+											"name": "Duergar Guards",
+											"page": 12,
+											"entries": [
+												"If the duergar in area 19 hear any commotion, they turn {@condition invisible} and enter, prepared to join the fray."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Dais Button",
+											"page": 12,
+											"entries": [
+												"Anyone who examines the eastern wall and makes a successful DC 12 Wisdom ({@skill Perception}) check sees an iron button. Pressing this button causes the dais to rise and fall. There is a similar button on the throne's armrest."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 12,
+											"entries": [
+												"Brolgalgeld has the aforementioned {@item wand of lightning bolts} and is wearing a dead frog attached to a leather thong. Brolgalgeld also has a small glass container holding a piece of raw limbo, which pulses and rapidly changes color. As an action, a character can take this matter and shape it into another item, exactly like a {@spell creation} spell cast at 5th level. The raw limbo can only be used once in this way."
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"name": "Found Fortunate",
+					"page": 12,
+					"entries": [
+						"A community of orcs known as the Found Fortunate were responsible for implementing numerous infrastructure innovations in the city, including converting these caverns into an aqueduct.",
+						{
+							"type": "entries",
+							"name": "Found Fortunate Omens",
+							"page": 12,
+							"entries": [
+								"Here are a collection of beliefs and omens held by the Found Fortunate orcs:",
+								{
+									"type": "list",
+									"items": [
+										"A fortune found is a fortune earned.",
+										"Taming stone is such great folly, make stonework for you and be jolly."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Features",
+							"page": 12,
+							"entries": [
+								"These caverns serve as a central location to collect safe water and feed it to other regions of the city. The aqueduct has the following features:",
+								{
+									"type": "list",
+									"items": [
+										"The water in the aqueduct is 20 feet deep and possesses a moderate natural current. Creatures without a swim speed must succeed on a DC 12 Strength ({@skill Athletics}) check to tread water in place.",
+										"The ceilings are 20 feet above the water level.",
+										"There are no light sources."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Locations",
+							"page": 12,
+							"entries": [
+								"The following locations are keyed to map 4.",
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "adventure/RtG/006.webp"
+									},
+									"title": "Map 4"
+								},
+								{
+									"type": "entries",
+									"name": "24. Water Treatment Cavern",
+									"page": 12,
+									"entries": [
+										{
+											"type": "insetReadaloud",
+											"page": 12,
+											"entries": [
+												"This vast cavern is a marriage of natural rock formations and exquisite feats of masonry. A series of floor-to-ceiling pillars rise from the dark water and stretch back into the cavern far beyond your sight. Sounds of flowing water echo through this room."
+											]
+										},
+										"This room was created by the Found Fortunate innovators as a water treatment plant. Its magical columns served to clean the water flowing in from underground sources and to protect against unwelcome creatures that might try to enter the city through its waterways. This cavern is full of 20-foot-deep running water that flows in via several off-map sources (you are free to decide the nature of these sources). There is also a stream of water that flows downward and empties into the Lake of the Ancestors. All these waterway entry points have been rigged with net traps by the kuo-toa refugees.",
+										{
+											"type": "entries",
+											"name": "Net Work",
+											"page": 12,
+											"entries": [
+												"The kuo-toa have strung net traps over the waterway entrances to this cavern, including the tunnels that lead to the Lake of the Ancestors and the Wedding Cove (area 12). Creatures looking for traps while traveling the waterways spot the nets with a successful DC 15 Wisdom ({@skill Perception}) check. If the nets are detected, an action can be used to remove the hooks anchoring them.",
+												"The first creature that swims into a net must succeed on a DC 14 Dexterity saving throw or be {@condition restrained}. A creature {@condition restrained} by the net can use an action to make a DC 14 Strength check. On a success, it frees itself and is no longer {@condition restrained}. A creature that isn't {@condition restrained} by the nets can use an action to free another creature without making a check."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Kuo-Toa Refugees",
+											"page": 12,
+											"entries": [
+												"A band of kuo-toa refugees have taken up residence in this chamber. The party's sudden appearance startles the kuo-toa, who thought this city was abandoned. They react cautiously to the party and avoid combat if at all possible.",
+												"Once the party enters the cavern, five {@creature kuo-toa} and their leader, a {@creature kuo-toa archpriest} named Glipglooploop, emerge from the water to make contact. If the party isn't immediately hostile, Glipglooploop attempts to speak with them in Undercommon. If the party don't seem to understand, Glipglooploop casts {@spell tongues} on herself then asks the party if they mean her people any harm. If the party responds amiably, Glipglooploop welcomes them and asks if the party would be willing to help secure the area.",
+												"If the party grows hostile, five more {@creature kuo-toa} warriors float to the surface to join the fight, and the group's two pet {@creature reef shark||reef sharks} attack any characters in the water."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Wet Work",
+											"page": 13,
+											"entries": [
+												"If the party members are friendly, Glipglooploop asks the characters for help to safeguard this cavern. When the city was in its prime, the pillars in this room were enchanted to purify and protect the waters flowing into this cavern. Over time, three of the warding glyphs on the pillars have worn away, causing the cavern's magic to fail.",
+												"To successfully restore the pillars' magic, the characters must examine the orcish symbols carved into each pillar and identify which pillars have damaged symbols with a successful DC 14 Intelligence ({@skill Arcana} or {@skill History}) check. They then must recarve the symbol either by magical means or by succeeding on a DC 14 Dexterity ({@item mason's tools|PHB}) check. All checks to recarve the symbols are made with disadvantage unless the party can negate the constant effects of the water current or if they possess a swim speed (see \"Aqueduct Features.\")",
+												"If the party restores all three damaged pillars, each pillar in the cavern begins to emit a dim blue glow."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 13,
+											"entries": [
+												"If the party members successfully restore the pillars' magic, Glipglooploop gives the party an ebony fly {@item figurine of wondrous power}, which she found submerged in this cavern."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "25. Observation Deck",
+									"page": 13,
+									"entries": [
+										{
+											"type": "insetReadaloud",
+											"page": 13,
+											"entries": [
+												"Several huts made of junk and dried muck crowd this ledge. Strands of shiny baubles and animal teeth decorate the walls."
+											]
+										},
+										"The kuo-toa have converted this ledge into their settlement. There is nothing of value amongst their possessions.",
+										{
+											"type": "entries",
+											"name": "Secret Door",
+											"page": 13,
+											"entries": [
+												"The wall of this room holds a secret door to the Path of Vision (area 26). Any character searching for hidden doors locates it with a successful DC 12 Intelligence ({@skill Investigation}) check. When viewing it, there is no obvious way to open the passage, but if a character examines the door via touch, they find the {@condition invisible} doorknob. The doorknob is visible with detect magic, see invisibility, {@sense truesight}, or a similar effect."
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"name": "Watchful Eye",
+					"page": 13,
+					"entries": [
+						"A community of orcs known as the Watchful Eye were tasked with guarding the city. They cultivated their talents of perception and mindfulness to better protect the communities of the city.",
+						{
+							"type": "entries",
+							"name": "Watchful Eye Omens",
+							"page": 13,
+							"entries": [
+								"Here are a collection of beliefs and omens held by the orcs of the Watchful Eye:",
+								{
+									"type": "list",
+									"items": [
+										"A wise orc doesn't rely on their eyes to see.",
+										"Rainbows guide toward great knowledge."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Features",
+							"page": 13,
+							"entries": [
+								"These hidden chambers were built to house the Eye of Gruumsh; an arcane device made to keep watch over the different regions of the city. The watchtower has the following features:",
+								{
+									"type": "list",
+									"items": [
+										"The ceilings are 15 feet high.",
+										"There are no light sources."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Locations",
+							"page": 14,
+							"entries": [
+								"The following locations are keyed to map 4.",
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "adventure/RtG/006.webp"
+									},
+									"title": "Map 4"
+								},
+								{
+									"type": "entries",
+									"name": "26. Path of Vision",
+									"page": 14,
+									"entries": [
+										"A stylized mural of the city adorns this long, curving hallway. Characters who examine it recognize depictions of rooms they have already explored in the dungeon."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "27. Ready Room",
+									"page": 14,
+									"entries": [
+										"This room is where the Watchers kept supplies necessary to activate the Eye of Gruumsh. A neat collection of cupboards lines the walls of this room, and there is a central table that has seven crystals set on its surface. A fine layer of dust covers everything.",
+										"The crystals appear colorless if viewed via {@sense darkvision}. However, if a light source is present (i.e. a lit torch, the {@spell light} spell, etc.), each crystal glows with a different color of the rainbow: red, orange, yellow, green, blue, indigo, and violet. Each crystal resembles a chunk of quartz, approximately the size of an orc's fist.",
+										"Unidentifiable decayed objects fill the cabinets lining this room."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "28. Storage Closet",
+									"page": 14,
+									"entries": [
+										"This storage closet is where the Watchers kept light sources necessary to activate the Eye. It is filled with the rotted remains of torches, dried-up containers of oil, and rusted-through lanterns.",
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 14,
+											"entries": [
+												"Only one usable item remains in this closet: the {@item lantern of revealing} hung on a storage peg."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "29. Watcher's Walk",
+									"page": 14,
+									"entries": [
+										"This complicated tunnel arrangement mimics the shape of an eye. It houses a puzzle that must be solved to activate the Eye of Gruumsh in the Chamber of Seeing.",
+										"There are several details about the room that the party notice immediately to clue them into the puzzle's solution:",
+										{
+											"type": "list",
+											"items": [
+												"Seven empty vessels hang from the ceiling at regular intervals in this curving hallway. These vessels resemble wire birdcages, and an object can be placed inside.",
+												"The three doors in this room are mirrored on one side. The mirror is revealed when the doors stand open.",
+												"There is a large window that lets a viewer peer into the Chamber of Seeing (area 30)."
+											]
+										},
+										"If a character searches the room, a successful DC 15 Intelligence ({@skill Investigation}) check allows them to spot a network of small holes bored through the walls.",
+										"To activate the Eye, the party must place the seven crystals from the {@action Ready} Room in the hanging vessels in correct rainbow order: red, orange, yellow, green, blue, indigo, and violet. They must then place a light source in the sconce in the Chamber of Seeing (a torch, a lantern, or casting light on the sconce all work). If the mirrored doors are open, streams of rainbow light bounce around the room to shine on the Eye of Gruumsh, which activates it."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "30. Chamber of Seeing",
+									"page": 14,
+									"entries": [
+										{
+											"type": "insetReadaloud",
+											"page": 14,
+											"entries": [
+												"A large crystal orb placed on a mirrored pedestal dominates the center of this room. An empty sconce hangs on one of the walls."
+											]
+										},
+										"This chamber holds the Eye of Gruumsh, which can be used to view different regions of the city when correctly activated. A light source must be placed in the sconce of this room to activate the Eye, in addition to the conditions met in Watcher's Walk.",
+										"Once the puzzle is solved, and the rainbow light hits the Eye, it shimmers, and images begin to play across its surface.",
+										{
+											"type": "entries",
+											"name": "Eye of Gruumsh",
+											"page": 14,
+											"entries": [
+												"Once activated, the Eye of Gruumsh allows an observer to see other regions of the city. The visions can warn the party about foes lurking in the dungeon, or alert them to hidden treasure locations. What images the party sees are ultimately up to the DM, but here are a couple of examples:",
+												{
+													"type": "list",
+													"items": [
+														"The sphere clouds over, and you see a charred black chamber. You somehow know that the ghost of a beast haunts this place (referring to the Funeral Room in the Worg Grounds\u2014area 64).",
+														"The sphere clouds over and you see a room filled with skulls. You somehow know an offer of blood will awaken a helpful guide (referring to the Overlook of Skulls at the Lake of the Ancestors\u2014area 40)."
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"name": "Song Trackers",
+					"page": 14,
+					"entries": [
+						"The Song Trackers are a group of orcs renowned for their warriors' ability to follow a creature, even if all they have to go on is a whisper of sound. They also have a history of producing bards, famous for their voices. Much of their training would take place outside the city, such excellence required constant work.",
+						{
+							"type": "entries",
+							"name": "Song Trackers' Omens",
+							"page": 14,
+							"entries": [
+								{
+									"type": "list",
+									"items": [
+										"If you find something that is lost, returning it to its owner brings you good fortune.",
+										"Finding an antler branch on your path denotes trouble (as it's something lost that cannot be returned).",
+										"Seeing three birds flying in the same direction means it is a good day to start a journey.",
+										"Always travel crossways to where you saw lightning strike.",
+										"Be wary of an early thaw.",
+										"If you cannot sing, then whistle, or learn to drum a beat."
+									]
+								},
+								{
+									"type": "inset",
+									"name": "Musical Commands",
+									"page": 15,
+									"entries": [
+										"Sound carries and the orcs took advantage of that, creating a code to communicate over distances using the sounds of mainly harmless creatures native to their environments. The various chirps and whistles of songbirds were used, relying on unique patterns to differentiate from actual birds when necessary. The songs and their meaning have changed slightly over time, in part due to the fall of the city, their territory and terrain has changed. Song Trackers know the current codes and have advantage on Intelligence ({@skill History}) or Charisma ({@skill Performance}) checks to control the mechanical teaching aids. Attempts to determine which sound to use by other orcs require a successful DC 25 Intelligence ({@skill History}) check."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Features",
+							"page": 15,
+							"entries": [
+								"Some features are consistent throughout the area unless otherwise noted:",
+								{
+									"type": "entries",
+									"entries": [
+										{
+											"type": "entries",
+											"name": "Illumination",
+											"page": 15,
+											"entries": [
+												"The area is in darkness."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Ceilings",
+											"page": 15,
+											"entries": [
+												"The ceilings are 15 feet high."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Doors",
+											"page": 15,
+											"entries": [
+												"The doors are stone and all have two locks (practice for the bards) of varying difficulty which aren't locked except the door from area 31 to area 33 which has one lock engaged."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Portcullises and Cells",
+											"page": 15,
+											"entries": [
+												"The bars are rusted, and have AC 17 and 15 hit points. The bars are far enough apart to allow Tiny creatures through them. Unless noted otherwise there doesn't seem to be a way to raise or lower the bars."
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Locations",
+							"page": 15,
+							"entries": [
+								"The following locations are keyed to map 5.",
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "adventure/RtG/007.webp"
+									},
+									"title": "Map 5"
+								},
+								{
+									"type": "entries",
+									"name": "31. Armory",
+									"page": 15,
+									"entries": [
+										{
+											"type": "insetReadaloud",
+											"page": 15,
+											"entries": [
+												"Looking into the room, the characters see: The hallway opens into a room. Weapons covered in rust and webs line the walls, armor lies in dust-covered heaps, and a shield with the barely discernable design of a hawk over paw tracks lies on the floor near the doorway."
+											]
+										},
+										"Adjust the boxed text if they are entering from a different direction and move the shield to a location they can immediately see. Song Trackers recognize the symbols on the shield as being from their group.",
+										{
+											"type": "entries",
+											"name": "Walls",
+											"page": 15,
+											"entries": [
+												"The walls of this room are lined with weapon racks and spiderwebs. Except for the two greataxes ({@creature flying sword||flying swords}) racked by the doors, whose gleaming metal is rust-free, the weapons are tarnished, brittle, and shrouded in webs. The greataxes attack when the characters enter the room. A Song Tracker, or a character who makes a successful DC 25 Intelligence ({@skill History}) check, knows the \"Stand down\" command is the repetitive chirp of a chickadee, and can deactivate the weapons with a successful DC 10 Charisma ({@skill Performance}) check."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Webs",
+											"page": 15,
+											"entries": [
+												"The webs were spun by the two {@creature swarm of spiders||swarms of spiders} that reside here. If anyone removes a weapon from the racks, or the greataxes attack, this disturbs the swarms and causes them to attack the nearest creature."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Piles of Armor",
+											"page": 15,
+											"entries": [
+												"In the middle of the room are two piles of armor. At end of the first round of combat, or when a character gets within 5 feet, the piles of armor rise revealing themselves to be two sets of {@creature animated armor}. A Song Tracker knows the \"At ease\" command is the cry of a hawk, and they must succeed on a DC 10 Charisma ({@skill Performance}) check to deactivate them."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Door",
+											"page": 15,
+											"entries": [
+												"The door to area 33 has the upper lock engaged. A character must succeed on a DC 25 Dexterity ({@item thieves' tools|PHB}) check to unlock the door. The door has AC 17, 27 hit points, and immunity to poison and psychic damage."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 15,
+											"entries": [
+												"The shield isn't magical, but on the inside is etched the family name of one of the orc characters in the group (DM's choice), and it belonged to their many-generations-removed ancestor."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "32. Instrument Fabrication",
+									"page": 15,
+									"entries": [
+										"A short hallway opens into a larger area, the walls of which are lined with work areas covered in dust.",
+										{
+											"type": "entries",
+											"name": "Work Areas (Musical Instruments)",
+											"page": 15,
+											"entries": [
+												"On the work surfaces reside; a {@item lute|PHB} without tuning pegs and strings, a hollowed-out bone that has two holes drilled in it (the beginnings of a {@item flute|PHB}), and a headless {@item drum|PHB}. Looking through the drawers and cabinets of these stations reveals tools still in excellent condition. Two sets of each of the following are found: {@item woodcarver's tools|PHB}, {@item jeweler's tools|PHB}, and {@item tinker's tools|PHB}. A successful Intelligence ({@skill Investigation}) DC 20 in this area reveals a hidden panel behind which is a beautiful cli {@item lyre|PHB}."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Work Areas (Leather Goods)",
+											"page": 16,
+											"entries": [
+												"Beneath the dust and grime of the desks are partially finished bracers, a set of bird jesses, and a pouch. In the drawers of these workstations are two sets of {@item leatherworker's tools|PHB}."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Alcove",
+											"page": 16,
+											"entries": [
+												"In the alcove are shelves with pieces of wood and dried-out leather."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Doors",
+											"page": 16,
+											"entries": [
+												"The door next to the alcove leads to area 34 and has no keyhole but moves smoothly when pushed. The other door isn't locked and opens into area 35."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 16,
+											"entries": [
+												"The characters might gain a cli {@item lyre|PHB} and two of each of the following: {@item jeweler's tools|PHB}, {@item woodcarver's tools|PHB}, {@item tinker's tools|PHB} and {@item leatherworker's tools|PHB}."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "33. Changing Hallway",
+									"page": 16,
+									"entries": [
+										"This area was used to practice close-quarter fighting on uneven terrain, with the occasional trap thrown in to spice it up. The spice is now provided by a {@creature poltergeist}.",
+										{
+											"type": "entries",
+											"name": "Doors",
+											"page": 16,
+											"entries": [
+												"The door from the hallway isn't locked. The other door is locked as described in area 31."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Alcoves",
+											"page": 16,
+											"entries": [
+												"Immediately opposite the door from area 31 is an alcove, the back wall of which has a series of levers and some wheels. The alcove to the right of that doorway appears empty."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Floor",
+											"page": 16,
+											"entries": [
+												"The floor is made up of uneven cobblestones. A creature that runs in this hallway must succeed on a DC 10 Dexterity check or fall {@condition prone}."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Control Panel",
+											"page": 16,
+											"entries": [
+												"Wheels and gears lay in pieces on the floor. On the wall, among many broken controls, are two intact levers. They control the following traps:"
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Grease Trap",
+											"page": 16,
+											"entries": [
+												"When the lever for this trap is activated, grease oozes up through tiny holes in the floor of two adjoining sections creating a thin layer of grease. A creature walking in these areas must succeed on a DC 15 Dexterity saving throw or fall {@condition prone}. If the creature was running, they also take 3 ({@damage 1d6}) bludgeoning damage on a failed save. The holes can be detected with a successful DC 20 Wisdom ({@skill Perception}) check."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Pit Trap",
+											"page": 16,
+											"entries": [
+												"When the {@creature poltergeist} flips the lever for this, a section of the floor becomes a trap. When a creature weighing at least ten pounds steps on it, they must make a DC 15 Dexterity saving throw to avoid falling into the pit. On a failure, they fall 10 feet and take 3 ({@damage 1d6}) bludgeoning damage and 2 ({@damage 1d4}) piercing damage from the bones at the bottom of the pit. A successful DC 15 Wisdom ({@skill Perception}) check notices that the next 5-foot section of floor is slightly depressed."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Creatures",
+											"page": 16,
+											"entries": [
+												"The {@creature poltergeist} is what remains of the unlucky adventurer whose bones are at the bottom of the pit trap. It is tied to this area. It uses its Telekinetic Thrust to manipulate the levers and avoids direct confrontation."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "34. Clockwork Haven",
+									"page": 16,
+									"entries": [
+										"This room was the workshop of an art that has since been lost to the Song Trackers\u2014the making of clockwork devices. They used these devices both for training and in the field.",
+										{
+											"type": "entries",
+											"name": "Light",
+											"page": 16,
+											"entries": [
+												"When the door opens a glyph of warding casts a {@spell light} spell which bathes the area in bright light."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Smell",
+											"page": 16,
+											"entries": [
+												"Anyone who has a passive DC 20 Wisdom ({@skill Perception}) score smells a faint odor of decay."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Desk",
+											"page": 16,
+											"entries": [
+												"Centered on the left-hand wall is a desk with small tables on either side of it. The desk is dust-free and has some clamps, {@item leatherworker's tools|PHB} and {@item tinker's tools|PHB}, and four small emeralds spread across it. On one table are remnants of animal pelts. On the other, bits of metal are strewn about."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Floor",
+											"page": 16,
+											"entries": [
+												"Under the two tables near the corners of the room are small piles of rubble. Moving closer causes the two mechanical badgers ({@creature bronze scout|MTF|bronze scouts}\u2014see appendix A) hiding there to use their Lightning Flare before retreating down their tunnels."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Stools",
+											"page": 16,
+											"entries": [
+												"Laying on their side are two stools, one made to support an orc, the other designed to allow a Small creature to reach the work area."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Creatures",
+											"page": 16,
+											"entries": [
+												"The {@creature bronze scout|MTF|bronze scouts} understand Orc but cannot speak. Even though it mimics the look of a badger, its eyes still telescope up. It has no desire to fight. Their goal is to warn the gnome {@creature mummy} of intruders."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 16,
+											"entries": [
+												"The four emeralds are worth 25 gp each. There is also a set of {@item leatherworker's tools|PHB} and a set of {@item tinker's tools|PHB}."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "35. Hallway",
+									"page": 16,
+									"entries": [
+										"The worn floor of this hallway is occasionally interrupted by small piles of stone. These are more of the exits from the tunnels burrowed by the bronze scout badgers. Dim light spills out from area 36."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "36. Carefully Taught",
+									"page": 16,
+									"entries": [
+										"The walls of this room are covered in tapestries that are interrupted by alcoves which hold cages.",
+										{
+											"type": "entries",
+											"name": "Light",
+											"page": 16,
+											"entries": [
+												"Three globes spaced out across the ceiling emit dim light in a ten-foot radius."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Tapestries",
+											"page": 16,
+											"entries": [
+												"These were clearly designed as teaching aids. They show tracks and illustrations of different animals except for the two smaller rugs which show trail markings and runes, one for elves and one for dwarves. The one for elves is a {@creature rug of smothering}. Creatures with a passive Wisdom ({@skill Perception}) score of 20 or higher notice that the hangers for this rug appear slightly different. Closer inspection causes it to attack."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Alcoves",
+											"page": 16,
+											"entries": [
+												"Cells, with no apparent way in or out, take up half of each alcove. In the cell areas, limbs of trees are positioned to hold bird nests with additional perches in the walls. A successful DC 10 Intelligence ({@skill Nature}) check identifies the nests as belonging to various songbirds, which all would be small enough to fly through the bars. The bronze scout badgers have exits into this room in the three alcoves."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Portcullis",
+											"page": 16,
+											"entries": [
+												"A lever on the wall next to it activates this."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Creatures",
+											"page": 16,
+											"entries": [
+												"Frug, a gnome {@creature mummy}, has no interest in fighting. They asked to be mummified in order to take care of the clockwork creatures found while exploring here. Frug hides next to the portcullis leading to area 39 (the portcullis is open), with two {@creature iron cobra|MTF|iron cobras} (see appendix A) as guards. The {@creature bronze scout|MTF|bronze scouts} (see appendix A) use their Lightning Flare to warn the gnome mummy that the characters are coming closer. They engage in a delaying tactic while the {@creature iron cobra|MTF|iron cobras} move up and Frug flees to the stairway in area 39.",
+												"The iron cobras have vocal resonators, but only vocalize flute sounds. As they approach, they start emitting a song and ready Bite attacks. If they don't hear the correct whistled or sung response within 1 round, they attack. A character who makes a successful DC 10 Intelligence ({@skill History}) check recognizes the melody as an old lullaby (bards have advantage on this check), and they know the correct notes of the refrain to respond with. A character who completes the lullaby and makes a successful DC 15 Charisma ({@skill Performance}) check halts the iron cobras' attack."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "37. Performance Circle",
+									"page": 17,
+									"entries": [
+										"The center of the room seems clear, with debris along the base of the walls and odd hooks at varying heights along the walls.",
+										{
+											"type": "entries",
+											"name": "Ceiling",
+											"page": 17,
+											"entries": [
+												"The ceiling is domed and is 25 feet high at the apex."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Debris",
+											"page": 17,
+											"entries": [
+												"Upon inspection it looks broken furniture, some of which was stone."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Wall Hooks",
+											"page": 17,
+											"entries": [
+												"A character who makes a successful DC 20 Intelligence ({@skill Investigation}) check determines that these hooks were meant to hold musical instruments."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Stairs",
+											"page": 17,
+											"entries": [
+												"These lead down. Anyone who walks down them is caught in a magical trap. When a creature reaches the halfway point, they are teleported to the stairs in area 39, facing as if they were walking up those stairs. If they attempt to walk up and exit the stairs, they are teleported back to the top of the stairs they started on. This loop continues until the trapped creature walks up the stairs backward."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Creatures",
+											"page": 17,
+											"entries": [
+												"Undead are immune to the stair trap and Frug, the gnome mummy, has a path from the bottom of these stairs to the bottom of the stairs in 39."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "38. Alcoves of Quiet",
+									"page": 17,
+									"entries": [
+										"These alcoves are under the effect of permanent {@spell silence} spells, but the spells don't affect the hallway."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "39. Circle of Performance",
+									"page": 17,
+									"entries": [
+										"This room is very similar to area 36, except it has a cage containing an {@creature oaken bolter|MTF} (see appendix A) and two stuffed bears ({@creature stone defender|MTF|stone defenders}\u2014see appendix A) stand either side of the cage.",
+										{
+											"type": "entries",
+											"name": "Ceiling",
+											"page": 17,
+											"entries": [
+												"The ceiling is domed and is 25 feet high at the apex."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Debris",
+											"page": 17,
+											"entries": [
+												"Upon inspection it looks broken furniture, some of which was stone."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Wall Hooks",
+											"page": 17,
+											"entries": [
+												"A character who makes a successful DC 10 Intelligence ({@skill Investigation}) determines that these hooks were meant to hold weapons."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Stairs",
+											"page": 17,
+											"entries": [
+												"These lead down. Anyone who walks down them is caught in a magical trap. When a creature reaches the halfway point, they are teleported to the stairs in area 37, facing as if they were walking up those stairs. If they attempt to walk up and exit the stairs, they are teleported back to the stairs they started on. This loop continues until the trapped creature walks up the stairs backward."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Cage",
+											"page": 17,
+											"entries": [
+												"This was designed to stop anyone sabotaging the oaken bolter within, and it starts to rise after the oaken bolter attacks. It takes a full round to rise."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Creatures",
+											"page": 17,
+											"entries": [
+												"There is dust on all the creatures, but their role was to provide a challenge, thus they attack any creature that enters."
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"name": "Lake of the Ancestors",
+					"page": 17,
+					"entries": [
+						"These caves were once holy to Yurtrus the White Hand and his followers. It was here, at the edge of the city, that his followers memorialized those heroes worthy of an afterlife in Gruumsh's horde.",
+						{
+							"type": "entries",
+							"name": "Lake of the Ancestors Omens",
+							"page": 17,
+							"entries": [
+								{
+									"type": "list",
+									"items": [
+										"A skull from one of the honored dead can bolster a warrior's courage if smeared in blood.",
+										"A woman in blue wields the {@condition poisoned} blade you don't see coming. Beware the unexpected attack.",
+										"When a flame offers no heat, it is a sure sign that the dead walk nearby."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Manifestations of the Blue Lady",
+							"page": 17,
+							"entries": [
+								"The Blue Lady's presence can affect the Lake of the Ancestors and the surrounding rooms in any number of ways. Consider building suspense and utilizing any of the following by tying these manifestations to omens the characters are searching for:",
+								{
+									"type": "list",
+									"items": [
+										"Flickering lights ignite within the single eyes of the skulls still mounted atop weapons, shining out across the lake.",
+										"The lake water instantly fouls, running red with blood.",
+										"The faint murmuring of orcish voices drifts on the breeze, praising the deeds of fallen heroes."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Locations",
+							"page": 17,
+							"entries": [
+								"The following locations are keyed to map 6.",
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "adventure/RtG/008.webp"
+									},
+									"title": "Map 6"
+								},
+								{
+									"type": "entries",
+									"name": "40. Overlook of Skulls",
+									"page": 17,
+									"entries": [
+										"The Overlook of Skulls is a place of honor, where the skulls of ancestral heroes are displayed so that they may be remembered.",
+										"Marshy shores slope down to the Lake of Blood (area 42). Embedded in the thick muck are rusted weapons, capped with skulls that look out over the water. A reinforced door leads the Heroes' Vault (area 41).",
+										{
+											"type": "entries",
+											"name": "Illumination",
+											"page": 17,
+											"entries": [
+												"Both sides of the overlook are in total darkness."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Door",
+											"page": 17,
+											"entries": [
+												"Thick iron doors, covered in dirt and rust, lead to the Heroes' Vault (area 41). Each door is locked and protected by an {@spell arcane lock} spell (included in the DCs below). They can be opened with a successful DC 25 Dexterity check using {@item thieves' tools|PHB}, or knocked down with a successful DC 30 Strength check."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Muck",
+											"page": 17,
+											"entries": [
+												"The shoreline is covered with a cloying, black mud that grips the boot and slows anyone attempting to move within five feet of the water's edge. A successful DC 12 Wisdom ({@skill Perception}) check made while searching the muck finds that hundreds of orcish bones lie just below the surface; the bodies of many honored dead. One of the skulls, that of Vrograg Brokentusk, occasionally still wakes if prompted."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Skulls",
+											"page": 18,
+											"entries": [
+												"Dozens of orc skulls are perched atop badly rusted weapons, and many more are half-buried in the mud where the weapons have succumbed to age. Each skull has the bridge of the nose broken out. A successful DC 10 Intelligence ({@skill Religion}) recognizes this as a practice to honor those who died a \"good death\" in battle."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "The Skull of Vrograg Brokentusk",
+									"page": 18,
+									"entries": [
+										"Vrograg Brokentusk was a member of the Fang Trust who died heroically while fighting the hated elves. Some semblance of him remains within his skull, and if a character makes an offering of their blood, he wakes with a yawning groan, like an old man rising from a long nap.",
+										{
+											"type": "entries",
+											"name": "Curmudgeon",
+											"page": 18,
+											"entries": [
+												"Vrograg is a cranky sort who always sees the worst. Every omen is a bad one, and the chances for a good death are few. He assumes the characters are doomed, just like the rest of the city, and he doesn't have much time to spare for children playing in the ashes of lost greatness. Only young orcs of his own clan can sway him to share his knowledge, and even then, he does so with sadness, like he is just helping them delay their doom."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Stories of Yore",
+											"page": 18,
+											"entries": [
+												"Vrograg knows most of the city's history until about 150 years before the calamity, though curiously cannot recall its name. If the characters win him over, he doesn't really answer their questions so much as tell rambling epic stories that each last tens of minutes. He especially tends to focus on tales of heroic warriors. Vrograg is a convenient vehicle for the DM to impart some missed bit of history, or plant a plot hook leading to another area of the city."
+											]
+										},
+										{
+											"type": "inset",
+											"name": "The Good Death",
+											"page": 18,
+											"entries": [
+												"Orcs who die \"a good death\" are sent to Gruumsh by the priests of Yurtrus. The priests seek out the bodies of such fallen heroes, sever their heads, boil or smoke them to get rid of most of the flesh, and then use a ritual punch to break out the bridge of the nose leaving the skull with a single eye. Orcs that appreciate the strength and ferocity of a foe might choose to honor that enemy by giving it the same treatment. The bodies of orcs that die in a failed battle are left behind; they were weak and don't deserve to join Gruumsh. Those that die of old age have typically been taken into Yurtrus's fold, and their bones are used to build furnishings and structures in areas dedicated to the worship of Yurtrus."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "41. The Heroes' Vault",
+									"page": 18,
+									"entries": [
+										"This room is the final resting place of the city's greatest heroes. Unlike the Overlook, the Vault has stayed relatively dry over the ages. Anyone foolish enough to steal from their ancestors will suffer the {@trap death fog trap|RtG}. The walls of this chamber are covered in niches, filled with bones and trophies of the past.",
+										{
+											"type": "entries",
+											"name": "Illumination",
+											"page": 18,
+											"entries": [
+												"There is no light inside the vault."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Burial Niches",
+											"page": 18,
+											"entries": [
+												"There are dozens of niches, each with a few bones and some trophy or trinket. The trinkets aren't of monetary value, but rather cultural. Most have surrendered to time and are little more than fragments or dust, but pieces of bone, stone, or metal are ever present. Several niches have names inscribed below them, including: Ishi the Listener, Laylia Ghost-Walker, Alloh the Healer, Gatalah, Tracker of Songs, and Romdar, the Boy Who Speaks to Lightning."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Magic-Dampening Field",
+											"page": 18,
+											"entries": [
+												"The entirely room is blanketed by a field similar to the false aura effect of Nystul's magic aura. All spells and magic items appear nonmagical to effects that detect magic."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 18,
+											"entries": [
+												"In a niche belonging to Overlox Curgain Bloodsplatter, a skull ritually broken to have one \"eye\" sits atop a feathered spear capped with a wide black metal blade that bears runes declaring it to be Geldak, the Throatseeker. Geldak is a vicious spear that grows warm when within 120 feet of an elf.",
+												"In addition to Geldak, 20 gp worth of jewelry can be scavenged from the graves."
+											]
+										}
+									]
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "adventure/RtG/009.webp"
+									}
+								},
+								{
+									"type": "entries",
+									"name": "42. Lake of Blood",
+									"page": 18,
+									"entries": [
+										"The Lake of Blood is the final resting place of the orcs of the city. Four {@creature water weird||water weirds} guard the lake, summoned long ago to prevent anyone from disturbing the remains of the dead. They attack anyone swimming in the lake and will also respond to the Blue Lady's call within two rounds, should she mentally summon them.",
+										"Despite its name, the Lake of Blood is only filled with water running from an underground spring. The constant motion of the water stirs up the muck, leaving the water cloudy, even if there is light to see by.",
+										{
+											"type": "entries",
+											"name": "Illumination",
+											"page": 18,
+											"entries": [
+												"The cavern is completely dark."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Lake",
+											"page": 18,
+											"entries": [
+												"The lake bottom is uneven, dropping to depths of 40 to 60 feet. The floor of the lake is covered in the same black mud as the shore, and is similarly peppered with the bones of centuries of orcish dead. The water is cloudy, making it lightly obscured within 10 feet, and heavily obscured beyond that."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 18,
+											"entries": [
+												"The lake bottom is covered in the bones of the dead, some of which took their valuables with them. A character who spends ten minutes searching the lake bottom and succeeds on a DC 15 Wisdom ({@skill Perception}) check finds a watertight silver coffer worth 50 gp that contains a necklace of wolves' teeth and pieces of quartz worth 10 gp, and a {@item potion of greater healing}."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "43. Final Rest of the Blue Lady",
+									"page": 18,
+									"entries": [
+										"The last of Yurtrus's faithful watches over the honored dead from this cold campsite. Her name forgotten, the Blue Lady ({@creature ghost}), watches from the Ethereal plane. If the characters simply pay their respects to the dead, she lets them be. If they try to rob the Heroes' Vault or otherwise desecrate the dead, she manifests as a sad-faced female orc wearing blue garments, sat at the campfire. She beckons the characters join her, but never speaks.",
+										"If the characters attack her, or continue their blasphemy, she waves her hand and from the mud around her rise three {@creature flying sword||flying swords} and two {@creature earth elemental||earth elementals} made from the black mud and bones of the dead. Those who desecrate the dead will receive no mercy from her.",
+										"Upon closer inspection, the muddy campsite is littered with discarded weapons and the bones of orcs. A rotted bedroll lies next to a firepit filled with wood waiting to be lit.",
+										{
+											"type": "entries",
+											"name": "Illumination",
+											"page": 18,
+											"entries": [
+												"If the Blue Lady chooses, the campfire may be lit, giving off light but no heat. Otherwise, this area is dark."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Secret Door",
+											"page": 18,
+											"entries": [
+												"The secret door to the northwest can be found with a successful DC 15 Wisdom ({@skill Perception}) check. It isn't locked, and leads to area 60."
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"name": "Rotting Root",
+					"page": 20,
+					"entries": [
+						"Shortly before the fall, Dirt-Under-Nails, a dwarf druid, claimed this area as his home. While on an excursion into the Underdark, he happened upon a strange, sapient fungus which made him an offer he couldn't refuse. The druid was infected by its spores, returned home, and has been here ever since. The only company he keeps is the infested remains of the occasional interloper\u2014rotters.",
+						{
+							"type": "entries",
+							"name": "Rotting Root Clan Omens",
+							"page": 20,
+							"entries": [
+								"The Rotting Root clan stamps out corruption and wickedness when it appears in nature. Aberrations and monstrosities that would corrupt their surroundings are chief among their foes.",
+								{
+									"type": "list",
+									"items": [
+										"Only a cleansing flame can burn away a pestilent heart.",
+										"A tree planted in bloody soil rots from within.",
+										"If a thousand eyes are upon you, then a thousand eyes must be plucked if you are to pass unseen."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Features",
+							"page": 20,
+							"entries": [
+								"Unless specified elsewhere, the area has these features:",
+								{
+									"type": "entries",
+									"entries": [
+										{
+											"type": "entries",
+											"name": "Dimensions and Terrain",
+											"page": 20,
+											"entries": [
+												"The walls and floors are level and of hewn stone brick with ceilings 10 feet above. A thick growth of mycelium lies underfoot. Large clumps of tall mushrooms grow throughout the entire area. The walls are covered in intricate, unusual symbols, spiraling circles, jagged angles, and seemingly nonsensical images\u2014all of which have been painted with an unmentionable brown substance."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Light",
+											"page": 20,
+											"entries": [
+												"The room is completely dark, save for the occasional patch of bioluminescent fungus that sheds dim light in a 5-foot radius."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Sounds and Smells",
+											"page": 20,
+											"entries": [
+												"Wheezing breath, shuffling feet. Rot, dust, and freshly turned earth."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Mycelium",
+											"page": 20,
+											"entries": [
+												"Though dense enough to walk on in most parts, occasional 5-foot patches of the undergrowth are loose and are difficult terrain."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Mushrooms",
+											"page": 20,
+											"entries": [
+												"The mushrooms vary in size from a few inches to 5 feet in height, and they can be found in dozens of vibrant shades of red, blue, green, and yellow. Any of the area's denizens (Dirt-Under-Nails or the rotters) can meld into a clump of mushrooms and move to another within 100 feet as if using the Tree Stride ability. A clump of mushrooms occupies a 5-foot square (AC 11, 28 hit points, and immunity to poison damage)."
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Locations",
+							"page": 20,
+							"entries": [
+								"The following locations are keyed to map 7.",
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "adventure/RtG/010.webp"
+									},
+									"title": "Map 7"
+								},
+								{
+									"type": "entries",
+									"name": "44. A Warning",
+									"page": 20,
+									"entries": [
+										"The mycelium grows only in thin patches here, leaving most of the stone floor visible. A copse of mushrooms stands in the southeastern corner. The only other feature is the orc skeleton wearing rags and a small satchel\u2014all of which are covered in a light dusting of what looks like spores.",
+										"Characters who inspect the skeleton or the satchel it carries risk disturbing the fungus covering its body. Upon opening the satchel, spores fill a 5-foot area immediately surrounding the skeleton. Any living creature in the area must succeed on a DC 15 Constitution saving throw or become {@condition poisoned} for 1 hour. While {@condition poisoned} in this way, the creature has vulnerability to necrotic and poison damage, and has disadvantage on saving throws against poison. The satchel contains three tarnished silver coins and an empty vial."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "45. Storeroom",
+									"page": 20,
+									"entries": [
+										"Moldering remains of crates, barrels, and other containers lay scattered about, their contents spoiled beyond recognition. A {@creature rotter|RtG} (see appendix A) is here, rotting.",
+										{
+											"type": "entries",
+											"name": "Locked Door",
+											"page": 20,
+											"entries": [
+												"The wooden door on the eastern wall is locked. The fungus colony doesn't understand the concept behind a key, but it has no need to unlock it anyway. The door can be unlocked with a successful DC 17 Dexterity check using {@item thieves' tools|PHB}. However, the door is so swollen with moisture that opening it still requires a successful DC 17 Strength ({@skill Athletics}) check."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "46. Hallway",
+									"page": 20,
+									"entries": [
+										"This short hallway features the other entrance to the area. The mycelium here has grown up the door and walls\u2014effectively blocking egress. A creature attempting to open the door must succeed on a DC 25 Strength ({@skill Athletics}) check to brush the growth aside. However, doing so fills the entire hallway with spores (see area 44, above)."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "47. Laboratory",
+									"page": 21,
+									"entries": [
+										"This area was once a place of study and experimentation for Dirt-Under-Nails. It has seen better days. Two {@creature rotter|RtG|rotters} (see appendix A) can usually be found here, though there is a {@chance 25|25 percent} chance that they've wandered into area 48, below. The niche in the northern wall houses a wide, shallow font that trickles with fresh water. A copse of mushrooms grows just east of the font."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "48. Grim Nutriment",
+									"page": 21,
+									"entries": [
+										"A collected mass of skeletons\u2014orcish from the look of it\u2014hang from the wide, square column in the eastern portion of the room, held in place by the thick growth of spongy tentacles woven through their bones. Closer examination reveals the bones are covered in symbols similar to those painted onto the walls.",
+										"A handful of slender pink mushrooms grow in and around the skeletons. Three copses of mushrooms are scattered around the room.",
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 21,
+											"entries": [
+												"A total of three pink mushrooms can be harvested from the pillar, each of which functions as a {@item potion of greater healing} that also provides enough nourishment to sustain a creature for one day. However, the mushrooms are delicate, and each requires a successful DC 13 Dexterity ({@skill Sleight of Hand}) check to pick."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "49. Fetid Oracle",
+									"page": 21,
+									"entries": [
+										"This room is a veritable jungle of tall mushrooms of various colors and shapes. While it's obscured by the growth, the glow of a campfire can be seen reflecting off the walls and ceiling north of the entrance. Three copses of mushrooms are spread throughout the room. The mushrooms in the northern portion of the room have been cleared away. Two benches made of alchemically treated mushrooms are placed around a central fire. {@creature Dirt-Under-Nails|RtG} (see appendix A) sits on a bench, staring into the flames.",
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 21,
+											"entries": [
+												"Dirt-Under-Nails carries 50 gp worth of coins of various mints as well as a +2 rod of the pact keeper."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "49a. Reliquary",
+									"page": 21,
+									"entries": [
+										"The door to this room is made of precisely hewn stone. It's locked and trapped with a 5th-level glyph of warding that is triggered by any nonplant creature attempting to open the door. Detecting the nearly {@condition invisible} glyph requires a successful DC 15 Intelligence ({@skill Investigation}) check. However, the check is made with disadvantage due to the mycelium growth on the wall. If triggered, the glyph casts {@spell cloudkill} (save DC 15).",
+										{
+											"type": "inset",
+											"name": "Dirt-Under-Nails",
+											"page": 21,
+											"entries": [
+												"While he may have once been a dwarf, Dirt-Under-Nails is now anything but. The fungus's hold is apparent; his mottled skin is various shades of brown, purple, and white, and his beard is a network of pale, wispy roots. A trio of bracket fungi grow along his neck and twist around to the back of his head. His eyes are cloudy and when he speaks, his voice is raspy. He refers to himself as \"we\" and \"us,\" likely referring to the spores that have taken root in his body.",
+												"Dirt-Under-Nails is eternally patient, the only thing that can truly rouse his anger is a threat to himself or those he shares company with. He's perfectly content to be left to stare into his fire for eternity."
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"name": "Red Wardens",
+					"page": 21,
+					"entries": [
+						"This cavernous area was once a subterranean garden that served as a font of flora used for both medicinal and dietary needs. It was also a gathering site for ceremonies to honor or celebrate important developments shared between the tribes, such as advancements for the city or victories shared between tribal leaders. The area was overseen by the Red Wardens.",
+						"The Red Falls gets its name from the stream that flows through the area. The rocky sediment along the bottom of the stream, combined with the light from above, gives the water a reddish hue.",
+						{
+							"type": "entries",
+							"name": "Red Wardens Omens",
+							"page": 21,
+							"entries": [
+								"This subtribe's traditions closely follow those of Luthic, the Cave Mother. They promoted unity among the people by enforcing the traditions and rituals centered around the circle of life and death. They were often warrior-shamans and healers.",
+								"Red Wardens have their own unique customs guided by specific omens and prophecies:",
+								{
+									"type": "list",
+									"items": [
+										"The shared blood of orcs brings life to the hearth and death to its enemies.",
+										"To carry fear when gazing upon your own reflection is to invite death into your soul.",
+										"You must cast a shadow at least once each day to expel the corruption within you."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Features",
+							"page": 21,
+							"entries": [
+								"Each section in this area shares the following features:",
+								{
+									"type": "entries",
+									"entries": [
+										{
+											"type": "entries",
+											"name": "Terrain",
+											"page": 21,
+											"entries": [
+												"The ground is covered in a mixture of dirt and thick, mossy overgrowth."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Lighting",
+											"page": 21,
+											"entries": [
+												"Three fissures in the ceiling, no more than two feet wide, give way to periodic breaches of sunlight and moonlight within the area. The rest of the ceiling is covered with a bioluminescent moss that emits a soft, reddish-orange glow. Even together, both of these provide only a dim light source."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Underground Stream",
+											"page": 21,
+											"entries": [
+												"Water flows from the south into a stream that divides the area, then down through the portcullis gate in the northeast into the Lake of Ancestors. The water on the south side of the chamber is four feet deep and is six feet deep on the north side after falling into the small pool (area 50). The bioluminescent moss that grows on the ceiling also grows along the ground beneath the stream's surface, giving the water a distinct reddish hue."
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Locations",
+							"page": 21,
+							"entries": [
+								"The following locations are keyed to map 8.",
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "adventure/RtG/011.webp"
+									},
+									"title": "Map 8"
+								},
+								{
+									"type": "entries",
+									"name": "50. Chamber of the Mother",
+									"page": 21,
+									"entries": [
+										"This chamber was once the site of many tribal gatherings and processions of honor. It also served as grounds for harvesting flora for food and medicine.",
+										{
+											"type": "insetReadaloud",
+											"page": 22,
+											"entries": [
+												"The rushing stream drops off of a steep ledge into a small pool on the north side of the chamber. A shaft of light shines down upon the waters from a crack in the ceiling above."
+											]
+										},
+										"The waterfall drops ten feet into a small pool of glowing red water. The pool is seven feet deep.",
+										{
+											"type": "entries",
+											"name": "The Last Warden",
+											"page": 22,
+											"entries": [
+												"The spirit of Ahthi Greenclaws, last of the Red Wardens, resides here, appearing only when the ritual is performed at the Heroes' Bridge (area 51)."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "50a. Warden's Gate",
+									"page": 22,
+									"entries": [
+										{
+											"type": "insetReadaloud",
+											"page": 22,
+											"entries": [
+												"A rusty iron portcullis blocks passage to the northeast. Alongside the passage beyond the gate, water flows from a stream that cuts through the area. The stream bears a distinct reddish color which steadily fades once it reaches the portcullis."
+											]
+										},
+										"The gate itself is rusted and worn. There are several options available for getting past it.",
+										{
+											"type": "entries",
+											"name": "Using the Crank",
+											"page": 22,
+											"entries": [
+												"A crank on the nearby wall on either side of the gate can be used to open it, which requires a successful DC 14 Strength ({@skill Athletics}) check. This method requires some finesse. The portcullis opens only halfway (about 4 feet) and must be held open, but too much force causes the rusty hoisting mechanism to break. Each round, the character holding the portcullis open must make a DC 13 Wisdom saving throw. On a failed save, the chains snap and the portcullis slams shut. Each character moving beneath the portcullis must succeed on a DC 15 Dexterity saving throw or take 18 ({@damage 4d8}) piercing damage.",
+												"Forcing it Open. A character can bend the bars with a successful DC 19 Strength ({@skill Athletics}) check, creating a gap wide enough for a Medium or smaller creature to fit through. If all else fails, an opening of the same size can be made by damaging the rusted beams. A weak section of the portcullis has AC 13, 45 hit points, and resistance to piercing damage."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "50b. Statue and Grounds",
+									"page": 22,
+									"entries": [
+										"This corner of the chamber has stairs leading up to the south and a door leading to the north. Next to the stairs, a stone statue of a cave bear stands on a large circular platform.",
+										{
+											"type": "entries",
+											"name": "Statue of the Mother",
+											"page": 23,
+											"entries": [
+												"The cave bear statue has abnormally long, sharp talons, identifying it as a representation of the goddess Luthic. A successful DC 15 Intelligence ({@skill Investigation}) check reveals the arms of the statue can be raised upward. Doing so causes the entire platform to slide to the north, revealing a 10-foot drop beneath it into a hidden passage to area 66."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Poisonous Patch",
+											"page": 23,
+											"entries": [
+												"The patch of fungus next to the stream is poisonous when disturbed. It can be spotted and identified with a successful DC 15 Wisdom ({@skill Survival}) check. When a creature moves at least 5 feet into this patch, it releases a cloud of poisonous spores. The creature and each creature within 5 feet of it must succeed on a DC 14 Constitution saving throw or become {@condition poisoned}. A {@condition poisoned} character can repeat this saving throw once every hour, removing the effect upon a success."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "50c. Overgrown Flora",
+									"page": 23,
+									"entries": [
+										"This corner of the chamber is where most of the medicinal herbs were grown and harvested. A {@creature cloaker} has made its home on the ceiling of this area alongside four {@creature giant bat||giant bats}. The cloaker attacks any characters that move into this side of the chamber.",
+										{
+											"type": "entries",
+											"name": "Entangling Vines",
+											"page": 23,
+											"entries": [
+												"The vegetation in this area has been corrupted by foul magics, writhing along the ground and wrapping about the legs of creatures passing through them. The ground here counts as difficult terrain. Characters moving through this area must succeed on a DC 13 Dexterity saving throw or fall {@condition prone} at the end of their move. Characters who run or take the {@action Dash} action have disadvantage on the roll."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 23,
+											"entries": [
+												"A character who succeeds on a DC 13 Wisdom ({@skill Survival}) check identifies particular mosses and herbs with healing properties. If gathered and processed with an {@item herbalism kit|PHB} for one hour, there is enough to produce two antitoxins and two potions of healing."
+											]
+										}
+									]
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "adventure/RtG/012.webp"
+									}
+								},
+								{
+									"type": "entries",
+									"name": "51. Warden's Terrace",
+									"page": 23,
+									"entries": [
+										{
+											"type": "insetReadaloud",
+											"page": 23,
+											"entries": [
+												"Towering fungi grow out from the moss-covered floor, reaching almost as high as the ceiling. A stone bridge provides passage across the stream."
+											]
+										},
+										"A {@creature rot troll|MTF} (see appendix A) has made its lair here. It resides on the platform at the top of the western staircase and attacks the party on sight. The stairs on either side of the chamber both end in walls of collapsed debris. This troll can make one additional claw attack with its Multiattack action.",
+										{
+											"type": "entries",
+											"name": "Rushing Current",
+											"page": 23,
+											"entries": [
+												"The current in this part of the chamber is strong, rushing in from an opening to the south. The water here is seven feet deep. Characters who fall into the water must make a DC 15 Strength saving throw or be carried along with the current at a rate of 20 feet per round. Characters pushed into the rocks take 18 ({@damage 4d8}) bludgeoning damage."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Heroes' Bridge",
+											"page": 23,
+											"entries": [
+												"The bridge is decorated with the carved names of heroes and leaders who have been honored within this chamber. Characters who perform the blood bond ritual (see area 54) here, each take 1 slashing damage. The ritual summons the spirit of Ahthi Greenclaws.",
+												"The spirit rises from the small pool in area 50 and cleanses the area. Once cleansed, the poisonous patch in area 50b and the entangling vines in area 50c are both eradicated. If instead the blood of any other creature is intentionally spilled into the pool, Ahthi Greenclaws transforms into an empowered {@creature water elemental}. The elemental can make one additional slam attack with its Multiattack action."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "52. Workshops",
+									"page": 24,
+									"entries": [
+										"Each of these rooms contain a variety of crafting materials. Most of the tools are ruined. If the party spends at least five minutes searching and make a successful DC 14 Intelligence ({@skill Investigation}) check, they find an {@item herbalism kit|PHB}, a set of {@item mason's tools|PHB}, and a set of {@item alchemist's supplies|PHB}."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "53. Painted Hall",
+									"page": 24,
+									"entries": [
+										"The walls of this room are covered in paintings and stone carvings that depict and describe several significant events that mark the development and growth of the city and its tribal society. Characters who make a successful DC 14 Wisdom ({@skill Insight}) check glean some historical information (such as the city's name and how its peoples came to rise under the guidance of their deities)."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "54. Ritual Chamber",
+									"page": 24,
+									"entries": [
+										"This smaller room is dressed in faded painted banners depicting the different rituals practiced by the tribe for major events such as honoring war heroes, treaties, and changes in tribal leadership.",
+										{
+											"type": "entries",
+											"name": "Blood Bond Ritual",
+											"page": 24,
+											"entries": [
+												"A successful DC 13 Wisdom ({@skill Perception}) check identifies the Heroes' Bridge in area 51, as well as the ritual performed between prominent tribe members. It involves one or more orcs cutting their palms and squeezing their blood simultaneously into the running waters."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Water Font",
+											"page": 24,
+											"entries": [
+												"A four-foot-tall cylindrical container sits against the north wall, filled with dirty, viscous water. If cleansed with purify food and drink, or if the blood bond ritual is performed at the bridge in area 51, the water is clear. Once per day, if a character stares into the font's clear waters and makes a successful DC 16 Intelligence ({@skill Arcana}) check, they gain the benefit of a {@spell scrying} spell."
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"name": "Luthic's Zealots",
+					"page": 24,
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Luthic's Zealots Omens",
+							"page": 24,
+							"entries": [
+								{
+									"type": "list",
+									"items": [
+										"When handling the honored dead, show respect by blinding yourself, or your dishonor will taint their spirit.",
+										"When offering another a drink, prove your honorable intentions by taking the first sip.",
+										"Drawing blood with malice in a place of healing will curse you and your line forever.",
+										"If you turn away an injured orc, you doom yourself to suffer their injuries.",
+										"The waters of home are the strongest cure for any ailing orc."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Locations",
+							"page": 24,
+							"entries": [
+								"The following locations are keyed to map 9.",
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "adventure/RtG/013.webp"
+									},
+									"title": "Map 9"
+								},
+								{
+									"type": "entries",
+									"name": "55. Shrine to Luthic",
+									"page": 24,
+									"entries": [
+										"A small shrine to Luthic, the orc goddess of medicine, still stands, though any cloth or other soft materials have long ago rotted off its stone. Atop a high slab, a carved statue depicts a female orc wearing druidic talismans and standing above several wounded orc soldiers, with her arms outstretched. An inscription, shallowed by dust and age, reads \"With renewed life, pursue thy quarry.\"",
+										"The shrine is as old as its surroundings, but still has some magic infusing it. If an orc prays at the shrine, they have advantage on their next three Constitution saving throws. This benefit lasts until the next time they finish a long rest."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "56. Healing Floor",
+									"page": 24,
+									"entries": [
+										"This long, rectangular room is scattered with the debris of rotted furniture and piles of degraded cloth. A few stone slabs remain intact among the detritus, each of a size and height to function as beds for orc residents. One slab still holds the remains of an orc; now just bones and scraps of metal armor.",
+										{
+											"type": "insetReadaloud",
+											"page": 24,
+											"entries": [
+												"Set into the north and south walls are deep alcoves, three on either side. In the northeast alcove, you see movement, though it floats just at the edge of your vision."
+											]
+										},
+										"In the northeast alcove is Hinsha, an orc {@creature ghost}. Hinsha was the lead healer of this area when she was alive, and continued to haunt the area after her untimely death. When the players first approach, she is scared and seems about to lash out at them. When she sees that they're orcs, she relaxes, and thanks Luthic that they're here. She has the following information to give:",
+										{
+											"type": "list",
+											"items": [
+												"Years ago, members of the ruling clan abruptly abdicated their position, throwing the city into chaos.",
+												"A terrible civil war ensued throughout the city, with members of the different family-tribes fighting for power.",
+												"Hinsha's ward was a firm place of no fighting where any orc could seek asylum and healing.",
+												"Eventually, the Boneshield clan grew impatient with Hinsha's refusal to hand over injured enemies.",
+												"The Boneshields launched an assault on the ward, and Hinsha's staff were ill-equipped to handle the full fighting force. She and her staff were slaughtered, along with her patients.",
+												"Survivors of the war recognized that the city was no longer safe, so, clan by clan, they left to establish new homes."
+											]
+										},
+										"When the players inform Hinsha of their intent to reunite the clans and reestablish the keep, she is cautiously optimistic. \"This was the beating heart of our people,\" she explains, \"and you need to cleanse it.\"",
+										"Hinsha says she can perform a ritual which will ward off the ill will and betrayal that taints the place. However, she'll need three ritual components to do so:",
+										{
+											"type": "list",
+											"items": [
+												"The still-beating heart of a foe thrice slain (found in area 57).",
+												"The purest waters sourced from our home (found in area 60).",
+												"A poultice made from the bones of the honorable dead (found in area 59)."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "The Ritual",
+											"page": 25,
+											"entries": [
+												"Once the players return to Hinsha with the items for the ritual, she asks that they help her put the final spirits to rest.",
+												"As she performs the ceremony, three waves of spirits assault the players. The next wave arrives as soon as the previous wave is destroyed:",
+												{
+													"type": "list",
+													"items": [
+														"{@creature Poltergeist||Poltergeists} (one for each player)",
+														"{@creature Ghost||Ghosts} (one for every two players) and two specters",
+														"Two {@creature wraith||wraiths}"
+													]
+												}
+											]
+										},
+										"The poltergeists generally avoid getting too near the players, instead using their Telekinetic Thrust to hurl various bits of debris at the party. However, due to the 12-foothigh ceilings, they can never get high enough to be out of melee range.",
+										"As soon as the last enemy is defeated, read:",
+										{
+											"type": "insetReadaloud",
+											"page": 25,
+											"entries": [
+												"With a sudden rise in volume, Hinsha utters the last of her incantations, and the reagents in front of her flash a bright green. They melt, hovering in the air, and coalesce into a smooth sphere which shifts through several colors before settling a bright red. Warm light pulses from it at the same steady beat as the terrible heart.",
+												"The pace quickens, and the light seems to coat everything in the room. \"Thank you,\" Hinsha says solemnly from behind the sphere. \"Perhaps you are the change needed in this dark place. You must promise to never again allow greed to consume us all.\""
+											]
+										},
+										"When the players assent to this, Hinsha and the sphere fade to nothingness. The area feels better, as if an intangible evil has finally been dispelled."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "57. Quarantine",
+									"page": 25,
+									"entries": [
+										"The door to this chamber is festooned with warding runes and clear, strongly worded warnings in Orc. They read \"An evil contained; death to those that enter\" and \"Twice killed, the heart still beats.\" Though the magic has lessened over time, the runes still glow faintly.",
+										"It isn't hard to open the door from outside, and as soon as a player does, read:",
+										{
+											"type": "insetReadaloud",
+											"page": 25,
+											"entries": [
+												"As the slightest crack forms between the door and its jamb, the door bursts open, and a rush of unbelievably strong wind pushes all of you back into the main healing room.",
+												"As you get back on your feet, you see a new figure in the room, and he looks decidedly upset. He is roughly humanoid, though easily nine feet tall. He once sported a pair of impressive horns and wings, but all that remains are the tattered remains where they were violently torn from him. His chest, latticed with deep scars, thumps audibly with a slow, steady heartbeat."
+											]
+										},
+										"This is a {@creature horned devil} which immediately attacks. Once defeated, its body rapidly disintegrates to ash, leaving behind the beating heart."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "58. Intake",
+									"page": 25,
+									"entries": [
+										"This room is dominated by a long stone slab which was clearly a desk or table of some kind. On the northern wall, a carved relief of the goddess Luthic looks down on the room with a matronly gaze.",
+										"An inscription beneath the relief reads, \"No injury too great, no need too strong.\"",
+										"The room has some scattered debris from broken furniture, and the door to the northwest is closed, but not locked. If the players investigate, they find a rotted box beneath the desk containing a {@item potion of greater healing} and a {@item potion of healing}.",
+										"Taking the potions angers the two {@creature ghost||ghosts} invisibly skulking around the room. They attack the intruders."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "59. Staff Sleeping Quarters",
+									"page": 25,
+									"entries": [
+										{
+											"type": "insetReadaloud",
+											"page": 25,
+											"entries": [
+												"This room contains the scattered remains of several bunkbeds and other furniture. As you enter, movement stirs in the piles of detritus, and the bones of a dozen orc skeletons rise to face you."
+											]
+										},
+										"There are twelve {@creature skeleton||skeletons} in here with the following modifications:",
+										{
+											"type": "list",
+											"items": [
+												"They have the Aggressive and Undead Fortitude traits.",
+												"They have a Strength score of 16.",
+												"They carry greataxes with a +5 to hit which deal 9 ({@damage 1d12 + 3}) slashing damage."
+											]
+										},
+										"These skeletons are the remains of the healing ward's staff, though now they are mindless undead. Once defeated, the players are able to grind a few of the bones into a usable poultice. However, because of the tribe's superstition, this must be done while blindfolded or the poultice won't be an effective reagent. Hinsha can explain this to the players if needed."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "60. Storage",
+									"page": 25,
+									"entries": [
+										"In this room, medical supplies spill out of rotting boxes. In one corner, the contents of a shattered vial have eaten a small crater into the stone floor.",
+										{
+											"type": "insetReadaloud",
+											"page": 25,
+											"entries": [
+												"As you enter, one of the intact vials from a crate wobbles, then flies through the air to shatter on the wall next to you."
+											]
+										},
+										"The four {@creature poltergeist||poltergeists} in the room attempt to fling vials of acid at the players. There are twelve vials in the box, and the acid eats into the floor where it is thrown, even if it hits a creature.",
+										"If a vial hits a square or a creature in a square over the secret door, it is revealed to be a former well that has been cleverly hidden to look like part of the floor. A ladder descends to area 43 in the caverns below.",
+										"Once the players defeat the poltergeists, they can take any remaining vials. Additionally, there is a {@item potion of greater healing} and a {@item potion of diminution}, neither of which are labeled.",
+										"There is also a large flask of clear water stoppered with wax. This is a reagent for Hinsha's ceremony. As befitting an honorable orc, a player must unstopper and taste the water prior to giving it to her (an ancient custom to prove one isn't offering a {@condition poisoned} drink)."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "61. Cavern",
+									"page": 27,
+									"entries": [
+										"Upon entering the cavern, the stream's flow widens to the trickle of a shallow pool before narrowing again on the other side. Several boulders lie scattered around the chamber, though the floor looks remarkably smooth and bare between them.",
+										"Two {@creature galeb duhr} hide among the boulders, making the most of their False Appearance and {@sense tremorsense}. Once the party is entirely within the chamber, they spring an attack. The galeb duhr can't be identified except by magical means, so the players will likely be surprised during the first round of combat."
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"name": "Fang Trust",
+					"page": 27,
+					"entries": [
+						"A community of orcs known as the Fang Trust looked after the city's worgs. A character who belongs to the Fang Trust knows the group believes that offering a worg a meal upon first meeting it was the quickest way to bond with the creature."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Dungeon Features",
+					"page": 27,
+					"entries": [
+						"The orcs trained and cared for worgs in this part of the city. Worgs were guardians, mounts, trackers, and friends to the orcs. All areas of the worg ground have the following features:",
+						{
+							"type": "list",
+							"items": [
+								"The ceilings are 15 feet high.",
+								"There are no light sources.",
+								"The walls and doors are made of stone. The doors have no knobs or handles but are made to be easily pushed open from either direction."
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Dungeon Locations",
+					"page": 27,
+					"entries": [
+						"The following locations are keyed to map 10.",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "adventure/RtG/014.webp"
+							},
+							"title": "Map 10"
+						},
+						{
+							"type": "entries",
+							"name": "62. Monument Chamber",
+							"page": 27,
+							"entries": [
+								"This dusty stone chamber has Orc carved on the walls from floor to ceiling; most of it faded beyond legibility. The few readable words are the names of worgs that died serving the city. Translated from Orc, these names are Drool Puppy, Great Claw, Howler, Quiet Step, and Snoof.",
+								"A {@spell detect magic} spell reveals that the readable names radiate auras of illusion magic. If a creature touches one of these names, the sound of the deceased worg's unique howl fills the chamber for a moment before fading away."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "63. Trainers' Chambers",
+							"page": 27,
+							"entries": [
+								"Four stone bunks are built into the walls of this dusty chamber and the Fang Trust's symbol, a circle of six fangs, is carved into the floor.",
+								{
+									"type": "entries",
+									"name": "Creatures",
+									"page": 27,
+									"entries": [
+										"A {@creature crawling claw} made from an orc's hand hides in one of the bunks. The claw attempts to remain hidden, fleeing if attacked or obviously noticed, skittering through the city to get away from potential aggressors. A creature with a passive Wisdom ({@skill Perception}) score of 14 or higher notices the claw."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Treasure",
+									"page": 27,
+									"entries": [
+										"The crawling claw wears a ring of animal friendship."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "64. Funeral Room",
+							"page": 27,
+							"entries": [
+								"Ancient soot and black burn marks mar the floor of this chamber, which sports a 3-foot-diameter hole in the ceiling. This room was used to burn the corpses of deceased worgs.",
+								{
+									"type": "entries",
+									"name": "Creatures",
+									"page": 28,
+									"entries": [
+										"If a creature crosses the center of this room, the ghost of a worg named Great Claw appears. She has the statistics of a {@creature ghost} with the following adjustments:",
+										{
+											"type": "list",
+											"items": [
+												"Great Claw is Large and has 55 ({@dice 10d10}) hit points.",
+												"Great Claw speaks Common and Orc."
+											]
+										},
+										"When she first appears, Great Claw snarls at the characters, warning them to leave. A successful DC 14 Charisma ({@skill Persuasion}) check convinces Great Claw the characters mean no harm. A character who puts out an offering of food for Great Claw gains advantage on this check, for even though she can't eat the food, she appreciates the gesture. If the characters refuse to leave and fail this check, she attacks, fighting until destroyed.",
+										"If the characters succeed on the check, Great Claw is overjoyed to see orcs have returned to restore the city. She shares the following information with the characters:",
+										{
+											"type": "list",
+											"items": [
+												"Great Claw was the leader of the worgs when the city fell.",
+												"Great Claw and other two worgs, Howler and Snoof, died in the city's final days. Because they were sworn to protect this place, their spirits haven't been able to journey on.",
+												"Many years ago, a necromancer searching the city for corpses twisted Howler and Snoof's spirits into evil {@creature wraith||wraiths}. They killed the necromancer and now stalk their old pens (area area 66).",
+												"If the characters destroy Howler and Snoof, the worgs' spirits will be laid to rest and Great Claw will reward them. If the characters have already done this, Great Claw can feel that her friends have moved on and rewards the characters."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Great Claw's Reward",
+									"page": 28,
+									"entries": [
+										"If the characters kill the {@creature wraith||wraiths} in area 66, Great Claw touches them one by one. Each character gains a charm of heroism (see \"Charms\" in chapter 7 of the Dungeon Master's Guide)."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "65. Training Room",
+							"page": 28,
+							"entries": [
+								"The remains of three rusted iron dummies litter the floor of this chamber. A character who examines the dummies finds punctures in the metal. A successful DC 13 Intelligence ({@skill Nature}) check reveals these punctures were made by a worg's bite."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "66. Worg Pens",
+							"page": 28,
+							"entries": [
+								{
+									"type": "insetReadaloud",
+									"page": 28,
+									"entries": [
+										"A cold chill blows through this chamber that smells faintly of sweaty, furry animal. In the center of the floor lies a black-cloaked skeleton. Six cozy pens littered with ancient chicken bones are built into the north, south, and east walls of the chamber."
+									]
+								},
+								"When the characters enter this chamber, two worg wraiths appear and attack, fighting until destroyed. They have the statistics of {@creature wraith||wraiths} with the following adjustments:",
+								{
+									"type": "list",
+									"items": [
+										"They are Large and have 76 ({@dice 9d10 + 27}) hit points each.",
+										"They speak Common and Orc."
+									]
+								},
+								"The first time a character uses an action to offer the wraiths food, the wraiths use their next action attempting to eat the food. After one attempt, they remember they can't eat anything now they're undead and resume attacking.",
+								{
+									"type": "entries",
+									"name": "Treasure",
+									"page": 28,
+									"entries": [
+										"The skeleton wears a belt pouch containing ruby dust worth 750 gp."
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"name": "Quill Keepers",
+					"page": 29,
+					"entries": [
+						"The Quill Keepers were the city's scholars who recorded histories and taught young citizens how to read and write. A Quill Keeper knows that the group places tomes containing the most dangerous knowledge on top of bookshelves, keeping those books furthest from the evil forces of the Lower Planes.",
+						{
+							"type": "entries",
+							"name": "Dungeon Features",
+							"page": 29,
+							"entries": [
+								"The orcs created a place where they could study, write, teach, and read. This area of the city was simply called the Conservatory. All areas of the Conservatory have the following features:",
+								{
+									"type": "list",
+									"items": [
+										"The ceilings are 10 feet high.",
+										"There are no light sources.",
+										"The walls and doors are made of stone."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Locations",
+							"page": 29,
+							"entries": [
+								"The following locations are keyed to map 10.",
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "adventure/RtG/014.webp"
+									},
+									"title": "Map 10"
+								},
+								{
+									"type": "entries",
+									"name": "67. Study",
+									"page": 29,
+									"entries": [
+										"This room is littered with the rotting remains of broken wood tables and cushioned chairs. Empty bookshelves are built into the walls. A character who searches the top of the shelves and succeeds on a DC 14 Intelligence ({@skill Investigation}) check finds a button that unlocks the door to area 69."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "68. Closet",
+									"page": 29,
+									"entries": [
+										"This chamber holds a dozen moth-eaten robes embroidered with the Quill Keepers' symbol, a pair of crossed quills."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "69. Scroll Vault",
+									"page": 29,
+									"entries": [
+										"The door to this room is locked, though no keyhole is apparent. A button in area 67 unlocks the door, or a successful DC 22 Strength ({@skill Athletics}) check forces the door open. The door has AC 17, 27 hit points, and immunity to poison and psychic damage.",
+										"A scroll case lies on the center of a rug woven with the Quill Keepers' symbol, a pair of crossed quills. This {@creature rug of smothering} attacks if the characters broke down or forced open the door, but otherwise it remains dormant.",
+										{
+											"type": "entries",
+											"name": "Treasure",
+											"page": 29,
+											"entries": [
+												"The scroll case contains a {@item spell scroll} of {@spell modify memory}."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "70. Librarian's Office",
+									"page": 29,
+									"entries": [
+										{
+											"type": "insetReadaloud",
+											"page": 29,
+											"entries": [
+												"This dusty office is still intact. An enormous stone desk dominates the west wall, a plush chair rotting behind it Along the north wall, a floor-to-ceiling bookshelf holds musty tomes."
+											]
+										},
+										"Most of the books on the shelves are ruined due to age, but a character who takes 10 minutes to search the top shelf finds an intact journal authored by Scalora the Learned. The journal contains all the information found in the \"Background\" section of the introduction about the history of the city.",
+										{
+											"type": "entries",
+											"name": "Secret Door",
+											"page": 29,
+											"entries": [
+												"The outline of a secret door that connects this area to area 71 can be detected with a successful DC 14 Intelligence ({@skill Investigation}) check."
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "71. Library",
+									"page": 29,
+									"entries": [
+										"Bookshelves containing ruined tomes line the walls of this chamber. Torin Dwendale (chaotic evil male Tethyrian human {@creature mage}) searches the library with his {@creature shield guardian} for useful spellbooks but has found nothing so far. When he sees the characters, he introduces himself with a foppish flourish and tells them he is searching the ruins for spells to add to his collection.",
+										"If any of the characters carry a spellbook, a Book of Shadows, or a {@item spell scroll}, he attacks, hoping to steal the item. Torin fights until reduced to half his hit points, he gets the item he wants, or his shield guardian is destroyed, then flees. Otherwise, he tries to get the characters to battle the golems in area 72, tempting them with tales of treasure in the golem laboratory. He hopes the characters kill the golems or vice versa, then he can kill the weakened victor and claim the treasure in the room.",
+										"Torin cast a ward on his {@item shield guardian amulet|IDRotF} that makes it crumble to dust if it is removed from his body. His spellbook contains all the spells he has prepared."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "72. Golem Laboratory",
+									"page": 29,
+									"entries": [
+										{
+											"type": "insetReadaloud",
+											"page": 29,
+											"entries": [
+												"Two creatures made of stitched-together flesh crash about this room covered in broken furniture and glass. All that remains intact is a single bookshelf with one tome atop its highest level."
+											]
+										},
+										"The two {@creature flesh golem||flesh golems} in this chamber are out of control after centuries of being cooped up. They attack any other creatures they notice, fighting until destroyed. After the flesh golems are destroyed, Torin and his shield guardian (see area 71) seize the moment to attack the characters or steal the spellbook in this room.",
+										{
+											"type": "entries",
+											"name": "Spellbook",
+											"page": 29,
+											"entries": [
+												"The only book on the shelf is a spellbook with the following spells: {@spell banishment}, {@spell cone of cold}, {@spell counterspell}, {@spell detect magic}, {@spell detect thoughts}, {@spell fire shield}, {@spell fly}, {@spell globe of invulnerability}, {@spell identify}, {@spell lightning bolt}, {@spell mage armor}, {@spell magic missile}, {@spell mind blank}, {@spell mirror image}, {@spell misty step}, {@spell scrying}, {@spell stoneskin}, {@spell teleport}, {@spell time stop}, and {@spell wall of force}."
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"name": "False Hope, Dark Promises",
+					"page": 30,
+					"entries": [
+						"As the characters enter this final area, they immediately come under the scrutiny of the {@creature balhannoth|MTF} (see appendix A) that's made its lair here. Native to the Shadowfell, the vicious, predatory balhannoth alters reality in its lair to make the place appear inviting to travelers. Once the orcs step inside, the balhannoth begins to weave its snare.",
+						{
+							"type": "entries",
+							"name": "Dungeon Features",
+							"page": 30,
+							"entries": [
+								"The balhannoth's lair has the following features:",
+								{
+									"type": "entries",
+									"entries": [
+										{
+											"type": "entries",
+											"name": "Illumination",
+											"page": 30,
+											"entries": [
+												"There is no light here, except where noted."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Ceilings",
+											"page": 30,
+											"entries": [
+												"The ceilings are twenty feet high."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Doors",
+											"page": 30,
+											"entries": [
+												"The doors are stone and quite heavy; over the years they have become stuck in their frames and require a successful DC 16 Strength ({@skill Athletics}) check to force open. They aren't locked."
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dungeon Locations",
+							"page": 30,
+							"entries": [
+								"This dungeon area is keyed to map 11.",
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "adventure/RtG/015.webp"
+									},
+									"title": "Map 11"
+								},
+								{
+									"type": "entries",
+									"name": "73. Balhannoth Lair",
+									"page": 30,
+									"entries": [
+										"All of the chambers throughout the area shown on map 11 are part of the balhannoth's lair. Thanks to a limited form of telepathy, the creature can sense the desires of others and identify images of places where they expect those desires to be met. The balhannoth then warps reality around it, remaking the environment so that it matches the appearance of the place the creature seeks.",
+										"A balhannoth thrives on fear and despair, taking pleasure in the horror its victims experience. It terrorizes its prey by using its reality-warping powers to mask its presence until it can snatch the target. Then it teleports away to feed on its victims.",
+										{
+											"type": "entries",
+											"name": "Preparatory Note",
+											"page": 30,
+											"entries": [
+												"As you're preparing to play this adventure, you'll want to ask each of the players about their characters hopes and dreams for this expedition. This is also a good time to ask players about lines and veils as well. It's important to avoid personal triggers in an encounter like this. If they're uncomfortable speaking of these things in front of the group, provide them with a note card or other private means to communicate these with you. This should occur before they even begin wandering around the dungeon, and it can happen as part of a ‘sending-off' ritual held by the elders that set them on this task.",
+												"Once the characters enter, it will be up to you to improvise the description of the areas as the balhannoth hunts them down and attempts to pick them off, one-by-one. If that weren't enough, there is a trio of gelatinous cubes wandering these halls, taking advantage of the confusion caused by the balhannoth to feed."
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"name": "Conclusion",
+					"page": 30,
+					"entries": [
+						"Once the orcs have cleared out the entire dungeon and destroyed the balhannoth, their combined tribes celebrate them as heroes. The new Overlox will enlist them as a group to participate as part of a special council in rebuilding and protecting their home. The new Overlox will ask the characters to donate all but 20 percent of any nonmagical treasure they might have discovered to help resupply, but they allow them to keep any magic items found."
+					]
+				}
+			]
+		},
+		{
+			"type": "section",
+			"name": "Appendix A: Creatures",
+			"entries": [
+				{
+					"type": "list",
+					"columns": 3,
+					"items": [
+						"{@creature Balhannoth|MTF}",
+						"{@creature Bronze Scout|MTF}",
+						"{@creature Dirt-Under-Nails|RtG}",
+						"{@creature Iron Cobra|MTF}",
+						"{@creature Oaken Bolter|MTF}",
+						"{@creature Rot Troll|MTF}",
+						"{@creature Rotter|RtG}",
+						"{@creature Stone Defender|MTF}"
+					]
+				}
+			]
+		},
+		{
+			"type": "section",
+			"name": "Appendix B: Maps",
+			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "adventure/RtG/016.webp"
+					}
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "adventure/RtG/017.webp"
+					}
+				}
+			]
+		}
+	]
+}

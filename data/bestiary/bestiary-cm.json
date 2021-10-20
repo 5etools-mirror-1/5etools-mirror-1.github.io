@@ -96,7 +96,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Flyby"
 			],
@@ -111,7 +110,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Animated Chained Library",
@@ -182,7 +182,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -198,6 +197,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -306,7 +306,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -325,6 +324,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -472,7 +472,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -494,6 +493,7 @@
 				"deafened",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -589,7 +589,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"SD"
 			],
@@ -604,6 +603,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -752,7 +752,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Incorporeal Movement",
 				"Regeneration"
@@ -775,6 +774,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -832,7 +832,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
@@ -842,6 +841,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -921,7 +921,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -940,6 +939,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1121,7 +1121,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -1138,6 +1137,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1339,7 +1339,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance",
 				"Rejuvenation"
@@ -1377,7 +1376,8 @@
 				"poisoned",
 				"prone",
 				"stunned"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Gingwatzim",
@@ -1447,7 +1447,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -1466,6 +1465,7 @@
 			"conditionInflict": [
 				"exhaustion"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1547,7 +1547,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Hold Breath"
 			],
@@ -1573,6 +1572,7 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1580,177 +1580,69 @@
 			"name": "Hag of the Fetid Gaze",
 			"source": "CM",
 			"page": 76,
-			"size": "M",
-			"type": "fey",
-			"alignment": [
-				"N",
-				"E"
-			],
-			"ac": [
-				{
-					"ac": 17,
-					"from": [
-						"natural armor"
-					]
-				}
-			],
-			"hp": {
-				"average": 82,
-				"formula": "11d8 + 33"
-			},
-			"speed": {
-				"walk": 30
-			},
-			"str": 18,
-			"dex": 12,
-			"con": 16,
-			"int": 13,
-			"wis": 14,
-			"cha": 14,
-			"skill": {
-				"arcana": "+3",
-				"deception": "+4",
-				"perception": "+4",
-				"stealth": "+4"
-			},
-			"senses": [
-				"darkvision 60 ft."
-			],
-			"passive": 14,
-			"languages": [
-				"Common",
-				"Draconic",
-				"Sylvan"
-			],
-			"cr": "5",
-			"spellcasting": [
-				{
-					"name": "Innate Spellcasting",
-					"headerEntries": [
-						"The hag's innate spellcasting ability is Charisma (spell save {@dc 12}). She can innately cast the following spells, requiring no material components:"
-					],
-					"will": [
-						"{@spell dancing lights}",
-						"{@spell minor illusion}",
-						"{@spell vicious mockery}"
-					],
-					"ability": "cha"
-				},
-				{
-					"name": "Shared Spellcasting",
-					"headerEntries": [
-						"While all three members of the Fetid Gaze are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
-					],
-					"spells": {
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell charm person}",
-								"{@spell witch bolt}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell alter self}",
-								"{@spell suggestion}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell dispel magic}",
-								"{@spell glyph of warding}",
-								"{@spell slow}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell blight}",
-								"{@spell polymorph}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell dominate person}",
-								"{@spell seeming}"
-							]
-						},
-						"6": {
-							"slots": 1,
-							"spells": [
-								"{@spell Otto's irresistible dance}"
+			"_copy": {
+				"name": "Green Hag",
+				"source": "MM",
+				"_mod": {
+					"spellcasting": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Shared Spellcasting (Coven Only)",
+							"headerEntries": [
+								"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell charm person}",
+										"{@spell witch bolt}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell alter self}",
+										"{@spell suggestion}"
+									]
+								},
+								"3": {
+									"slots": 3,
+									"spells": [
+										"{@spell dispel magic}",
+										"{@spell glyph of warding}",
+										"{@spell slow}"
+									]
+								},
+								"4": {
+									"slots": 3,
+									"spells": [
+										"{@spell blight}",
+										"{@spell polymorph}"
+									]
+								},
+								"5": {
+									"slots": 2,
+									"spells": [
+										"{@spell dominate person}",
+										"{@spell seeming}"
+									]
+								},
+								"6": {
+									"slots": 1,
+									"spells": [
+										"{@spell Otto's irresistible dance}"
+									]
+								}
+							},
+							"footerEntries": [
+								"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12 + the hag's Intelligence modifier, and the spell attack bonus is 4 + the hag's Intelligence modifier."
 							]
 						}
-					},
-					"footerEntries": [
-						"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12 + the hag's Intelligence modifier, and the spell attack bonus is 4 + the hag's Intelligence modifier."
-					]
+					}
 				}
-			],
-			"trait": [
-				{
-					"name": "Amphibious",
-					"entries": [
-						"The hag can breathe air and water."
-					]
-				},
-				{
-					"name": "Mimicry",
-					"entries": [
-						"The hag can mimic animal sounds and humanoid voices. A creature that hears the sounds can tell they are imitations with a successful {@dc 14} Wisdom (Insight) check."
-					]
-				}
-			],
-			"action": [
-				{
-					"name": "Claws",
-					"entries": [
-						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d8 + 4}) slashing damage."
-					]
-				},
-				{
-					"name": "Illusory Appearance",
-					"entries": [
-						"The hag covers herself and anything she is wearing or carrying with a magical illusion that makes her look like another creature of her general size and humanoid shape. The illusion ends if the hag takes a bonus action to end it or if she dies.",
-						"The changes wrought by this effect fail to hold up to physical inspection. For example, the hag could appear to have smooth skin, but someone touching her would feel her rough flesh. Otherwise, a creature must take an action to visually inspect the illusion and succeed on a {@dc 20} Intelligence (Investigation) check to discern that the hag is disguised."
-					]
-				},
-				{
-					"name": "Invisible Passage",
-					"entries": [
-						"The hag magically turns {@condition invisible} until she attacks or casts a spell, or until her concentration ends (as if concentrating on a spell). While {@condition invisible}, she leaves no physical evidence of her passage, so she can be tracked only by magic. Any equipment she wears or carries is {@condition invisible} with her."
-					]
-				}
-			],
+			},
 			"hasToken": true,
-			"traitTags": [
-				"Amphibious"
-			],
-			"senseTags": [
-				"D"
-			],
-			"languageTags": [
-				"C",
-				"DR",
-				"S"
-			],
-			"damageTags": [
-				"S"
-			],
-			"spellcastingTags": [
-				"CW",
-				"I",
-				"S"
-			],
-			"miscTags": [
-				"MW"
-			],
-			"conditionInflictSpell": [
-				"charmed"
-			],
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1819,7 +1711,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1837,7 +1728,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Jade Tigress",
@@ -1949,7 +1841,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1970,6 +1861,7 @@
 				"exhaustion",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2076,7 +1968,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -2097,6 +1988,7 @@
 			"conditionInflictSpell": [
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2175,7 +2067,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -2192,6 +2083,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2353,7 +2245,6 @@
 				"name": "Lichen Lich",
 				"source": "CM"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Rejuvenation"
@@ -2383,6 +2274,7 @@
 				"poisoned",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2487,7 +2379,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Damage Absorption",
 				"Immutable Form",
@@ -2509,6 +2400,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2623,11 +2515,10 @@
 				{
 					"name": "Shield (1st-Level Spell; 3/Day)",
 					"entries": [
-						"When the sage is hit by an attack or targeted by a magic missile spell, it calls forth an invisible barrier of magical force that protects it. Until the start of its next turn, the sage has a +5 bonus to AC, including against the triggering attack, and it takes no damage from magic missile."
+						"When the sage is hit by an attack or targeted by a magic missile spell, it calls forth an {@condition invisible} barrier of magical force that protects it. Until the start of its next turn, the sage has a +5 bonus to AC, including against the triggering attack, and it takes no damage from magic missile."
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"X"
@@ -2639,6 +2530,7 @@
 			"miscTags": [
 				"AOE"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2825,7 +2717,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Incorporeal Movement",
 				"Legendary Resistances",
@@ -2856,6 +2747,7 @@
 				"frightened",
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2948,7 +2840,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"False Appearance",
 				"Shapechanger"
@@ -2966,7 +2857,8 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Nintra Siotta",
@@ -3101,7 +2993,6 @@
 				"name": "Nintra Siotta",
 				"source": "CM"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -3128,6 +3019,7 @@
 			"conditionInflict": [
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3355,7 +3247,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Breath Weapon",
 				"Multiattack"
@@ -3380,6 +3271,7 @@
 				"paralyzed",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3478,7 +3370,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"X"
@@ -3486,6 +3377,7 @@
 			"damageTags": [
 				"L"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3594,7 +3486,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Immutable Form",
 				"Magic Resistance",
@@ -3616,6 +3507,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3723,7 +3615,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Incorporeal Movement"
 			],
@@ -3737,6 +3628,7 @@
 				"O",
 				"Y"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -3829,7 +3721,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Damage Absorption"
 			],
@@ -3850,6 +3741,7 @@
 				"grappled",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3958,7 +3850,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3976,6 +3867,7 @@
 			"conditionInflict": [
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4059,7 +3951,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -4077,7 +3968,8 @@
 				"MW",
 				"RCH",
 				"RW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Swarm of Animated Books",
@@ -4160,7 +4052,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -4170,6 +4061,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -4376,7 +4268,6 @@
 				"name": "Valin Sarnaster",
 				"source": "CM"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance",
 				"Rejuvenation"
@@ -4415,6 +4306,7 @@
 				"prone",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4500,7 +4392,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -4521,175 +4412,29 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Wood Elf Wizard",
 			"source": "CM",
 			"page": 187,
-			"size": "M",
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"elf"
-				]
-			},
-			"alignment": [
-				"N",
-				"E"
-			],
-			"ac": [
-				12
-			],
-			"hp": {
-				"average": 45,
-				"formula": "10d8"
-			},
-			"speed": {
-				"walk": 30
-			},
-			"str": 9,
-			"dex": 14,
-			"con": 10,
-			"int": 17,
-			"wis": 13,
-			"cha": 12,
-			"skill": {
-				"arcana": "+6",
-				"deception": "+5",
-				"perception": "+4",
-				"stealth": "+5"
-			},
-			"senses": [
-				"darkvision 120 ft."
-			],
-			"passive": 14,
-			"languages": [
-				"Elvish",
-				"Undercommon"
-			],
-			"cr": "7",
-			"spellcasting": [
-				{
-					"name": "Innate Spellcasting",
-					"headerEntries": [
-						"The wood elf's innate spellcasting ability is Charisma (spell save {@dc 12}). It can innately cast the following spells, requiring no material components:"
-					],
-					"will": [
-						"{@spell dancing lights}"
-					],
-					"daily": {
-						"1e": [
-							"{@spell darkness}",
-							"{@spell faerie fire}",
-							"{@spell levitate} (self only)"
-						]
+			"_copy": {
+				"name": "Drow Mage",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "\\bdrow\\b",
+						"with": "wood elf"
 					},
-					"ability": "cha"
-				},
-				{
-					"name": "Spellcasting",
-					"headerEntries": [
-						"The wood elf is a 10th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 14}, {@hit 6} to hit with spell attacks). The wood elf has the following wizard spells prepared:"
-					],
-					"spells": {
-						"0": {
-							"spells": [
-								"{@spell mage hand}",
-								"{@spell minor illusion}",
-								"{@spell poison spray}",
-								"{@spell ray of frost}"
-							]
-						},
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell mage armor}",
-								"{@spell magic missile}",
-								"{@spell shield}",
-								"{@spell witch bolt}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell alter self}",
-								"{@spell misty step}",
-								"{@spell web}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell fly}",
-								"{@spell lightning bolt}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell Evard's black tentacles}",
-								"{@spell greater invisibility}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell cloudkill}"
-							]
-						}
-					},
-					"ability": "int"
+					"trait": {
+						"mode": "removeArr",
+						"names": "Sunlight Sensitivity"
+					}
 				}
-			],
-			"trait": [
-				{
-					"name": "Fey Ancestry",
-					"entries": [
-						"The wood elf has advantage on saving throws against being {@condition charmed}, and magic can't put the wood elf to sleep."
-					]
-				}
-			],
-			"action": [
-				{
-					"name": "Staff",
-					"entries": [
-						"{@atk mw} {@hit 2} to hit, reach 5 ft., one target. {@h}2 ({@damage 1d6 - 1}) bludgeoning damage, or 3 ({@damage 1d8 - 1}) bludgeoning damage if used with two hands, plus 3 ({@damage 1d6}) poison damage."
-					]
-				},
-				{
-					"name": "Summon Demon (1/Day)",
-					"entries": [
-						"The wood elf magically summons a quasit, or attempts to summon a shadow demon with a {@chance 50|50 percent} chance of success. The summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 10 minutes, until it or its summoner dies, or until its summoner dismisses it as an action."
-					]
-				}
-			],
-			"hasToken": true,
-			"traitTags": [
-				"Fey Ancestry"
-			],
-			"senseTags": [
-				"SD"
-			],
-			"languageTags": [
-				"E",
-				"U"
-			],
-			"damageTags": [
-				"B",
-				"I"
-			],
-			"spellcastingTags": [
-				"CW",
-				"I"
-			],
-			"miscTags": [
-				"MW"
-			],
-			"conditionInflictSpell": [
-				"invisible",
-				"restrained"
-			]
+			},
+			"hasToken": true
 		},
 		{
 			"name": "Zikran",
@@ -4734,7 +4479,6 @@
 				"Sahuagin",
 				"Undercommon"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious",
 				"Magic Resistance"
@@ -4746,6 +4490,7 @@
 				"P",
 				"U"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4894,7 +4639,6 @@
 				"name": "Zikzokrishka",
 				"source": "CM"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance"
@@ -4927,6 +4671,7 @@
 				"frightened",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		}

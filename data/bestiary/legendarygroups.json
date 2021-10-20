@@ -130,6 +130,32 @@
 			]
 		},
 		{
+			"name": "Baalzebul",
+			"source": "MaBJoV",
+			"lairActions": [
+				"On initiative count 20 (losing initiative ties), Baalzebul can take one lair action to cause one of the following effects; Baalzebul can't use the same effect two rounds in a row:",
+				{
+					"type": "list",
+					"items": [
+						"Baalzebul casts his innate hold monster.",
+						"Baalzebul emits slime in a 5-foot radius centered on him. Any creature that starts their turn standing in this slime is considered {@condition grappled} and must use their action to succeed on DC 17 Strength ({@skill Athletics}) check to break free.",
+						"Baalzebul uses half his burrow speed to dig into the ground. He gains half-cover when buried 10 feet and three-quarters cover when at 20 feet."
+					]
+				}
+			],
+			"regionalEffects": [
+				"The region containing Baalzebul's lair is corrupted by his presence, which creates one or more of the following effects:",
+				{
+					"type": "list",
+					"items": [
+						"Within 1 mile of Baalzebul's lair, stinking piles of filth accumulate as if from nowhere. The entire area is covered with garbage and feces and is treated as difficult terrain.",
+						"Within 2 miles of the lair, the air is filled with buzzing flies. Any creature that finishes a short or long rest in this area must succeed on a DC 22 Wisdom saving throw or derive no benefit from the rest."
+					]
+				},
+				"If Baalzebul dies, the effects fade over the course of {@dice 1d10} days."
+			]
+		},
+		{
 			"name": "Balhannoth",
 			"source": "MTF",
 			"lairActions": [
@@ -444,6 +470,33 @@
 					]
 				},
 				"If the dragon dies, the magic carvings fade over the course of {@dice 1d10} days. The other effects end immediately."
+			]
+		},
+		{
+			"name": "Cryonax",
+			"source": "MaBJoV",
+			"lairActions": [
+				"When Cryonax occupies Frostfell, or any area that he has corrupted by inhabiting it for at least a week, he can command the snow and ice around him to take lair actions. On initiative count 20 (losing initiative ties), Cryonax can take a lair action to cause one of the following effects; Cryonax can't use the same effect two rounds in a row:",
+				{
+					"type": "list",
+					"items": [
+						"Ice and snow explode in radius of 60 feet around Cryonax. This creates a freezing mist full of hail and larger chunks of ice that will heavily obscure the area and last until initiative count 20 of the next round. All creatures within the area of effect take 13 ({@damage 3d8}) cold damage and must make a DC 20 Wisdom saving throw or be {@condition blinded} until initiative count 20 of the next round.",
+						"The air freezes in a 120 feet wide (and tall) hemisphere centered around Cryonax. This effect forms hundreds of sharp icicles. These immediately crash to the ground causing 14 ({@damage 4d6}) slashing damage to everyone in the area of effect (the damage is halved if a DC 22 Dexterity saving throw is successful). Afterwards the terrain becomes difficult and anyone falling {@condition prone} within it takes the damage again (no saving throw).",
+						"The frozen ground buckles, driving massive chunks of rock and ice into the air. {@dice 1d8} thirty-foot-tall stalagmites will rise into the air and all creatures in a 30-foot radius around Cryonax must make a DC 24 Dexterity saving throw or take 9 ({@damage 2d8}) bludgeoning damage and be knocked {@condition prone}."
+					]
+				}
+			],
+			"regionalEffects": [
+				"The region containing Cryonax's lair is warped by his presence, which creates one or more of the following effects:",
+				{
+					"type": "list",
+					"items": [
+						"Within ten miles of the lair all water has frozen and any precipitation becomes thick snow and hail instead.",
+						"The ground beneath the lair is freezing, causing the earth to buckle and rise. Tremors become common within 5 miles of the lair. After five days any wooden structure or weaker has collapsed; within 10 days stone buildings are destroyed. For every hour in the area there is a 1 in 10 chance that a tremor strikes forcing everyone other than Cryonax to make a DC 22 Dexterity saving throw or be knocked {@condition prone} and suffer 9 ({@damage 2d8}) bludgeoning damage.",
+						"Within 1 mile of Cryonax's location inside the lair the air becomes bitterly cold and difficult to breath. Each hour while within this area every living creature must make a DC 15 Constitution saving throw or suffer a level of {@condition exhaustion}."
+					]
+				},
+				"If Cryonax is destroyed or banished back to his home plane, the regional effects fade over the next {@dice 1d10} weeks."
 			]
 		},
 		{
@@ -1315,6 +1368,31 @@
 			]
 		},
 		{
+			"name": "Mephistopheles",
+			"source": "MaBJoV",
+			"lairActions": [
+				"On initiative count 20 (losing initiative ties), Mephistopheles can take one lair action to cause one of the following effects; Mephistopheles can't use the same effect two rounds in a row:",
+				{
+					"type": "list",
+					"items": [
+						"Mephistopheles casts any spell from his wizard list and if it normally requires concentration, it lasts for the full duration instead.",
+						"Mephistopheles covers a 5-foot area with Hellfire. Any creature that starts their turn on that area suffers 27 ({@damage 6d8}) fire damage. The Hellfire remains until Mephistopheles dismisses it or he uses this ability again."
+					]
+				}
+			],
+			"regionalEffects": [
+				"The region containing Mephistopheles's lair is corrupted by his presence, which creates one or more of the following effects:",
+				{
+					"type": "list",
+					"items": [
+						"Flaming winds scour the area within 2 miles of Mephistopheles's lair. Any creature with vulnerability to fire damage suffers 1 level of {@condition exhaustion} for every hour spent this close to the lair.",
+						"Within 2 miles of Mephistopheles's lair, every 60 feet of movement results in a flame geyser erupting. When a geyser appears, the creature that triggered its appearance and fails a Dexterity 22 saving throw suffers 10 ({@damage 3d6}) fire damage. Damage is halved if the saving throw is successful. The geyser remains for a day."
+					]
+				},
+				"If Mephistopheles dies, the effects fade over the course of {@dice 1d10} days."
+			]
+		},
+		{
 			"name": "Merrenoloth",
 			"source": "MTF",
 			"lairActions": [
@@ -1571,6 +1649,32 @@
 			]
 		},
 		{
+			"name": "Pazuzu",
+			"source": "MaBJoV",
+			"lairActions": [
+				"On initiative count 20 (losing initiative ties), Pazuzu can take a lair action to cause one of the following effects; Pazuzu can't use the same effect two rounds in a row:",
+				{
+					"type": "list",
+					"items": [
+						"Pazuzu opens a portal and summons forth {@dice 1d4} perytons or gargoyles.",
+						"Pazuzu casts insect plague but does not need to concentrate to maintain it. The insects inflict 33 ({@damage 6d10}) piercing damage.",
+						"Pazuzu telepathically speaks to all creatures within 120 ft. of him and offers each what they most desire. Each target must succeed on a DC 21 Charisma saving throw or forfeit their next action as they contemplate the decision. A good-aligned target may voluntarily fail the saving throw and forfeit their action to agree to Pazuzu's terms. If so, and if he has the wish spell available, he will cast it as long as he sees no immediate negative consequence to his doing so. Pazuzu does not suffer any of the negative effects of casting the wish spell."
+					]
+				}
+			],
+			"regionalEffects": [
+				"The region containing Pazuzu's lair is warped by his presence, which creates one or more of the following effects:",
+				{
+					"type": "list",
+					"items": [
+						"A warm, sickly sweet wind blows briskly within one mile of Pazuzu. Each day, upon first encountering this wind, every creature must make a DC 21 Constitution saving throw or immediately vomit, suffering 14 ({@damage 4d6}) necrotic damage. Those that failed the saving throw are also {@condition poisoned} for one hour.",
+						"Any flying creature of CR 2 or less becomes twisted after a day spent within 6 miles of Pazuzu. If not already evil-aligned, they become so. Flying insects, birds, and other flying creatures will harass any other creatures moving through the region, slowing movement by one half."
+					]
+				},
+				"If Pazuzu dies, the effects fade over the course of {@dice 1d10} days."
+			]
+		},
+		{
 			"name": "Red Dragon",
 			"source": "MM",
 			"lairActions": [
@@ -1727,6 +1831,31 @@
 						"The sphinx shifts itself and up to seven other creatures it can see within in its lair to another plane of existence. Once outside its lair, the sphinx can't use lair actions, but it can return to its lair as a bonus action on its turn, taking up to seven creatures with it."
 					]
 				}
+			]
+		},
+		{
+			"name": "Ssendam, Lord of Madness",
+			"source": "MaBJoV",
+			"lairActions": [
+				"On initiative count 20 (losing initiative ties), Ssendam can take one lair action to cause one of the following effects; Ssendam can't use the same effect two rounds in a row:",
+				{
+					"type": "list",
+					"items": [
+						"All creatures within 30 ft. of Ssendam must succeed on a DC 20 Wisdom saving throw or come under the effects of the confusion spell until the end of its next turn.",
+						"Until the end of Ssendam's next turn, any creature that casts a spell within 60 ft. of Ssendam must roll on the sorcerer's wild surge table in the PHB."
+					]
+				}
+			],
+			"regionalEffects": [
+				"The region containing Ssendam's lair is corrupted by the chaos phage, which creates one or more of the following effects:",
+				{
+					"type": "list",
+					"items": [
+						"Within 1 mile of Ssendam's lair, there is a 1 in 20 chance that any creature that casts a spell must roll on the sorcerer's wild surge table in the PHB.",
+						"Within 10 miles of the lair, any creature that takes a long or short rest must succeed on a DC 20 Wisdom saving throw or be inflicted with a random shortterm madness."
+					]
+				},
+				"If Ssendam dies, the effects fade over the course of {@dice 1d10} days."
 			]
 		},
 		{

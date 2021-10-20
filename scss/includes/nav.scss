@@ -1,0 +1,160 @@
+@import "vars";
+
+// region Old
+.nav {
+	.dropdown-menu--top {
+		margin-top: 0;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+}
+
+@media (max-width: $width-screen-sm) {
+	.nav > li > a {
+		border: 1px solid $rgb-border-grey;
+	}
+
+	.night-mode .nav > li > a {
+		border-color: $rgb-border-grey--night;
+	}
+
+	.nav .caret--right {
+		transform: none;
+	}
+
+	.nav .dropdown-menu--side {
+		top: 100%;
+		left: 0;
+	}
+}
+
+.night-mode {
+	.nav > li:not(.active) > a {
+		color: $rgb-font--night;
+		background-color: $rgb-bg--night;
+		border: 1px solid $rgb-border-grey--trans-night;
+		border-top: 0;
+
+		&:focus,
+		&:hover {
+			background-color: lighten($rgb-bg--night, 2%);
+			color: white;
+		}
+	}
+
+	.nav > li.active > a {
+		&:focus,
+		&:hover {
+			color: white;
+		}
+	}
+
+	.nav li.open > a,
+	.nav li.open > a:focus,
+	.nav li.open > a:hover {
+		background-color: lighten($rgb-bg--night, 2%);
+		border-left: 1px solid $rgb-link-blue;
+		border-right: 1px solid $rgb-link-blue;
+		border-color: $rgb-link-blue;
+	}
+
+	.nav li.active.open > a,
+	.nav li.active.open > a:focus,
+	.nav li.active.open > a:hover {
+		background-color: $rgb-off-black;
+	}
+}
+// endregion
+
+// region New
+.nav2 {
+	&-accord__ {
+		&head {
+			padding: 3px 7px 3px 20px;
+
+			&:focus,
+			&:hover {
+				background-color: $rgb-bg--alt;
+			}
+
+			&--active {
+				background: $rgb-active-blue;
+				color: white;
+
+				&:focus,
+				&:hover {
+					background: $rgb-active-blue--light;
+				}
+			}
+		}
+
+		&body {
+			padding: 3px 0 3px 35px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		&lnk-item {
+			padding: 3px 20px;
+			color: $rgb-off-black;
+
+			&:focus,
+			&:hover {
+				background-color: $rgb-bg--alt;
+				text-decoration: none;
+			}
+
+			&--active {
+				background: $rgb-active-blue;
+				color: white;
+
+				&:focus,
+				&:hover {
+					background: $rgb-active-blue--light;
+					color: white;
+				}
+			}
+		}
+	}
+}
+
+.night-mode .nav2 {
+	&-accord__ {
+		&head {
+			&:focus,
+			&:hover {
+				background-color: $rgb-bg--alt-night;
+				color: white;
+			}
+
+			&--active {
+				color: white;
+
+				&:focus,
+				&:hover {
+					background: $rgb-active-blue--light;
+				}
+			}
+		}
+
+		&lnk-item {
+			color: $rgb-font--night;
+
+			&:focus,
+			&:hover {
+				background-color: $rgb-bg--alt-night;
+				color: white;
+			}
+
+			&--active {
+				color: white;
+
+				&:focus,
+				&:hover {
+					background: $rgb-active-blue--light;
+				}
+			}
+		}
+	}
+}
+// endregion

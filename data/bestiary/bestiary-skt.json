@@ -90,7 +90,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"AU",
 				"OTH"
@@ -103,7 +102,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Alastrah",
@@ -130,10 +130,10 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"GI"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Augrek Brighthelm",
@@ -219,7 +219,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -236,6 +235,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -307,7 +307,6 @@
 				"Common",
 				"Dwarvish"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -320,7 +319,8 @@
 				"RNG",
 				"RW",
 				"THW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Beldora",
@@ -404,7 +404,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"D",
@@ -420,6 +419,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -502,7 +502,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -519,6 +518,7 @@
 				"RCH",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -566,12 +566,12 @@
 				"formula": "8d10 + 16"
 			},
 			"cr": "4",
-			"hasToken": true,
 			"damageTags": [
 				"F",
 				"P",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Cinderhild",
@@ -604,13 +604,13 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"damageTags": [
 				"P"
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Claugiyliamatar",
@@ -698,11 +698,11 @@
 					"ability": "wis"
 				}
 			],
-			"hasToken": true,
 			"spellcastingTags": [
 				"CD",
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Clockwork Mule",
@@ -855,7 +855,6 @@
 				"Giant"
 			],
 			"cr": "10",
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"DR",
@@ -865,7 +864,8 @@
 			"spellcastingTags": [
 				"CD",
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Countess Sansuri",
@@ -1050,7 +1050,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -1084,6 +1083,7 @@
 				"incapacitated",
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1161,7 +1161,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Pounce"
 			],
@@ -1178,6 +1177,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1304,7 +1304,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1320,6 +1319,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1397,7 +1397,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Sneak Attack"
 			],
@@ -1412,6 +1411,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1457,14 +1457,14 @@
 					"ability": "wis"
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D",
 				"T"
 			],
 			"spellcastingTags": [
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Duchess Brimskarda",
@@ -1510,12 +1510,12 @@
 				"Giant",
 				"Goblin"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"GI",
 				"GO"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Duke Zalto",
@@ -1611,7 +1611,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Siege Monster"
 			],
@@ -1634,6 +1633,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1711,7 +1711,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Parry"
 			],
@@ -1729,6 +1728,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1782,7 +1782,6 @@
 				"Common",
 				"Giant"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Incorporeal Movement",
 				"Rejuvenation"
@@ -1790,7 +1789,8 @@
 			"languageTags": [
 				"C",
 				"GI"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Elister",
@@ -1849,14 +1849,14 @@
 					"ability": "wis"
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
 			"languageTags": [
 				"G",
 				"X"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Felbarren Dwarf",
@@ -1874,7 +1874,6 @@
 				"L",
 				"G"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -1882,7 +1881,8 @@
 				"C",
 				"D",
 				"X"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Felgolos",
@@ -1998,7 +1998,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -2015,6 +2014,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2078,11 +2078,11 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"OTH"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Harshnag",
@@ -2168,7 +2168,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -2192,6 +2191,7 @@
 			"conditionInflict": [
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2287,7 +2287,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious"
 			],
@@ -2307,6 +2306,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2340,11 +2340,11 @@
 				"Bothii",
 				"Common"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"OTH"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Ice Spider",
@@ -2369,12 +2369,12 @@
 			"resist": [
 				"cold"
 			],
-			"hasToken": true,
 			"damageTags": [
 				"C",
 				"I",
 				"P"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Ice Spider Queen",
@@ -2413,12 +2413,12 @@
 				"cold"
 			],
 			"cr": "2",
-			"hasToken": true,
 			"damageTags": [
 				"C",
 				"I",
 				"P"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Imperator Uthor",
@@ -2463,7 +2463,6 @@
 				"average": 272,
 				"formula": "20d12 + 100"
 			},
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"L",
@@ -2474,7 +2473,8 @@
 				"RCH",
 				"RW",
 				"THW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Isendraug",
@@ -2644,7 +2644,6 @@
 				"source": "MM"
 			},
 			"dragonCastingColor": "U",
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -2683,6 +2682,7 @@
 				"prone",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2794,7 +2794,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -2816,6 +2815,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2872,7 +2872,6 @@
 					]
 				}
 			},
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -2886,7 +2885,8 @@
 				"RNG",
 				"RW",
 				"THW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Kaaltar",
@@ -2913,10 +2913,10 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"GI"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Kella Darkhope",
@@ -2982,11 +2982,11 @@
 				"Dwarvish",
 				"Elvish"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"E"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "King Hekaton",
@@ -3107,7 +3107,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious"
 			],
@@ -3132,6 +3131,7 @@
 				"RCH",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3364,7 +3364,6 @@
 				"name": "Red Dragon",
 				"source": "MM"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -3413,6 +3412,7 @@
 				"petrified",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3463,7 +3463,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -3475,7 +3474,8 @@
 			"damageTags": [
 				"B",
 				"P"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Lifferlas",
@@ -3550,7 +3550,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"False Appearance"
 			],
@@ -3567,6 +3566,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3714,7 +3714,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Illumination",
 				"Magic Resistance"
@@ -3740,6 +3739,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3821,7 +3821,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3837,6 +3836,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3914,7 +3914,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
@@ -3927,6 +3926,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3962,12 +3962,12 @@
 				"perception": "+9",
 				"performance": "+9"
 			},
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"L",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Morak Ur'gray",
@@ -3986,7 +3986,6 @@
 				"L",
 				"G"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -3994,7 +3993,8 @@
 				"C",
 				"D",
 				"X"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Narbeck Horn",
@@ -4030,7 +4030,6 @@
 			"alignment": [
 				"N"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -4038,7 +4037,8 @@
 				"C",
 				"D",
 				"X"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Narth Tezrin",
@@ -4117,7 +4117,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"D"
@@ -4130,6 +4129,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4244,7 +4244,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"D",
@@ -4260,6 +4259,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4301,12 +4301,12 @@
 				"insight": "+9",
 				"perception": "+9"
 			},
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"L",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Noori",
@@ -4343,11 +4343,11 @@
 				"Bothii",
 				"Common"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"OTH"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Nym",
@@ -4381,12 +4381,12 @@
 				"perception": "+9",
 				"performance": "+9"
 			},
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"L",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Ogre Goblin Hucker",
@@ -4491,7 +4491,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"H"
@@ -4504,6 +4503,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4545,12 +4545,12 @@
 				"deception": "+14",
 				"perception": "+9"
 			},
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"L",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Orok",
@@ -4588,14 +4588,14 @@
 				"Bothii",
 				"Common"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Pack Tactics"
 			],
 			"languageTags": [
 				"C",
 				"OTH"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Othovir",
@@ -4701,7 +4701,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Parry"
 			],
@@ -4718,6 +4717,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4739,9 +4739,9 @@
 			"cr": "0",
 			"trait": null,
 			"action": null,
-			"hasToken": true,
 			"traitTags": [],
-			"miscTags": []
+			"miscTags": [],
+			"hasToken": true
 		},
 		{
 			"name": "Pow Ming",
@@ -4840,13 +4840,13 @@
 					"ability": "int"
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"D",
 				"DR",
 				"E"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Purple Wormling",
@@ -4905,7 +4905,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B",
 				"T"
@@ -4926,6 +4925,7 @@
 				"blinded",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4953,7 +4953,6 @@
 				"N",
 				"E"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -4961,7 +4960,8 @@
 				"O",
 				"TC",
 				"X"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Sea Elf",
@@ -5005,7 +5005,6 @@
 				"Common",
 				"Elvish"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious",
 				"Fey Ancestry"
@@ -5016,7 +5015,8 @@
 			"languageTags": [
 				"C",
 				"E"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Serissa",
@@ -5069,11 +5069,11 @@
 				"average": 200,
 				"formula": "20d12 + 100"
 			},
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"L"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Shaldoor",
@@ -5113,12 +5113,12 @@
 				"athletics": "+14",
 				"perception": "+9"
 			},
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"L",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Shalvus Martholio",
@@ -5203,7 +5203,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Sneak Attack"
 			],
@@ -5220,6 +5219,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5277,7 +5277,6 @@
 				"Common",
 				"Terran"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"T"
@@ -5287,7 +5286,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Sheep",
@@ -5318,9 +5318,9 @@
 				"walk": 30
 			},
 			"action": null,
-			"hasToken": true,
 			"traitTags": [],
-			"miscTags": []
+			"miscTags": [],
+			"hasToken": true
 		},
 		{
 			"name": "Shield Dwarf Guard",
@@ -5346,7 +5346,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -5360,7 +5359,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Shield Dwarf Noble",
@@ -5380,13 +5380,12 @@
 			],
 			"action": [
 				{
-					"name": "Rapier",
+					"name": "Warhammer",
 					"entries": [
 						"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d8 + 1}) bludgeoning damage, or 6 ({@damage 1d10 + 1}) bludgeoning damage if used with two hands."
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -5400,7 +5399,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Sir Baric Nylef",
@@ -5483,7 +5483,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
@@ -5496,6 +5495,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5582,7 +5582,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Parry"
 			],
@@ -5598,6 +5597,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5839,7 +5839,6 @@
 				"name": "Kraken",
 				"source": "MM"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious",
 				"Legendary Resistances",
@@ -5891,6 +5890,7 @@
 				"restrained",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5917,10 +5917,10 @@
 			"languages": null,
 			"cr": "0",
 			"action": null,
-			"hasToken": true,
 			"actionTags": [],
 			"languageTags": [],
-			"miscTags": []
+			"miscTags": [],
+			"hasToken": true
 		},
 		{
 			"name": "Tartha",
@@ -5995,7 +5995,6 @@
 				"Common",
 				"Terran"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"T"
@@ -6005,7 +6004,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Thane Kayalithica",
@@ -6085,7 +6085,7 @@
 				{
 					"name": "Olach Morrah",
 					"entries": [
-						"The giant meditates for 1 hour, during which time it can do nothing else. At the end of the hour, provided the giant's meditation has been uninterrupted, it becomes {@condition petrified} for 8 hours. At the end of this time, the giant is no longer petrified and gains tremorsense out to a range of 30 feet, as well as a measure of innate spellcasting ability for the next 24 hours."
+						"The giant meditates for 1 hour, during which time it can do nothing else. At the end of the hour, provided the giant's meditation has been uninterrupted, it becomes {@condition petrified} for 8 hours. At the end of this time, the giant is no longer {@condition petrified} and gains tremorsense out to a range of 30 feet, as well as a measure of innate spellcasting ability for the next 24 hours."
 					]
 				}
 			],
@@ -6129,7 +6129,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -6151,6 +6150,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6204,7 +6204,6 @@
 				"N",
 				"E"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -6217,7 +6216,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Tholtz Daggerdark",
@@ -6306,7 +6306,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -6320,7 +6319,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Tressym",
@@ -6403,7 +6403,6 @@
 				}
 			],
 			"familiar": true,
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -6420,6 +6419,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6517,10 +6517,10 @@
 					"ability": "wis"
 				}
 			],
-			"hasToken": true,
 			"spellcastingTags": [
 				"CD"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Urgala Meltimer",
@@ -6608,7 +6608,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -6624,6 +6623,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6675,7 +6675,6 @@
 				"Common",
 				"Elvish"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"E",
@@ -6688,7 +6687,8 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Uthgardt Shaman",
@@ -6779,7 +6779,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"OTH"
@@ -6796,6 +6795,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6856,12 +6856,12 @@
 				"perception": "+9",
 				"survival": "+9"
 			},
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"L",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Wiri Feagol",
@@ -6880,7 +6880,6 @@
 				"C",
 				"G"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -6888,7 +6887,8 @@
 				"C",
 				"G",
 				"X"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Wood Elf",
@@ -6917,7 +6917,6 @@
 				"Common",
 				"Elvish"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry",
 				"Keen Senses"
@@ -6928,7 +6927,8 @@
 			"languageTags": [
 				"C",
 				"E"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Xolkin Alassandar",
@@ -7097,7 +7097,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -7122,6 +7121,7 @@
 				"paralyzed",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -7194,7 +7194,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -7214,6 +7213,7 @@
 			"conditionInflict": [
 				"incapacitated"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7271,7 +7271,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -7281,7 +7280,8 @@
 			],
 			"spellcastingTags": [
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Zaltember",
@@ -7338,7 +7338,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"GI"
@@ -7351,7 +7350,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Zephyros",
@@ -7530,7 +7530,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -7562,6 +7561,7 @@
 				"invisible",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7649,7 +7649,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -7666,6 +7665,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		}

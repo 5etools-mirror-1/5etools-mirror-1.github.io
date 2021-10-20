@@ -176,7 +176,7 @@ class SpellParser extends BaseParser {
 				}
 			});
 		};
-		TagCondition.tryTagConditions(stats, true);
+		TagCondition.tryTagConditions(stats, {isTagInflicted: true});
 		if (stats.entries) {
 			stats.entries = stats.entries.map(it => DiceConvert.getTaggedEntry(it));
 			EntryConvert.tryRun(stats, "entries");

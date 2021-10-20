@@ -652,6 +652,20 @@
 			]
 		},
 		{
+			"name": "One Grung Above",
+			"id": "OGA",
+			"source": "OGA",
+			"group": "supplement-alt",
+			"coverUrl": "img/covers/OGA.png",
+			"published": "2017-10-11",
+			"author": "Extra Life",
+			"contents": [
+				{
+					"name": "One Grung Above"
+				}
+			]
+		},
+		{
 			"name": "Xanathar's Guide to Everything",
 			"id": "XGE",
 			"source": "XGE",
@@ -2727,7 +2741,7 @@
 			"name": "Domains of Delight",
 			"id": "DoD",
 			"source": "DoD",
-			"group": "supplement",
+			"group": "supplement-alt",
 			"coverUrl": "img/covers/DoD.png",
 			"published": "2021-9-21",
 			"contents": [
@@ -2870,6 +2884,83 @@
 					"ordinal": {
 						"type": "appendix",
 						"identifier": "A"
+					}
+				}
+			]
+		},
+		{
+			"name": "Minsc and Boo's Journal of Villainy",
+			"id": "MaBJoV",
+			"source": "MaBJoV",
+			"group": "supplement-alt",
+			"coverUrl": "img/covers/MaBJoV.png",
+			"published": "2021-10-05",
+			"author": "Wizards RPG Team",
+			"contents": [
+				{
+					"name": "Preface",
+					"headers": [
+						"Hometowns"
+					]
+				},
+				{
+					"name": "Heroic Stories",
+					"headers": [
+						"Group Patrons",
+						"Campaign Villains"
+					]
+				},
+				{
+					"name": "Hometowns",
+					"headers": [
+						"Athkatla",
+						"Baldur's Gate",
+						"Suldanessellar",
+						"Ust Natha"
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 1
+					}
+				},
+				{
+					"name": "Group Patrons",
+					"headers": [
+						"Adventurer's Guild",
+						"Candlekeep",
+						"Church of Sune",
+						"Emerald Enclave",
+						"Flaming Fist",
+						"Harpers",
+						"Knights of Bahamut",
+						"Order of Icarus",
+						"Raven Circle",
+						"Shadow Thieves"
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 2
+					}
+				},
+				{
+					"name": "Campaign Villains",
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 3
+					}
+				},
+				{
+					"name": "Henchmen",
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 4
+					}
+				},
+				{
+					"name": "Monsters",
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 5
 					}
 				}
 			]

@@ -191,7 +191,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Charge"
 			],
@@ -206,7 +205,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Beast of the Sea",
@@ -266,7 +266,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious"
 			],
@@ -282,7 +281,8 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Beast of the Sky",
@@ -342,7 +342,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Flyby"
 			],
@@ -354,7 +353,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Bestial Spirit",
@@ -523,7 +523,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -539,7 +538,8 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Construct Spirit",
@@ -712,7 +712,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Immutable Form"
 			],
@@ -724,7 +723,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Elemental Spirit",
@@ -927,7 +927,7 @@
 								{
 									"type": "item",
 									"name": "Mirthful.",
-									"entry": "The fey can force one creature it can see within 10 feet of it to make a Wisdom saving throw against your spell save DC. Unless the save succeeds, the target is charmed by you and the fey for 1 minute or until the target takes any damage."
+									"entry": "The fey can force one creature it can see within 10 feet of it to make a Wisdom saving throw against your spell save DC. Unless the save succeeds, the target is {@condition charmed} by you and the fey for 1 minute or until the target takes any damage."
 								},
 								{
 									"type": "item",
@@ -1165,7 +1165,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -1175,6 +1174,7 @@
 			"miscTags": [
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -1255,7 +1255,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"False Appearance",
 				"Spider Climb"
@@ -1274,7 +1273,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Mighty Servant of Leuk-o",
@@ -1395,7 +1395,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance",
 				"Regeneration"
@@ -1417,6 +1416,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -1537,7 +1537,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"SD"
 			],
@@ -1555,7 +1554,8 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Steel Defender",
@@ -1645,7 +1645,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -1655,6 +1654,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -1839,7 +1839,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -1849,7 +1848,8 @@
 			"miscTags": [
 				"AOE",
 				"RW"
-			]
+			],
+			"hasToken": true
 		}
 	]
 }

@@ -8,6 +8,12 @@ if (typeof module !== "undefined") {
 	global.PropOrder = require("./utils-proporder.js");
 }
 
+// TODO easy improvements to be made:
+//    - improve "broken line" fixing:
+//      - across lines that end with: "Melee Weapon Attack:"
+//      - creature's name breaking across multiple lines
+//      - lines starting "DC" breaking across multiple lines
+//      - lines starting with attack range e.g. "100/400 ft."
 class CreatureParser extends BaseParser {
 	/**
 	 * Parses statblocks from raw text pastes
@@ -25,7 +31,7 @@ class CreatureParser extends BaseParser {
 		options = this._getValidOptions(options);
 
 		function startNextPhase (cur) {
-			return (!cur.toUpperCase().indexOf("ACTION") || !cur.toUpperCase().indexOf("LEGENDARY ACTION") || !cur.toUpperCase().indexOf("MYTHIC ACTION") || !cur.toUpperCase().indexOf("REACTION") || !cur.toUpperCase().indexOf("BONUS ACTION"))
+			return /^(?:action|legendary action|mythic action|reaction|bonus action)s?(?:\s+\([^)]+\))?$/i.test(cur);
 		}
 
 		/**
@@ -856,9 +862,21 @@ class CreatureParser extends BaseParser {
 		TagAttack.tryTagAttacks(stats, (atk) => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Manual attack tagging required for "${atk}"`));
 		TagHit.tryTagHits(stats);
 		TagDc.tryTagDcs(stats);
-		TagCondition.tryTagConditions(stats, true);
-		TagCondition.tryTagConditionsSpells(stats, (sp) => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Spell "${sp}" could not be found during condition tagging`));
-		TagCondition.tryTagConditionsRegionalsLairs(stats, (legendaryGroup) => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Legendary group "${legendaryGroup.name} :: ${legendaryGroup.source}" could not be found during condition tagging`));
+		TagCondition.tryTagConditions(stats, {isTagInflicted: true});
+		TagCondition.tryTagConditionsSpells(
+			stats,
+			{
+				cbMan: (sp) => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Spell "${sp}" could not be found during condition tagging`),
+				isTagInflicted: true,
+			},
+		);
+		TagCondition.tryTagConditionsRegionalsLairs(
+			stats,
+			{
+				cbMan: (legendaryGroup) => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Legendary group "${legendaryGroup.name} :: ${legendaryGroup.source}" could not be found during condition tagging`),
+				isTagInflicted: true,
+			},
+		);
 		TraitActionTag.tryRun(stats);
 		LanguageTag.tryRun(stats);
 		SenseFilterTag.tryRun(stats);
@@ -940,7 +958,7 @@ class CreatureParser extends BaseParser {
 	}
 
 	static _mutAbilityScoresFromSingleLine (stats, toConvert, iCur) {
-		const abilities = toConvert[iCur].trim().split(/ ?\(([+\-—])?[0-9]*\) ?/g);
+		const abilities = toConvert[iCur].trim().replace(/[-\u2012\u2013\u2014]+/g, "-").split(/ ?\(([+-])?[0-9]*\) ?/g);
 		stats.str = this._tryConvertNumber(abilities[0]);
 		stats.dex = this._tryConvertNumber(abilities[2]);
 		stats.con = this._tryConvertNumber(abilities[4]);

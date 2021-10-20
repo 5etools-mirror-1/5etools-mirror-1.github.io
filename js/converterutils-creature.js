@@ -117,6 +117,7 @@ class AcConvert {
 						case "glamoured studded leather": froms.push("{@item glamoured studded leather}"); break;
 						case "bracers of defense": froms.push("{@item bracers of defense}"); break;
 						case "badge of the watch": froms.push("{@item Badge of the Watch|wdh}"); break;
+						case "cloak of protection": froms.push("{@item cloak of protection}"); break;
 						case "ring of protection": froms.push("{@item ring of protection}"); break;
 						case "robe of the archmagi": froms.push("{@item robe of the archmagi}"); break;
 						case "robe of the archmage": froms.push("{@item robe of the archmagi}"); break;
@@ -905,19 +906,19 @@ class SpellcastingTraitConvert {
 		ent.entries.forEach((thisLine, i) => {
 			thisLine = thisLine.replace(/,\s*\*/g, ",*"); // put asterisks on the correct side of commas
 			if (i === 0) return;
-			if (thisLine.includes("/rest")) {
+			if (/\/rest/i.test(thisLine)) {
 				hasAnyHeader = true;
 				let property = thisLine.substr(0, 1) + (thisLine.includes(" each:") ? "e" : "");
 				const value = this._getParsedSpells({thisLine, isMarkdown});
 				if (!spellcastingEntry.rest) spellcastingEntry.rest = {};
 				spellcastingEntry.rest[property] = value;
-			} else if (thisLine.includes("/day")) {
+			} else if (/\/day/i.test(thisLine)) {
 				hasAnyHeader = true;
 				let property = thisLine.substr(0, 1) + (thisLine.includes(" each:") ? "e" : "");
 				const value = this._getParsedSpells({thisLine, isMarkdown});
 				if (!spellcastingEntry.daily) spellcastingEntry.daily = {};
 				spellcastingEntry.daily[property] = value;
-			} else if (thisLine.includes("/week")) {
+			} else if (/\/week/i.test(thisLine)) {
 				hasAnyHeader = true;
 				let property = thisLine.substr(0, 1) + (thisLine.includes(" each:") ? "e" : "");
 				const value = this._getParsedSpells({thisLine, isMarkdown});
@@ -942,7 +943,7 @@ class SpellcastingTraitConvert {
 
 				const out = {};
 				if (thisLine.includes(" slot")) {
-					const mWarlock = /^(\d)..(?: level)?-(\d).. level \((\d) (\d)..-level slots?\)/.exec(thisLine);
+					const mWarlock = /^(\d)..(?: level)?-(\d).. level \((\d) (\d)..[- ]level slots?\)/.exec(thisLine);
 					if (mWarlock) {
 						out.lower = parseInt(mWarlock[1]);
 						out.slots = parseInt(mWarlock[3]);
@@ -1153,7 +1154,7 @@ class SpeedConvert {
 
 	static tryConvertSpeed (m, cbMan) {
 		if (typeof m.speed === "string") {
-			let line = m.speed.toLowerCase().trim().replace(/^speed:?\s*/, "");
+			let line = m.speed.toLowerCase().trim().replace(/^speed[:.]?\s*/, "");
 
 			const out = {};
 			let byHand = false;

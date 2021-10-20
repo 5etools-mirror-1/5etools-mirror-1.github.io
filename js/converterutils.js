@@ -64,6 +64,7 @@ class BaseParser {
 	 * @param [opts.noAbilityName] Disable ability checking.
 	 * @param [opts.noHit] Disable "Hit:" checking.
 	 * @param [opts.noSpellcastingAbility] Disable spellcasting ability checking.
+	 * @param [opts.noSpellcastingWarlockSlotLevel] Disable spellcasting warlot slock checking.
 	 */
 	static _isContinuationLine (entryArray, curLine, opts) {
 		opts = opts || {};
@@ -78,6 +79,8 @@ class BaseParser {
 		if (/[-\u2014]\s*$/.test(lastEntry)) return true;
 
 		const cleanLine = curLine.trim();
+
+		if (/^\d..-\d.. level\s+\(/.test(cleanLine) && !opts.noSpellcastingWarlockSlotLevel) return false;
 
 		// A lowercase word
 		if (/^[a-z]/.test(cleanLine) && !opts.noLowercase) return true;
@@ -160,7 +163,7 @@ class TagCondition {
 		TagCondition._ALL_SPELLS = spells;
 	}
 
-	static _getConvertedEntry (mon, entry, inflictedSet) {
+	static _getConvertedEntry (mon, entry, {inflictedSet, inflictedWhitelist} = {}) {
 		const walker = MiscUtil.getWalker({keyBlacklist: TagCondition._KEY_BLACKLIST});
 		const nameStack = [];
 		const walkerHandlers = {
@@ -171,7 +174,7 @@ class TagCondition {
 					if (nameStack.includes("Antimagic Susceptibility")) return str;
 					if (nameStack.includes("Sneak Attack (1/Turn)")) return str;
 					const ptrStack = {_: ""};
-					return TagCondition._walkerStringHandler(ptrStack, 0, 0, str, inflictedSet)
+					return TagCondition._walkerStringHandler(ptrStack, 0, 0, str, {inflictedSet, inflictedWhitelist});
 				},
 			],
 		};
@@ -179,7 +182,7 @@ class TagCondition {
 		return walker.walk(entry, walkerHandlers);
 	}
 
-	static _walkerStringHandler (ptrStack, depth, conditionCount, str, inflictedSet) {
+	static _walkerStringHandler (ptrStack, depth, conditionCount, str, {inflictedSet, inflictedWhitelist} = {}) {
 		TaggerUtils.walkerStringHandler(
 			"@condition",
 			ptrStack,
@@ -198,39 +201,39 @@ class TagCondition {
 		if (depth !== 0) return;
 
 		// Collect inflicted conditions for tagging
-		if (inflictedSet) this._collectInflictedConditions(ptrStack._, inflictedSet)
+		if (inflictedSet) this._collectInflictedConditions(ptrStack._, {inflictedSet, inflictedWhitelist})
 
 		return ptrStack._;
 	}
 
-	static _handleProp (m, prop, inflictedSet) {
+	static _handleProp (m, prop, {inflictedSet, inflictedWhitelist} = {}) {
 		if (!m[prop]) return;
 
-		m[prop] = m[prop].map(entry => this._getConvertedEntry(m, entry, inflictedSet));
+		m[prop] = m[prop].map(entry => this._getConvertedEntry(m, entry, {inflictedSet, inflictedWhitelist}));
 	}
 
-	static tryTagConditions (m, isTagInflicted) {
+	static tryTagConditions (m, {isTagInflicted = false, isInflictedAddOnly = false, inflictedWhitelist = null} = {}) {
 		const inflictedSet = isTagInflicted ? new Set() : null;
 
-		this._handleProp(m, "action", inflictedSet);
-		this._handleProp(m, "reaction", inflictedSet);
-		this._handleProp(m, "bonus", inflictedSet);
-		this._handleProp(m, "trait", inflictedSet);
-		this._handleProp(m, "legendary", inflictedSet);
-		this._handleProp(m, "mythic", inflictedSet);
-		this._handleProp(m, "variant", inflictedSet);
-		this._handleProp(m, "entries", inflictedSet);
-		this._handleProp(m, "entriesHigherLevel", inflictedSet);
+		this._handleProp(m, "action", {inflictedSet, inflictedWhitelist});
+		this._handleProp(m, "reaction", {inflictedSet, inflictedWhitelist});
+		this._handleProp(m, "bonus", {inflictedSet, inflictedWhitelist});
+		this._handleProp(m, "trait", {inflictedSet, inflictedWhitelist});
+		this._handleProp(m, "legendary", {inflictedSet, inflictedWhitelist});
+		this._handleProp(m, "mythic", {inflictedSet, inflictedWhitelist});
+		this._handleProp(m, "variant", {inflictedSet, inflictedWhitelist});
+		this._handleProp(m, "entries", {inflictedSet, inflictedWhitelist});
+		this._handleProp(m, "entriesHigherLevel", {inflictedSet, inflictedWhitelist});
 
-		if (!isTagInflicted) return;
-
-		if (inflictedSet.size) m.conditionInflict = [...inflictedSet];
-		else delete m.conditionInflict;
+		this._mutAddInflictedSet({m, inflictedSet, isInflictedAddOnly, prop: "conditionInflict"});
 	}
 
-	static _collectInflictedConditions (str, inflictedSet) {
+	static _collectInflictedConditions (str, {inflictedSet, inflictedWhitelist} = {}) {
+		if (!inflictedSet) return;
+
 		TagCondition._CONDITION_INFLICTED_MATCHERS.forEach(re => str.replace(re, (...m) => {
-			inflictedSet.add(m[1]);
+			const cond = m[1];
+			if (!inflictedWhitelist || inflictedWhitelist.has(cond)) inflictedSet.add(m[1]);
 
 			// ", {@condition ...}, ..."
 			if (m[2]) m[2].replace(/{@condition ([^}]+)}/g, (...n) => inflictedSet.add(n[1]));
@@ -240,10 +243,10 @@ class TagCondition {
 		}));
 	}
 
-	static tryTagConditionsSpells (m, cbMan) {
+	static tryTagConditionsSpells (m, {cbMan, isTagInflicted, isInflictedAddOnly, inflictedWhitelist} = {}) {
 		if (!m.spellcasting) return false;
 
-		const inflictedSet = new Set();
+		const inflictedSet = isTagInflicted ? new Set() : null;
 
 		// Collect known spells
 		const strSpellcasting = JSON.stringify(m.spellcasting);
@@ -260,25 +263,36 @@ class TagCondition {
 				spellSet.forEach(it => {
 					const spell = TagCondition._ALL_SPELLS.find(s => (s.name.toLowerCase() === it || (typeof s.srd === "string" && s.srd.toLowerCase() === it)) && s.source.toLowerCase() === source);
 					if (!spell) return cbMan ? cbMan(`${it} :: ${source}`) : null;
-					if (spell.conditionInflict) spell.conditionInflict.forEach(c => inflictedSet.add(c));
+					if (spell.conditionInflict) spell.conditionInflict.filter(c => !inflictedWhitelist || inflictedWhitelist.has(c)).forEach(c => inflictedSet.add(c));
 				});
 			});
 
-		if (inflictedSet.size) m.conditionInflictSpell = [...inflictedSet];
-		else delete m.conditionInflict;
+		this._mutAddInflictedSet({m, inflictedSet, isInflictedAddOnly, prop: "conditionInflictSpell"});
 	}
 
-	static tryTagConditionsRegionalsLairs (m, cbMan) {
+	static tryTagConditionsRegionalsLairs (m, {cbMan, isTagInflicted, isInflictedAddOnly, inflictedWhitelist} = {}) {
 		if (!m.legendaryGroup) return;
 
-		const inflictedSet = new Set();
+		const inflictedSet = isTagInflicted ? new Set() : null;
 
 		const meta = TagCondition._ALL_LEGENDARY_GROUPS.find(it => it.name === m.legendaryGroup.name && it.source === m.legendaryGroup.source);
 		if (!meta) return cbMan ? cbMan(m.legendaryGroup) : null;
-		this._collectInflictedConditions(JSON.stringify(meta), inflictedSet);
+		this._collectInflictedConditions(JSON.stringify(meta), {inflictedSet, inflictedWhitelist});
 
-		if (inflictedSet.size) m.conditionInflictLegendary = [...inflictedSet];
-		else delete m.conditionInflictLegendary;
+		this._mutAddInflictedSet({m, inflictedSet, isInflictedAddOnly, prop: "conditionInflictLegendary"});
+	}
+
+	static _mutAddInflictedSet ({m, inflictedSet, isInflictedAddOnly, prop}) {
+		if (!inflictedSet) return;
+
+		if (isInflictedAddOnly) {
+			(m[prop] || []).forEach(it => inflictedSet.add(it));
+			if (inflictedSet.size) m[prop] = [...inflictedSet].sort(SortUtil.ascSortLower);
+			return;
+		}
+
+		if (inflictedSet.size) m[prop] = [...inflictedSet].sort(SortUtil.ascSortLower);
+		else delete m[prop];
 	}
 
 	// region Run basic tagging
@@ -371,6 +385,8 @@ TagCondition._CONDITION_INFLICTED_MATCHERS = [
 	`the {@condition ([^}]+)} creature can repeat the saving throw`, // GGR :: Archon of the Triumvirate :: Pacifying Presence
 	`if the (?:${TagCondition.__TGT}|creature) is already {@condition [^}]+}, it becomes {@condition ([^}]+)}`,
 	`(?:creature|${TagCondition.__TGT}) (?:also becomes|is) {@condition ([^}]+)}`, // MTF :: Eidolon :: Divine Dread
+	`magically (?:become|turn)s? {@condition (invisible)}`, // MM :: Will-o'-Wisp :: Invisibility
+	`The (?:[^.]+) is {@condition (invisible)}`, // MM :: Invisible Stalker :: Invisibility
 ].map(it => new RegExp(`${it}((?:, {@condition [^}]+})*)(,? (?:and|or) {@condition [^}]+})?`, "gi"));
 
 class TagUtil {
@@ -865,7 +881,7 @@ class ConvertUtil {
 	}
 
 	static _getStatblockLineHeaderRegExp (start) {
-		return new RegExp(`\\s*${start.escapeRegexp()}\\s*?(?::|\\b)\\s*`, "i");
+		return new RegExp(`\\s*${start.escapeRegexp()}\\s*?(?::|\\.|\\b)\\s*`, "i");
 	}
 }
 

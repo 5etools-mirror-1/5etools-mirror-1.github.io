@@ -136,6 +136,9 @@
 					]
 				}
 			],
+			"miscTags": [
+				"HL"
+			],
 			"areaTags": [
 				"MT"
 			],
@@ -5480,6 +5483,18 @@
 					{
 						"name": "Wizard",
 						"source": "PHB"
+					}
+				],
+				"fromSubclass": [
+					{
+						"class": {
+							"name": "Druid",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Spores",
+							"source": "TCE"
+						}
 					}
 				]
 			},

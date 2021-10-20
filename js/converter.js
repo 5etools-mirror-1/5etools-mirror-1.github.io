@@ -829,8 +829,12 @@ class ConverterUi extends BaseComponent {
 		};
 
 		const doConversion = (isAppend) => {
-			catchErrors(() => {
-				if (isAppend && this._state.hasAppended && !confirm("You're about to overwrite multiple entries. Are you sure?")) return;
+			catchErrors(async () => {
+				if (
+					isAppend
+					&& !this._state.hasAppended
+					&& !await InputUiUtil.pGetUserBoolean({title: "Are you Sure?", htmlDescription: "You're about to overwrite multiple entries. Are you sure?", textYes: "Yes", textNo: "Cancel"})
+				) return;
 
 				const chunks = (this._state.inputSeparator
 					? this.inText.split(this._state.inputSeparator)

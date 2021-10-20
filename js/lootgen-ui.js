@@ -755,25 +755,33 @@ class LootGenOutput {
 	}
 
 	async _pDoSendToFoundry ({isTemp}) {
-		if (this._coins) await ExtensionUtil.pDoSendCurrency({currency: this._coins});
+		const toSend = {};
+		if (isTemp) toSend.isTemp = isTemp;
+		if (this._coins) toSend.currency = this._coins;
 
-		if (this._gems) await this._pDoSendToFoundry_gemsArtObjects({isTemp, loot: this._gems});
-		if (this._artObjects) await this._pDoSendToFoundry_gemsArtObjects({isTemp, loot: this._artObjects});
+		const entityInfos = [];
+		if (this._gems) entityInfos.push(...await this._pDoSendToFoundry_getGemsArtObjectsMetas({loot: this._gems}));
+		if (this._artObjects) entityInfos.push(...await this._pDoSendToFoundry_getGemsArtObjectsMetas({loot: this._artObjects}));
 
 		if (this._magicItemsByTable?.length) {
 			for (const magicItemsByTable of this._magicItemsByTable) {
-				for (const {item} of magicItemsByTable.breakdown) {
-					await ExtensionUtil.pDoSendStatsPreloaded({
-						page: UrlUtil.PG_ITEMS,
-						entity: item,
-						isTemp,
+				for (const lootItem of magicItemsByTable.breakdown) {
+					const {page, entity, options} = lootItem.getExtensionExportMeta();
+					entityInfos.push({
+						page,
+						entity,
+						options,
 					});
 				}
 			}
 		}
+
+		if (entityInfos.length) toSend.entityInfos = entityInfos;
+
+		if (toSend.currency || toSend.entityInfos) await ExtensionUtil.pDoSend({type: "5etools.lootgen.loot", data: toSend})
 	}
 
-	async _pDoSendToFoundry_gemsArtObjects ({isTemp, loot}) {
+	async _pDoSendToFoundry_getGemsArtObjectsMetas ({loot}) {
 		const uidToCount = {};
 		const specialItemMetas = {}; // For any rows which don't actually map to an item
 
@@ -806,29 +814,30 @@ class LootGenOutput {
 				specialItemMetas[uidFaux].count += count;
 			});
 
+		const out = [];
 		for (const [uid, count] of Object.entries(uidToCount)) {
 			const [name, source] = uid.split("|");
 			const item = await Renderer.hover.pCacheAndGet(UrlUtil.PG_ITEMS, source, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS]({name, source}));
-			await ExtensionUtil.pDoSendStatsPreloaded({
+			out.push({
 				page: UrlUtil.PG_ITEMS,
 				entity: item,
-				isTemp,
+				options: {
+					quantity: count,
+				},
+			})
+		}
+
+		for (const {count, item} of Object.values(specialItemMetas)) {
+			out.push({
+				page: UrlUtil.PG_ITEMS,
+				entity: item,
 				options: {
 					quantity: count,
 				},
 			});
 		}
 
-		for (const {count, item} of Object.values(specialItemMetas)) {
-			await ExtensionUtil.pDoSendStatsPreloaded({
-				page: UrlUtil.PG_ITEMS,
-				entity: item,
-				isTemp,
-				options: {
-					quantity: count,
-				},
-			});
-		}
+		return out;
 	}
 
 	_render_$getPtValueSummary () {
@@ -1087,6 +1096,13 @@ class LootGenMagicItem extends BaseComponent {
 
 	get item () { return this._state.item; }
 
+	getExtensionExportMeta () {
+		return {
+			page: UrlUtil.PG_ITEMS,
+			entity: this._state.item,
+		};
+	}
+
 	async _pDoReroll () {
 		const nxt = await this.constructor.pGetMagicItemRoll({
 			lootGenMagicItems: this._lootGenMagicItems,
@@ -1169,6 +1185,16 @@ class LootGenMagicItemSpellScroll extends LootGenMagicItem {
 
 		this._state.spellLevel = spellLevel;
 		this._state.spell = spell;
+	}
+
+	getExtensionExportMeta () {
+		return {
+			page: UrlUtil.PG_SPELLS,
+			entity: this._state.spell,
+			options: {
+				isSpellScroll: true,
+			},
+		};
 	}
 
 	_$getRender () {

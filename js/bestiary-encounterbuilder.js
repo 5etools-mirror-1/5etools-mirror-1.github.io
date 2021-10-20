@@ -105,11 +105,10 @@ class EncounterBuilder extends ProxyBase {
 	_handleClickCopyAsText (evt) {
 		let xpTotal = 0;
 		const toCopyCreatures = ListUtil.sublist.items
-			.map(it => ({name: it.name, ...it.values}))
 			.sort((a, b) => SortUtil.ascSortLower(a.name, b.name))
 			.map(it => {
-				xpTotal += Parser.crToXpNumber(it.cr) * it.count;
-				return `${it.count}× ${it.name}`;
+				xpTotal += Parser.crToXpNumber(it.values.cr) * it.data.count;
+				return `${it.data.count}× ${it.name}`;
 			})
 			.join(", ");
 		MiscUtil.pCopyTextToClipboard(`${toCopyCreatures} (${xpTotal.toLocaleString()} XP)`);

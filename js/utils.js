@@ -7,7 +7,7 @@ if (IS_NODE) require("./parser.js");
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 IS_DEPLOYED = undefined;
-VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.139.0"/* 5ETOOLS_VERSION__CLOSE */;
+VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.140.0"/* 5ETOOLS_VERSION__CLOSE */;
 DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 // for the roll20 script to set
 IS_VTT = false;
@@ -2418,6 +2418,7 @@ SortUtil = {
 
 	ascSortAdventure (a, b) {
 		return SortUtil.ascSortDateString(b.published, a.published)
+			|| SortUtil.ascSortLower(a.parentSource || "", b.parentSource || "")
 			|| SortUtil.ascSortLower(a.storyline, b.storyline)
 			|| SortUtil.ascSort(a.level?.start ?? 20, b.level?.start ?? 20)
 			|| SortUtil.ascSortLower(a.name, b.name);
@@ -2425,6 +2426,7 @@ SortUtil = {
 
 	ascSortBook (a, b) {
 		return SortUtil.ascSortDateString(b.published, a.published)
+			|| SortUtil.ascSortLower(a.parentSource || "", b.parentSource || "")
 			|| SortUtil.ascSortLower(a.name, b.name);
 	},
 
@@ -6779,6 +6781,8 @@ ExtensionUtil = {
 	},
 
 	doSendRoll (data) { ExtensionUtil._doSend("roll", data); },
+
+	pDoSend ({type, data}) { ExtensionUtil._doSend(type, data); },
 };
 if (typeof window !== "undefined") window.addEventListener("rivet.active", () => ExtensionUtil.ACTIVE = true);
 

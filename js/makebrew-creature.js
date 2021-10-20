@@ -386,7 +386,7 @@ class CreatureBuilder extends Builder {
 			TagAttack.tryTagAttacks(this._state);
 			TagHit.tryTagHits(this._state);
 			TagDc.tryTagDcs(this._state);
-			TagCondition.tryTagConditions(this._state, true);
+			TagCondition.tryTagConditions(this._state, {isTagInflicted: true});
 			TraitActionTag.tryRun(this._state);
 			LanguageTag.tryRun(this._state);
 			SenseFilterTag.tryRun(this._state);
@@ -1118,14 +1118,14 @@ class CreatureBuilder extends Builder {
 
 		// SIMPLE FORMULA STAGE
 		const conHook = () => {
-			if (this._meta.autoCalc.hpModifier) {
-				const num = Number($selSimpleNum.val());
-				const mod = Parser.getAbilityModNumber(this._state.con);
-				const total = num * mod;
-				$iptSimpleMod.val(total || null);
-				hpSimpleAverageHook();
-				doUpdateState();
-			}
+			if (!this._meta.autoCalc.hpModifier) return;
+
+			const num = Number($selSimpleNum.val());
+			const mod = Parser.getAbilityModNumber(this._state.con);
+			const total = num * mod;
+			$iptSimpleMod.val(total ?? null);
+			hpSimpleAverageHook();
+			doUpdateState();
 		};
 
 		this._addHook("state", "con", conHook);
@@ -1140,6 +1140,7 @@ class CreatureBuilder extends Builder {
 		const $selSimpleNum = $(`<select class="form-control input-xs mr-2">${[...new Array(50)].map((_, i) => `<option>${i + 1}</option>`)}</select>`)
 			.change(() => {
 				conHook();
+				hpSimpleAverageHook();
 				doUpdateState();
 			});
 
@@ -1265,7 +1266,10 @@ class CreatureBuilder extends Builder {
 	}
 
 	static __$getHpInput__getFormulaParts (formula) {
-		const m = /^(\d*)d(\d+)([-+]\d+)?$/.exec(formula.replace(/\s+/g, ""));
+		formula = formula
+			.replace(/\s+/g, "")
+			.replace(/[\u2012\u2013\u2014]/g, "-");
+		const m = /^(\d*)d(\d+)([-+]\d+)?$/.exec(formula);
 		if (!m) return null;
 		const hdNum = m[1] ? Number(m[1]) : 1;
 		if (hdNum <= 0 || hdNum > 50) return null; // if it's e.g. 0d10, consider invalid. Cap at 50 HD

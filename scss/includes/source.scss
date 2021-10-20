@@ -6,7 +6,9 @@
 	$rgb-source-MM: green;
 	$rgb-source-SCAG: #76af76;
 	$rgb-source-VGM: grey;
+	$rgb-source-OGA: #933d0f;
 	$rgb-source-XGE: #ba7c00;
+	$rgb-source-XMtS: #830051;
 	$rgb-source-HotDQ: #ad8eba;
 	$rgb-source-RoT: #ff2900;
 	$rgb-source-CoS: purple;
@@ -23,6 +25,7 @@
 	$rgb-source-GGR: #bfa76c;
 	$rgb-source-WDMM: #a2201f;
 	$rgb-source-LLK: #6e7a71;
+	$rgb-source-AZfyT: #4667a7;
 	$rgb-source-GoS: #3d695a;
 	$rgb-source-AI: #5baf04;
 	$rgb-source-ESK: #6b909a;
@@ -41,9 +44,11 @@
 	$rgb-source-HF: #ac9544;
 	$rgb-source-CM: #e6585e;
 	$rgb-source-VRGR: #bd000f;
+	$rgb-source-RtG: #8a536a;
 	$rgb-source-AitFR: #6e5ab9;
 	$rgb-source-WBtW: #7151b6;
 	$rgb-source-DoD: #fe4935;
+	$rgb-source-MaBJoV: #7a2854;
 
 	&PHB {
 		color: $rgb-source-PHB !important;
@@ -75,11 +80,23 @@
 		text-decoration-color: $rgb-source-VGM !important;
 	}
 
+	&OGA {
+		color: $rgb-source-OGA !important;
+		border-color: $rgb-source-OGA !important;
+		text-decoration-color: $rgb-source-OGA !important;
+	}
+
 	&XGE,
 	&TTP { // Tortles are counted as an XGE race for AL
 		color: $rgb-source-XGE !important;
 		border-color: $rgb-source-XGE !important;
 		text-decoration-color: $rgb-source-XGE !important;
+	}
+
+	&XMtS {
+		color: $rgb-source-XMtS !important;
+		border-color: $rgb-source-XMtS !important;
+		text-decoration-color: $rgb-source-XMtS !important;
 	}
 
 	&HotDQ {
@@ -184,6 +201,12 @@
 		color: $rgb-source-LLK !important;
 		border-color: $rgb-source-LLK !important;
 		text-decoration-color: $rgb-source-LLK !important;
+	}
+
+	&AZfyT {
+		color: $rgb-source-AZfyT !important;
+		border-color: $rgb-source-AZfyT !important;
+		text-decoration-color: $rgb-source-AZfyT !important;
 	}
 
 	&GoS {
@@ -307,6 +330,12 @@
 		text-decoration-color: $rgb-source-VRGR !important;
 	}
 
+	&RtG {
+		color: $rgb-source-RtG !important;
+		border-color: $rgb-source-RtG !important;
+		text-decoration-color: $rgb-source-RtG !important;
+	}
+
 	&AitFR {
 		color: $rgb-source-AitFR !important;
 		border-color: $rgb-source-AitFR !important;
@@ -333,6 +362,12 @@
 		color: $rgb-source-DoD !important;
 		border-color: $rgb-source-DoD !important;
 		text-decoration-color: $rgb-source-DoD !important;
+	}
+
+	&MaBJoV {
+		color: $rgb-source-MaBJoV !important;
+		border-color: $rgb-source-MaBJoV !important;
+		text-decoration-color: $rgb-source-MaBJoV !important;
 	}
 }
 

@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "2.8.0",
+	"version": "2.8.1",
 	"$id": "class.json",
 
 	"type": "object",
@@ -526,10 +526,18 @@
 					"additionalProperties": false
 				},
 				"requirements": {"$ref": "#/definitions/requirements"},
+				"requirementsSpecial ": {
+					"description": "For homebrew use.",
+					"type": "string"
+				},
 				"multiclassing": {
 					"type": "object",
 					"properties": {
 						"requirements": {"$ref": "#/definitions/requirements"},
+						"requirementsSpecial ": {
+							"description": "For homebrew use.",
+							"type": "string"
+						},
 						"proficienciesGained": {
 							"$ref": "#/definitions/proficiencies"
 						},

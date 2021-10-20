@@ -89,7 +89,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -99,6 +98,7 @@
 			"miscTags": [
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -189,7 +189,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -205,7 +204,8 @@
 			],
 			"conditionInflict": [
 				"charmed"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Animated Statue of Lolth",
@@ -295,7 +295,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -307,6 +306,7 @@
 				"AOE",
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -494,10 +494,10 @@
 					"ability": "cha"
 				}
 			],
-			"hasToken": true,
 			"spellcastingTags": [
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Awakened Brown Bear",
@@ -666,13 +666,13 @@
 					"ability": "int"
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"DS",
 				"OTH",
 				"U"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -710,11 +710,11 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Bore Worm",
@@ -816,7 +816,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Regeneration"
 			],
@@ -836,6 +835,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -902,7 +902,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack",
 				"Tentacles"
@@ -919,6 +918,7 @@
 				"paralyzed",
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1063,7 +1063,6 @@
 					"ability": "int"
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"DS",
@@ -1071,6 +1070,7 @@
 				"U"
 			],
 			"miscTags": [],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1098,7 +1098,6 @@
 				"N",
 				"E"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -1107,6 +1106,7 @@
 				"D",
 				"X"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1181,7 +1181,6 @@
 					}
 				}
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Illumination",
 				"Immutable Form",
@@ -1192,6 +1191,7 @@
 				"AOE",
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1226,13 +1226,13 @@
 				"average": 40,
 				"formula": "4d8 + 4"
 			},
-			"hasToken": true,
 			"miscTags": [
 				"MW",
 				"RCH",
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1350,7 +1350,6 @@
 				"Goblin",
 				"Undercommon"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry",
 				"Magic Resistance",
@@ -1370,7 +1369,8 @@
 			"spellcastingTags": [
 				"CW",
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Emberosa",
@@ -1399,11 +1399,11 @@
 					}
 				}
 			},
-			"hasToken": true,
 			"damageTags": [
 				"F",
 				"S"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1526,7 +1526,6 @@
 					"ability": "int"
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"D",
@@ -1534,7 +1533,8 @@
 				"E",
 				"S",
 				"U"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Fazrian",
@@ -1565,11 +1565,11 @@
 				"name": "Fazrian",
 				"source": "WDMM"
 			},
-			"hasToken": true,
 			"miscTags": [
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1643,13 +1643,13 @@
 					}
 				}
 			},
-			"hasToken": true,
 			"damageTags": [
 				"P"
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Giant Flying Spider",
@@ -1729,7 +1729,6 @@
 					"ability": "cha"
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry",
 				"Keen Senses",
@@ -1742,7 +1741,8 @@
 				"C",
 				"E",
 				"GI"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Glyster",
@@ -1862,11 +1862,11 @@
 					"ability": "wis"
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"D",
 				"U"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -1912,11 +1912,11 @@
 			"languages": [
 				"understands Undercommon but can't speak"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"CS",
 				"U"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Halaster Blackcloak",
@@ -2149,7 +2149,6 @@
 				"name": "Halaster Blackcloak",
 				"source": "WDMM"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Rejuvenation"
@@ -2184,6 +2183,7 @@
 				"stunned",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2226,10 +2226,10 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"damageTags": [
 				"B"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Halaster Puppet",
@@ -2276,13 +2276,13 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Antimagic Susceptibility"
 			],
 			"languageTags": [
 				"C"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Haungharassk",
@@ -2333,10 +2333,10 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Spider Climb"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2369,7 +2369,6 @@
 				"Infernal",
 				"Undercommon"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -2382,7 +2381,8 @@
 			"spellcastingTags": [
 				"CW",
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Huge Gray Ooze",
@@ -2425,13 +2425,16 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
 			"damageTags": [
 				"A"
-			]
+			],
+			"conditionInflict": [
+				"invisible"
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Intelligent Black Pudding",
@@ -2468,7 +2471,6 @@
 					"ability": "int"
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"CS",
 				"E",
@@ -2476,7 +2478,8 @@
 			],
 			"spellcastingTags": [
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Iron Spider",
@@ -2520,10 +2523,10 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Junior Drow Priestess of Lolth",
@@ -2548,7 +2551,6 @@
 				"N",
 				"E"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry",
 				"Sunlight Sensitivity"
@@ -2563,7 +2565,8 @@
 			"spellcastingTags": [
 				"CC",
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Kavil",
@@ -2697,10 +2700,10 @@
 				"name": "Keresta Delvingstone",
 				"source": "WDMM"
 			},
-			"hasToken": true,
 			"spellcastingTags": [
 				"CC"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2745,12 +2748,12 @@
 				"average": 20,
 				"formula": "2d8 + 4"
 			},
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"P",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Large Mimic",
@@ -2851,7 +2854,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -2869,6 +2871,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2935,7 +2938,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -2949,6 +2951,10 @@
 			"miscTags": [
 				"MW"
 			],
+			"conditionInflict": [
+				"invisible"
+			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2989,7 +2995,6 @@
 				"and Undercommon but can't speak"
 			],
 			"cr": "12",
-			"hasToken": true,
 			"languageTags": [
 				"AB",
 				"C",
@@ -3001,6 +3006,7 @@
 				"I",
 				"U"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3037,7 +3043,6 @@
 				"Gnomish but can't speak"
 			],
 			"cr": "2",
-			"hasToken": true,
 			"languageTags": [
 				"AB",
 				"C",
@@ -3047,7 +3052,8 @@
 			],
 			"damageTags": [
 				"P"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Marta Moonshadow",
@@ -3100,7 +3106,6 @@
 				"Elvish",
 				"Undercommon"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -3111,6 +3116,7 @@
 				"E",
 				"U"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3156,13 +3162,13 @@
 				"Draconic",
 				"Dwarvish"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"D",
 				"DR",
 				"DS"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Metal Wasp",
@@ -3195,10 +3201,10 @@
 				"petrified",
 				"poisoned"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Mobar",
@@ -3408,7 +3414,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -3437,6 +3442,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3497,14 +3503,14 @@
 					}
 				}
 			},
-			"hasToken": true,
 			"damageTags": [
 				"N",
 				"P"
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Nester",
@@ -3558,7 +3564,6 @@
 				"Giant",
 				"Terran"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -3570,6 +3575,7 @@
 				"GI",
 				"T"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3599,10 +3605,10 @@
 				}
 			},
 			"cr": "1/8",
-			"hasToken": true,
 			"damageTags": [
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Otto",
@@ -3632,10 +3638,10 @@
 			},
 			"str": 18,
 			"cr": "3",
-			"hasToken": true,
 			"damageTags": [
 				"P"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Play-by-Play Generator",
@@ -3683,7 +3689,6 @@
 			"languages": [
 				"Common"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
@@ -3693,7 +3698,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Poison Weird",
@@ -3731,11 +3737,14 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"I"
-			]
+			],
+			"conditionInflict": [
+				"invisible"
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Portia Dzuth",
@@ -3772,10 +3781,10 @@
 			"languages": [
 				"Common"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Preeta Kreepa",
@@ -3837,7 +3846,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"SD"
 			],
@@ -3851,6 +3859,7 @@
 				"frightened",
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3872,8 +3881,8 @@
 				"U"
 			],
 			"languages": null,
-			"hasToken": true,
-			"languageTags": []
+			"languageTags": [],
+			"hasToken": true
 		},
 		{
 			"name": "Rowboat Mimic",
@@ -4006,7 +4015,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Damage Absorption"
 			],
@@ -4028,6 +4036,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4140,7 +4149,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amorphous"
 			],
@@ -4161,6 +4169,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4182,12 +4191,12 @@
 					}
 				}
 			},
-			"hasToken": true,
 			"traitTags": [
 				"False Appearance",
 				"Shapechanger",
 				"Spider Climb"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Shockerstomper",
@@ -4284,7 +4293,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Immutable Form"
 			],
@@ -4301,7 +4309,8 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Shunn Shurreth",
@@ -4361,11 +4370,11 @@
 				"Common",
 				"Halfling"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"H"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Space Hamster",
@@ -4384,9 +4393,9 @@
 				}
 			},
 			"action": null,
-			"hasToken": true,
 			"damageTags": [],
-			"miscTags": []
+			"miscTags": [],
+			"hasToken": true
 		},
 		{
 			"name": "Stalagma Steelshadow",
@@ -4435,7 +4444,6 @@
 				"Dwarvish",
 				"Terran"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"D",
 				"DR",
@@ -4446,7 +4454,8 @@
 				"B",
 				"P",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Statue of Vergadain",
@@ -4503,7 +4512,6 @@
 				"Infernal",
 				"and Undercommon but can't speak"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"AB",
 				"C",
@@ -4515,6 +4523,7 @@
 				"I",
 				"U"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4547,7 +4556,6 @@
 				"Common",
 				"Giant"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -4555,6 +4563,7 @@
 				"C",
 				"GI"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4604,7 +4613,6 @@
 				"N",
 				"E"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -4617,6 +4625,7 @@
 				"B",
 				"P"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4644,7 +4653,6 @@
 				"C",
 				"E"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious",
 				"Sneak Attack"
@@ -4654,6 +4662,7 @@
 				"TC",
 				"X"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4733,10 +4742,10 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"damageTags": [
 				"L"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4844,10 +4853,10 @@
 					"ability": "int"
 				}
 			],
-			"hasToken": true,
 			"spellcastingTags": [
 				"CW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -4868,7 +4877,6 @@
 				"N",
 				"E"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious",
 				"Legendary Resistances",
@@ -4879,7 +4887,8 @@
 				"N",
 				"P",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Undead Bulette",
@@ -4982,7 +4991,6 @@
 				"Troglodyte",
 				"Undercommon"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"SD"
 			],
@@ -4994,6 +5002,7 @@
 				"T",
 				"U"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -5043,7 +5052,6 @@
 				"Deep Speech",
 				"Undercommon"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -5052,7 +5060,8 @@
 				"C",
 				"DS",
 				"U"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Werebat",
@@ -5171,7 +5180,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses",
 				"Shapechanger",
@@ -5196,6 +5204,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5230,10 +5239,10 @@
 				"petrified",
 				"poisoned"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -5266,7 +5275,6 @@
 				"Druidic",
 				"Elvish"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -5278,6 +5286,7 @@
 				"DU",
 				"E"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -5332,12 +5341,12 @@
 				"Common",
 				"Deep Speech"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"AB",
 				"C",
 				"DS"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Zorak Lightdrinker",
@@ -5528,7 +5537,6 @@
 				"name": "Vampire",
 				"source": "MM"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Regeneration",
@@ -5557,7 +5565,8 @@
 			],
 			"conditionInflict": [
 				"charmed"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Zox Clammersham",
@@ -5599,7 +5608,6 @@
 				"Ignan",
 				"Terran"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -5610,7 +5618,8 @@
 				"G",
 				"IG",
 				"T"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Zress Orlezziir",

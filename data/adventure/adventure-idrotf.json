@@ -341,7 +341,7 @@
 									"id": "022",
 									"entries": [
 										"To fish for knucklehead trout on the lakes of Icewind Dale, a character needs fishing tackle and a rowboat. The former costs 4 gp (per the {@book Player's Handbook|PHB}), while the latter can be bought for 50 gp or rented for 2 gp per day. A character can fish on the ice instead of a boat, in which case a saw or similar tool is needed to cut a fishing hole through the ice.",
-										"At the end of each hour spent fishing on the lake, the character must make a DC 15 Wisdom ({@skill Survival}) check. A failed check indicates no fish is caught during that hour. If the check succeeds, the character hooks a {@creature knucklehead trout|IDRotF} (see {@adventure appendix C|IDRotF|21}) and must make a Strength ({@skill Athletics}) check contested by the fish's Strength check to pull it out of the water. The trout has advantage on its check. If the character fails the check, the trout escapes. A character who fails the check by 5 or more must succeed on a DC 10 Dexterity saving throw or be pulled into the frigid water (see \"Frigid Water\" below). A character who is pulled out of the water is dripping wet and continues to suffer the effects of the frigid water until the wet clothes are taken off and replaced with dry ones."
+										"At the end of each hour spent fishing on the lake, the character must make a DC 15 Wisdom ({@skill Survival}) check. A failed check indicates no fish is caught during that hour. If the check succeeds, the character hooks a {@creature knucklehead trout|IDRotF} (see {@adventure appendix C|IDRotF|21}) and must make a Strength ({@skill Athletics}) check contested by the fish's Strength check to pull it out of the water. The trout has advantage on its check. If the character fails the check, the trout escapes. A character who fails the check by 5 or more must succeed on a DC 10 Dexterity saving throw or be pulled into the {@hazard frigid water} (see \"Frigid Water\" below). A character who is pulled out of the water is dripping wet and continues to suffer the effects of the frigid water until the wet clothes are taken off and replaced with dry ones."
 									]
 								},
 								{
@@ -1367,7 +1367,7 @@
 									"id": "04b",
 									"entries": [
 										"This outfit consists of a heavy fur coat or cloak over layers of wool clothing, as well as a fur-lined hat or hood, goggles, and fur-lined leather boots and gloves.",
-										"As long as cold weather clothing remains dry, its wearer automatically succeeds on saving throws against the effects of extreme cold (see \"{@area Extreme Cold|020|x}\")."
+										"As long as cold weather clothing remains dry, its wearer automatically succeeds on saving throws against the effects of {@hazard extreme cold} (see \"{@area Extreme Cold|020|x}\")."
 									]
 								},
 								{
@@ -2044,7 +2044,7 @@
 									"name": "Falling in the Water",
 									"id": "087",
 									"entries": [
-										"Any character who falls into the lake is subject to the effects of frigid water (see \"{@area Frigid Water|023|x}\"). Even after the character gets out of the frigid water, the effects persist until the wet clothing is dried out or replaced with warm, dry clothing."
+										"Any character who falls into the lake is subject to the effects of {@hazard frigid water} (see \"{@area Frigid Water|023|x}\"). Even after the character gets out of the frigid water, the effects persist until the wet clothing is dried out or replaced with warm, dry clothing."
 									]
 								},
 								{
@@ -16306,7 +16306,7 @@
 											]
 										},
 										"If Auril is home, so is her white {@creature roc}, Iskra. During the day, the roc sleeps in its nest. Shortly before midnight, the roc takes to the sky with the Frostmaiden on its back and doesn't return to the fortress until a few hours before sunrise. Without the roc to carry her around Icewind Dale, Auril can't cast her nightly spell, thus bringing an end to the everlasting winter.",
-										"The roc is too big to enter the fortress. If it takes damage from foes it can't reach, it gets clear of the fortress and climbs to a height that puts it outside the range of its enemies. If the roc grapples a foe, it heads toward open water with its prize; once there, it drops the {@condition grappled} creature into the water from a height of at least 200 feet. In addition to taking {@dice 20d6} bludgeoning damage from the fall, the victim must also contend with the frigid water (see \"{@area Frigid Water|023|x}\").",
+										"The roc is too big to enter the fortress. If it takes damage from foes it can't reach, it gets clear of the fortress and climbs to a height that puts it outside the range of its enemies. If the roc grapples a foe, it heads toward open water with its prize; once there, it drops the {@condition grappled} creature into the water from a height of at least 200 feet. In addition to taking {@dice 20d6} bludgeoning damage from the fall, the victim must also contend with the {@hazard frigid water} (see \"{@area Frigid Water|023|x}\").",
 										{
 											"type": "entries",
 											"name": "Treasure",

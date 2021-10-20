@@ -899,6 +899,7 @@ Renderer.dice.lang = {
 			.replace(/\s+times\s+/g, " * ")
 			// endregion
 			.replace(/\s+/g, "")
+			.replace(/[\u2012\u2013\u2014]/g, "-") // convert dashes
 			.replace(/[×]/g, "*") // convert mult signs
 			.replace(/\*\*/g, "^") // convert ** to ^
 			.replace(/÷/g, "/") // convert div signs

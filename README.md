@@ -12,7 +12,10 @@ Please see [our wiki](https://wiki.5e.tools/) for FAQs, installation guides, sup
 
 ## Developer Notes
 ### Data Sources and Versioning
-Only "official" (that is, published by WotC) data is to be included in the site. Anything else should be added to the homebrew repository.
+Only "official" (that is, published by WotC) data is to be included in the site. Anything else should be added to the homebrew repository. Some exceptions to this rule are:
+- All Adventurers League (AL) -specific content is to be kept in the homebrew repository. While much of this content broadly falls under the "published by WotC" umbrella, a good deal of it doesn't. For the sake of consistency/cleanliness, all AL content is to be considered homebrew.
+- Anything published in the Dragon+ magazine.
+- Anything veto'd by the maintainers of this repository.
 
 Prioritise RAW above all else. Aim to provide a 1:1 copy of the original data. Obvious typos (for instance, mathematical errors in creature statblocks) may be corrected at the discretion of the maintainer(s).
 
@@ -37,7 +40,7 @@ Within this ordering, the following prioritisation should be made:
 
 
 ### Target JavaScript Version
-Anything language feature available in both main-line Chrome and Firefox for at least six months may be used.
+Any language feature which is available in both main-line Chrome and main-line Firefox, and has been available for at least six months, may be used.
 
 ### Style Guidelines
 #### Code

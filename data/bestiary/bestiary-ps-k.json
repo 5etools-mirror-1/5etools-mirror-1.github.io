@@ -53,7 +53,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -62,7 +61,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Servo",
@@ -111,13 +111,13 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"damageTags": [
 				"S"
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Sky Leviathan",
@@ -168,7 +168,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Swallow"
 			],
@@ -183,7 +182,8 @@
 			"conditionInflict": [
 				"blinded",
 				"restrained"
-			]
+			],
+			"hasToken": true
 		}
 	]
 }

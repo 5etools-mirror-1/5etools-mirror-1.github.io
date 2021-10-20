@@ -2763,7 +2763,7 @@
 					"id": "092",
 					"entries": [
 						"As characters traverse the Silken Paths, keep in mind the following features.",
-						"{@b Difficult Terrain.} Any creature with a climbing speed can walk along the webs at that speed. For all other creatures, the webs are difficult terrain. Any creature that falls can potentially become entangled in the webs (see \"Falling\").",
+						"{@b Difficult Terrain.} Any creature with a climbing speed can walk along the webs at that speed. For all other creatures, the webs are difficult terrain. Any creature that falls can potentially become entangled in the {@hazard webs} (see \"Falling\").",
 						"{@b Falling.} Whenever a creature takes damage while traversing the Silken Paths, or whenever the webs upon which it is walking break, the creature must make a DC 15 Dexterity saving throw. On a successful save, the creature manages to avoid a fall by grabbing nearby web strands. On a failure, the creature falls 1d10 × 10 feet. If the distance fallen is less than the distance to the chasm floor, the creature becomes entangled in webs and restrained; otherwise, it hits the floor and takes damage from the fall as normal. A restrained creature can make a DC 12 Strength saving throw at the end of each of its turns, freeing itself and ending the restrained condition on a success. Another creature can use its action to help a restrained creature within its reach, granting advantage on that creature's next saving throw to end the effect.",
 						"{@b Light.} The chasm is dark. Carrying a light source attracts hostile creatures, increasing the chance of an encounter to 1-3 on a d6.",
 						"{@b Fire.} Webs burn away when exposed to any attack or effect that deals fire damage. This causes several strands to break, and all creatures within 30 feet of the affected area must make a saving throw to avoid falling (see \"Falling\")."
@@ -5498,7 +5498,7 @@
 					"name": "Moldy Quaggoth Spore Servants",
 					"id": "155",
 					"entries": [
-						"A patch of yellow mold (see \"Dungeon Hazards\" in chapter 5 of the Dungeon Master's Guide) covers each spore servant. Each time a spore servant is touched or takes damage, it releases a cloud of yellow mold spores until the mold patch is destroyed."
+						"A patch of {@hazard yellow mold} (see \"Dungeon Hazards\" in chapter 5 of the Dungeon Master's Guide) covers each spore servant. Each time a spore servant is touched or takes damage, it releases a cloud of yellow mold spores until the mold patch is destroyed."
 					]
 				},
 				{
@@ -5522,7 +5522,7 @@
 					"name": "Yellow Mold",
 					"id": "158",
 					"entries": [
-						"The characters notice a patch of yellow mold (see \"Dungeon Hazards\" in chapter 5 of the Dungeon Master's Guide) growing on something of interest, determined by rolling a d4 and consulting the Beneath the Yellow Mold table. Tampering with the moldencrusted object causing the yellow mold to release its deadly spores.",
+						"The characters notice a patch of {@hazard yellow mold} (see \"Dungeon Hazards\" in chapter 5 of the Dungeon Master's Guide) growing on something of interest, determined by rolling a d4 and consulting the Beneath the Yellow Mold table. Tampering with the moldencrusted object causing the yellow mold to release its deadly spores.",
 						{
 							"type": "table",
 							"caption": "Beneath the Yellow Mold",
@@ -5743,7 +5743,7 @@
 								"The tunnel opens into a natural cave, wherein you see several fungal creatures dancing to a silent tune. Three of them stand five feet tall, while the others are half as tall. One of the small ones stands apart from the rest, its movements not nearly as frantic. Hunched nearby are two larger creatures that resemble apes covered with mushroom growths and yellow mold."
 							]
 						},
-						"Characters who know anything about myconids know that myconids don't dance. If Stool is with the party, it points this out. This group is composed of three {@creature myconid adult||myconid adults} and five {@creature myconid sprout||myconid sprouts}. Stool recognizes one of the sprouts\u2014the one not dancing\u2014as his buddy, Rumpadump (see \"Development\"). The ape-like creatures are two {@creature quaggoth spore servant||quaggoth spore servants}, and each one is covered with a patch of yellow mold (see \"Dungeon Hazards\" in chapter 5 of the {@i Dungeon Master's Guide}). Whenever a quaggoth spore servant is touched or takes damage, it releases a cloud of yellow mold spores until its mold patch is destroyed.",
+						"Characters who know anything about myconids know that myconids don't dance. If Stool is with the party, it points this out. This group is composed of three {@creature myconid adult||myconid adults} and five {@creature myconid sprout||myconid sprouts}. Stool recognizes one of the sprouts\u2014the one not dancing\u2014as his buddy, Rumpadump (see \"Development\"). The ape-like creatures are two {@creature quaggoth spore servant||quaggoth spore servants}, and each one is covered with a patch of {@hazard yellow mold} (see \"Dungeon Hazards\" in chapter 5 of the {@i Dungeon Master's Guide}). Whenever a quaggoth spore servant is touched or takes damage, it releases a cloud of yellow mold spores until its mold patch is destroyed.",
 						"The myconids are too swept up in their silent revelry to notice the characters. If the adventurers attack, the myconid adults fight fiercely while the sprouts run and hide. The spore servants join the fray if either they or the myconids are threatened. Otherwise, they remain motionless.",
 						"If the characters try to communicate with the myconids, they release rapport spores so that everyone can speak telepathically. The leader of the myconids is an adult named Voosbur, who speaks on behalf of the others. Sharing thoughts with these sentient mushrooms is an odd and strangely intoxicating experience (and feels quite different than the rapport the characters might have shared with Stool). Voosbur happily tells the party how its \"troupe\" was attracted by the special mushrooms in these tunnels, and it tells the characters about the magical properties of the pygmywort and bigwig mushrooms. Voosbur further explains that the myconids didn't wander into this area, but arrived here by traveling \"through the Lady's dream.\" Voosbur describes \"the Lady\" as a powerful being that loves and guides all myconids. He offers to share \"the Lady's gift\" with the characters, allowing them to travel \"through the Lady's dream\" as the myconids do. Characters who accept the offer gain Zuggtmoy's gift.",
 						"If present, Stool tells the characters it has no idea what Voosbur is talking about. Additionally, Sarith Kzekarit starts to act erratically, trying to warn the characters away from the myconids, but unable to shake off the influence of Zuggtmoy's spores.",
@@ -6213,7 +6213,7 @@
 							"name": "Trap",
 							"id": "193",
 							"entries": [
-								"The tunnel west of this cavern contains a hidden pit (see \"Sample Traps\" in chapter 5 of the Dungeon Master's Guide). Debris conceals the lid, which is made of thin zurkhwood that breaks when a creature weighing 50 pounds or more steps on it. (A character of reduced size might not weigh enough to break the lid.) The pit is 10 feet deep, and its floor is covered by a patch of green slime (see \"Dungeon Hazards\" in chapter 5 of the {@i Dungeon Master's Guide}). Any creature that falls into the pit takes 1d6 bludgeoning damage and automatically fails its Dexterity saving throw to avoid the slime."
+								"The tunnel west of this cavern contains a hidden pit (see \"Sample Traps\" in chapter 5 of the Dungeon Master's Guide). Debris conceals the lid, which is made of thin zurkhwood that breaks when a creature weighing 50 pounds or more steps on it. (A character of reduced size might not weigh enough to break the lid.) The pit is 10 feet deep, and its floor is covered by a patch of {@hazard green slime} (see \"Dungeon Hazards\" in chapter 5 of the {@i Dungeon Master's Guide}). Any creature that falls into the pit takes 1d6 bludgeoning damage and automatically fails its Dexterity saving throw to avoid the slime."
 							]
 						},
 						{
@@ -6582,7 +6582,7 @@
 										],
 										[
 											"10",
-											"Patch of brown mold (see \"Dungeon Hazards\" in chapter 5 of the Dungeon Master's Guide)"
+											"Patch of {@hazard brown mold} (see \"Dungeon Hazards\" in chapter 5 of the Dungeon Master's Guide)"
 										],
 										[
 											"11",
@@ -7960,7 +7960,7 @@
 						"It is rare for cavern walls to be bare in Blingdenstone. The walls of large caverns are studded with stairs and ramps leading to balconies and hollows serving as storage or shops. The largest caverns are crisscrossed by walkways allowing svirfneblin and visitors to reach connecting tunnels high above the floor.",
 						"{@b Light.} The caverns of Inner Blingdenstone are brightly lit with a mix of bioluminescent fungi, caged giant fire beetles, and magic. The light from these chambers spills into short connecting tunnels lacking their own illumination, creating areas of dim light. Longer tunnels have their own light, usually magically produced.",
 						"{@b Connecting Tunnels.} Svirfneblin and other Small races can walk through tunnels with ease, but Medium or larger creatures must duck and squeeze-a feature intended to control invaders' movements. Most tunnels have smooth floors, but those around the periphery of the reclaimed areas are strewn with rubble and debris.",
-						"Some of the connecting tunnels in Blingdenstone are trapped. The most common traps are collapsing roofs and spiked pits (see \"Sample Traps\" in chapter 5 of the Dungeon Master's Guide). Many tunnels slope down before rising up again, allowing the gnomes to flood them. All tunnel traps are inactive in Inner Blingdenstone, but the svirfneblin can quickly activate them in case of emergency."
+						"Some of the connecting tunnels in Blingdenstone are trapped. The most common traps are collapsing roofs and spiked {@trap pits} (see \"Sample Traps\" in chapter 5 of the Dungeon Master's Guide). Many tunnels slope down before rising up again, allowing the gnomes to flood them. All tunnel traps are inactive in Inner Blingdenstone, but the svirfneblin can quickly activate them in case of emergency."
 					]
 				},
 				{
@@ -10433,7 +10433,7 @@
 						"{@b Shed 6} holds 2d10 empty wooden chests with iron fittings and 2d10 locks with keys.",
 						"{@b Shed 7} contains 2d6 jars of ink, 3d12 blank pieces of parchment, 3d6 boxes of candles (12 candles per box), and 2d6 ink pens.",
 						"{@b Shed 8} holds 3d6 crowbars, 3d6 hammers, and 3d6 miner's picks.",
-						"{@b Shed 9} is locked, and Ghazrim DuLoc carries the only key. The lock is also trapped with a poison needle (see \"{@book Sample Traps|DMG|5|Sample Traps}\" in chapter 5 of the Dungeon Master's Guide). The shed contains 250 pp, 1,800 gp, 3,300 sp, 6,000 cp, and thirty 100 gp gems in a loose pile.",
+						"{@b Shed 9} is locked, and Ghazrim DuLoc carries the only key. The lock is also trapped with a {@trap poison needle} (see \"{@book Sample Traps|DMG|5|Sample Traps}\" in chapter 5 of the Dungeon Master's Guide). The shed contains 250 pp, 1,800 gp, 3,300 sp, 6,000 cp, and thirty 100 gp gems in a loose pile.",
 						"{@b Shed 10} contains 3d6 jars of spices worth 10 gp each, 2d6 10-pound sacks of cinnamon worth 20 gp each, and 3d6 boxes of soap (12 bars of soap per box).",
 						"{@b Shed 11} holds four wooden chicken coops, each one containing 1d6+1 live chickens. Sacks of chicken feed are stored on a shelf above the coops.",
 						"{@b Shed 12} is currently empty.",

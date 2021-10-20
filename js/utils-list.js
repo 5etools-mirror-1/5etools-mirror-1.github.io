@@ -852,7 +852,7 @@ const ListUtil = {
 	async _pHandleJsonDownload () {
 		const entities = await ListUtil.pGetPinnedEntities();
 		entities.forEach(cpy => DataUtil.cleanJson(cpy));
-		DataUtil.userDownload(`${ListUtil._getDownloadName()}-data`, data);
+		DataUtil.userDownload(`${ListUtil._getDownloadName()}-data`, entities);
 	},
 
 	bindShowTableButton (id, title, dataList, colTransforms, filter, sorter) {

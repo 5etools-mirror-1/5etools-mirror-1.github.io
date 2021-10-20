@@ -9991,6 +9991,15 @@
 			"speed": 40
 		},
 		{
+			"name": "Dowsing Dagger",
+			"source": "XMtS",
+			"page": 19,
+			"rarity": "unknown (magic)",
+			"entries": [
+				"A curved jade blade fashioned by the River Heralds, this {@item +1 dagger} can detect the presence of fresh water within 200 feet of the wielder."
+			]
+		},
+		{
 			"name": "Draakhorn",
 			"source": "RoT",
 			"page": 93,
@@ -23025,6 +23034,15 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "Pirate's Cutlass",
+			"source": "XMtS",
+			"page": 19,
+			"rarity": "unknown (magic)",
+			"entries": [
+				"This {@item +1 shortsword} is a terrifying weapon with a serrated edge. It grants its wielder advantage on Charisma ({@skill Intimidation}) checks when brandished."
+			]
+		},
+		{
 			"name": "Pitcher",
 			"source": "PHB",
 			"page": 153,
@@ -24582,6 +24600,15 @@
 			]
 		},
 		{
+			"name": "Primal Amulet",
+			"source": "XMtS",
+			"page": 19,
+			"rarity": "unknown (magic)",
+			"entries": [
+				"This beaded jade necklace bears an ancient symbol of the River Heralds. When worn, the primal amulet allows its wearer to cast {@spell speak with animals}, {@spell locate object}, and {@spell pass without trace}. Once the amulet has been used to cast a spell, it can't be used to cast that spell again until the next dawn."
+			]
+		},
+		{
 			"name": "Professor Orb",
 			"source": "WDMM",
 			"page": 284,
@@ -24699,6 +24726,15 @@
 				"mordenkainen's private sanctum",
 				"protection from evil and good",
 				"symbol"
+			]
+		},
+		{
+			"name": "Prying Blade",
+			"source": "XMtS",
+			"page": 19,
+			"rarity": "unknown (magic)",
+			"entries": [
+				"A hooked blade useful on board a ship or as a cutting tool in the wilderness, this {@item +1 shortsword} grants its wielder advantage on Strength ({@skill Athletics}) checks to climb or to escape while {@condition restrained}."
 			]
 		},
 		{
@@ -28881,6 +28917,15 @@
 			"entries": [
 				"Soothsalts are derived from a naturally occurring crystalline substance discovered throughout the wilds of the Miskath Strand. The crimson crystals have been mined from cavernous veins like those in the mouth of the Miskath Pit and found within smaller geode formations near sites ravaged by the Calamity. Soothsalts are consumed orally in lozenge-sized doses, and frequent users can be identified by the telltale crimson stain around their mouths. A creature subjected to a dose of soothsalts gains advantage on all Intelligence checks for {@dice 1d4} hours.",
 				"For each dose of soothsalts consumed, the creature must succeed on a DC 15 Constitution saving throw or gain one level of {@condition exhaustion}\u2014an effect which is cumulative with multiple doses."
+			]
+		},
+		{
+			"name": "Sorcerous Spyglass",
+			"source": "XMtS",
+			"page": 19,
+			"rarity": "unknown (magic)",
+			"entries": [
+				"This elegant brass {@item spyglass|phb} features an intricate lens mechanism. A creature looking through the sorcerous spyglass has advantage on Wisdom ({@skill Perception}) checks to detect things that can be seen. In addition, the user can view magical auras while looking through the spyglass, as if under the effect of a {@spell detect magic} spell."
 			]
 		},
 		{
@@ -35420,6 +35465,15 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "Vanquisher's Banner",
+			"source": "XMtS",
+			"page": 19,
+			"rarity": "unknown (magic)",
+			"entries": [
+				"This battle-worn but unbroken standard bears the insignia of one of the forces of the Legion of Dusk. A creature that holds the vanquisher's banner can use a bonus action to grant an ally advantage on the ally's next attack roll, saving throw, or ability check."
+			]
+		},
+		{
 			"name": "Vanrak's Mithral Shirt",
 			"source": "WDMM",
 			"page": 237,
@@ -35565,6 +35619,17 @@
 			],
 			"attachedSpells": [
 				"dream"
+			]
+		},
+		{
+			"name": "Vial of Thought Capture",
+			"source": "AZfyT",
+			"page": 4,
+			"rarity": "unknown (magic)",
+			"entries": [
+				"This dark blue vial allows you to read another's surface thoughts and capture them as thoguht strands, storing the strands within the vial. As an action, you can activate the vial to target a creature you can see within 10 feet of you to learn its surface thoughts and pul the thoughts learned out of the creature's head as a tangible glowing string of energy known as a thought strand. The strands can be stored in the vial for up to 24 hours or until the vial reaches capacity, in which case the oldest strands dissipate. A creature affected by the vial knows that its thoughts are being probed.",
+				"The vial can also store thought strands created by the {@spell encode thoughts|ggr} cantrip. It does not extend the duration of those strands beyond 8 hours, but stored strands do not disappear if you cast {@spell encode thoughts|ggr} again during the duration of the cantrip.",
+				"The vial has 3 charges and can store up to 3 thought strands. It regains all its charges daily at dusk."
 			]
 		},
 		{

@@ -126,7 +126,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Incorporeal Movement",
 				"Legendary Resistances"
@@ -148,6 +147,7 @@
 				"frightened",
 				"incapacitated"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -244,7 +244,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
@@ -256,7 +255,8 @@
 				"RNG",
 				"RW",
 				"THW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Spellcaster (Healer)",
@@ -382,7 +382,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
@@ -397,7 +396,8 @@
 			],
 			"conditionInflictSpell": [
 				"incapacitated"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Spellcaster (Mage)",
@@ -523,7 +523,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
@@ -540,7 +539,8 @@
 				"invisible",
 				"paralyzed",
 				"unconscious"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Warrior",
@@ -661,7 +661,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
@@ -673,7 +672,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasToken": true
 		}
 	]
 }

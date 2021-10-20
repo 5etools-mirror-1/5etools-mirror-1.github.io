@@ -719,6 +719,7 @@ class StatGenUi extends BaseComponent {
 				isAllowNull: true,
 				fnDisplay: ix => {
 					const r = this._races[ix];
+					if (!r) return "(Unknown)";
 					return `${r.name} ${r.source !== SRC_PHB ? `[${Parser.sourceJsonToAbv(r.source)}]` : ""}`;
 				},
 				asMeta: true,
@@ -752,7 +753,7 @@ class StatGenUi extends BaseComponent {
 				html: `<button class="btn btn-xs btn-default" title="Toggle Race Preview"><span class="glyphicon glyphicon-eye-open"></span></button>`,
 			},
 		);
-		const hkBtnPreviewRace = () => $btnPreviewRace.toggleVe(this._state.common_ixRace != null);
+		const hkBtnPreviewRace = () => $btnPreviewRace.toggleVe(this._state.common_ixRace != null && !~this._state.common_ixRace);
 		this._addHookBase("common_ixRace", hkBtnPreviewRace)
 		hkBtnPreviewRace();
 
@@ -1253,7 +1254,7 @@ class StatGenUi extends BaseComponent {
 	getSaveableState () {
 		const out = super.getSaveableState();
 
-		if (out.common_ixRace != null) {
+		if (out.common_ixRace != null && !~this._state.common_ixRace) {
 			out._pb_raceHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RACES](this._races[out.common_ixRace]);
 			delete out.common_ixRace;
 		}

@@ -4,6 +4,7 @@
 			"name": "Lost Mine of Phandelver",
 			"id": "LMoP",
 			"source": "LMoP",
+			"group": "supplement",
 			"coverUrl": "img/covers/LMoP.png",
 			"published": "2014-07-15",
 			"storyline": "Starter Set",
@@ -100,6 +101,7 @@
 			"name": "Hoard of the Dragon Queen",
 			"id": "HotDQ",
 			"source": "HotDQ",
+			"group": "supplement",
 			"coverUrl": "img/covers/HotDQ.png",
 			"published": "2014-08-19",
 			"storyline": "Tyranny of Dragons",
@@ -862,6 +864,7 @@
 			"name": "Rise of Tiamat",
 			"id": "RoT",
 			"source": "RoT",
+			"group": "supplement",
 			"coverUrl": "img/covers/RoT.png",
 			"published": "2014-11-04",
 			"storyline": "Tyranny of Dragons",
@@ -1418,6 +1421,7 @@
 			"name": "Princes of the Apocalypse",
 			"id": "PotA",
 			"source": "PotA",
+			"group": "supplement",
 			"coverUrl": "img/covers/PotA.png",
 			"published": "2015-04-07",
 			"storyline": "Elemental Evil",
@@ -1579,6 +1583,7 @@
 			"name": "Out of the Abyss",
 			"id": "OotA",
 			"source": "OotA",
+			"group": "supplement",
 			"coverUrl": "img/covers/OotA.png",
 			"published": "2015-09-15",
 			"storyline": "Rage of Demons",
@@ -1889,6 +1894,7 @@
 			"name": "Curse of Strahd",
 			"id": "CoS",
 			"source": "CoS",
+			"group": "supplement",
 			"coverUrl": "img/covers/CoS.png",
 			"published": "2016-03-15",
 			"storyline": "Ravenloft",
@@ -3504,6 +3510,7 @@
 			"name": "Storm King's Thunder",
 			"id": "SKT",
 			"source": "SKT",
+			"group": "supplement",
 			"coverUrl": "img/covers/SKT.png",
 			"published": "2016-09-06",
 			"storyline": "Storm King's Thunder",
@@ -4376,6 +4383,8 @@
 			"name": "Tales from the Yawning Portal: The Sunless Citadel",
 			"id": "TftYP-TSC",
 			"source": "TftYP-TSC",
+			"parentSource": "TftYP",
+			"group": "supplement",
 			"coverUrl": "img/covers/TftYP.png",
 			"published": "2017-03-24",
 			"publishedOrder": 0,
@@ -4479,6 +4488,8 @@
 			"name": "Tales from the Yawning Portal: The Forge of Fury",
 			"id": "TftYP-TFoF",
 			"source": "TftYP-TFoF",
+			"parentSource": "TftYP",
+			"group": "supplement",
 			"coverUrl": "img/covers/TftYP.png",
 			"published": "2017-03-24",
 			"publishedOrder": 1,
@@ -4604,6 +4615,8 @@
 			"name": "Tales from the Yawning Portal: The Hidden Shrine of Tamoachan",
 			"id": "TftYP-THSoT",
 			"source": "TftYP-THSoT",
+			"parentSource": "TftYP",
+			"group": "supplement",
 			"coverUrl": "img/covers/TftYP.png",
 			"published": "2017-03-24",
 			"publishedOrder": 2,
@@ -4720,6 +4733,8 @@
 			"name": "Tales from the Yawning Portal: White Plume Mountain",
 			"id": "TftYP-WPM",
 			"source": "TftYP-WPM",
+			"parentSource": "TftYP",
+			"group": "supplement",
 			"coverUrl": "img/covers/TftYP.png",
 			"published": "2017-03-24",
 			"publishedOrder": 3,
@@ -4789,6 +4804,8 @@
 			"name": "Tales from the Yawning Portal: Dead in Thay",
 			"id": "TftYP-DiT",
 			"source": "TftYP-DiT",
+			"parentSource": "TftYP",
+			"group": "supplement",
 			"coverUrl": "img/covers/TftYP.png",
 			"published": "2017-03-24",
 			"publishedOrder": 4,
@@ -5274,6 +5291,8 @@
 			"name": "Tales from the Yawning Portal: Tomb of Horrors",
 			"id": "TftYP-ToH",
 			"source": "TftYP-ToH",
+			"parentSource": "TftYP",
+			"group": "supplement",
 			"coverUrl": "img/covers/TftYP.png",
 			"published": "2017-03-24",
 			"publishedOrder": 6,
@@ -5462,6 +5481,8 @@
 			"name": "Tales from the Yawning Portal: Against the Giants",
 			"id": "TftYP-AtG",
 			"source": "TftYP-AtG",
+			"parentSource": "TftYP",
+			"group": "supplement",
 			"coverUrl": "img/covers/TftYP.png",
 			"published": "2017-03-24",
 			"publishedOrder": 5,
@@ -5691,6 +5712,7 @@
 			"name": "Tomb of Annihilation",
 			"id": "ToA",
 			"source": "ToA",
+			"group": "supplement",
 			"coverUrl": "img/covers/ToA.png",
 			"published": "2017-09-19",
 			"storyline": "Tomb of Annihilation",
@@ -5843,6 +5865,7 @@
 			"name": "The Tortle Package",
 			"id": "TTP",
 			"source": "TTP",
+			"group": "supplement-alt",
 			"coverUrl": "img/covers/TTP.png",
 			"published": "2017-11-03",
 			"storyline": "Tomb of Annihilation",
@@ -5917,9 +5940,105 @@
 			]
 		},
 		{
+			"name": "The Lost Kenku",
+			"id": "TLK",
+			"source": "TLK",
+			"group": "supplement-alt",
+			"coverUrl": "img/covers/TLK.png",
+			"published": "2017-11-28",
+			"storyline": "Extra Life",
+			"level": {
+				"start": 4,
+				"end": 4
+			},
+			"contents": [
+				{
+					"name": "The Lost Kenku"
+				}
+			]
+		},
+		{
+			"name": "X Marks the Spot",
+			"id": "XMtS",
+			"source": "XMtS",
+			"group": "supplement-alt",
+			"coverUrl": "img/covers/XMtS.png",
+			"published": "2017-12-11",
+			"storyline": "Ixalan",
+			"level": {
+				"start": 4,
+				"end": 4
+			},
+			"contents": [
+				{
+					"name": "Background"
+				},
+				{
+					"name": "Overview"
+				},
+				{
+					"name": "Adventure Hooks",
+					"headers": [
+						"Treasure"
+					]
+				},
+				{
+					"name": "Starting the Adventure",
+					"headers": [
+						"The Great Escape",
+						"Conqueror's Foothold",
+						"Field of Ruin",
+						"Fort Leor and Fort Durron",
+						"Primal Wellspring",
+						"Unclaimed Territory",
+						"Temple of Aclazotz"
+					]
+				},
+				{
+					"name": "Conclusion"
+				},
+				{
+					"name": "Monster and NPC Statistics",
+					"ordinal": {
+						"type": "appendix",
+						"identifier": "A"
+					}
+				},
+				{
+					"name": "Locations of Ixalan",
+					"ordinal": {
+						"type": "appendix",
+						"identifier": "B"
+					}
+				},
+				{
+					"name": "Map of Ixalan",
+					"ordinal": {
+						"type": "appendix",
+						"identifier": "C"
+					}
+				},
+				{
+					"name": "Hidden Plunder",
+					"ordinal": {
+						"type": "appendix",
+						"identifier": "D"
+					}
+				},
+				{
+					"name": "Player Characters",
+					"ordinal": {
+						"type": "appendix",
+						"identifier": "E"
+					}
+				}
+			]
+		},
+		{
 			"name": "Waterdeep: Dragon Heist",
 			"id": "WDH",
 			"source": "WDH",
+			"group": "supplement",
 			"coverUrl": "img/covers/WDH.png",
 			"published": "2018-09-18",
 			"storyline": "Waterdeep",
@@ -6169,6 +6288,7 @@
 			"name": "Lost Laboratory of Kwalish",
 			"id": "LLK",
 			"source": "LLK",
+			"group": "supplement-alt",
 			"coverUrl": "img/covers/LLK.png",
 			"published": "2018-11-10",
 			"storyline": "Extra Life",
@@ -6285,6 +6405,7 @@
 			"name": "Waterdeep: Dungeon of the Mad Mage",
 			"id": "WDMM",
 			"source": "WDMM",
+			"group": "supplement",
 			"coverUrl": "img/covers/WDMM.png",
 			"published": "2018-11-13",
 			"storyline": "Waterdeep",
@@ -9538,6 +9659,7 @@
 			"name": "Krenko's Way",
 			"id": "KKW",
 			"source": "KKW",
+			"group": "supplement-alt",
 			"coverUrl": "img/covers/GGR.png",
 			"published": "2018-11-20",
 			"storyline": "Ravnica",
@@ -9563,9 +9685,40 @@
 			]
 		},
 		{
+			"name": "A Zib for Your Thoughts",
+			"id": "AZfyT",
+			"source": "AZfyT",
+			"group": "supplement-alt",
+			"coverUrl": "img/covers/AZfyT.png",
+			"published": "2019-03-05",
+			"storyline": "Ravnica",
+			"level": {
+				"start": 2,
+				"end": 2
+			},
+			"contents": [
+				{
+					"name": "A Zib for Your Thoughts",
+					"headers": [
+						"Story Overview",
+						"Running the Adventure",
+						"Starting the Adventure",
+						"Getting to Work",
+						"House Dimir Intervenes",
+						"Argona",
+						"Delrim Munn",
+						"Herringbone",
+						"Return to Veszka",
+						"Further Adventures"
+					]
+				}
+			]
+		},
+		{
 			"name": "Ghosts of Saltmarsh",
 			"id": "GoS",
 			"source": "GoS",
+			"group": "supplement",
 			"coverUrl": "img/covers/GoS.png",
 			"published": "2019-05-21",
 			"storyline": "Ghosts of Saltmarsh",
@@ -10739,6 +10892,7 @@
 			"name": "Hunt for the Thessalhydra",
 			"id": "HftT",
 			"source": "HftT",
+			"group": "supplement-alt",
 			"coverUrl": "img/covers/HftT.png",
 			"published": "2019-05-21",
 			"storyline": "Stranger Things",
@@ -10767,6 +10921,7 @@
 			"name": "The Orrery of the Wanderer",
 			"id": "OoW",
 			"source": "OoW",
+			"group": "supplement",
 			"coverUrl": "img/covers/AI.png",
 			"published": "2019-06-18",
 			"storyline": "Acquisitions Incorporated",
@@ -11088,6 +11243,8 @@
 			"name": "Essentials Kit: Dragon of Icespire Peak",
 			"id": "DIP",
 			"source": "DIP",
+			"parentSource": "ESK",
+			"group": "supplement",
 			"coverUrl": "img/covers/ESK.png",
 			"published": "2019-06-24",
 			"publishedOrder": 0,
@@ -11241,6 +11398,8 @@
 			"name": "Essentials Kit: Storm Lord's Wrath",
 			"id": "SLW",
 			"source": "SLW",
+			"parentSource": "ESK",
+			"group": "supplement",
 			"coverUrl": "img/covers/ESK.png",
 			"published": "2019-09-03",
 			"publishedOrder": 1,
@@ -12039,6 +12198,8 @@
 			"name": "Essentials Kit: Sleeping Dragon's Wake",
 			"id": "SDW",
 			"source": "SDW",
+			"parentSource": "ESK",
+			"group": "supplement",
 			"coverUrl": "img/covers/ESK.png",
 			"published": "2019-09-03",
 			"publishedOrder": 2,
@@ -12766,6 +12927,8 @@
 			"name": "Essentials Kit: Divine Contention",
 			"id": "DC",
 			"source": "DC",
+			"parentSource": "ESK",
+			"group": "supplement",
 			"coverUrl": "img/covers/ESK.png",
 			"published": "2019-09-03",
 			"publishedOrder": 3,
@@ -13777,6 +13940,7 @@
 			"name": "Baldur's Gate: Descent Into Avernus",
 			"id": "BGDIA",
 			"source": "BGDIA",
+			"group": "supplement",
 			"coverUrl": "img/covers/BGDIA.png",
 			"published": "2019-09-18",
 			"storyline": "Baldur's Gate",
@@ -14664,6 +14828,7 @@
 			"name": "Locathah Rising",
 			"id": "LR",
 			"source": "LR",
+			"group": "supplement-alt",
 			"coverUrl": "img/covers/LR.png",
 			"published": "2019-09-19",
 			"storyline": "Extra Life",
@@ -14759,6 +14924,7 @@
 			"name": "Infernal Machine Rebuild",
 			"id": "IMR",
 			"source": "IMR",
+			"group": "supplement-alt",
 			"coverUrl": "img/covers/IMR.png",
 			"published": "2019-11-12",
 			"storyline": "Extra Life",
@@ -15132,6 +15298,7 @@
 			"name": "Eberron: Forgotten Relics",
 			"id": "EFR",
 			"source": "EFR",
+			"group": "supplement",
 			"coverUrl": "img/covers/ERLW.png",
 			"published": "2019-11-19",
 			"storyline": "Eberron",
@@ -15219,6 +15386,7 @@
 			"name": "The Lost Dungeon of Rickedness: Big Rick Energy",
 			"id": "RMBRE",
 			"source": "RMBRE",
+			"group": "supplement",
 			"coverUrl": "img/covers/RMR.png",
 			"published": "2019-11-19",
 			"storyline": "Rick and Morty",
@@ -15432,6 +15600,8 @@
 			"name": "Wildemount: Dangerous Designs",
 			"id": "DD",
 			"source": "DD",
+			"parentSource": "EGW",
+			"group": "supplement",
 			"coverUrl": "img/covers/EGW.png",
 			"published": "2020-03-17",
 			"publishedOrder": 1,
@@ -15568,6 +15738,8 @@
 			"name": "Wildemount: Frozen Sick",
 			"id": "FS",
 			"source": "FS",
+			"parentSource": "EGW",
+			"group": "supplement",
 			"coverUrl": "img/covers/EGW.png",
 			"published": "2020-03-17",
 			"publishedOrder": 2,
@@ -15695,6 +15867,8 @@
 			"name": "Wildemount: Tide of Retribution",
 			"id": "ToR",
 			"source": "ToR",
+			"parentSource": "EGW",
+			"group": "supplement",
 			"coverUrl": "img/covers/EGW.png",
 			"published": "2020-03-17",
 			"publishedOrder": 0,
@@ -15764,6 +15938,8 @@
 			"name": "Wildemount: Unwelcome Spirits",
 			"id": "US",
 			"source": "US",
+			"parentSource": "EGW",
+			"group": "supplement",
 			"coverUrl": "img/covers/EGW.png",
 			"published": "2020-03-17",
 			"publishedOrder": 3,
@@ -15873,6 +16049,7 @@
 			"name": "Theros: No Silent Secret",
 			"id": "MOT-NSS",
 			"source": "MOT",
+			"group": "supplement",
 			"coverUrl": "img/covers/MOT.png",
 			"published": "2020-06-02",
 			"storyline": "Mythic Odysseys of Theros",
@@ -15932,6 +16109,7 @@
 			"name": "Icewind Dale: Rime of the Frostmaiden",
 			"id": "IDRotF",
 			"source": "IDRotF",
+			"group": "supplement",
 			"coverUrl": "img/covers/IDRotF.png",
 			"published": "2020-09-15",
 			"storyline": "Icewind Dale",
@@ -17671,6 +17849,7 @@
 			"name": "Candlekeep Mysteries",
 			"id": "CM",
 			"source": "CM",
+			"group": "supplement",
 			"coverUrl": "img/covers/CM.png",
 			"published": "2021-03-16",
 			"storyline": "Candlekeep Mysteries",
@@ -18707,6 +18886,7 @@
 			"name": "Ravenloft: The House of Lament",
 			"id": "HoL",
 			"source": "HoL",
+			"group": "supplement",
 			"coverUrl": "img/covers/VRGR.png",
 			"published": "2021-05-18",
 			"storyline": "Ravenloft",
@@ -18863,9 +19043,58 @@
 			]
 		},
 		{
+			"name": "Return to the Glory",
+			"id": "RtG",
+			"source": "RtG",
+			"group": "supplement-alt",
+			"coverUrl": "img/covers/RtG.png",
+			"published": "2021-05-21",
+			"storyline": "Extra Life",
+			"level": {
+				"start": 6,
+				"end": 8
+			},
+			"contents": [
+				{
+					"name": "Adventure Primer",
+					"headers": [
+						"Boneyard",
+						"Eroding Ones",
+						"Chambers of the Overlox",
+						"Found Fortunate",
+						"Watchful Eye",
+						"Song Trackers",
+						"Lake of the Ancestors",
+						"Rotting Root",
+						"Red Wardens",
+						"Luthic's Zealots",
+						"Fang Trust",
+						"Quill Keepers",
+						"False Hope, Dark Promises"
+					]
+				},
+				{
+					"name": "Creatures",
+					"ordinal": {
+						"type": "appendix",
+						"identifier": "A"
+					}
+				},
+				{
+					"name": "Maps",
+					"ordinal": {
+						"type": "appendix",
+						"identifier": "B"
+					}
+				}
+			]
+		},
+		{
 			"name": "Adventures in the Forgotten Realms: In Scarlet Flames",
 			"id": "AitFR-ISF",
 			"source": "AitFR-ISF",
+			"parentSource": "AitFR",
+			"group": "supplement-alt",
 			"coverUrl": "img/covers/AitFR-ISF.png",
 			"published": "2021-06-30",
 			"storyline": "Adventures in the Forgotten Realms",
@@ -18965,6 +19194,8 @@
 			"name": "Adventures in the Forgotten Realms: The Hidden Page",
 			"id": "AitFR-THP",
 			"source": "AitFR-THP",
+			"parentSource": "AitFR",
+			"group": "supplement-alt",
 			"coverUrl": "img/covers/AitFR-THP.png",
 			"published": "2021-07-07",
 			"storyline": "Adventures in the Forgotten Realms",
@@ -19057,6 +19288,8 @@
 			"name": "Adventures in the Forgotten Realms: A Verdant Tomb",
 			"id": "AitFR-AVT",
 			"source": "AitFR-AVT",
+			"parentSource": "AitFR",
+			"group": "supplement-alt",
 			"coverUrl": "img/covers/AitFR-AVT.png",
 			"published": "2021-07-14",
 			"storyline": "Adventures in the Forgotten Realms",
@@ -19145,6 +19378,8 @@
 			"name": "Adventures in the Forgotten Realms: Darkest Night",
 			"id": "AitFR-DN",
 			"source": "AitFR-DN",
+			"parentSource": "AitFR",
+			"group": "supplement-alt",
 			"coverUrl": "img/covers/AitFR-DN.png",
 			"published": "2021-07-21",
 			"storyline": "Adventures in the Forgotten Realms",
@@ -19246,6 +19481,8 @@
 			"name": "Adventures in the Forgotten Realms: From Cyan Depths",
 			"id": "AitFR-FCD",
 			"source": "AitFR-FCD",
+			"parentSource": "AitFR",
+			"group": "supplement-alt",
 			"coverUrl": "img/covers/AitFR-FCD.png",
 			"published": "2021-07-28",
 			"storyline": "Adventures in the Forgotten Realms",
@@ -19341,6 +19578,7 @@
 			"name": "The Wild Beyond the Witchlight",
 			"id": "WBtW",
 			"source": "WBtW",
+			"group": "supplement",
 			"coverUrl": "img/covers/WBtW.png",
 			"published": "2021-09-21",
 			"storyline": "The Wild Beyond the Witchlight",
