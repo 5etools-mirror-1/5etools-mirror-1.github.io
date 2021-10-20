@@ -299,12 +299,7 @@
 
 <div class="container">
 	<div class="alert alert-warning my-3"><p><strong>Note:</strong> this is a mirror, and is not guaranteed to be up-to-date. Use at your own risk. If you can, please use the main site at <a class="alert-link" href="https://5e.tools/" target="_blank">5e.tools</a>.</p></div>
-	<!--	<div class="alert alert-warning">-->
-	<!--		<p><strong>Discord update:</strong> A recent bot-hijack resulted in many accounts being banned from our Discord server, along with a general server reset. Besides bans, no user accounts were affected, and the server has largely been restored to its former state. <a class="alert-link" href="https://discord.gg/5etools" target="_blank" rel="noopener noreferrer">You can rejoin here.</a></p>-->
-	<!--	</div>-->
 </div>
-
-<div class="cancer__wrp-sidebar-rhs cancer__wrp-sidebar-rhs--scrolling-page cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--top"><!--5ETOOLS_AD_RIGHT_1--></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--bottom"><!--5ETOOLS_AD_RIGHT_2--></div></div>
 
 <div class="home__stripe">
 	<div class="home__split relative">
@@ -421,42 +416,8 @@ Unearthed Arcana content can be accessed by cycling the &quot;All Sources&quot; 
 </div>
 
 <main class="container">
-<!--	<div id="don-wrapper" class="alert alert-info" style="display: none">-->
-<!--		<div class="split" style="align-items: center">-->
-<!--			<div class="text-center" style="max-width: 260px; padding-right: 10px;">For those with an abundance of gold, we accept <a href="donate.html">donations</a>.</div>-->
-<!--			<div style="width: 100%">-->
-<!--				<div class="don__bar don__bar&#45;&#45;home">-->
-<!--					<div class="don__bar_inner"></div>-->
-<!--				</div>-->
-<!--				<div class="split">-->
-<!--					<span>€0.00</span>-->
-<!--					<span id="don-total">Loading...</span>-->
-<!--				</div>-->
-<!--			</div>-->
-<!--		</div>-->
-<!--	</div>-->
-
-	<div class="cancer__wrp-leaderboard cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__wrp-leaderboard-inner"><!--5ETOOLS_AD_LEADERBOARD--></div></div>
 
 	<div class="w-100">
-		<p><a href="https://www.patreon.com/bePatron?u=22018559" rel="noopener noreferrer"><img src="img/patreon.png" alt="Become a Patron" style="width: 217px; height: 51px"></a></p>
-
-		<h3>Use Discord?</h3>
-		<p>Join the <a href="https://discord.gg/5etools" target="_blank" rel="noopener noreferrer">fan server</a> for announcements, updates, and feature voting.</p>
-
-		<h3>Use <a href="https://foundryvtt.com/" rel="noopener">Foundry</a>?</h3>
-		<p>No? <span class="help" title="Please note that Foundry Gaming, LLC. and The Norr Group Ltd. are in no way affiliated, and that Foundry Gaming, LLC. does not condone the use of their software in violation of your local laws.">Well, you should!</span> Foundry is a modernized, better-than replacement for Roll20, which prioritizes modding support. It is the 5etools platform of choice for VTT integrations.</p>
-		<p>To install the <a href="plutonium.html">Plutonium</a> module, and start using all of 5etools' content in your game, paste the <a href="https://raw.githubusercontent.com/TheGiddyLimit/plutonium-next/master/module.json" target="_blank" rel="noopener noreferrer">manifest URL</a> into your Foundry server's module installer. See the <a href="plutonium.html">Plutonium Features</a> page for an overview of the functionality the module provides.</p>
-		<p>You can also install the <a href="plutonium.html#rivet-browser-extension">Rivet</a> browser extension (<a rel="noopener noreferrer" href="https://chrome.google.com/webstore/detail/rivet/igmilfmbmkmpkjjgoabaagaoohhhbjde">Chrome</a>/<a rel="noopener noreferrer" href="https://addons.mozilla.org/en-GB/firefox/addon/rivet/">Firefox</a>) to import content from the site with a single click.</p>
-
-		<h3>Use Roll20?</h3>
-		<p class="text-danger"><i><b>Please note:</b> the 5etools Roll20 integration, betteR20, is <a href="https://wiki.5e.tools/index.php/BetteR20:maintenance_mode">no longer being actively developed</a>. Instead, development efforts are being focused on <a href="plutonium.html">Plutonium</a>, as described above.</i></p>
-		<p>Install <a href="https://ssstormy.github.io/roll20-enhancement-suite/" rel="noopener noreferrer">
-			Roll20 Enhancement Suite</a> and Tampermonkey (<a
-			href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" rel="noopener noreferrer">Chrome</a>/<a
-			href="https://addons.mozilla.org/firefox/addon/tampermonkey/" rel="noopener noreferrer">Firefox</a>), and get the betteR20 script using
-			this <a href="https://github.com/TheGiddyLimit/betterR20/raw/development/dist/betteR20-5etools.user.js" id="betteR20_link" rel="noopener noreferrer">link</a>.</p>
-		<p>Check the <a href="https://wiki.5e.tools/index.php/BetteRoll20_Install" rel="noopener noreferrer">installation guide</a> on the wiki, and check the <a href="roll20.html">Help page</a> for some basic pointers on how to use the script.</p>
 
 		<h3>FAQ</h3>
 		<p><b>Is there a wiki?</b> <a href="https://wiki.5e.tools/index.php/Main_Page" rel="noopener noreferrer">Here.</a> Contributions are welcome.</p>
@@ -516,25 +477,6 @@ Unearthed Arcana content can be accessed by cycling the &quot;All Sources&quot; 
 	window.__cmp2 = () => {
 		alert("This only works on a live version of the site!");
 	};
-
-	// TAG Disabled until further notice
-	/*
-	(async () => {
-		if (!await _Donate.pNotDonating()) {
-			const $wrpDon = $(`#don-wrapper`).show();
-			$(`<div><span class="glyphicon glyphicon-remove"></span></div>`).css({
-				position: "absolute",
-				top: 0,
-				right: 2,
-				cursor: "pointer"
-			}).click(() => {
-				StorageUtil.pSet("notDonating", true);
-				$wrpDon.remove();
-			}).appendTo($wrpDon);
-			_Donate.init();
-		}
-	})();
-	*/
 </script>
 </body>
 </html>
