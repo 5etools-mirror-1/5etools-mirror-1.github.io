@@ -978,6 +978,7 @@
 			"className": "Monk",
 			"classSource": "PHB",
 			"page": 1,
+			"isReprinted": true,
 			"subclassFeatures": [
 				"Way of the Ascendant Dragon|Monk||Ascendant Dragon (UA)|UA2020SubclassesPt5|3",
 				"Wings Unfurled|Monk||Ascendant Dragon (UA)|UA2020SubclassesPt5|6",
@@ -1011,6 +1012,19 @@
 				"Visage of the Astral Self|Monk||Astral Self|TCE|6",
 				"Body of the Astral Self|Monk||Astral Self|TCE|11",
 				"Awakened Astral Self|Monk||Astral Self|TCE|17"
+			]
+		},
+		{
+			"name": "Way of the Ascendant Dragon",
+			"shortName": "Ascendant Dragon",
+			"source": "FTD",
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassFeatures": [
+				"Way of the Ascendant Dragon|Monk||Ascendant Dragon|FTD|3",
+				"Wings Unfurled|Monk||Ascendant Dragon|FTD|6",
+				"Aspect of the Wyrm|Monk||Ascendant Dragon|FTD|11",
+				"Ascendant Aspect|Monk||Ascendant Dragon|FTD|17"
 			]
 		}
 	],
@@ -1584,6 +1598,197 @@
 		}
 	],
 	"subclassFeature": [
+		{
+			"name": "Way of the Ascendant Dragon",
+			"source": "FTD",
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Ascendant Dragon",
+			"subclassSource": "FTD",
+			"level": 3,
+			"entries": [
+				"The dragon god Bahamut is known to travel the Material Plane in the guise of a young monk, and legend says that he founded the first monastery of the Way of the Ascendant Dragon in this guise. The fundamental teaching of this tradition holds that by emulating dragons, a monk becomes a more integrated part of the world and its magic. By altering their spirit to resonate with draconic might, monks who follow this tradition augment their prowess in battle, bolster their allies, and can even soar through the air on draconic wings. But all this power is in service of a greater goal: achieving a spiritual unity with the essence of the Material Plane.",
+				"As a follower of the Way of the Ascendant Dragon, you decide how you unlocked the power of dragons within yourself. The Ascendant Dragon Origin table offers a number of possibilities.",
+				{
+					"type": "table",
+					"caption": "Ascendant Dragon Origin",
+					"colLabels": [
+						"d6",
+						"Origin"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"1",
+							"You honed your abilities by aligning your spirit with a dragon's world-altering power."
+						],
+						[
+							"2",
+							"A dragon personally took an active role in shaping your inner energy."
+						],
+						[
+							"3",
+							"You studied at a monastery that traces its teachings back centuries or more to a single dragon's instruction, or one that is devoted to a dragon god."
+						],
+						[
+							"4",
+							"You spent long stretches meditating in the region around an ancient dragon's lair, absorbing that lair's ambient magic."
+						],
+						[
+							"5",
+							"You found a scroll written in Draconic that contained inspiring new techniques."
+						],
+						[
+							"6",
+							"After a dream featuring a five-handed dragonborn, you awoke with the mystical breath of dragons."
+						]
+					]
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Draconic Disciple|Monk||Ascendant Dragon|FTD|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Breath of the Dragon|Monk||Ascendant Dragon|FTD|3"
+				}
+			]
+		},
+		{
+			"name": "Breath of the Dragon",
+			"source": "FTD",
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Ascendant Dragon",
+			"subclassSource": "FTD",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"{@i 3rd-level Way of the Ascendant Dragon feature}",
+				"You can channel destructive waves of energy, like those created by the dragons you emulate. When you take the {@action Attack} action on your turn, you can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide (your choice). Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in that area must make a Dexterity saving throw against your ki save DC, taking damage of the chosen type equal to two rolls of your Martial Arts die on a failed save, or half as much damage on a successful one.",
+				"At 11th level, the damage of this feature increases to three rolls of your Martial Arts die.",
+				"You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. While you have no uses available, you can spend 2 ki points to use this feature again."
+			]
+		},
+		{
+			"name": "Draconic Disciple",
+			"source": "FTD",
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Ascendant Dragon",
+			"subclassSource": "FTD",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"{@i 3rd-level Way of the Ascendant Dragon feature}",
+				"You can channel draconic power to magnify your presence and imbue your unarmed strikes with the essence of a dragon's breath. You gain the following benefits:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Draconic Presence.",
+							"entry": "If you fail a Charisma ({@skill Intimidation}) or Charisma ({@skill Persuasion}) check, you can use your reaction to reroll the check, as you tap into the mighty presence of dragons. Once this feature turns a failure into a success, you can't use it again until you finish a long rest."
+						},
+						{
+							"type": "item",
+							"name": "Draconic Strike.",
+							"entry": "When you damage a target with an unarmed strike, you can change the damage type to acid, cold, fire, lightning, or poison."
+						},
+						{
+							"type": "item",
+							"name": "Tongue of Dragons.",
+							"entry": "You learn to speak, read, and write {@language Draconic} or one other language of your choice."
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Wings Unfurled",
+			"source": "FTD",
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Ascendant Dragon",
+			"subclassSource": "FTD",
+			"level": 6,
+			"header": 2,
+			"entries": [
+				"{@i 6th-level Way of the Ascendant Dragon feature}",
+				"When you use your Step of the Wind, you can unfurl spectral draconic wings from your back that vanish at the end of your turn. While the wings exist, you have a flying speed equal to your walking speed.",
+				"You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+			]
+		},
+		{
+			"name": "Aspect of the Wyrm",
+			"source": "FTD",
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Ascendant Dragon",
+			"subclassSource": "FTD",
+			"level": 11,
+			"header": 2,
+			"entries": [
+				"{@i 11th-level Way of the Ascendant Dragon feature}",
+				"The power of your draconic spirit now radiates from you, warding your allies or inspiring fear in your enemies. As a bonus action, you can create an aura of draconic power that radiates 10 feet from you for 1 minute. For the duration, you gain one of the following effects of your choice:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Frightful Presence.",
+							"entry": "When you create this aura, and as a bonus action on subsequent turns, you can choose a creature within the aura. The target must succeed on a Wisdom saving throw against your ki save DC or become {@condition frightened} of you for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save."
+						},
+						{
+							"type": "item",
+							"name": "Resistance.",
+							"entry": "Choose a damage type when you activate this aura: acid, cold, fire, lightning, or poison. You and your allies within the aura have resistance to that damage."
+						}
+					]
+				},
+				"Once you create this aura, you can't create it again until you finish a long rest, unless you expend 3 ki points to create it again."
+			]
+		},
+		{
+			"name": "Ascendant Aspect",
+			"source": "FTD",
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Ascendant Dragon",
+			"subclassSource": "FTD",
+			"level": 17,
+			"header": 2,
+			"entries": [
+				"{@i 17th-level Way of the Ascendant Dragon feature}",
+				"Your draconic spirit reaches its peak. You gain the following benefits:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Augment Breath.",
+							"entry": "When you use your Breath of the Dragon, you can spend 1 ki point to augment its shape and power. The exhalation of draconic energy becomes either a 60-foot cone or a 90-foot line that is 5 feet wide (your choice), and each creature in that area takes damage equal to four rolls of your Martial Arts die on a failed save, or half as much damage on a successful one."
+						},
+						{
+							"type": "item",
+							"name": "Blindsight.",
+							"entry": "You gain {@sense blindsight} out to 10 feet. Within that range, you can effectively see anything that isn't behind total cover, even if you're {@condition blinded} or in darkness. Moreover, you can see an {@condition invisible} creature within that range, unless the creature successfully hides from you."
+						},
+						{
+							"type": "item",
+							"name": "Explosive Fury.",
+							"entry": "When you activate your Aspect of the Wyrm, draconic fury explodes from you. Choose any number of creatures you can see in your aura. Each of those creatures must succeed on a Dexterity saving throw against your ki save DC or take {@damage 3d10} acid, cold, fire, lightning, or poison damage (your choice)."
+						}
+					]
+				}
+			]
+		},
 		{
 			"name": "Way of the Four Elements",
 			"source": "PHB",

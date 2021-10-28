@@ -2898,14 +2898,12 @@
 			"author": "Wizards RPG Team",
 			"contents": [
 				{
-					"name": "Preface",
-					"headers": [
-						"Hometowns"
-					]
+					"name": "Preface"
 				},
 				{
 					"name": "Heroic Stories",
 					"headers": [
+						"Hometowns",
 						"Group Patrons",
 						"Campaign Villains"
 					]
@@ -2962,6 +2960,120 @@
 						"type": "chapter",
 						"identifier": 5
 					}
+				}
+			]
+		},
+		{
+			"name": "Fizban's Treasury of Dragons",
+			"id": "FTD",
+			"source": "FTD",
+			"group": "supplement",
+			"coverUrl": "img/covers/FTD.png",
+			"published": "2021-10-26",
+			"author": "Wizards RPG Team",
+			"contents": [
+				{
+					"name": "Elegy for the First World",
+					"headers": [
+						"A Treasury of Dragons",
+						"The First World"
+					]
+				},
+				{
+					"name": "Character Creation",
+					"headers": [
+						"Draconic Races",
+						"Subclass Options",
+						"Heroes of the Dragon",
+						"Draconic Feats"
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 1
+					}
+				},
+				{
+					"name": "Dragon Magic",
+					"headers": [
+						"Spells",
+						"Magic Items",
+						"Hoard Magic Items",
+						"Draconic Gifts"
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 2
+					}
+				},
+				{
+					"name": "Dragons in Play",
+					"headers": [
+						"Roleplaying Dragons",
+						"Followers",
+						"Dragon Encounters",
+						"Dragon Adventures",
+						"Dragon Campaigns"
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 3
+					}
+				},
+				{
+					"name": "Lairs and Hoards",
+					"headers": [
+						"Dragon Lairs",
+						"Dragon Hoards",
+						"What's in a Hoard?"
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 4
+					}
+				},
+				{
+					"name": "Draconomicon",
+					"headers": [
+						"Using the Entries",
+						"Amethyst Dragons",
+						"Black Dragons",
+						"Blue Dragons",
+						"Brass Dragons",
+						"Bronze Dragons",
+						"Copper Dragons",
+						"Crystal Dragons",
+						"Deep Dragons",
+						"Dragon Turtles",
+						"Emerald Dragons",
+						"Faerie Dragons",
+						"Gold Dragons",
+						"Green Dragons",
+						"Moonstone Dragons",
+						"Red Dragons",
+						"Sapphire Dragons",
+						"Shadow Dragons",
+						"Silver Dragons",
+						"Topaz Dragons",
+						"White Dragons"
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 5
+					}
+				},
+				{
+					"name": "Bestiary",
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 6
+					}
+				},
+				{
+					"name": "Creature Lists",
+					"headers": [
+						"Challenge Ratings",
+						"Creature Types"
+					]
 				}
 			]
 		}

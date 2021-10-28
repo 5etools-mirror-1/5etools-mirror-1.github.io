@@ -1,4 +1,11 @@
 {
+	"_meta": {
+		"dependencies": {
+			"monsterFluff": [
+				"MOT"
+			]
+		}
+	},
 	"monsterFluff": [
 		{
 			"name": "Animated Chained Library",
@@ -414,6 +421,23 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/CM/Miirym.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Naiad",
+			"source": "CM",
+			"_copy": {
+				"name": "Naiad",
+				"source": "MOT"
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/CM/Naiad.png"
 					}
 				}
 			]

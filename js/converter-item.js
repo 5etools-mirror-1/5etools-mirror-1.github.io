@@ -231,12 +231,15 @@ class ItemParser extends BaseParser {
 			if (partLower === "weapon" || partLower === "weapon (any)") {
 				genericType = "weapon";
 				continue;
-			} else if (partLower === "weapon (any sword)") {
-				genericType = "sword";
-				continue;
 			} else if (partLower === "armor" || partLower === "armor (any)") {
 				genericType = "armor";
 				continue;
+			} else {
+				const mWeaponAnyX = /^weapon \(any ([^)]+)\)$/i.exec(part);
+				if (mWeaponAnyX) {
+					stats.__genericType = mWeaponAnyX[1].trim().toCamelCase();
+					continue;
+				}
 			}
 
 			const mBaseWeapon = /^(weapon|staff) \(([^)]+)\)$/i.exec(part);
@@ -307,6 +310,7 @@ class ItemParser extends BaseParser {
 			case "weapon": stats.requires = [{"weapon": true}]; break;
 			case "sword": stats.requires = [{"sword": true}]; break;
 			case "armor": stats.requires = [{"armor": true}]; break;
+			case "bow": stats.requires = [{"bow": true}, {"crossbow": true}]; break;
 			default: throw new Error(`Unhandled generic type "${genericType}"`);
 		}
 	}

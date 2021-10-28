@@ -1683,7 +1683,8 @@ Parser.weightToFull = function (lbs, isSmallUnit) {
 	].filter(Boolean).join(", ");
 };
 
-Parser.ITEM_RARITIES = ["none", "common", "uncommon", "rare", "very rare", "legendary", "artifact", "unknown", "unknown (magic)", "other"];
+Parser.RARITIES = ["common", "uncommon", "rare", "very rare", "legendary", "artifact"];
+Parser.ITEM_RARITIES = ["none", ...Parser.RARITIES, "unknown", "unknown (magic)", "other"];
 
 Parser.CAT_ID_CREATURE = 1;
 Parser.CAT_ID_SPELL = 2;
@@ -2377,6 +2378,7 @@ SRC_AitFR_FCD = "AitFR-FCD";
 SRC_WBtW = "WBtW";
 SRC_DoD = "DoD";
 SRC_MaBJoV = "MaBJoV";
+SRC_FTD = "FTD";
 SRC_SCREEN = "Screen";
 SRC_SCREEN_WILDERNESS_KIT = "ScreenWildernessKit";
 SRC_HEROES_FEAST = "HF";
@@ -2559,6 +2561,7 @@ Parser.SOURCE_JSON_TO_FULL[SRC_AitFR_FCD] = `${AitFR_NAME}: From Cyan Depths`;
 Parser.SOURCE_JSON_TO_FULL[SRC_WBtW] = `The Wild Beyond the Witchlight`;
 Parser.SOURCE_JSON_TO_FULL[SRC_DoD] = `Domains of Delight`;
 Parser.SOURCE_JSON_TO_FULL[SRC_MaBJoV] = `Minsc and Boo's Journal of Villainy`;
+Parser.SOURCE_JSON_TO_FULL[SRC_FTD] = `Fizban's Treasury of Dragons`;
 Parser.SOURCE_JSON_TO_FULL[SRC_SCREEN] = "Dungeon Master's Screen";
 Parser.SOURCE_JSON_TO_FULL[SRC_SCREEN_WILDERNESS_KIT] = "Dungeon Master's Screen: Wilderness Kit";
 Parser.SOURCE_JSON_TO_FULL[SRC_HEROES_FEAST] = "Heroes' Feast";
@@ -2722,6 +2725,7 @@ Parser.SOURCE_JSON_TO_ABV[SRC_AitFR_FCD] = "AitFR-FCD";
 Parser.SOURCE_JSON_TO_ABV[SRC_WBtW] = "WBtW";
 Parser.SOURCE_JSON_TO_ABV[SRC_DoD] = "DoD";
 Parser.SOURCE_JSON_TO_ABV[SRC_MaBJoV] = "MaBJoV";
+Parser.SOURCE_JSON_TO_ABV[SRC_FTD] = "FTD";
 Parser.SOURCE_JSON_TO_ABV[SRC_SCREEN] = "Screen";
 Parser.SOURCE_JSON_TO_ABV[SRC_SCREEN_WILDERNESS_KIT] = "Wild";
 Parser.SOURCE_JSON_TO_ABV[SRC_HEROES_FEAST] = "HF";
@@ -2884,6 +2888,7 @@ Parser.SOURCE_JSON_TO_DATE[SRC_AitFR_FCD] = "2021-07-28";
 Parser.SOURCE_JSON_TO_DATE[SRC_WBtW] = "2021-09-21";
 Parser.SOURCE_JSON_TO_DATE[SRC_DoD] = "2021-09-21";
 Parser.SOURCE_JSON_TO_DATE[SRC_MaBJoV] = "2021-10-05";
+Parser.SOURCE_JSON_TO_DATE[SRC_FTD] = "2021-11-26";
 Parser.SOURCE_JSON_TO_DATE[SRC_SCREEN] = "2015-01-20";
 Parser.SOURCE_JSON_TO_DATE[SRC_SCREEN_WILDERNESS_KIT] = "2020-11-17";
 Parser.SOURCE_JSON_TO_DATE[SRC_HEROES_FEAST] = "2020-10-27";
@@ -3064,6 +3069,7 @@ Parser.SOURCES_VANILLA = new Set([
 	SRC_MFF,
 	SRC_SADS,
 	SRC_TCE,
+	SRC_FTD,
 	SRC_SCREEN,
 	SRC_SCREEN_WILDERNESS_KIT,
 ]);
@@ -3115,6 +3121,7 @@ Parser.SOURCES_AVAILABLE_DOCS_BOOK = {};
 	SRC_VRGR,
 	SRC_DoD,
 	SRC_MaBJoV,
+	SRC_FTD,
 ].forEach(src => {
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src] = src;
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src.toLowerCase()] = src;

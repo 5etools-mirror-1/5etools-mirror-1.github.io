@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "items-base.json",
-	"version": "1.4.4",
+	"version": "1.4.5",
 	"definitions": {
 		"itemLookup": {
 			"type": "array",
@@ -56,19 +56,7 @@
 						"type": "string"
 					},
 					"rarity": {
-						"type": "string",
-						"description": "\"None\" is for mundane items. \"Unknown (Magic)\" is for miscellaneous magical items. \"Unknown\" is for miscellaneous mundane items.",
-						"enum": [
-							"rare",
-							"none",
-							"uncommon",
-							"very rare",
-							"legendary",
-							"artifact",
-							"unknown",
-							"common",
-							"unknown (magic)"
-						]
+						"$ref": "util.json#/definitions/itemRarity"
 					},
 					"source": {
 						"type": "string"

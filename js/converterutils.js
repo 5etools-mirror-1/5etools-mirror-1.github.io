@@ -64,7 +64,7 @@ class BaseParser {
 	 * @param [opts.noAbilityName] Disable ability checking.
 	 * @param [opts.noHit] Disable "Hit:" checking.
 	 * @param [opts.noSpellcastingAbility] Disable spellcasting ability checking.
-	 * @param [opts.noSpellcastingWarlockSlotLevel] Disable spellcasting warlot slock checking.
+	 * @param [opts.noSpellcastingWarlockSlotLevel] Disable spellcasting warlock slot checking.
 	 */
 	static _isContinuationLine (entryArray, curLine, opts) {
 		opts = opts || {};
@@ -806,7 +806,16 @@ class ConvertUtil {
 	static isListItemLine (line) { return line.trim().startsWith("•") }
 
 	static splitNameLine (line, isKeepPunctuation) {
-		const spl = line.split(/([.!?:])/g);
+		let spl = line.split(/([.!?:])/g);
+
+		// Handle e.g. "1. Freezing Ray. ..."
+		if (/^\d+$/.test(spl[0]) && spl.length > 3) {
+			spl = [
+				`${spl[0]}${spl[1]}${spl[2]}`,
+				...spl.slice(3),
+			];
+		}
+
 		const rawName = spl[0];
 		const entry = line.substring(rawName.length + 1, line.length).trim();
 		const name = this.getCleanTraitActionName(rawName);
@@ -915,7 +924,7 @@ AlignmentUtil.ALIGNMENTS_RAW = {
 	"chaotic": ["C"],
 	"evil": ["E"],
 
-	"(?:any )?neutral( alignment)?": ["NX", "NY", "N"],
+	"any neutral( alignment)?": ["NX", "NY", "N"],
 
 	"unaligned": ["U"],
 

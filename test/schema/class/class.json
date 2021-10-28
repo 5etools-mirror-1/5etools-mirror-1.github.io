@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "2.8.1",
+	"version": "2.8.2",
 	"$id": "class.json",
 
 	"type": "object",
@@ -351,8 +351,13 @@
 				},
 				"subSubclassSpells": {
 					"description": "Homebrew use only",
-					"type": "array",
-					"items": {"$ref": "#/definitions/spellRef"}
+					"type": "object",
+					"patternProperties": {
+						".*": {
+							"type": "array",
+							"items": {"$ref": "#/definitions/spellRef"}
+						}
+					}
 				}
 			},
 			"additionalProperties": false
@@ -526,7 +531,7 @@
 					"additionalProperties": false
 				},
 				"requirements": {"$ref": "#/definitions/requirements"},
-				"requirementsSpecial ": {
+				"requirementsSpecial": {
 					"description": "For homebrew use.",
 					"type": "string"
 				},
@@ -534,7 +539,7 @@
 					"type": "object",
 					"properties": {
 						"requirements": {"$ref": "#/definitions/requirements"},
-						"requirementsSpecial ": {
+						"requirementsSpecial": {
 							"description": "For homebrew use.",
 							"type": "string"
 						},

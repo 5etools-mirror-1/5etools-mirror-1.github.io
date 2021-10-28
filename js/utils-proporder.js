@@ -1013,6 +1013,8 @@ PropOrder._REWARD = [
 
 	"type",
 
+	"rarity",
+
 	"entries",
 ];
 PropOrder._VARIANTRULE = [

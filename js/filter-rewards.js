@@ -13,10 +13,16 @@ class PageFilterRewards extends PageFilter {
 				"Charm",
 			],
 		});
+		this._rarityFilter = new Filter({
+			header: "Rarity",
+			items: ["unknown", ...Parser.RARITIES],
+			itemSortFn: null,
+			displayFn: StrUtil.toTitleCase,
+		});
 	}
 
 	static mutateForFilters (it) {
-		// No-op
+		it._fRarity = it.rarity || "unknown";
 	}
 
 	addToFilters (reward, isExcluded) {
@@ -24,12 +30,14 @@ class PageFilterRewards extends PageFilter {
 
 		this._sourceFilter.addItem(reward.source);
 		this._typeFilter.addItem(reward.type);
+		this._rarityFilter.addItem(reward._fRarity);
 	}
 
 	async _pPopulateBoxOptions (opts) {
 		opts.filters = [
 			this._sourceFilter,
 			this._typeFilter,
+			this._rarityFilter,
 		];
 	}
 
@@ -38,6 +46,7 @@ class PageFilterRewards extends PageFilter {
 			values,
 			r.source,
 			r.type,
+			r._fRarity,
 		)
 	}
 }

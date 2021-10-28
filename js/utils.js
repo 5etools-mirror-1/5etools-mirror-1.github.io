@@ -7,7 +7,7 @@ if (IS_NODE) require("./parser.js");
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 IS_DEPLOYED = undefined;
-VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.140.0"/* 5ETOOLS_VERSION__CLOSE */;
+VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.141.1"/* 5ETOOLS_VERSION__CLOSE */;
 DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 // for the roll20 script to set
 IS_VTT = false;
@@ -1203,15 +1203,6 @@ MiscUtil = {
 				} else errInvalid();
 			} else return null;
 		}
-	},
-
-	MONTH_NAMES: [
-		"January", "February", "March", "April", "May", "June",
-		"July", "August", "September", "October", "November", "December",
-	],
-	dateToStr (date, short) {
-		const month = MiscUtil.MONTH_NAMES[date.getMonth()];
-		return `${short ? month.substring(0, 3) : month} ${Parser.getOrdinalForm(date.getDate())}, ${date.getFullYear()}`;
 	},
 
 	findCommonPrefix (strArr) {
@@ -4759,8 +4750,8 @@ BrewUtil = {
 			it._brewInternalSources = (nameIndex[it.name]) || [];
 			it._brewCat = BrewUtil._pRenderBrewScreen_getDisplayCat(BrewUtil.dirToProp(it._cat));
 
-			const timestampAdded = it._brewAdded ? MiscUtil.dateToStr(new Date(it._brewAdded * 1000), true) : "";
-			const timestampModified = it._brewModified ? MiscUtil.dateToStr(new Date(it._brewModified * 1000), true) : "";
+			const timestampAdded = it._brewAdded ? DatetimeUtil.getDateStr(new Date(it._brewAdded * 1000), true) : "";
+			const timestampModified = it._brewModified ? DatetimeUtil.getDateStr(new Date(it._brewModified * 1000), true) : "";
 
 			const $btnAdd = $(`<span class="col-4 bold manbrew__load_from_url pl-0 clickable"></span>`)
 				.text(it._brewName)
@@ -6821,6 +6812,66 @@ VeLock = function () {
 	};
 }
 BrewUtil._lockHandleBrewJson = new VeLock();
+
+// DATETIME ============================================================================================================
+DatetimeUtil = {
+	getDateStr (date, short) {
+		const month = DatetimeUtil._MONTHS[date.getMonth()];
+		return `${short ? month.substring(0, 3) : month} ${Parser.getOrdinalForm(date.getDate())}, ${date.getFullYear()}`;
+	},
+
+	getDatetimeStr ({date, isPlainText = false} = {}) {
+		date = date ?? new Date();
+		const monthName = DatetimeUtil._MONTHS[date.getMonth()];
+		return `${date.getDate()} ${!isPlainText ? `<span title="${monthName}">` : ""}${monthName.substring(0, 3)}.${!isPlainText ? `</span>` : ""} ${date.getFullYear()}, ${DatetimeUtil._getPad2(date.getHours())}:${DatetimeUtil._getPad2(date.getMinutes())}:${DatetimeUtil._getPad2(date.getSeconds())}`;
+	},
+
+	_getPad2 (num) { return `${num}`.padStart(2, "0"); },
+
+	getIntervalStr (millis) {
+		if (millis < 0 || isNaN(millis)) return "(Unknown interval)";
+
+		const s = number => (number !== 1) ? "s" : "";
+
+		const stack = [];
+
+		let numSecs = Math.floor(millis / 1000);
+
+		const numYears = Math.floor(numSecs / DatetimeUtil._SECS_PER_YEAR);
+		if (numYears) {
+			stack.push(`${numYears} year${s(numYears)}`);
+			numSecs = numSecs - (numYears * DatetimeUtil._SECS_PER_YEAR);
+		}
+
+		const numDays = Math.floor(numSecs / DatetimeUtil._SECS_PER_DAY);
+		if (numDays) {
+			stack.push(`${numDays} day${s(numDays)}`);
+			numSecs = numSecs - (numDays * DatetimeUtil._SECS_PER_DAY);
+		}
+
+		const numHours = Math.floor(numSecs / DatetimeUtil._SECS_PER_HOUR);
+		if (numHours) {
+			stack.push(`${numHours} hour${s(numHours)}`);
+			numSecs = numSecs - (numHours * DatetimeUtil._SECS_PER_HOUR);
+		}
+
+		const numMinutes = Math.floor(numSecs / DatetimeUtil._SECS_PER_MINUTE);
+		if (numMinutes) {
+			stack.push(`${numMinutes} minute${s(numMinutes)}`);
+			numSecs = numSecs - (numMinutes * DatetimeUtil._SECS_PER_MINUTE);
+		}
+
+		if (numSecs) stack.push(`${numSecs} second${s(numSecs)}`);
+		else if (!stack.length) stack.push("less than a second"); // avoid adding this if there's already info
+
+		return stack.join(", ");
+	},
+}
+DatetimeUtil._MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+DatetimeUtil._SECS_PER_YEAR = 31536000;
+DatetimeUtil._SECS_PER_DAY = 86400;
+DatetimeUtil._SECS_PER_HOUR = 3600;
+DatetimeUtil._SECS_PER_MINUTE = 60;
 
 // MISC WEBPAGE ONLOADS ================================================================================================
 if (!IS_VTT && typeof window !== "undefined") {

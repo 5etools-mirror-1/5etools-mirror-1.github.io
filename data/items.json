@@ -98,6 +98,22 @@
 			]
 		},
 		{
+			"name": "+1 Dragonhide Belt",
+			"source": "FTD",
+			"page": 23,
+			"rarity": "uncommon",
+			"reqAttune": "by a monk",
+			"reqAttuneTags": [
+				{
+					"class": "monk"
+				}
+			],
+			"wondrous": true,
+			"entries": [
+				"This finely detailed belt is made of dragonhide. While wearing it, you gain a +1 bonus to the saving throw DCs of your ki features. In addition, you can use an action to regain ki points equal to a roll of your Martial Arts die. You can't use this action again until the next dawn."
+			]
+		},
+		{
 			"name": "+1 Moon Sickle",
 			"source": "TCE",
 			"page": 133,
@@ -289,6 +305,22 @@
 			]
 		},
 		{
+			"name": "+2 Dragonhide Belt",
+			"source": "FTD",
+			"page": 23,
+			"rarity": "rare",
+			"reqAttune": "by a monk",
+			"reqAttuneTags": [
+				{
+					"class": "monk"
+				}
+			],
+			"wondrous": true,
+			"entries": [
+				"This finely detailed belt is made of dragonhide. While wearing it, you gain a +2 bonus to the saving throw DCs of your ki features. In addition, you can use an action to regain ki points equal to a roll of your Martial Arts die. You can't use this action again until the next dawn."
+			]
+		},
+		{
 			"name": "+2 Moon Sickle",
 			"source": "TCE",
 			"page": 133,
@@ -477,6 +509,22 @@
 			"entries": [
 				"To attune to this vial, you must place a few drops of your blood into it. The vial can't be opened while your attunement to it lasts. If your attunement to the vial ends, the contained blood turns to ash. You can use the vial as a spellcasting focus for your spells while wearing or holding it, and you gain a +3 bonus to spell attack rolls and to the saving throw DCs of your sorcerer spells.",
 				"In addition, when you roll any Hit Dice to recover hit points while you are carrying the vial, you can regain 5 sorcery points. This property of the vial can't be used again until the next dawn."
+			]
+		},
+		{
+			"name": "+3 Dragonhide Belt",
+			"source": "FTD",
+			"page": 23,
+			"rarity": "very rare",
+			"reqAttune": "by a monk",
+			"reqAttuneTags": [
+				{
+					"class": "monk"
+				}
+			],
+			"wondrous": true,
+			"entries": [
+				"This finely detailed belt is made of dragonhide. While wearing it, you gain a +3 bonus to the saving throw DCs of your ki features. In addition, you can use an action to regain ki points equal to a roll of your Martial Arts die. You can't use this action again until the next dawn."
 			]
 		},
 		{
@@ -1240,6 +1288,49 @@
 			]
 		},
 		{
+			"name": "Amethyst Lodestone",
+			"source": "FTD",
+			"page": 22,
+			"rarity": "very rare",
+			"reqAttune": true,
+			"wondrous": true,
+			"modifySpeed": {
+				"equal": {
+					"fly": "walk"
+				}
+			},
+			"recharge": "dawn",
+			"charges": 6,
+			"entries": [
+				"This fist-sized chunk of amethyst is infused with an amethyst dragon's ability to bend gravitational forces. While you are carrying the lodestone, you have advantage on Strength saving throws.",
+				"The lodestone has 6 charges for the following properties, which you can use while you are holding the stone. The stone regains {@dice 1d6} expended charges daily at dawn.",
+				{
+					"type": "entries",
+					"name": "Flight",
+					"entries": [
+						"As a bonus action, you can expend 1 charge to gain the power of flight for 10 minutes. For the duration, you gain a flying speed equal to your walking speed, and you can hover."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Gravitational Thrust",
+					"entries": [
+						"As an action, you can expend 1 charge to focus gravity around a creature you can see within 60 feet of you. The target must succeed on a DC 18 Strength saving throw or be pushed up to 20 feet in a direction of your choice."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Reverse Gravity",
+					"entries": [
+						"As an action, you can expend 3 charges to cast {@spell reverse gravity} from the stone (save DC 18)."
+					]
+				}
+			],
+			"attachedSpells": [
+				"reverse gravity"
+			]
+		},
+		{
 			"name": "Amulet",
 			"source": "PHB",
 			"page": 151,
@@ -1774,6 +1865,124 @@
 			],
 			"lootTables": [
 				"Magic Item Table G"
+			]
+		},
+		{
+			"name": "Ascendant Dragon Vessel",
+			"source": "FTD",
+			"page": 27,
+			"rarity": "legendary",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"This vessel can be a potion bottle, drinking horn, or other container meant to hold a liquid.",
+				"As a bonus action, if the vessel is empty, you can speak the command word to fill the vessel with one of the following (your choice): ale, olive oil, mead, wine, whiskey, a {@item potion of healing}, a {@item potion of greater healing}, a {@item potion of superior healing}, a {@item potion of supreme healing}, a {@item potion of climbing}, a {@item potion of fire breath}, a {@item potion of flying}, or a {@item potion of dragon's majesty|FTD}. Once this property is used, it can't be used until the next dawn. A potion you create in this way loses its magical properties if it isn't imbibed within 24 hours."
+			]
+		},
+		{
+			"name": "Ascendant Dragon-Touched Focus",
+			"source": "FTD",
+			"page": 26,
+			"rarity": "legendary",
+			"reqAttune": "by a spellcaster",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"wondrous": true,
+			"focus": [
+				"Artificer",
+				"Bard",
+				"Cleric",
+				"Druid",
+				"Paladin",
+				"Ranger",
+				"Sorcerer",
+				"Warlock",
+				"Wizard"
+			],
+			"entries": [
+				"This wondrous item can be a scepter, an orb, an amulet, a crystal, or another finely crafted object. It typically incorporates imagery of dragons' wings, claws, teeth, or scales.",
+				"You have advantage on initiative rolls. While you are holding the focus, it can function as a spellcasting focus for all your spells.",
+				"The focus gains an additional property determined by the family of the dragon in whose hoard it became Stirring:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Chromatic.",
+							"entries": [
+								"Whenever you use a spell slot to cast a spell that deals acid, cold, fire, lightning, or poison damage, roll a {@dice d6}, and you gain a bonus equal to the number rolled to one of the spell's damage rolls."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Gem.",
+							"entries": [
+								"Whenever you use a spell slot to cast a spell, you can immediately teleport to an unoccupied space you can see within 15 feet of you."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Metallic.",
+							"entries": [
+								"When a creature you can see within 30 feet of you makes a saving throw, you can use your reaction to give that creature advantage on the saving throw."
+							]
+						}
+					]
+				},
+				"While you are holding a Wakened focus, you can use it to cast certain spells. Once the item is used to cast a given spell, it can't be used to cast that spell again until the next dawn. The spells are determined by the family of the dragon in whose hoard it became Wakened.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Chromatic.",
+							"entries": [
+								"{@spell Hold monster}, {@spell Rime's binding ice|FTD}"
+							]
+						},
+						{
+							"type": "item",
+							"name": "Gem.",
+							"entries": [
+								"{@spell Rary's telepathic bond}, {@spell Raulothim's psychic lance|FTD}"
+							]
+						},
+						{
+							"type": "item",
+							"name": "Metallic.",
+							"entries": [
+								"{@spell Fizban's platinum shield|FTD}, {@spell legend lore}"
+							]
+						}
+					]
+				},
+				"When you cast a spell of 1st level or higher while holding this focus, you can treat the spell as if it were cast using a 9th-level spell slot. Once this property is used, it can't be used again until the next dawn."
+			]
+		},
+		{
+			"name": "Ascendant Scaled Ornament",
+			"source": "FTD",
+			"page": 27,
+			"rarity": "legendary",
+			"reqAttune": true,
+			"wondrous": true,
+			"bonusAc": "+1",
+			"modifySpeed": {
+				"equal": {
+					"fly": "walk"
+				}
+			},
+			"entries": [
+				"This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon's scale, tooth, or claw, or it incorporates images in those shapes.",
+				"You have advantage on saving throws you make to avoid being {@condition charmed} or {@condition frightened} or to end those conditions on you.",
+				"You gain a +1 bonus to AC, and you can't be {@condition charmed} or {@condition frightened}. Moreover, each creature of your choice within 30 feet of you has advantage on saving throws it makes to avoid being {@condition charmed} or {@condition frightened} or to end those conditions on itself.",
+				"When you would take damage of the type dealt by the breath of the dragon in whose hoard the ornament became Wakened, you can use your reaction to take no damage instead, and you regain hit points equal to the damage you would have taken. Once this property is used, it can't be used again until the next dawn.",
+				"While you are wearing the ornament, you gain a flying speed equal to your walking speed and can hover. While you are flying using this speed, spectral dragon wings appear on your back."
 			]
 		},
 		{
@@ -11299,6 +11508,19 @@
 			]
 		},
 		{
+			"name": "Emerald Pen",
+			"source": "FTD",
+			"page": 23,
+			"rarity": "uncommon",
+			"wondrous": true,
+			"entries": [
+				"This pen is tipped with an emerald nib and requires no ink to write. While holding this pen, you can cast {@spell illusory script} at will, requiring no material components."
+			],
+			"attachedSpells": [
+				"illusory script"
+			]
+		},
+		{
 			"name": "Enchanted Three-Dragon Ante Set",
 			"source": "LLK",
 			"page": 15,
@@ -12715,6 +12937,25 @@
 			]
 		},
 		{
+			"name": "Flail of Tiamat",
+			"source": "FTD",
+			"page": 23,
+			"baseItem": "flail|PHB",
+			"type": "M",
+			"rarity": "legendary",
+			"reqAttune": true,
+			"weight": 2,
+			"weaponCategory": "martial",
+			"dmg1": "1d8",
+			"dmgType": "B",
+			"bonusWeapon": "+3",
+			"weapon": true,
+			"entries": [
+				"This magic flail is made in the image of Tiamat, with five jagged heads shaped like the heads of five different chromatic dragons. You gain a +3 bonus to attack and damage rolls made with this flail. When you hit with an attack roll using it, the target takes an extra {@damage 5d4} damage of your choice of one of the following damage types: acid, cold, fire, lightning, or poison.",
+				"While holding the flail, you can use an action and speak a command word to cause the heads to breathe multicolored flames in a 90-foot cone. Each creature in that area must make a DC 18 Dexterity saving throw. On a failed save, it takes {@damage 14d6} damage of one of the following damage types (your choice): acid, cold, fire, lightning, or poison. On a successful save, it takes half as much damage. Once this action is used, it can't be used again until the next dawn."
+			]
+		},
+		{
 			"name": "Flame Tongue Shortsword of Greed",
 			"source": "TftYP",
 			"page": 179,
@@ -13576,6 +13817,32 @@
 			"type": "$",
 			"rarity": "none",
 			"value": 25000
+		},
+		{
+			"name": "Gold Canary Figurine of Wondrous Power",
+			"source": "FTD",
+			"page": 23,
+			"rarity": "legendary",
+			"wondrous": true,
+			"entries": [
+				"This gold statuette is carved in the likeness of a canary and is small enough to fit in a pocket. If you use an action to speak the command word and throw the figurine to a point on the ground within 60 feet of you, the figurine becomes a living creature in one of two forms (you choose). If there isn't enough space for the creature where it would appear, the figurine doesn't become a creature. The two forms are as follows:",
+				{
+					"type": "entries",
+					"name": "Giant Canary Form",
+					"entries": [
+						"The figurine becomes a {@creature giant canary|FTD} for up to 8 hours and can be ridden as a mount. Once the figurine has become a {@creature giant canary|FTD}, it can't be used this way again until the next dawn."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Gold Dragon Form",
+					"entries": [
+						"While you are missing half or more of your hit points, you can speak a different command word and the figurine becomes an {@creature adult gold dragon} (see its stat block in the Monster Manual) for up to 1 hour. The dragon can't use any legendary actions or lair actions. Once the figurine has become an {@creature adult gold dragon}, it can't be used this way again until 1 year has passed.",
+						"In either form, the creature is friendly to you and your companions. It understands your languages and obeys your spoken commands. If you issue no commands, the creature defends itself but takes no other actions.",
+						"The creature exists for a duration specific to each form. At the end of the duration, the creature reverts to its figurine form. It reverts to a figurine early if it drops to 0 hit points or if you use an action to speak the command word again while touching it. When the creature becomes a figurine again, its property can't be used again until a certain amount of time has passed, as specified in the description."
+					]
+				}
+			]
 		},
 		{
 			"name": "Gold chalice (Legion of Dusk)",
@@ -23288,6 +23555,41 @@
 			"value": 750000
 		},
 		{
+			"name": "Platinum Scarf",
+			"source": "FTD",
+			"page": 24,
+			"rarity": "legendary",
+			"reqAttune": true,
+			"wondrous": true,
+			"bonusAc": "+1",
+			"entries": [
+				"This scarf is made of sturdy cloth and covered in platinum-colored scales.",
+				"As an action, you can pull a scale from the scarf and speak a command word. When you do so, choose one of the following effects:",
+				{
+					"type": "entries",
+					"name": "Breath of Life",
+					"entries": [
+						"The scale disappears, and you or a creature you touch regains {@dice 10d4} hit points."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Platinum Shield",
+					"entries": [
+						"For 1 hour or until you dismiss it (no action required), the scale becomes a {@item +1 shield}, which you or another creature can use. A creature wielding the shield has immunity to radiant damage."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Radiant Hammer",
+					"entries": [
+						"For 1 hour or until you dismiss it (no action required), the scale becomes a magic {@item light hammer|phb}, which you or another creature can use. The weapon deals {@damage 2d4} radiant damage, instead of the bludgeoning damage normal for a light hammer. It deals an extra {@damage 2d4} radiant damage to chromatic dragons.",
+						"Once three scales have been pulled from the scarf, no more scales can be removed until the next dawn, when all the missing scales grow back. If you pull off a scale but don't speak a command word, it disappears after 1 minute."
+					]
+				}
+			]
+		},
+		{
 			"name": "Platinum staff topped with amber (Sun Empire)",
 			"source": "PSX",
 			"page": 25,
@@ -23715,6 +24017,16 @@
 			],
 			"lootTables": [
 				"Magic Item Table C"
+			]
+		},
+		{
+			"name": "Potion of Dragon's Majesty",
+			"source": "FTD",
+			"page": 24,
+			"type": "P",
+			"rarity": "legendary",
+			"entries": [
+				"This potion looks like liquid gold, with a single scale from a {@filter chromatic|bestiary|search=chromatic dragon}, {@filter gem|bestiary|search=gem dragon}, or {@filter metallic|bestiary|search=metallic dragon} dragon suspended in it. When you drink this potion, you transform into an adult dragon of the same kind as the dragon the scale came from. The transformation lasts for 1 hour. Any equipment you are wearing or carrying melds into your new form or falls to the ground (your choice). For the duration, you use the game statistics of the adult dragon instead of your own, but you retain your languages, personality, and memories. You can't use a dragon's Change Shape or its legendary or lair actions."
 			]
 		},
 		{
@@ -26141,7 +26453,8 @@
 			],
 			"lootTables": [
 				"Magic Item Table F"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ring of Water Elemental Command",
@@ -26901,6 +27214,37 @@
 			]
 		},
 		{
+			"name": "Ruby Weave Gem",
+			"source": "FTD",
+			"page": 24,
+			"rarity": "legendary",
+			"reqAttune": "by a spellcaster",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"wondrous": true,
+			"recharge": "dawn",
+			"charges": 3,
+			"focus": [
+				"Artificer",
+				"Bard",
+				"Cleric",
+				"Druid",
+				"Paladin",
+				"Ranger",
+				"Sorcerer",
+				"Warlock",
+				"Wizard"
+			],
+			"entries": [
+				"While you are holding this gem, you can use it as a spellcasting focus for your spells.",
+				"The gem has 3 charges and regains all expended charges daily at dawn. When you cast a spell while holding this gem, you can expend up to 3 charges to ignore the spell's material components with a gold piece cost, up to 500 gp per charge expended.",
+				"When you finish a long rest, choose a spell from any class list. The spell you choose must be of a level you can cast. You know the chosen spell and can cast it with your spell slots of the appropriate level until the end of your next long rest."
+			]
+		},
+		{
 			"name": "Ruin's Wake",
 			"source": "EGW",
 			"page": 277,
@@ -27180,6 +27524,25 @@
 			"rarity": "none",
 			"weight": 1,
 			"value": 5
+		},
+		{
+			"name": "Sapphire Buckler",
+			"source": "FTD",
+			"page": 24,
+			"baseItem": "shield|PHB",
+			"type": "S",
+			"resist": [
+				"psychic",
+				"thunder"
+			],
+			"rarity": "very rare",
+			"reqAttune": true,
+			"weight": 6,
+			"ac": 2,
+			"entries": [
+				"This crystalline blue shield is fashioned from a sapphire dragon's scale and is created to aid in rooting out the influence of Aberrations. While wielding the shield, you have resistance to psychic and thunder damage. Also, when you take damage from a creature that is within 5 feet of you, you can use your reaction to deal {@damage 2d6} thunder damage to that creature.",
+				"As an action, you can use the shield to help you locate Aberrations until the end of your next turn. If any Aberrations are within 1 mile of you, the shield emits a low humming tone for a moment, and you know the direction of all Aberrations within that range. Once this property is used, it can't be used again until the next dawn."
+			]
 		},
 		{
 			"name": "Sardonyx",
@@ -28705,6 +29068,64 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "Slumbering Dragon Vessel",
+			"source": "FTD",
+			"page": 27,
+			"rarity": "uncommon",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"This vessel can be a potion bottle, drinking horn, or other container meant to hold a liquid.",
+				"As a bonus action, if the vessel is empty, you can speak the command word to fill the vessel with one of the following (your choice): ale, olive oil, a {@item potion of healing}, or a {@item potion of climbing}. Once this property is used, it can't be used until the next dawn. A potion you create in this way loses its magical properties if it isn't imbibed within 24 hours."
+			]
+		},
+		{
+			"name": "Slumbering Dragon-Touched Focus",
+			"source": "FTD",
+			"page": 26,
+			"rarity": "uncommon",
+			"reqAttune": "by a spellcaster",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"wondrous": true,
+			"focus": [
+				"Artificer",
+				"Bard",
+				"Cleric",
+				"Druid",
+				"Paladin",
+				"Ranger",
+				"Sorcerer",
+				"Warlock",
+				"Wizard"
+			],
+			"entries": [
+				"This wondrous item can be a scepter, an orb, an amulet, a crystal, or another finely crafted object. It typically incorporates imagery of dragons' wings, claws, teeth, or scales.",
+				"You have advantage on initiative rolls. While you are holding the focus, it can function as a spellcasting focus for all your spells."
+			]
+		},
+		{
+			"name": "Slumbering Scaled Ornament",
+			"source": "FTD",
+			"page": 27,
+			"rarity": "uncommon",
+			"reqAttune": true,
+			"wondrous": true,
+			"bonusAc": "+1",
+			"modifySpeed": {
+				"equal": {
+					"fly": "walk"
+				}
+			},
+			"entries": [
+				"This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon's scale, tooth, or claw, or it incorporates images in those shapes.",
+				"You have advantage on saving throws you make to avoid being {@condition charmed} or {@condition frightened} or to end those conditions on you."
+			]
+		},
+		{
 			"name": "Small gold bracelet",
 			"source": "DMG",
 			"page": 134,
@@ -28845,7 +29266,11 @@
 			"reqAttuneTags": [
 				{
 					"alignment": [
-						"E"
+						"L",
+						"NX",
+						"C",
+						"G",
+						"NY"
 					]
 				}
 			],
@@ -30904,6 +31329,93 @@
 			"rarity": "none",
 			"weight": 0.5,
 			"value": 500
+		},
+		{
+			"name": "Stirring Dragon Vessel",
+			"source": "FTD",
+			"page": 27,
+			"rarity": "rare",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"This vessel can be a potion bottle, drinking horn, or other container meant to hold a liquid.",
+				"As a bonus action, if the vessel is empty, you can speak the command word to fill the vessel with one of the following (your choice): ale, olive oil, mead, a {@item potion of healing}, a {@item potion of greater healing}, a {@item potion of climbing}, or a {@item potion of fire breath}. Once this property is used, it can't be used until the next dawn. A potion you create in this way loses its magical properties if it isn't imbibed within 24 hours."
+			]
+		},
+		{
+			"name": "Stirring Dragon-Touched Focus",
+			"source": "FTD",
+			"page": 26,
+			"rarity": "rare",
+			"reqAttune": "by a spellcaster",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"wondrous": true,
+			"focus": [
+				"Artificer",
+				"Bard",
+				"Cleric",
+				"Druid",
+				"Paladin",
+				"Ranger",
+				"Sorcerer",
+				"Warlock",
+				"Wizard"
+			],
+			"entries": [
+				"This wondrous item can be a scepter, an orb, an amulet, a crystal, or another finely crafted object. It typically incorporates imagery of dragons' wings, claws, teeth, or scales.",
+				"You have advantage on initiative rolls. While you are holding the focus, it can function as a spellcasting focus for all your spells.",
+				"The focus gains an additional property determined by the family of the dragon in whose hoard it became Stirring:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Chromatic.",
+							"entries": [
+								"Whenever you use a spell slot to cast a spell that deals acid, cold, fire, lightning, or poison damage, roll a {@dice d6}, and you gain a bonus equal to the number rolled to one of the spell's damage rolls."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Gem.",
+							"entries": [
+								"Whenever you use a spell slot to cast a spell, you can immediately teleport to an unoccupied space you can see within 15 feet of you."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Metallic.",
+							"entries": [
+								"When a creature you can see within 30 feet of you makes a saving throw, you can use your reaction to give that creature advantage on the saving throw."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Stirring Scaled Ornament",
+			"source": "FTD",
+			"page": 27,
+			"rarity": "rare",
+			"reqAttune": true,
+			"wondrous": true,
+			"bonusAc": "+1",
+			"modifySpeed": {
+				"equal": {
+					"fly": "walk"
+				}
+			},
+			"entries": [
+				"This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon's scale, tooth, or claw, or it incorporates images in those shapes.",
+				"You have advantage on saving throws you make to avoid being {@condition charmed} or {@condition frightened} or to end those conditions on you.",
+				"You gain a +1 bonus to AC, and you can't be {@condition charmed} or {@condition frightened}. Moreover, each creature of your choice within 30 feet of you has advantage on saving throws it makes to avoid being {@condition charmed} or {@condition frightened} or to end those conditions on itself."
+			]
 		},
 		{
 			"name": "Stone of Controlling Earth Elementals",
@@ -33729,6 +34241,29 @@
 			]
 		},
 		{
+			"name": "Topaz Annihilator",
+			"source": "FTD",
+			"page": 24,
+			"type": "R",
+			"rarity": "legendary",
+			"property": [
+				"2H"
+			],
+			"range": "100/300",
+			"dmg1": "2d6",
+			"dmgType": "N",
+			"firearm": true,
+			"weapon": true,
+			"entries": [
+				"This magic ranged weapon resembles a {@item musket|DMG}, but in lieu of any ammunition, it holds a glowing yellow scale from a topaz dragon in its heart.",
+				"The weapon has a normal range of 100 feet and a long range of 300 feet, and it has the two-handed property. It deals {@damage 2d6} necrotic damage on a hit. If this damage reduces a creature or object to 0 hit points, the target is reduced to dust. A creature reduced to dust can be restored to life only by a {@spell true resurrection} or {@spell wish} spell.",
+				"While the weapon is on your person, you can use an action to cast the {@spell disintegrate} spell (save DC 18). Once this property is used, it can't be used again until the next dawn."
+			],
+			"attachedSpells": [
+				"disintegrate"
+			]
+		},
+		{
 			"name": "Torch",
 			"source": "PHB",
 			"page": 153,
@@ -35627,7 +36162,7 @@
 			"page": 4,
 			"rarity": "unknown (magic)",
 			"entries": [
-				"This dark blue vial allows you to read another's surface thoughts and capture them as thoguht strands, storing the strands within the vial. As an action, you can activate the vial to target a creature you can see within 10 feet of you to learn its surface thoughts and pul the thoughts learned out of the creature's head as a tangible glowing string of energy known as a thought strand. The strands can be stored in the vial for up to 24 hours or until the vial reaches capacity, in which case the oldest strands dissipate. A creature affected by the vial knows that its thoughts are being probed.",
+				"This dark blue vial allows you to read another's surface thoughts and capture them as thought strands, storing the strands within the vial. As an action, you can activate the vial to target a creature you can see within 10 feet of you to learn its surface thoughts and pul the thoughts learned out of the creature's head as a tangible glowing string of energy known as a thought strand. The strands can be stored in the vial for up to 24 hours or until the vial reaches capacity, in which case the oldest strands dissipate. A creature affected by the vial knows that its thoughts are being probed.",
 				"The vial can also store thought strands created by the {@spell encode thoughts|ggr} cantrip. It does not extend the duration of those strands beyond 8 hours, but stored strands do not disappear if you cast {@spell encode thoughts|ggr} again during the duration of the cantrip.",
 				"The vial has 3 charges and can store up to 3 thought strands. It regains all its charges daily at dusk."
 			]
@@ -35705,6 +36240,130 @@
 			"rarity": "none",
 			"weight": 400,
 			"value": 3500
+		},
+		{
+			"name": "Wakened Dragon Vessel",
+			"source": "FTD",
+			"page": 27,
+			"rarity": "very rare",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"This vessel can be a potion bottle, drinking horn, or other container meant to hold a liquid.",
+				"As a bonus action, if the vessel is empty, you can speak the command word to fill the vessel with one of the following (your choice): ale, olive oil, mead, wine, a {@item potion of healing}, a {@item potion of greater healing}, a {@item potion of superior healing}, a {@item potion of climbing}, a {@item potion of fire breath}, or a {@item potion of flying}. Once this property is used, it can't be used until the next dawn. A potion you create in this way loses its magical properties if it isn't imbibed within 24 hours."
+			]
+		},
+		{
+			"name": "Wakened Dragon-Touched Focus",
+			"source": "FTD",
+			"page": 26,
+			"rarity": "very rare",
+			"reqAttune": "by a spellcaster",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"wondrous": true,
+			"focus": [
+				"Artificer",
+				"Bard",
+				"Cleric",
+				"Druid",
+				"Paladin",
+				"Ranger",
+				"Sorcerer",
+				"Warlock",
+				"Wizard"
+			],
+			"entries": [
+				"This wondrous item can be a scepter, an orb, an amulet, a crystal, or another finely crafted object. It typically incorporates imagery of dragons' wings, claws, teeth, or scales.",
+				"You have advantage on initiative rolls. While you are holding the focus, it can function as a spellcasting focus for all your spells.",
+				"The focus gains an additional property determined by the family of the dragon in whose hoard it became Stirring:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Chromatic",
+							"entries": [
+								"Whenever you use a spell slot to cast a spell that deals acid, cold, fire, lightning, or poison damage, roll a {@dice d6}, and you gain a bonus equal to the number rolled to one of the spell's damage rolls."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Gem",
+							"entries": [
+								"Whenever you use a spell slot to cast a spell, you can immediately teleport to an unoccupied space you can see within 15 feet of you."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Metallic",
+							"entries": [
+								"When a creature you can see within 30 feet of you makes a saving throw, you can use your reaction to give that creature advantage on the saving throw."
+							]
+						}
+					]
+				},
+				"While you are holding a Wakened focus, you can use it to cast certain spells. Once the item is used to cast a given spell, it can't be used to cast that spell again until the next dawn. The spells are determined by the family of the dragon in whose hoard it became Wakened.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Chromatic.",
+							"entries": [
+								"{@spell Hold monster}, {@spell Rime's binding ice|FTD}"
+							]
+						},
+						{
+							"type": "item",
+							"name": "Gem.",
+							"entries": [
+								"{@spell Rary's telepathic bond}, {@spell Raulothim's psychic lance|FTD}"
+							]
+						},
+						{
+							"type": "item",
+							"name": "Metallic.",
+							"entries": [
+								"{@spell Fizban's platinum shield|FTD}, {@spell legend lore}"
+							]
+						}
+					]
+				}
+			],
+			"attachedSpells": [
+				"hold monster",
+				"rime's binding ice|ftd",
+				"rary's telepathic bond",
+				"raulothim's psychic lance|ftd",
+				"fizban's platinum shield|ftd",
+				"legend lore"
+			]
+		},
+		{
+			"name": "Wakened Scaled Ornament",
+			"source": "FTD",
+			"page": 27,
+			"rarity": "very rare",
+			"reqAttune": true,
+			"wondrous": true,
+			"bonusAc": "+1",
+			"modifySpeed": {
+				"equal": {
+					"fly": "walk"
+				}
+			},
+			"entries": [
+				"This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon's scale, tooth, or claw, or it incorporates images in those shapes.",
+				"You have advantage on saving throws you make to avoid being {@condition charmed} or {@condition frightened} or to end those conditions on you.",
+				"You gain a +1 bonus to AC, and you can't be {@condition charmed} or {@condition frightened}. Moreover, each creature of your choice within 30 feet of you has advantage on saving throws it makes to avoid being {@condition charmed} or {@condition frightened} or to end those conditions on itself.",
+				"When you would take damage of the type dealt by the breath of the dragon in whose hoard the ornament became Wakened, you can use your reaction to take no damage instead, and you regain hit points equal to the damage you would have taken. Once this property is used, it can't be used again until the next dawn."
+			]
 		},
 		{
 			"name": "Wand of Binding",
@@ -36786,7 +37445,7 @@
 					"type": "entries",
 					"entries": [
 						"Whelm is a sentient lawful neutral weapon with an Intelligence of 15, a Wisdom of 12, and a Charisma of 15. It has hearing and {@sense darkvision} out to a range of 120 feet.",
-						"The weapon communicates telepathically with its wielder and can speak, read, and understand Dwarvish. Giant, and Goblin. It shouts battle cries in Dwarvish when used in combat."
+						"The weapon communicates telepathically with its wielder and can speak, read, and understand Dwarvish, Giant, and Goblin. It shouts battle cries in Dwarvish when used in combat."
 					]
 				},
 				{
@@ -38205,6 +38864,73 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "Dragon Vessel",
+			"source": "FTD",
+			"page": 27,
+			"rarity": "varies",
+			"reqAttune": true,
+			"wondrous": true,
+			"entries": [
+				"This vessel can be a potion bottle, drinking horn, or other container meant to hold a liquid."
+			],
+			"items": [
+				"Slumbering Dragon Vessel|FTD",
+				"Stirring Dragon Vessel|FTD",
+				"Wakened Dragon Vessel|FTD",
+				"Ascendant Dragon Vessel|FTD"
+			]
+		},
+		{
+			"name": "Dragon's Wrath Weapon",
+			"source": "FTD",
+			"page": 25,
+			"type": "GV",
+			"rarity": "varies",
+			"reqAttune": true,
+			"entries": [
+				"This weapon is decorated with dragon heads, claws, wings, scales, or Draconic letters. When it steeps in a dragon's hoard, it absorbs the energy of the dragon's breath weapon and deals damage of that type with its special properties."
+			],
+			"items": [
+				"Slumbering Dragon's Wrath Weapon|FTD",
+				"Stirring Dragon's Wrath Weapon|FTD",
+				"Wakened Dragon's Wrath Weapon|FTD",
+				"Ascendant Dragon's Wrath Weapon|FTD"
+			]
+		},
+		{
+			"name": "Dragon-Touched Focus",
+			"source": "FTD",
+			"page": 26,
+			"rarity": "varies",
+			"reqAttune": "by a spellcaster",
+			"reqAttuneTags": [
+				{
+					"spellcasting": true
+				}
+			],
+			"wondrous": true,
+			"focus": [
+				"Artificer",
+				"Bard",
+				"Cleric",
+				"Druid",
+				"Paladin",
+				"Ranger",
+				"Sorcerer",
+				"Warlock",
+				"Wizard"
+			],
+			"entries": [
+				"This wondrous item can be a scepter, an orb, an amulet, a crystal, or another finely crafted object. It typically incorporates imagery of dragons' wings, claws, teeth, or scales."
+			],
+			"items": [
+				"Slumbering Dragon-Touched Focus|FTD",
+				"Stirring Dragon-Touched Focus|FTD",
+				"Wakened Dragon-Touched Focus|FTD",
+				"Ascendant Dragon-Touched Focus|FTD"
+			]
+		},
+		{
 			"name": "Druidic Focus",
 			"source": "PHB",
 			"page": 151,
@@ -38860,6 +39586,29 @@
 				"Magic Item Table G"
 			],
 			"hasFluffImages": true
+		},
+		{
+			"name": "Scaled Ornament",
+			"source": "FTD",
+			"page": 27,
+			"rarity": "varies",
+			"reqAttune": true,
+			"wondrous": true,
+			"bonusAc": "+1",
+			"modifySpeed": {
+				"equal": {
+					"fly": "walk"
+				}
+			},
+			"entries": [
+				"This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon's scale, tooth, or claw, or it incorporates images in those shapes."
+			],
+			"items": [
+				"Slumbering Scaled Ornament|FTD",
+				"Stirring Scaled Ornament|FTD",
+				"Wakened Scaled Ornament|FTD",
+				"Ascendant Scaled Ornament|FTD"
+			]
 		},
 		{
 			"name": "Scroll of Protection",

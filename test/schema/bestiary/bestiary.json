@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.16.9",
+	"version": "1.17.0",
 	"title": "Bestiary Schema",
 	"$id": "bestiary.json",
 	"type": "object",
@@ -808,9 +808,7 @@
 				},
 				"dragonCastingColor": {
 					"type": "string",
-					"enum": [
-						"B", "U", "G", "R", "W", "A", "Z", "C", "O", "S"
-					]
+					"enum": ["black", "blue", "green", "red", "white", "brass", "bronze", "copper", "gold", "silver", "deep"]
 				},
 				"traitTags": {
 					"type": "array",

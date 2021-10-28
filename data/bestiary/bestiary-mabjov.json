@@ -80,7 +80,7 @@
 				{
 					"name": "Defensive Cloud",
 					"entries": [
-						"When injured the achaierai can use its reaction to release a cloud of poisonous gas in a 10-foot radius. All creatures in the cloud take 7 ({@damage 2d6}) poison damage and must make a {@dc 15} Constitution saving throw or be {@condition poisoned} for 1 minute. While {@condition poisoned} the target is confused as if from a confusion spell. At the end of its turns, the affected target can repeat the Constitution saving throw. If it succeeds the confusion ends. Achaierai are immune to the effects of this cloud."
+						"When injured the achaierai can use its reaction to release a cloud of poisonous gas in a 10-foot radius. All creatures in the cloud take 7 ({@damage 2d6}) poison damage and must make a {@dc 15} Constitution saving throw or be {@condition poisoned} for 1 minute. While {@condition poisoned} the target is confused as if from a {@spell confusion} spell. At the end of its turns, the affected target can repeat the Constitution saving throw. If it succeeds the confusion ends. Achaierai are immune to the effects of this cloud."
 					]
 				}
 			],
@@ -240,7 +240,7 @@
 				{
 					"name": "Shadows",
 					"entries": [
-						"3 shadows hide within the saddle of Aribeth's nightmare. These shadows only come out if there is a creature within 30 feet that is at 0 hit points. When that happens, 1 shadow will emerge and attack the creature in order to make it fail a death saving throw. It continues to do so until the creature is dead."
+						"3 {@creature shadow||shadows} hide within the saddle of Aribeth's nightmare. These shadows only come out if there is a creature within 30 feet that is at 0 hit points. When that happens, 1 shadow will emerge and attack the creature in order to make it fail a death saving throw. It continues to do so until the creature is dead."
 					]
 				}
 			],
@@ -504,7 +504,7 @@
 				{
 					"name": "Summon Allies (1/Day)",
 					"entries": [
-						"Baalzebul summons {@dice 1d6} horned devils, {@dice 1d4} ice devils, or 1 pit fiend."
+						"Baalzebul summons {@dice 1d6} {@creature horned devil||horned devils}, {@dice 1d4} {@creature ice devil||ice devils}, or 1 {@creature pit fiend}."
 					]
 				}
 			],
@@ -816,7 +816,7 @@
 				{
 					"name": "Avatar of Bhaal",
 					"entries": [
-						"When the ravager drops to 0 hit points, its form fractures. Within the next 24 hours, it will reappear in its slayer form within {@dice 2d6} miles of where the ravager form fell."
+						"When the ravager drops to 0 hit points, its form fractures. Within the next 24 hours, it will reappear in its {@creature Bhaal, Slayer|MaBJoV|slayer form} within {@dice 2d6} miles of where the ravager form fell."
 					]
 				},
 				{
@@ -1083,7 +1083,7 @@
 				{
 					"name": "Ravager Form (Costs 3 Actions)",
 					"entries": [
-						"If the slayer has killed a creature of CR/level 5 or greater that it previously marked with its Prey ability in the last minute, it can transform into its Ravager form. The form lasts until dawn (minimum 1 hour)."
+						"If the slayer has killed a creature of CR/level 5 or greater that it previously marked with its Prey ability in the last minute, it can transform into its {@creature Bhaal, Ravager|MaBJoV|Ravager form}. The form lasts until dawn (minimum 1 hour)."
 					]
 				}
 			],
@@ -1772,13 +1772,7 @@
 				{
 					"name": "Cold Aura",
 					"entries": [
-						"At the start of each of Cryonax's turns, each creature within 10 feet of him takes 21 ({@damage 6d6}) cold damage. A creature also takes 21 ({@damage 6d6}) cold damage if they touch or hit"
-					]
-				},
-				{
-					"name": "Cryonax",
-					"entries": [
-						"Nonmagical weapons that hit Cryonax are frozen immediately after dealing damage to Cryonax. If used again and they hit any creature, the weapon shatters. The freezing effect disappears after an hour."
+						"At the start of each of Cryonax's turns, each creature within 10 feet of him takes 21 ({@damage 6d6}) cold damage. A creature also takes 21 ({@damage 6d6}) cold damage if they touch or hit Cryonax. Nonmagical weapons that hit Cryonax are frozen immediately after dealing damage to Cryonax. If used again and they hit any creature, the weapon shatters. The freezing effect disappears after an hour."
 					]
 				},
 				{
@@ -1828,7 +1822,7 @@
 				{
 					"name": "Summon Frost Horde (1/Day)",
 					"entries": [
-						"Cryonax summons two young white dragons or a frost giant with 2 yetis. The summoning costs Cryonax 50 hit points. The summoned creatures have maximum hit points and appear within 100 feet of Cryonax."
+						"Cryonax summons two {@creature young white dragon||young white dragons} or a {@creature frost giant} with 2 {@creature yeti||yetis}. The summoning costs Cryonax 50 hit points. The summoned creatures have maximum hit points and appear within 100 feet of Cryonax."
 					]
 				}
 			],
@@ -2723,7 +2717,7 @@
 				{
 					"name": "Summon Reinforcements (Recharges after a Short or Long Rest)",
 					"entries": [
-						"If the kelubar rolls 1-2 on a {@dice d6} it summons in two farastu, a result of 3-4 summons in one kelubar."
+						"If the kelubar rolls 1-2 on a {@dice d6} it summons in two {@creature Demodand, Farastu|MaBJoV|farastu}, a result of 3-4 summons in one {@creature Demodand, kelubar|MaBJoV|kelubar}."
 					]
 				}
 			],
@@ -2933,7 +2927,7 @@
 				{
 					"name": "Summon Reinforcements (Recharges after a Short or Long Rest)",
 					"entries": [
-						"If the shator rolls 1-2 on a {@dice d6} it summons in two farastu, a result of 3-4 summons in one shator."
+						"If the shator rolls 1-2 on a {@dice d6} it summons in two Demodand, Farastu|MaBJoV|farastu, a result of 3-4 summons in one {@creature Demodand, shator|MaBJoV|shator}."
 					]
 				}
 			],
@@ -3281,7 +3275,7 @@
 				{
 					"name": "Summon Hell Hounds",
 					"entries": [
-						"Edwin magically summons three hell hounds. The summoned hell hounds appear in an unoccupied space within 60 feet of its summoner, and act as allies of their summoner. They remain for 10 minutes, until they or their summoner dies, or until their summoner dismisses them as an action."
+						"Edwin magically summons three {@creature hell hound||hell hounds}. The summoned hell hounds appear in an unoccupied space within 60 feet of its summoner, and act as allies of their summoner. They remain for 10 minutes, until they or their summoner dies, or until their summoner dismisses them as an action."
 					]
 				}
 			],
@@ -3847,7 +3841,7 @@
 				{
 					"name": "Summon Steel Defender (1/Day)",
 					"entries": [
-						"Flimp summons a metallic panther to aid him in combat. The panther has maximum hit points (24) and is immune to poison and being {@condition charmed}."
+						"Flimp summons a {@creature Steel Defender|TCE|metallic panther} to aid him in combat. The panther has maximum hit points (24) and is immune to poison and being {@condition charmed}."
 					]
 				}
 			],
@@ -4388,7 +4382,7 @@
 				{
 					"name": "Mighty Summons (1/Day)",
 					"entries": [
-						"Jaheira casts the spell conjure animals using a 7th level slot. She can choose to summon three CR 2 beasts or six CR 1 beasts. All summoned beasts have maximum hit points. The damage from the summoned beasts natural weapons are considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks and damage."
+						"Jaheira casts the spell conjure animals using a 7th level slot. She can choose to summon three {@filter CR 2 beasts|bestiary|challenge rating=[&2]|type=beast|miscellaneous=!swarm} or six {@filter CR 1 beasts|bestiary|challenge rating=[&1]|type=beast|miscellaneous=!swarm}. All summoned beasts have maximum hit points. The damage from the summoned beasts natural weapons are considered magical for the purpose of overcoming immunity and resistance to nonmagical attacks and damage."
 					]
 				}
 			],
@@ -5390,7 +5384,7 @@
 				{
 					"name": "Summon Allies (1/Day)",
 					"entries": [
-						"Mephistopheles summons {@dice 1d4} ice devils."
+						"Mephistopheles summons {@dice 1d4} {@creature ice devil||ice devils}."
 					]
 				}
 			],
@@ -5535,7 +5529,7 @@
 				{
 					"name": "Go for the eyes Boo",
 					"entries": [
-						"Boo is a miniature giant space hamster and has the statistics of a rat. As a bonus action, Minsc can talk to Boo and gain the inspiration to go into a berserker fury. While in this berserking fury Minsc gains the following advantages:",
+						"Boo is a miniature giant space hamster and has the statistics of a {@creature rat}. As a bonus action, Minsc can talk to Boo and gain the inspiration to go into a berserker fury. While in this berserking fury Minsc gains the following advantages:",
 						{
 							"type": "list",
 							"items": [
@@ -5552,7 +5546,7 @@
 				{
 					"name": "Boo, The Miniature Giant Space Hamster",
 					"entries": [
-						"Boo is Minsc's animal companion. Boo is a miniature giant space hamster and has the statistics of a rat."
+						"Boo is Minsc's animal companion. Boo is a miniature giant space hamster and has the statistics of a {@creature rat}."
 					]
 				}
 			],
@@ -5574,7 +5568,7 @@
 				{
 					"name": "Run, Boo, run!",
 					"entries": [
-						"If Boo take damage, Minsc can choose to take the damage instead."
+						"If Boo takes damage, Minsc can choose to take the damage instead."
 					]
 				}
 			],
@@ -5683,7 +5677,7 @@
 				{
 					"name": "Special Items",
 					"entries": [
-						"Montaron possesses a bag of holding. He keeps the demilich, Xzar, in the bag. He also possesses a portable hole, which he uses to aid in robberies. As a bonus action, Montaron can place his portable hole in his bag of holding. This instantly destroys both items and opens a gate to the Astral Plane. Montaron and any creature within 10 feet of him is sucked through the gate to a random location on the Astral Plane. The gate then closes."
+						"Montaron possesses a {@item bag of holding}. He keeps the {@creature demilich}, Xzar, in the bag. He also possesses a portable hole, which he uses to aid in robberies. As a bonus action, Montaron can place his portable hole in his bag of holding. This instantly destroys both items and opens a gate to the Astral Plane. Montaron and any creature within 10 feet of him is sucked through the gate to a random location on the Astral Plane. The gate then closes."
 					]
 				}
 			],
@@ -7081,13 +7075,7 @@
 				{
 					"name": "Long Sword",
 					"entries": [
-						"{@atk mw} {@hit 10} to hit, reach 5 ft., one target. {@h}9 ({@damage 1d8 + 5}) slashing damage or 10 ({@dice 1d10 + 5}) if wielded in two hands. If the target is a creature, it must succeed on a {@dc 16} Constitution saving throw or be cursed"
-					]
-				},
-				{
-					"name": "by Bhaal",
-					"entries": [
-						"The cursed target can't regain hit points. The curse lasts until removed by the remove curse spell or other magic."
+						"{@atk mw} {@hit 10} to hit, reach 5 ft., one target. {@h}9 ({@damage 1d8 + 5}) slashing damage or 10 ({@dice 1d10 + 5}) if wielded in two hands. If the target is a creature, it must succeed on a {@dc 16} Constitution saving throw or be cursed by Bhaal. The cursed target can't regain hit points. The curse lasts until removed by the remove curse spell or other magic."
 					]
 				},
 				{
@@ -7359,13 +7347,7 @@
 				{
 					"name": "Fear Aura",
 					"entries": [
-						"Any creature hostile to the skeleton lord that starts its turn within 20 feet of the skeleton lord must make a {@dc 17} Wisdom saving throw, unless the skeleton lord is"
-					]
-				},
-				{
-					"name": "Incapacitated",
-					"entries": [
-						"On a failed save, the creature is Frightened until the start of its next turn. If a creature's saving throw is successful, then the creature is immune to the skeleton lord's Fear Aura for the next 24 hours."
+						"Any creature hostile to the skeleton lord that starts its turn within 20 feet of the skeleton lord must make a {@dc 17} Wisdom saving throw, unless the skeleton lord is {@condition incapacitated}. On a failed save, the creature is Frightened until the start of its next turn. If a creature's saving throw is successful, then the creature is immune to the skeleton lord's Fear Aura for the next 24 hours."
 					]
 				},
 				{
@@ -7709,7 +7691,7 @@
 				{
 					"name": "Summon Slaadi (1/Day)",
 					"entries": [
-						"Ssendam summons {@dice 1d4 + 1} death slaadi. A summoned slaad appears in an unoccupied space within 60 feet of Ssendam, acts as an ally of Ssendam, and can't summon other slaadi. It remains for 1 minute, until it or Ssendam dies, or until Ssendam dismisses it as an action."
+						"Ssendam summons {@dice 1d4 + 1} {@creature death slaad||death slaadi}. A summoned slaad appears in an unoccupied space within 60 feet of Ssendam, acts as an ally of Ssendam, and can't summon other slaadi. It remains for 1 minute, until it or Ssendam dies, or until Ssendam dismisses it as an action."
 					]
 				},
 				{

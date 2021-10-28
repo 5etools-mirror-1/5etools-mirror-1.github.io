@@ -382,8 +382,11 @@ class CreatureParser extends BaseParser {
 				curTrait = {};
 			}
 
+			["trait", "action", "bonus", "reaction", "legendary", "mythic"].forEach(prop => this._doMergeNumberedLists(stats, prop))
+
 			// Remove keys if they are empty
 			if (stats.trait.length === 0) delete stats.trait;
+			if (stats.action.length === 0) delete stats.action;
 			if (stats.bonus.length === 0) delete stats.bonus;
 			if (stats.reaction.length === 0) delete stats.reaction;
 			if (stats.legendary.length === 0) delete stats.legendary;
@@ -406,6 +409,41 @@ class CreatureParser extends BaseParser {
 		this._doStatblockPostProcess(stats, false, options);
 		const statsOut = PropOrder.getOrdered(stats, "monster");
 		options.cbOutput(statsOut, options.isAppend);
+	}
+
+	static _doMergeNumberedLists (stats, prop) {
+		if (!stats[prop]) return;
+
+		for (let i = 0; i < stats[prop].length; ++i) {
+			const cur = stats[prop][i];
+
+			if (
+				typeof cur?.entries?.last() === "string"
+				&& cur?.entries?.last().trim().endsWith(":")
+			) {
+				let lst = null;
+
+				while (stats[prop].length) {
+					const nxt = stats[prop][i + 1];
+
+					if (/^\d+[.!?:] [A-Za-z]/.test(nxt?.name || "")) {
+						if (!lst) {
+							lst = {type: "list", style: "list-hang-notitle", items: []};
+							cur.entries.push(lst);
+						}
+
+						nxt.type = "item";
+						nxt.name += ".";
+						lst.items.push(nxt);
+						stats[prop].splice(i + 1, 1);
+
+						continue;
+					}
+
+					break;
+				}
+			}
+		}
 	}
 
 	/**

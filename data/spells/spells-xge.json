@@ -5469,7 +5469,10 @@
 			},
 			"components": {
 				"s": true,
-				"m": "a melee weapon worth at least 1 sp"
+				"m": {
+					"text": "a melee weapon worth at least 1 sp",
+					"cost": 10
+				}
 			},
 			"duration": [
 				{

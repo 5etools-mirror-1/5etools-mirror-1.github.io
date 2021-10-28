@@ -4818,6 +4818,38 @@
 				"uses.per": null,
 				"uses.max": "2 * @classes.wizard.levels + floor((@abilities.int.value - 10) / 2)"
 			}
+		},
+		{
+			"name": "Draconic Disciple",
+			"source": "FTD",
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Ascendant Dragon",
+			"subclassSource": "FTD",
+			"level": 3,
+			"entryData": {
+				"languageProficiencies": [
+					{
+						"any": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "Draconic Gift",
+			"source": "FTD",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"subclassShortName": "Drakewarden",
+			"subclassSource": "FTD",
+			"level": 3,
+			"entryData": {
+				"languageProficiencies": [
+					{
+						"any": 1
+					}
+				]
+			}
 		}
 	]
 }

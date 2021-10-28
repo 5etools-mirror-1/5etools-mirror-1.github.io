@@ -4,7 +4,7 @@ class BooksList {
 	static getDateStr (it) {
 		if (!it.published) return "\u2014";
 		const date = new Date(it.published);
-		return MiscUtil.dateToStr(date);
+		return DatetimeUtil.getDateStr(date);
 	}
 
 	constructor (options) {

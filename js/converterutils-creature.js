@@ -80,6 +80,8 @@ class AcConvert {
 						case "see below":
 						case "wicker armor":
 						case "bone armor":
+						case "deflection":
+						case "mental defense":
 							froms.push(fromLow);
 							break;
 
@@ -474,7 +476,7 @@ TraitActionTag.tags = { // true = map directly; string = map to this string
 		"parry": "Parry",
 	},
 	bonus: {
-		// unused
+		"change shape": "Shapechanger",
 	},
 	legendary: {
 		// unused

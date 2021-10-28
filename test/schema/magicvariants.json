@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "magicvariants.json",
-	"version": "1.4.5",
+	"version": "1.4.7",
 	"type": "object",
 	"properties": {
 		"variant": {
@@ -30,6 +30,8 @@
 								"ammunition": {"type": "boolean"},
 								"armor": {"type": "boolean"},
 								"axe": {"type": "boolean"},
+								"bow": {"type": "boolean"},
+								"crossbow": {"type": "boolean"},
 								"sword": {"type": "boolean"},
 								"weapon": {"type": "boolean"},
 								"dmgType": {"type": "string"},
@@ -77,19 +79,8 @@
 								"type": "string"
 							},
 							"rarity": {
-								"type": "string",
-								"enum": [
-									"rare",
-									"none",
-									"uncommon",
-									"very rare",
-									"legendary",
-									"artifact",
-									"unknown",
-									"common",
-									"unknown (magic)",
-									"varies"
-								]
+								"$ref": "util.json#/definitions/itemRarity",
+								"not": {"enum": ["varies"]}
 							},
 							"source": {
 								"type": "string"
@@ -148,6 +139,9 @@
 							},
 							"charges": {
 								"type": ["string", "integer"]
+							},
+							"recharge": {
+								"$ref": "util.json#/definitions/itemRecharge"
 							},
 							"attachedSpells": {
 								"type": "array",

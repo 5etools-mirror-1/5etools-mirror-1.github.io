@@ -817,9 +817,7 @@ function Renderer () {
 				}
 				// If it's a raw string in a hanging list, wrap it in a div to allow for the correct styling
 				if (isListHang && typeof item === "string") textStack[0] += "<div>";
-				const cacheDepth = this._adjustDepth(meta, 1);
 				this._recursiveRender(item, textStack, meta);
-				meta.depth = cacheDepth;
 				if (isListHang && typeof item === "string") textStack[0] += "</div>";
 				if (item.type !== "list") textStack[0] += "</li>";
 			}
@@ -3355,47 +3353,61 @@ Renderer.utils = {
 };
 
 Renderer.feat = {
+	_mergeAbilityIncrease_getListItemText (abilityObj) {
+		return Renderer.feat._mergeAbilityIncrease_getText(abilityObj);
+	},
+
+	_mergeAbilityIncrease_getListItemItem (abilityObj) {
+		return {
+			type: "item",
+			name: "Ability Score Increase.",
+			entry: Renderer.feat._mergeAbilityIncrease_getText(abilityObj),
+		};
+	},
+
+	_mergeAbilityIncrease_getText (abilityObj) {
+		if (!abilityObj.choose) {
+			return Object.keys(abilityObj)
+				.map(ab => `Increase your ${Parser.attAbvToFull(ab)} score by ${abilityObj[ab]}, to a maximum of 20.`)
+				.join(" ");
+		}
+
+		if (abilityObj.choose.from.length === 6) {
+			return abilityObj.choose.entry
+				? Renderer.get().render(abilityObj.choose.entry) // only used in "Resilient"
+				: `Increase one ability score of your choice by ${abilityObj.choose.amount}, to a maximum of 20.`;
+		}
+
+		const abbChoicesText = abilityObj.choose.from.map(it => Parser.attAbvToFull(it)).joinConjunct(", ", " or ");
+		return `Increase your ${abbChoicesText} by ${abilityObj.choose.amount}, to a maximum of 20.`;
+	},
+
 	mergeAbilityIncrease: function (feat) {
 		if (!feat.ability || feat._hasMergedAbility || !feat.ability.length) return;
+
 		feat._hasMergedAbility = true;
-		if (feat.ability.every(it => it.hidden)) return;
+		const abilsToDisplay = feat.ability.filter(it => !it.hidden);
+		if (!abilsToDisplay.length) return;
+
 		const targetList = feat.entries.find(e => e.type === "list");
+
+		// FTD+ style
+		if (targetList.items.every(it => it.type === "item")) {
+			abilsToDisplay.forEach(abilObj => targetList.items.unshift(Renderer.feat._mergeAbilityIncrease_getListItemItem(abilObj)));
+			return;
+		}
+
 		if (targetList) {
-			feat.ability.forEach(abilObj => targetList.items.unshift(abilityObjToListItem(abilObj)));
-		} else {
-			// this should never happen, but display sane output anyway, and throw an out-of-order exception
-			feat.ability.forEach(abilObj => feat.entries.unshift(abilityObjToListItem(abilObj)));
-
-			setTimeout(() => {
-				throw new Error(`Could not find object of type "list" in "entries" for feat "${feat.name}" from source "${feat.source}" when merging ability scores! Reformat the feat to include a "list"-type entry.`);
-			}, 1);
+			abilsToDisplay.forEach(abilObj => targetList.items.unshift(Renderer.feat._mergeAbilityIncrease_getListItemText(abilObj)));
+			return;
 		}
 
-		function abilityObjToListItem (abilityObj) {
-			const abbArr = [];
-			if (!abilityObj.choose) {
-				Object.keys(abilityObj).forEach(ab => abbArr.push(`Increase your ${Parser.attAbvToFull(ab)} score by ${abilityObj[ab]}, to a maximum of 20.`));
-			} else {
-				const choose = abilityObj.choose;
-				if (choose.from.length === 6) {
-					if (choose.entry) { // only used in "Resilient"
-						abbArr.push(Renderer.get().render(choose.entry));
-					} else {
-						abbArr.push(`Increase one ability score of your choice by ${choose.amount}, to a maximum of 20.`);
-					}
-				} else {
-					const from = choose.from;
-					const amount = choose.amount;
-					const abbChoices = [];
-					for (let j = 0; j < from.length; ++j) {
-						abbChoices.push(Parser.attAbvToFull(from[j]));
-					}
-					const abbChoicesText = abbChoices.joinConjunct(", ", " or ");
-					abbArr.push(`Increase your ${abbChoicesText} by ${amount}, to a maximum of 20.`);
-				}
-			}
-			return abbArr.join(" ");
-		}
+		// this should never happen, but display sane output anyway, and throw an out-of-order exception
+		abilsToDisplay.forEach(abilObj => feat.entries.unshift(Renderer.feat._mergeAbilityIncrease_getListItemText(abilObj)));
+
+		setTimeout(() => {
+			throw new Error(`Could not find object of type "list" in "entries" for feat "${feat.name}" from source "${feat.source}" when merging ability scores! Reformat the feat to include a "list"-type entry.`);
+		}, 1);
 	},
 
 	/**
@@ -3572,7 +3584,7 @@ Renderer.spell = {
 			Renderer.spell.brewSpellClasses.class = Renderer.spell.brewSpellClasses.class || {};
 
 			const cls = it.className.toLowerCase();
-			const source = it.classSource || SRC_PHB;
+			const source = (it.classSource || SRC_PHB).toLowerCase();
 
 			Renderer.spell.brewSpellClasses.class[source] = Renderer.spell.brewSpellClasses.class[source] || {};
 			Renderer.spell.brewSpellClasses.class[source][cls] = Renderer.spell.brewSpellClasses.class[source][cls] || {};
@@ -3582,7 +3594,7 @@ Renderer.spell = {
 			Renderer.spell.brewSpellClasses.spell = Renderer.spell.brewSpellClasses.spell || {};
 
 			const name = (typeof it === "string" ? it : it.name).toLowerCase();
-			const source = typeof it === "string" ? "PHB" : it.source;
+			const source = (typeof it === "string" ? "PHB" : it.source).toLowerCase();
 			Renderer.spell.brewSpellClasses.spell[source] = Renderer.spell.brewSpellClasses.spell[source] || {};
 			Renderer.spell.brewSpellClasses.spell[source][name] = Renderer.spell.brewSpellClasses.spell[source][name] || {fromClassList: [], fromSubclass: []};
 
@@ -3600,14 +3612,14 @@ Renderer.spell = {
 
 		if (it.race) {
 			const race = it.race.toLowerCase();
-			const source = it.source || SRC_PHB;
+			const source = (it.source || SRC_PHB).toLowerCase();
 
 			const tgt = MiscUtil.set(Renderer.spell, "brewSpellRaces", "race", source, race, []);
 
 			tgt.push(toAdd);
 		} else {
 			const name = (typeof it === "string" ? it : it.name).toLowerCase();
-			const source = typeof it === "string" ? "PHB" : it.source;
+			const source = (typeof it === "string" ? "PHB" : it.source).toLowerCase();
 
 			const tgt = MiscUtil.set(Renderer.spell, "brewSpellRaces", "spell", source, name, []);
 
@@ -4038,18 +4050,19 @@ Renderer.spell = {
 		// endregion
 
 		const lowName = spell.name.toLowerCase();
+		const lowSource = spell.source.toLowerCase();
 
 		// region Add homebrew class/subclass
 		if (Renderer.spell.brewSpellClasses) {
 			if (Renderer.spell.brewSpellClasses.spell) {
-				if (Renderer.spell.brewSpellClasses.spell[spell.source] && Renderer.spell.brewSpellClasses.spell[spell.source][lowName]) {
-					if (Renderer.spell.brewSpellClasses.spell[spell.source][lowName].fromClassList.length) {
+				if (Renderer.spell.brewSpellClasses.spell[lowSource] && Renderer.spell.brewSpellClasses.spell[lowSource][lowName]) {
+					if (Renderer.spell.brewSpellClasses.spell[lowSource][lowName].fromClassList.length) {
 						spell._tmpClasses.fromClassList = spell._tmpClasses.fromClassList || [];
-						spell._tmpClasses.fromClassList.push(...Renderer.spell.brewSpellClasses.spell[spell.source][lowName].fromClassList);
+						spell._tmpClasses.fromClassList.push(...Renderer.spell.brewSpellClasses.spell[lowSource][lowName].fromClassList);
 					}
-					if (Renderer.spell.brewSpellClasses.spell[spell.source][lowName].fromSubclass.length) {
+					if (Renderer.spell.brewSpellClasses.spell[lowSource][lowName].fromSubclass.length) {
 						spell._tmpClasses.fromSubclass = spell._tmpClasses.fromSubclass || [];
-						spell._tmpClasses.fromSubclass.push(...Renderer.spell.brewSpellClasses.spell[spell.source][lowName].fromSubclass);
+						spell._tmpClasses.fromSubclass.push(...Renderer.spell.brewSpellClasses.spell[lowSource][lowName].fromSubclass);
 					}
 				}
 			}
@@ -4058,11 +4071,11 @@ Renderer.spell = {
 				(spell._tmpClasses = spell._tmpClasses || {}).fromClassList = spell._tmpClasses.fromClassList || [];
 
 				// speed over safety
-				outer: for (const src in Renderer.spell.brewSpellClasses.class) {
-					const searchForClasses = Renderer.spell.brewSpellClasses.class[src];
+				outer: for (const srcLower in Renderer.spell.brewSpellClasses.class) {
+					const searchForClasses = Renderer.spell.brewSpellClasses.class[srcLower];
 
 					for (const clsLowName in searchForClasses) {
-						const spellHasClass = spell.classes.fromClassList.some(cls => cls.source === src && cls.name.toLowerCase() === clsLowName);
+						const spellHasClass = spell.classes.fromClassList.some(cls => (cls.source || "").toLowerCase() === srcLower && cls.name.toLowerCase() === clsLowName);
 						if (!spellHasClass) continue;
 
 						const fromDetails = searchForClasses[clsLowName];
@@ -4086,20 +4099,20 @@ Renderer.spell = {
 
 		// region Add homebrew races/subraces
 		if (Renderer.spell.brewSpellRaces) {
-			if (Renderer.spell.brewSpellRaces.spell?.[spell.source]?.[lowName]?.length) {
+			if (Renderer.spell.brewSpellRaces.spell?.[lowSource]?.[lowName]?.length) {
 				spell._tmpRaces = spell._tmpRaces || [];
-				spell._tmpRaces.push(...Renderer.spell.brewSpellRaces.spell[spell.source][lowName]);
+				spell._tmpRaces.push(...Renderer.spell.brewSpellRaces.spell[lowSource][lowName]);
 			}
 
 			if (Renderer.spell.brewSpellRaces?.race && spell.races) {
 				spell._tmpRaces = spell._tmpRaces || [];
 
 				// speed over safety
-				outer: for (const src in Renderer.spell.brewSpellRaces.race) {
-					const searchForRaces = Renderer.spell.brewSpellRaces.race[src];
+				outer: for (const srcLower in Renderer.spell.brewSpellRaces.race) {
+					const searchForRaces = Renderer.spell.brewSpellRaces.race[srcLower];
 
 					for (const raceLowName in searchForRaces) {
-						const spellHasRace = spell.races.some(r => r.source === src && r.name.toLowerCase() === raceLowName);
+						const spellHasRace = spell.races.some(r => (r.source || "").toLowerCase() === srcLower && r.name.toLowerCase() === raceLowName);
 						if (!spellHasRace) continue;
 
 						const fromDetails = searchForRaces[raceLowName];
@@ -4310,10 +4323,15 @@ Renderer.optionalfeature = {
 
 Renderer.reward = {
 	getRenderedString: (reward) => {
-		const renderer = Renderer.get();
-		const renderStack = [];
-		renderer.recursiveRender({entries: reward.entries}, renderStack, {depth: 1});
-		return `<tr class="text"><td colspan="6">${renderStack.join("")}</td></tr>`;
+		const ptSubtitle = [
+			(reward.type || "").toTitleCase(),
+			reward.rarity ? reward.rarity.toTitleCase() : "",
+		].filter(Boolean).join(", ");
+		const entries = [
+			ptSubtitle ? `{@i ${ptSubtitle}}` : "",
+			...reward.entries,
+		].filter(Boolean);
+		return `<tr class="text"><td colspan="6">${Renderer.get().setFirstSection(true).render({entries}, 1)}</td></tr>`;
 	},
 
 	getCompactRenderedString (reward) {
@@ -4969,46 +4987,46 @@ Renderer.monster = {
 		VARIANT_NAME: "Dragons as Innate Spellcasters",
 		LVL_TO_COLOR_TO_SPELLS: {
 			2: {
-				B: ["darkness", "Melf's acid arrow", "fog cloud", "scorching ray"],
-				G: ["ray of sickness", "charm person", "detect thoughts", "invisibility", "suggestion"],
-				W: ["ice knife|XGE", "Snilloc's snowball swarm|XGE"],
-				A: ["see invisibility", "magic mouth", "blindness/deafness", "sleep", "detect thoughts"],
-				Z: ["gust of wind", "misty step", "locate object", "blur", "witch bolt", "thunderwave", "shield"],
-				C: ["knock", "sleep", "detect thoughts", "blindness/deafness", "tasha's hideous laughter"],
+				black: ["darkness", "Melf's acid arrow", "fog cloud", "scorching ray"],
+				green: ["ray of sickness", "charm person", "detect thoughts", "invisibility", "suggestion"],
+				white: ["ice knife|XGE", "Snilloc's snowball swarm|XGE"],
+				brass: ["see invisibility", "magic mouth", "blindness/deafness", "sleep", "detect thoughts"],
+				bronze: ["gust of wind", "misty step", "locate object", "blur", "witch bolt", "thunderwave", "shield"],
+				copper: ["knock", "sleep", "detect thoughts", "blindness/deafness", "tasha's hideous laughter"],
 			},
 			3: {
-				U: ["wall of sand|XGE", "thunder step|XGE", "lightning bolt", "blink", "magic missile", "slow"],
-				R: ["fireball", "scorching ray", "haste", "erupting earth|XGE", "Aganazzar's scorcher|XGE"],
-				O: ["slow", "fireball", "dispel magic", "counterspell", "Aganazzar's scorcher|XGE", "shield"],
-				S: ["sleet storm", "protection from energy", "catnap|XGE", "locate object", "identify", "Leomund's tiny hut"],
+				blue: ["wall of sand|XGE", "thunder step|XGE", "lightning bolt", "blink", "magic missile", "slow"],
+				red: ["fireball", "scorching ray", "haste", "erupting earth|XGE", "Aganazzar's scorcher|XGE"],
+				gold: ["slow", "fireball", "dispel magic", "counterspell", "Aganazzar's scorcher|XGE", "shield"],
+				silver: ["sleet storm", "protection from energy", "catnap|XGE", "locate object", "identify", "Leomund's tiny hut"],
 			},
 			4: {
-				B: ["vitriolic sphere|XGE", "sickening radiance|XGE", "Evard's black tentacles", "blight", "hunger of Hadar"],
-				W: ["fire shield", "ice storm", "sleet storm"],
-				A: ["charm monster|XGE", "sending", "wall of sand|XGE", "hypnotic pattern", "tongues"],
-				C: ["polymorph", "greater invisibility", "confusion", "stinking cloud", "major image", "charm monster|XGE"],
+				black: ["vitriolic sphere|XGE", "sickening radiance|XGE", "Evard's black tentacles", "blight", "hunger of Hadar"],
+				white: ["fire shield", "ice storm", "sleet storm"],
+				brass: ["charm monster|XGE", "sending", "wall of sand|XGE", "hypnotic pattern", "tongues"],
+				copper: ["polymorph", "greater invisibility", "confusion", "stinking cloud", "major image", "charm monster|XGE"],
 			},
 			5: {
-				U: ["telekinesis", "hold monster", "dimension door", "wall of stone", "wall of force"],
-				G: ["cloudkill", "charm monster|XGE", "modify memory", "mislead", "hallucinatory terrain", "dimension door"],
-				Z: ["steel wind strike|XGE", "control weather", "control winds|XGE", "watery sphere|XGE", "storm sphere|XGE", "tidal wave|XGE"],
-				O: ["hold monster", "immolation|XGE", "wall of fire", "greater invisibility", "dimension door"],
-				S: ["cone of cold", "ice storm", "teleportation circle", "skill empowerment|XGE", "creation", "Mordenkainen's private sanctum"],
+				blue: ["telekinesis", "hold monster", "dimension door", "wall of stone", "wall of force"],
+				green: ["cloudkill", "charm monster|XGE", "modify memory", "mislead", "hallucinatory terrain", "dimension door"],
+				bronze: ["steel wind strike|XGE", "control weather", "control winds|XGE", "watery sphere|XGE", "storm sphere|XGE", "tidal wave|XGE"],
+				gold: ["hold monster", "immolation|XGE", "wall of fire", "greater invisibility", "dimension door"],
+				silver: ["cone of cold", "ice storm", "teleportation circle", "skill empowerment|XGE", "creation", "Mordenkainen's private sanctum"],
 			},
 			6: {
-				W: ["cone of cold", "wall of ice"],
-				A: ["scrying", "Rary's telepathic bond", "Otto's irresistible dance", "legend lore", "hold monster", "dream"],
+				white: ["cone of cold", "wall of ice"],
+				brass: ["scrying", "Rary's telepathic bond", "Otto's irresistible dance", "legend lore", "hold monster", "dream"],
 			},
 			7: {
-				B: ["power word pain|XGE", "finger of death", "disintegrate", "hold monster"],
-				U: ["chain lightning", "forcecage", "teleport", "etherealness"],
-				G: ["project image", "mirage arcane", "prismatic spray", "teleport"],
-				Z: ["whirlwind|XGE", "chain lightning", "scatter|XGE", "teleport", "disintegrate", "lightning bolt"],
-				C: ["symbol", "simulacrum", "reverse gravity", "project image", "Bigby's hand", "mental prison|XGE", "seeming"],
-				S: ["Otiluke's freezing sphere", "prismatic spray", "wall of ice", "contingency", "arcane gate"],
+				black: ["power word pain|XGE", "finger of death", "disintegrate", "hold monster"],
+				blue: ["chain lightning", "forcecage", "teleport", "etherealness"],
+				green: ["project image", "mirage arcane", "prismatic spray", "teleport"],
+				bronze: ["whirlwind|XGE", "chain lightning", "scatter|XGE", "teleport", "disintegrate", "lightning bolt"],
+				copper: ["symbol", "simulacrum", "reverse gravity", "project image", "Bigby's hand", "mental prison|XGE", "seeming"],
+				silver: ["Otiluke's freezing sphere", "prismatic spray", "wall of ice", "contingency", "arcane gate"],
 			},
 			8: {
-				O: ["sunburst", "delayed blast fireball", "antimagic field", "teleport", "globe of invulnerability", "maze"],
+				gold: ["sunburst", "delayed blast fireball", "antimagic field", "teleport", "globe of invulnerability", "maze"],
 			},
 		},
 
@@ -5249,8 +5267,8 @@ Renderer.monster = {
 		const extraThClasses = !opts.isCompact && hasToken ? ["mon__name--token"] : null;
 
 		const isCr = Parser.crToNumber(mon.cr) !== VeCt.CR_UNKNOWN;
-		const isShowSpellLevelScaler = !isCr && mon._summonedBySpell_levelBase != null;
-		const isShowClassLevelScaler = !isShowSpellLevelScaler && mon.summonedByClass != null;
+		const isShowSpellLevelScaler = opts.isShowScalers && !isCr && mon._summonedBySpell_levelBase != null;
+		const isShowClassLevelScaler = opts.isShowScalers && !isShowSpellLevelScaler && mon.summonedByClass != null;
 
 		const fnGetSpellTraits = Renderer.monster.getSpellcastingRenderedTraits.bind(Renderer.monster, renderer);
 		const allTraits = Renderer.monster.getOrderedTraits(mon, {fnGetSpellTraits});

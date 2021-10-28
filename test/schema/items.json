@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "items.json",
-	"version": "1.10.8",
+	"version": "1.10.9",
 	"type": "object",
 	"definitions": {
 		"itemData": {
@@ -17,20 +17,7 @@
 					"type": "string"
 				},
 				"rarity": {
-					"type": "string",
-					"description": "\"None\" is for mundane items. \"Unknown (Magic)\" is for miscellaneous magical items. \"Unknown\" is for miscellaneous mundane items. \"Varies\" is for item groups.",
-					"enum": [
-						"rare",
-						"none",
-						"uncommon",
-						"very rare",
-						"legendary",
-						"artifact",
-						"unknown",
-						"common",
-						"unknown (magic)",
-						"varies"
-					]
+					"$ref": "util.json#/definitions/itemRarity"
 				},
 				"source": {
 					"type": "string"
@@ -251,7 +238,7 @@
 					"type": ["string", "integer"]
 				},
 				"recharge": {
-					"enum": ["round", "restShort", "restLong", "dawn", "dusk", "midnight", "special"]
+					"$ref": "util.json#/definitions/itemRecharge"
 				},
 				"attachedSpells": {
 					"type": "array",

@@ -1,13 +1,15 @@
 "use strict";
 
 class LootGenUi extends BaseComponent {
-	constructor ({spells, items}) {
+	constructor ({spells, items, ClsLootGenOutput}) {
 		super();
 
 		TabUiUtil.decorate(this);
 
 		this.__meta = {};
 		this._meta = this._getProxy("meta", this.__meta);
+
+		this._ClsLootGenOutput = ClsLootGenOutput || LootGenOutput;
 
 		this._data = null;
 		this._dataSpells = spells;
@@ -20,6 +22,8 @@ class LootGenUi extends BaseComponent {
 		this._$wrpOutputRows = null;
 		this._lootOutputs = [];
 	}
+
+	static _er (...args) { return Renderer.get().setFirstSection(true).render(...args); }
 
 	getSaveableState () {
 		return {
@@ -72,7 +76,6 @@ class LootGenUi extends BaseComponent {
 		const byTier = {};
 
 		this._dataItems
-			.filter(item => !Renderer.item.isMundane(item))
 			.forEach(item => {
 				const tier = item.tier || "other";
 				const rarity = item.rarity || (Renderer.item.isMundane(item) ? "unknown" : "unknown (magic)");
@@ -83,6 +86,7 @@ class LootGenUi extends BaseComponent {
 		return Object.entries(byTier)
 			.map(([tier, byRarity]) => {
 				return Object.entries(byRarity)
+					.sort(([rarityA], [rarityB]) => SortUtil.ascSortItemRarity(rarityA, rarityB))
 					.map(([rarity, items]) => {
 						const isMundane = Renderer.item.isMundane({rarity});
 
@@ -200,7 +204,7 @@ class LootGenUi extends BaseComponent {
 
 			<hr class="hr-3">
 
-			<div class="ve-small italic">${Renderer.get().render(`Based on the tables and rules in the {@book Dungeon Master's Guide|DMG|7|Treasure Tables}`)}, pages 133-149.</div>
+			<div class="ve-small italic">${this.constructor._er(`Based on the tables and rules in the {@book Dungeon Master's Guide|DMG|7|Treasure Tables}`)}, pages 133-149.</div>
 		</div>`.appendTo(tabMeta.$wrpTab);
 	}
 
@@ -218,7 +222,8 @@ class LootGenUi extends BaseComponent {
 		const coins = Object.entries(row.coins)
 			.mergeMap(([type, formula]) => ({[type]: Renderer.dice.parseRandomise2(formula)}));
 
-		const lootOutput = new LootGenOutput({
+		const lootOutput = new this._ClsLootGenOutput({
+			type: `Individual Treasure: ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}`,
 			name: `{@b Individual Treasure} for challenge rating {@b ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}}`,
 			coins,
 		});
@@ -238,7 +243,8 @@ class LootGenUi extends BaseComponent {
 		const artObjects = this._ft_doHandleClickRollLoot_hoard_gemsArtObjects({row, prop: "artObjects"});
 		const magicItemsByTable = await this._ft_doHandleClickRollLoot_hoard_pMagicItems({row});
 
-		const lootOutput = new LootGenOutput({
+		const lootOutput = new this._ClsLootGenOutput({
+			type: `Treasure Hoard: ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}`,
 			name: `{@b Hoard} for challenge rating {@b ${LootGenUi._CHALLENGE_RATING_RANGES[this._state.ft_challenge]}}`,
 			coins,
 			gems,
@@ -332,9 +338,9 @@ class LootGenUi extends BaseComponent {
 			if (tableMeta == null) return;
 
 			$dispHelp
-				.html(tableMeta.type === "DMG" ? Renderer.get().render(`Based on the tables and rules in the {@book Dungeon Master's Guide|DMG|7|Treasure Tables}, pages 133-149.`) : Renderer.get().render(`Tables auto-generated based on the rules in {@book Xanathar's Guide to Everything (Choosing Items Piecemeal)|XGE|2|choosing items piecemeal}, pages 135-136.`));
+				.html(tableMeta.type === "DMG" ? this.constructor._er(`Based on the tables and rules in the {@book Dungeon Master's Guide|DMG|7|Treasure Tables}, pages 133-149.`) : this.constructor._er(`Tables auto-generated based on the rules in {@book Xanathar's Guide to Everything (Choosing Items Piecemeal)|XGE|2|choosing items piecemeal}, pages 135-136.`));
 
-			$dispTable.html(Renderer.get().render(tableMeta.tableEntry));
+			$dispTable.html(this.constructor._er(tableMeta.tableEntry));
 		};
 		this._addHookBase("lt_ixTable", hkTable);
 		hkTable();
@@ -361,7 +367,8 @@ class LootGenUi extends BaseComponent {
 		const tableMeta = this._lt_tableMetas[this._state.lt_ixTable];
 		if (!tableMeta) return JqueryUtil.doToast({type: "warning", content: `Please select a table first!`});
 
-		const lootOutput = new LootGenOutput({
+		const lootOutput = new this._ClsLootGenOutput({
+			type: `Treasure Table Roll: ${tableMeta.type === "DMG" ? tableMeta.tableEntry.caption : `${tableMeta.tier} ${tableMeta.rarity}`}`,
 			name: tableMeta.type === "DMG"
 				? `Rolled against {@b {@table ${tableMeta.tableEntry.caption}|${SRC_DMG}}}`
 				: `Rolled on the table for {@b ${tableMeta.tier} ${tableMeta.rarity}} items`,
@@ -446,7 +453,7 @@ class LootGenUi extends BaseComponent {
 
 		$$`<div class="flex-col py-2 px-3">
 			<p>
-				Generates a set of magical items for a party, based on the tables and rules in ${Renderer.get().render(`{@book Xanathar's Guide to Everything|XGE|2|awarding magic items}`)}, pages 135-136.
+				Generates a set of magical items for a party, based on the tables and rules in ${this.constructor._er(`{@book Xanathar's Guide to Everything|XGE|2|awarding magic items}`)}, pages 135-136.
 			</p>
 			<p><i>If &quot;Exact Level&quot; is selected, the output will include a proportional number of items for any partially-completed tier.</i></p>
 
@@ -503,7 +510,8 @@ class LootGenUi extends BaseComponent {
 		const ptLevel = this._state.pl_isExactLevel
 			? this._state.pl_exactLevel
 			: LootGenUi._PARTY_LOOT_LEVEL_RANGES[this._state.pl_charLevel];
-		const lootOutput = new LootGenOutput({
+		const lootOutput = new this._ClsLootGenOutput({
+			type: `Party Loot: Level ${ptLevel}`,
 			name: `Magic items for a {@b Level ${ptLevel}} Party`,
 			magicItemsByTable,
 		});
@@ -719,6 +727,7 @@ LootGenUi._PARTY_LOOT_ITEMS_PER_LEVEL = {
 class LootGenOutput {
 	constructor (
 		{
+			type,
 			name,
 			coins,
 			gems,
@@ -726,6 +735,7 @@ class LootGenOutput {
 			magicItemsByTable,
 		},
 	) {
+		this._type = type;
 		this._name = name;
 		this._coins = coins;
 		this._gems = gems;
@@ -733,16 +743,20 @@ class LootGenOutput {
 		this._magicItemsByTable = magicItemsByTable;
 	}
 
-	render ($parent) {
-		const $btnSendToFoundry = !IS_VTT && ExtensionUtil.ACTIVE
+	_$getEleTitleSplit () {
+		return !IS_VTT && ExtensionUtil.ACTIVE
 			? $(`<button title="Send to Foundry (SHIFT for Temporary Import)" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-send"></span></button>`)
 				.click(evt => this._pDoSendToFoundry({isTemp: !!evt.shiftKey}))
 			: null;
+	}
 
-		this._$wrp = $$`<div class="flex-col lootg__wrp-output py-3 px-2 my-2 mr-1">
+	render ($parent) {
+		const $eleTitleSplit = this._$getEleTitleSplit();
+
+		this._$wrp = $$`<div class="flex-col lootg__wrp-output py-3 px-2 my-2 mr-1" draggable="true">
 			<h4 class="mt-1 mb-2 split-v-center">
 				<div>${Renderer.get().render(this._name)}</div>
-				${$btnSendToFoundry}
+				${$eleTitleSplit}
 			</h4>
 			<ul>
 				${this._render_$getPtValueSummary()}
@@ -751,12 +765,31 @@ class LootGenOutput {
 				${this._render_$getPtGemsArtObjects({loot: this._artObjects, name: "art objects"})}
 				${this._render_$getPtMagicItems()}
 			</ul>
-		</div>`.prependTo($parent);
+		</div>`
+			.on("dragstart", evt => {
+				const meta = {
+					type: "ve-Loot",
+					data: dropData,
+				};
+				evt.originalEvent.dataTransfer.setData("application/json", JSON.stringify(meta));
+			})
+			.prependTo($parent);
+
+		// Preload the drop data in the background, to lessen the chance that the user drops the card before it has time
+		//   to load.
+		let dropData;
+		this._pGetFoundryForm().then(it => dropData = it);
 	}
 
 	async _pDoSendToFoundry ({isTemp}) {
-		const toSend = {};
+		const toSend = await this._pGetFoundryForm();
 		if (isTemp) toSend.isTemp = isTemp;
+		if (toSend.currency || toSend.entityInfos) await ExtensionUtil.pDoSend({type: "5etools.lootgen.loot", data: toSend})
+	}
+
+	async _pGetFoundryForm () {
+		const toSend = {name: this._name};
+
 		if (this._coins) toSend.currency = this._coins;
 
 		const entityInfos = [];
@@ -778,7 +811,7 @@ class LootGenOutput {
 
 		if (entityInfos.length) toSend.entityInfos = entityInfos;
 
-		if (toSend.currency || toSend.entityInfos) await ExtensionUtil.pDoSend({type: "5etools.lootgen.loot", data: toSend})
+		return toSend;
 	}
 
 	async _pDoSendToFoundry_getGemsArtObjectsMetas ({loot}) {
@@ -1117,7 +1150,7 @@ class LootGenMagicItem extends BaseComponent {
 	}
 
 	_$getBtnReroll () {
-		return $(`<span class="roller">[reroll]</span>`)
+		return $(`<span class="roller render-roller">[reroll]</span>`)
 			.mousedown(evt => evt.preventDefault())
 			.click(() => this._pDoReroll());
 	}
@@ -1201,7 +1234,7 @@ class LootGenMagicItemSpellScroll extends LootGenMagicItem {
 		const $dispBaseEntry = this._$getRender_$getDispBaseEntry();
 		const $dispRoll = this._$getRender_$getDispRoll();
 
-		const $btnRerollSpell = $(`<span class="roller mr-2">[reroll]</span>`)
+		const $btnRerollSpell = $(`<span class="roller render-roller mr-2">[reroll]</span>`)
 			.mousedown(evt => evt.preventDefault())
 			.click(() => {
 				this._state.spell = RollerUtil.rollOnArray(this._spells);
@@ -1260,7 +1293,7 @@ class LootGenMagicItemSubItems extends LootGenMagicItem {
 		const $dispBaseEntry = this._$getRender_$getDispBaseEntry();
 		const $dispRoll = this._$getRender_$getDispRoll();
 
-		const $btnRerollSubItem = $(`<span class="roller mr-2">[reroll]</span>`)
+		const $btnRerollSubItem = $(`<span class="roller render-roller mr-2">[reroll]</span>`)
 			.mousedown(evt => evt.preventDefault())
 			.click(() => {
 				this._state.item = RollerUtil.rollOnArray(this._subItems);
@@ -1333,7 +1366,7 @@ class LootGenMagicItemTable extends LootGenMagicItem {
 
 		const $btnReroll = this._$getBtnReroll();
 
-		const $btnRerollSub = $(`<span class="roller ve-small self-flex-end">[reroll]</span>`)
+		const $btnRerollSub = $(`<span class="roller render-roller ve-small self-flex-end">[reroll]</span>`)
 			.mousedown(evt => evt.preventDefault())
 			.click(async () => {
 				const {subRowRoll, subRow, subItem} = await LootGenMagicItemTable.pGetSubRollMeta({

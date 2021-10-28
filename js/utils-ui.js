@@ -2224,15 +2224,32 @@ class InputUiUtil {
 	 * @param [opts.autocomplete] Array of autocomplete strings. REQUIRES INCLUSION OF THE TYPEAHEAD LIBRARY.
 	 * @param [opts.isCode] If the text is code.
 	 * @param [opts.isSkippable] If the prompt is skippable.
+	 * @param [opts.fnIsValid] A function which checks if the current input is valid, and prevents the user from
+	 *        submitting the value if it is.
+	 * @param [opts.$elePost] Element to add below the input.
+	 * @param [opts.cbPostRender] Callback to call after rendering the modal
 	 * @return {Promise<String>} A promise which resolves to the string if the user entered one, or null otherwise.
 	 */
 	static pGetUserString (opts) {
 		opts = opts || {};
+
+		const propValue = "text";
+		const comp = BaseComponent.fromObject({
+			[propValue]: opts.default || "",
+			isValid: true,
+		});
+
 		return new Promise(resolve => {
-			const $iptStr = $(`<input class="form-control mb-2" type="text">`)
-				.val(opts.default)
+			const $iptStr = ComponentUiUtil.$getIptStr(
+				comp,
+				propValue,
+				{
+					html: `<input class="form-control mb-2" type="text">`,
+					autocomplete: opts.autocomplete,
+				},
+			)
 				.keydown(async evt => {
-					if (evt.key === "Escape") { $iptStr.blur(); return; }
+					if (evt.key === "Escape") return; // Already handled
 
 					if (opts.autocomplete) {
 						// prevent double-binding the return key if we have autocomplete enabled
@@ -2240,13 +2257,26 @@ class InputUiUtil {
 						if ($modalInner.find(`.typeahead.dropdown-menu`).is(":visible")) return;
 					}
 					// return key
-					if (evt.which === 13) doClose(true);
+					if (evt.key === "Enter") doClose(true);
 					evt.stopPropagation();
 				});
 			if (opts.isCode) $iptStr.addClass("code");
-			if (opts.autocomplete && opts.autocomplete.length) $iptStr.typeahead({source: opts.autocomplete});
+
+			if (opts.fnIsValid) {
+				const hkText = () => comp._state.isValid = !comp._state.text.trim() || !!opts.fnIsValid(comp._state.text);
+				comp._addHookBase(propValue, hkText)
+				hkText();
+
+				const hkIsValid = () => $iptStr.toggleClass("form-control--error", !comp._state.isValid);
+				comp._addHookBase("isValid", hkIsValid)
+				hkIsValid();
+			}
+
 			const $btnOk = $(`<button class="btn btn-primary mr-2">OK</button>`)
-				.click(() => doClose(true));
+				.click(() => {
+					if (!comp._state.isValid) return JqueryUtil.doToast({content: `Please enter valid input!`, type: "warning"});
+					return doClose(true);
+				});
 			const $btnCancel = $(`<button class="btn btn-default">Cancel</button>`)
 				.click(() => doClose(false));
 			const $btnSkip = !opts.isSkippable ? null : $(`<button class="btn btn-default ml-3">Skip</button>`)
@@ -2262,9 +2292,18 @@ class InputUiUtil {
 				},
 			});
 			$iptStr.appendTo($modalInner);
+			if (opts.$elePost) opts.$elePost.appendTo($modalInner);
 			$$`<div class="flex-v-center flex-h-right pb-1 px-1">${$btnOk}${$btnCancel}${$btnSkip}</div>`.appendTo($modalInner);
 			$iptStr.focus();
 			$iptStr.select();
+
+			if (opts.cbPostRender) {
+				opts.cbPostRender({
+					comp,
+					$iptStr,
+					propValue,
+				});
+			}
 		});
 	}
 

@@ -66,7 +66,7 @@ class PageFilterBestiary extends PageFilter {
 			itemSortFn: null,
 		});
 		this._speedFilter = new RangeFilter({header: "Speed", min: 30, max: 30, suffix: " ft"});
-		this._speedTypeFilter = new Filter({header: "Speed Type", items: [...Parser.SPEED_MODES], displayFn: StrUtil.uppercaseFirst});
+		this._speedTypeFilter = new Filter({header: "Speed Type", items: [...Parser.SPEED_MODES, "hover"], displayFn: StrUtil.uppercaseFirst});
 		this._strengthFilter = new RangeFilter({header: "Strength", min: 1, max: 30});
 		this._dexterityFilter = new RangeFilter({header: "Dexterity", min: 1, max: 30});
 		this._constitutionFilter = new RangeFilter({header: "Constitution", min: 1, max: 30});

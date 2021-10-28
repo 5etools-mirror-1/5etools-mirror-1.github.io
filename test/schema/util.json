@@ -799,6 +799,39 @@
 			},
 			"additionalProperties": false
 		},
+
+		"rarity": {
+			"type": "string",
+			"enum": [
+				"rare",
+				"uncommon",
+				"very rare",
+				"legendary",
+				"artifact",
+				"common"
+			]
+		},
+
+		"itemRarity": {
+			"anyOf": [
+				{"$ref": "#/definitions/rarity"},
+				{
+					"type": "string",
+					"description": "\"None\" is for mundane items. \"Unknown (Magic)\" is for miscellaneous magical items. \"Unknown\" is for miscellaneous mundane items. \"Varies\" is for item groups.",
+					"enum": [
+						"none",
+						"unknown",
+						"unknown (magic)",
+						"varies"
+					]
+				}
+			]
+		},
+
+		"itemRecharge": {
+			"enum": ["round", "restShort", "restLong", "dawn", "dusk", "midnight", "special"]
+		},
+
 		"prerequisite": {
 			"type": "array",
 			"items": {

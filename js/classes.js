@@ -195,7 +195,7 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 		}
 
 		data.subclass.forEach(sc => {
-			if (sc.className === "Generic" || sc.classSource === "Generic") return;
+			if (sc.className === VeCt.STR_GENERIC || sc.classSource === VeCt.STR_GENERIC) return;
 
 			const cls = this._dataList.find(c => c.name.toLowerCase() === sc.className.toLowerCase() && c.source.toLowerCase() === (sc.classSource || SRC_PHB).toLowerCase());
 			if (!cls) {
@@ -1299,7 +1299,7 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 
 		const filterSets = [
 			{name: "View Official", subHashes: [], isClearSources: false},
-			{name: "View Most Recent", subHashes: [], isClearSources: true},
+			{name: "View Most Recent", subHashes: [], isClearSources: false, sources: {[SRC_UACFV]: 2}},
 			{name: "View All", subHashes: ["flstmiscellaneous:reprinted=0"], isClearSources: true},
 		];
 		const setFilterSet = ix => {
@@ -1313,6 +1313,16 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 					.map(src => `${src.toUrlified()}=0`)
 					.join(HASH_SUB_LIST_SEP);
 				cpySubHashes.push(`flstsource:${sourcePart}`)
+			} else if (filterSet.sources) {
+				const sourcePartSpecified = Object.entries(filterSet.sources).map(([src, val]) => `${src.toUrlified()}=${val}`);
+
+				const classifiedSources = this._pageFilter.sourceFilter.getSources();
+				const sourcePartRest = [...classifiedSources.official, ...classifiedSources.homebrew]
+					.filter(src => filterSet.sources[src] == null)
+					.map(src => `${src.toUrlified()}=0`);
+
+				const sourcePart = [...sourcePartSpecified, ...sourcePartRest].join(HASH_SUB_LIST_SEP);
+				cpySubHashes.push(`flstsource:${sourcePart}`);
 			}
 
 			this.filterBox.setFromSubHashes([
@@ -2010,8 +2020,9 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 				"entries_styleClass_fromSource",
 				"section_styleClass_fromSource",
 			],
-			fnPlugin: () => {
-				if (toRenderSource === cls.source) return {isSkip: true};
+			fnPlugin: (entryType, entry) => {
+				const source = entry.source || toRenderSource;
+				if (source === cls.source) return {isSkip: true};
 			},
 			fn: () => {
 				return $(`<tr data-scroll-id="${ixLvl}-${ixFeature}" data-feature-type="class" class="cls-main__linked-titles"><td colspan="6"/></tr>`)
@@ -2039,7 +2050,7 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 				const depthArr = [];
 
 				const ptDate = ptrIsFirstSubclassLevel._ === true && SourceUtil.isNonstandardSource(sc.source) && Parser.sourceJsonToDate(sc.source)
-					? Renderer.get().render(`{@note This subclass was published on ${MiscUtil.dateToStr(new Date(Parser.sourceJsonToDate(sc.source)))}.}`)
+					? Renderer.get().render(`{@note This subclass was published on ${DatetimeUtil.getDateStr(new Date(Parser.sourceJsonToDate(sc.source)))}.}`)
 					: "";
 				const ptSources = ptrIsFirstSubclassLevel._ === true && sc.otherSources ? `{@note {@b Subclass source:} ${Renderer.utils.getSourceAndPageHtml(sc)}}` : "";
 				const toRender = (ptDate || ptSources) && scFeature.entries ? MiscUtil.copy(scFeature) : scFeature;
@@ -2067,8 +2078,9 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 						"entries_styleClass_fromSource",
 						"section_styleClass_fromSource",
 					],
-					fnPlugin: () => {
-						if (toRenderSource === sc.source) return {isSkip: true};
+					fnPlugin: (entryType, entry) => {
+						const source = entry.source || toRenderSource;
+						if (source === sc.source) return {isSkip: true};
 					},
 					fn: () => {
 						const $trSubclassFeature = $(`<tr class="cls-main__sc-feature ${cssMod}" data-subclass-id="${UrlUtil.getStateKeySubclass(sc)}"><td colspan="6"/></tr>`)

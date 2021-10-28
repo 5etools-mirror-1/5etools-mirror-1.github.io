@@ -3,7 +3,8 @@
 		"dependencies": {
 			"monster": [
 				"MM",
-				"ToA"
+				"ToA",
+				"MOT"
 			]
 		},
 		"otherSources": {
@@ -2859,6 +2860,17 @@
 				"grappled"
 			],
 			"hasToken": true
+		},
+		{
+			"name": "Naiad",
+			"source": "CM",
+			"_copy": {
+				"name": "Naiad",
+				"source": "MOT"
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nintra Siotta",
