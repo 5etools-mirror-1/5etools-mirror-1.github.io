@@ -33,402 +33,6 @@
 			]
 		},
 		{
-			"name": "Adult Amethyst Dragon",
-			"source": "FTD",
-			"lairActions": [
-				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Beguiling Whisper.",
-							"entry": "The dragon telepathically whispers to one creature within range of the dragon's telepathy. The creature must succeed on a DC 15 Wisdom saving throw or be charmed by the dragon until initiative count 20 on the next round. A creature charmed in this way obeys to the best of its ability any command the dragon issues that isn't directly harmful to the creature."
-						},
-						{
-							"type": "item",
-							"name": "Imprisoning Force.",
-							"entry": "The dragon casts the forcecage spell, using its spell save DC and requiring no spell components. The spell ends early if the dragon uses this lair action again or dies."
-						},
-						{
-							"type": "item",
-							"name": "Spatial Projection.",
-							"entry": "The dragon chooses a space it can fit into within the lair. It exists in its own space and the chosen space simultaneously until initiative count 20 on the next round. Whenever it moves or takes an action, it chooses which version of itself is moving or acting. If an effect or attack can target both of the dragon's spaces at the same time, the dragon is affected only once."
-						}
-					]
-				}
-			],
-			"regionalEffects": [
-				"The region surrounding a legendary amethyst dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Background Check.",
-							"entry": "Once per day, the dragon can cast the legend lore spell, requiring no spell components, naming any person, place, or object within 1 mile of the lair as the spell's subject."
-						},
-						{
-							"type": "item",
-							"name": "Crystal Profusion.",
-							"entry": "Amethyst crystals and geodes form along muddy shores and lake beds within 6 miles of the lair."
-						},
-						{
-							"type": "item",
-							"name": "Thriving Wildlife.",
-							"entry": "Fish and other aquatic Beasts reproduce rapidly and thrive in bodies of water within 6 miles of the lair. Foraging in these waters yields twice the usual amount of food."
-						},
-						{
-							"type": "item",
-							"name": "Watery Sight.",
-							"entry": "Water within 6 miles of the lair is a conduit for the dragon's psionic presence. As an action, the dragon can cast the clairvoyance spell, requiring no spell components and targeting any body of water in that region."
-						}
-					]
-				},
-				"If the dragon dies, the populations of aquatic life near the lair return to normal levels over the course of {@dice 1d10} days. The existing abundance of amethysts remains, but new crystals and geodes form at a normal rate."
-			]
-		},
-		{
-			"name": "Adult Crystal Dragon",
-			"source": "FTD",
-			"lairActions": [
-				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Beguiling Whisper.",
-							"entry": "The dragon telepathically whispers to one creature within range of the dragon's telepathy. The creature must succeed on a DC 15 Wisdom saving throw or be charmed by the dragon until initiative count 20 on the next round. A creature charmed in this way obeys to the best of its ability any command the dragon issues that isn't directly harmful to the creature."
-						},
-						{
-							"type": "item",
-							"name": "Ice Passage.",
-							"entry": "The dragon can open a passage through a wall of ice or snow that is up to 5 feet thick, creating an opening up to 30 feet wide and high."
-						},
-						{
-							"type": "item",
-							"name": "Starlight's Gleam.",
-							"entry": "The dragon chooses a point it can see in the lair. Gleaming starlight radiates from that point to fill a 10-foot-radius sphere with dim light. Each creature other than the dragon in that area when the light appears must succeed on a DC 15 Dexterity saving throw or take 13 ({@dice 2d12}) radiant damage and be outlined in the glow. Attack rolls made against an outlined creature have advantage, and the creature can't hide or benefit from being invisible. The starlight and the glow around any creature fades on initiative count 20 on the next round."
-						}
-					]
-				}
-			],
-			"regionalEffects": [
-				"The region surrounding a legendary crystal dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Clear Skies.",
-							"entry": "The skies above a crystal dragon's lair remain clear and free of precipitation unless magically altered. Winds blow lightly, posing little threat to those approaching the lair, and visibility is the best possible for the time of day."
-						},
-						{
-							"type": "item",
-							"name": "Crystal Profusion.",
-							"entry": "Plentiful quartz crystals form in natural stone within 6 miles of the lair, particularly in places where natural light can shine on the crystals."
-						},
-						{
-							"type": "item",
-							"name": "Icy Sight.",
-							"entry": "Ice and quartz within 6 miles of the lair become conduits for the dragon's psionic presence. As an action, the dragon can cast the clairvoyance spell, requiring no spell components and targeting any ice or quartz crystals in that region."
-						},
-						{
-							"type": "item",
-							"name": "Positive Energy.",
-							"entry": "Any creature that finishes a long rest within 6 miles of the lair regains two additional spent Hit Dice."
-						},
-						{
-							"type": "item",
-							"name": "Thriving Wildlife.",
-							"entry": "Animal populations flourish within 6 miles of the lair. Ability checks made to forage for food by hunting, fishing, or trapping in that area are made with advantage."
-						}
-					]
-				},
-				"If the dragon dies, the animal population near the lair returns to normal levels over the course of {@dice 1d10} days. The increased Hit Die recovery ends immediately. The existing abundance of quartz crystals remains, but new crystals form at a normal rate."
-			]
-		},
-		{
-			"name": "Adult Deep Dragon",
-			"source": "FTD",
-			"lairActions": [
-				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Deep Torpor.",
-							"entry": "The dragon casts the slow spell, requiring no spell components and using Charisma as the spellcasting ability (spell save DC 16). The spell ends early if the dragon uses this lair action again or if the dragon dies."
-						},
-						{
-							"type": "item",
-							"name": "Mossy Sludge.",
-							"entry": "The dragon conjures sludge-like moss that briefly covers surfaces in the lair. The ceiling, floor, and walls of the lair become difficult terrain until initiative count 20 on the next round."
-						},
-						{
-							"type": "item",
-							"name": "Toxic Spores.",
-							"entry": "The dragon fills a 20-foot cube it can see within 120 feet of itself with toxic spores. Each creature in that area must succeed on a DC 15 Constitution saving throw or take 14 ({@dice 4d6}) poison damage and be poisoned until the end of its next turn."
-						}
-					]
-				}
-			],
-			"regionalEffects": [
-				"The region surrounding a legendary deep dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Preservation of Knowledge.",
-							"entry": "Books, letters, and any other physical forms of writing within 6 miles of the dragon's lair become magically charged and can't be damaged by nonmagical means."
-						},
-						{
-							"type": "item",
-							"name": "Restless Sleep.",
-							"entry": "When a creature finishes a long rest within 6 miles of the lair, the creature must first succeed on a DC 10 Constitution saving throw or be unable to reduce its level of exhaustion. Creatures immune to the poisoned condition are immune to this effect."
-						},
-						{
-							"type": "item",
-							"name": "Verdant Growth.",
-							"entry": "Vegetation and fungi within 6 miles of the dragon's lair grow faster and cover a greater area than they normally would. Foraging in this area yields twice the usual amount of food."
-						}
-					]
-				},
-				"If the dragon dies, these effects fade over the course of {@dice 1d10} days."
-			]
-		},
-		{
-			"name": "Adult Emerald Dragon",
-			"source": "FTD",
-			"lairActions": [
-				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Beguiling Whisper.",
-							"entry": "The dragon telepathically whispers to one creature within range of the dragon's telepathy. The creature must succeed on a DC 15 Wisdom saving throw or be charmed by the dragon until initiative count 20 on the next round. A creature charmed in this way obeys to the best of its ability any command the dragon issues that isn't directly harmful to the creature."
-						},
-						{
-							"type": "item",
-							"name": "Distort Perceptions.",
-							"entry": "The dragon attempts to alter the perceptions of one creature it can see within its lair. That creature must succeed on a DC 15 Intelligence saving throw or take 22 ({@dice 4d10}) psychic damage and have disadvantage on saving throws until the start of its next turn."
-						},
-						{
-							"type": "item",
-							"name": "Vanish.",
-							"entry": "The dragon becomes invisible until initiative count 20 on the next round."
-						}
-					]
-				}
-			],
-			"regionalEffects": [
-				"The region surrounding a legendary emerald dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Crystal Profusion.",
-							"entry": "Natural stone within 6 miles of the lair grows plentiful crystal formations and veins of emerald gemstones."
-						},
-						{
-							"type": "item",
-							"name": "Fiery Sight.",
-							"entry": "Fire and lava within 6 miles of the lair become conduits for the dragon's psionic presence. As an action, the dragon can cast the clairvoyance spell, requiring no spell components and targeting any area of fire or lava in that region."
-						},
-						{
-							"type": "item",
-							"name": "Subtle Obstruction.",
-							"entry": "Rocks within 6 miles of the dragon's lair sometimes move of their own accord, usually when no one is watching. Often the rocks obstruct the approach to the emerald dragon's lair, with boulders moving to block narrow defiles, way-markers tumbling off the path, or smaller stones shifting beneath travelers' feet to send them tumbling down slopes or into rivers."
-						},
-						{
-							"type": "item",
-							"name": "Thriving Wildlife.",
-							"entry": "Giant lizards are attracted to the area within 6 miles of the lair and settle there in large numbers."
-						}
-					]
-				},
-				"If the dragon dies, the population of giant lizards near the lair returns to normal levels over the course of {@dice 1d10} days. Rocks immediately stop moving of their own accord. The existing abundance of crystals and emeralds remains, but new ones form at a normal rate."
-			]
-		},
-		{
-			"name": "Adult Moonstone Dragon",
-			"source": "FTD",
-			"lairActions": [
-				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Banish into Dream.",
-							"entry": "The dragon targets a creature it can see within 120 feet of it and attempts to send that creature to a dream plane. The target must succeed on a DC 15 Charisma saving throw or be banished to a harmless demiplane until initiative count 20 on the next round. While there, the target is stunned. When the effect ends, the target reappears in the space it left or in the nearest unoccupied space."
-						},
-						{
-							"type": "item",
-							"name": "Compulsive Dance.",
-							"entry": "The dragon targets a creature it can see in its lair, and a merry waltz begins to play that only the target can hear. The target must succeed on a DC 15 Intelligence saving throw or dance until initiative count 20 on the following round. The dancing creature is incapacitated and must use all its movement to dance."
-						},
-						{
-							"type": "item",
-							"name": "Disorienting Visions.",
-							"entry": "Disorienting illusory images flit through the dragon's lair. Each creature in the lair must succeed on a DC 20 Wisdom saving throw or have disadvantage on ability checks until initiative count 20 on the following round."
-						}
-					]
-				}
-			],
-			"regionalEffects": [
-				"The region surrounding a legendary moonstone dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Dream Communication.",
-							"entry": "Whenever a creature that can understand a language sleeps or enters a state of trance or reverie within 6 miles of the dragon's lair, the dragon can establish telepathic contact with that creature and converse with it in its dreams. The creature remembers its conversation with the dragon upon waking."
-						},
-						{
-							"type": "item",
-							"name": "Planar Transition.",
-							"entry": "The veil between planes is thinned near a moonstone dragon's lair. Various portals link the Material Plane, the Feywild, and the Border Ethereal within 6 miles of the lair. Creatures can pass through a portal in either direction by spending 5 feet of movement."
-						}
-					]
-				},
-				"If the dragon dies, any portals near the lair close immediately."
-			]
-		},
-		{
-			"name": "Adult Sapphire Dragon",
-			"source": "FTD",
-			"lairActions": [
-				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Awesome Thunder.",
-							"entry": "A thunderous detonation of sound that can be heard up to 300 feet away surrounds one creature in the lair that the dragon can see. That creature must succeed on a DC 15 Constitution saving throw or take 13 ({@dice 3d8}) thunder damage and be stunned until the end of its next turn."
-						},
-						{
-							"type": "item",
-							"name": "Beguiling Whisper.",
-							"entry": "The dragon telepathically whispers to one creature within range of the dragon's telepathy. The creature must succeed on a DC 15 Wisdom saving throw or be charmed by the dragon until initiative count 20 on the next round. A creature charmed in this way obeys to the best of its ability any command the dragon issues that isn't directly harmful to the creature."
-						},
-						{
-							"type": "item",
-							"name": "Stone Passage.",
-							"entry": "The dragon touches a section of stone up to 30 feet in any dimension. The dragon can shape the stone to open or close a passage through a wall, as long as the wall is less than 10 feet thick."
-						}
-					]
-				}
-			],
-			"regionalEffects": [
-				"The region surrounding a legendary sapphire dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Crystal Profusion.",
-							"entry": "Natural stone within 6 miles of the lair grows plentiful crystal formations and veins of sapphire gemstones, particularly underground."
-						},
-						{
-							"type": "item",
-							"name": "Stony Sight.",
-							"entry": "Natural stone within 6 miles of the lair is a conduit for the dragon's psionic presence. As an action, the dragon can cast the clairvoyance spell, requiring no spell components and targeting any natural stone formation in that region."
-						},
-						{
-							"type": "item",
-							"name": "Telepathic Enhancement.",
-							"entry": "The dragon's psionic energy enhances the mental powers of other creatures. Any creature capable of telepathic communication has its telepathy range doubled while within 1 mile of the lair. This includes creatures with innate telepathy and magical telepathy such as the Rary's telepathic bond spell."
-						},
-						{
-							"type": "item",
-							"name": "Thriving Wildlife.",
-							"entry": "Giant spiders (a sapphire dragon's favorite prey) are attracted to the area within 6 miles of the lair and settle there in large numbers."
-						}
-					]
-				},
-				"If the dragon dies, the population of giant spiders in the region returns to normal levels over the course of {@dice 1d10} days. The enhancement of telepathic abilities ends immediately. The existing abundance of crystals and sapphires remains, but new ones form at a normal rate."
-			]
-		},
-		{
-			"name": "Adult Topaz Dragon",
-			"source": "FTD",
-			"lairActions": [
-				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Beguiling Whisper.",
-							"entry": "The dragon telepathically whispers to one creature within range of the dragon's telepathy. The creature must succeed on a DC 15 Wisdom saving throw or be charmed by the dragon until initiative count 20 on the next round. A creature charmed in this way obeys to the best of its ability any command the dragon issues that isn't directly harmful to the creature."
-						},
-						{
-							"type": "item",
-							"name": "Cancellation.",
-							"entry": "The dragon chooses an active spell of 5th level or lower that it's aware of in the lair and ends the spell."
-						},
-						{
-							"type": "item",
-							"name": "Negative Energy Infusion.",
-							"entry": "Up to two creatures the dragon can see within the lair must each succeed on a DC 15 Constitution saving throw or take 14 ({@dice 4d6}) necrotic damage. Negative energy then infuses the lair until initiative count 20 on the next round. While the infusion lasts, creatures in the lair other than the dragon can't regain hit points."
-						}
-					]
-				}
-			],
-			"regionalEffects": [
-				"The region surrounding a legendary topaz dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Crystal Profusion.",
-							"entry": "Natural stone within 6 miles of the lair grows plentiful crystal formations and veins of topaz gemstones, particularly underground."
-						},
-						{
-							"type": "item",
-							"name": "Negative Energy.",
-							"entry": "When a creature finishes a long rest within 6 miles of the lair, the creature must first succeed on a DC 15 Constitution saving throw or be unable to reduce its levels of exhaustion or regain spent Hit Dice. Creatures resistant or immune to necrotic damage are immune to this regional effect."
-						},
-						{
-							"type": "item",
-							"name": "Thriving Wildlife.",
-							"entry": "Giant squid are attracted to the sea within 6 miles of the lair, migrating and hunting there in large numbers."
-						},
-						{
-							"type": "item",
-							"name": "Watery Sight.",
-							"entry": "Water within 6 miles of the lair is a conduit for the dragon's psionic presence. As an action, the dragon can cast the clairvoyance spell, requiring no spell components and targeting any body of water in that region."
-						}
-					]
-				},
-				"If the dragon dies, the population of giant squid in the region returns to normal levels over the course of {@dice 1d10} days. The existing abundance of crystals and topazes remains, but new ones form at a normal rate."
-			]
-		},
-		{
 			"name": "Aerisi Kalinoth",
 			"source": "PotA",
 			"lairActions": [
@@ -437,7 +41,7 @@
 			]
 		},
 		{
-			"name": "Ancient Amethyst Dragon",
+			"name": "Amethyst Dragon",
 			"source": "FTD",
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
@@ -492,69 +96,6 @@
 					]
 				},
 				"If the dragon dies, the populations of aquatic life near the lair return to normal levels over the course of {@dice 1d10} days. The existing abundance of amethysts remains, but new crystals and geodes form at a normal rate."
-			]
-		},
-		{
-			"name": "Ancient Crystal Dragon",
-			"source": "FTD",
-			"lairActions": [
-				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Beguiling Whisper.",
-							"entry": "The dragon telepathically whispers to one creature within range of the dragon's telepathy. The creature must succeed on a DC 15 Wisdom saving throw or be charmed by the dragon until initiative count 20 on the next round. A creature charmed in this way obeys to the best of its ability any command the dragon issues that isn't directly harmful to the creature."
-						},
-						{
-							"type": "item",
-							"name": "Ice Passage.",
-							"entry": "The dragon can open a passage through a wall of ice or snow that is up to 5 feet thick, creating an opening up to 30 feet wide and high."
-						},
-						{
-							"type": "item",
-							"name": "Starlight's Gleam.",
-							"entry": "The dragon chooses a point it can see in the lair. Gleaming starlight radiates from that point to fill a 10-foot-radius sphere with dim light. Each creature other than the dragon in that area when the light appears must succeed on a DC 15 Dexterity saving throw or take 13 ({@dice 2d12}) radiant damage and be outlined in the glow. Attack rolls made against an outlined creature have advantage, and the creature can't hide or benefit from being invisible. The starlight and the glow around any creature fades on initiative count 20 on the next round."
-						}
-					]
-				}
-			],
-			"regionalEffects": [
-				"The region surrounding a legendary crystal dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Clear Skies.",
-							"entry": "The skies above a crystal dragon's lair remain clear and free of precipitation unless magically altered. Winds blow lightly, posing little threat to those approaching the lair, and visibility is the best possible for the time of day."
-						},
-						{
-							"type": "item",
-							"name": "Crystal Profusion.",
-							"entry": "Plentiful quartz crystals form in natural stone within 6 miles of the lair, particularly in places where natural light can shine on the crystals."
-						},
-						{
-							"type": "item",
-							"name": "Icy Sight.",
-							"entry": "Ice and quartz within 6 miles of the lair become conduits for the dragon's psionic presence. As an action, the dragon can cast the clairvoyance spell, requiring no spell components and targeting any ice or quartz crystals in that region."
-						},
-						{
-							"type": "item",
-							"name": "Positive Energy.",
-							"entry": "Any creature that finishes a long rest within 6 miles of the lair regains two additional spent Hit Dice."
-						},
-						{
-							"type": "item",
-							"name": "Thriving Wildlife.",
-							"entry": "Animal populations flourish within 6 miles of the lair. Ability checks made to forage for food by hunting, fishing, or trapping in that area are made with advantage."
-						}
-					]
-				},
-				"If the dragon dies, the animal population near the lair returns to normal levels over the course of {@dice 1d10} days. The increased Hit Die recovery ends immediately. The existing abundance of quartz crystals remains, but new crystals form at a normal rate."
 			]
 		},
 		{
@@ -571,59 +112,6 @@
 					]
 				},
 				"If the ancient deep crow dies, these effects fade immediately."
-			]
-		},
-		{
-			"name": "Ancient Deep Dragon",
-			"source": "FTD",
-			"lairActions": [
-				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Deep Torpor.",
-							"entry": "The dragon casts the slow spell, requiring no spell components and using Charisma as the spellcasting ability (spell save DC 19). The spell ends early if the dragon uses this lair action again or if the dragon dies."
-						},
-						{
-							"type": "item",
-							"name": "Mossy Sludge.",
-							"entry": "The dragon conjures sludge-like moss that briefly covers surfaces in the lair. The ceiling, floor, and walls of the lair become difficult terrain until initiative count 20 on the next round."
-						},
-						{
-							"type": "item",
-							"name": "Toxic Spores.",
-							"entry": "The dragon fills a 20-foot cube it can see within 120 feet of itself with toxic spores. Each creature in that area must succeed on a DC 15 Constitution saving throw or take 14 ({@dice 4d6}) poison damage and be poisoned until the end of its next turn."
-						}
-					]
-				}
-			],
-			"regionalEffects": [
-				"The region surrounding a legendary deep dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Preservation of Knowledge.",
-							"entry": "Books, letters, and any other physical forms of writing within 6 miles of the dragon's lair become magically charged and can't be damaged by nonmagical means."
-						},
-						{
-							"type": "item",
-							"name": "Restless Sleep.",
-							"entry": "When a creature finishes a long rest within 6 miles of the lair, the creature must first succeed on a DC 10 Constitution saving throw or be unable to reduce its level of exhaustion. Creatures immune to the poisoned condition are immune to this effect."
-						},
-						{
-							"type": "item",
-							"name": "Verdant Growth.",
-							"entry": "Vegetation and fungi within 6 miles of the dragon's lair grow faster and cover a greater area than they normally would. Foraging in this area yields twice the usual amount of food."
-						}
-					]
-				},
-				"If the dragon dies, these effects fade over the course of {@dice 1d10} days."
 			]
 		},
 		{
@@ -677,228 +165,6 @@
 					]
 				},
 				"If the dragon turtle dies, these effects fade over the course of {@dice 1d10} days."
-			]
-		},
-		{
-			"name": "Ancient Emerald Dragon",
-			"source": "FTD",
-			"lairActions": [
-				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Beguiling Whisper.",
-							"entry": "The dragon telepathically whispers to one creature within range of the dragon's telepathy. The creature must succeed on a DC 15 Wisdom saving throw or be charmed by the dragon until initiative count 20 on the next round. A creature charmed in this way obeys to the best of its ability any command the dragon issues that isn't directly harmful to the creature."
-						},
-						{
-							"type": "item",
-							"name": "Distort Perceptions.",
-							"entry": "The dragon attempts to alter the perceptions of one creature it can see within its lair. That creature must succeed on a DC 15 Intelligence saving throw or take 22 ({@dice 4d10}) psychic damage and have disadvantage on saving throws until the start of its next turn."
-						},
-						{
-							"type": "item",
-							"name": "Vanish.",
-							"entry": "The dragon becomes invisible until initiative count 20 on the next round."
-						}
-					]
-				}
-			],
-			"regionalEffects": [
-				"The region surrounding a legendary emerald dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Crystal Profusion.",
-							"entry": "Natural stone within 6 miles of the lair grows plentiful crystal formations and veins of emerald gemstones."
-						},
-						{
-							"type": "item",
-							"name": "Fiery Sight.",
-							"entry": "Fire and lava within 6 miles of the lair become conduits for the dragon's psionic presence. As an action, the dragon can cast the clairvoyance spell, requiring no spell components and targeting any area of fire or lava in that region."
-						},
-						{
-							"type": "item",
-							"name": "Subtle Obstruction.",
-							"entry": "Rocks within 6 miles of the dragon's lair sometimes move of their own accord, usually when no one is watching. Often the rocks obstruct the approach to the emerald dragon's lair, with boulders moving to block narrow defiles, way-markers tumbling off the path, or smaller stones shifting beneath travelers' feet to send them tumbling down slopes or into rivers."
-						},
-						{
-							"type": "item",
-							"name": "Thriving Wildlife.",
-							"entry": "Giant lizards are attracted to the area within 6 miles of the lair and settle there in large numbers."
-						}
-					]
-				},
-				"If the dragon dies, the population of giant lizards near the lair returns to normal levels over the course of {@dice 1d10} days. Rocks immediately stop moving of their own accord. The existing abundance of crystals and emeralds remains, but new ones form at a normal rate."
-			]
-		},
-		{
-			"name": "Ancient Moonstone Dragon",
-			"source": "FTD",
-			"lairActions": [
-				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Banish into Dream.",
-							"entry": "The dragon targets a creature it can see within 120 feet of it and attempts to send that creature to a dream plane. The target must succeed on a DC 15 Charisma saving throw or be banished to a harmless demiplane until initiative count 20 on the next round. While there, the target is stunned. When the effect ends, the target reappears in the space it left or in the nearest unoccupied space."
-						},
-						{
-							"type": "item",
-							"name": "Compulsive Dance.",
-							"entry": "The dragon targets a creature it can see in its lair, and a merry waltz begins to play that only the target can hear. The target must succeed on a DC 15 Intelligence saving throw or dance until initiative count 20 on the following round. The dancing creature is incapacitated and must use all its movement to dance."
-						},
-						{
-							"type": "item",
-							"name": "Disorienting Visions.",
-							"entry": "Disorienting illusory images flit through the dragon's lair. Each creature in the lair must succeed on a DC 20 Wisdom saving throw or have disadvantage on ability checks until initiative count 20 on the following round."
-						}
-					]
-				}
-			],
-			"regionalEffects": [
-				"The region surrounding a legendary moonstone dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Dream Communication.",
-							"entry": "Whenever a creature that can understand a language sleeps or enters a state of trance or reverie within 6 miles of the dragon's lair, the dragon can establish telepathic contact with that creature and converse with it in its dreams. The creature remembers its conversation with the dragon upon waking."
-						},
-						{
-							"type": "item",
-							"name": "Planar Transition.",
-							"entry": "The veil between planes is thinned near a moonstone dragon's lair. Various portals link the Material Plane, the Feywild, and the Border Ethereal within 6 miles of the lair. Creatures can pass through a portal in either direction by spending 5 feet of movement."
-						}
-					]
-				},
-				"If the dragon dies, any portals near the lair close immediately."
-			]
-		},
-		{
-			"name": "Ancient Sapphire Dragon",
-			"source": "FTD",
-			"lairActions": [
-				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Awesome Thunder.",
-							"entry": "A thunderous detonation of sound that can be heard up to 300 feet away surrounds one creature in the lair that the dragon can see. That creature must succeed on a DC 15 Constitution saving throw or take 13 ({@dice 3d8}) thunder damage and be stunned until the end of its next turn."
-						},
-						{
-							"type": "item",
-							"name": "Beguiling Whisper.",
-							"entry": "The dragon telepathically whispers to one creature within range of the dragon's telepathy. The creature must succeed on a DC 15 Wisdom saving throw or be charmed by the dragon until initiative count 20 on the next round. A creature charmed in this way obeys to the best of its ability any command the dragon issues that isn't directly harmful to the creature."
-						},
-						{
-							"type": "item",
-							"name": "Stone Passage.",
-							"entry": "The dragon touches a section of stone up to 30 feet in any dimension. The dragon can shape the stone to open or close a passage through a wall, as long as the wall is less than 10 feet thick."
-						}
-					]
-				}
-			],
-			"regionalEffects": [
-				"The region surrounding a legendary sapphire dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Crystal Profusion.",
-							"entry": "Natural stone within 6 miles of the lair grows plentiful crystal formations and veins of sapphire gemstones, particularly underground."
-						},
-						{
-							"type": "item",
-							"name": "Stony Sight.",
-							"entry": "Natural stone within 6 miles of the lair is a conduit for the dragon's psionic presence. As an action, the dragon can cast the clairvoyance spell, requiring no spell components and targeting any natural stone formation in that region."
-						},
-						{
-							"type": "item",
-							"name": "Telepathic Enhancement.",
-							"entry": "The dragon's psionic energy enhances the mental powers of other creatures. Any creature capable of telepathic communication has its telepathy range doubled while within 1 mile of the lair. This includes creatures with innate telepathy and magical telepathy such as the Rary's telepathic bond spell."
-						},
-						{
-							"type": "item",
-							"name": "Thriving Wildlife.",
-							"entry": "Giant spiders (a sapphire dragon's favorite prey) are attracted to the area within 6 miles of the lair and settle there in large numbers."
-						}
-					]
-				},
-				"If the dragon dies, the population of giant spiders in the region returns to normal levels over the course of {@dice 1d10} days. The enhancement of telepathic abilities ends immediately. The existing abundance of crystals and sapphires remains, but new ones form at a normal rate."
-			]
-		},
-		{
-			"name": "Ancient Topaz Dragon",
-			"source": "FTD",
-			"lairActions": [
-				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Beguiling Whisper.",
-							"entry": "The dragon telepathically whispers to one creature within range of the dragon's telepathy. The creature must succeed on a DC 15 Wisdom saving throw or be charmed by the dragon until initiative count 20 on the next round. A creature charmed in this way obeys to the best of its ability any command the dragon issues that isn't directly harmful to the creature."
-						},
-						{
-							"type": "item",
-							"name": "Cancellation.",
-							"entry": "The dragon chooses an active spell of 5th level or lower that it's aware of in the lair and ends the spell."
-						},
-						{
-							"type": "item",
-							"name": "Negative Energy Infusion.",
-							"entry": "Up to two creatures the dragon can see within the lair must each succeed on a DC 15 Constitution saving throw or take 14 ({@dice 4d6}) necrotic damage. Negative energy then infuses the lair until initiative count 20 on the next round. While the infusion lasts, creatures in the lair other than the dragon can't regain hit points."
-						}
-					]
-				}
-			],
-			"regionalEffects": [
-				"The region surrounding a legendary topaz dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Crystal Profusion.",
-							"entry": "Natural stone within 6 miles of the lair grows plentiful crystal formations and veins of topaz gemstones, particularly underground."
-						},
-						{
-							"type": "item",
-							"name": "Negative Energy.",
-							"entry": "When a creature finishes a long rest within 6 miles of the lair, the creature must first succeed on a DC 15 Constitution saving throw or be unable to reduce its levels of exhaustion or regain spent Hit Dice. Creatures resistant or immune to necrotic damage are immune to this regional effect."
-						},
-						{
-							"type": "item",
-							"name": "Thriving Wildlife.",
-							"entry": "Giant squid are attracted to the sea within 6 miles of the lair, migrating and hunting there in large numbers."
-						},
-						{
-							"type": "item",
-							"name": "Watery Sight.",
-							"entry": "Water within 6 miles of the lair is a conduit for the dragon's psionic presence. As an action, the dragon can cast the clairvoyance spell, requiring no spell components and targeting any body of water in that region."
-						}
-					]
-				},
-				"If the dragon dies, the population of giant squid in the region returns to normal levels over the course of {@dice 1d10} days. The existing abundance of crystals and topazes remains, but new ones form at a normal rate."
 			]
 		},
 		{
@@ -1188,6 +454,11 @@
 		{
 			"name": "Black Dragon",
 			"source": "MM",
+			"additionalSources": [
+				{
+					"source": "FTD"
+				}
+			],
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon takes a lair action to cause one of the following effects; the dragon can't use the same effect two rounds in a row:",
 				{
@@ -1197,6 +468,35 @@
 						"A cloud of swarming insects fills a 20-foot-radius sphere centered on a point the dragon chooses within 120 feet of it. The cloud spreads around corners and remains until the dragon dismisses it as an action, uses this lair action again, or dies. The cloud is lightly obscured. Any creature in the cloud when it appears must make on a {@dc 15} Constitution saving throw, taking 10 ({@damage 3d6}) piercing damage on a failed save, or half as much damage on a successful one. A creature that ends its turn in the cloud takes 10 ({@damage 3d6}) piercing damage.",
 						"Magical darkness spreads from a point the dragon chooses within 60 feet of it, filling a 15-foot-radius sphere until the dragon dismisses it as an action, uses this lair action again, or dies. The darkness spreads around corners. A creature with {@sense darkvision} can't see through this darkness, and nonmagical light can't illuminate it. If any of the effect's area overlaps with an area of light created by a spell of 2nd level or lower, the spell that created the light is dispelled."
 					]
+				},
+				{
+					"type": "entries",
+					"name": "Additional Lair Actions",
+					"entries": [
+						"At your discretion, a legendary ({@creature Adult Black Dragon||adult} or {@creature Ancient Black Dragon||ancient}) black dragon can use one or more of the following additional lair actions while in its lair:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Filth Burst.",
+									"entry": "The dragon chooses a point on the ground it can see within 120 feet of it. A 20-foot-radius, 20-foot-high cylinder of watery filth centered on that point erupts from the ground until initiative count 20 on the next round. Each creature in the cylinder when it appears or that ends its turn there must make a DC 15 Constitution saving throw, taking 10 ({@dice 3d6}) poison damage on a failed save, or half as much damage on a successful one. The cylinder is {@book difficult terrain|PHB|8|Difficult Terrain}."
+								},
+								{
+									"type": "item",
+									"name": "Grasping Muck.",
+									"entry": "Tendrils of roiling muck extend from the dragon's lair to grasp up to three creatures of the dragon's choice that it can see within the lair. A targeted creature must succeed on a DC 15 Strength saving throw or be {@condition restrained} until initiative count 20 on the next round."
+								},
+								{
+									"type": "item",
+									"name": "Noxious Gas.",
+									"entry": "A bubble of swamp gas erupts in a 20-foot-radius sphere centered on a point the dragon can see within its lair. Each creature in the area must succeed on a DC 15 Constitution saving throw or be {@condition poisoned} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								}
+							]
+						}
+					],
+					"source": "FTD"
 				}
 			],
 			"regionalEffects": [
@@ -1209,12 +509,46 @@
 						"Fog lightly obscures the land within 6 miles of the lair."
 					]
 				},
-				"If the dragon dies, vegetation remains as it has grown, but other effects fade over {@dice 1d10} days."
+				"If the dragon dies, vegetation remains as it has grown, but other effects fade over {@dice 1d10} days.",
+				{
+					"type": "entries",
+					"name": "Additional Regional Effects",
+					"entries": [
+						"Any of these effects might appear in the area around a black dragon's lair, in addition to or instead of the effects described in the {@i Monster Manual}:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Ennui.",
+									"entry": "Creatures that spend a year within 10 miles of the dragon's lair are filled with listless despair."
+								},
+								{
+									"type": "item",
+									"name": "Grating Spies.",
+									"entry": "Trilling, obnoxious birds, bugs, and reptiles follow any Humanoid creatures unknown to the dragon within 6 miles of the lair, imposing disadvantage on Dexterity ({@skill Stealth}) checks. The dragon can suppress this effect at will."
+								},
+								{
+									"type": "item",
+									"name": "Rotting Domain.",
+									"entry": "Stinging bugs are aggressive and the air is heavy with the odor of rot within 6 miles of the lair."
+								}
+							]
+						}
+					],
+					"source": "FTD"
+				}
 			]
 		},
 		{
 			"name": "Blue Dragon",
 			"source": "MM",
+			"additionalSources": [
+				{
+					"source": "FTD"
+				}
+			],
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon takes a lair action to cause one of the following effects; the dragon can't use the same effect two rounds in a row:",
 				{
@@ -1224,6 +558,30 @@
 						"A cloud of sand swirls about in a 20-foot-radius sphere centered on a point the dragon can see within 120 feet of it. The cloud spreads around corners. Each creature in the cloud must succeed on a {@dc 15} Constitution saving throw or be {@condition blinded} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
 						"Lightning arcs, forming a 5-foot-wide line between two of the lair's solid surfaces that the dragon can see. They must be within 120 feet of the dragon and 120 feet of each other. Each creature in that line must succeed on a {@dc 15} Dexterity saving throw or take 10 ({@damage 3d6}) lightning damage."
 					]
+				},
+				{
+					"type": "entries",
+					"name": "Additional Lair Actions",
+					"entries": [
+						"At your discretion, a legendary ({@creature Adult Blue Dragon||adult} or {@creature Ancient Blue Dragon||ancient}) blue dragon can use one or both of the following additional lair actions while in its lair:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Misleading Mirage.",
+									"entry": "Until initiative count 20 on the next round, at each intersection or branching passage in the lair, a creature other than the dragon has a 50 percent chance of going in a different direction from the direction it intends."
+								},
+								{
+									"type": "item",
+									"name": "Sudden Sinkhole.",
+									"entry": "The dragon chooses a point on the ground that it can see within 120 feet of it. A 5-foot-radius, 20-foot-deep pit forms centered on that point. A creature on the ground above where the pit formed must make a DC 15 Dexterity saving throw. On a failed save, a creature falls to the bottom of the pit, taking 7 ({@dice 2d6}) bludgeoning damage and landing {@condition prone}. On a successful save, a creature moves to the nearest unoccupied space instead of falling in the pit."
+								}
+							]
+						}
+					],
+					"source": "FTD"
 				}
 			],
 			"regionalEffects": [
@@ -1236,12 +594,46 @@
 						"Hidden sinkholes form in and around the dragon's lair. A sinkhole can be spotted from a safe distance with a successful {@dc 20} Wisdom ({@skill Perception}) check. Otherwise, the first creature to step on the thin crust covering the sinkhole must succeed on a {@dc 15} Dexterity saving throw or fall {@dice 1d6 × 10} feet into the sinkhole."
 					]
 				},
-				"If the dragon dies, the dust devils disappear immediately, and the thunderstorms abate within {@dice 1d10} days. Any sinkholes remain where they are."
+				"If the dragon dies, the dust devils disappear immediately, and the thunderstorms abate within {@dice 1d10} days. Any sinkholes remain where they are.",
+				{
+					"type": "entries",
+					"name": "Additional Regional Effects",
+					"entries": [
+						"Any of these effects might appear in the area around a blue dragon's lair, in addition to or instead of the effects described in the {@i Monster Manual}:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Blue Luster.",
+									"entry": "Creatures that spend a year within 1 mile of the dragon's lair find blue objects fascinating and feel compelled to acquire them at every opportunity."
+								},
+								{
+									"type": "item",
+									"name": "Mirage Terrain.",
+									"entry": "The area immediately surrounding the lair appears to be a lush oasis. A creature carefully examining the illusion can attempt a DC 15 Intelligence ({@skill Investigation}) check to disbelieve it. A creature who disbelieves the illusion sees it as a vague image superimposed on the underlying terrain."
+								},
+								{
+									"type": "item",
+									"name": "Sandstorm.",
+									"entry": "A sandstorm blows constantly within 1 mile of the dragon's lair."
+								}
+							]
+						}
+					],
+					"source": "FTD"
+				}
 			]
 		},
 		{
 			"name": "Brass Dragon",
 			"source": "MM",
+			"additionalSources": [
+				{
+					"source": "FTD"
+				}
+			],
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon takes a lair action to cause one of the following effects:",
 				{
@@ -1250,6 +642,35 @@
 						"A strong wind blows around the dragon. Each creature within 60 feet of the dragon must succeed on a {@dc 15} Strength saving throw or be pushed 15 feet away from the dragon and knocked {@condition prone}. Gases and vapors are dispersed by the wind, and unprotected flames are extinguished. Protected flames; such as lanterns, have a {@chance 50|50 percent} chance of being extinguished.",
 						"A cloud of sand swirls about in a 20-foot-radius sphere centered on a point the dragon can see within 120 feet of it. The cloud spreads around corners. Each creature in it must succeed on a {@dc 15} Constitution saving throw or be {@condition blinded} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 					]
+				},
+				{
+					"type": "entries",
+					"name": "Additional Lair Actions",
+					"entries": [
+						"At your discretion, a legendary ({@creature Adult Brass Dragon||adult} or {@creature Ancient Brass Dragon||ancient}) brass dragon can use one or more of the following additional lair actions while in its lair:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Animate Statues.",
+									"entry": "The dragon chooses up to three statues in the lair that it can see. Each of these statues briefly animates and attacks one creature within 5 feet of it, with a +7 bonus to hit and dealing 10 ({@dice 3d6}) bludgeoning damage on a hit."
+								},
+								{
+									"type": "item",
+									"name": "Blast of Wind.",
+									"entry": "A mighty wind sweeps through the lair in a direction of the dragon's choice, blowing along a line 40 feet wide and 100 feet long. Each creature in that area except the dragon must succeed on a DC 15 Strength saving throw or be pushed 15 feet in the wind's direction and be knocked {@condition prone}. Gases and vapors are dispersed by the wind, and unprotected flames are extinguished. Protected flames, such as lanterns, have a 50 percent chance of being extinguished. If the dragon is within the area of the wind, it can choose to be pushed 15 feet in the wind's direction, and the wind can't knock the dragon {@condition prone}."
+								},
+								{
+									"type": "item",
+									"name": "Obscuring Sand.",
+									"entry": "Dust and sand fill the air within 120 feet of the dragon, making the area {@book lightly obscured|PHB|8|Vision and Light} until initiative count 20 on the next round."
+								}
+							]
+						}
+					],
+					"source": "FTD"
 				}
 			],
 			"regionalEffects": [
@@ -1262,12 +683,41 @@
 						"Whenever a creature with an Intelligence of 3 or higher comes within 30 feet of a water source within 1 mile of the dragon's lair, the dragon becomes aware of the creature's presence and location."
 					]
 				},
-				"If the dragon dies, the tracks fade in {@dice 1d10} days, but the other effects fade immediately."
+				"If the dragon dies, the tracks fade in {@dice 1d10} days, but the other effects fade immediately.",
+				{
+					"type": "entries",
+					"name": "Additional Regional Effects",
+					"entries": [
+						"Any of these effects might appear in the area around a brass dragon's lair, in addition to or instead of the effects described in the {@i Monster Manual}:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Cloud Companion.",
+									"entry": "A small, wispy cloud follows non-evil creatures as they journey within 6 miles of the dragon's lair. It changes direction as the creatures do, remaining interposed between them and the direct glare of the sun, and grants them advantage on saving throws to resist the effects of {@book extreme heat|DMG|5|Extreme Heat} (see the {@book Dungeon Master's Guide|DMG})."
+								},
+								{
+									"type": "item",
+									"name": "Talkative Denizens.",
+									"entry": "Creatures within 1 mile of the dragon's lair find pleasure in hearing the sound of their own voices. The air is filled with a deafening chorus of birds and small animals, and sapient creatures talk extensively."
+								}
+							]
+						}
+					],
+					"source": "FTD"
+				}
 			]
 		},
 		{
 			"name": "Bronze Dragon",
 			"source": "MM",
+			"additionalSources": [
+				{
+					"source": "FTD"
+				}
+			],
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon takes a lair action to cause one of the following effects:",
 				{
@@ -1276,6 +726,35 @@
 						"The dragon creates fog as though it had cast the {@spell fog cloud} spell. The fog lasts until initiative count 20 on the next round.",
 						"A thunderclap originates at a point the dragon can see within 120 feet of it. Each creature within a 20-foot radius centered on that point must make a {@dc 15} Constitution saving throw or take 5 ({@damage 1d10}) thunder damage and be {@condition deafened} until the end of its next turn."
 					]
+				},
+				{
+					"type": "entries",
+					"name": "Additional Lair Actions",
+					"entries": [
+						"At your discretion, a legendary ({@creature Adult Bronze Dragon||adult} or {@creature Ancient Bronze Dragon||ancient}) bronze dragon can use one or more of the following additional lair actions while in its lair:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Ocean's Call.",
+									"entry": "The dragon conjures a swarm of spectral dolphins. Each creature in the water within 120 feet of the dragon must succeed on a DC 15 Dexterity saving throw or take 5 ({@dice 1d10}) slashing damage; then the swarm vanishes."
+								},
+								{
+									"type": "item",
+									"name": "Salt Burst.",
+									"entry": "The dragon chooses a point it can see in the lair. The air in a 20-foot-radius sphere centered on that point bursts with abrasive salt crystals. Each creature in that area must succeed on a DC 15 Dexterity saving throw or take 10 ({@dice 3d6}) slashing damage."
+								},
+								{
+									"type": "item",
+									"name": "Whelming Water.",
+									"entry": "The dragon causes a strong current to course through the water in its lair. The dragon chooses any number of creatures it can see that are standing or swimming in water within 120 feet of it. Each chosen creature must succeed on a DC 15 Strength saving throw or be knocked {@condition prone}."
+								}
+							]
+						}
+					],
+					"source": "FTD"
 				}
 			],
 			"regionalEffects": [
@@ -1288,12 +767,46 @@
 						"Within its lair, the dragon can set illusory sounds, such as soft music and strange echoes, so that they can be heard in various parts of the lair."
 					]
 				},
-				"If the dragon dies, changed weather reverts to normal, as described in the spell, and the other effects fade in {@dice 1d10} days."
+				"If the dragon dies, changed weather reverts to normal, as described in the spell, and the other effects fade in {@dice 1d10} days.",
+				{
+					"type": "entries",
+					"name": "Additional Regional Effects",
+					"entries": [
+						"Any of these effects might appear in the area around a bronze dragon's lair, in addition to or instead of the effects described in the {@i Monster Manual}:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Phantom Escort.",
+									"entry": "Ghostly naval ships from an ancient armada appear, escorting well-meaning creatures in need of the dragon's help toward the dragon's lair."
+								},
+								{
+									"type": "item",
+									"name": "Underwater Pursuit.",
+									"entry": "Sailors glimpse the shadowy, illusory form of a dragon in the depths below them, keeping pace with their vessel."
+								},
+								{
+									"type": "item",
+									"name": "Unfailing Faithfulness.",
+									"entry": "Sapient creatures that spend a year within 10 miles of the dragon's lair find it nearly impossible to break a promise."
+								}
+							]
+						}
+					],
+					"source": "FTD"
+				}
 			]
 		},
 		{
 			"name": "Copper Dragon",
 			"source": "MM",
+			"additionalSources": [
+				{
+					"source": "FTD"
+				}
+			],
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon takes a lair action to cause one of the following effects:",
 				{
@@ -1302,6 +815,30 @@
 						"The dragon chooses a point on the ground that it can see within 120 feet of it. Stone spikes sprout from the ground in a 20-foot radius centered on that point. The effect is otherwise identical to the {@spell spike growth} spell and lasts until the dragon uses this lair action again or until the dragon dies.",
 						"The dragon chooses a 10-foot-square area on the ground that it can see within 120 feet of it. The ground in that area turns into 3-foot-deep mud. Each creature on the ground in that area when the mud appears must succeed on a {@dc 15} Dexterity saving throw or sink into the mud and become {@condition restrained}. A creature can take an action to attempt a {@dc 15} Strength check, freeing itself or another creature within its reach and ending the {@condition restrained} condition on a success. Moving 1 foot in the mud costs 2 feet of movement. On initiative count 20 on the next round, the mud hardens, and the Strength DC to work free increases to 20."
 					]
+				},
+				{
+					"type": "entries",
+					"name": "Additional Lair Actions",
+					"entries": [
+						"At your discretion, a legendary ({@creature Adult Copper Dragon||adult} or {@creature Ancient Copper Dragon||ancient}) copper dragon can use one or both of the following additional lair actions while in its lair:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Laughing Gas.",
+									"entry": "The dragon chooses a point on the ground that it can see within 120 feet of it. A cloud of pink gas fills a 20-foot-radius sphere centered on that point. Each creature in that area that fails a DC 15 Wisdom saving throw is {@condition incapacitated} with laughter until the end of its next turn."
+								},
+								{
+									"type": "item",
+									"name": "Torpid Energy.",
+									"entry": "The dragon chooses a creature it can see within 120 feet of it. If the target fails a DC 15 Constitution saving throw, its speed is halved, and it can't use reactions or bonus actions until the end of its next turn."
+								}
+							]
+						}
+					],
+					"source": "FTD"
 				}
 			],
 			"regionalEffects": [
@@ -1314,7 +851,31 @@
 						"Intelligent creatures within 1 mile of the dragon's lair are prone to fits of giggling. Even serious matters suddenly seem amusing."
 					]
 				},
-				"If the dragon dies, the magic carvings fade over the course of {@dice 1d10} days. The other effects end immediately."
+				"If the dragon dies, the magic carvings fade over the course of {@dice 1d10} days. The other effects end immediately.",
+				{
+					"type": "entries",
+					"name": "Additional Regional Effects",
+					"entries": [
+						"Either of these effects might appear in the area around a copper dragon's lair, in addition to or instead of the effects described in the {@i Monster Manual}:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Distant Melodies.",
+									"entry": "The ethereal music of woodwinds and bells can be heard carried on the wind within 1 mile of the dragon's lair."
+								},
+								{
+									"type": "item",
+									"name": "Starlit Stones.",
+									"entry": "Standing stones are common on hilltops within 1 mile of the dragon's lair. The stones shed dim light in a 10-foot radius at night. (If the dragon dies, the stones remain, but they no longer shed light.)"
+								}
+							]
+						}
+					],
+					"source": "FTD"
+				}
 			]
 		},
 		{
@@ -1345,6 +906,69 @@
 			]
 		},
 		{
+			"name": "Crystal Dragon",
+			"source": "FTD",
+			"lairActions": [
+				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Beguiling Whisper.",
+							"entry": "The dragon telepathically whispers to one creature within range of the dragon's telepathy. The creature must succeed on a DC 15 Wisdom saving throw or be charmed by the dragon until initiative count 20 on the next round. A creature charmed in this way obeys to the best of its ability any command the dragon issues that isn't directly harmful to the creature."
+						},
+						{
+							"type": "item",
+							"name": "Ice Passage.",
+							"entry": "The dragon can open a passage through a wall of ice or snow that is up to 5 feet thick, creating an opening up to 30 feet wide and high."
+						},
+						{
+							"type": "item",
+							"name": "Starlight's Gleam.",
+							"entry": "The dragon chooses a point it can see in the lair. Gleaming starlight radiates from that point to fill a 10-foot-radius sphere with dim light. Each creature other than the dragon in that area when the light appears must succeed on a DC 15 Dexterity saving throw or take 13 ({@dice 2d12}) radiant damage and be outlined in the glow. Attack rolls made against an outlined creature have advantage, and the creature can't hide or benefit from being invisible. The starlight and the glow around any creature fades on initiative count 20 on the next round."
+						}
+					]
+				}
+			],
+			"regionalEffects": [
+				"The region surrounding a legendary crystal dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Clear Skies.",
+							"entry": "The skies above a crystal dragon's lair remain clear and free of precipitation unless magically altered. Winds blow lightly, posing little threat to those approaching the lair, and visibility is the best possible for the time of day."
+						},
+						{
+							"type": "item",
+							"name": "Crystal Profusion.",
+							"entry": "Plentiful quartz crystals form in natural stone within 6 miles of the lair, particularly in places where natural light can shine on the crystals."
+						},
+						{
+							"type": "item",
+							"name": "Icy Sight.",
+							"entry": "Ice and quartz within 6 miles of the lair become conduits for the dragon's psionic presence. As an action, the dragon can cast the clairvoyance spell, requiring no spell components and targeting any ice or quartz crystals in that region."
+						},
+						{
+							"type": "item",
+							"name": "Positive Energy.",
+							"entry": "Any creature that finishes a long rest within 6 miles of the lair regains two additional spent Hit Dice."
+						},
+						{
+							"type": "item",
+							"name": "Thriving Wildlife.",
+							"entry": "Animal populations flourish within 6 miles of the lair. Ability checks made to forage for food by hunting, fishing, or trapping in that area are made with advantage."
+						}
+					]
+				},
+				"If the dragon dies, the animal population near the lair returns to normal levels over the course of {@dice 1d10} days. The increased Hit Die recovery ends immediately. The existing abundance of quartz crystals remains, but new crystals form at a normal rate."
+			]
+		},
+		{
 			"name": "Death Tyrant",
 			"source": "MM",
 			"lairActions": [
@@ -1369,6 +993,59 @@
 					]
 				},
 				"If the death tyrant dies, these effects fade over the course of {@dice 1d10} days."
+			]
+		},
+		{
+			"name": "Deep Dragon",
+			"source": "FTD",
+			"lairActions": [
+				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Deep Torpor.",
+							"entry": "The dragon casts the slow spell, requiring no spell components and using Charisma as the spellcasting ability (spell save DC 16). The spell ends early if the dragon uses this lair action again or if the dragon dies."
+						},
+						{
+							"type": "item",
+							"name": "Mossy Sludge.",
+							"entry": "The dragon conjures sludge-like moss that briefly covers surfaces in the lair. The ceiling, floor, and walls of the lair become difficult terrain until initiative count 20 on the next round."
+						},
+						{
+							"type": "item",
+							"name": "Toxic Spores.",
+							"entry": "The dragon fills a 20-foot cube it can see within 120 feet of itself with toxic spores. Each creature in that area must succeed on a DC 15 Constitution saving throw or take 14 ({@dice 4d6}) poison damage and be poisoned until the end of its next turn."
+						}
+					]
+				}
+			],
+			"regionalEffects": [
+				"The region surrounding a legendary deep dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Preservation of Knowledge.",
+							"entry": "Books, letters, and any other physical forms of writing within 6 miles of the dragon's lair become magically charged and can't be damaged by nonmagical means."
+						},
+						{
+							"type": "item",
+							"name": "Restless Sleep.",
+							"entry": "When a creature finishes a long rest within 6 miles of the lair, the creature must first succeed on a DC 10 Constitution saving throw or be unable to reduce its level of exhaustion. Creatures immune to the poisoned condition are immune to this effect."
+						},
+						{
+							"type": "item",
+							"name": "Verdant Growth.",
+							"entry": "Vegetation and fungi within 6 miles of the dragon's lair grow faster and cover a greater area than they normally would. Foraging in this area yields twice the usual amount of food."
+						}
+					]
+				},
+				"If the dragon dies, these effects fade over the course of {@dice 1d10} days."
 			]
 		},
 		{
@@ -1565,6 +1242,93 @@
 			]
 		},
 		{
+			"name": "Emerald Dragon",
+			"source": "FTD",
+			"lairActions": [
+				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Beguiling Whisper.",
+							"entry": "The dragon telepathically whispers to one creature within range of the dragon's telepathy. The creature must succeed on a DC 15 Wisdom saving throw or be charmed by the dragon until initiative count 20 on the next round. A creature charmed in this way obeys to the best of its ability any command the dragon issues that isn't directly harmful to the creature."
+						},
+						{
+							"type": "item",
+							"name": "Distort Perceptions.",
+							"entry": "The dragon attempts to alter the perceptions of one creature it can see within its lair. That creature must succeed on a DC 15 Intelligence saving throw or take 22 ({@dice 4d10}) psychic damage and have disadvantage on saving throws until the start of its next turn."
+						},
+						{
+							"type": "item",
+							"name": "Vanish.",
+							"entry": "The dragon becomes invisible until initiative count 20 on the next round."
+						}
+					]
+				}
+			],
+			"regionalEffects": [
+				"The region surrounding a legendary emerald dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Crystal Profusion.",
+							"entry": "Natural stone within 6 miles of the lair grows plentiful crystal formations and veins of emerald gemstones."
+						},
+						{
+							"type": "item",
+							"name": "Fiery Sight.",
+							"entry": "Fire and lava within 6 miles of the lair become conduits for the dragon's psionic presence. As an action, the dragon can cast the clairvoyance spell, requiring no spell components and targeting any area of fire or lava in that region."
+						},
+						{
+							"type": "item",
+							"name": "Subtle Obstruction.",
+							"entry": "Rocks within 6 miles of the dragon's lair sometimes move of their own accord, usually when no one is watching. Often the rocks obstruct the approach to the emerald dragon's lair, with boulders moving to block narrow defiles, way-markers tumbling off the path, or smaller stones shifting beneath travelers' feet to send them tumbling down slopes or into rivers."
+						},
+						{
+							"type": "item",
+							"name": "Thriving Wildlife.",
+							"entry": "Giant lizards are attracted to the area within 6 miles of the lair and settle there in large numbers."
+						}
+					]
+				},
+				"If the dragon dies, the population of giant lizards near the lair returns to normal levels over the course of {@dice 1d10} days. Rocks immediately stop moving of their own accord. The existing abundance of crystals and emeralds remains, but new ones form at a normal rate."
+			]
+		},
+		{
+			"name": "Faerie Dragon",
+			"source": "FTB",
+			"regionalEffects": [
+				"The region containing a faerie dragon's lair can be transformed by its presence, creating one or more of the following effects:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Compulsory Offering.",
+							"entry": "The first time a creature comes within 1 mile of the faerie dragon's lair, the creature must succeed on a DC 15 Wisdom saving throw or feel an overwhelming compulsion to leave an offering worth at least 5 gp stashed in an out-of-the-way place. The dragon immediately senses the location of this gift. A creature can be affected only once by this compulsion."
+						},
+						{
+							"type": "item",
+							"name": "Malleable Time.",
+							"entry": "Time is fluid within 1 mile of the faerie dragon's lair, flowing somewhere between half and twice its normal speed."
+						},
+						{
+							"type": "item",
+							"name": "Mischief Afoot.",
+							"entry": "Sapient creatures that spend a year within 5 miles of the faerie dragon's lair feel the persistent urge to play pranks on others."
+						}
+					]
+				},
+				"If the faerie dragon dies, these effects fade over the course of {@dice 1d10} days."
+			]
+		},
+		{
 			"name": "Fazrian",
 			"source": "WDMM",
 			"lairActions": [
@@ -1727,6 +1491,11 @@
 		{
 			"name": "Gold Dragon",
 			"source": "MM",
+			"additionalSources": [
+				{
+					"source": "FTD"
+				}
+			],
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon takes a lair action to cause one of the following effects; the dragon can't use the same effect two rounds in a row:",
 				{
@@ -1735,6 +1504,25 @@
 						"The dragon glimpses the future, so it has advantage on attack rolls, ability checks, and saving throws until initiative count 20 on the next round.",
 						"One creature the dragon can see within 120 feet of it must succeed on a {@dc 15} Charisma saving throw or be banished to a dream plane, a different plane of existence the dragon has imagined into being. To escape, the creature must use its action to make a Charisma check contested by the dragon's. If the creature wins, it escapes the dream plane. Otherwise, the effect ends on initiative count 20 on the next round. When the effect ends, the creature reappears in the space it left or in the nearest unoccupied space if that one is occupied."
 					]
+				},
+				{
+					"type": "entries",
+					"name": "Additional Lair Action",
+					"entries": [
+						"At your discretion, a legendary ({@creature Adult Gold Dragon||adult} or {@creature Ancient Gold Dragon||ancient}) gold dragon can use the following additional lair action while in its lair:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Beguiling Glow.",
+									"entry": "Warm light fills a 30-foot-radius sphere centered on the dragon; each creature in that area must succeed on a DC 15 Wisdom saving throw or be {@condition charmed} by the dragon until initiative count 20 on the next round."
+								}
+							]
+						}
+					],
+					"source": "FTD"
 				}
 			],
 			"regionalEffects": [
@@ -1747,7 +1535,36 @@
 						"Gems and pearls within 1 mile of the dragon's lair sparkle and gleam, shedding dim light in a 5-foot radius."
 					]
 				},
-				"If the dragon dies, these effects end immediately."
+				"If the dragon dies, these effects end immediately.",
+				{
+					"type": "entries",
+					"name": "Additional Regional Effects",
+					"entries": [
+						"Any of these effects might appear in the area around a gold dragon's lair, in addition to or instead of the effects described in the {@i Monster Manual}:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Beneficent Trail.",
+									"entry": "Within 10 miles of the dragon's lair, small runes in the shape of a gold dragon appear to creatures in great need, marking a subtle trail leading to the dragon's lair."
+								},
+								{
+									"type": "item",
+									"name": "Emanation of Justice.",
+									"entry": "Creatures that spend a year within 6 miles of the dragon's lair value fairness and justice over their personal feelings."
+								},
+								{
+									"type": "item",
+									"name": "Liar's Revelation.",
+									"entry": "Within 6 miles of the dragon's lair, any creature attempting to tell a deliberate lie must succeed on a DC 15 Charisma saving throw or find itself accidentally revealing the truth it was attempting to conceal. The first time a creature fails this saving throw, it is immune to this effect for 24 hours."
+								}
+							]
+						}
+					],
+					"source": "FTD"
+				}
 			]
 		},
 		{
@@ -1824,6 +1641,11 @@
 		{
 			"name": "Green Dragon",
 			"source": "MM",
+			"additionalSources": [
+				{
+					"source": "FTD"
+				}
+			],
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon takes a lair action to cause one of the following effects; the dragon can't use the same effect two rounds in a row:",
 				{
@@ -1833,6 +1655,30 @@
 						"A wall of tangled brush bristling with thorns springs into existence on a solid surface within 120 feet of the dragon. The wall is up to 60 feet long, 10 feet high, and 5 feet thick, and it blocks line of sight. When the wall appears, each creature in its area must make a {@dc 15} Dexterity saving throw. A creature that fails the save takes 18 ({@damage 4d8}) piercing damage and is pushed 5 feet out of the wall's space, appearing on whichever side of the wall it wants. A creature can move through the wall, albeit slowly and painfully. For every 1 foot a creature travels through the wall, it must spend 4 feet of movement. Furthermore, a creature in the wall's space must make a {@dc 15} Dexterity saving throw once each round it's in contact with the wall, taking 18 ({@damage 4d8}) piercing damage on a failed save, or half as much damage on a successful one. Each 10-foot section of wall has AC 5, 15 hit points, vulnerability to fire damage, resistance to bludgeoning and piercing damage, and immunity to psychic damage. The wall sinks back into the ground when the dragon uses this lair action again or when the dragon dies.",
 						"Magical fog billows around one creature the dragon can see within 120 feet of it. The creature must succeed on a {@dc 15} Wisdom saving throw or be {@condition charmed} by the dragon until initiative count 20 on the next round."
 					]
+				},
+				{
+					"type": "entries",
+					"name": "Additional Lair Actions",
+					"entries": [
+						"At your discretion, a legendary ({@creature Adult Green Dragon||adult} or {@creature Ancient Green Dragon||ancient}) green dragon can use one or both of the following additional lair actions while in its lair:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Creeper Vines.",
+									"entry": "The dragon can use the vines and roots within its lair to animate up to three Humanoid corpses, which become {@creature Zombie||zombies}. The zombies take their turn immediately after this lair action. Each one reverts to an inanimate corpse after 1 minute, when the dragon uses this lair action again, or when the zombie is destroyed."
+								},
+								{
+									"type": "item",
+									"name": "Lashing Root.",
+									"entry": "One large root or branch that is part of the lair makes a melee attack roll against a creature within 10 feet of it. It has a +7 bonus to hit and deals 10 ({@dice 3d6}) bludgeoning damage on a hit. If the target is a Medium or smaller creature, it must succeed on a DC 15 Strength saving throw or be knocked {@condition prone}."
+								}
+							]
+						}
+					],
+					"source": "FTD"
 				}
 			],
 			"regionalEffects": [
@@ -1846,7 +1692,31 @@
 						"Rodents and birds within 1 mile of the dragon's lair serve as the dragon's eyes and ears. Deer and other large game are strangely absent, hinting at the presence of an unnaturally hungry predator."
 					]
 				},
-				"If the dragon dies, the rodents and birds lose their supernatural link to it. The thickets remain, but within {@dice 1d10} days, they become mundane plants and normal difficult terrain, losing their thorns."
+				"If the dragon dies, the rodents and birds lose their supernatural link to it. The thickets remain, but within {@dice 1d10} days, they become mundane plants and normal difficult terrain, losing their thorns.",
+				{
+					"type": "entries",
+					"name": "Additional Regional Effects",
+					"entries": [
+						"Either or both of these effects might appear in the area around a green dragon's lair, in addition to or instead of those described in the {@i Monster Manual}:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Inviting Whispers.",
+									"entry": "Whispers rustle in the foliage within 1 mile of the dragon's lair. The words are indistinct, but a creature with an Intelligence score of 5 or higher interprets them as an invitation to move deeper into the greenery."
+								},
+								{
+									"type": "item",
+									"name": "Twisted Messengers.",
+									"entry": "The dragon can cause any Tiny Beast within 1 mile of its lair to act as its mouthpiece. The effect is horrendous, as the creature's throat and mouth temporarily warp into a twisted version of the dragon's own in order to allow the dragon's voice to issue forth."
+								}
+							]
+						}
+					],
+					"source": "FTD"
+				}
 			]
 		},
 		{
@@ -1967,7 +1837,6 @@
 				"You might foreshadow Hythonia using her mythic trait by describing her skin cracking and turning pale as she suffers wounds. Read or paraphrase the following text when Hythonia finally uses her Shed Skin trait:",
 				{
 					"type": "insetReadaloud",
-					"id": "3ed",
 					"entries": [
 						"The medusa's skin cracks, turns a lifeless gray, and shatters! The monster crumbles to dust\u2014but what clatters to the ground isn't scale and bone, but hollow stone. The sound of rippling coils precedes the medusa rising up anew, the last of her shed skin dropping away, revealing glistening, unscarred scales."
 					]
@@ -2265,6 +2134,54 @@
 			]
 		},
 		{
+			"name": "Moonstone Dragon",
+			"source": "FTD",
+			"lairActions": [
+				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Banish into Dream.",
+							"entry": "The dragon targets a creature it can see within 120 feet of it and attempts to send that creature to a dream plane. The target must succeed on a DC 15 Charisma saving throw or be banished to a harmless demiplane until initiative count 20 on the next round. While there, the target is stunned. When the effect ends, the target reappears in the space it left or in the nearest unoccupied space."
+						},
+						{
+							"type": "item",
+							"name": "Compulsive Dance.",
+							"entry": "The dragon targets a creature it can see in its lair, and a merry waltz begins to play that only the target can hear. The target must succeed on a DC 15 Intelligence saving throw or dance until initiative count 20 on the following round. The dancing creature is incapacitated and must use all its movement to dance."
+						},
+						{
+							"type": "item",
+							"name": "Disorienting Visions.",
+							"entry": "Disorienting illusory images flit through the dragon's lair. Each creature in the lair must succeed on a DC 20 Wisdom saving throw or have disadvantage on ability checks until initiative count 20 on the following round."
+						}
+					]
+				}
+			],
+			"regionalEffects": [
+				"The region surrounding a legendary moonstone dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Dream Communication.",
+							"entry": "Whenever a creature that can understand a language sleeps or enters a state of trance or reverie within 6 miles of the dragon's lair, the dragon can establish telepathic contact with that creature and converse with it in its dreams. The creature remembers its conversation with the dragon upon waking."
+						},
+						{
+							"type": "item",
+							"name": "Planar Transition.",
+							"entry": "The veil between planes is thinned near a moonstone dragon's lair. Various portals link the Material Plane, the Feywild, and the Border Ethereal within 6 miles of the lair. Creatures can pass through a portal in either direction by spending 5 feet of movement."
+						}
+					]
+				},
+				"If the dragon dies, any portals near the lair close immediately."
+			]
+		},
+		{
 			"name": "Morkoth",
 			"source": "VGM",
 			"lairActions": [
@@ -2522,6 +2439,11 @@
 		{
 			"name": "Red Dragon",
 			"source": "MM",
+			"additionalSources": [
+				{
+					"source": "FTD"
+				}
+			],
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon takes a lair action to cause one of the following effects; the dragon can't use the same effect two rounds in a row:",
 				{
@@ -2531,6 +2453,30 @@
 						"A tremor shakes the lair in a 60-foot radius around the dragon. Each creature other than the dragon on the ground in that area must succeed on a {@dc 15} Dexterity saving throw or be knocked {@condition prone}.",
 						"Volcanic gases form a cloud in a 20-foot-radius sphere centered on a point the dragon can see within 120 feet of it. The sphere spreads around corners, and its area is lightly obscured. It lasts until initiative count 20 on the next round. Each creature that starts its turn in the cloud must succeed on a {@dc 13} Constitution saving throw or be {@condition poisoned} until the end of its turn. While {@condition poisoned} in this way, a creature is {@condition incapacitated}."
 					]
+				},
+				{
+					"type": "entries",
+					"name": "Additional Lair Actions",
+					"entries": [
+						"At your discretion, a legendary ({@creature Adult Red Dragon||adult} or {@creature Ancient Red Dragon||ancient}) red dragon can use one or both of the following additional lair actions while in its lair:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Noxious Smoke.",
+									"entry": "A cloud of thick, dark smoke fills a 20-foot-radius sphere centered on a point the dragon can see within 120 feet of it. The sphere spreads around corners, and its area is {@book heavily obscured|PHB|8|Vision and Light}. A creature other than the dragon that starts its turn in the cloud or enters it for the first time on its turn must succeed on a DC 15 Constitution saving throw or be {@condition poisoned} until the end of its turn. The cloud lasts until initiative count 20 on the next round."
+								},
+								{
+									"type": "item",
+									"name": "Searing Heat.",
+									"entry": "Searing heat spreads out in a 15-foot-radius sphere centered on a point the dragon can see within 120 feet of it. Any creature that enters the affected area or starts its turn there must make a DC 15 Constitution saving throw, taking 10 ({@dice 3d6}) fire damage on a failed save, or half as much damage on a successful one. The heat lasts until initiative count 20 on the next round."
+								}
+							]
+						}
+					],
+					"source": "FTD"
 				}
 			],
 			"regionalEffects": [
@@ -2543,7 +2489,94 @@
 						"Rocky fissures within 1 mile of the dragon's lair form portals to the Elemental Plane of Fire, allowing creatures of elemental fire into the world to dwell nearby."
 					]
 				},
-				"If the dragon dies, these effects fade over the course of {@dice 1d10} days."
+				"If the dragon dies, these effects fade over the course of {@dice 1d10} days.",
+				{
+					"type": "entries",
+					"name": "Additional Regional Effects",
+					"entries": [
+						"Any of these effects might appear in the area around a red dragon's lair, in addition to or instead of the effects described in the {@i Monster Manual}:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Desertification.",
+									"entry": "Precipitation is almost nonexistent within 6 miles of the dragon's lair, making the land parched and arid and most plant life withered and brown."
+								},
+								{
+									"type": "item",
+									"name": "Fiery Senses.",
+									"entry": "The dragon can hear up to 30 feet through any open flame within 1 mile of the dragon's lair."
+								},
+								{
+									"type": "item",
+									"name": "Ominous Flames.",
+									"entry": "Open flames within 6 miles of the dragon's lair are tinged dark red, hiss and crackle constantly, and throw off embers and showers of sparks."
+								}
+							]
+						}
+					],
+					"source": "FTD"
+				}
+			]
+		},
+		{
+			"name": "Sapphire Dragon",
+			"source": "FTD",
+			"lairActions": [
+				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Awesome Thunder.",
+							"entry": "A thunderous detonation of sound that can be heard up to 300 feet away surrounds one creature in the lair that the dragon can see. That creature must succeed on a DC 15 Constitution saving throw or take 13 ({@dice 3d8}) thunder damage and be stunned until the end of its next turn."
+						},
+						{
+							"type": "item",
+							"name": "Beguiling Whisper.",
+							"entry": "The dragon telepathically whispers to one creature within range of the dragon's telepathy. The creature must succeed on a DC 15 Wisdom saving throw or be charmed by the dragon until initiative count 20 on the next round. A creature charmed in this way obeys to the best of its ability any command the dragon issues that isn't directly harmful to the creature."
+						},
+						{
+							"type": "item",
+							"name": "Stone Passage.",
+							"entry": "The dragon touches a section of stone up to 30 feet in any dimension. The dragon can shape the stone to open or close a passage through a wall, as long as the wall is less than 10 feet thick."
+						}
+					]
+				}
+			],
+			"regionalEffects": [
+				"The region surrounding a legendary sapphire dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Crystal Profusion.",
+							"entry": "Natural stone within 6 miles of the lair grows plentiful crystal formations and veins of sapphire gemstones, particularly underground."
+						},
+						{
+							"type": "item",
+							"name": "Stony Sight.",
+							"entry": "Natural stone within 6 miles of the lair is a conduit for the dragon's psionic presence. As an action, the dragon can cast the clairvoyance spell, requiring no spell components and targeting any natural stone formation in that region."
+						},
+						{
+							"type": "item",
+							"name": "Telepathic Enhancement.",
+							"entry": "The dragon's psionic energy enhances the mental powers of other creatures. Any creature capable of telepathic communication has its telepathy range doubled while within 1 mile of the lair. This includes creatures with innate telepathy and magical telepathy such as the Rary's telepathic bond spell."
+						},
+						{
+							"type": "item",
+							"name": "Thriving Wildlife.",
+							"entry": "Giant spiders (a sapphire dragon's favorite prey) are attracted to the area within 6 miles of the lair and settle there in large numbers."
+						}
+					]
+				},
+				"If the dragon dies, the population of giant spiders in the region returns to normal levels over the course of {@dice 1d10} days. The enhancement of telepathic abilities ends immediately. The existing abundance of crystals and sapphires remains, but new ones form at a normal rate."
 			]
 		},
 		{
@@ -2637,8 +2670,61 @@
 			}
 		},
 		{
+			"name": "Shadow Dragon",
+			"source": "FTB",
+			"lairActions": [
+				{
+					"type": "entries",
+					"name": "Additional Lair Action",
+					"entries": [
+						"Shadow dragons have access to the lair actions usable by untransformed dragons of the same kind. The effects of these actions might be cosmetically altered, seeming darker, gloomier, and more subdued. They might also deal necrotic damage instead of other damage types. At your discretion, a legendary (adult or ancient) shadow dragon can use the following additional lair action while in its lair:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Banish Light.",
+									"entry": "Any nonmagical source of illumination within a 60-foot-radius sphere centered on the dragon is snuffed out, and any spell that creates light within that same area is dispelled."
+								}
+							]
+						}
+					]
+				}
+			],
+			"regionalEffects": [
+				"When a shadow dragon establishes a lair on the Material Plane, the region around the lair takes on some of the characteristics of the Shadowfell, creating one or more of the following effects:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Brooding Despair.",
+							"entry": "Creatures within 1 mile of the dragon's lair that have an Intelligence score of 5 or higher feel forlorn and hopeless."
+						},
+						{
+							"type": "item",
+							"name": "Dying Light.",
+							"entry": "Light is diminished within 6 miles of the dragon's lair, {@book lightly obscuring|PHB|8|Vision and Light} the land in gloomy shadows."
+						},
+						{
+							"type": "item",
+							"name": "Gloomy Portals.",
+							"entry": "Some caves, caverns, pits, and other places of deep gloom within 1 mile of the dragon's lair form portals to the Shadowfell, allowing creatures from that plane to dwell nearby."
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "Silver Dragon",
 			"source": "MM",
+			"additionalSources": [
+				{
+					"source": "FTD"
+				}
+			],
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon takes a lair action to cause one of the following effects:",
 				{
@@ -2647,6 +2733,25 @@
 						"The dragon creates fog as if it had cast the {@spell fog cloud} spell. The fog lasts until initiative count 20 on the next round.",
 						"A blisteringly cold wind blows through the lair near the dragon. Each creature within 120 feet of the dragon must succeed on a {@dc 15} Constitution saving throw or take 5 ({@damage 1d10}) cold damage. Gases and vapors are dispersed by the wind, and unprotected flames are extinguished. Protected flames, such as lanterns, have a {@chance 50|50 percent} chance of being extinguished."
 					]
+				},
+				{
+					"type": "entries",
+					"name": "Additional Lair Action",
+					"entries": [
+						"At your discretion, a legendary ({@creature Adult Silver Dragon||adult} or {@creature Ancient Silver Dragon||ancient}) silver dragon can use the following additional lair action while in its lair:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Icy Grip.",
+									"entry": "A sudden, supernatural chill fills the lair near the dragon. Each creature of the dragon's choice that it can see within 120 feet of it must succeed on a DC 15 Constitution saving throw or be {@condition restrained} until initiative count 20 on the next round. Creatures that have resistance to cold damage have advantage on the saving throw; creatures that have immunity to cold damage succeed automatically."
+								}
+							]
+						}
+					],
+					"source": "FTD"
 				}
 			],
 			"regionalEffects": [
@@ -2763,6 +2868,64 @@
 			]
 		},
 		{
+			"name": "Topaz Dragon",
+			"source": "FTD",
+			"lairActions": [
+				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Beguiling Whisper.",
+							"entry": "The dragon telepathically whispers to one creature within range of the dragon's telepathy. The creature must succeed on a DC 15 Wisdom saving throw or be charmed by the dragon until initiative count 20 on the next round. A creature charmed in this way obeys to the best of its ability any command the dragon issues that isn't directly harmful to the creature."
+						},
+						{
+							"type": "item",
+							"name": "Cancellation.",
+							"entry": "The dragon chooses an active spell of 5th level or lower that it's aware of in the lair and ends the spell."
+						},
+						{
+							"type": "item",
+							"name": "Negative Energy Infusion.",
+							"entry": "Up to two creatures the dragon can see within the lair must each succeed on a DC 15 Constitution saving throw or take 14 ({@dice 4d6}) necrotic damage. Negative energy then infuses the lair until initiative count 20 on the next round. While the infusion lasts, creatures in the lair other than the dragon can't regain hit points."
+						}
+					]
+				}
+			],
+			"regionalEffects": [
+				"The region surrounding a legendary topaz dragon's lair is altered by the dragon's magic, creating one or more of the following effects:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Crystal Profusion.",
+							"entry": "Natural stone within 6 miles of the lair grows plentiful crystal formations and veins of topaz gemstones, particularly underground."
+						},
+						{
+							"type": "item",
+							"name": "Negative Energy.",
+							"entry": "When a creature finishes a long rest within 6 miles of the lair, the creature must first succeed on a DC 15 Constitution saving throw or be unable to reduce its levels of exhaustion or regain spent Hit Dice. Creatures resistant or immune to necrotic damage are immune to this regional effect."
+						},
+						{
+							"type": "item",
+							"name": "Thriving Wildlife.",
+							"entry": "Giant squid are attracted to the sea within 6 miles of the lair, migrating and hunting there in large numbers."
+						},
+						{
+							"type": "item",
+							"name": "Watery Sight.",
+							"entry": "Water within 6 miles of the lair is a conduit for the dragon's psionic presence. As an action, the dragon can cast the clairvoyance spell, requiring no spell components and targeting any body of water in that region."
+						}
+					]
+				},
+				"If the dragon dies, the population of giant squid in the region returns to normal levels over the course of {@dice 1d10} days. The existing abundance of crystals and topazes remains, but new ones form at a normal rate."
+			]
+		},
+		{
 			"name": "Tromokratis",
 			"source": "MOT",
 			"mythicEncounter": [
@@ -2849,6 +3012,11 @@
 		{
 			"name": "White Dragon",
 			"source": "MM",
+			"additionalSources": [
+				{
+					"source": "FTD"
+				}
+			],
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon takes a lair action to cause one of the following effects; the dragon can't use the same effect two rounds in a row:",
 				{
@@ -2858,6 +3026,30 @@
 						"Jagged ice shards fall from the ceiling, striking up to three creatures underneath that the dragon can see within 120 feet of it. The dragon makes one ranged attack roll ({@hit 7} to hit) against each target. On a hit, the target takes 10 ({@damage 3d6}) piercing damage.",
 						"The dragon creates an opaque wall of ice on a solid surface it can see within 120 feet of it. The wall can be up to 30 feet long, 30 feet high, and 1 foot thick. When the wall appears, each creature within its area is pushed 5 feet out of the wall's space; appearing on whichever side of the wall it wants. Each 10-foot section of the wall has AC 5, 30 hit points, vulnerability to fire damage, and immunity to acid, cold, necrotic, poison, and psychic damage. The wall disappears when the dragon uses this lair action again or when the dragon dies."
 					]
+				},
+				{
+					"type": "entries",
+					"name": "Additional Lair Actions",
+					"entries": [
+						"At your discretion, a legendary ({@creature Adult White Dragon||adult} or {@creature Ancient White Dragon||ancient}) white dragon can use one or both of the following additional lair actions while in its lair:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Blinding Sleet.",
+									"entry": "Driving sleet falls in a 40-foot-high, 20-foot-radius cylinder centered on a point the dragon can see within 120 feet of it. Each creature in that area must succeed on a DC 15 Constitution saving throw or be {@condition blinded} until initiative count 20 on the next round."
+								},
+								{
+									"type": "item",
+									"name": "Whirling Wind.",
+									"entry": "A strong wind blows in a 30-foot-radius sphere centered on the dragon (see the {@book Dungeon Master's Guide|DMG} for rules on {@book strong wind|DMG|5|Strong Wind}). The dragon's flying is not affected by this wind, which lasts until the next time the dragon uses a lair action or until the dragon dies."
+								}
+							]
+						}
+					],
+					"source": "FTD"
 				}
 			],
 			"regionalEffects": [
@@ -2871,7 +3063,31 @@
 						"If the dragon wishes to move through a wall, it can do so without slowing down. The portion of the wall the dragon moves through is destroyed, however."
 					]
 				},
-				"If the dragon dies, the fog and precipitation fade within 1 day. The ice walls melt over the course of {@dice 1d10} days."
+				"If the dragon dies, the fog and precipitation fade within 1 day. The ice walls melt over the course of {@dice 1d10} days.",
+				{
+					"type": "entries",
+					"name": "Additional Regional Effects",
+					"entries": [
+						"Any of these effects might appear in the area around a white dragon's lair, in addition to or instead of the effects described in the {@i Monster Manual}:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Biting Chill.",
+									"entry": "Extreme cold envelops the land within 6 miles of the dragon's lair (see the {@book Dungeon Master's Guide|DMG} for rules on {@book extreme cold|DMG|5|Extreme Cold}). If the climate in the area already features extreme cold, the cold is numbing, giving creatures in the area without immunity or resistance to cold damage disadvantage on Strength and Dexterity checks."
+								},
+								{
+									"type": "item",
+									"name": "Mirror Ice.",
+									"entry": "The icy surfaces in the dragon's lair reflect light like mirrors, giving creatures in the lair other than the dragon disadvantage on Dexterity ({@skill Stealth}) checks made to hide. In addition, at each intersection or branching passage, any creature other than the dragon has a 50 percent chance of going in a different direction from the direction it intends."
+								}
+							]
+						}
+					],
+					"source": "FTD"
+				}
 			]
 		},
 		{

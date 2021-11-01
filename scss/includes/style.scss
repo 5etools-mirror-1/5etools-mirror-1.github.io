@@ -1076,10 +1076,11 @@ div#lootoutput {
 	}
 
 	&stat-header-underline {
-		font-size: 1.6rem;
+		font-size: 18px;
+		line-height: 23px;
 		font-family: "Times New Roman", serif;
 		font-variant: small-caps;
-		border-bottom: 2px solid $rgb-name-red;
+		border-bottom: 1px solid $rgb-name-red;
 		color: $rgb-name-red;
 		vertical-align: bottom !important;
 		padding-left: 0.2rem;

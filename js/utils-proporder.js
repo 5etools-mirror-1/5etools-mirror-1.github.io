@@ -372,6 +372,9 @@ PropOrder._TRAIT = [
 PropOrder._LEGENDARY_GROUP = [
 	"name",
 	"source",
+	"page",
+
+	"additionalSources",
 
 	new PropOrder._ObjectKey("_copy", {
 		order: [

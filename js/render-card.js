@@ -274,11 +274,11 @@ class RendererCard {
 	_renderBonusSpeed (entry, textStack, meta, options) {
 		// (Use base implementation)
 	}
+	*/
 
 	_renderDice (entry, textStack, meta, options) {
-		// (Use base implementation)
+		textStack[0] += Renderer.getEntryDiceDisplayText(entry);
 	}
-	*/
 
 	_renderLink (entry, textStack, meta, options) {
 		this._recursiveRender(entry.text, textStack, meta);
@@ -411,11 +411,18 @@ class RendererCard {
 			if (!s) continue;
 			if (s.startsWith("{@")) {
 				const [tag, text] = Renderer.splitFirstSpace(s.slice(1, -1));
-				this._renderString_renderTag(textStack, meta, options, tag, text);
+				if (!this._renderString_renderTag_card(textStack, meta, options, tag, text)) this._renderString_renderTag(textStack, meta, options, tag, text);
 			} else {
 				if (textStack[0].last() === "\n" || !textStack[0].last()) textStack[0] += `text | `;
 				textStack[0] += s;
 			}
+		}
+	}
+
+	_renderString_renderTag_card (textStack, meta, options, tag, text) {
+		switch (tag) {
+			case "@dc": { textStack[0] += `DC ${text}`; return true; }
+			default: return false;
 		}
 	}
 

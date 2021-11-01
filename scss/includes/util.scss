@@ -133,6 +133,10 @@ i > i {
 .copyable {
 	cursor: copy !important;
 }
+
+.ve-draggable {
+	cursor: grab;
+}
 // endregion
 
 // region Events

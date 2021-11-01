@@ -4016,26 +4016,22 @@
 		{
 			"name": "Sekelok",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "ToA",
 			"page": 120,
 			"_copy": {
 				"name": "Champion",
 				"source": "VGM",
+				"_trait": {
+					"name": "Yuan-ti Pureblood",
+					"source": "VGM"
+				},
 				"_mod": {
 					"*": {
 						"mode": "replaceTxt",
 						"replace": "the champion",
 						"with": "Sekelok",
 						"flags": "i"
-					},
-					"trait": {
-						"mode": "prependArr",
-						"items": {
-							"name": "Magic Resistance",
-							"entries": [
-								"Sekelok has advantage on saving throws against spells and other magical effects."
-							]
-						}
 					}
 				}
 			},
@@ -4049,38 +4045,6 @@
 					"from": [
 						"natural armor"
 					]
-				}
-			],
-			"senses": [
-				"darkvision 60 ft."
-			],
-			"immune": [
-				"poison"
-			],
-			"conditionImmune": [
-				"poisoned"
-			],
-			"languages": [
-				"Abyssal",
-				"Common",
-				"Draconic"
-			],
-			"spellcasting": [
-				{
-					"name": "Innate Spellcasting",
-					"headerEntries": [
-						"Sekelok's spellcasting ability is Charisma (spell save {@dc 13}). Sekelok can innately cast the following spells, requiring no material components:"
-					],
-					"will": [
-						"{@spell animal friendship} (snakes only)",
-						"{@spell poison spray}"
-					],
-					"daily": {
-						"3e": [
-							"{@spell suggestion}"
-						]
-					},
-					"ability": "cha"
 				}
 			],
 			"traitTags": [

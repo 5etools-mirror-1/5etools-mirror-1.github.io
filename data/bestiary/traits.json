@@ -1956,6 +1956,68 @@
 			}
 		},
 		{
+			"name": "Legendary Shadow Dragon",
+			"source": "MM",
+			"page": 84,
+			"apply": {
+				"_root": {
+					"legendaryGroup": {
+						"name": "Shadow Dragon",
+						"source": "FTB"
+					}
+				},
+				"_mod": {
+					"_": [
+						{
+							"mode": "addSkills",
+							"skills": {
+								"stealth": 2
+							}
+						}
+					],
+					"resist": {
+						"mode": "appendIfNotExistsArr",
+						"items": "necrotic"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"name": "Living Shadow",
+								"entries": [
+									"While in dim light or darkness, the dragon has resistance to damage that isn't force, psychic, or radiant."
+								]
+							},
+							{
+								"name": "Shadow Stealth",
+								"entries": [
+									"While in dim light or darkness, the dragon can take the {@action Hide} action as a bonus action."
+								]
+							},
+							{
+								"name": "Sunlight Sensitivity",
+								"entries": [
+									"While in sunlight, the dragon has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+								]
+							}
+						]
+					},
+					"action": [
+						{
+							"mode": "replaceTxt",
+							"replace": "(acid|cold|fire|lightning|poison)",
+							"with": "necrotic"
+						},
+						{
+							"mode": "replaceTxt",
+							"replace": "(Acid|Cold|Fire|Lightning|Poison)",
+							"with": "Necrotic"
+						}
+					]
+				}
+			}
+		},
+		{
 			"name": "Lizardfolk",
 			"source": "DMG",
 			"page": 282,
@@ -2260,62 +2322,6 @@
 							}
 						]
 					}
-				}
-			}
-		},
-		{
-			"name": "Shadow Dragon",
-			"source": "MM",
-			"page": 84,
-			"apply": {
-				"_mod": {
-					"_": [
-						{
-							"mode": "addSkills",
-							"skills": {
-								"stealth": 2
-							}
-						}
-					],
-					"resist": {
-						"mode": "appendIfNotExistsArr",
-						"items": "necrotic"
-					},
-					"trait": {
-						"mode": "appendArr",
-						"items": [
-							{
-								"name": "Living Shadow",
-								"entries": [
-									"While in dim light or darkness, the dragon has resistance to damage that isn't force, psychic, or radiant."
-								]
-							},
-							{
-								"name": "Shadow Stealth",
-								"entries": [
-									"While in dim light or darkness, the dragon can take the {@action Hide} action as a bonus action."
-								]
-							},
-							{
-								"name": "Sunlight Sensitivity",
-								"entries": [
-									"While in sunlight, the dragon has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
-								]
-							}
-						]
-					},
-					"action": [
-						{
-							"mode": "replaceTxt",
-							"replace": "(acid|cold|fire|lightning|poison)",
-							"with": "necrotic"
-						},
-						{
-							"mode": "replaceTxt",
-							"replace": "(Acid|Cold|Fire|Lightning|Poison)",
-							"with": "Necrotic"
-						}
-					]
 				}
 			}
 		},
@@ -2634,6 +2640,81 @@
 								"name": "Mask of the Wild",
 								"entries": [
 									"<$title_short_name$> can attempt to {@action hide} even when they are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
+								]
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"name": "Yuan-ti Pureblood",
+			"source": "VGM",
+			"page": 120,
+			"ref": "{@race Yuan-ti Pureblood|VGM}",
+			"apply": {
+				"_root": {
+					"type": {
+						"type": "humanoid",
+						"tags": [
+							"yuan-ti"
+						]
+					},
+					"speed": 35
+				},
+				"_mod": {
+					"_": [
+						{
+							"mode": "addSenses",
+							"senses": {
+								"type": "darkvision",
+								"range": 60
+							}
+						}
+					],
+					"immune": {
+						"mode": "appendIfNotExistsArr",
+						"items": "poison"
+					},
+					"conditionImmune": {
+						"mode": "appendIfNotExistsArr",
+						"items": "poisoned"
+					},
+					"languages": {
+						"mode": "appendIfNotExistsArr",
+						"items": [
+							"Abyssal",
+							"Draconic"
+						]
+					},
+					"spellcasting": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"name": "Innate Spellcasting",
+								"headerEntries": [
+									"<$title_short_name$>'s innate spellcasting ability is Charisma (spell save DC <$spell_dc__cha$>). <$title_short_name$> can innately cast the following spells, requiring no material components:"
+								],
+								"will": [
+									"{@spell animal friendship} (snakes only)",
+									"{@spell poison spray}"
+								],
+								"daily": {
+									"3e": [
+										"{@spell suggestion}"
+									]
+								},
+								"ability": "cha"
+							}
+						]
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"name": "Magic Resistance",
+								"entries": [
+									"<$title_short_name$> has advantage on saving throws against spells and other magical effects."
 								]
 							}
 						]

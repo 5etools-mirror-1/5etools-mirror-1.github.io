@@ -1606,6 +1606,539 @@
 			]
 		}
 	],
+	"dragon": [
+		{
+			"name": "Wyrmling",
+			"source": "FTD",
+			"page": 72,
+			"coins": {
+				"cp": "12d6*100",
+				"sp": "6d6*100",
+				"gp": "4d6*10"
+			},
+			"dragonMundaneItems": {
+				"amount": "1d6"
+			},
+			"gems": {
+				"typeTable": [
+					{
+						"min": 1,
+						"max": 43,
+						"type": 10
+					},
+					{
+						"min": 44,
+						"max": 99,
+						"type": 50
+					},
+					{
+						"min": 100,
+						"max": 100,
+						"type": 100
+					}
+				],
+				"amount": "2d8"
+			},
+			"artObjects": {
+				"typeTable": [
+					{
+						"min": 1,
+						"max": 95,
+						"type": 25
+					},
+					{
+						"min": 96,
+						"max": 100,
+						"type": 250
+					}
+				],
+				"amount": "1d4"
+			},
+			"magicItems": [
+				{
+					"typeTable": [
+						{
+							"min": 1,
+							"max": 34,
+							"type": "A",
+							"typeAltChoose": {
+								"rarity": "common",
+								"tier": "minor"
+							}
+						},
+						{
+							"min": 35,
+							"max": 61,
+							"type": "B",
+							"typeAltChoose": {
+								"rarity": "uncommon",
+								"tier": "minor"
+							}
+						},
+						{
+							"min": 62,
+							"max": 77,
+							"type": "C",
+							"typeAltChoose": {
+								"rarity": "rare",
+								"tier": "minor"
+							}
+						},
+						{
+							"min": 78,
+							"max": 96,
+							"type": "F",
+							"typeAltChoose": {
+								"rarity": "uncommon",
+								"tier": "major"
+							}
+						},
+						{
+							"min": 97,
+							"max": 100,
+							"type": "G",
+							"typeAltChoose": {
+								"rarity": "rare",
+								"tier": "major"
+							}
+						}
+					],
+					"amount": "1d8"
+				}
+			]
+		},
+		{
+			"name": "Adult",
+			"source": "FTD",
+			"page": 72,
+			"coins": {
+				"cp": "12d6*100",
+				"sp": "4d6*1000",
+				"gp": "8d6*1000",
+				"pp": "10d6*100"
+			},
+			"dragonMundaneItems": {
+				"amount": "2d6"
+			},
+			"gems": {
+				"typeTable": [
+					{
+						"min": 1,
+						"max": 18,
+						"type": 10
+					},
+					{
+						"min": 19,
+						"max": 36,
+						"type": 50
+					},
+					{
+						"min": 37,
+						"max": 54,
+						"type": 100
+					},
+					{
+						"min": 55,
+						"max": 77,
+						"type": 500
+					},
+					{
+						"min": 78,
+						"max": 99,
+						"type": 1000
+					},
+					{
+						"min": 100,
+						"max": 100,
+						"type": 5000
+					}
+				],
+				"amount": "6d6"
+			},
+			"artObjects": {
+				"typeTable": [
+					{
+						"min": 1,
+						"max": 49,
+						"type": 25
+					},
+					{
+						"min": 50,
+						"max": 75,
+						"type": 250
+					},
+					{
+						"min": 76,
+						"max": 99,
+						"type": 750
+					},
+					{
+						"min": 100,
+						"max": 100,
+						"type": 2500
+					}
+				],
+				"amount": "3d6"
+			},
+			"magicItems": [
+				{
+					"typeTable": [
+						{
+							"min": 1,
+							"max": 6,
+							"type": "A",
+							"typeAltChoose": {
+								"rarity": "common",
+								"tier": "minor"
+							}
+						},
+						{
+							"min": 7,
+							"max": 18,
+							"type": "B",
+							"typeAltChoose": {
+								"rarity": "uncommon",
+								"tier": "minor"
+							}
+						},
+						{
+							"min": 19,
+							"max": 41,
+							"type": "C",
+							"typeAltChoose": {
+								"rarity": "rare",
+								"tier": "minor"
+							}
+						},
+						{
+							"min": 42,
+							"max": 64,
+							"type": "D",
+							"typeAltChoose": {
+								"rarity": "very",
+								"tier": "rare"
+							}
+						},
+						{
+							"min": 65,
+							"max": 69,
+							"type": "E",
+							"typeAltChoose": {
+								"rarity": "legendary",
+								"tier": "minor"
+							}
+						},
+						{
+							"min": 70,
+							"max": 72,
+							"type": "F",
+							"typeAltChoose": {
+								"rarity": "uncommon",
+								"tier": "major"
+							}
+						},
+						{
+							"min": 73,
+							"max": 80,
+							"type": "G",
+							"typeAltChoose": {
+								"rarity": "rare",
+								"tier": "major"
+							}
+						},
+						{
+							"min": 81,
+							"max": 91,
+							"type": "H",
+							"typeAltChoose": {
+								"rarity": "very",
+								"tier": "rare"
+							}
+						},
+						{
+							"min": 92,
+							"max": 100,
+							"type": "I",
+							"typeAltChoose": {
+								"rarity": "legendary",
+								"tier": "major"
+							}
+						}
+					],
+					"amount": "1d8"
+				}
+			]
+		},
+		{
+			"name": "Young",
+			"source": "FTD",
+			"page": 72,
+			"coins": {
+				"cp": "12d6*100",
+				"sp": "4d6*1000",
+				"gp": "12d6*100",
+				"pp": "6d6*10"
+			},
+			"dragonMundaneItems": {
+				"amount": "1d8"
+			},
+			"gems": {
+				"typeTable": [
+					{
+						"min": 1,
+						"max": 51,
+						"type": 10
+					},
+					{
+						"min": 52,
+						"max": 75,
+						"type": 50
+					},
+					{
+						"min": 76,
+						"max": 99,
+						"type": 100
+					},
+					{
+						"min": 100,
+						"max": 100,
+						"type": 500
+					}
+				],
+				"amount": "6d6"
+			},
+			"artObjects": {
+				"typeTable": [
+					{
+						"min": 1,
+						"max": 53,
+						"type": 25
+					},
+					{
+						"min": 54,
+						"max": 99,
+						"type": 250
+					},
+					{
+						"min": 100,
+						"max": 100,
+						"type": 750
+					}
+				],
+				"amount": "2d4"
+			},
+			"magicItems": [
+				{
+					"typeTable": [
+						{
+							"min": 1,
+							"max": 21,
+							"type": "A",
+							"typeAltChoose": {
+								"rarity": "common",
+								"tier": "minor"
+							}
+						},
+						{
+							"min": 22,
+							"max": 49,
+							"type": "B",
+							"typeAltChoose": {
+								"rarity": "uncommon",
+								"tier": "minor"
+							}
+						},
+						{
+							"min": 50,
+							"max": 64,
+							"type": "C",
+							"typeAltChoose": {
+								"rarity": "rare",
+								"tier": "minor"
+							}
+						},
+						{
+							"min": 65,
+							"max": 72,
+							"type": "D",
+							"typeAltChoose": {
+								"rarity": "very",
+								"tier": "rare"
+							}
+						},
+						{
+							"min": 73,
+							"max": 91,
+							"type": "F",
+							"typeAltChoose": {
+								"rarity": "uncommon",
+								"tier": "major"
+							}
+						},
+						{
+							"min": 92,
+							"max": 97,
+							"type": "G",
+							"typeAltChoose": {
+								"rarity": "rare",
+								"tier": "major"
+							}
+						},
+						{
+							"min": 98,
+							"max": 100,
+							"type": "H",
+							"typeAltChoose": {
+								"rarity": "very",
+								"tier": "rare"
+							}
+						}
+					],
+					"amount": "1d8"
+				}
+			]
+		},
+		{
+			"name": "Ancient",
+			"source": "FTD",
+			"page": 72,
+			"coins": {
+				"cp": "12d6*100",
+				"sp": "4d6*1000",
+				"gp": "6d6*10000",
+				"pp": "12d6*1000"
+			},
+			"dragonMundaneItems": {
+				"amount": "2d8"
+			},
+			"gems": {
+				"typeTable": [
+					{
+						"min": 1,
+						"max": 14,
+						"type": 10
+					},
+					{
+						"min": 15,
+						"max": 28,
+						"type": 50
+					},
+					{
+						"min": 29,
+						"max": 42,
+						"type": 100
+					},
+					{
+						"min": 43,
+						"max": 58,
+						"type": 500
+					},
+					{
+						"min": 59,
+						"max": 93,
+						"type": 1000
+					},
+					{
+						"min": 94,
+						"max": 100,
+						"type": 5000
+					}
+				],
+				"amount": "6d6"
+			},
+			"artObjects": {
+				"typeTable": [
+					{
+						"min": 1,
+						"max": 22,
+						"type": 25
+					},
+					{
+						"min": 23,
+						"max": 42,
+						"type": 250
+					},
+					{
+						"min": 43,
+						"max": 58,
+						"type": 750
+					},
+					{
+						"min": 59,
+						"max": 93,
+						"type": 2500
+					},
+					{
+						"min": 94,
+						"max": 100,
+						"type": 7500
+					}
+				],
+				"amount": "2d10"
+			},
+			"magicItems": [
+				{
+					"typeTable": [
+						{
+							"min": 1,
+							"max": 12,
+							"type": "C",
+							"typeAltChoose": {
+								"rarity": "rare",
+								"tier": "minor"
+							}
+						},
+						{
+							"min": 13,
+							"max": 56,
+							"type": "D",
+							"typeAltChoose": {
+								"rarity": "very",
+								"tier": "rare"
+							}
+						},
+						{
+							"min": 57,
+							"max": 67,
+							"type": "E",
+							"typeAltChoose": {
+								"rarity": "legendary",
+								"tier": "minor"
+							}
+						},
+						{
+							"min": 68,
+							"max": 73,
+							"type": "G",
+							"typeAltChoose": {
+								"rarity": "rare",
+								"tier": "major"
+							}
+						},
+						{
+							"min": 74,
+							"max": 82,
+							"type": "H",
+							"typeAltChoose": {
+								"rarity": "very",
+								"tier": "rare"
+							}
+						},
+						{
+							"min": 83,
+							"max": 100,
+							"type": "I",
+							"typeAltChoose": {
+								"rarity": "legendary",
+								"tier": "major"
+							}
+						}
+					],
+					"amount": "2d6"
+				}
+			]
+		}
+	],
 	"gems": [
 		{
 			"name": "10 gp Gemstones",
@@ -4030,6 +4563,133 @@
 					"item": "{@item Tome of the Stilled Tongue}"
 				}
 			]
+		}
+	],
+	"dragonMundaneItems": [
+		{
+			"min": 1,
+			"max": 4,
+			"item": "A painting by an artist long forgotten by everyone except the dragon"
+		},
+		{
+			"min": 5,
+			"max": 8,
+			"item": "A hogshead (large cask) containing 65 gallons of clean drinking water"
+		},
+		{
+			"min": 9,
+			"max": 12,
+			"item": "Several embroidered throw pillows depicting wyrmling dragons"
+		},
+		{
+			"min": 13,
+			"max": 16,
+			"item": "A funerary urn containing remains the dragon can't identify"
+		},
+		{
+			"min": 17,
+			"max": 20,
+			"item": "A set of seven candlesticks bearing a god's holy symbol"
+		},
+		{
+			"min": 21,
+			"max": 24,
+			"item": "A tarnished brazier with pleasant-smelling ash"
+		},
+		{
+			"min": 25,
+			"max": 28,
+			"item": "A drum for use in religious rites, with a foreboding echo to its beat"
+		},
+		{
+			"min": 29,
+			"max": 32,
+			"item": "A stuffed Monstrosity appropriate to the local terrain"
+		},
+		{
+			"min": 33,
+			"max": 36,
+			"item": "The skull of a Fiend or Celestial"
+		},
+		{
+			"min": 37,
+			"max": 40,
+			"item": "A spinning wheel"
+		},
+		{
+			"min": 41,
+			"max": 44,
+			"item": "An hourglass filled with sparkling sand"
+		},
+		{
+			"min": 45,
+			"max": 48,
+			"item": "A crude flute with a pleasing sound"
+		},
+		{
+			"min": 49,
+			"max": 52,
+			"item": "Hundreds or thousands of fake coins interspersed with the real treasure"
+		},
+		{
+			"min": 53,
+			"max": 56,
+			"item": "A treatise on alchemy etched on steel cylinders"
+		},
+		{
+			"min": 57,
+			"max": 60,
+			"item": "The battle standard of one of the dragon's ancient foes"
+		},
+		{
+			"min": 61,
+			"max": 64,
+			"item": "A sketchbook from another world of the Material Plane, depicting unfamiliar creatures and one very familiar dragon"
+		},
+		{
+			"min": 65,
+			"max": 68,
+			"item": "A set of irregular polyhedral dice (with 9, 13, 25, and 34 sides)"
+		},
+		{
+			"min": 69,
+			"max": 72,
+			"item": "A map showing the dragon's lair in relation to villages and other long-gone landmarks"
+		},
+		{
+			"min": 73,
+			"max": 76,
+			"item": "A kneeling bench, which anyone addressing the dragon is required to use"
+		},
+		{
+			"min": 77,
+			"max": 80,
+			"item": "A scroll containing a long epic poem in praise of the dragon"
+		},
+		{
+			"min": 81,
+			"max": 84,
+			"item": "A star chart showing Bahamut and a one-headed Tiamat as constellations, with \"Elegy for the First World\" written between the stars"
+		},
+		{
+			"min": 85,
+			"max": 88,
+			"item": "A large, noisy wind chime"
+		},
+		{
+			"min": 89,
+			"max": 92,
+			"item": "A small shrine with a statuette, a brazier, and an altar dedicated to a god worshiped by many of the dragon's minions"
+		},
+		{
+			"min": 93,
+			"max": 96,
+			"item": "A jar with a dead illithid tadpole floating in preserving chemicals"
+		},
+		{
+			"min": 97,
+			"max": 100,
+			"item": "An extensive historical record in the form of carefully knotted strings"
 		}
 	]
 }

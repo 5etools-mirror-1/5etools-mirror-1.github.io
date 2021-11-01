@@ -116,9 +116,12 @@ class BookUtil {
 			BookUtil.$dispBook.append(Renderer.utils.getBorderTr());
 			this._showBookContent_renderNavButtons({isTop: true, ixChapter, bookId, data});
 			const textStack = [];
-			BookUtil._renderer.setFirstSection(true);
-			BookUtil._renderer.setLazyImages(true);
-			BookUtil._renderer.resetHeaderIndex();
+			BookUtil._renderer
+				.setFirstSection(true)
+				.setLazyImages(true)
+				.resetHeaderIndex()
+				.setHeaderIndexTableCaptions(true)
+				.setHeaderIndexImageTitles(true);
 			if (ixChapter === -1) {
 				BookUtil.curRender.allViewFirstTitleIndexes = [];
 				data.forEach(d => {
@@ -128,7 +131,10 @@ class BookUtil {
 			} else BookUtil._renderer.recursiveRender(data[ixChapter], textStack);
 			BookUtil.$dispBook.append(`<tr class="text"><td colspan="6" class="py-2 px-y">${Renderer.utils.getExcludedHtml(fromIndex, BookUtil.contentType, UrlUtil.getCurrentPage())}${textStack.join("")}</td></tr>`);
 			Renderer.initLazyImageLoaders();
-			BookUtil._renderer.setLazyImages(false);
+			BookUtil._renderer
+				.setLazyImages(false)
+				.setHeaderIndexTableCaptions(false)
+				.setHeaderIndexImageTitles(false);
 			this._showBookContent_renderNavButtons({ixChapter, bookId, data});
 
 			BookUtil.$dispBook.append(Renderer.utils.getBorderTr());

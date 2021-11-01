@@ -171,7 +171,7 @@
 				}
 			],
 			"legendaryGroup": {
-				"name": "Adult Amethyst Dragon",
+				"name": "Amethyst Dragon",
 				"source": "FTD"
 			},
 			"traitTags": [
@@ -373,7 +373,7 @@
 				}
 			],
 			"legendaryGroup": {
-				"name": "Adult Crystal Dragon",
+				"name": "Crystal Dragon",
 				"source": "FTD"
 			},
 			"traitTags": [
@@ -551,7 +551,7 @@
 				}
 			],
 			"legendaryGroup": {
-				"name": "Adult Deep Dragon",
+				"name": "Deep Dragon",
 				"source": "FTD"
 			},
 			"dragonCastingColor": "deep",
@@ -766,7 +766,7 @@
 				}
 			],
 			"legendaryGroup": {
-				"name": "Adult Emerald Dragon",
+				"name": "Emerald Dragon",
 				"source": "FTD"
 			},
 			"traitTags": [
@@ -924,19 +924,27 @@
 				{
 					"name": "Breath Weapon {@recharge 5}",
 					"entries": [
-						"The dragon uses one of the following breath weapons:"
-					]
-				},
-				{
-					"name": "Dream Breath",
-					"entries": [
-						"The dragon exhales mist in a 90-foot cone. Each creature in that area must succeed on a {@dc 18} Constitution saving throw or fall {@condition unconscious} for 10 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it."
-					]
-				},
-				{
-					"name": "Moonlight Breath",
-					"entries": [
-						"The dragon exhales a beam of moonlight in a 90-foot line that is 10 feet wide. Each creature in that area must make a {@dc 18} Dexterity saving throw, taking 49 ({@damage 9d10}) radiant damage on a failed save, or half as much damage on a successful one."
+						"The dragon uses one of the following breath weapons:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Dream Breath.",
+									"entries": [
+										"The dragon exhales mist in a 90-foot cone. Each creature in that area must succeed on a {@dc 18} Constitution saving throw or fall {@condition unconscious} for 10 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Moonlight Breath.",
+									"entries": [
+										"The dragon exhales a beam of moonlight in a 90-foot line that is 10 feet wide. Each creature in that area must make a {@dc 18} Dexterity saving throw, taking 49 ({@damage 9d10}) radiant damage on a failed save, or half as much damage on a successful one."
+									]
+								}
+							]
+						}
 					]
 				}
 			],
@@ -955,7 +963,7 @@
 				}
 			],
 			"legendaryGroup": {
-				"name": "Adult Moonstone Dragon",
+				"name": "Moonstone Dragon",
 				"source": "FTD"
 			},
 			"traitTags": [
@@ -1171,7 +1179,7 @@
 				}
 			],
 			"legendaryGroup": {
-				"name": "Adult Sapphire Dragon",
+				"name": "Sapphire Dragon",
 				"source": "FTD"
 			},
 			"traitTags": [
@@ -1385,7 +1393,7 @@
 				}
 			],
 			"legendaryGroup": {
-				"name": "Adult Topaz Dragon",
+				"name": "Topaz Dragon",
 				"source": "FTD"
 			},
 			"traitTags": [
@@ -1623,7 +1631,7 @@
 				"truesight 120 ft."
 			],
 			"passive": 25,
-			"resist": [
+			"immune": [
 				"force"
 			],
 			"conditionImmune": [
@@ -1953,7 +1961,7 @@
 				}
 			],
 			"legendaryGroup": {
-				"name": "Ancient Amethyst Dragon",
+				"name": "Amethyst Dragon",
 				"source": "FTD"
 			},
 			"traitTags": [
@@ -2156,7 +2164,7 @@
 				}
 			],
 			"legendaryGroup": {
-				"name": "Ancient Crystal Dragon",
+				"name": "Crystal Dragon",
 				"source": "FTD"
 			},
 			"traitTags": [
@@ -2335,7 +2343,7 @@
 				}
 			],
 			"legendaryGroup": {
-				"name": "Ancient Deep Dragon",
+				"name": "Deep Dragon",
 				"source": "FTD"
 			},
 			"dragonCastingColor": "deep",
@@ -2513,13 +2521,10 @@
 					]
 				}
 			],
+			"mythicHeader": [
+				"If the dragon turtle's Blessing of the Sea trait has activated in the last hour, it can use the options below as legendary actions."
+			],
 			"mythic": [
-				{
-					"name": "",
-					"entries": [
-						"If the dragon turtle's Blessing of the Sea trait has activated in the last hour, it can use the options below as legendary actions."
-					]
-				},
 				{
 					"name": "Bite",
 					"entries": [
@@ -2745,7 +2750,7 @@
 				}
 			],
 			"legendaryGroup": {
-				"name": "Ancient Emerald Dragon",
+				"name": "Emerald Dragon",
 				"source": "FTD"
 			},
 			"traitTags": [
@@ -2902,19 +2907,27 @@
 				{
 					"name": "Breath Weapon {@recharge 5}",
 					"entries": [
-						"The dragon uses one of the following breath weapons:"
-					]
-				},
-				{
-					"name": "Dream Breath",
-					"entries": [
-						"The dragon exhales mist in a 90-foot cone. Each creature in that area must succeed on a {@dc 21} Constitution saving throw or fall {@condition unconscious} for 10 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it."
-					]
-				},
-				{
-					"name": "Moonlight Breath",
-					"entries": [
-						"The dragon exhales a beam of moonlight in a 120-foot line that is 10 feet wide. Each creature in that area must make a {@dc 21} Dexterity saving throw, taking 60 ({@damage 11d10}) radiant damage on a failed save, or half as much damage on a successful one."
+						"The dragon uses one of the following breath weapons:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Dream Breath.",
+									"entries": [
+										"The dragon exhales mist in a 90-foot cone. Each creature in that area must succeed on a {@dc 21} Constitution saving throw or fall {@condition unconscious} for 10 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Moonlight Breath.",
+									"entries": [
+										"The dragon exhales a beam of moonlight in a 120-foot line that is 10 feet wide. Each creature in that area must make a {@dc 21} Dexterity saving throw, taking 60 ({@damage 11d10}) radiant damage on a failed save, or half as much damage on a successful one."
+									]
+								}
+							]
+						}
 					]
 				}
 			],
@@ -2933,7 +2946,7 @@
 				}
 			],
 			"legendaryGroup": {
-				"name": "Ancient Moonstone Dragon",
+				"name": "Moonstone Dragon",
 				"source": "FTD"
 			},
 			"traitTags": [
@@ -3146,7 +3159,7 @@
 				}
 			],
 			"legendaryGroup": {
-				"name": "Ancient Sapphire Dragon",
+				"name": "Sapphire Dragon",
 				"source": "FTD"
 			},
 			"traitTags": [
@@ -3507,7 +3520,7 @@
 				}
 			],
 			"legendaryGroup": {
-				"name": "Ancient Topaz Dragon",
+				"name": "Topaz Dragon",
 				"source": "FTD"
 			},
 			"traitTags": [
@@ -3801,19 +3814,27 @@
 				{
 					"name": "Breath Weapon {@recharge 5}",
 					"entries": [
-						"The aspect uses one of the following breath weapons:"
-					]
-				},
-				{
-					"name": "Exalting Breath",
-					"entries": [
-						"The aspect exhales the restoring winds of Mount Celestia in a 300-foot cone. Each creature in that area of the aspect's choice regains 71 ({@dice 13d10}) hit points, and each creature in that area of the aspect's choice that has been dead for no longer than 1 hour is restored to life with all its hit points."
-					]
-				},
-				{
-					"name": "Platinum Breath",
-					"entries": [
-						"The aspect exhales radiant platinum flames in a 300-foot cone. Each creature in that area must make a {@dc 26} Dexterity saving throw, taking 66 ({@damage 12d10}) radiant damage on a failed save, or half as much damage on a successful one."
+						"The aspect uses one of the following breath weapons:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Exalting Breath.",
+									"entries": [
+										"The aspect exhales the restoring winds of Mount Celestia in a 300-foot cone. Each creature in that area of the aspect's choice regains 71 ({@dice 13d10}) hit points, and each creature in that area of the aspect's choice that has been dead for no longer than 1 hour is restored to life with all its hit points."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Platinum Breath.",
+									"entries": [
+										"The aspect exhales radiant platinum flames in a 300-foot cone. Each creature in that area must make a {@dc 26} Dexterity saving throw, taking 66 ({@damage 12d10}) radiant damage on a failed save, or half as much damage on a successful one."
+									]
+								}
+							]
+						}
 					]
 				}
 			],
@@ -3839,13 +3860,10 @@
 					]
 				}
 			],
+			"mythicHeader": [
+				"If the aspect's Platinum Brilliance trait has activated in the last hour, he can use the options below as legendary actions."
+			],
 			"mythic": [
-				{
-					"name": "",
-					"entries": [
-						"If the aspect's Platinum Brilliance trait has activated in the last hour, he can use the options below as legendary actions."
-					]
-				},
 				{
 					"name": "Celestial Shield (Costs 2 Actions)",
 					"entries": [
@@ -4039,13 +4057,10 @@
 					]
 				}
 			],
+			"mythicHeader": [
+				"If the aspect's Chromatic Wrath trait has activated in the last hour, she can use the options below as legendary actions."
+			],
 			"mythic": [
-				{
-					"name": "",
-					"entries": [
-						"If the aspect's Chromatic Wrath trait has activated in the last hour, she can use the options below as legendary actions."
-					]
-				},
 				{
 					"name": "Hurl Through Avernus (Costs 2 Actions)",
 					"entries": [
@@ -4235,13 +4250,10 @@
 					]
 				}
 			],
+			"mythicHeader": [
+				"If the greatwyrm's Chromatic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
+			],
 			"mythic": [
-				{
-					"name": "",
-					"entries": [
-						"If the greatwyrm's Chromatic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
-					]
-				},
 				{
 					"name": "Bite",
 					"entries": [
@@ -4430,13 +4442,10 @@
 					]
 				}
 			],
+			"mythicHeader": [
+				"If the greatwyrm's Chromatic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
+			],
 			"mythic": [
-				{
-					"name": "",
-					"entries": [
-						"If the greatwyrm's Chromatic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
-					]
-				},
 				{
 					"name": "Bite",
 					"entries": [
@@ -4482,6 +4491,7 @@
 				"prone",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4602,19 +4612,27 @@
 				{
 					"name": "Breath Weapon {@recharge 5}",
 					"entries": [
-						"The greatwyrm uses one of the following breath weapons:"
-					]
-				},
-				{
-					"name": "Elemental Breath",
-					"entries": [
-						"The greatwyrm exhales elemental energy in a 300-foot cone. Each creature in that area must make a {@dc 25} Dexterity saving throw, taking 84 ({@damage 13d12}) fire damage on a failed save, or half as much damage on a successful one."
-					]
-				},
-				{
-					"name": "Sapping Breath",
-					"entries": [
-						"The greatwyrm exhales gas in a 300-foot cone. Each creature in that area must make a {@dc 25} Constitution saving throw. On a failed save, the creature falls {@condition unconscious} for 1 minute. On a successful save, the creature has disadvantage on attack rolls and saving throws until the end of the greatwyrm's next turn. An {@condition unconscious} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"The greatwyrm uses one of the following breath weapons:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Elemental Breath.",
+									"entries": [
+										"The greatwyrm exhales elemental energy in a 300-foot cone. Each creature in that area must make a {@dc 25} Dexterity saving throw, taking 84 ({@damage 13d12}) fire damage on a failed save, or half as much damage on a successful one."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Sapping Breath.",
+									"entries": [
+										"The greatwyrm exhales gas in a 300-foot cone. Each creature in that area must make a {@dc 25} Constitution saving throw. On a failed save, the creature falls {@condition unconscious} for 1 minute. On a successful save, the creature has disadvantage on attack rolls and saving throws until the end of the greatwyrm's next turn. An {@condition unconscious} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+									]
+								}
+							]
+						}
 					]
 				},
 				{
@@ -4638,13 +4656,10 @@
 					]
 				}
 			],
+			"mythicHeader": [
+				"If the greatwyrm's Metallic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
+			],
 			"mythic": [
-				{
-					"name": "",
-					"entries": [
-						"If the greatwyrm's Metallic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
-					]
-				},
 				{
 					"name": "Bite",
 					"entries": [
@@ -4814,19 +4829,27 @@
 				{
 					"name": "Breath Weapon {@recharge 5}",
 					"entries": [
-						"The greatwyrm uses one of the following breath weapons:"
-					]
-				},
-				{
-					"name": "Elemental Breath",
-					"entries": [
-						"The greatwyrm exhales elemental energy in a 300-foot cone. Each creature in that area must make a {@dc 25} Dexterity saving throw, taking 84 ({@damage 13d12}) lightning damage on a failed save, or half as much damage on a successful one."
-					]
-				},
-				{
-					"name": "Sapping Breath",
-					"entries": [
-						"The greatwyrm exhales gas in a 300-foot cone. Each creature in that area must make a {@dc 25} Constitution saving throw. On a failed save, the creature falls {@condition unconscious} for 1 minute. On a successful save, the creature has disadvantage on attack rolls and saving throws until the end of the greatwyrm's next turn. An {@condition unconscious} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"The greatwyrm uses one of the following breath weapons:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Elemental Breath.",
+									"entries": [
+										"The greatwyrm exhales elemental energy in a 300-foot cone. Each creature in that area must make a {@dc 25} Dexterity saving throw, taking 84 ({@damage 13d12}) lightning damage on a failed save, or half as much damage on a successful one."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Sapping Breath.",
+									"entries": [
+										"The greatwyrm exhales gas in a 300-foot cone. Each creature in that area must make a {@dc 25} Constitution saving throw. On a failed save, the creature falls {@condition unconscious} for 1 minute. On a successful save, the creature has disadvantage on attack rolls and saving throws until the end of the greatwyrm's next turn. An {@condition unconscious} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+									]
+								}
+							]
+						}
 					]
 				},
 				{
@@ -4850,13 +4873,10 @@
 					]
 				}
 			],
+			"mythicHeader": [
+				"If the greatwyrm's Metallic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
+			],
 			"mythic": [
-				{
-					"name": "",
-					"entries": [
-						"If the greatwyrm's Metallic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
-					]
-				},
 				{
 					"name": "Bite",
 					"entries": [
@@ -5026,19 +5046,27 @@
 				{
 					"name": "Breath Weapon {@recharge 5}",
 					"entries": [
-						"The greatwyrm uses one of the following breath weapons:"
-					]
-				},
-				{
-					"name": "Elemental Breath",
-					"entries": [
-						"The greatwyrm exhales elemental energy in a 300-foot cone. Each creature in that area must make a {@dc 25} Dexterity saving throw, taking 84 ({@damage 13d12}) acid damage on a failed save, or half as much damage on a successful one."
-					]
-				},
-				{
-					"name": "Sapping Breath",
-					"entries": [
-						"The greatwyrm exhales gas in a 300-foot cone. Each creature in that area must make a {@dc 25} Constitution saving throw. On a failed save, the creature falls {@condition unconscious} for 1 minute. On a successful save, the creature has disadvantage on attack rolls and saving throws until the end of the greatwyrm's next turn. An {@condition unconscious} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"The greatwyrm uses one of the following breath weapons:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Elemental Breath.",
+									"entries": [
+										"The greatwyrm exhales elemental energy in a 300-foot cone. Each creature in that area must make a {@dc 25} Dexterity saving throw, taking 84 ({@damage 13d12}) acid damage on a failed save, or half as much damage on a successful one."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Sapping Breath.",
+									"entries": [
+										"The greatwyrm exhales gas in a 300-foot cone. Each creature in that area must make a {@dc 25} Constitution saving throw. On a failed save, the creature falls {@condition unconscious} for 1 minute. On a successful save, the creature has disadvantage on attack rolls and saving throws until the end of the greatwyrm's next turn. An {@condition unconscious} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+									]
+								}
+							]
+						}
 					]
 				},
 				{
@@ -5062,13 +5090,10 @@
 					]
 				}
 			],
+			"mythicHeader": [
+				"If the greatwyrm's Metallic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
+			],
 			"mythic": [
-				{
-					"name": "",
-					"entries": [
-						"If the greatwyrm's Metallic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
-					]
-				},
 				{
 					"name": "Bite",
 					"entries": [
@@ -5299,7 +5324,7 @@
 				"truesight 120 ft."
 			],
 			"passive": 25,
-			"resist": [
+			"immune": [
 				"radiant"
 			],
 			"conditionImmune": [
@@ -8578,7 +8603,7 @@
 				"truesight 120 ft."
 			],
 			"passive": 25,
-			"resist": [
+			"immune": [
 				"psychic"
 			],
 			"conditionImmune": [
@@ -9369,19 +9394,27 @@
 				{
 					"name": "Breath Weapon {@recharge 5}",
 					"entries": [
-						"The greatwyrm uses one of the following breath weapons:"
-					]
-				},
-				{
-					"name": "Elemental Breath",
-					"entries": [
-						"The greatwyrm exhales elemental energy in a 300-foot cone. Each creature in that area must make a {@dc 25} Dexterity saving throw, taking 84 ({@damage 13d12}) fire damage on a failed save, or half as much damage on a successful one."
-					]
-				},
-				{
-					"name": "Sapping Breath",
-					"entries": [
-						"The greatwyrm exhales gas in a 300-foot cone. Each creature in that area must make a {@dc 25} Constitution saving throw. On a failed save, the creature falls {@condition unconscious} for 1 minute. On a successful save, the creature has disadvantage on attack rolls and saving throws until the end of the greatwyrm's next turn. An {@condition unconscious} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"The greatwyrm uses one of the following breath weapons:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Elemental Breath.",
+									"entries": [
+										"The greatwyrm exhales elemental energy in a 300-foot cone. Each creature in that area must make a {@dc 25} Dexterity saving throw, taking 84 ({@damage 13d12}) fire damage on a failed save, or half as much damage on a successful one."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Sapping Breath.",
+									"entries": [
+										"The greatwyrm exhales gas in a 300-foot cone. Each creature in that area must make a {@dc 25} Constitution saving throw. On a failed save, the creature falls {@condition unconscious} for 1 minute. On a successful save, the creature has disadvantage on attack rolls and saving throws until the end of the greatwyrm's next turn. An {@condition unconscious} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+									]
+								}
+							]
+						}
 					]
 				},
 				{
@@ -9405,13 +9438,10 @@
 					]
 				}
 			],
+			"mythicHeader": [
+				"If the greatwyrm's Metallic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
+			],
 			"mythic": [
-				{
-					"name": "",
-					"entries": [
-						"If the greatwyrm's Metallic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
-					]
-				},
 				{
 					"name": "Bite",
 					"entries": [
@@ -9604,13 +9634,10 @@
 					]
 				}
 			],
+			"mythicHeader": [
+				"If the greatwyrm's Chromatic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
+			],
 			"mythic": [
-				{
-					"name": "",
-					"entries": [
-						"If the greatwyrm's Chromatic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
-					]
-				},
 				{
 					"name": "Bite",
 					"entries": [
@@ -10412,19 +10439,27 @@
 				{
 					"name": "Breath Weapon {@recharge 5}",
 					"entries": [
-						"The dragon uses one of the following breath weapons:"
-					]
-				},
-				{
-					"name": "Dream Breath",
-					"entries": [
-						"The dragon exhales mist in a 90-foot cone. Each creature in that area must succeed on a {@dc 12} Constitution saving throw or fall {@condition unconscious} for 10 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it."
-					]
-				},
-				{
-					"name": "Moonlight Breath",
-					"entries": [
-						"The dragon exhales a beam of moonlight in a 30-foot line that is 5 feet wide. Each creature in that area must make a {@dc 12} Dexterity saving throw, taking 14 ({@damage 4d6}) radiant damage on a failed save, or half as much damage on a successful one."
+						"The dragon uses one of the following breath weapons:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Dream Breath.",
+									"entries": [
+										"The dragon exhales mist in a 90-foot cone. Each creature in that area must succeed on a {@dc 12} Constitution saving throw or fall {@condition unconscious} for 10 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Moonlight Breath.",
+									"entries": [
+										"The dragon exhales a beam of moonlight in a 30-foot line that is 5 feet wide. Each creature in that area must make a {@dc 12} Dexterity saving throw, taking 14 ({@damage 4d6}) radiant damage on a failed save, or half as much damage on a successful one."
+									]
+								}
+							]
+						}
 					]
 				}
 			],
@@ -10595,13 +10630,10 @@
 					]
 				}
 			],
+			"mythicHeader": [
+				"If the greatwyrm's Chromatic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
+			],
 			"mythic": [
-				{
-					"name": "",
-					"entries": [
-						"If the greatwyrm's Chromatic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
-					]
-				},
 				{
 					"name": "Bite",
 					"entries": [
@@ -10856,7 +10888,7 @@
 				"truesight 120 ft."
 			],
 			"passive": 25,
-			"resist": [
+			"immune": [
 				"thunder"
 			],
 			"conditionImmune": [
@@ -11132,19 +11164,27 @@
 				{
 					"name": "Breath Weapon {@recharge 5}",
 					"entries": [
-						"The greatwyrm uses one of the following breath weapons:"
-					]
-				},
-				{
-					"name": "Elemental Breath",
-					"entries": [
-						"The greatwyrm exhales elemental energy in a 300-foot cone. Each creature in that area must make a {@dc 25} Dexterity saving throw, taking 84 ({@damage 13d12}) cold damage on a failed save, or half as much damage on a successful one."
-					]
-				},
-				{
-					"name": "Sapping Breath",
-					"entries": [
-						"The greatwyrm exhales gas in a 300-foot cone. Each creature in that area must make a {@dc 25} Constitution saving throw. On a failed save, the creature falls {@condition unconscious} for 1 minute. On a successful save, the creature has disadvantage on attack rolls and saving throws until the end of the greatwyrm's next turn. An {@condition unconscious} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"The greatwyrm uses one of the following breath weapons:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Elemental Breath.",
+									"entries": [
+										"The greatwyrm exhales elemental energy in a 300-foot cone. Each creature in that area must make a {@dc 25} Dexterity saving throw, taking 84 ({@damage 13d12}) cold damage on a failed save, or half as much damage on a successful one."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Sapping Breath.",
+									"entries": [
+										"The greatwyrm exhales gas in a 300-foot cone. Each creature in that area must make a {@dc 25} Constitution saving throw. On a failed save, the creature falls {@condition unconscious} for 1 minute. On a successful save, the creature has disadvantage on attack rolls and saving throws until the end of the greatwyrm's next turn. An {@condition unconscious} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+									]
+								}
+							]
+						}
 					]
 				},
 				{
@@ -11168,13 +11208,10 @@
 					]
 				}
 			],
+			"mythicHeader": [
+				"If the greatwyrm's Metallic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
+			],
 			"mythic": [
-				{
-					"name": "",
-					"entries": [
-						"If the greatwyrm's Metallic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
-					]
-				},
 				{
 					"name": "Bite",
 					"entries": [
@@ -11520,7 +11557,7 @@
 				"truesight 120 ft."
 			],
 			"passive": 25,
-			"resist": [
+			"immune": [
 				"necrotic"
 			],
 			"conditionImmune": [
@@ -11817,13 +11854,10 @@
 					]
 				}
 			],
+			"mythicHeader": [
+				"If the greatwyrm's Chromatic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
+			],
 			"mythic": [
-				{
-					"name": "",
-					"entries": [
-						"If the greatwyrm's Chromatic Awakening trait has activated in the last hour, it can use the options below as legendary actions."
-					]
-				},
 				{
 					"name": "Bite",
 					"entries": [
@@ -12662,19 +12696,27 @@
 				{
 					"name": "Breath Weapon {@recharge 5}",
 					"entries": [
-						"The dragon uses one of the following breath weapons:"
-					]
-				},
-				{
-					"name": "Dream Breath",
-					"entries": [
-						"The dragon exhales mist in a 90-foot cone. Each creature in that area must succeed on a {@dc 14} Constitution saving throw or fall {@condition unconscious} for 10 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it."
-					]
-				},
-				{
-					"name": "Moonlight Breath",
-					"entries": [
-						"The dragon exhales a beam of moonlight in a 60-foot line that is 5 feet wide. Each creature in that area must make a {@dc 14} Dexterity saving throw, taking 38 ({@damage 7d10}) radiant damage on a failed save, or half as much damage on a successful one."
+						"The dragon uses one of the following breath weapons:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Dream Breath.",
+									"entries": [
+										"The dragon exhales mist in a 90-foot cone. Each creature in that area must succeed on a {@dc 14} Constitution saving throw or fall {@condition unconscious} for 10 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Moonlight Breath.",
+									"entries": [
+										"The dragon exhales a beam of moonlight in a 60-foot line that is 5 feet wide. Each creature in that area must make a {@dc 14} Dexterity saving throw, taking 38 ({@damage 7d10}) radiant damage on a failed save, or half as much damage on a successful one."
+									]
+								}
+							]
+						}
 					]
 				}
 			],

@@ -3,7 +3,7 @@ class RenderBestiary {
 		const renderer = Renderer.get();
 		const renderStack = [];
 		if (sectionTrClass === "lairaction" || sectionTrClass === "regionaleffect") {
-			renderer.recursiveRender({entries: sectionEntries}, renderStack, {depth: sectionLevel + 2});
+			renderer.setFirstSection(true).recursiveRender({entries: sectionEntries}, renderStack, {depth: sectionLevel + 1});
 		} else if (sectionTrClass === "legendary" || sectionTrClass === "mythic") {
 			const cpy = MiscUtil.copy(sectionEntries).map(it => {
 				if (it.name && it.entries) {
@@ -13,11 +13,11 @@ class RenderBestiary {
 				return it;
 			});
 			const toRender = {type: "list", style: "list-hang-notitle", items: cpy};
-			renderer.recursiveRender(toRender, renderStack, {depth: sectionLevel});
+			renderer.setFirstSection(true).recursiveRender(toRender, renderStack, {depth: sectionLevel});
 		} else {
 			sectionEntries.forEach(e => {
 				if (e.rendered) renderStack.push(e.rendered);
-				else renderer.recursiveRender(e, renderStack, {depth: sectionLevel + 1});
+				else renderer.setFirstSection(true).recursiveRender(e, renderStack, {depth: sectionLevel + 1});
 			});
 		}
 		return `<tr class="${sectionTrClass}"><td colspan="6" class="mon__sect-row-inner">${renderStack.join("")}</td></tr>`;
@@ -70,7 +70,7 @@ class RenderBestiary {
 			}
 		})();
 
-		const htmlSourceAndEnvironment = this._$getRenderedCreature_getHtmlSourceAndEnvironment(mon);
+		const htmlSourceAndEnvironment = this._$getRenderedCreature_getHtmlSourceAndEnvironment(mon, legGroup);
 
 		const hasToken = (mon.tokenUrl && mon.uniqueId) || mon.hasToken;
 		const extraThClasses = hasToken ? ["mon__name--token"] : null;
@@ -144,7 +144,7 @@ class RenderBestiary {
 		${Renderer.utils.getBorderTr()}`;
 	}
 
-	static _$getRenderedCreature_getHtmlSourceAndEnvironment (mon) {
+	static _$getRenderedCreature_getHtmlSourceAndEnvironment (mon, legGroup) {
 		const srcCpy = {
 			source: mon.source,
 			page: mon.page,
@@ -165,14 +165,15 @@ class RenderBestiary {
 				}
 			})
 		}
+		if (legGroup) {
+			if (legGroup.source !== mon.source) additional.push({source: legGroup.source, page: legGroup.page});
+			if (legGroup.additionalSources) additional.push(...MiscUtil.copy(legGroup.additionalSources));
+		}
 		srcCpy.additionalSources = additional;
 
 		const pageTrInner = Renderer.utils.getSourceAndPageTrHtml(srcCpy);
-		if (mon.environment && mon.environment.length) {
-			return [pageTrInner, `<div class="mb-1 mt-2"><b>Environment:</b> ${mon.environment.sort(SortUtil.ascSortLower).map(it => it.toTitleCase()).join(", ")}</div>`];
-		} else {
-			return [pageTrInner];
-		}
+		if (!mon.environment?.length) return [pageTrInner];
+		return [pageTrInner, `<div class="mb-1 mt-2"><b>Environment:</b> ${mon.environment.sort(SortUtil.ascSortLower).map(it => it.toTitleCase()).join(", ")}</div>`];
 	}
 
 	static $getRenderedLegendaryGroup (legGroup) {

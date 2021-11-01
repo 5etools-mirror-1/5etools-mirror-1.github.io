@@ -35,6 +35,7 @@ const BLACKLIST_KEYS = new Set([
 	"itemTypeAdditionalEntries",
 	"legendaryGroup",
 	"languageScript",
+	"dragonMundaneItems",
 ]);
 
 // Sources which only exist in digital form

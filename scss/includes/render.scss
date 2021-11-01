@@ -242,6 +242,10 @@ $rgb-inset-border: #656565;
 			padding: 0 10px;
 		}
 
+		&list-italic {
+			font-style: italic;
+		}
+
 		&list-name {
 			margin: 0;
 			font-weight: bold;
@@ -270,7 +274,7 @@ $rgb-inset-border: #656565;
 		&h--2 {
 			@include rd__h--large();
 
-			font-size: 1.4em;
+			font-size: 1.35em;
 		}
 
 		// inset headers

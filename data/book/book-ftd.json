@@ -236,6 +236,27 @@
 								"{@class monk|phb|Monk: Way of the Ascendant Dragon|Ascendant Dragon|FTD}",
 								"{@class ranger|phb|Ranger: Drakewarden|Drakewarden|FTD}"
 							]
+						},
+						{
+							"type": "gallery",
+							"images": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/FTD/dragon monk.webp"
+									},
+									"title": "A human monk practices a form inspired by dragon flight"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/FTD/drakewarden ranger.webp"
+									},
+									"title": "A dragonborn drakewarden shares affection with her drake companion"
+								}
+							]
 						}
 					]
 				},
@@ -1126,6 +1147,7 @@
 										{
 											"type": "table",
 											"caption": "Dragon Name Elements",
+											"isNameGenerator": true,
 											"colLabels": [
 												"d20",
 												"1",
@@ -1328,7 +1350,7 @@
 														{
 															"type": "item",
 															"name": "Change Shape.",
-															"entry": "You can decide that a dragon acquires this action at a younger age than usual, particularly if you want to feature a dragon in Humanoid form in your campaign. The \" {@book Shape-Shifting|FTD|3|Shape-Shifting}\" section later in this chapter offers more information and inspiration. (See the metallic dragons in the {@book Monster Manual|MM}.)"
+															"entry": "You can decide that a dragon acquires this action at a younger age than usual, particularly if you want to feature a dragon in Humanoid form in your campaign. The \"{@book Shape-Shifting|FTD|3|Shape-Shifting}\" section later in this chapter offers more information and inspiration. (See the metallic dragons in the {@book Monster Manual|MM}.)"
 														},
 														{
 															"type": "item",
@@ -1790,7 +1812,7 @@
 										],
 										[
 											"4",
-											"Roll on the {@table Wild Magic Surge|PHB} table in the \" {@class sorcerer|phb|Sorcerer}\" section of the {@book Player's Handbook|PHB}, rerolling any inappropriate result."
+											"Roll on the {@table Wild Magic Surge|PHB} table in the \"{@class sorcerer|phb|Sorcerer}\" section of the {@book Player's Handbook|PHB}, rerolling any inappropriate result."
 										],
 										[
 											"5",
@@ -1851,7 +1873,7 @@
 									"name": "Passing the Mantle",
 									"id": "0b9",
 									"entries": [
-										"When a dragon dies, the power enfleshed in the dragon doesn't just disappear from the world. Over time, it disperses, but in the moments immediately surrounding the dragon's death, it can be passed on to others\u2014or claimed. Sometimes (as discussed in \" {@book Reproduction|FTD|3|Reproduction}\" above) a dragon's death gives rise to an egg, transferring the dragon's power directly to a new generation. In other cases, a dragon at the brink of death invests power into another creature\u2014usually a dragon, but sometimes a sovereign, a sage, or an adventurer. Moreover, those who slay a dragon could seize the dragon's power.",
+										"When a dragon dies, the power enfleshed in the dragon doesn't just disappear from the world. Over time, it disperses, but in the moments immediately surrounding the dragon's death, it can be passed on to others\u2014or claimed. Sometimes (as discussed in \"{@book Reproduction|FTD|3|Reproduction}\" above) a dragon's death gives rise to an egg, transferring the dragon's power directly to a new generation. In other cases, a dragon at the brink of death invests power into another creature\u2014usually a dragon, but sometimes a sovereign, a sage, or an adventurer. Moreover, those who slay a dragon could seize the dragon's power.",
 										"The benefit conferred by this transfer of power is up to you. It might include one of the draconic gifts described in {@book chapter 2|FTD|2|Draconic Gifts} of this book, or a charm or blessing from the {@book Dungeon Master's Guide|DMG}. You can also use the supernatural gifts in {@book Mythic Odysseys of Theros|MOT} or the Dark Gifts in {@book Van Richten's Guide to Ravenloft|VRGR} as benefits (with definite drawbacks, in the case of Dark Gifts).",
 										{
 											"type": "entries",
@@ -2048,7 +2070,7 @@
 									],
 									"by": "Fizban"
 								},
-								"Most metallic and gem dragons can change shape to take on a Humanoid or Beast form by the time they reach adulthood or ancient age. A few other Dragon varieties possess similar abilities (including deep dragons, described in {@book chapter 6|FTD|6|Deep Dragons}), and you can give any dragon the Change Shape action of an adult or ancient dragon without affecting the dragon's challenge rating (as noted under \" {@book Customizing Dragons|FTD|3|Customizing Dragons}\" earlier in this chapter). Likewise, if you use the {@book Monster Manual|MM} variant rule to make dragons innate spellcasters, you could give any adult or older dragon the {@spell polymorph} spell to take on an alternate form.",
+								"Most metallic and gem dragons can change shape to take on a Humanoid or Beast form by the time they reach adulthood or ancient age. A few other Dragon varieties possess similar abilities (including deep dragons, described in {@book chapter 6|FTD|6|Deep Dragons}), and you can give any dragon the Change Shape action of an adult or ancient dragon without affecting the dragon's challenge rating (as noted under \"{@book Customizing Dragons|FTD|3|Customizing Dragons}\" earlier in this chapter). Likewise, if you use the {@book Monster Manual|MM} variant rule to make dragons innate spellcasters, you could give any adult or older dragon the {@spell polymorph} spell to take on an alternate form.",
 								"Dragons typically use their shape-shifting ability to move about in the world without drawing attention to themselves. Dragons like to know as much as they can about the lands around their lairs and the inhabitants of those lands, and posing as a more innocuous creature is an easy way to gather such information. Many metallic dragons also believe they are following the example of Bahamut, who is known to wander the worlds of the Material Plane in Humanoid guise, appearing sometimes as an elderly sage or wizard, other times as a young fisher or monk. In any of these forms, he is often accompanied by seven gold dragons in the form of brilliant yellow songbirds.",
 								"Famously, Bahamut traveled the world of Krynn in the guise of a human wizard named Fizban, guiding the peoples of that world as they prepared for war against the evil forces of Tiamat. In the same way, some metallic dragons use their Humanoid forms to influence people. Since they can remain in Humanoid form indefinitely, metallic dragons often create false identities and mundane lives for themselves. Thanks to their keen intellects and strong personalities, shape-shifted dragons can easily end up in positions of leadership\u2014either overtly as mayors, high priests, the heads of knightly orders, or crime bosses or behind the scenes as advisors, activists, or the spouses of rulers.",
 								{
@@ -2083,7 +2105,7 @@
 									"name": "Cult of the Dragon",
 									"id": "0c3",
 									"entries": [
-										"Founded in Faerûn, the Cult of the Dragon was based on a mistranslated prophecy that \"dead dragons shall rule the world entire.\" For most of its history, the cult has focused on creating dracoliches to fulfill this prophecy. Its members have been responsible for creating more dracoliches than any other force on the Material Plane. And thanks to the corruption that spreads between worlds whenever a dragon embraces undeath (see \" {@book Undeath|FTD|3|Undeath}\" earlier in this chapter), the cult's influence has been tremendous.",
+										"Founded in Faerûn, the Cult of the Dragon was based on a mistranslated prophecy that \"dead dragons shall rule the world entire.\" For most of its history, the cult has focused on creating dracoliches to fulfill this prophecy. Its members have been responsible for creating more dracoliches than any other force on the Material Plane. And thanks to the corruption that spreads between worlds whenever a dragon embraces undeath (see \"{@book Undeath|FTD|3|Undeath}\" earlier in this chapter), the cult's influence has been tremendous.",
 										"In recent years, Tiamat has worked through a young member of the Cult of the Dragon to alter the cult's foundational beliefs. The Dragon Queen steered this prophet, named Severin, to the correct translation of the cult's foundational prophecy: \"...naught will be left save shattered thrones, with no rulers but the dead. Dragons shall rule the world entire...\" Guided by this new vision, Severin has worked tirelessly to bring about the ascendance to power of living dragons, even attempting to bring an avatar of Tiamat into the world to wreak havoc (and nearly succeeding).",
 										{
 											"type": "entries",
@@ -2121,7 +2143,7 @@
 														],
 														[
 															"3",
-															"A dragon whose echo on another world has become a dracolich suffers from a wasting affliction (see \" {@book Undeath|FTD|3|Undeath}\" above). Members of the Cult of the Dragon are trying to persuade the afflicted dragon to become a dracolich as well."
+															"A dragon whose echo on another world has become a dracolich suffers from a wasting affliction (see \"{@book Undeath|FTD|3|Undeath}\" above). Members of the Cult of the Dragon are trying to persuade the afflicted dragon to become a dracolich as well."
 														],
 														[
 															"4",
@@ -2577,7 +2599,7 @@
 									"id": "0df",
 									"entries": [
 										"Dragons might take on the role of patron, using a fraction of their tremendous wealth to support the arts, groups of freelance adventurers, or important causes. Such dragons' minions might include artists painting frescoes in their lairs, musicians composing chorales for the dragons to enjoy, poets writing odes in praise of their draconic lieges, and adventurers seeking priceless treasures to add to the dragons' hoards. Dragons who spend a lot of time in Humanoid form are often drawn to this role, and their minions might have no idea that their generous patrons are actually dragons.",
-										"If you want to have a dragon act as a patron for a group of adventurers, look to the \" {@book Group Patrons|TCE|16}\" chapter of {@book Tasha's Cauldron of Everything|TCE}. You can use the information there to create a dragon filling this role in your campaign. Dragons naturally fall into the category of \" {@book ancient being|TCE|2|Ancient Being},\" as described in that chapter, but depending on their roles and personalities, they might act more like another kind of patron."
+										"If you want to have a dragon act as a patron for a group of adventurers, look to the \"{@book Group Patrons|TCE|16}\" chapter of {@book Tasha's Cauldron of Everything|TCE}. You can use the information there to create a dragon filling this role in your campaign. Dragons naturally fall into the category of \"{@book ancient being|TCE|2|Ancient Being},\" as described in that chapter, but depending on their roles and personalities, they might act more like another kind of patron."
 									]
 								},
 								{
@@ -2778,7 +2800,7 @@
 									"type": "item",
 									"name": "What's the goal of the encounter?",
 									"entries": [
-										"Not every encounter with a dragon needs to involve combat, let alone an all-out fight to the death. Maybe the characters are trying to help a kobold Keeper of Dragons retrieve a wyrmling kidnapped by a gang of goblins (as in \" {@adventure The Sunless Citadel|TftYP|0},\" an adventure found in {@adventure Tales from the Yawning Portal|TftYP}). In this case, fighting the dragon might be necessary if the dragon doesn't want to return, but killing the creature is undesirable. Or perhaps the characters are seriously outmatched by the dragon, and their only reasonable goal is to escape the encounter alive."
+										"Not every encounter with a dragon needs to involve combat, let alone an all-out fight to the death. Maybe the characters are trying to help a kobold Keeper of Dragons retrieve a wyrmling kidnapped by a gang of goblins (as in \"{@adventure The Sunless Citadel|TftYP|0},\" an adventure found in {@adventure Tales from the Yawning Portal|TftYP}). In this case, fighting the dragon might be necessary if the dragon doesn't want to return, but killing the creature is undesirable. Or perhaps the characters are seriously outmatched by the dragon, and their only reasonable goal is to escape the encounter alive."
 									]
 								},
 								{
@@ -2792,7 +2814,7 @@
 									"type": "item",
 									"name": "Is the dragon alone or accompanied by minions?",
 									"entries": [
-										"With their legendary actions, adult and ancient dragons are designed to be challenging encounters all on their own, but even a younger dragon can be a handful as a solo enemy. On the other hand, adding minions to a dragon encounter can divert the characters' attention away from the dragon and make a combat encounter more interesting\u2014as well as more dangerous. See \" {@book Followers|FTD|3|Followers}\" earlier in this chapter for ideas about how the relationship between dragon and minions can impact an encounter."
+										"With their legendary actions, adult and ancient dragons are designed to be challenging encounters all on their own, but even a younger dragon can be a handful as a solo enemy. On the other hand, adding minions to a dragon encounter can divert the characters' attention away from the dragon and make a combat encounter more interesting\u2014as well as more dangerous. See \"{@book Followers|FTD|3|Followers}\" earlier in this chapter for ideas about how the relationship between dragon and minions can impact an encounter."
 									]
 								}
 							]
@@ -3008,7 +3030,7 @@
 							"id": "0f3",
 							"entries": [
 								"In some places, dragons are more than monsters or masterminds. They are movers and shakers whose desires shape the course of history. A powerful dragon's schemes impact the characters because those schemes impact the world as a whole, not because the dragon is interested in the characters individually\u2014at least not initially. As the characters become powers in their own right, dragons are more likely to take personal notice of them.",
-								"The \" {@book Dragon Campaigns|FTD|3|Dragon Campaigns}\" section that follows discusses the world-ranging implications of putting dragons in positions of power and central story importance in your game. When crafting individual adventures in the context of such a campaign, take standard adventure hooks (in this book or elsewhere) and dial them up\u2014amplifying the scale and significance of a dragon's schemes to make those plots fit the dragon's stature in the world. Imagine the dragon's hoard on the scale of a national treasury. Think of the dragon's minions as the entire nation or religion that owes the dragon allegiance.",
+								"The \"{@book Dragon Campaigns|FTD|3|Dragon Campaigns}\" section that follows discusses the world-ranging implications of putting dragons in positions of power and central story importance in your game. When crafting individual adventures in the context of such a campaign, take standard adventure hooks (in this book or elsewhere) and dial them up\u2014amplifying the scale and significance of a dragon's schemes to make those plots fit the dragon's stature in the world. Imagine the dragon's hoard on the scale of a national treasury. Think of the dragon's minions as the entire nation or religion that owes the dragon allegiance.",
 								"Adventures at this scale might involve dragons as villains or as patrons, and they might well involve multiple dragons in conflict with each other. The characters might loyally serve one dragon in opposition to another, or they might attempt to play multiple dragons against one another\u2014perhaps earning the ire of them all.",
 								{
 									"type": "image",
@@ -3781,7 +3803,7 @@
 							],
 							"by": "Fizban"
 						},
-						"The random treasure tables in the {@book Dungeon Master's Guide|DMG} can help you quickly generate a hoard for a dragon of any age. (As suggested in that book, you should roll on the hoard tables at least twice for legendary dragons.) If you want a more detailed hoard, the information under \" {@book Creating a Hoard|FTD|4|Creating a Hoard}\" can help you generate treasure with more variety, which is especially appropriate for significant troves. The average monetary value of a hoard created using these guidelines is about the same as if you rolled twice on the tables in the {@book Dungeon Master's Guide|DMG}.",
+						"The random treasure tables in the {@book Dungeon Master's Guide|DMG} can help you quickly generate a hoard for a dragon of any age. (As suggested in that book, you should roll on the hoard tables at least twice for legendary dragons.) If you want a more detailed hoard, the information under \"{@book Creating a Hoard|FTD|4|Creating a Hoard}\" can help you generate treasure with more variety, which is especially appropriate for significant troves. The average monetary value of a hoard created using these guidelines is about the same as if you rolled twice on the tables in the {@book Dungeon Master's Guide|DMG}.",
 						{
 							"type": "entries",
 							"name": "Kinds of Treasure",
@@ -3840,7 +3862,7 @@
 									"name": "Mundane Items",
 									"id": "11a",
 									"entries": [
-										"A dragon's hoard often includes mundane items that can be clues to their owner's personality and history, and that might inspire further investigation by curious adventurers. The {@book Hoard Mundane Items|FTD|4|Hoard Mundane Items} table in the \" {@book Creating a Hoard|FTD|4|Creating a Hoard}\" section provides a quick starting point for generating these items. You can find more inspiration on the {@book Trinkets|PHB|5|Trinkets} table in the {@book Player's Handbook|PHB} and the tables in the \" {@book Dungeon Dressing|DMG|10|Dungeon Dressing}\" section of the {@book Dungeon Master's Guide|DMG}."
+										"A dragon's hoard often includes mundane items that can be clues to their owner's personality and history, and that might inspire further investigation by curious adventurers. The {@book Hoard Mundane Items|FTD|4|Hoard Mundane Items} table in the \"{@book Creating a Hoard|FTD|4|Creating a Hoard}\" section provides a quick starting point for generating these items. You can find more inspiration on the {@book Trinkets|PHB|5|Trinkets} table in the {@book Player's Handbook|PHB} and the tables in the \"{@book Dungeon Dressing|DMG|10|Dungeon Dressing}\" section of the {@book Dungeon Master's Guide|DMG}."
 									]
 								},
 								{
@@ -4346,7 +4368,7 @@
 							"name": "Creating a Dragon",
 							"id": "125",
 							"entries": [
-								"Use the tables in this section in conjunction with \" {@book Roleplaying Dragons|FTD|3|Roleplaying Dragons}\" in {@book chapter 3|FTD|3} to craft distinctive dragon characters. Most of the personality traits and ideals align with the general nature of the dragons, but the tables also include examples of atypical dragons.",
+								"Use the tables in this section in conjunction with \"{@book Roleplaying Dragons|FTD|3|Roleplaying Dragons}\" in {@book chapter 3|FTD|3} to craft distinctive dragon characters. Most of the personality traits and ideals align with the general nature of the dragons, but the tables also include examples of atypical dragons.",
 								"For dragons who do not have spellcasting ability, this section also includes suggested spells to give a dragon if you want it to be a spellcaster. A table shows the spells a typical dragon knows, along with the spell save DC for those spells. The dragon can cast each listed spell once per day, requiring no material components and using Charisma as the spellcasting ability."
 							]
 						},
@@ -4355,7 +4377,7 @@
 							"name": "Dragon Adventures",
 							"id": "126",
 							"entries": [
-								"Building on \" {@book Dragon Adventures|FTD|3|Dragon Adventures}\" in {@book chapter 3|FTD|3}, this section starts with a collection of adventure hooks that might bring characters into contact with a dragon of a particular kind, whether in conflict or as an ally or patron. Then, additional tables explore the relationships each kind of dragon has to other creatures of a similar challenge rating in their preferred environment. Use these tables to inspire adventures that feature dragons dwelling alongside other creatures, either as enemies or as allies."
+								"Building on \"{@book Dragon Adventures|FTD|3|Dragon Adventures}\" in {@book chapter 3|FTD|3}, this section starts with a collection of adventure hooks that might bring characters into contact with a dragon of a particular kind, whether in conflict or as an ally or patron. Then, additional tables explore the relationships each kind of dragon has to other creatures of a similar challenge rating in their preferred environment. Use these tables to inspire adventures that feature dragons dwelling alongside other creatures, either as enemies or as allies."
 							]
 						},
 						{
@@ -4363,7 +4385,7 @@
 							"name": "Dragon Lairs",
 							"id": "127",
 							"entries": [
-								"This section expands on \" {@book Dragon Lairs|FTD|4|Dragon Lairs}\" in {@book chapter 4|FTD|4}. If there is a map of a sample lair for a dragon of that kind, it is accompanied by discussion of the lair's important features. Many of these sections also describe additional lair actions a dragon can use to exploit the lair's features, as well as additional regional effects that might alter the landscape surrounding the lair.",
+								"This section expands on \"{@book Dragon Lairs|FTD|4|Dragon Lairs}\" in {@book chapter 4|FTD|4}. If there is a map of a sample lair for a dragon of that kind, it is accompanied by discussion of the lair's important features. Many of these sections also describe additional lair actions a dragon can use to exploit the lair's features, as well as additional regional effects that might alter the landscape surrounding the lair.",
 								"You can adjust the scale on the lair maps to suit the needs of the dragon lairing there. If you use these maps for a wyrmling's lair, you might set the scale to 5 feet per square, but for an ancient dragon or a greatwyrm, you might need to go as high as 20 feet per square to give the dragon room to move."
 							]
 						},
@@ -4372,7 +4394,7 @@
 							"name": "Dragon Treasures",
 							"id": "128",
 							"entries": [
-								"Each entry ends with a discussion of the kinds of treasures the dragon favors, including a table of art objects you can use to expand on the information in \" {@book What's in a Hoard?|FTD|4|What's in a Hoard?}\" in {@book chapter 4|FTD|4}. The items shown on these tables can represent art objects of any value, depending on their materials, quality, and history. For example, a small bronze bust might be worth 25 gp, while a large bust crafted from platinum and emeralds could be worth 7,500 gp."
+								"Each entry ends with a discussion of the kinds of treasures the dragon favors, including a table of art objects you can use to expand on the information in \"{@book What's in a Hoard?|FTD|4|What's in a Hoard?}\" in {@book chapter 4|FTD|4}. The items shown on these tables can represent art objects of any value, depending on their materials, quality, and history. For example, a small bronze bust might be worth 25 gp, while a large bust crafted from platinum and emeralds could be worth 7,500 gp."
 							]
 						},
 						{
@@ -5881,17 +5903,17 @@
 													"entry": "A sandstorm blows constantly within 1 mile of the dragon's lair."
 												}
 											]
-										},
-										{
-											"type": "inset",
-											"name": "Iymrith",
-											"id": "144",
-											"entries": [
-												"Known as the Dragon of the Statues and the Doom of the Desert, the ancient blue dragon {@creature Iymrith|SKT} commands an army of {@creature Gargoyle||gargoyles} and has studied magic for centuries in the hope of transcending her physical form and becoming a god.",
-												"Iymrith often appears as a {@creature storm giant} using her special Change Shape trait. In this guise, she infiltrates storm giant settlements and insinuates herself into the affections of the rulers' heirs, becoming a mentor to them\u2014and turning them against their parents. She demands great accomplishments from her own offspring, but she is more than willing to support and aid them with her considerable resources.",
-												"Ferocious in her youth, Iymrith has grown more philosophical and even whimsical as she ages, but she has not lost sight of her quest for transcendence."
-											]
 										}
+									]
+								},
+								{
+									"type": "inset",
+									"name": "Iymrith",
+									"id": "144",
+									"entries": [
+										"Known as the Dragon of the Statues and the Doom of the Desert, the ancient blue dragon {@creature Iymrith|SKT} commands an army of {@creature Gargoyle||gargoyles} and has studied magic for centuries in the hope of transcending her physical form and becoming a god.",
+										"Iymrith often appears as a {@creature storm giant} using her special Change Shape trait. In this guise, she infiltrates storm giant settlements and insinuates herself into the affections of the rulers' heirs, becoming a mentor to them\u2014and turning them against their parents. She demands great accomplishments from her own offspring, but she is more than willing to support and aid them with her considerable resources.",
+										"Ferocious in her youth, Iymrith has grown more philosophical and even whimsical as she ages, but she has not lost sight of her quest for transcendence."
 									]
 								}
 							]
@@ -6984,16 +7006,16 @@
 													"entry": "Sapient creatures that spend a year within 10 miles of the dragon's lair find it nearly impossible to break a promise."
 												}
 											]
-										},
-										{
-											"type": "inset",
-											"name": "Fireflash",
-											"id": "158",
-											"entries": [
-												"Also known as Khirsah, Fireflash is a gregarious and inquisitive bronze dragon with a keen interest in other species, especially dwarves and elves. During the War of the Lance, he was one of the first to answer the call of Silvara\u2014the elf identity of the silver dragon D'argent\u2014for the metallic dragons to join the conflict. During the Vingaard Campaign, Fireflash teamed up with a dwarf named Flint Fireforge and a kender named Tasslehoff Burrfoot to capture Highmaster Bakaris. Later, in the Blue Lady's War, Tasslehoff foresaw Fireflash's demise at the hands of the death knight Lord Soth\u2014and was thus able to avert the dragon's grim fate.",
-												"After the wars, Fireflash faded from public view, but rumor holds that he continues his lifelong fight against evil, using his legendary skill in aerial combat to assist the Knights of Solamnia."
-											]
 										}
+									]
+								},
+								{
+									"type": "inset",
+									"name": "Fireflash",
+									"id": "158",
+									"entries": [
+										"Also known as Khirsah, Fireflash is a gregarious and inquisitive bronze dragon with a keen interest in other species, especially dwarves and elves. During the War of the Lance, he was one of the first to answer the call of Silvara\u2014the elf identity of the silver dragon D'argent\u2014for the metallic dragons to join the conflict. During the Vingaard Campaign, Fireflash teamed up with a dwarf named Flint Fireforge and a kender named Tasslehoff Burrfoot to capture Highmaster Bakaris. Later, in the Blue Lady's War, Tasslehoff foresaw Fireflash's demise at the hands of the death knight Lord Soth\u2014and was thus able to avert the dragon's grim fate.",
+										"After the wars, Fireflash faded from public view, but rumor holds that he continues his lifelong fight against evil, using his legendary skill in aerial combat to assist the Knights of Solamnia."
 									]
 								}
 							]
@@ -8429,7 +8451,7 @@
 									"name": "Deep Dragon Lair Features",
 									"id": "171",
 									"entries": [
-										"A deep dragon lair might share the same basic structure as the sapphire dragon lair shown on {@book map 5.12|FTD|5|Map 5.12: sapphire dragon lair View Player Version}, but instead of being formed from stone, it might consist of chambers hollowed out within a fungus network growing near an underground river. Whatever the setup, a deep dragon festoons the narrow, twisting passages between the lair's fungal walls with magical and mundane traps. A typical lair has the following features:",
+										"A deep dragon lair might share the same basic structure as the sapphire dragon lair shown on {@book map 5.12|FTD|5|Map 5.12: sapphire dragon lair}, but instead of being formed from stone, it might consist of chambers hollowed out within a fungus network growing near an underground river. Whatever the setup, a deep dragon festoons the narrow, twisting passages between the lair's fungal walls with magical and mundane traps. A typical lair has the following features:",
 										{
 											"type": "list",
 											"style": "list-hang-notitle",
@@ -8911,7 +8933,7 @@
 									"id": "178",
 									"entries": [
 										"The underwater caves inhabited by dragon turtles are structurally similar to the seaside caverns where bronze and topaz dragons lair. When constructing a dragon turtle's lair, you can simply take a coastal map and translate it to an underwater environment or use the map as-is if the dragon turtle is content to lair near the surface.",
-										"As an example, {@book map 5.14|FTD|5|Map 5.14: topaz dragon lair View Player Version} depicts a topaz dragon's lair in a seaside cavern, but it could be reimagined as a grotto in the side of a coral reef rising from a shelf on the ocean floor, with the following features:",
+										"As an example, {@book map 5.14|FTD|5|Map 5.14: topaz dragon lair} depicts a topaz dragon's lair in a seaside cavern, but it could be reimagined as a grotto in the side of a coral reef rising from a shelf on the ocean floor, with the following features:",
 										{
 											"type": "list",
 											"style": "list-hang-notitle",
@@ -9783,7 +9805,7 @@
 									"name": "Faerie Dragon Lair Features",
 									"id": "1a7",
 									"entries": [
-										"An example complex faerie dragon lair is built around several hollowed-out chambers inside a large dead tree. The tree is decorated with the dragon's lesser treasures, its limbs draped with scrolls and scarves and set with glittering glass. You could use part of the underground portion of the copper dragon's lair ({@book map 5.6|FTD|5|Map 5.6: copper dragon lair View Player Version}) to represent such a lair, with the scale reduced to 2½ feet per square, the hollow spaces tucked inside a massive tree trunk, and the passages running inside major branches rather than underground. A typical lair has the following features:",
+										"An example complex faerie dragon lair is built around several hollowed-out chambers inside a large dead tree. The tree is decorated with the dragon's lesser treasures, its limbs draped with scrolls and scarves and set with glittering glass. You could use part of the underground portion of the copper dragon's lair ({@book map 5.6|FTD|5|Map 5.6: copper dragon lair}) to represent such a lair, with the scale reduced to 2½ feet per square, the hollow spaces tucked inside a massive tree trunk, and the passages running inside major branches rather than underground. A typical lair has the following features:",
 										{
 											"type": "list",
 											"style": "list-hang-notitle",
@@ -11397,7 +11419,7 @@
 									"name": "Moonstone Dragon Lair Features",
 									"id": "1c6",
 									"entries": [
-										"You can look to other maps in this chapter as inspiration for the scattered parts of a moonstone dragon's lair. For example, a well maintained and above-water version of the black dragon lair's tower ({@book map 5.2|FTD|5|Map 5.2: black dragon lair View Player Version}) makes a great Feywild audience chamber, while a vibrant, living version of the green dragon lair's enormous tree ({@book map 5.10|FTD|5|Map 5.10: green dragon lair View Player Version}) makes for a very comfortable bedchamber in a grove on the Material Plane. And features such as the cloud bridges of the silver dragon lair ({@book map 5.13|FTD|5|Map 5.13: silver dragon lair View Player Version}) can be used for the parts of a moonstone dragon's lair that lie in the Border Ethereal."
+										"You can look to other maps in this chapter as inspiration for the scattered parts of a moonstone dragon's lair. For example, a well maintained and above-water version of the black dragon lair's tower ({@book map 5.2|FTD|5|Map 5.2: black dragon lair}) makes a great Feywild audience chamber, while a vibrant, living version of the green dragon lair's enormous tree ({@book map 5.10|FTD|5|Map 5.10: green dragon lair}) makes for a very comfortable bedchamber in a grove on the Material Plane. And features such as the cloud bridges of the silver dragon lair ({@book map 5.13|FTD|5|Map 5.13: silver dragon lair}) can be used for the parts of a moonstone dragon's lair that lie in the Border Ethereal."
 									]
 								}
 							]
@@ -12793,7 +12815,7 @@
 							"entries": [
 								"When dragons become aware of the Shadowfell's malign influence seeping into their territories, most scoop up their hoards and abandon any compromised lairs. But some are stubborn, prideful, or bitter enough to stay, even in the face of inevitable corruption. More often, a dragon is unknowingly swept up by the Shadowfell while asleep, awakening after a years-long rest to find that both dragon and lair have changed. In these cases, a shadow dragon's lair undergoes the same transformation as the dragon, becoming a shadowy, melancholic version of the original site.",
 								"Shadow dragons that are born on the Shadowfell or seek out new lairs after their transformations establish lairs according to the preferences of their kind, though they find comfort only in the most gloomy and cheerless of places. Reconciling these sometimes-contrasting urges can lead to some very unusual lair choices.",
-								"As an example, consider the red dragon lair in {@book map 5.11|FTD|5|Map 5.11: red dragon lair View Player Version} as the lair of a red shadow dragon. In this case, the once-active volcano has now lapsed into dormancy. Its lava flows have cooled into a blackened, alien landscape. Ash coats the slopes of the caldera, picked up by the weird swirling winds common to this region and drawn into the atmosphere. Clouds of ash periodically cast the surrounding lands into deep shadow, before the fine grit once again falls to the ground in a hazy gray blizzard. The shadow dragon prowls the region during these hazes, rendered all but invisible by the eddies of ash.",
+								"As an example, consider the red dragon lair in {@book map 5.11|FTD|5|Map 5.11: red dragon lair} as the lair of a red shadow dragon. In this case, the once-active volcano has now lapsed into dormancy. Its lava flows have cooled into a blackened, alien landscape. Ash coats the slopes of the caldera, picked up by the weird swirling winds common to this region and drawn into the atmosphere. Clouds of ash periodically cast the surrounding lands into deep shadow, before the fine grit once again falls to the ground in a hazy gray blizzard. The shadow dragon prowls the region during these hazes, rendered all but invisible by the eddies of ash.",
 								"In the heart of the lair, even the brightest light is muted, and creatures find their eyes playing tricks on them as details and distance are distorted. The shadow dragon rarely leaves this place except to hunt and is attended by dozens of shadows.",
 								{
 									"type": "entries",
@@ -13351,16 +13373,16 @@
 													"entry": "A sudden, supernatural chill fills the lair near the dragon. Each creature of the dragon's choice that it can see within 120 feet of it must succeed on a DC 15 Constitution saving throw or be {@condition restrained} until initiative count 20 on the next round. Creatures that have resistance to cold damage have advantage on the saving throw; creatures that have immunity to cold damage succeed automatically."
 												}
 											]
-										},
-										{
-											"type": "inset",
-											"name": "D'argent",
-											"id": "1e9",
-											"entries": [
-												"Like so many silver dragons, D'argent takes considerable interest in the matters of mortals on her home world of Krynn. The {@creature Ancient Silver Dragon||ancient dragon} rarely openly participates in heroics, preferring to help in more surreptitious ways. She has been known to join in the conflicts of mortals in disguise, either as a brave human knight or as a fierce elf healer with gleaming silver hair, named Silvara.",
-												"Though she is happy to remain in the background, D'argent's seeming placidity hides a brilliant intellect, and she has exposed the machinations of many chromatic dragons on Krynn. She is a romantic at heart, and it is said that she has fallen deeply for mortals more than once."
-											]
 										}
+									]
+								},
+								{
+									"type": "inset",
+									"name": "D'argent",
+									"id": "1e9",
+									"entries": [
+										"Like so many silver dragons, D'argent takes considerable interest in the matters of mortals on her home world of Krynn. The {@creature Ancient Silver Dragon||ancient dragon} rarely openly participates in heroics, preferring to help in more surreptitious ways. She has been known to join in the conflicts of mortals in disguise, either as a brave human knight or as a fierce elf healer with gleaming silver hair, named Silvara.",
+										"Though she is happy to remain in the background, D'argent's seeming placidity hides a brilliant intellect, and she has exposed the machinations of many chromatic dragons on Krynn. She is a romantic at heart, and it is said that she has fallen deeply for mortals more than once."
 									]
 								}
 							]
@@ -14978,6 +15000,7 @@
 										{
 											"type": "list",
 											"columns": 2,
+											"style": "list-no-bullets",
 											"items": [
 												"{@creature Dragon blessed|FTD}",
 												"{@creature Dragonborn of Bahamut|FTD}",

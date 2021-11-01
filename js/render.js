@@ -32,6 +32,8 @@ function Renderer () {
 	this._roll20Ids = null;
 	this._trackTitles = {enabled: false, titles: {}};
 	this._enumerateTitlesRel = {enabled: false, titles: {}};
+	this._isHeaderIndexIncludeTableCaptions = false;
+	this._isHeaderIndexIncludeImageTitles = false;
 	this._plugins = {};
 	this._fnPostProcess = null;
 	this._extraSourceClasses = null;
@@ -92,6 +94,7 @@ function Renderer () {
 	 */
 	this.setExtraSourceClasses = function (arr) { this._extraSourceClasses = arr; return this; };
 
+	// region Header index
 	/**
 	 * Headers are ID'd using the attribute `data-title-index` using an incrementing int. This resets it to 1.
 	 */
@@ -103,6 +106,10 @@ function Renderer () {
 	};
 
 	this.getHeaderIndex = function () { return this._headerIndex; };
+
+	this.setHeaderIndexTableCaptions = function (bool) { this._isHeaderIndexIncludeTableCaptions = bool; return this; };
+	this.setHeaderIndexImageTitles = function (bool) { this._isHeaderIndexIncludeImageTitles = bool; return this; };
+	// endregion
 
 	/**
 	 * Pass an object to have the renderer export lists of found @-tagged content during renders
@@ -196,8 +203,10 @@ function Renderer () {
 		return trackedTitlesInverse;
 	};
 
-	this._handleTrackTitles = function (name) {
+	this._handleTrackTitles = function (name, {isTable = false, isImage = false} = {}) {
 		if (!this._trackTitles.enabled) return;
+		if (isTable && !this._isHeaderIndexIncludeTableCaptions) return;
+		if (isImage && !this._isHeaderIndexIncludeImageTitles) return;
 		this._trackTitles.titles[this._headerIndex] = name;
 	};
 
@@ -445,16 +454,7 @@ function Renderer () {
 	};
 
 	this._renderImage = function (entry, textStack, meta, options) {
-		function getStylePart () {
-			const styles = [
-				// N.b. this width/height should be reflected in the renderer image CSS
-				// Clamp the max width at 100%, as per the renderer styling
-				entry.maxWidth ? `max-width: min(100%, ${entry.maxWidth}${entry.maxWidthUnits || "px"})` : "",
-				// Clamp the max height at 60vh, as per the renderer styling
-				entry.maxHeight ? `max-height: min(60vh, ${entry.maxHeight}${entry.maxHeightUnits || "px"})` : "",
-			].filter(Boolean).join("; ");
-			return styles ? `style="${styles}"` : "";
-		}
+		if (entry.title) this._handleTrackTitles(entry.title, {isImage: true});
 
 		if (entry.imageType === "map") textStack[0] += `<div class="rd__wrp-map">`;
 		this._renderPrefix(entry, textStack, meta, options);
@@ -465,21 +465,35 @@ function Renderer () {
 		const svg = this._lazyImages && entry.width != null && entry.height != null
 			? `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${entry.width}" height="${entry.height}"><rect width="100%" height="100%" fill="#ccc3"></rect></svg>`)}`
 			: null;
-		textStack[0] += `<div class="${this._renderImage_getWrapperClasses(entry, meta)}">
+		textStack[0] += `<div class="${this._renderImage_getWrapperClasses(entry, meta)}" ${entry.title && this._isHeaderIndexIncludeImageTitles ? `data-title-index="${this._headerIndex++}"` : ""}>
 			<a href="${href}" target="_blank" rel="noopener noreferrer" ${entry.title ? `title="${Renderer.stripTags(entry.title)}"` : ""}>
-				<img class="${this._renderImage_getImageClasses(entry, meta)}" src="${svg || href}" ${entry.altText || entry.title ? `alt="${(entry.altText || entry.title).qq()}"` : ""} ${svg ? `data-src="${href}"` : `loading="lazy"`} ${getStylePart()}>
+				<img class="${this._renderImage_getImageClasses(entry, meta)}" src="${svg || href}" ${entry.altText || entry.title ? `alt="${(entry.altText || entry.title).qq()}"` : ""} ${svg ? `data-src="${href}"` : `loading="lazy"`} ${this._renderImage_getStylePart(entry)}>
 			</a>
 		</div>`;
+
 		if (entry.title || entry.mapRegions) {
 			textStack[0] += `<div class="rd__image-title">
 				${entry.title && !entry.mapRegions ? `<div class="rd__image-title-inner ${entry.title && entry.mapRegions ? "mr-2" : ""}">${this.render(entry.title)}</div>` : ""}
 				${entry.mapRegions ? `<button class="btn btn-xs btn-default rd__image-btn-viewer" onclick="RenderMap.pShowViewer(event, this)" data-rd-packed-map="${this._renderImage_getMapRegionData(entry)}" ${entry.title ? `title="Open Dynamic Viewer"` : ""}><span class="glyphicon glyphicon-picture"></span> ${entry.title || "Dynamic Viewer"}</button>` : ""}
 			</div>`;
-		} else if (entry._galleryTitlePad) textStack[0] += `<div class="rd__image-title">&nbsp;</div>`;
+		} else if (entry._galleryTitlePad) {
+			textStack[0] += `<div class="rd__image-title">&nbsp;</div>`;
+		}
 
 		textStack[0] += `</div>`;
 		this._renderSuffix(entry, textStack, meta, options);
 		if (entry.imageType === "map") textStack[0] += `</div>`;
+	};
+
+	this._renderImage_getStylePart = function (entry) {
+		const styles = [
+			// N.b. this width/height should be reflected in the renderer image CSS
+			// Clamp the max width at 100%, as per the renderer styling
+			entry.maxWidth ? `max-width: min(100%, ${entry.maxWidth}${entry.maxWidthUnits || "px"})` : "",
+			// Clamp the max height at 60vh, as per the renderer styling
+			entry.maxHeight ? `max-height: min(60vh, ${entry.maxHeight}${entry.maxHeightUnits || "px"})` : "",
+		].filter(Boolean).join("; ");
+		return styles ? `style="${styles}"` : "";
 	};
 
 	this._renderImage_getMapRegionData = function (entry) {
@@ -563,7 +577,10 @@ function Renderer () {
 		const isInfiniteResults = autoRollMode === RollerUtil.ROLL_COL_VARIABLE;
 
 		// caption
-		if (entry.caption != null) textStack[0] += `<caption>${entry.caption}</caption>`;
+		if (entry.caption != null) {
+			this._handleTrackTitles(entry.caption, {isTable: true});
+			textStack[0] += `<caption ${this._isHeaderIndexIncludeTableCaptions ? `data-title-index="${this._headerIndex++}"` : ""}>${entry.caption}</caption>`;
+		}
 
 		// body -- temporarily build this to own string; append after headers
 		const rollCols = [];
@@ -4984,8 +5001,8 @@ Renderer.monster = {
 	},
 
 	dragonCasterVariant: {
-		VARIANT_NAME: "Dragons as Innate Spellcasters",
-		LVL_TO_COLOR_TO_SPELLS: {
+		// Community-created (legacy)
+		_LVL_TO_COLOR_TO_SPELLS__UNOFFICIAL: {
 			2: {
 				black: ["darkness", "Melf's acid arrow", "fog cloud", "scorching ray"],
 				green: ["ray of sickness", "charm person", "detect thoughts", "invisibility", "suggestion"],
@@ -5009,7 +5026,7 @@ Renderer.monster = {
 			5: {
 				blue: ["telekinesis", "hold monster", "dimension door", "wall of stone", "wall of force"],
 				green: ["cloudkill", "charm monster|XGE", "modify memory", "mislead", "hallucinatory terrain", "dimension door"],
-				bronze: ["steel wind strike|XGE", "control weather", "control winds|XGE", "watery sphere|XGE", "storm sphere|XGE", "tidal wave|XGE"],
+				bronze: ["steel wind strike|XGE", "control winds|XGE", "watery sphere|XGE", "storm sphere|XGE", "tidal wave|XGE"],
 				gold: ["hold monster", "immolation|XGE", "wall of fire", "greater invisibility", "dimension door"],
 				silver: ["cone of cold", "ice storm", "teleportation circle", "skill empowerment|XGE", "creation", "Mordenkainen's private sanctum"],
 			},
@@ -5029,6 +5046,58 @@ Renderer.monster = {
 				gold: ["sunburst", "delayed blast fireball", "antimagic field", "teleport", "globe of invulnerability", "maze"],
 			},
 		},
+		// From Fizban's Treasury of Dragons
+		_LVL_TO_COLOR_TO_SPELLS__FTD: {
+			1: {
+				deep: ["command", "dissonant whispers", "faerie fire"],
+			},
+			2: {
+				black: ["blindness/deafness", "create or destroy water"],
+				green: ["invisibility", "speak with animals"],
+				white: ["gust of wind"],
+				brass: ["create or destroy water", "speak with animals"],
+				bronze: ["beast sense", "detect thoughts", "speak with animals"],
+				copper: ["lesser restoration", "phantasmal force"],
+			},
+			3: {
+				blue: ["create or destroy water", "major image"],
+				red: ["bane", "heat metal", "hypnotic pattern", "suggestion"],
+				gold: ["bless", "cure wounds", "slow", "suggestion", "zone of truth"],
+				silver: ["beacon of hope", "calm emotions", "hold person", "zone of truth"],
+				deep: ["command", "dissonant whispers", "faerie fire", "water breathing"],
+			},
+			4: {
+				black: ["blindness/deafness", "create or destroy water", "plant growth"],
+				white: ["gust of wind"],
+				brass: ["create or destroy water", "speak with animals", "suggestion"],
+				copper: ["lesser restoration", "phantasmal force", "stone shape"],
+			},
+			5: {
+				blue: ["arcane eye", "create or destroy water", "major image"],
+				red: ["bane", "dominate person", "heat metal", "hypnotic pattern", "suggestion"],
+				green: ["invisibility", "plant growth", "speak with animals"],
+				bronze: ["beast sense", "control water", "detect thoughts", "speak with animals"],
+				gold: ["bless", "commune", "cure wounds", "geas", "slow", "suggestion", "zone of truth"],
+				silver: ["beacon of hope", "calm emotions", "hold person", "polymorph", "zone of truth"],
+			},
+			6: {
+				white: ["gust of wind", "ice storm"],
+				brass: ["create or destroy water", "locate creature", "speak with animals", "suggestion"],
+				deep: ["command", "dissonant whispers", "faerie fire", "passwall", "water breathing"],
+			},
+			7: {
+				black: ["blindness/deafness", "create or destroy water", "insect plague", "plant growth"],
+				blue: ["arcane eye", "create or destroy water", "major image", "project image"],
+				red: ["bane", "dominate person", "heat metal", "hypnotic pattern", "power word stun", "suggestion"],
+				green: ["invisibility", "mass suggestion", "plant growth", "speak with animals"],
+				bronze: ["beast sense", "control water", "detect thoughts", "heroes' feast", "speak with animals"],
+				copper: ["lesser restoration", "move earth", "phantasmal force", "stone shape"],
+				silver: ["beacon of hope", "calm emotions", "hold person", "polymorph", "teleport", "zone of truth"],
+			},
+			8: {
+				gold: ["bless", "commune", "cure wounds", "geas", "plane shift", "slow", "suggestion", "word of recall", "zone of truth"],
+			},
+		},
 
 		hasCastingColorVariant (dragon) {
 			// if the dragon already has a spellcasting trait specified, don't add a note about adding a spellcasting trait
@@ -5046,15 +5115,24 @@ Renderer.monster = {
 				maxSpellLevel,
 				spellSaveDc: pb + chaMod + 8,
 				spellToHit: pb + chaMod,
-				exampleSpells: Renderer.monster.dragonCasterVariant._getMeta_getExampleSpells(dragon, maxSpellLevel),
+				exampleSpellsUnofficial: Renderer.monster.dragonCasterVariant._getMeta_getExampleSpells({
+					dragon,
+					maxSpellLevel,
+					spellLookup: Renderer.monster.dragonCasterVariant._LVL_TO_COLOR_TO_SPELLS__UNOFFICIAL,
+				}),
+				exampleSpellsFtd: Renderer.monster.dragonCasterVariant._getMeta_getExampleSpells({
+					dragon,
+					maxSpellLevel,
+					spellLookup: Renderer.monster.dragonCasterVariant._LVL_TO_COLOR_TO_SPELLS__FTD,
+				}),
 			};
 		},
 
-		_getMeta_getExampleSpells (dragon, maxSpellLevel) {
-			if (Renderer.monster.dragonCasterVariant.LVL_TO_COLOR_TO_SPELLS[maxSpellLevel]?.[dragon.dragonCastingColor]) return Renderer.monster.dragonCasterVariant.LVL_TO_COLOR_TO_SPELLS[maxSpellLevel][dragon.dragonCastingColor];
+		_getMeta_getExampleSpells ({dragon, maxSpellLevel, spellLookup}) {
+			if (spellLookup[maxSpellLevel]?.[dragon.dragonCastingColor]) return spellLookup[maxSpellLevel][dragon.dragonCastingColor];
 
 			// If there's no exact match, try to find the next lowest
-			const flatKeys = Object.entries(Renderer.monster.dragonCasterVariant.LVL_TO_COLOR_TO_SPELLS)
+			const flatKeys = Object.entries(spellLookup)
 				.map(([lvl, group]) => {
 					return Object.keys(group)
 						.map(color => `${lvl}${color}`);
@@ -5064,41 +5142,57 @@ Renderer.monster = {
 
 			while (--maxSpellLevel > -1) {
 				const lookupKey = `${maxSpellLevel}${dragon.dragonCastingColor}`;
-				if (flatKeys[lookupKey]) return Renderer.monster.dragonCasterVariant.LVL_TO_COLOR_TO_SPELLS[maxSpellLevel][dragon.dragonCastingColor];
+				if (flatKeys[lookupKey]) return spellLookup[maxSpellLevel][dragon.dragonCastingColor];
 			}
 			return [];
 		},
 
-		getSpellcasterDetailsPart ({chaMod, maxSpellLevel, spellSaveDc, spellToHit}) {
+		getSpellcasterDetailsPart ({chaMod, maxSpellLevel, spellSaveDc, spellToHit, isSeeSpellsPageNote = false}) {
 			const levelString = maxSpellLevel === 0 ? `${chaMod === 1 ? "This" : "These"} spells are Cantrips.` : `${chaMod === 1 ? "The" : "Each"} spell's level can be no higher than ${Parser.spLevelToFull(maxSpellLevel)}.`;
 
-			return `This dragon can innately cast ${Parser.numberToText(chaMod)} spell${chaMod === 1 ? "" : "s"}, once per day${chaMod === 1 ? "" : " each"}, requiring no material components. ${levelString} The dragon's spell save DC is {@dc ${spellSaveDc}}, and it has {@hit ${spellToHit}} to hit with spell attacks. See the {@filter spell page|spells|level=${[...new Array(maxSpellLevel + 1)].map((it, i) => i).join(";")}} for a list of spells the dragon is capable of casting.`;
+			return `This dragon can innately cast ${Parser.numberToText(chaMod)} spell${chaMod === 1 ? "" : "s"}, once per day${chaMod === 1 ? "" : " each"}, requiring no material components. ${levelString} The dragon's spell save DC is {@dc ${spellSaveDc}}, and it has {@hit ${spellToHit}} to hit with spell attacks.${isSeeSpellsPageNote ? ` See the {@filter spell page|spells|level=${[...new Array(maxSpellLevel + 1)].map((it, i) => i).join(";")}} for a list of spells the dragon is capable of casting.` : ""}`;
 		},
 
 		getHtml (renderer, dragon) {
 			if (!Renderer.monster.dragonCasterVariant.hasCastingColorVariant(dragon)) return null;
 
 			const meta = Renderer.monster.dragonCasterVariant.getMeta(dragon);
-			const {exampleSpells} = meta;
+			const {exampleSpellsUnofficial, exampleSpellsFtd} = meta;
 
-			const v = {
+			const vFtd = exampleSpellsFtd?.length ? {
+				type: "variant",
+				name: "Dragons as Innate Spellcasters",
+				variantSource: {source: SRC_FTD},
+				entries: [
+					`${Renderer.monster.dragonCasterVariant.getSpellcasterDetailsPart(meta)}`,
+					`A suggested spell list is shown below, but you can also choose spells to reflect the dragon's character. A dragon who innately casts {@filter druid|spells|class=druid} spells feels different from one who casts {@filter warlock|spells|class=warlock} spells. You can also give a dragon spells of a higher level than this rule allows, but such a tweak might increase the dragon's challenge rating\u2014especially if those spells deal damage or impose conditions on targets.`,
+					{
+						type: "list",
+						items: exampleSpellsFtd.map(it => `{@spell ${it}}`),
+					},
+				],
+			} : null;
+
+			const vBasic = {
 				type: "variant",
 				name: "Dragons as Innate Spellcasters",
 				entries: [
 					"Dragons are innately magical creatures that can master a few spells as they age, using this variant.",
 					`A young or older dragon can innately cast a number of spells equal to its Charisma modifier. Each spell can be cast once per day, requiring no material components, and the spell's level can be no higher than one-third the dragon's challenge rating (rounded down). The dragon's bonus to hit with spell attacks is equal to its proficiency bonus + its Charisma bonus. The dragon's spell save DC equals 8 + its proficiency bonus + its Charisma modifier.`,
-					`{@note ${Renderer.monster.dragonCasterVariant.getSpellcasterDetailsPart(meta)}${exampleSpells ? ` A selection of examples are shown below:` : ""}}`,
+					`{@note ${Renderer.monster.dragonCasterVariant.getSpellcasterDetailsPart({...meta, isSeeSpellsPageNote: true})}${exampleSpellsUnofficial?.length ? ` A selection of examples are shown below:` : ""}}`,
 				],
 			};
-			if (exampleSpells) {
+			if (dragon.source !== SRC_MM) vBasic.variantSource = {source: SRC_MM, page: 86};
+			if (exampleSpellsUnofficial) {
 				const ls = {
 					type: "list",
-					style: "italic",
-					items: exampleSpells.map(it => `{@spell ${it}}`),
+					style: "list-italic",
+					items: exampleSpellsUnofficial.map(it => `{@spell ${it}}`),
 				};
-				v.entries.push(ls);
+				vBasic.entries.push(ls);
 			}
-			return renderer.render(v);
+
+			return [vFtd, vBasic].filter(Boolean).map(it => renderer.render(it)).join("");
 		},
 	},
 
