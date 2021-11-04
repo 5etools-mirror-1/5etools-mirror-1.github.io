@@ -166,6 +166,7 @@ class InitiativeTracker {
 		 * @param [opts]
 		 * @param [opts.$btnStartServer]
 		 * @param [opts.$btnGetToken]
+		 * @param [opts.$btnGetLink]
 		 * @param [opts.fnDispServerStoppedState]
 		 * @param [opts.fnDispServerRunningState]
 		 */
@@ -182,6 +183,7 @@ class InitiativeTracker {
 				srvPeer = new PeerVeServer();
 				await srvPeer.pInit();
 				if (opts.$btnGetToken) opts.$btnGetToken.prop("disabled", false);
+				if (opts.$btnGetLink) opts.$btnGetLink.prop("disabled", false);
 
 				srvPeer.on("connection", connection => {
 					const pConnected = new Promise(resolve => {
@@ -238,26 +240,36 @@ class InitiativeTracker {
 				const fnDispServerStoppedState = () => {
 					$btnStartServer.html(`<span class="glyphicon glyphicon-play"/> Start Server`).prop("disabled", false);
 					$btnGetToken.prop("disabled", true);
+					$btnGetLink.prop("disabled", true);
 				};
 
 				const fnDispServerRunningState = () => {
 					$btnStartServer.html(`<span class="glyphicon glyphicon-play"/> Server Running`).prop("disabled", true);
 					$btnGetToken.prop("disabled", false);
+					$btnGetLink.prop("disabled", false);
 				};
 
 				const $btnStartServer = $(`<button class="btn btn-default mr-2"></button>`)
 					.click(async () => {
-						const isRunning = await startServer({$btnStartServer, $btnGetToken, fnDispServerStoppedState, fnDispServerRunningState});
+						const isRunning = await startServer({$btnStartServer, $btnGetToken, $btnGetLink, fnDispServerStoppedState, fnDispServerRunningState});
 						if (isRunning) {
 							srvPeer.onTemp("connection", showConnected);
 							showConnected();
 						}
 					});
 
-				const $btnGetToken = $(`<button class="btn btn-default" disabled><span class="glyphicon glyphicon-copy"/> Copy Token</button>`).appendTo($wrpHelp)
+				const $btnGetToken = $(`<button class="btn btn-default mr-2" disabled><span class="glyphicon glyphicon-copy"/> Copy Token</button>`).appendTo($wrpHelp)
 					.click(() => {
 						MiscUtil.pCopyTextToClipboard(srvPeer.token);
 						JqueryUtil.showCopiedEffect($btnGetToken);
+					});
+
+				const $btnGetLink = $(`<button class="btn btn-default" disabled><span class="glyphicon glyphicon-link"/> Copy Link</button>`).appendTo($wrpHelp)
+					.click(() => {
+						const cleanOrigin = window.location.origin.replace(/\/+$/, "");
+						const url = `${cleanOrigin}/inittrackerplayerview.html#${srvPeer.token}`;
+						MiscUtil.pCopyTextToClipboard(url);
+						JqueryUtil.showCopiedEffect($btnGetLink);
 					});
 
 				if (srvPeer) fnDispServerRunningState();
@@ -273,7 +285,7 @@ class InitiativeTracker {
 							<li>Wait for them to connect!</li>
 						</ol>
 						</p>
-						<p>${$btnStartServer}${$btnGetToken}</p>
+						<p>${$btnStartServer}${$btnGetToken}${$btnGetLink}</p>
 						<p><i>Please note that this system is highly experimental. Your experience may vary.</i></p>
 					</div>
 				</div>`.appendTo($wrpHelp);
