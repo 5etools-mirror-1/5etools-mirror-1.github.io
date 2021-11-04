@@ -13,6 +13,8 @@ window.addEventListener("load", () => {
 		.change(() => $iptPlayerName.removeClass("form-control--error"))
 		.disableSpellcheck();
 
+	$iptServerToken.val(window.location.hash.slice(1));
+
 	const $btnConnect = $(`#initp__btn_connect`)
 		.click(async () => {
 			if (!$iptPlayerName.val().trim()) return $iptPlayerName.addClass("form-control--error");
