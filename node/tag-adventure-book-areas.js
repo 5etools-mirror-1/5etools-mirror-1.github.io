@@ -67,7 +67,7 @@ const doPass = (arr, type) => {
 		areaTagger.run();
 		console.log(`\tTagged ${meta.id}...`);
 	});
-}
+};
 
 doPass(adventureIndex.adventure, "adventure");
 doPass(bookIndex.book, "book");

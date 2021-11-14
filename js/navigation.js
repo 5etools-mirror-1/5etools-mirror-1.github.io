@@ -310,10 +310,10 @@ class NavBar {
 			li.classList.add("page__btn-nav-root");
 		}
 		if (opts.isSide) {
-			li.onmouseenter = function () { NavBar._handleSideItemMouseEnter(this) }
+			li.onmouseenter = function () { NavBar._handleSideItemMouseEnter(this); };
 		} else {
-			li.onmouseenter = function () { NavBar._handleItemMouseEnter(this) };
-			li.onclick = function () { NavBar._dropdowns.forEach(ele => ele.classList.remove("open")) }
+			li.onmouseenter = function () { NavBar._handleItemMouseEnter(this); };
+			li.onclick = function () { NavBar._dropdowns.forEach(ele => ele.classList.remove("open")); };
 		}
 
 		const a = document.createElement("a");
@@ -326,7 +326,7 @@ class NavBar {
 			a.setAttribute("target", "_blank");
 			a.classList.add("inline-split-v-center");
 			a.classList.add("w-100");
-			a.innerHTML = `<span>${aText}</span><span class="glyphicon glyphicon-new-window"/>`
+			a.innerHTML = `<span>${aText}</span><span class="glyphicon glyphicon-new-window"/>`;
 		}
 
 		li.appendChild(a);
@@ -352,7 +352,7 @@ class NavBar {
 
 		const li = document.createElement("li");
 		li.className = "nav2-accord__wrp";
-		li.onmouseenter = function () { NavBar._handleItemMouseEnter(this) };
+		li.onmouseenter = function () { NavBar._handleItemMouseEnter(this); };
 
 		// region Header button
 		const wrpHead = document.createElement("div");
@@ -646,7 +646,7 @@ NavBar._GROUP_ORDER = {
 		"homebrew",
 		"other",
 	],
-}
+};
 NavBar._CAT_RULES = "Rules";
 NavBar._CAT_BOOKS = "Books";
 NavBar._CAT_PLAYER = "Player";
@@ -743,7 +743,7 @@ NavBar.InteractionManager = class {
 				}
 			} catch (e) {
 				// Ignore errors
-				setTimeout(() => { throw e; })
+				setTimeout(() => { throw e; });
 			}
 		};
 
@@ -801,7 +801,7 @@ NavBar.InteractionManager = class {
 
 						JqueryUtil.doToast(`An error occurred. ${VeCt.STR_SEE_CONSOLE}`);
 					}
-					setTimeout(() => { throw new Error(msg.message); })
+					setTimeout(() => { throw new Error(msg.message); });
 					break;
 				}
 			}
@@ -809,7 +809,7 @@ NavBar.InteractionManager = class {
 
 		sendMessage({"type": "cache-start"});
 	}
-}
+};
 
 NavBar.Node = class {
 	constructor ({parent, head, body}) {
@@ -830,7 +830,7 @@ NavBar.Node = class {
 	get isActive () {
 		return this._isActive;
 	}
-}
+};
 
 NavBar.NodeLink = class extends NavBar.Node {
 	constructor ({isInAccordion, lnk, ...rest}) {
@@ -853,7 +853,7 @@ NavBar.NodeLink = class extends NavBar.Node {
 	get isActive () { // Overriding the setter clobbers the getter, so, re-make it
 		return super.isActive;
 	}
-}
+};
 
 NavBar.NodeAccordion = class extends NavBar.Node {
 	static getDispToggleDisplayHtml (val) { return val ? `[\u2012]` : `[+]`; }
@@ -884,6 +884,6 @@ NavBar.NodeAccordion = class extends NavBar.Node {
 	get isExpanded () {
 		return this._isExpanded;
 	}
-}
+};
 
 NavBar.init();

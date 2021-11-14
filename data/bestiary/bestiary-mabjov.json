@@ -3809,7 +3809,7 @@
 				{
 					"name": "Infused Magical Items",
 					"entries": [
-						"Flimp is wearing a cloak of the manta ray, a ring of protection, plate armor +2, and winged boots. Flimp wields a warhammer +2. These items vanish 4 days after Flimp dies."
+						"Flimp is wearing a {@item cloak of the manta ray}, a {@item ring of protection}, {@item +2 plate armor||plate armor +2}, and {@item winged boots}. Flimp wields a {@item +2 warhammer||warhammer +2}. These items vanish 4 days after Flimp dies."
 					]
 				},
 				{
@@ -4161,13 +4161,13 @@
 				{
 					"name": "Sneak Attack (1/Turn)",
 					"entries": [
-						"Imoen deals an extra 13 ({@damage 4d6}) damage when she hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 ft. of an ally of Imoen that isn't incapacitated and Imoen doesn't have disadvantage on the attack roll."
+						"Imoen deals an extra 14 ({@damage 4d6}) damage when she hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 ft. of an ally of Imoen that isn't {@condition incapacitated} and Imoen doesn't have disadvantage on the attack roll."
 					]
 				},
 				{
 					"name": "Spider Climb",
 					"entries": [
-						"The vampire can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+						"Imoen can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
 					]
 				},
 				{
@@ -6000,7 +6000,7 @@
 				{
 					"name": "Special Items",
 					"entries": [
-						"Nauk wears adamantine plate armor. He wields a +1 maul and a heavy crossbow +1 which is already factored into his stats. He has 2 potions of resistance\u2014cold, 2 potions of resistance\u2014fire, 2 potions of resistance\u2014lightning. He has 2 potions of heroism and 4 potions of superior healing."
+						"Nauk wears {@item adamantine plate armor}. He wields a {@item +1 maul} and a {@item +1 heavy crossbow||heavy crossbow +1} which is already factored into his stats. He has 2 {@item potion of cold resistance||potions of resistance\u2014cold}, 2 {@item potion of fire resistance||potions of resistance\u2014fire}, 2 {@item potion of lightning resistance||potions of resistance\u2014lightning}. He has 2 {@item potion of heroism||potions of heroism} and 4 {@item potion of superior healing||potions of superior healing}."
 					]
 				}
 			],
@@ -6030,7 +6030,7 @@
 						{
 							"type": "list",
 							"items": [
-								"Potion of heroism: Nauk gains 10 temporary hit points for 1 hour. For the same duration, Nauk is under the effect of the bless spell (no concentration required).",
+								"Potion of heroism: Nauk gains 10 temporary hit points for 1 hour. For the same duration, Nauk is under the effect of the {@spell bless} spell (no concentration required).",
 								"Potion of resistance: Nauk gains resistance from one damage type for 1 hour. Nauk chooses from one of these damage types: cold, fire, lightning.",
 								"Potion of superior healing: Nauk regains 28 hit points."
 							]
@@ -7347,7 +7347,7 @@
 				{
 					"name": "Fear Aura",
 					"entries": [
-						"Any creature hostile to the skeleton lord that starts its turn within 20 feet of the skeleton lord must make a {@dc 17} Wisdom saving throw, unless the skeleton lord is {@condition incapacitated}. On a failed save, the creature is Frightened until the start of its next turn. If a creature's saving throw is successful, then the creature is immune to the skeleton lord's Fear Aura for the next 24 hours."
+						"Any creature hostile to the skeleton lord that starts its turn within 20 feet of the skeleton lord must make a {@dc 17} Wisdom saving throw, unless the skeleton lord is {@condition incapacitated}. On a failed save, the creature is {@condition frightened} until the start of its next turn. If a creature's saving throw is successful, then the creature is immune to the skeleton lord's Fear Aura for the next 24 hours."
 					]
 				},
 				{
@@ -7359,7 +7359,7 @@
 				{
 					"name": "Magic Weapons",
 					"entries": [
-						"The skeleton lord's weapon attacks are magical and gain a +3 advantage to attack and damage rolls (included in the attack)."
+						"The skeleton lord's weapon attacks are magical and have a +3 bonus to attack and damage rolls (included in the attack)."
 					]
 				}
 			],
@@ -7480,7 +7480,7 @@
 				{
 					"name": "Magic Weapons",
 					"entries": [
-						"The skeleton warrior's weapon attacks are magical and gain a +3 advantage to attack and damage rolls (included in the attack)."
+						"The skeleton warrior's weapon attacks are magical and have a +3 bonus to attack and damage rolls (included in the attack)."
 					]
 				}
 			],
@@ -8067,7 +8067,12 @@
 			"source": "MaBJoV",
 			"page": 153,
 			"size": "S",
-			"type": "humanoid",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"goblinoid"
+				]
+			},
 			"alignment": [
 				"C",
 				"E"
@@ -8107,7 +8112,7 @@
 				{
 					"name": "Nimble Escape",
 					"entries": [
-						"The tasloi can take the Disengage or Hide"
+						"The tasloi can take the Disengage or Hide action as a bonus action on each of its turns."
 					]
 				}
 			],
@@ -8210,7 +8215,7 @@
 				{
 					"name": "Nimble Escape",
 					"entries": [
-						"The tasloi can take the Disengage or Hide"
+						"The tasloi can take the Disengage or Hide action as a bonus action on each of its turns."
 					]
 				}
 			],
@@ -8550,7 +8555,7 @@
 				{
 					"name": "Animal Companions",
 					"entries": [
-						"Vellin is accompanied by a wolf with maximum hit points (18) named Akela. Vellin can mount or dismount Akela using 5 ft. of movement. While mounted, Vellin can order Akela to Dash, Disengage, and Dodge. In addition, Vellin has an owl companion with maximum hit points (3). On Vellin's turn, the owl can perform a flyby on a creature of Vellin's choice. The next attack that Vellin makes against that creature has advantage."
+						"Vellin is accompanied by a {@creature wolf} with maximum hit points (18) named Akela. Vellin can mount or dismount Akela using 5 ft. of movement. While mounted, Vellin can order Akela to Dash, Disengage, and Dodge. In addition, Vellin has an {@creature owl} companion with maximum hit points (3). On Vellin's turn, the owl can perform a flyby on a creature of Vellin's choice. The next attack that Vellin makes against that creature has advantage."
 					]
 				},
 				{

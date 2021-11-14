@@ -18,7 +18,7 @@ class PeerVe extends Peer {
 
 	getActiveConnections () { return this._connectionsArray.filter(it => it.open); }
 
-	pInit () { return this._pInit }
+	pInit () { return this._pInit; }
 
 	sendMessage (toSend) {
 		if (this.disconnected || this.destroyed) throw new Error(`Connection is not active!`);
@@ -56,7 +56,7 @@ class PeerVeServer extends PeerVe {
 	 * Remove al temporary event listeners for a Peer event type.
 	 */
 	offTemp (eventName) {
-		(this._tempListeners[eventName] || []).forEach(it => this.off(eventName, it))
+		(this._tempListeners[eventName] || []).forEach(it => this.off(eventName, it));
 	}
 }
 

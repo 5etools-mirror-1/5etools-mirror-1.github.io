@@ -52,6 +52,6 @@ class PageFilterTrapsHazards extends PageFilter {
 			values,
 			it.source,
 			it.trapHazType,
-		)
+		);
 	}
 }

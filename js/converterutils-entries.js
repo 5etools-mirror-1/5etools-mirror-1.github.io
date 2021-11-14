@@ -27,7 +27,7 @@ class TagJsons {
 					{_: json[k]},
 					{
 						object: (obj, lastKey) => {
-							if (lastKey != null && !LAST_KEY_WHITELIST.has(lastKey)) return obj
+							if (lastKey != null && !LAST_KEY_WHITELIST.has(lastKey)) return obj;
 
 							obj = TagCondition.tryRunBasic(obj);
 							obj = SkillTag.tryRun(obj);
@@ -108,7 +108,7 @@ class SpellTag {
 			.replace(SpellTag._SPELL_NAME_REGEX_CAST, (...m) => {
 				const spellMeta = SpellTag._SPELL_NAMES[m.last().spell.toLowerCase()];
 				return `${m.last().prefix}{@spell ${m.last().spell}${spellMeta.source !== SRC_PHB ? `|${spellMeta.source}` : ""}}`;
-			})
+			});
 
 		return strMod
 			.replace(SpellTag._SPELL_NAME_REGEX_AND, (...m) => {

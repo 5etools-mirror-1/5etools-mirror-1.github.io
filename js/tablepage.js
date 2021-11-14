@@ -29,7 +29,7 @@ class TablePage {
 		for (let i = 0; i < this._dataList.length; i++) {
 			const loc = this._dataList[i];
 
-			const $dispShowHide = $(`<div class="lst__tgl-item-group mr-1">[\u2013]</div>`)
+			const $dispShowHide = $(`<div class="lst__tgl-item-group mr-1">[\u2013]</div>`);
 
 			const $btnHeader = $$`<div class="lst__item-group-header my-2 split-v-center" title="Source: ${Parser.sourceJsonToFull(loc.source)}">
 				<div>${loc.name}</div>
@@ -39,14 +39,14 @@ class TablePage {
 					$ulContents.toggleVe();
 					if ($ulContents.hasClass("ve-hidden")) $dispShowHide.html(`[+]`);
 					else $dispShowHide.html(`[\u2013]`);
-				})
+				});
 
 			const $ulContents = this._$getContentsBlock(i, loc);
 
 			const $wrp = $$`<div>
 				${$btnHeader}
 				${$ulContents}
-			</div>`
+			</div>`;
 
 			const listItem = new ListItem(i, $wrp, loc.name);
 
@@ -73,7 +73,7 @@ class TablePage {
 
 	_$getContentsBlock (i, meta) {
 		const $out = $(`<div class="flex-col w-100"></div>`);
-		let stack = ""
+		let stack = "";
 		meta.tables.forEach((table, j) => {
 			const tableName = this._fnGetTableName(meta, table);
 			stack += `<div class="lst__row flex-col"><a id="${i},${j}" class="lst--border lst__row-inner" href="#${this._fnGetTableHash(meta, table)}" title="${tableName}">${tableName}</a></div>`;
@@ -152,7 +152,7 @@ class TablePage {
 		// add dice results
 		result = result.replace(RollerUtil.DICE_REGEX, function (match) {
 			const r = Renderer.dice.parseRandomise2(match);
-			return `<span class="roller" onmousedown="event.preventDefault()" onclick="tablePage.reroll(this)">${match}</span> (<span class="result">${r}</span>)`
+			return `<span class="roller" onmousedown="event.preventDefault()" onclick="tablePage.reroll(this)">${match}</span> (<span class="result">${r}</span>)`;
 		});
 
 		Renderer.dice.addRoll({name: this._fnGetTableName(meta, table)}, `<span><strong>${TablePage._pad(roll)}</strong> ${result}</span>`);

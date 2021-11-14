@@ -46,6 +46,6 @@ class PageFilterConditionsDiseases extends PageFilter {
 			it.source,
 			it.__prop,
 			it._fMisc,
-		)
+		);
 	}
 }

@@ -858,7 +858,7 @@ class IndexableFileQuickReference extends IndexableFile {
 					return [
 						IndexableFileQuickReference._getDeepDoc(indexer, primary, nameMeta),
 						...(nameMeta.alias || []).map(alias => IndexableFileQuickReference._getDeepDoc(indexer, primary, nameMeta, alias)),
-					]
+					];
 				}).flat();
 			})
 			.flat();
@@ -1160,7 +1160,7 @@ class IndexableSpecialPages extends IndexableSpecial {
 				n: name,
 				c: Parser.CAT_ID_PAGE,
 				u: page,
-			}))
+			}));
 	}
 }
 

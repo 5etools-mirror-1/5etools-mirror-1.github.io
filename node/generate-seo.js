@@ -19,7 +19,7 @@ const version = rd("package.json").version;
 
 const lastMod = (() => {
 	const date = new Date();
-	return `${date.getFullYear()}-${`${date.getMonth() + 1}`.padStart(2, "0")}-${`${date.getDate()}`.padStart(2, "0")}`
+	return `${date.getFullYear()}-${`${date.getMonth() + 1}`.padStart(2, "0")}-${`${date.getDate()}`.padStart(2, "0")}`;
 })();
 
 const baseSitemapData = (() => {
@@ -119,7 +119,7 @@ const toGenerate = [
 			const index = rd(`data/spells/index.json`);
 			const fileData = Object.entries(index)
 				.map(([_, filename]) => rd(`data/spells/${filename}`));
-			return fileData.map(it => MiscUtil.copy(it.spell)).reduce((a, b) => a.concat(b))
+			return fileData.map(it => MiscUtil.copy(it.spell)).reduce((a, b) => a.concat(b));
 		},
 		style: 1,
 		isFluff: 1,
@@ -131,7 +131,7 @@ const toGenerate = [
 			const fileData = Object.entries(index)
 				.map(([source, filename]) => ({source: source, json: rd(`data/bestiary/${filename}`)}));
 			// Filter to prevent duplicates from "otherSources" copies
-			return fileData.map(it => MiscUtil.copy(it.json.monster.filter(mon => mon.source === it.source))).reduce((a, b) => a.concat(b))
+			return fileData.map(it => MiscUtil.copy(it.json.monster.filter(mon => mon.source === it.source))).reduce((a, b) => a.concat(b));
 		},
 		style: 2,
 		isFluff: 1,
@@ -155,9 +155,9 @@ async function main () {
 	console.log(`Generating SEO pages...`);
 	await Promise.all(toGenerate.map(async meta => {
 		try {
-			fs.mkdirSync(`./${meta.page}`, { recursive: true })
+			fs.mkdirSync(`./${meta.page}`, { recursive: true });
 		} catch (err) {
-			if (err.code !== "EEXIST") throw err
+			if (err.code !== "EEXIST") throw err;
 		}
 
 		const entries = await meta.pGetEntries();
@@ -220,7 +220,7 @@ async function main () {
 
 	const xml = $urlSet.end({pretty: true});
 	fs.writeFileSync("./sitemap.xml", xml, "utf-8");
-	console.log(`Wrote ${sitemapLinkCount.toLocaleString()} URL${sitemapLinkCount === 1 ? "" : "s"} to sitemap.xml`)
+	console.log(`Wrote ${sitemapLinkCount.toLocaleString()} URL${sitemapLinkCount === 1 ? "" : "s"} to sitemap.xml`);
 }
 
 main().then(() => console.log(`SEO page generation complete.`)).catch(e => console.error(e));

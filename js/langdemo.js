@@ -46,7 +46,7 @@ class LangDemoUi {
 		const loadContext = () => {
 			const loaded = StorageUtil.syncGetForPage("context");
 			if (loaded != null) {
-				loaded.forEach(it => addContextRow(it.name, it.val))
+				loaded.forEach(it => addContextRow(it.name, it.val));
 			}
 		};
 

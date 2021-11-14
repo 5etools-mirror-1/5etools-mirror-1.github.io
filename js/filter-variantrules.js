@@ -38,6 +38,6 @@ class PageFilterVariantRules extends PageFilter {
 			r.source,
 			r._fRuleType,
 			r._fMisc,
-		)
+		);
 	}
 }

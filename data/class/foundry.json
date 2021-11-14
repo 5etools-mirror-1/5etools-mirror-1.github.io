@@ -648,6 +648,31 @@
 	],
 	"subclassFeature": [
 		{
+			"name": "Arcane Firearm",
+			"source": "TCE",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Artillerist",
+			"subclassSource": "TCE",
+			"level": 5,
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "data.bonuses.msak.damage",
+							"mode": "ADD",
+							"value": "1d8"
+						},
+						{
+							"key": "data.bonuses.rsak.damage",
+							"mode": "ADD",
+							"value": "1d8"
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "Remarkable Athlete",
 			"source": "PHB",
 			"className": "Fighter",

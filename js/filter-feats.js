@@ -99,7 +99,7 @@ class PageFilterFeats extends PageFilter {
 			],
 			ft._fBenifits,
 			ft._fMisc,
-		)
+		);
 	}
 }
 

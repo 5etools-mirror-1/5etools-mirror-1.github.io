@@ -41,6 +41,6 @@ class PageFilterCultsBoons extends PageFilter {
 			cb.source,
 			cb._fType,
 			cb.type,
-		)
+		);
 	}
 }

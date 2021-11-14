@@ -420,7 +420,7 @@ class Board {
 				this.exiledPanels.unshift(toExile);
 				const toDestroy = this.exiledPanels.splice(10);
 				toDestroy.forEach(p => p.destroy());
-				this.sideMenu.doUpdateHistory()
+				this.sideMenu.doUpdateHistory();
 			} else this.destroyPanel(id);
 			this.doSaveStateDebounced();
 		}
@@ -492,7 +492,7 @@ class Board {
 		if (this.$btnLockPanels && (toLoad.lk !== !!this.isLocked)) this.$btnLockPanels.click();
 
 		// re-exile
-		const toReExile = toLoad.ex.filter(Boolean).reverse()
+		const toReExile = toLoad.ex.filter(Boolean).reverse();
 		for (const saved of toReExile) {
 			const p = await Panel.fromSavedState(this, saved);
 			if (p) {
@@ -545,7 +545,7 @@ class Board {
 		Object.values(this.panels).forEach(p => {
 			if (panel && panel.id === p.id) return;
 			p.$btnAddInner.removeClass("faux-hover");
-		})
+		});
 	}
 
 	addPanel (panel) {
@@ -1087,9 +1087,9 @@ class Panel {
 					};
 
 					if (originalCr) {
-						doRender(mon)
+						doRender(mon);
 					} else {
-						ScaleCreature.scale(mon, targetCr).then(toRender => doRender(toRender))
+						ScaleCreature.scale(mon, targetCr).then(toRender => doRender(toRender));
 					}
 				},
 			});
@@ -1714,7 +1714,7 @@ class Panel {
 			tabDatas: this.tabDatas,
 			tabCanRename: this.tabCanRename,
 			tabRenamed: this.tabRenamed,
-		}
+		};
 	}
 
 	setPanelMeta (type, contentMeta) {
@@ -2110,7 +2110,7 @@ class Panel {
 	}
 
 	get$Content () {
-		return this.$content
+		return this.$content;
 	}
 
 	exile () {
@@ -2873,7 +2873,7 @@ class AddMenuImageTab extends AddMenuTab {
 									content: "Failed to upload: Unknown error",
 									type: "danger",
 								});
-								setTimeout(() => { throw e });
+								setTimeout(() => { throw e; });
 							}
 							this.menu.pnl.doPopulate_Empty(ix);
 						},
@@ -2924,7 +2924,7 @@ class AddMenuImageTab extends AddMenuTab {
 			$$`<div class="ui-modal__row">
 				<div>Adventure Map Dynamic Viewer</div>
 				${$btnSelectAdventure}
-			</div>`.appendTo($tab)
+			</div>`.appendTo($tab);
 			// endregion
 
 			this.$tab = $tab;
@@ -3225,7 +3225,7 @@ class AddMenuSearchTab extends AddMenuTab {
 				</select>
 			`).appendTo($wrpCtrls).toggle(Object.keys(this.indexes).length !== 1);
 			Object.keys(this.indexes).sort().filter(it => it !== "ALL").forEach(it => {
-				$selCat.append(`<option value="${it}">${this._getCatOptionText(it)}</option>`)
+				$selCat.append(`<option value="${it}">${this._getCatOptionText(it)}</option>`);
 			});
 			$selCat.on("change", () => {
 				this.cat = $selCat.val();
@@ -3299,7 +3299,7 @@ class AdventureOrBookLoader {
 		switch (this._type) {
 			case "adventure": return `${Renderer.get().baseUrl}data/adventures.json`;
 			case "book": return `${Renderer.get().baseUrl}data/books.json`;
-			default: throw new Error(`Unknown loader type "${this._type}"`)
+			default: throw new Error(`Unknown loader type "${this._type}"`);
 		}
 	}
 
@@ -3307,7 +3307,7 @@ class AdventureOrBookLoader {
 		switch (this._type) {
 			case "adventure": return `${Renderer.get().baseUrl}data/adventure/adventure-${bookOrAdventure.toLowerCase()}.json`;
 			case "book": return `${Renderer.get().baseUrl}data/book/book-${bookOrAdventure.toLowerCase()}.json`;
-			default: throw new Error(`Unknown loader type "${this._type}"`)
+			default: throw new Error(`Unknown loader type "${this._type}"`);
 		}
 	}
 
@@ -3320,7 +3320,7 @@ class AdventureOrBookLoader {
 			case "book": {
 				return (BrewUtil.homebrew.bookData || []).find(it => it.id.toLowerCase() === searchFor);
 			}
-			default: throw new Error(`Unknown loader type "${this._type}"`)
+			default: throw new Error(`Unknown loader type "${this._type}"`);
 		}
 	}
 
@@ -3365,80 +3365,87 @@ class NoteBox {
 	static make$Notebox (board, content) {
 		const $iptText = $(`<textarea class="panel-content-textarea" placeholder="Supports inline rolls and content tags (CTRL-q with the caret in the text to activate the embed):\n • Inline rolls,  [[1d20+2]]\n • Content tags (as per the Demo page), {@creature goblin}, {@spell fireball}\n • Link tags, {@link https://5e.tools}">${content || ""}</textarea>`)
 			.on("keydown", async evt => {
-				if ((evt.ctrlKey || evt.metaKey) && evt.key === "q") {
-					const txt = $iptText[0];
-					if (txt.selectionStart === txt.selectionEnd) {
-						const pos = txt.selectionStart - 1;
-						const text = txt.value;
-						const l = text.length;
-						let beltStack = [];
-						let braceStack = [];
-						let belts = 0;
-						let braces = 0;
-						let beltsAtPos = null;
-						let bracesAtPos = null;
-						let lastBeltPos = null;
-						let lastBracePos = null;
-						outer: for (let i = 0; i < l; ++i) {
-							const c = text[i];
-							switch (c) {
-								case "[":
-									belts = Math.min(belts + 1, 2);
-									if (belts === 2) beltStack = [];
-									lastBeltPos = i;
-									break;
-								case "]":
-									belts = Math.max(belts - 1, 0);
-									if (belts === 0 && i > pos) break outer;
-									break;
-								case "{":
-									if (text[i + 1] === "@") {
-										braces = 1;
-										braceStack = [];
-										lastBracePos = i;
-									}
-									break;
-								case "}":
-									braces = 0;
-									if (i >= pos) break outer;
-									break;
-								default:
-									if (belts === 2) {
-										beltStack.push(c);
-									}
-									if (braces) {
-										braceStack.push(c);
-									}
-							}
-							if (i === pos) {
-								beltsAtPos = belts;
-								bracesAtPos = braces;
-							}
-						}
+				const key = EventUtil.getKeyIgnoreCapsLock(evt);
 
-						if (beltsAtPos === 2 && belts === 0) {
-							const str = beltStack.join("");
-							await Renderer.dice.pRoll2(str.replace(`[[`, "").replace(`]]`, ""), {
-								isUser: false,
-								name: "DM Screen",
-							});
-						} else if (bracesAtPos === 1 && braces === 0) {
-							const str = braceStack.join("");
-							const tag = str.split(" ")[0].replace(/^@/, "");
-							const text = str.split(" ").slice(1).join(" ");
-							if (Renderer.hover.TAG_TO_PAGE[tag]) {
-								const r = Renderer.get().render(`{${str}}`);
-								evt.type = "mouseover";
-								evt.shiftKey = true;
-								evt.ctrlKey = false;
-								$(r).trigger(evt);
-							} else if (tag === "link") {
-								const [txt, link] = Renderer.splitTagByPipe(text);
-								window.open(link && link.trim() ? link : txt);
-							}
+				const isCtrlQ = (evt.ctrlKey || evt.metaKey) && key === "q";
+
+				if (!isCtrlQ) {
+					board.doSaveStateDebounced();
+					return;
+				}
+
+				const txt = $iptText[0];
+				if (txt.selectionStart === txt.selectionEnd) {
+					const pos = txt.selectionStart - 1;
+					const text = txt.value;
+					const l = text.length;
+					let beltStack = [];
+					let braceStack = [];
+					let belts = 0;
+					let braces = 0;
+					let beltsAtPos = null;
+					let bracesAtPos = null;
+					let lastBeltPos = null;
+					let lastBracePos = null;
+					outer: for (let i = 0; i < l; ++i) {
+						const c = text[i];
+						switch (c) {
+							case "[":
+								belts = Math.min(belts + 1, 2);
+								if (belts === 2) beltStack = [];
+								lastBeltPos = i;
+								break;
+							case "]":
+								belts = Math.max(belts - 1, 0);
+								if (belts === 0 && i > pos) break outer;
+								break;
+							case "{":
+								if (text[i + 1] === "@") {
+									braces = 1;
+									braceStack = [];
+									lastBracePos = i;
+								}
+								break;
+							case "}":
+								braces = 0;
+								if (i >= pos) break outer;
+								break;
+							default:
+								if (belts === 2) {
+									beltStack.push(c);
+								}
+								if (braces) {
+									braceStack.push(c);
+								}
+						}
+						if (i === pos) {
+							beltsAtPos = belts;
+							bracesAtPos = braces;
 						}
 					}
-				} else board.doSaveStateDebounced();
+
+					if (beltsAtPos === 2 && belts === 0) {
+						const str = beltStack.join("");
+						await Renderer.dice.pRoll2(str.replace(`[[`, "").replace(`]]`, ""), {
+							isUser: false,
+							name: "DM Screen",
+						});
+					} else if (bracesAtPos === 1 && braces === 0) {
+						const str = braceStack.join("");
+						const tag = str.split(" ")[0].replace(/^@/, "");
+						const text = str.split(" ").slice(1).join(" ");
+						if (Renderer.hover.TAG_TO_PAGE[tag]) {
+							const r = Renderer.get().render(`{${str}}`);
+							evt.type = "mouseover";
+							evt.shiftKey = true;
+							evt.ctrlKey = false;
+							$(r).trigger(evt);
+						} else if (tag === "link") {
+							const [txt, link] = Renderer.splitTagByPipe(text);
+							window.open(link && link.trim() ? link : txt);
+						}
+					}
+				}
 			});
 
 		return $iptText;
@@ -3528,7 +3535,7 @@ class UnitConverter {
 					$iptRight.val(Number((total * mL).toFixed(5)));
 				} catch (e) {
 					$iptLeft.addClass(`ipt-invalid`);
-					$iptRight.val("")
+					$iptRight.val("");
 				}
 			} else showInvalid();
 			board.doSaveStateDebounced();

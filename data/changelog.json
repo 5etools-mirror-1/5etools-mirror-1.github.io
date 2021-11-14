@@ -1832,5 +1832,11 @@
 		"ver": "1.141.2",
 		"date": "2021-10-31",
 		"txt": "- Added FTD \"Dragon Hoard\" section to the Loot Generator\n- Added FTD additional dragon lair actions/regional effects to bestiary \n- Added FTD versions of \"Dragons as Innate Spellcasters,\" with spells taken from the suggested lists in FTD. [Note that the original/\"legacy\" Monster Manual + community contributed versions are also still present, for now.]\n- Fixed Loot Generator failing to limit spell scroll level when re-rolling spell scrolls\n- Fixed RPG Cards JSON Builder outputting excessive junk text when rendering dice/DCs\n- (Fixed typos/added tags)\n"
+	},
+	{
+		"ver": "1.142.0",
+		"date": "2021-11-14",
+		"title": "Plumbing",
+		"txt": "- Added Book View to Other Options and Features page\n- Added \"Copy Link\" button to DM Screen Initiative Tracker (thanks @ tobloef)\n- Fixed Blacklist page failing to display various item categories\n- Fixed hotkeys being sensitive to capslock\n- (Fixed \"Preload Offline Data\" being unavailable on the mirror, hopefully)\n- (Fixed typos/added tags)"
 	}
 ]

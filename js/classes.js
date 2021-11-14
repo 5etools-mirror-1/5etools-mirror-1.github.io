@@ -284,7 +284,7 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 		} else {
 			// This should never occur (failed loads should pick the first list item), but attempt to handle it semi-gracefully
 			this._$pgContent.empty().append(ClassesPage._render_$getTrNoContent());
-			JqueryUtil.doToast({content: "Could not find the class to load!", type: "error"})
+			JqueryUtil.doToast({content: "Could not find the class to load!", type: "error"});
 		}
 	}
 
@@ -617,7 +617,7 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 					.filter(it => it.data.$lnk)
 					.forEach(it => {
 						const href = `#${this._getHashState({class: it.data.entity})}`;
-						it.data.$lnk.attr("href", href)
+						it.data.$lnk.attr("href", href);
 					});
 			}, 5);
 		};
@@ -1051,7 +1051,7 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 				...requirements.entries || [],
 			].filter(Boolean);
 
-			return $$`<div>${Renderer.get().setFirstSection(true).render({type: "section", entries: allEntries})}</div>`
+			return $$`<div>${Renderer.get().setFirstSection(true).render({type: "section", entries: allEntries})}</div>`;
 		};
 
 		let $ptRequirements = null;
@@ -1079,7 +1079,7 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 					<div><strong>Hit Points at 1st Level:</strong> ${Renderer.class.getHitPointsAtFirstLevel(cls.hd)}</div>
 					<div><strong>Hit Points at Higher Levels:</strong> ${Renderer.class.getHitPointsAtHigherLevels(cls.name, cls.hd, hdEntry)}</div>
 				</td>
-			</tr>`
+			</tr>`;
 		}
 		// endregion
 
@@ -1124,7 +1124,7 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 				$ptMcPrereqSpecial = $$`<div>
 					${mc.requirements ? "" : htmlMCcPrereqPreText}
 					<b>${mc.requirements ? "Other " : ""}Prerequisites:</b> ${Renderer.get().render(mc.requirementsSpecial || "")}
-				</div>`
+				</div>`;
 			}
 
 			let $ptMcProfsIntro = null;
@@ -1312,7 +1312,7 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 				const sourcePart = [...classifiedSources.official, ...classifiedSources.homebrew]
 					.map(src => `${src.toUrlified()}=0`)
 					.join(HASH_SUB_LIST_SEP);
-				cpySubHashes.push(`flstsource:${sourcePart}`)
+				cpySubHashes.push(`flstsource:${sourcePart}`);
 			} else if (filterSet.sources) {
 				const sourcePartSpecified = Object.entries(filterSet.sources).map(([src, val]) => `${src.toUrlified()}=${val}`);
 
@@ -1329,14 +1329,14 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 				...boxSubhashes,
 				...cpySubHashes,
 				`flopsource:extend`,
-			].filter(Boolean), true);
+			].filter(Boolean), {force: true});
 			$selFilterPreset.val("-1");
 		};
 		const $selFilterPreset = $(`<select class="input-xs form-control cls-tabs__sel-preset"><option value="-1" disabled>Filter...</option></select>`)
 			.change(() => {
 				const val = Number($selFilterPreset.val());
 				if (val == null) return;
-				setFilterSet(val)
+				setFilterSet(val);
 			});
 		filterSets.forEach((it, i) => $selFilterPreset.append(`<option value="${i}">${it.name}</option>`));
 		$selFilterPreset.val("-1");
@@ -1498,7 +1498,7 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 							$wrpBody,
 
 							depthData: it,
-						})
+						});
 					});
 			}
 
@@ -1552,7 +1552,7 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 	}
 
 	static _hasSubclassFeaturesAtLevel (cls, level) {
-		return (cls.subclasses || []).some(it => (it.subclassFeatures || []).some(lvlFeatures => lvlFeatures.some(scf => scf.level === level)))
+		return (cls.subclasses || []).some(it => (it.subclassFeatures || []).some(lvlFeatures => lvlFeatures.some(scf => scf.level === level)));
 	}
 
 	_render_renderOutline_doMakeItem (
@@ -1715,7 +1715,7 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 			isHideButtonCloseNone: true,
 			pageTitle: "Subclass Comparison",
 			isFlex: true,
-			popTblGetNumShown: $wrpContent => {
+			popTblGetNumShown: ({$wrpContent}) => {
 				$wrpContent.removeClass("bkmv__wrp").addClass("h-100").addClass("flex-col");
 				$wrpContent.parent().addClass("stats").addClass("stats--book");
 
@@ -1774,7 +1774,7 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 												return undefined; // If it shouldn't be displayed, delete it
 											},
 										},
-									)
+									);
 
 									cpy.forEach(f => Renderer.get().recursiveRender(f, renderStack));
 								});
@@ -2067,7 +2067,7 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 						if (hasNamePluginRun) return;
 						hasNamePluginRun = true;
 
-						Renderer.get().removePlugins("entries_namePrefix")
+						Renderer.get().removePlugins("entries_namePrefix");
 						return `<span class="ve-hidden" data-subclass-name-prefix="true">${sc.name.qq()}:</span> `;
 					});
 				// endregion
@@ -2103,7 +2103,7 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 		const cls = this._dataList.find(c => c.name.toLowerCase() === sc.className.toLowerCase() && c.source.toLowerCase() === sc.classSource.toLowerCase());
 
 		if (!cls) {
-			setTimeout(() => { throw new Error(`Could not find class "${sc.className}" with source "${sc.classSource}" to delete subclass "${sc.name}" from!`); })
+			setTimeout(() => { throw new Error(`Could not find class "${sc.className}" with source "${sc.classSource}" to delete subclass "${sc.name}" from!`); });
 			return;
 		}
 

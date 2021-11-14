@@ -99,7 +99,7 @@ class ItemParser extends BaseParser {
 		TagCondition.tryTagConditions(stats);
 		ArtifactPropertiesTag.tryRun(stats);
 		if (stats.entries) {
-			stats.entries = stats.entries.map(it => DiceConvert.getTaggedEntry(it))
+			stats.entries = stats.entries.map(it => DiceConvert.getTaggedEntry(it));
 			EntryConvert.tryRun(stats, "entries");
 			stats.entries = SkillTag.tryRun(stats.entries);
 			stats.entries = ActionTag.tryRun(stats.entries);
@@ -253,7 +253,7 @@ class ItemParser extends BaseParser {
 				baseItem = ItemParser.getItem(mBaseArmor[1]);
 				if (!baseItem) baseItem = ItemParser.getItem(`${mBaseArmor[1]} armor`); // "armor (plate)" -> "plate armor"
 				if (!baseItem) throw new Error(`Could not find base item "${mBaseArmor[1]}"`);
-				continue
+				continue;
 			}
 			// endregion
 
@@ -327,7 +327,7 @@ class ItemParser extends BaseParser {
 			const fromText = Parser.textToNumber(m[1]);
 			if (!isNaN(fromText)) stats.weight = fromText;
 
-			if (!stats.weight) options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Weight "${m[1]}" requires manual conversion`)
+			if (!stats.weight) options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Weight "${m[1]}" requires manual conversion`);
 		});
 	}
 

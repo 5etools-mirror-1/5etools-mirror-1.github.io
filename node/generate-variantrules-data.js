@@ -10,7 +10,7 @@ class GenVariantrules {
 					return {
 						adventure: idx,
 						adventureData: JSON.parse(fs.readFileSync(`./data/adventure/adventure-${idx.id.toLowerCase()}.json`, "utf-8")),
-					}
+					};
 				}
 			})
 			.filter(it => it);
@@ -30,7 +30,7 @@ class GenVariantrules {
 	}
 
 	async pRun () {
-		GenVariantrules._WALKER = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST, isNoModification: true})
+		GenVariantrules._WALKER = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST, isNoModification: true});
 
 		const output = {variantrule: []};
 

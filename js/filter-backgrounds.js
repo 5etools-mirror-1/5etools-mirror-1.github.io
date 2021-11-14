@@ -48,7 +48,7 @@ class PageFilterBackgrounds extends PageFilter {
 			bg._fTools,
 			bg._fLangs,
 			bg._fMisc,
-		)
+		);
 	}
 }
 

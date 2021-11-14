@@ -201,7 +201,7 @@ class TagCondition {
 		if (depth !== 0) return;
 
 		// Collect inflicted conditions for tagging
-		if (inflictedSet) this._collectInflictedConditions(ptrStack._, {inflictedSet, inflictedWhitelist})
+		if (inflictedSet) this._collectInflictedConditions(ptrStack._, {inflictedSet, inflictedWhitelist});
 
 		return ptrStack._;
 	}
@@ -313,7 +313,8 @@ class TagCondition {
 							fnTag: strMod => strMod.replace(TagCondition._CONDITION_MATCHER_WORD, (...m) => `${m[1]}{@condition ${m[2]}}${m[3]}`),
 						},
 					);
-					return ptrStack._;
+					return ptrStack._
+						.replace(/\b{@condition (prone)} (to)\b/gi, "$1 $2");
 				},
 			},
 		);
@@ -430,7 +431,7 @@ class DiceConvert {
 			// replace e.g. "+X to hit"
 			str = str.replace(/([-+])?\d+(?= to hit)/g, function (match) {
 				const cleanMatch = match.startsWith("+") ? match.replace("+", "") : match;
-				return `{@hit ${cleanMatch}}`
+				return `{@hit ${cleanMatch}}`;
 			});
 		}
 
@@ -495,7 +496,7 @@ class ArtifactPropertiesTag {
 					case "minor detrimental": return `{@table Artifact Properties; Minor Detrimental Properties|dmg|${m[0]}}`;
 				}
 			}),
-		})
+		});
 	}
 }
 
@@ -556,7 +557,7 @@ class ActionTag {
 		// Avoid tagging text within titles
 		if (strMod.toTitleCase() === strMod) return strMod;
 
-		const reAction = /(^|[ "(\u2013\u2014])(Attack|Dash|Disengage|Dodge|Help|Hide|Ready|Search|Use an Object|shove a creature)([ "',.:;)\u2013\u2014]|$)/g
+		const reAction = /(^|[ "(\u2013\u2014])(Attack|Dash|Disengage|Dodge|Help|Hide|Ready|Search|Use an Object|shove a creature)([ "',.:;)\u2013\u2014]|$)/g;
 		let mAction;
 
 		while ((mAction = reAction.exec(strMod))) {
@@ -651,7 +652,7 @@ class EntryConvert {
 					return out;
 				},
 			},
-		)
+		);
 	}
 
 	/**
@@ -673,8 +674,8 @@ class EntryConvert {
 			entries,
 		];
 
-		const popList = () => { while (stack.last().type === "list") stack.pop(); }
-		const popNestedEntries = () => { while (stack.length > 1) stack.pop(); }
+		const popList = () => { while (stack.last().type === "list") stack.pop(); };
+		const popNestedEntries = () => { while (stack.length > 1) stack.pop(); };
 
 		const addEntry = (entry, canCombine) => {
 			canCombine = canCombine && typeof entry === "string";
@@ -682,19 +683,19 @@ class EntryConvert {
 			const target = stack.last();
 			if (target instanceof Array) {
 				if (canCombine && typeof target.last() === "string") {
-					target.last(`${target.last().trimRight()} ${entry.trimLeft()}`)
+					target.last(`${target.last().trimRight()} ${entry.trimLeft()}`);
 				} else {
 					target.push(entry);
 				}
 			} else if (target.type === "list") {
 				if (canCombine && typeof target.items.last() === "string") {
-					target.items.last(`${target.items.last().trimRight()} ${entry.trimLeft()}`)
+					target.items.last(`${target.items.last().trimRight()} ${entry.trimLeft()}`);
 				} else {
 					target.items.push(entry);
 				}
 			} else if (target.type === "entries") {
 				if (canCombine && typeof target.entries.last() === "string") {
-					target.entries.last(`${target.entries.last().trimRight()} ${entry.trimLeft()}`)
+					target.entries.last(`${target.entries.last().trimRight()} ${entry.trimLeft()}`);
 				} else {
 					target.entries.push(entry);
 				}
@@ -803,7 +804,7 @@ class ConvertUtil {
 		return line.toTitleCase() === line;
 	}
 
-	static isListItemLine (line) { return line.trim().startsWith("•") }
+	static isListItemLine (line) { return line.trim().startsWith("•"); }
 
 	static splitNameLine (line, isKeepPunctuation) {
 		let spl = line.split(/([.!?:])/g);
@@ -858,7 +859,7 @@ class ConvertUtil {
 						cleanString = cleanString.substring(0, foundOpen);
 						skipSpace = true;
 					} else {
-						cleanString += ")"
+						cleanString += ")";
 					}
 					break;
 				}
@@ -937,7 +938,7 @@ Object.entries(AlignmentUtil.ALIGNMENTS_RAW).forEach(([k, v]) => {
 		regex: RegExp(`^${k}$`, "i"),
 		regexChance: RegExp(`^${k}\\s*\\((\\d+)\\s*%\\)$`, "i"),
 		regexWeak: RegExp(k, "i"),
-	}
+	};
 });
 
 if (typeof module !== "undefined") {

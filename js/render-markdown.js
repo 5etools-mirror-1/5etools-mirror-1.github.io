@@ -275,7 +275,7 @@ class RendererMarkdown {
 				meta.depth = cacheDepth;
 			}
 		}
-		if (entry.variantSource) textStack[0] += `>${RendererMarkdown.utils.getPageText(entry.variantSource)}\n`;
+		if (entry.source) textStack[0] += `>${RendererMarkdown.utils.getPageText({source: entry.source, page: entry.page})}\n`;
 		textStack[0] += "\n";
 	}
 
@@ -754,7 +754,7 @@ ___
 		}
 	}
 
-	_renderPrimitive (entry, textStack, meta, options) { textStack[0] += `${entry}` }
+	_renderPrimitive (entry, textStack, meta, options) { textStack[0] += `${entry}`; }
 	// endregion
 
 	// region Static options
@@ -795,7 +795,7 @@ ___
 					return $$`<div class="m-1 stripe-even"><label class="split-v-center">
 						<div class="w-100 mr-2">${v.name}</div>
 						${$ipt.addClass("max-w-33")}
-					</label></div>`
+					</label></div>`;
 				});
 
 			RendererMarkdown.__$wrpSettings = $$`<div class="flex-v-col w-100 h-100">${$rows}</div>`;
@@ -833,20 +833,20 @@ RendererMarkdown.utils = class {
 		return `${introText} ${it[prop].map(as => {
 			if (as.entry) return Renderer.get().render(as.entry);
 			else return `*${Parser.sourceJsonToAbv(as.source)}*${Renderer.utils.isDisplayPage(as.page) ? `, page ${as.page}` : ""}`;
-		}).join("; ")}`
+		}).join("; ")}`;
 	}
 };
 
 RendererMarkdown.monster = class {
 	static getSave (attr, mod) {
 		if (attr === "special") return Renderer.stripTags(mod);
-		return `${attr.uppercaseFirst()} ${mod}`
+		return `${attr.uppercaseFirst()} ${mod}`;
 	}
 
 	static getSkillsString (mon) {
 		function doSortMapJoinSkillKeys (obj, keys, joinWithOr) {
 			const toJoin = keys.sort(SortUtil.ascSort).map(s => `${s.toTitleCase()} ${obj[s]}`);
-			return joinWithOr ? toJoin.joinConjunct(", ", " or ") : toJoin.join(", ")
+			return joinWithOr ? toJoin.joinConjunct(", ", " or ") : toJoin.join(", ");
 		}
 
 		const skills = doSortMapJoinSkillKeys(mon.skill, Object.keys(mon.skill).filter(k => k !== "other" && k !== "special"));
@@ -854,9 +854,9 @@ RendererMarkdown.monster = class {
 		if (mon.skill.other || mon.skill.special) {
 			const others = mon.skill.other && mon.skill.other.map(it => {
 				if (it.oneOf) {
-					return `plus one of the following: ${doSortMapJoinSkillKeys(it.oneOf, Object.keys(it.oneOf), true)}`
+					return `plus one of the following: ${doSortMapJoinSkillKeys(it.oneOf, Object.keys(it.oneOf), true)}`;
 				}
-				throw new Error(`Unhandled monster "other" skill properties!`)
+				throw new Error(`Unhandled monster "other" skill properties!`);
 			});
 			const special = mon.skill.special && Renderer.stripTags(mon.skill.special);
 			return [skills, others, special].filter(Boolean).join(", ");
@@ -1040,7 +1040,7 @@ class MarkdownConverter {
 					type: "inset",
 					name: "(To convert creature statblocks, please use the Text Converter utility)",
 					entries: line.lines.slice(1).map(it => it.slice(1).trim()),
-				}
+				};
 			}
 		}
 	}
@@ -1068,7 +1068,7 @@ class MarkdownConverter {
 
 			obj.forEach(it => {
 				if (typeof it !== "object") return;
-				this._coalesceConvert_doRecurse(it, fn)
+				this._coalesceConvert_doRecurse(it, fn);
 			});
 		} else {
 			if (obj.type) {
@@ -1164,7 +1164,7 @@ class MarkdownConverter {
 						if (!nxt || !nxt.trim()) {
 							// Allow a max of one blank line before breaking into another list
 							if (blankCount++ < 1) continue;
-							else break
+							else break;
 						}
 						blankCount = 0;
 						if (typeof nxt !== "string") break;
@@ -1719,14 +1719,14 @@ class MarkdownConverter {
 						.replace(/[.,]/g, "") // Remove number separators
 						.replace(/(^| )(cp|sp|gp|pp|lb\.|ft\.)( |$)/g, "") // Remove units
 						.trim();
-					counts[isNaN(Number(clean)) ? "text" : "number"]++
+					counts[isNaN(Number(clean)) ? "text" : "number"]++;
 				});
 
 				// If most of the cells in this column contain number data, right-align
 				// Unless it's the first column, in which case, center-align
 				if ((counts.number / tbl.rows.length) >= 0.80) {
 					if (i === 0) tbl.colStyles[i] += ` text-center`;
-					else tbl.colStyles[i] += ` text-right`
+					else tbl.colStyles[i] += ` text-right`;
 				}
 			});
 		})();
@@ -1749,7 +1749,7 @@ class MarkdownConverter {
 					const cell = r[i];
 					if (typeof cell !== "string") return counts.long++;
 					const words = Renderer.stripTags(cell).split(" ");
-					counts[words.length <= 3 ? "short" : "long"]++
+					counts[words.length <= 3 ? "short" : "long"]++;
 				});
 
 				// If most of the cells in this column contain short text, center-align
@@ -1766,7 +1766,7 @@ class MarkdownConverter {
 		(function doEvenCenteredColumns () {
 			if (!isDiceCol0) return;
 			if (tbl.colStyles.length === 2 && isFewWordsCol1) {
-				tbl.colStyles = ["col-6 text-center", "col-6 text-center"]
+				tbl.colStyles = ["col-6 text-center", "col-6 text-center"];
 			}
 		})();
 
@@ -1776,7 +1776,7 @@ class MarkdownConverter {
 				if (cell === "--") return "\u2014";
 				return cell;
 			});
-		})
+		});
 	}
 
 	static _doCleanTable (tbl) {
@@ -1791,5 +1791,5 @@ if (typeof module !== "undefined") {
 	module.exports = {
 		RendererMarkdown,
 		MarkdownConverter,
-	}
+	};
 }

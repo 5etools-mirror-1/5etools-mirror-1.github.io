@@ -57,7 +57,7 @@ function run (args) {
 	}
 
 	files.forEach(file => {
-		console.log(`Tagging file "${file}"`)
+		console.log(`Tagging file "${file}"`);
 		const json = ut.readJson(file);
 
 		if (json instanceof Array) return;

@@ -59,7 +59,7 @@ class ObjectsPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (obj, ix) {
+	pGetSublistItem (obj, ix) {
 		const hash = UrlUtil.autoEncodeHash(obj);
 		const size = Parser.sizeAbvToFull(obj.size);
 
@@ -103,11 +103,6 @@ class ObjectsPage extends ListPage {
 		}
 
 		ListUtil.updateSelected();
-	}
-
-	async pDoLoadSubHash (sub) {
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
 	}
 
 	_getSearchCache (entity) {

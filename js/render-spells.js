@@ -7,7 +7,7 @@ class RenderSpells {
 
 		renderStack.push(`
 			${Renderer.utils.getBorderTr()}
-			${Renderer.utils.getExcludedTr(sp, "spell", UrlUtil.PG_SPELLS)}
+			${Renderer.utils.getExcludedTr({entity: sp, dataProp: "spell", page: UrlUtil.PG_SPELLS})}
 			${Renderer.utils.getNameTr(sp, {page: UrlUtil.PG_SPELLS})}
 			<tr><td class="rd-spell__level-school-ritual" colspan="6"><span>${Parser.spLevelSchoolMetaToFull(sp.level, sp.school, sp.meta, sp.subschools)}</span></td></tr>
 			<tr><td colspan="6"><span class="bold">Casting Time: </span>${Parser.spTimeListToFull(sp.time)}</td></tr>
@@ -90,7 +90,7 @@ class RenderSpells {
 		}
 
 		if (stackFroms.length) {
-			renderStack.push(`<tr class="text"><td colspan="6">${stackFroms.join("")}</td></tr>`)
+			renderStack.push(`<tr class="text"><td colspan="6">${stackFroms.join("")}</td></tr>`);
 		}
 
 		if (sp._scrollNote) {

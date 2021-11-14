@@ -62,7 +62,7 @@ class CreatureBuilder extends Builder {
 				const url = Renderer.monster.getTokenUrl(mon);
 				img.onload = resolve(url);
 				img.onerror = resolve(null);
-				img.src = url
+				img.src = url;
 			});
 		}
 
@@ -151,7 +151,7 @@ class CreatureBuilder extends Builder {
 				toLoad = await ScaleCreature.scale(toLoad, scaleTo);
 				delete toLoad._displayName;
 			} catch (e) {
-				setTimeout(() => { throw e; })
+				setTimeout(() => { throw e; });
 			}
 		} else if (scaledSpellSummonHash) {
 			const scaleTo = Number(UrlUtil.unpackSubHash(scaledSpellSummonHash)[VeCt.HASH_SCALED_SPELL_SUMMON][0]);
@@ -159,7 +159,7 @@ class CreatureBuilder extends Builder {
 				toLoad = await ScaleSpellSummonedCreature.scale(toLoad, scaleTo);
 				delete toLoad._displayName;
 			} catch (e) {
-				setTimeout(() => { throw e; })
+				setTimeout(() => { throw e; });
 			}
 		} else if (scaledClassSummonHash) {
 			const scaleTo = Number(UrlUtil.unpackSubHash(scaledClassSummonHash)[VeCt.HASH_SCALED_CLASS_SUMMON][0]);
@@ -167,7 +167,7 @@ class CreatureBuilder extends Builder {
 				toLoad = await ScaleClassSummonedCreature.scale(toLoad, scaleTo);
 				delete toLoad._displayName;
 			} catch (e) {
-				setTimeout(() => { throw e; })
+				setTimeout(() => { throw e; });
 			}
 		}
 
@@ -177,7 +177,7 @@ class CreatureBuilder extends Builder {
 	async pInit () {
 		BrewUtil.bind({
 			pHandleBrew: this._pHandleBrew.bind(this),
-		})
+		});
 
 		const [bestiaryFluffIndex, jsonCreature] = await Promise.all([
 			DataUtil.loadJSON("data/bestiary/fluff-index.json"),
@@ -254,7 +254,7 @@ class CreatureBuilder extends Builder {
 			cha: 10,
 			passive: 10,
 			cr: "0",
-		}
+		};
 	}
 
 	setStateFromLoaded (state) {
@@ -704,14 +704,14 @@ class CreatureBuilder extends Builder {
 
 		const $iptCustom = $(`<input class="form-control form-control--minimal input-xs">`)
 			.change(() => setState(0))
-			.val(this._state.shortName && this._state.shortName !== true ? this._state.shortName : null)
+			.val(this._state.shortName && this._state.shortName !== true ? this._state.shortName : null);
 		const $stageCustom = $$`<div>${$iptCustom}</div>`
 			.toggleVe(initialMode === "0")
 			.appendTo($rowInner);
 
 		const $cbFullName = $(`<input type="checkbox">`)
 			.change(() => setState(1))
-			.prop("checked", this._state.shortName === true)
+			.prop("checked", this._state.shortName === true);
 		const $stageMatchesName = $$`<label class="flex-v-center"><div class="mr-2">Enabled</div>${$cbFullName}</label>`
 			.toggleVe(initialMode === "1")
 			.appendTo($rowInner);
@@ -728,7 +728,7 @@ class CreatureBuilder extends Builder {
 				this._state.alignment = raw.map(it => {
 					if (it && (it.special != null || it.alignment)) return it;
 					else return {alignment: it};
-				})
+				});
 			} else this._state.alignment = raw[0];
 			cb();
 		};
@@ -740,7 +740,7 @@ class CreatureBuilder extends Builder {
 		if ((this._state.alignment && this._state.alignment.some(it => it && (it.special != null || it.alignment !== undefined))) || !~CreatureBuilder.__$getAlignmentInput__getAlignmentIx(this._state.alignment)) {
 			this._state.alignment.forEach(alignment => CreatureBuilder.__$getAlignmentInput__getAlignmentRow(doUpdateState, alignmentRows, alignment).$wrp.appendTo($wrpRows));
 		} else {
-			CreatureBuilder.__$getAlignmentInput__getAlignmentRow(doUpdateState, alignmentRows, this._state.alignment).$wrp.appendTo($wrpRows)
+			CreatureBuilder.__$getAlignmentInput__getAlignmentRow(doUpdateState, alignmentRows, this._state.alignment).$wrp.appendTo($wrpRows);
 		}
 
 		const $wrpBtnAdd = $(`<div/>`).appendTo($rowInner);
@@ -849,7 +849,7 @@ class CreatureBuilder extends Builder {
 	}
 
 	static __$getAlignmentInput__getAlignmentIx (alignment) {
-		return CreatureBuilder._ALIGNMENTS.findIndex(it => CollectionUtil.setEq(new Set(it), new Set(alignment)))
+		return CreatureBuilder._ALIGNMENTS.findIndex(it => CollectionUtil.setEq(new Set(it), new Set(alignment)));
 	}
 
 	__$getAcInput (cb) {
@@ -1016,7 +1016,7 @@ class CreatureBuilder extends Builder {
 					$iptFrom.val(CreatureBuilder._AC_COMMON[k]);
 					doUpdateState();
 				},
-			)
+			);
 		}));
 
 		const $btnCommon = $(`<button class="btn btn-default btn-xs mr-2">Feature <span class="caret"></span></button>`)
@@ -1288,7 +1288,7 @@ class CreatureBuilder extends Builder {
 				const speedRaw = $iptSpeed.val().trim();
 				if (!speedRaw) {
 					delete this._state.speed[prop];
-					if (prop === "fly") delete this._state.speed.canHover
+					if (prop === "fly") delete this._state.speed.canHover;
 				} else {
 					const speed = UiUtil.strToInt(speedRaw);
 					const condition = $iptCond.val().trim();
@@ -1549,19 +1549,19 @@ class CreatureBuilder extends Builder {
 	}
 
 	__$getVulnerableInput (cb) {
-		return this.__$getDefencesInput(cb, "Damage Vulnerabilities", "Vulnerability", "vulnerable")
+		return this.__$getDefencesInput(cb, "Damage Vulnerabilities", "Vulnerability", "vulnerable");
 	}
 
 	__$getResistInput (cb) {
-		return this.__$getDefencesInput(cb, "Damage Resistances", "Resistance", "resist")
+		return this.__$getDefencesInput(cb, "Damage Resistances", "Resistance", "resist");
 	}
 
 	__$getImmuneInput (cb) {
-		return this.__$getDefencesInput(cb, "Damage Immunities", "Immunity", "immune")
+		return this.__$getDefencesInput(cb, "Damage Immunities", "Immunity", "immune");
 	}
 
 	__$getCondImmuneInput (cb) {
-		return this.__$getDefencesInput(cb, "Condition Immunities", "Immunity", "conditionImmune")
+		return this.__$getDefencesInput(cb, "Condition Immunities", "Immunity", "conditionImmune");
 	}
 
 	__$getDefencesInput (cb, rowName, shortName, prop) {
@@ -1677,7 +1677,7 @@ class CreatureBuilder extends Builder {
 		const $ele = (() => {
 			const $base = $$`<div class="flex-col ${depth ? "" : "mkbru__wrp-rows"}">${$wrpControls}${$wrpChildren}</div>`;
 			if (!depth) return $base;
-			else return $$`<div class="flex-v-center w-100"><div class="mkbru_mon__row-indent"/>${$base}</div>`
+			else return $$`<div class="flex-v-center w-100"><div class="mkbru_mon__row-indent"/>${$base}</div>`;
 		})();
 
 		if (initial) {
@@ -1716,13 +1716,13 @@ class CreatureBuilder extends Builder {
 							if (raw) return {special: raw};
 							return null;
 						},
-					}
+					};
 				}
 				default: {
 					return {
 						$ele: $$`<div class="mb-2 split flex-v-center mkbru__wrp-btn-xxs"><span class="mr-2">&bull; ${type.uppercaseFirst()}</span>${$btnRemove}</div>`,
 						getState: () => type,
-					}
+					};
 				}
 			}
 		})();
@@ -1760,7 +1760,7 @@ class CreatureBuilder extends Builder {
 
 							doUpdateState();
 						},
-					)
+					);
 				}),
 		);
 
@@ -1909,7 +1909,7 @@ class CreatureBuilder extends Builder {
 					parent._state.cr = nxtState;
 				} else delete parent._state.cr;
 			}
-		}()
+		}();
 		const $stageCustom = $$`<div class="flex-col mb-2">
 			<div class="flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--25">CR</span>${compCrCustom.renderInputCr()}</div>
 			<div class="flex-v-center"><span class="mr-2 mkbru__sub-name--25">XP</span>${compCrCustom.renderInputXp()}</div>
@@ -2122,6 +2122,11 @@ class CreatureBuilder extends Builder {
 				type: "weekly",
 				mode: "frequency",
 			},
+			{
+				display: "\uD835\uDC65/year (/each) spells",
+				type: "yearly",
+				mode: "frequency",
+			},
 		];
 
 		const menu = ContextUtil.getMenu(_CONTEXT_ENTRIES.map(contextMeta => {
@@ -2156,7 +2161,7 @@ class CreatureBuilder extends Builder {
 					doAddSpellRow(meta);
 					doUpdateState();
 				},
-			)
+			);
 		}));
 
 		const $btnAddSpell = $(`<button class="btn btn-xs btn-default">Add...</button>`)
@@ -2204,6 +2209,7 @@ class CreatureBuilder extends Builder {
 			if (trait.daily) handleFrequency("daily");
 			if (trait.rest) handleFrequency("rest");
 			if (trait.weekly) handleFrequency("weekly");
+			if (trait.yearly) handleFrequency("yearly");
 			if (trait.spells) {
 				Object.entries(trait.spells).forEach(([k, v]) => {
 					const level = Number(k);
@@ -2233,7 +2239,7 @@ class CreatureBuilder extends Builder {
 
 				if (metaPart.getAdditionalData) {
 					const additionalData = metaPart.getAdditionalData();
-					additionalData.filter(it => it.value != null).forEach(it => setValueByPath(out, it.keyPath, it.value))
+					additionalData.filter(it => it.value != null).forEach(it => setValueByPath(out, it.keyPath, it.value));
 				}
 
 				return out;
@@ -2302,7 +2308,8 @@ class CreatureBuilder extends Builder {
 						switch (meta.type) {
 							case "daily": return "/Day";
 							case "rest": return "/Rest";
-							case "weekly": return "/Week"
+							case "weekly": return "/Week";
+							case "yearly": return "/Year";
 						}
 					})();
 
@@ -2349,7 +2356,7 @@ class CreatureBuilder extends Builder {
 								keyPath: ["spells", `${meta.level}`, "lower"],
 								value: $cbWarlock.prop("checked") ? 1 : null,
 							},
-						]
+						];
 					};
 					out.filterIgnoreLevel = () => $cbWarlock.prop("checked");
 				}
@@ -2455,7 +2462,7 @@ class CreatureBuilder extends Builder {
 							});
 							$modalInner.append(searchWidget.$wrpSearch);
 							searchWidget.doFocus();
-						})
+						});
 					},
 				},
 			],
@@ -2701,7 +2708,7 @@ class CreatureBuilder extends Builder {
 								${$stageVersatile}
 								${$stageBonusDamage}
 								<div class="flex-v-center flex-h-right mt-2 pb-1 px-1">${$btnConfirm}${$btnReset}</div>
-								</div>`.appendTo($modalInner)
+								</div>`.appendTo($modalInner);
 							});
 						},
 					},
@@ -2768,7 +2775,7 @@ class CreatureBuilder extends Builder {
 							doUpdateState();
 						}
 					});
-			})
+			});
 		}
 
 		if (this._state[options.prop]) this._state[options.prop].forEach(entry => this.__$getGenericEntryInput__getEntryRow(doUpdateState, doUpdateOrder, rowOptions, entryRows, entry).$ele.appendTo($wrpRows));
@@ -2789,7 +2796,10 @@ class CreatureBuilder extends Builder {
 			if (options.prop === "variant") out.type = "variant";
 			if (sourceControls) {
 				const rawSourceState = sourceControls.getState();
-				if (rawSourceState) out.variantSource = rawSourceState;
+				if (rawSourceState) {
+					out.source = rawSourceState.source;
+					out.page = rawSourceState.page;
+				}
 			}
 
 			if (!out.name || !out.entries || !out.entries.length) return null;
@@ -2852,9 +2862,9 @@ class CreatureBuilder extends Builder {
 			const $iptPage = $(`<input class="form-control form-control--minimal input-xs" min="0">`)
 				.change(() => doUpdateState());
 
-			if (entry && entry.variantSource && BrewUtil.hasSourceJson(entry.variantSource.source)) {
-				$selVariantSource.val(entry.variantSource);
-				if (entry.variantSource.page) $iptPage.val(entry.variantSource.page);
+			if (entry && entry.source && BrewUtil.hasSourceJson(entry.source)) {
+				$selVariantSource.val(entry.source);
+				if (entry.page) $iptPage.val(entry.page);
 			}
 
 			(this._$eles.$selVariantSources = this._$eles.$selVariantSources || []).push($selVariantSource);
@@ -3065,7 +3075,7 @@ class CreatureBuilder extends Builder {
 				this._state.soundClip = {
 					type: "external",
 					url,
-				}
+				};
 			}
 
 			cb();

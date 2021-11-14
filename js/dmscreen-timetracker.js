@@ -173,7 +173,7 @@ class TimeTrackerBase extends TimeTrackerComponent {
 				out.monthStartDayOfYear += m.days;
 			}
 			out.year++;
-			out.monthStartDayOfYear = out.monthStartDayOfYear % daysPerYear
+			out.monthStartDayOfYear = out.monthStartDayOfYear % daysPerYear;
 		}
 		out.monthStartDay = (numDays - out.date) % daysPerWeek;
 		if (seasonInfos.length) out.seasonInfos = seasonInfos.filter(it => dayOfYear >= it.startDay && dayOfYear <= it.endDay);
@@ -256,7 +256,7 @@ class TimeTrackerBase extends TimeTrackerComponent {
 				phaseFirstDay: phaseFirstDay,
 				phaseIndex: ixPhase,
 				dayOfPeriod,
-			}
+			};
 		});
 	}
 
@@ -384,7 +384,7 @@ class TimeTrackerBase extends TimeTrackerComponent {
 	}
 
 	static formatYearInfo (year, yearInfos, eraInfos, abbreviate) {
-		return `Year ${year + 1}${yearInfos.length ? ` (<span class="italic">${yearInfos.map(it => it.name.escapeQuotes()).join("/")}</span>)` : ""}${eraInfos.length ? `, ${eraInfos.map(it => `${it.dayOfEra + 1} <span ${abbreviate ? `title="${it.name.escapeQuotes()}"` : ``}>${(abbreviate ? it.abbreviation : it.name).escapeQuotes()}</span>${abbreviate ? "" : ` (${it.abbreviation.escapeQuotes()})`}`).join("/")}` : ""}`
+		return `Year ${year + 1}${yearInfos.length ? ` (<span class="italic">${yearInfos.map(it => it.name.escapeQuotes()).join("/")}</span>)` : ""}${eraInfos.length ? `, ${eraInfos.map(it => `${it.dayOfEra + 1} <span ${abbreviate ? `title="${it.name.escapeQuotes()}"` : ``}>${(abbreviate ? it.abbreviation : it.name).escapeQuotes()}</span>${abbreviate ? "" : ` (${it.abbreviation.escapeQuotes()})`}`).join("/")}` : ""}`;
 	}
 
 	static $getCvsMoon (moonInfo) {
@@ -961,7 +961,7 @@ class TimeTrackerRoot_Clock extends TimeTrackerComponent {
 
 				if (dayNightHtml !== lastDayNightHtml) {
 					$wrpDayNight.html(dayNightHtml);
-					lastDayNightHtml = dayNightHtml
+					lastDayNightHtml = dayNightHtml;
 				}
 
 				$btnNextSunrise.removeClass("hidden");
@@ -990,7 +990,7 @@ class TimeTrackerRoot_Clock extends TimeTrackerComponent {
 							let name = event.name;
 							if (event.hasTime) {
 								const {hours, minutes, seconds} = TimeTrackerBase.getHoursMinutesSecondsFromSeconds(secsPerHour, secsPerMinute, event.timeOfDaySecs);
-								name = `${name} at ${TimeTrackerBase.getPaddedNum(hours, hoursPerDay)}:${TimeTrackerBase.getPaddedNum(minutes, minutesPerHour)}:${TimeTrackerBase.getPaddedNum(seconds, secsPerMinute)}`
+								name = `${name} at ${TimeTrackerBase.getPaddedNum(hours, hoursPerDay)}:${TimeTrackerBase.getPaddedNum(minutes, minutesPerHour)}:${TimeTrackerBase.getPaddedNum(seconds, secsPerMinute)}`;
 							}
 							const toShow = {
 								name,
@@ -1021,7 +1021,7 @@ class TimeTrackerRoot_Clock extends TimeTrackerComponent {
 							let name = encounter.displayName != null ? encounter.displayName : (encounter.name || "(Unnamed Encounter)");
 							if (encounter.hasTime) {
 								const {hours, minutes, seconds} = TimeTrackerBase.getHoursMinutesSecondsFromSeconds(secsPerHour, secsPerMinute, encounter.timeOfDaySecs);
-								name = `${name} at ${TimeTrackerBase.getPaddedNum(hours, hoursPerDay)}:${TimeTrackerBase.getPaddedNum(minutes, minutesPerHour)}:${TimeTrackerBase.getPaddedNum(seconds, secsPerMinute)}`
+								name = `${name} at ${TimeTrackerBase.getPaddedNum(hours, hoursPerDay)}:${TimeTrackerBase.getPaddedNum(minutes, minutesPerHour)}:${TimeTrackerBase.getPaddedNum(seconds, secsPerMinute)}`;
 							}
 							const toShow = {
 								name,
@@ -1066,7 +1066,7 @@ class TimeTrackerRoot_Clock extends TimeTrackerComponent {
 									liveEncounter.countUses = 0;
 									this._parent.triggerMapUpdate("encounters");
 								} else {
-									await TimeTrackerRoot_Calendar.pDoRunEncounter(this._parent, liveEncounter)
+									await TimeTrackerRoot_Calendar.pDoRunEncounter(this._parent, liveEncounter);
 								}
 							})
 							.appendTo($wrpEventsEncounters);
@@ -1220,7 +1220,7 @@ class TimeTrackerRoot_Clock_Weather extends TimeTrackerComponent {
 							name: it.uppercaseFirst(),
 							buttonClassActive: meta.class ? `${meta.class} active` : null,
 							iconClass: `fal ${meta.icon}`,
-						}
+						};
 					}),
 					title: "Temperature",
 					default: ixCur,
@@ -1257,7 +1257,7 @@ class TimeTrackerRoot_Clock_Weather extends TimeTrackerComponent {
 							name: TimeTrackerUtil.revSlugToText(it),
 							iconClass: `fal ${useNightIcon && meta.iconNight ? meta.iconNight : meta.icon}`,
 							buttonClass: `btn-default`,
-						}
+						};
 					}),
 					title: "Weather",
 					default: ixCur,
@@ -1281,7 +1281,7 @@ class TimeTrackerRoot_Clock_Weather extends TimeTrackerComponent {
 			let ix = TimeTrackerRoot_Clock_Weather._PRECIPICATION.indexOf(this._state.precipitation);
 			if (!~ix) ix = 0;
 			const meta = TimeTrackerRoot_Clock_Weather._PRECIPICATION_META[ix];
-			$btnPrecipitation.title(TimeTrackerUtil.revSlugToText(this._state.precipitation)).html(`<div class="fal ${useNightIcon && meta.iconNight ? meta.iconNight : meta.icon}"/>`)
+			$btnPrecipitation.title(TimeTrackerUtil.revSlugToText(this._state.precipitation)).html(`<div class="fal ${useNightIcon && meta.iconNight ? meta.iconNight : meta.icon}"/>`);
 		};
 		this._addHookBase("precipitation", hookPrecipitation);
 		this._parent.addHook("time", hookPrecipitation);
@@ -1317,7 +1317,7 @@ class TimeTrackerRoot_Clock_Weather extends TimeTrackerComponent {
 							name: TimeTrackerUtil.revSlugToText(it),
 							buttonClass: `btn-default`,
 							iconContent: `<div class="mb-1 whitespace-normal dm-time__wind-speed">${this._parent.get("unitsWindSpeed") === "mph" ? `${meta.mph} mph` : `${meta.kmph} km/h`}</div>`,
-						}
+						};
 					}),
 					title: "Wind Speed",
 					default: ixCur,
@@ -1487,7 +1487,7 @@ class TimeTrackerRoot_Clock_RandomWeather extends BaseComponent {
 					name: it.uppercaseFirst(),
 					buttonClass: meta.class,
 					iconClass: `fal ${meta.icon}`,
-				}
+				};
 			})
 			.map(v => {
 				const $btn = $$`<div class="m-2 btn btn-default ui__btn-xxl-square flex-col flex-h-center">
@@ -1520,7 +1520,7 @@ class TimeTrackerRoot_Clock_RandomWeather extends BaseComponent {
 					precipitation: it,
 					name: TimeTrackerUtil.revSlugToText(it),
 					iconClass: `fal ${meta.icon}`,
-				}
+				};
 			})
 			.map(v => {
 				const $btn = $$`<div class="m-2 btn btn-default ui__btn-xxl-square flex-col flex-h-center">
@@ -1557,7 +1557,7 @@ class TimeTrackerRoot_Clock_RandomWeather extends BaseComponent {
 					speed: it,
 					name: TimeTrackerUtil.revSlugToText(it),
 					iconContent: `<div class="mb-1 whitespace-normal dm-time__wind-speed">${this._unitsWindSpeed === "mph" ? `${meta.mph} mph` : `${meta.kmph} km/h`}</div>`,
-				}
+				};
 			})
 			.map(v => {
 				const $btn = $$`<div class="m-2 btn btn-default ui__btn-xxl-square flex-col flex-h-center">
@@ -1579,7 +1579,7 @@ class TimeTrackerRoot_Clock_RandomWeather extends BaseComponent {
 		const $btnOk = $(`<button class="btn btn-default">Confirm and Roll Weather</button>`)
 			.click(() => {
 				if (!this._state.allowedTemperatures.length || !this._state.allowedPrecipitations.length || !this._state.allowedWindSpeeds.length) {
-					JqueryUtil.doToast({content: `Please select allowed values for all sections!`, type: "warning"})
+					JqueryUtil.doToast({content: `Please select allowed values for all sections!`, type: "warning"});
 				} else doClose(true);
 			});
 
@@ -1677,7 +1677,7 @@ class TimeTrackerRoot_Clock_RandomWeather extends BaseComponent {
 				precipitation: isNewPrecipitation ? RollerUtil.rollOnArray(inputs.allowedPrecipitations) : curWeather.precipitation,
 				windDirection,
 				windSpeed,
-			}
+			};
 		};
 
 		if (opts.isReroll) return getWeather();
@@ -2002,7 +2002,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 						"grid-row-start": `1`,
 						"grid-row-end": `2`,
 					})
-					.appendTo($wrpCalendar)
+					.appendTo($wrpCalendar);
 			});
 		}
 
@@ -2021,7 +2021,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 						"grid-row-start": `${yPos + gridOffsetY + 1}`,
 						"grid-row-end": `${yPos + gridOffsetY + 2}`,
 					})
-					.appendTo($wrpCalendar)
+					.appendTo($wrpCalendar);
 			}
 
 			let $ele;
@@ -2043,7 +2043,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 							return TimeTrackerBase.$getCvsMoon(m).addClass("dm-time__calendar-moon-phase");
 						} else if (i === 1) {
 							const otherMoons = activeMoons.length - 1;
-							return `<div class="dm-time__calendar-moon-phase text-muted" title="${otherMoons} additional moon${otherMoons === 1 ? "" : "s"} not shown"><span class="glyphicon glyphicon-plus"/></div>`
+							return `<div class="dm-time__calendar-moon-phase text-muted" title="${otherMoons} additional moon${otherMoons === 1 ? "" : "s"} not shown"><span class="glyphicon glyphicon-plus"/></div>`;
 						}
 					});
 
@@ -2586,7 +2586,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 						offsetHour: 0,
 						offsetMinute: 0,
 						offsetSec: 0,
-					}
+					};
 				}
 			}
 
@@ -2649,7 +2649,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 			}
 		}
 
-		return {eventYear, eventDay, timeOfDay}
+		return {eventYear, eventDay, timeOfDay};
 	}
 
 	/**
@@ -2731,7 +2731,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 					placeholder: "Select tracker",
 				});
 				if (ix != null && ~ix) {
-					$tracker = $existingTrackers[ix]
+					$tracker = $existingTrackers[ix];
 				}
 			}
 
@@ -3069,7 +3069,7 @@ class TimeTrackerRoot_Settings extends TimeTrackerComponent {
 				}
 			});
 
-		return {$wrp, $btnAdd}
+		return {$wrp, $btnAdd};
 	}
 }
 

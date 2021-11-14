@@ -49,8 +49,13 @@ function addImplicits (obj, lastKey) {
 	}
 }
 
-function preprocess (schema) {
-	function deepMerge (a, b) {
+class SchemaPreprocessor {
+	static preprocess (schema) {
+		this._recurse({root: schema, obj: schema});
+		return schema;
+	}
+
+	static _mutMergeObjects (a, b) {
 		if (typeof a !== "object" || typeof b !== "object") return;
 		if ((a instanceof Array && !(b instanceof Array)) || (!(a instanceof Array) && b instanceof Array)) return console.warn(`Could not merge:\n${JSON.stringify(a)}\n${JSON.stringify(b)}`);
 
@@ -67,8 +72,8 @@ function preprocess (schema) {
 					case "number":
 					case "string": a[ak] = bv; break; // if we have a primitive, overwrite
 					case "object": {
-						if (bv instanceof Array) a[ak] = bv; // if we have an array, overwrite
-						else deepMerge(av, bv); // otherwise, go deeper
+						if (bv instanceof Array) a[ak] = [...a[ak], ...bv]; // if we have an array, combine
+						else this._mutMergeObjects(av, bv); // otherwise, go deeper
 						break;
 					}
 					default: throw new Error(`Impossible!`);
@@ -81,49 +86,71 @@ function preprocess (schema) {
 		bKeys.forEach(bk => a[bk] = b[bk]);
 	}
 
-	function findReplace$$Merge (obj) {
-		if (typeof obj === "object") {
-			if (obj instanceof Array) return obj.map(d => findReplace$$Merge(d));
-			else {
-				Object.entries(obj).forEach(([k, v]) => {
-					if (k === "$$merge") {
-						const merged = {};
-						v.forEach(toMerge => {
-							// handle any mergeable children
-							toMerge = findReplace$$Merge(toMerge);
-							// resolve references
-							toMerge = (() => {
-								if (!toMerge.$ref) return toMerge;
-								else {
-									const [file, path] = toMerge.$ref.split("#");
-									const pathParts = path.split("/").filter(Boolean);
+	static _recurse ({root, obj}) {
+		if (typeof obj !== "object") return obj;
 
-									let refData;
-									if (file) {
-										const externalSchema = loadJSON(file);
-										refData = MiscUtil.get(externalSchema, ...pathParts);
-									} else {
-										refData = MiscUtil.get(schema, ...pathParts);
-									}
+		if (obj instanceof Array) return obj.map(d => this._recurse({root, obj: d}));
 
-									if (!refData) throw new Error(`Could not find referenced data!`);
-									return refData;
-								}
-							})();
-							// merge
-							deepMerge(merged, toMerge);
-						});
-						delete obj[k];
-						deepMerge(obj, merged);
-					} else obj[k] = findReplace$$Merge(v);
+		Object.entries(obj)
+			.forEach(([k, v]) => {
+				if (k !== "$$merge") {
+					obj[k] = this._recurse({root, obj: v});
+					return;
+				}
+
+				const merged = {};
+				v.forEach(toMerge => {
+					// handle any mergeable children
+					toMerge = this._recurse({root, obj: toMerge});
+					// resolve references
+					toMerge = this._getResolvedRefJson({root, toMerge});
+					// merge
+					this._mutMergeObjects(merged, toMerge);
 				});
-				return obj;
-			}
-		} else return obj;
+
+				if (merged.type && ["anyOf", "allOf", "oneOf", "not"].some(prop => merged[prop])) {
+					throw new Error(`Merged schema had both "type" and a combining/compositing property!`);
+				}
+
+				delete obj[k];
+				this._mutMergeObjects(obj, merged);
+			});
+
+		return obj;
 	}
-	findReplace$$Merge(schema);
-	return schema;
+
+	static _getResolvedRefJson ({root, toMerge}) {
+		if (!toMerge.$ref) return toMerge;
+
+		const [file, path] = toMerge.$ref.split("#");
+		const pathParts = path.split("/").filter(Boolean);
+
+		let refData;
+		if (file) {
+			const externalSchema = loadJSON(file);
+			refData = MiscUtil.get(externalSchema, ...pathParts);
+
+			// Convert any `#/ ...` definitions to refer to the original file, as the schema will be copied into our file
+			SchemaPreprocessor._WALKER.walk(
+				refData,
+				{
+					string: (str, lastKey) => {
+						if (lastKey !== "$ref") return str;
+						const [otherFile, otherPath] = str.split("#");
+						if (otherFile) return str;
+						return [file, otherPath].filter(Boolean).join("#");
+					},
+				},
+			);
+		} else {
+			refData = MiscUtil.get(root, ...pathParts);
+		}
+
+		if (!refData) throw new Error(`Could not find referenced data!`);
+		return refData;
+	}
 }
+SchemaPreprocessor._WALKER = MiscUtil.getWalker();
 
 async function main () {
 	console.log(`##### Validating JSON against schemata #####`);
@@ -138,13 +165,13 @@ async function main () {
 		"items.json",
 	];
 
-	ajv.addSchema(preprocess(loadJSON("spells/spells.json", "utf8")), "spells/spells.json");
-	ajv.addSchema(preprocess(loadJSON("bestiary/bestiary.json", "utf8")), "bestiary/bestiary.json");
+	ajv.addSchema(SchemaPreprocessor.preprocess(loadJSON("spells/spells.json", "utf8")), "spells/spells.json");
+	ajv.addSchema(SchemaPreprocessor.preprocess(loadJSON("bestiary/bestiary.json", "utf8")), "bestiary/bestiary.json");
 	PRELOAD_SINGLE_FILE_SCHEMAS.forEach(schemaName => {
-		ajv.addSchema(preprocess(loadJSON(schemaName, "utf8")), schemaName);
-	})
-	ajv.addSchema(preprocess(loadJSON("entry.json", "utf8")), "entry.json");
-	ajv.addSchema(preprocess(loadJSON("util.json", "utf8")), "util.json");
+		ajv.addSchema(SchemaPreprocessor.preprocess(loadJSON(schemaName, "utf8")), schemaName);
+	});
+	ajv.addSchema(SchemaPreprocessor.preprocess(loadJSON("entry.json", "utf8")), "entry.json");
+	ajv.addSchema(SchemaPreprocessor.preprocess(loadJSON("util.json", "utf8")), "util.json");
 
 	// Get schema files, ignoring directories
 	const schemaFiles = fs.readdirSync(`${cacheDir}/test/schema`)
@@ -163,7 +190,7 @@ async function main () {
 			// Avoid re-adding schemas we have already loaded
 			if (!PRELOAD_SINGLE_FILE_SCHEMAS.includes(schemaFile)) {
 				const schema = loadJSON(schemaFile, "utf8");
-				ajv.addSchema(preprocess(schema), schemaFile);
+				ajv.addSchema(SchemaPreprocessor.preprocess(schema), schemaFile);
 			}
 
 			addImplicits(data);
@@ -195,7 +222,7 @@ async function main () {
 				const data = loadJSON(`${cacheDir}/data/${schemaDir}/${dataFile}`);
 				const schema = loadJSON(`${cacheDir}/test/schema/${schemaDir}/${schemaFile}`, "utf8");
 				// only add the schema if we didn't do so already for this category
-				if (!ajv.getSchema(schemaKey)) ajv.addSchema(preprocess(schema), schemaKey);
+				if (!ajv.getSchema(schemaKey)) ajv.addSchema(SchemaPreprocessor.preprocess(schema), schemaKey);
 
 				addImplicits(data);
 				const valid = ajv.validate(schemaKey, data);

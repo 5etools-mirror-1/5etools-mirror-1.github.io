@@ -78,7 +78,7 @@ class FeatParser extends BaseParser {
 		TagCondition.tryTagConditions(feat);
 		ArtifactPropertiesTag.tryRun(feat);
 		if (feat.entries) {
-			feat.entries = feat.entries.map(it => DiceConvert.getTaggedEntry(it))
+			feat.entries = feat.entries.map(it => DiceConvert.getTaggedEntry(it));
 			EntryConvert.tryRun(feat, "entries");
 			feat.entries = SkillTag.tryRun(feat.entries);
 			feat.entries = ActionTag.tryRun(feat.entries);
@@ -107,7 +107,7 @@ class FeatParser extends BaseParser {
 				pres.push({proficiency: [{weapon: "martial"}]});
 			} else {
 				pres.push({other: joinedStack});
-				options.cbWarning(`(${feat.name}) Prerequisite "${joinedStack}" requires manual conversion`)
+				options.cbWarning(`(${feat.name}) Prerequisite "${joinedStack}" requires manual conversion`);
 			}
 
 			tkStack = [];
@@ -152,7 +152,7 @@ class FeatParser extends BaseParser {
 										amount: 1,
 									},
 								},
-							]
+							];
 						}
 
 						obj.items.shift();
@@ -164,13 +164,13 @@ class FeatParser extends BaseParser {
 									amount: 1,
 								},
 							},
-						]
+						];
 
 						obj.items.shift();
 					}
 				},
 			},
-		)
+		);
 	}
 }
 

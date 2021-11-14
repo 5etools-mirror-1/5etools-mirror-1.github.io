@@ -81,7 +81,7 @@ function run (isModificationMode) {
 											.filter(subIt => subIt.name)
 											.filter(subIt => !BLACKLIST_SOURCES.has(subIt.source))
 											.filter(subIt => !subIt.page));
-									})
+									});
 							});
 						}
 

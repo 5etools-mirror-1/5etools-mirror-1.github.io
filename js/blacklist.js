@@ -7,6 +7,9 @@ class Blacklist {
 		if (cat === "variant") return "Magic Item Variant";
 		if (cat === "classFeature") return "Class Feature";
 		if (cat === "subclassFeature") return "Subclass Feature";
+		if (cat === "baseitem") return "Item (Base)";
+		if (cat === "item") return "Item";
+		if (cat === "itemGroup") return "Item Group";
 		return cat.uppercaseFirst();
 	}
 
@@ -24,8 +27,8 @@ class Blacklist {
 		Blacklist._list.update();
 	}
 
-	static _getDisplayNamePrefix_classFeature (it) { return `${it.className} ${it.level}: ` }
-	static _getDisplayNamePrefix_subclassFeature (it) { return `${it.className} (${it.subclassShortName}) ${it.level}: ` }
+	static _getDisplayNamePrefix_classFeature (it) { return `${it.className} ${it.level}: `; }
+	static _getDisplayNamePrefix_subclassFeature (it) { return `${it.className} (${it.subclassShortName}) ${it.level}: `; }
 
 	static async pInitialise () {
 		await this._pInitialise_pInitList();
@@ -50,7 +53,7 @@ class Blacklist {
 
 		function mergeData (fromRec) {
 			Object.keys(fromRec).filter(it => !Blacklist._IGNORED_CATEGORIES.has(it))
-				.forEach(k => data[k] ? data[k] = data[k].concat(fromRec[k]) : data[k] = fromRec[k])
+				.forEach(k => data[k] ? data[k] = data[k].concat(fromRec[k]) : data[k] = fromRec[k]);
 		}
 
 		// LOAD DATA ===============================================================================
@@ -90,14 +93,29 @@ class Blacklist {
 		mergeData(classData);
 
 		// everything else
-		const promises = Blacklist._BASIC_FILES.map(url => DataUtil.loadJSON(`data/${url}`));
-		promises.push(async () => ({item: await Renderer.items.pBuildList({isAddGroups: true})}));
-		const contentData = await Promise.all(promises);
-		contentData.forEach(d => {
+		const contentData = await Promise.all(Blacklist._BASIC_FILES.map(url => DataUtil.loadJSON(`data/${url}`)));
+		for (const d of contentData) {
 			if (d.race) d.race = Renderer.race.mergeSubraces(d.race);
 			if (d.variant) d.variant.forEach(it => it.source = it.source || it.inherits.source);
+
+			if (d.itemGroup) {
+				for (const it of d.itemGroup) {
+					const itemGroupHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS](it);
+
+					const subBlacklist = await it.items.pSerialAwaitMap(async uid => {
+						let [name, source] = uid.split("|");
+						source = Parser.getTagSource("item", source);
+						const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS]({name, source});
+						const item = await Renderer.hover.pCacheAndGet(UrlUtil.PG_ITEMS, source, hash);
+						return {displayName: item.name, hash, category: "item", source: item.source};
+					});
+
+					MiscUtil.set(Blacklist._SUB_BLACKLIST_ENTRIES, "itemGroup", itemGroupHash, subBlacklist);
+				}
+			}
+
 			mergeData(d);
-		});
+		}
 
 		return data;
 	}
@@ -171,14 +189,14 @@ class Blacklist {
 
 		// Utility controls
 		const $btnExport = $(`<button class="btn btn-default btn-xs">Export List</button>`)
-			.click(() => Blacklist._export())
+			.click(() => Blacklist._export());
 		const $btnImport = $(`<button class="btn btn-default btn-xs" title="SHIFT for Add Only">Import List</button>`)
 			.click(evt => Blacklist._pImport(evt));
 		const $btnReset = $(`<button class="btn btn-danger btn-xs">Reset List</button>`)
 			.click(async () => {
 				if (!await InputUiUtil.pGetUserBoolean({title: "Reset Blacklist", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
 				Blacklist.reset();
-			})
+			});
 		// endregion
 
 		$$`<div class="mb-5 flex-v-center">
@@ -252,7 +270,7 @@ class Blacklist {
 	}
 
 	static _getBtnHtml_removeFromBlacklist () {
-		return `<button class="btn btn-success btn-xs btn-icon flex-vh-center" title="Remove from Blacklist"><span class="glyphicon glyphicon-thumbs-up"></span></button>`
+		return `<button class="btn btn-success btn-xs btn-icon flex-vh-center" title="Remove from Blacklist"><span class="glyphicon glyphicon-thumbs-up"></span></button>`;
 	}
 
 	static _doHandleSourceCategorySelChange (data) {
@@ -309,7 +327,7 @@ class Blacklist {
 				break;
 			}
 			default: {
-				copy = arr.map(({name, source}) => ({name, source})).sort((a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source))
+				copy = arr.map(({name, source}) => ({name, source})).sort((a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source));
 				break;
 			}
 		}
@@ -385,7 +403,7 @@ class Blacklist {
 			if (subBlacklist) {
 				subBlacklist.forEach(it => {
 					const {displayName, hash, category, source} = it;
-					ExcludeUtil.addExclude(displayName, hash, category, source)
+					ExcludeUtil.addExclude(displayName, hash, category, source);
 					Blacklist._addListItem(displayName, hash, category, source);
 				});
 			}
@@ -473,6 +491,12 @@ class Blacklist {
 Blacklist._IGNORED_CATEGORIES = new Set([
 	"_meta",
 	"linkedLootTables",
+
+	// `items-base.json`
+	"itemProperty",
+	"itemType",
+	"itemEntry",
+	"itemTypeAdditionalEntries",
 ]);
 Blacklist._SUB_BLACKLIST_ENTRIES = {};
 Blacklist._BASIC_FILES = [
@@ -482,7 +506,9 @@ Blacklist._BASIC_FILES = [
 	"cultsboons.json",
 	"deities.json",
 	"feats.json",
+	"items-base.json",
 	"magicvariants.json",
+	"items.json",
 	"optionalfeatures.json",
 	"objects.json",
 	"psionics.json",
@@ -518,7 +544,7 @@ Blacklist.Component = class extends BaseComponent {
 			},
 		};
 	}
-}
+};
 
 window.addEventListener("load", async () => {
 	await ExcludeUtil.pInitialise();

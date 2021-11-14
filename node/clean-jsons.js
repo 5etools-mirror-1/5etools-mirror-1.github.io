@@ -12,7 +12,7 @@ function cleanFolder (folder) {
 		.forEach(file => {
 			console.log(`\tCleaning ${file}...`);
 			fs.writeFileSync(file, CleanUtil.getCleanJson(ut.readJson(file)), "utf-8");
-		})
+		});
 }
 
 cleanFolder(`./data`);

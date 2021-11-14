@@ -64,7 +64,7 @@ class VariantRulesPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (it, ix) {
+	pGetSublistItem (it, ix) {
 		const hash = UrlUtil.autoEncodeHash(it);
 
 		const $ele = $(`<div class="lst__row lst__row--sublist flex-col"><a href="#${hash}" class="lst--border lst__row-inner">
@@ -95,11 +95,9 @@ class VariantRulesPage extends ListPage {
 	}
 
 	async pDoLoadSubHash (sub) {
+		sub = await super.pDoLoadSubHash(sub);
+
 		if (!sub.length) return;
-
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
-
 		const $title = $(`.rd__h[data-title-index="${sub[0]}"]`);
 		if ($title.length) $title[0].scrollIntoView();
 	}

@@ -13,7 +13,7 @@ class PageFilterClassesBase extends PageFilter {
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
 			items: ["Reprinted", "Sidekick", "SRD"],
-			deselFn: (it) => { return it === "Reprinted" || it === "Sidekick" },
+			deselFn: (it) => { return it === "Reprinted" || it === "Sidekick"; },
 			displayFnMini: it => it === "Reprinted" ? "Repr." : it,
 			displayFnTitle: it => it === "Reprinted" ? it : "",
 			isSrdFilter: true,
@@ -104,7 +104,7 @@ class PageFilterClassesBase extends PageFilter {
 			const isScExcluded = (subclassExclusions[sc.source] || {})[sc.name] || false;
 			if (!isScExcluded) {
 				this._sourceFilter.addItem(sc.source);
-				sc.subclassFeatures.forEach(lvlFeatures => lvlFeatures.forEach(feature => this._addEntrySourcesToFilter(feature)))
+				sc.subclassFeatures.forEach(lvlFeatures => lvlFeatures.forEach(feature => this._addEntrySourcesToFilter(feature)));
 			}
 		});
 	}
@@ -138,7 +138,7 @@ class PageFilterClassesBase extends PageFilter {
 				return sc.otherSources?.length && sc.otherSources.some(src => this._filterBox.toDisplay(
 					values,
 					...this.constructor._getIsSubclassDisplayedToDisplayParams(cls, sc, src),
-				))
+				));
 			});
 	}
 
@@ -173,7 +173,7 @@ class PageFilterClassesBase extends PageFilter {
 		return this._filterBox.toDisplay(
 			values,
 			...this._getToDisplayParams(values, it),
-		)
+		);
 	}
 
 	_getToDisplayParams (values, cls) {

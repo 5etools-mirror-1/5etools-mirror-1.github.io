@@ -7,7 +7,7 @@ if (IS_NODE) require("./parser.js");
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 IS_DEPLOYED = undefined;
-VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.141.2"/* 5ETOOLS_VERSION__CLOSE */;
+VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.142.0"/* 5ETOOLS_VERSION__CLOSE */;
 DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 // for the roll20 script to set
 IS_VTT = false;
@@ -221,10 +221,10 @@ String.prototype.toUrlified = String.prototype.toUrlified || function () {
 
 String.prototype.toChunks = String.prototype.toChunks || function (size) {
 	// https://stackoverflow.com/a/29202760/5987433
-	const numChunks = Math.ceil(this.length / size)
-	const chunks = new Array(numChunks)
+	const numChunks = Math.ceil(this.length / size);
+	const chunks = new Array(numChunks);
 	for (let i = 0, o = 0; i < numChunks; ++i, o += size) chunks[i] = this.substr(o, size);
-	return chunks
+	return chunks;
 };
 
 String.prototype.toAscii = String.prototype.toAscii || function () {
@@ -431,7 +431,7 @@ CurrencyUtil = {
 				return {
 					...it,
 					normalizedMult: 1 / it.mult,
-				}
+				};
 			})
 			.sort((a, b) => SortUtil.ascSort(a.normalizedMult, b.normalizedMult));
 
@@ -556,7 +556,7 @@ JqueryUtil = {
 						return `<${arg.tag()} data-r="true"></${arg.tag()}>`;
 					} else if (arg instanceof HTMLElement) {
 						return handleArg($(arg));
-					} else return arg
+					} else return arg;
 				};
 
 				const raw = parts.reduce((html, p) => {
@@ -622,7 +622,7 @@ JqueryUtil = {
 			remove: function (o) {
 				if (o.handler) o.handler();
 			},
-		}
+		};
 	},
 
 	addSelectors () {
@@ -925,7 +925,7 @@ ElementUtil = {
 		while (child !== parent) {
 			if (!child.parentElement) return null;
 
-			const ix = [...child.parentElement.children].indexOf(child)
+			const ix = [...child.parentElement.children].indexOf(child);
 			if (!~ix) return null;
 
 			path.push(ix);
@@ -945,7 +945,7 @@ ElementUtil = {
 		return parent;
 	},
 	// endregion
-}
+};
 
 if (typeof window !== "undefined") window.e_ = ElementUtil.getOrModify;
 
@@ -1664,6 +1664,18 @@ EventUtil = {
 	},
 
 	noModifierKeys (evt) { return !evt.ctrlKey && !evt.altKey && !evt.metaKey; },
+
+	getKeyIgnoreCapsLock (evt) {
+		if (!evt.key) return null;
+		if (evt.key.length !== 1) return evt.key;
+		const isCaps = (evt.originalEvent || evt).getModifierState("CapsLock");
+		if (!isCaps) return evt.key;
+		const asciiCode = evt.key.charCodeAt(0);
+		const isUpperCase = asciiCode >= 65 && asciiCode <= 90;
+		const isLowerCase = asciiCode >= 97 && asciiCode <= 122;
+		if (!isUpperCase && !isLowerCase) return evt.key;
+		return isUpperCase ? evt.key.toLowerCase() : evt.key.toUpperCase();
+	},
 };
 
 if (typeof window !== "undefined") window.addEventListener("load", EventUtil.init);
@@ -1713,10 +1725,10 @@ ContextUtil = {
 
 		this._userData = null;
 
-		this.remove = function () { if (this._$ele) this._$ele.remove(); }
+		this.remove = function () { if (this._$ele) this._$ele.remove(); };
 
-		this.width = function () { return this._$ele ? this._$ele.width() : undefined; }
-		this.height = function () { return this._$ele ? this._$ele.height() : undefined; }
+		this.width = function () { return this._$ele ? this._$ele.width() : undefined; };
+		this.height = function () { return this._$ele ? this._$ele.height() : undefined; };
 
 		this.pOpen = function (evt, userData) {
 			this._initLazy();
@@ -1736,8 +1748,8 @@ ContextUtil = {
 				.showVe();
 
 			return this._pResult;
-		}
-		this.close = function () { if (this._$ele) this._$ele.hideVe(); }
+		};
+		this.close = function () { if (this._$ele) this._$ele.hideVe(); };
 
 		this._initLazy = function () {
 			if (this._$ele) return;
@@ -1780,7 +1792,7 @@ ContextUtil = {
 			// opening menu would pass the side of the page
 			if (posMouse + szMenu > szWin && szMenu < posMouse) position -= szMenu;
 			return position;
-		}
+		};
 	},
 
 	/**
@@ -1866,7 +1878,7 @@ UrlUtil = {
 			if (out[k].length === 1 && out[k] === HASH_SUB_NONE) out[k] = [];
 			return out;
 		} else {
-			throw new Error(`Badly formatted subhash ${subHash}`)
+			throw new Error(`Badly formatted subhash ${subHash}`);
 		}
 	},
 
@@ -1908,7 +1920,7 @@ UrlUtil = {
 				await MiscUtil.pCopyTextToClipboard(parts.join(HASH_PART_SEP));
 				JqueryUtil.showCopiedEffect($btn);
 			})
-			.title("Get Link to Filters (SHIFT adds List)")
+			.title("Get Link to Filters (SHIFT adds List)");
 	},
 
 	mini: {
@@ -1958,7 +1970,7 @@ UrlUtil = {
 							hash: `${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](cls)}${HASH_PART_SEP}${UrlUtil.getClassesPageStatePart({feature: {ixLevel: ixLvl, ixFeature: ixFeature}})}`,
 							entry: feature,
 							level: ixLvl + 1,
-						})
+						});
 					});
 			});
 
@@ -2470,7 +2482,7 @@ DataUtil = {
 		try {
 			data = await DataUtil._pLoad(procUrl);
 		} catch (e) {
-			setTimeout(() => { throw e; })
+			setTimeout(() => { throw e; });
 		}
 
 		// Fallback to the un-processed URL
@@ -2592,7 +2604,7 @@ DataUtil = {
 	},
 
 	userDownload (filename, data, {fileType = null, isSipAdditionalMetadata = false, propVersion = "siteVersion", valVersion = VERSION_NUMBER} = {}) {
-		filename = `${filename}.json`
+		filename = `${filename}.json`;
 		if (isSipAdditionalMetadata || data instanceof Array) return DataUtil._userDownload(filename, JSON.stringify(data, null, "\t"), "text/json");
 
 		data = {[propVersion]: valVersion, ...data};
@@ -2681,6 +2693,8 @@ DataUtil = {
 				obj.forEach(it => DataUtil.__cleanJsonObject(it));
 			} else {
 				Object.entries(obj).forEach(([k, v]) => {
+					if (k === "_versions" || k === "_version") return;
+					// TODO(Future) use "__" prefix for temp data, instead of "_"
 					if ((k.startsWith("_") && k !== "_") || k === "customHashId") delete obj[k];
 					else DataUtil.__cleanJsonObject(v);
 				});
@@ -2782,6 +2796,7 @@ DataUtil = {
 			hasFluff: true,
 			hasFluffImages: true,
 			hasToken: true,
+			_versions: true,
 		},
 
 		_walker_replaceTxt: null,
@@ -2825,7 +2840,12 @@ DataUtil = {
 			if (DataUtil.dbg.isTrackCopied) it.dbg_isCopied = true;
 			// Handle recursive copy
 			if (it._copy) await DataUtil.generic._pMergeCopy(impl, page, entryList, it, options);
-			return DataUtil.generic._pApplyCopy(impl, MiscUtil.copy(it), entry, options);
+
+			// Preload traits, if required
+			const traitData = entry._copy?._trait
+				? (await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/bestiary/traits.json`))
+				: null;
+			return DataUtil.generic._applyCopy(impl, MiscUtil.copy(it), entry, traitData, options);
 		},
 
 		_pMergeCopy_search (impl, page, entryList, entry, options) {
@@ -2837,7 +2857,7 @@ DataUtil = {
 			});
 		},
 
-		async _pApplyCopy (impl, copyFrom, copyTo, options = {}) {
+		_applyCopy (impl, copyFrom, copyTo, traitData, options = {}) {
 			if (options.doKeepCopy) copyTo.__copy = MiscUtil.copy(copyFrom);
 
 			// convert everything to arrays
@@ -2847,6 +2867,8 @@ DataUtil = {
 				});
 			}
 
+			const msgPtFailed = `Failed to apply _copy to "${copyTo.name}" ("${copyTo.source}").`;
+
 			const copyMeta = copyTo._copy || {};
 
 			if (copyMeta._mod) normaliseMods(copyMeta);
@@ -2854,9 +2876,8 @@ DataUtil = {
 			// fetch and apply any external traits -- append them to existing copy mods where available
 			let racials = null;
 			if (copyMeta._trait) {
-				const traitData = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/bestiary/traits.json`);
 				racials = traitData.trait.find(t => t.name.toLowerCase() === copyMeta._trait.name.toLowerCase() && t.source.toLowerCase() === copyMeta._trait.source.toLowerCase());
-				if (!racials) throw new Error(`Could not find traits to apply with name "${copyMeta._trait.name}" and source "${copyMeta._trait.source}"`);
+				if (!racials) throw new Error(`${msgPtFailed} Could not find traits to apply with name "${copyMeta._trait.name}" and source "${copyMeta._trait.source}"`);
 				racials = MiscUtil.copy(racials);
 
 				if (racials.apply._mod) {
@@ -2879,8 +2900,8 @@ DataUtil = {
 			Object.keys(copyFrom).forEach(k => {
 				if (copyTo[k] === null) return delete copyTo[k];
 				if (copyTo[k] == null) {
-					if (DataUtil.generic._MERGE_REQUIRES_PRESERVE_BASE[k] || impl._MERGE_REQUIRES_PRESERVE[k]) {
-						if (copyTo._copy._preserve && copyTo._copy._preserve[k]) copyTo[k] = copyFrom[k];
+					if (DataUtil.generic._MERGE_REQUIRES_PRESERVE_BASE[k] || impl?._MERGE_REQUIRES_PRESERVE[k]) {
+						if (copyTo._copy._preserve?.["*"] || copyTo._copy._preserve?.[k]) copyTo[k] = copyFrom[k];
 					} else copyTo[k] = copyFrom[k];
 				}
 			});
@@ -2957,12 +2978,12 @@ DataUtil = {
 
 			function doMod_prependArr (modInfo, prop) {
 				doEnsureArray(modInfo, "items");
-				copyTo[prop] = copyTo[prop] ? modInfo.items.concat(copyTo[prop]) : modInfo.items
+				copyTo[prop] = copyTo[prop] ? modInfo.items.concat(copyTo[prop]) : modInfo.items;
 			}
 
 			function doMod_appendArr (modInfo, prop) {
 				doEnsureArray(modInfo, "items");
-				copyTo[prop] = copyTo[prop] ? copyTo[prop].concat(modInfo.items) : modInfo.items
+				copyTo[prop] = copyTo[prop] ? copyTo[prop].concat(modInfo.items) : modInfo.items;
 			}
 
 			function doMod_appendIfNotExistsArr (modInfo, prop) {
@@ -2975,7 +2996,7 @@ DataUtil = {
 				doEnsureArray(modInfo, "items");
 
 				if (!copyTo[prop]) {
-					if (isThrow) throw new Error(`Could not find "${prop}" array`);
+					if (isThrow) throw new Error(`${msgPtFailed} Could not find "${prop}" array`);
 					return false;
 				}
 
@@ -2992,7 +3013,7 @@ DataUtil = {
 				if (~ixOld) {
 					copyTo[prop].splice(ixOld, 1, ...modInfo.items);
 					return true;
-				} else if (isThrow) throw new Error(`Could not find "${prop}" item with name "${modInfo.replace}" to replace`);
+				} else if (isThrow) throw new Error(`${msgPtFailed} Could not find "${prop}" item with name "${modInfo.replace}" to replace`);
 				return false;
 			}
 
@@ -3003,7 +3024,7 @@ DataUtil = {
 
 			function doMod_insertArr (modInfo, prop) {
 				doEnsureArray(modInfo, "items");
-				if (!copyTo[prop]) throw new Error(`Could not find "${prop}" array`);
+				if (!copyTo[prop]) throw new Error(`${msgPtFailed} Could not find "${prop}" array`);
 				copyTo[prop].splice(modInfo.index, 0, ...modInfo.items);
 			}
 
@@ -3014,7 +3035,7 @@ DataUtil = {
 						const ixOld = copyTo[prop].findIndex(it => it.name === nameToRemove);
 						if (~ixOld) copyTo[prop].splice(ixOld, 1);
 						else {
-							if (!modInfo.force) throw new Error(`Could not find "${prop}" item with name "${nameToRemove}" to remove`);
+							if (!modInfo.force) throw new Error(`${msgPtFailed} Could not find "${prop}" item with name "${nameToRemove}" to remove`);
 						}
 					});
 				} else if (modInfo.items) {
@@ -3022,9 +3043,9 @@ DataUtil = {
 					modInfo.items.forEach(itemToRemove => {
 						const ixOld = copyTo[prop].findIndex(it => it === itemToRemove);
 						if (~ixOld) copyTo[prop].splice(ixOld, 1);
-						else throw new Error(`Could not find "${prop}" item "${itemToRemove}" to remove`);
+						else throw new Error(`${msgPtFailed} Could not find "${prop}" item "${itemToRemove}" to remove`);
 					});
-				} else throw new Error(`One of "names" or "items" must be provided!`)
+				} else throw new Error(`${msgPtFailed} One of "names" or "items" must be provided!`);
 			}
 
 			function doMod_calculateProp (modInfo, prop) {
@@ -3033,7 +3054,7 @@ DataUtil = {
 					switch (m[1]) {
 						case "prof_bonus": return Parser.crToPb(copyTo.cr);
 						case "dex_mod": return Parser.getAbilityModNumber(copyTo.dex);
-						default: throw new Error(`Unknown variable "${m[1]}"`);
+						default: throw new Error(`${msgPtFailed} Unknown variable "${m[1]}"`);
 					}
 				});
 				// eslint-disable-next-line no-eval
@@ -3129,7 +3150,7 @@ DataUtil = {
 			}
 
 			function doMod_addSpells (modInfo) {
-				if (!copyTo.spellcasting) throw new Error(`Creature did not have a spellcasting property!`);
+				if (!copyTo.spellcasting) throw new Error(`${msgPtFailed} Creature did not have a spellcasting property!`);
 
 				// TODO could accept a "position" or "name" parameter should spells need to be added to other spellcasting traits
 				const spellcasting = copyTo.spellcasting[0];
@@ -3148,7 +3169,7 @@ DataUtil = {
 								else {
 									if (typeof spellCategoryOld[kk] === "object") {
 										if (spellCategoryOld[kk] instanceof Array) spellCategoryOld[kk] = spellCategoryOld[kk].concat(spellCategoryNu[kk]).sort(SortUtil.ascSortLower);
-										else throw new Error(`Object at key ${kk} not an array!`);
+										else throw new Error(`${msgPtFailed} Object at key ${kk} not an array!`);
 									} else spellCategoryOld[kk] = spellCategoryNu[kk];
 								}
 							});
@@ -3156,29 +3177,32 @@ DataUtil = {
 					});
 				}
 
-				if (modInfo.will) {
-					modInfo.will.forEach(sp => (modInfo.will = modInfo.will || []).push(sp));
-				}
+				["constant", "will", "ritual"].forEach(prop => {
+					if (!modInfo[prop]) return;
+					modInfo[prop].forEach(sp => (spellcasting[prop] = spellcasting[prop] || []).push(sp));
+				});
 
-				if (modInfo.daily) {
+				["rest", "daily", "weekly", "yearly"].forEach(prop => {
+					if (!modInfo[prop]) return;
+
 					for (let i = 1; i <= 9; ++i) {
 						const e = `${i}e`;
 
-						spellcasting.daily = spellcasting.daily || {};
+						spellcasting[prop] = spellcasting[prop] || {};
 
-						if (modInfo.daily[i]) {
-							modInfo.daily[i].forEach(sp => (spellcasting.daily[i] = spellcasting.daily[i] || []).push(sp));
+						if (modInfo[prop][i]) {
+							modInfo[prop][i].forEach(sp => (spellcasting[prop][i] = spellcasting[prop][i] || []).push(sp));
 						}
 
-						if (modInfo.daily[e]) {
-							modInfo.daily[e].forEach(sp => (spellcasting.daily[e] = spellcasting.daily[e] || []).push(sp));
+						if (modInfo[prop][e]) {
+							modInfo[prop][e].forEach(sp => (spellcasting[prop][e] = spellcasting[prop][e] || []).push(sp));
 						}
 					}
-				}
+				});
 			}
 
 			function doMod_replaceSpells (modInfo) {
-				if (!copyTo.spellcasting) throw new Error(`Creature did not have a spellcasting property!`);
+				if (!copyTo.spellcasting) throw new Error(`${msgPtFailed} Creature did not have a spellcasting property!`);
 
 				// TODO could accept a "position" or "name" parameter should spells need to be added to other spellcasting traits
 				const spellcasting = copyTo.spellcasting[0];
@@ -3190,7 +3214,7 @@ DataUtil = {
 					if (~ix) {
 						curSpells[k].splice(ix, 1, ...replaceMeta.with);
 						curSpells[k].sort(SortUtil.ascSortLower);
-					} else throw new Error(`Could not find spell "${replaceMeta.replace}" to replace`);
+					} else throw new Error(`${msgPtFailed} Could not find spell "${replaceMeta.replace}" to replace`);
 				};
 
 				if (modInfo.spells) {
@@ -3222,7 +3246,7 @@ DataUtil = {
 
 			function doMod_scalarAddHit (modInfo, prop) {
 				if (!copyTo[prop]) return;
-				copyTo[prop] = JSON.parse(JSON.stringify(copyTo[prop]).replace(/{@hit ([-+]?\d+)}/g, (m0, m1) => `{@hit ${Number(m1) + modInfo.scalar}}`))
+				copyTo[prop] = JSON.parse(JSON.stringify(copyTo[prop]).replace(/{@hit ([-+]?\d+)}/g, (m0, m1) => `{@hit ${Number(m1) + modInfo.scalar}}`));
 			}
 
 			function doMod_scalarAddDc (modInfo, prop) {
@@ -3233,8 +3257,8 @@ DataUtil = {
 			function doMod_maxSize (modInfo) {
 				const ixCur = Parser.SIZE_ABVS.indexOf(copyTo.size);
 				const ixMax = Parser.SIZE_ABVS.indexOf(modInfo.max);
-				if (ixCur < 0 || ixMax < 0) throw new Error(`Unhandled size!`);
-				copyTo.size = Parser.SIZE_ABVS[Math.min(ixCur, ixMax)]
+				if (ixCur < 0 || ixMax < 0) throw new Error(`${msgPtFailed} Unhandled size!`);
+				copyTo.size = Parser.SIZE_ABVS[Math.min(ixCur, ixMax)];
 			}
 
 			function doMod_scalarMultXp (modInfo) {
@@ -3258,7 +3282,7 @@ DataUtil = {
 						if (typeof modInfo === "string") {
 							switch (modInfo) {
 								case "remove": return delete copyTo[prop];
-								default: throw new Error(`Unhandled mode: ${modInfo}`);
+								default: throw new Error(`${msgPtFailed} Unhandled mode: ${modInfo}`);
 							}
 						} else {
 							switch (modInfo.mode) {
@@ -3288,7 +3312,7 @@ DataUtil = {
 								case "maxSize": return doMod_maxSize(modInfo);
 								case "scalarMultXp": return doMod_scalarMultXp(modInfo);
 								// endregion
-								default: throw new Error(`Unhandled mode: ${modInfo.mode}`);
+								default: throw new Error(`${msgPtFailed} Unhandled mode: ${modInfo.mode}`);
 							}
 						}
 					});
@@ -3315,16 +3339,16 @@ DataUtil = {
 										return Renderer.monster.getShortName(copyTo, parts[0] === "title_short_name");
 									}
 									case "spell_dc": {
-										if (!Parser.ABIL_ABVS.includes(parts[1])) throw new Error(`Unknown ability score "${parts[1]}"`);
+										if (!Parser.ABIL_ABVS.includes(parts[1])) throw new Error(`${msgPtFailed} Unknown ability score "${parts[1]}"`);
 										return 8 + Parser.getAbilityModNumber(Number(copyTo[parts[1]])) + Parser.crToPb(copyTo.cr);
 									}
 									case "to_hit": {
-										if (!Parser.ABIL_ABVS.includes(parts[1])) throw new Error(`Unknown ability score "${parts[1]}"`);
+										if (!Parser.ABIL_ABVS.includes(parts[1])) throw new Error(`${msgPtFailed} Unknown ability score "${parts[1]}"`);
 										const total = Parser.crToPb(copyTo.cr) + Parser.getAbilityModNumber(Number(copyTo[parts[1]]));
 										return total >= 0 ? `+${total}` : total;
 									}
 									case "damage_mod": {
-										if (!Parser.ABIL_ABVS.includes(parts[1])) throw new Error(`Unknown ability score "${parts[1]}"`);
+										if (!Parser.ABIL_ABVS.includes(parts[1])) throw new Error(`${msgPtFailed} Unknown ability score "${parts[1]}"`);
 										const total = Parser.getAbilityModNumber(Number(copyTo[parts[1]]));
 										return total === 0 ? "" : total > 0 ? ` +${total}` : ` ${total}`;
 									}
@@ -3353,6 +3377,90 @@ DataUtil = {
 			// cleanup
 			delete copyTo._copy;
 		},
+
+		getVersions (parent) {
+			if (!parent?._versions?.length) return [];
+
+			return parent._versions
+				.map(ver => {
+					if (ver._template && ver._implementations?.length) return DataUtil.generic._getVersions_template({ver});
+					return DataUtil.generic._getVersions_basic({ver});
+				})
+				.flat()
+				.map(ver => DataUtil.generic._getVersion({parentEntity: parent, version: ver}));
+		},
+
+		_getVersions_template ({ver}) {
+			return ver._implementations
+				.map(impl => {
+					let cpyTemplate = MiscUtil.copy(ver._template);
+					const cpyImpl = MiscUtil.copy(impl);
+
+					DataUtil.generic._getVersions_mutExpandCopy({ent: cpyTemplate});
+
+					if (cpyImpl._variables) {
+						cpyTemplate = MiscUtil.getWalker()
+							.walk(
+								cpyTemplate,
+								{
+									string: str => str.replace(/{{([^}]+)}}/g, (...m) => cpyImpl._variables[m[1]]),
+								},
+							);
+						delete cpyImpl._variables;
+					}
+
+					Object.assign(cpyTemplate, cpyImpl);
+
+					return cpyTemplate;
+				});
+		},
+
+		_getVersions_basic ({ver}) {
+			const cpyVer = MiscUtil.copy(ver);
+			DataUtil.generic._getVersions_mutExpandCopy({ent: cpyVer});
+			return cpyVer;
+		},
+
+		_getVersions_mutExpandCopy ({ent}) {
+			// Tweak the data structure to match what `_applyCopy` expects
+			ent._copy = {
+				_mod: ent._mod,
+				_preserve: {"*": true},
+			};
+			delete ent._mod;
+		},
+
+		_getVersion ({parentEntity, version}) {
+			const additionalData = {
+				_versionBase_isVersion: true,
+				_versionBase_name: parentEntity.name,
+				_versionBase_source: parentEntity.source,
+				_versionBase_hasToken: parentEntity.hasToken,
+				_versionBase_hasFluff: parentEntity.hasFluff,
+				_versionBase_hasFluffImages: parentEntity.hasFluffImages,
+			};
+			const cpyParentEntity = MiscUtil.copy(parentEntity);
+
+			delete cpyParentEntity._versions;
+			delete cpyParentEntity.hasToken;
+			delete cpyParentEntity.hasFluff;
+			delete cpyParentEntity.hasFluffImages;
+
+			DataUtil.generic._applyCopy(
+				null,
+				cpyParentEntity,
+				version,
+				null,
+			);
+			Object.assign(version, additionalData);
+			return version;
+		},
+	},
+
+	proxy: {
+		getVersions (prop, ent) {
+			return (DataUtil[prop]?.getVersions || DataUtil.generic.getVersions)(ent);
+		},
 	},
 
 	monster: {
@@ -3367,6 +3475,65 @@ DataUtil = {
 		_mergeCache: {},
 		async pMergeCopy (monList, mon, options) {
 			return DataUtil.generic._pMergeCopy(DataUtil.monster, UrlUtil.PG_BESTIARY, monList, mon, options);
+		},
+
+		getVersions (mon) {
+			const additionalVersionData = DataUtil.monster._getAdditionalVersionsData(mon);
+			if (additionalVersionData.length) {
+				mon = MiscUtil.copy(mon);
+				(mon._versions = mon._versions || []).push(...additionalVersionData);
+			}
+			return DataUtil.generic.getVersions(mon);
+		},
+
+		_getAdditionalVersionsData (mon) {
+			if (!mon.variant) return [];
+
+			return mon.variant
+				.filter(it => it._version)
+				.map(it => {
+					const toAdd = {
+						name: it._version.name || it.name,
+						source: it._version.source || it.source || mon.source,
+						variant: null,
+					};
+
+					if (it._version.addAs) {
+						const cpy = MiscUtil.copy(it);
+						delete cpy._version;
+						delete cpy.type;
+						delete cpy.source;
+						delete cpy.page;
+
+						toAdd._mod = {
+							[it._version.addAs]: {
+								mode: "appendArr",
+								items: cpy,
+							},
+						};
+
+						return toAdd;
+					}
+
+					if (it._version.addHeadersAs) {
+						const cpy = MiscUtil.copy(it);
+						cpy.entries = cpy.entries.filter(it => it.name && it.entries);
+						cpy.entries.forEach(cpyEnt => {
+							delete cpyEnt.type;
+							delete cpyEnt.source;
+						});
+
+						toAdd._mod = {
+							[it._version.addHeadersAs]: {
+								mode: "appendArr",
+								items: cpy.entries,
+							},
+						};
+
+						return toAdd;
+					}
+				})
+				.filter(Boolean);
 		},
 
 		async pPreloadMeta () {
@@ -3417,7 +3584,7 @@ DataUtil = {
 				if (data.spell?.length) spell = data.spell.find(sp => UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_SPELLS](sp) === hash);
 				if (!spell) spell = await Renderer.hover.pCacheAndGetHash(UrlUtil.PG_SPELLS, hash);
 				if (!spell) {
-					setTimeout(() => { throw new Error(`Could not load "${mon.name} (${mon.source})" "summonedBySpell" "${mon.summonedBySpell}"`); })
+					setTimeout(() => { throw new Error(`Could not load "${mon.name} (${mon.source})" "summonedBySpell" "${mon.summonedBySpell}"`); });
 					continue;
 				}
 				mon._summonedBySpell_levelBase = spell.level;
@@ -3551,6 +3718,7 @@ DataUtil = {
 				DataUtil.race._pIsLoadings[isAddBaseRaces] = (async () => {
 					const rawRaceData = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/races.json`);
 					const raceData = Renderer.race.mergeSubraces(rawRaceData.race, {isAddBaseRaces});
+					raceData.forEach(it => it.__prop = "race");
 					DataUtil.race._loadCache[isAddBaseRaces] = {race: raceData};
 				})();
 			}
@@ -3640,7 +3808,7 @@ DataUtil = {
 			let [name, className, classSource, level, source, displayText] = uid.split("|").map(it => it.trim());
 			classSource = classSource || (opts.isLower ? SRC_PHB.toLowerCase() : SRC_PHB);
 			source = source || classSource;
-			level = Number(level)
+			level = Number(level);
 			return {
 				name,
 				className,
@@ -3679,7 +3847,7 @@ DataUtil = {
 			classSource = classSource || (opts.isLower ? SRC_PHB.toLowerCase() : SRC_PHB);
 			subclassSource = subclassSource || (opts.isLower ? SRC_PHB.toLowerCase() : SRC_PHB);
 			source = source || subclassSource;
-			level = Number(level)
+			level = Number(level);
 			return {
 				name,
 				className,
@@ -4111,7 +4279,7 @@ RollerUtil = {
 	},
 
 	rollOnArray (array) {
-		return array[RollerUtil.randomise(array.length) - 1]
+		return array[RollerUtil.randomise(array.length) - 1];
 	},
 
 	/**
@@ -4279,7 +4447,7 @@ StorageUtil = {
 
 	syncSet (key, value) {
 		StorageUtil._getSyncStorage().setItem(key, JSON.stringify(value));
-		StorageUtil._syncTrackKey(key)
+		StorageUtil._syncTrackKey(key);
 	},
 
 	syncRemove (key) {
@@ -4291,7 +4459,7 @@ StorageUtil = {
 	syncSetForPage (key, value) { StorageUtil.syncSet(`${key}_${UrlUtil.getCurrentPage()}`, value); },
 
 	isSyncFake () {
-		return !!StorageUtil._getSyncStorage().isSyncFake
+		return !!StorageUtil._getSyncStorage().isSyncFake;
 	},
 
 	_syncTrackKey (key, isRemove) {
@@ -4391,7 +4559,7 @@ SessionStorageUtil = {
 	},
 
 	isFake () {
-		return SessionStorageUtil.getStorage().isSyncFake
+		return SessionStorageUtil.getStorage().isSyncFake;
 	},
 
 	setForPage: (key, value) => {
@@ -4413,7 +4581,7 @@ SessionStorageUtil = {
 	},
 
 	removeForPage: (key) => {
-		SessionStorageUtil.remove(`${key}_${UrlUtil.getCurrentPage()}`)
+		SessionStorageUtil.remove(`${key}_${UrlUtil.getCurrentPage()}`);
 	},
 
 	remove (key) {
@@ -4491,7 +4659,7 @@ BrewUtil = {
 					});
 					delete cls.subclasses;
 				}
-			})
+			});
 		}
 
 		if (hasOldSubclasses) {
@@ -4613,11 +4781,11 @@ BrewUtil = {
 		if (opts.isModal) {
 			$$($appendTo)`
 			${$brewList}
-			${$wrpBtns.addClass("mb-2")}`
+			${$wrpBtns.addClass("mb-2")}`;
 		} else {
 			$$($appendTo)`
 			${$wrpBtns.addClass("mb-3")}
-			${$brewList}`
+			${$brewList}`;
 		}
 
 		BrewUtil.addBrewRemote = async ($ele, jsonUrl, doUnescape) => {
@@ -4647,7 +4815,7 @@ BrewUtil = {
 			.keydown(evt => {
 				switch (evt.which) {
 					case 13: { // enter
-						return $wrpRows.find(`.lst__row`).first().find(`.manbrew__load_from_url`).click()
+						return $wrpRows.find(`.lst__row`).first().find(`.manbrew__load_from_url`).click();
 					}
 					case 40: { // down
 						const firstItem = list.visibleItems[0];
@@ -4718,8 +4886,8 @@ BrewUtil = {
 						path,
 						name: path.slice(path.indexOf("/") + 1),
 						_cat: BrewUtil.dirToProp(dir),
-					})
-				})
+					});
+				});
 		});
 
 		dataList.forEach(it => {
@@ -4771,7 +4939,7 @@ BrewUtil = {
 			$row.keydown(evt => {
 				switch (evt.which) {
 					case 13: { // enter
-						return $btnAdd.click()
+						return $btnAdd.click();
 					}
 					case 38: { // up
 						const ixCur = list.visibleItems.indexOf(listItem);
@@ -5248,7 +5416,7 @@ BrewUtil = {
 	},
 
 	async _pDoRemove (arrName, uniqueId, {isChild} = {}) {
-		const index = BrewUtil.homebrew[arrName].findIndex(it => isChild ? it.parentUniqueId : it.uniqueId === uniqueId)
+		const index = BrewUtil.homebrew[arrName].findIndex(it => isChild ? it.parentUniqueId : it.uniqueId === uniqueId);
 		if (!~index) return;
 
 		const toRemove = BrewUtil.homebrew[arrName][index];
@@ -5714,7 +5882,7 @@ BrewUtil = {
 		if (!source) return "";
 		source = source.toLowerCase();
 		const color = BrewUtil.sourceJsonToColor(source);
-		if (color) return `color: #${color}; border-color: #${color}; text-decoration-color: #${color};`
+		if (color) return `color: #${color}; border-color: #${color}; text-decoration-color: #${color};`;
 		return "";
 	},
 
@@ -5787,9 +5955,9 @@ BrewUtil = {
 
 					if (arbiter.pFnPreProcBrew) {
 						const toProc = await arbiter.pFnPreProcBrew.bind(arbiter)(BrewUtil.homebrew);
-						await indexer.pAddToIndex(arbiter, toProc)
+						await indexer.pAddToIndex(arbiter, toProc);
 					} else {
-						await indexer.pAddToIndex(arbiter, BrewUtil.homebrew)
+						await indexer.pAddToIndex(arbiter, BrewUtil.homebrew);
 					}
 				}
 			}
@@ -5836,7 +6004,7 @@ BrewUtil = {
 						.filter(([prop]) => prop === altProp);
 					for (const tuple of filteredAltIndexes) {
 						const [prop, pGetIndex] = tuple;
-						await indexer.pAddToIndex(ti, BrewUtil.homebrew, {alt: ti.alternateIndexes[prop]})
+						await indexer.pAddToIndex(ti, BrewUtil.homebrew, {alt: ti.alternateIndexes[prop]});
 					}
 				}
 			}
@@ -6460,7 +6628,7 @@ function BookModeView (opts) {
 			: $$`<div class="bkmv__scroller h-100 overflow-y-auto ${isFlex ? "flex" : ""}">${this.isHideContentOnNoneShown ? null : $wrpContent}</div>`;
 		this._$wrpRenderedContent.appendTo(this._$wrpBook);
 
-		const numShown = await this.popTblGetNumShown($wrpContent, $dispName, $wrpControlsToPass);
+		const numShown = await this.popTblGetNumShown({$wrpContent, $dispName, $wrpControls: $wrpControlsToPass});
 
 		if (numShown) {
 			if (this.isHideContentOnNoneShown) this._$wrpRenderedContent.append($wrpContent);
@@ -6511,7 +6679,7 @@ function BookModeView (opts) {
 			const injectPrintCss = (cols) => {
 				$(`#bkmv__print-style`).remove();
 				$(`<style media="print" id="bkmv__print-style">.bkmv__wrp { column-count: ${cols}; }</style>`)
-					.appendTo($(document.body))
+					.appendTo($(document.body));
 			};
 
 			const lastColumns = StorageUtil.syncGetForPage(BookModeView._BOOK_VIEW_COLUMNS_K);
@@ -6587,11 +6755,11 @@ ExcludeUtil = {
 			try {
 				await StorageUtil.pRemove(VeCt.STORAGE_EXCLUDES);
 			} catch (e) {
-				setTimeout(() => { throw e });
+				setTimeout(() => { throw e; });
 			}
 			ExcludeUtil._excludes = null;
 			window.location.hash = "";
-			setTimeout(() => { throw e });
+			setTimeout(() => { throw e; });
 		}
 		ExcludeUtil.isInitialised = true;
 	},
@@ -6723,7 +6891,7 @@ EncounterUtil = {
 			const largestCount = encounter.l.items.sort((a, b) => SortUtil.ascSort(Number(b.c), Number(a.c)))[0];
 			const name = (UrlUtil.decodeHash(largestCount.h)[0] || "(Unnamed)").toTitleCase();
 			return `Encounter with ${name} ×${largestCount.c}`;
-		} else return "(Unnamed Encounter)"
+		} else return "(Unnamed Encounter)";
 	},
 };
 EncounterUtil.SUB_HASH_PREFIX = "encounter";
@@ -6785,9 +6953,9 @@ TokenUtil = {
 			.css({
 				opacity: (32 - ele.scrollTop) / 32,
 				top: -ele.scrollTop,
-			})
+			});
 	},
-}
+};
 
 // LOCKS ===============================================================================================================
 VeLock = function () {
@@ -6800,7 +6968,7 @@ VeLock = function () {
 		this._lockMeta = {
 			lock,
 			unlock,
-		}
+		};
 	};
 
 	this.unlock = () => {
@@ -6810,7 +6978,7 @@ VeLock = function () {
 			lockMeta.unlock();
 		}
 	};
-}
+};
 BrewUtil._lockHandleBrewJson = new VeLock();
 
 // DATETIME ============================================================================================================
@@ -6866,7 +7034,7 @@ DatetimeUtil = {
 
 		return stack.join(", ");
 	},
-}
+};
 DatetimeUtil._MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 DatetimeUtil._SECS_PER_YEAR = 31536000;
 DatetimeUtil._SECS_PER_DAY = 86400;
@@ -6920,7 +7088,7 @@ if (!IS_VTT && typeof window !== "undefined") {
 				if (isPadded) return;
 				isPadded = true;
 				// Pad the bottom of the page so the adhesive unit doesn't overlap the content
-				$(`.view-col-group--cancer`).append(`<div class="w-100 no-shrink" style="height: 110px;"></div>`)
+				$(`.view-col-group--cancer`).append(`<div class="w-100 no-shrink" style="height: 110px;"></div>`);
 			}, 300);
 			ivsCancer.push(ivPad);
 		});
@@ -6988,7 +7156,7 @@ _Donate = {
 		const mode = modes[pos];
 		$e.css(mode);
 		$e.text(`${mode.width}*${mode.height}`);
-		$e.data("pos", (pos + 1) % modes.length)
+		$e.data("pos", (pos + 1) % modes.length);
 	},
 	// endregion
 };

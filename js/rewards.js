@@ -58,7 +58,7 @@ class RewardsPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (reward, ix) {
+	pGetSublistItem (reward, ix) {
 		const hash = UrlUtil.autoEncodeHash(reward);
 
 		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
@@ -89,11 +89,6 @@ class RewardsPage extends ListPage {
 		this._$pgContent.empty().append(RenderRewards.$getRenderedReward(reward));
 
 		ListUtil.updateSelected();
-	}
-
-	async pDoLoadSubHash (sub) {
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
 	}
 }
 

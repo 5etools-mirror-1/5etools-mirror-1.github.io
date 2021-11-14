@@ -26,7 +26,7 @@ class AbilityScoreFilter extends FilterBase {
 			this._itemsLookup[itemAnyDecrease.uid] = itemAnyDecrease;
 			if (this.__state[itemAnyIncrease.uid] == null) this.__state[itemAnyIncrease.uid] = 0;
 			if (this.__state[itemAnyDecrease.uid] == null) this.__state[itemAnyDecrease.uid] = 0;
-		})
+		});
 
 		for (let i = this._minMod; i <= this._maxMod; ++i) {
 			if (i === 0) continue;
@@ -35,7 +35,7 @@ class AbilityScoreFilter extends FilterBase {
 				this._items.push(item);
 				this._itemsLookup[item.uid] = item;
 				if (this.__state[item.uid] == null) this.__state[item.uid] = 0;
-			})
+			});
 		}
 		// endregion
 	}
@@ -633,7 +633,7 @@ AbilityScoreFilter.FilterItem = class {
 		if (this._isAnyDecrease) return `\u2012Any`;
 		return UiUtil.intToBonus(this._modifier);
 	}
-}
+};
 
 class PageFilterRaces extends PageFilter {
 	// region static
@@ -658,9 +658,9 @@ class PageFilterRaces extends PageFilter {
 				asi: asi,
 				amount: amount,
 				_toIdString: () => {
-					return `${asi}${amount}`
+					return `${asi}${amount}`;
 				},
-			}
+			};
 		}
 
 		const out = new CollectionUtil.ObjectSet();
@@ -869,7 +869,7 @@ class PageFilterRaces extends PageFilter {
 		const ability = r.ability ? Renderer.getAbilityData(r.ability) : {asTextShort: "None"};
 		r._slAbility = ability.asTextShort;
 
-		if (r.age?.mature != null && r.age?.max != null) r._fAge = [r.age.mature, r.age.max]
+		if (r.age?.mature != null && r.age?.max != null) r._fAge = [r.age.mature, r.age.max];
 		else if (r.age?.mature != null) r._fAge = r.age.mature;
 		else if (r.age?.max != null) r._fAge = r.age.max;
 	}
@@ -885,6 +885,7 @@ class PageFilterRaces extends PageFilter {
 		this._traitFilter.addItem(r._fTraits);
 		this._asiFilterLegacy.addItem(r._fAbility);
 		this._ageFilter.addItem(r._fAge);
+		this._languageFilter.addItem(r._fLangs);
 	}
 
 	async _pPopulateBoxOptions (opts) {
@@ -919,7 +920,7 @@ class PageFilterRaces extends PageFilter {
 			r._fAge,
 
 			r._fAbility,
-		)
+		);
 	}
 
 	static getListAliases (race) {
@@ -929,7 +930,7 @@ class PageFilterRaces extends PageFilter {
 				return [`"${it}"`, invertedName ? `"${invertedName}"` : false].filter(Boolean);
 			})
 			.flat()
-			.join(",")
+			.join(",");
 	}
 
 	static getInvertedName (name) {

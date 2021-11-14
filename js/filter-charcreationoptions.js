@@ -2,7 +2,7 @@
 
 class PageFilterCharCreationOptions extends PageFilter {
 	static _filterFeatureTypeSort (a, b) {
-		return SortUtil.ascSort(Parser.charCreationOptionTypeToFull(a.item), Parser.charCreationOptionTypeToFull(b.item))
+		return SortUtil.ascSort(Parser.charCreationOptionTypeToFull(a.item), Parser.charCreationOptionTypeToFull(b.item));
 	}
 
 	constructor () {
@@ -44,6 +44,6 @@ class PageFilterCharCreationOptions extends PageFilter {
 			it.source,
 			it._fOptionType,
 			it._fMisc,
-		)
+		);
 	}
 }

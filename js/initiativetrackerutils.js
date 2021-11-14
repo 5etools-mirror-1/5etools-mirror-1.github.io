@@ -62,7 +62,7 @@ class InitiativeTrackerUtil {
 						: `background: ${state.color};`,
 				];
 				if (opts.width) styleStack.push(`width: ${opts.width}px;`);
-				return `<div class="init__cond_bar" style="${styleStack.join(" ")}"/>`
+				return `<div class="init__cond_bar" style="${styleStack.join(" ")}"/>`;
 			};
 
 			const inner = state.turns
@@ -240,7 +240,7 @@ class InitiativeTrackerPlayerMessageHandler {
 		const getHpContent = () => {
 			if (rowData.hh != null) {
 				const {text, color} = InitiativeTrackerUtil.getWoundMeta(rowData.hh);
-				return {hpText: text, hpColor: color}
+				return {hpText: text, hpColor: color};
 			} else {
 				const woundLevel = InitiativeTrackerUtil.getWoundLevel(100 * Number(rowData.h) / Number(rowData.g));
 				return {hpText: `${rowData.h == null ? "?" : rowData.h}/${rowData.g == null ? "?" : rowData.g}`, hpColor: InitiativeTrackerUtil.getWoundMeta(woundLevel).color};

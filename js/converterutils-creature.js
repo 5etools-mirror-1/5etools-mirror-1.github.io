@@ -157,7 +157,7 @@ class AcConvert {
 								froms.push(fromLow);
 							} else {
 								if (cbMan) cbMan(fromLow, `AC requires manual checking: ${mon.name} ${mon.source} p${mon.page}`);
-								nuAc.push(fromClean)
+								nuAc.push(fromClean);
 							}
 						}
 					}
@@ -301,10 +301,10 @@ class AlignmentConvert {
 				else {
 					const mChange = it.regexChance.exec(part);
 					if (mChange) {
-						out.push({alignment: it.output, chance: Number(mChange[1])})
+						out.push({alignment: it.output, chance: Number(mChange[1])});
 					}
 				}
-			})
+			});
 		});
 
 		if (out.length === 1) stats.alignment = out[0].alignment;
@@ -528,7 +528,7 @@ class LanguageTag {
 						if (opt.cbTracked) opt.cbTracked(v);
 						tags.add(v);
 					}
-				})
+				});
 			});
 		}
 
@@ -734,7 +734,7 @@ class DamageTypeTag {
 
 										// debugger
 										sentence.replace(ConverterConst.RE_DAMAGE_TYPE, (m0, pre, type) => {
-											typeSet.add(DamageTypeTag._TYPE_LOOKUP[type])
+											typeSet.add(DamageTypeTag._TYPE_LOOKUP[type]);
 										});
 									});
 							}
@@ -742,7 +742,7 @@ class DamageTypeTag {
 					},
 				);
 			}
-		})
+		});
 	}
 
 	static tryRun (m) {
@@ -849,7 +849,7 @@ class MiscTag {
 						tagSet.add("RNG");
 					}));
 				}
-			})
+			});
 		}
 	}
 
@@ -908,24 +908,22 @@ class SpellcastingTraitConvert {
 		ent.entries.forEach((thisLine, i) => {
 			thisLine = thisLine.replace(/,\s*\*/g, ",*"); // put asterisks on the correct side of commas
 			if (i === 0) return;
-			if (/\/rest/i.test(thisLine)) {
+
+			const perDurations = [
+				{re: /\/rest/i, prop: "rest"},
+				{re: /\/day/i, prop: "daily"},
+				{re: /\/week/i, prop: "weekly"},
+				{re: /\/yeark/i, prop: "yearly"},
+			];
+
+			const perDuration = perDurations.find(({re}) => re.test(thisLine));
+
+			if (perDuration) {
 				hasAnyHeader = true;
 				let property = thisLine.substr(0, 1) + (thisLine.includes(" each:") ? "e" : "");
 				const value = this._getParsedSpells({thisLine, isMarkdown});
-				if (!spellcastingEntry.rest) spellcastingEntry.rest = {};
-				spellcastingEntry.rest[property] = value;
-			} else if (/\/day/i.test(thisLine)) {
-				hasAnyHeader = true;
-				let property = thisLine.substr(0, 1) + (thisLine.includes(" each:") ? "e" : "");
-				const value = this._getParsedSpells({thisLine, isMarkdown});
-				if (!spellcastingEntry.daily) spellcastingEntry.daily = {};
-				spellcastingEntry.daily[property] = value;
-			} else if (/\/week/i.test(thisLine)) {
-				hasAnyHeader = true;
-				let property = thisLine.substr(0, 1) + (thisLine.includes(" each:") ? "e" : "");
-				const value = this._getParsedSpells({thisLine, isMarkdown});
-				if (!spellcastingEntry.weekly) spellcastingEntry.weekly = {};
-				spellcastingEntry.weekly[property] = value;
+				if (!spellcastingEntry[perDuration.prop]) spellcastingEntry[perDuration.prop] = {};
+				spellcastingEntry[perDuration.prop][property] = value;
 			} else if (thisLine.startsWith("Constant: ")) {
 				hasAnyHeader = true;
 				spellcastingEntry.constant = this._getParsedSpells({thisLine, isMarkdown});
@@ -1087,7 +1085,7 @@ class SpellcastingTraitConvert {
 	}
 
 	static _getSpellUids (str) {
-		const uids = []
+		const uids = [];
 		str.replace(/{@spell ([^}]+)}/gi, (...m) => {
 			const [name, source = SRC_PHB.toLowerCase()] = m[1].toLowerCase().split("|").map(it => it.trim());
 			uids.push(`${name}|${source}`);
@@ -1164,9 +1162,9 @@ class SpeedConvert {
 
 			SpeedConvert._splitSpeed(line.toLowerCase()).map(it => it.trim()).forEach(s => {
 				// For e.g. shapechanger speeds, store them behind a "condition" on the previous speed
-				const mParens = /^\((\w+?\s+)?(\d+)\s*ft\.?( .*)?\)$/.exec(s)
+				const mParens = /^\((\w+?\s+)?(\d+)\s*ft\.?( .*)?\)$/.exec(s);
 				if (mParens && prevSpeed) {
-					if (typeof out[prevSpeed] === "number") out[prevSpeed] = {number: out[prevSpeed], condition: s}
+					if (typeof out[prevSpeed] === "number") out[prevSpeed] = {number: out[prevSpeed], condition: s};
 					else out[prevSpeed].condition = s;
 					return;
 				}
@@ -1263,7 +1261,7 @@ class TagImmResVulnConditional {
 
 	static _handleProp_recurse (obj, prop) {
 		if (obj.note) {
-			const note = obj.note.toLowerCase().trim().replace(/^\(/, "").replace(/^damage/, "").trim()
+			const note = obj.note.toLowerCase().trim().replace(/^\(/, "").replace(/^damage/, "").trim();
 			if (
 				note.startsWith("while ")
 				|| note.startsWith("from ")

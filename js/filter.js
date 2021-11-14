@@ -38,9 +38,9 @@ class PageFilter {
 	// region Helpers
 	static _getClassFilterItem ({className, classSource, isVariantClass, definedInSource}) {
 		const nm = className.split("(")[0].trim();
-		const variantSuffix = isVariantClass ? ` [${definedInSource ? Parser.sourceJsonToAbv(definedInSource) : "Unknown"}]` : ""
+		const variantSuffix = isVariantClass ? ` [${definedInSource ? Parser.sourceJsonToAbv(definedInSource) : "Unknown"}]` : "";
 		const sourceSuffix = (SourceUtil.isNonstandardSource(classSource || SRC_PHB) || BrewUtil.hasSourceJson(classSource || SRC_PHB))
-			? ` (${Parser.sourceJsonToAbv(classSource)})` : ""
+			? ` (${Parser.sourceJsonToAbv(classSource)})` : "";
 		const name = `${nm}${variantSuffix}${sourceSuffix}`;
 
 		const opts = {
@@ -52,7 +52,7 @@ class PageFilter {
 
 		if (isVariantClass) {
 			opts.nest = definedInSource ? Parser.sourceJsonToFull(definedInSource) : "Unknown";
-			opts.userData.equivalentClassName = `${nm}${sourceSuffix}`
+			opts.userData.equivalentClassName = `${nm}${sourceSuffix}`;
 			opts.userData.definedInSource = definedInSource;
 		}
 
@@ -136,7 +136,7 @@ class ModalFilter {
 			${$iptSearch}
 			<div class="lst__wrp-search-glass no-events flex-vh-center"><span class="glyphicon glyphicon-search"></span></div>
 			${$dispNumVisible}
-		</div>`
+		</div>`;
 
 		const $wrpFormTop = $$`<div class="flex input-group btn-group w-100 lst__form-top">${$wrpIptSearch}${$btnReset}</div>`;
 
@@ -226,7 +226,7 @@ class ModalFilter {
 			list: this._list,
 			$cbSelAll,
 			$btnSendAllToRight,
-		}
+		};
 	}
 
 	/**
@@ -281,7 +281,7 @@ class ModalFilter {
 
 		const filterSubhashMeta = Renderer.getFilterSubhashes(Renderer.splitTagByPipe(filterExpression), this._namespace);
 		const subhashes = filterSubhashMeta.subhashes.map(it => `${it.key}${HASH_SUB_KV_SEP}${it.value}`);
-		this.pageFilter.filterBox.setFromSubHashes(subhashes, true);
+		this.pageFilter.filterBox.setFromSubHashes(subhashes, {force: true, $iptSearch: this._filterCache.$iptSearch});
 	}
 
 	_getNameStyle () { return `bold`; }
@@ -411,7 +411,7 @@ class FilterBox extends ProxyBase {
 	}
 	// endregion
 
-	_getNamespacedStorageKey () { return `${FilterBox._STORAGE_KEY}${this._namespace ? `.${this._namespace}` : ""}` }
+	_getNamespacedStorageKey () { return `${FilterBox._STORAGE_KEY}${this._namespace ? `.${this._namespace}` : ""}`; }
 	getNamespacedHashKey (k) { return `${k || "_".repeat(FilterUtil.SUB_HASH_PREFIX_LENGTH)}${this._namespace ? `.${this._namespace}` : ""}`; }
 
 	async pGetStoredActiveSources () {
@@ -730,7 +730,7 @@ class FilterBox extends ProxyBase {
 		this._filters.forEach(f => f.hide());
 	}
 
-	setFromSubHashes (subHashes, force = false) {
+	setFromSubHashes (subHashes, {force = false, $iptSearch = null} = {}) {
 		const unpacked = {};
 		subHashes.forEach(s => {
 			const unpackedPart = UrlUtil.unpackSubHash(s, true);
@@ -768,7 +768,7 @@ class FilterBox extends ProxyBase {
 					if (prefix === VeCt.FILTER_BOX_SUB_HASH_SEARCH_PREFIX) filterInitialSearch = data.clean[0];
 					else filterBoxState[prefix] = data.clean;
 					consumed.add(data.raw);
-				} else if (FilterUtil.SUB_HASH_PREFIXES.has(prefix)) throw new Error(`Could not find filter with header ${urlHeader} for subhash ${data.raw}`)
+				} else if (FilterUtil.SUB_HASH_PREFIXES.has(prefix)) throw new Error(`Could not find filter with header ${urlHeader} for subhash ${data.raw}`);
 			});
 
 		if (consumed.size || force) {
@@ -797,7 +797,7 @@ class FilterBox extends ProxyBase {
 			Hist.setSuppressHistory(true);
 			Hist.replaceHistoryHash(`${link}${outSub.length ? `${HASH_PART_SEP}${outSub.join(HASH_PART_SEP)}` : ""}`);
 
-			if (filterInitialSearch && this._$iptSearch) this._$iptSearch.val(filterInitialSearch).change().keydown().keyup();
+			if (filterInitialSearch && ($iptSearch || this._$iptSearch)) ($iptSearch || this._$iptSearch).val(filterInitialSearch).change().keydown().keyup();
 			this.fireChangeEvent();
 			Hist.hashChange();
 			return outSub;
@@ -925,10 +925,10 @@ class FilterBox extends ProxyBase {
 					const f = filters[i];
 					if (!this._combineAs[f.header] || this._combineAs[f.header] === "and") { // default to "and" if undefined
 						andFilters.push(f);
-						andValues.push(entryVals[i])
+						andValues.push(entryVals[i]);
 					} else {
 						orFilters.push(f);
-						orValues.push(entryVals[i])
+						orValues.push(entryVals[i]);
 					}
 				}
 
@@ -1051,7 +1051,7 @@ class FilterBase extends BaseComponent {
 		const anyNotDefault = Object.keys(defaultMeta).find(k => this._meta[k] !== defaultMeta[k]);
 		if (anyNotDefault) {
 			const serMeta = Object.keys(defaultMeta).map(k => UrlUtil.mini.compress(this._meta[k] === undefined ? defaultMeta[k] : this._meta[k]));
-			return [UrlUtil.packSubHash(this.getSubHashPrefix("meta", this.header), serMeta)]
+			return [UrlUtil.packSubHash(this.getSubHashPrefix("meta", this.header), serMeta)];
 		} else return null;
 	}
 
@@ -1277,7 +1277,7 @@ class Filter extends FilterBase {
 		if (!out.length) return null;
 
 		// Always extend default state
-		out.push(UrlUtil.packSubHash(this.getSubHashPrefix("options", this.header), ["extend"]))
+		out.push(UrlUtil.packSubHash(this.getSubHashPrefix("options", this.header), ["extend"]));
 		return out;
 	}
 
@@ -1424,7 +1424,7 @@ class Filter extends FilterBase {
 			const isDefaultSel = this._selFn && this._selFn(it.item);
 			it.btnMini
 				.toggleClass("fltr__mini-pill--default-desel", isDefaultDesel)
-				.toggleClass("fltr__mini-pill--default-sel", isDefaultSel)
+				.toggleClass("fltr__mini-pill--default-sel", isDefaultSel);
 		});
 	}
 
@@ -1733,7 +1733,7 @@ class Filter extends FilterBase {
 			existingMeta.wrpPills.appendTo(this.__wrpPills);
 			existingMeta.isAttached = true;
 		}
-		if (existingMeta) return
+		if (existingMeta) return;
 
 		this._pillGroupsMeta[group] = {
 			hrDivider: this._doRenderPills_doRenderWrpGroup_getHrDivider(group).appendTo(this.__wrpPills),
@@ -2101,7 +2101,7 @@ class SourceFilter extends Filter {
 		opts.displayFn = opts.displayFn === undefined ? item => Parser.sourceJsonToFullCompactPrefix(item.item || item) : opts.displayFn;
 		opts.itemSortFn = opts.itemSortFn === undefined ? (a, b) => SortUtil.ascSortLower(Parser.sourceJsonToFull(a.item), Parser.sourceJsonToFull(b.item)) : opts.itemSortFn;
 		opts.groupFn = opts.groupFn === undefined ? SourceUtil.getFilterGroup : opts.groupFn;
-		opts.selFn = opts.selFn === undefined ? PageFilter.defaultSourceSelFn : opts.selFn
+		opts.selFn = opts.selFn === undefined ? PageFilter.defaultSourceSelFn : opts.selFn;
 
 		super(opts);
 
@@ -2314,7 +2314,7 @@ class SourceFilter extends Filter {
 					.filter(k => SourceUtil.isNonstandardSource(k))
 					.forEach(k => {
 						const sourceDate = Parser.sourceJsonToDate(k);
-						nxtState[k] = allowedDateSet.has(sourceDate) ? 1 : 0
+						nxtState[k] = allowedDateSet.has(sourceDate) ? 1 : 0;
 					});
 				this._proxyAssign("state", "_state", "__state", nxtState);
 			},
@@ -2433,7 +2433,7 @@ class SourceFilter extends Filter {
 }
 SourceFilter._DEFAULT_META = {
 	isIncludeOtherSources: false,
-}
+};
 SourceFilter._SRD_SOURCES = null;
 
 class RangeFilter extends FilterBase {
@@ -2649,7 +2649,7 @@ class RangeFilter extends FilterBase {
 
 			$wrpSummary
 				.title(isRange ? `Hidden range` : isCapped ? `Hidden limit` : "")
-				.text(isRange ? `${this._getDisplayText(cur.min)}-${this._getDisplayText(cur.max)}` : !cur.isMinVal ? `≥ ${this._getDisplayText(cur.min)}` : !cur.isMaxVal ? `≤ ${this._getDisplayText(cur.max)}` : "")
+				.text(isRange ? `${this._getDisplayText(cur.min)}-${this._getDisplayText(cur.max)}` : !cur.isMinVal ? `≥ ${this._getDisplayText(cur.min)}` : !cur.isMaxVal ? `≤ ${this._getDisplayText(cur.max)}` : "");
 		};
 		this._addHook("meta", "isHidden", hkIsHidden);
 		hkIsHidden();
@@ -2744,7 +2744,7 @@ class RangeFilter extends FilterBase {
 		this._addHook("state", "curMax", hkUpdateLabelSearchCache);
 		hkUpdateLabelSearchCache();
 
-		this._slider = new ComponentUiUtil.RangeSlider({comp: this, ...getSliderOpts()})
+		this._slider = new ComponentUiUtil.RangeSlider({comp: this, ...getSliderOpts()});
 		$wrpSlider.append(this._slider.get());
 		// endregion
 
@@ -3232,7 +3232,7 @@ class OptionsFilter extends FilterBase {
 
 			$wrpSummary
 				.title(`${cntNonDefault} non-default option${cntNonDefault === 1 ? "" : "s"} selected`)
-				.text(cntNonDefault)
+				.text(cntNonDefault);
 		};
 		this._addHook("meta", "isHidden", hkIsHidden);
 		hkIsHidden();
@@ -3275,7 +3275,7 @@ class OptionsFilter extends FilterBase {
 	}
 
 	getDefaultMeta () {
-		return {...OptionsFilter._DEFAULT_META, ...super.getDefaultMeta()}
+		return {...OptionsFilter._DEFAULT_META, ...super.getDefaultMeta()};
 	}
 
 	handleSearch (searchTerm) {
@@ -3504,7 +3504,7 @@ class MultiFilter extends FilterBase {
 		for (let i = this._filters.length - 1; i >= 0; --i) {
 			const f = this._filters[i];
 			if (f instanceof RangeFilter) {
-				results.push(f.toDisplay(boxState, entryValArr[i]))
+				results.push(f.toDisplay(boxState, entryValArr[i]));
 			} else {
 				const totals = boxState[f.header]._totals;
 

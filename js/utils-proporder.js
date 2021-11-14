@@ -199,6 +199,20 @@ PropOrder._MONSTER = [
 	"hasToken",
 	"hasFluff",
 	"hasFluffImages",
+
+	new PropOrder._ArrayKey("_versions", {
+		fnGetOrder: () => [
+			"name",
+			"source",
+			new PropOrder._ObjectKey("_mod", {
+				fnGetOrder: () => PropOrder._MONSTER__COPY_MOD,
+			}),
+			"_template",
+			"_implementations",
+			...PropOrder._MONSTER,
+		],
+		fnSort: (a, b) => SortUtil.ascSortLower(a.name || "", b.name || "") || SortUtil.ascSortLower(a.source || "", b.source || ""),
+	}),
 ];
 PropOrder._MONSTER__COPY_MOD = [
 	"*",
@@ -902,6 +916,7 @@ PropOrder._ITEM = [
 	"containerCapacity",
 
 	"attachedSpells",
+	"spellScrollLevel",
 	"lootTables",
 
 	"hasFluff",
@@ -1097,6 +1112,20 @@ PropOrder._RACE = [
 
 	"hasFluff",
 	"hasFluffImages",
+
+	new PropOrder._ArrayKey("_versions", {
+		fnGetOrder: () => [
+			"name",
+			"source",
+			new PropOrder._ObjectKey("_mod", {
+				fnGetOrder: () => PropOrder._RACE__COPY_MOD,
+			}),
+			"_template",
+			"_implementations",
+			...PropOrder._RACE,
+		],
+		fnSort: (a, b) => SortUtil.ascSortLower(a.name || "", b.name || "") || SortUtil.ascSortLower(a.source || "", b.source || ""),
+	}),
 ];
 PropOrder._RACE__COPY_MOD = [
 	"*",

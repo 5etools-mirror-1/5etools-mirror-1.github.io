@@ -26,7 +26,7 @@ class RacesPage extends ListPage {
 		// Attach each subrace to a parent race, and recurse
 		const nxtData = Renderer.race.adoptSubraces(this._dataList, data.subrace);
 
-		if (nxtData.length) this._addData({race: Renderer.race.mergeSubraces(nxtData)})
+		if (nxtData.length) this._addData({race: Renderer.race.mergeSubraces(nxtData)});
 	}
 
 	async _pHandleBrew (homebrew) {
@@ -96,7 +96,7 @@ class RacesPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (race, ix) {
+	pGetSublistItem (race, ix) {
 		const hash = UrlUtil.autoEncodeHash(race);
 
 		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
@@ -165,11 +165,6 @@ class RacesPage extends ListPage {
 		});
 
 		ListUtil.updateSelected();
-	}
-
-	async pDoLoadSubHash (sub) {
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
 	}
 }
 

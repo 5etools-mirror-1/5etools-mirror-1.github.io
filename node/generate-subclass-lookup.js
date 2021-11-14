@@ -9,7 +9,7 @@ Object.values(classIndex).forEach(f => {
 
 	(data.subclass || []).forEach(sc => {
 		MiscUtil.set(out, sc.classSource, sc.className, sc.source, sc.shortName, {name: sc.name, isReprinted: sc.isReprinted});
-	})
+	});
 });
 fs.writeFileSync(`./data/generated/gendata-subclass-lookup.json`, CleanUtil.getCleanJson(out, true));
 console.log("Regenerated subclass lookup.");

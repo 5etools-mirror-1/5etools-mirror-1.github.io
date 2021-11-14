@@ -1165,6 +1165,88 @@
 			}
 		},
 		{
+			"name": "Drow +2 Armor",
+			"type": "GV",
+			"requires": [
+				{
+					"armor": true
+				}
+			],
+			"inherits": {
+				"namePrefix": "Drow +2 ",
+				"source": "MM",
+				"page": 126,
+				"rarity": "unknown (magic)",
+				"bonusAc": "+2",
+				"entries": [
+					"You have a {=bonusAc} bonus to AC while wearing this armor. This armor loses its enchantment bonus permanently if it is exposed to sunlight for 1 hour or longer."
+				]
+			}
+		},
+		{
+			"name": "Drow +2 Weapon",
+			"type": "GV",
+			"requires": [
+				{
+					"weapon": true
+				}
+			],
+			"excludes": {
+				"net": true
+			},
+			"inherits": {
+				"namePrefix": "Drow +2 ",
+				"source": "MM",
+				"page": 126,
+				"rarity": "unknown (magic)",
+				"bonusWeapon": "+2",
+				"entries": [
+					"You have a {=bonusWeapon} bonus to attack and damage rolls made with this weapon. This weapon loses its enchantment bonus permanently if it is exposed to sunlight for 1 hour or longer."
+				]
+			}
+		},
+		{
+			"name": "Drow +3 Armor",
+			"type": "GV",
+			"requires": [
+				{
+					"armor": true
+				}
+			],
+			"inherits": {
+				"namePrefix": "Drow +3 ",
+				"source": "MM",
+				"page": 126,
+				"rarity": "unknown (magic)",
+				"bonusAc": "+3",
+				"entries": [
+					"You have a {=bonusAc} bonus to AC while wearing this armor. This armor loses its enchantment bonus permanently if it is exposed to sunlight for 1 hour or longer."
+				]
+			}
+		},
+		{
+			"name": "Drow +3 Weapon",
+			"type": "GV",
+			"requires": [
+				{
+					"weapon": true
+				}
+			],
+			"excludes": {
+				"net": true
+			},
+			"inherits": {
+				"namePrefix": "Drow +3 ",
+				"source": "MM",
+				"page": 126,
+				"rarity": "unknown (magic)",
+				"bonusWeapon": "+3",
+				"entries": [
+					"You have a {=bonusWeapon} bonus to attack and damage rolls made with this weapon. This weapon loses its enchantment bonus permanently if it is exposed to sunlight for 1 hour or longer."
+				]
+			}
+		},
+		{
 			"name": "Flame Tongue",
 			"type": "GV",
 			"requires": [

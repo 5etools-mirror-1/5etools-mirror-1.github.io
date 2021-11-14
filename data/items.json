@@ -1979,7 +1979,6 @@
 			},
 			"entries": [
 				"This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon's scale, tooth, or claw, or it incorporates images in those shapes.",
-				"You have advantage on saving throws you make to avoid being {@condition charmed} or {@condition frightened} or to end those conditions on you.",
 				"You gain a +1 bonus to AC, and you can't be {@condition charmed} or {@condition frightened}. Moreover, each creature of your choice within 30 feet of you has advantage on saving throws it makes to avoid being {@condition charmed} or {@condition frightened} or to end those conditions on itself.",
 				"When you would take damage of the type dealt by the breath of the dragon in whose hoard the ornament became Wakened, you can use your reaction to take no damage instead, and you regain hit points equal to the damage you would have taken. Once this property is used, it can't be used again until the next dawn.",
 				"While you are wearing the ornament, you gain a flying speed equal to your walking speed and can hover. While you are flying using this speed, spectral dragon wings appear on your back."
@@ -29724,6 +29723,7 @@
 				"A spell cast from this scroll has a save DC of 13 and an attack bonus of {@hit 5}.",
 				"A wizard spell on a spell scroll can be copied just as spells in spellbooks can be copied. When a spell is copied from a spell scroll, the copier must succeed on a DC 11 Intelligence ({@skill Arcana}) check. If the check succeeds, the spell is successfully copied. Whether the check succeeds or fails, the spell scroll is destroyed."
 			],
+			"spellScrollLevel": 1,
 			"lootTables": [
 				"Magic Item Table A"
 			]
@@ -29743,6 +29743,7 @@
 				"A spell cast from this scroll has a save DC of 13 and an attack bonus of {@hit 5}.",
 				"A wizard spell on a spell scroll can be copied just as spells in spellbooks can be copied. When a spell is copied from a spell scroll, the copier must succeed on a DC 12 Intelligence ({@skill Arcana}) check. If the check succeeds, the spell is successfully copied. Whether the check succeeds or fails, the spell scroll is destroyed."
 			],
+			"spellScrollLevel": 2,
 			"lootTables": [
 				"Magic Item Table A",
 				"Magic Item Table B"
@@ -29763,6 +29764,7 @@
 				"A spell cast from this scroll has a save DC of 15 and an attack bonus of {@hit 7}.",
 				"A wizard spell on a spell scroll can be copied just as spells in spellbooks can be copied. When a spell is copied from a spell scroll, the copier must succeed on a DC 13 Intelligence ({@skill Arcana}) check. If the check succeeds, the spell is successfully copied. Whether the check succeeds or fails, the spell scroll is destroyed."
 			],
+			"spellScrollLevel": 3,
 			"lootTables": [
 				"Magic Item Table B"
 			]
@@ -29782,6 +29784,7 @@
 				"A spell cast from this scroll has a save DC of 15 and an attack bonus of {@hit 7}.",
 				"A wizard spell on a spell scroll can be copied just as spells in spellbooks can be copied. When a spell is copied from a spell scroll, the copier must succeed on a DC 14 Intelligence ({@skill Arcana}) check. If the check succeeds, the spell is successfully copied. Whether the check succeeds or fails, the spell scroll is destroyed."
 			],
+			"spellScrollLevel": 4,
 			"lootTables": [
 				"Magic Item Table C"
 			]
@@ -29801,6 +29804,7 @@
 				"A spell cast from this scroll has a save DC of 17 and an attack bonus of {@hit 9}.",
 				"A wizard spell on a spell scroll can be copied just as spells in spellbooks can be copied. When a spell is copied from a spell scroll, the copier must succeed on a DC 15 Intelligence ({@skill Arcana}) check. If the check succeeds, the spell is successfully copied. Whether the check succeeds or fails, the spell scroll is destroyed."
 			],
+			"spellScrollLevel": 5,
 			"lootTables": [
 				"Magic Item Table C"
 			]
@@ -29820,6 +29824,7 @@
 				"A spell cast from this scroll has a save DC of 17 and an attack bonus of {@hit 9}.",
 				"A wizard spell on a spell scroll can be copied just as spells in spellbooks can be copied. When a spell is copied from a spell scroll, the copier must succeed on a DC 16 Intelligence ({@skill Arcana}) check. If the check succeeds, the spell is successfully copied. Whether the check succeeds or fails, the spell scroll is destroyed."
 			],
+			"spellScrollLevel": 6,
 			"lootTables": [
 				"Magic Item Table D"
 			]
@@ -29839,6 +29844,7 @@
 				"A spell cast from this scroll has a save DC of 18 and an attack bonus of {@hit 10}.",
 				"A wizard spell on a spell scroll can be copied just as spells in spellbooks can be copied. When a spell is copied from a spell scroll, the copier must succeed on a DC 17 Intelligence ({@skill Arcana}) check. If the check succeeds, the spell is successfully copied. Whether the check succeeds or fails, the spell scroll is destroyed."
 			],
+			"spellScrollLevel": 7,
 			"lootTables": [
 				"Magic Item Table D"
 			]
@@ -29858,6 +29864,7 @@
 				"A spell cast from this scroll has a save DC of 18 and an attack bonus of {@hit 10}.",
 				"A wizard spell on a spell scroll can be copied just as spells in spellbooks can be copied. When a spell is copied from a spell scroll, the copier must succeed on a DC 18 Intelligence ({@skill Arcana}) check. If the check succeeds, the spell is successfully copied. Whether the check succeeds or fails, the spell scroll is destroyed."
 			],
+			"spellScrollLevel": 8,
 			"lootTables": [
 				"Magic Item Table D",
 				"Magic Item Table E"
@@ -29878,6 +29885,7 @@
 				"A spell cast from this scroll has a save DC of 19 and an attack bonus of {@hit 11}.",
 				"A wizard spell on a spell scroll can be copied just as spells in spellbooks can be copied. When a spell is copied from a spell scroll, the copier must succeed on a DC 19 Intelligence ({@skill Arcana}) check. If the check succeeds, the spell is successfully copied. Whether the check succeeds or fails, the spell scroll is destroyed."
 			],
+			"spellScrollLevel": 9,
 			"lootTables": [
 				"Magic Item Table E"
 			]
@@ -29896,6 +29904,7 @@
 				"Once the spell is cast, the words on the scroll fade, and the scroll itself crumbles to dust.",
 				"A spell cast from this scroll has a save DC of 13 and an attack bonus of {@hit 5}."
 			],
+			"spellScrollLevel": 0,
 			"lootTables": [
 				"Magic Item Table A"
 			]
@@ -31413,7 +31422,6 @@
 			},
 			"entries": [
 				"This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon's scale, tooth, or claw, or it incorporates images in those shapes.",
-				"You have advantage on saving throws you make to avoid being {@condition charmed} or {@condition frightened} or to end those conditions on you.",
 				"You gain a +1 bonus to AC, and you can't be {@condition charmed} or {@condition frightened}. Moreover, each creature of your choice within 30 feet of you has advantage on saving throws it makes to avoid being {@condition charmed} or {@condition frightened} or to end those conditions on itself."
 			]
 		},
@@ -36360,7 +36368,6 @@
 			},
 			"entries": [
 				"This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon's scale, tooth, or claw, or it incorporates images in those shapes.",
-				"You have advantage on saving throws you make to avoid being {@condition charmed} or {@condition frightened} or to end those conditions on you.",
 				"You gain a +1 bonus to AC, and you can't be {@condition charmed} or {@condition frightened}. Moreover, each creature of your choice within 30 feet of you has advantage on saving throws it makes to avoid being {@condition charmed} or {@condition frightened} or to end those conditions on itself.",
 				"When you would take damage of the type dealt by the breath of the dragon in whose hoard the ornament became Wakened, you can use your reaction to take no damage instead, and you regain hit points equal to the damage you would have taken. Once this property is used, it can't be used again until the next dawn."
 			]
@@ -37557,6 +37564,16 @@
 				"locate animals or plants"
 			],
 			"hasFluffImages": true
+		},
+		{
+			"name": "Whistle-Stick",
+			"source": "OGA",
+			"page": 4,
+			"type": "INS",
+			"rarity": "unknown",
+			"entries": [
+				"The {@race grung|OGA} of {@book One Grung Above|OGA} are trained to use this new musical instrument. This is a hollow tube with holes cut throughout, much like a flute. You can play music with it for entertainment, but the grung also swing it about by a sturdy cord (attached) to create a sound recognizable by other grung, so they know each other's approximate location. Additionally, grung that know {@language Thieves' Cant} can use a whistle stick in this manner to communicate over distance."
+			]
 		},
 		{
 			"name": "White Chromatic Rose",

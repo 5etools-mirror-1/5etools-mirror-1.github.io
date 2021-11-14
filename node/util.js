@@ -108,7 +108,7 @@ function listFiles (opts) {
 		.filter(file => {
 			const path = `${opts.dir}/${file}`;
 			if (isDirectory(path)) return opts.whitelistDirs ? opts.whitelistDirs.includes(path) : true;
-			return !opts.blacklistFilePrefixes.some(it => file.startsWith(it)) && opts.whitelistFileExts.some(it => file.endsWith(it))
+			return !opts.blacklistFilePrefixes.some(it => file.startsWith(it)) && opts.whitelistFileExts.some(it => file.endsWith(it));
 		})
 		.map(file => `${opts.dir}/${file}`);
 
@@ -126,7 +126,7 @@ class PatchLoadJson {
 			const data = readJson(url);
 			await DataUtil.pDoMetaMerge(url, data);
 			return data;
-		}
+		};
 	}
 
 	static unpatchLoadJson () {

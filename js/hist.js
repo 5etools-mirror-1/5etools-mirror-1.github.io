@@ -134,7 +134,7 @@ class Hist {
 		window.history.replaceState(
 			{},
 			document.title,
-			`${location.origin}${location.pathname}#${hash}`,
+			`${location.origin}${location.pathname}${hash ? `#${hash}` : ""}`,
 		);
 	}
 }

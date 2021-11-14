@@ -4,7 +4,7 @@
 
 	"title": "Util",
 	"description": "Utility definitions to be used in other schemas.",
-	"version": "1.8.1",
+	"version": "1.10.0",
 
 	"definitions" : {
 		"metaBlock": {
@@ -1677,7 +1677,9 @@
 						"mode": {"const": "addSpells"},
 						"spells": {"type": "object"},
 						"will": {"type": "array"},
-						"daily": {"type": "object"}
+						"daily": {"type": "object"},
+						"weekly": {"type": "object"},
+						"yearly": {"type": "object"}
 					},
 					"required": ["mode"],
 					"additionalProperties": false
@@ -1722,6 +1724,7 @@
 		},
 
 		"copyBlock": {
+			"type": "object",
 			"properties": {
 				"_copy": {
 					"type": "object",
@@ -1736,25 +1739,7 @@
 						"classSource": {"description": "Used in subclass data", "type": "string"},
 
 						"_mod": {
-							"type": "object",
-							"patternProperties": {
-								".*": {
-									"anyOf": [
-										{
-											"type": "string"
-										},
-										{
-											"$ref": "util.json#/definitions/copyModifier"
-										},
-										{
-											"type": "array",
-											"items": {
-												"$ref": "util.json#/definitions/copyModifier"
-											}
-										}
-									]
-								}
-							}
+							"$ref": "util.json#/definitions/_modObject"
 						},
 						"_trait": {
 							"type": "object",
@@ -1780,6 +1765,78 @@
 			"required": [
 				"_copy"
 			]
+		},
+
+		"version": {
+			"oneOf": [
+				{
+					"type": "object",
+					"properties": {
+						"name": {"type": "string"},
+						"source": {"type": "string"},
+
+						"_mod": {"$ref": "util.json#/definitions/_modObject"}
+					},
+					"required": ["name", "source"]
+				},
+				{
+					"type": "object",
+					"properties": {
+						"_template": {
+							"type": "object",
+							"properties": {
+								"name": {"type": "string"},
+								"source": {"type": "string"},
+
+								"_mod": {"$ref": "util.json#/definitions/_modObject"}
+							},
+							"required": ["name", "source", "_mod"]
+						},
+						"_implementations": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"_variables": {
+										"type": "object"
+									}
+								},
+								"required": ["_variables"]
+							}
+						}
+					},
+					"required": ["_template", "_implementations"]
+				}
+			]
+		},
+
+		"versionsArray": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/version"
+			}
+		},
+
+		"_modObject": {
+			"type": "object",
+			"patternProperties": {
+				".*": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"$ref": "util.json#/definitions/copyModifier"
+						},
+						{
+							"type": "array",
+							"items": {
+								"$ref": "util.json#/definitions/copyModifier"
+							}
+						}
+					]
+				}
+			}
 		},
 
 		"srd": {

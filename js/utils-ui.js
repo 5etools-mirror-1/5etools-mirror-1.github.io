@@ -74,7 +74,7 @@ class ProxyBase {
 		const prevValue = object[prop];
 		object[prop] = value;
 		this._doFireHooksAll(hookProp, prop, value, prevValue);
-		if (this.__hooks[hookProp] && this.__hooks[hookProp][prop]) this.__hooks[hookProp][prop].forEach(hook => hook(prop, value, prevValue));
+		this._doFireHooks(hookProp, prop, value, prevValue);
 		return true;
 	}
 
@@ -86,6 +86,10 @@ class ProxyBase {
 		if (this.__hooksAll[hookProp]) for (const hook of this.__hooksAll[hookProp]) await hook(prop, value, prevValue);
 		if (this.__hooks[hookProp] && this.__hooks[hookProp][prop]) for (const hook of this.__hooks[hookProp][prop]) await hook(prop, value, prevValue);
 		return true;
+	}
+
+	_doFireHooks (hookProp, prop, value, prevValue) {
+		if (this.__hooks[hookProp] && this.__hooks[hookProp][prop]) this.__hooks[hookProp][prop].forEach(hook => hook(prop, value, prevValue));
 	}
 
 	_doFireHooksAll (hookProp, prop, value, prevValue) {
@@ -117,7 +121,7 @@ class ProxyBase {
 
 	_addHookAll (hookProp, hook) {
 		ProxyBase._addHookAll_to(this.__hooksAll, hookProp, hook);
-		if (this.__hooksAllTmp) ProxyBase._addHookAll_to(this.__hooksAllTmp, hookProp, hook)
+		if (this.__hooksAllTmp) ProxyBase._addHookAll_to(this.__hooksAllTmp, hookProp, hook);
 	}
 
 	static _addHookAll_to (obj, hookProp, hook) {
@@ -219,7 +223,7 @@ class UiUtil {
 	 * @param [opts.min] Min allowed return value.
 	 * @param [opts.fallbackOnNaN] Return value if not a number.
 	 */
-	static strToInt (string, fallbackEmpty = 0, opts) { return UiUtil._strToNumber(string, fallbackEmpty, opts, true) }
+	static strToInt (string, fallbackEmpty = 0, opts) { return UiUtil._strToNumber(string, fallbackEmpty, opts, true); }
 
 	/**
 	 * @param string String to parse.
@@ -229,7 +233,7 @@ class UiUtil {
 	 * @param [opts.min] Min allowed return value.
 	 * @param [opts.fallbackOnNaN] Return value if not a number.
 	 */
-	static strToNumber (string, fallbackEmpty = 0, opts) { return UiUtil._strToNumber(string, fallbackEmpty, opts, false) }
+	static strToNumber (string, fallbackEmpty = 0, opts) { return UiUtil._strToNumber(string, fallbackEmpty, opts, false); }
 
 	static _strToNumber (string, fallbackEmpty = 0, opts, isInt) {
 		opts = opts || {};
@@ -432,7 +436,7 @@ class UiUtil {
 
 				modalFooter,
 			].filter(Boolean),
-		}).appendTo(opts.isFullscreenModal ? overlayBlind : wrpOverlay)
+		}).appendTo(opts.isFullscreenModal ? overlayBlind : wrpOverlay);
 
 		wrpOverlay
 			.addEventListener("mouseup", evt => {
@@ -725,7 +729,7 @@ class ListUiUtil {
 				it.data.cbSel.checked = false;
 				it.ele.classList.remove("list-multi-selected");
 			}
-		})
+		});
 	}
 
 	static _getCb (item, opts) { return opts.fnGetCb ? opts.fnGetCb(item) : item.data.cbSel; }
@@ -795,7 +799,7 @@ class ListUiUtil {
 		elePreviewWrp.dataset.dataType = isFluff ? "fluff" : "stats";
 
 		if (!evt.shiftKey) {
-			Renderer.hover.$getHoverContent_stats(page, entity).appendTo(elePreviewWrpInner);
+			Renderer.hover.$getHoverContent_stats(page, entity, {isStatic: true}).appendTo(elePreviewWrpInner);
 			return;
 		}
 
@@ -837,7 +841,7 @@ class ListUiUtil {
 					const isSure = await InputUiUtil.pGetUserBoolean({
 						title: "Are You Sure?",
 						htmlDescription: `You are about to expand ${list.visibleItems.length} rows. This may seriously degrade performance.<br>Are you sure you want to continue?`,
-					})
+					});
 					if (!isSure) return;
 				}
 
@@ -894,7 +898,7 @@ class ProfUiUtil {
 			$ele: $btnCycle,
 			setState,
 			getState: () => state,
-		}
+		};
 	}
 }
 ProfUiUtil.PROF_TO_FULL = {
@@ -1079,7 +1083,7 @@ TabUiUtilBase.TabMeta = class {
 		this.type = type;
 		this.buttons = buttons;
 	}
-}
+};
 
 class TabUiUtil extends TabUiUtilBase {
 	static decorate (obj) {
@@ -1091,7 +1095,7 @@ class TabUiUtil extends TabUiUtilBase {
 		};
 
 		obj.__$getWrpTab = function ({tabMeta}) {
-			return $(`<div class="ui-tab__wrp-tab-body flex-col ve-hidden ${tabMeta.hasBorder ? "ui-tab__wrp-tab-body--border" : ""} ${tabMeta.hasBackground ? "ui-tab__wrp-tab-body--background" : ""}"></div>`)
+			return $(`<div class="ui-tab__wrp-tab-body flex-col ve-hidden ${tabMeta.hasBorder ? "ui-tab__wrp-tab-body--border" : ""} ${tabMeta.hasBackground ? "ui-tab__wrp-tab-body--background" : ""}"></div>`);
 		};
 
 		obj.__renderTypedTabMeta = function ({tabMeta, ixTab}) {
@@ -1109,7 +1113,7 @@ TabUiUtil.TabMeta = class extends TabUiUtilBase.TabMeta {
 		this.hasBorder = opts.hasBorder;
 		this.hasBackground = opts.hasBackground;
 	}
-}
+};
 
 class TabUiUtilSide extends TabUiUtilBase {
 	static decorate (obj) {
@@ -1445,7 +1449,7 @@ class SearchWidget {
 
 	get $wrpSearch () {
 		if (!this._$rendered) this._render();
-		return this._$rendered
+		return this._$rendered;
 	}
 
 	__showMsgInputRequired () {
@@ -1454,7 +1458,7 @@ class SearchWidget {
 	}
 
 	__showMsgWait () {
-		this._$wrpResults.empty().append(SearchWidget.getSearchLoading())
+		this._$wrpResults.empty().append(SearchWidget.getSearchLoading());
 	}
 
 	__showMsgNoResults () {
@@ -1475,12 +1479,12 @@ class SearchWidget {
 					return {
 						toProcess: filtered.slice(0, UiUtil.SEARCH_RESULTS_CAP),
 						resultCount: filtered.length,
-					}
+					};
 				} else {
 					return {
 						toProcess: results.slice(0, UiUtil.SEARCH_RESULTS_CAP),
 						resultCount: results.length,
-					}
+					};
 				}
 			} else {
 				// If the user has entered a search and we found nothing, return no results
@@ -1497,12 +1501,12 @@ class SearchWidget {
 					return {
 						toProcess: filtered.slice(0, UiUtil.SEARCH_RESULTS_CAP),
 						resultCount: filtered.length,
-					}
+					};
 				} else {
 					return {
 						toProcess: Object.values(index.documentStore.docs).slice(0, UiUtil.SEARCH_RESULTS_CAP).map(it => ({doc: it})),
 						resultCount: Object.values(index.documentStore.docs).length,
-					}
+					};
 				}
 			}
 		})();
@@ -1746,7 +1750,7 @@ class SearchWidget {
 
 	static async __pLoadItemIndex (isBasicIndex) {
 		const dataSource = async () => {
-			const allItems = await Renderer.item.pBuildList({isBlacklistVariants: true});
+			const allItems = await Renderer.item.pBuildList();
 			return {
 				item: allItems.filter(it => {
 					if (it.type === "GV") return false;
@@ -2066,7 +2070,7 @@ class InputUiUtil {
 						const out = {extraState: opts.fnGetExtraState()};
 						if (opts.isResolveItem) out.item = opts.values[ix];
 						else out.ix = ix;
-						resolve(out)
+						resolve(out);
 					} else resolve(opts.isResolveItem ? opts.values[ix] : ix);
 				},
 			});
@@ -2128,7 +2132,7 @@ class InputUiUtil {
 			$wrpList.addClass(`mb-1`);
 
 			const hkIsAcceptable = () => $btnOk.attr("disabled", !comp._state[propIsAcceptable]);
-			comp._addHookBase(propIsAcceptable, hkIsAcceptable)
+			comp._addHookBase(propIsAcceptable, hkIsAcceptable);
 			hkIsAcceptable();
 
 			const {$modalInner, doClose} = UiUtil.getShowModal({
@@ -2147,7 +2151,7 @@ class InputUiUtil {
 					else if (opts.values) resolve(ixs.map(ix => opts.values[ix]));
 					else if (opts.valueGroups) {
 						const allValues = opts.valueGroups.map(it => it.values).flat();
-						resolve(ixs.map(ix => allValues[ix]))
+						resolve(ixs.map(ix => allValues[ix]));
 					}
 				},
 			});
@@ -2264,11 +2268,11 @@ class InputUiUtil {
 
 			if (opts.fnIsValid) {
 				const hkText = () => comp._state.isValid = !comp._state.text.trim() || !!opts.fnIsValid(comp._state.text);
-				comp._addHookBase(propValue, hkText)
+				comp._addHookBase(propValue, hkText);
 				hkText();
 
 				const hkIsValid = () => $iptStr.toggleClass("form-control--error", !comp._state.isValid);
-				comp._addHookBase("isValid", hkIsValid)
+				comp._addHookBase("isValid", hkIsValid);
 				hkIsValid();
 			}
 
@@ -2479,7 +2483,7 @@ class InputUiUtil {
 					.css({
 						width: (CONTROLS_RADIUS * 2) + BTN_STEP_SIZE + BORDER_PAD,
 						height: (CONTROLS_RADIUS * 2) + BTN_STEP_SIZE + BORDER_PAD,
-					})
+					});
 			})() : null;
 
 			const $btnOk = $(`<button class="btn btn-primary mr-2">OK</button>`)
@@ -2713,7 +2717,7 @@ class DragReorderUiUtil {
 	static $getDragPad2 ($fnGetRow, $parent, parent) {
 		const {swapRowPositions, $children, $getChildren} = parent;
 		const nxtOpts = {$parent, swapRowPositions, $children, $getChildren};
-		return this.$getDragPadOpts($fnGetRow, nxtOpts)
+		return this.$getDragPadOpts($fnGetRow, nxtOpts);
 	}
 }
 
@@ -2909,7 +2913,17 @@ class BaseComponent extends ProxyBase {
 		this._proxyAssign("state", "_state", "__state", toState, true);
 	}
 
-	_getState () { return MiscUtil.copy(this.__state) }
+	_setStateValue (prop, value, {isForceTriggerHooks = true} = {}) {
+		if (this._state[prop] === value && !isForceTriggerHooks) return value;
+		// If the value is new, hooks will be run automatically
+		if (this._state[prop] !== value) return this._state[prop] = value;
+
+		this._doFireHooksAll("state", prop, value, value);
+		this._doFireHooks("state", prop, value, value);
+		return value;
+	}
+
+	_getState () { return MiscUtil.copy(this.__state); }
 
 	getPod () {
 		this.__pod = this.__pod || {
@@ -3128,7 +3142,7 @@ class BaseComponent extends ProxyBase {
 		this.__locks[lockName] = {
 			lock,
 			unlock,
-		}
+		};
 	}
 
 	async _pGate (lockName) {
@@ -3397,7 +3411,7 @@ class CompLayer extends ProxyBase {
 		return {
 			name: this._name,
 			data: MiscUtil.copy(this.__data),
-		}
+		};
 	}
 
 	static fromSavedState (component, savedState) { return new CompLayer(component, savedState.name, savedState.data); }
@@ -3453,7 +3467,7 @@ const MixinComponentHistory = compClass => class extends compClass {
 	_histAddExcludedProperties (stateCopy) {
 		Object.entries(this._state).forEach(([k, v]) => {
 			if (this._histPropBlacklist.has(k)) return stateCopy[k] = v;
-			if (this._histPropWhitelist && !this._histPropWhitelist.has(k)) stateCopy[k] = v
+			if (this._histPropWhitelist && !this._histPropWhitelist.has(k)) stateCopy[k] = v;
 		});
 	}
 
@@ -3540,7 +3554,7 @@ MixinComponentGlobalState._Singleton = class {
 			isUseSpellPoints: false,
 		};
 	}
-}
+};
 MixinComponentGlobalState._Singleton.__stateGlobal = {...MixinComponentGlobalState._Singleton._getDefaultStateGlobal()};
 MixinComponentGlobalState._Singleton._pSaveStateDebounced = MiscUtil.debounce(MixinComponentGlobalState._Singleton._pSaveState.bind(MixinComponentGlobalState._Singleton), 100);
 MixinComponentGlobalState._Singleton._pLoadingState = null;
@@ -3721,7 +3735,7 @@ class ComponentUiUtil {
 				$decorRight = ComponentUiUtil._$getDecor(component, prop, $ipt, opts.decorationRight, "right", opts);
 			}
 
-			out.$wrp = $$`<div class="relative w-100">${$ipt}${$decorLeft}${$decorRight}</div>`
+			out.$wrp = $$`<div class="relative w-100">${$ipt}${$decorLeft}${$decorRight}</div>`;
 		}
 
 		return out;
@@ -3856,7 +3870,7 @@ class ComponentUiUtil {
 		component._addHook(stateName, prop, hk);
 		hk();
 
-		return btn
+		return btn;
 	}
 
 	/**
@@ -4069,7 +4083,7 @@ class ComponentUiUtil {
 			if (comp._state[prop] == null) $iptDisplay.addClass("italic").addClass("ve-muted").val(opts.displayNullAs || "\u2014");
 			else $iptDisplay.removeClass("italic").removeClass("ve-muted").val(opts.fnDisplay ? opts.fnDisplay(comp._state[prop]) : comp._state[prop]);
 
-			metaOptions.forEach(it => it.$ele.removeClass("active"))
+			metaOptions.forEach(it => it.$ele.removeClass("active"));
 			const metaActive = metaOptions.find(it => it.value == null ? comp._state[prop] == null : it.value === comp._state[prop]);
 			if (metaActive) metaActive.$ele.addClass("active");
 		};
@@ -4104,9 +4118,10 @@ class ComponentUiUtil {
 	 * @param [opts.displayNullAs] If null values are allowed, display them as this string.
 	 * @param [opts.asMeta] If a meta-object should be returned containing the hook and the select.
 	 * @param [opts.propProxy] Proxy prop.
+	 * @param [opts.isSetIndexes] If the index of the selected item should be set as state, rather than the item itself.
 	 */
-	static $getSelEnum (component, prop, {values, $ele, html, isAllowNull, fnDisplay, displayNullAs, asMeta, propProxy = "state"} = {}) {
-		const _propProxy = `_${propProxy}`
+	static $getSelEnum (component, prop, {values, $ele, html, isAllowNull, fnDisplay, displayNullAs, asMeta, propProxy = "state", isSetIndexes = false} = {}) {
+		const _propProxy = `_${propProxy}`;
 
 		let values_;
 
@@ -4116,12 +4131,32 @@ class ComponentUiUtil {
 
 		$sel.change(() => {
 			const ix = Number($sel.val());
-			if (~ix) component[_propProxy][prop] = values_[ix];
-			else {
-				if (isAllowNull) component[_propProxy][prop] = null;
-				else component[_propProxy][prop] = values_[0];
-			}
+			if (~ix) return void (component[_propProxy][prop] = isSetIndexes ? ix : values_[ix]);
+
+			if (isAllowNull) return void (component[_propProxy][prop] = null);
+			component[_propProxy][prop] = isSetIndexes ? 0 : values_[0];
 		});
+
+		// If the new value list doesn't contain our current value, reset our current value
+		const setValues_handleResetOnMissing = ({isResetOnMissing, nxtValues}) => {
+			if (!isResetOnMissing) return;
+
+			if (component[_propProxy][prop] == null) return;
+
+			if (isSetIndexes) {
+				if (component[_propProxy][prop] >= 0 && component[_propProxy][prop] < nxtValues.length) {
+					if (isAllowNull) return component[_propProxy][prop] = null;
+					return component[_propProxy][prop] = 0;
+				}
+
+				return;
+			}
+
+			if (!nxtValues.includes(component[_propProxy][prop])) {
+				if (isAllowNull) return component[_propProxy][prop] = null;
+				return component[_propProxy][prop] = nxtValues[0];
+			}
+		};
 
 		const setValues = (nxtValues, {isResetOnMissing = false} = {}) => {
 			if (CollectionUtil.deepEquals(values_, nxtValues)) return;
@@ -4131,18 +4166,18 @@ class ComponentUiUtil {
 			if (isAllowNull) { const opt = document.createElement("option"); opt.value = "-1"; opt.text = displayNullAs || "\u2014"; $sel.append(opt); }
 			values_.forEach((it, i) => { const opt = document.createElement("option"); opt.value = `${i}`; opt.text = fnDisplay ? fnDisplay(it) : it; $sel.append(opt); });
 
-			if (isResetOnMissing) {
-				// If the new value list doesn't contain our current value, reset our current value
-				if (component[_propProxy][prop] != null && !nxtValues.includes(component[_propProxy][prop])) {
-					if (isAllowNull) return component[_propProxy][prop] = null;
-					else return component[_propProxy][prop] = nxtValues[0];
-				}
-			}
+			setValues_handleResetOnMissing({isResetOnMissing, nxtValues});
 
 			hook();
 		};
 
 		const hook = () => {
+			if (isSetIndexes) {
+				const ix = component[_propProxy][prop] == null ? -1 : component[_propProxy][prop];
+				$sel.val(`${ix}`);
+				return;
+			}
+
 			const searchFor = component[_propProxy][prop] === undefined ? null : component[_propProxy][prop];
 			// Null handling is done in change handler
 			const ix = values_.indexOf(searchFor);
@@ -4342,7 +4377,7 @@ class ComponentUiUtil {
 				const $wrpName = $$`<div class="split-v-center py-1">
 					<div class="flex-v-center"><span class="mr-2">‒</span><span>${group.name}</span></div>
 					${opts.valueGroupSplitControlsLookup?.[group.name]}
-				</div>`
+				</div>`;
 				$eles.push($wrpName);
 			}
 
@@ -4722,7 +4757,7 @@ ComponentUiUtil.RangeSlider = class {
 						isMajor: i === 0 || i === (len - 1),
 						value: val,
 					}));
-				})
+				});
 			}
 
 			wrpPips.empty();
@@ -4874,7 +4909,7 @@ ComponentUiUtil.RangeSlider = class {
 		// Move the closest slider to this pip's location
 		const distToMin = Math.abs(this._compCpy._state[this._propCurMin] - value);
 		const distToMax = Math.abs(this._compCpy._state[this._propCurMax] - value);
-		return {distToMin, distToMax}
+		return {distToMin, distToMax};
 	}
 
 	_handleClick (evt, value) {
@@ -4967,7 +5002,7 @@ ComponentUiUtil.RangeSlider = class {
 			}
 		});
 	}
-}
+};
 ComponentUiUtil.RangeSlider._isInit = false;
 ComponentUiUtil.RangeSlider._ALL_SLIDERS = new Set();
 ComponentUiUtil.RangeSlider._W_THUMB_PX = 16;

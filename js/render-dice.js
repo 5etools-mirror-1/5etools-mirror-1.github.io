@@ -132,7 +132,7 @@ Renderer.dice = {
 					Renderer.dice._prevHistory();
 				} else if (e.which === 40) { // down arrow
 					e.preventDefault();
-					Renderer.dice._nextHistory()
+					Renderer.dice._nextHistory();
 				}
 			});
 		$wrpRoll.append($head).append($outRoll).append($iptRoll);
@@ -164,7 +164,7 @@ Renderer.dice = {
 		if (!Renderer.dice._hist.length) {
 			Renderer.dice._histIndex = null;
 		} else {
-			Renderer.dice._histIndex = Math.min(Renderer.dice._hist.length, Math.max(Renderer.dice._histIndex, 0))
+			Renderer.dice._histIndex = Math.min(Renderer.dice._hist.length, Math.max(Renderer.dice._histIndex, 0));
 		}
 	},
 
@@ -205,7 +205,7 @@ Renderer.dice = {
 						shiftKey = shiftKey || evt.shiftKey;
 						ctrlKey = ctrlKey || (evt.ctrlKey || evt.metaKey);
 						cpyRollData.toRoll = it;
-						return cpyRollData
+						return cpyRollData;
 					},
 				)),
 			]);
@@ -277,7 +277,7 @@ Renderer.dice = {
 									return rollDataCpy;
 								}
 							},
-						)
+						);
 					}),
 			]);
 
@@ -751,7 +751,7 @@ Use <span class="out-roll-item-code">${PREF_MACRO} list</span> to list saved mac
 						if (checkLength(others, 0)) {
 							Object.keys(Renderer.dice.storage).forEach(name => {
 								Renderer.dice._showMessage(`<span class="out-roll-item-code">#${name}</span> \u2014 ${Renderer.dice.storage[name]}`, Renderer.dice.SYSTEM_USER);
-							})
+							});
 						} else {
 							showInvalid();
 						}
@@ -1118,7 +1118,7 @@ Renderer.dice.lang = {
 		} else if (this._parse3_accept(self, Renderer.dice.tk.PAREN_OPEN)) {
 			const exp = this._parse3_expression(self);
 			this._parse3_expect(self, Renderer.dice.tk.PAREN_CLOSE);
-			return new Renderer.dice.parsed.Factor(exp, {hasParens: true})
+			return new Renderer.dice.parsed.Factor(exp, {hasParens: true});
 		} else if (this._parse3_accept(self, Renderer.dice.tk.BRACE_OPEN)) {
 			const children = [];
 
@@ -1130,7 +1130,7 @@ Renderer.dice.lang = {
 			const modPart = [];
 			this._parse3__dice_modifiers(self, modPart);
 
-			return new Renderer.dice.parsed.Pool(children, modPart[0])
+			return new Renderer.dice.parsed.Pool(children, modPart[0]);
 		} else {
 			if (self.sym) throw new Error(`Unexpected input: <code>${self.sym}</code>`);
 			else throw new Error(`Unexpected end of input`);
@@ -1261,7 +1261,7 @@ Renderer.dice.tk = {
 			return this.toDebugString();
 		}
 
-		toDebugString () { return `${this.type}${this.value ? ` :: ${this.value}` : ""}` }
+		toDebugString () { return `${this.type}${this.value ? ` :: ${this.value}` : ""}`; }
 	},
 
 	_new (type, asString, opts) { return new Renderer.dice.tk.Token(type, null, asString, opts); },
@@ -1876,7 +1876,7 @@ Renderer.dice.parsed = {
 					out *= this._nodes[i + 1][fnName](meta);
 				} else if (this._nodes[i].eq(Renderer.dice.tk.DIV)) {
 					this.addToMeta(meta, " ÷ ");
-					out /= this._nodes[i + 1][fnName](meta)
+					out /= this._nodes[i + 1][fnName](meta);
 				} else throw new Error(`Unimplemented!`);
 			}
 

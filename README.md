@@ -12,6 +12,7 @@ Please see [our wiki](https://wiki.5e.tools/) for FAQs, installation guides, sup
 
 ## Developer Notes
 ### Data Sources and Versioning
+
 Only "official" (that is, published by WotC) data is to be included in the site. Anything else should be added to the homebrew repository. Some exceptions to this rule are:
 - All Adventurers League (AL) -specific content is to be kept in the homebrew repository. While much of this content broadly falls under the "published by WotC" umbrella, a good deal of it doesn't. For the sake of consistency/cleanliness, all AL content is to be considered homebrew.
 - Anything published in the Dragon+ magazine.
@@ -40,16 +41,20 @@ Within this ordering, the following prioritisation should be made:
 
 
 ### Target JavaScript Version
+
 Any language feature which is available in both main-line Chrome and main-line Firefox, and has been available for at least six months, may be used.
 
 ### Style Guidelines
 #### Code
+
 - Use tabs over spaces.
 
 #### CSS
+
 - The [BEM](http://getbem.com/) ("Block Element Modifier") naming strategy should be used where possible.
 
 #### Data/Text
+
 - Format JSON to match the default output of JavaScript's `JSON.stringify` (using tabs for indentation), i.e. one line per bracket and one line per value. JSON files programmatically generated from other JSON files (i.e. those stored in `data/generated`) should be minified, however.
 
 - When "tagging" references in data (e.g. `{@creature goblin}`), the following rules apply:
@@ -59,6 +64,7 @@ Any language feature which is available in both main-line Chrome and main-line F
 
 ### JSON Cleaning
 #### Trailing commas
+
 To remove trailing commas in JSON:
 
 Find: `(.*?)(,)(:?\s*]|\s*})`
@@ -66,6 +72,7 @@ Find: `(.*?)(,)(:?\s*]|\s*})`
 Replace: `$1$3`
 
 #### Character replacement
+
 - `’` should be replaced with `'`
 - `“` and `”` should be replaced with `"`
 - `—` (em dash) should be replaced with `\u2014` (Unicode for em dash)
@@ -75,6 +82,7 @@ Replace: `$1$3`
 - the only Unicode escape sequences allowed are `\u2014`, `\u2013`, and `\u2212`; all other characters (unless noted above) should be stored as-is
 
 #### Convention for dashes
+
 - `-` (hyphen) should **only** be used to hyphenate words, e.g. `60-foot` and `18th-level`
 - `\u2014` should be used for parenthetical dash pairs, or for marking empty table rows.
 - `\u2013` should be used for joining numerical ranges, e.g. `1-5` should become `1\u20135`.
@@ -82,17 +90,21 @@ Replace: `$1$3`
 - any whitespace on any side of a `\u2014` should be removed
 
 #### Convention for measurement
+
 - Adjectives: a hyphen and the full name of the unit of measure should be used, e.g. dragon exhales acid in a `60-foot line`
 - Nouns: a space and the short name of the unit of measure (including the trailing period) should be used, e.g. `blindsight 60 ft.`, `darkvision 120 ft.`
 - Time: a slash, `/`, with no spaces on either side followed by the capitalised unit of time, e.g. `2/Turn`, `3/Day`
 
 #### Convention for Dice
+
 Dice should be written as `[X]dY[ <+|-|×> Z]`, i.e. with a space between dice and operator, and a space between operator and modifier. Some examples of acceptable formatting are: `d6`, `2d6`, or `2d6 + 1`.
 
 #### Convention for Item Names
+
 Item names should be title-case, with the exception of units in parentheses, which should be sentence-case. Items who's volume or amount is specified by container (e.g. `(vial)`) treat the container as a unit.
 
 ### Mouse/Keyboard Events
+
 Avoid binding ALT-modified events, as these are not available under MacOS or various Linux flavors. Binding SHIFT-/CTRL-modified events is preferred.
 
 ### Dev Server

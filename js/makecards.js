@@ -84,7 +84,7 @@ class MakeCards extends BaseComponent {
 			</div>`;
 		};
 
-		Object.keys(MakeCards._AVAILABLE_TYPES).forEach(it => $getColorIconConfigRow(it).appendTo($wrpConfig))
+		Object.keys(MakeCards._AVAILABLE_TYPES).forEach(it => $getColorIconConfigRow(it).appendTo($wrpConfig));
 	}
 
 	_render_cardList () {
@@ -115,7 +115,7 @@ class MakeCards extends BaseComponent {
 						icon_back: it.values.icon,
 						contents: entityMeta.fnGetContents(it.values.entity),
 						tags: entityMeta.fnGetTags(it.values.entity),
-					}
+					};
 				});
 				DataUtil.userDownload("rpg-cards", toDownload, {isSipAdditionalMetadata: true});
 			});
@@ -277,7 +277,7 @@ class MakeCards extends BaseComponent {
 				this._list.update();
 				this._doSaveStateDebounced();
 			},
-		))
+		));
 	}
 
 	_getStateForType (entityType) {
@@ -468,7 +468,7 @@ class MakeCards extends BaseComponent {
 			mon.mythic ? this._ct_section("Mythic Actions") : null,
 			mon.mythic ? this._ct_text(this._ct_htmlToText(Renderer.monster.getMythicActionIntro(mon, renderer))) : null,
 			...(mon.mythic ? this._ct_renderEntries(mon.mythic, 2) : []),
-		].filter(Boolean)
+		].filter(Boolean);
 	}
 
 	static _getCardContents_spell (sp) {
@@ -480,7 +480,7 @@ class MakeCards extends BaseComponent {
 			return [
 				this._ct_section("At higher levels"),
 				...this._ct_renderEntries(ents, 2),
-			]
+			];
 		})() : null;
 
 		return [
@@ -579,9 +579,9 @@ class MakeCards extends BaseComponent {
 		];
 
 		if (classIconNames.includes(iconName)) {
-			return `https://raw.githubusercontent.com/crobi/rpg-cards/gh-pages/generator/icons/${iconName}.png`
+			return `https://raw.githubusercontent.com/crobi/rpg-cards/gh-pages/generator/icons/${iconName}.png`;
 		}
-		return `https://raw.githubusercontent.com/crobi/rpg-cards/gh-pages/generator/icons/${iconName}.svg`
+		return `https://raw.githubusercontent.com/crobi/rpg-cards/gh-pages/generator/icons/${iconName}.svg`;
 	}
 
 	static _pGetUserIcon (initialVal) {
@@ -693,7 +693,7 @@ MakeCards._AVAILABLE_TYPES = {
 		fnGetTags: (mon) => {
 			const types = Parser.monTypeToFullObj(mon.type);
 			const cr = mon.cr == null ? "unknown CR" : `CR ${(mon.cr.cr || mon.cr)}`;
-			return ["creature", Parser.sourceJsonToAbv(mon.source), types.type, cr, Parser.sizeAbvToFull(mon.size)]
+			return ["creature", Parser.sourceJsonToAbv(mon.source), types.type, cr, Parser.sizeAbvToFull(mon.size)];
 		},
 	},
 	item: {
@@ -706,7 +706,7 @@ MakeCards._AVAILABLE_TYPES = {
 		fnGetContents: MakeCards._getCardContents_item.bind(MakeCards),
 		fnGetTags: (item) => {
 			const [typeListText] = Renderer.item.getHtmlAndTextTypes(item);
-			return ["item", Parser.sourceJsonToAbv(item.source), ...typeListText]
+			return ["item", Parser.sourceJsonToAbv(item.source), ...typeListText];
 		},
 	},
 	spell: {

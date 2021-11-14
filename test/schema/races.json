@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "races.json",
-	"version": "1.8.3",
+	"version": "1.9.0",
 	"type": "object",
 
 	"definitions": {
@@ -17,6 +17,23 @@
 						"type": "string"
 					}
 				},
+				"race": {
+					"description": "For use in homebrew files featuring standalone subraces of existing full races.",
+					"type": "object",
+					"properties": {
+						"name": {
+							"type": "string"
+						},
+						"source": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"name",
+						"source"
+					],
+					"additionalProperties": false
+				},
 				"source": {
 					"type": "string"
 				},
@@ -28,6 +45,12 @@
 				},
 				"ability": {
 					"$ref": "#/definitions/abilityScores"
+				},
+				"size": {
+					"type": "array",
+					"items": {
+						"$ref": "util.json#/definitions/size"
+					}
 				},
 				"speed": {
 					"$ref": "util.json#/definitions/speed"
@@ -77,6 +100,9 @@
 				},
 				"armorProficiencies": {
 					"$ref": "util.json#/definitions/armorProficiencies"
+				},
+				"fluff": {
+					"$ref": "#/definitions/fluff"
 				},
 				"overwrite": {
 					"description": "Map of 'property' -> true where 'property' is a property on the base race which should be overwritten by that of the subrace",
@@ -147,7 +173,8 @@
 				},
 				"age": {"$ref": "#/definitions/age"},
 				"hasFluff": {"type": "boolean"},
-				"hasFluffImages": {"type": "boolean"}
+				"hasFluffImages": {"type": "boolean"},
+				"_versions": {"$ref": "util.json#/definitions/versionsArray"}
 			},
 			"additionalProperties": false
 		},
@@ -186,8 +213,7 @@
 					"description": "An array of choices.",
 					"type": "array",
 					"items": {
-						"type": "string",
-						"enum": ["M", "S", "V"]
+						"$ref": "util.json#/definitions/size"
 					}
 				},
 				"entries": {
@@ -246,40 +272,7 @@
 					"$ref": "util.json#/definitions/armorProficiencies"
 				},
 				"fluff": {
-					"description": "Homebrew use only.",
-					"oneOf": [
-						{
-							"$ref": "util.json#/definitions/fluffObject"
-						},
-						{
-							"description": "References \"raceFluff\" array items",
-							"type": "object",
-							"properties": {
-								"_raceFluff": {
-									"type": "object",
-									"properties": {
-										"name": {
-											"type": "string"
-										},
-										"source": {
-											"type": "string"
-										}
-									}
-								},
-								"_appendRaceFluff": {
-									"type": "object",
-									"properties": {
-										"name": {
-											"type": "string"
-										},
-										"source": {
-											"type": "string"
-										}
-									}
-								}
-							}
-						}
-					]
+					"$ref": "#/definitions/fluff"
 				},
 				"srd": {
 					"$ref": "util.json#/definitions/srd"
@@ -337,7 +330,8 @@
 				},
 				"age": {"$ref": "#/definitions/age"},
 				"hasFluff": {"type": "boolean"},
-				"hasFluffImages": {"type": "boolean"}
+				"hasFluffImages": {"type": "boolean"},
+				"_versions": {"$ref": "util.json#/definitions/versionsArray"}
 			},
 			"additionalProperties": false
 		},
@@ -497,6 +491,75 @@
 					]
 				}
 			]
+		},
+
+		"subrace": {
+			"description": "Homebrew use only.",
+			"anyOf": [
+				{
+					"type": "object",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/subraceData"
+						},
+						{
+							"required": [
+								"name",
+								"source",
+								"race"
+							]
+						}
+					]
+				},
+				{
+					"type": "object",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/subraceData"
+						},
+						{
+							"$ref": "util.json#/definitions/copyBlock"
+						}
+					]
+				}
+			]
+		},
+
+		"fluff": {
+			"description": "Homebrew use only.",
+			"anyOf": [
+				{
+					"$ref": "util.json#/definitions/fluffObject"
+				},
+				{
+					"description": "References \"raceFluff\" array items",
+					"type": "object",
+					"properties": {
+						"_raceFluff": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								}
+							}
+						},
+						"_appendRaceFluff": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			]
 		}
 	},
 
@@ -507,9 +570,16 @@
 				"$ref": "#/definitions/race"
 			}
 		},
+		"subrace": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/subrace"
+			}
+		},
 		"_meta": {
 			"$ref": "util.json#/definitions/metaBlock"
 		}
 	},
+	"required": ["race"],
 	"additionalProperties": false
 }

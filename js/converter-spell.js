@@ -185,7 +185,7 @@ class SpellParser extends BaseParser {
 			stats.entries = SenseTag.tryRun(stats.entries);
 		}
 		if (stats.entriesHigherLevel) {
-			stats.entriesHigherLevel = stats.entriesHigherLevel.map(it => DiceConvert.getTaggedEntry(it))
+			stats.entriesHigherLevel = stats.entriesHigherLevel.map(it => DiceConvert.getTaggedEntry(it));
 			EntryConvert.tryRun(stats, "entriesHigherLevel");
 			stats.entriesHigherLevel = SkillTag.tryRun(stats.entriesHigherLevel);
 			stats.entriesHigherLevel = ActionTag.tryRun(stats.entriesHigherLevel);

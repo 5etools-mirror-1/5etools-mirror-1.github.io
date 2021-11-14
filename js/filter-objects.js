@@ -30,6 +30,6 @@ class PageFilterObjects extends PageFilter {
 			values,
 			obj.source,
 			obj._fMisc,
-		)
+		);
 	}
 }

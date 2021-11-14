@@ -13,6 +13,9 @@ window.addEventListener("load", () => {
 		.change(() => $iptPlayerName.removeClass("form-control--error"))
 		.disableSpellcheck();
 
+	$iptServerToken.val(window.location.hash.slice(1));
+	Hist.replaceHistoryHash("");
+
 	const $btnConnect = $(`#initp__btn_connect`)
 		.click(async () => {
 			if (!$iptPlayerName.val().trim()) return $iptPlayerName.addClass("form-control--error");
@@ -31,10 +34,9 @@ window.addEventListener("load", () => {
 		});
 
 	const $body = $(`body`);
-	$body.on("keypress", (e) => {
-		if (((e.key === "f") && EventUtil.noModifierKeys(e))) {
-			if (EventUtil.isInInput(e)) return;
-			e.preventDefault();
+	$body.on("keypress", (evt) => {
+		if (EventUtil.getKeyIgnoreCapsLock(evt) === "f" && EventUtil.noModifierKeys(evt) && !EventUtil.isInInput(evt)) {
+			evt.preventDefault();
 
 			if (view.isActive) $body.toggleClass("is-fullscreen");
 		}

@@ -26,5 +26,5 @@ main()
 	.then(() => console.log("Tests complete."))
 	.catch(e => {
 		console.error(e);
-		throw e
+		throw e;
 	});

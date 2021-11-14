@@ -21,6 +21,13 @@ class OptionalFeaturesPage extends ListPage {
 
 			dataProps: ["optionalfeature"],
 
+			bookViewOptions: {
+				$btnOpen: $(`#btn-book`),
+				$eleNoneVisible: $(`<span class="initial-message">If you wish to view multiple optional features, please first make a list</span>`),
+				pageTitle: "Optional Features Book View",
+				popTblGetNumShown: (opts) => this._bookView_popTblGetNumShown(opts),
+			},
+
 			isPreviewable: true,
 		});
 	}
@@ -78,7 +85,7 @@ class OptionalFeaturesPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (it, ix) {
+	pGetSublistItem (it, ix) {
 		const hash = UrlUtil.autoEncodeHash(it);
 		const prerequisite = Renderer.utils.getPrerequisiteHtml(it.prerequisite, {isListMode: true, blacklistKeys: new Set(["level"])});
 		const level = Renderer.optionalfeature.getListPrerequisiteLevelText(it.prerequisite);
@@ -134,8 +141,8 @@ class OptionalFeaturesPage extends ListPage {
 	}
 
 	async pDoLoadSubHash (sub) {
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
+		sub = await super.pDoLoadSubHash(sub);
+		await this._bookView.pHandleSub(sub);
 	}
 }
 

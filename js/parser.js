@@ -210,39 +210,35 @@ Parser.getAbilityModifier = function (abilityScore) {
 	return `${modifier}`;
 };
 
-Parser.getSpeedString = (it) => {
-	if (it.speed == null) return "\u2014";
+Parser.getSpeedString = (ent, {isMetric = false} = {}) => {
+	if (ent.speed == null) return "\u2014";
 
-	function procSpeed (propName) {
-		function addSpeed (s) {
-			stack.push(`${propName === "walk" ? "" : `${propName} `}${getVal(s)} ft.${getCond(s)}`);
-		}
-
-		if (it.speed[propName] || propName === "walk") addSpeed(it.speed[propName] || 0);
-		if (it.speed.alternate && it.speed.alternate[propName]) it.speed.alternate[propName].forEach(addSpeed);
-	}
-
-	function getVal (speedProp) {
-		return speedProp.number != null ? speedProp.number : speedProp;
-	}
-
-	function getCond (speedProp) {
-		return speedProp.condition ? ` ${Renderer.get().render(speedProp.condition)}` : "";
-	}
-
-	const stack = [];
-	if (typeof it.speed === "object") {
+	const unit = isMetric ? Parser.metric.getMetricUnit({originalUnit: "ft.", isShortForm: true}) : "ft.";
+	if (typeof ent.speed === "object") {
+		const stack = [];
 		let joiner = ", ";
-		Parser.SPEED_MODES.forEach(mode => procSpeed(mode));
-		if (it.speed.choose) {
+		Parser.SPEED_MODES.forEach(mode => Parser._getSpeedString_addSpeedMode({ent, prop: mode, stack, isMetric, unit}));
+		if (ent.speed.choose) {
 			joiner = "; ";
-			stack.push(`${it.speed.choose.from.sort().joinConjunct(", ", " or ")} ${it.speed.choose.amount} ft.${it.speed.choose.note ? ` ${it.speed.choose.note}` : ""}`);
+			stack.push(`${ent.speed.choose.from.sort().joinConjunct(", ", " or ")} ${ent.speed.choose.amount} ${unit}${ent.speed.choose.note ? ` ${ent.speed.choose.note}` : ""}`);
 		}
-		return stack.join(joiner) + (it.speed.note ? ` ${it.speed.note}` : "");
-	} else {
-		return it.speed + (it.speed === "Varies" ? "" : " ft. ");
+		return stack.join(joiner) + (ent.speed.note ? ` ${ent.speed.note}` : "");
 	}
+
+	return (isMetric ? Parser.metric.getMetricNumber({originalValue: ent.speed, originalUnit: UNT_FEET}) : ent.speed)
+		+ (ent.speed === "Varies" ? "" : ` ${unit} `);
 };
+Parser._getSpeedString_addSpeedMode = ({ent, prop, stack, isMetric, unit}) => {
+	const addSpeed = (s) => stack.push(`${prop === "walk" ? "" : `${prop} `}${Parser._getSpeedString_getVal({propSpeed: s, isMetric})} ${unit}${Parser._getSpeedString_getCondition({propSpeed: s})}`);
+
+	if (ent.speed[prop] || prop === "walk") addSpeed(ent.speed[prop] || 0);
+	if (ent.speed.alternate && ent.speed.alternate[prop]) ent.speed.alternate[prop].forEach(addSpeed);
+};
+Parser._getSpeedString_getVal = ({propSpeed, isMetric}) => {
+	const num = propSpeed.number != null ? propSpeed.number : propSpeed;
+	return isMetric ? Parser.metric.getMetricNumber({originalValue: num, originalUnit: UNT_FEET}) : num;
+};
+Parser._getSpeedString_getCondition = ({propSpeed}) => propSpeed.condition ? ` ${Renderer.get().render(propSpeed.condition)}` : "";
 
 Parser.SPEED_MODES = ["walk", "burrow", "climb", "fly", "swim"];
 
@@ -272,7 +268,7 @@ Parser.raceCreatureTypesToFull = function (creatureTypes) {
 				.map(sub => Parser.monTypeToFullObj(sub).asText.toTitleCase())
 				.joinConjunct(", ", " or ");
 		})
-		.joinConjunct(hasSubOptions ? "; " : ", ", " and ")
+		.joinConjunct(hasSubOptions ? "; " : ", ", " and ");
 };
 
 Parser.crToXp = function (cr, {isDouble = false} = {}) {
@@ -755,10 +751,10 @@ Parser.itemWeightToFull = function (item, isShortForm) {
 			case 12: vulgarGlyph = "¾"; break;
 			case 14: vulgarGlyph = "⅞"; break;
 		}
-		if (vulgarGlyph) return `${integerPart || ""}${vulgarGlyph} lb.${(item.weightNote ? ` ${item.weightNote}` : "")}`
+		if (vulgarGlyph) return `${integerPart || ""}${vulgarGlyph} lb.${(item.weightNote ? ` ${item.weightNote}` : "")}`;
 
 		// Fall back on decimal pounds or ounces
-		return `${item.weight < 1 ? item.weight * 16 : item.weight} ${item.weight < 1 ? "oz" : "lb"}.${(item.weightNote ? ` ${item.weightNote}` : "")}`
+		return `${item.weight < 1 ? item.weight * 16 : item.weight} ${item.weight < 1 ? "oz" : "lb"}.${(item.weightNote ? ` ${item.weightNote}` : "")}`;
 	}
 	if (item.weightMult) return isShortForm ? `×${item.weightMult}` : `base weight ×${item.weightMult}`;
 	return "";
@@ -772,7 +768,7 @@ Parser.ITEM_RECHARGE_TO_FULL = {
 	dusk: "Dusk",
 	midnight: "Midnight",
 	special: "Special",
-}
+};
 Parser.itemRechargeToFull = function (recharge) {
 	return Parser._parse_aToB(Parser.ITEM_RECHARGE_TO_FULL, recharge);
 };
@@ -1073,7 +1069,7 @@ Parser.spRangeToShortHtml._renderArea = function (range) {
 	return `<span class="fas fa-fw ${Parser.spRangeTypeToIcon(RNG_SELF)} help-subtle" title="Self"></span> ${size.amount}<span class="ve-small">-${Parser.getSingletonUnit(size.type, true)}</span> ${Parser.spRangeToShortHtml._getAreaStyleString(range)}`;
 };
 Parser.spRangeToShortHtml._getAreaStyleString = function (range) {
-	return `<span class="fas fa-fw ${Parser.spRangeTypeToIcon(range.type)} help-subtle" title="${Parser.spRangeTypeToFull(range.type)}"></span>`
+	return `<span class="fas fa-fw ${Parser.spRangeTypeToIcon(range.type)} help-subtle" title="${Parser.spRangeTypeToFull(range.type)}"></span>`;
 };
 
 Parser.spRangeToFull = function (range) {
@@ -1223,7 +1219,7 @@ Parser.spClassesToFull = function (sp, isTextOnly, subclassLookup = {}) {
 	const fromSubclassList = Renderer.spell.getCombinedClasses(sp, "fromSubclass");
 	const fromSubclasses = Parser.spSubclassesToFull(fromSubclassList, isTextOnly, subclassLookup);
 	const fromClassList = Renderer.spell.getCombinedClasses(sp, "fromClassList");
-	return `${Parser.spMainClassesToFull(fromClassList, isTextOnly)}${fromSubclasses ? `, ${fromSubclasses}` : ""}`
+	return `${Parser.spMainClassesToFull(fromClassList, isTextOnly)}${fromSubclasses ? `, ${fromSubclasses}` : ""}`;
 };
 
 Parser.spMainClassesToFull = function (fromClassList, textOnly = false) {
@@ -1965,7 +1961,7 @@ Parser.spVariantClassesToCurrentAndLegacy = function (fromVariantClassList) {
 		else current.push(cls);
 	});
 	return [current, legacy];
-}
+};
 
 Parser.attackTypeToFull = function (attackType) {
 	return Parser._parse_aToB(Parser.ATK_TYPE_TO_FULL, attackType);
@@ -2080,7 +2076,7 @@ Parser.SP_TIME_TO_SHORT = {
 	[Parser.SP_TM_ROUND]: "Rnd.",
 	[Parser.SP_TM_MINS]: "Min.",
 	[Parser.SP_TM_HRS]: "Hr.",
-}
+};
 Parser.spTimeUnitToShort = function (timeUnit) {
 	return Parser._parse_aToB(Parser.SP_TIME_TO_SHORT, timeUnit);
 };
@@ -3361,3 +3357,34 @@ Parser.SENSE_JSON_TO_FULL = {
 Parser.NUMBERS_ONES = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 Parser.NUMBERS_TENS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
 Parser.NUMBERS_TEENS = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+
+// region Metric conversion
+Parser.metric = {
+	// See MPMB's breakdown: https://old.reddit.com/r/dndnext/comments/6gkuec
+	MILES_TO_KILOMETRES: 1.6,
+	FEET_TO_METRES: 0.3, // 5 ft = 1.5 m
+	POUNDS_TO_KILOGRAMS: 0.5, // 2 lb = 1 kg
+
+	getMetricNumber ({originalValue, originalUnit}) {
+		if (isNaN(originalValue)) return originalValue;
+		originalValue = Number(originalValue);
+		if (!originalValue) return originalValue;
+
+		switch (originalUnit) {
+			case "mi.": case "mi": case UNT_MILES: return originalValue * Parser.metric.MILES_TO_KILOMETRES;
+			case "ft.": case "ft": case UNT_FEET: return originalValue * Parser.metric.FEET_TO_METRES;
+			case "lb.": case "lb": case "lbs": return originalValue * Parser.metric.POUNDS_TO_KILOGRAMS;
+			default: return originalValue;
+		}
+	},
+
+	getMetricUnit ({originalUnit, isShortForm = false, isPlural = true}) {
+		switch (originalUnit) {
+			case "mi.": case "mi": case UNT_MILES: return isShortForm ? "km" : `kilometre${isPlural ? "s" : ""}`;
+			case "ft.": case "ft": case UNT_FEET: return isShortForm ? "m" : `meter${isPlural ? "s" : ""}`;
+			case "lb.": case "lb": case "lbs": return isShortForm ? "kg" : `kilogram${isPlural ? "s" : ""}`;
+			default: return originalUnit;
+		}
+	},
+};
+// endregion

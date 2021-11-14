@@ -84,7 +84,7 @@ class SpellBuilder extends Builder {
 			},
 			entries: [],
 			source: this._ui ? this._ui.source : "",
-		}
+		};
 	}
 
 	setStateFromLoaded (state) {
@@ -793,7 +793,7 @@ class SpellBuilder extends Builder {
 			return {
 				name: $iptClass.val().trim(),
 				source: $selClassSource.val().unescapeQuotes(),
-			}
+			};
 		};
 
 		const $iptClass = $(`<input class="form-control form-control--minimal input-xs">`)

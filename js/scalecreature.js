@@ -271,7 +271,7 @@
 	_crToCasterLevel (cr) {
 		if (cr === 0) return 2;
 		if (cr >= 19) return 20;
-		return this._crToCasterLevelAvg[cr]
+		return this._crToCasterLevelAvg[cr];
 	},
 
 	_calcNewAbility (mon, prop, modifier) {
@@ -354,7 +354,7 @@
 				const expert = actualPb === pbIn * 2;
 
 				mon.save[k] = this._applyPb_getNewSkillSaveMod(pbIn, pbOut, bonus, expert);
-			})
+			});
 		}
 
 		this._applyPb_skills(mon, pbIn, pbOut, mon.skill);
@@ -365,7 +365,7 @@
 				const curToHit = Number(m1);
 				const outToHit = curToHit + pbDelta;
 				return `{@hit ${outToHit}}`;
-			})
+			});
 		};
 
 		const handleDc = (str) => {
@@ -705,7 +705,7 @@
 							name: name.trim(),
 							ench: ench,
 							source: source,
-						}
+						};
 					} else {
 						const m = /@item ([^|}]+)(\|[^|}]+)?(\|[^|}]+)?/gi.exec(f);
 						if (m) {
@@ -776,7 +776,7 @@
 						return { // fill the gap with natural armor
 							ac: target,
 							from: ["natural armor"],
-						}
+						};
 					}
 				} else if (dexMismatch < 0 && canAdjustDex) { // increase/reduce DEX to move the AC up/down
 					adjustDex();
@@ -882,7 +882,7 @@
 						case 20:
 							return `+2 plate armor|dmg`;
 						case PL3_PLATE:
-							return `+3 plate armor|dmg`
+							return `+3 plate armor|dmg`;
 					}
 				};
 
@@ -1395,7 +1395,7 @@
 
 			// Otherwise, for high CR -> low CR
 			return this._getScaledToRatio(toHitIn, idealHitIn, idealHitOut);
-		}
+		};
 
 		const handleHit = (str, name) => {
 			const offsetEnchant = name != null ? this._getEnchantmentBonus(name) : 0;
@@ -1425,7 +1425,7 @@
 					mon[tmpModListProp].push(modFromAbilOut);
 				}
 				return `{@hit ${targetToHitNoEnch + offsetEnchant}}`;
-			})
+			});
 		};
 
 		const idealDcIn = this._crToDc(crIn);
@@ -1660,7 +1660,7 @@
 									ability: modBeingScaled,
 									mod: modOut,
 									adjustedDpr,
-								})
+								});
 							}
 						};
 
@@ -1812,7 +1812,7 @@
 
 			if (mon[tmpModProp] != null) {
 				mon[oldScoreProp] = mon[prop];
-				mon[prop] = this._calcNewAbility(mon, prop, mon[tmpModProp])
+				mon[prop] = this._calcNewAbility(mon, prop, mon[tmpModProp]);
 			}
 			delete mon[tmpModProp];
 		};
@@ -1954,7 +1954,7 @@
 				if (mClasses) spellsFromClass = mClasses[1];
 				else {
 					const mClasses2 = /(artificer|bard|cleric|druid|paladin|ranger|sorcerer|warlock|wizard)(?:'s)? spell list/i.exec(outStr);
-					if (mClasses2) spellsFromClass = mClasses2[1]
+					if (mClasses2) spellsFromClass = mClasses2[1];
 				}
 
 				if (anyChange) sc.headerEntries = JSON.parse(outStr);
@@ -2037,7 +2037,7 @@
 						spells: [
 							`A selection of ${maxSpellLevel === 1 ? `{@filter 1st-level warlock spells|spells|level=${1}|class=warlock}.` : `{@filter 1st- to ${Parser.spLevelToFull(maxSpellLevel)}-level warlock spells|spells|level=${[...new Array(maxSpellLevel)].map((_, i) => i + 1).join(";")}|class=warlock}.`}  Examples include: ${spellsKnown.sort(SortUtil.ascSortLower).map(it => `{@spell ${it}}`).joinConjunct(", ", " and ")}`,
 						],
-					}
+					};
 				} else {
 					let lastRatio = 1; // adjust for higher/lower than regular spell slot counts
 					for (let i = 1; i < 10; ++i) {
@@ -2141,7 +2141,7 @@
 
 	_adjustSpellcasting_isWarlock (mon) {
 		if (mon.spellcasting) {
-			return mon.spellcasting.some(sc => sc.headerEntries && /warlock spells?|warlock('s)? spell list/i.test(JSON.stringify(sc.headerEntries)))
+			return mon.spellcasting.some(sc => sc.headerEntries && /warlock spells?|warlock('s)? spell list/i.test(JSON.stringify(sc.headerEntries)));
 		}
 	},
 
@@ -2227,7 +2227,7 @@
 			ScaleSummonedCreature._mutSimpleSpecialAcItem(it);
 
 			return it;
-		})
+		});
 	},
 
 	_scale_hp (mon, toSpellLevel, state) {
@@ -2250,7 +2250,7 @@
 	},
 
 	_scale_genericEntries (mon, toSpellLevel, state, prop) {
-		if (!mon[prop]) return
+		if (!mon[prop]) return;
 		mon[prop] = ScaleSpellSummonedCreature._WALKER.walk(
 			mon[prop],
 			{
@@ -2259,7 +2259,7 @@
 						// "The aberration makes a number of attacks equal to half this spell's level (rounded down)."
 						.replace(/a number of attacks equal to half this spell's level \(rounded down\)/g, (...m) => {
 							const count = Math.floor(toSpellLevel / 2);
-							return `${Parser.numberToText(count)} attack${count === 1 ? "" : "s"}`
+							return `${Parser.numberToText(count)} attack${count === 1 ? "" : "s"}`;
 						})
 						// "{@damage 1d8 + 3 + summonSpellLevel}"
 						.replace(/{@(?:dice|damage|hit|d20) [^}]+}/g, (...m) => {
@@ -2272,7 +2272,7 @@
 					return str;
 				},
 			},
-		)
+		);
 	},
 
 	_scale_traits (mon, toSpellLevel, state) { this._scale_genericEntries(mon, toSpellLevel, state, "trait"); },
@@ -2380,7 +2380,7 @@
 				const hdFormula = `${toClassLevel}d${m.last().hdSides}`;
 				if (!yourAbilModPart) return hdFormula;
 
-				return `${m.last().intro} {@dice ${hdFormula}} Hit Dice`
+				return `${m.last().intro} {@dice ${hdFormula}} Hit Dice`;
 			});
 		}
 
@@ -2395,7 +2395,7 @@
 	},
 
 	_scale_genericEntries (mon, toClassLevel, state, prop) {
-		if (!mon[prop]) return
+		if (!mon[prop]) return;
 		mon[prop] = ScaleClassSummonedCreature._WALKER.walk(
 			mon[prop],
 			{
@@ -2403,7 +2403,7 @@
 					str = str
 						// "add your proficiency bonus"
 						.replace(/add your proficiency bonus/gi, (...m) => {
-							return `${m[0]} (${UiUtil.intToBonus(state.proficiencyBonus)})`
+							return `${m[0]} (${UiUtil.intToBonus(state.proficiencyBonus)})`;
 						})
 						// "{@damage 1d8 + 2 + PB}"
 						.replace(/{@(?:dice|damage|hit|d20) [^}]+}/g, (...m) => {
@@ -2419,7 +2419,7 @@
 					return str;
 				},
 			},
-		)
+		);
 	},
 
 	_scale_traits (mon, toClassLevel, state) { this._scale_genericEntries(mon, toClassLevel, state, "trait"); },

@@ -9,7 +9,7 @@ function getHiddenModeList (psionic) {
 		if (modeList[i].submodes != null) {
 			const subModes = modeList[i].submodes;
 			for (let j = 0; j < subModes.length; ++j) {
-				outArray.push(`"${subModes[j].name}"`)
+				outArray.push(`"${subModes[j].name}"`);
 			}
 		}
 	}
@@ -34,39 +34,7 @@ class PsionicsPage extends ListPage {
 				$btnOpen: $(`#btn-psibook`),
 				$eleNoneVisible: $(`<span class="initial-message">If you wish to view multiple psionics, please first make a list</span>`),
 				pageTitle: "Psionics Book View",
-				popTblGetNumShown: $wrpContent => {
-					const toShow = ListUtil.getSublistedIds().map(id => this._dataList[id]);
-
-					const stack = [];
-					const renderPsionic = (p) => {
-						stack.push(`<div class="bkmv__wrp-item"><table class="stats stats--book stats--bkmv"><tbody>`);
-						stack.push(Renderer.psionic.getCompactRenderedString(p));
-						stack.push(`</tbody></table></div>`);
-					};
-
-					const renderType = (type) => {
-						const toRender = toShow.filter(p => p.type === type);
-						if (toRender.length) {
-							toRender.forEach(p => renderPsionic(p));
-						}
-					};
-
-					renderType("T");
-					renderType("D");
-
-					if (!toShow.length && Hist.lastLoadedId != null) {
-						renderPsionic(this._dataList[Hist.lastLoadedId]);
-					}
-
-					if (!toShow.length && Hist.lastLoadedId != null) {
-						stack.push(`<tr class="spellbook-level"><td>`);
-						renderPsionic(this._dataList[Hist.lastLoadedId]);
-						stack.push(`</td></tr>`);
-					}
-
-					$wrpContent.append(stack.join(""));
-					return toShow.length;
-				},
+				popTblGetNumShown: (opts) => this._bookView_popTblGetNumShown(opts, {fnPartition: it => it.type === "T" ? 0 : 1}),
 			},
 
 			tableViewOptions: {
@@ -128,7 +96,7 @@ class PsionicsPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (p, ix) {
+	pGetSublistItem (p, ix) {
 		const hash = UrlUtil.autoEncodeHash(p);
 		const typeMeta = Parser.psiTypeToMeta(p.type);
 
@@ -164,9 +132,7 @@ class PsionicsPage extends ListPage {
 	}
 
 	async pDoLoadSubHash (sub) {
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
-
+		sub = await super.pDoLoadSubHash(sub);
 		await this._bookView.pHandleSub(sub);
 	}
 

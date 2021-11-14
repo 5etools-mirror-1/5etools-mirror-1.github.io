@@ -176,31 +176,31 @@ function fmtChoice (str, render) {
 }
 
 function rollOnArray (lst) {
-	return lst[RNG(lst.length) - 1]
+	return lst[RNG(lst.length) - 1];
 }
 
 const RACES_SELECTABLE = ["Dwarf", "Elf", "Half-Elf", "Half-Orc", "Tiefling"];
 const RACES_UNSELECTABLE = ["Human", "Halfling", "Dragonborn", "Gnome"];
 
 const PARENTS_HALF_ELF = [
-	{min: 1, max: 5, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was an elf and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a human.` }, display: "One parent was an elf and the other was a human.", _races: ["Elf", "Human"]},
-	{min: 6, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was an elf and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a half-elf.` }, display: "One parent was an elf and the other was a half-elf.", _races: ["Elf", "Half-Elf"]},
-	{min: 7, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was a human and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a half-elf.` }, display: "One parent was a human and the other was a half-elf.", _races: ["Half-Elf", "Human"]},
+	{min: 1, max: 5, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was an elf and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a human.`; }, display: "One parent was an elf and the other was a human.", _races: ["Elf", "Human"]},
+	{min: 6, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was an elf and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a half-elf.`; }, display: "One parent was an elf and the other was a half-elf.", _races: ["Elf", "Half-Elf"]},
+	{min: 7, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was a human and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a half-elf.`; }, display: "One parent was a human and the other was a half-elf.", _races: ["Half-Elf", "Human"]},
 	{min: 8, result: "Both parents were half-elves.", _races: ["Half-Elf", "Half-Elf"]},
 ];
 
 const PARENTS_HALF_ORC = [
-	{min: 1, max: 3, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was an orc and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a human.` }, display: "One parent was an orc and the other was a human.", _races: ["Orc", "Human"]},
-	{min: 4, max: 5, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was an orc and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a half-orc.` }, display: "One parent was an orc and the other was a half-orc.", _races: ["Orc", "Half-Orc"]},
-	{min: 6, max: 7, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was a human and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a half-orc.` }, display: "One parent was a human and the other was a half-orc.", _races: ["Human", "Half-Orc"]},
+	{min: 1, max: 3, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was an orc and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a human.`; }, display: "One parent was an orc and the other was a human.", _races: ["Orc", "Human"]},
+	{min: 4, max: 5, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was an orc and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a half-orc.`; }, display: "One parent was an orc and the other was a half-orc.", _races: ["Orc", "Half-Orc"]},
+	{min: 6, max: 7, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was a human and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a half-orc.`; }, display: "One parent was a human and the other was a half-orc.", _races: ["Human", "Half-Orc"]},
 	{min: 8, display: "Both parents were half-orcs.", _races: ["Half-Orc", "Half-Orc"]},
 ];
 
 const PARENTS_TIEFLING = [
 	{min: 1, max: 4, display: "Both parents were humans, their infernal heritage dormant until you came along.", _races: ["Human", "Human"]},
-	{min: 5, max: 6, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was a tiefling and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a human.` }, display: "One parent was a tiefling and the other was a human.", _races: ["Human", "Tiefling"]},
-	{min: 7, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was a tiefling and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a devil.` }, display: "One parent was a tiefling and the other was a devil.", _races: ["Devil", "Tiefling"]},
-	{min: 8, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was a human and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a devil.` }, display: "One parent was a human and the other was a devil.", _races: ["Human", "Devil"]},
+	{min: 5, max: 6, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was a tiefling and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a human.`; }, display: "One parent was a tiefling and the other was a human.", _races: ["Human", "Tiefling"]},
+	{min: 7, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was a tiefling and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a devil.`; }, display: "One parent was a tiefling and the other was a devil.", _races: ["Devil", "Tiefling"]},
+	{min: 8, result: () => { const p = RNG(2); return `One parent ${fmtChoice(p === 1 ? "mother" : "father")} was a human and the other ${fmtChoice(p === 1 ? "father" : "mother")} was a devil.`; }, display: "One parent was a human and the other was a devil.", _races: ["Human", "Devil"]},
 ];
 
 const BIRTHPLACES = [
@@ -244,7 +244,7 @@ function otherParent (parent) {
 
 function singleParentOrStep (parent) {
 	const p = RNG(2);
-	return `Single ${parent} or step${parent} ${fmtChoice(p === 1 ? parent : `step${parent}`)}. ${p === 1 ? `${absentParent(otherParent(parent))}` : absentBothParents()}`
+	return `Single ${parent} or step${parent} ${fmtChoice(p === 1 ? parent : `step${parent}`)}. ${p === 1 ? `${absentParent(otherParent(parent))}` : absentBothParents()}`;
 }
 
 const FAMILY = [
@@ -321,7 +321,7 @@ function _lifeEvtResultArr (title, titles, ...rollResults) {
 	return {
 		title: title,
 		result: titles.map((it, i) => `${it}: ${rollResults[i].result}`),
-	}
+	};
 }
 
 let marriageIndex = 0;
@@ -329,7 +329,7 @@ function _lifeEvtPerson (title, personDetails) {
 	return {
 		title: title,
 		result: personDetails,
-	}
+	};
 }
 
 const LIFE_EVENTS = [
@@ -416,7 +416,7 @@ const LIFE_EVENTS_SUPERNATURAL = [
 	{min: 41, max: 50, result: "You escaped certain death and believe it was the intervention of a god that saved you."},
 	{min: 51, max: 60, result: "You witnessed a minor miracle."},
 	{min: 61, max: 70, result: "You explored an empty house and found it to be haunted."},
-	{min: 71, max: 75, result: () => { const p = RNG(6); return `You were briefly possessed. Roll a {@dice d6} to determine what type of creature possessed you: 1, celestial; 2, devil; 3, demon; 4, fey; 5, elemental; 6, undead ${fmtChoice(`${p}; ${["celestial", "devil", "demon", "fey", "elemental", "undead"][p - 1]}`)}.` }, display: "You were briefly possessed. Roll a {@dice d6} to determine what type of creature possessed you: 1, celestial; 2, devil; 3, demon; 4, fey; 5, elemental; 6, undead."},
+	{min: 71, max: 75, result: () => { const p = RNG(6); return `You were briefly possessed. Roll a {@dice d6} to determine what type of creature possessed you: 1, celestial; 2, devil; 3, demon; 4, fey; 5, elemental; 6, undead ${fmtChoice(`${p}; ${["celestial", "devil", "demon", "fey", "elemental", "undead"][p - 1]}`)}.`; }, display: "You were briefly possessed. Roll a {@dice d6} to determine what type of creature possessed you: 1, celestial; 2, devil; 3, demon; 4, fey; 5, elemental; 6, undead."},
 	{min: 76, max: 80, result: "You saw a ghost."},
 	{min: 81, max: 85, result: "You saw a ghoul feeding on a corpse."},
 	{min: 86, max: 90, result: "A celestial or a fiend visited you in your dreams to give a warning of dangers to come."},
@@ -435,7 +435,7 @@ const LIFE_EVENTS_TRAGEDIES = [
 	{min: 9, result: "You did something that brought terrible shame to you in the eyes of your family. You might have been involved in a scandal, dabbled in dark magic, or offended someone important. The attitude of your family members toward you becomes indifferent at best, though they might eventually forgive you."},
 	{min: 10, result: "For a reason you were never told, you were exiled from your community. You then either wandered in the wilderness for a time or promptly found a new place to live."},
 	{min: 11, result: () => `A romantic relationship ended. Roll a {@dice d6} ${fmtChoice(RNG(6))}. An odd number means it ended with bad feelings, while an even number means it ended amicably.`, display: "A romantic relationship ended. Roll a {@dice d6}. An odd number means it ended with bad feelings, while an even number means it ended amicably."},
-	{min: 12, result: () => `A current or prospective romantic partner of yours died. Roll on the {@table Supplemental Tables; Cause of Death|XGE|Cause of Death} supplemental table to find out how. If the result is murder, roll a {@dice d12}. On a 1, you were responsible, whether directly or indirectly.`, display: "A current or prospective romantic partner of yours died. Roll on the {@table Supplemental Tables; Cause of Death|XGE|Cause of Death} supplemental table to find out how. If the result is murder, roll a {@dice d12}. On a 1, you were responsible, whether directly or indirectly.", nextRoll: () => _lifeEvtResult("Cause of Death", (() => { const r = RNG(12); const p = GenUtil.getFromTable(SUPP_DEATH, r); return {result: `${p.result}${r === 2 && RNG(12) === 1 ? ` ${fmtChoice("you were responsible")}` : ""}`} })())},
+	{min: 12, result: () => `A current or prospective romantic partner of yours died. Roll on the {@table Supplemental Tables; Cause of Death|XGE|Cause of Death} supplemental table to find out how. If the result is murder, roll a {@dice d12}. On a 1, you were responsible, whether directly or indirectly.`, display: "A current or prospective romantic partner of yours died. Roll on the {@table Supplemental Tables; Cause of Death|XGE|Cause of Death} supplemental table to find out how. If the result is murder, roll a {@dice d12}. On a 1, you were responsible, whether directly or indirectly.", nextRoll: () => _lifeEvtResult("Cause of Death", (() => { const r = RNG(12); const p = GenUtil.getFromTable(SUPP_DEATH, r); return {result: `${p.result}${r === 2 && RNG(12) === 1 ? ` ${fmtChoice("you were responsible")}` : ""}`}; })())},
 ];
 
 const LIFE_EVENTS_WAR = [
@@ -541,7 +541,7 @@ const SUPP_RELATIONSHIP = [
 ];
 
 const SUPP_STATUS = [
-	{min: 3, result: () => { return `Dead (${rollSuppDeath().result.lowercaseFirst()})` }, display: "Dead (roll on the Cause of Death table)", "dead": true},
+	{min: 3, result: () => { return `Dead (${rollSuppDeath().result.lowercaseFirst()})`; }, display: "Dead (roll on the Cause of Death table)", "dead": true},
 	{min: 4, max: 5, result: () => `Missing or status unknown ${choose("missing", "status unknown")}`, display: "Missing or status unknown"},
 	{min: 6, max: 8, result: () => `Alive, but doing poorly due to injury, financial trouble, or relationship difficulties ${choose("injury", "financial trouble", "relationship difficulties")}`, display: "Alive, but doing poorly due to injury, financial trouble, or relationship difficulties"},
 	{min: 9, max: 12, result: "Alive and well"},
@@ -581,7 +581,7 @@ function onJsonLoad (lifeData, nameData) {
 	RACES_UNSELECTABLE.forEach(r => $selRace.append(`<option class="italic" value="${r}">${r}</option>`));
 	$selCha.append(`<option value="Random">Random</option>`);
 	for (let i = -5; i <= 5; ++i) {
-		$selCha.append(`<option value="${i}" ${i === 0 ? "selected" : ""}>${i >= 0 ? "+" : ""}${i}</option>`)
+		$selCha.append(`<option value="${i}" ${i === 0 ? "selected" : ""}>${i >= 0 ? "+" : ""}${i}</option>`);
 	}
 	$selBg.append(`<option value="-1" selected>Random</option>`);
 	bgList.forEach((b, i) => $selBg.append(`<option value="${i}">${b.name}</option>`));
@@ -625,7 +625,7 @@ function concatSentences (...lst) {
 		} else if (typeof it === "function") {
 			stack.push(it());
 		} else { // array
-			Array.prototype.push.apply(stack, ...it)
+			Array.prototype.push.apply(stack, ...it);
 		}
 	});
 	return joinParaList(stack);
@@ -735,7 +735,7 @@ function sectSiblings () {
 	function getBirthOrder () {
 		const rollBirthOrder = RNG(6) + RNG(6);
 		if (rollBirthOrder < 3) {
-			return "Twin, triplet, or quadruplet"
+			return "Twin, triplet, or quadruplet";
 		} else if (rollBirthOrder < 8) {
 			return "Older";
 		} else {
@@ -886,9 +886,9 @@ window.addEventListener("load", async () => {
 
 	$(`#age`).on("change", function () {
 		if ($(this).val()) {
-			$(this).addClass("italic")
+			$(this).addClass("italic");
 		} else {
-			$(this).removeClass("italic")
+			$(this).removeClass("italic");
 		}
 	});
 

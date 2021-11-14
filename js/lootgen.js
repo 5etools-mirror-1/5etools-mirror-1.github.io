@@ -45,9 +45,7 @@ class LootGenPage {
 	}
 
 	async _pLoadItems () {
-		const stockItems = await Renderer.item.pBuildList({
-			isBlacklistVariants: true,
-		});
+		const stockItems = await Renderer.item.pBuildList();
 		const homebrew = await BrewUtil.pAddBrewData();
 		const brewItems = await Renderer.item.pGetItemsFromHomebrew(homebrew);
 		return stockItems.concat(brewItems)

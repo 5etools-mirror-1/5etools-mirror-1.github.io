@@ -63,7 +63,7 @@ function flattenReferenceIndex (ref, skipHeaders) {
 					s: meta.section[c.name], // section name
 					p: i, // section index
 					h, // header name
-				})
+				});
 			});
 		});
 	});

@@ -31,7 +31,7 @@ class PageFilterDeities extends PageFilter {
 			header: "Miscellaneous",
 			items: ["Grants Piety Features", "Has Info", PageFilterDeities._STR_REPRINTED, "SRD"],
 			displayFn: StrUtil.uppercaseFirst,
-			deselFn: (it) => { return it === PageFilterDeities._STR_REPRINTED },
+			deselFn: (it) => { return it === PageFilterDeities._STR_REPRINTED; },
 			isSrdFilter: true,
 		});
 	}
@@ -77,7 +77,7 @@ class PageFilterDeities extends PageFilter {
 			g.category,
 			g.domains,
 			g._fMisc,
-		)
+		);
 	}
 }
 PageFilterDeities._STR_REPRINTED = "reprinted";

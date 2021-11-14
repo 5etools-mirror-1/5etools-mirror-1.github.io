@@ -23,7 +23,7 @@ class RenderMap {
 					return {
 						width: Math.min(window.innerWidth, Math.round(mapData.getZoom() * mapData.width)),
 						height: Math.min(window.innerHeight, Math.round(mapData.getZoom() * mapData.height) + 32),
-					}
+					};
 				},
 			},
 		);
@@ -60,7 +60,7 @@ class RenderMap {
 			out = await pLoad;
 		} catch (e) {
 			JqueryUtil.doToast({type: "danger", content: `Failed to load image! ${VeCt.STR_SEE_CONSOLE}`});
-			setTimeout(() => { throw e; })
+			setTimeout(() => { throw e; });
 		}
 		return out;
 	}

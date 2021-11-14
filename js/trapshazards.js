@@ -59,7 +59,7 @@ class TrapsHazardsPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (it, ix) {
+	pGetSublistItem (it, ix) {
 		const hash = UrlUtil.autoEncodeHash(it);
 		const trapType = Parser.trapHazTypeToFull(it.trapHazType);
 
@@ -92,12 +92,6 @@ class TrapsHazardsPage extends ListPage {
 
 		ListUtil.updateSelected();
 	}
-
-	async pDoLoadSubHash (sub) {
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
-	}
-
 	_getSearchCache (entity) {
 		if (!entity.effect && !entity.trigger && !entity.countermeasures && !entity.entries) return "";
 		const ptrOut = {_: ""};

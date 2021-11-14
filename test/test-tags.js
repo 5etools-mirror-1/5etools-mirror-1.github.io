@@ -77,7 +77,7 @@ function fileRecurse (file, fileHandler, doParse, filenameMatcher) {
 		Object.keys(MSG).forEach(k => {
 			if (MSG[k] && MSG[k].trim() && MSG[k].slice(-5) !== "\n---\n") MSG[k] = `${MSG[k].trimRight()}\n---\n`;
 		});
-	} else if (fs.lstatSync(file).isDirectory() && !isIgnoredDir(file)) fs.readdirSync(file).forEach(nxt => fileRecurse(`${file}/${nxt}`, fileHandler, doParse, filenameMatcher))
+	} else if (fs.lstatSync(file).isDirectory() && !isIgnoredDir(file)) fs.readdirSync(file).forEach(nxt => fileRecurse(`${file}/${nxt}`, fileHandler, doParse, filenameMatcher));
 }
 
 class TestTagsUtil {
@@ -122,14 +122,14 @@ class TestTagsUtil {
 										case "will":
 										case "ritual":
 										case "_":
-											val.forEach(sp => this._testAdditionalSpells_testSpellExists(file, msgProp, sp))
+											val.forEach(sp => this._testAdditionalSpells_testSpellExists(file, msgProp, sp));
 											break;
 										default: throw new Error(`Unhandled additionalSpells prop "${prop}"`);
 									}
 								});
 						});
 					});
-			})
+			});
 	}
 }
 
@@ -160,7 +160,7 @@ function getSimilar (url) {
 	const similarUrls = [];
 	const similar = /^\w+\.html#\w+/.exec(url);
 	Array.from(ALL_URLS).forEach(it => {
-		if (similar && it.startsWith(similar[0])) similarUrls.push(it)
+		if (similar && it.startsWith(similar[0])) similarUrls.push(it);
 	});
 	return JSON.stringify(similarUrls, null, 2);
 }
@@ -231,7 +231,7 @@ class LinkCheck {
 		while ((match = LinkCheck.SKILL_RE.exec(str))) {
 			const skill = match[1];
 			if (!VALID_SKILLS.has(skill)) {
-				MSG.LinkCheck += `Unknown skill: ${match[0]} in file ${file} (evaluates to "${skill}")\n`
+				MSG.LinkCheck += `Unknown skill: ${match[0]} in file ${file} (evaluates to "${skill}")\n`;
 			}
 		}
 	}
@@ -293,7 +293,7 @@ class ItemDataCheck {
 
 			const url = getEncoded(s, tag);
 			if (!ALL_URLS.has(url)) MSG.ItemDataCheck += `Missing link: ${s} in file ${file} (evaluates to "${url}") in "${prop}"\nSimilar URLs were:\n${getSimilar(url)}\n`;
-		})
+		});
 	}
 
 	static _checkReqAttuneTags (file, root, name, source, prop) {
@@ -311,7 +311,7 @@ class ItemDataCheck {
 						}
 					}
 				});
-		})
+		});
 	}
 
 	static _checkRoot (file, root, name, source) {
@@ -393,7 +393,7 @@ class ActionData {
 				it.seeAlsoAction.forEach(s => {
 					const url = getEncoded(s, "action");
 					if (!ALL_URLS.has(url)) MSG.ActionDataCheck += `Missing link: ${s} in file ${file} (evaluates to "${url}") in "seeAlsoAction"\nSimilar URLs were:\n${getSimilar(url)}\n`;
-				})
+				});
 			}
 		});
 	}
@@ -431,7 +431,7 @@ class BraceCheck {
 			}
 		}
 		if (total !== 0) {
-			MSG.BraceCheck += `Mismatched braces in ${file}: "${str}"\n`
+			MSG.BraceCheck += `Mismatched braces in ${file}: "${str}"\n`;
 		}
 	}
 }
@@ -469,7 +469,7 @@ class FilterCheck {
 					}
 				}
 				if (missingEq.length) {
-					MSG.FilterCheck += `Missing equals in filter tag "${str}" in part${missingEq.length > 1 ? "s" : ""} ${missingEq.join(", ")}\n`
+					MSG.FilterCheck += `Missing equals in filter tag "${str}" in part${missingEq.length > 1 ? "s" : ""} ${missingEq.join(", ")}\n`;
 				}
 			}
 			return m0;
@@ -514,7 +514,7 @@ class StripTagTest {
 		if (file === "./data/bestiary/traits.json") return;
 
 		try {
-			Renderer.stripTags(str)
+			Renderer.stripTags(str);
 		} catch (e) {
 			if (!StripTagTest._seenErrors.has(e.message)) {
 				StripTagTest._seenErrors.add(e.message);
@@ -650,7 +650,7 @@ class AreaCheck {
 		}
 
 		if (AreaCheck.headerMap.__BAD) {
-			AreaCheck.headerMap.__BAD.forEach(dupId => MSG.AreaCheck += `Duplicate ID: "${dupId}"\n`)
+			AreaCheck.headerMap.__BAD.forEach(dupId => MSG.AreaCheck += `Duplicate ID: "${dupId}"\n`);
 		}
 	}
 }
@@ -684,7 +684,7 @@ class LootDataCheck {
 					}
 				});
 			}
-		})
+		});
 	}
 }
 LootDataCheck.file = `data/loot.json`;
@@ -870,7 +870,7 @@ class RaceDataCheck {
 		const races = require(`../${file}`);
 		races.race.forEach(r => {
 			this._handleRaceOrSubraceRaw(file, r);
-			(r.subraces || []).forEach(sr => this._handleRaceOrSubraceRaw(file, sr, r))
+			(r.subraces || []).forEach(sr => this._handleRaceOrSubraceRaw(file, sr, r));
 		});
 	}
 }
@@ -907,7 +907,7 @@ class BestiaryDataCheck {
 				};
 			});
 		fileMetas.forEach(({file, contents}) => {
-			(contents.monster || []).forEach(mon => this._handleCreature(file, mon))
+			(contents.monster || []).forEach(mon => this._handleCreature(file, mon));
 		});
 	}
 }
@@ -943,53 +943,13 @@ class DuplicateEntityCheck {
 			.forEach(([prop, arr]) => {
 				const positions = {};
 				arr.forEach((ent, i) => {
-					const name = ent.name;
-					const source = ent.source ? ent.source : (ent.inherits && ent.inherits.source) ? ent.inherits.source : null;
+					this._doAddPosition({prop, ent, ixArray: i, positions});
+					if (!ent._versions) return;
 
-					switch (prop) {
-						case "deity": {
-							if (name && source) {
-								const key = `${source} :: ${ent.pantheon} :: ${name}`;
-								(positions[key] = positions[key] || []).push(i);
-							}
-							break;
-						}
-						case "subclass": {
-							if (name && source) {
-								const key = `${source} :: ${ent.classSource} :: ${ent.className} :: ${name}`;
-								(positions[key] = positions[key] || []).push(i);
-							}
-							break;
-						}
-						case "classFeature": {
-							if (name && source) {
-								const key = `${source} :: ${ent.level} :: ${ent.classSource} :: ${ent.className} :: ${name}`;
-								(positions[key] = positions[key] || []).push(i);
-							}
-							break;
-						}
-						case "subclassFeature": {
-							if (name && source) {
-								const key = `${source} :: ${ent.level} :: ${ent.classSource} :: ${ent.className} :: ${ent.subclassSource} :: ${ent.subclassShortName} :: ${name}`;
-								(positions[key] = positions[key] || []).push(i);
-							}
-							break;
-						}
-						case "raceFeature": {
-							if (name && source) {
-								const key = `${source} :: ${ent.raceSource} :: ${ent.raceName} :: ${name}`;
-								(positions[key] = positions[key] || []).push(i);
-							}
-							break;
-						}
-						default: {
-							if (name && source) {
-								const key = `${source} :: ${name}`;
-								(positions[key] = positions[key] || []).push(i);
-							}
-							break;
-						}
-					}
+					DataUtil.proxy.getVersions(prop, ent)
+						.forEach((entVer, j) => {
+							this._doAddPosition({prop, ent: entVer, ixArray: i, ixVersion: j, positions});
+						});
 				});
 
 				if (Object.keys(positions).length) {
@@ -1003,6 +963,58 @@ class DuplicateEntityCheck {
 					}
 				}
 			});
+	}
+
+	static _doAddPosition ({prop, ent, ixArray, ixVersion, positions}) {
+		const keyIx = [ixArray, ixVersion].filter(it => it != null).join("-v");
+
+		const name = ent.name;
+		const source = ent.source ? ent.source : (ent.inherits && ent.inherits.source) ? ent.inherits.source : null;
+
+		switch (prop) {
+			case "deity": {
+				if (name && source) {
+					const key = `${source} :: ${ent.pantheon} :: ${name}`;
+					(positions[key] = positions[key] || []).push(keyIx);
+				}
+				break;
+			}
+			case "subclass": {
+				if (name && source) {
+					const key = `${source} :: ${ent.classSource} :: ${ent.className} :: ${name}`;
+					(positions[key] = positions[key] || []).push(keyIx);
+				}
+				break;
+			}
+			case "classFeature": {
+				if (name && source) {
+					const key = `${source} :: ${ent.level} :: ${ent.classSource} :: ${ent.className} :: ${name}`;
+					(positions[key] = positions[key] || []).push(keyIx);
+				}
+				break;
+			}
+			case "subclassFeature": {
+				if (name && source) {
+					const key = `${source} :: ${ent.level} :: ${ent.classSource} :: ${ent.className} :: ${ent.subclassSource} :: ${ent.subclassShortName} :: ${name}`;
+					(positions[key] = positions[key] || []).push(keyIx);
+				}
+				break;
+			}
+			case "raceFeature": {
+				if (name && source) {
+					const key = `${source} :: ${ent.raceSource} :: ${ent.raceName} :: ${name}`;
+					(positions[key] = positions[key] || []).push(keyIx);
+				}
+				break;
+			}
+			default: {
+				if (name && source) {
+					const key = `${source} :: ${name}`;
+					(positions[key] = positions[key] || []).push(keyIx);
+				}
+				break;
+			}
+		}
 	}
 }
 
@@ -1026,7 +1038,7 @@ class RefTagCheck {
 								RefTagCheck._TO_CHECK.push(str);
 							},
 						},
-					)
+					);
 				});
 			});
 	}
@@ -1082,7 +1094,7 @@ class TagTester {
 			const ixFeatures = [];
 			cls.classFeatures.forEach((levelFeatures, ixLevel) => {
 				levelFeatures.forEach((_, ixFeature) => {
-					ixFeatures.push(`${ixLevel}-${ixFeature}`)
+					ixFeatures.push(`${ixLevel}-${ixFeature}`);
 				});
 			});
 			MiscUtil.set(tmpClassIxFeatures, cls.source, cls.name, ixFeatures);
@@ -1137,7 +1149,7 @@ async function main () {
 	let outMessage = "";
 	Object.entries(MSG).forEach(([k, v]) => {
 		if (v) outMessage += `Error messages for ${k}:\n\n${v}`;
-		else console.log(`##### ${k} passed! #####`)
+		else console.log(`##### ${k} passed! #####`);
 	});
 	if (outMessage) console.error(outMessage);
 

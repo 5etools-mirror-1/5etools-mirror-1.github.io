@@ -94,7 +94,7 @@ class RecipesPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (itRaw, ix, {customHashId = null} = {}) {
+	pGetSublistItem (itRaw, ix, {customHashId = null} = {}) {
 		const it = this.constructor._pGetModifiedRecipe(itRaw, customHashId);
 		const name = it._displayName || it.name;
 		const hash = UrlUtil.autoEncodeHash(it);
@@ -184,8 +184,7 @@ class RecipesPage extends ListPage {
 	}
 
 	async pDoLoadSubHash (sub) {
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
+		sub = await super.pDoLoadSubHash(sub);
 
 		const scaledHash = sub.find(it => it.startsWith(RecipesPage._HASH_START_SCALED));
 		if (scaledHash) {

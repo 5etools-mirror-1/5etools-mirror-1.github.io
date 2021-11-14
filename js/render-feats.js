@@ -7,7 +7,7 @@ class RenderFeats {
 
 		return $$`
 			${Renderer.utils.getBorderTr()}
-			${Renderer.utils.getExcludedTr(feat, "feat")}
+			${Renderer.utils.getExcludedTr({entity: feat, dataProp: "feat"})}
 			${Renderer.utils.getNameTr(feat, {page: UrlUtil.PG_FEATS})}
 			${prerequisite ? `<tr><td colspan="6"><span class="prerequisite">${prerequisite}</span></td></tr>` : ""}
 			<tr><td class="divider" colspan="6"><div></div></td></tr>

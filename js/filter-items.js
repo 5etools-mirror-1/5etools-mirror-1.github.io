@@ -109,7 +109,7 @@ class PageFilterItems extends PageFilterEquipment {
 		else if (o.sortBy === "source") return SortUtil.ascSortLower(a.values.source, b.values.source) || SortUtil.compareListNames(a, b);
 		else if (o.sortBy === "rarity") return SortUtil.ascSortItemRarity(a.values.rarity, b.values.rarity) || SortUtil.compareListNames(a, b);
 		else if (o.sortBy === "attunement") return SortUtil.ascSort(a.values.attunement, b.values.attunement) || SortUtil.compareListNames(a, b);
-		else if (o.sortBy === "count") return SortUtil.ascSort(a.values.count, b.values.count) || SortUtil.compareListNames(a, b);
+		else if (o.sortBy === "count") return SortUtil.ascSort(a.data.count, b.data.count) || SortUtil.compareListNames(a, b);
 		else if (o.sortBy === "weight") return SortUtil.ascSort(a.values.weight, b.values.weight) || SortUtil.compareListNames(a, b);
 		else if (o.sortBy === "cost") return SortUtil.ascSort(a.values.cost, b.values.cost) || SortUtil.compareListNames(a, b);
 		else return 0;
@@ -179,7 +179,7 @@ class PageFilterItems extends PageFilterEquipment {
 			items: ["Magic Item Table A", "Magic Item Table B", "Magic Item Table C", "Magic Item Table D", "Magic Item Table E", "Magic Item Table F", "Magic Item Table G", "Magic Item Table H", "Magic Item Table I"],
 			displayFn: it => {
 				const [name, sourceJson] = it.split("|");
-				return `${name}${sourceJson ? ` (${Parser.sourceJsonToAbv(sourceJson)})` : ""}`
+				return `${name}${sourceJson ? ` (${Parser.sourceJsonToAbv(sourceJson)})` : ""}`;
 			},
 		});
 		this._rarityFilter = new Filter({
@@ -190,7 +190,7 @@ class PageFilterItems extends PageFilterEquipment {
 		});
 		this._attunementFilter = new Filter({header: "Attunement", items: [...PageFilterItems._FILTER_BASE_ITEMS_ATTUNEMENT], itemSortFn: PageFilterItems._sortAttunementFilter});
 		this._bonusFilter = new Filter({header: "Bonus", items: ["Armor Class", "Proficiency Bonus", "Spell Attacks", "Spell Save DC", "Saving Throws", "Weapon Attack and Damage Rolls", "Weapon Attack Rolls", "Weapon Damage Rolls"]});
-		this._rechargeTypeFilter = new Filter({header: "Recharge Type", displayFn: Parser.itemRechargeToFull})
+		this._rechargeTypeFilter = new Filter({header: "Recharge Type", displayFn: Parser.itemRechargeToFull});
 		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Ability Score Adjustment", "Charges", "Cursed", "Grants Proficiency", "Has Images", "Has Info", "Item Group", "Magic", "Mundane", "Sentient", "Speed Adjustment", "SRD"], isSrdFilter: true});
 		this._baseSourceFilter = new SourceFilter({header: "Base Source", selFn: null});
 		this._baseItemFilter = new Filter({header: "Base Item", displayFn: this.constructor._getBaseItemDisplay.bind(this.constructor)});
@@ -239,7 +239,7 @@ class PageFilterItems extends PageFilterEquipment {
 		super.addToFilters(item, isExcluded);
 
 		this._sourceFilter.addItem(item.source);
-		this._tierFilter.addItem(item._fTier)
+		this._tierFilter.addItem(item._fTier);
 		this._attachedSpellsFilter.addItem(item.attachedSpells);
 		this._lootTableFilter.addItem(item.lootTables);
 		this._baseItemFilter.addItem(item._fBaseItem);
@@ -315,7 +315,7 @@ class ModalFilterItems extends ModalFilter {
 			...opts,
 			modalTitle: `Item${opts.isRadio ? "" : "s"}`,
 			pageFilter: new PageFilterItems(),
-		})
+		});
 	}
 
 	_$getColumnHeaders () {
@@ -333,7 +333,7 @@ class ModalFilterItems extends ModalFilter {
 
 	async _pLoadAllData () {
 		const brew = await BrewUtil.pAddBrewData();
-		const fromData = await Renderer.item.pBuildList({isAddGroups: true, isBlacklistVariants: true});
+		const fromData = await Renderer.item.pBuildList({isAddGroups: true});
 		const fromBrew = await Renderer.item.pGetItemsFromHomebrew(brew);
 		return [...fromData, ...fromBrew];
 	}

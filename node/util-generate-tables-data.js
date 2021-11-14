@@ -296,8 +296,8 @@ class UtilGenTables {
 
 					// Used to deduplicate headers
 					name: entity.name,
-				})
-			})
+				});
+			});
 		});
 
 		stacks.table.forEach(it => {

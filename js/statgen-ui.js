@@ -106,7 +106,7 @@ class StatGenUi extends BaseComponent {
 				pointbuy: this._getTotals_pb(),
 				manual: this._getTotals_manual(),
 			},
-		}
+		};
 	}
 
 	_getTotals_rolled () { return Parser.ABIL_ABVS.mergeMap(ab => ({[ab]: this._rolled_getTotalScore(ab)})); }
@@ -169,7 +169,7 @@ class StatGenUi extends BaseComponent {
 				new TabUiUtil.TabMeta({name: "Point Buy", icon: this._isFvttMode ? `fas fa-fw fa-chart-bar` : `far fa-fw fa-chart-bar`, hasBorder: true}),
 				new TabUiUtil.TabMeta({name: "Manual", icon: this._isFvttMode ? `fas fa-fw fa-tools` : `far fa-fw fa-tools`, hasBorder: true}),
 				...this._tabMetasAdditional || [],
-			]
+			];
 
 		const tabMetas = this._renderTabs(iptTabMetas, {$parent: this._isFvttMode ? null : $parent});
 		if (this._isFvttMode) {
@@ -529,7 +529,7 @@ class StatGenUi extends BaseComponent {
 			$stgPbCustom.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_PB);
 			$vrPbCustom.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_PB);
 			$hrPbCustom.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_PB);
-		}
+		};
 		this._addHookActiveTab(hkStgPb);
 		hkStgPb();
 		// endregion
@@ -554,7 +554,7 @@ class StatGenUi extends BaseComponent {
 			$elesArray.forEach($ele => $ele.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_ARRAY));
 			$elesPb.forEach($ele => $ele.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_PB));
 			$elesManual.forEach($ele => $ele.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_MANUAL));
-		}
+		};
 		this._addHookActiveTab(hkElesMode);
 		// endregion
 
@@ -598,7 +598,7 @@ class StatGenUi extends BaseComponent {
 				$selRolled.val(`${nxtSelIx == null ? -1 : nxtSelIx}`);
 				if ((nxtSelIx) !== this._state[propAbilSelectedRollIx]) this._state[propAbilSelectedRollIx] = nxtSelIx;
 			};
-			this._addHookBase("rolled_rolls", hkRolls)
+			this._addHookBase("rolled_rolls", hkRolls);
 			hkRolls();
 
 			const hookIxRolled = () => {
@@ -684,7 +684,7 @@ class StatGenUi extends BaseComponent {
 				${$selArray}
 				${$iptPb}
 				${$iptManual}
-			</label>`
+			</label>`;
 		});
 
 		const $wrpsUser = this._render_$getWrpsUser();
@@ -754,7 +754,7 @@ class StatGenUi extends BaseComponent {
 			},
 		);
 		const hkBtnPreviewRace = () => $btnPreviewRace.toggleVe(this._state.common_ixRace != null && !~this._state.common_ixRace);
-		this._addHookBase("common_ixRace", hkBtnPreviewRace)
+		this._addHookBase("common_ixRace", hkBtnPreviewRace);
 		hkBtnPreviewRace();
 
 		const $dispPreviewRace = $(`<div class="flex-col mb-2"></div>`);
@@ -884,7 +884,7 @@ class StatGenUi extends BaseComponent {
 
 			return $$`<label class="my-1 statgen-pb__cell">
 				${$iptExisting}
-			</label>`
+			</label>`;
 		});
 
 		const $wrpsUser = this._render_$getWrpsUser();
@@ -944,7 +944,7 @@ class StatGenUi extends BaseComponent {
 					html: `<input class="form-control form-control--minimal statgen-shared__ipt text-right" type="number">`,
 				},
 			);
-			return $$`<label class="my-1 statgen-pb__cell">${$ipt}</label>`
+			return $$`<label class="my-1 statgen-pb__cell">${$ipt}</label>`;
 		});
 	}
 
@@ -985,7 +985,7 @@ class StatGenUi extends BaseComponent {
 			return {
 				$wrpIptTotal,
 				$wrpIptMod,
-			}
+			};
 		});
 	}
 
@@ -998,7 +998,7 @@ class StatGenUi extends BaseComponent {
 	static _common_getProps (ab) {
 		return {
 			propUserBonus: `${StatGenUi._PROP_PREFIX_COMMON}${ab}_user`,
-		}
+		};
 	}
 
 	static _rolled_getProps (ab) {
@@ -1020,7 +1020,7 @@ class StatGenUi extends BaseComponent {
 	}
 
 	_pb_unhookRaceRender () {
-		this._pbRaceHookMetas.forEach(it => it.unhook())
+		this._pbRaceHookMetas.forEach(it => it.unhook());
 		this._pbRaceHookMetas = [];
 	}
 
@@ -1093,7 +1093,7 @@ class StatGenUi extends BaseComponent {
 			$ptBase = $$`<div class="flex-col mr-3">
 				<div class="my-1 statgen-pb__header flex-vh-center">Static</div>
 				${$wrpsRace}
-			</div>`
+			</div>`;
 		}
 
 		let $ptChooseFrom = null;
@@ -1137,7 +1137,7 @@ class StatGenUi extends BaseComponent {
 					<div class="${count !== 1 ? `mr-1` : ""}">${UiUtil.intToBonus(amount)}</div>${count !== 1 ? `<div class="ve-small ve-muted">(x${count})</div>` : ""}
 				</div>
 				${$wrpsChoose}
-			</div>`
+			</div>`;
 		}
 
 		let $ptsChooseWeighted = null;
@@ -1179,7 +1179,7 @@ class StatGenUi extends BaseComponent {
 				return $$`<div class="flex-col mr-3">
 					<div class="my-1 statgen-pb__header statgen-pb__header--choose-from flex-vh-center">${UiUtil.intToBonus(weight)}</div>
 					${$wrpsChoose}
-				</div>`
+				</div>`;
 			});
 		}
 
@@ -1366,7 +1366,7 @@ class StatGenUi extends BaseComponent {
 				score,
 				cost,
 			},
-		}
+		};
 	}
 
 	_getDefaultStateManualResettable () {
@@ -1424,7 +1424,7 @@ class StatGenUi extends BaseComponent {
 			// region Manual
 			...this._getDefaultStateManualResettable(),
 			// endregion
-		}
+		};
 	}
 }
 
@@ -1568,9 +1568,9 @@ StatGenUi.CompAsi = class extends BaseComponent {
 					// endregion
 
 					// region Feat
-					const $dispFeat = $(`<div class="flex-v-center mr-2"></div>`)
-					const $stgSelectAbilitySet = $$`<div class="flex-v-center mr-2"></div>`
-					const $stgFeatNoChoice = $$`<div class="flex-v-center mr-2"></div>`
+					const $dispFeat = $(`<div class="flex-v-center mr-2"></div>`);
+					const $stgSelectAbilitySet = $$`<div class="flex-v-center mr-2"></div>`;
+					const $stgFeatNoChoice = $$`<div class="flex-v-center mr-2"></div>`;
 					const $stgFeatChooseAsiFrom = $$`<div class="flex-v-end"></div>`;
 					const $stgFeatChooseAsiWeighted = $$`<div class="flex-v-center"></div>`;
 
@@ -1640,7 +1640,7 @@ StatGenUi.CompAsi = class extends BaseComponent {
 
 								// region Choices
 								if (abilitySet.choose && abilitySet.choose.from) {
-									$stgFeat.removeClass("flex-v-center").addClass("flex-v-end")
+									$stgFeat.removeClass("flex-v-center").addClass("flex-v-end");
 									$stgFeatChooseAsiFrom.showVe().empty();
 									$stgFeatChooseAsiWeighted.empty().hideVe();
 
@@ -1812,7 +1812,7 @@ StatGenUi.CompAsi = class extends BaseComponent {
 				let featMeta;
 				if (feat) featMeta = {ix: this._parent.state[propIxFeat], uid: `${feat.name}|${feat.source}`};
 				else featMeta = {ix: -1, uid: null};
-				outFeats[namespace].push(featMeta)
+				outFeats[namespace].push(featMeta);
 
 				if (feat && feat.ability) {
 					const abilitySet = feat.ability[this._parent.state[propIxFeatAbility] || 0];
@@ -1862,7 +1862,7 @@ StatGenUi.CompAsi = class extends BaseComponent {
 			feats,
 		};
 	}
-}
+};
 
 StatGenUi.RenderableCollectionPbRules = class extends RenderableCollectionBase {
 	constructor (statGenUi, $wrp) {
@@ -1925,7 +1925,7 @@ StatGenUi.RenderableCollectionPbRules = class extends RenderableCollectionBase {
 				parentComp._removeHookBase("pb_isCustom", hkRules);
 				parentComp._removeHookBase("pb_rules", hkRules);
 			},
-		}
+		};
 	}
 
 	doUpdateExistingRender (renderedMeta, rule) {
@@ -1940,9 +1940,9 @@ StatGenUi.RenderableCollectionPbRules = class extends RenderableCollectionBase {
 		const parent = this._comp;
 
 		const ix = parent.state.pb_rules.map(it => it.id).indexOf(rule.id);
-		const curIx = this._$wrp.find(`.statgen-pb__row-cost`).index(renderedMeta.$wrpRow)
+		const curIx = this._$wrp.find(`.statgen-pb__row-cost`).index(renderedMeta.$wrpRow);
 
 		const isMove = !this._$wrp.length || curIx !== ix;
 		if (isMove) renderedMeta.$wrpRow.detach().appendTo(this._$wrp);
 	}
-}
+};

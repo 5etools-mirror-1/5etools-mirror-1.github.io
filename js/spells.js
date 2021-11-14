@@ -1,28 +1,167 @@
 "use strict";
 
-const JSON_DIR = "data/spells/";
-
-const SUBCLASS_LOOKUP = {};
-
-class SpellsPage extends ListPage {
+class SpellsPage extends ListPageMultiSource {
 	constructor () {
 		super({
 			pageFilter: new PageFilterSpells(),
 
-			sublistClass: "subspells",
+			listClass: "spells",
+			listOptions: {
+				fnSort: PageFilterSpells.sortSpells,
+			},
 
-			dataProp: ["spell"],
-		})
-		this._multiSource = new MultiSource({
-			fnHandleData: this._addSpells.bind(this),
-			prop: "spell",
+			sublistClass: "subspells",
+			sublistOptions: {
+				fnSort: PageFilterSpells.sortSpells,
+			},
+
+			dataProps: ["spell"],
+
+			bookViewOptions: {
+				$btnOpen: $(`#btn-spellbook`),
+				$eleNoneVisible: $(`<span class="initial-message">If you wish to view multiple spells, please first make a list</span>`),
+				pageTitle: "Spells Book View",
+				popTblGetNumShown: (opts) => this._bookView_popTblGetNumShown(opts),
+			},
+
+			bindPopoutButtonOptions: {
+				handlerGenerator: SpellsPage.popoutHandlerGenerator.bind(SpellsPage),
+				title: "Popout Window (SHIFT for Source Data; CTRL for Markdown Render)",
+			},
+			bindOtherButtonsOptions: {
+				upload: {
+					pFnPreLoad: (...args) => this.pPreloadSublistSources(...args),
+				},
+				sendToBrew: {
+					mode: "spellBuilder",
+					fnGetMeta: () => ({
+						page: UrlUtil.getCurrentPage(),
+						source: Hist.getHashSource(),
+						hash: Hist.getHashParts()[0],
+					}),
+				},
+			},
+
+			jsonDir: "data/spells/",
 		});
 
 		this._seenHashes = new Set();
 
-		this._spellBookView = null;
-
 		this._lastFilterValues = null;
+		this._subclassLookup = {};
+	}
+
+	_bookView_popTblGetNumShown ({$wrpContent, $dispName, $wrpControls}) {
+		const toShow = ListUtil.getSublistedIds().map(id => this._dataList[id])
+			.sort((a, b) => SortUtil.ascSortLower(a.name, b.name));
+
+		const renderSpell = (stack, sp) => {
+			stack.push(`<div class="bkmv__wrp-item"><table class="stats stats--book stats--bkmv"><tbody>`);
+			stack.push(Renderer.spell.getCompactRenderedString(sp));
+			stack.push(`</tbody></table></div>`);
+		};
+
+		let lastOrder = StorageUtil.syncGetForPage(SpellsPage._BOOK_VIEW_MODE_K);
+		if (lastOrder != null) lastOrder = `${lastOrder}`;
+
+		const $selSortMode = $(`<select class="form-control input-sm">
+					<option value="0">Spell Level</option>
+					<option value="1">Alphabetical</option>
+				</select>`)
+			.change(() => {
+				if (!toShow.length && Hist.lastLoadedId != null) return;
+
+				const val = Number($selSortMode.val());
+				if (val === 0) renderByLevel();
+				else renderByAlpha();
+
+				StorageUtil.syncSetForPage(SpellsPage._BOOK_VIEW_MODE_K, val);
+			});
+		if (lastOrder != null) $selSortMode.val(lastOrder);
+
+		$$`<div class="flex-vh-center ml-3"><div class="mr-2 no-wrap">Sort order:</div>${$selSortMode}</div>`.appendTo($wrpControls);
+
+		// region Markdown
+		// TODO refactor this and bestiary markdown section
+		const getAsMarkdown = () => {
+			const toRender = toShow.length ? toShow : [this._dataList[Hist.lastLoadedId]];
+			const parts = [...toRender]
+				.sort((a, b) => lastOrder === "0" ? SortUtil.ascSort(a.level, b.level) : SortUtil.ascSortLower(a.name, b.name))
+				.map(sp => RendererMarkdown.get().render({type: "dataSpell", dataSpell: sp}).trim());
+
+			const out = [];
+			let charLimit = RendererMarkdown._PAGE_CHARS;
+			for (let i = 0; i < parts.length; ++i) {
+				const part = parts[i];
+				out.push(part);
+
+				if (i < parts.length - 1) {
+					if ((charLimit -= part.length) < 0) {
+						if (RendererMarkdown._isAddPageBreaks) out.push("", "\\pagebreak", "");
+						charLimit = RendererMarkdown._PAGE_CHARS;
+					}
+				}
+			}
+
+			return out.join("\n\n");
+		};
+
+		const $btnDownloadMarkdown = $(`<button class="btn btn-default btn-sm">Download as Markdown</button>`)
+			.click(() => DataUtil.userDownloadText("spells.md", getAsMarkdown()));
+
+		const $btnCopyMarkdown = $(`<button class="btn btn-default btn-sm px-2" title="Copy Markdown to Clipboard"><span class="glyphicon glyphicon-copy"/></button>`)
+			.click(async () => {
+				await MiscUtil.pCopyTextToClipboard(await getAsMarkdown());
+				JqueryUtil.showCopiedEffect($btnCopyMarkdown);
+			});
+
+		const $btnDownloadMarkdownSettings = $(`<button class="btn btn-default btn-sm px-2" title="Markdown Settings"><span class="glyphicon glyphicon-cog"/></button>`)
+			.click(async () => RendererMarkdown.pShowSettingsModal());
+
+		$$`<div class="flex-v-center btn-group ml-3">
+					${$btnDownloadMarkdown}
+					${$btnCopyMarkdown}
+					${$btnDownloadMarkdownSettings}
+				</div>`.appendTo($wrpControls);
+		// endregion
+
+		const renderByLevel = () => {
+			const stack = [];
+			for (let i = 0; i < 10; ++i) {
+				const atLvl = toShow.filter(sp => sp.level === i);
+				if (atLvl.length) {
+					stack.push(`<div class="w-100 h-100 bkmv__no-breaks">`);
+					stack.push(`<div class="bkmv__spacer-name flex-v-center no-shrink">${Parser.spLevelToFullLevelText(i)}</div>`);
+					atLvl.forEach(sp => renderSpell(stack, sp));
+					stack.push(`</div>`);
+				}
+			}
+			$wrpContent.empty().append(stack.join(""));
+			lastOrder = "0";
+		};
+
+		const renderByAlpha = () => {
+			const stack = [];
+			toShow.forEach(sp => renderSpell(stack, sp));
+			$wrpContent.empty().append(stack.join(""));
+			lastOrder = "1";
+		};
+
+		const renderNoneSelected = () => {
+			const stack = [];
+			stack.push(`<div class="w-100 h-100 no-breaks">`);
+			const sp = this._dataList[Hist.lastLoadedId];
+			renderSpell(stack, sp);
+			$dispName.text(Parser.spLevelToFullLevelText(sp.level));
+			stack.push(`</div>`);
+			$wrpContent.empty().append(stack.join(""));
+		};
+
+		if (!toShow.length && Hist.lastLoadedId != null) renderNoneSelected();
+		else if (lastOrder === 1) renderByAlpha();
+		else renderByLevel();
+
+		return toShow.length;
 	}
 
 	getListItem (spell, spI) {
@@ -85,7 +224,7 @@ class SpellsPage extends ListPage {
 				level: spell.level,
 				time,
 				school: Parser.spSchoolAbvToFull(spell.school),
-				classes: Parser.spClassesToFull(spell, true, SUBCLASS_LOOKUP),
+				classes: Parser.spClassesToFull(spell, true, this._subclassLookup),
 				concentration,
 				normalisedTime: spell._normalisedTime,
 				normalisedRange: spell._normalisedRange,
@@ -105,10 +244,10 @@ class SpellsPage extends ListPage {
 			const s = this._dataList[li.ix];
 			return this._pageFilter.toDisplay(f, s);
 		});
-		this._multiSource.onFilterChangeMulti(this._dataList, f);
+		this._onFilterChangeMulti(this._dataList, f);
 	}
 
-	getSublistItem (spell, ix) {
+	pGetSublistItem (spell, ix) {
 		const hash = UrlUtil.autoEncodeHash(spell);
 		const school = Parser.spSchoolAndSubschoolsAbvsShort(spell.school, spell.subschools);
 		const time = PageFilterSpells.getTblTimeStr(spell.time[0]);
@@ -152,7 +291,7 @@ class SpellsPage extends ListPage {
 		const spell = this._dataList[id];
 
 		const buildStatsTab = () => {
-			this._$pgContent.append(RenderSpells.$getRenderedSpell(spell, SUBCLASS_LOOKUP));
+			this._$pgContent.append(RenderSpells.$getRenderedSpell(spell, this._subclassLookup));
 		};
 
 		const buildFluffTab = (isImageTab) => {
@@ -191,41 +330,13 @@ class SpellsPage extends ListPage {
 	}
 
 	async pDoLoadSubHash (sub) {
-		sub = this._pageFilter.filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub, this.pPreloadSublistSources.bind(this));
-
-		await this._spellBookView.pHandleSub(sub);
+		sub = await super.pDoLoadSubHash(sub);
+		await this._bookView.pHandleSub(sub);
 	}
 
-	async pOnLoad () {
-		this._$pgContent = $(`#pagecontent`);
-
-		window.loadHash = this.doLoadHash.bind(this);
-		window.loadSubHash = this.pDoLoadSubHash.bind(this);
-		window.pHandleUnknownHash = this.pHandleUnknownHash.bind(this);
-
-		await this._pageFilter.pInitFilterBox({
-			$iptSearch: $(`#lst__search`),
-			$wrpFormTop: $(`#filter-search-group`),
-			$btnReset: $(`#reset`),
-		});
-
-		const [subclassLookup] = await Promise.all([
-			DataUtil.class.pGetSubclassLookup(),
-			ExcludeUtil.pInitialise(),
-		]);
-		Object.assign(SUBCLASS_LOOKUP, subclassLookup);
-		await this._multiSource.pMultisourceLoad(
-			JSON_DIR,
-			this._pageFilter.filterBox,
-			this._pPageInit.bind(this),
-			this._addSpells.bind(this),
-			this._pPostLoad.bind(this),
-		);
-		if (Hist.lastLoadedId == null) Hist._freshLoad();
-		ListPage._checkShowAllExcluded(this._dataList, this._$pgContent);
-
-		window.dispatchEvent(new Event("toolsLoaded"));
+	async _pOnLoad_pPreDataLoad () {
+		const subclassLookup = await DataUtil.class.pGetSubclassLookup();
+		Object.assign(this._subclassLookup, subclassLookup);
 	}
 
 	// TODO refactor this and bestiary markdown section
@@ -263,17 +374,10 @@ class SpellsPage extends ListPage {
 					Renderer.hover.doPopoutCurPage(evt, toList[Hist.lastLoadedId]);
 				}
 			}
-		}
+		};
 	}
 
-	async _pPostLoad () {
-		const homebrew = await BrewUtil.pAddBrewData();
-		await this._handleBrew(homebrew);
-		BrewUtil.bind({list: this._list, pHandleBrew: this._handleBrew.bind(this)});
-		BrewUtil.makeBrewButton("manage-brew");
-		BrewUtil.bind({filterBox: this._pageFilter.filterBox, sourceFilter: this._pageFilter.sourceFilter});
-		await ListUtil.pLoadState();
-
+	async _pOnLoad_pPreHashInit () {
 		ListUtil.bindShowTableButton(
 			"btn-show-table",
 			"Spells",
@@ -302,216 +406,18 @@ class SpellsPage extends ListPage {
 		);
 	}
 
-	_handleBrew (homebrew) {
-		DataUtil.class.mergeHomebrewSubclassLookup(SUBCLASS_LOOKUP, homebrew);
-		this._addSpells(homebrew.spell);
-		return Promise.resolve();
+	_pHandleBrew (homebrew) {
+		try {
+			DataUtil.class.mergeHomebrewSubclassLookup(this._subclassLookup, homebrew);
+			this._addData(homebrew);
+		} catch (e) {
+			BrewUtil.pPurgeBrew(e);
+		}
 	}
 
-	async _pPageInit (loadedSources) {
-		Object.keys(loadedSources)
-			.map(src => new FilterItem({item: src, pFnChange: this._multiSource.pLoadSource.bind(this._multiSource)}))
-			.forEach(fi => this._pageFilter.sourceFilter.addItem(fi));
-
-		this._list = ListUtil.initList({
-			listClass: "spells",
-			fnSort: PageFilterSpells.sortSpells,
-			syntax: this._listSyntax,
-			isBindFindHotkey: true,
-		});
-		ListUtil.setOptions({primaryLists: [this._list]});
-		SortUtil.initBtnSortHandlers($(`#filtertools`), this._list);
-
-		const $outVisibleResults = $(`.lst__wrp-search-visible`);
-		this._list.on("updated", () => {
-			$outVisibleResults.html(`${this._list.visibleItems.length}/${this._list.items.length}`);
-		});
-
-		// filtering function
-		this._pageFilter.filterBox.on(
-			FilterBox.EVNT_VALCHANGE,
-			this.handleFilterChange.bind(this),
-		);
-
-		this._listSub = ListUtil.initSublist({
-			listClass: "subspells",
-			fnSort: PageFilterSpells.sortSpells,
-		});
-		SortUtil.initBtnSortHandlers($("#sublistsort"), this._listSub);
-		ListUtil.initGenericPinnable();
-
-		this._spellBookView = new BookModeView({
-			hashKey: "bookview",
-			$openBtn: $(`#btn-spellbook`),
-			$eleNoneVisible: $(`<span class="initial-message">If you wish to view multiple spells, please first make a list</span>`),
-			pageTitle: "Spells Book View",
-			popTblGetNumShown: ($wrpContent, $dispName, $wrpControls) => {
-				const toShow = ListUtil.getSublistedIds().map(id => this._dataList[id])
-					.sort((a, b) => SortUtil.ascSortLower(a.name, b.name));
-
-				const renderSpell = (stack, sp) => {
-					stack.push(`<div class="bkmv__wrp-item"><table class="stats stats--book stats--bkmv"><tbody>`);
-					stack.push(Renderer.spell.getCompactRenderedString(sp));
-					stack.push(`</tbody></table></div>`);
-				};
-
-				let lastOrder = StorageUtil.syncGetForPage(SpellsPage._BOOK_VIEW_MODE_K);
-				if (lastOrder != null) lastOrder = `${lastOrder}`;
-
-				const $selSortMode = $(`<select class="form-control input-sm">
-					<option value="0">Spell Level</option>
-					<option value="1">Alphabetical</option>
-				</select>`)
-					.change(() => {
-						if (!toShow.length && Hist.lastLoadedId != null) return;
-
-						const val = Number($selSortMode.val());
-						if (val === 0) renderByLevel();
-						else renderByAlpha();
-
-						StorageUtil.syncSetForPage(SpellsPage._BOOK_VIEW_MODE_K, val);
-					});
-				if (lastOrder != null) $selSortMode.val(lastOrder);
-
-				$$`<div class="flex-vh-center ml-3"><div class="mr-2 no-wrap">Sort order:</div>${$selSortMode}</div>`.appendTo($wrpControls);
-
-				// region Markdown
-				// TODO refactor this and bestiary markdown section
-				const getAsMarkdown = () => {
-					const toRender = toShow.length ? toShow : [this._dataList[Hist.lastLoadedId]];
-					const parts = [...toRender]
-						.sort((a, b) => lastOrder === "0" ? SortUtil.ascSort(a.level, b.level) : SortUtil.ascSortLower(a.name, b.name))
-						.map(sp => RendererMarkdown.get().render({type: "dataSpell", dataSpell: sp}).trim());
-
-					const out = [];
-					let charLimit = RendererMarkdown._PAGE_CHARS;
-					for (let i = 0; i < parts.length; ++i) {
-						const part = parts[i];
-						out.push(part);
-
-						if (i < parts.length - 1) {
-							if ((charLimit -= part.length) < 0) {
-								if (RendererMarkdown._isAddPageBreaks) out.push("", "\\pagebreak", "");
-								charLimit = RendererMarkdown._PAGE_CHARS;
-							}
-						}
-					}
-
-					return out.join("\n\n");
-				};
-
-				const $btnDownloadMarkdown = $(`<button class="btn btn-default btn-sm">Download as Markdown</button>`)
-					.click(() => DataUtil.userDownloadText("spells.md", getAsMarkdown()));
-
-				const $btnCopyMarkdown = $(`<button class="btn btn-default btn-sm px-2" title="Copy Markdown to Clipboard"><span class="glyphicon glyphicon-copy"/></button>`)
-					.click(async () => {
-						await MiscUtil.pCopyTextToClipboard(await getAsMarkdown());
-						JqueryUtil.showCopiedEffect($btnCopyMarkdown);
-					});
-
-				const $btnDownloadMarkdownSettings = $(`<button class="btn btn-default btn-sm px-2" title="Markdown Settings"><span class="glyphicon glyphicon-cog"/></button>`)
-					.click(async () => RendererMarkdown.pShowSettingsModal());
-
-				$$`<div class="flex-v-center btn-group ml-3">
-					${$btnDownloadMarkdown}
-					${$btnCopyMarkdown}
-					${$btnDownloadMarkdownSettings}
-				</div>`.appendTo($wrpControls);
-				// endregion
-
-				const renderByLevel = () => {
-					const stack = [];
-					for (let i = 0; i < 10; ++i) {
-						const atLvl = toShow.filter(sp => sp.level === i);
-						if (atLvl.length) {
-							stack.push(`<div class="w-100 h-100 bkmv__no-breaks">`);
-							stack.push(`<div class="bkmv__spacer-name flex-v-center no-shrink">${Parser.spLevelToFullLevelText(i)}</div>`);
-							atLvl.forEach(sp => renderSpell(stack, sp));
-							stack.push(`</div>`);
-						}
-					}
-					$wrpContent.empty().append(stack.join(""));
-					lastOrder = "0";
-				};
-
-				const renderByAlpha = () => {
-					const stack = [];
-					toShow.forEach(sp => renderSpell(stack, sp));
-					$wrpContent.empty().append(stack.join(""));
-					lastOrder = "1";
-				};
-
-				const renderNoneSelected = () => {
-					const stack = [];
-					stack.push(`<div class="w-100 h-100 no-breaks">`);
-					const sp = this._dataList[Hist.lastLoadedId];
-					renderSpell(stack, sp);
-					$dispName.text(Parser.spLevelToFullLevelText(sp.level));
-					stack.push(`</div>`);
-					$wrpContent.empty().append(stack.join(""));
-				};
-
-				if (!toShow.length && Hist.lastLoadedId != null) renderNoneSelected();
-				else if (lastOrder === 1) renderByAlpha();
-				else renderByLevel();
-
-				return toShow.length;
-			},
-			hasPrintColumns: true,
-		});
-
+	async _pOnLoad_pPreDataAdd () {
 		const homebrew = await BrewUtil.pAddBrewData();
 		Renderer.spell.populateHomebrewLookup(homebrew);
-
-		return {list: this._list, listSub: this._listSub};
-	}
-
-	_addSpells (data) {
-		if (!data || !data.length) return;
-
-		this._dataList.push(...data);
-
-		for (; this._ixData < this._dataList.length; this._ixData++) {
-			const spell = this._dataList[this._ixData];
-			const listItem = this.getListItem(spell, this._ixData);
-			if (!listItem) continue;
-			this._list.addItem(listItem);
-		}
-		this._list.update();
-
-		this._pageFilter.filterBox.render();
-		this.handleFilterChange();
-
-		ListUtil.setOptions({
-			itemList: this._dataList,
-			pGetSublistRow: this.getSublistItem.bind(this),
-			primaryLists: [this._list],
-		});
-		ListUtil.bindPinButton();
-		const $btnPop = ListUtil.getOrTabRightButton(`btn-popout`, `new-window`);
-		Renderer.hover.bindPopoutButton(
-			$btnPop,
-			this._dataList,
-			{
-				handlerGenerator: SpellsPage.popoutHandlerGenerator.bind(SpellsPage),
-				title: "Popout Window (SHIFT for Source Data; CTRL for Markdown Render)",
-			},
-		);
-		UrlUtil.bindLinkExportButton(this._pageFilter.filterBox);
-		ListUtil.bindOtherButtons({
-			download: true,
-			upload: {
-				pFnPreLoad: this.pPreloadSublistSources.bind(this),
-			},
-			sendToBrew: {
-				mode: "spellBuilder",
-				fnGetMeta: () => ({
-					page: UrlUtil.getCurrentPage(),
-					source: Hist.getHashSource(),
-					hash: Hist.getHashParts()[0],
-				}),
-			},
-		});
 	}
 
 	_getSearchCache (entity) {
@@ -522,23 +428,23 @@ class SpellsPage extends ListPage {
 	}
 
 	async pPreloadSublistSources (json) {
-		const loaded = Object.keys(this._multiSource.loadedSources)
-			.filter(it => this._multiSource.loadedSources[it].loaded);
+		const loaded = Object.keys(this._loadedSources)
+			.filter(it => this._loadedSources[it].loaded);
 		const lowerSources = json.sources.map(it => it.toLowerCase());
-		const toLoad = Object.keys(this._multiSource.loadedSources)
+		const toLoad = Object.keys(this._loadedSources)
 			.filter(it => !loaded.includes(it))
 			.filter(it => lowerSources.includes(it.toLowerCase()));
 		const loadTotal = toLoad.length;
 		if (loadTotal) {
-			await Promise.all(toLoad.map(src => this._multiSource.pLoadSource(src, "yes")));
+			await Promise.all(toLoad.map(src => this._pLoadSource(src, "yes")));
 		}
 	}
 
 	async pHandleUnknownHash (link, sub) {
-		const src = Object.keys(this._multiSource.loadedSources)
+		const src = Object.keys(this._loadedSources)
 			.find(src => src.toLowerCase() === (UrlUtil.decodeHash(link)[1] || "").toLowerCase());
 		if (src) {
-			await this._multiSource.pLoadSource(src, "yes");
+			await this._pLoadSource(src, "yes");
 			Hist.hashChange();
 		}
 	}

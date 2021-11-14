@@ -85,7 +85,7 @@ class EncounterBuilder extends ProxyBase {
 	}
 
 	_handleClickSaveToFile () {
-		DataUtil.userDownload(`encounter`, this._getSaveableState(), {fileType: "encounter"})
+		DataUtil.userDownload(`encounter`, this._getSaveableState(), {fileType: "encounter"});
 	}
 
 	async _handleClickLoadFromFile () {
@@ -97,7 +97,7 @@ class EncounterBuilder extends ProxyBase {
 			jsons.l = {
 				items: jsons.items,
 				sources: jsons.sources,
-			}
+			};
 		}
 		await this._pDoLoadState(jsons[0]);
 	}
@@ -227,11 +227,11 @@ class EncounterBuilder extends ProxyBase {
 	}
 
 	_renderGroupAndDifficulty () {
-		const $btnSaveToUrl = $(`<button class="btn btn-primary btn-xs mr-2">Save to URL</button>`).click((evt) => this._handleClickSaveToUrl(evt))
-		const $btnSaveToFile = $(`<button class="btn btn-primary btn-xs">Save to File</button>`).click((evt) => this._handleClickSaveToFile(evt))
-		const $btnLoadFromFile = $(`<button class="btn btn-primary btn-xs">Load from File</button>`).click((evt) => this._handleClickLoadFromFile(evt))
-		const $btnCopyAsText = $(`<button class="btn btn-primary btn-xs mr-2">Copy as Text</button>`).click((evt) => this._handleClickCopyAsText(evt))
-		const $btnReset = $(`<button class="btn btn-danger btn-xs" title="SHIFT-click to reset players">Reset</button>`).click((evt) => this._handleClickReset(evt))
+		const $btnSaveToUrl = $(`<button class="btn btn-primary btn-xs mr-2">Save to URL</button>`).click((evt) => this._handleClickSaveToUrl(evt));
+		const $btnSaveToFile = $(`<button class="btn btn-primary btn-xs">Save to File</button>`).click((evt) => this._handleClickSaveToFile(evt));
+		const $btnLoadFromFile = $(`<button class="btn btn-primary btn-xs">Load from File</button>`).click((evt) => this._handleClickLoadFromFile(evt));
+		const $btnCopyAsText = $(`<button class="btn btn-primary btn-xs mr-2">Copy as Text</button>`).click((evt) => this._handleClickCopyAsText(evt));
+		const $btnReset = $(`<button class="btn btn-danger btn-xs" title="SHIFT-click to reset players">Reset</button>`).click((evt) => this._handleClickReset(evt));
 
 		const $btnBackToStatblocks = $(`<button class="btn btn-default btn-xs ecgen__visible">Back to Statblocks</button>`).click((evt) => this._handleClickBackToStatblocks(evt));
 
@@ -276,7 +276,7 @@ class EncounterBuilder extends ProxyBase {
 		this._$btnAddPlayers = $(`<button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-plus"></span> Add Another Level</button>`)
 			.click(() => {
 				if (this._isAdvanced) this._addAdvancedPlayerRow(false);
-				else this._addPlayerRow(false)
+				else this._addPlayerRow(false);
 			});
 
 		this._$cbIsAdvanced = $(`<input type="checkbox">`)
@@ -337,7 +337,7 @@ class EncounterBuilder extends ProxyBase {
 			</label>
 
 			${this._$wrpAdvancedHelp}
-		</div>`
+		</div>`;
 	}
 
 	_renderGroupAndDifficulty_$getGroupInfoRhs () {
@@ -361,7 +361,7 @@ class EncounterBuilder extends ProxyBase {
 			${this._$dispTtk}
 			<br>
 			${this._$dispBudgetDaily}
-		</div>`
+		</div>`;
 	}
 
 	_renderGroupAndDifficulty_$getDifficultyLhs () {
@@ -377,8 +377,8 @@ class EncounterBuilder extends ProxyBase {
 
 		this._$hovXpAdjustedInfo = $(`<span class="glyphicon glyphicon-info-sign"></span>`);
 
-		this._$dispXpAdjustedTotal = $(`<h4 class="inline-block">Adjusted XP: ?</h4>`)
-		this._$dispXpAdjustedPerPlayer = $(`<i>(? per player)</i>`)
+		this._$dispXpAdjustedTotal = $(`<h4 class="inline-block">Adjusted XP: ?</h4>`);
+		this._$dispXpAdjustedPerPlayer = $(`<i>(? per player)</i>`);
 
 		return $$`<div class="w-50 text-right">
 			${this._$dispXpRawTotal}
@@ -392,7 +392,7 @@ class EncounterBuilder extends ProxyBase {
 		this._$cbIsAdvanced.prop("checked", this._isAdvanced);
 
 		this._advancedHeaderMetas.forEach(({fnRemove}) => fnRemove());
-		this._advancedFooterMetas.forEach(({fnRemove}) => fnRemove())
+		this._advancedFooterMetas.forEach(({fnRemove}) => fnRemove());
 
 		if (this._isAdvanced) {
 			this._$btnAddPlayers.html(`<span class="glyphicon glyphicon-plus"></span> Add Another Player`);
@@ -742,9 +742,9 @@ class EncounterBuilder extends ProxyBase {
 					.off("mouseover")
 					.off("mousemove")
 					.off("mouseleave")
-					.on("mouseover", function (event) { hoverMeta.mouseOver(event, this) })
-					.on("mousemove", function (event) { hoverMeta.mouseMove(event, this) })
-					.on("mouseleave", function (event) { hoverMeta.mouseLeave(event, this) });
+					.on("mouseover", function (event) { hoverMeta.mouseOver(event, this); })
+					.on("mousemove", function (event) { hoverMeta.mouseMove(event, this); })
+					.on("mouseleave", function (event) { hoverMeta.mouseLeave(event, this); });
 			} else {
 				Renderer.hover.updatePredefinedHover(this._infoHoverId, infoEntry);
 			}
@@ -965,7 +965,7 @@ class EncounterBuilder extends ProxyBase {
 		};
 		this._advancedFooterMetas.push(meta);
 
-		this._$wrpAddidionalPlayers.append(wrpFooter)
+		this._$wrpAddidionalPlayers.append(wrpFooter);
 	}
 
 	_addAdvancedColumn () {
@@ -1232,7 +1232,7 @@ class EncounterBuilder extends ProxyBase {
 		</span>`
 			.click(evt => {
 				evt.preventDefault();
-				evt.stopPropagation()
+				evt.stopPropagation();
 			});
 
 		return {
@@ -1393,7 +1393,7 @@ class EncounterBuilder extends ProxyBase {
 								${$btnDelete}
 							</div>`.appendTo($wrpRows);
 						});
-				} else $$`<div class="w-100 flex-vh-center italic">No saved encounters</div>`.appendTo($wrpRows)
+				} else $$`<div class="w-100 flex-vh-center italic">No saved encounters</div>`.appendTo($wrpRows);
 			});
 
 		const hookActiveKey = () => {
@@ -1461,7 +1461,7 @@ EncounterBuilder.Cache = class {
 		this._build();
 		return Object.keys(this._cache).map(it => Number(it));
 	}
-}
+};
 
 EncounterBuilder.Adjuster = class {
 	constructor ({partyMeta}) {
@@ -1641,7 +1641,7 @@ EncounterBuilder.Adjuster = class {
 			}
 		}
 	}
-}
+};
 EncounterBuilder.Adjuster._INCOMPLETE_EXHAUSTED = 0;
 EncounterBuilder.Adjuster._INCOMPLETE_FAILED = -1;
 EncounterBuilder.Adjuster._COMPLETE = 1;
@@ -1738,7 +1738,7 @@ EncounterBuilder.Randomizer = class {
 
 	_isValidEncounter ({candidateEncounter, budget}) {
 		const encounterXp = candidateEncounter.getXp({partyMeta: this._partyMeta});
-		return encounterXp.adjustedXp >= (budget * 0.6) && encounterXp.adjustedXp <= (budget * 1.1)
+		return encounterXp.adjustedXp >= (budget * 0.6) && encounterXp.adjustedXp <= (budget * 1.1);
 	}
 
 	_pDoGenerateEncounter_generateClosestEncounter ({budget, rawBudget, lockedEncounterCreatures}) {
@@ -1877,7 +1877,7 @@ EncounterBuilder.Randomizer = class {
 		}
 		return maxSkip - 1;
 	}
-}
+};
 EncounterBuilder.Randomizer._NUM_SAMPLES = 20;
 
 EncounterBuilder.CandidateEncounter = class {
@@ -1907,7 +1907,7 @@ EncounterBuilder.CandidateEncounter = class {
 			}),
 		);
 	}
-}
+};
 
 EncounterBuilder.CandidateEncounterCreature = class {
 	constructor ({xp, creature, count, isLocked = false, customHashId}) {
@@ -1920,7 +1920,7 @@ EncounterBuilder.CandidateEncounterCreature = class {
 		this.customHashId = customHashId;
 		// endregion
 	}
-}
+};
 
 class EncounterPartyMeta {
 	constructor (arr) {
@@ -1929,7 +1929,7 @@ class EncounterPartyMeta {
 		arr.forEach(it => {
 			const existingLvl = this.levelMetas.find(x => x.level === it.level);
 			if (existingLvl) existingLvl.count += it.count;
-			else this.levelMetas.push({count: it.count, level: it.level})
+			else this.levelMetas.push({count: it.count, level: it.level});
 		});
 
 		this.cntPlayers = 0;

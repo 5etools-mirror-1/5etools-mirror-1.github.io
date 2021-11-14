@@ -22,7 +22,7 @@ class Adventures {
 
 	static getLevelsStr (adv) {
 		if (adv.level.custom) return adv.level.custom;
-		return `Level ${adv.level.start}\u2013${adv.level.end}`
+		return `Level ${adv.level.start}\u2013${adv.level.end}`;
 	}
 }
 const adventuresList = new BooksList({

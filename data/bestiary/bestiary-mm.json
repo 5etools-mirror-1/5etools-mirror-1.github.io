@@ -205,7 +205,7 @@
 				{
 					"name": "Tentacle",
 					"entries": [
-						"{@atk mw} {@hit 9} to hit, reach 10 ft., one target. {@h}12 ({@damage 2d6 + 5}) bludgeoning damage. If the target is a creature, it must succeed on a {@dc 14} Constitution saving throw or become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature's skin becomes translucent and slimy, the creature can't regain hit points unless it is underwater, and the disease can be removed only by heal or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 ({@damage 1d12}) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed."
+						"{@atk mw} {@hit 9} to hit, reach 10 ft., one target. {@h}12 ({@damage 2d6 + 5}) bludgeoning damage. If the target is a creature, it must succeed on a {@dc 14} Constitution saving throw or become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature's skin becomes translucent and slimy, the creature can't regain hit points unless it is underwater, and the disease can be removed only by {@spell heal} or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 ({@damage 1d12}) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed."
 					]
 				},
 				{
@@ -545,6 +545,9 @@
 						"{@atk mw} {@hit 2} to hit, reach 5 ft., one target. {@h}2 ({@damage 1d4}) bludgeoning damage."
 					]
 				}
+			],
+			"environment": [
+				"urban"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -5904,7 +5907,11 @@
 								"A summoned yugoloth appears in an unoccupied space within 60 feet of its summoner, does as it pleases, and can't summon other yugoloths. The summoned yugoloth remains for 1 minute, until it or its summoner dies, or until its summoner takes a bonus action to dismiss it."
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Arcanaloth (Summoner)",
+						"addHeadersAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -6164,9 +6171,12 @@
 					"type": "variant",
 					"name": "Familiars",
 					"entries": [
-						"Any spellcaster that can cast the {@spell find familiar} spell (such as an archmage or mage) is likely to have a familiar. The familiar can be one of the creatures described in the spell (see the Player's Handbook) or some other Tiny monster, such as a {@creature crawling claw}, {@creature imp}, {@creature pseudodragon}, or {@creature quasit}."
+						"Any spellcaster that can cast the {@spell find familiar} spell (such as an archmage or mage) is likely to have a familiar. The familiar can be one of the creatures described in the spell or some other Tiny monster, such as a {@creature crawling claw}, {@creature imp}, {@creature pseudodragon}, or {@creature quasit}."
 					]
 				}
+			],
+			"environment": [
+				"urban"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -6191,7 +6201,26 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Archmage (Familiar)",
+					"source": "MM",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"spells": {
+								"1": {
+									"spells": [
+										"{@spell find familiar} (one of the creatures described in the spell or some other Tiny monster, such as a {@creature crawling claw}, {@creature imp}, {@creature pseudodragon}, or {@creature quasit})"
+									]
+								}
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Assassin",
@@ -6340,6 +6369,9 @@
 						"{@atk rw} {@hit 6} to hit, range 80/320 ft., one target. {@h}7 ({@damage 1d8 + 3}) piercing damage, and the target must make a {@dc 15} Constitution saving throw, taking 24 ({@damage 7d6}) poison damage on a failed save, or half as much damage on a successful one."
 					]
 				}
+			],
+			"environment": [
+				"urban"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -7048,7 +7080,11 @@
 						"The demon chooses what to summon and attempts a magical summoning.",
 						"A balor has a {@chance 50|50 percent|50% summoning chance} chance of summoning {@dice 1d8} {@creature vrock||vrocks}, {@dice 1d6} {@creature hezrou||hezrous}, {@dice 1d4} {@creature glabrezu||glabrezus}, {@dice 1d3} {@creature nalfeshnee||nalfeshnees}, {@dice 1d2} {@creature marilith||mariliths}, or one {@creature goristro}.",
 						"A summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
-					]
+					],
+					"_version": {
+						"name": "Balor (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -7192,6 +7228,14 @@
 						"{@atk rw} {@hit 3} to hit, range 80/320 ft., one target. {@h}5 ({@damage 1d8 + 1}) piercing damage."
 					]
 				}
+			],
+			"environment": [
+				"coastal",
+				"hill",
+				"arctic",
+				"urban",
+				"forest",
+				"desert"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -7355,6 +7399,14 @@
 						"The captain adds 2 to its AC against one melee attack that would hit it. To do so, the captain must see the attacker and be wielding a melee weapon."
 					]
 				}
+			],
+			"environment": [
+				"coastal",
+				"hill",
+				"arctic",
+				"urban",
+				"forest",
+				"desert"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -7873,7 +7925,11 @@
 						"The demon chooses what to summon and attempts a magical summoning.",
 						"A barlgura has a {@chance 30|30 percent|30% summoning chance} chance of summoning one barlgura.",
 						"A summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
-					]
+					],
+					"_version": {
+						"name": "Barlgura (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -8649,9 +8705,11 @@
 							]
 						}
 					],
-					"variantSource": {
-						"source": "VGM",
-						"page": 12
+					"source": "VGM",
+					"page": 12,
+					"_version": {
+						"name": "Beholder (Variant Abilities)",
+						"addAs": "trait"
 					}
 				}
 			],
@@ -8948,6 +9006,14 @@
 						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}9 ({@damage 1d12 + 3}) slashing damage."
 					]
 				}
+			],
+			"environment": [
+				"coastal",
+				"mountain",
+				"hill",
+				"arctic",
+				"forest",
+				"desert"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -9722,7 +9788,7 @@
 				{
 					"name": "Claw",
 					"entries": [
-						"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}12 ({@damage 2d6 + 5}) slashing damage. If the target is a humanoid, it must succeed on a {@dc 15} Constitution saving throw or be infected with a disease called chaos phage. While infected, the target can't regain hit points, and its hit point maximum is reduced by 10 ({@dice 3d6}) every 24 hours. If the disease reduces the target's hit point maximum to 0, the target instantly transforms into a red slaad or, if it has the ability to cast spells of 3rd level or higher, a green slaad. Only a {@spell wish} spell can reverse the transformation."
+						"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}12 ({@damage 2d6 + 5}) slashing damage. If the target is a humanoid, it must succeed on a {@dc 15} Constitution saving throw or be infected with a disease called chaos phage. While infected, the target can't regain hit points, and its hit point maximum is reduced by 10 ({@dice 3d6}) every 24 hours. If the disease reduces the target's hit point maximum to 0, the target instantly transforms into a {@creature red slaad} or, if it has the ability to cast spells of 3rd level or higher, a {@creature green slaad}. Only a {@spell wish} spell can reverse the transformation."
 					]
 				}
 			],
@@ -9735,7 +9801,11 @@
 						"Certain spells can be used to acquire the gem. If the slaad fails its saving throw against {@spell imprisonment}, the spell can transfer the gem to the spellcaster's open hand, instead of imprisoning the slaad. A {@spell wish} spell, if cast in the slaad's presence, can be worded to acquire the gem.",
 						"A {@spell greater restoration} spell cast on the slaad destroys the gem without harming the slaad.",
 						"Someone who is proficient in Wisdom (Medicine) can remove the gem from an {@condition incapacitated} slaad. Each try requires 1 minute of uninterrupted work and a successful {@dc 20} Wisdom (Medicine) check. Each failed attempt deals 22 ({@damage 4d10}) psychic damage to the slaad."
-					]
+					],
+					"_version": {
+						"name": "Blue Slaad (Control Gem)",
+						"addAs": "trait"
+					}
 				}
 			],
 			"soundClip": {
@@ -10021,7 +10091,11 @@
 								"{@atk mw} {@hit 8} to hit, reach 10 ft., one target. {@h}17 ({@damage 2d12 + 4}) piercing damage. If the target is a Huge or smaller creature, it is {@condition grappled} (escape {@dc 14}). Until this grapple ends, the devil can't use its polearm on another target."
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Bone Devil (Polearm)",
+						"addHeadersAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -11352,10 +11426,8 @@
 							]
 						}
 					],
-					"variantSource": {
-						"source": "MTF",
-						"page": 32
-					}
+					"source": "MTF",
+					"page": 32
 				}
 			],
 			"environment": [
@@ -11408,7 +11480,51 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Demonic Cambion (Baphomet)",
+					"source": "MTF",
+					"_mod": {
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Fiendish Charm",
+							"items": {
+								"name": "Horned One's Call",
+								"entries": [
+									"When the cambion targets only one creature with the attacks of its Multiattack, it can choose one ally it can see within 30 feet. That ally can use its reaction to make one melee attack against a target of its choice."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Demonic Cambion (Orcus)",
+					"source": "MTF",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"daily": {
+								"3e": [
+									"{@spell animate dead}"
+								]
+							}
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Fiendish Charm",
+							"items": {
+								"name": "Spawn of the Grave",
+								"entries": [
+									"At the end of each of the cambion's turns, each undead of its choice that it can see within 30 feet gains 10 temporary hit points, provided the cambion isn't {@condition incapacitated}."
+								]
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Camel",
@@ -11779,7 +11895,8 @@
 				}
 			],
 			"environment": [
-				"forest"
+				"forest",
+				"underdark"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -12192,7 +12309,11 @@
 						"The demon chooses what to summon and attempts a magical summoning.",
 						"A chasme has a {@chance 30|30 percent|30% summoning chance} chance of summoning one chasme.",
 						"A summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
-					]
+					],
+					"_version": {
+						"name": "Chasme (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -12951,10 +13072,12 @@
 							]
 						}
 					],
-					"variantSource": {
-						"source": "SKT",
-						"page": 245
-					}
+					"_version": {
+						"name": "Cloud Giant (Optional Actions)",
+						"addHeadersAs": "action"
+					},
+					"source": "SKT",
+					"page": 245
 				}
 			],
 			"environment": [
@@ -14076,6 +14199,9 @@
 					]
 				}
 			],
+			"environment": [
+				"urban"
+			],
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/cult-fanatic.mp3"
@@ -14236,6 +14362,9 @@
 						"{@atk mw} {@hit 3} to hit, reach 5 ft., one creature. {@h}4 ({@damage 1d6 + 1}) slashing damage."
 					]
 				}
+			],
+			"environment": [
+				"urban"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -14583,7 +14712,61 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Dao (Disguises)",
+					"source": "MM",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"will": [
+								"{@spell disguise self} (often with a longer duration than is normal for that spell; see Disguises)"
+							],
+							"daily": {
+								"3e": [
+									"{@spell true polymorph} (mightier genies only; see Disguises)"
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Disguises",
+								"entries": [
+									"Some genies can veil themselves in illusion to pass as other similarly shaped creatures. Such genies can innately cast the {@spell disguise self} spell at will, often with a longer duration than is normal for that spell. Mightier genies can cast the {@spell true polymorph} spell one to three times per day, possibly with a longer duration than normal. Such genies can change only their own shape, but a rare few can use the spell on other creatures and objects as well."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Dao (Wishes)",
+					"source": "MM",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"yearly": {
+								"1e": [
+									"{@spell wish} (see Wishes)"
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Wishes",
+								"entries": [
+									"The genie power to grant wishes is legendary among mortals. Only the most potent genies, such as those among the nobility, can do so. A particular genie that has this power can grant one to three wishes to a creature that isn't a genie. Once a genie has granted its limit of wishes, it can't grant wishes again for some amount of time (usually 1 year), and cosmic law dictates that the same genie can expend its limit of wishes on a specific creature only once in that creature's existence.",
+									"To be granted a wish, a creature within 60 feet of the genie states a desired effect to it. The genie can then cast the {@spell wish} spell on the creature's behalf to bring about the effect. Depending on the genie's nature, the genie might try to pervert the intent of the wish by exploiting the wish's poor wording. The perversion of the wording is usually crafted to be to the genie's benefit."
+								]
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Darkmantle",
@@ -15160,7 +15343,11 @@
 						"Certain spells can be used to acquire the gem. If the slaad fails its saving throw against {@spell imprisonment}, the spell can transfer the gem to the spellcaster's open hand, instead of imprisoning the slaad. A {@spell wish} spell, if cast in the slaad's presence, can be worded to acquire the gem.",
 						"A {@spell greater restoration} spell cast on the slaad destroys the gem without harming the slaad.",
 						"Someone who is proficient in Wisdom (Medicine) can remove the gem from an {@condition incapacitated} slaad. Each try requires 1 minute of uninterrupted work and a successful {@dc 20} Wisdom (Medicine) check. Each failed attempt deals 22 ({@damage 4d10}) psychic damage to the slaad."
-					]
+					],
+					"_version": {
+						"name": "Death Slaad (Control Gem)",
+						"addAs": "trait"
+					}
 				}
 			],
 			"soundClip": {
@@ -15846,7 +16033,30 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Demilich (Trap Soul)",
+					"source": "MM",
+					"_mod": {
+						"action": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Trap Soul",
+								"entries": [
+									"The demilich targets one creature that it can see within 30 feet of it. The target must make a {@dc 19} Charisma saving throw. On a failed save, the target's soul is magically trapped inside one of the demilich's gems. While the soul is trapped, the target's body and all the equipment it is carrying cease to exist. On a successful save, the target takes 24 ({@damage 7d6}) necrotic damage, and if this damage reduces the target to 0 hit points, its soul is trapped as if it failed the saving throw. A soul trapped in a gem for 24 hours is devoured and ceases to exist.",
+									"If the demilich drops to 0 hit points, it is destroyed and turns to powder, leaving behind its gems. Crushing a gem releases any soul trapped within, at which point the target's body re-forms in an unoccupied space nearest to the gem and in the same state as when it was trapped."
+								]
+							}
+						}
+					},
+					"cr": {
+						"cr": "21",
+						"lair": "23"
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Deva",
@@ -16405,7 +16615,61 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Djinni (Disguises)",
+					"source": "MM",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"will": [
+								"{@spell disguise self} (often with a longer duration than is normal for that spell; see Disguises)"
+							],
+							"daily": {
+								"3e": [
+									"{@spell true polymorph} (mightier genies only; see Disguises)"
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Disguises",
+								"entries": [
+									"Some genies can veil themselves in illusion to pass as other similarly shaped creatures. Such genies can innately cast the {@spell disguise self} spell at will, often with a longer duration than is normal for that spell. Mightier genies can cast the {@spell true polymorph} spell one to three times per day, possibly with a longer duration than normal. Such genies can change only their own shape, but a rare few can use the spell on other creatures and objects as well."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Djinni (Wishes)",
+					"source": "MM",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"yearly": {
+								"1e": [
+									"{@spell wish} (see Wishes)"
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Wishes",
+								"entries": [
+									"The genie power to grant wishes is legendary among mortals. Only the most potent genies, such as those among the nobility, can do so. A particular genie that has this power can grant one to three wishes to a creature that isn't a genie. Once a genie has granted its limit of wishes, it can't grant wishes again for some amount of time (usually 1 year), and cosmic law dictates that the same genie can expend its limit of wishes on a specific creature only once in that creature's existence.",
+									"To be granted a wish, a creature within 60 feet of the genie states a desired effect to it. The genie can then cast the {@spell wish} spell on the creature's behalf to bring about the effect. Depending on the genie's nature, the genie might try to pervert the intent of the wish by exploiting the wish's poor wording. The perversion of the wording is usually crafted to be to the genie's benefit."
+								]
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Doppelganger",
@@ -17091,7 +17355,61 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Drider Spellcaster",
+					"source": "MM",
+					"wis": 16,
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"The drider is a 7th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 14}, {@hit 6} to hit with spell attacks). The drider has the following spells prepared from the cleric spell list:"
+							],
+							"spells": {
+								"0": {
+									"spells": [
+										"{@spell poison spray}",
+										"{@spell thaumaturgy}"
+									]
+								},
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell bane}",
+										"{@spell detect magic}",
+										"{@spell sanctuary}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell hold person}",
+										"{@spell silence}"
+									]
+								},
+								"3": {
+									"slots": 3,
+									"spells": [
+										"{@spell clairvoyance}",
+										"{@spell dispel magic}"
+									]
+								},
+								"4": {
+									"slots": 2,
+									"spells": [
+										"{@spell divination}",
+										"{@spell freedom of movement}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Drow",
@@ -17261,7 +17579,43 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Drow (Magic Equipment)",
+					"source": "MM",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Special Equipment",
+								"entries": [
+									"The drow wears a {@item drow +1 chain shirt|mm|+1 chain shirt} and carries a {@item drow +1 shortsword|mm|+1 shortsword}. These items lose their enhancement bonuses permanently if they are exposed to sunlight for 1 hour or longer."
+								]
+							}
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Shortsword",
+							"items": {
+								"name": "+1 Shortsword",
+								"entries": [
+									"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) piercing damage."
+								]
+							}
+						}
+					},
+					"ac": [
+						{
+							"ac": 16,
+							"from": [
+								"{@item drow +1 chain shirt|mm|+1 chain shirt}"
+							]
+						}
+					],
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Drow Elite Warrior",
@@ -17456,7 +17810,44 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Drow Elite Warrior (Magic Equipment)",
+					"source": "MM",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Special Equipment",
+								"entries": [
+									"The drow wears {@item drow +2 studded leather armor|mm|+2 studded leather armor} and carries a {@item drow +2 shortsword|mm|+2 shortsword}. These items lose their enhancement bonuses permanently if they are exposed to sunlight for 1 hour or longer."
+								]
+							}
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Shortsword",
+							"items": {
+								"name": "+2 Shortsword",
+								"entries": [
+									"{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}9 ({@damage 1d6 + 6}) piercing damage plus 10 ({@damage 3d6}) poison damage."
+								]
+							}
+						}
+					},
+					"ac": [
+						{
+							"ac": 20,
+							"from": [
+								"{@item drow +2 studded leather armor|mm|+2 studded leather armor}",
+								"{@item shield|phb}"
+							]
+						}
+					],
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Drow Mage",
@@ -17913,7 +18304,33 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Drow Priestess of Lolth (Magic Equipment)",
+					"source": "MM",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Special Equipment",
+								"entries": [
+									"The drow wears {@item drow +3 scale mail|mm|+3 scale mail}. This armor loses its enhancement bonuses permanently if it is exposed to sunlight for 1 hour or longer."
+								]
+							}
+						}
+					},
+					"ac": [
+						{
+							"ac": 19,
+							"from": [
+								"{@item drow +3 scale mail|mm|+3 scale mail}"
+							]
+						}
+					],
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Druid",
@@ -18046,6 +18463,17 @@
 						"{@atk mw} {@hit 2} to hit ({@hit 4} to hit with shillelagh), reach 5 ft., one target. {@h}3 ({@damage 1d6}) bludgeoning damage, 4 ({@damage 1d8}) bludgeoning damage if wielded with two hands, or 6 ({@damage 1d8 + 2}) bludgeoning damage with {@spell shillelagh}."
 					]
 				}
+			],
+			"environment": [
+				"coastal",
+				"mountain",
+				"grassland",
+				"hill",
+				"arctic",
+				"forest",
+				"swamp",
+				"underdark",
+				"desert"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -18493,7 +18921,23 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Duodrone (Rogue)",
+					"source": "MM",
+					"_mod": {
+						"trait": {
+							"mode": "removeArr",
+							"names": "Axiomatic Mind"
+						}
+					},
+					"alignment": [
+						"A"
+					],
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Dust Mephit",
@@ -18596,7 +19040,11 @@
 					"name": "Summon Mephits (1/Day)",
 					"entries": [
 						"The mephit has a {@chance 25|25 percent|25% summoning chance} chance of summoning {@dice 1d4} mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
-					]
+					],
+					"_version": {
+						"name": "Dust Mephit (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"environment": [
@@ -19036,7 +19484,61 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Efreeti (Disguises)",
+					"source": "MM",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"will": [
+								"{@spell disguise self} (often with a longer duration than is normal for that spell; see Disguises)"
+							],
+							"daily": {
+								"3e": [
+									"{@spell true polymorph} (mightier genies only; see Disguises)"
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Disguises",
+								"entries": [
+									"Some genies can veil themselves in illusion to pass as other similarly shaped creatures. Such genies can innately cast the {@spell disguise self} spell at will, often with a longer duration than is normal for that spell. Mightier genies can cast the {@spell true polymorph} spell one to three times per day, possibly with a longer duration than normal. Such genies can change only their own shape, but a rare few can use the spell on other creatures and objects as well."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Efreeti (Wishes)",
+					"source": "MM",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"yearly": {
+								"1e": [
+									"{@spell wish} (see Wishes)"
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Wishes",
+								"entries": [
+									"The genie power to grant wishes is legendary among mortals. Only the most potent genies, such as those among the nobility, can do so. A particular genie that has this power can grant one to three wishes to a creature that isn't a genie. Once a genie has granted its limit of wishes, it can't grant wishes again for some amount of time (usually 1 year), and cosmic law dictates that the same genie can expend its limit of wishes on a specific creature only once in that creature's existence.",
+									"To be granted a wish, a creature within 60 feet of the genie states a desired effect to it. The genie can then cast the {@spell wish} spell on the creature's behalf to bring about the effect. Depending on the genie's nature, the genie might try to pervert the intent of the wish by exploiting the wish's poor wording. The perversion of the wording is usually crafted to be to the genie's benefit."
+								]
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Elephant",
@@ -19581,7 +20083,35 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Erinyes (Rope of Entanglement)",
+					"source": "MM",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Special Equipment",
+								"entries": [
+									"The erinyes carries a {@item rope of entanglement}."
+								]
+							}
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Multiattack",
+							"items": {
+								"name": "Multiattack",
+								"entries": [
+									"The erinyes makes three attacks. It can use its {@item rope of entanglement} in place of two of the attacks."
+								]
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Ettercap",
@@ -19710,7 +20240,11 @@
 					"name": "Web Garrote",
 					"entries": [
 						"{@atk mw} {@hit 4} to hit, reach 5 ft., one Medium or Small creature against which the ettercap has advantage on the attack roll. {@h}4 ({@damage 1d4 + 2}) bludgeoning damage, and the target is {@condition grappled} (escape {@dc 12}). Until this grapple ends, the target can't breathe, and the ettercap has advantage on attack rolls against it."
-					]
+					],
+					"_version": {
+						"name": "Ettercap (Web Garrote)",
+						"addAs": "action"
+					}
 				}
 			],
 			"environment": [
@@ -21233,10 +21767,12 @@
 							]
 						}
 					],
-					"variantSource": {
-						"source": "SKT",
-						"page": 245
-					}
+					"_version": {
+						"name": "Fire Giant (Optional Actions)",
+						"addHeadersAs": "action"
+					},
+					"source": "SKT",
+					"page": 245
 				}
 			],
 			"environment": [
@@ -22418,10 +22954,12 @@
 							]
 						}
 					],
-					"variantSource": {
-						"source": "SKT",
-						"page": 246
-					}
+					"_version": {
+						"name": "Frost Giant (Optional Actions)",
+						"addHeadersAs": "action"
+					},
+					"source": "SKT",
+					"page": 246
 				}
 			],
 			"environment": [
@@ -24903,7 +25441,38 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"_versions": [
+				{
+					"name": "Giant Lizard (Hold Breath and Spider Climb)",
+					"source": "MM",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Hold Breath",
+									"entries": [
+										"The lizard can hold its breath for 15 minutes."
+									]
+								},
+								{
+									"name": "Spider Climb",
+									"entries": [
+										"The lizard can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+									]
+								}
+							]
+						}
+					},
+					"speed": {
+						"walk": 30,
+						"climb": 30,
+						"swim": 30
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Giant Octopus",
@@ -25354,7 +25923,22 @@
 			"miscTags": [
 				"MW"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"_versions": [
+				{
+					"name": "Giant Rat (Diseased)",
+					"source": "MM",
+					"action": [
+						{
+							"name": "Bite",
+							"entries": [
+								"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage. If the target is a creature, it must succeed on a {@dc 10} Constitution saving throw or contract a disease. Until the disease is cured, the target can't regain hit points except by magical means, and the target's hit point maximum decreases by 3 ({@dice 1d6}) every 24 hours. If the target's hit point maximum drops to 0 as a result of this disease, the target dies."
+							]
+						}
+					],
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Giant Scorpion",
@@ -27032,7 +27616,11 @@
 						"The demon chooses what to summon and attempts a magical summoning.",
 						"A glabrezu has a {@chance 30|30 percent|30% summoning chance} chance of summoning {@dice 1d3} {@creature vrock||vrocks}, {@dice 1d2} {@creature hezrou||hezrous}, or one glabrezu.",
 						"A summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
-					]
+					],
+					"_version": {
+						"name": "Glabrezu (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -27202,6 +27790,9 @@
 						"The gladiator adds 3 to its AC against one melee attack that would hit it. To do so, the gladiator must see the attacker and be wielding a melee weapon."
 					]
 				}
+			],
+			"environment": [
+				"urban"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -28558,7 +29149,26 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Gray Ooze (Psychic)",
+					"source": "MM",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Psychic Crush {@recharge 5}",
+								"entries": [
+									"The ooze targets one creature that it can sense within 60 feet of it. The target must make a {@dc 10} Intelligence saving throw, taking 10 ({@damage 3d6}) psychic damage on a failed save, or half as much damage on a successful one."
+								]
+							}
+						}
+					},
+					"int": 6,
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Gray Slaad",
@@ -28716,7 +29326,11 @@
 						"Certain spells can be used to acquire the gem. If the slaad fails its saving throw against {@spell imprisonment}, the spell can transfer the gem to the spellcaster's open hand, instead of imprisoning the slaad. A {@spell wish} spell, if cast in the slaad's presence, can be worded to acquire the gem.",
 						"A {@spell greater restoration} spell cast on the slaad destroys the gem without harming the slaad.",
 						"Someone who is proficient in Wisdom (Medicine) can remove the gem from an {@condition incapacitated} slaad. Each try requires 1 minute of uninterrupted work and a successful {@dc 20} Wisdom (Medicine) check. Each failed attempt deals 22 ({@damage 4d10}) psychic damage to the slaad."
-					]
+					],
+					"_version": {
+						"name": "Gray Slaad (Control Gem)",
+						"addAs": "trait"
+					}
 				}
 			],
 			"environment": [
@@ -29122,7 +29736,74 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Green Hag (Coven)",
+					"source": "MM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell identify}",
+											"{@spell ray of sickness}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell hold person}",
+											"{@spell locate object}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell bestow curse}",
+											"{@spell counterspell}",
+											"{@spell lightning bolt}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell phantasmal killer}",
+											"{@spell polymorph}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell contact other plane}",
+											"{@spell scrying}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell eyebite}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "5",
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Green Slaad",
@@ -29273,7 +29954,11 @@
 						"Certain spells can be used to acquire the gem. If the slaad fails its saving throw against {@spell imprisonment}, the spell can transfer the gem to the spellcaster's open hand, instead of imprisoning the slaad. A {@spell wish} spell, if cast in the slaad's presence, can be worded to acquire the gem.",
 						"A {@spell greater restoration} spell cast on the slaad destroys the gem without harming the slaad.",
 						"Someone who is proficient in Wisdom (Medicine) can remove the gem from an {@condition incapacitated} slaad. Each try requires 1 minute of uninterrupted work and a successful {@dc 20} Wisdom (Medicine) check. Each failed attempt deals 22 ({@damage 4d10}) psychic damage to the slaad."
-					]
+					],
+					"_version": {
+						"name": "Green Slaad (Control Gem)",
+						"addAs": "trait"
+					}
 				}
 			],
 			"soundClip": {
@@ -30017,6 +30702,15 @@
 						"{@atk mw,rw} {@hit 3} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}4 ({@damage 1d6 + 1}) piercing damage, or 5 ({@damage 1d8 + 1}) piercing damage if used with two hands to make a melee attack."
 					]
 				}
+			],
+			"environment": [
+				"coastal",
+				"mountain",
+				"grassland",
+				"hill",
+				"urban",
+				"forest",
+				"desert"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -31307,7 +32001,11 @@
 						"The demon chooses what to summon and attempts a magical summoning.",
 						"A hezrou has a {@chance 30|30 percent|30% summoning chance} chance of summoning {@dice 2d6} {@creature dretch||dretches} or one hezrou.",
 						"A summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
-					]
+					],
+					"_version": {
+						"name": "Hezrou (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -31438,10 +32136,12 @@
 							]
 						}
 					],
-					"variantSource": {
-						"source": "SKT",
-						"page": 246
-					}
+					"_version": {
+						"name": "Hill Giant (Optional Actions)",
+						"addHeadersAs": "action"
+					},
+					"source": "SKT",
+					"page": 246
 				}
 			],
 			"environment": [
@@ -32835,7 +33535,11 @@
 								"{@atk mw} {@hit 10} to hit, reach 10 ft., one target. {@h}14 ({@damage 2d8 + 5}) piercing damage plus 10 ({@damage 3d6}) cold damage. If the target is a creature, it must succeed on a {@dc 15} Constitution saving throw, or for 1 minute, its speed is reduced by 10 feet; it can take either an action or a bonus action on each of its turns, not both; and it can't take reactions. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Ice Devil (Spear)",
+						"addHeadersAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -32992,7 +33696,11 @@
 					"name": "Summon Mephits (1/Day)",
 					"entries": [
 						"The mephit has a {@chance 25|25 percent|25% summoning chance} chance of summoning {@dice 1d4} mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
-					]
+					],
+					"_version": {
+						"name": "Ice Mephit (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"environment": [
@@ -33174,7 +33882,10 @@
 								"The imp can enter into a contract to serve another creature as a familiar, forming a telepathic bond with its willing master. While the two are bonded, the master can sense what the imp senses as long as they are within 1 mile of each other. While the imp is within 10 feet of its master, the master shares the imp's Magic Resistance trait. If its master violates the terms of the contract, the imp can end its service as a familiar, ending the telepathic bond."
 							]
 						}
-					]
+					],
+					"_version": {
+						"addHeadersAs": "trait"
+					}
 				}
 			],
 			"familiar": true,
@@ -34421,6 +35132,9 @@
 					]
 				}
 			],
+			"environment": [
+				"urban"
+			],
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/knight.mp3"
@@ -35261,6 +35975,9 @@
 						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage plus 3 ({@damage 1d6}) lightning damage, and the target can't take reactions until the end of the kuo-toa's next turn."
 					]
 				}
+			],
+			"environment": [
+				"underdark"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -36944,6 +37661,9 @@
 					]
 				}
 			],
+			"environment": [
+				"urban"
+			],
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/mage.mp3"
@@ -36963,7 +37683,26 @@
 				"THW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"_versions": [
+				{
+					"name": "Mage (Familiar)",
+					"source": "MM",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"spells": {
+								"1": {
+									"spells": [
+										"{@spell find familiar} (one of the creatures described in the spell or some other Tiny monster, such as a {@creature crawling claw}, {@creature imp}, {@creature pseudodragon}, or {@creature quasit})"
+									]
+								}
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Magma Mephit",
@@ -37084,7 +37823,11 @@
 					"name": "Summon Mephits (1/Day)",
 					"entries": [
 						"The mephit has a {@chance 25|25 percent|25% summoning chance} chance of summoning {@dice 1d4} mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
-					]
+					],
+					"_version": {
+						"name": "Magma Mephit (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"environment": [
@@ -37769,7 +38512,61 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Marid (Disguises)",
+					"source": "MM",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"will": [
+								"{@spell disguise self} (often with a longer duration than is normal for that spell; see Disguises)"
+							],
+							"daily": {
+								"3e": [
+									"{@spell true polymorph} (mightier genies only; see Disguises)"
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Disguises",
+								"entries": [
+									"Some genies can veil themselves in illusion to pass as other similarly shaped creatures. Such genies can innately cast the {@spell disguise self} spell at will, often with a longer duration than is normal for that spell. Mightier genies can cast the {@spell true polymorph} spell one to three times per day, possibly with a longer duration than normal. Such genies can change only their own shape, but a rare few can use the spell on other creatures and objects as well."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Marid (Wishes)",
+					"source": "MM",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"yearly": {
+								"1e": [
+									"{@spell wish} (see Wishes)"
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Wishes",
+								"entries": [
+									"The genie power to grant wishes is legendary among mortals. Only the most potent genies, such as those among the nobility, can do so. A particular genie that has this power can grant one to three wishes to a creature that isn't a genie. Once a genie has granted its limit of wishes, it can't grant wishes again for some amount of time (usually 1 year), and cosmic law dictates that the same genie can expend its limit of wishes on a specific creature only once in that creature's existence.",
+									"To be granted a wish, a creature within 60 feet of the genie states a desired effect to it. The genie can then cast the {@spell wish} spell on the creature's behalf to bring about the effect. Depending on the genie's nature, the genie might try to pervert the intent of the wish by exploiting the wish's poor wording. The perversion of the wording is usually crafted to be to the genie's benefit."
+								]
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Marilith",
@@ -37922,7 +38719,11 @@
 						"The demon chooses what to summon and attempts a magical summoning.",
 						"A marilith has a {@chance 50|50 percent|50% summoning chance} chance of summoning {@dice 1d6} {@creature vrock||vrocks}, {@dice 1d4} {@creature hezrou||hezrous}, {@dice 1d3} {@creature glabrezu||glabrezus}, {@dice 1d2} {@creature nalfeshnee||nalfeshnees}, or one marilith.",
 						"A summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
-					]
+					],
+					"_version": {
+						"name": "Marilith (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -38582,7 +39383,11 @@
 								"A summoned yugoloth appears in an unoccupied space within 60 feet of its summoner, does as it pleases, and can't summon other yugoloths. The summoned yugoloth remains for 1 minute, until it or its summoner dies, or until its summoner takes a bonus action to dismiss it."
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Mezzoloth (Summoner)",
+						"addHeadersAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -39537,7 +40342,23 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Monodrone (Rogue)",
+					"source": "MM",
+					"_mod": {
+						"trait": {
+							"mode": "removeArr",
+							"names": "Axiomatic Mind"
+						}
+					},
+					"alignment": [
+						"A"
+					],
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Mud Mephit",
@@ -39636,7 +40457,11 @@
 					"name": "Summon Mephits (1/Day)",
 					"entries": [
 						"The mephit has a {@chance 25|25 percent|25% summoning chance} chance of summoning {@dice 1d4} mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
-					]
+					],
+					"_version": {
+						"name": "Mud Mephit (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"environment": [
@@ -40272,10 +41097,12 @@
 							]
 						}
 					],
-					"variantSource": {
-						"source": "OotA",
-						"page": 228
-					}
+					"_version": {
+						"name": "Myconid Adult (Additional Spore Effects)",
+						"addHeadersAs": "action"
+					},
+					"source": "OotA",
+					"page": 228
 				}
 			],
 			"environment": [
@@ -40436,10 +41263,12 @@
 							]
 						}
 					],
-					"variantSource": {
-						"source": "OotA",
-						"page": 228
-					}
+					"_version": {
+						"name": "Myconid Sovereign (Additional Spore Effects)",
+						"addHeadersAs": "action"
+					},
+					"source": "OotA",
+					"page": 228
 				}
 			],
 			"environment": [
@@ -40698,7 +41527,11 @@
 						"The demon chooses what to summon and attempts a magical summoning.",
 						"A nalfeshnee has a {@chance 50|50 percent|50% summoning chance} chance of summoning {@dice 1d4} {@creature vrock||vrocks}, {@dice 1d3} {@creature hezrou||hezrous}, {@dice 1d2} {@creature glabrezu||glabrezus}, or one nalfeshnee.",
 						"A summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
-					]
+					],
+					"_version": {
+						"name": "Nalfeshnee (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -41109,7 +41942,74 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Night Hag (Coven)",
+					"source": "MM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell identify}",
+											"{@spell ray of sickness}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell hold person}",
+											"{@spell locate object}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell bestow curse}",
+											"{@spell counterspell}",
+											"{@spell lightning bolt}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell phantasmal killer}",
+											"{@spell polymorph}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell contact other plane}",
+											"{@spell scrying}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell eyebite}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 15}, and the spell attack bonus is {@hit 7}."
+								]
+							}
+						}
+					},
+					"cr": "7",
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Nightmare",
@@ -41342,6 +42242,9 @@
 						"The noble adds 2 to its AC against one melee attack that would hit it. To do so, the noble must see the attacker and be wielding a melee weapon."
 					]
 				}
+			],
+			"environment": [
+				"urban"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -41669,7 +42572,11 @@
 								"A summoned yugoloth appears in an unoccupied space within 60 feet of its summoner, does as it pleases, and can't summon other yugoloths. The summoned yugoloth remains for 1 minute, until it or its summoner dies, or until its summoner takes a bonus action to dismiss it."
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Nycaloth (Summoner)",
+						"addHeadersAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -43652,7 +44559,23 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Pentadrone (Rogue)",
+					"source": "MM",
+					"_mod": {
+						"trait": {
+							"mode": "removeArr",
+							"names": "Axiomatic Mind"
+						}
+					},
+					"alignment": [
+						"A"
+					],
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Peryton",
@@ -45162,6 +46085,9 @@
 					]
 				}
 			],
+			"environment": [
+				"urban"
+			],
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/priest.mp3"
@@ -45296,7 +46222,10 @@
 								"The pseudodragon can serve another creature as a familiar, forming a magic, telepathic bond with that willing companion. While the two are bonded, the companion can sense what the pseudodragon senses as long as they are within 1 mile of each other. While the pseudodragon is within 10 feet of its companion, the companion shares the pseudodragon's Magic Resistance trait. At any time and for any reason, the pseudodragon can end its service as a familiar, ending the telepathic bond."
 							]
 						}
-					]
+					],
+					"_version": {
+						"addHeadersAs": "trait"
+					}
 				}
 			],
 			"environment": [
@@ -45660,7 +46589,23 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Quadrone (Rogue)",
+					"source": "MM",
+					"_mod": {
+						"trait": {
+							"mode": "removeArr",
+							"names": "Axiomatic Mind"
+						}
+					},
+					"alignment": [
+						"A"
+					],
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Quaggoth",
@@ -46134,7 +47079,10 @@
 								"The quasit can serve another creature as a familiar, forming a telepathic bond with its willing master. While the two are bonded, the master can sense what the quasit senses as long as they are within 1 mile of each other. While the quasit is within 10 feet of its master, the master shares the quasit's Magic Resistance trait. At any time and for any reason, the quasit can end its service as a familiar, ending the telepathic bond."
 							]
 						}
-					]
+					],
+					"_version": {
+						"addHeadersAs": "trait"
+					}
 				}
 			],
 			"familiar": true,
@@ -46804,7 +47752,7 @@
 					"name": "Claw",
 					"entries": [
 						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) piercing damage. If the target is a humanoid, it must succeed on a {@dc 14} Constitution saving throw or be infected with a disease\u2014a minuscule slaad egg.",
-						"A humanoid host can carry only one slaad egg to term at a time. Over three months, the egg moves to the chest cavity, gestates, and forms a slaad tadpole. In the 24-hour period before giving birth, the host starts to feel unwell, its speed is halved, and it has disadvantage on attack rolls, ability checks, and saving throws. At birth, the tadpole chews its way through vital organs and out of the host's chest in 1 round, killing the host in the process.",
+						"A humanoid host can carry only one slaad egg to term at a time. Over three months, the egg moves to the chest cavity, gestates, and forms a {@creature slaad tadpole}. In the 24-hour period before giving birth, the host starts to feel unwell, its speed is halved, and it has disadvantage on attack rolls, ability checks, and saving throws. At birth, the tadpole chews its way through vital organs and out of the host's chest in 1 round, killing the host in the process.",
 						"If the disease is cured before the tadpole's emergence, the unborn slaad is disintegrated."
 					]
 				}
@@ -46818,7 +47766,11 @@
 						"Certain spells can be used to acquire the gem. If the slaad fails its saving throw against {@spell imprisonment}, the spell can transfer the gem to the spellcaster's open hand, instead of imprisoning the slaad. A {@spell wish} spell, if cast in the slaad's presence, can be worded to acquire the gem.",
 						"A {@spell greater restoration} spell cast on the slaad destroys the gem without harming the slaad.",
 						"Someone who is proficient in Wisdom (Medicine) can remove the gem from an {@condition incapacitated} slaad. Each try requires 1 minute of uninterrupted work and a successful {@dc 20} Wisdom (Medicine) check. Each failed attempt deals 22 ({@damage 4d10}) psychic damage to the slaad."
-					]
+					],
+					"_version": {
+						"name": "Red Slaad (Control Gem)",
+						"addAs": "trait"
+					}
 				}
 			],
 			"soundClip": {
@@ -48739,7 +49691,11 @@
 								}
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Satyr Piper",
+						"addHeadersAs": "trait"
+					}
 				}
 			],
 			"environment": [
@@ -49105,6 +50061,17 @@
 					]
 				}
 			],
+			"environment": [
+				"coastal",
+				"mountain",
+				"grassland",
+				"hill",
+				"arctic",
+				"forest",
+				"swamp",
+				"underdark",
+				"desert"
+			],
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/scout.mp3"
@@ -49358,7 +50325,74 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Sea Hag (Coven)",
+					"source": "MM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell identify}",
+											"{@spell ray of sickness}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell hold person}",
+											"{@spell locate object}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell bestow curse}",
+											"{@spell counterspell}",
+											"{@spell lightning bolt}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell phantasmal killer}",
+											"{@spell polymorph}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell contact other plane}",
+											"{@spell scrying}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell eyebite}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "4",
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Sea Horse",
@@ -50574,7 +51608,11 @@
 					"name": "Summon Mephits (1/Day)",
 					"entries": [
 						"The mephit has a {@chance 25|25 percent|25% summoning chance} chance of summoning {@dice 1d4} mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
-					]
+					],
+					"_version": {
+						"name": "Smoke Mephit (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"environment": [
@@ -51859,6 +52897,9 @@
 					]
 				}
 			],
+			"environment": [
+				"urban"
+			],
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/spy.mp3"
@@ -51987,7 +53028,11 @@
 					"name": "Summon Mephits (1/Day)",
 					"entries": [
 						"The mephit has a {@chance 25|25 percent|25% summoning chance} chance of summoning {@dice 1d4} mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
-					]
+					],
+					"_version": {
+						"name": "Steam Mephit (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"environment": [
@@ -52262,10 +53307,12 @@
 							]
 						}
 					],
-					"variantSource": {
-						"source": "SKT",
-						"page": 246
-					}
+					"_version": {
+						"name": "Stone Giant (Optional Actions)",
+						"addHeadersAs": "action"
+					},
+					"source": "SKT",
+					"page": 246
 				}
 			],
 			"environment": [
@@ -52611,14 +53658,17 @@
 							]
 						}
 					],
-					"variantSource": {
-						"source": "SKT",
-						"page": 246
-					}
+					"_version": {
+						"name": "Storm Giant (Optional Actions)",
+						"addHeadersAs": "action"
+					},
+					"source": "SKT",
+					"page": 246
 				}
 			],
 			"environment": [
-				"coastal"
+				"coastal",
+				"underwater"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -54368,7 +55418,64 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Thri-kreen (Weapons and Psionics)",
+					"source": "MM",
+					"_mod": {
+						"action": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Weapons Multiattack",
+									"type": "entries",
+									"entries": [
+										"The thri-kreen makes two gythka attacks or two chatkcha attacks."
+									]
+								},
+								{
+									"name": "Gythka",
+									"type": "entries",
+									"entries": [
+										"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d8 + 1}) slashing damage."
+									]
+								},
+								{
+									"name": "Chatkcha",
+									"type": "entries",
+									"entries": [
+										"{@atk rw} {@hit 4} to hit, range 30/120 ft., one target. {@h}5 ({@damage 1d6 + 2}) slashing damage."
+									]
+								}
+							]
+						}
+					},
+					"spellcasting": [
+						{
+							"type": "spellcasting",
+							"name": "Innate Spellcasting (Psionics)",
+							"headerEntries": [
+								"The thri-kreen's innate spellcasting ability is Wisdom. The thri-kreen can innately cast the following spells, requiring no components:"
+							],
+							"will": [
+								"{@spell mage hand} (the hand is {@condition invisible})"
+							],
+							"daily": {
+								"1": [
+									"{@spell invisibility} (self only)"
+								],
+								"2e": [
+									"{@spell blur}",
+									"{@spell magic weapon}"
+								]
+							},
+							"ability": "wis"
+						}
+					],
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Thug",
@@ -54492,6 +55599,9 @@
 						"{@atk rw} {@hit 2} to hit, range 100/400 ft., one target. {@h}5 ({@damage 1d10}) piercing damage."
 					]
 				}
+			],
+			"environment": [
+				"urban"
 			],
 			"soundClip": {
 				"type": "internal",
@@ -54872,6 +55982,17 @@
 					]
 				}
 			],
+			"environment": [
+				"coastal",
+				"mountain",
+				"grassland",
+				"hill",
+				"arctic",
+				"forest",
+				"swamp",
+				"underdark",
+				"desert"
+			],
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/tribal-warrior.mp3"
@@ -55088,7 +56209,23 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Tridrone (Rogue)",
+					"source": "MM",
+					"_mod": {
+						"trait": {
+							"mode": "removeArr",
+							"names": "Axiomatic Mind"
+						}
+					},
+					"alignment": [
+						"A"
+					],
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Troglodyte",
@@ -55354,39 +56491,50 @@
 					"type": "variant",
 					"name": "Loathsome Limbs",
 					"entries": [
-						"Whenever the troll takes at least 15 slashing damage at one time, roll a {@dice d20} to determine what else happens to it:",
+						"Some trolls have the following trait",
 						{
-							"type": "list",
-							"style": "list-hang-notitle",
-							"items": [
+							"type": "entries",
+							"name": "Loathsome Limbs",
+							"entries": [
+								"Whenever the troll takes at least 15 slashing damage at one time, roll a {@dice d20} to determine what else happens to it:",
 								{
-									"type": "item",
-									"name": "1\u201310:",
-									"entry": "Nothing else happens."
+									"type": "list",
+									"style": "list-hang-notitle",
+									"items": [
+										{
+											"type": "item",
+											"name": "1\u201310:",
+											"entry": "Nothing else happens."
+										},
+										{
+											"type": "item",
+											"name": "11\u201314:",
+											"entry": "One leg is severed from the troll if it has any legs left."
+										},
+										{
+											"type": "item",
+											"name": "15\u201318:",
+											"entry": "One arm is severed from the troll if it has any arms left."
+										},
+										{
+											"type": "item",
+											"name": "19\u201320:",
+											"entry": "The troll is decapitated, but the troll dies only if it can't regenerate. If it dies, so does the severed head."
+										}
+									]
 								},
-								{
-									"type": "item",
-									"name": "11\u201314:",
-									"entry": "One leg is severed from the troll if it has any legs left."
-								},
-								{
-									"type": "item",
-									"name": "15\u201318:",
-									"entry": "One arm is severed from the troll if it has any arms left."
-								},
-								{
-									"type": "item",
-									"name": "19\u201320:",
-									"entry": "The troll is decapitated, but the troll dies only if it can't regenerate. If it dies, so does the severed head."
-								}
+								"If the troll finishes a short or long rest without reattaching a severed limb or head, the part regrows. At that point, the severed part dies. Until then, a severed part acts on the troll's initiative and has its own action and movement. A severed part has AC 13, 10 hit points, and the troll's Regeneration trait.",
+								"A {@b severed leg} is unable to attack and has a speed of 5 feet.",
+								"A {@b severed arm} has a speed of 5 feet and can make one claw attack on its turn, with disadvantage on the attack roll unless the troll can see the arm and its target. Each time the troll loses an arm, it loses a claw attack.",
+								"If its head is severed, the troll loses its bite attack and its body is {@condition blinded} unless the head can see it. The {@b severed head} has a speed of 0 feet and the troll's Keen Smell trait. It can make a bite attack but only against a target in its space.",
+								"The troll's speed is halved if it's missing a leg. If it loses both legs, it falls {@condition prone}. If it has both arms, it can crawl. With only one arm, it can still crawl, but its speed is halved. With no arms or legs, its speed is 0, and it can't benefit from bonuses to speed."
 							]
-						},
-						"If the troll finishes a short or long rest without reattaching a severed limb or head, the part regrows. At that point, the severed part dies. Until then, a severed part acts on the troll's initiative and has its own action and movement. A severed part has AC 13, 10 hit points, and the troll's Regeneration trait.",
-						"A severed leg is unable to attack and has a speed of 5 feet.",
-						"A severed arm has a speed of 5 feet and can make one claw attack on its turn, with disadvantage on the attack roll unless the troll can see the arm and its target. Each time the troll loses an arm, it loses a claw attack.",
-						"If its head is severed, the troll loses its bite attack and its body is {@condition blinded} unless the head can see it. The severed head has a speed of 0 feet and the troll's Keen Smell trait. It can make a bite attack but only against a target in its space.",
-						"The troll's speed is halved if it's missing a leg. If it loses both legs, it falls {@condition prone}. If it has both arms, it can crawl. With only one arm, it can still crawl, but its speed is halved. With no arms or legs, its speed is 0, and it can't benefit from bonuses to speed."
-					]
+						}
+					],
+					"_version": {
+						"name": "Toll (Loathsome Limbs)",
+						"addHeadersAs": "trait"
+					}
 				}
 			],
 			"environment": [
@@ -55805,7 +56953,11 @@
 								"A summoned yugoloth appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other yugoloths. The summoned yugoloth remains for 1 minute, until it or its summoner dies, or until its summoner takes a bonus action to dismiss it."
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Ultroloth (Summoner)",
+						"addHeadersAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -57211,6 +58363,16 @@
 					]
 				}
 			],
+			"environment": [
+				"coastal",
+				"mountain",
+				"grassland",
+				"hill",
+				"arctic",
+				"urban",
+				"forest",
+				"underdark"
+			],
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/veteran.mp3"
@@ -57593,7 +58755,11 @@
 						"The demon chooses what to summon and attempts a magical summoning.",
 						"A vrock has a {@chance 30|30 percent|30% summoning chance} chance of summoning {@dice 2d4} {@creature dretch||dretches} or one vrock.",
 						"A summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
-					]
+					],
+					"_version": {
+						"name": "Vrock (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -57855,7 +59021,100 @@
 			"conditionInflict": [
 				"prone"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"_versions": [
+				{
+					"name": "Warhorse (Chain Mail Barding)",
+					"source": "MM",
+					"ac": [
+						{
+							"ac": 16,
+							"from": [
+								"{@item chain mail barding|phb}"
+							]
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Warhorse (Leather Barding)",
+					"source": "MM",
+					"ac": [
+						{
+							"ac": 12,
+							"from": [
+								"{@item leather barding|phb}"
+							]
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Warhorse (Plate Barding)",
+					"source": "MM",
+					"ac": [
+						{
+							"ac": 18,
+							"from": [
+								"{@item plate barding|phb}"
+							]
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Warhorse (Ring Mail Barding)",
+					"source": "MM",
+					"ac": [
+						{
+							"ac": 14,
+							"from": [
+								"{@item ring mail barding|phb}"
+							]
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Warhorse (Scale Mail Barding)",
+					"source": "MM",
+					"ac": [
+						{
+							"ac": 15,
+							"from": [
+								"{@item scale mail barding|phb}"
+							]
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Warhorse (Splint Barding)",
+					"source": "MM",
+					"ac": [
+						{
+							"ac": 17,
+							"from": [
+								"{@item splint barding|phb}"
+							]
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Warhorse (Studded Leather Barding)",
+					"source": "MM",
+					"ac": [
+						{
+							"ac": 13,
+							"from": [
+								"{@item studded leather barding|phb}"
+							]
+						}
+					],
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Warhorse Skeleton",
@@ -60824,7 +62083,11 @@
 						"The demon chooses what to summon and attempts a magical summoning.",
 						"A yochlol has a {@chance 50|50 percent|50% summoning chance} chance of summoning one yochlol.",
 						"A summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
-					]
+					],
+					"_version": {
+						"name": "Yochlol (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"soundClip": {

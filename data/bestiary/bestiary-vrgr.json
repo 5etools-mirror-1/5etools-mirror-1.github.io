@@ -2588,7 +2588,7 @@
 										"type": "entries",
 										"name": "Blazing",
 										"entries": [
-											"The priest sloughs off its flesh, and its skeleton crumbles away, leaving only its skull. Its stat block is replaced by that of a flameskull, but it retains its Tattoo of Osybus trait, and all fire damage it deals becomes necrotic damage. The Tattoo of Osybus now appears carved into the skull's forehead."
+											"The priest sloughs off its flesh, and its skeleton crumbles away, leaving only its skull. Its stat block is replaced by that of a {@creature flameskull}, but it retains its Tattoo of Osybus trait, and all fire damage it deals becomes necrotic damage. The Tattoo of Osybus now appears carved into the skull's forehead."
 										]
 									}
 								],
@@ -2645,7 +2645,134 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Priest of Osybus (Blazing Boon)",
+					"source": "VRGR",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Blazing Boon",
+								"entries": [
+									"The priest sloughs off its flesh, and its skeleton crumbles away, leaving only its skull. Its stat block is replaced by that of a {@creature flameskull}, but it retains its Tattoo of Osybus trait, and all fire damage it deals becomes necrotic damage. The Tattoo of Osybus now appears carved into the skull's forehead."
+								]
+							}
+						}
+					},
+					"type": "undead",
+					"variant": null
+				},
+				{
+					"name": "Priest of Osybus (Deathly Boon)",
+					"source": "VRGR",
+					"_mod": {
+						"action": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Circle of Death (Spell; {@recharge 5|m})",
+								"entries": [
+									"Each creature in a 60-foot-radius sphere centered on a point the priest can see within 150 feet of it must make a DC 15 Constitution saving throw, taking 28 ({@dice 8d6}) necrotic damage on a failed save, or half as much damage on a successful one.)"
+								]
+							}
+						}
+					},
+					"type": "undead",
+					"cr": "7",
+					"spellcasting": [
+						{
+							"name": "Innate Spellcasting",
+							"headerEntries": [
+								"The priest casts one of the following spells, requiring no components and using Intelligence as the spellcasting ability (spell save {@dc 15}):"
+							],
+							"daily": {
+								"1e": [
+									"{@spell animate dead}",
+									"{@spell create undead}"
+								]
+							},
+							"will": [
+								{
+									"entry": "{@spell circle of death}",
+									"hidden": true
+								}
+							],
+							"ability": "int",
+							"displayAs": "action"
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Priest of Osybus (Dread Boon)",
+					"source": "VRGR",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Dread Boon",
+								"entries": [
+									"Eerie whispers can now be heard around the priest. Any non-Undead creature that starts its turn within 30 feet of the priest must succeed on a DC 15 Wisdom saving throw or be {@condition frightened} of the priest until the start of the creature's next turn."
+								]
+							}
+						}
+					},
+					"type": "undead",
+					"variant": null
+				},
+				{
+					"name": "Priest of Osybus (Ectoplasmic Boon)",
+					"source": "VRGR",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Ectoplasmic Boon",
+								"entries": [
+									"An otherworldly slime drips off the priest and fades away moments later, leaving a greenish stain. When any creature starts its turn within 10 feet of the priest, the priest can reduce that creature's speed by 10 feet until the start of the creature's next turn, until which the creature is covered by ectoplasm. In addition, as an action, the priest can use the slime to make itself look and feel like any creature that is Medium or Small, while retaining its game statistics. This transformation lasts for 8 hours or until the priest drops to 0 hit points."
+								]
+							}
+						}
+					},
+					"type": "undead",
+					"variant": null
+				},
+				{
+					"name": "Priest of Osybus (Spectral Boon)",
+					"source": "VRGR",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Spectral Boon",
+								"entries": [
+									"The priest now appears wraithlike, and its challenge rating increases by 1. It gains resistance to all damage but force, radiant, and psychic, and it is vulnerable to radiant damage. It can also move through creatures and objects as if they were difficult terrain, but it takes 5 ({@dice 1d10}) force damage if it ends its turn inside a creature or an object."
+								]
+							}
+						}
+					},
+					"type": "undead",
+					"variant": null
+				},
+				{
+					"name": "Priest of Osybus (Vampiric Boon)",
+					"source": "VRGR",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Vampiric Boon",
+								"entries": [
+									"When the priest deals necrotic damage to any creature, the priest gains a number of temporary hit points equal to half that necrotic damage. The priest's speed also increases by 10 feet."
+								]
+							}
+						}
+					},
+					"type": "undead",
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Relentless Juggernaut",
@@ -3738,7 +3865,11 @@
 								]
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Unspeakable Horror (Customized)",
+						"addAs": "trait"
+					}
 				}
 			],
 			"traitTags": [

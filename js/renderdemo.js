@@ -65,7 +65,7 @@ async function initDemo (data, rendererType) {
 		} catch (e) {
 			$msg.html(`Invalid JSON! We recommend using <a href="https://jsonlint.com/" target="_blank" rel="noopener noreferrer">JSONLint</a>.`);
 			setTimeout(() => {
-				throw e
+				throw e;
 			});
 		}
 
@@ -76,7 +76,7 @@ async function initDemo (data, rendererType) {
 			<tr><th class="border" colspan="6"></th></tr>
 			<tr class="text"><td colspan="6">${renderStack.join("")}</td></tr>
 			<tr><th class="border" colspan="6"></th></tr>
-		`)
+		`);
 	}
 
 	function demoReset () {

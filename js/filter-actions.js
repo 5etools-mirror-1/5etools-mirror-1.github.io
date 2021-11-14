@@ -2,7 +2,7 @@
 
 class PageFilterActions extends PageFilter {
 	static getTimeText (time) {
-		return typeof time === "string" ? time : Parser.getTimeToFull(time)
+		return typeof time === "string" ? time : Parser.getTimeToFull(time);
 	}
 
 	constructor () {
@@ -44,6 +44,6 @@ class PageFilterActions extends PageFilter {
 			it.source,
 			it._fTime,
 			it._fMisc,
-		)
+		);
 	}
 }

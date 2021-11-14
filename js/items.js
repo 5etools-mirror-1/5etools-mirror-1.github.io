@@ -3,14 +3,14 @@
 class ItemsPage extends ListPage {
 	constructor () {
 		super({
-			dataSource: Renderer.item.pBuildList({isAddGroups: true, isBlacklistVariants: true}),
+			dataSource: Renderer.item.pBuildList({isAddGroups: true}),
 
 			pageFilter: new PageFilterItems(),
 
 			sublistClass: "subitems",
 
 			dataProps: ["item"],
-		})
+		});
 
 		this._sublistCurrencyConversion = null;
 		this._sublistCurrencyDisplayMode = null;
@@ -26,7 +26,7 @@ class ItemsPage extends ListPage {
 	getListItem (item, itI, isExcluded) {
 		const hash = UrlUtil.autoEncodeHash(item);
 
-		if (ExcludeUtil.isExcluded(hash, "item", item.source)) return null;
+		if (Renderer.item.isExcluded(item, {hash})) return null;
 		if (item.noDisplay) return null;
 		Renderer.item.enhanceItem(item);
 
@@ -140,7 +140,7 @@ class ItemsPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (item, ix, {count = 1} = {}) {
+	pGetSublistItem (item, ix, {count = 1} = {}) {
 		const hash = UrlUtil.autoEncodeHash(item);
 
 		const $dispCount = $(`<span class="text-center col-2 pr-0">${count}</span>`);
@@ -215,11 +215,6 @@ class ItemsPage extends ListPage {
 		});
 
 		ListUtil.updateSelected();
-	}
-
-	async pDoLoadSubHash (sub) {
-		sub = this._pageFilter.filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
 	}
 
 	onSublistChange () {
@@ -309,13 +304,13 @@ class ItemsPage extends ListPage {
 
 		[this._sublistCurrencyConversion, this._sublistCurrencyDisplayMode] = await Promise.all([StorageUtil.pGetForPage("sublistCurrencyConversion"), StorageUtil.pGetForPage("sublistCurrencyDisplayMode")]);
 		await ExcludeUtil.pInitialise();
-		await this._pageFilter.pInitFilterBox({
+		this._filterBox = await this._pageFilter.pInitFilterBox({
 			$iptSearch: $(`#lst__search`),
 			$wrpFormTop: $(`#filter-search-group`),
 			$btnReset: $(`#reset`),
 		});
 
-		return this._pPopulateTablesAndFilters({item: await Renderer.item.pBuildList({isAddGroups: true, isBlacklistVariants: true})});
+		return this._pPopulateTablesAndFilters({item: await Renderer.item.pBuildList({isAddGroups: true})});
 	}
 
 	async _pPopulateTablesAndFilters (data) {
@@ -395,7 +390,7 @@ class ItemsPage extends ListPage {
 		this._listSub = ListUtil.initSublist({
 			listClass: "subitems",
 			fnSort: PageFilterItems.sortItems,
-			pGetSublistRow: this.getSublistItem.bind(this),
+			pGetSublistRow: this.pGetSublistItem.bind(this),
 			onUpdate: this.onSublistChange.bind(this),
 		});
 		SortUtil.initBtnSortHandlers($("#sublistsort"), this._listSub);
@@ -472,7 +467,7 @@ class ItemsPage extends ListPage {
 
 		ListUtil.setOptions({
 			itemList: this._dataList,
-			pGetSublistRow: this.getSublistItem.bind(this),
+			pGetSublistRow: this.pGetSublistItem.bind(this),
 			primaryLists: [this._mundaneList, this._magicList],
 		});
 		ListUtil.bindAddButton();

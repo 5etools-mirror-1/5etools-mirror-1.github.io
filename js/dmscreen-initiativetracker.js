@@ -114,7 +114,7 @@ class InitiativeTracker {
 					makeImportSettingsModal();
 				},
 			),
-		])
+		]);
 
 		const $wrpTop = $(`<div class="dm-init-wrp-header-outer"/>`).appendTo($wrpTracker);
 		const $wrpHeader = $(`
@@ -166,6 +166,7 @@ class InitiativeTracker {
 		 * @param [opts]
 		 * @param [opts.$btnStartServer]
 		 * @param [opts.$btnGetToken]
+		 * @param [opts.$btnGetLink]
 		 * @param [opts.fnDispServerStoppedState]
 		 * @param [opts.fnDispServerRunningState]
 		 */
@@ -182,6 +183,7 @@ class InitiativeTracker {
 				srvPeer = new PeerVeServer();
 				await srvPeer.pInit();
 				if (opts.$btnGetToken) opts.$btnGetToken.prop("disabled", false);
+				if (opts.$btnGetLink) opts.$btnGetLink.prop("disabled", false);
 
 				srvPeer.on("connection", connection => {
 					const pConnected = new Promise(resolve => {
@@ -194,7 +196,7 @@ class InitiativeTracker {
 					Promise.race([pConnected, pTimeout])
 						.then(didConnect => {
 							if (!didConnect) {
-								JqueryUtil.doToast({content: `Connecting to "${connection.label.escapeQuotes()}" has taken more than 5 seconds! The connection may need to be re-attempted.`, type: "warning"})
+								JqueryUtil.doToast({content: `Connecting to "${connection.label.escapeQuotes()}" has taken more than 5 seconds! The connection may need to be re-attempted.`, type: "warning"});
 							}
 						});
 				});
@@ -229,7 +231,7 @@ class InitiativeTracker {
 					isHeight100: true,
 					cbClose: () => {
 						if (p2pMeta.rows.length) p2pMeta.rows.forEach(row => row.$row.detach());
-						if (srvPeer) srvPeer.offTemp("connection")
+						if (srvPeer) srvPeer.offTemp("connection");
 					},
 				});
 
@@ -238,26 +240,36 @@ class InitiativeTracker {
 				const fnDispServerStoppedState = () => {
 					$btnStartServer.html(`<span class="glyphicon glyphicon-play"/> Start Server`).prop("disabled", false);
 					$btnGetToken.prop("disabled", true);
+					$btnGetLink.prop("disabled", true);
 				};
 
 				const fnDispServerRunningState = () => {
 					$btnStartServer.html(`<span class="glyphicon glyphicon-play"/> Server Running`).prop("disabled", true);
 					$btnGetToken.prop("disabled", false);
+					$btnGetLink.prop("disabled", false);
 				};
 
 				const $btnStartServer = $(`<button class="btn btn-default mr-2"></button>`)
 					.click(async () => {
-						const isRunning = await startServer({$btnStartServer, $btnGetToken, fnDispServerStoppedState, fnDispServerRunningState});
+						const isRunning = await startServer({$btnStartServer, $btnGetToken, $btnGetLink, fnDispServerStoppedState, fnDispServerRunningState});
 						if (isRunning) {
 							srvPeer.onTemp("connection", showConnected);
 							showConnected();
 						}
 					});
 
-				const $btnGetToken = $(`<button class="btn btn-default" disabled><span class="glyphicon glyphicon-copy"/> Copy Token</button>`).appendTo($wrpHelp)
+				const $btnGetToken = $(`<button class="btn btn-default mr-2" disabled><span class="glyphicon glyphicon-copy"/> Copy Token</button>`).appendTo($wrpHelp)
 					.click(() => {
 						MiscUtil.pCopyTextToClipboard(srvPeer.token);
 						JqueryUtil.showCopiedEffect($btnGetToken);
+					});
+
+				const $btnGetLink = $(`<button class="btn btn-default" disabled><span class="glyphicon glyphicon-link"/> Copy Link</button>`).appendTo($wrpHelp)
+					.click(() => {
+						const cleanOrigin = window.location.origin.replace(/\/+$/, "");
+						const url = `${cleanOrigin}/inittrackerplayerview.html#${srvPeer.token}`;
+						MiscUtil.pCopyTextToClipboard(url);
+						JqueryUtil.showCopiedEffect($btnGetLink);
 					});
 
 				if (srvPeer) fnDispServerRunningState();
@@ -269,11 +281,11 @@ class InitiativeTracker {
 						The Player View is part of a peer-to-peer system to allow players to connect to a DM's initiative tracker. Players should use the <a href="inittrackerplayerview.html">Initiative Tracker Player View</a> page to connect to the DM's instance. As a DM, the usage is as follows:
 						<ol>
 							<li>Start the server.</li>
-							<li>Copy your token and share it with your players.</li>
+							<li>Copy your link/token and share it with your players.</li>
 							<li>Wait for them to connect!</li>
 						</ol>
 						</p>
-						<p>${$btnStartServer}${$btnGetToken}</p>
+						<p>${$btnStartServer}${$btnGetLink}${$btnGetToken}</p>
 						<p><i>Please note that this system is highly experimental. Your experience may vary.</i></p>
 					</div>
 				</div>`.appendTo($wrpHelp);
@@ -748,7 +760,7 @@ class InitiativeTracker {
 		$wrpTracker.data("getSummary", () => {
 			const nameList = $wrpEntries.find(`.dm-init-row`).map((i, e) => $(e).find(`input.name`).val()).get();
 			const nameListFilt = nameList.filter(it => it.trim());
-			return `${nameList.length} creature${nameList.length === 1 ? "" : "s"} ${nameListFilt.length ? `(${nameListFilt.slice(0, 3).join(", ")}${nameListFilt.length > 3 ? "..." : ""})` : ""}`
+			return `${nameList.length} creature${nameList.length === 1 ? "" : "s"} ${nameListFilt.length ? `(${nameListFilt.slice(0, 3).join(", ")}${nameListFilt.length > 3 ? "..." : ""})` : ""}`;
 		});
 
 		function setNextActive () {
@@ -1464,7 +1476,7 @@ class InitiativeTracker {
 									});
 								}
 							});
-					})
+					});
 				}));
 				await Promise.all(toAdd.filter(Boolean).map(async it => {
 					const groupInit = cfg.importIsRollGroups && cfg.isRollInit ? await pRollInitiative(it.monster) : null;
@@ -1566,7 +1578,7 @@ InitiativeTracker.STAT_COLUMNS = {
 					const found = [0];
 					it.replace(/DC (\d+)/g, (...m) => found.push(Number(m[1])));
 					return Math.max(...found);
-				}).filter(Boolean)
+				}).filter(Boolean);
 			})),
 	},
 	legendaryActions: {

@@ -31,7 +31,7 @@ if (fs.existsSync("./img")) {
 
 					// add tokens specified as alt art
 					if (m.altArt) {
-						m.altArt.forEach(alt => expected.add(`${Parser.sourceJsonToAbv(alt.source)}/${Parser.nameToTokenName(alt.name)}.png`))
+						m.altArt.forEach(alt => expected.add(`${Parser.sourceJsonToAbv(alt.source)}/${Parser.nameToTokenName(alt.name)}.png`));
 					}
 				} else expectedDirs[source] = true;
 			});
@@ -79,7 +79,7 @@ if (fs.existsSync("./img")) {
 			if (!IGNORED_DIRS.has(dir)) {
 				fs.readdirSync(`./img/${dir}`).forEach(file => {
 					existing.add(`${dir.replace("(", "").replace(")", "")}/${file}`);
-				})
+				});
 			}
 		});
 

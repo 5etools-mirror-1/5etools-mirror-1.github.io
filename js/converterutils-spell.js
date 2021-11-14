@@ -5,7 +5,7 @@ class DamageTagger {
 		str = str.toLowerCase().trim();
 		if (str === "all" || str === "one" || str === "a") arr.push(...Parser.DMG_TYPES);
 		else if (Parser.DMG_TYPES.includes(str)) arr.push(str);
-		else options.cbWarning(`Unknown damage type "${str}"`)
+		else options.cbWarning(`Unknown damage type "${str}"`);
 	}
 }
 
@@ -120,7 +120,7 @@ class ScalingLevelDiceTagger {
 
 			const mDamageType = ConverterConst.RE_DAMAGE_TYPE.exec(strEntries);
 			if (mDamageType) {
-				label = `${mDamageType[2]} damage`
+				label = `${mDamageType[2]} damage`;
 			}
 
 			ConverterConst.RE_DAMAGE_TYPE.lastIndex = 0;
@@ -146,7 +146,7 @@ class ScalingLevelDiceTagger {
 						11: rolls[3],
 						17: rolls[4],
 					},
-			}
+			};
 		} else if (sp.entries.length === 2 && sp.entries.filter(it => typeof it === "string").length === 2) {
 			const rollsFirstLine = [];
 			const rollsSecondLine = [];

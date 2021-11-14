@@ -339,8 +339,8 @@ class List {
 	 * @param dataArr Array from which the list was rendered.
 	 * @param opts Options object.
 	 * @param opts.fnGetName Function which gets the name from a dataSource item.
-	 * @param opts.fnGetValues Function which gets list values from a dataSource item.
-	 * @param opts.fnGetData Function which gets list data from a listItem and dataSource item.
+	 * @param [opts.fnGetValues] Function which gets list values from a dataSource item.
+	 * @param [opts.fnGetData] Function which gets list data from a listItem and dataSource item.
 	 * @param [opts.fnBindListeners] Function which binds event listeners to the list.
 	 */
 	doAbsorbItems (dataArr, opts) {

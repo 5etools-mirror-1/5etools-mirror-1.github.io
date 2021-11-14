@@ -33,6 +33,6 @@ class PageFilterTables extends PageFilter {
 		return this._filterBox.toDisplay(
 			values,
 			it.source,
-		)
+		);
 	}
 }

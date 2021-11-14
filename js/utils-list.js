@@ -18,10 +18,10 @@ const ListUtil = {
 		if (listOpts.isBindFindHotkey && !ListUtil._isFindHotkeyBound) {
 			helpText.push(`Hotkey: f.`);
 
-			$(document.body).on("keypress", (e) => {
-				if (!EventUtil.noModifierKeys(e) || EventUtil.isInInput(e)) return;
-				if (e.key === "f") {
-					e.preventDefault();
+			$(document.body).on("keypress", (evt) => {
+				if (!EventUtil.noModifierKeys(evt) || EventUtil.isInInput(evt)) return;
+				if (EventUtil.getKeyIgnoreCapsLock(evt) === "f") {
+					evt.preventDefault();
 					$iptSearch.select().focus();
 				}
 			});
@@ -49,7 +49,7 @@ const ListUtil = {
 			setTimeout(() => {
 				if ($iptSearch.val().length) $btnSearchClear.removeClass("no-events").addClass("clickable").title("Clear").html(`<span class="glyphicon glyphicon-remove"/>`);
 				else $btnSearchClear.addClass("no-events").removeClass("clickable").title(null).html(`<span class="glyphicon glyphicon-search"/>`);
-			})
+			});
 		};
 		const handleSearchChange = MiscUtil.throttle(_handleSearchChange, 50);
 		$iptSearch.on("keydown", handleSearchChange);
@@ -85,15 +85,16 @@ const ListUtil = {
 	},
 
 	_initList_bindWindowHandlers () {
-		$(window).on("keypress", (evt) => {
+		window.addEventListener("keypress", (evt) => {
 			if (!EventUtil.noModifierKeys(evt)) return;
 
 			// K up; J down
-			if (evt.key === "k" || evt.key === "j") {
+			const key = EventUtil.getKeyIgnoreCapsLock(evt);
+			if (key === "k" || key === "j") {
 				// don't switch if the user is typing somewhere else
 				if (EventUtil.isInInput(evt)) return;
-				ListUtil._initList_handleListUpDownPress(evt.key === "k" ? -1 : 1);
-			} else if (ListUtil._isPreviewable && evt.key === "m") {
+				ListUtil._initList_handleListUpDownPress(key === "k" ? -1 : 1);
+			} else if (ListUtil._isPreviewable && key === "m") {
 				if (EventUtil.isInInput(evt)) return;
 				const it = Hist.getSelectedListElementWithLocation();
 				$(it.item.ele.firstElementChild.firstElementChild).click();
@@ -158,11 +159,11 @@ const ListUtil = {
 			} else {
 				ListUtil._primaryLists.forEach(l => l.deselectAll());
 				list.doSelect(listItem);
-				selection = [listItem]
+				selection = [listItem];
 			}
 		} else {
 			list.doSelect(listItem);
-			selection = [listItem]
+			selection = [listItem];
 		}
 
 		const menu = ListUtil.contextMenuPinnableList || ListUtil.contextMenuAddableList;
@@ -534,7 +535,7 @@ const ListUtil = {
 				await ListUtil._pLoadSavedSublist(store.items);
 			}
 		} catch (e) {
-			setTimeout(() => { throw e });
+			setTimeout(() => { throw e; });
 			await StorageUtil.pRemoveForPage("sublist");
 		}
 	},
@@ -571,7 +572,7 @@ const ListUtil = {
 		try {
 			store = await StorageUtil.pGetForPage("sublist");
 		} catch (e) {
-			setTimeout(() => { throw e });
+			setTimeout(() => { throw e; });
 		}
 		if (store && store.sources) return store.sources;
 	},
@@ -683,7 +684,7 @@ const ListUtil = {
 				"Popout",
 				(evt, userData) => {
 					const {ele, selection} = userData;
-					ListUtil._handleGenericContextMenuClick_pDoMassPopout(evt, ele, selection)
+					ListUtil._handleGenericContextMenuClick_pDoMassPopout(evt, ele, selection);
 				},
 			),
 			new ContextUtil.Action(
@@ -728,10 +729,10 @@ const ListUtil = {
 			const list = ListUtil.getExportableSublist();
 			const len = list.items.length;
 			await StorageUtil.pSet(VeCt.STORAGE_DMSCREEN_TEMP_SUBLIST, {page: UrlUtil.getCurrentPage(), list});
-			JqueryUtil.doToast(`${len} pin${len === 1 ? "" : "s"} will be loaded into the DM Screen on your next visit.`)
+			JqueryUtil.doToast(`${len} pin${len === 1 ? "" : "s"} will be loaded into the DM Screen on your next visit.`);
 		} catch (e) {
 			JqueryUtil.doToast(`Failed! ${VeCt.STR_SEE_CONSOLE}`);
-			setTimeout(() => { throw e; })
+			setTimeout(() => { throw e; });
 		}
 	},
 

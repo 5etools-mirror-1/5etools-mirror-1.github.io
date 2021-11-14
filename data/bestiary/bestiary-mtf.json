@@ -976,7 +976,11 @@
 								"The amnizu summons {@dice 2d4} bearded devils or {@dice 1d4} barbed devils. A summoned devil appears in an unoccupied space within 60 feet of the amnizu, acts as an ally of the amnizu, and can't summon other devils. It remains for 1 minute, until the amnizu dies, or until its summoner dismisses it as an action"
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Amnizu (Summoner)",
+						"addHeadersAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -3747,7 +3751,126 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Deathlock (Archfey Patron)",
+					"source": "MTF",
+					"_mod": {
+						"spellcasting": {
+							"mode": "replaceArr",
+							"replace": "Spellcasting",
+							"items": {
+								"name": "Spellcasting",
+								"headerEntries": [
+									"The deathlock is a 5th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 13}, {@hit 5} to hit with spell attacks). It regains its expended spell slots when it finishes a short or long rest. It knows the following warlock spells:"
+								],
+								"spells": {
+									"0": {
+										"spells": [
+											"{@spell chill touch}",
+											"{@spell eldritch blast}",
+											"{@spell mage hand}"
+										]
+									},
+									"3": {
+										"lower": 1,
+										"slots": 2,
+										"spells": [
+											"{@spell blink}",
+											"{@spell faerie fire}",
+											"{@spell hunger of Hadar}",
+											"{@spell hypnotic pattern}",
+											"{@spell phantasmal force}",
+											"{@spell sleep}"
+										]
+									}
+								},
+								"ability": "cha"
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Deathlock (Fiend Patron)",
+					"source": "MTF",
+					"_mod": {
+						"spellcasting": {
+							"mode": "replaceArr",
+							"replace": "Spellcasting",
+							"items": {
+								"name": "Spellcasting",
+								"headerEntries": [
+									"The deathlock is a 5th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 13}, {@hit 5} to hit with spell attacks). It regains its expended spell slots when it finishes a short or long rest. It knows the following warlock spells:"
+								],
+								"spells": {
+									"0": {
+										"spells": [
+											"{@spell chill touch}",
+											"{@spell eldritch blast}",
+											"{@spell mage hand}"
+										]
+									},
+									"3": {
+										"lower": 1,
+										"slots": 2,
+										"spells": [
+											"{@spell blindness/deafness}",
+											"{@spell burning hands}",
+											"{@spell command}",
+											"{@spell fireball}",
+											"{@spell hellish rebuke}",
+											"{@spell scorching ray}"
+										]
+									}
+								},
+								"ability": "cha"
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Deathlock (Great Old One Patron)",
+					"source": "MTF",
+					"_mod": {
+						"spellcasting": {
+							"mode": "replaceArr",
+							"replace": "Spellcasting",
+							"items": {
+								"name": "Spellcasting",
+								"headerEntries": [
+									"The deathlock is a 5th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 13}, {@hit 5} to hit with spell attacks). It regains its expended spell slots when it finishes a short or long rest. It knows the following warlock spells:"
+								],
+								"spells": {
+									"0": {
+										"spells": [
+											"{@spell chill touch}",
+											"{@spell eldritch blast}",
+											"{@spell mage hand}"
+										]
+									},
+									"3": {
+										"lower": 1,
+										"slots": 2,
+										"spells": [
+											"{@spell armor of Agathys}",
+											"{@spell detect thoughts}",
+											"{@spell dissonant whispers}",
+											"{@spell hunger of Hadar}",
+											"{@spell Tasha's hideous laughter}",
+											"{@spell phantasmal force}"
+										]
+									}
+								},
+								"ability": "cha"
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Deathlock Mastermind",
@@ -3944,7 +4067,141 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Deathlock Mastermind (Archfey Patron)",
+					"source": "MTF",
+					"_mod": {
+						"spellcasting": {
+							"mode": "replaceArr",
+							"replace": "Spellcasting",
+							"items": {
+								"name": "Spellcasting",
+								"headerEntries": [
+									"The deathlock is a 10th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It regains its expended spell slots when it finishes a short or long rest. It knows the following warlock spells:"
+								],
+								"spells": {
+									"0": {
+										"spells": [
+											"{@spell chill touch}",
+											"{@spell mage hand}",
+											"{@spell minor illusion}",
+											"{@spell poison spray}"
+										]
+									},
+									"5": {
+										"lower": 1,
+										"slots": 2,
+										"spells": [
+											"{@spell blink}",
+											"{@spell dominate beast}",
+											"{@spell dominate person}",
+											"{@spell faerie fire}",
+											"{@spell greater invisibility}",
+											"{@spell hunger of Hadar}",
+											"{@spell hypnotic pattern}",
+											"{@spell phantasmal force}",
+											"{@spell seeming}",
+											"{@spell sleep}"
+										]
+									}
+								},
+								"ability": "cha"
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Deathlock Mastermind (Fiend Patron)",
+					"source": "MTF",
+					"_mod": {
+						"spellcasting": {
+							"mode": "replaceArr",
+							"replace": "Spellcasting",
+							"items": {
+								"name": "Spellcasting",
+								"headerEntries": [
+									"The deathlock is a 10th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It regains its expended spell slots when it finishes a short or long rest. It knows the following warlock spells:"
+								],
+								"spells": {
+									"0": {
+										"spells": [
+											"{@spell chill touch}",
+											"{@spell mage hand}",
+											"{@spell minor illusion}",
+											"{@spell poison spray}"
+										]
+									},
+									"5": {
+										"lower": 1,
+										"slots": 2,
+										"spells": [
+											"{@spell blindness/deafness}",
+											"{@spell burning hands}",
+											"{@spell command}",
+											"{@spell fire shield}",
+											"{@spell fireball}",
+											"{@spell flame strike}",
+											"{@spell hellish rebuke}",
+											"{@spell scorching ray}",
+											"{@spell stinking cloud}",
+											"{@spell wall of fire}"
+										]
+									}
+								},
+								"ability": "cha"
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Deathlock Mastermind (Great Old One Patron)",
+					"source": "MTF",
+					"_mod": {
+						"spellcasting": {
+							"mode": "replaceArr",
+							"replace": "Spellcasting",
+							"items": {
+								"name": "Spellcasting",
+								"headerEntries": [
+									"The deathlock is a 10th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It regains its expended spell slots when it finishes a short or long rest. It knows the following warlock spells:"
+								],
+								"spells": {
+									"0": {
+										"spells": [
+											"{@spell chill touch}",
+											"{@spell mage hand}",
+											"{@spell minor illusion}",
+											"{@spell poison spray}"
+										]
+									},
+									"5": {
+										"lower": 1,
+										"slots": 2,
+										"spells": [
+											"{@spell clairvoyance}",
+											"{@spell detect thoughts}",
+											"{@spell dissonant whispers}",
+											"{@spell dominate person}",
+											"{@spell Evard's black tentacles}",
+											"{@spell hunger of Hadar}",
+											"{@spell phantasmal force}",
+											"{@spell sending}",
+											"{@spell Tasha's hideous laughter}",
+											"{@spell telekinesis}"
+										]
+									}
+								},
+								"ability": "cha"
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Deathlock Wight",
@@ -5715,7 +5972,11 @@
 								"The drow attempts to magically summon a yochlol, with a {@chance 50|50 percent} chance of success. If the attempt fails, the drow takes 5 ({@damage 1d10}) psychic damage. Otherwise, the summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 10 minutes, until it or its summoner dies, or until its summoner dismisses it as an action. (see notes for link)"
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Drow Inquisitor (Summoner)",
+						"addHeadersAs": "action"
+					}
 				}
 			],
 			"environment": [
@@ -6184,7 +6445,11 @@
 								"The drow attempts to magically summon a shadow demon with a {@chance 50|50 percent} chance of success. If the attempt fails, the drow takes 5 ({@damage 1d10}) psychic damage. Otherwise, the summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 10 minutes, until it or its summoner dies, or until its summoner dismisses it as an action."
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Drow Shadowblade (Summoner)",
+						"addHeadersAs": "action"
+					}
 				}
 			],
 			"environment": [
@@ -9017,7 +9282,11 @@
 								"Geryon blows his horn, which causes {@dice 5d4} minotaurs to appear in unoccupied spaces of his choice within 600 feet of him. The minotaurs roll initiative when they appear. They remain until they die or Geryon uses an action to dismiss any or all of them."
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Geryon (Summoner)",
+						"addHeadersAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -13297,7 +13566,11 @@
 								"As an action, the molydeus has a {@chance 50|50 percent} chance of summoning its choice of {@dice 1d6} babaus, {@dice 1d4} {@creature chasme||chasmes}, or one {@creature marilith}. A summoned demon appears in an unoccupied space within 60 feet of the molydeus, acts as an ally of the molydeus, and can't summon other demons. It remains for 1 minute, until it or the molydeus dies, or until the molydeus dismisses it as an action."
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Molydeus (Summoner)",
+						"addHeadersAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -16585,7 +16858,11 @@
 								]
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Sibriex (Flesh Warping)",
+						"addAs": "trait"
+					}
 				}
 			],
 			"environment": [

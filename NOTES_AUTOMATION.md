@@ -1,6 +1,6 @@
 # Automation
 
-The following is a list of non-automated or semi-automated (i.e. handled with manually-run-once scripts) procedures or data additions that must be maintained. Some the items on this list may be automation-friendly and simply as-yet un-automated, others are impractical or near-impossible to meaningfully. This list exist to serve as a reminder/checklist to any maintainer, but also as a gauge of how much manual upkeep is currently required to better judge whether adding to this list with new features is a good idea or not.
+The following is a list of non-automated or semi-automated (i.e. handled with manually-run-once scripts) procedures or data additions that must be maintained. Some the items on this list may be automation-friendly and simply as-yet un-automated, others are impractical or near-impossible to meaningfully automate. This list exist to serve as a reminder/checklist to any maintainer, but also as a gauge of how much manual upkeep is currently required to better judge whether adding to this list with new features is a good idea or not.
 
 Note that this list is being created retroactively, and is as-yet incomplete.
 

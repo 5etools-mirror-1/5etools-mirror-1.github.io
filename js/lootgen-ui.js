@@ -92,7 +92,7 @@ class LootGenUi extends BaseComponent {
 
 						const caption = tier === "other"
 							? `Other ${isMundane ? "mundane" : "magic"} items of ${rarity} rarity`
-							: `${tier.toTitleCase()}-tier ${isMundane ? "mundane" : "magic"} items of ${rarity} rarity`
+							: `${tier.toTitleCase()}-tier ${isMundane ? "mundane" : "magic"} items of ${rarity} rarity`;
 
 						return {
 							type: "XGE",
@@ -121,7 +121,7 @@ class LootGenUi extends BaseComponent {
 								table: items.map((it, i) => ({min: i + 1, max: i + 1, item: `{@item ${it.name}|${it.source}}`})),
 							},
 						};
-					})
+					});
 			})
 			.flat();
 	}
@@ -211,8 +211,8 @@ class LootGenUi extends BaseComponent {
 	}
 
 	_ft_pDoHandleClickRollLoot () {
-		if (this._state.ft_isHoard) return this._ft_doHandleClickRollLoot_pHoard()
-		return this._ft_doHandleClickRollLoot_single()
+		if (this._state.ft_isHoard) return this._ft_doHandleClickRollLoot_pHoard();
+		return this._ft_doHandleClickRollLoot_single();
 	}
 
 	_ft_doHandleClickRollLoot_single () {
@@ -471,7 +471,7 @@ class LootGenUi extends BaseComponent {
 				propMax: "pl_exactLevelMax",
 				propCurMin: "pl_exactLevel",
 			},
-		)
+		);
 
 		const $stgExactLevel = $$`<div class="flex-col w-100">
 			<div class="flex-col mb-2">
@@ -549,7 +549,7 @@ class LootGenUi extends BaseComponent {
 					breakdown,
 					tier,
 				}),
-			)
+			);
 		}
 
 		const ptLevel = this._state.pl_isExactLevel
@@ -600,7 +600,7 @@ class LootGenUi extends BaseComponent {
 		const templateLow = MiscUtil.copy(LootGenUi._PARTY_LOOT_ITEMS_PER_LEVEL[levelLow]);
 		const templateHigh = MiscUtil.copy(LootGenUi._PARTY_LOOT_ITEMS_PER_LEVEL[levelHigh]);
 
-		const ratio = (this._state.pl_exactLevel - levelLow) / (levelHigh - levelLow)
+		const ratio = (this._state.pl_exactLevel - levelLow) / (levelHigh - levelLow);
 
 		const out = {major: {}, minor: {}};
 		Object.entries(out)
@@ -713,7 +713,7 @@ class LootGenUi extends BaseComponent {
 			.forEach(() => {
 				const roll = RollerUtil.randomise(100);
 				const result = this._data.dragonMundaneItems.find(it => roll >= it.min && roll <= it.max);
-				breakdown.push(result.item)
+				breakdown.push(result.item);
 			});
 
 		return new LootGenOutputDragonMundaneItems({
@@ -937,7 +937,7 @@ class LootGenOutput {
 	async _pDoSendToFoundry ({isTemp}) {
 		const toSend = await this._pGetFoundryForm();
 		if (isTemp) toSend.isTemp = isTemp;
-		if (toSend.currency || toSend.entityInfos) await ExtensionUtil.pDoSend({type: "5etools.lootgen.loot", data: toSend})
+		if (toSend.currency || toSend.entityInfos) await ExtensionUtil.pDoSend({type: "5etools.lootgen.loot", data: toSend});
 	}
 
 	async _pGetFoundryForm () {
@@ -1024,7 +1024,7 @@ class LootGenOutput {
 				options: {
 					quantity: count,
 				},
-			})
+			});
 		}
 
 		for (const {count, item} of Object.values(specialItemMetas)) {
@@ -1049,7 +1049,7 @@ class LootGenOutput {
 			this._artObjects ? this._artObjects.type * this._artObjects.count * 100 : 0,
 		].sum();
 
-		return $(`<li class="italic ve-muted">A total of ${(totalValue / 100).toLocaleString()} gp worth of coins, art objects, and/or gems, as follows:</li>`)
+		return $(`<li class="italic ve-muted">A total of ${(totalValue / 100).toLocaleString()} gp worth of coins, art objects, and/or gems, as follows:</li>`);
 	}
 
 	_render_$getPtCoins () {
@@ -1114,7 +1114,7 @@ class LootGenOutput {
 								<li>${rarity.toTitleCase()} items (×${lootItems.length}):</li>
 								<ul>${lootItems.map(it => it.$getRender())}</ul>
 							`;
-						})
+						});
 
 					return $$`
 						<li>${magicItems.tier.toTitleCase()} items:</li>
@@ -1127,7 +1127,7 @@ class LootGenOutput {
 				return $$`
 					<li>Magic Items${magicItems.type ? ` (${Renderer.get().render(`{@table Magic Item Table ${magicItems.type}||Table ${magicItems.type}}`)})` : ""}${(magicItems.count || 0) > 1 ? ` (×${magicItems.count})` : ""}</li>
 					<ul>${magicItems.breakdown.map(it => it.$getRender())}</ul>
-				`
+				`;
 			});
 	}
 
@@ -1208,6 +1208,25 @@ class LootGenMagicItem extends BaseComponent {
 		isItemsAltChooseRoll = isItemsAltChooseRoll && !!itemsAltChoose;
 		if (isItemsAltChooseRoll) {
 			const item = RollerUtil.rollOnArray(itemsAltChoose);
+
+			const baseEntry = `{@item ${item.name}|${item.source}}`;
+
+			if (item.spellScrollLevel != null) {
+				return new LootGenMagicItemSpellScroll({
+					lootGenMagicItems,
+					spells,
+					magicItemTable,
+					itemsAltChoose,
+					itemsAltChooseDisplayText,
+					isItemsAltChooseRoll,
+					fnGetIsPreferAltChoose,
+					baseEntry,
+					item,
+					spellLevel: item.spellScrollLevel,
+					spell: RollerUtil.rollOnArray(spells.filter(it => it.level === item.spellScrollLevel)),
+				});
+			}
+
 			return new LootGenMagicItem({
 				lootGenMagicItems,
 				spells,
@@ -1216,7 +1235,7 @@ class LootGenMagicItem extends BaseComponent {
 				itemsAltChooseDisplayText,
 				isItemsAltChooseRoll,
 				fnGetIsPreferAltChoose,
-				baseEntry: `{@item ${item.name}|${item.source}}`,
+				baseEntry,
 				item,
 			});
 		}
@@ -1449,7 +1468,7 @@ class LootGenMagicItem extends BaseComponent {
 
 	_$getRender_$getDispBaseEntry ({prop = "baseEntry"} = {}) {
 		const $dispBaseEntry = $(`<div class="mr-2"></div>`);
-		const hkBaseEntry = () => $dispBaseEntry.html(Renderer.get().render(this._state.isItemsAltChooseRoll ? `{@i ${this._state[prop]}}` : this._state[prop]))
+		const hkBaseEntry = () => $dispBaseEntry.html(Renderer.get().render(this._state.isItemsAltChooseRoll ? `{@i ${this._state[prop]}}` : this._state[prop]));
 		this._addHookBase(prop, hkBaseEntry);
 		hkBaseEntry();
 		return $dispBaseEntry;
@@ -1509,7 +1528,7 @@ class LootGenMagicItemSpellScroll extends LootGenMagicItem {
 			});
 
 		const $dispSpell = $(`<div></div>`);
-		const hkSpell = () => $dispSpell.html(Renderer.get().render(`{@spell ${this._state.spell.name}|${this._state.spell.source}}`))
+		const hkSpell = () => $dispSpell.html(Renderer.get().render(`{@spell ${this._state.spell.name}|${this._state.spell.source}}`));
 		this._addHookBase("spell", hkSpell);
 		hkSpell();
 
@@ -1563,7 +1582,7 @@ class LootGenMagicItemSubItems extends LootGenMagicItem {
 			});
 
 		const $dispSubItem = $(`<div></div>`);
-		const hkItem = () => $dispSubItem.html(Renderer.get().render(`{@item ${this._state.item.name}|${this._state.item.source}}`))
+		const hkItem = () => $dispSubItem.html(Renderer.get().render(`{@item ${this._state.item.name}|${this._state.item.source}}`));
 		this._addHookBase("item", hkItem);
 		hkItem();
 

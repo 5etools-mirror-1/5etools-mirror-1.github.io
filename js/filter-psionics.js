@@ -47,6 +47,6 @@ class PageFilterPsionics extends PageFilter {
 			p.source,
 			p.type,
 			p._fOrder,
-		)
+		);
 	}
 }

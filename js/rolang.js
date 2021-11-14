@@ -23,7 +23,7 @@ class Ro_Token {
 		return this.toDebugString();
 	}
 
-	toDebugString () { return `${this.type}${this.value ? ` :: ${this.value}` : ""}` }
+	toDebugString () { return `${this.type}${this.value ? ` :: ${this.value}` : ""}`; }
 
 	static NUMBER (val, line) { return new Ro_Token(Ro_Token.TYP_NUMBER, val, null, line); }
 	static IDENTIFIER (val, line) { return new Ro_Token(Ro_Token.TYP_IDENTIFIER, val, null, line); }
@@ -355,7 +355,7 @@ class Ro_Parser {
 		else if (this._accept(Ro_Token.PAREN_OPEN)) {
 			const exp = this._expression();
 			this._expect(Ro_Token.PAREN_CLOSE);
-			return new Ro_Parser._Factor(exp, {hasParens: true})
+			return new Ro_Parser._Factor(exp, {hasParens: true});
 		} else {
 			if (this._sym) throw new Error(`Unexpected input: <code>${this._sym}</code> (line <code>${this._sym.line}</code>)`);
 			else throw new Error(`Unexpected end of input (line <code>${this._sym.line}</code>)`);
@@ -410,7 +410,7 @@ class Ro_Parser {
 
 		if (this._match(Ro_Token.TYP_NUMBER) || this._match(Ro_Token.ADD) || this._match(Ro_Token.SUB) || this._match(Ro_Token.PAREN_OPEN)) { // e.g. `4` or `1 + 2` etc; all valid stage labels
 			children.push(this._expression());
-			this._expect(Ro_Token.NEWLINE)
+			this._expect(Ro_Token.NEWLINE);
 		} else if (this._match(Ro_Token.TYP_IDENTIFIER)) {
 			if (this._peek() === Ro_Token.ASSIGN) { // a = 1
 				children.push(this._accept(Ro_Token.TYP_IDENTIFIER));
@@ -1030,4 +1030,4 @@ class Ro_Lang {
 	}
 }
 
-export {Ro_Token, Ro_Lexer, Ro_Parser, Ro_Lang}
+export {Ro_Token, Ro_Lexer, Ro_Parser, Ro_Lang};

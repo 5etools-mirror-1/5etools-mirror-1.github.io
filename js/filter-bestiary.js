@@ -3,7 +3,7 @@
 class PageFilterBestiary extends PageFilter {
 	// region static
 	static sortMonsters (a, b, o) {
-		if (o.sortBy === "count") return SortUtil.ascSort(a.values.count, b.values.count) || SortUtil.compareListNames(a, b);
+		if (o.sortBy === "count") return SortUtil.ascSort(a.data.count, b.data.count) || SortUtil.compareListNames(a, b);
 		switch (o.sortBy) {
 			case "name": return SortUtil.compareListNames(a, b);
 			case "type": return SortUtil.ascSort(a.values.type, b.values.type) || SortUtil.compareListNames(a, b);
@@ -267,6 +267,8 @@ class PageFilterBestiary extends PageFilter {
 			if (it.from.includes("Unarmored Defense")) mon._fMisc.push("AC from Unarmored Defense");
 		}
 		if (this._hasRecharge(mon)) mon._fMisc.push("Has Recharge");
+		if (mon._versionBase_isVersion) mon._fMisc.push("Is Variant");
+
 		const spellcasterMeta = this._getSpellcasterMeta(mon);
 		if (spellcasterMeta) {
 			if (spellcasterMeta.spellLevels.size) mon._fSpellSlotLevels = [...spellcasterMeta.spellLevels];
@@ -295,7 +297,7 @@ class PageFilterBestiary extends PageFilter {
 				{
 					string: this._getSpellcasterMeta_stringHandler.bind(null, spellSet),
 				},
-			)
+			);
 		}
 
 		return {spellLevels, spellSet};
@@ -346,6 +348,7 @@ class PageFilterBestiary extends PageFilter {
 		this._passivePerceptionFilter.addItem(mon._fPassive);
 		this._spellSlotLevelFilter.addItem(mon._fSpellSlotLevels);
 		this._spellKnownFilter.addItem(mon._fSpellsKnown);
+		if (mon._versionBase_isVersion) this._miscFilter.addItem("Is Variant");
 	}
 
 	async _pPopulateBoxOptions (opts) {
@@ -480,7 +483,7 @@ class ModalFilterBestiary extends ModalFilter {
 			modalTitle: `Creature${opts.isRadio ? "" : "s"}`,
 			pageFilter: new PageFilterBestiary(),
 			fnSort: PageFilterBestiary.sortMonsters,
-		})
+		});
 	}
 
 	_$getColumnHeaders () {

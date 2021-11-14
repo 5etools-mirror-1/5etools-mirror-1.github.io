@@ -76,10 +76,10 @@ class Omnisearch {
 
 		this._init_initScrollHandler();
 
-		$(document.body).on("keypress", (e) => {
-			if (!EventUtil.noModifierKeys(e) || EventUtil.isInInput(e)) return;
-			if (e.key !== "F") return;
-			e.preventDefault();
+		$(document.body).on("keypress", (evt) => {
+			if (!EventUtil.noModifierKeys(evt) || EventUtil.isInInput(evt)) return;
+			if (EventUtil.getKeyIgnoreCapsLock(evt) !== "F") return;
+			evt.preventDefault();
 			this._$iptSearch.select().focus();
 		});
 	}
@@ -303,7 +303,7 @@ class Omnisearch {
 					page++;
 					this._pDoSearch_renderLinks(results, page);
 				});
-				$pgControls.append($nxt)
+				$pgControls.append($nxt);
 			} else ($pgControls.append(`<span class="omni__paginate-right omni__paginate-ctrl">`));
 			this._$searchOut.append($pgControls);
 		}
@@ -313,7 +313,7 @@ class Omnisearch {
 		}
 
 		if (!results.length) {
-			this._$searchOut.append(`<div class="ve-muted"><i>No results found.</i></div>`)
+			this._$searchOut.append(`<div class="ve-muted"><i>No results found.</i></div>`);
 		}
 	}
 	// endregion
@@ -371,7 +371,7 @@ class Omnisearch {
 		// this doesn't update if the 'Brew changes later, but so be it.
 		const brewIndex = await BrewUtil.pGetSearchIndex();
 		brewIndex.forEach(it => this._addToIndex(it));
-		if (brewIndex.length) this.highestId = brewIndex.last().id
+		if (brewIndex.length) this.highestId = brewIndex.last().id;
 
 		this._adventureBookLookup = {};
 		[brewIndex, data].forEach(index => {
@@ -400,7 +400,7 @@ class Omnisearch {
 
 		const toAdd = Omnidexer.decompressIndex(indexer.getIndex());
 		toAdd.forEach(it => this._addToIndex(it));
-		if (toAdd.length) this.highestId = toAdd.last().id
+		if (toAdd.length) this.highestId = toAdd.last().id;
 	}
 
 	static _addToIndex (d) {

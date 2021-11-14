@@ -20,7 +20,7 @@ class RenderRecipes {
 
 		return $$`
 		${Renderer.utils.getBorderTr()}
-		${Renderer.utils.getExcludedTr(it, "recipe")}
+		${Renderer.utils.getExcludedTr({entity: it, dataProp: "recipe"})}
 		${Renderer.utils.getNameTr(it, {page: UrlUtil.PG_RECIPES})}
 
 		${ptFluff ? `<tr class="mobile__hidden recipes__wrp-fluff"><td colspan="6">${ptFluff}</td></tr>
@@ -46,7 +46,7 @@ class RenderRecipes {
 
 		${Renderer.utils.getPageTr(it)}
 		${Renderer.utils.getBorderTr()}
-		`
+		`;
 	}
 
 	static _getFluffHtml (it) {

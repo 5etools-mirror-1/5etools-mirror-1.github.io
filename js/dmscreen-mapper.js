@@ -112,9 +112,9 @@ class DmMapperRoot extends BaseComponent {
 	render ($parent) {
 		$parent.empty();
 
-		$parent.append(`<div class="flex-vh-center w-100 h-100"><i class="dnd-font ve-muted">Loading...</i></div>`)
+		$parent.append(`<div class="flex-vh-center w-100 h-100"><i class="dnd-font ve-muted">Loading...</i></div>`);
 
 		RenderMap.$pGetRendered(this._state)
-			.then($ele => $parent.empty().append($ele))
+			.then($ele => $parent.empty().append($ele));
 	}
 }

@@ -13,7 +13,7 @@ class GenTables {
 					return {
 						adventure: idx,
 						adventureData: JSON.parse(fs.readFileSync(`./data/adventure/adventure-${idx.id.toLowerCase()}.json`, "utf-8")),
-					}
+					};
 				}
 			})
 			.filter(it => it);

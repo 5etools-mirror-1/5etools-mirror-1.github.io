@@ -12,7 +12,7 @@ class BaseConverter extends BaseComponent {
 			case "html": return "HTML";
 			case "md": return "Markdown";
 			case "txt": return "Text";
-			default: throw new Error(`Unimplemented!`)
+			default: throw new Error(`Unimplemented!`);
 		}
 	}
 
@@ -180,7 +180,7 @@ class BaseConverter extends BaseComponent {
 				optionsToAdd.forEach(source => {
 					const fullSource = BrewUtil.sourceJsonToSource(source);
 					$(`<option/>`, {val: fullSource.json, text: fullSource.full}).insertAfter($optBrewLast);
-				})
+				});
 			}
 
 			const toDelete = CollectionUtil.setDiff(curSources, nxtSources);
@@ -581,7 +581,7 @@ class TableConverter extends BaseConverter {
 		switch (format) {
 			case "html": return TableConverter.SAMPLE_HTML;
 			case "md": return TableConverter.SAMPLE_MARKDOWN;
-			default: throw new Error(`Unknown format "${format}"`)
+			default: throw new Error(`Unknown format "${format}"`);
 		}
 	}
 }
@@ -654,7 +654,7 @@ class ConverterUi extends BaseComponent {
 		return {
 			...super.getBaseSaveableState(),
 			...Object.values(this._converters).mergeMap(it => ({[it.converterId]: it.getBaseSaveableState()})),
-		}
+		};
 	}
 
 	async pInit () {
@@ -683,7 +683,7 @@ class ConverterUi extends BaseComponent {
 		try {
 			const prevInput = await StorageUtil.pGetForPage(ConverterUi.STORAGE_INPUT);
 			if (prevInput) this._editorIn.setValue(prevInput, -1);
-		} catch (ignored) { setTimeout(() => { throw ignored; }) }
+		} catch (ignored) { setTimeout(() => { throw ignored; }); }
 		this._editorIn.on("change", () => this._saveInputDebounced());
 
 		this._editorOut = ace.edit("converter_output");
@@ -732,7 +732,7 @@ class ConverterUi extends BaseComponent {
 						JqueryUtil.doToast({
 							type: "warning",
 							content: `Ignored ${dupes.length} duplicate entr${dupes.length === 1 ? "y" : "ies"}`,
-						})
+						});
 					}
 
 					// handle overwrites
@@ -743,7 +743,7 @@ class ConverterUi extends BaseComponent {
 								isOverwrite: true,
 								ix,
 								entry: it,
-							}
+							};
 						} else return {entry: it, isOverwrite: false};
 					}).filter(Boolean);
 					const willOverwrite = overwriteMeta.map(it => it.isOverwrite).filter(Boolean);
@@ -770,7 +770,7 @@ class ConverterUi extends BaseComponent {
 						content: `Current output was not valid JSON!`,
 						type: "danger",
 					});
-					setTimeout(() => { throw e });
+					setTimeout(() => { throw e; });
 				}
 			} else {
 				JqueryUtil.doToast({
@@ -824,7 +824,7 @@ class ConverterUi extends BaseComponent {
 				const message = `[Error] ${x.message} ${atPos}`;
 				$(`#lastError`).show().html(message);
 				this._editorOut.resize();
-				setTimeout(() => { throw x });
+				setTimeout(() => { throw x; });
 			}
 		};
 
@@ -897,7 +897,7 @@ class ConverterUi extends BaseComponent {
 		Object
 			.keys(this._converters)
 			.sort(SortUtil.ascSortLower)
-			.forEach(k => this._converters[k].renderSidebar(this.getPod(), $wrpConverters))
+			.forEach(k => this._converters[k].renderSidebar(this.getPod(), $wrpConverters));
 	}
 
 	showWarning (text) {
@@ -952,7 +952,7 @@ async function doPageInit () {
 
 	const ui = new ConverterUi();
 
-	const statblockConverter = new CreatureConverter(ui)
+	const statblockConverter = new CreatureConverter(ui);
 	const itemConverter = new ItemConverter(ui);
 	const featConverter = new FeatConverter(ui);
 	const spellConverter = new SpellConverter(ui);

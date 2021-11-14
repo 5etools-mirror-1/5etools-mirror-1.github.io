@@ -16,7 +16,7 @@ class StyleSwitcher {
 	}
 
 	static _setButtonText (btnClassName, text) {
-		[...document.getElementsByClassName(btnClassName)].forEach(ele => ele.innerHTML = text)
+		[...document.getElementsByClassName(btnClassName)].forEach(ele => ele.innerHTML = text);
 	}
 
 	// region Night Mode
@@ -49,8 +49,8 @@ class StyleSwitcher {
 	getDayNightClassNames () {
 		switch (this.currentStylesheet) {
 			case StyleSwitcher._STYLE_DAY: return "";
-			case StyleSwitcher._STYLE_NIGHT: return StyleSwitcher._NIGHT_CLASS
-			case StyleSwitcher._STYLE_NIGHT_ALT: return [StyleSwitcher._NIGHT_CLASS, StyleSwitcher._NIGHT_CLASS_ALT].join(" ")
+			case StyleSwitcher._STYLE_NIGHT: return StyleSwitcher._NIGHT_CLASS;
+			case StyleSwitcher._STYLE_NIGHT_ALT: return [StyleSwitcher._NIGHT_CLASS, StyleSwitcher._NIGHT_CLASS_ALT].join(" ");
 		}
 	}
 
@@ -153,7 +153,7 @@ try {
 		},
 
 		setItem (k, v) {},
-	}
+	};
 }
 
 const styleSwitcher = new StyleSwitcher();

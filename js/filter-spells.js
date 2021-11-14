@@ -20,7 +20,7 @@ class VariantClassFilter extends Filter {
 	set parent (multiFilterClasses) { this._parent = multiFilterClasses; }
 
 	handleVariantSplit (isVariantSplit) {
-		this.__$wrpFilter.toggleVe(isVariantSplit)
+		this.__$wrpFilter.toggleVe(isVariantSplit);
 	}
 }
 
@@ -42,7 +42,7 @@ class MultiFilterClasses extends MultiFilter {
 		const $out = super.$render(opts);
 
 		const hkVariantSplit = () => this._variantClassFilter.handleVariantSplit(this._meta.isVariantSplit);
-		this._addHook("meta", "isVariantSplit", hkVariantSplit)
+		this._addHook("meta", "isVariantSplit", hkVariantSplit);
 		hkVariantSplit();
 
 		return $out;
@@ -59,7 +59,7 @@ class MultiFilterClasses extends MultiFilter {
 				stateProp: "_meta",
 				title: `If "Optional/Variant Class" spell lists should be treated as part of the "Class" filter.`,
 			},
-		)
+		);
 
 		e_({
 			tag: "div",
@@ -264,7 +264,7 @@ class PageFilterSpells extends PageFilter {
 			case RNG_SPHERE:
 			case RNG_CYLINDER:
 			case RNG_CUBE:
-				return PageFilterSpells.F_RNG_SELF_AREA
+				return PageFilterSpells.F_RNG_SELF_AREA;
 		}
 	}
 
@@ -286,7 +286,7 @@ class PageFilterSpells extends PageFilter {
 			},
 		};
 		if (r.baseName) opts.nest = r.baseName;
-		else opts.nest = "(No Subraces)"
+		else opts.nest = "(No Subraces)";
 		return new FilterItem(opts);
 	}
 	// endregion
@@ -449,7 +449,7 @@ class PageFilterSpells extends PageFilter {
 					subclassShortName: c.subclass.name,
 					subclassSource: c.subclass.source,
 					subSubclassName: c.subclass.subSubclass,
-				})
+				});
 			});
 		spell._fVariantClasses = Renderer.spell.getCombinedClasses(spell, "fromClassListVariant").map(c => {
 			return this._getClassFilterItem({
@@ -496,7 +496,7 @@ class PageFilterSpells extends PageFilter {
 		});
 		spell._fVariantClasses.forEach(c => {
 			this._variantClassFilter.addNest(c.nest, {isHidden: true});
-			this._variantClassFilter.addItem(c)
+			this._variantClassFilter.addItem(c);
 		});
 		this._subSchoolFilter.addItem(spell.subschools);
 	}
@@ -551,7 +551,7 @@ class PageFilterSpells extends PageFilter {
 			s._fDurationType,
 			s._fRangeType,
 			s._fAreaTags,
-		)
+		);
 	}
 }
 // toss these into the "Tags" section to save screen space

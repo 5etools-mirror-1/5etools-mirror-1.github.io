@@ -135,7 +135,7 @@ function prettifyFolder (folder) {
 			const keyOrder = Object.keys(json)
 				.sort((a, b) => {
 					const ixA = _FILE_PROP_ORDER.indexOf(a);
-					const ixB = _FILE_PROP_ORDER.indexOf(b)
+					const ixB = _FILE_PROP_ORDER.indexOf(b);
 					return SortUtil.ascSort(~ixA ? ixA : Number.MAX_SAFE_INTEGER, ~ixB ? ixB : Number.MAX_SAFE_INTEGER);
 				});
 			const numUnhandledKeys = Object.keys(json).filter(it => !~_FILE_PROP_ORDER.indexOf(it));
@@ -156,7 +156,7 @@ function prettifyFolder (folder) {
 		.forEach(([prop, set]) => {
 			console.warn(`Unhandled keys for data property "${prop}":`);
 			set.forEach(k => console.warn(`\t${k}`));
-		})
+		});
 }
 
 prettifyFolder(`./data`);

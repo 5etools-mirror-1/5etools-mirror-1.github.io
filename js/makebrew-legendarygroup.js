@@ -48,7 +48,7 @@ class LegendaryGroupBuilder extends Builder {
 			regionalEffects: [],
 			mythicEncounter: [],
 			source: this._ui ? this._ui.source : "",
-		}
+		};
 	}
 
 	setStateFromLoaded (state) {

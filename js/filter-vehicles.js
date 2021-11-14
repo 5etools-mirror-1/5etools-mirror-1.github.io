@@ -69,7 +69,7 @@ class PageFilterVehicles extends PageFilter {
 
 		this._sourceFilter.addItem(it.source);
 		this._vehicleTypeFilter.addItem(it.vehicleType);
-		this._upgradeTypeFilter.addItem(it.upgradeType)
+		this._upgradeTypeFilter.addItem(it.upgradeType);
 		this._speedFilter.addItem(it._fSpeed);
 		this._terrainFilter.addItem(it.terrain);
 		this._acFilter.addItem(it._fAc);
@@ -103,6 +103,6 @@ class PageFilterVehicles extends PageFilter {
 			it._fHp,
 			it._fCreatureCapacity,
 			it._fMisc,
-		)
+		);
 	}
 }

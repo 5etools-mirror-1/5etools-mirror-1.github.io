@@ -19,7 +19,7 @@ class SearchPage {
 				if (evt.key !== "Enter") return;
 				$btnSearch.click();
 			})
-			.val(decodeURIComponent(location.search.slice(1).replace(/\+/g, " ")))
+			.val(decodeURIComponent(location.search.slice(1).replace(/\+/g, " ")));
 
 		const $btnSearch = $(`<button class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>`)
 			.click(() => {
@@ -36,7 +36,7 @@ class SearchPage {
 			if (isInitialHooks) return;
 			this._doSearch();
 		};
-		Omnisearch.addHookUa(hkUa)
+		Omnisearch.addHookUa(hkUa);
 		hkUa();
 
 		const $btnToggleBlacklisted = $(`<button class="btn btn-default" title="Filter blacklisted content results">Include Blacklisted</button>`)
@@ -46,7 +46,7 @@ class SearchPage {
 			if (isInitialHooks) return;
 			this._doSearch();
 		};
-		Omnisearch.addHookBlacklisted(hkBlacklisted)
+		Omnisearch.addHookBlacklisted(hkBlacklisted);
 		hkBlacklisted();
 
 		const handleMassExpandCollapse = mode => {
@@ -106,7 +106,7 @@ class SearchPage {
 					});
 				},
 				{rootMargin: "150px 0px", threshold: 0.01},
-			)
+			);
 		}
 		SearchPage._rowMetas = [];
 
@@ -228,7 +228,7 @@ class SearchPage {
 	}
 
 	static _getWrpResult_message (message) {
-		return `<div class="my-2 py-2 px-3 pg-search__wrp-result flex-vh-center"><i>${message.qq()}</i></div>`
+		return `<div class="my-2 py-2 px-3 pg-search__wrp-result flex-vh-center"><i>${message.qq()}</i></div>`;
 	}
 }
 SearchPage._STORAGE_KEY_IS_EXPANDED = "isExpanded";

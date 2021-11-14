@@ -18,7 +18,7 @@ function addMonsterFeatures (mfData) {
 	monsterFeatures = mfData.monsterfeatures;
 	for (let i = 0; i < msbcr.cr.length; i++) {
 		const curCr = msbcr.cr[i];
-		$("#msbcr").append(`<tr><td>${curCr._cr}</td><td>${Parser.crToXp(curCr._cr)}</td><td>${curCr.pb}</td><td>${curCr.ac}</td><td>${curCr.hpmin}-${curCr.hpmax}</td><td>${curCr.attackbonus}</td><td>${curCr.dprmin}-${curCr.dprmax}</td><td>${curCr.savedc}</td></tr>`)
+		$("#msbcr").append(`<tr><td>${curCr._cr}</td><td>${Parser.crToXp(curCr._cr)}</td><td>${curCr.pb}</td><td>${curCr.ac}</td><td>${curCr.hpmin}-${curCr.hpmax}</td><td>${curCr.attackbonus}</td><td>${curCr.dprmin}-${curCr.dprmax}</td><td>${curCr.savedc}</td></tr>`);
 	}
 
 	$("#crcalc input").change(calculateCr);
@@ -133,7 +133,7 @@ function addMonsterFeatures (mfData) {
 		if ($cbFeature.prop("checked")) {
 			Hist.setSubhash(curFeature, $iptNum.length ? $iptNum.val() : true);
 		} else {
-			Hist.setSubhash(curFeature, null)
+			Hist.setSubhash(curFeature, null);
 		}
 	}
 
@@ -279,7 +279,7 @@ function calculateCr () {
 			const $cb = $(e);
 			if ($cb.prop("checked")) {
 				const $iptNum = $cb.siblings("input[type=number]");
-				return `${$cb.attr("id")}:${$iptNum.length ? $iptNum.val() : true}`
+				return `${$cb.attr("id")}:${$iptNum.length ? $iptNum.val() : true}`;
 			} else return false;
 		}).get().filter(Boolean).join(","),
 	];

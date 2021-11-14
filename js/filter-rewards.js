@@ -47,6 +47,6 @@ class PageFilterRewards extends PageFilter {
 			r.source,
 			r.type,
 			r._fRarity,
-		)
+		);
 	}
 }

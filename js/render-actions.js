@@ -2,7 +2,7 @@ class RenderActions {
 	static $getRenderedAction (it) {
 		return $$`
 		${Renderer.utils.getBorderTr()}
-		${Renderer.utils.getExcludedTr(it, "action")}
+		${Renderer.utils.getExcludedTr({entity: it, dataProp: "action"})}
 		${Renderer.utils.getNameTr(it, {page: UrlUtil.PG_ACTIONS})}
 		<tr><td class="divider" colspan="6"><div></div></td></tr>
 		<tr class="text"><td colspan="6">
@@ -12,6 +12,6 @@ class RenderActions {
 		</td></tr>
 		${Renderer.utils.getPageTr(it)}
 		${Renderer.utils.getBorderTr()}
-		`
+		`;
 	}
 }

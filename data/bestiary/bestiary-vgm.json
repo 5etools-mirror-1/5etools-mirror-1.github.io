@@ -78,7 +78,7 @@
 							"slots": 4,
 							"spells": [
 								"{@spell alarm}*",
-								"{@spell mage armor}",
+								"{@spell mage armor}*",
 								"{@spell magic missile}",
 								"{@spell shield}*"
 							]
@@ -812,7 +812,269 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Annis Hag (Coven)",
+					"source": "VGM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell identify}",
+											"{@spell ray of sickness}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell hold person}",
+											"{@spell locate object}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell bestow curse}",
+											"{@spell counterspell}",
+											"{@spell lightning bolt}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell phantasmal killer}",
+											"{@spell polymorph}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell contact other plane}",
+											"{@spell scrying}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell eyebite}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "8",
+					"variant": null
+				},
+				{
+					"name": "Annis Hag (Coven; Death)",
+					"source": "VGM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell false life}",
+											"{@spell inflict wounds}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell gentle repose}",
+											"{@spell ray of enfeeblement}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell animate dead}",
+											"{@spell revivify}",
+											"{@spell speak with dead}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell blight}",
+											"{@spell death ward}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell contagion}",
+											"{@spell raise dead}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell circle of death}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "8",
+					"variant": null
+				},
+				{
+					"name": "Annis Hag (Coven; Nature)",
+					"source": "VGM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell entangle}",
+											"{@spell speak with animals}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell flaming sphere}",
+											"{@spell moonbeam}",
+											"{@spell spike growth}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell call lightning}",
+											"{@spell plant growth}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell dominate beast}",
+											"{@spell grasping vine}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell insect plague}",
+											"{@spell tree stride}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell wall of thorns}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "8",
+					"variant": null
+				},
+				{
+					"name": "Annis Hag (Coven; Prophecy)",
+					"source": "VGM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell bane}",
+											"{@spell bless}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell augury}",
+											"{@spell detect thoughts}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell clairvoyance}",
+											"{@spell dispel magic}",
+											"{@spell nondetection}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell arcane eye}",
+											"{@spell locate creature}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell geas}",
+											"{@spell legend lore}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell true seeing}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "8",
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Apprentice Wizard",
@@ -2307,7 +2569,269 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Bheur Hag (Coven)",
+					"source": "VGM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell identify}",
+											"{@spell ray of sickness}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell hold person}",
+											"{@spell locate object}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell bestow curse}",
+											"{@spell counterspell}",
+											"{@spell lightning bolt}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell phantasmal killer}",
+											"{@spell polymorph}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell contact other plane}",
+											"{@spell scrying}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell eyebite}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "9",
+					"variant": null
+				},
+				{
+					"name": "Bheur Hag (Coven; Death)",
+					"source": "VGM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell false life}",
+											"{@spell inflict wounds}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell gentle repose}",
+											"{@spell ray of enfeeblement}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell animate dead}",
+											"{@spell revivify}",
+											"{@spell speak with dead}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell blight}",
+											"{@spell death ward}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell contagion}",
+											"{@spell raise dead}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell circle of death}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "9",
+					"variant": null
+				},
+				{
+					"name": "Bheur Hag (Coven; Nature)",
+					"source": "VGM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell entangle}",
+											"{@spell speak with animals}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell flaming sphere}",
+											"{@spell moonbeam}",
+											"{@spell spike growth}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell call lightning}",
+											"{@spell plant growth}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell dominate beast}",
+											"{@spell grasping vine}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell insect plague}",
+											"{@spell tree stride}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell wall of thorns}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "9",
+					"variant": null
+				},
+				{
+					"name": "Bheur Hag (Coven; Prophecy)",
+					"source": "VGM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell bane}",
+											"{@spell bless}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell augury}",
+											"{@spell detect thoughts}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell clairvoyance}",
+											"{@spell dispel magic}",
+											"{@spell nondetection}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell arcane eye}",
+											"{@spell locate creature}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell geas}",
+											"{@spell legend lore}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell true seeing}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "9",
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Black Guard Drake",
@@ -7268,7 +7792,10 @@
 								"The gazer can serve another creature as a familiar, forming a telepathic bond with its willing master, provided that the master is at least a 3rd-level spellcaster. While the two are bonded, the master can sense what the gazer senses as long as they are within 1 mile of each other. If its master causes it physical harm, the gazer will end its service as a familiar, breaking the telepathic bond."
 							]
 						}
-					]
+					],
+					"_version": {
+						"addHeadersAs": "trait"
+					}
 				}
 			],
 			"environment": [
@@ -8108,7 +8635,111 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Grung (Blue)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature must shout loudly or otherwise make a loud noise at the start and end of its turn."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung (Gold)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature is {@condition charmed} and can speak Grung."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung (Green)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature can't move except to climb or make standing jumps. If the creature is flying, it can't take any actions or reactions unless it lands."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung (Orange)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature is {@condition frightened} of its allies."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung (Purple)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature feels a desperate need to soak itself in liquid or mud. It can't take actions or move except to do so or to reach a body of liquid or mud."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung (Red)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature must use its action to eat if food is within reach."
+								]
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Grung Elite Warrior",
@@ -8289,7 +8920,111 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Grung Elite Warrior (Blue)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature must shout loudly or otherwise make a loud noise at the start and end of its turn."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Elite Warrior (Gold)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature is {@condition charmed} and can speak Grung."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Elite Warrior (Green)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature can't move except to climb or make standing jumps. If the creature is flying, it can't take any actions or reactions unless it lands."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Elite Warrior (Orange)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature is {@condition frightened} of its allies."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Elite Warrior (Purple)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature feels a desperate need to soak itself in liquid or mud. It can't take actions or move except to do so or to reach a body of liquid or mud."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Elite Warrior (Red)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature must use its action to eat if food is within reach."
+								]
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Grung Wildling",
@@ -8497,7 +9232,111 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Grung Wildling (Blue)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature must shout loudly or otherwise make a loud noise at the start and end of its turn."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Wildling (Gold)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature is {@condition charmed} and can speak Grung."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Wildling (Green)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature can't move except to climb or make standing jumps. If the creature is flying, it can't take any actions or reactions unless it lands."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Wildling (Orange)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature is {@condition frightened} of its allies."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Wildling (Purple)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature feels a desperate need to soak itself in liquid or mud. It can't take actions or move except to do so or to reach a body of liquid or mud."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Wildling (Red)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature must use its action to eat if food is within reach."
+								]
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Hadrosaurus",
@@ -13603,10 +14442,12 @@
 						"A madcap is a redcap that soaks its hat in demon ichor instead of blood. Contact with demon ichor makes the creature even more psychotic, causing it to brood over irrational hatreds. A group of madcaps will sometimes band together over a shared hatred of something, such as music, creatures with curly hair, the word \"cool,\" or the color blue.",
 						"When a madcap drops to 0 hit points, its hateful existence comes to an end in spectacular fashion as it bursts into flames, reducing itself, its ichor-soaked hat, and its pants to ashes instantly while leaving behind its weapon and smoldering iron boots."
 					],
-					"variantSource": {
-						"source": "BGDIA",
-						"page": 240
-					}
+					"_version": {
+						"name": "Madcap",
+						"addAs": "trait"
+					},
+					"source": "BGDIA",
+					"page": 240
 				}
 			],
 			"environment": [
@@ -13972,7 +14813,30 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Shadow Mastiff Alpha",
+					"source": "VGM",
+					"_mod": {
+						"action": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Terrifying Howl",
+								"entries": [
+									"The shadow mastiff howls. Any beast or humanoid within 300 feet of the mastiff and able to hear its howl must succeed on a {@dc 11} Wisdom saving throw or be {@condition frightened} for 1 minute. A {@condition frightened} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to any shadow mastiff's Terrifying Howl for the next 24 hours."
+								]
+							}
+						}
+					},
+					"hp": {
+						"average": 48,
+						"formula": "6d8 + 6"
+					},
+					"int": 6,
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Shoosuva",
@@ -18068,21 +18932,33 @@
 					"name": "Acid Slime",
 					"entries": [
 						"As a bonus action, the yuan-ti can coat its body in a slimy acid that lasts for 1 minute. A creature that touches the yuan-ti, hits it with a melee attack while within 5 feet of it, or is hit by its constrict attack takes 5 ({@damage 1d10}) acid damage."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Anathema (Acid Slime)",
+						"addAs": "bonus"
+					}
 				},
 				{
 					"type": "variant",
 					"name": "Chameleon Skin",
 					"entries": [
 						"The yuan-ti has advantage on Dexterity (Stealth) checks made to hide."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Anathema (Chameleon Skin)",
+						"addAs": "trait"
+					}
 				},
 				{
 					"type": "variant",
 					"name": "Shed Skin (1/Day)",
 					"entries": [
 						"The yuan-ti can shed its skin as a bonus action to free itself from a grapple, shackles, or other restraints. If the yuan-ti spends 1 minute eating its shed skin, it regains hit points equal to half its hit point maximum."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Anathema (Shed Skin)",
+						"addAs": "bonus"
+					}
 				}
 			],
 			"environment": [
@@ -18247,14 +19123,22 @@
 					"name": "Chameleon Skin",
 					"entries": [
 						"The yuan-ti has advantage on Dexterity (Stealth) checks made to hide."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Broodguard (Chameleon Skin)",
+						"addAs": "trait"
+					}
 				},
 				{
 					"type": "variant",
 					"name": "Shed Skin (1/Day)",
 					"entries": [
 						"The yuan-ti can shed its skin as a bonus action to free itself from a grapple, shackles, or other restraints. If the yuan-ti spends 1 minute eating its shed skin, it regains hit points equal to half its hit point maximum."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Broodguard (Shed Skin)",
+						"addAs": "bonus"
+					}
 				}
 			],
 			"environment": [
@@ -18809,14 +19693,22 @@
 					"name": "Chameleon Skin",
 					"entries": [
 						"The yuan-ti has advantage on Dexterity (Stealth) checks made to hide."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Mind Whisperer (Chameleon Skin)",
+						"addAs": "trait"
+					}
 				},
 				{
 					"type": "variant",
 					"name": "Shed Skin (1/Day)",
 					"entries": [
 						"The yuan-ti can shed its skin as a bonus action to free itself from a grapple, shackles, or other restraints. If the yuan-ti spends 1 minute eating its shed skin, it regains hit points equal to half its hit point maximum."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Mind Whisperer (Shed Skin)",
+						"addAs": "bonus"
+					}
 				}
 			],
 			"environment": [
@@ -19028,14 +19920,22 @@
 					"name": "Chameleon Skin",
 					"entries": [
 						"The yuan-ti has advantage on Dexterity (Stealth) checks made to hide."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Nightmare Speaker (Chameleon Skin)",
+						"addAs": "trait"
+					}
 				},
 				{
 					"type": "variant",
 					"name": "Shed Skin (1/Day)",
 					"entries": [
 						"The yuan-ti can shed its skin as a bonus action to free itself from a grapple, shackles, or other restraints. If the yuan-ti spends 1 minute eating its shed skin, it regains hit points equal to half its hit point maximum."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Nightmare Speaker (Shed Skin)",
+						"addAs": "bonus"
+					}
 				}
 			],
 			"environment": [
@@ -19248,14 +20148,22 @@
 					"name": "Chameleon Skin",
 					"entries": [
 						"The yuan-ti has advantage on Dexterity (Stealth) checks made to hide."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Pit Master (Chameleon Skin)",
+						"addAs": "trait"
+					}
 				},
 				{
 					"type": "variant",
 					"name": "Shed Skin (1/Day)",
 					"entries": [
 						"The yuan-ti can shed its skin as a bonus action to free itself from a grapple, shackles, or other restraints. If the yuan-ti spends 1 minute eating its shed skin, it regains hit points equal to half its hit point maximum."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Pit Master (Shed Skin)",
+						"addAs": "bonus"
+					}
 				}
 			],
 			"environment": [

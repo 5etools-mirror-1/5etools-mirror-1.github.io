@@ -3,7 +3,7 @@
 class PageFilterOptionalFeatures extends PageFilter {
 	// region static
 	static _filterFeatureTypeSort (a, b) {
-		return SortUtil.ascSort(Parser.optFeatureTypeToFull(a.item), Parser.optFeatureTypeToFull(b.item))
+		return SortUtil.ascSort(Parser.optFeatureTypeToFull(a.item), Parser.optFeatureTypeToFull(b.item));
 	}
 
 	static sortOptionalFeatures (itemA, itemB, options) {
@@ -142,6 +142,6 @@ class PageFilterOptionalFeatures extends PageFilter {
 				it._fprereqFeature,
 			],
 			it._fMisc,
-		)
+		);
 	}
 }

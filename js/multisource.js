@@ -1,24 +1,19 @@
 "use strict";
 
-class MultiSource {
-	/**
-	 * @param opts Options object.
-	 * @param opts.fnHandleData Data handling function, e.g. "addMonsters"
-	 * @param opts.prop Data property, e.g. "monster"
-	 */
-	constructor (opts) {
-		opts = opts || {};
+class ListPageMultiSource extends ListPage {
+	constructor ({jsonDir, ...rest}) {
+		super({
+			...rest,
+			isLoadDataAfterFilterInit: true,
+			isBindHashHandlerUnknown: true,
+		});
 
-		this._fnHandleData = opts.fnHandleData;
-		this._prop = opts.prop;
-
+		this._jsonDir = jsonDir;
 		this._loadedSources = {};
 		this._lastFilterValues = null;
 	}
 
-	get loadedSources () { return this._loadedSources; }
-
-	onFilterChangeMulti (multiList, filterValues) {
+	_onFilterChangeMulti (multiList, filterValues) {
 		FilterBox.selectFirstVisible(multiList);
 
 		if (!this._lastFilterValues) {
@@ -28,11 +23,17 @@ class MultiSource {
 
 		if (!filterValues.Source._isActive && this._lastFilterValues.Source._isActive) {
 			this._lastFilterValues = filterValues;
-			this.pForceLoadDefaultSources();
+			this._pForceLoadDefaultSources();
 		}
 	}
 
-	async pLoadSource (src, nextFilterVal) {
+	async _pForceLoadDefaultSources () {
+		const defaultSources = Object.keys(this._loadedSources)
+			.filter(s => PageFilter.defaultSourceSelFn(s));
+		await Promise.all(defaultSources.map(src => this._pLoadSource(src, "yes")));
+	}
+
+	async _pLoadSource (src, nextFilterVal) {
 		// We only act when the user changes the filter to "yes", i.e. "load/view the source"
 		if (nextFilterVal !== "yes") return;
 
@@ -40,38 +41,24 @@ class MultiSource {
 		if (toLoad.loaded) return;
 
 		const data = await DataUtil.loadJSON(toLoad.url);
-		this._fnHandleData(data[this._prop]);
+		this._addData(data);
 		toLoad.loaded = true;
 	}
 
-	async pForceLoadDefaultSources () {
-		const defaultSources = Object.keys(this._loadedSources)
-			.filter(s => PageFilter.defaultSourceSelFn(s));
-		await Promise.all(defaultSources.map(src => this.pLoadSource(src, "yes")));
-	}
-
-	/**
-	 * @param jsonDir the directory containing JSON for this page
-	 * @param filterBox Filter box to check for active sources.
-	 * @param pPageInit promise to be run once the index has loaded, should accept an object of src:URL mappings
-	 * @param addFn function to be run when all data has been loaded, should accept a list of objects custom to the page
-	 * @param pOptional optional promise to be run after dataFn, but before page history/etc is init'd
-	 * (e.g. spell data objects for the spell page) which were found in the `this._prop` list
-	 */
-	async pMultisourceLoad (jsonDir, filterBox, pPageInit, addFn, pOptional) {
-		const src2UrlMap = Object.entries(await DataUtil.loadJSON(`${jsonDir}index.json`))
+	async _pOnLoad_pGetData () {
+		const src2UrlMap = Object.entries(await DataUtil.loadJSON(`${this._jsonDir}index.json`))
 			.filter(([source]) => !ExcludeUtil.isExcluded("*", "*", source, {isNoCount: true}))
 			.mergeMap(([source, filename]) => ({[source]: filename}));
 
 		// track loaded sources
-		Object.keys(src2UrlMap).forEach(src => this._loadedSources[src] = {url: jsonDir + src2UrlMap[src], loaded: false});
+		Object.keys(src2UrlMap).forEach(src => this._loadedSources[src] = {url: this._jsonDir + src2UrlMap[src], loaded: false});
 
 		// collect a list of sources to load
 		const sources = Object.keys(src2UrlMap);
 		const defaultSel = sources.filter(s => PageFilter.defaultSourceSelFn(s));
 		const hashSourceRaw = Hist.getHashSource();
 		const hashSource = hashSourceRaw ? Object.keys(src2UrlMap).find(it => it.toLowerCase() === hashSourceRaw.toLowerCase()) : null;
-		const filterSel = await filterBox.pGetStoredActiveSources() || defaultSel;
+		const filterSel = await this._filterBox.pGetStoredActiveSources() || defaultSel;
 		const listSel = await ListUtil.pGetSelectedSources() || [];
 		const userSel = [...new Set([...filterSel, ...listSel, hashSource].filter(Boolean))];
 
@@ -92,7 +79,7 @@ class MultiSource {
 
 		// add source from the current hash, if there is one
 		if (window.location.hash.length) {
-			const [link, ...sub] = Hist.getHashParts();
+			const [link] = Hist.getHashParts();
 			const src = link.split(HASH_LIST_SEP)[1];
 			const hashSrcs = {};
 			sources.forEach(src => hashSrcs[UrlUtil.encodeForHash(src)] = src);
@@ -103,10 +90,10 @@ class MultiSource {
 		}
 
 		// make a list of src : url objects
-		const toLoads = allSources.map(src => ({src: src, url: jsonDir + src2UrlMap[src]}));
+		const toLoads = allSources.map(src => ({src: src, url: this._jsonDir + src2UrlMap[src]}));
 
 		// load the sources
-		let list, listSub;
+		let toAdd = {};
 		if (toLoads.length > 0) {
 			const dataStack = (await Promise.all(toLoads.map(async toLoad => {
 				const data = await DataUtil.loadJSON(toLoad.url);
@@ -114,27 +101,19 @@ class MultiSource {
 				return data;
 			}))).flat();
 
-			const listPair = await pPageInit(this._loadedSources);
-			list = listPair.list;
-			listSub = listPair.listSub;
-
-			let toAdd = [];
-			dataStack.forEach(d => toAdd = toAdd.concat(d[this._prop]));
-			addFn(toAdd);
-		} else {
-			const listPair = await pPageInit(this._loadedSources);
-			list = listPair.list;
-			listSub = listPair.listSub;
+			dataStack.forEach(d => {
+				Object.entries(d)
+					.forEach(([prop, arr]) => {
+						if (!(arr instanceof Array)) return;
+						toAdd[prop] = (toAdd[prop] || []).concat(arr);
+					});
+			});
 		}
 
-		if (pOptional) await pOptional();
+		Object.keys(this._loadedSources)
+			.map(src => new FilterItem({item: src, pFnChange: this._pLoadSource.bind(this)}))
+			.forEach(fi => this._pageFilter.sourceFilter.addItem(fi));
 
-		RollerUtil.addListRollButton();
-		ListUtil.addListShowHide();
-
-		list.init();
-		listSub.init();
-
-		Hist.init(true);
+		return toAdd;
 	}
 }

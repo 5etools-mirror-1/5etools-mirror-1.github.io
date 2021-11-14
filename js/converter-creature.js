@@ -521,7 +521,7 @@ class CreatureParser extends BaseParser {
 			return {
 				source: options.source,
 				page: options.page,
-			}
+			};
 		};
 
 		let step = 0;
@@ -549,7 +549,7 @@ class CreatureParser extends BaseParser {
 			return [
 				ConvertUtil.getCleanTraitActionName(name),
 				text.replace(/\*Hit(\*:|:\*) /g, "Hit: "), // clean hit tags for later replacement
-			]
+			];
 		};
 
 		const getCleanLegendaryActionText = (line) => {
@@ -987,7 +987,7 @@ class CreatureParser extends BaseParser {
 
 	static _tryConvertNumber (strNumber) {
 		try {
-			return Number(strNumber.replace(/—/g, "-"))
+			return Number(strNumber.replace(/—/g, "-"));
 		} catch (e) {
 			return strNumber;
 		}
@@ -1003,12 +1003,12 @@ class CreatureParser extends BaseParser {
 				return { // retain any leading junk, as we'll parse it out in a later step
 					type: `${mSwarm[1]}${swarmTypeSingular}`,
 					swarmSize: mSwarm[2][0].toUpperCase(),
-				}
+				};
 			}
 
 			const mParens = /^(.*?) (\(.*?\))\s*$/.exec(strType);
 			if (mParens) {
-				return {type: mParens[1], tags: mParens[2].split(",").map(s => s.replace(/\(/g, "").replace(/\)/g, "").trim())}
+				return {type: mParens[1], tags: mParens[2].split(",").map(s => s.replace(/\(/g, "").replace(/\)/g, "").trim())};
 			}
 
 			return strType;
@@ -1060,7 +1060,7 @@ class CreatureParser extends BaseParser {
 	static _tryParseDamageResVulnImmune (ipt, modProp, options) {
 		// handle the case where a comma is mistakenly used instead of a semicolon
 		if (ipt.toLowerCase().includes(", bludgeoning, piercing, and slashing from")) {
-			ipt = ipt.replace(/, (bludgeoning, piercing, and slashing from)/gi, "; $1")
+			ipt = ipt.replace(/, (bludgeoning, piercing, and slashing from)/gi, "; $1");
 		}
 
 		const splSemi = ipt.toLowerCase().split(";").map(it => it.trim()).filter(Boolean);
@@ -1142,7 +1142,7 @@ class CreatureParser extends BaseParser {
 				}
 				section = section.replace(/and/g, "");
 				section.split(",").forEach(s => pushArray.push(s.trim()));
-				if ("note" in tempDamage) newDamage.push(tempDamage)
+				if ("note" in tempDamage) newDamage.push(tempDamage);
 			});
 			return newDamage;
 		} catch (ignored) {
@@ -1244,7 +1244,7 @@ class CreatureParser extends BaseParser {
 			stats.skill = newSkills;
 			if (stats.skill[""]) delete stats.skill[""]; // remove empty properties
 		} catch (ignored) {
-			setTimeout(() => { throw ignored });
+			setTimeout(() => { throw ignored; });
 		}
 	}
 
@@ -1297,7 +1297,7 @@ class CreatureParser extends BaseParser {
 						.replace(/All/g, "all")
 						.replace(/Understands/g, "understands")
 						.replace(/Cant/g, "cant")
-						.replace(/Can/g, "can")
+						.replace(/Can/g, "can");
 				})
 				.join("")
 				.split(StrUtil.COMMA_SPACE_NOT_IN_PARENTHESES_REGEX);

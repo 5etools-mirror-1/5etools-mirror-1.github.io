@@ -163,7 +163,7 @@ class AttachedSpellTag {
 						r.forEach(c => addTaggedSpells(c));
 					});
 
-					return obj
+					return obj;
 				},
 			],
 		};
@@ -307,7 +307,7 @@ class BonusTag {
 		[BonusTag._RE_SPEED_BECOMES, BonusTag._RE_SPEED_GAIN, BonusTag._RE_SPEED_GAIN__EXPEND_CHARGE, BonusTag._RE_SPEED_GIVE_YOU].forEach(re => {
 			strEntries.replace(re, (...m) => {
 				const {mode, value} = m.last();
-				obj.modifySpeed = MiscUtil.merge(obj.modifySpeed || {}, {static: {[this._getSpeedKey(mode)]: Number(value)}})
+				obj.modifySpeed = MiscUtil.merge(obj.modifySpeed || {}, {static: {[this._getSpeedKey(mode)]: Number(value)}});
 			});
 		});
 
@@ -340,7 +340,7 @@ class BonusTag {
 	}
 
 	static tryRun (it, opts) {
-		if (it.inherits && it.inherits.entries) this._runOn(it.inherits, "inherits", opts)
+		if (it.inherits && it.inherits.entries) this._runOn(it.inherits, "inherits", opts);
 		else if (it.entries) this._runOn(it, null, opts);
 	}
 }
@@ -370,9 +370,9 @@ class BasicTextClean {
 					if (/^\s*This armor consists of a coat and leggings \(and perhaps a separate skirt\) of leather covered with overlapping pieces of metal, much like the scales of a fish\. The suit includes gauntlets\.\s*$/i.test(it)) return false;
 
 					return true;
-				})
+				});
 			},
-		})
+		});
 	}
 }
 
@@ -398,7 +398,7 @@ class ItemMiscTag {
 class ItemSpellcastingFocusTag {
 	static tryRun (it, opts) {
 		const focusClasses = new Set(it.focus || []);
-		ItemSpellcastingFocusTag._RE_CLASS_NAMES = ItemSpellcastingFocusTag._RE_CLASS_NAMES || new RegExp(`(${Parser.ITEM_SPELLCASTING_FOCUS_CLASSES.join("|")})`, "gi")
+		ItemSpellcastingFocusTag._RE_CLASS_NAMES = ItemSpellcastingFocusTag._RE_CLASS_NAMES || new RegExp(`(${Parser.ITEM_SPELLCASTING_FOCUS_CLASSES.join("|")})`, "gi");
 
 		let isMiscFocus = false;
 		if (it.entries || (it.inherits && it.inherits.entries)) {
@@ -419,7 +419,7 @@ class ItemSpellcastingFocusTag {
 								m[1].trim().replace(ItemSpellcastingFocusTag._RE_CLASS_NAMES, (...n) => {
 									focusClasses.add(n[1].toTitleCase());
 								});
-							})
+							});
 						return str;
 					},
 				},
@@ -522,7 +522,7 @@ class ConditionImmunityTag {
 				string: (str) => {
 					str.replace(/you (?:have|gain|are) (?:[^.!?]+ )?immun(?:e|ity) to disease/gi, (...m) => {
 						all.add("disease");
-					})
+					});
 
 					str.replace(/you (?:have|gain|are) (?:[^.!?]+ )?(?:immune) ([^.!?]+)/, (...m) => {
 						m[1].replace(/{@condition ([^}]+)}/gi, (...n) => {

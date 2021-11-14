@@ -3,7 +3,7 @@ class RenderTables {
 		it.type = it.type || "table";
 		return $$`
 		${Renderer.utils.getBorderTr()}
-		${Renderer.utils.getExcludedTr(it, "table")}
+		${Renderer.utils.getExcludedTr({entity: it, dataProp: "table"})}
 		${Renderer.utils.getNameTr(it, {page: UrlUtil.PG_TABLES})}
 		<tr><td class="divider" colspan="6"><div></div></td></tr>
 		<tr><td colspan="6">${Renderer.get().setFirstSection(true).render(it)}</td></tr>

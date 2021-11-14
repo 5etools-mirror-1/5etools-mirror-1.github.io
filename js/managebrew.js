@@ -72,7 +72,7 @@ class ManageBrew {
 						case "psionicTypes": populateGenericSection("Psionic Types", (brew, metaType, k) => brew[metaType][k].full || k); break;
 					}
 					handleSecChange(i);
-				})
+				});
 			}
 		}
 	}

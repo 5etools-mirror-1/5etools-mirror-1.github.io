@@ -59,7 +59,7 @@ UtilBookReference = {
 					ent.forEach(e => recursiveSetSource(e, source));
 				} else if (typeof ent === "object") {
 					if (ent.page) ent.source = source;
-					Object.values(ent).forEach(v => recursiveSetSource(v, source))
+					Object.values(ent).forEach(v => recursiveSetSource(v, source));
 				}
 			}
 
@@ -97,7 +97,7 @@ UtilBookReference = {
 					if (chap.entries) {
 						recursiveAdd(chap, book.source);
 					}
-				})
+				});
 			});
 
 			Object.keys(out).sort().forEach(i => {

@@ -10,7 +10,7 @@ class RenderItems {
 
 		return $$`
 			${Renderer.utils.getBorderTr()}
-			${Renderer.utils.getExcludedTr(item, "item")}
+			${Renderer.utils.getExcludedTr({isExcluded: Renderer.item.isExcluded(item)})}
 			${Renderer.utils.getNameTr(item, {page: UrlUtil.PG_ITEMS})}
 
 			<tr><td class="rd-item__type-rarity-attunement" colspan="6">${Renderer.item.getTypeRarityAndAttunementHtml(typeRarityText, subTypeText, tierText)}</td></tr>

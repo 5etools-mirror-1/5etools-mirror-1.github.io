@@ -86,7 +86,7 @@ class InitiativeTrackerPlayer {
 						InitiativeTrackerPlayerMessageHandlerScreen.initUnloadMessage();
 					} catch (e) {
 						JqueryUtil.doToast({content: `Failed to connect. ${VeCt.STR_SEE_CONSOLE}`, type: "danger"});
-						setTimeout(() => { throw e; })
+						setTimeout(() => { throw e; });
 					}
 				} else {
 					$btnConnectRemote.detach();
@@ -115,7 +115,7 @@ class InitiativeTrackerPlayer {
 								// restore original state
 								$btnCancel.remove(); $wrpSel.remove();
 								view.$wrpInitial.append($btnConnectRemote).append($btnConnectLocal);
-								setTimeout(() => { throw e; })
+								setTimeout(() => { throw e; });
 							}
 						});
 
