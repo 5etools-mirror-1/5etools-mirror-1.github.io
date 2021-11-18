@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.18.3",
+	"version": "1.18.4",
 	"title": "Bestiary Schema",
 	"$id": "bestiary.json",
 	"type": "object",
@@ -8,18 +8,7 @@
 		"align": {
 			"oneOf": [
 				{
-					"type": "string",
-					"enum": [
-						"L",
-						"N",
-						"NX",
-						"NY",
-						"C",
-						"G",
-						"E",
-						"U",
-						"A"
-					]
+					"$ref": "util.json#/definitions/alignment"
 				},
 				{
 					"type": "object",
