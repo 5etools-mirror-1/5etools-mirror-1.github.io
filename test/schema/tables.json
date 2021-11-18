@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "tables.json",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "object",
 	"properties": {
 		"table": {
@@ -79,6 +79,13 @@
 							"type": "string"
 						}
 					},
+					"intro": {
+						"description": "Primarily for homebrew use.",
+						"type": "array",
+						"items": {
+							"$ref": "entry.json"
+						}
+					},
 					"rows": {
 						"type": "array",
 						"items": {
@@ -86,6 +93,13 @@
 							"items": {
 								"$ref": "entry.json"
 							}
+						}
+					},
+					"outro": {
+						"description": "Primarily for homebrew use.",
+						"type": "array",
+						"items": {
+							"$ref": "entry.json"
 						}
 					},
 					"footnotes": {
