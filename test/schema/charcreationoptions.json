@@ -1,14 +1,15 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "charcreationoptions.json",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"title": "Character Creation Options",
 	"type": "object",
 
 	"definitions": {
 		"optionType": {
+			"description": "DG: Dark Gift\n OF: Optional Feature\n RF:B Replacement Feature: Background\n SG: Supernatural Gift",
 			"type": "string",
-			"enum":  ["SG", "OF", "DG", "RF:B"]
+			"enum":  ["DG", "OF", "RF:B", "SG"]
 		},
 
 		"charoption": {
