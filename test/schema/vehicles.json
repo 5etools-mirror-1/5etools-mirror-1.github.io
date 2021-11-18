@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "vehicles.json",
-	"version": "1.4.0",
+	"version": "1.5.0",
 	"type": "object",
 
 	"definitions": {
@@ -156,6 +156,9 @@
 						"hp": {
 							"type": "integer"
 						},
+						"hpNote": {
+							"type": "string"
+						},
 						"dt": {
 							"type": "integer"
 						}
@@ -308,6 +311,49 @@
 						"additionalProperties": false
 					}
 				},
+				"trait": {
+					"oneOf": [
+						{
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"entries": {
+										"type": "array",
+										"items": {
+											"$ref": "entry.json"
+										}
+									},
+									"type": {
+										"type": "string",
+										"enum": [
+											"entries",
+											"inset"
+										]
+									},
+									"sort": {
+										"description": "Forces a sort order. Traits with sort orders will always be arranged before those without.",
+										"type": "integer"
+									}
+								},
+								"required": [
+									"name",
+									"entries"
+								],
+								"additionalProperties": false
+							}
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"tokenUrl": {
+					"type": "string"
+				},
 				"hasToken": {
 					"type": "boolean"
 				},
@@ -381,13 +427,16 @@
 					"type": "object",
 					"properties": {
 						"hp": {
-							"type": "integer"
+							"type": "integer",
+							"description": "Hit Points"
 						},
 						"dt": {
-							"type": "integer"
+							"type": "integer",
+							"description": "Damage Threshold"
 						},
 						"mt": {
-							"type": "integer"
+							"type": "integer",
+							"description": "Mishap Threshold"
 						}
 					},
 					"additionalProperties": false,
