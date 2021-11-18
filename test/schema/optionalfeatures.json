@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "optionalfeatures.json",
-	"version": "1.10.0",
+	"version": "1.10.1",
 	"title": "Optional Features",
 	"type": "object",
 
@@ -12,7 +12,8 @@
 
 		"featureType": {
 			"type": "array",
-			"items": {"$ref": "util.json#/definitions/dataOptionalfeatureType"}
+			"items": {"$ref": "util.json#/definitions/dataOptionalfeatureType"},
+			"uniqueItems": true
 		},
 
 		"optionalfeature": {
