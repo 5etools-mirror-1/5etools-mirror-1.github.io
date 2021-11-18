@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "magicvariants.json",
-	"version": "1.4.7",
+	"version": "1.4.8",
 	"type": "object",
 	"properties": {
 		"variant": {
@@ -38,8 +38,9 @@
 								"name": {"type": "string"},
 								"source": {"type": "string"},
 								"type": {"type": "string"},
-								"scfType": {"type": "string"},
-								"net": {"type": "boolean"}
+								"scfType": {"type": "string", "enum": ["arcane", "druid", "holy"]},
+								"net": {"type": "boolean"},
+								"weaponCategory": {"type": "string", "enum": ["simple", "martial"]}
 							},
 							"additionalProperties": false
 						}
@@ -76,7 +77,9 @@
 								"$ref": "util.json#/definitions/itemModifySpeed"
 							},
 							"tier": {
-								"type": "string"
+								"type": "string",
+								"description": "Item Tier as per XGE p135",
+								"enum": ["minor", "major"]
 							},
 							"rarity": {
 								"$ref": "util.json#/definitions/itemRarity",
@@ -98,14 +101,7 @@
 								"type": "string"
 							},
 							"reqAttune": {
-								"oneOf": [
-									{
-										"type": "string"
-									},
-									{
-										"type": "boolean"
-									}
-								]
+								"type": ["string", "boolean"]
 							},
 							"curse": {
 								"type": "boolean"
@@ -198,6 +194,10 @@
 							},
 							"reqAttuneAltTags": {
 								"$ref": "util.json#/definitions/reqAttuneTags"
+							},
+							"weaponCategory": {
+								"type": "string",
+								"enum": ["simple", "martial"]
 							},
 							"hasRefs": {"type": "boolean"}
 						},
