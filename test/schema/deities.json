@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "deities.json",
-	"version": "1.1.5",
+	"version": "1.1.6",
 	"type": "object",
 
 	"definitions": {
@@ -31,12 +31,15 @@
 						"Dawn War",
 						"Dragonlance",
 						"Drow",
+						"Duergar",
 						"Dwarven",
 						"Eberron",
 						"Egyptian",
 						"Elven",
+						"Exandria",
 						"Faerûnian",
 						"Forgotten Realms",
+						"Gnome",
 						"Gnomish",
 						"Greek",
 						"Greyhawk",
@@ -44,10 +47,8 @@
 						"Nonhuman",
 						"Norse",
 						"Orc",
-						"Gnome",
-						"Duergar",
-						"Exandria",
 						"Theros",
+
 						"Unknown"
 					]
 				},
@@ -59,7 +60,22 @@
 					"items": {
 						"type": "string",
 						"enum": [
-							"Arcana", "Death", "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War", "Forge", "Grave", "Order", "Peace", "Twilight", "Unknown"
+							"Arcana",
+							"Death",
+							"Forge",
+							"Grave",
+							"Knowledge",
+							"Life",
+							"Light",
+							"Nature",
+							"Order",
+							"Peace",
+							"Tempest",
+							"Trickery",
+							"Twilight",
+							"War",
+
+							"Unknown"
 						]
 					}
 				},
