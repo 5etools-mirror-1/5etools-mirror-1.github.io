@@ -4,7 +4,7 @@
 
 	"title": "Entry",
 	"description": "A recursively renderable object.",
-	"version": "1.5.0",
+	"version": "1.5.1",
 
 	"definitions" : {
 		"_arrayOfSpell": {
@@ -311,7 +311,10 @@
 							}
 						},
 						"isStriped": {"type": "boolean"},
-						"isNameGenerator": {"type": "boolean"},
+						"isNameGenerator": {
+							"type": "boolean",
+							"description": "Uses the result rolled to construct a name from multiple columns, such as Prefix, Given, Family, Suffix names etc."
+						},
 						"style": {"type" : "string"},
 						"colLabels": {
 							"type": "array",
@@ -336,7 +339,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "entry.json"
+											"$ref": "#"
 										}
 									},
 									{
@@ -468,7 +471,16 @@
 							"type": "integer"
 						},
 						"style": {
-							"type": "string"
+							"type": "string",
+							"description": "Formatting to be applied to the list; not providing a style results in a simple bullet point list.\n list-decimal: decimal numbering 1. 2. 3. etc \n list-hang: a list with the bullets removed and a full indentation \n list-hang-notitle: a list with no bullets that indents all lines but the first\n list-lower-roman: lowercase roman numeral numbering i, ii, iii, iv, etc.\n list-name: a bulleted list with all text in bold\n list-no-bullets: a list with the bullets removed and reduced indentation",
+							"enum": [
+								"list-decimal",
+								"list-hang",
+								"list-hang-notitle",
+								"list-lower-roman",
+								"list-name",
+								"list-no-bullets"
+							]
 						},
 						"name": {
 							"type": "string"
@@ -1031,7 +1043,7 @@
 						"maxWidthUnits": {"type": "string"},
 						"maxHeightUnits": {"type": "string"},
 						"style": {
-							"enum": ["comic-speaker-left", "comic-speaker-right"]
+							"enum": ["comic-speaker-left", "comic-speaker-right", "deity-symbol"]
 						}
 					},
 					"required": ["href"],
@@ -1088,6 +1100,7 @@
 						"type": {"const": "attack"},
 						"attackType": {
 							"type": "string",
+							"description": "MW: Melee Weapon\n RW: Ranged Weapon",
 							"enum": ["MW", "RW"]
 						},
 						"attackEntries": {
