@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.18.0",
+	"version": "1.18.1",
 	"title": "Bestiary Schema",
 	"$id": "bestiary.json",
 	"type": "object",
@@ -99,16 +99,8 @@
 					"type": "string"
 				},
 				"shortName": {
-					"oneOf": [
-						{
-							"description": "Used anywhere a shortened form of the creatures name is required (e.g. in legendary action headers). If not supplied, a shortened name will be automatically generated from the creature's full name.",
-							"type": "string"
-						},
-						{
-							"description": "As above, but \"true\" if the \"shortName\" should be an exact copy of the creature's \"name\".",
-							"type": "boolean"
-						}
-					]
+					"description": "Used anywhere a shortened form of the creatures name is required (e.g. in legendary action headers).\nIf not supplied, a shortened name will be automatically generated from the creature's full name.\nAlternatively use \"true\" if the \"shortName\" should be an exact copy of the creature's \"name\".",
+					"type": ["string", "boolean"]
 				},
 				"alias": {
 					"type": "array",
@@ -238,6 +230,7 @@
 									"type": "string"
 								}
 							},
+							"required": ["average", "formula"],
 							"additionalProperties": false
 						},
 						{
@@ -397,14 +390,7 @@
 					]
 				},
 				"passive": {
-					"oneOf": [
-						{
-							"type": "integer"
-						},
-						{
-							"type": "string"
-						}
-					]
+					"type": ["integer", "string"]
 				},
 				"languages": {
 					"oneOf": [
@@ -746,17 +732,17 @@
 					"items": {
 						"type": "string",
 						"enum": [
-							"underwater",
+							"arctic",
 							"coastal",
-							"mountain",
+							"desert",
+							"forest",
 							"grassland",
 							"hill",
-							"arctic",
-							"urban",
-							"forest",
+							"mountain",
 							"swamp",
 							"underdark",
-							"desert"
+							"underwater",
+							"urban"
 						]
 					}
 				},
@@ -835,8 +821,9 @@
 					"type": "array",
 					"items": {
 						"type": "string",
+						"description": "X: Any (Choose)\n XX: All\n CS: Can't Speak Known Languages\n LF: Languages Known in Life\n TP: Telepathy\n OTH: Other\n -\n AB: Abyssal\n AQ: Aquan\n AU: Auran\n C: Common\n CE: Celestial\n D: Dwarvish\n DR: Draconic\n DS: Deep Speech\n DU: Druidic\n E: Elvish\n G: Gnomish\n GI: Giant\n GO: Goblin\n GTH: Gith\n H: Halfling\n I: Infernal\n IG: Ignan\n O: Orc\n  P: Primordial\n S: Sylvan\n T: Terran\n TC: Thieves' cant\n U: Undercommon\n ",
 						"enum": [
-							"AB", "AQ", "AU", "C", "CE", "CS","D", "DR", "DS", "DU", "E", "G", "GI", "GO", "GTH", "H", "I", "IG", "LF", "O", "OTH", "P", "S", "T", "TC", "TP", "U", "X", "XX"
+							"AB", "AQ", "AU", "C", "CE", "CS", "D", "DR", "DS", "DU", "E", "G", "GI", "GO", "GTH", "H", "I", "IG", "LF", "O", "OTH", "P", "S", "T", "TC", "TP", "U", "X", "XX"
 						]
 					}
 				},
@@ -844,6 +831,7 @@
 					"type": "array",
 					"items": {
 						"type": "string",
+						"description": "B: Blindsight\n D: Darkvision\n SD: Superior Darkvision\n T: Tremorsense\n U: Truesight",
 						"enum": ["B", "D", "SD", "T", "U"]
 					}
 				},
@@ -851,6 +839,7 @@
 					"type": "array",
 					"items": {
 						"type": "string",
+						"description": "P: Psionics\n I: Innate\n F: Form Only\n S: Shared\n CA: Class, Artificer\n CB: Class, Bard\n CC: Class, Cleric\n CD: Class, Druid\n CP: Class, Paladin\n CR: Class, Ranger\n CS: Class, Sorcerer\n CL: Class, Warlock\n CW: Class, Wizard",
 						"enum": ["P", "I", "F", "S", "CA", "CB", "CC", "CD", "CP", "CR", "CS", "CL", "CW"]
 					}
 				},
@@ -865,7 +854,8 @@
 					"type": "array",
 					"items": {
 						"type": "string",
-						"enum": ["MW", "RW", "RCH", "THW", "RNG", "AOE"]
+						"description": "AOE: Has Areas of Effect\n MW: Has Weapon Attacks, Melee\n RW: Has Weapon Attacks, Ranged\n RCH: Has Reach Attacks\n RNG: Has Ranged Weapons\n THW: Has Thrown Weapons",
+						"enum": ["AOE", "MW", "RW", "RCH", "RNG", "THW"]
 					}
 				},
 				"conditionInflict": {
