@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "spells.json",
-	"version": "1.6.6",
+	"version": "1.6.7",
 	"title": "Spells",
 	"type": "object",
 
@@ -17,16 +17,17 @@
 				},
 				"school": {
 					"type": "string",
+					"description": "You can specify you own spell school using the \"spellSchools\" block in the _meta section.\n A: Abjuration\n C: Conjuration\n D: Divination\n E: Enchantment\n V: Evocation\n I: Illusion\n N: Necromancy\n P: Psionic\n T: Transmutation",
 					"enum": [
 						"A",
-						"V",
-						"E",
-						"I",
-						"D",
-						"N",
-						"T",
 						"C",
-						"P"
+						"D",
+						"E",
+						"V",
+						"I",
+						"N",
+						"P",
+						"T"
 					]
 				},
 				"subschools": {
@@ -46,7 +47,12 @@
 							"type": "boolean"
 						}
 					},
-					"additionalProperties": false
+					"patternProperties": {
+						".*": {
+							"description": "This is a custom homebrew property.",
+							"type": "boolean"
+						}
+					}
 				},
 				"time": {
 					"type": "array",
@@ -60,15 +66,15 @@
 						"type": {
 							"type": "string",
 							"enum": [
-								"special",
-								"point",
-								"line",
 								"cube",
 								"cone",
-								"radius",
-								"sphere",
+								"cylinder",
 								"hemisphere",
-								"cylinder"
+								"line",
+								"point",
+								"radius",
+								"special",
+								"sphere"
 							]
 						},
 						"distance": {
@@ -79,11 +85,11 @@
 									"enum": [
 										"feet",
 										"miles",
-										"self",
-										"touch",
-										"unlimited",
 										"plane",
-										"sight"
+										"self",
+										"sight",
+										"touch",
+										"unlimited"
 									]
 								},
 								"amount": {
@@ -95,11 +101,11 @@
 									"enum": [
 										"feet",
 										"miles",
-										"self",
-										"touch",
-										"unlimited",
 										"plane",
-										"sight"
+										"self",
+										"sight",
+										"touch",
+										"unlimited"
 									]
 								},
 								"amountSecondary": {
@@ -367,6 +373,7 @@
 				"spellAttack": {
 					"type": "array",
 					"uniqueItems": true,
+					"description": "M: Melee\n R: Ranged\n O: Other/Unknown",
 					"items": {
 						"type": "string",
 						"enum": [
@@ -375,21 +382,21 @@
 					}
 				},
 				"areaTags": {
-					"description": "By convention, only the effects of the spell cast at its base level are considered when populating these.",
+					"description": "By convention, only the effects of the spell cast at its base level are considered when populating these.\n C: Cube\n H: Hemisphere\n L: Line\n MT: Multiple Targets\n N: Cone\n Q: Square\n R: Circle\n ST: Single Target\n S: Sphere\n W: Wall\n Y: Cylinder",
 					"type": "array",
 					"uniqueItems": true,
 					"items": {
 						"type": "string",
-						"enum": ["ST", "MT", "R", "N", "C","Y", "H", "L", "S", "Q", "W"]
+						"enum": ["C", "H", "L", "MT", "N", "Q", "R", "ST", "S", "W", "Y"]
 					}
 				},
 				"miscTags": {
 					"type": "array",
-					"description": "PRM = permanentEffects = 'Used to flag spells that can/will have permanent effects, but are not listed as having permanent duration'; SCL = scalingEffects; HL = isHeal; SMN = isSummon; SGT = requiresSight; THP = isTempHp; MAC = isModifiesAc; TP = isTeleport; FMV = isForcedMovement",
+					"description": " FMV: Forced Movement\n HL: Healing\n MAC: Modifies AC\n PRM: Permanent Effects\n SCL: Scaling Effects\n  SMN: Summons Creature\n SGT: Requires Sight\n THP: Grants Temporary Hit Points\n TP: Teleportation",
 					"uniqueItems": true,
 					"items": {
 						"type": "string",
-						"enum": ["PRM", "SCL", "HL", "SMN", "SGT", "THP", "MAC", "TP", "FMV"]
+						"enum": ["FMV", "HL", "MAC", "PRM", "SCL", "SMN", "SGT", "THP", "TP"]
 					}
 				},
 				"srd": {
@@ -487,12 +494,12 @@
 						"type": {
 							"type": "string",
 							"enum": [
-								"hour",
-								"minute",
 								"turn",
 								"round",
-								"week",
+								"minute",
+								"hour",
 								"day",
+								"week",
 								"year"
 							]
 						},
@@ -515,7 +522,8 @@
 					"type": "array",
 					"items": {
 						"type": "string",
-						"enum": ["dispel", "trigger", "discharge"]
+						"description": "The examples given are short forms that are automatically expanded to \"discharged\", \"dispelled\" & \"triggered\".\nHomebrew files should state custom end conditions in full.",
+						"examples": ["discharge", "dispel", "trigger"]
 					}
 				},
 				"condition": {
