@@ -25,7 +25,7 @@
 				},
 				"pantheon": {
 					"type": "string",
-					"enum": [
+					"examples": [
 						"Celtic",
 						"Dawn War",
 						"Dragonlance",
@@ -58,7 +58,7 @@
 					"type": "array",
 					"items": {
 						"type": "string",
-						"enum": [
+						"examples": [
 							"Arcana",
 							"Death",
 							"Forge",
@@ -79,7 +79,7 @@
 					}
 				},
 				"province": {
-					"description": "The nouveau form of 'title,' first seen in MTF",
+					"description": "The nouveau form of 'title', first seen in MTF",
 					"type": "string"
 				},
 				"symbol": {

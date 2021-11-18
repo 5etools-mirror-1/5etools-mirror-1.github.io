@@ -142,7 +142,7 @@
 			"type": "string",
 			"$comment": "Dumped from `Object(Parser.ITEM_TYPE_JSON_TO_ABV)`",
 			"description": "$: Treasure\n A: Ammunition\n AF: Ammunition (futuristic)\n AIR: Vehicle (air)\n AT: Artisan Tool\n EM: Eldritch Machine\n EXP: Explosive\n G: Adventuring Gear\n GS: Gaming Set\n GV: Generic Variant\n HA: Heavy Armor\n INS: Instrument\n LA: Light Armor\n M: Melee Weapon\n MA: Medium Armor\n MNT: Mount\n OTH: Other\n P: Potion\n R: Ranged Weapon\n RD: Rod\n RG: Ring\n S: Shield\n SC: Scroll\n SCF: Spellcasting Focus\n SHP: Vehicle (water)\n T: Tool\n TAH: Tack and Harness\n TG: Trade Good\n VEH: Vehicle (land)\n WD: Wand",
-			"enum": [
+			"examples": [
 				"$",
 				"A",
 				"AF",
@@ -929,11 +929,11 @@
 					},
 					"pact": {
 						"type": "string",
-						"enum": ["Blade", "Chain", "Tome", "Talisman"]
+						"examples": ["Blade", "Chain", "Tome", "Talisman"]
 					},
 					"patron": {
 						"type": "string",
-						"enum": [
+						"examples": [
 							"The Archfey", "The Fiend", "The Great Old One", "The Hexblade", "The Raven Queen", "The Seeker"
 						]
 					},
@@ -1054,7 +1054,7 @@
 
 		"creatureType": {
 			"type": "string",
-			"enum": [
+			"examples": [
 				"aberration",
 				"beast",
 				"celestial",
@@ -1170,7 +1170,7 @@
 		"dataOptionalfeatureType": {
 			"type": "string",
 			"description": "AF: Alchemical Formula\n AI: Artificer Infusion\n AS: Arcane Shot\n AS:V1-UA: Arcane Shot, V1 (UA)\n AS:V2-UA: Arcane Shot, V2 (UA)\n ED: Elemental Discipline\n EI: Eldritch Invocation\n FS:B: Fighting Style; Bard\n FS:F: Fighting Style; Fighter\n FS:P: Fighting Style; Paladin\n FS:R: Fighting Style; Ranger\n IWM:A: Infernal War Machine Upgrade, Armor\n IWM:G: Infernal War Machine Upgrade, Gadget\n IWM:W: Infernal War Machine Variant, Weapon\n MM: Metamagic\n MV: Maneuver\n MV:B: Maneuver, Battle Master\n MV:C2-UA: Maneuver, Cavalier V2 (UA)\n OR: Onomancy Resonant\n OTH: Other\n PB: Pact Boon\n RN: Rune Knight Rune\n SHP:F: Ship Upgrade, Figurehead\n SHP:H: Ship Upgrade, Hull\n SHP:M: Ship Upgrade, Movement\n SHP:O: Ship Upgrade, Miscellaneous\n SHP:W: Ship Upgrade, Weapon",
-			"enum": [
+			"examples": [
 				"AF",
 				"AI",
 				"AS",

@@ -21,7 +21,7 @@
 					},
 					"type": {
 						"type": "string",
-						"enum": ["Diabolical", "Elder Evil", "Elemental"]
+						"examples": ["Diabolical", "Elder Evil", "Elemental"]
 					},
 					"goal": {
 						"type": "object",
@@ -91,7 +91,7 @@
 					},
 					"type": {
 						"type": "string",
-						"enum": ["Demonic"]
+						"examples": ["Demonic"]
 					},
 					"ability": {
 						"type": "object",

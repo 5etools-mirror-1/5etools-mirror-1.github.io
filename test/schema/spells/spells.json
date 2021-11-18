@@ -18,7 +18,7 @@
 				"school": {
 					"type": "string",
 					"description": "You can specify you own spell school using the \"spellSchools\" block in the _meta section.\n A: Abjuration\n C: Conjuration\n D: Divination\n E: Enchantment\n V: Evocation\n I: Illusion\n N: Necromancy\n P: Psionic\n T: Transmutation",
-					"enum": [
+					"examples": [
 						"A",
 						"C",
 						"D",
@@ -82,7 +82,7 @@
 							"properties": {
 								"type": {
 									"type": "string",
-									"enum": [
+									"examples": [
 										"feet",
 										"miles",
 										"plane",
@@ -98,7 +98,7 @@
 								"typeSecondary": {
 									"description": "Homebrew only",
 									"type": "string",
-									"enum": [
+									"examples": [
 										"feet",
 										"miles",
 										"plane",
@@ -459,7 +459,7 @@
 					"properties": {
 						"type": {
 							"type": "string",
-							"enum": [
+							"examples": [
 								"turn",
 								"round",
 								"minute",

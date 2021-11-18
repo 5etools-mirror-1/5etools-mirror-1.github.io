@@ -40,7 +40,7 @@
 				},
 				"age": {
 					"type": "string",
-					"enum": ["futuristic", "modern", "renaissance"]
+					"examples": ["futuristic", "modern", "renaissance"]
 				},
 				"ammunition": {
 					"type": "boolean",
@@ -81,7 +81,7 @@
 					"description": "2H: Two-Handed\n A: Ammunition\n AF: Ammunition (futuristic)\n BF: Burst Fire\n EM: Eldritch Machine\n F: Finesse\n H: Heavy\n L: Light\n LD: Loading\n OTH: Other\n R: Reach\n RLD: Reload\n S: Special\n T: Thrown\n V: Versatile",
 					"items": {
 						"type": "string",
-						"enum": ["2H", "A", "AF", "BF", "EM", "F", "H", "L", "LD", "OTH", "R", "RLD", "S", "T", "V"]
+						"examples": ["2H", "A", "AF", "BF", "EM", "F", "H", "L", "LD", "OTH", "R", "RLD", "S", "T", "V"]
 					}
 				},
 				"range": {
@@ -118,7 +118,7 @@
 				},
 				"scfType": {
 					"type": "string",
-					"enum": ["arcane", "druid", "holy"]
+					"examples": ["arcane", "druid", "holy"]
 				},
 				"speed": {
 					"type": "integer"
@@ -146,7 +146,7 @@
 				"tier": {
 					"type": "string",
 					"description": "Item Tier as per XGE p135",
-					"enum": ["minor", "major"]
+					"examples": ["minor", "major"]
 				},
 				"value": {
 					"description": "In copper pieces.",
@@ -164,7 +164,7 @@
 				},
 				"weaponCategory": {
 					"type": "string",
-					"enum": ["simple", "martial"]
+					"examples": ["simple", "martial"]
 				},
 				"weight": {
 					"type": "number"
@@ -191,7 +191,7 @@
 					"type": "array",
 					"items": {
 						"type": "string",
-						"enum": ["contact", "ingested", "injury", "inhaled"]
+						"examples": ["contact", "ingested", "injury", "inhaled"]
 					}
 				},
 				"crew": {
@@ -290,7 +290,7 @@
 							"type": "array",
 							"items": {
 								"type": "string",
-								"enum": ["Artificer", "Bard", "Cleric", "Druid", "Paladin", "Ranger", "Sorcerer", "Warlock", "Wizard"]
+								"examples": ["Artificer", "Bard", "Cleric", "Druid", "Paladin", "Ranger", "Sorcerer", "Warlock", "Wizard"]
 							}
 						}
 					]
@@ -420,7 +420,7 @@
 				},
 				"ammoType": {
 					"type": "string",
-					"enum": ["energy cell", "modern bullet", "blowgun needle|phb", "crossbow bolt|phb", "arrow|phb", "renaissance bullet", "sling bullet|phb"]
+					"examples": ["energy cell", "modern bullet", "blowgun needle|phb", "crossbow bolt|phb", "arrow|phb", "renaissance bullet", "sling bullet|phb"]
 				},
 				"grantsProficiency": {
 					"type": "boolean"

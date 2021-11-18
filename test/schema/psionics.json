@@ -22,14 +22,14 @@
 					"type": {
 						"description": "D: Discipline\nT: Talent",
 						"type": "string",
-						"enum": ["D", "T"]
+						"examples": ["D", "T"]
 					},
 					"focus": {
 						"type": "string"
 					},
 					"order": {
 						"type": "string",
-						"enum": ["Avatar", "Awakened", "Immortal", "Nomad", "Wu Jen"]
+						"examples": ["Avatar", "Awakened", "Immortal", "Nomad", "Wu Jen"]
 					},
 					"modes": {
 						"type": "array",

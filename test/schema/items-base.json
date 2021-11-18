@@ -69,7 +69,7 @@
 					},
 					"age": {
 						"type": "string",
-						"enum": ["futuristic", "modern", "renaissance"]
+						"examples": ["futuristic", "modern", "renaissance"]
 					},
 					"armor": {
 						"description": "Flag used when merging generic variants",
@@ -109,7 +109,7 @@
 					},
 					"scfType": {
 						"type": "string",
-						"enum": ["arcane", "druid", "holy"]
+						"examples": ["arcane", "druid", "holy"]
 					},
 					"stealth": {
 						"type": "boolean"
@@ -167,7 +167,7 @@
 					},
 					"weaponCategory": {
 						"type": "string",
-						"enum": ["simple", "martial"]
+						"examples": ["simple", "martial"]
 					},
 					"weight": {
 						"type": "number"
@@ -186,7 +186,7 @@
 					},
 					"ammoType": {
 						"type": "string",
-						"enum": ["energy cell", "modern bullet", "blowgun needle|phb", "crossbow bolt|phb", "arrow|phb", "renaissance bullet", "sling bullet|phb"]
+						"examples": ["energy cell", "modern bullet", "blowgun needle|phb", "crossbow bolt|phb", "arrow|phb", "renaissance bullet", "sling bullet|phb"]
 					},
 					"packContents": {
 						"type": "array",

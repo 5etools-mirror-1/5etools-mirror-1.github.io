@@ -38,9 +38,9 @@
 								"name": {"type": "string"},
 								"source": {"type": "string"},
 								"type": {"$ref": "util.json#/definitions/itemTypeTags"},
-								"scfType": {"type": "string", "enum": ["arcane", "druid", "holy"]},
+								"scfType": {"type": "string", "examples": ["arcane", "druid", "holy"]},
 								"net": {"type": "boolean"},
-								"weaponCategory": {"type": "string", "enum": ["simple", "martial"]}
+								"weaponCategory": {"type": "string", "examples": ["simple", "martial"]}
 							},
 							"additionalProperties": false
 						}
@@ -79,7 +79,7 @@
 							"tier": {
 								"type": "string",
 								"description": "Item Tier as per XGE p135",
-								"enum": ["minor", "major"]
+								"examples": ["minor", "major"]
 							},
 							"rarity": {
 								"$ref": "util.json#/definitions/itemRarity",
@@ -233,7 +233,7 @@
 							},
 							"weaponCategory": {
 								"type": "string",
-								"enum": ["simple", "martial"]
+								"examples": ["simple", "martial"]
 							},
 							"hasRefs": {"type": "boolean"}
 						},
@@ -341,8 +341,8 @@
 		},
 		"linkedLootTables": {
 			"type": "object",
-			"properties": {
-				"DMG": {
+			"patternProperties": {
+				".*": {
 					"type": "object"
 				}
 			}
