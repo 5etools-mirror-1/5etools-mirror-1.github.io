@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "items.json",
-	"version": "1.10.10",
+	"version": "1.10.11",
 	"type": "object",
 	"definitions": {
 		"itemData": {
@@ -39,22 +39,27 @@
 					"type": "string"
 				},
 				"age": {
-					"type": "string"
+					"type": "string",
+					"enum": ["futuristic", "modern", "renaissance"]
 				},
 				"ammunition": {
-					"type": "boolean"
+					"type": "boolean",
+					"description": "An item that uses ammunition; not an item that is ammunition."
 				},
 				"axe": {
 					"type": "boolean"
 				},
 				"carryingCapacity": {
-					"type": "integer"
+					"type": "integer",
+					"description": "Of a mount/beast, not a container."
 				},
 				"dmg1": {
-					"type": "string"
+					"type": "string",
+					"description": "The damage dice of the weapon, e.g. \"1d8\""
 				},
 				"dmg2": {
-					"type": "string"
+					"type": "string",
+					"description": "The versatile or alternative damage dice of the weapon, e.g. \"1d10\""
 				},
 				"dmgType": {
 					"type": "string"
@@ -73,37 +78,24 @@
 				},
 				"property": {
 					"type": "array",
+					"description": "2H: Two-Handed\n A: Ammunition\n AF: Ammunition (futuristic)\n BF: Burst Fire\n EM: Eldritch Machine\n F: Finesse\n H: Heavy\n L: Light\n LD: Loading\n OTH: Other\n R: Reach\n RLD: Reload\n S: Special\n T: Thrown\n V: Versatile",
 					"items": {
 						"type": "string",
-						"enum": ["T", "V", "H", "2H", "F", "L", "R", "A", "LD", "S", "AF", "RLD", "BF", "EM", "OTH"]
+						"enum": ["2H", "A", "AF", "BF", "EM", "F", "H", "L", "LD", "OTH", "R", "RLD", "S", "T", "V"]
 					}
 				},
 				"range": {
 					"type": "string"
 				},
 				"reload": {
-					"type": "string"
+					"type": ["string", "integer"]
 				},
 				"reqAttune": {
-					"oneOf": [
-						{
-							"type": "string"
-						},
-						{
-							"type": "boolean"
-						}
-					]
+					"type": ["string", "boolean"]
 				},
 				"reqAttuneAlt": {
 					"description": "Used for filtering.",
-					"oneOf": [
-						{
-							"type": "string"
-						},
-						{
-							"type": "boolean"
-						}
-					]
+					"type": ["string", "boolean"]
 				},
 				"curse": {
 					"type": "boolean"
@@ -121,10 +113,12 @@
 					"$ref": "util.json#/definitions/conditionImmunityArray"
 				},
 				"detail1": {
+					"description": "A descriptive field that can be used to complete entries in variants.",
 					"type": "string"
 				},
 				"scfType": {
-					"type": "string"
+					"type": "string",
+					"enum": ["arcane", "druid", "holy"]
 				},
 				"speed": {
 					"type": "integer"
@@ -150,7 +144,9 @@
 					"type": "boolean"
 				},
 				"tier": {
-					"type": "string"
+					"type": "string",
+					"description": "Item Tier as per XGE p135",
+					"enum": ["minor", "major"]
 				},
 				"value": {
 					"description": "In copper pieces.",
@@ -167,7 +163,8 @@
 					"type": "boolean"
 				},
 				"weaponCategory": {
-					"type": "string"
+					"type": "string",
+					"enum": ["simple", "martial"]
 				},
 				"weight": {
 					"type": "number"
@@ -194,7 +191,7 @@
 					"type": "array",
 					"items": {
 						"type": "string",
-						"enum": ["ingested", "injury", "inhaled", "contact"]
+						"enum": ["contact", "ingested", "injury", "inhaled"]
 					}
 				},
 				"crew": {
@@ -422,7 +419,8 @@
 					"additionalProperties": false
 				},
 				"ammoType": {
-					"type": "string"
+					"type": "string",
+					"enum": ["energy cell", "modern bullet", "blowgun needle|phb", "crossbow bolt|phb", "arrow|phb", "renaissance bullet", "sling bullet|phb"]
 				},
 				"grantsProficiency": {
 					"type": "boolean"
