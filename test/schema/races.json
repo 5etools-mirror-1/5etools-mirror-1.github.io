@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "races.json",
-	"version": "1.9.0",
+	"version": "1.9.1",
 	"type": "object",
 
 	"definitions": {
@@ -18,7 +18,7 @@
 					}
 				},
 				"race": {
-					"description": "For use in homebrew files featuring standalone subraces of existing full races.",
+					"description": "For use ONLY in homebrew standalone subraces of existing full races.",
 					"type": "object",
 					"properties": {
 						"name": {
@@ -47,6 +47,7 @@
 					"$ref": "#/definitions/abilityScores"
 				},
 				"size": {
+					"description": "For subraces also include \"size\" in the \"overwrite\": key.",
 					"type": "array",
 					"items": {
 						"$ref": "util.json#/definitions/size"
@@ -210,7 +211,6 @@
 					"$ref": "util.json#/definitions/speed"
 				},
 				"size": {
-					"description": "An array of choices.",
 					"type": "array",
 					"items": {
 						"$ref": "util.json#/definitions/size"
