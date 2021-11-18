@@ -1,11 +1,11 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "deities.json",
-	"version": "1.1.7",
+	"version": "1.2.0",
 	"type": "object",
 
 	"definitions": {
-		"deityData": {
+		"deity": {
 			"type": "object",
 			"properties": {
 				"name": {
@@ -119,40 +119,18 @@
 				"customExtensionOf": {
 					"type": "string"
 				},
-				"piety": {"type": "boolean"}
+				"piety": {"type": "boolean"},
+				"_copy": {"$ref": "util.json#/definitions/copyBlock/properties/_copy"}
 			},
-			"additionalProperties": false
-		},
-
-		"deity": {
-			"anyOf": [
-				{
-					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/deityData"
-						},
-						{
-							"required": [
-								"name",
-								"pantheon",
-								"source"
-							]
-						}
-					]
-				},
-				{
-					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/deityData"
-						},
-						{
-							"$ref": "util.json#/definitions/copyBlock"
-						}
-					]
-				}
-			]
+			"additionalProperties": false,
+			"if": {"properties": {"_copy": false}},
+			"then": {
+				"required": [
+					"name",
+					"pantheon",
+					"source"
+				]
+			}
 		}
 	},
 

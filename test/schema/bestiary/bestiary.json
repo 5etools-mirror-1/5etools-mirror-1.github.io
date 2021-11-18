@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.18.6",
+	"version": "1.19.0",
 	"title": "Bestiary Schema",
 	"$id": "bestiary.json",
 	"type": "object",
@@ -81,7 +81,7 @@
 			]
 		},
 
-		"creatureData":  {
+		"creature":  {
 			"type": "object",
 			"properties": {
 				"name": {
@@ -873,52 +873,29 @@
 					}
 				},
 				"hasFluff": {"type": "boolean"},
-				"hasFluffImages": {"type": "boolean"}
+				"hasFluffImages": {"type": "boolean"},
+				"_copy": {"$ref": "util.json#/definitions/copyBlock/properties/_copy"}
 			},
-			"additionalProperties": false
-		},
-
-		"creature": {
-			"anyOf": [
-				{
-					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/creatureData"
-						},
-						{
-							"required": [
-								"name",
-								"size",
-								"type",
-								"source",
-								"ac",
-								"hp",
-								"speed",
-								"str",
-								"dex",
-								"con",
-								"int",
-								"wis",
-								"cha",
-								"passive"
-							]
-						}
-					]
-				},
-				{
-					"type": "object",
-					"$comment": "This is a custom pre-processor tag, which merges together the array of objects into one. This allows proper inheritance, which JSON schema don't really do.",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/creatureData"
-						},
-						{
-							"$ref": "util.json#/definitions/copyBlock"
-						}
-					]
-				}
-			]
+			"additionalProperties": false,
+			"if": {"properties": {"_copy": false}},
+			"then": {
+				"required": [
+					"name",
+					"size",
+					"type",
+					"source",
+					"ac",
+					"hp",
+					"speed",
+					"str",
+					"dex",
+					"con",
+					"int",
+					"wis",
+					"cha",
+					"passive"
+				]
+			}
 		},
 
 		"variantVersion": {
@@ -967,38 +944,21 @@
 		},
 
 		"entryVariantBestiary": {
-			"anyOf": [
-				{
-					"type": "object",
-					"$$merge": [
-						{"$ref": "entry.json#/definitions/entryVariant"},
-						{
-							"allOf": [
-								{"$ref": "#/definitions/variantToken"},
-								{"$ref": "#/definitions/variantVersion"}
-							]
-						}
-					]
-				},
-				{
-					"type": "object",
-					"$$merge": [
-						{"$ref": "entry.json#/definitions/entryInset"},
-						{
-							"allOf": [
-								{"$ref": "#/definitions/variantToken"},
-								{"$ref": "#/definitions/variantVersion"}
-							]
-						}
-					]
-				}
+			"$comment": "entryVariant and entryInset will always preclude each other as they have different const requirements. Neither variantToken nor variantVersion have additionalProperties:false at their top level so they pass independently. No merging is apparently needed to validate these structures.",
+			"allOf": [
+				{"$ref": "#/definitions/variantToken"},
+				{"$ref": "#/definitions/variantVersion"}
+			],
+			"oneOf": [
+				{"$ref": "entry.json#/definitions/entryVariant"},
+				{"$ref": "entry.json#/definitions/entryInset"}
 			]
 		},
 
 		"creatureVersion": {
 			"anyOf": [
 				{"$ref": "util.json#/definitions/version"},
-				{"$ref": "#/definitions/creatureData"}
+				{"$ref": "#/definitions/creature"}
 			]
 		}
 	},

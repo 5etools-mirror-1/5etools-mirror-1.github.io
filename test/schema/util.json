@@ -4,7 +4,7 @@
 
 	"title": "Util",
 	"description": "Utility definitions to be used in other schemas.",
-	"version": "1.12.0",
+	"version": "1.13.0",
 
 	"definitions" : {
 		"metaBlock": {
@@ -1513,39 +1513,23 @@
 					"items": {
 						"$ref": "entry.json"
 					}
-				}
+				},
+				"_copy": {"$ref": "#/definitions/copyBlock/properties/_copy"}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"if": {"properties": {"_copy": false}},
+			"then": {
+				"required": [
+					"name",
+					"source"
+				]
+			}
 		},
 
 		"genericFluffArray": {
 			"type": "array",
 			"items": {
-				"anyOf": [
-					{
-						"type": "object",
-						"$$merge": [
-							{
-								"$ref": "#/definitions/genericFluffArrayItemData"
-							},
-							{
-								"required": ["name", "source"]
-							}
-						]
-					},
-					{
-						"type": "object",
-						"$comment": "This is a custom pre-processor tag, which merges together the array of objects into one. This allows proper inheritance, which JSON schema don't really do.",
-						"$$merge": [
-							{
-								"$ref": "#/definitions/genericFluffArrayItemData"
-							},
-							{
-								"$ref": "util.json#/definitions/copyBlock"
-							}
-						]
-					}
-				]
+				"$ref": "#/definitions/genericFluffArrayItemData"
 			}
 		},
 

@@ -1,10 +1,10 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "items.json",
-	"version": "1.10.15",
+	"version": "1.11.0",
 	"type": "object",
 	"definitions": {
-		"itemData": {
+		"item": {
 			"type": "object",
 			"properties": {
 				"name": {
@@ -477,42 +477,21 @@
 				},
 				"hasFluff": {"type": "boolean"},
 				"hasFluffImages": {"type": "boolean"},
-				"hasRefs": {"type": "boolean"}
+				"hasRefs": {"type": "boolean"},
+				"_copy": {"$ref": "util.json#/definitions/copyBlock/properties/_copy"}
 			},
-			"additionalProperties": false
-		},
-
-		"item": {
-			"anyOf": [
-				{
-					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/itemData"
-						},
-						{
-							"required": [
-								"name",
-								"rarity",
-								"source"
-							]
-						}
-					]
-				},
-				{
-					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/itemData"
-						},
-						{
-							"$ref": "util.json#/definitions/copyBlock"
-						}
-					]
-				}
-			]
+			"additionalProperties": false,
+			"if": {"properties": {"_copy": false}},
+			"then": {
+				"required": [
+					"name",
+					"rarity",
+					"source"
+				]
+			}
 		}
 	},
+
 	"properties": {
 		"item": {
 			"type": "array",

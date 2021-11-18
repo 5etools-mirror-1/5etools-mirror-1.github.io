@@ -1,11 +1,11 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "backgrounds.json",
-	"version": "1.2.2",
+	"version": "1.3.0",
 	"type": "object",
 
 	"definitions": {
-		"backgroundData": {
+		"background": {
 			"type": "object",
 			"properties": {
 				"name": {
@@ -52,41 +52,19 @@
 					"$ref": "util.json#/definitions/fluffObject"
 				},
 				"hasFluff": {"type": "boolean"},
-				"hasFluffImages": {"type": "boolean"}
+				"hasFluffImages": {"type": "boolean"},
+				"_copy": {"$ref": "util.json#/definitions/copyBlock/properties/_copy"}
 			},
-			"additionalProperties": false
-		},
-
-		"background": {
-			"anyOf": [
-				{
-					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/backgroundData"
-						},
-						{
-							"required": [
-								"name",
-								"source",
-								"skillProficiencies",
-								"entries"
-							]
-						}
-					]
-				},
-				{
-					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/backgroundData"
-						},
-						{
-							"$ref": "util.json#/definitions/copyBlock"
-						}
-					]
-				}
-			]
+			"additionalProperties": false,
+			"if": {"properties": {"_copy": false}},
+			"then": {
+				"required": [
+					"name",
+					"source",
+					"skillProficiencies",
+					"entries"
+				]
+			}
 		}
 	},
 

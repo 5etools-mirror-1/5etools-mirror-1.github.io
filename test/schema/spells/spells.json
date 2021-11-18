@@ -1,12 +1,12 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "spells.json",
-	"version": "1.7.0",
+	"version": "1.8.0",
 	"title": "Spells",
 	"type": "object",
 
 	"definitions": {
-		"spellData": {
+		"spell": {
 			"type": "object",
 			"properties": {
 				"name": {
@@ -404,45 +404,23 @@
 					]
 				},
 				"hasFluff": {"type": "boolean"},
-				"hasFluffImages": {"type": "boolean"}
+				"hasFluffImages": {"type": "boolean"},
+				"_copy": {"$ref": "util.json#/definitions/copyBlock/properties/_copy"}
 			},
-			"additionalProperties": false
-		},
-
-		"spell": {
-			"anyOf": [
-				{
-					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/spellData"
-						},
-						{
-							"required": [
-								"name",
-								"level",
-								"school",
-								"time",
-								"range",
-								"duration",
-								"entries",
-								"source"
-							]
-						}
-					]
-				},
-				{
-					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/spellData"
-						},
-						{
-							"$ref": "util.json#/definitions/copyBlock"
-						}
-					]
-				}
-			]
+			"additionalProperties": false,
+			"if": {"properties": {"_copy": false}},
+			"then": {
+				"required": [
+					"name",
+					"level",
+					"school",
+					"time",
+					"range",
+					"duration",
+					"entries",
+					"source"
+				]
+			}
 		},
 
 		"time": {
