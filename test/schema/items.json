@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "items.json",
-	"version": "1.10.11",
+	"version": "1.10.12",
 	"type": "object",
 	"definitions": {
 		"itemData": {
@@ -432,6 +432,13 @@
 				"reqAttuneAltTags": {
 					"$ref": "util.json#/definitions/reqAttuneTags"
 				},
+				"foundryType":{
+					"description": "Homebrew only: used to manually specify the exact Foundry item type an item should be imported as. \n\"CONFIG.Item.typeLabels\" correct as of v0.8.9",
+					"type": "string",
+					"enum": ["weapon", "equipment", "consumable", "tool", "loot", "class", "spell", "feat", "backpack"]
+				},
+				"foundryData": {"$ref": "util.json#/definitions/foundryDataObject"},
+				"foundryEffects": {"type": "array", "items": {"$ref": "util.json#/definitions/foundryEffectObject"}},
 				"hasFluff": {"type": "boolean"},
 				"hasFluffImages": {"type": "boolean"},
 				"hasRefs": {"type": "boolean"}
