@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "vehicles.json",
-	"version": "1.5.1",
+	"version": "1.5.2",
 	"type": "object",
 
 	"definitions": {
@@ -346,7 +346,8 @@
 					"type": "boolean"
 				},
 				"hasFluff": {"type": "boolean"},
-				"hasFluffImages": {"type": "boolean"}
+				"hasFluffImages": {"type": "boolean"},
+				"foundryData": {"$ref": "util.json#/definitions/foundryDataObject"}
 			},
 			"required": ["name", "source"],
 			"additionalProperties": false
