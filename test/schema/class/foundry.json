@@ -11,37 +11,37 @@
 			"type": "object",
 			"properties": {
 				"languageProficiencies": {
-					"$ref": "util.json#/definitions/languageProficiencies"
+					"$ref": "../util.json#/definitions/languageProficiencies"
 				},
 				"skillProficiencies": {
-					"$ref": "util.json#/definitions/skillProficiencies"
+					"$ref": "../util.json#/definitions/skillProficiencies"
 				},
 				"weaponProficiencies": {
-					"$ref": "util.json#/definitions/weaponProficiencies"
+					"$ref": "../util.json#/definitions/weaponProficiencies"
 				},
 				"armorProficiencies": {
-					"$ref": "util.json#/definitions/armorProficiencies"
+					"$ref": "../util.json#/definitions/armorProficiencies"
 				},
 				"toolProficiencies": {
-					"$ref": "util.json#/definitions/toolProficiencies"
+					"$ref": "../util.json#/definitions/toolProficiencies"
 				},
 				"savingThrowProficiencies": {
-					"$ref": "util.json#/definitions/savingThrowProficiencies"
+					"$ref": "../util.json#/definitions/savingThrowProficiencies"
 				},
 				"expertise": {
-					"$ref": "util.json#/definitions/expertise"
+					"$ref": "../util.json#/definitions/expertise"
 				},
 				"resist": {
-					"$ref": "util.json#/definitions/damageResistArrayPlayer"
+					"$ref": "../util.json#/definitions/damageResistArrayPlayer"
 				},
 				"immune": {
-					"$ref": "util.json#/definitions/damageImmunityArrayPlayer"
+					"$ref": "../util.json#/definitions/damageImmunityArrayPlayer"
 				},
 				"vulnerable": {
-					"$ref": "util.json#/definitions/damageVulnerabilityArrayPlayer"
+					"$ref": "../util.json#/definitions/damageVulnerabilityArrayPlayer"
 				},
 				"conditionImmune": {
-					"$ref": "util.json#/definitions/conditionImmunityArrayPlayer"
+					"$ref": "../util.json#/definitions/conditionImmunityArrayPlayer"
 				}
 			},
 			"additionalProperties": false
@@ -57,18 +57,18 @@
 					"name": {"type": "string"},
 					"source": {"type": "string"},
 
-					"entries": {"type": "array", "items": {"$ref": "entry.json"}},
+					"entries": {"type": "array", "items": {"$ref": "../entry.json"}},
 					"entryData": {"$ref": "#/definitions/entryDataObject"},
 
-					"data": {"$ref": "util.json#/definitions/foundryDataObject"},
-					"chooseData": {"type": "array", "items": {"$ref": "util.json#/definitions/foundryDataObject"}},
+					"data": {"$ref": "../util.json#/definitions/foundryDataObject"},
+					"chooseData": {"type": "array", "items": {"$ref": "../util.json#/definitions/foundryDataObject"}},
 					"isChooseDataRenderEntries": {"type": "boolean"},
 					"isIgnored": {"type": "boolean"},
 					"actorDataMod": {"type": "object"},
 					"actorTokenMod": {"type": "object"},
-					"effects": {"type": "array", "items": {"$ref": "util.json#/definitions/foundryEffectObject"}},
+					"effects": {"type": "array", "items": {"$ref": "../util.json#/definitions/foundryEffectObject"}},
 
-					"subEntities": {"$ref": "util.json#/definitions/foundrySubEntitiesObject"}
+					"subEntities": {"$ref": "../util.json#/definitions/foundrySubEntitiesObject"}
 				},
 				"required": [
 					"name",
@@ -88,18 +88,18 @@
 					"classSource": {"type": "string"},
 					"level":  {"type": "integer"},
 
-					"entries": {"type": "array", "items": {"$ref": "entry.json"}},
+					"entries": {"type": "array", "items": {"$ref": "../entry.json"}},
 					"entryData": {"$ref": "#/definitions/entryDataObject"},
 
-					"data": {"$ref": "util.json#/definitions/foundryDataObject"},
-					"chooseData": {"type": "array", "items": {"$ref": "util.json#/definitions/foundryDataObject"}},
+					"data": {"$ref": "../util.json#/definitions/foundryDataObject"},
+					"chooseData": {"type": "array", "items": {"$ref": "../util.json#/definitions/foundryDataObject"}},
 					"isChooseDataRenderEntries": {"type": "boolean"},
 					"isIgnored": {"type": "boolean"},
 					"actorDataMod": {"type": "object"},
 					"actorTokenMod": {"type": "object"},
-					"effects": {"type": "array", "items": {"$ref": "util.json#/definitions/foundryEffectObject"}},
+					"effects": {"type": "array", "items": {"$ref": "../util.json#/definitions/foundryEffectObject"}},
 
-					"subEntities": {"$ref": "util.json#/definitions/foundrySubEntitiesObject"}
+					"subEntities": {"$ref": "../util.json#/definitions/foundrySubEntitiesObject"}
 				},
 				"required": [
 					"name",
@@ -125,18 +125,18 @@
 					"subclassShortName": {"type": "string"},
 					"subclassSource":{"type": "string"},
 
-					"entries": {"type": "array", "items": {"$ref": "entry.json"}},
+					"entries": {"type": "array", "items": {"$ref": "../entry.json"}},
 					"entryData": {"$ref": "#/definitions/entryDataObject"},
 
-					"data": {"$ref": "util.json#/definitions/foundryDataObject"},
-					"chooseData": {"type": "array", "items": {"$ref": "util.json#/definitions/foundryDataObject"}},
+					"data": {"$ref": "../util.json#/definitions/foundryDataObject"},
+					"chooseData": {"type": "array", "items": {"$ref": "../util.json#/definitions/foundryDataObject"}},
 					"isChooseDataRenderEntries": {"type": "boolean"},
 					"isIgnored": {"type": "boolean"},
 					"actorDataMod": {"type": "object"},
 					"actorTokenMod": {"type": "object"},
-					"effects": {"type": "array", "items": {"$ref": "util.json#/definitions/foundryEffectObject"}},
+					"effects": {"type": "array", "items": {"$ref": "../util.json#/definitions/foundryEffectObject"}},
 
-					"subEntities": {"$ref": "util.json#/definitions/foundrySubEntitiesObject"}
+					"subEntities": {"$ref": "../util.json#/definitions/foundrySubEntitiesObject"}
 				},
 				"required": [
 					"name",

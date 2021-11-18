@@ -182,13 +182,13 @@
 				"entries": {
 					"type": "array",
 					"items": {
-						"$ref": "entry.json"
+						"$ref": "../entry.json"
 					}
 				},
 				"entriesHigherLevel": {
 					"type": "array",
 					"items": {
-						"$ref": "entry.json"
+						"$ref": "../entry.json"
 					}
 				},
 				"classes": {
@@ -302,41 +302,41 @@
 					"type": "integer"
 				},
 				"otherSources": {
-					"$ref": "util.json#/definitions/otherSources"
+					"$ref": "../util.json#/definitions/otherSources"
 				},
 				"damageInflict": {
 					"type": "array",
 					"uniqueItems": true,
 					"items": {
-						"$ref": "util.json#/definitions/dataDamageType"
+						"$ref": "../util.json#/definitions/dataDamageType"
 					}
 				},
 				"damageResist": {
 					"type": "array",
 					"uniqueItems": true,
 					"items": {
-						"$ref": "util.json#/definitions/dataDamageType"
+						"$ref": "../util.json#/definitions/dataDamageType"
 					}
 				},
 				"damageImmune": {
 					"type": "array",
 					"uniqueItems": true,
 					"items": {
-						"$ref": "util.json#/definitions/dataDamageType"
+						"$ref": "../util.json#/definitions/dataDamageType"
 					}
 				},
 				"damageVulnerable": {
 					"type": "array",
 					"uniqueItems": true,
 					"items": {
-						"$ref": "util.json#/definitions/dataDamageType"
+						"$ref": "../util.json#/definitions/dataDamageType"
 					}
 				},
 				"conditionInflict": {
-					"$ref": "util.json#/definitions/tagsConditions"
+					"$ref": "../util.json#/definitions/tagsConditions"
 				},
 				"conditionImmune": {
-					"$ref": "util.json#/definitions/tagsConditions"
+					"$ref": "../util.json#/definitions/tagsConditions"
 				},
 				"savingThrow": {
 					"type": "array",
@@ -388,7 +388,7 @@
 					}
 				},
 				"srd": {
-					"$ref": "util.json#/definitions/srd"
+					"$ref": "../util.json#/definitions/srd"
 				},
 				"scalingLevelDice": {
 					"oneOf": [
@@ -405,7 +405,7 @@
 				},
 				"hasFluff": {"type": "boolean"},
 				"hasFluffImages": {"type": "boolean"},
-				"_copy": {"$ref": "util.json#/definitions/copyBlock/properties/_copy"}
+				"_copy": {"$ref": "../util.json#/definitions/copyBlock/properties/_copy"}
 			},
 			"additionalProperties": false,
 			"if": {"properties": {"_copy": false}},
@@ -548,7 +548,7 @@
 			"items": {"$ref": "#/definitions/spell"}
 		},
 		"_meta": {
-			"$ref": "util.json#/definitions/metaBlock"
+			"$ref": "../util.json#/definitions/metaBlock"
 		}
 	},
 	"required": [

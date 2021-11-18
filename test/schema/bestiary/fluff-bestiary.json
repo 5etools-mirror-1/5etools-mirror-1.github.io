@@ -6,10 +6,10 @@
 
 	"properties": {
 		"monsterFluff": {
-			"$ref": "util.json#/definitions/genericFluffArray"
+			"$ref": "../util.json#/definitions/genericFluffArray"
 		},
 		"_meta": {
-			"$ref": "util.json#/definitions/metaBlock"
+			"$ref": "../util.json#/definitions/metaBlock"
 		}
 	},
 	"additionalProperties": false

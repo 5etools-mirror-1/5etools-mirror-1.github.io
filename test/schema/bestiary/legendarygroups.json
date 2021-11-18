@@ -17,27 +17,27 @@
 					"type": "integer"
 				},
 				"additionalSources": {
-					"$ref": "util.json#/definitions/additionalSources"
+					"$ref": "../util.json#/definitions/additionalSources"
 				},
 				"lairActions": {
 					"type": "array",
 					"items": {
-						"$ref": "entry.json"
+						"$ref": "../entry.json"
 					}
 				},
 				"regionalEffects": {
 					"type": "array",
 					"items": {
-						"$ref": "entry.json"
+						"$ref": "../entry.json"
 					}
 				},
 				"mythicEncounter": {
 					"type": "array",
 					"items": {
-						"$ref": "entry.json"
+						"$ref": "../entry.json"
 					}
 				},
-				"_copy": {"$ref": "util.json#/definitions/copyBlock/properties/_copy"}
+				"_copy": {"$ref": "../util.json#/definitions/copyBlock/properties/_copy"}
 			},
 			"additionalProperties": false,
 			"if": {"properties": {"_copy": false}},
@@ -51,7 +51,7 @@
 	},
 
 	"properties": {
-		"_meta": {"$ref": "util.json#/definitions/metaBlock"},
+		"_meta": {"$ref": "../util.json#/definitions/metaBlock"},
 		"legendaryGroup": {
 			"type": "array",
 			"uniqueItems": true,

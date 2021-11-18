@@ -292,20 +292,20 @@
 			"$ref": "books.json#/properties/book"
 		},
 		"class": {
-			"$ref": "class.json#/properties/class"
+			"$ref": "class/class.json#/properties/class"
 		},
 		"subclass": {
-			"$ref": "class.json#/properties/subclass"
+			"$ref": "class/class.json#/properties/subclass"
 		},
 		"subclassFeature": {
-			"$ref": "class.json#/properties/subclassFeature"
+			"$ref": "class/class.json#/properties/subclassFeature"
 		},
 		"spell": {
-			"$ref": "spells.json#/properties/spell"
+			"$ref": "spells/spells.json#/properties/spell"
 		},
 		"roll20Spell": {
 			"description": "Based on the Roll20 JSON data, example available here: https://app.roll20.net/compendium/dnd5e/Spells:Fireball.json",
-			"$ref": "roll20.json#/properties/spell"
+			"$ref": "spells/roll20.json#/properties/spell"
 		},
 		"foundrySpell": {
 			"type": "array",
@@ -436,25 +436,25 @@
 			"$ref": "variantrules.json#/properties/variantrule"
 		},
 		"legendaryGroup": {
-			"$ref": "legendarygroups.json#/properties/legendaryGroup"
+			"$ref": "bestiary/legendarygroups.json#/properties/legendaryGroup"
 		},
 		"language": {
 			"$ref": "languages.json#/properties/language"
 		},
 		"monster": {
-			"$ref": "bestiary.json#/properties/monster"
+			"$ref": "bestiary/bestiary.json#/properties/monster"
 		},
 		"itemFluff": {
 			"$ref": "fluff-items.json#/properties/itemFluff"
 		},
 		"monsterFluff": {
-			"$ref": "fluff-bestiary.json#/properties/monsterFluff"
+			"$ref": "bestiary/fluff-bestiary.json#/properties/monsterFluff"
 		},
 		"bookData": {
-			"$ref": "book.json#/properties/data"
+			"$ref": "book/book.json#/properties/data"
 		},
 		"adventureData": {
-			"$ref": "adventure.json#/properties/data"
+			"$ref": "adventure/adventure.json#/properties/data"
 		},
 		"$schema": {
 			"description": "An optional key that allows you specify the schema you want to verify against.\nIt is strongly advised that you leave this key out when submitting to the repo.\nTo reduce work it is advised that you set up your environment to use the same schema for all homebrew files.",
@@ -473,7 +473,7 @@
 			"$ref": "recipes.json#/properties/recipe"
 		},
 		"classFeature": {
-			"$ref": "class.json#/properties/classFeature"
+			"$ref": "class/class.json#/properties/classFeature"
 		},
 		"cult": {
 			"$ref": "cultsboons.json#/properties/cult"
@@ -488,10 +488,10 @@
 			"$ref": "names.json#/properties/name"
 		},
 		"foundryClassFeature": {
-			"$ref": "foundry.json#/properties/classFeature"
+			"$ref": "class/foundry.json#/properties/classFeature"
 		},
 		"foundrySubclassFeature": {
-			"$ref": "foundry.json#/properties/subclassFeature"
+			"$ref": "class/foundry.json#/properties/subclassFeature"
 		}
 	},
 	"additionalProperties": false

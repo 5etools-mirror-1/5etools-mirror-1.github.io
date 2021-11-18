@@ -8,7 +8,7 @@
 		"align": {
 			"oneOf": [
 				{
-					"$ref": "util.json#/definitions/alignment"
+					"$ref": "../util.json#/definitions/alignment"
 				},
 				{
 					"type": "object",
@@ -16,7 +16,7 @@
 						"alignment": {
 							"type": "array",
 							"items": {
-								"$ref": "util.json#/definitions/alignment"
+								"$ref": "../util.json#/definitions/alignment"
 							}
 						},
 						"chance": {
@@ -106,7 +106,7 @@
 					"type": "integer"
 				},
 				"size": {
-					"$ref": "util.json#/definitions/size"
+					"$ref": "../util.json#/definitions/size"
 				},
 				"sizeNote": {
 					"type": "string"
@@ -117,10 +117,10 @@
 							"type": "object",
 							"properties": {
 								"type": {
-									"$ref": "util.json#/definitions/creatureType"
+									"$ref": "../util.json#/definitions/creatureType"
 								},
 								"swarmSize": {
-									"$ref": "util.json#/definitions/size",
+									"$ref": "../util.json#/definitions/size",
 									"description": "Size of the individual creatures that make up the swarm."
 								},
 								"tags": {
@@ -157,7 +157,7 @@
 							"additionalProperties": false
 						},
 						{
-							"$ref": "util.json#/definitions/creatureType"
+							"$ref": "../util.json#/definitions/creatureType"
 						}
 					]
 				},
@@ -165,7 +165,7 @@
 					"type": "string"
 				},
 				"otherSources": {
-					"$ref": "util.json#/definitions/otherSources"
+					"$ref": "../util.json#/definitions/otherSources"
 				},
 				"externalSources": {
 					"description": "For homebrew use only.",
@@ -174,7 +174,7 @@
 						"type": "object",
 						"properties": {
 							"entry": {
-								"$ref": "entry.json"
+								"$ref": "../entry.json"
 							}
 						},
 						"required": [
@@ -223,7 +223,7 @@
 					]
 				},
 				"speed": {
-					"$ref": "util.json#/definitions/speed"
+					"$ref": "../util.json#/definitions/speed"
 				},
 				"str": {
 					"type": ["integer", "null"]
@@ -254,7 +254,7 @@
 						"cha": {"type": "string"},
 						"special": {
 							"description": "For use in homebrew.",
-							"$ref": "entry.json"
+							"$ref": "../entry.json"
 						}
 					},
 					"additionalProperties": false
@@ -349,7 +349,7 @@
 						},
 						"special": {
 							"description": "For use in homebrew.",
-							"$ref": "entry.json"
+							"$ref": "../entry.json"
 						}
 					},
 					"additionalProperties": false
@@ -413,23 +413,23 @@
 					]
 				},
 				"vulnerable": {
-					"$ref": "util.json#/definitions/damageVulnerabilityArray"
+					"$ref": "../util.json#/definitions/damageVulnerabilityArray"
 				},
 				"resist": {
-					"$ref": "util.json#/definitions/damageResistArray"
+					"$ref": "../util.json#/definitions/damageResistArray"
 				},
 				"immune": {
-					"$ref": "util.json#/definitions/damageImmunityArray"
+					"$ref": "../util.json#/definitions/damageImmunityArray"
 				},
 				"conditionImmune": {
-					"$ref": "util.json#/definitions/conditionImmunityArray"
+					"$ref": "../util.json#/definitions/conditionImmunityArray"
 				},
 				"spellcasting": {
 					"oneOf": [
 						{
 							"type": "array",
 							"items": {
-								"$ref": "entry.json#/definitions/entrySpellcasting"
+								"$ref": "../entry.json#/definitions/entrySpellcasting"
 							}
 						},
 						{
@@ -450,7 +450,7 @@
 									"entries": {
 										"type": "array",
 										"items": {
-											"$ref": "entry.json"
+											"$ref": "../entry.json"
 										}
 									},
 									"type": {
@@ -490,7 +490,7 @@
 									"entries": {
 										"type": "array",
 										"items": {
-											"$ref": "entry.json"
+											"$ref": "../entry.json"
 										}
 									}
 								},
@@ -517,7 +517,7 @@
 							"entries": {
 								"type": "array",
 								"items": {
-									"$ref": "entry.json"
+									"$ref": "../entry.json"
 								}
 							}
 						},
@@ -539,7 +539,7 @@
 							"entries": {
 								"type": "array",
 								"items": {
-									"$ref": "entry.json"
+									"$ref": "../entry.json"
 								}
 							}
 						},
@@ -567,7 +567,7 @@
 				"legendaryHeader": {
 					"type": "array",
 					"items": {
-						"$ref": "entry.json"
+						"$ref": "../entry.json"
 					}
 				},
 				"legendary": {
@@ -583,7 +583,7 @@
 									"entries": {
 										"type": "array",
 										"items": {
-											"$ref": "entry.json"
+											"$ref": "../entry.json"
 										}
 									}
 								},
@@ -601,7 +601,7 @@
 				"mythicHeader": {
 					"type": "array",
 					"items": {
-						"$ref": "entry.json"
+						"$ref": "../entry.json"
 					}
 				},
 				"mythic": {
@@ -615,7 +615,7 @@
 							"entries": {
 								"type": "array",
 								"items": {
-									"$ref": "entry.json"
+									"$ref": "../entry.json"
 								}
 							}
 						},
@@ -636,7 +636,7 @@
 					"type": "boolean"
 				},
 				"additionalSources": {
-					"$ref": "util.json#/definitions/additionalSources"
+					"$ref": "../util.json#/definitions/additionalSources"
 				},
 				"hasToken": {
 					"type": "boolean"
@@ -694,7 +694,7 @@
 							}
 						},
 						{
-							"$ref": "util.json#/definitions/fluffObject"
+							"$ref": "../util.json#/definitions/fluffObject"
 						}
 					]
 				},
@@ -709,7 +709,7 @@
 					"type": "array",
 					"items": {
 						"type": "string",
-						"enum": [
+						"examples": [
 							"arctic",
 							"coastal",
 							"desert",
@@ -725,7 +725,7 @@
 					}
 				},
 				"soundClip": {
-					"$ref": "entry.json#/definitions/mediaHref"
+					"$ref": "../entry.json#/definitions/mediaHref"
 				},
 				"dragonCastingColor": {
 					"type": "string",
@@ -824,7 +824,7 @@
 				"damageTags": {
 					"type": "array",
 					"items": {
-						"$ref": "util.json#/definitions/dataDamageTags"
+						"$ref": "../util.json#/definitions/dataDamageTags"
 					}
 				},
 				"miscTags": {
@@ -836,23 +836,23 @@
 					}
 				},
 				"conditionInflict": {
-					"$ref": "util.json#/definitions/tagsConditions"
+					"$ref": "../util.json#/definitions/tagsConditions"
 				},
 				"conditionInflictLegendary": {
-					"$ref": "util.json#/definitions/tagsConditions"
+					"$ref": "../util.json#/definitions/tagsConditions"
 				},
 				"conditionInflictSpell": {
-					"$ref": "util.json#/definitions/tagsConditions"
+					"$ref": "../util.json#/definitions/tagsConditions"
 				},
 				"footer": {
 					"description": "Intended for homebrew use only.",
 					"type": "array",
 					"items": {
-						"$ref": "entry.json"
+						"$ref": "../entry.json"
 					}
 				},
 				"srd": {
-					"$ref": "util.json#/definitions/srd"
+					"$ref": "../util.json#/definitions/srd"
 				},
 				"summonedBySpell": {
 					"description": "The spell used to summon this creature; specifically for TCE-esque summon spells.",
@@ -874,7 +874,7 @@
 				},
 				"hasFluff": {"type": "boolean"},
 				"hasFluffImages": {"type": "boolean"},
-				"_copy": {"$ref": "util.json#/definitions/copyBlock/properties/_copy"}
+				"_copy": {"$ref": "../util.json#/definitions/copyBlock/properties/_copy"}
 			},
 			"additionalProperties": false,
 			"if": {"properties": {"_copy": false}},
@@ -950,14 +950,14 @@
 				{"$ref": "#/definitions/variantVersion"}
 			],
 			"oneOf": [
-				{"$ref": "entry.json#/definitions/entryVariant"},
-				{"$ref": "entry.json#/definitions/entryInset"}
+				{"$ref": "../entry.json#/definitions/entryVariant"},
+				{"$ref": "../entry.json#/definitions/entryInset"}
 			]
 		},
 
 		"creatureVersion": {
 			"anyOf": [
-				{"$ref": "util.json#/definitions/version"},
+				{"$ref": "../util.json#/definitions/version"},
 				{"$ref": "#/definitions/creature"}
 			]
 		}
@@ -971,7 +971,7 @@
 			}
 		},
 		"_meta": {
-			"$ref": "util.json#/definitions/metaBlock"
+			"$ref": "../util.json#/definitions/metaBlock"
 		}
 	},
 	"additionalProperties": false

@@ -1197,7 +1197,7 @@
 			"properties": {
 				"type": {"const": "dataCreature"},
 				"dataCreature": {
-					"$ref" : "bestiary.json#/definitions/creature"
+					"$ref" : "bestiary/bestiary.json#/definitions/creature"
 				}
 			},
 			"required": [
@@ -1210,7 +1210,7 @@
 			"properties": {
 				"type": {"const": "dataSpell"},
 				"dataSpell": {
-					"$ref" : "spells.json#/definitions/spell"
+					"$ref" : "spells/spells.json#/definitions/spell"
 				}
 			},
 			"required": [
