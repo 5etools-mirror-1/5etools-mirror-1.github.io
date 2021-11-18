@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "vehicles.json",
-	"version": "1.5.0",
+	"version": "1.5.1",
 	"type": "object",
 
 	"definitions": {
@@ -71,19 +71,7 @@
 				"vehicleType": {"const": "SHIP"},
 				"terrain": {"$ref": "#/definitions/vehicleTerrain"},
 				"size": {
-					"type": "string",
-					"enum": [
-						"F",
-						"D",
-						"T",
-						"S",
-						"M",
-						"L",
-						"H",
-						"G",
-						"C",
-						"V"
-					]
+					"$ref": "util.json#/definitions/size"
 				},
 				"dimensions": {
 					"type": "array",
@@ -379,19 +367,7 @@
 				"vehicleType": {"const": "INFWAR"},
 				"terrain": {"$ref": "#/definitions/vehicleTerrain"},
 				"size": {
-					"type": "string",
-					"enum": [
-						"F",
-						"D",
-						"T",
-						"S",
-						"M",
-						"L",
-						"H",
-						"G",
-						"C",
-						"V"
-					]
+					"$ref": "util.json#/definitions/size"
 				},
 				"weight": {
 					"type": "integer"

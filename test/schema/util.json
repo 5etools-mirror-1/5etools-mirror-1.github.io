@@ -4,7 +4,7 @@
 
 	"title": "Util",
 	"description": "Utility definitions to be used in other schemas.",
-	"version": "1.10.1",
+	"version": "1.10.2",
 
 	"definitions" : {
 		"metaBlock": {
@@ -2182,7 +2182,7 @@
 					"background":{"type": "string"},
 					"race": {"type": "string"},
 					"creatureType":{"$ref": "#/definitions/creatureType"},
-					"size": {"type": "string"},
+					"size": {"$ref": "#/definitions/size"},
 					"class":{"type": "string"},
 
 					"languageProficiency": {"$ref": "#/definitions/languageNameLower"},

@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.18.2",
+	"version": "1.18.3",
 	"title": "Bestiary Schema",
 	"$id": "bestiary.json",
 	"type": "object",
@@ -131,19 +131,8 @@
 									"$ref": "util.json#/definitions/creatureType"
 								},
 								"swarmSize": {
-									"type": "string",
-									"enum": [
-										"F",
-										"D",
-										"T",
-										"S",
-										"M",
-										"L",
-										"H",
-										"G",
-										"C",
-										"V"
-									]
+									"$ref": "util.json#/definitions/size",
+									"description": "Size of the individual creatures that make up the swarm."
 								},
 								"tags": {
 									"type": "array",
