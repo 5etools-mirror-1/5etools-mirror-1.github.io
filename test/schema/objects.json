@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "objects.json",
-	"version": "1.2.2",
+	"version": "1.2.3",
 	"type": "object",
 
 	"definitions": {
@@ -25,8 +25,8 @@
 				},
 				"objectType": {
 					"type": "string",
-					"description": "siege weapon; generic; unknown",
-					"enum": ["SW", "GEN", "U"]
+					"description": "G: Generic\n SW: Siege Weapon\n U: Unknown",
+					"enum": ["GEN", "SW", "U"]
 				},
 				"str": {
 					"type": "integer"
@@ -76,14 +76,10 @@
 					"$ref": "util.json#/definitions/speed"
 				},
 				"senses": {
-					"oneOf": [
-						{
-							"type": "array",
-							"items": {
-								"type": "string"
-							}
-						}
-					]
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
 				},
 				"resist": {
 					"$ref": "util.json#/definitions/damageResistArray"
