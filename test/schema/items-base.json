@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "items-base.json",
-	"version": "1.4.7",
+	"version": "1.4.8",
 	"definitions": {
 		"itemLookup": {
 			"type": "array",
@@ -53,7 +53,7 @@
 						"type": "string"
 					},
 					"type": {
-						"type": "string"
+						"$ref": "util.json#/definitions/itemTypeTags"
 					},
 					"rarity": {
 						"$ref": "util.json#/definitions/itemRarity"

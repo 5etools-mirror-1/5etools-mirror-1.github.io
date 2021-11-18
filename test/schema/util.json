@@ -4,7 +4,7 @@
 
 	"title": "Util",
 	"description": "Utility definitions to be used in other schemas.",
-	"version": "1.11.0",
+	"version": "1.12.0",
 
 	"definitions" : {
 		"metaBlock": {
@@ -136,6 +136,44 @@
 					}
 				}
 			}
+		},
+
+		"itemTypeTags": {
+			"type": "string",
+			"$comment": "Dumped from `Object(Parser.ITEM_TYPE_JSON_TO_ABV)`",
+			"description": "$: Treasure\n A: Ammunition\n AF: Ammunition (futuristic)\n AIR: Vehicle (air)\n AT: Artisan Tool\n EM: Eldritch Machine\n EXP: Explosive\n G: Adventuring Gear\n GS: Gaming Set\n GV: Generic Variant\n HA: Heavy Armor\n INS: Instrument\n LA: Light Armor\n M: Melee Weapon\n MA: Medium Armor\n MNT: Mount\n OTH: Other\n P: Potion\n R: Ranged Weapon\n RD: Rod\n RG: Ring\n S: Shield\n SC: Scroll\n SCF: Spellcasting Focus\n SHP: Vehicle (water)\n T: Tool\n TAH: Tack and Harness\n TG: Trade Good\n VEH: Vehicle (land)\n WD: Wand",
+			"enum": [
+				"$",
+				"A",
+				"AF",
+				"AIR",
+				"AT",
+				"EM",
+				"EXP",
+				"G",
+				"GS",
+				"GV",
+				"HA",
+				"INS",
+				"LA",
+				"M",
+				"MA",
+				"MNT",
+				"OTH",
+				"P",
+				"R",
+				"RD",
+				"RG",
+				"S",
+				"SC",
+				"SCF",
+				"SHP",
+				"T",
+				"TAH",
+				"TG",
+				"VEH",
+				"WD"
+			]
 		},
 
 		"toolNameLower": {

@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "magicvariants.json",
-	"version": "1.4.9",
+	"version": "1.4.10",
 	"type": "object",
 	"properties": {
 		"variant": {
@@ -14,7 +14,7 @@
 						"type": "string"
 					},
 					"type": {
-						"type": "string"
+						"$ref": "util.json#/definitions/itemTypeTags"
 					},
 					"entries": {
 						"type": "array",
@@ -37,7 +37,7 @@
 								"dmgType": {"$ref": "util.json#/definitions/dataDamageTags"},
 								"name": {"type": "string"},
 								"source": {"type": "string"},
-								"type": {"type": "string"},
+								"type": {"$ref": "util.json#/definitions/itemTypeTags"},
 								"scfType": {"type": "string", "enum": ["arcane", "druid", "holy"]},
 								"net": {"type": "boolean"},
 								"weaponCategory": {"type": "string", "enum": ["simple", "martial"]}
@@ -50,7 +50,7 @@
 						"properties": {
 							"type": {
 								"description": "Generally this should be omitted, as the type of the base item will be used.",
-								"type": "string"
+								"$ref": "util.json#/definitions/itemTypeTags"
 							},
 							"bonusAc": {
 								"type": "string"

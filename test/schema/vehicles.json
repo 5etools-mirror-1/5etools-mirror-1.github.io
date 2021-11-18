@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "vehicles.json",
-	"version": "1.5.2",
+	"version": "1.5.3",
 	"type": "object",
 
 	"definitions": {
@@ -42,7 +42,9 @@
 				},
 				"upgradeType": {
 					"type": "array",
-					"items": {"type": "string"}
+					"items": {
+						"$ref": "util.json#/definitions/dataOptionalfeatureType", "pattern": "^SHP.*|^IWM.*"
+					}
 				},
 				"hasFluff": {"type": "boolean"},
 				"hasFluffImages": {"type": "boolean"}

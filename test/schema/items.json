@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "items.json",
-	"version": "1.10.13",
+	"version": "1.10.14",
 	"type": "object",
 	"definitions": {
 		"itemData": {
@@ -11,10 +11,10 @@
 					"type": "string"
 				},
 				"type": {
-					"type": "string"
+					"$ref": "util.json#/definitions/itemTypeTags"
 				},
 				"typeAlt": {
-					"type": "string"
+					"$ref": "util.json#/definitions/itemTypeTags"
 				},
 				"rarity": {
 					"$ref": "util.json#/definitions/itemRarity"
