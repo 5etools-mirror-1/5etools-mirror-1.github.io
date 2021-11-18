@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "2.8.2",
+	"version": "2.8.3",
 	"$id": "class.json",
 
 	"type": "object",
@@ -138,6 +138,7 @@
 				"header":  {"type": "integer"},
 				"page": {"type": "integer"},
 				"type": {"type": "string", "enum": ["inset"]},
+				"prerequisite": {"type": "string"},
 				"entries": {
 					"type": "array",
 					"items": {
@@ -316,6 +317,7 @@
 				},
 				"subclassFeatures": {
 					"type": "array",
+					"description": "Format: \"featureName | className | classSource | subclassShortName | subclassSource | level | featureSource\"\nPHB is assumed for sources.\nfeatureSource is assumed to be the same as subclassSource.",
 					"items": {
 						"oneOf": [
 							{
@@ -345,16 +347,17 @@
 				},
 				"additionalSpells": { "$ref": "util.json#/definitions/additionalSpellsArray" },
 				"subclassSpells": {
-					"description": "Homebrew use only",
+					"description": "Homebrew use only; adds custom subclasses to lists in spells.\nDoes not enable VTT import - use \"additionalSpells\" as well.",
 					"type": "array",
 					"items": {"$ref": "#/definitions/spellRef"}
 				},
 				"subSubclassSpells": {
-					"description": "Homebrew use only",
+					"description": "Homebrew use only; adds custom sub-subclasses to lists in spells.\nPrimarily used by cleric orders and druid circles.\nDoes not enable VTT import - use \"additionalSpells\" as well.",
 					"type": "object",
 					"patternProperties": {
 						".*": {
 							"type": "array",
+							"description": "A circle, order or other sub-subclass name",
 							"items": {"$ref": "#/definitions/spellRef"}
 						}
 					}
@@ -532,7 +535,7 @@
 				},
 				"requirements": {"$ref": "#/definitions/requirements"},
 				"requirementsSpecial": {
-					"description": "For homebrew use.",
+					"description": "For homebrew use; free-text requirement with formatting.",
 					"type": "string"
 				},
 				"multiclassing": {
@@ -540,7 +543,7 @@
 					"properties": {
 						"requirements": {"$ref": "#/definitions/requirements"},
 						"requirementsSpecial": {
-							"description": "For homebrew use.",
+							"description": "For homebrew use; free-text requirement with formatting.",
 							"type": "string"
 						},
 						"proficienciesGained": {
@@ -557,7 +560,8 @@
 					"enum": ["full", "1/2", "1/3", "pact", "artificer"]
 				},
 				"preparedSpells": {
-					"type": "string"
+					"type": "string",
+					"description": "Formula for the number of spells the class can prepare, for example:\n\"<$level$> / 2 + <$int_mod$>\""
 				},
 				"spellcastingAbility": {
 					"enum": ["str", "dex", "con", "int", "wis", "cha"]
@@ -618,7 +622,8 @@
 							"name": {"type": "string"},
 							"featureType": {
 								"type": "array",
-								"items": {"$ref": "util.json#/definitions/dataOptionalfeatureType"}
+								"items": {"$ref": "util.json#/definitions/dataOptionalfeatureType"},
+								"uniqueItems": true
 							},
 							"progression": {
 								"type": "array",
@@ -632,6 +637,7 @@
 				},
 				"classFeatures": {
 					"type": "array",
+					"description": "Format: \" featureName | className | classSource | level | featureSource \" , PHB is assumed as classSource and featureSource is assumed to be the same as classSource.",
 					"items": {
 						"oneOf": [
 							{
@@ -686,7 +692,7 @@
 				},
 				"additionalSpells": { "$ref": "util.json#/definitions/additionalSpellsArray" },
 				"classSpells": {
-					"description": "Homebrew use only",
+					"description": "Homebrew use only; adds custom classes to lists in spells.\nDoes not enable VTT import - use \"additionalSpells\" as well.",
 					"type": "array",
 					"items": {"$ref": "#/definitions/spellRef"}
 				}
@@ -695,7 +701,7 @@
 		},
 
 		"spellRef": {
-			"description": "A reference to a spell, linked by name and source. Assumes PHB as the source, if none is provided.",
+			"description": "A reference to a spell or an existing spell list, linked by name and source. Assumes PHB as the source, if none is provided.",
 			"oneOf": [
 				{
 					"description": "A spell with a non-PHB source",
@@ -705,7 +711,8 @@
 							"type": "string"
 						},
 						"source": {
-							"type": "string"
+							"type": "string",
+							"description": "Currently case-sensitive; use \"XGE\" not \"xge\"."
 						}
 					},
 					"required": [
@@ -730,7 +737,8 @@
 					"additionalProperties": false
 				},
 				{
-					"type": "string"
+					"type": "string",
+					"description": "A spell name from the PHB.\nUse {\"name\",\"source\"} structures to reference non-PHB spells here - not \"name|source\""
 				}
 			]
 		}
