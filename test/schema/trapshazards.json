@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "trapshazards.json",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"type": "object",
 
 	"definitions": {
@@ -16,6 +16,7 @@
 						},
 						"trapHazType": {
 							"type": "string",
+							"description": "MAG: Magical Trap\n MECH: Mechanical Trap",
 							"enum": [
 								"MECH",
 								"MAG"
@@ -162,12 +163,13 @@
 				},
 				"trapHazType": {
 					"type": "string",
+					"description": "ENV: Environmental Hazard\n EST: Eldritch Storm\n GEN: Generic\n WTH: Weather\n WLD: Wilderness Hazard",
 					"enum": [
-						"WTH",
 						"ENV",
-						"WLD",
+						"EST",
 						"GEN",
-						"EST"
+						"WTH",
+						"WLD"
 					]
 				},
 				"source": {
