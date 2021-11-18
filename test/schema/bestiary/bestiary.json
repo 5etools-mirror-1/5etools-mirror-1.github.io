@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.18.1",
+	"version": "1.18.2",
 	"title": "Bestiary Schema",
 	"$id": "bestiary.json",
 	"type": "object",
@@ -248,22 +248,22 @@
 					"$ref": "util.json#/definitions/speed"
 				},
 				"str": {
-					"type": "integer"
+					"type": ["integer", "null"]
 				},
 				"dex": {
-					"type": "integer"
+					"type": ["integer", "null"]
 				},
 				"con": {
-					"type": "integer"
+					"type": ["integer", "null"]
 				},
 				"int": {
-					"type": "integer"
+					"type": ["integer", "null"]
 				},
 				"wis": {
-					"type": "integer"
+					"type": ["integer", "null"]
 				},
 				"cha": {
-					"type": "integer"
+					"type": ["integer", "null"]
 				},
 				"save": {
 					"type": "object",
@@ -390,7 +390,7 @@
 					]
 				},
 				"passive": {
-					"type": ["integer", "string"]
+					"type": ["integer", "string", "null"]
 				},
 				"languages": {
 					"oneOf": [
