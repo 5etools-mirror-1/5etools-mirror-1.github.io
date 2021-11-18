@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.18.4",
+	"version": "1.18.5",
 	"title": "Bestiary Schema",
 	"$id": "bestiary.json",
 	"type": "object",
@@ -824,8 +824,7 @@
 				"damageTags": {
 					"type": "array",
 					"items": {
-						"type": "string",
-						"enum": ["A", "B", "C", "F", "O", "L", "N", "P", "I", "Y", "R", "S", "T"]
+						"$ref": "util.json#/definitions/dataDamageTags"
 					}
 				},
 				"miscTags": {

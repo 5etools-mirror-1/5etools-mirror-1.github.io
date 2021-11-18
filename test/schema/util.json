@@ -4,7 +4,7 @@
 
 	"title": "Util",
 	"description": "Utility definitions to be used in other schemas.",
-	"version": "1.10.2",
+	"version": "1.11.0",
 
 	"definitions" : {
 		"metaBlock": {
@@ -1106,6 +1106,26 @@
 				"radiant",
 				"slashing",
 				"thunder"
+			]
+		},
+
+		"dataDamageTags": {
+			"type": "string",
+			"description": "A: Acid\n B: Bludgeoning\n C: Cold\n F: Fire\n O: Force\n L: Lightning\n N: Necrotic\n P: Piercing\n I: Poison\n Y: Psychic\n R: Radiant\n S: Slashing\n T: Thunder",
+			"enum": [
+				"A",
+				"B",
+				"C",
+				"F",
+				"O",
+				"L",
+				"N",
+				"P",
+				"I",
+				"Y",
+				"R",
+				"S",
+				"T"
 			]
 		},
 

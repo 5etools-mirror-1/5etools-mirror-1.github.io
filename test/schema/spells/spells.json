@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "spells.json",
-	"version": "1.6.7",
+	"version": "1.7.0",
 	"title": "Spells",
 	"type": "object",
 
@@ -308,40 +308,28 @@
 					"type": "array",
 					"uniqueItems": true,
 					"items": {
-						"type": "string",
-						"enum": [
-							"acid", "bludgeoning", "cold", "fire", "force", "lightning", "necrotic", "piercing", "poison", "psychic", "radiant", "slashing", "thunder"
-						]
+						"$ref": "util.json#/definitions/dataDamageType"
 					}
 				},
 				"damageResist": {
 					"type": "array",
 					"uniqueItems": true,
 					"items": {
-						"type": "string",
-						"enum": [
-							"acid", "bludgeoning", "cold", "fire", "force", "lightning", "necrotic", "piercing", "poison", "psychic", "radiant", "slashing", "thunder"
-						]
+						"$ref": "util.json#/definitions/dataDamageType"
 					}
 				},
 				"damageImmune": {
 					"type": "array",
 					"uniqueItems": true,
 					"items": {
-						"type": "string",
-						"enum": [
-							"acid", "bludgeoning", "cold", "fire", "force", "lightning", "necrotic", "piercing", "poison", "psychic", "radiant", "slashing", "thunder"
-						]
+						"$ref": "util.json#/definitions/dataDamageType"
 					}
 				},
 				"damageVulnerable": {
 					"type": "array",
 					"uniqueItems": true,
 					"items": {
-						"type": "string",
-						"enum": [
-							"acid", "bludgeoning", "cold", "fire", "force", "lightning", "necrotic", "piercing", "poison", "psychic", "radiant", "slashing", "thunder"
-						]
+						"$ref": "util.json#/definitions/dataDamageType"
 					}
 				},
 				"conditionInflict": {

@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "items.json",
-	"version": "1.10.12",
+	"version": "1.10.13",
 	"type": "object",
 	"definitions": {
 		"itemData": {
@@ -62,7 +62,7 @@
 					"description": "The versatile or alternative damage dice of the weapon, e.g. \"1d10\""
 				},
 				"dmgType": {
-					"type": "string"
+					"$ref": "util.json#/definitions/dataDamageTags"
 				},
 				"entries": {
 					"type": "array",
