@@ -1,0 +1,98 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "fluff-races.json",
+	"version": "2.1.0",
+	"type": "object",
+
+	"definitions": {
+		"raceFluffData": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"source": {
+					"type": "string"
+				},
+				"images": {
+					"oneOf": [
+						{
+							"type": "array",
+							"items": {
+								"$ref": "entry.json#/definitions/entryImage"
+							}
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"entries": {
+					"type": "array",
+					"items": {
+						"$ref": "entry.json"
+					}
+				},
+				"uncommon": {
+					"type": "boolean"
+				},
+				"monstrous": {
+					"type": "boolean"
+				}
+			},
+			"additionalProperties": false
+		},
+
+		"raceFluff": {
+			"anyOf": [
+				{
+					"type": "object",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/raceFluffData"
+						},
+						{
+							"required": ["name", "source"]
+						}
+					]
+				},
+				{
+					"type": "object",
+					"$comment": "This is a custom pre-processor tag, which merges together the array of objects into one. This allows proper inheritance, which JSON schema don't really do.",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/raceFluffData"
+						},
+						{
+							"$ref": "util.json#/definitions/copyBlock"
+						}
+					]
+				}
+			]
+		}
+	},
+
+	"properties": {
+		"raceFluff": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/raceFluff"
+			}
+		},
+		"raceFluffMeta": {
+			"type": "object",
+			"properties": {
+				"uncommon": {
+					"$ref": "entry.json"
+				},
+				"monstrous": {
+					"$ref": "entry.json"
+				}
+			}
+		},
+		"_meta": {
+			"$ref": "util.json#/definitions/metaBlock"
+		}
+	},
+	"additionalProperties": false
+}

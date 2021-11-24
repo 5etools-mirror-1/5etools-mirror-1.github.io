@@ -1,0 +1,96 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "encounters.json",
+	"version": "1.2.1",
+	"title": "EncounterArray",
+	"type": "object",
+
+	"definitions": {
+		"encounterTableRow": {
+			"type": "object",
+			"properties": {
+				"min": {
+					"type": "integer"
+				},
+				"max": {
+					"type": "integer"
+				},
+				"result": {
+					"$ref": "entry.json"
+				}
+			},
+			"required": [
+				"min",
+				"max",
+				"result"
+			],
+			"additionalProperties": false
+		},
+
+		"encounterTable": {
+			"type": "object",
+			"properties": {
+				"minlvl": {
+					"type": "integer"
+				},
+				"maxlvl": {
+					"type": "integer"
+				},
+				"diceType": {
+					"type": "integer"
+				},
+				"table": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/encounterTableRow"
+					}
+				}
+			},
+			"required": [
+				"minlvl",
+				"maxlvl",
+				"table"
+			],
+			"additionalProperties": false
+		},
+
+		"encounter": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"source": {
+					"type": "string"
+				},
+				"tables": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/encounterTable"
+					}
+				},
+				"page": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"name",
+				"source",
+				"tables"
+			],
+			"additionalProperties": false
+		}
+	},
+
+	"properties": {
+		"encounter": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/encounter"
+			}
+		}
+	},
+
+	"required": ["encounter"],
+	"additionalProperties": false
+}

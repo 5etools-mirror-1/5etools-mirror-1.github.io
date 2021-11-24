@@ -1,0 +1,29 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "makebrew-creature.json",
+	"version": "1.1.0",
+	"type": "object",
+	"properties": {
+		"#makebrewCreatureTrait": {
+			"type": "string"
+		},
+		"makebrewCreatureTrait": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"entries": {
+						"type": "array",
+						"items": {
+							"$ref": "entry.json"
+						}
+					}
+				}
+			}
+		}
+	},
+	"additionalProperties": false
+}

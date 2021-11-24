@@ -1,0 +1,76 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "conditionsdiseases.json",
+	"version": "1.1.5",
+	"type": "object",
+	"definitions": {
+		"conditionDisease": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"entries": {
+					"type": "array",
+					"items": {
+						"$ref": "entry.json"
+					}
+				},
+				"source": {
+					"type": "string"
+				},
+				"page": {
+					"type": "integer"
+				},
+				"srd": {
+					"$ref": "util.json#/definitions/srd"
+				},
+				"$$ifBrew": {
+					"color": {
+						"description": "For homebrew use only; HTML hex color code this source should use when displayed on the DM Screen.\ne.g. \"ff00ff\"",
+						"type": "string",
+						"pattern": "^([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$"
+					}
+				},
+				"hasFluff": {"type": "boolean"},
+				"hasFluffImages": {"type": "boolean"}
+			},
+			"required": [
+				"name",
+				"entries",
+				"source",
+				"page"
+			],
+			"additionalProperties": false
+		}
+	},
+	"properties": {
+		"condition": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"$ref": "#/definitions/conditionDisease"
+			}
+		},
+		"disease": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"$ref": "#/definitions/conditionDisease"
+			}
+		},
+		"status": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"$ref": "#/definitions/conditionDisease"
+			}
+		}
+	},
+	"required": [
+		"condition",
+		"disease",
+		"status"
+	],
+	"additionalProperties": false
+}

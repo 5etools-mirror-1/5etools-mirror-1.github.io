@@ -1,0 +1,159 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "psionics.json",
+	"version": "1.1.1",
+	"type": "object",
+	"properties": {
+		"psionic": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"page": {
+						"type": "integer"
+					},
+					"type": {
+						"description": "D: Discipline\nT: Talent",
+						"type": "string",
+						"$$ifSiteElse_key": {
+							"keySite": "enum",
+							"keyBrew": "examples",
+							"value": ["D", "T"]
+						}
+					},
+					"focus": {
+						"type": "string"
+					},
+					"order": {
+						"type": "string",
+						"$$ifSiteElse_key": {
+							"keySite": "enum",
+							"keyBrew": "examples",
+							"value": ["Avatar", "Awakened", "Immortal", "Nomad", "Wu Jen"]
+						}
+					},
+					"modes": {
+						"type": "array",
+						"uniqueItems": true,
+						"items": {
+							"type": "object",
+							"properties": {
+								"cost": {
+									"type": "object",
+									"properties": {
+										"min": {
+											"type": "integer"
+										},
+										"max": {
+											"type": "integer"
+										}
+									},
+									"required": [
+										"min",
+										"max"
+									],
+									"additionalProperties": false
+								},
+								"concentration": {
+									"type": "object",
+									"properties": {
+										"duration": {
+											"type": "integer"
+										},
+										"unit": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"duration",
+										"unit"
+									],
+									"additionalProperties": false
+								},
+								"name": {
+									"type": "string"
+								},
+								"entries": {
+									"type": "array",
+									"items": {
+										"$ref": "entry.json"
+									}
+								},
+								"submodes": {
+									"type": "array",
+									"uniqueItems": true,
+									"items": {
+										"type": "object",
+										"properties": {
+											"cost": {
+												"type": "object",
+												"properties": {
+													"min": {
+														"type": "integer"
+													},
+													"max": {
+														"type": "integer"
+													}
+												},
+												"required": [
+													"min",
+													"max"
+												],
+												"additionalProperties": false
+											},
+											"name": {
+												"type": "string"
+											},
+											"entries": {
+												"type": "array",
+												"uniqueItems": true,
+												"items": {
+													"$ref": "entry.json"
+												}
+											}
+										},
+										"required": [
+											"cost",
+											"name",
+											"entries"
+										],
+										"additionalProperties": false
+									}
+								}
+							},
+							"required": [
+								"name",
+								"entries"
+							],
+							"additionalProperties": false
+						}
+					},
+					"entries": {
+						"type": "array",
+						"uniqueItems": true,
+						"items": {
+							"$ref": "entry.json"
+						}
+					}
+				},
+				"required": [
+					"name",
+					"source",
+					"type"
+				],
+				"additionalProperties": false
+			}
+		}
+	},
+	"required": [
+		"psionic"
+	],
+	"additionalProperties": false
+}

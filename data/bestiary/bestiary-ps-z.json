@@ -319,7 +319,10 @@
 			"miscTags": [
 				"MW"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"conditionInflict": [
+				"prone"
+			]
 		},
 		{
 			"name": "Kraken",
@@ -450,7 +453,11 @@
 				"MW",
 				"RCH"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"conditionInflict": [
+				"grappled",
+				"restrained"
+			]
 		}
 	]
 }

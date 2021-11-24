@@ -480,6 +480,20 @@ class ItemsPage extends ListPage {
 			upload: true,
 		});
 	}
+
+	// region TODO(Future) Homebrew deletion; refactor
+	getSpecificVariantsByBaseItemBrewUid (uniqueId) {
+		const item = this._dataList.find(it => it.uniqueId === uniqueId);
+		if (!item) return [];
+		return this._dataList.filter(it => it._baseName === item.name && (it._baseSource || it.source) === item.source);
+	}
+
+	getSpecificVariantsByGenericVariantBrewUid (uniqueId) {
+		const item = this._dataList.find(it => it.uniqueId === uniqueId);
+		if (!item) return [];
+		return item.variants.map(it => it.specificVariant);
+	}
+	// endregion
 }
 
 const itemsPage = new ItemsPage();

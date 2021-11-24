@@ -22357,6 +22357,7 @@
 			"name": "Orrery of the Wanderer",
 			"source": "AI",
 			"page": 220,
+			"type": "OTH",
 			"rarity": "artifact",
 			"reqAttune": true,
 			"wondrous": true,
@@ -22384,7 +22385,7 @@
 						"Each of the six components that powers the Orrery of the Wanderer is a powerful magic relic in its own right:",
 						{
 							"type": "list",
-							"style": "no-bullets",
+							"style": "list-no-bullets",
 							"items": [
 								"The {@item chronolometer|AI}",
 								"The {@item dimensional loop|AI}",
@@ -34254,6 +34255,7 @@
 			"page": 24,
 			"type": "R",
 			"rarity": "legendary",
+			"reqAttune": true,
 			"property": [
 				"2H"
 			],

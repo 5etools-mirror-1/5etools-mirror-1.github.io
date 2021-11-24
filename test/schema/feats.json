@@ -60,7 +60,14 @@
 										"from": {
 											"type": "array",
 											"items": {
-												"enum": ["str", "dex", "con", "int", "wis", "cha"]
+												"enum": [
+													"str",
+													"dex",
+													"con",
+													"int",
+													"wis",
+													"cha"
+												]
 											},
 											"uniqueItems": true
 										},
@@ -76,7 +83,14 @@
 												"from": {
 													"type": "array",
 													"items": {
-														"enum": ["str", "dex", "con", "int", "wis", "cha"]
+														"enum": [
+															"str",
+															"dex",
+															"con",
+															"int",
+															"wis",
+															"cha"
+														]
 													},
 													"uniqueItems": true
 												},
@@ -132,11 +146,17 @@
 						"$ref": "util.json#/definitions/proficiencyTags"
 					}
 				},
-				"required": ["name", "source", "entries"],
+				"required": [
+					"name",
+					"source",
+					"entries"
+				],
 				"additionalProperties": false
 			}
 		}
 	},
-	"required": ["feat"],
+	"required": [
+		"feat"
+	],
 	"additionalProperties": false
 }

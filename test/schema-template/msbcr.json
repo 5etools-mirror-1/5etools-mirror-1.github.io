@@ -1,0 +1,60 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "msbcr.json",
+	"version": "1.0.0",
+	"type": "object",
+	"properties": {
+		"cr": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"_cr": {
+						"type": "string"
+					},
+					"pb": {
+						"type": "integer"
+					},
+					"ac": {
+						"type": "integer"
+					},
+					"hpmin": {
+						"type": "integer"
+					},
+					"hpmax": {
+						"type": "integer"
+					},
+					"attackbonus": {
+						"type": "integer"
+					},
+					"dprmin": {
+						"type": "integer"
+					},
+					"dprmax": {
+						"type": "integer"
+					},
+					"savedc": {
+						"type": "integer"
+					}
+				},
+				"required": [
+					"_cr",
+					"pb",
+					"ac",
+					"hpmin",
+					"hpmax",
+					"attackbonus",
+					"dprmin",
+					"dprmax",
+					"savedc"
+				],
+				"additionalProperties": false
+			}
+		}
+	},
+	"required": [
+		"cr"
+	],
+	"additionalProperties": false
+}

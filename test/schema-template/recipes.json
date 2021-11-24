@@ -1,0 +1,156 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "recipes.json",
+	"version": "1.2.0",
+	"type": "object",
+
+	"definitions": {
+		"recipe": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"source": {
+					"type": "string"
+				},
+				"page": {
+					"type": "integer"
+				},
+
+				"$$ifBrew": {
+					"fluff": {
+						"$ref": "util.json#/definitions/fluffObject"
+					}
+				},
+				"serves": {
+					"oneOf": [
+						{
+							"type": "object",
+							"properties": {
+								"min": {"type": "integer"},
+								"max": {"type": "integer"},
+								"note": {"$ref": "entry.json"}
+							},
+							"required": ["min", "max"],
+							"additionalProperties": false
+						},
+						{
+							"type": "object",
+							"properties": {
+								"exact": {"type": "integer"},
+								"note": {"$ref": "entry.json"}
+							},
+							"required": ["exact"],
+							"additionalProperties": false
+						}
+					]
+				},
+				"makes": {
+					"$ref": "entry.json"
+				},
+				"ingredients": {
+					"type": "array",
+					"items": {
+						"$ref": "entry.json"
+					}
+				},
+				"instructions": {
+					"type": "array",
+					"items": {
+						"$ref": "entry.json"
+					}
+				},
+				"noteCook": {
+					"type": "array",
+					"items": {
+						"$ref": "entry.json"
+					}
+				},
+				"type": {
+					"type": "string",
+					"$$ifSiteElse_key": {
+						"keySite": "enum",
+						"keyBrew": "examples",
+						"value": ["Dwarven", "Elven","Elixir/Ale", "Human", "Halfling", "Uncommon Cuisine"]
+					}
+				},
+				"diet": {
+					"type": "string",
+					"description": "C: Vegetarian [aka \"cheese\"]\n V: Vegan\n X: Omnivorous",
+					"enum": ["C", "V", "X"]
+				},
+				"miscTags": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"enum": ["alcohol"]
+					}
+				},
+				"allergenGroups": {
+					"type": "array",
+					"description": "One of the 14 major food allergens; see https://erudus.com/food-allergens for more information.",
+					"items": {
+						"type": "string",
+						"enum": [
+							"celery",
+							"crustaceans",
+							"eggs",
+							"fish",
+							"gluten",
+							"lupin",
+							"milk",
+							"molluscs",
+							"mustard",
+							"nuts",
+							"peanuts",
+							"sesame",
+							"soya",
+							"sulphites"
+						]
+					}
+				},
+				"dishTypes": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"$$ifSiteElse_key": {
+							"keySite": "enum",
+							"keyBrew": "examples",
+							"value": [
+								"appetizer",
+								"bread",
+								"cocktail",
+								"dessert",
+								"drink",
+								"entree",
+								"pastry",
+								"salad",
+								"side",
+								"snack",
+								"soup"
+							]
+						}
+					}
+				},
+				"hasFluff": {"type": "boolean"},
+				"hasFluffImages": {"type": "boolean"}
+			},
+			"required": ["name", "source", "instructions", "ingredients"],
+			"additionalProperties": false
+		}
+	},
+
+	"properties": {
+		"recipe": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/recipe"
+			}
+		}
+	},
+
+	"required": ["recipe"],
+
+	"additionalProperties": false
+}

@@ -1,9 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "backgrounds.json",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"type": "object",
-
 	"definitions": {
 		"backgroundData": {
 			"type": "object",
@@ -47,45 +46,305 @@
 				"additionalSpells": {
 					"$ref": "util.json#/definitions/additionalSpellsArray"
 				},
-				"hasFluff": {"type": "boolean"},
-				"hasFluffImages": {"type": "boolean"}
+				"hasFluff": {
+					"type": "boolean"
+				},
+				"hasFluffImages": {
+					"type": "boolean"
+				},
+				"_copy": {
+					"type": "object",
+					"properties": {
+						"name": {
+							"type": "string"
+						},
+						"source": {
+							"type": "string"
+						},
+						"pantheon": {
+							"description": "Used in deity data",
+							"type": "string"
+						},
+						"shortName": {
+							"description": "Used in subclass data",
+							"type": "string"
+						},
+						"className": {
+							"description": "Used in subclass data",
+							"type": "string"
+						},
+						"classSource": {
+							"description": "Used in subclass data",
+							"type": "string"
+						},
+						"_mod": {
+							"$ref": "util.json#/definitions/_modObject"
+						},
+						"_trait": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"name",
+								"source"
+							]
+						},
+						"_preserve": {
+							"type": "object",
+							"patternProperties": {
+								".*": {
+									"type": "boolean"
+								}
+							}
+						}
+					},
+					"required": [
+						"name",
+						"source"
+					],
+					"additionalProperties": false
+				}
 			},
 			"additionalProperties": false
 		},
-
 		"background": {
 			"anyOf": [
 				{
 					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/backgroundData"
+					"properties": {
+						"name": {
+							"type": "string"
 						},
-						{
+						"source": {
+							"type": "string"
+						},
+						"page": {
+							"type": "integer"
+						},
+						"skillProficiencies": {
+							"$ref": "util.json#/definitions/skillProficiencies"
+						},
+						"toolProficiencies": {
+							"$ref": "util.json#/definitions/toolProficiencies"
+						},
+						"languageProficiencies": {
+							"$ref": "util.json#/definitions/languageProficiencies"
+						},
+						"entries": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
+						},
+						"additionalSources": {
+							"$ref": "util.json#/definitions/additionalSources"
+						},
+						"srd": {
+							"$ref": "util.json#/definitions/srd"
+						},
+						"otherSources": {
+							"$ref": "util.json#/definitions/otherSources"
+						},
+						"startingEquipment": {
+							"$ref": "util.json#/definitions/startingEquipment"
+						},
+						"additionalSpells": {
+							"$ref": "util.json#/definitions/additionalSpellsArray"
+						},
+						"hasFluff": {
+							"type": "boolean"
+						},
+						"hasFluffImages": {
+							"type": "boolean"
+						},
+						"_copy": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								},
+								"pantheon": {
+									"description": "Used in deity data",
+									"type": "string"
+								},
+								"shortName": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"className": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"classSource": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"_mod": {
+									"$ref": "util.json#/definitions/_modObject"
+								},
+								"_trait": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"source": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"name",
+										"source"
+									]
+								},
+								"_preserve": {
+									"type": "object",
+									"patternProperties": {
+										".*": {
+											"type": "boolean"
+										}
+									}
+								}
+							},
 							"required": [
 								"name",
-								"source",
-								"skillProficiencies",
-								"entries"
-							]
+								"source"
+							],
+							"additionalProperties": false
 						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"name",
+						"source",
+						"skillProficiencies",
+						"entries"
 					]
 				},
 				{
 					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/backgroundData"
+					"properties": {
+						"name": {
+							"type": "string"
 						},
-						{
-							"$ref": "util.json#/definitions/copyBlock"
+						"source": {
+							"type": "string"
+						},
+						"page": {
+							"type": "integer"
+						},
+						"skillProficiencies": {
+							"$ref": "util.json#/definitions/skillProficiencies"
+						},
+						"toolProficiencies": {
+							"$ref": "util.json#/definitions/toolProficiencies"
+						},
+						"languageProficiencies": {
+							"$ref": "util.json#/definitions/languageProficiencies"
+						},
+						"entries": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
+						},
+						"additionalSources": {
+							"$ref": "util.json#/definitions/additionalSources"
+						},
+						"srd": {
+							"$ref": "util.json#/definitions/srd"
+						},
+						"otherSources": {
+							"$ref": "util.json#/definitions/otherSources"
+						},
+						"startingEquipment": {
+							"$ref": "util.json#/definitions/startingEquipment"
+						},
+						"additionalSpells": {
+							"$ref": "util.json#/definitions/additionalSpellsArray"
+						},
+						"hasFluff": {
+							"type": "boolean"
+						},
+						"hasFluffImages": {
+							"type": "boolean"
+						},
+						"_copy": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								},
+								"pantheon": {
+									"description": "Used in deity data",
+									"type": "string"
+								},
+								"shortName": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"className": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"classSource": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"_mod": {
+									"$ref": "util.json#/definitions/_modObject"
+								},
+								"_trait": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"source": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"name",
+										"source"
+									]
+								},
+								"_preserve": {
+									"type": "object",
+									"patternProperties": {
+										".*": {
+											"type": "boolean"
+										}
+									}
+								}
+							},
+							"required": [
+								"name",
+								"source"
+							],
+							"additionalProperties": false
 						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"_copy"
 					]
 				}
 			]
 		}
 	},
-
 	"properties": {
 		"background": {
 			"type": "array",

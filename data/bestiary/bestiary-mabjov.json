@@ -561,7 +561,11 @@
 				"poisoned"
 			],
 			"conditionInflictSpell": [
-				"paralyzed"
+				"frightened",
+				"incapacitated",
+				"paralyzed",
+				"stunned",
+				"unconscious"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1888,7 +1892,11 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflictLegendary": [
+				"blinded",
+				"prone"
+			]
 		},
 		{
 			"name": "Dagryn",
@@ -5537,7 +5545,7 @@
 								"Minsc gains a +4 bonus to the damage rolls when using a melee weapon.",
 								"Minsc has resistance to bludgeoning, piercing, and slashing damage.",
 								"Minsc can make a single melee weapon attack as a bonus",
-								"Minsc can't be charmed or frightened while raging. If Minsc is {@condition charmed} or {@condition frightened} when he enters his berserking fury, the effect is suspended for the duration of the rage",
+								"Minsc can't be {@condition charmed} or {@condition frightened} while raging. If Minsc is {@condition charmed} or {@condition frightened} when he enters his berserking fury, the effect is suspended for the duration of the rage",
 								"If Minsc drops to 0 hit points while in a berserking fury and doesn't die outright, he can make a {@dc 10} Constitution saving throw. If he succeeds, he drops to 1 hit point instead. Each time he uses this feature after the first, the DC increases by 5. After 24 hours, the DC resets to 10."
 							]
 						}
@@ -7398,7 +7406,11 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflict": [
+				"frightened",
+				"incapacitated"
+			]
 		},
 		{
 			"name": "Skeleton Warrior",
@@ -7770,7 +7782,8 @@
 				"MW"
 			],
 			"conditionInflictSpell": [
-				"frightened"
+				"frightened",
+				"stunned"
 			],
 			"hasToken": true,
 			"hasFluff": true,

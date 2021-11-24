@@ -60,11 +60,21 @@
 							"items": {
 								"type": "object",
 								"properties": {
-									"min": {"type": "integer"},
-									"max": {"type": "integer"},
-									"type": {"type": "integer"}
+									"min": {
+										"type": "integer"
+									},
+									"max": {
+										"type": "integer"
+									},
+									"type": {
+										"type": "integer"
+									}
 								},
-								"required": ["min", "max", "type"],
+								"required": [
+									"min",
+									"max",
+									"type"
+								],
 								"additionalProperties": false
 							}
 						},
@@ -87,8 +97,12 @@
 					{
 						"type": "object",
 						"properties": {
-							"type": {"type": "string"},
-							"amount": {"type": "string"}
+							"type": {
+								"type": "string"
+							},
+							"amount": {
+								"type": "string"
+							}
 						},
 						"required": [
 							"type",
@@ -97,7 +111,6 @@
 						"additionalProperties": false
 					},
 					{
-
 						"type": "object",
 						"properties": {
 							"typeTable": {
@@ -105,14 +118,24 @@
 								"items": {
 									"type": "object",
 									"properties": {
-										"min": {"type": "integer"},
-										"max": {"type": "integer"},
-										"type": {"type": "string"},
+										"min": {
+											"type": "integer"
+										},
+										"max": {
+											"type": "integer"
+										},
+										"type": {
+											"type": "string"
+										},
 										"typeAltChoose": {
 											"type": "object",
 											"properties": {
-												"rarity":  {"type": "string"},
-												"tier": {"type": "string"}
+												"rarity": {
+													"type": "string"
+												},
+												"tier": {
+													"type": "string"
+												}
 											},
 											"required": [
 												"rarity",
@@ -121,11 +144,18 @@
 											"additionalProperties": false
 										}
 									},
-									"required": ["min", "max", "type", "typeAltChoose"],
+									"required": [
+										"min",
+										"max",
+										"type",
+										"typeAltChoose"
+									],
 									"additionalProperties": false
 								}
 							},
-							"amount": {"type": "string"}
+							"amount": {
+								"type": "string"
+							}
 						},
 						"required": [
 							"typeTable",
@@ -206,33 +236,39 @@
 										}
 									}
 								},
-								"required": ["fromGroup"],
+								"required": [
+									"fromGroup"
+								],
 								"additionalProperties": false
 							},
 							{
 								"type": "object",
 								"properties": {
 									"fromGeneric": {
-										"type":  "array",
+										"type": "array",
 										"items": {
-											"type":  "string"
+											"type": "string"
 										}
 									}
 								},
-								"required": ["fromGeneric"],
+								"required": [
+									"fromGeneric"
+								],
 								"additionalProperties": false
 							},
 							{
 								"type": "object",
 								"properties": {
 									"fromItems": {
-										"type":  "array",
+										"type": "array",
 										"items": {
-											"type":  "string"
+											"type": "string"
 										}
 									}
 								},
-								"required": ["fromItems"],
+								"required": [
+									"fromItems"
+								],
 								"additionalProperties": false
 							}
 						]
@@ -438,9 +474,13 @@
 					"dragonMundaneItems": {
 						"type": "object",
 						"properties": {
-							"amount": {"type": "string"}
+							"amount": {
+								"type": "string"
+							}
 						},
-						"required": ["amount"],
+						"required": [
+							"amount"
+						],
 						"additionalProperties": false
 					}
 				},

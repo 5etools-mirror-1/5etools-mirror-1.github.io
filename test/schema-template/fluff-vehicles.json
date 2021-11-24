@@ -1,0 +1,58 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "fluff-vehicles.json",
+	"version": "1.3.0",
+	"type": "object",
+	"properties": {
+		"vehicleFluff": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"images": {
+						"type": "array",
+						"items": {
+							"$ref": "entry.json#/definitions/entryImage"
+						}
+					},
+					"entries": {
+						"type": "array",
+						"items": {
+							"$ref": "entry.json"
+						}
+					},
+					"_copy": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"source": {
+								"type": "string"
+							}
+						}
+					},
+					"_appendCopy": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"source": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"required": ["name", "source"],
+				"additionalProperties": false
+			}
+		}
+	}
+}

@@ -224,7 +224,7 @@ class SpellsPage extends ListPageMultiSource {
 				level: spell.level,
 				time,
 				school: Parser.spSchoolAbvToFull(spell.school),
-				classes: Parser.spClassesToFull(spell, true, this._subclassLookup),
+				classes: Parser.spClassesToFull(spell, {isTextOnly: true, subclassLookup: this._subclassLookup}),
 				concentration,
 				normalisedTime: spell._normalisedTime,
 				normalisedRange: spell._normalisedRange,

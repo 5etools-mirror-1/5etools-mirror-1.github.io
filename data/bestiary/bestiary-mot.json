@@ -2874,12 +2874,16 @@
 				"RCH"
 			],
 			"conditionInflict": [
+				"grappled",
 				"petrified",
 				"restrained"
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflictLegendary": [
+				"poisoned"
+			]
 		},
 		{
 			"name": "Ironscale Hydra",

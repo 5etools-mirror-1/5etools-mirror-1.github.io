@@ -1,0 +1,151 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "cultsboons.json",
+	"version": "1.0.1",
+	"type": "object",
+	"properties": {
+		"cult": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"page": {
+						"type": "integer"
+					},
+					"type": {
+						"type": "string",
+						"$$ifSiteElse_key": {
+							"keySite": "enum",
+							"keyBrew": "examples",
+							"value": ["Diabolical", "Elder Evil", "Elemental"]
+						}
+					},
+					"goal": {
+						"type": "object",
+						"properties": {
+							"entry": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"entry"
+						],
+						"additionalProperties": false
+					},
+					"cultists": {
+						"type": "object",
+						"properties": {
+							"entry": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"entry"
+						],
+						"additionalProperties": false
+					},
+					"signaturespells": {
+						"type": "object",
+						"properties": {
+							"entry": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"entry"
+						],
+						"additionalProperties": false
+					},
+					"entries": {
+						"type": "array",
+						"items": {
+							"$ref": "entry.json"
+						}
+					}
+				},
+				"required": [
+					"name",
+					"source",
+					"entries"
+				],
+				"additionalProperties": false
+			}
+		},
+		"boon": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"page": {
+						"type": "integer"
+					},
+					"type": {
+						"type": "string",
+						"$$ifSiteElse_key": {
+							"keySite": "enum",
+							"keyBrew": "examples",
+							"value": ["Demonic"]
+						}
+					},
+					"ability": {
+						"type": "object",
+						"properties": {
+							"entry": {
+								"$ref": "entry.json"
+							}
+						},
+						"required": [
+							"entry"
+						],
+						"additionalProperties": false
+					},
+					"signaturespells": {
+						"type": "object",
+						"properties": {
+							"entry": {
+								"$ref": "entry.json"
+							}
+						},
+						"required": [
+							"entry"
+						],
+						"additionalProperties": false
+					},
+					"entries": {
+						"type": "array",
+						"uniqueItems": true,
+						"items": {
+							"$ref": "entry.json"
+						}
+					}
+				},
+				"required": [
+					"name",
+					"source",
+					"type",
+					"entries"
+				],
+				"additionalProperties": false
+			}
+		}
+	},
+	"required": [
+		"cult",
+		"boon"
+	],
+	"additionalProperties": false
+}

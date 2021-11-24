@@ -4,7 +4,6 @@
 	"version": "1.0.3",
 	"title": "SpellMetaArray",
 	"type": "object",
-
 	"definitions": {
 		"spellMeta": {
 			"type": "object",
@@ -67,7 +66,7 @@
 						"Secondary Higher Spell Slot Die": {
 							"type": "string"
 						},
-						"Secondary Higher Spell Slot Dice":{
+						"Secondary Higher Spell Slot Dice": {
 							"type": "string"
 						},
 						"Secondary Damage Progression": {
@@ -92,15 +91,20 @@
 					"type": "object"
 				}
 			},
-			"required": ["name", "source", "data"],
+			"required": [
+				"name",
+				"source",
+				"data"
+			],
 			"additionalProperties": false
 		}
 	},
-
 	"properties": {
 		"spell": {
 			"type": "array",
-			"items": {"$ref": "#/definitions/spellMeta"}
+			"items": {
+				"$ref": "#/definitions/spellMeta"
+			}
 		}
 	}
 }

@@ -1,0 +1,192 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "shared-items.json",
+
+	"title": "Shared Item Schema",
+	"description": "Shared item definitions to be used in item schemas.",
+	"version": "1.0.0",
+
+	"definitions" : {
+		"_itemModifySpeedEqual": {
+			"type": "string",
+			"enum": ["walk", "burrow", "climb", "fly", "swim"]
+		},
+
+		"itemModifySpeed": {
+			"type": "object",
+			"properties": {
+				"multiply": {
+					"type": "object",
+					"properties": {
+						"walk": {"type": "number"},
+						"burrow": {"type": "number"},
+						"climb":  {"type": "number"},
+						"fly": {"type": "number"},
+						"swim":  {"type": "number"},
+						"*":  {"type": "number"}
+					},
+					"additionalProperties": false
+				},
+				"static": {
+					"type": "object",
+					"properties": {
+						"walk": {"type": "number"},
+						"burrow": {"type": "number"},
+						"climb":  {"type": "number"},
+						"fly": {"type": "number"},
+						"swim":  {"type": "number"},
+						"*":  {"type": "number"}
+					},
+					"additionalProperties": false
+				},
+				"equal": {
+					"type": "object",
+					"properties": {
+						"walk": {"$ref": "#/definitions/_itemModifySpeedEqual"},
+						"burrow": {"$ref": "#/definitions/_itemModifySpeedEqual"},
+						"climb":  {"$ref": "#/definitions/_itemModifySpeedEqual"},
+						"fly": {"$ref": "#/definitions/_itemModifySpeedEqual"},
+						"swim":  {"$ref": "#/definitions/_itemModifySpeedEqual"}
+					},
+					"additionalProperties": false
+				},
+				"bonus": {
+					"type": "object",
+					"properties": {
+						"walk": {"type": "number"},
+						"burrow": {"type": "number"},
+						"climb":  {"type": "number"},
+						"fly": {"type": "number"},
+						"swim":  {"type": "number"},
+						"*":  {"type": "number"}
+					},
+					"additionalProperties": false
+				}
+			},
+			"additionalProperties": false
+		},
+
+		"itemRarity": {
+			"anyOf": [
+				{"$ref": "util.json#/definitions/rarity"},
+				{
+					"type": "string",
+					"description": "\"None\" is for mundane items. \"Unknown (Magic)\" is for miscellaneous magical items. \"Unknown\" is for miscellaneous mundane items. \"Varies\" is for item groups.",
+					"enum": [
+						"none",
+						"unknown",
+						"unknown (magic)",
+						"varies"
+					]
+				}
+			]
+		},
+
+		"itemRecharge": {
+			"enum": ["round", "restShort", "restLong", "dawn", "dusk", "midnight", "special"]
+		},
+
+		"itemType": {
+			"type": "string",
+			"$comment": "Dumped from `Object(Parser.ITEM_TYPE_JSON_TO_ABV)`",
+			"description": "$: Treasure\n A: Ammunition\n AF: Ammunition (futuristic)\n AIR: Vehicle (air)\n AT: Artisan Tool\n EM: Eldritch Machine\n EXP: Explosive\n FD: Food and Drink\n G: Adventuring Gear\n GS: Gaming Set\n GV: Generic Variant\n HA: Heavy Armor\n INS: Instrument\n LA: Light Armor\n M: Melee Weapon\n MA: Medium Armor\n MNT: Mount\n MR: Master Rune \n OTH: Other\n P: Potion\n R: Ranged Weapon\n RD: Rod\n RG: Ring\n S: Shield\n SC: Scroll\n SCF: Spellcasting Focus\n SHP: Vehicle (water)\n T: Tool\n TAH: Tack and Harness\n TG: Trade Good\n VEH: Vehicle (land)\n WD: Wand",
+			"$$ifSiteElse_key": {
+				"keySite": "enum",
+				"keyBrew": "examples",
+				"value": [
+					"$",
+					"A",
+					"AF",
+					"AIR",
+					"AT",
+					"EM",
+					"EXP",
+					"FD",
+					"G",
+					"GS",
+					"GV",
+					"HA",
+					"INS",
+					"LA",
+					"M",
+					"MA",
+					"MNT",
+					"MR",
+					"OTH",
+					"P",
+					"R",
+					"RD",
+					"RG",
+					"S",
+					"SC",
+					"SCF",
+					"SHP",
+					"T",
+					"TAH",
+					"TG",
+					"VEH",
+					"WD"
+				]
+			}
+		},
+
+		"itemAge": {
+			"type": "string",
+			"$$ifSiteElse_key": {
+				"keySite": "enum",
+				"keyBrew": "examples",
+				"value": ["futuristic", "modern", "renaissance"]
+			}
+		},
+
+		"itemProperty": {
+			"type": "array",
+			"description": "2H: Two-Handed\n A: Ammunition\n AF: Ammunition (futuristic)\n BF: Burst Fire\n EM: Eldritch Machine\n F: Finesse\n H: Heavy\n L: Light\n LD: Loading\n OTH: Other\n R: Reach\n RLD: Reload\n S: Special\n T: Thrown\n V: Versatile",
+			"items": {
+				"type": "string",
+				"$$ifSiteElse_key": {
+					"keySite": "enum",
+					"keyBrew": "examples",
+					"value": ["2H", "A", "AF", "BF", "EM", "F", "H", "L", "LD", "OTH", "R", "RLD", "S", "T", "V"]
+				}
+			}
+		},
+
+		"itemScfType": {
+			"type": "string",
+			"$$ifSiteElse_key": {
+				"keySite": "enum",
+				"keyBrew": "examples",
+				"value": ["arcane", "druid", "holy"]
+			}
+		},
+
+		"itemTier": {
+			"type": "string",
+			"description": "Item Tier as per XGE p135",
+			"$$ifSiteElse_key": {
+				"keySite": "enum",
+				"keyBrew": "examples",
+				"value": ["minor", "major"]
+			}
+		},
+
+		"itemWeaponCategory": {
+			"type": "string",
+			"$$ifSiteElse_key": {
+				"keySite": "enum",
+				"keyBrew": "examples",
+				"value": ["simple", "martial"]
+			}
+		},
+
+		"itemAmmoType": {
+			"type": "string",
+			"$$ifSiteElse_key": {
+				"keySite": "enum",
+				"keyBrew": "examples",
+				"value": ["energy cell", "modern bullet", "blowgun needle|phb", "crossbow bolt|phb", "arrow|phb", "renaissance bullet", "sling bullet|phb"]
+			}
+		}
+	}
+}

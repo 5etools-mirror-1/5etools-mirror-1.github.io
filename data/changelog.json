@@ -1838,5 +1838,11 @@
 		"date": "2021-11-14",
 		"title": "Plumbing",
 		"txt": "- Added Book View to Other Options and Features page\n- Added \"Copy Link\" button to DM Screen Initiative Tracker (thanks @ tobloef)\n- Fixed Blacklist page failing to display various item categories\n- Fixed hotkeys being sensitive to capslock\n- (Fixed \"Preload Offline Data\" being unavailable on the mirror, hopefully)\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.143.0",
+		"date": "2021-11-23",
+		"title": "Autoschematic",
+		"txt": "- This Is Your Life \"life events\" may now be individually re-rolled, and the page layout has been fixed \n- Fixed Items page Source filter \"Include References\" failing to include references\n- (Brew) Reworked JSON schema to better support homebrew, by moving to a custom pre-processor capable of outputting two different schema sets; one for the site, one for homebrew. This allows the homebrew schema to be more permissive, without sacrificing the efficacy of the site's tests (thanks to @ Lyra and @ Jenny for the brew schema improvements).\n- (Brew) Fixed deletion of item `\"variant\"` and `\"baseitem\"` entities failing to fully clean up items\n- (Fixed typos/added tags)"
 	}
 ]

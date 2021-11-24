@@ -715,7 +715,7 @@ class DamageTypeTag {
 						string: (str) => {
 							// if (str.includes("your spell attack modifier")) debugger
 							str.replace(RollerUtil.REGEX_DAMAGE_DICE, (m0, average, prefix, diceExp, suffix) => {
-								suffix.replace(ConverterConst.RE_DAMAGE_TYPE, (m0, pre, type) => typeSet.add(DamageTypeTag._TYPE_LOOKUP[type]));
+								suffix.replace(ConverterConst.RE_DAMAGE_TYPE, (m0, type) => typeSet.add(DamageTypeTag._TYPE_LOOKUP[type]));
 							});
 
 							str.replace(DamageTypeTag._STATIC_DAMAGE_REGEX, (m0, type) => {
@@ -733,7 +733,7 @@ class DamageTypeTag {
 										if (!isSentenceMatch) return;
 
 										// debugger
-										sentence.replace(ConverterConst.RE_DAMAGE_TYPE, (m0, pre, type) => {
+										sentence.replace(ConverterConst.RE_DAMAGE_TYPE, (m0, type) => {
 											typeSet.add(DamageTypeTag._TYPE_LOOKUP[type]);
 										});
 									});

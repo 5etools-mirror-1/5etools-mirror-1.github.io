@@ -2683,7 +2683,11 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"conditionInflict": [
+				"frightened",
+				"prone"
+			]
 		},
 		{
 			"name": "Jarl Storvald",
@@ -2817,7 +2821,10 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflict": [
+				"restrained"
+			]
 		},
 		{
 			"name": "Jasper Dimmerchasm",
@@ -3132,7 +3139,10 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"conditionInflict": [
+				"deafened"
+			]
 		},
 		{
 			"name": "Klauth",
@@ -6152,7 +6162,10 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflictSpell": [
+				"prone"
+			]
 		},
 		{
 			"name": "The Weevil",

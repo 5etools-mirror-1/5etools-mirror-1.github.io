@@ -3610,8 +3610,9 @@ Renderer.spell = {
 		} else {
 			Renderer.spell.brewSpellClasses.spell = Renderer.spell.brewSpellClasses.spell || {};
 
-			const name = (typeof it === "string" ? it : it.name).toLowerCase();
-			const source = (typeof it === "string" ? "PHB" : it.source).toLowerCase();
+			let [name, source] = `${it}`.toLowerCase().split("|");
+			source = source || SRC_PHB.toLowerCase();
+
 			Renderer.spell.brewSpellClasses.spell[source] = Renderer.spell.brewSpellClasses.spell[source] || {};
 			Renderer.spell.brewSpellClasses.spell[source][name] = Renderer.spell.brewSpellClasses.spell[source][name] || {fromClassList: [], fromSubclass: []};
 
@@ -6484,6 +6485,17 @@ Renderer.item = {
 					[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]: "note",
 				},
 			});
+		}
+
+		// Create a uniqueId for this specific variant if the "parent" generic variant has one (i.e., if it's homebrew),
+		//   using only the name/source and the parent UID. This avoids changes to the base item from affecting the UID
+		//   of the specific variant.
+		if (genericVariant.uniqueId) {
+			specificVariant.uniqueId = CryptUtil.md5(JSON.stringify({
+				name: specificVariant.name,
+				source: specificVariant.source,
+				genericVariantUniqueId: genericVariant.uniqueId,
+			}));
 		}
 
 		return specificVariant;

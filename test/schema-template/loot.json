@@ -1,0 +1,470 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "loot.json",
+	"version": "1.4.0",
+	"definitions": {
+		"cr": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 30
+		},
+		"d100": {
+			"type": "integer",
+			"minimum": 1,
+			"maximum": 100
+		},
+		"coin": {
+			"type": "object",
+			"properties": {
+				"cp": {
+					"type": "string"
+				},
+				"sp": {
+					"type": "string"
+				},
+				"ep": {
+					"type": "string"
+				},
+				"gp": {
+					"type": "string"
+				},
+				"pp": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
+		},
+		"lootTypeAmount": {
+			"oneOf": [
+				{
+					"type": "object",
+					"properties": {
+						"type": {
+							"type": "integer"
+						},
+						"amount": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"type",
+						"amount"
+					],
+					"additionalProperties": false
+				},
+				{
+					"type": "object",
+					"properties": {
+						"typeTable": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"min": {"type": "integer"},
+									"max": {"type": "integer"},
+									"type": {"type": "integer"}
+								},
+								"required": ["min", "max", "type"],
+								"additionalProperties": false
+							}
+						},
+						"amount": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"typeTable",
+						"amount"
+					],
+					"additionalProperties": false
+				}
+			]
+		},
+		"lootTypeAmountMagicItems": {
+			"type": "array",
+			"items": {
+				"oneOf": [
+					{
+						"type": "object",
+						"properties": {
+							"type": {"type": "string"},
+							"amount": {"type": "string"}
+						},
+						"required": [
+							"type",
+							"amount"
+						],
+						"additionalProperties": false
+					},
+					{
+
+						"type": "object",
+						"properties": {
+							"typeTable": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"min": {"type": "integer"},
+										"max": {"type": "integer"},
+										"type": {"type": "string"},
+										"typeAltChoose": {
+											"type": "object",
+											"properties": {
+												"rarity":  {"type": "string"},
+												"tier": {"type": "string"}
+											},
+											"required": [
+												"rarity",
+												"tier"
+											],
+											"additionalProperties": false
+										}
+									},
+									"required": ["min", "max", "type", "typeAltChoose"],
+									"additionalProperties": false
+								}
+							},
+							"amount": {"type": "string"}
+						},
+						"required": [
+							"typeTable",
+							"amount"
+						],
+						"additionalProperties": false
+					}
+				]
+			},
+			"minItems": 1
+		},
+		"gemsOrArt": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"page": {
+						"type": "integer"
+					},
+					"type": {
+						"type": "integer"
+					},
+					"table": {
+						"type": "array",
+						"uniqueItems": true,
+						"items": {
+							"type": "string"
+						}
+					}
+				},
+				"required": [
+					"name",
+					"source",
+					"page",
+					"type",
+					"table"
+				],
+				"additionalProperties": false
+			}
+		},
+		"table": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"min": {
+						"$ref": "#/definitions/d100"
+					},
+					"max": {
+						"$ref": "#/definitions/d100"
+					},
+					"item": {
+						"type": "string"
+					},
+					"spellLevel": {
+						"type": "integer"
+					},
+					"table": {
+						"$ref": "#/definitions/table"
+					},
+					"choose": {
+						"oneOf": [
+							{
+								"type": "object",
+								"properties": {
+									"fromGroup": {
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									}
+								},
+								"required": ["fromGroup"],
+								"additionalProperties": false
+							},
+							{
+								"type": "object",
+								"properties": {
+									"fromGeneric": {
+										"type":  "array",
+										"items": {
+											"type":  "string"
+										}
+									}
+								},
+								"required": ["fromGeneric"],
+								"additionalProperties": false
+							},
+							{
+								"type": "object",
+								"properties": {
+									"fromItems": {
+										"type":  "array",
+										"items": {
+											"type":  "string"
+										}
+									}
+								},
+								"required": ["fromItems"],
+								"additionalProperties": false
+							}
+						]
+					}
+				},
+				"additionalProperties": false
+			}
+		}
+	},
+	"type": "object",
+	"properties": {
+		"individual": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"page": {
+						"type": "integer"
+					},
+					"crMin": {
+						"$ref": "#/definitions/cr"
+					},
+					"crMax": {
+						"$ref": "#/definitions/cr"
+					},
+					"table": {
+						"type": "array",
+						"uniqueItems": true,
+						"items": {
+							"type": "object",
+							"properties": {
+								"min": {
+									"$ref": "#/definitions/d100"
+								},
+								"max": {
+									"$ref": "#/definitions/d100"
+								},
+								"coins": {
+									"$ref": "#/definitions/coin"
+								}
+							},
+							"required": [
+								"min",
+								"max",
+								"coins"
+							],
+							"additionalProperties": false
+						}
+					}
+				},
+				"required": [
+					"name",
+					"source",
+					"page",
+					"crMin",
+					"crMax",
+					"table"
+				],
+				"additionalProperties": false
+			}
+		},
+		"hoard": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"page": {
+						"type": "integer"
+					},
+					"crMin": {
+						"$ref": "#/definitions/cr"
+					},
+					"crMax": {
+						"$ref": "#/definitions/cr"
+					},
+					"coins": {
+						"$ref": "#/definitions/coin"
+					},
+					"table": {
+						"type": "array",
+						"uniqueItems": true,
+						"items": {
+							"type": "object",
+							"properties": {
+								"min": {
+									"$ref": "#/definitions/d100"
+								},
+								"max": {
+									"$ref": "#/definitions/d100"
+								},
+								"gems": {
+									"$ref": "#/definitions/lootTypeAmount"
+								},
+								"artObjects": {
+									"$ref": "#/definitions/lootTypeAmount"
+								},
+								"magicItems": {
+									"$ref": "#/definitions/lootTypeAmountMagicItems"
+								}
+							},
+							"required": [
+								"min",
+								"max"
+							],
+							"additionalProperties": false
+						}
+					}
+				},
+				"required": [
+					"name",
+					"source",
+					"page",
+					"crMin",
+					"crMax",
+					"coins",
+					"table"
+				],
+				"additionalProperties": false
+			}
+		},
+		"gems": {
+			"$ref": "#/definitions/gemsOrArt"
+		},
+		"artObjects": {
+			"$ref": "#/definitions/gemsOrArt"
+		},
+		"magicItems": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"page": {
+						"type": "integer"
+					},
+					"type": {
+						"type": "string"
+					},
+					"table": {
+						"$ref": "#/definitions/table"
+					}
+				},
+				"required": [
+					"name",
+					"source",
+					"page",
+					"type",
+					"table"
+				],
+				"additionalProperties": false
+			}
+		},
+		"dragonMundaneItems": {
+			"$ref": "#/definitions/table"
+		},
+		"dragon": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"page": {
+						"type": "integer"
+					},
+					"coins": {
+						"$ref": "#/definitions/coin"
+					},
+					"gems": {
+						"$ref": "#/definitions/lootTypeAmount"
+					},
+					"artObjects": {
+						"$ref": "#/definitions/lootTypeAmount"
+					},
+					"magicItems": {
+						"$ref": "#/definitions/lootTypeAmountMagicItems"
+					},
+					"dragonMundaneItems": {
+						"type": "object",
+						"properties": {
+							"amount": {"type": "string"}
+						},
+						"required": ["amount"],
+						"additionalProperties": false
+					}
+				},
+				"required": [
+					"name",
+					"source",
+					"page",
+					"coins",
+					"gems",
+					"artObjects",
+					"magicItems",
+					"dragonMundaneItems"
+				],
+				"additionalProperties": false
+			}
+		}
+	},
+	"required": [
+		"individual",
+		"hoard",
+		"gems",
+		"artObjects",
+		"magicItems",
+		"dragonMundaneItems"
+	],
+	"additionalProperties": false
+}

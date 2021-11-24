@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "items-base.json",
-	"version": "1.4.5",
+	"version": "1.4.6",
 	"definitions": {
 		"itemLookup": {
 			"type": "array",
@@ -53,10 +53,10 @@
 						"type": "string"
 					},
 					"type": {
-						"type": "string"
+						"$ref": "shared-items.json#/definitions/itemType"
 					},
 					"rarity": {
-						"$ref": "util.json#/definitions/itemRarity"
+						"$ref": "shared-items.json#/definitions/itemRarity"
 					},
 					"source": {
 						"type": "string"
@@ -68,7 +68,7 @@
 						"type": "integer"
 					},
 					"age": {
-						"type": "string"
+						"$ref": "shared-items.json#/definitions/itemAge"
 					},
 					"armor": {
 						"description": "Flag used when merging generic variants",
@@ -84,7 +84,7 @@
 						"type": "string"
 					},
 					"dmgType": {
-						"type": "string"
+						"$ref": "util.json#/definitions/dataDamageTags"
 					},
 					"entries": {
 						"type": "array",
@@ -93,11 +93,7 @@
 						}
 					},
 					"property": {
-						"type": "array",
-						"items": {
-							"type": "string",
-							"enum": ["T", "V", "H", "2H", "F", "L", "R", "A", "LD", "S", "AF", "RLD", "BF"]
-						}
+						"$ref": "shared-items.json#/definitions/itemProperty"
 					},
 					"range": {
 						"type": "string"
@@ -106,7 +102,7 @@
 						"type": "integer"
 					},
 					"scfType": {
-						"type": "string"
+						"$ref": "shared-items.json#/definitions/itemScfType"
 					},
 					"stealth": {
 						"type": "boolean"
@@ -152,10 +148,6 @@
 						"description": "In copper pieces.",
 						"type": "number"
 					},
-					"currencyConversion": {
-						"description": "ID of a value conversion table. Homebrew only.",
-						"type": "string"
-					},
 					"valueMult": {
 						"type": "number"
 					},
@@ -163,7 +155,7 @@
 						"type": "boolean"
 					},
 					"weaponCategory": {
-						"type": "string"
+						"$ref": "shared-items.json#/definitions/itemWeaponCategory"
 					},
 					"weight": {
 						"type": "number"
@@ -181,7 +173,7 @@
 						"$ref": "util.json#/definitions/otherSources"
 					},
 					"ammoType": {
-						"type": "string"
+						"$ref": "shared-items.json#/definitions/itemAmmoType"
 					},
 					"packContents": {
 						"type": "array",
@@ -201,7 +193,9 @@
 										}
 									},
 									"additionalProperties": false,
-									"required": ["special"]
+									"required": [
+										"special"
+									]
 								},
 								{
 									"type": "object",
@@ -214,13 +208,20 @@
 										}
 									},
 									"additionalProperties": false,
-									"required": ["item", "quantity"]
+									"required": [
+										"item",
+										"quantity"
+									]
 								}
 							]
 						}
 					},
-					"hasFluff": {"type": "boolean"},
-					"hasFluffImages": {"type": "boolean"}
+					"hasFluff": {
+						"type": "boolean"
+					},
+					"hasFluffImages": {
+						"type": "boolean"
+					}
 				},
 				"required": [
 					"name",
@@ -243,11 +244,17 @@
 			"items": {
 				"type": "object",
 				"properties": {
-					"name": {"type": "string"},
-					"source": {"type": "string"},
+					"name": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
 					"entriesTemplate": {
 						"type": "array",
-						"items": {"$ref": "entry.json"}
+						"items": {
+							"$ref": "entry.json"
+						}
 					}
 				}
 			}

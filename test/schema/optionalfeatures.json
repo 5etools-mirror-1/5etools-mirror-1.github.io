@@ -1,20 +1,20 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "optionalfeatures.json",
-	"version": "1.10.0",
+	"version": "1.10.1",
 	"title": "Optional Features",
 	"type": "object",
-
 	"definitions": {
 		"prerequisite": {
 			"$ref": "util.json#/definitions/prerequisite"
 		},
-
 		"featureType": {
 			"type": "array",
-			"items": {"$ref": "util.json#/definitions/dataOptionalfeatureType"}
+			"items": {
+				"$ref": "util.json#/definitions/dataOptionalfeatureType"
+			},
+			"uniqueItems": true
 		},
-
 		"optionalfeature": {
 			"type": "object",
 			"properties": {
@@ -40,7 +40,10 @@
 							"type": "string"
 						}
 					},
-					"required": ["name", "source"],
+					"required": [
+						"name",
+						"source"
+					],
 					"additionalProperties": false
 				},
 				"source": {
@@ -105,11 +108,12 @@
 			"additionalProperties": false
 		}
 	},
-
 	"properties": {
 		"optionalfeature": {
 			"type": "array",
-			"items": {"$ref": "#/definitions/optionalfeature"}
+			"items": {
+				"$ref": "#/definitions/optionalfeature"
+			}
 		}
 	},
 	"additionalProperties": false

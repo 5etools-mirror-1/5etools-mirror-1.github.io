@@ -25,6 +25,8 @@ class PageFilterEquipment extends PageFilter {
 	}
 
 	static mutateForFilters (item) {
+		item._fSources = SourceFilter.getCompleteFilterSources(item);
+
 		item._fProperties = item.property ? item.property.map(p => Renderer.item.propertyMap[p].name).filter(n => n) : [];
 
 		item._fMisc = item.srd ? ["SRD"] : [];
@@ -62,7 +64,7 @@ class PageFilterEquipment extends PageFilter {
 	addToFilters (item, isExcluded) {
 		if (isExcluded) return;
 
-		this._sourceFilter.addItem(item.source);
+		this._sourceFilter.addItem(item._fSources);
 		this._typeFilter.addItem(item._typeListText);
 		this._propertyFilter.addItem(item._fProperties);
 		this._damageTypeFilter.addItem(item.dmgType);
@@ -87,7 +89,7 @@ class PageFilterEquipment extends PageFilter {
 	toDisplay (values, it) {
 		return this._filterBox.toDisplay(
 			values,
-			it.source,
+			it._fSources,
 			it._typeListText,
 			it._fProperties,
 			it._category,
@@ -277,7 +279,7 @@ class PageFilterItems extends PageFilterEquipment {
 	toDisplay (values, it) {
 		return this._filterBox.toDisplay(
 			values,
-			it.source,
+			it._fSources,
 			it._typeListText,
 			it._fTier,
 			it.rarity,

@@ -1,0 +1,98 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "languages.json",
+	"version": "1.1.2",
+	"type": "object",
+
+	"properties": {
+		"language": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"entries": {
+						"type": "array",
+						"items": {
+							"$ref": "entry.json"
+						}
+					},
+					"source": {
+						"type": "string"
+					},
+					"page": {
+						"type": "integer"
+					},
+					"srd": {
+						"type": "boolean"
+					},
+					"typicalSpeakers": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"script": {
+						"type": "string"
+					},
+					"type": {
+						"type": "string",
+						"enum": ["standard", "exotic", "secret"]
+					},
+					"additionalSources": {
+						"$ref": "util.json#/definitions/additionalSources"
+					},
+					"dialects": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"fonts": {
+						"description": "A list of direct URLs to font files.",
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"hasFluff": {"type": "boolean"},
+					"hasFluffImages": {"type": "boolean"},
+					"$$ifBrew": {
+						"fluff": {
+							"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source",
+							"$ref": "util.json#/definitions/fluffObject"
+						}
+					}
+				},
+				"required": [
+					"name",
+					"source",
+					"page"
+				],
+				"additionalProperties": false
+			}
+		},
+
+		"languageScript": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {"type": "string"},
+					"fonts": {
+						"type": "array",
+						"items": {"type": "string"}
+					}
+				},
+				"required": ["name", "fonts"],
+				"additionalProperties": false
+			}
+		}
+	},
+	"required": [
+		"language"
+	],
+	"additionalProperties": false
+}

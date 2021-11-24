@@ -1,0 +1,55 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "monsterfeatures.json",
+	"version": "1.0.1",
+	"type": "object",
+	"properties": {
+		"monsterfeatures": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"example": {
+						"type": "string"
+					},
+					"effect": {
+						"type": "string"
+					},
+					"hp": {
+						"type": "string"
+					},
+					"ac": {
+						"type": "string"
+					},
+					"dpr": {
+						"type": "string"
+					},
+					"attackbonus": {
+						"type": "string"
+					},
+					"numbox": {
+						"type": "boolean"
+					}
+				},
+				"required": [
+					"name",
+					"example",
+					"effect",
+					"hp",
+					"ac",
+					"dpr",
+					"attackbonus"
+				],
+				"additionalProperties": false
+			}
+		}
+	},
+	"required": [
+		"monsterfeatures"
+	],
+	"additionalProperties": false
+}

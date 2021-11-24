@@ -1,0 +1,142 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "feats.json",
+	"version": "1.4.1",
+	"type": "object",
+	"properties": {
+		"feat": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"prerequisite": {
+						"$ref": "util.json#/definitions/prerequisite"
+					},
+					"source": {
+						"type": "string"
+					},
+					"additionalSources": {
+						"$ref": "util.json#/definitions/additionalSources"
+					},
+					"page": {
+						"type": "integer"
+					},
+					"entries": {
+						"type": "array",
+						"items": {
+							"$ref": "entry.json"
+						}
+					},
+					"ability": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"str": {
+									"type": "integer"
+								},
+								"dex": {
+									"type": "integer"
+								},
+								"con": {
+									"type": "integer"
+								},
+								"int": {
+									"type": "integer"
+								},
+								"wis": {
+									"type": "integer"
+								},
+								"cha": {
+									"type": "integer"
+								},
+								"choose": {
+									"type": "object",
+									"properties": {
+										"from": {
+											"type": "array",
+											"items": {
+												"enum": ["str", "dex", "con", "int", "wis", "cha"]
+											},
+											"uniqueItems": true
+										},
+										"count": {
+											"type": "integer"
+										},
+										"amount": {
+											"type": "integer"
+										},
+										"weighted": {
+											"type": "object",
+											"properties": {
+												"from": {
+													"type": "array",
+													"items": {
+														"enum": ["str", "dex", "con", "int", "wis", "cha"]
+													},
+													"uniqueItems": true
+												},
+												"weights": {
+													"type": "array",
+													"items": {
+														"type": "integer"
+													}
+												}
+											}
+										},
+										"entry": {
+											"$ref": "entry.json"
+										}
+									},
+									"additionalProperties": false
+								},
+								"hidden": {
+									"type": "boolean"
+								}
+							},
+							"additionalProperties": false
+						}
+					},
+					"srd": {
+						"$ref": "util.json#/definitions/srd"
+					},
+					"otherSources": {
+						"$ref": "util.json#/definitions/otherSources"
+					},
+					"additionalSpells": {
+						"$ref": "util.json#/definitions/additionalSpellsArray"
+					},
+					"languageProficiencies": {
+						"$ref": "util.json#/definitions/languageProficiencies"
+					},
+					"skillProficiencies": {
+						"$ref": "util.json#/definitions/skillProficiencies"
+					},
+					"weaponProficiencies": {
+						"$ref": "util.json#/definitions/weaponProficiencies"
+					},
+					"armorProficiencies": {
+						"$ref": "util.json#/definitions/armorProficiencies"
+					},
+					"toolProficiencies": {
+						"$ref": "util.json#/definitions/toolProficiencies"
+					},
+					"skillToolLanguageProficiencies": {
+						"$ref": "util.json#/definitions/skillToolLanguageProficiencies"
+					},
+					"proficiencyTags": {
+						"$ref": "util.json#/definitions/proficiencyTags"
+					}
+				},
+				"required": ["name", "source", "entries"],
+				"additionalProperties": false
+			}
+		}
+	},
+	"required": ["feat"],
+	"additionalProperties": false
+}

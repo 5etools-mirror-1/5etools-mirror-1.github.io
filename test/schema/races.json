@@ -3,7 +3,6 @@
 	"$id": "races.json",
 	"version": "1.9.0",
 	"type": "object",
-
 	"definitions": {
 		"subraceData": {
 			"type": "object",
@@ -16,23 +15,6 @@
 					"items": {
 						"type": "string"
 					}
-				},
-				"race": {
-					"description": "For use in homebrew files featuring standalone subraces of existing full races.",
-					"type": "object",
-					"properties": {
-						"name": {
-							"type": "string"
-						},
-						"source": {
-							"type": "string"
-						}
-					},
-					"required": [
-						"name",
-						"source"
-					],
-					"additionalProperties": false
 				},
 				"source": {
 					"type": "string"
@@ -101,9 +83,6 @@
 				"armorProficiencies": {
 					"$ref": "util.json#/definitions/armorProficiencies"
 				},
-				"fluff": {
-					"$ref": "#/definitions/fluff"
-				},
 				"overwrite": {
 					"description": "Map of 'property' -> true where 'property' is a property on the base race which should be overwritten by that of the subrace",
 					"type": "object"
@@ -171,14 +150,79 @@
 						}
 					]
 				},
-				"age": {"$ref": "#/definitions/age"},
-				"hasFluff": {"type": "boolean"},
-				"hasFluffImages": {"type": "boolean"},
-				"_versions": {"$ref": "util.json#/definitions/versionsArray"}
+				"age": {
+					"$ref": "#/definitions/age"
+				},
+				"hasFluff": {
+					"type": "boolean"
+				},
+				"hasFluffImages": {
+					"type": "boolean"
+				},
+				"_versions": {
+					"$ref": "util.json#/definitions/versionsArray"
+				},
+				"_copy": {
+					"type": "object",
+					"properties": {
+						"name": {
+							"type": "string"
+						},
+						"source": {
+							"type": "string"
+						},
+						"pantheon": {
+							"description": "Used in deity data",
+							"type": "string"
+						},
+						"shortName": {
+							"description": "Used in subclass data",
+							"type": "string"
+						},
+						"className": {
+							"description": "Used in subclass data",
+							"type": "string"
+						},
+						"classSource": {
+							"description": "Used in subclass data",
+							"type": "string"
+						},
+						"_mod": {
+							"$ref": "util.json#/definitions/_modObject"
+						},
+						"_trait": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"name",
+								"source"
+							]
+						},
+						"_preserve": {
+							"type": "object",
+							"patternProperties": {
+								".*": {
+									"type": "boolean"
+								}
+							}
+						}
+					},
+					"required": [
+						"name",
+						"source"
+					],
+					"additionalProperties": false
+				}
 			},
 			"additionalProperties": false
 		},
-
 		"raceData": {
 			"type": "object",
 			"properties": {
@@ -319,7 +363,9 @@
 										}
 									}
 								},
-								"required": ["choose"],
+								"required": [
+									"choose"
+								],
 								"additionalProperties": false
 							},
 							{
@@ -328,14 +374,79 @@
 						]
 					}
 				},
-				"age": {"$ref": "#/definitions/age"},
-				"hasFluff": {"type": "boolean"},
-				"hasFluffImages": {"type": "boolean"},
-				"_versions": {"$ref": "util.json#/definitions/versionsArray"}
+				"age": {
+					"$ref": "#/definitions/age"
+				},
+				"hasFluff": {
+					"type": "boolean"
+				},
+				"hasFluffImages": {
+					"type": "boolean"
+				},
+				"_versions": {
+					"$ref": "util.json#/definitions/versionsArray"
+				},
+				"_copy": {
+					"type": "object",
+					"properties": {
+						"name": {
+							"type": "string"
+						},
+						"source": {
+							"type": "string"
+						},
+						"pantheon": {
+							"description": "Used in deity data",
+							"type": "string"
+						},
+						"shortName": {
+							"description": "Used in subclass data",
+							"type": "string"
+						},
+						"className": {
+							"description": "Used in subclass data",
+							"type": "string"
+						},
+						"classSource": {
+							"description": "Used in subclass data",
+							"type": "string"
+						},
+						"_mod": {
+							"$ref": "util.json#/definitions/_modObject"
+						},
+						"_trait": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"name",
+								"source"
+							]
+						},
+						"_preserve": {
+							"type": "object",
+							"patternProperties": {
+								".*": {
+									"type": "boolean"
+								}
+							}
+						}
+					},
+					"required": [
+						"name",
+						"source"
+					],
+					"additionalProperties": false
+				}
 			},
 			"additionalProperties": false
 		},
-
 		"traitTag": {
 			"oneOf": [
 				{
@@ -360,7 +471,6 @@
 				}
 			]
 		},
-
 		"abilityScores": {
 			"type": "array",
 			"items": {
@@ -390,7 +500,14 @@
 							"from": {
 								"type": "array",
 								"items": {
-									"enum": ["str", "dex", "con", "int", "wis", "cha"]
+									"enum": [
+										"str",
+										"dex",
+										"con",
+										"int",
+										"wis",
+										"cha"
+									]
 								},
 								"uniqueItems": true
 							},
@@ -406,7 +523,14 @@
 									"from": {
 										"type": "array",
 										"items": {
-											"enum": ["str", "dex", "con", "int", "wis", "cha"]
+											"enum": [
+												"str",
+												"dex",
+												"con",
+												"int",
+												"wis",
+												"cha"
+											]
 										},
 										"uniqueItems": true
 									},
@@ -423,14 +547,21 @@
 				}
 			}
 		},
-
 		"heightAndWeight": {
 			"type": "object",
 			"properties": {
-				"baseHeight":  {"type": "integer"},
-				"heightMod": {"type": "string"},
-				"baseWeight":  {"type": "integer"},
-				"weightMod": {"type": "string"}
+				"baseHeight": {
+					"type": "integer"
+				},
+				"heightMod": {
+					"type": "string"
+				},
+				"baseWeight": {
+					"type": "integer"
+				},
+				"weightMod": {
+					"type": "string"
+				}
 			},
 			"required": [
 				"baseHeight",
@@ -439,7 +570,6 @@
 			],
 			"additionalProperties": false
 		},
-
 		"lineage": {
 			"oneOf": [
 				{
@@ -450,83 +580,936 @@
 				{
 					"description": "For lineages which modify the race with e.g. specific ability score modes.",
 					"type": "string",
-					"enum": ["UA1", "VRGR"]
+					"enum": [
+						"UA1",
+						"VRGR"
+					]
 				}
 			]
 		},
-
 		"age": {
 			"type": "object",
 			"properties": {
-				"mature": {"type": "integer"},
-				"max": {"type": "integer"}
+				"mature": {
+					"type": "integer"
+				},
+				"max": {
+					"type": "integer"
+				}
 			}
 		},
-
 		"race": {
 			"anyOf": [
 				{
 					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/raceData"
+					"properties": {
+						"name": {
+							"type": "string"
 						},
-						{
+						"alias": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"source": {
+							"type": "string"
+						},
+						"page": {
+							"type": "integer"
+						},
+						"otherSources": {
+							"$ref": "util.json#/definitions/otherSources"
+						},
+						"additionalSources": {
+							"$ref": "util.json#/definitions/additionalSources"
+						},
+						"ability": {
+							"$ref": "#/definitions/abilityScores"
+						},
+						"speed": {
+							"$ref": "util.json#/definitions/speed"
+						},
+						"size": {
+							"description": "An array of choices.",
+							"type": "array",
+							"items": {
+								"$ref": "util.json#/definitions/size"
+							}
+						},
+						"entries": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
+						},
+						"soundClip": {
+							"$ref": "entry.json#/definitions/mediaHref"
+						},
+						"subraces": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/subraceData"
+							}
+						},
+						"darkvision": {
+							"type": "integer"
+						},
+						"feats": {
+							"type": "integer"
+						},
+						"traitTags": {
+							"oneOf": [
+								{
+									"type": "array",
+									"items": {
+										"$ref": "#/definitions/traitTag"
+									}
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"languageProficiencies": {
+							"$ref": "util.json#/definitions/languageProficiencies"
+						},
+						"skillProficiencies": {
+							"$ref": "util.json#/definitions/skillProficiencies"
+						},
+						"toolProficiencies": {
+							"$ref": "util.json#/definitions/toolProficiencies"
+						},
+						"skillToolLanguageProficiencies": {
+							"$ref": "util.json#/definitions/skillToolLanguageProficiencies"
+						},
+						"expertise": {
+							"$ref": "util.json#/definitions/expertise"
+						},
+						"weaponProficiencies": {
+							"$ref": "util.json#/definitions/weaponProficiencies"
+						},
+						"armorProficiencies": {
+							"$ref": "util.json#/definitions/armorProficiencies"
+						},
+						"fluff": {
+							"$ref": "#/definitions/fluff"
+						},
+						"srd": {
+							"$ref": "util.json#/definitions/srd"
+						},
+						"heightAndWeight": {
+							"oneOf": [
+								{
+									"$ref": "#/definitions/heightAndWeight"
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"additionalSpells": {
+							"$ref": "util.json#/definitions/additionalSpellsArray"
+						},
+						"resist": {
+							"$ref": "util.json#/definitions/damageResistArrayPlayer"
+						},
+						"immune": {
+							"$ref": "util.json#/definitions/damageImmunityArrayPlayer"
+						},
+						"vulnerable": {
+							"$ref": "util.json#/definitions/damageVulnerabilityArrayPlayer"
+						},
+						"conditionImmune": {
+							"$ref": "util.json#/definitions/conditionImmunityArrayPlayer"
+						},
+						"lineage": {
+							"$ref": "#/definitions/lineage"
+						},
+						"creatureTypes": {
+							"type": "array",
+							"items": {
+								"oneOf": [
+									{
+										"type": "object",
+										"properties": {
+											"choose": {
+												"type": "array",
+												"items": {
+													"$ref": "util.json#/definitions/creatureType"
+												}
+											}
+										},
+										"required": [
+											"choose"
+										],
+										"additionalProperties": false
+									},
+									{
+										"$ref": "util.json#/definitions/creatureType"
+									}
+								]
+							}
+						},
+						"age": {
+							"$ref": "#/definitions/age"
+						},
+						"hasFluff": {
+							"type": "boolean"
+						},
+						"hasFluffImages": {
+							"type": "boolean"
+						},
+						"_versions": {
+							"$ref": "util.json#/definitions/versionsArray"
+						},
+						"_copy": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								},
+								"pantheon": {
+									"description": "Used in deity data",
+									"type": "string"
+								},
+								"shortName": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"className": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"classSource": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"_mod": {
+									"$ref": "util.json#/definitions/_modObject"
+								},
+								"_trait": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"source": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"name",
+										"source"
+									]
+								},
+								"_preserve": {
+									"type": "object",
+									"patternProperties": {
+										".*": {
+											"type": "boolean"
+										}
+									}
+								}
+							},
 							"required": [
 								"name",
 								"source"
-							]
+							],
+							"additionalProperties": false
 						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"name",
+						"source"
 					]
 				},
 				{
 					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/raceData"
+					"properties": {
+						"name": {
+							"type": "string"
 						},
-						{
-							"$ref": "util.json#/definitions/copyBlock"
+						"alias": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"source": {
+							"type": "string"
+						},
+						"page": {
+							"type": "integer"
+						},
+						"otherSources": {
+							"$ref": "util.json#/definitions/otherSources"
+						},
+						"additionalSources": {
+							"$ref": "util.json#/definitions/additionalSources"
+						},
+						"ability": {
+							"$ref": "#/definitions/abilityScores"
+						},
+						"speed": {
+							"$ref": "util.json#/definitions/speed"
+						},
+						"size": {
+							"description": "An array of choices.",
+							"type": "array",
+							"items": {
+								"$ref": "util.json#/definitions/size"
+							}
+						},
+						"entries": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
+						},
+						"soundClip": {
+							"$ref": "entry.json#/definitions/mediaHref"
+						},
+						"subraces": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/subraceData"
+							}
+						},
+						"darkvision": {
+							"type": "integer"
+						},
+						"feats": {
+							"type": "integer"
+						},
+						"traitTags": {
+							"oneOf": [
+								{
+									"type": "array",
+									"items": {
+										"$ref": "#/definitions/traitTag"
+									}
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"languageProficiencies": {
+							"$ref": "util.json#/definitions/languageProficiencies"
+						},
+						"skillProficiencies": {
+							"$ref": "util.json#/definitions/skillProficiencies"
+						},
+						"toolProficiencies": {
+							"$ref": "util.json#/definitions/toolProficiencies"
+						},
+						"skillToolLanguageProficiencies": {
+							"$ref": "util.json#/definitions/skillToolLanguageProficiencies"
+						},
+						"expertise": {
+							"$ref": "util.json#/definitions/expertise"
+						},
+						"weaponProficiencies": {
+							"$ref": "util.json#/definitions/weaponProficiencies"
+						},
+						"armorProficiencies": {
+							"$ref": "util.json#/definitions/armorProficiencies"
+						},
+						"fluff": {
+							"$ref": "#/definitions/fluff"
+						},
+						"srd": {
+							"$ref": "util.json#/definitions/srd"
+						},
+						"heightAndWeight": {
+							"oneOf": [
+								{
+									"$ref": "#/definitions/heightAndWeight"
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"additionalSpells": {
+							"$ref": "util.json#/definitions/additionalSpellsArray"
+						},
+						"resist": {
+							"$ref": "util.json#/definitions/damageResistArrayPlayer"
+						},
+						"immune": {
+							"$ref": "util.json#/definitions/damageImmunityArrayPlayer"
+						},
+						"vulnerable": {
+							"$ref": "util.json#/definitions/damageVulnerabilityArrayPlayer"
+						},
+						"conditionImmune": {
+							"$ref": "util.json#/definitions/conditionImmunityArrayPlayer"
+						},
+						"lineage": {
+							"$ref": "#/definitions/lineage"
+						},
+						"creatureTypes": {
+							"type": "array",
+							"items": {
+								"oneOf": [
+									{
+										"type": "object",
+										"properties": {
+											"choose": {
+												"type": "array",
+												"items": {
+													"$ref": "util.json#/definitions/creatureType"
+												}
+											}
+										},
+										"required": [
+											"choose"
+										],
+										"additionalProperties": false
+									},
+									{
+										"$ref": "util.json#/definitions/creatureType"
+									}
+								]
+							}
+						},
+						"age": {
+							"$ref": "#/definitions/age"
+						},
+						"hasFluff": {
+							"type": "boolean"
+						},
+						"hasFluffImages": {
+							"type": "boolean"
+						},
+						"_versions": {
+							"$ref": "util.json#/definitions/versionsArray"
+						},
+						"_copy": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								},
+								"pantheon": {
+									"description": "Used in deity data",
+									"type": "string"
+								},
+								"shortName": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"className": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"classSource": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"_mod": {
+									"$ref": "util.json#/definitions/_modObject"
+								},
+								"_trait": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"source": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"name",
+										"source"
+									]
+								},
+								"_preserve": {
+									"type": "object",
+									"patternProperties": {
+										".*": {
+											"type": "boolean"
+										}
+									}
+								}
+							},
+							"required": [
+								"name",
+								"source"
+							],
+							"additionalProperties": false
 						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"_copy"
 					]
 				}
 			]
 		},
-
 		"subrace": {
 			"description": "Homebrew use only.",
 			"anyOf": [
 				{
 					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/subraceData"
+					"properties": {
+						"name": {
+							"type": "string"
 						},
-						{
+						"alias": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"source": {
+							"type": "string"
+						},
+						"page": {
+							"type": "integer"
+						},
+						"otherSources": {
+							"$ref": "util.json#/definitions/otherSources"
+						},
+						"ability": {
+							"$ref": "#/definitions/abilityScores"
+						},
+						"size": {
+							"type": "array",
+							"items": {
+								"$ref": "util.json#/definitions/size"
+							}
+						},
+						"speed": {
+							"$ref": "util.json#/definitions/speed"
+						},
+						"entries": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
+						},
+						"darkvision": {
+							"type": "integer"
+						},
+						"feats": {
+							"type": "integer"
+						},
+						"traitTags": {
+							"oneOf": [
+								{
+									"type": "array",
+									"items": {
+										"$ref": "#/definitions/traitTag"
+									}
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"languageProficiencies": {
+							"$ref": "util.json#/definitions/languageProficiencies"
+						},
+						"skillProficiencies": {
+							"$ref": "util.json#/definitions/skillProficiencies"
+						},
+						"toolProficiencies": {
+							"$ref": "util.json#/definitions/toolProficiencies"
+						},
+						"skillToolLanguageProficiencies": {
+							"$ref": "util.json#/definitions/skillToolLanguageProficiencies"
+						},
+						"expertise": {
+							"$ref": "util.json#/definitions/expertise"
+						},
+						"weaponProficiencies": {
+							"$ref": "util.json#/definitions/weaponProficiencies"
+						},
+						"armorProficiencies": {
+							"$ref": "util.json#/definitions/armorProficiencies"
+						},
+						"overwrite": {
+							"description": "Map of 'property' -> true where 'property' is a property on the base race which should be overwritten by that of the subrace",
+							"type": "object"
+						},
+						"srd": {
+							"$ref": "util.json#/definitions/srd"
+						},
+						"heightAndWeight": {
+							"oneOf": [
+								{
+									"$ref": "#/definitions/heightAndWeight"
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"additionalSpells": {
+							"oneOf": [
+								{
+									"type": "null"
+								},
+								{
+									"$ref": "util.json#/definitions/additionalSpellsArray"
+								}
+							]
+						},
+						"resist": {
+							"oneOf": [
+								{
+									"$ref": "util.json#/definitions/damageResistArrayPlayer"
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"immune": {
+							"oneOf": [
+								{
+									"$ref": "util.json#/definitions/damageImmunityArrayPlayer"
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"vulnerable": {
+							"oneOf": [
+								{
+									"$ref": "util.json#/definitions/damageVulnerabilityArrayPlayer"
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"conditionImmune": {
+							"oneOf": [
+								{
+									"$ref": "util.json#/definitions/conditionImmunityArrayPlayer"
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"age": {
+							"$ref": "#/definitions/age"
+						},
+						"hasFluff": {
+							"type": "boolean"
+						},
+						"hasFluffImages": {
+							"type": "boolean"
+						},
+						"_versions": {
+							"$ref": "util.json#/definitions/versionsArray"
+						},
+						"_copy": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								},
+								"pantheon": {
+									"description": "Used in deity data",
+									"type": "string"
+								},
+								"shortName": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"className": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"classSource": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"_mod": {
+									"$ref": "util.json#/definitions/_modObject"
+								},
+								"_trait": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"source": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"name",
+										"source"
+									]
+								},
+								"_preserve": {
+									"type": "object",
+									"patternProperties": {
+										".*": {
+											"type": "boolean"
+										}
+									}
+								}
+							},
 							"required": [
 								"name",
-								"source",
-								"race"
-							]
+								"source"
+							],
+							"additionalProperties": false
 						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"name",
+						"source",
+						"race"
 					]
 				},
 				{
 					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/subraceData"
+					"properties": {
+						"name": {
+							"type": "string"
 						},
-						{
-							"$ref": "util.json#/definitions/copyBlock"
+						"alias": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"source": {
+							"type": "string"
+						},
+						"page": {
+							"type": "integer"
+						},
+						"otherSources": {
+							"$ref": "util.json#/definitions/otherSources"
+						},
+						"ability": {
+							"$ref": "#/definitions/abilityScores"
+						},
+						"size": {
+							"type": "array",
+							"items": {
+								"$ref": "util.json#/definitions/size"
+							}
+						},
+						"speed": {
+							"$ref": "util.json#/definitions/speed"
+						},
+						"entries": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
+						},
+						"darkvision": {
+							"type": "integer"
+						},
+						"feats": {
+							"type": "integer"
+						},
+						"traitTags": {
+							"oneOf": [
+								{
+									"type": "array",
+									"items": {
+										"$ref": "#/definitions/traitTag"
+									}
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"languageProficiencies": {
+							"$ref": "util.json#/definitions/languageProficiencies"
+						},
+						"skillProficiencies": {
+							"$ref": "util.json#/definitions/skillProficiencies"
+						},
+						"toolProficiencies": {
+							"$ref": "util.json#/definitions/toolProficiencies"
+						},
+						"skillToolLanguageProficiencies": {
+							"$ref": "util.json#/definitions/skillToolLanguageProficiencies"
+						},
+						"expertise": {
+							"$ref": "util.json#/definitions/expertise"
+						},
+						"weaponProficiencies": {
+							"$ref": "util.json#/definitions/weaponProficiencies"
+						},
+						"armorProficiencies": {
+							"$ref": "util.json#/definitions/armorProficiencies"
+						},
+						"overwrite": {
+							"description": "Map of 'property' -> true where 'property' is a property on the base race which should be overwritten by that of the subrace",
+							"type": "object"
+						},
+						"srd": {
+							"$ref": "util.json#/definitions/srd"
+						},
+						"heightAndWeight": {
+							"oneOf": [
+								{
+									"$ref": "#/definitions/heightAndWeight"
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"additionalSpells": {
+							"oneOf": [
+								{
+									"type": "null"
+								},
+								{
+									"$ref": "util.json#/definitions/additionalSpellsArray"
+								}
+							]
+						},
+						"resist": {
+							"oneOf": [
+								{
+									"$ref": "util.json#/definitions/damageResistArrayPlayer"
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"immune": {
+							"oneOf": [
+								{
+									"$ref": "util.json#/definitions/damageImmunityArrayPlayer"
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"vulnerable": {
+							"oneOf": [
+								{
+									"$ref": "util.json#/definitions/damageVulnerabilityArrayPlayer"
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"conditionImmune": {
+							"oneOf": [
+								{
+									"$ref": "util.json#/definitions/conditionImmunityArrayPlayer"
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						"age": {
+							"$ref": "#/definitions/age"
+						},
+						"hasFluff": {
+							"type": "boolean"
+						},
+						"hasFluffImages": {
+							"type": "boolean"
+						},
+						"_versions": {
+							"$ref": "util.json#/definitions/versionsArray"
+						},
+						"_copy": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								},
+								"pantheon": {
+									"description": "Used in deity data",
+									"type": "string"
+								},
+								"shortName": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"className": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"classSource": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"_mod": {
+									"$ref": "util.json#/definitions/_modObject"
+								},
+								"_trait": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"source": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"name",
+										"source"
+									]
+								},
+								"_preserve": {
+									"type": "object",
+									"patternProperties": {
+										".*": {
+											"type": "boolean"
+										}
+									}
+								}
+							},
+							"required": [
+								"name",
+								"source"
+							],
+							"additionalProperties": false
 						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"_copy"
 					]
 				}
 			]
 		},
-
 		"fluff": {
-			"description": "Homebrew use only.",
+			"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source.",
 			"anyOf": [
 				{
 					"$ref": "util.json#/definitions/fluffObject"
@@ -562,7 +1545,6 @@
 			]
 		}
 	},
-
 	"properties": {
 		"race": {
 			"type": "array",
@@ -570,16 +1552,12 @@
 				"$ref": "#/definitions/race"
 			}
 		},
-		"subrace": {
-			"type": "array",
-			"items": {
-				"$ref": "#/definitions/subrace"
-			}
-		},
 		"_meta": {
 			"$ref": "util.json#/definitions/metaBlock"
 		}
 	},
-	"required": ["race"],
+	"required": [
+		"race"
+	],
 	"additionalProperties": false
 }

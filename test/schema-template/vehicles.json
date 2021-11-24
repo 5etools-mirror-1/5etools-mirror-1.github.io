@@ -1,0 +1,537 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "vehicles.json",
+	"version": "1.5.0",
+	"type": "object",
+
+	"definitions": {
+		"vehicleTerrain": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["land", "sea", "air"]
+			}
+		},
+
+		"vehicle": {
+			"oneOf": [
+				{"$ref": "#/definitions/vehicleShip"},
+				{"$ref": "#/definitions/vehicleInfernalWarMachine"},
+				{"$ref": "#/definitions/vehicleCreature"},
+				{"$ref": "#/definitions/vehicleObject"}
+			]
+		},
+
+		"vehicleUpgrade": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"entries": {
+					"type": "array",
+					"items": {
+						"$ref": "entry.json"
+					}
+				},
+				"source": {
+					"type": "string"
+				},
+				"page": {
+					"type": "integer"
+				},
+				"upgradeType": {
+					"type": "array",
+					"items": {
+						"$ref": "util.json#/definitions/dataOptionalfeatureType",
+						"type": "string",
+						"pattern": "^(SHP|IWM):.*"
+					}
+				},
+				"hasFluff": {"type": "boolean"},
+				"hasFluffImages": {"type": "boolean"}
+			},
+			"required": [
+				"name",
+				"entries",
+				"source",
+				"upgradeType"
+			],
+			"additionalProperties": false
+		},
+
+		"vehicleShip": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"source": {
+					"type": "string"
+				},
+				"page": {
+					"type": "integer"
+				},
+				"vehicleType": {"const": "SHIP"},
+				"terrain": {"$ref": "#/definitions/vehicleTerrain"},
+				"size": {
+					"$ref": "util.json#/definitions/size"
+				},
+				"dimensions": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"capCrew": {
+					"type": "integer"
+				},
+				"capPassenger": {
+					"type": "integer"
+				},
+				"capCargo": {
+					"type": ["number", "string"]
+				},
+				"pace": {
+					"type": "integer"
+				},
+				"str": {
+					"type": "integer"
+				},
+				"dex": {
+					"type": "integer"
+				},
+				"con": {
+					"type": "integer"
+				},
+				"int": {
+					"type": "integer"
+				},
+				"wis": {
+					"type": "integer"
+				},
+				"cha": {
+					"type": "integer"
+				},
+				"conditionImmune": {
+					"type": "array",
+					"items": {
+						"$ref": "entry.json#/definitions/dataCondImmune"
+					}
+				},
+				"immune": {
+					"type": "array",
+					"items": {
+						"$ref": "entry.json#/definitions/dataDamImmune"
+					}
+				},
+				"actionThresholds": {
+					"type": "object",
+					"patternProperties": {
+						"\\d+": {
+							"type": "integer"
+						}
+					}
+				},
+				"action": {
+					"type": "array",
+					"items": {
+						"$ref": "entry.json"
+					}
+				},
+				"hull": {
+					"type": "object",
+					"properties": {
+						"ac": {
+							"type": "integer"
+						},
+						"hp": {
+							"type": "integer"
+						},
+						"hpNote": {
+							"type": "string"
+						},
+						"dt": {
+							"type": "integer"
+						}
+					},
+					"required": ["ac", "hp"],
+					"additionalProperties": false
+				},
+				"control": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"ac": {
+								"type": "integer"
+							},
+							"hp": {
+								"type": "integer"
+							},
+							"dt": {
+								"type": "integer"
+							},
+							"entries": {
+								"type": "array",
+								"items": {
+									"$ref": "entry.json"
+								}
+							}
+						},
+						"required": ["ac", "hp", "entries"],
+						"additionalProperties": false
+					}
+				},
+				"movement": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"isControl": {
+								"type": "boolean"
+							},
+							"ac": {
+								"type": "integer"
+							},
+							"hp": {
+								"type": "integer"
+							},
+							"hpNote": {
+								"type": "string"
+							},
+							"dt": {
+								"type": "integer"
+							},
+							"locomotion": {
+								"description": "Legacy format, from the original UA release.",
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"mode": {
+											"type": "string"
+										},
+										"entries": {
+											"type": "array",
+											"items": {
+												"$ref": "entry.json"
+											}
+										}
+									},
+									"required": ["mode", "entries"],
+									"additionalProperties": false
+								}
+							},
+							"speed": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"mode": {
+											"type": "string"
+										},
+										"entries": {
+											"type": "array",
+											"items": {
+												"$ref": "entry.json"
+											}
+										}
+									},
+									"required": ["mode", "entries"],
+									"additionalProperties": false
+								}
+							}
+						},
+						"required": ["ac", "hp"],
+						"additionalProperties": false
+					}
+				},
+				"weapon": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"ac": {
+								"type": "integer"
+							},
+							"hp": {
+								"type": "integer"
+							},
+							"count": {
+								"type": "integer"
+							},
+							"dt": {
+								"type": "integer"
+							},
+							"entries": {
+								"type": "array",
+								"items": {
+									"$ref": "entry.json"
+								}
+							}
+						},
+						"required": ["name", "entries"],
+						"additionalProperties": false
+					}
+				},
+				"other": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"entries": {
+								"type": "array",
+								"items": {
+									"$ref": "entry.json"
+								}
+							}
+						},
+						"required": ["entries"],
+						"additionalProperties": false
+					}
+				},
+				"trait": {
+					"oneOf": [
+						{
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"entries": {
+										"type": "array",
+										"items": {
+											"$ref": "entry.json"
+										}
+									},
+									"type": {
+										"type": "string",
+										"enum": [
+											"entries",
+											"inset"
+										]
+									},
+									"sort": {
+										"description": "Forces a sort order. Traits with sort orders will always be arranged before those without.",
+										"type": "integer"
+									}
+								},
+								"required": [
+									"name",
+									"entries"
+								],
+								"additionalProperties": false
+							}
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"$$ifBrew": {
+					"fluff": {
+						"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source",
+						"$ref": "util.json#/definitions/fluffObject"
+					},
+					"tokenUrl": {
+						"type": "string"
+					},
+					"foundryData": {"$ref": "util.json#/definitions/foundryDataObject"}
+				},
+				"hasToken": {
+					"type": "boolean"
+				},
+				"hasFluff": {"type": "boolean"},
+				"hasFluffImages": {"type": "boolean"}
+			},
+			"required": ["name", "source"],
+			"additionalProperties": false
+		},
+
+		"vehicleInfernalWarMachine": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"source": {
+					"type": "string"
+				},
+				"page": {
+					"type": "integer"
+				},
+				"vehicleType": {"const": "INFWAR"},
+				"terrain": {"$ref": "#/definitions/vehicleTerrain"},
+				"size": {
+					"$ref": "util.json#/definitions/size"
+				},
+				"weight": {
+					"type": "integer"
+				},
+				"capCreature": {
+					"type": "number"
+				},
+				"capCargo": {
+					"type": "number"
+				},
+				"speed": {
+					"type": "integer"
+				},
+				"str": {
+					"type": "integer"
+				},
+				"dex": {
+					"type": "integer"
+				},
+				"con": {
+					"type": "integer"
+				},
+				"int": {
+					"type": "integer"
+				},
+				"wis": {
+					"type": "integer"
+				},
+				"cha": {
+					"type": "integer"
+				},
+				"hp": {
+					"type": "object",
+					"properties": {
+						"hp": {
+							"type": "integer",
+							"description": "Hit Points"
+						},
+						"dt": {
+							"type": "integer",
+							"description": "Damage Threshold"
+						},
+						"mt": {
+							"type": "integer",
+							"description": "Mishap Threshold"
+						}
+					},
+					"additionalProperties": false,
+					"required": ["hp", "dt", "mt"]
+				},
+				"conditionImmune": {
+					"type": "array",
+					"items": {
+						"$ref": "entry.json#/definitions/dataCondImmune"
+					}
+				},
+				"immune": {
+					"type": "array",
+					"items": {
+						"$ref": "entry.json#/definitions/dataDamImmune"
+					}
+				},
+				"trait": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"entries": {
+								"type": "array",
+								"items": {
+									"$ref": "entry.json"
+								}
+							}
+						}
+					}
+				},
+				"actionStation": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"entries": {
+								"type": "array",
+								"items": {
+									"$ref": "entry.json"
+								}
+							}
+						}
+					}
+				},
+				"reaction": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"entries": {
+								"type": "array",
+								"items": {
+									"$ref": "entry.json"
+								}
+							}
+						}
+					}
+				},
+				"hasToken": {
+					"type": "boolean"
+				},
+				"hasFluff": {"type": "boolean"},
+				"hasFluffImages": {"type": "boolean"}
+			},
+			"required": ["name", "source"],
+			"additionalProperties": false
+		},
+
+		"vehicleCreature": {
+			"type": "object",
+			"properties": {
+				"vehicleType": {"const": "CREATURE"},
+				"terrain": {"$ref": "#/definitions/vehicleTerrain"}
+			}
+		},
+
+		"vehicleObject": {
+			"type": "object",
+			"properties": {
+				"vehicleType": {"const": "OBJECT"},
+				"terrain": {"$ref": "#/definitions/vehicleTerrain"}
+			}
+		}
+	},
+
+	"properties": {
+		"vehicle": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/vehicle"
+			}
+		},
+		"vehicleUpgrade": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/vehicleUpgrade"
+			}
+		}
+	},
+	"additionalProperties": false
+}

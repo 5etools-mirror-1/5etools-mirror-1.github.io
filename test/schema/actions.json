@@ -3,7 +3,6 @@
 	"$id": "actions.json",
 	"version": "1.1.1",
 	"type": "object",
-
 	"properties": {
 		"action": {
 			"type": "array",
@@ -26,25 +25,35 @@
 						"type": "integer"
 					},
 					"fromVariant": {
-						"type": "string"
+						"type": "string",
+						"description": "UID of a \"variantrule\" to be linked as a footnote in the action."
 					},
 					"time": {
 						"type": "array",
 						"items": {
 							"oneOf": [
-								{"type": "string"},
 								{
-									"type":  "object",
+									"type": "string"
+								},
+								{
+									"type": "object",
 									"properties": {
 										"unit": {
 											"type": "string",
-											"enum": ["action", "bonus", "reaction"]
+											"enum": [
+												"action",
+												"bonus",
+												"reaction"
+											]
 										},
 										"number": {
 											"type": "integer"
 										}
 									},
-									"required": ["unit", "number"],
+									"required": [
+										"unit",
+										"number"
+									],
 									"additionalProperties": false
 								}
 							]
@@ -56,7 +65,8 @@
 					"seeAlsoAction": {
 						"type": "array",
 						"items": {
-							"type": "string"
+							"type": "string",
+							"description": "UIDs of \"action\"s to be linked in a \"See Also\" footnote.\nEx.: \"disarm|dmg\"."
 						}
 					}
 				},

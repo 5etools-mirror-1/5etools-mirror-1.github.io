@@ -5769,7 +5769,11 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"conditionInflict": [
+				"poisoned",
+				"unconscious"
+			]
 		},
 		{
 			"name": "Drow Inquisitor",
@@ -6489,7 +6493,11 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"conditionInflict": [
+				"poisoned",
+				"unconscious"
+			]
 		},
 		{
 			"name": "Duergar Despot",
@@ -6651,7 +6659,10 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"conditionInflict": [
+				"prone"
+			]
 		},
 		{
 			"name": "Duergar Hammerer",
@@ -12555,7 +12566,10 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflict": [
+				"stunned"
+			]
 		},
 		{
 			"name": "Maurezhi",
@@ -13319,7 +13333,7 @@
 				{
 					"name": "Stinking Cloud",
 					"entries": [
-						"Moloch casts stinking cloud."
+						"Moloch casts {@spell stinking cloud}."
 					]
 				},
 				{
@@ -18553,7 +18567,10 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflict": [
+				"stunned"
+			]
 		},
 		{
 			"name": "Stone Cursed",
@@ -21139,7 +21156,10 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflict": [
+				"charmed"
+			]
 		},
 		{
 			"name": "Yagnoloth",

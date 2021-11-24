@@ -1215,23 +1215,23 @@ Parser.DURATION_AMOUNT_TYPES = [
 	"year",
 ];
 
-Parser.spClassesToFull = function (sp, isTextOnly, subclassLookup = {}) {
+Parser.spClassesToFull = function (sp, {isTextOnly = false, subclassLookup = {}} = {}) {
 	const fromSubclassList = Renderer.spell.getCombinedClasses(sp, "fromSubclass");
-	const fromSubclasses = Parser.spSubclassesToFull(fromSubclassList, isTextOnly, subclassLookup);
+	const fromSubclasses = Parser.spSubclassesToFull(fromSubclassList, {isTextOnly, subclassLookup});
 	const fromClassList = Renderer.spell.getCombinedClasses(sp, "fromClassList");
-	return `${Parser.spMainClassesToFull(fromClassList, isTextOnly)}${fromSubclasses ? `, ${fromSubclasses}` : ""}`;
+	return `${Parser.spMainClassesToFull(fromClassList, {isTextOnly})}${fromSubclasses ? `, ${fromSubclasses}` : ""}`;
 };
 
-Parser.spMainClassesToFull = function (fromClassList, textOnly = false) {
+Parser.spMainClassesToFull = function (fromClassList, {isTextOnly = false} = {}) {
 	return fromClassList
 		.map(c => ({hash: UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](c), c}))
 		.filter(it => !ExcludeUtil.isInitialised || !ExcludeUtil.isExcluded(it.hash, "class", it.c.source))
 		.sort((a, b) => SortUtil.ascSort(a.c.name, b.c.name))
-		.map(it => textOnly ? it.c.name : `<a title="${it.c.definedInSource ? `Class source` : "Source"}: ${Parser.sourceJsonToFull(it.c.source)}${it.c.definedInSource ? `. Spell list defined in: ${Parser.sourceJsonToFull(it.c.definedInSource)}.` : ""}" href="${UrlUtil.PG_CLASSES}#${it.hash}">${it.c.name}</a>`)
+		.map(it => isTextOnly ? it.c.name : `<a title="${it.c.definedInSource ? `Class source` : "Source"}: ${Parser.sourceJsonToFull(it.c.source)}${it.c.definedInSource ? `. Spell list defined in: ${Parser.sourceJsonToFull(it.c.definedInSource)}.` : ""}" href="${UrlUtil.PG_CLASSES}#${it.hash}">${it.c.name}</a>`)
 		.join(", ") || "";
 };
 
-Parser.spSubclassesToFull = function (fromSubclassList, textOnly, subclassLookup = {}) {
+Parser.spSubclassesToFull = function (fromSubclassList, {isTextOnly = false, subclassLookup = {}} = {}) {
 	return fromSubclassList
 		.filter(mt => {
 			if (!ExcludeUtil.isInitialised) return true;
@@ -1250,15 +1250,15 @@ Parser.spSubclassesToFull = function (fromSubclassList, textOnly, subclassLookup
 			const byName = SortUtil.ascSort(a.class.name, b.class.name);
 			return byName || SortUtil.ascSort(a.subclass.name, b.subclass.name);
 		})
-		.map(c => Parser._spSubclassItem({fromSubclass: c, textOnly, subclassLookup}))
+		.map(c => Parser._spSubclassItem({fromSubclass: c, isTextOnly, subclassLookup}))
 		.join(", ") || "";
 };
 
-Parser._spSubclassItem = function ({fromSubclass, textOnly, subclassLookup}) {
+Parser._spSubclassItem = function ({fromSubclass, isTextOnly, subclassLookup}) {
 	const c = fromSubclass.class;
 	const sc = fromSubclass.subclass;
 	const text = `${sc.name}${sc.subSubclass ? ` (${sc.subSubclass})` : ""}`;
-	if (textOnly) return text;
+	if (isTextOnly) return text;
 	const classPart = `<a href="${UrlUtil.PG_CLASSES}#${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](c)}" title="Source: ${Parser.sourceJsonToFull(c.source)}${c.definedInSource ? ` From a class spell list defined in: ${Parser.sourceJsonToFull(c.definedInSource)}` : ""}">${c.name}</a>`;
 	const fromLookup = subclassLookup ? MiscUtil.get(subclassLookup, c.source, c.name, sc.source, sc.name) : null;
 	if (fromLookup) return `<a class="italic" href="${UrlUtil.PG_CLASSES}#${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](c)}${HASH_PART_SEP}${UrlUtil.getClassesPageStatePart({subclass: {shortName: sc.name, source: sc.source}})}" title="Source: ${Parser.sourceJsonToFull(fromSubclass.subclass.source)}">${text}</a> ${classPart}`;
@@ -1907,7 +1907,7 @@ Parser._spSubclassesToCurrentAndLegacyFull = ({sp, subclassLookup, prop}) => {
 			const nm = c.subclass.name;
 			const src = c.subclass.source;
 
-			const toAdd = Parser._spSubclassItem({fromSubclass: c, textOnly: false, subclassLookup});
+			const toAdd = Parser._spSubclassItem({fromSubclass: c, isTextOnly: false, subclassLookup});
 
 			const fromLookup = MiscUtil.get(
 				subclassLookup,

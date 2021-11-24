@@ -3,7 +3,6 @@
 	"$id": "trapshazards.json",
 	"version": "1.2.0",
 	"type": "object",
-
 	"definitions": {
 		"trap": {
 			"oneOf": [
@@ -16,6 +15,7 @@
 						},
 						"trapHazType": {
 							"type": "string",
+							"description": "MAG: Magical Trap\n MECH: Mechanical Trap",
 							"enum": [
 								"MECH",
 								"MAG"
@@ -33,7 +33,9 @@
 								"$ref": "entry.json"
 							}
 						},
-						"srd": {"$ref": "util.json#/definitions/srd"}
+						"srd": {
+							"$ref": "util.json#/definitions/srd"
+						}
 					},
 					"additionalProperties": false,
 					"required": [
@@ -78,13 +80,21 @@
 							"description": "Alternative to \"tier\" which allows for non-standard level ranges.",
 							"type": "object",
 							"properties": {
-								"min": {"type": "integer"},
-								"max": {"type": "integer"}
+								"min": {
+									"type": "integer"
+								},
+								"max": {
+									"type": "integer"
+								}
 							}
 						},
 						"threat": {
 							"type": "string",
-							"enum": ["moderate", "dangerous", "deadly"]
+							"enum": [
+								"moderate",
+								"dangerous",
+								"deadly"
+							]
 						},
 						"trigger": {
 							"type": "array",
@@ -98,10 +108,6 @@
 									"type": "integer",
 									"minimum": 1,
 									"maximum": 3
-								},
-								{
-									"description": "Custom initiative, for homebrew only.",
-									"type": "string"
 								}
 							]
 						},
@@ -138,7 +144,9 @@
 								"$ref": "entry.json"
 							}
 						},
-						"srd": {"$ref": "util.json#/definitions/srd"}
+						"srd": {
+							"$ref": "util.json#/definitions/srd"
+						}
 					},
 					"additionalProperties": false,
 					"required": [
@@ -153,7 +161,6 @@
 				}
 			]
 		},
-
 		"hazard": {
 			"type": "object",
 			"properties": {
@@ -162,6 +169,7 @@
 				},
 				"trapHazType": {
 					"type": "string",
+					"description": "ENV: Environmental Hazard\n EST: Eldritch Storm\n GEN: Generic\n WTH: Weather\n WLD: Wilderness Hazard",
 					"enum": [
 						"WTH",
 						"ENV",
@@ -182,7 +190,9 @@
 						"$ref": "entry.json"
 					}
 				},
-				"srd": {"$ref": "util.json#/definitions/srd"}
+				"srd": {
+					"$ref": "util.json#/definitions/srd"
+				}
 			},
 			"additionalProperties": false,
 			"required": [
@@ -192,7 +202,6 @@
 			]
 		}
 	},
-
 	"properties": {
 		"trap": {
 			"type": "array",

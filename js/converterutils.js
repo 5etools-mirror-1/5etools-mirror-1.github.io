@@ -13,7 +13,7 @@
 
 class ConverterConst {}
 ConverterConst.STR_RE_DAMAGE_TYPE = "(acid|bludgeoning|cold|fire|force|lightning|necrotic|piercing|poison|psychic|radiant|slashing|thunder)";
-ConverterConst.RE_DAMAGE_TYPE = new RegExp(`(^|\\W)${ConverterConst.STR_RE_DAMAGE_TYPE}(\\W|$)`, "g");
+ConverterConst.RE_DAMAGE_TYPE = new RegExp(`\\b${ConverterConst.STR_RE_DAMAGE_TYPE}\\b`, "g");
 
 class BaseParser {
 	static _getValidOptions (options) {
@@ -310,11 +310,12 @@ class TagCondition {
 						0,
 						str,
 						{
-							fnTag: strMod => strMod.replace(TagCondition._CONDITION_MATCHER_WORD, (...m) => `${m[1]}{@condition ${m[2]}}${m[3]}`),
+							fnTag: strMod => strMod.replace(TagCondition._CONDITION_MATCHER_WORD, (...m) => `{@condition ${m[1]}}`),
 						},
 					);
 					return ptrStack._
-						.replace(/\b{@condition (prone)} (to)\b/gi, "$1 $2");
+						.replace(/\b{@condition (prone)} (to)\b/gi, "$1 $2")
+					;
 				},
 			},
 		);
@@ -344,20 +345,21 @@ TagCondition._CONDITIONS = [
 	"stunned",
 	"unconscious",
 ];
-TagCondition._CONDITION_MATCHERS = TagCondition._CONDITIONS.map(it => new RegExp(`(${it})`, "g"));
-TagCondition._CONDITION_MATCHER_WORD = new RegExp(`(^|[ "(\\u2013\\u2014])(${TagCondition._CONDITIONS.join("|")})([ "',.:;)\\u2013\\u2014]|$)`, "g");
+TagCondition._CONDITION_MATCHERS = TagCondition._CONDITIONS.map(it => new RegExp(`\\b(${it})\\b`, "g"));
+TagCondition._CONDITION_MATCHER_WORD = new RegExp(`\\b(${TagCondition._CONDITIONS.join("|")})\\b`, "g");
 // Each should have one group which matches the condition name.
 //   A comma/and part is appended to the end to handle chains of conditions.
 TagCondition.__TGT = `(?:target|wielder)`;
 TagCondition._CONDITION_INFLICTED_MATCHERS = [
-	`(?:creature|enemy|target) (?:is|becomes) (?:\\w+ )?{@condition ([^}]+)}`,
+	`(?:creature|enemy|target) is \\w+ {@condition ([^}]+)}`, // "is knocked prone"
+	`(?:creature|enemy|target) becomes (?:\\w+ )?{@condition ([^}]+)}`,
 	`saving throw (?:by \\d+ or more, it )?is (?:\\w+ )?{@condition ([^}]+)}`, // MM :: Sphinx :: First Roar
 	`(?:the save|fails) by \\d+ or more, [^.!?]+?{@condition ([^}]+)}`, // VGM :: Fire Giant Dreadnought :: Shield Charge
 	`(?:${TagCondition.__TGT}|creatures?|humanoid|undead|other creatures|enemy) [^.!?]+?(?:succeed|make|pass)[^.!?]+?saving throw[^.!?]+?or (?:fall|be(?:come)?|is) (?:\\w+ )?{@condition ([^}]+)}`,
 	`and then be (?:\\w+ )?{@condition ([^}]+)}`,
 	`(?:be|is) knocked (?:\\w+ )?{@condition (prone|unconscious)}`,
 	`a (?:\\w+ )?{@condition [^}]+} (?:creature|enemy) is (?:\\w+ )?{@condition ([^}]+)}`, // e.g. `a frightened creature is paralyzed`
-	`the[^.!?]+?${TagCondition.__TGT} is[^.!?]+?{@condition ([^}]+)}`,
+	`the[^.!?]+?${TagCondition.__TGT} is [^.!?]*?{@condition ([^}]+)}`,
 	`the[^.!?]+?${TagCondition.__TGT} is [^.!?]+?, it is {@condition ([^}]+)}(?: \\(escape [^\\)]+\\))?`,
 	`begins to [^.!?]+? and is {@condition ([^}]+)}`, // e.g. `begins to turn to stone and is restrained`
 	`saving throw[^.!?]+?or [^.!?]+? and remain {@condition ([^}]+)}`, // e.g. `or fall asleep and remain unconscious`
@@ -525,7 +527,7 @@ class SkillTag {
 	}
 
 	static _fnTag (strMod) {
-		return strMod.replace(/(^|[ "(\u2013\u2014])(Acrobatics|Animal Handling|Arcana|Athletics|Deception|History|Insight|Intimidation|Investigation|Medicine|Nature|Perception|Performance|Persuasion|Religion|Sleight of Hand|Stealth|Survival)([ "',.:;)\u2013\u2014]|$)/g, (...m) => `${m[1]}{@skill ${m[2]}}${m[3]}`);
+		return strMod.replace(/\b(Acrobatics|Animal Handling|Arcana|Athletics|Deception|History|Insight|Intimidation|Investigation|Medicine|Nature|Perception|Performance|Persuasion|Religion|Sleight of Hand|Stealth|Survival)\b/g, (...m) => `{@skill ${m[1]}}`);
 	}
 }
 
@@ -557,21 +559,21 @@ class ActionTag {
 		// Avoid tagging text within titles
 		if (strMod.toTitleCase() === strMod) return strMod;
 
-		const reAction = /(^|[ "(\u2013\u2014])(Attack|Dash|Disengage|Dodge|Help|Hide|Ready|Search|Use an Object|shove a creature)([ "',.:;)\u2013\u2014]|$)/g;
+		const reAction = /\b(Attack|Dash|Disengage|Dodge|Help|Hide|Ready|Search|Use an Object|shove a creature)\b/g;
 		let mAction;
 
 		while ((mAction = reAction.exec(strMod))) {
 			const ixMatchEnd = mAction.index + mAction[0].length;
 
-			const ptTag = mAction[2] === "shove a creature" ? "shove" : mAction[2];
-			const ptTrailing = mAction[2] === "shove a creature" ? ` a creature${mAction[3]}` : mAction[3];
-			const replaceAs = `${mAction[1]}{@action ${ptTag}}${ptTrailing}`;
+			const ptTag = mAction[1] === "shove a creature" ? "shove" : mAction[1];
+			const ptTrailing = mAction[1] === "shove a creature" ? ` a creature` : "";
+			const replaceAs = `{@action ${ptTag}}${ptTrailing}`;
 
 			strMod = `${strMod.slice(0, mAction.index)}${replaceAs}${strMod.slice(ixMatchEnd, strMod.length)}`
 				.replace(/{@action Attack} (and|or) damage roll/g, "Attack $1 damage roll")
 			;
 
-			mAction.index += replaceAs.length - 1;
+			reAction.lastIndex += replaceAs.length - 1;
 		}
 
 		return strMod;

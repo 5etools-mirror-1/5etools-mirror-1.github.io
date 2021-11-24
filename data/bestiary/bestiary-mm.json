@@ -761,7 +761,9 @@
 				"prone"
 			],
 			"conditionInflictLegendary": [
-				"prone"
+				"poisoned",
+				"prone",
+				"restrained"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1576,7 +1578,8 @@
 				"prone"
 			],
 			"conditionInflictLegendary": [
-				"deafened"
+				"deafened",
+				"prone"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1776,7 +1779,10 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflictLegendary": [
+				"incapacitated"
+			]
 		},
 		{
 			"name": "Adult Gold Dragon",
@@ -1989,7 +1995,10 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflictLegendary": [
+				"charmed"
+			]
 		},
 		{
 			"name": "Adult Green Dragon",
@@ -2184,6 +2193,7 @@
 			],
 			"conditionInflictLegendary": [
 				"charmed",
+				"prone",
 				"restrained"
 			],
 			"hasToken": true,
@@ -2588,7 +2598,10 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflictLegendary": [
+				"restrained"
+			]
 		},
 		{
 			"name": "Adult White Dragon",
@@ -2789,7 +2802,10 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflictLegendary": [
+				"blinded"
+			]
 		},
 		{
 			"name": "Air Elemental",
@@ -3229,7 +3245,9 @@
 				"prone"
 			],
 			"conditionInflictLegendary": [
-				"prone"
+				"poisoned",
+				"prone",
+				"restrained"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3827,7 +3845,8 @@
 				"prone"
 			],
 			"conditionInflictLegendary": [
-				"deafened"
+				"deafened",
+				"prone"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4032,7 +4051,10 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflictLegendary": [
+				"incapacitated"
+			]
 		},
 		{
 			"name": "Ancient Gold Dragon",
@@ -4237,7 +4259,10 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflictLegendary": [
+				"charmed"
+			]
 		},
 		{
 			"name": "Ancient Green Dragon",
@@ -4429,6 +4454,7 @@
 			],
 			"conditionInflictLegendary": [
 				"charmed",
+				"prone",
 				"restrained"
 			],
 			"hasToken": true,
@@ -4819,7 +4845,10 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflictLegendary": [
+				"restrained"
+			]
 		},
 		{
 			"name": "Ancient White Dragon",
@@ -5008,7 +5037,10 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflictLegendary": [
+				"blinded"
+			]
 		},
 		{
 			"name": "Androsphinx",
@@ -17615,6 +17647,10 @@
 					],
 					"variant": null
 				}
+			],
+			"conditionInflict": [
+				"poisoned",
+				"unconscious"
 			]
 		},
 		{
@@ -17847,6 +17883,10 @@
 					],
 					"variant": null
 				}
+			],
+			"conditionInflict": [
+				"poisoned",
+				"unconscious"
 			]
 		},
 		{
@@ -36175,6 +36215,7 @@
 				"RCH"
 			],
 			"conditionInflict": [
+				"grappled",
 				"invisible"
 			],
 			"hasToken": true,
@@ -51647,7 +51688,10 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflict": [
+				"blinded"
+			]
 		},
 		{
 			"name": "Solar",
@@ -53700,7 +53744,10 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflict": [
+				"deafened"
+			]
 		},
 		{
 			"name": "Succubus",
@@ -56535,6 +56582,21 @@
 						"name": "Toll (Loathsome Limbs)",
 						"addHeadersAs": "trait"
 					}
+				},
+				{
+					"type": "inset",
+					"name": "Four-Armed Troll",
+					"source": "HotDQ",
+					"entries": [
+						"Sometimes when a troll loses a limb, it regenerates two limbs to replace the one it lost. This can result in trolls with multiple arms. A four-armed troll uses the {@creature troll} stat block, except that it is a challenge rating 6 monster (2,300 XP) and has the following action instead of the troll's normal Multiattack action:",
+						{
+							"type": "entries",
+							"name": "Multiattack",
+							"entries": [
+								"The troll attacks five times, once with its bite and four times with its claws. If two or more claws hit the same target, the troll rends the target, dealing an extra {@dice 2d6} slashing damage."
+							]
+						}
+					]
 				}
 			],
 			"environment": [
@@ -56571,7 +56633,27 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Four-Armed Troll",
+					"source": "HotDQ",
+					"_mod": {
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Multiattack",
+							"items": {
+								"name": "Multiattack",
+								"entries": [
+									"The troll attacks five times, once with its bite and four times with its claws. If two or more claws hit the same target, the troll rends the target, dealing an extra {@dice 2d6} slashing damage."
+								]
+							}
+						}
+					},
+					"cr": "6",
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Twig Blight",
@@ -59668,7 +59750,7 @@
 				{
 					"name": "Bite (Bear or Hybrid Form Only)",
 					"entries": [
-						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}15 ({@damage 2d10 + 4}) piercing damage. If the target is a humanoid, it must succeed on a {@dc 14} Constitution saving throw or be cursed with were bear lycanthropy."
+						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}15 ({@damage 2d10 + 4}) piercing damage. If the target is a humanoid, it must succeed on a {@dc 14} Constitution saving throw or be cursed with werebear lycanthropy."
 					]
 				},
 				{

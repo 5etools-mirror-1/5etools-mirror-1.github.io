@@ -1,0 +1,166 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "deities.json",
+	"version": "1.2.0",
+	"type": "object",
+
+	"definitions": {
+		"deityData": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"reprintAlias": {
+					"type": "string"
+				},
+				"alignment": {
+					"type": "array",
+					"items": {
+						"$ref": "util.json#/definitions/alignment"
+					}
+				},
+				"title": {
+					"type": "string"
+				},
+				"pantheon": {
+					"type": "string",
+					"$$ifSiteElse_key": {
+						"keySite": "enum",
+						"keyBrew": "examples",
+						"value": [
+							"Celtic",
+							"Dawn War",
+							"Dragonlance",
+							"Drow",
+							"Dwarven",
+							"Eberron",
+							"Egyptian",
+							"Elven",
+							"Faerûnian",
+							"Forgotten Realms",
+							"Gnomish",
+							"Greek",
+							"Greyhawk",
+							"Halfling",
+							"Nonhuman",
+							"Norse",
+							"Orc",
+							"Gnome",
+							"Duergar",
+							"Exandria",
+							"Theros",
+							"Unknown"
+						]
+					}
+				},
+				"category": {
+					"type": "string"
+				},
+				"domains": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"$$ifSiteElse_key": {
+							"keySite": "enum",
+							"keyBrew": "examples",
+							"value": [
+								"Arcana", "Death", "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War", "Forge", "Grave", "Order", "Peace", "Twilight", "Unknown"
+							]
+						}
+					}
+				},
+				"province": {
+					"description": "The nouveau form of \"title\", first seen in MTF",
+					"type": "string"
+				},
+				"symbol": {
+					"type": "string"
+				},
+				"$$ifBrew": {
+					"customProperties": {
+						"description": "For homebrew use only; a key-value dict of the form: `\"Typical Worshipers\": \"Half-elf Bards\"`",
+						"type": "object"
+					}
+				},
+				"source": {
+					"type": "string"
+				},
+				"entries": {
+					"type": "array",
+					"items": {
+						"$ref": "entry.json"
+					}
+				},
+				"page": {
+					"type": "integer"
+				},
+				"additionalSources": {
+					"$ref": "util.json#/definitions/additionalSources"
+				},
+				"altNames": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"symbolImg": {
+					"$ref": "entry.json#/definitions/entryImage"
+				},
+				"srd": {
+					"$ref": "util.json#/definitions/srd"
+				},
+				"customExtensionOf": {
+					"type": "string"
+				},
+				"piety": {"type": "boolean"}
+			},
+			"additionalProperties": false
+		},
+
+		"deity": {
+			"anyOf": [
+				{
+					"type": "object",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/deityData"
+						},
+						{
+							"required": [
+								"name",
+								"pantheon",
+								"source"
+							]
+						}
+					]
+				},
+				{
+					"type": "object",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/deityData"
+						},
+						{
+							"$ref": "util.json#/definitions/copyBlock"
+						}
+					]
+				}
+			]
+		}
+	},
+
+	"properties": {
+		"deity": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"$ref": "#/definitions/deity"
+			}
+		},
+		"_meta": {
+			"$ref": "util.json#/definitions/metaBlock"
+		}
+	},
+	"additionalProperties": false
+}

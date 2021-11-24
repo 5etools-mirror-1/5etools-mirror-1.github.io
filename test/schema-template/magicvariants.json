@@ -1,0 +1,327 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "magicvariants.json",
+	"version": "1.5.0",
+	"type": "object",
+	"properties": {
+		"variant": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"type": {
+						"$ref": "shared-items.json#/definitions/itemType"
+					},
+					"entries": {
+						"type": "array",
+						"items": {
+							"$ref": "entry.json"
+						}
+					},
+					"requires": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"ammunition": {"type": "boolean"},
+								"armor": {"type": "boolean"},
+								"axe": {"type": "boolean"},
+								"bow": {"type": "boolean"},
+								"crossbow": {"type": "boolean"},
+								"sword": {"type": "boolean"},
+								"weapon": {"type": "boolean"},
+								"dmgType": {"$ref": "util.json#/definitions/dataDamageTags"},
+								"name": {"type": "string"},
+								"source": {"type": "string"},
+								"type": {"$ref": "shared-items.json#/definitions/itemType"},
+								"scfType": {"$ref": "shared-items.json#/definitions/itemScfType"},
+								"net": {"type": "boolean"},
+								"weaponCategory": {"$ref": "shared-items.json#/definitions/itemWeaponCategory"}
+							},
+							"additionalProperties": false
+						}
+					},
+					"inherits": {
+						"type": "object",
+						"properties": {
+							"type": {
+								"description": "Generally this should be omitted, as the type of the base item will be used.",
+								"$ref": "shared-items.json#/definitions/itemType"
+							},
+							"bonusAc": {
+								"type": "string"
+							},
+							"bonusWeapon": {
+								"type": "string"
+							},
+							"bonusWeaponAttack": {
+								"type": "string"
+							},
+							"bonusSpellAttack": {
+								"type": "string"
+							},
+							"bonusSpellDamage": {
+								"type": "string"
+							},
+							"bonusSavingThrow": {
+								"type": "string"
+							},
+							"bonusAbilityCheck": {
+								"type": "string"
+							},
+							"modifySpeed": {
+								"$ref": "shared-items.json#/definitions/itemModifySpeed"
+							},
+							"tier": {
+								"$ref": "shared-items.json#/definitions/itemTier"
+							},
+							"rarity": {
+								"$ref": "shared-items.json#/definitions/itemRarity",
+								"not": {"enum": ["varies"]}
+							},
+							"source": {
+								"type": "string"
+							},
+							"page": {
+								"type": "integer"
+							},
+							"namePrefix": {
+								"type": "string"
+							},
+							"nameSuffix": {
+								"type": "string"
+							},
+							"nameRemove": {
+								"type": "string"
+							},
+							"reqAttune": {
+								"type": ["string", "boolean"]
+							},
+							"curse": {
+								"type": "boolean"
+							},
+							"vulnerable": {
+								"$ref": "util.json#/definitions/damageVulnerabilityArray"
+							},
+							"resist": {
+								"$ref": "util.json#/definitions/damageResistArray"
+							},
+							"immune": {
+								"$ref": "util.json#/definitions/damageImmunityArray"
+							},
+							"conditionImmune": {
+								"$ref": "util.json#/definitions/conditionImmunityArray"
+							},
+							"stealth": {
+								"type": "boolean"
+							},
+							"strength": {
+								"type": ["string", "null"]
+							},
+							"wondrous": {
+								"type": "boolean"
+							},
+							"entries": {
+								"type": "array",
+								"items": {
+									"$ref": "entry.json"
+								}
+							},
+							"charges": {
+								"type": ["string", "integer"]
+							},
+							"recharge": {
+								"$ref": "shared-items.json#/definitions/itemRecharge"
+							},
+							"attachedSpells": {
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							},
+							"lootTables": {
+								"type": "array",
+								"items": {
+									"oneOf": [
+										{
+											"type": "string"
+										},
+										{
+											"type": "object",
+											"properties": {
+												"name": {
+													"type": "string"
+												},
+												"source": {
+													"type": "string"
+												}
+											}
+										}
+									]
+								}
+							},
+							"srd": {
+								"$ref": "util.json#/definitions/srd"
+							},
+							"otherSources": {
+								"$ref": "util.json#/definitions/otherSources"
+							},
+							"valueMult": {
+								"type": "number"
+							},
+							"valueExpression": {
+								"description": "Expression used to calculate each specific variant's value.",
+								"type": "string"
+							},
+							"weightMult": {
+								"type": "number"
+							},
+							"weightExpression": {
+								"description": "Expression used to calculate each specific variant's weight.",
+								"type": "string"
+							},
+							"barding": {
+								"type": "boolean"
+							},
+							"reqAttuneTags": {
+								"$ref": "util.json#/definitions/reqAttuneTags"
+							},
+							"reqAttuneAltTags": {
+								"$ref": "util.json#/definitions/reqAttuneTags"
+							},
+							"hasRefs": {"type": "boolean"}
+						},
+						"required": [
+							"rarity",
+							"source",
+							"page"
+						],
+						"additionalProperties": false
+					},
+					"excludes": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"oneOf": [
+									{
+										"type": "string"
+									},
+									{
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									}
+								]
+							},
+							"page": {
+								"type": "integer"
+							},
+							"property": {
+								"type": "string"
+							},
+							"net": {
+								"type": "boolean"
+							}
+						},
+						"additionalProperties": false
+					},
+					"noDisplay": {
+						"type": "boolean"
+					},
+					"charges": {
+						"type": ["string", "integer"]
+					},
+					"attachedSpells": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"ammo": {
+						"type": "boolean"
+					},
+					"reqAttuneTags": {
+						"$ref": "util.json#/definitions/reqAttuneTags"
+					},
+					"reqAttuneAltTags": {
+						"$ref": "util.json#/definitions/reqAttuneTags"
+					},
+					"weaponCategory": {
+						"$ref": "shared-items.json#/definitions/itemWeaponCategory"
+					},
+					"hasFluff": {"type": "boolean"},
+					"hasFluffImages": {"type": "boolean"},
+					"$$ifBrew": {
+						"fluff": {
+							"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source.",
+							"anyOf": [
+								{
+									"description": "References \"itemFluff\" array items",
+									"type": "object",
+									"properties": {
+										"_itemFluff": {
+											"type": "object",
+											"properties": {
+												"name": {
+													"type": "string"
+												},
+												"source": {
+													"type": "string"
+												}
+											}
+										},
+										"_appendItemFluff": {
+											"type": "object",
+											"properties": {
+												"name": {
+													"type": "string"
+												},
+												"source": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								},
+								{
+									"$ref": "util.json#/definitions/fluffObject"
+								}
+							]
+						}
+					}
+				},
+				"required": [
+					"name",
+					"inherits"
+				],
+				"additionalProperties": false
+			}
+		},
+		"linkedLootTables": {
+			"type": "object",
+			"$$ifSite": {
+				"properties": {
+					"DMG": {
+						"type": "object"
+					}
+				}
+			},
+			"$$ifBrew": {
+				"patternProperties": {
+					".*": {
+						"type": "object"
+					}
+				}
+			}
+		}
+	},
+	"required": [
+		"variant"
+	],
+	"additionalProperties": false
+}

@@ -3408,7 +3408,11 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflict": [
+				"grappled",
+				"stunned"
+			]
 		},
 		{
 			"name": "Goliath Warrior",
@@ -6227,7 +6231,11 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflict": [
+				"frightened",
+				"incapacitated"
+			]
 		},
 		{
 			"name": "Prisoner 237",

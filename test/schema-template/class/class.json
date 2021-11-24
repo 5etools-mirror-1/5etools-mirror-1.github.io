@@ -1,0 +1,761 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"version": "2.9.0",
+	"$id": "class.json",
+
+	"type": "object",
+
+	"definitions": {
+		"_classTableGroupSubclass": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					}
+				},
+				"required": ["name", "source"],
+				"additionalProperties": false
+			}
+		},
+
+		"classTableGroup": {
+			"oneOf": [
+				{
+					"type": "object",
+					"properties": {
+						"title": {
+							"type": "string"
+						},
+						"subclasses": {
+							"$ref": "#/definitions/_classTableGroupSubclass"
+						},
+						"colLabels": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"rows": {
+							"type": "array",
+							"items": {
+								"type": "array",
+								"items": {
+									"$ref": "../entry.json"
+								}
+							}
+						}
+					},
+					"required": [
+						"colLabels",
+						"rows"
+					],
+					"additionalProperties": false
+				},
+				{
+					"type": "object",
+					"properties": {
+						"title": {
+							"type": "string"
+						},
+						"subclasses": {
+							"$ref": "#/definitions/_classTableGroupSubclass"
+						},
+						"colLabels": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"rowsSpellProgression": {
+							"description": "A count of spell points, starting with 1st-level spells at array index 0, to (n+1)th-level spells at array index n",
+							"type": "array",
+							"items": {
+								"type": "array",
+								"items": {"type": "integer"},
+								"minItems": 1,
+								"maxItems": 9
+							}
+						}
+					},
+					"required": [
+						"colLabels",
+						"rowsSpellProgression"
+					],
+					"additionalProperties": false
+				}
+			]
+		},
+
+		"classFeature": {
+			"type": "object",
+			"properties": {
+				"name": {"type": "string"},
+				"source": {"type": "string"},
+				"srd": {"type": "boolean"},
+				"className":  {"type": "string"},
+				"classSource": {"type": "string"},
+				"level":  {"type": "integer"},
+				"header":  {"type": "integer"},
+				"page": {"type": "integer"},
+				"type": {"type": "string", "enum": ["inset"]},
+				"entries": {
+					"type": "array",
+					"items": {
+						"$ref": "../entry.json"
+					}
+				},
+				"isClassFeatureVariant": {"type": "boolean"},
+				"otherSources": {
+					"$ref": "../util.json#/definitions/otherSources"
+				}
+			},
+			"required": [
+				"name",
+				"source",
+				"className",
+				"classSource",
+				"level",
+				"entries"
+			],
+			"additionalProperties": false
+		},
+		"subclassFeature": {
+			"type": "object",
+			"properties": {
+				"name": {"type": "string"},
+				"source": {"type": "string"},
+				"srd": {"type": "boolean"},
+				"className":  {"type": "string"},
+				"classSource": {"type": "string"},
+				"subclassShortName":  {"type": "string"},
+				"subclassSource": {"type": "string"},
+				"level":  {"type": "integer"},
+				"header":  {"type": "integer"},
+				"page": {"type": "integer"},
+				"type": {"type": "string", "enum": ["inset"]},
+				"entries": {
+					"type": "array",
+					"items": {
+						"$ref": "../entry.json"
+					}
+				},
+				"isClassFeatureVariant": {"type": "boolean"},
+				"isGainAtNextFeatureLevel": {
+					"description": "If this feature should only be (optionally) gained at the next \"gainSubclassFeature\" level, rather than at the level listed on the feature.",
+					"type": "boolean"
+				},
+				"otherSources": {
+					"$ref": "../util.json#/definitions/otherSources"
+				}
+			},
+			"required": [
+				"name",
+				"source",
+				"className",
+				"classSource",
+				"subclassShortName",
+				"subclassSource",
+				"level",
+				"entries"
+			],
+			"additionalProperties": false
+		},
+
+		"proficiencies": {
+			"type": "object",
+			"properties": {
+				"armor": {
+					"type": "array",
+					"items": {
+						"oneOf": [
+							{
+								"type": "string",
+								"enum": [
+									"light", "medium", "heavy", "{@item shield|phb|shields}"
+								]
+							},
+							{
+								"type": "object",
+								"properties": {
+									"proficiency": {
+										"type": "string",
+										"enum": [
+											"light", "medium", "heavy", "{@item shield|phb|shields}", "special"
+										]
+									},
+									"full": {
+										"description": "The complete text for this proficiency.",
+										"type": "string"
+									}
+								},
+								"required": ["proficiency", "full"]
+							}
+						]
+					}
+				},
+				"weapons": {
+					"type": "array",
+					"items": {
+						"oneOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "object",
+								"properties": {
+									"proficiency": {"type": "string"},
+									"optional": {"type": "boolean"}
+								},
+								"additionalProperties": false,
+								"required": ["proficiency", "optional"]
+							}
+						]
+					}
+				},
+				"tools": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"skills": {
+					"$ref": "../util.json#/definitions/skillProficiencies"
+				}
+			}
+		},
+
+		"subclass": {
+			"anyOf": [
+				{
+					"type": "object",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/subclassData"
+						},
+						{
+							"required": [
+								"name",
+								"shortName",
+								"source",
+								"className",
+								"classSource",
+								"subclassFeatures"
+							]
+						}
+					]
+				},
+				{
+					"type": "object",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/subclassData"
+						},
+						{
+							"$ref": "../util.json#/definitions/copyBlock"
+						}
+					]
+				}
+			]
+		},
+
+		"subclassData": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"shortName": {
+					"type": "string"
+				},
+				"source": {
+					"type": "string"
+				},
+				"className": {
+					"description": "The name of the class this subclass belongs to.",
+					"type": "string"
+				},
+				"classSource": {
+					"description": "The source of the class this subclass belongs to (defaults to PHB).",
+					"type": "string"
+				},
+				"isReprinted": {
+					"type": "boolean"
+				},
+				"srd": {
+					"type": "boolean"
+				},
+				"page": {
+					"type": "integer"
+				},
+				"casterProgression": {
+					"enum": ["full", "1/2", "1/3", "pact", "artificer"]
+				},
+				"spellcastingAbility": {
+					"enum": ["str", "dex", "con", "int", "wis", "cha"]
+				},
+				"cantripProgression": {
+					"type": "array",
+					"items": {
+						"type": "integer"
+					},
+					"minItems": 20,
+					"maxItems": 20
+				},
+				"spellsKnownProgression": {
+					"type": "array",
+					"items": {
+						"type": "integer"
+					},
+					"minItems": 20,
+					"maxItems": 20
+				},
+				"subclassFeatures": {
+					"type": "array",
+					"description": "Format: \"<name>|<className>|<classSource>|<subclassShortName>|<subclassSource>|<level>|<source>\"\nPHB is assumed for sources.\nfeatureSource is assumed to be the same as subclassSource.",
+					"items": {
+						"oneOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "object",
+								"properties": {
+									"subclassFeature": {
+										"type": "string"
+									},
+									"gainSubclassFeature": {
+										"type": "boolean"
+									}
+								},
+								"required": ["subclassFeature"]
+							}
+						]
+					}
+				},
+				"subclassTableGroups": {
+					"type": "array",
+					"items": { "$ref": "#/definitions/classTableGroup"}
+				},
+				"otherSources": {
+					"$ref": "../util.json#/definitions/otherSources"
+				},
+				"additionalSpells": { "$ref": "../util.json#/definitions/additionalSpellsArray" },
+				"$$ifBrew": {
+					"subclassSpells": {
+						"description": "Homebrew use only; adds custom subclasses to lists in spells.\nDoes not enable VTT import - see \"additionalSpells\".",
+						"type": "array",
+						"items": {"$ref": "#/definitions/spellRef"}
+					},
+					"subSubclassSpells": {
+						"description": "Homebrew use only; adds custom sub-subclasses to lists in spells.\nPrimarily used by cleric orders and druid circles.\nDoes not enable VTT import - use \"additionalSpells\" as well.",
+						"type": "object",
+						"patternProperties": {
+							".*": {
+								"type": "array",
+								"description": "For example, a druid circle, religious order, or other sub-subclass name",
+								"items": {"$ref": "#/definitions/spellRef"}
+							}
+						}
+					}
+				}
+			},
+			"additionalProperties": false
+		},
+
+		"requirements": {
+			"type": "object",
+			"properties": {
+				"str": {
+					"type": "integer"
+				},
+				"dex": {
+					"type": "integer"
+				},
+				"con": {
+					"type": "integer"
+				},
+				"int": {
+					"type": "integer"
+				},
+				"wis": {
+					"type": "integer"
+				},
+				"cha": {
+					"type": "integer"
+				},
+				"or": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"str": {
+								"type": "integer"
+							},
+							"dex": {
+								"type": "integer"
+							},
+							"con": {
+								"type": "integer"
+							},
+							"int": {
+								"type": "integer"
+							},
+							"wis": {
+								"type": "integer"
+							},
+							"cha": {
+								"type": "integer"
+							}
+						},
+						"additionalProperties": false
+					}
+				},
+				"entries": {
+					"type": "array",
+					"items": {
+						"$ref": "../entry.json"
+					}
+				}
+			},
+			"additionalProperties": false
+		},
+
+		"class": {
+			"anyOf": [
+				{
+					"type": "object",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/classData"
+						},
+						{
+							"required": [
+								"name",
+								"source",
+								"classFeatures"
+							]
+						}
+					]
+				},
+				{
+					"type": "object",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/classData"
+						},
+						{
+							"$ref": "../util.json#/definitions/copyBlock"
+						}
+					]
+				}
+			]
+		},
+
+		"classData": {
+			"description" : "A character class",
+
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"source": {
+					"type": "string"
+				},
+				"otherSources": {
+					"$ref": "../util.json#/definitions/otherSources"
+				},
+				"srd": {
+					"type": "boolean"
+				},
+				"isReprinted": {
+					"type": "boolean"
+				},
+				"isSidekick": {
+					"type": "boolean"
+				},
+				"hd": {
+					"type": "object",
+					"properties": {
+						"number": {
+							"type": "integer"
+						},
+						"faces": {
+							"type": "integer"
+						}
+					},
+					"required": [
+						"number",
+						"faces"
+					],
+					"additionalProperties": false
+				},
+				"proficiency": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"enum": ["str", "dex", "con", "int", "wis", "cha"]
+					}
+				},
+				"classTableGroups": {
+					"type": "array",
+					"items": { "$ref": "#/definitions/classTableGroup"}
+				},
+				"startingProficiencies": {
+					"$ref": "#/definitions/proficiencies"
+				},
+				"startingEquipment": {
+					"type": "object",
+					"properties": {
+						"additionalFromBackground": {
+							"type": "boolean"
+						},
+						"default": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"defaultData": {
+							"$ref": "../util.json#/definitions/startingEquipment"
+						},
+						"goldAlternative": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"additionalFromBackground",
+						"default"
+					],
+					"additionalProperties": false
+				},
+				"requirements": {"$ref": "#/definitions/requirements"},
+				"multiclassing": {
+					"type": "object",
+					"properties": {
+						"requirements": {"$ref": "#/definitions/requirements"},
+						"$$ifBrew": {
+							"requirementsSpecial": {
+								"description": "For homebrew use.",
+								"type": "string"
+							}
+						},
+						"proficienciesGained": {
+							"$ref": "#/definitions/proficiencies"
+						},
+						"entries": {
+							"type": "array",
+							"items": {"$ref": "../entry.json"}
+						}
+					},
+					"additionalProperties": false
+				},
+				"casterProgression": {
+					"enum": ["full", "1/2", "1/3", "pact", "artificer"]
+				},
+				"preparedSpells": {
+					"type": "string",
+					"description": "Formula for the number of spells the class can prepare, for example:\n\"<$level$> / 2 + <$int_mod$>\""
+				},
+				"spellcastingAbility": {
+					"enum": ["str", "dex", "con", "int", "wis", "cha"]
+				},
+				"cantripProgression": {
+					"type": "array",
+					"items": {
+						"type": "integer"
+					},
+					"minItems": 20,
+					"maxItems": 20
+				},
+				"spellsKnownProgression": {
+					"type": "array",
+					"items": {
+						"type": "integer"
+					},
+					"minItems": 20,
+					"maxItems": 20
+				},
+				"spellsKnownProgressionFixed": {
+					"description": "For e.g. Wizard, where the spells taken at each level must be <= the max spellcasting level, and cannot be swapped out afterward.",
+					"type": "array",
+					"items": {
+						"type": "integer"
+					},
+					"minItems": 20,
+					"maxItems": 20
+				},
+				"spellsKnownProgressionFixedAllowLowerLevel": {"type": "boolean"},
+				"spellsKnownProgressionFixedByLevel": {
+					"description": "For e.g. Warlock Mystic Arcanum. A map of <class level> -> <spell level> -> <number of spells known>",
+					"type": "object",
+					"patternProperties": {
+						"^\\d+$": {
+							"type": "object",
+							"properties": {
+								"1": {"type": "integer"},
+								"2": {"type": "integer"},
+								"3": {"type": "integer"},
+								"4": {"type": "integer"},
+								"5": {"type": "integer"},
+								"6": {"type": "integer"},
+								"7": {"type": "integer"},
+								"8": {"type": "integer"},
+								"9": {"type": "integer"}
+							},
+							"additionalProperties": false
+						}
+					},
+					"additionalProperties": false
+				},
+				"optionalfeatureProgression": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": {"type": "string"},
+							"featureType": {
+								"type": "array",
+								"items": {"$ref": "../util.json#/definitions/dataOptionalfeatureType"},
+								"uniqueItems": true
+							},
+							"progression": {
+								"type": "array",
+								"items": {"type": "integer"},
+								"minItems": 20,
+								"maxItems": 20
+							}
+						},
+						"required": ["name", "featureType", "progression"]
+					}
+				},
+				"classFeatures": {
+					"type": "array",
+					"description": "Format: \"<name>|<className>|<classSource>|<level>|<source>\" , PHB is assumed as classSource and featureSource is assumed to be the same as classSource.",
+					"items": {
+						"oneOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "object",
+								"properties": {
+									"classFeature": {
+										"type": "string"
+									},
+									"gainSubclassFeature": {
+										"type": "boolean"
+									}
+								},
+								"required": ["classFeature"]
+							}
+						]
+					}
+				},
+				"subclassTitle": {
+					"type": "string"
+				},
+				"page": {
+					"type": "integer"
+				},
+				"fluff": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"entries": {
+								"type": "array",
+								"items": {"$ref": "../entry.json"}
+							},
+							"page": {
+								"type": "integer"
+							},
+							"source": {
+								"type": "string"
+							},
+							"type": {
+								"type": "string"
+							}
+						},
+						"required": ["entries", "source"],
+						"additionalProperties": false
+					}
+				},
+				"additionalSpells": { "$ref": "../util.json#/definitions/additionalSpellsArray" },
+				"$$ifBrew": {
+					"classSpells": {
+						"description": "Homebrew use only",
+						"type": "array",
+						"items": {"$ref": "#/definitions/spellRef"}
+					},
+					"requirementsSpecial": {
+						"description": "For homebrew use.",
+						"type": "string"
+					}
+				}
+			},
+			"additionalProperties": false
+		},
+
+		"spellRef": {
+			"description": "A reference to a spell or an existing spell list, linked by name and source. Assumes PHB as the source, if none is provided.",
+			"oneOf": [
+				{
+					"description": "Another class/subclass/subsubclass's spell list",
+					"type": "object",
+					"properties": {
+						"className": {"type": "string"},
+						"classSource": {"type": "string"},
+						"subclassName": {"type": "string"},
+						"subclassSource": {"type": "string"},
+						"subSubclassName": {"type": "string"},
+						"subSubclassSource": {"type": "string"}
+					},
+					"required": [
+						"className", "classSource"
+					],
+					"additionalProperties": false
+				},
+				{
+					"description": "A spell UID of the form \"fireball\" (PHB source assumed by default) or \"shape water|xge\"",
+					"type": "string"
+				}
+			]
+		}
+	},
+
+	"properties": {
+		"_meta": {
+			"$ref": "../util.json#/definitions/metaBlock"
+		},
+
+		"class": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/class"}
+		},
+
+		"subclass": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/subclass"}
+		},
+
+		"classFeature": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/classFeature"}
+		},
+
+		"subclassFeature": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/subclassFeature"}
+		}
+	},
+	"additionalProperties": false
+}

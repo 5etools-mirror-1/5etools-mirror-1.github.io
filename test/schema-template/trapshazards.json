@@ -1,0 +1,216 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "trapshazards.json",
+	"version": "1.2.0",
+	"type": "object",
+
+	"definitions": {
+		"trap": {
+			"oneOf": [
+				{
+					"description": "Older format, used in DMG",
+					"type": "object",
+					"properties": {
+						"name": {
+							"type": "string"
+						},
+						"trapHazType": {
+							"type": "string",
+							"description": "MAG: Magical Trap\n MECH: Mechanical Trap",
+							"enum": [
+								"MECH",
+								"MAG"
+							]
+						},
+						"source": {
+							"type": "string"
+						},
+						"page": {
+							"type": "integer"
+						},
+						"entries": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
+						},
+						"srd": {"$ref": "util.json#/definitions/srd"}
+					},
+					"additionalProperties": false,
+					"required": [
+						"name",
+						"trapHazType",
+						"source",
+						"entries"
+					]
+				},
+				{
+					"description": "XGE \"Traps Revisited\" Simple/Complex traps",
+					"type": "object",
+					"properties": {
+						"name": {
+							"type": "string"
+						},
+						"trapHazType": {
+							"type": "string",
+							"enum": [
+								"SMPL",
+								"CMPX"
+							]
+						},
+						"source": {
+							"type": "string"
+						},
+						"page": {
+							"type": "integer"
+						},
+						"entries": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
+						},
+						"tier": {
+							"type": "integer",
+							"minimum": 1,
+							"maximum": 4
+						},
+						"level": {
+							"description": "Alternative to \"tier\" which allows for non-standard level ranges.",
+							"type": "object",
+							"properties": {
+								"min": {"type": "integer"},
+								"max": {"type": "integer"}
+							}
+						},
+						"threat": {
+							"type": "string",
+							"enum": ["moderate", "dangerous", "deadly"]
+						},
+						"trigger": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
+						},
+						"initiative": {
+							"oneOf": [
+								{
+									"type": "integer",
+									"minimum": 1,
+									"maximum": 3
+								},
+								{
+									"$$ifBrew_item": {
+										"description": "Custom initiative, for homebrew only.",
+										"type": "string"
+									}
+								}
+							]
+						},
+						"initiativeNote": {
+							"$ref": "entry.json"
+						},
+						"effect": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
+						},
+						"eActive": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
+						},
+						"eDynamic": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
+						},
+						"eConstant": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
+						},
+						"countermeasures": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
+						},
+						"srd": {"$ref": "util.json#/definitions/srd"}
+					},
+					"additionalProperties": false,
+					"required": [
+						"name",
+						"trapHazType",
+						"source",
+						"entries",
+						"threat",
+						"trigger",
+						"countermeasures"
+					]
+				}
+			]
+		},
+
+		"hazard": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"trapHazType": {
+					"type": "string",
+					"description": "ENV: Environmental Hazard\n EST: Eldritch Storm\n GEN: Generic\n WTH: Weather\n WLD: Wilderness Hazard",
+
+					"enum": [
+						"WTH",
+						"ENV",
+						"WLD",
+						"GEN",
+						"EST"
+					]
+				},
+				"source": {
+					"type": "string"
+				},
+				"page": {
+					"type": "integer"
+				},
+				"entries": {
+					"type": "array",
+					"items": {
+						"$ref": "entry.json"
+					}
+				},
+				"srd": {"$ref": "util.json#/definitions/srd"}
+			},
+			"additionalProperties": false,
+			"required": [
+				"name",
+				"source",
+				"entries"
+			]
+		}
+	},
+
+	"properties": {
+		"trap": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/trap"
+			}
+		},
+		"hazard": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/hazard"
+			}
+		}
+	},
+	"additionalProperties": false
+}

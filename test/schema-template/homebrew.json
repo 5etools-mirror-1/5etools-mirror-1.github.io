@@ -1,0 +1,498 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"version": "1.7.0",
+	"type": "object",
+	"description": "Homebrew for 5etools. Should include arrays titled similarly to the main site data, e.g. `spell` or `class`",
+
+	"properties": {
+		"_meta": {
+			"description": "Metadata for the included data arrays",
+			"type": "object",
+			"properties": {
+				"sources": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"description": "A set of properties describing a \"source.\" A source could be, for example, a homebrew PDF, book, or blog post.",
+						"properties": {
+							"json": {
+								"type": "string",
+								"description": "An identifying string, as seen in the JSON in \"source\" fields."
+							},
+							"abbreviation": {
+								"type": "string",
+								"description": "Abbreviated form of the source, to display on the site."
+							},
+							"color": {
+								"type": "string",
+								"description": "HTML hex color code this source should use when displayed in lists, e.g. 'ff00ff'",
+								"pattern": "^([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$"
+							},
+							"full": {
+								"type": "string",
+								"description": "Full title of the source, to display on the site."
+							},
+							"authors": {
+								"type": "array",
+								"description": "A list of authors who created the homebrew source.",
+								"items": {
+									"type": "string",
+									"description": "Author name."
+								}
+							},
+							"convertedBy": {
+								"type": "array",
+								"description": "An optional list of people who contributed to converting the source to 5etools format.",
+								"items": {
+									"type": "string",
+									"description": "Contributor name."
+								}
+							},
+							"dateReleased": {
+								"type": "string",
+								"format": "date",
+								"description": "The date of release of the source, in the format YYYY-MM-DD (RFC3339)."
+							},
+							"version": {
+								"type": "string",
+								"description": "The source version, e.g. \"1.2.3\"."
+							},
+							"url": {
+								"type": "string",
+								"description": "A direct link to the source, if available in web form or on a store."
+							},
+							"targetSchema": {
+								"type": "string",
+								"description": "The target schema version in 5etools, e.g. \"1.2.3\"."
+							}
+						},
+						"required": [
+							"json",
+							"abbreviation",
+							"full",
+							"version"
+						],
+						"additionalProperties": false
+					}
+				},
+				"skills": {
+					"type": "object",
+					"description": "Object keys are Skill names, which can referenced using {@skill <key>} (case sensitive)",
+					"patternProperties": {
+						".*": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"senses": {
+					"type": "object",
+					"description": "Object keys are Sense names, which can referenced using {@sense <key>} (case insensitive)",
+					"patternProperties": {
+						".*": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"spellSchools": {
+					"type": "object",
+					"description": "Object names are spell school abbreviations (e.g. `\"X\"`); values should be objects with `\"full\"`` (used in the main entry, e.g. \"Evocation\") and `\"short\"` (used in the list view, e.g. `\"Evoc.\"`) key/values.",
+					"patternProperties": {
+						".*": {
+							"type": "object",
+							"properties": {
+								"full": {
+									"type": "string"
+								},
+								"short": {
+									"type": "string"
+								},
+								"color": {
+									"type": "string",
+									"description": "HTML hex color code this source should use when displayed in lists, e.g. 'ff00ff'",
+									"pattern": "^([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$"
+								}
+							},
+							"required": [
+								"full",
+								"short"
+							]
+						}
+					}
+				},
+				"spellDistanceUnits": {
+					"type": "object",
+					"description": "Object names are spell distance units (e.g. `\"hectares\"`); values should be objects with optional `\"singular\"`` (singular form of the unit, e.g. \"foot\" for the singular of \"feet\"--if unspecified, a trailing \"s\" is removed from the plural version, if it exists, and the result is used as the singular form) and `\"feetPerUnit\"` (e.g. for a \"yards\" custom unit, this would be `3`, as there are three feet in a yard) key/values.",
+					"patternProperties": {
+						".*": {
+							"type": "object",
+							"properties": {
+								"feetPerUnit": {
+									"type": "number"
+								},
+								"singular": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"feetPerUnit"
+							]
+						}
+					}
+				},
+				"optionalFeatureTypes": {
+					"type": "object",
+					"description": "Object names are optional feature \"type\" shorthands (e.g. \"EI\" for \"Eldritch Invocation\" which will be displayed in the list view as a sortable column",
+					"patternProperties": {
+						".*": {
+							"type": "string"
+						}
+					}
+				},
+				"psionicTypes": {
+					"type": "object",
+					"description": "Object names are psionic type abbreviations (e.g. `\"X\"`); values should be objects with `\"full\"`` (used in the main entry, e.g. \"Greater Discipline\") and `\"short\"` (used in the list view, e.g. `\"G. Discipline\"`) key/values.",
+					"patternProperties": {
+						".*": {
+							"type": "object",
+							"properties": {
+								"full": {
+									"type": "string"
+								},
+								"short": {
+									"type": "string"
+								},
+								"hasOrder": {
+									"description": "If this type has a psionic order.",
+									"type": "boolean"
+								},
+								"isAltDisplay": {
+									"description": "If this type should display its psionic type/order with the format \"Greater Discipline (Awakened)\" instead of the standard \"Awakened Greater Discipline\"",
+									"type": "boolean"
+								}
+							},
+							"required": [
+								"full",
+								"short"
+							]
+						}
+					}
+				},
+				"dateAdded": {
+					"type": "integer",
+					"description": "The epoch timestamp (in seconds) when the homebrew was added to the repository. Not guaranteed to be anywhere near accurate."
+				},
+				"dateLastModified": {
+					"type": "integer",
+					"description": "The epoch timestamp (in seconds) when the homebrew was last modified. Not guaranteed to be anywhere near accurate."
+				},
+				"currencyConversions": {
+					"type": "object",
+					"description": "Keys should be uniquely-named value conversion objects, and can be referenced from item entities as \"currencyConversion\": \"<MyKey>\". The currency conversion info will then be used when rendering the value of the item.",
+					"patternProperties": {
+						".*": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"coin": {
+										"type": "string",
+										"description": "Coin abbreviation, e.g. \"gp\""
+									},
+									"mult": {
+										"type": "number",
+										"description": "A multiplier for converting copper to this currency, e.g. \"0.01\" for standard gold pieces"
+									},
+									"isFallback": {
+										"type": "boolean",
+										"description": "If true, this currency will be used as a fallback when the copper value of the item is a fractional value (e.g. a single ball bearing is worth 0.1 cp; marking gold as the fallback currency would have this be converted to gold)."
+									}
+								},
+								"required": [
+									"coin",
+									"mult"
+								]
+							}
+						}
+					}
+				},
+				"dependencies": {
+					"description": "A map of `\"<data property>\": [\"<JsonSource1>\", ..., \"<JsonSourceN>\"]`. Entities from these sources can then be extended/referenced in this file.",
+					"type": "object",
+					"patternProperties": {
+						"^[a-zA-Z]+$": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"includes": {
+					"description": "Structure as per \"dependencies\". Additional sources to be included when loading the file.",
+					"type": "object",
+					"patternProperties": {
+						"^[a-zA-Z]+$": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"internalCopies": {
+					"description": "An array of keys that are copied from within the current document. e.g. \"item\", \"monsterFluff\", \"background\" etc.",
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"unlisted": {
+					"description": "If this homebrew file should be ignored/hidden by any indexer.",
+					"type": "boolean"
+				}
+			},
+			"required": [
+				"sources"
+			],
+			"additionalProperties": false
+		},
+		"makebrewCreatureTrait": {
+			"description": "Additional trait templates which can be used in the homebrew builder.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"entries": {
+						"type": "array"
+					}
+				},
+				"required": [
+					"name",
+					"source",
+					"entries"
+				]
+			}
+		},
+		"adventure": {
+			"$ref": "adventures.json#/properties/adventure"
+		},
+		"book": {
+			"$ref": "books.json#/properties/book"
+		},
+		"class": {
+			"$ref": "class/class.json#/properties/class"
+		},
+		"subclass": {
+			"$ref": "class/class.json#/properties/subclass"
+		},
+		"subclassFeature": {
+			"$ref": "class/class.json#/properties/subclassFeature"
+		},
+		"spell": {
+			"$ref": "spells/spells.json#/properties/spell"
+		},
+		"roll20Spell": {
+			"description": "Based on the Roll20 JSON data, example available here: https://app.roll20.net/compendium/dnd5e/Spells:Fireball.json",
+			"$ref": "spells/roll20.json#/properties/spell"
+		},
+		"foundrySpell": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"description": "Used to link spells in the homebrew to this extra Foundry data",
+						"type": "string"
+					},
+					"source": {
+						"description": "Used to link spells in the homebrew to this extra Foundry data",
+						"type": "string"
+					},
+					"data": {
+						"description": "Foundry data",
+						"properties": {
+							"target.value": {
+								"type": "integer"
+							},
+							"target.units": {
+								"type": "string"
+							},
+							"target.type": {
+								"description": "From Foundry's `CONFIG.DND5E.targetTypes`",
+								"type": "string",
+								"enum": [
+									"ally",
+									"creature",
+									"cylinder",
+									"cone",
+									"cube",
+									"enemy",
+									"line",
+									"none",
+									"object",
+									"radius",
+									"self",
+									"space",
+									"sphere",
+									"square",
+									"wall"
+								]
+							}
+						}
+					}
+				},
+				"required": [
+					"name",
+					"source"
+				],
+				"additionalProperties": false
+			}
+		},
+		"item": {
+			"$ref": "items.json#/properties/item"
+		},
+		"itemGroup": {
+			"$ref": "items.json#/properties/itemGroup"
+		},
+		"baseitem": {
+			"$ref": "items-base.json#/properties/baseitem"
+		},
+		"itemProperty": {
+			"$ref": "items-base.json#/properties/itemProperty"
+		},
+		"itemType": {
+			"$ref": "items-base.json#/properties/itemType"
+		},
+		"variant": {
+			"$ref": "magicvariants.json#/properties/variant"
+		},
+		"background": {
+			"$ref": "backgrounds.json#/properties/background"
+		},
+		"condition": {
+			"$ref": "conditionsdiseases.json#/properties/condition"
+		},
+		"disease": {
+			"$ref": "conditionsdiseases.json#/properties/disease"
+		},
+		"status": {
+			"$ref": "conditionsdiseases.json#/properties/status"
+		},
+		"deity": {
+			"$ref": "deities.json#/properties/deity"
+		},
+		"encounter": {
+			"$ref": "encounters.json#/properties/encounter"
+		},
+		"feat": {
+			"$ref": "feats.json#/properties/feat"
+		},
+		"object": {
+			"$ref": "objects.json#/properties/object"
+		},
+		"psionic": {
+			"$ref": "psionics.json#/properties/psionic"
+		},
+		"race": {
+			"$ref": "races.json#/properties/race"
+		},
+		"subrace": {
+			"$ref": "races.json#/properties/subrace"
+		},
+		"raceFluff": {
+			"$ref": "fluff-races.json#/properties/raceFluff"
+		},
+		"reward": {
+			"$ref": "rewards.json#/properties/reward"
+		},
+		"ship": {
+			"$ref": "vehicles.json#/properties/vehicle"
+		},
+		"table": {
+			"$ref": "tables.json#/properties/table"
+		},
+		"trap": {
+			"$ref": "trapshazards.json#/properties/trap"
+		},
+		"hazard": {
+			"$ref": "trapshazards.json#/properties/hazard"
+		},
+		"optionalfeature": {
+			"$ref": "optionalfeatures.json#/properties/optionalfeature"
+		},
+		"variantrule": {
+			"$ref": "variantrules.json#/properties/variantrule"
+		},
+		"legendaryGroup": {
+			"$ref": "bestiary/legendarygroups.json#/properties/legendaryGroup"
+		},
+		"language": {
+			"$ref": "languages.json#/properties/language"
+		},
+		"monster": {
+			"$ref": "bestiary/bestiary.json#/properties/monster"
+		},
+		"itemFluff": {
+			"$ref": "fluff-items.json#/properties/itemFluff"
+		},
+		"monsterFluff": {
+			"$ref": "bestiary/fluff-bestiary.json#/properties/monsterFluff"
+		},
+		"bookData": {
+			"$ref": "book/book.json#/properties/data"
+		},
+		"adventureData": {
+			"$ref": "adventure/adventure.json#/properties/data"
+		},
+		"$schema": {
+			"description": "An optional key that allows you specify the schema you want to verify against.\nIt is strongly advised that you leave this key out when submitting to the repo.\nTo reduce work it is advised that you set up your environment to use the same schema for all homebrew files.",
+			"type": "string"
+		},
+		"vehicle": {
+			"$ref": "vehicles.json#/properties/vehicle"
+		},
+		"vehicleUpgrade": {
+			"$ref": "vehicles.json#/properties/vehicleUpgrade"
+		},
+		"action": {
+			"$ref": "actions.json#/properties/action"
+		},
+		"recipe": {
+			"$ref": "recipes.json#/properties/recipe"
+		},
+		"classFeature": {
+			"$ref": "class/class.json#/properties/classFeature"
+		},
+		"cult": {
+			"$ref": "cultsboons.json#/properties/cult"
+		},
+		"boon": {
+			"$ref": "cultsboons.json#/properties/boon"
+		},
+		"charoption": {
+			"$ref": "charcreationoptions.json#/properties/charoption"
+		},
+		"name": {
+			"$ref": "names.json#/properties/name"
+		},
+		"foundryClassFeature": {
+			"$ref": "class/foundry.json#/properties/classFeature"
+		},
+		"foundrySubclassFeature": {
+			"$ref": "class/foundry.json#/properties/subclassFeature"
+		}
+	},
+	"additionalProperties": false
+}

@@ -120,7 +120,7 @@ class ScalingLevelDiceTagger {
 
 			const mDamageType = ConverterConst.RE_DAMAGE_TYPE.exec(strEntries);
 			if (mDamageType) {
-				label = `${mDamageType[2]} damage`;
+				label = `${mDamageType[1]} damage`;
 			}
 
 			ConverterConst.RE_DAMAGE_TYPE.lastIndex = 0;

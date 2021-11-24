@@ -1,0 +1,92 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "names.json",
+	"version": "1.2.0",
+	"title": "NameArray",
+	"type": "object",
+
+	"definitions": {
+		"nameTableRow": {
+			"type": "object",
+			"properties": {
+				"min": {
+					"type": "integer"
+				},
+				"max": {
+					"type": "integer"
+				},
+				"result": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"min",
+				"max",
+				"result"
+			],
+			"additionalProperties": false
+		},
+
+		"nameTable": {
+			"type": "object",
+			"properties": {
+				"option": {
+					"type": "string"
+				},
+				"diceType": {
+					"type": "integer"
+				},
+				"table": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/nameTableRow"
+					}
+				}
+			},
+			"required": [
+				"option",
+				"table"
+			],
+			"additionalProperties": false
+		},
+
+		"name": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"source": {
+					"type": "string"
+				},
+				"page": {
+					"type": "integer"
+				},
+				"tables": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/nameTable"
+					}
+				}
+			},
+			"required": [
+				"name",
+				"source",
+				"tables"
+			],
+			"additionalProperties": false
+		}
+	},
+
+	"properties": {
+		"name": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/name"
+			}
+		}
+	},
+
+	"required": ["name"],
+	"additionalProperties": false
+}

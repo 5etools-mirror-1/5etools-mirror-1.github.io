@@ -17,69 +17,301 @@
 					"type": "integer"
 				},
 				"additionalSources": {
-					"$ref": "util.json#/definitions/additionalSources"
+					"$ref": "../util.json#/definitions/additionalSources"
 				},
 				"lairActions": {
 					"type": "array",
 					"items": {
-						"$ref": "entry.json"
+						"$ref": "../entry.json"
 					}
 				},
 				"regionalEffects": {
 					"type": "array",
 					"items": {
-						"$ref": "entry.json"
+						"$ref": "../entry.json"
 					}
 				},
 				"mythicEncounter": {
 					"type": "array",
 					"items": {
-						"$ref": "entry.json"
+						"$ref": "../entry.json"
 					}
-				}
-			},
-			"additionalProperties": false
-		},
-
-		"legendaryGroup": {
-			"anyOf": [
-				{
+				},
+				"_copy": {
 					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/legendaryGroupData"
+					"properties": {
+						"name": {
+							"type": "string"
 						},
-						{
+						"source": {
+							"type": "string"
+						},
+						"pantheon": {
+							"description": "Used in deity data",
+							"type": "string"
+						},
+						"shortName": {
+							"description": "Used in subclass data",
+							"type": "string"
+						},
+						"className": {
+							"description": "Used in subclass data",
+							"type": "string"
+						},
+						"classSource": {
+							"description": "Used in subclass data",
+							"type": "string"
+						},
+						"_mod": {
+							"$ref": "../util.json#/definitions/_modObject"
+						},
+						"_trait": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								}
+							},
 							"required": [
 								"name",
 								"source"
 							]
+						},
+						"_preserve": {
+							"type": "object",
+							"patternProperties": {
+								".*": {
+									"type": "boolean"
+								}
+							}
 						}
+					},
+					"required": [
+						"name",
+						"source"
+					],
+					"additionalProperties": false
+				}
+			},
+			"additionalProperties": false
+		},
+		"legendaryGroup": {
+			"anyOf": [
+				{
+					"type": "object",
+					"properties": {
+						"name": {
+							"type": "string"
+						},
+						"source": {
+							"type": "string"
+						},
+						"page": {
+							"type": "integer"
+						},
+						"additionalSources": {
+							"$ref": "../util.json#/definitions/additionalSources"
+						},
+						"lairActions": {
+							"type": "array",
+							"items": {
+								"$ref": "../entry.json"
+							}
+						},
+						"regionalEffects": {
+							"type": "array",
+							"items": {
+								"$ref": "../entry.json"
+							}
+						},
+						"mythicEncounter": {
+							"type": "array",
+							"items": {
+								"$ref": "../entry.json"
+							}
+						},
+						"_copy": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								},
+								"pantheon": {
+									"description": "Used in deity data",
+									"type": "string"
+								},
+								"shortName": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"className": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"classSource": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"_mod": {
+									"$ref": "../util.json#/definitions/_modObject"
+								},
+								"_trait": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"source": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"name",
+										"source"
+									]
+								},
+								"_preserve": {
+									"type": "object",
+									"patternProperties": {
+										".*": {
+											"type": "boolean"
+										}
+									}
+								}
+							},
+							"required": [
+								"name",
+								"source"
+							],
+							"additionalProperties": false
+						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"name",
+						"source"
 					]
 				},
 				{
 					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/legendaryGroupData"
+					"properties": {
+						"name": {
+							"type": "string"
 						},
-						{
-							"$ref": "util.json#/definitions/copyBlock"
+						"source": {
+							"type": "string"
+						},
+						"page": {
+							"type": "integer"
+						},
+						"additionalSources": {
+							"$ref": "../util.json#/definitions/additionalSources"
+						},
+						"lairActions": {
+							"type": "array",
+							"items": {
+								"$ref": "../entry.json"
+							}
+						},
+						"regionalEffects": {
+							"type": "array",
+							"items": {
+								"$ref": "../entry.json"
+							}
+						},
+						"mythicEncounter": {
+							"type": "array",
+							"items": {
+								"$ref": "../entry.json"
+							}
+						},
+						"_copy": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								},
+								"pantheon": {
+									"description": "Used in deity data",
+									"type": "string"
+								},
+								"shortName": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"className": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"classSource": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"_mod": {
+									"$ref": "../util.json#/definitions/_modObject"
+								},
+								"_trait": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"source": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"name",
+										"source"
+									]
+								},
+								"_preserve": {
+									"type": "object",
+									"patternProperties": {
+										".*": {
+											"type": "boolean"
+										}
+									}
+								}
+							},
+							"required": [
+								"name",
+								"source"
+							],
+							"additionalProperties": false
 						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"_copy"
 					]
 				}
 			]
 		}
 	},
-
 	"properties": {
-		"_meta": {"$ref": "util.json#/definitions/metaBlock"},
+		"_meta": {
+			"$ref": "../util.json#/definitions/metaBlock"
+		},
 		"legendaryGroup": {
 			"type": "array",
 			"uniqueItems": true,
-			"items": {"$ref": "#/definitions/legendaryGroup"}
+			"items": {
+				"$ref": "#/definitions/legendaryGroup"
+			}
 		}
 	},
-	"required": ["legendaryGroup"],
+	"required": [
+		"legendaryGroup"
+	],
 	"additionalProperties": false
 }

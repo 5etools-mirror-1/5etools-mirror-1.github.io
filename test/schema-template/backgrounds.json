@@ -1,0 +1,111 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "backgrounds.json",
+	"version": "1.2.2",
+	"type": "object",
+
+	"definitions": {
+		"backgroundData": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"source": {
+					"type": "string"
+				},
+				"page": {
+					"type": "integer"
+				},
+				"skillProficiencies": {
+					"$ref": "util.json#/definitions/skillProficiencies"
+				},
+				"toolProficiencies": {
+					"$ref": "util.json#/definitions/toolProficiencies"
+				},
+				"languageProficiencies": {
+					"$ref": "util.json#/definitions/languageProficiencies"
+				},
+				"entries": {
+					"type": "array",
+					"items": {
+						"$ref": "entry.json"
+					}
+				},
+				"additionalSources": {
+					"$ref": "util.json#/definitions/additionalSources"
+				},
+				"srd": {
+					"$ref": "util.json#/definitions/srd"
+				},
+				"otherSources": {
+					"$ref": "util.json#/definitions/otherSources"
+				},
+				"startingEquipment": {
+					"$ref": "util.json#/definitions/startingEquipment"
+				},
+				"additionalSpells": {
+					"$ref": "util.json#/definitions/additionalSpellsArray"
+				},
+				"hasFluff": {"type": "boolean"},
+				"hasFluffImages": {"type": "boolean"},
+				"$$ifBrew": {
+					"fluff": {
+						"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source",
+						"$ref": "util.json#/definitions/fluffObject"
+					}
+				}
+			},
+			"additionalProperties": false
+		},
+
+		"background": {
+			"anyOf": [
+				{
+					"type": "object",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/backgroundData"
+						},
+						{
+							"required": [
+								"name",
+								"source",
+								"skillProficiencies",
+								"entries"
+							]
+						}
+					]
+				},
+				{
+					"type": "object",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/backgroundData"
+						},
+						{
+							"$ref": "util.json#/definitions/copyBlock"
+						}
+					]
+				}
+			]
+		}
+	},
+
+	"properties": {
+		"background": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"$ref": "#/definitions/background"
+			}
+		},
+		"_meta": {
+			"$ref": "util.json#/definitions/metaBlock"
+		}
+	},
+	"required": [
+		"background"
+	],
+	"additionalProperties": false
+}

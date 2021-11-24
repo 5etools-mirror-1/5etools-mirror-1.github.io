@@ -1,9 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "recipes.json",
-	"version": "1.2.1",
+	"version": "1.2.0",
 	"type": "object",
-
 	"definitions": {
 		"recipe": {
 			"type": "object",
@@ -17,29 +16,40 @@
 				"page": {
 					"type": "integer"
 				},
-
-				"fluff": {
-					"$ref": "util.json#/definitions/fluffObject"
-				},
 				"serves": {
 					"oneOf": [
 						{
 							"type": "object",
 							"properties": {
-								"min": {"type": "integer"},
-								"max": {"type": "integer"},
-								"note": {"$ref": "entry.json"}
+								"min": {
+									"type": "integer"
+								},
+								"max": {
+									"type": "integer"
+								},
+								"note": {
+									"$ref": "entry.json"
+								}
 							},
-							"required": ["min", "max"],
+							"required": [
+								"min",
+								"max"
+							],
 							"additionalProperties": false
 						},
 						{
 							"type": "object",
 							"properties": {
-								"exact": {"type": "integer"},
-								"note": {"$ref": "entry.json"}
+								"exact": {
+									"type": "integer"
+								},
+								"note": {
+									"$ref": "entry.json"
+								}
 							},
-							"required": ["exact"],
+							"required": [
+								"exact"
+							],
 							"additionalProperties": false
 						}
 					]
@@ -67,29 +77,44 @@
 				},
 				"type": {
 					"type": "string",
-					"enum": ["Human", "Elven", "Dwarven", "Halfling", "Uncommon Cuisine", "Elixir/Ale"]
+					"enum": [
+						"Dwarven",
+						"Elven",
+						"Elixir/Ale",
+						"Human",
+						"Halfling",
+						"Uncommon Cuisine"
+					]
 				},
 				"diet": {
 					"type": "string",
-					"enum": ["V", "C", "X"]
+					"description": "C: Vegetarian [aka \"cheese\"]\n V: Vegan\n X: Omnivorous",
+					"enum": [
+						"C",
+						"V",
+						"X"
+					]
 				},
 				"miscTags": {
 					"type": "array",
 					"items": {
 						"type": "string",
-						"enum": ["alcohol"]
+						"enum": [
+							"alcohol"
+						]
 					}
 				},
 				"allergenGroups": {
 					"type": "array",
+					"description": "One of the 14 major food allergens; see https://erudus.com/food-allergens for more information.",
 					"items": {
 						"type": "string",
 						"enum": [
 							"celery",
-							"gluten",
 							"crustaceans",
 							"eggs",
 							"fish",
+							"gluten",
 							"lupin",
 							"milk",
 							"molluscs",
@@ -121,14 +146,22 @@
 						]
 					}
 				},
-				"hasFluff": {"type": "boolean"},
-				"hasFluffImages": {"type": "boolean"}
+				"hasFluff": {
+					"type": "boolean"
+				},
+				"hasFluffImages": {
+					"type": "boolean"
+				}
 			},
-			"required": ["name", "source", "instructions", "ingredients"],
+			"required": [
+				"name",
+				"source",
+				"instructions",
+				"ingredients"
+			],
 			"additionalProperties": false
 		}
 	},
-
 	"properties": {
 		"recipe": {
 			"type": "array",
@@ -137,8 +170,8 @@
 			}
 		}
 	},
-
-	"required": ["recipe"],
-
+	"required": [
+		"recipe"
+	],
 	"additionalProperties": false
 }

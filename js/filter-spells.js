@@ -657,7 +657,7 @@ class ModalFilterSpells extends ModalFilter {
 				level: spell.level,
 				time,
 				school: Parser.spSchoolAbvToFull(spell.school),
-				classes: Parser.spClassesToFull(spell, true),
+				classes: Parser.spClassesToFull(spell, {isTextOnly: true}),
 				concentration,
 				normalisedTime: spell._normalisedTime,
 				normalisedRange: spell._normalisedRange,

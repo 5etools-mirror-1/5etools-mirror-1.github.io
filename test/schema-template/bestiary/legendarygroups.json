@@ -1,0 +1,85 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "legendarygroups.json",
+	"version": "1.2.1",
+	"type": "object",
+	"definitions": {
+		"legendaryGroupData": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"source": {
+					"type": "string"
+				},
+				"page": {
+					"type": "integer"
+				},
+				"additionalSources": {
+					"$ref": "../util.json#/definitions/additionalSources"
+				},
+				"lairActions": {
+					"type": "array",
+					"items": {
+						"$ref": "../entry.json"
+					}
+				},
+				"regionalEffects": {
+					"type": "array",
+					"items": {
+						"$ref": "../entry.json"
+					}
+				},
+				"mythicEncounter": {
+					"type": "array",
+					"items": {
+						"$ref": "../entry.json"
+					}
+				}
+			},
+			"additionalProperties": false
+		},
+
+		"legendaryGroup": {
+			"anyOf": [
+				{
+					"type": "object",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/legendaryGroupData"
+						},
+						{
+							"required": [
+								"name",
+								"source"
+							]
+						}
+					]
+				},
+				{
+					"type": "object",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/legendaryGroupData"
+						},
+						{
+							"$ref": "../util.json#/definitions/copyBlock"
+						}
+					]
+				}
+			]
+		}
+	},
+
+	"properties": {
+		"_meta": {"$ref": "../util.json#/definitions/metaBlock"},
+		"legendaryGroup": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {"$ref": "#/definitions/legendaryGroup"}
+		}
+	},
+	"required": ["legendaryGroup"],
+	"additionalProperties": false
+}

@@ -7,7 +7,7 @@ if (IS_NODE) require("./parser.js");
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 IS_DEPLOYED = undefined;
-VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.142.0"/* 5ETOOLS_VERSION__CLOSE */;
+VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.143.0"/* 5ETOOLS_VERSION__CLOSE */;
 DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 // for the roll20 script to set
 IS_VTT = false;
@@ -5042,7 +5042,7 @@ BrewUtil = {
 			const cat = BrewUtil.homebrew[k];
 			const pDeleteFn = BrewUtil._getPDeleteFunction(k);
 			const toDel = [];
-			cat.filter(it => isMatchingSource(it.source)).forEach(it => toDel.push(it.uniqueId));
+			cat.filter(it => isMatchingSource(it.source || it.inherits?.source)).forEach(it => toDel.push(it.uniqueId));
 			await Promise.all(toDel.map(async uId => pDeleteFn(uId)));
 		}));
 		if (BrewUtil._lists) BrewUtil._lists.forEach(l => l.update());
@@ -5443,8 +5443,6 @@ BrewUtil = {
 			case "hazard":
 			case "deity":
 			case "item":
-			case "baseitem":
-			case "variant":
 			case "itemType":
 			case "itemProperty":
 			case "itemFluff":
@@ -5474,6 +5472,8 @@ BrewUtil = {
 			case "charoptionFluff":
 			case "recipe":
 				return BrewUtil._pPDeleteGenericBrew.bind(BrewUtil, category);
+			case "baseitem": return BrewUtil._pPDeleteBaseItemBrew.bind(BrewUtil);
+			case "variant": return BrewUtil._pPDeleteMagicVariantBrew.bind(BrewUtil);
 			case "race": return BrewUtil._pDeleteRaceBrew.bind(BrewUtil);
 			case "subclass": return BrewUtil._pDeleteSubclassBrew.bind(BrewUtil);
 			case "adventure":
@@ -5521,6 +5521,32 @@ BrewUtil = {
 
 		allAttachedRaces.forEach(attachedRace => {
 			BrewUtil._lists.forEach(l => l.removeItemByData("uniqueId", attachedRace.uniqueId));
+		});
+	},
+
+	async _pPDeleteBaseItemBrew (uniqueId) {
+		const removed = await BrewUtil._pDoRemove("baseitem", uniqueId);
+		if (!removed) return;
+		if (typeof itemsPage === "undefined" || !BrewUtil._lists) return;
+
+		const allVariants = itemsPage.getSpecificVariantsByBaseItemBrewUid(uniqueId);
+		if (!allVariants.length) return;
+
+		allVariants.forEach(({uniqueId}) => {
+			BrewUtil._lists.forEach(l => l.removeItemByData("uniqueId", uniqueId));
+		});
+	},
+
+	async _pPDeleteMagicVariantBrew (uniqueId) {
+		const removed = await BrewUtil._pDoRemove("variant", uniqueId);
+		if (!removed) return;
+		if (typeof itemsPage === "undefined" || !BrewUtil._lists) return;
+
+		const allVariants = itemsPage.getSpecificVariantsByGenericVariantBrewUid(uniqueId);
+		if (!allVariants.length) return;
+
+		allVariants.forEach(({uniqueId}) => {
+			BrewUtil._lists.forEach(l => l.removeItemByData("uniqueId", uniqueId));
 		});
 	},
 

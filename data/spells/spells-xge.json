@@ -2243,6 +2243,12 @@
 		{
 			"name": "Find Greater Steed",
 			"source": "XGE",
+			"additionalSources": [
+				{
+					"source": "FTD",
+					"page": 190
+				}
+			],
 			"page": 156,
 			"level": 4,
 			"school": "C",
@@ -2273,7 +2279,16 @@
 				"You control the mount in combat. While the mount is within 1 mile of you, you can communicate with it telepathically. While mounted on it, you can make any spell you cast that targets only you also target the mount.",
 				"The mount disappears temporarily when it drops to 0 hit points or when you dismiss it as an action. Casting this spell again re-summons the bonded mount, with all its hit points restored and any conditions removed.",
 				"You can't have more than one mount bonded by this spell or {@spell find steed} at the same time. As an action, you can release a mount from its bond, causing it to disappear permanently.",
-				"Whenever the mount disappears, it leaves behind any objects it was wearing or carrying."
+				"Whenever the mount disappears, it leaves behind any objects it was wearing or carrying.",
+				{
+					"type": "inset",
+					"source": "FTD",
+					"page": 190,
+					"name": "Dragonnel Steeds",
+					"entries": [
+						"With the DM's permission, a paladin can summon a spirit in the form of a dragonnel using the find greater steed spell, which appears in {@i Xanathar's Guide to Everything}."
+					]
+				}
 			],
 			"miscTags": [
 				"PRM",

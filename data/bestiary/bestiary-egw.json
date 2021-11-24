@@ -289,7 +289,12 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflict": [
+				"frightened",
+				"grappled",
+				"stunned"
+			]
 		},
 		{
 			"name": "Aeorian Reverser",

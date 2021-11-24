@@ -1,0 +1,106 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "roll20.json",
+	"version": "1.0.3",
+	"title": "SpellMetaArray",
+	"type": "object",
+
+	"definitions": {
+		"spellMeta": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"source": {
+					"type": "string"
+				},
+				"data": {
+					"description": "Based on the Roll20 data, available e.g. here: https://app.roll20.net/compendium/dnd5e/Spells:Fireball.json",
+					"type": "object",
+					"properties": {
+						"Save": {
+							"type": "string"
+						},
+						"Damage": {
+							"type": "string"
+						},
+						"Damage Type": {
+							"type": "string"
+						},
+						"Damage Progression": {
+							"type": "string"
+						},
+						"Target": {
+							"type": "string"
+						},
+						"Healing": {
+							"type": "string"
+						},
+						"Spell Attack": {
+							"type": "string"
+						},
+						"Save Success": {
+							"type": "string"
+						},
+						"Higher Spell Slot Die": {
+							"type": "string"
+						},
+						"Higher Spell Slot Dice": {
+							"type": "string"
+						},
+						"Add Casting Modifier": {
+							"type": "string"
+						},
+						"Secondary Damage": {
+							"type": "string"
+						},
+						"Secondary Damage Type": {
+							"type": "string"
+						},
+						"Higher Level Healing": {
+							"type": "string"
+						},
+						"Higher Spell Slot Bonus": {
+							"type": "string"
+						},
+						"Secondary Higher Spell Slot Die": {
+							"type": "string"
+						},
+						"Secondary Higher Spell Slot Dice":{
+							"type": "string"
+						},
+						"Secondary Damage Progression": {
+							"type": "string"
+						},
+						"Secondary Add Casting Modifier": {
+							"type": "string"
+						},
+						"data-Cantrip Scaling": {
+							"type": "string"
+						},
+						"Crit": {
+							"type": "string"
+						},
+						"Crit Range": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false
+				},
+				"shapedData": {
+					"type": "object"
+				}
+			},
+			"required": ["name", "source", "data"],
+			"additionalProperties": false
+		}
+	},
+
+	"properties": {
+		"spell": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/spellMeta"}
+		}
+	}
+}

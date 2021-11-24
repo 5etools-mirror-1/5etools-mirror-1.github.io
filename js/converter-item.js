@@ -309,9 +309,14 @@ class ItemParser extends BaseParser {
 		switch (genericType) {
 			case "weapon": stats.requires = [{"weapon": true}]; break;
 			case "sword": stats.requires = [{"sword": true}]; break;
+			case "axe": stats.requires = [{"axe": true}]; break;
 			case "armor": stats.requires = [{"armor": true}]; break;
 			case "bow": stats.requires = [{"bow": true}, {"crossbow": true}]; break;
-			default: throw new Error(`Unhandled generic type "${genericType}"`);
+			default: {
+				stats.require = [{[genericType]: true}];
+				options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Tagline part "${genericType}" requires manual conversion`);
+				break;
+			}
 		}
 	}
 

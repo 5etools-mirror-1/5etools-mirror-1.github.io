@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "cultsboons.json",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "object",
 	"properties": {
 		"cult": {
@@ -20,7 +20,12 @@
 						"type": "integer"
 					},
 					"type": {
-						"type": "string"
+						"type": "string",
+						"enum": [
+							"Diabolical",
+							"Elder Evil",
+							"Elemental"
+						]
 					},
 					"goal": {
 						"type": "object",
@@ -89,7 +94,10 @@
 						"type": "integer"
 					},
 					"type": {
-						"type": "string"
+						"type": "string",
+						"enum": [
+							"Demonic"
+						]
 					},
 					"ability": {
 						"type": "object",

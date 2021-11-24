@@ -837,35 +837,52 @@ function sectLifeEvents () {
 	marriageIndex = 0;
 	const age = GenUtil.getFromTable(LIFE_EVENTS_AGE, Number($selAge.val()) || RNG(100));
 	$events.append(`<b>Current age:</b> ${age.result} ${fmtChoice(`${age.age} year${age.age > 1 ? "s" : ""} old`, true)}`);
+
 	for (let i = 0; i < age.events; ++i) {
-		$events.append(`<h5>Life Event ${i + 1}</h5>`);
-		const evt = GenUtil.getFromTable(LIFE_EVENTS, RNG(100));
-		$events.append(`${evt.result}<br>`);
-		if (evt.nextRoll) {
+		const $dispResult = $(`<div></div>`);
+		const $dispNextRoll = $(`<div></div>`);
+
+		const recurseNextRolls = (evt) => {
+			if (!evt.nextRoll) return;
+
 			if (evt.nextRoll.title) {
 				$(`<div class="life__output-wrp-border p-3 my-2">
 					<h5 class="mt-0">${evt.nextRoll.title}</h5>
 					${joinParaList(evt.nextRoll.result)}
-				</div>`).appendTo($events);
+				</div>`).appendTo($dispNextRoll);
 			} else {
-				$events.append(`${joinParaList(evt.nextRoll.result)}<br>`);
-				if (evt.nextRoll.nextRoll) {
-					if (evt.nextRoll.nextRoll.title) {
-						$(`<div class="life__output-wrp-border p-3 my-2">
-							<h5 class="mt-0">${evt.nextRoll.nextRoll.title}</h5>
-							${joinParaList(evt.nextRoll.nextRoll.result)}
-						</div>`).appendTo($events);
-					} else {
-						$events.append(`${joinParaList(evt.nextRoll.nextRoll.result)}<br>`);
-					}
-				}
+				$dispNextRoll.append(`${joinParaList(evt.nextRoll.result)}<br>`);
 			}
-		}
+
+			return recurseNextRolls(evt.nextRoll);
+		};
+
+		const doRollAndDisplay = ({isScrollIntoView = false} = {}) => {
+			const evt = GenUtil.getFromTable(LIFE_EVENTS, RNG(100));
+			$dispResult.html(evt.result);
+			$dispNextRoll.empty();
+			recurseNextRolls(evt);
+			if (isScrollIntoView) $wrpEvent[0].scrollIntoView({block: "nearest", inline: "nearest"});
+		};
+
+		doRollAndDisplay();
+
+		const $btnReroll = $(`<button class="btn btn-default btn-xxs">Reroll</button>`)
+			.click(() => doRollAndDisplay({isScrollIntoView: true}));
+
+		const $wrpEvent = $$`<div class="flex-col">
+			<div class="flex-v-center mb-1 mt-2">
+				<h5 class="my-0 mr-2">Life Event ${i + 1}</h5>
+				${$btnReroll}
+			</div>
+			${$dispResult}
+			${$dispNextRoll}
+		</div>`.appendTo($events);
 	}
 }
 
 function roll () {
-	$(`.life__output`).show();
+	$(`.life__output`).removeClass("ve-hidden");
 
 	sectParents();
 	sectBirthplace();

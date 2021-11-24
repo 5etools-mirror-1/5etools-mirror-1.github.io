@@ -1,0 +1,143 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "objects.json",
+	"version": "1.2.2",
+	"type": "object",
+
+	"definitions": {
+		"object": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"source": {
+					"type": "string"
+				},
+				"page": {
+					"type": "integer"
+				},
+				"size": {
+					"$ref": "util.json#/definitions/size"
+				},
+				"creatureType": {
+					"$ref": "util.json#/definitions/creatureType"
+				},
+				"objectType": {
+					"type": "string",
+					"description": "G: Generic\n SW: Siege Weapon\n U: Unknown",
+					"enum": ["GEN", "SW", "U"]
+				},
+				"str": {
+					"type": "integer"
+				},
+				"dex": {
+					"type": "integer"
+				},
+				"con": {
+					"type": "integer"
+				},
+				"int": {
+					"type": "integer"
+				},
+				"wis": {
+					"type": "integer"
+				},
+				"cha": {
+					"type": "integer"
+				},
+				"ac": {
+					"oneOf": [
+						{"type": "integer"},
+						{
+							"type": "object",
+							"properties": {
+								"special": {"type": "string"}
+							},
+							"required": ["special"],
+							"additionalProperties": false
+						}
+					]
+				},
+				"hp": {
+					"oneOf": [
+						{"type": "integer"},
+						{
+							"type": "object",
+							"properties": {
+								"special": {"type": "string"}
+							},
+							"required": ["special"],
+							"additionalProperties": false
+						}
+					]
+				},
+				"speed": {
+					"$ref": "util.json#/definitions/speed"
+				},
+				"senses": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"resist": {
+					"$ref": "util.json#/definitions/damageResistArray"
+				},
+				"conditionImmune": {
+					"$ref": "util.json#/definitions/conditionImmunityArray"
+				},
+				"immune": {
+					"$ref": "util.json#/definitions/damageImmunityArray"
+				},
+				"vulnerable": {
+					"$ref": "util.json#/definitions/damageVulnerabilityArray"
+				},
+				"entries": {
+					"type": "array",
+					"items": {
+						"$ref": "entry.json"
+					}
+				},
+				"actionEntries": {
+					"type": "array",
+					"items": {
+						"$ref": "entry.json"
+					}
+				},
+				"tokenUrl": {
+					"type": "string"
+				},
+				"srd": {
+					"$ref": "util.json#/definitions/srd"
+				},
+				"isNpc": {
+					"type": "boolean"
+				},
+				"hasToken": {
+					"type": "boolean"
+				}
+			},
+			"additionalProperties": false,
+			"required": [
+				"name",
+				"source",
+				"size",
+				"objectType",
+				"hp",
+				"immune"
+			]
+
+		}
+	},
+
+	"properties": {
+		"object": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/object"
+			}
+		}
+	},
+	"additionalProperties": false
+}

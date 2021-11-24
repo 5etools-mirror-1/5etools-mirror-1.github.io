@@ -510,6 +510,8 @@
 				"MW"
 			],
 			"conditionInflict": [
+				"blinded",
+				"grappled",
 				"restrained"
 			],
 			"hasToken": true,
@@ -2906,7 +2908,10 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"conditionInflict": [
+				"unconscious"
+			]
 		},
 		{
 			"name": "Living Doll",

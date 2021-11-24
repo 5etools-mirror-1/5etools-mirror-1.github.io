@@ -1,0 +1,42 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "makecards.json",
+	"version": "1.0.0",
+	"definitions": {
+		"itemLookup": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"abbreviation": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"entries": {
+						"type": "array",
+						"items": {
+							"$ref": "entry.json"
+						}
+					}
+				},
+				"required": [
+					"abbreviation"
+				],
+				"additionalProperties": false
+			}
+		}
+	},
+	"type": "object",
+	"properties": {
+		"reducedItemProperty": {
+			"$ref": "#/definitions/itemLookup"
+		},
+		"reducedItemType": {
+			"$ref": "#/definitions/itemLookup"
+		}
+	},
+	"additionalProperties": false
+}

@@ -242,12 +242,6 @@
 						"col-4-5 text-right ",
 						"col-1-5"
 					],
-					"intro": [
-						"Optional intro entries."
-					],
-					"outro": [
-						"Optional outro entries."
-					],
 					"rows": [
 						[
 							"This is a table row",
@@ -816,47 +810,6 @@
 						],
 						"page": 241
 					}
-				},
-				"There exist a few homebrew features (generally) for use in custom copies of the site:",
-				{
-					"type": "homebrew",
-					"entries": [
-						{
-							"name": "Homebrew",
-							"type": "entries",
-							"entries": [
-								"If you make additions to existing text, you may want to use the \"homebrew\" entry type, to clearly mark homebrew sections."
-							]
-						}
-					]
-				},
-				{
-					"type": "homebrew",
-					"entries": [
-						{
-							"name": "Homebrew which changed something",
-							"type": "entries",
-							"entries": [
-								"It also supports changes, which show the replaced entries on hover."
-							]
-						}
-					],
-					"oldEntries": [
-						"This was the original content."
-					]
-				},
-				{
-					"type": "homebrew",
-					"oldEntries": [
-						"You can also mark removed content."
-					]
-				},
-				{
-					"type": "homebrew",
-					"movedTo": "a completely different place",
-					"oldEntries": [
-						"And you can also mark moved content."
-					]
 				}
 			]
 		}

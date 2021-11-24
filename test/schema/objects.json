@@ -3,7 +3,6 @@
 	"$id": "objects.json",
 	"version": "1.2.2",
 	"type": "object",
-
 	"definitions": {
 		"object": {
 			"type": "object",
@@ -18,15 +17,19 @@
 					"type": "integer"
 				},
 				"size": {
-					"type": "string"
+					"$ref": "util.json#/definitions/size"
 				},
 				"creatureType": {
 					"$ref": "util.json#/definitions/creatureType"
 				},
 				"objectType": {
 					"type": "string",
-					"description": "siege weapon; generic; unknown",
-					"enum": ["SW", "GEN", "U"]
+					"description": "G: Generic\n SW: Siege Weapon\n U: Unknown",
+					"enum": [
+						"GEN",
+						"SW",
+						"U"
+					]
 				},
 				"str": {
 					"type": "integer"
@@ -48,26 +51,38 @@
 				},
 				"ac": {
 					"oneOf": [
-						{"type": "integer"},
+						{
+							"type": "integer"
+						},
 						{
 							"type": "object",
 							"properties": {
-								"special": {"type": "string"}
+								"special": {
+									"type": "string"
+								}
 							},
-							"required": ["special"],
+							"required": [
+								"special"
+							],
 							"additionalProperties": false
 						}
 					]
 				},
 				"hp": {
 					"oneOf": [
-						{"type": "integer"},
+						{
+							"type": "integer"
+						},
 						{
 							"type": "object",
 							"properties": {
-								"special": {"type": "string"}
+								"special": {
+									"type": "string"
+								}
 							},
-							"required": ["special"],
+							"required": [
+								"special"
+							],
 							"additionalProperties": false
 						}
 					]
@@ -76,14 +91,10 @@
 					"$ref": "util.json#/definitions/speed"
 				},
 				"senses": {
-					"oneOf": [
-						{
-							"type": "array",
-							"items": {
-								"type": "string"
-							}
-						}
-					]
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
 				},
 				"resist": {
 					"$ref": "util.json#/definitions/damageResistArray"
@@ -131,10 +142,8 @@
 				"hp",
 				"immune"
 			]
-
 		}
 	},
-
 	"properties": {
 		"object": {
 			"type": "array",

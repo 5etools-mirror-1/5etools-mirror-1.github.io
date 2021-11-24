@@ -489,7 +489,7 @@ class DamageResistanceImmunityVulnerabilityTag {
 					str.replace(reOuter, (full, ..._) => {
 						outer.push(full);
 						full = full.split(/ except /gi)[0];
-						full.replace(ConverterConst.RE_DAMAGE_TYPE, (full, prefix, dmgType) => {
+						full.replace(ConverterConst.RE_DAMAGE_TYPE, (full, dmgType) => {
 							all.add(dmgType);
 						});
 					});

@@ -10,33 +10,6 @@ if (typeof module !== "undefined") {
 	Object.assign(global, require("../js/converterutils-entries"));
 }
 
-/**
- * Args:
- * file="./data/my-file.json"
- * filePrefix="./data/dir/"
- * inplace
- */
-class ArgParser {
-	static parse () {
-		process.argv
-			.slice(2)
-			.forEach(arg => {
-				let [k, v] = arg.split("=").map(it => it.trim()).filter(Boolean);
-				if (v == null) ArgParser.ARGS[k] = true;
-				else {
-					v = v
-						.replace(/^"(.*)"$/, "$1")
-						.replace(/^'(.*)'$/, "$1")
-					;
-
-					if (!isNaN(v)) ArgParser.ARGS[k] = Number(v);
-					else ArgParser.ARGS[k] = v;
-				}
-			});
-	}
-}
-ArgParser.ARGS = {};
-
 function run (args) {
 	TagJsons._BLACKLIST_FILE_PREFIXES = [
 		...ut.FILE_PREFIX_BLACKLIST,
@@ -91,13 +64,19 @@ function loadSpells () {
 	}).flat();
 }
 
+/**
+ * Args:
+ * file="./data/my-file.json"
+ * filePrefix="./data/dir/"
+ * inplace
+ */
 async function main () {
-	ArgParser.parse();
+	ut.ArgParser.parse();
 	setUp();
 	await TagJsons.pInit({
 		spells: loadSpells(),
 	});
-	run(ArgParser.ARGS);
+	run(ut.ArgParser.ARGS);
 	teardown();
 }
 

@@ -1,9 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "languages.json",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"type": "object",
-
 	"properties": {
 		"language": {
 			"type": "array",
@@ -39,7 +38,11 @@
 					},
 					"type": {
 						"type": "string",
-						"enum": ["standard", "exotic", "secret"]
+						"enum": [
+							"standard",
+							"exotic",
+							"secret"
+						]
 					},
 					"additionalSources": {
 						"$ref": "util.json#/definitions/additionalSources"
@@ -51,13 +54,18 @@
 						}
 					},
 					"fonts": {
+						"description": "A list of direct URLs to font files.",
 						"type": "array",
 						"items": {
 							"type": "string"
 						}
 					},
-					"hasFluff": {"type": "boolean"},
-					"hasFluffImages": {"type": "boolean"}
+					"hasFluff": {
+						"type": "boolean"
+					},
+					"hasFluffImages": {
+						"type": "boolean"
+					}
 				},
 				"required": [
 					"name",
@@ -67,19 +75,25 @@
 				"additionalProperties": false
 			}
 		},
-
 		"languageScript": {
 			"type": "array",
 			"items": {
 				"type": "object",
 				"properties": {
-					"name": {"type": "string"},
+					"name": {
+						"type": "string"
+					},
 					"fonts": {
 						"type": "array",
-						"items": {"type": "string"}
+						"items": {
+							"type": "string"
+						}
 					}
 				},
-				"required": ["name", "fonts"],
+				"required": [
+					"name",
+					"fonts"
+				],
 				"additionalProperties": false
 			}
 		}

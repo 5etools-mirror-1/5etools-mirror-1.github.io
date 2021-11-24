@@ -1,0 +1,273 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "items-base.json",
+	"version": "1.4.6",
+	"definitions": {
+		"itemLookup": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"abbreviation": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"page": {
+						"type": "integer"
+					},
+					"name": {
+						"type": "string"
+					},
+					"entries": {
+						"type": "array",
+						"items": {
+							"$ref": "entry.json"
+						}
+					},
+					"template": {
+						"$comment": "Note that this is not used on item types.",
+						"type": "string"
+					}
+				},
+				"required": [
+					"abbreviation",
+					"source",
+					"page"
+				],
+				"additionalProperties": false
+			}
+		}
+	},
+	"type": "object",
+	"properties": {
+		"baseitem": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"type": {
+						"$ref": "shared-items.json#/definitions/itemType"
+					},
+					"rarity": {
+						"$ref": "shared-items.json#/definitions/itemRarity"
+					},
+					"source": {
+						"type": "string"
+					},
+					"page": {
+						"type": "integer"
+					},
+					"ac": {
+						"type": "integer"
+					},
+					"age": {
+						"$ref": "shared-items.json#/definitions/itemAge"
+					},
+					"armor": {
+						"description": "Flag used when merging generic variants",
+						"type": "boolean"
+					},
+					"axe": {
+						"type": "boolean"
+					},
+					"dmg1": {
+						"type": "string"
+					},
+					"dmg2": {
+						"type": "string"
+					},
+					"dmgType": {
+						"$ref": "util.json#/definitions/dataDamageTags"
+					},
+					"entries": {
+						"type": "array",
+						"items": {
+							"$ref": "entry.json"
+						}
+					},
+					"property": {
+						"$ref": "shared-items.json#/definitions/itemProperty"
+					},
+					"range": {
+						"type": "string"
+					},
+					"reload": {
+						"type": "integer"
+					},
+					"scfType": {
+						"$ref": "shared-items.json#/definitions/itemScfType"
+					},
+					"stealth": {
+						"type": "boolean"
+					},
+					"strength": {
+						"type": "string"
+					},
+					"sword": {
+						"type": "boolean"
+					},
+					"mace": {
+						"type": "boolean"
+					},
+					"spear": {
+						"type": "boolean"
+					},
+					"hammer": {
+						"type": "boolean"
+					},
+					"bow": {
+						"type": "boolean"
+					},
+					"crossbow": {
+						"type": "boolean"
+					},
+					"club": {
+						"type": "boolean"
+					},
+					"dagger": {
+						"type": "boolean"
+					},
+					"net": {
+						"type": "boolean"
+					},
+					"firearm": {
+						"type": "boolean"
+					},
+					"staff": {
+						"description": "Adds the italicized \"Staff\" text to the item info line (below the name).",
+						"type": "boolean"
+					},
+					"value": {
+						"description": "In copper pieces.",
+						"type": "number"
+					},
+					"$$ifBrew": {
+						"currencyConversion": {
+							"description": "ID of a value conversion table. Homebrew only.",
+							"type": "string"
+						}
+					},
+					"valueMult": {
+						"type": "number"
+					},
+					"weapon": {
+						"type": "boolean"
+					},
+					"weaponCategory": {
+						"$ref": "shared-items.json#/definitions/itemWeaponCategory"
+					},
+					"weight": {
+						"type": "number"
+					},
+					"weightMult": {
+						"type": "number"
+					},
+					"quantity": {
+						"type": "integer"
+					},
+					"srd": {
+						"$ref": "util.json#/definitions/srd"
+					},
+					"otherSources": {
+						"$ref": "util.json#/definitions/otherSources"
+					},
+					"ammoType": {
+						"$ref": "shared-items.json#/definitions/itemAmmoType"
+					},
+					"packContents": {
+						"type": "array",
+						"items": {
+							"oneOf": [
+								{
+									"type": "string"
+								},
+								{
+									"type": "object",
+									"properties": {
+										"special": {
+											"type": "string"
+										},
+										"quantity": {
+											"type": "integer"
+										}
+									},
+									"additionalProperties": false,
+									"required": ["special"]
+								},
+								{
+									"type": "object",
+									"properties": {
+										"item": {
+											"type": "string"
+										},
+										"quantity": {
+											"type": "integer"
+										}
+									},
+									"additionalProperties": false,
+									"required": ["item", "quantity"]
+								}
+							]
+						}
+					},
+					"hasFluff": {"type": "boolean"},
+					"hasFluffImages": {"type": "boolean"}
+				},
+				"required": [
+					"name",
+					"type",
+					"rarity",
+					"source",
+					"page"
+				],
+				"additionalProperties": false
+			}
+		},
+		"itemProperty": {
+			"$ref": "#/definitions/itemLookup"
+		},
+		"itemType": {
+			"$ref": "#/definitions/itemLookup"
+		},
+		"itemEntry": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {"type": "string"},
+					"source": {"type": "string"},
+					"entriesTemplate": {
+						"type": "array",
+						"items": {"$ref": "entry.json"}
+					}
+				}
+			}
+		},
+		"itemTypeAdditionalEntries": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"appliesTo": {
+						"type": "string"
+					},
+					"entries": {
+						"type": "array",
+						"items": {
+							"$ref": "entry.json"
+						}
+					}
+				},
+				"additionalProperties": false
+			}
+		}
+	},
+	"additionalProperties": false
+}
