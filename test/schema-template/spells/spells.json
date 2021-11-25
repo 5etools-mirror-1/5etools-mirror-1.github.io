@@ -17,17 +17,21 @@
 				},
 				"school": {
 					"type": "string",
-					"enum": [
-						"A",
-						"V",
-						"E",
-						"I",
-						"D",
-						"N",
-						"T",
-						"C",
-						"P"
-					]
+					"$$ifSiteElse_key": {
+						"keySite": "enum",
+						"keyBrew": "examples",
+						"value": [
+							"A",
+							"V",
+							"E",
+							"I",
+							"D",
+							"N",
+							"T",
+							"C",
+							"P"
+						]
+					}
 				},
 				"$$ifBrew": {
 					"subschools": {
@@ -36,6 +40,10 @@
 						"items": {
 							"type": "string"
 						}
+					},
+					"fluff": {
+						"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source",
+						"$ref": "../util.json#/definitions/fluffObject"
 					}
 				},
 				"meta": {
