@@ -234,26 +234,30 @@
 
 		"skillNameLower": {
 			"type": "string",
-			"enum": [
-				"athletics",
-				"acrobatics",
-				"sleight of hand",
-				"stealth",
-				"arcana",
-				"history",
-				"investigation",
-				"nature",
-				"religion",
-				"animal handling",
-				"insight",
-				"medicine",
-				"perception",
-				"survival",
-				"deception",
-				"intimidation",
-				"performance",
-				"persuasion"
-			]
+			"$$ifSiteElse_key": {
+				"keySite": "enum",
+				"keyBrew": "examples",
+				"value": [
+					"athletics",
+					"acrobatics",
+					"sleight of hand",
+					"stealth",
+					"arcana",
+					"history",
+					"investigation",
+					"nature",
+					"religion",
+					"animal handling",
+					"insight",
+					"medicine",
+					"perception",
+					"survival",
+					"deception",
+					"intimidation",
+					"performance",
+					"persuasion"
+				]
+			}
 		},
 
 		"skillProficiencies": {
@@ -298,7 +302,12 @@
 						"additionalProperties": false
 					}
 				},
-				"additionalProperties": false
+				"$$ifSite": {
+					"additionalProperties": false
+				},
+				"$$ifBrew": {
+					"additionalProperties": {"type": "boolean"}
+				}
 			}
 		},
 
@@ -421,7 +430,12 @@
 						}
 					}
 				},
-				"additionalProperties": false
+				"$$ifSite": {
+					"additionalProperties": false
+				},
+				"$$ifBrew": {
+					"additionalProperties": {"type": "boolean"}
+				}
 			}
 		},
 
