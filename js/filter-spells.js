@@ -100,8 +100,6 @@ class PageFilterSpells extends PageFilter {
 		if (~ixA && ~ixB) return ixA - ixB;
 		if (~ixA) return -1;
 		if (~ixB) return 1;
-		if (a.item === "SRD") return 1;
-		if (b.item === "SRD") return -1;
 		return SortUtil.ascSortLower(a, b);
 	}
 
@@ -138,6 +136,7 @@ class PageFilterSpells extends PageFilter {
 		if ((!s.miscTags || (s.miscTags && !s.miscTags.includes("PRM"))) && s.duration.filter(it => it.type === "permanent").length) out.push("PRM");
 		if ((!s.miscTags || (s.miscTags && !s.miscTags.includes("SCL"))) && s.entriesHigherLevel) out.push("SCL");
 		if (s.srd) out.push("SRD");
+		if (s.basicRules) out.push("Basic Rules");
 		if (s.hasFluff) out.push("Has Info");
 		if (s.hasFluffImages) out.push("Has Images");
 		return out;
@@ -320,9 +319,9 @@ class PageFilterSpells extends PageFilter {
 		const backgroundFilter = new Filter({header: "Background"});
 		const metaFilter = new Filter({
 			header: "Components & Miscellaneous",
-			items: [...PageFilterSpells._META_FILTER_BASE_ITEMS, "Ritual", "SRD", "Has Images", "Has Token"],
+			items: [...PageFilterSpells._META_FILTER_BASE_ITEMS, "Ritual", "SRD", "Basic Rules", "Has Images", "Has Token"],
 			itemSortFn: PageFilterSpells.sortMetaFilter,
-			isSrdFilter: true,
+			isMiscFilter: true,
 			displayFn: it => Parser.spMiscTagToFull(it),
 		});
 		const schoolFilter = new Filter({

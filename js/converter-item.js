@@ -272,6 +272,7 @@ class ItemParser extends BaseParser {
 		const blacklistedProps = new Set([
 			"source",
 			"srd",
+			"basicRules",
 			"page",
 		]);
 

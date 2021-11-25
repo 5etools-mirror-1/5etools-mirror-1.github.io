@@ -59,7 +59,7 @@ class PageFilterOptionalFeatures extends PageFilter {
 				this._featureFilter,
 			],
 		});
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD", "Grants Additional Spells"], isSrdFilter: true});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD", "Grants Additional Spells"], isMiscFilter: true});
 	}
 
 	static mutateForFilters (it) {

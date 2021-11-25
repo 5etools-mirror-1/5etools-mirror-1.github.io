@@ -826,7 +826,7 @@ class PageFilterRaces extends PageFilter {
 			displayFn: it => `${it} y.o.`,
 			displayFnTooltip: it => `${it} year${it === 1 ? "" : "s"} old`,
 		});
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Base Race", "Key Race", "Lineage", "Modified Copy", "SRD", "Has Images", "Has Info"], isSrdFilter: true});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Base Race", "Key Race", "Lineage", "Modified Copy", "SRD", "Basic Rules", "Has Images", "Has Info"], isMiscFilter: true});
 	}
 
 	static mutateForFilters (r) {
@@ -849,10 +849,12 @@ class PageFilterRaces extends PageFilter {
 		r._fSources = SourceFilter.getCompleteFilterSources(r);
 		r._fLangs = PageFilterRaces.getLanguageProficiencyTags(r.languageProficiencies);
 		r._fCreatureTypes = r.creatureTypes ? r.creatureTypes.map(it => it.choose || it).flat() : ["humanoid"];
-		r._fMisc = r.srd ? ["SRD"] : [];
+		r._fMisc = [];
 		if (r._isBaseRace) r._fMisc.push("Base Race");
 		if (r._isBaseRace || !r._isSubRace) r._fMisc.push("Key Race");
 		if (r._isCopy) r._fMisc.push("Modified Copy");
+		if (r.srd) r._fMisc.push("SRD");
+		if (r.basicRules) r._fMisc.push("Basic Rules");
 		if (r.hasFluff) r._fMisc.push("Has Info");
 		if (r.hasFluffImages) r._fMisc.push("Has Images");
 		if (r.lineage) r._fMisc.push("Lineage");

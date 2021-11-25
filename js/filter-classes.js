@@ -12,11 +12,11 @@ class PageFilterClassesBase extends PageFilter {
 
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
-			items: ["Reprinted", "Sidekick", "SRD"],
+			items: ["Reprinted", "Sidekick", "SRD", "Basic Rules"],
 			deselFn: (it) => { return it === "Reprinted" || it === "Sidekick"; },
 			displayFnMini: it => it === "Reprinted" ? "Repr." : it,
 			displayFnTitle: it => it === "Reprinted" ? it : "",
-			isSrdFilter: true,
+			isMiscFilter: true,
 		});
 
 		this._optionsFilter = new OptionsFilter({
@@ -70,6 +70,7 @@ class PageFilterClassesBase extends PageFilter {
 		cls._fMisc = [];
 		if (cls.isReprinted) cls._fMisc.push("Reprinted");
 		if (cls.srd) cls._fMisc.push("SRD");
+		if (cls.basicRules) cls._fMisc.push("Basic Rules");
 		if (cls.isSidekick) cls._fMisc.push("Sidekick");
 
 		cls.subclasses.forEach(sc => {
@@ -78,6 +79,7 @@ class PageFilterClassesBase extends PageFilter {
 
 			sc._fMisc = [];
 			if (sc.srd) sc._fMisc.push("SRD");
+			if (sc.basicRules) sc._fMisc.push("Basic Rules");
 			if (sc.isReprinted) sc._fMisc.push("Reprinted");
 		});
 	}
