@@ -531,7 +531,15 @@
 					"items": {
 						"type": "string",
 						"description": "The examples given are short forms that are automatically expanded to \"discharged\", \"dispelled\" & \"triggered\".\nHomebrew files should state custom end conditions in full.",
-						"enum": ["dispel", "trigger", "discharge"]
+						"$$ifSiteElse_key": {
+							"keySite": "enum",
+							"keyBrew": "examples",
+							"value": [
+								"dispel",
+								"trigger",
+								"discharge"
+							]
+						}
 					}
 				},
 				"condition": {

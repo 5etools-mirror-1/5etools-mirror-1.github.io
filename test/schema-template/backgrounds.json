@@ -71,7 +71,7 @@
 							"required": [
 								"name",
 								"source",
-								"skillProficiencies",
+								{"$$ifSite_item": "skillProficiencies"},
 								"entries"
 							]
 						}

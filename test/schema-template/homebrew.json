@@ -262,6 +262,34 @@
 			],
 			"additionalProperties": false
 		},
+		"blacklist": {
+			"description": "An array of objects to blacklist from display on the site.\nUse of this in public brew files is strongly discouraged.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"displayName": {
+						"type": "string"
+					},
+					"hash": {
+						"type": "string"
+					},
+					"category": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"displayName",
+					"hash",
+					"category",
+					"source"
+				],
+				"additionalProperties": false
+			}
+		},
 		"makebrewCreatureTrait": {
 			"description": "Additional trait templates which can be used in the homebrew builder.",
 			"type": "array",

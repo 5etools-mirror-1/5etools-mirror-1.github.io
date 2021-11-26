@@ -6,7 +6,7 @@ This directory contains extended pseudo JSON-schema files, designed to be compil
 
 ### `$$ifSite`/`$$ifBrew`
 
-The value will be merged into its parent iff the compilation mode matches the key, for example:
+The value will be merged into its parent if the compilation mode matches the key, for example:
 
 ---
 
