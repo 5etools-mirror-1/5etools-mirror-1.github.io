@@ -75,9 +75,11 @@
 					"type": "string"
 				}
 			},
-			"required": [
-				"type"
-			]
+			"$$ifSite": {
+				"required": [
+					"type"
+				]
+			}
 		},
 
 		"entrySection": {
