@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "2.9.0",
+	"version": "2.9.1",
 	"$id": "class.json",
 
 	"type": "object",
@@ -96,7 +96,8 @@
 			"properties": {
 				"name": {"type": "string"},
 				"source": {"type": "string"},
-				"srd": {"type": "boolean"},
+				"srd": {"$ref": "../util.json#/definitions/srd"},
+				"basicRules": {"$ref": "../util.json#/definitions/basicRules"},
 				"className":  {"type": "string"},
 				"classSource": {"type": "string"},
 				"level":  {"type": "integer"},
@@ -129,7 +130,8 @@
 			"properties": {
 				"name": {"type": "string"},
 				"source": {"type": "string"},
-				"srd": {"type": "boolean"},
+				"srd": {"$ref": "../util.json#/definitions/srd"},
+				"basicRules": {"$ref": "../util.json#/definitions/basicRules"},
 				"className":  {"type": "string"},
 				"classSource": {"type": "string"},
 				"subclassShortName":  {"type": "string"},
@@ -287,7 +289,10 @@
 					"type": "boolean"
 				},
 				"srd": {
-					"type": "boolean"
+					"$ref": "../util.json#/definitions/srd"
+				},
+				"basicRules": {
+					"$ref": "../util.json#/definitions/basicRules"
 				},
 				"page": {
 					"type": "integer"
@@ -471,7 +476,10 @@
 					"$ref": "../util.json#/definitions/otherSources"
 				},
 				"srd": {
-					"type": "boolean"
+					"$ref": "../util.json#/definitions/srd"
+				},
+				"basicRules": {
+					"$ref": "../util.json#/definitions/basicRules"
 				},
 				"isReprinted": {
 					"type": "boolean"

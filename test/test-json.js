@@ -35,15 +35,14 @@ function handleError () {
 
 // add any implicit data to the JSON
 function addImplicits (obj, lastKey) {
-	if (typeof obj === "object") {
-		if (obj == null) return;
-		if (obj instanceof Array) obj.forEach(d => addImplicits(d, lastKey));
-		else {
-			// "obj.mode" will be set if this is in a "_copy" etc. block
-			if (lastKey === "spellcasting" && !obj.mode) obj.type = obj.type || "spellcasting";
+	if (typeof obj !== "object") return;
+	if (obj == null) return;
+	if (obj instanceof Array) obj.forEach(it => addImplicits(it, lastKey));
+	else {
+		// "obj.mode" will be set if this is in a "_copy" etc. block
+		if (lastKey === "spellcasting" && !obj.mode) obj.type = obj.type || "spellcasting";
 
-			Object.entries(obj).forEach(([k, v]) => addImplicits(v, k));
-		}
+		Object.entries(obj).forEach(([k, v]) => addImplicits(v, k));
 	}
 }
 
@@ -73,9 +72,7 @@ async function main () {
 	});
 	PRELOAD_COMMON_SINGLE_FILE_SCHEMAS.forEach(schemaName => {
 		const json = ut.readJson(schemaName, "utf8");
-		// Store the same schema twice under two different IDs, to allow ajv to "understand" relative file paths
 		ajv.addSchema(json, schemaName);
-		ajv.addSchema(json, `../${schemaName}`);
 	});
 
 	// Get schema files, ignoring directories

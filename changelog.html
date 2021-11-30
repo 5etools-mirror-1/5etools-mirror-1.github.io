@@ -49,7 +49,7 @@
 	<!-- OpenSearch -->
 	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
 
-	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");</script>
+	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");</script>
 
 	<script type="text/javascript" src="js/styleswitch.js"></script>
 	<script type="text/javascript" src="js/navigation.js"></script>
@@ -98,7 +98,7 @@
 <script>
 	ExcludeUtil.pInitialise(); // don't await, as this is only used for search
 
-	DataUtil.loadJSON(`${Renderer.get().baseUrl}/data/changelog.json`)
+	DataUtil.loadJSON(`${Renderer.get().baseUrl}data/changelog.json`)
 		.then(changelog => {
 			const $wrp = $(`#pagecontent`).empty();
 			UtilsChangelog.renderChangelog(changelog, $wrp);

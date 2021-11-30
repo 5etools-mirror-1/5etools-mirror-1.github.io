@@ -68,7 +68,7 @@ function isIgnoredFile (file) {
 }
 
 function isIgnoredDir (directory) {
-	return directory === "./data/roll20-module";
+	return false;
 }
 
 function fileRecurse (file, fileHandler, doParse, filenameMatcher) {

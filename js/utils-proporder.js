@@ -113,6 +113,7 @@ PropOrder._MONSTER = [
 	"page",
 
 	"srd",
+	"basicRules",
 	"otherSources",
 
 	"summonedBySpell",
@@ -234,7 +235,8 @@ PropOrder._SPELL = [
 	"source",
 	"page",
 	"srd",
-
+	"basicRules",
+	"additionalSources",
 	"otherSources",
 
 	"level",
@@ -263,6 +265,8 @@ PropOrder._SPELL = [
 	"savingThrow",
 	"abilityCheck",
 
+	"affectsCreatureType",
+
 	"miscTags",
 	"areaTags",
 
@@ -280,6 +284,7 @@ PropOrder._ACTION = [
 	"source",
 	"page",
 	"srd",
+	"basicRules",
 
 	"fromVariant",
 
@@ -326,7 +331,7 @@ PropOrder._BACKGROUND = [
 	"source",
 	"page",
 	"srd",
-
+	"basicRules",
 	"additionalSources",
 	"otherSources",
 
@@ -418,7 +423,7 @@ PropOrder._CLASS = [
 	"page",
 	"srd",
 	"isReprinted",
-
+	"basicRules",
 	"otherSources",
 
 	"isSidekick",
@@ -464,7 +469,7 @@ PropOrder._SUBCLASS = [
 	"page",
 	"srd",
 	"isReprinted",
-
+	"basicRules",
 	"otherSources",
 
 	new PropOrder._ObjectKey("_copy", {
@@ -503,7 +508,7 @@ PropOrder._CLASS_FEATURE = [
 	"source",
 	"page",
 	"srd",
-
+	"basicRules",
 	"otherSources",
 
 	"className",
@@ -522,7 +527,7 @@ PropOrder._SUBCLASS_FEATURE = [
 	"source",
 	"page",
 	"srd",
-
+	"basicRules",
 	"otherSources",
 
 	"className",
@@ -546,7 +551,7 @@ PropOrder._LANGUAGE = [
 	"source",
 	"page",
 	"srd",
-
+	"basicRules",
 	"additionalSources",
 
 	"type",
@@ -570,6 +575,7 @@ PropOrder._CONDITION = [
 	"source",
 	"page",
 	"srd",
+	"basicRules",
 
 	"entries",
 
@@ -582,6 +588,7 @@ PropOrder._DISEASE = [
 	"source",
 	"page",
 	"srd",
+	"basicRules",
 
 	"entries",
 ];
@@ -591,6 +598,7 @@ PropOrder._STATUS = [
 	"source",
 	"page",
 	"srd",
+	"basicRules",
 
 	"entries",
 ];
@@ -600,6 +608,7 @@ PropOrder._CULT = [
 	"source",
 	"page",
 	"srd",
+	"basicRules",
 
 	"type",
 
@@ -615,6 +624,7 @@ PropOrder._BOON = [
 	"source",
 	"page",
 	"srd",
+	"basicRules",
 
 	"type",
 
@@ -634,6 +644,7 @@ PropOrder._DEITY = [
 	"source",
 	"page",
 	"srd",
+	"basicRules",
 
 	"additionalSources",
 
@@ -676,6 +687,7 @@ PropOrder._FEAT = [
 	"source",
 	"page",
 	"srd",
+	"basicRules",
 
 	"additionalSources",
 	"otherSources",
@@ -701,6 +713,7 @@ PropOrder._VEHICLE = [
 	"source",
 	"page",
 	"srd",
+	"basicRules",
 
 	"vehicleType",
 
@@ -757,6 +770,7 @@ PropOrder._VEHICLE_UPGRADE = [
 	"source",
 	"page",
 	"srd",
+	"basicRules",
 	"otherSources",
 
 	"upgradeType",
@@ -784,6 +798,7 @@ PropOrder._ITEM = [
 	"source",
 	"page",
 	"srd",
+	"basicRules",
 
 	"additionalSources",
 	"otherSources",
@@ -955,6 +970,7 @@ PropOrder._OBJECT = [
 	"source",
 	"page",
 	"srd",
+	"basicRules",
 
 	"size",
 	"objectType",
@@ -990,6 +1006,7 @@ PropOrder._OPTIONALFEATURE = [
 	"source",
 	"page",
 	"srd",
+	"basicRules",
 	"otherSources",
 
 	"isClassFeatureVariant",
@@ -1041,7 +1058,7 @@ PropOrder._VARIANTRULE = [
 	"source",
 	"page",
 	"srd",
-
+	"basicRules",
 	"additionalSources",
 
 	"ruleType",
@@ -1056,7 +1073,7 @@ PropOrder._RACE = [
 	"source",
 	"page",
 	"srd",
-
+	"basicRules",
 	"additionalSources",
 	"otherSources",
 
@@ -1153,6 +1170,7 @@ PropOrder._TRAP = [
 	"source",
 	"page",
 	"srd",
+	"basicRules",
 
 	"trapHazType",
 
@@ -1179,6 +1197,7 @@ PropOrder._HAZARD = [
 	"source",
 	"page",
 	"srd",
+	"basicRules",
 
 	"trapHazType",
 

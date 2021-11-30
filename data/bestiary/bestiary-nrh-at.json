@@ -1,0 +1,254 @@
+{
+	"_meta": {
+		"dependencies": {
+			"monster": [
+				"MM"
+			]
+		},
+		"otherSources": {
+			"monster": {
+				"NRH-TCMC": "NRH-AT",
+				"NRH-ASS": "NRH-AT"
+			}
+		}
+	},
+	"monster": [
+		{
+			"name": "Emo",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "NRH-AT",
+			"page": 9,
+			"_copy": {
+				"name": "Beholder",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the beholder",
+						"with": "Emo",
+						"flags": "i"
+					},
+					"action": [
+						{
+							"mode": "replaceArr",
+							"replace": "Eye Rays",
+							"items": {
+								"name": "Eye Rays",
+								"entries": [
+									"Emo shoots three of the following magical eye rays at random (reroll duplicates), choosing one to three targets it can see within 120 feet of it:",
+									{
+										"type": "list",
+										"style": "list-hang-notitle",
+										"items": [
+											{
+												"name": "1. Happiness Ray.",
+												"entries": [
+													"The targeted creature must succeed on a {@dc 14} Wisdom saving throw or fall {@condition prone} with laughter, becoming {@condition incapacitated} and unable to stand up for 1 minute or until Emo harms the creature. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+												],
+												"type": "item"
+											},
+											{
+												"name": "2. Sadness Ray.",
+												"entries": [
+													"The targeted creature must succeed on a {@dc 15} Intelligence saving throw. On a failed save, the target is overcome by sorrow and takes {@damage 3d6} psychic damage, and it can't take a reaction until the end of its next turn. On its next turn, it can use either an action or a bonus action, not both. On a successful save, the target takes half as much damage and suffers none of the other effects."
+												],
+												"type": "item"
+											},
+											{
+												"name": "3. Anger Ray.",
+												"entries": [
+													"The targeted creature must succeed on a {@dc 14} Wisdom saving throw or be compelled to duel with Emo for 1 minute. The target has disadvantage on attack rolls against creatures other than Emo and must make a Wisdom saving throw each time it attempts to move more than 30 feet away from Emo."
+												],
+												"type": "item"
+											},
+											{
+												"name": "4. Anxiety Ray.",
+												"entries": [
+													"The targeted creature must succeed on a {@dc 15} Intelligence saving throw or lose the ability to distinguish friend from foe, regarding all creatures it can see as enemies for 1 minute. Each time the target takes damage, it can repeat the saving throw, ending the effect on itself on a success.",
+													"Whenever the affected creature targets another creature with an attack, spell, or other ability, it must choose the target at random from among the creatures it can see within range of the attack, spell, or other ability it's using. If an enemy provokes an opportunity attack from the affected creature, the creature must make that attack if it is able to."
+												],
+												"type": "item"
+											},
+											{
+												"name": "5. Fear Ray.",
+												"entries": [
+													"The targeted creature must succeed on a {@dc 14} Wisdom saving throw or be {@condition frightened} for 1 minute.",
+													"The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+												],
+												"type": "item"
+											},
+											{
+												"name": "6. Desolation Ray.",
+												"entries": [
+													"The targeted creature must succeed on a {@dc 14} Intelligence saving throw. On a successful save, the target takes {@damage 5d10} psychic damage, and the spell ends. On a failed save, the target takes {@damage 5d10} psychic damage and perceives itself to be confined within an illusory stone cell for 1 minute. The target can't see or hear anything beyond the cell and is {@condition restrained}."
+												],
+												"type": "item"
+											},
+											{
+												"name": "7. Jealousy Ray.",
+												"entries": [
+													"The targeted creature must succeed on a {@dc 14} Wisdom saving throw or become {@condition charmed} for 1 minute. While the target is {@condition charmed} in this way, it must use its action before moving on each of its turns to make a melee attack against a creature that Emo chooses. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+												],
+												"type": "item"
+											},
+											{
+												"name": "8. Disgusting Ray.",
+												"entries": [
+													"The targeted creature must succeed on a {@dc 15} Constitution saving throw against poison. On a failed save, the target is enveloped in sphere of yellow, nauseating gas and spends its action on its next turn retching and reeling."
+												],
+												"type": "item"
+											},
+											{
+												"name": "9. Surprise Ray.",
+												"entries": [
+													"The targeted creature must succeed on a",
+													"{@dc 15} Dexterity saving throw or be {@condition blinded} by a spray of color until the end of its next turn."
+												],
+												"type": "item"
+											},
+											{
+												"name": "10. Trust Ray.",
+												"entries": [
+													"The targeted creature must succeed on a",
+													"{@dc 16} Wisdom saving throw or be {@condition charmed} by Emo for 1 hour or until Emo harms the creature."
+												],
+												"type": "item"
+											}
+										]
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Maude",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "NRH-AT",
+			"page": 12,
+			"_copy": {
+				"name": "Bugbear Chief",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the bugbear",
+						"with": "Maude",
+						"flags": "i"
+					}
+				}
+			}
+		},
+		{
+			"name": "Mr. Greystone",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "NRH-AT",
+			"page": 13,
+			"size": "M",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"{@item studded leather armor|PHB|studded leather}"
+					]
+				}
+			],
+			"hp": {
+				"average": 112,
+				"formula": "15d8 + 45"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 18,
+			"dex": 15,
+			"con": 16,
+			"int": 10,
+			"wis": 12,
+			"cha": 15,
+			"save": {
+				"str": "+7",
+				"dex": "+5",
+				"con": "+6"
+			},
+			"skill": {
+				"athletics": "+10",
+				"intimidation": "+5"
+			},
+			"passive": 11,
+			"languages": [
+				"Common",
+				"Goblin"
+			],
+			"cr": "5",
+			"trait": [
+				{
+					"name": "Brave",
+					"entries": [
+						"Mr. Greystone has advantage on saving throws against being {@condition frightened}."
+					]
+				},
+				{
+					"name": "Brute",
+					"entries": [
+						"A melee weapon deals one extra die of its damage when Mr. Greystone hits with it (included in the attack)."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Mr. Greystone makes two melee attacks or two ranged attacks."
+					]
+				},
+				{
+					"name": "Club",
+					"entries": [
+						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) bludgeoning damage."
+					]
+				},
+				{
+					"name": "Hand Crossbow",
+					"entries": [
+						"{@atk rw} {@hit 5} to hit, range 30/120 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage."
+					]
+				}
+			],
+			"traitTags": [
+				"Brute"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"GO"
+			],
+			"damageTags": [
+				"B",
+				"P"
+			],
+			"miscTags": [
+				"MW",
+				"RNG",
+				"RW"
+			]
+		}
+	]
+}

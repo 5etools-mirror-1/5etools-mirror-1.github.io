@@ -12,6 +12,7 @@ const _PROPS_TO_INDEX = [
 	"level",
 	"storyline",
 	"published",
+	"publishedOrder",
 ];
 
 const _METAS = [

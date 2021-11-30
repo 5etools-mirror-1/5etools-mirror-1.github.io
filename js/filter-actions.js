@@ -14,12 +14,14 @@ class PageFilterActions extends PageFilter {
 			displayFn: StrUtil.uppercaseFirst,
 			itemSortFn: SortUtil.ascSortLower,
 		});
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Optional/Variant Action", "SRD"], isSrdFilter: true});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Optional/Variant Action", "SRD", "Basic Rules"], isMiscFilter: true});
 	}
 
 	static mutateForFilters (it) {
 		it._fTime = it.time ? it.time.map(it => it.unit || it) : null;
-		it._fMisc = it.srd ? ["SRD"] : [];
+		it._fMisc = [];
+		if (it.srd) it._fMisc.push("SRD");
+		if (it.basicRules) it._fMisc.push("Basic Rules");
 		if (it.fromVariant) it._fMisc.push("Optional/Variant Action");
 	}
 

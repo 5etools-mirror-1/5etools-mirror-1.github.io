@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.7.0",
+	"version": "1.7.1",
 	"type": "object",
 	"description": "Homebrew for 5etools. Should include arrays titled similarly to the main site data, e.g. `spell` or `class`",
 
@@ -349,6 +349,7 @@
 						"type": "string"
 					},
 					"data": {
+						"type": "object",
 						"description": "Foundry data",
 						"properties": {
 							"target.value": {

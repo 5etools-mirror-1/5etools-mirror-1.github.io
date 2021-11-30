@@ -398,7 +398,7 @@ class BestiaryPage extends ListPageMultiSource {
 				);
 			} else if (evt.ctrlKey || evt.metaKey) {
 				const name = `${toRender._displayName || toRender.name} \u2014 Markdown`;
-				const mdText = RendererMarkdown.get().render({entries: [{type: "dataCreature", dataCreature: toRender}]});
+				const mdText = RendererMarkdown.get().render({entries: [{type: "dataCreature", dataCreature: toRender, legendaryGroup: DataUtil.monster.getMetaGroup(toRender)}]});
 				const $content = Renderer.hover.$getHoverContent_miscCode(name, mdText);
 
 				Renderer.hover.getShowWindow(

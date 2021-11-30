@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "races.json",
-	"version": "1.9.0",
+	"version": "1.9.1",
 	"type": "object",
 	"definitions": {
 		"subraceData": {
@@ -89,6 +89,9 @@
 				},
 				"srd": {
 					"$ref": "util.json#/definitions/srd"
+				},
+				"basicRules": {
+					"$ref": "util.json#/definitions/basicRules"
 				},
 				"heightAndWeight": {
 					"oneOf": [
@@ -320,6 +323,9 @@
 				},
 				"srd": {
 					"$ref": "util.json#/definitions/srd"
+				},
+				"basicRules": {
+					"$ref": "util.json#/definitions/basicRules"
 				},
 				"heightAndWeight": {
 					"oneOf": [
@@ -698,6 +704,9 @@
 						"srd": {
 							"$ref": "util.json#/definitions/srd"
 						},
+						"basicRules": {
+							"$ref": "util.json#/definitions/basicRules"
+						},
 						"heightAndWeight": {
 							"oneOf": [
 								{
@@ -926,6 +935,9 @@
 						"srd": {
 							"$ref": "util.json#/definitions/srd"
 						},
+						"basicRules": {
+							"$ref": "util.json#/definitions/basicRules"
+						},
 						"heightAndWeight": {
 							"oneOf": [
 								{
@@ -1145,6 +1157,9 @@
 						},
 						"srd": {
 							"$ref": "util.json#/definitions/srd"
+						},
+						"basicRules": {
+							"$ref": "util.json#/definitions/basicRules"
 						},
 						"heightAndWeight": {
 							"oneOf": [
@@ -1369,6 +1384,9 @@
 						},
 						"srd": {
 							"$ref": "util.json#/definitions/srd"
+						},
+						"basicRules": {
+							"$ref": "util.json#/definitions/basicRules"
 						},
 						"heightAndWeight": {
 							"oneOf": [

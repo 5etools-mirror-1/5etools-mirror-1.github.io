@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "spells.json",
-	"version": "1.7.0",
+	"version": "1.7.2",
 	"title": "Spells",
 	"type": "object",
 	"definitions": {
@@ -406,8 +406,17 @@
 						]
 					}
 				},
+				"affectsCreatureType": {
+					"type": "array",
+					"items": {
+						"$ref": "../util.json#/definitions/creatureType"
+					}
+				},
 				"srd": {
 					"$ref": "../util.json#/definitions/srd"
+				},
+				"basicRules": {
+					"$ref": "../util.json#/definitions/basicRules"
 				},
 				"scalingLevelDice": {
 					"oneOf": [
@@ -892,8 +901,17 @@
 								]
 							}
 						},
+						"affectsCreatureType": {
+							"type": "array",
+							"items": {
+								"$ref": "../util.json#/definitions/creatureType"
+							}
+						},
 						"srd": {
 							"$ref": "../util.json#/definitions/srd"
+						},
+						"basicRules": {
+							"$ref": "../util.json#/definitions/basicRules"
 						},
 						"scalingLevelDice": {
 							"oneOf": [
@@ -1386,8 +1404,17 @@
 								]
 							}
 						},
+						"affectsCreatureType": {
+							"type": "array",
+							"items": {
+								"$ref": "../util.json#/definitions/creatureType"
+							}
+						},
 						"srd": {
 							"$ref": "../util.json#/definitions/srd"
+						},
+						"basicRules": {
+							"$ref": "../util.json#/definitions/basicRules"
 						},
 						"scalingLevelDice": {
 							"oneOf": [

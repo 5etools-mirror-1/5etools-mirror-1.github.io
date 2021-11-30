@@ -82,12 +82,14 @@ class BaseParser {
 
 		if (/^\d..-\d.. level\s+\(/.test(cleanLine) && !opts.noSpellcastingWarlockSlotLevel) return false;
 
+		if (/^•/.test(cleanLine)) return false;
+
 		// A lowercase word
 		if (/^[a-z]/.test(cleanLine) && !opts.noLowercase) return true;
 		// An ordinal (e.g. "3rd"), but not a spell level (e.g. "1st level")
 		if (/^\d[a-z][a-z]/.test(cleanLine) && !/^\d[a-z][a-z] level/gi.test(cleanLine)) return true;
-		// A number (e.g. damage; "5 (1d6 + 2)")
-		if (/^\d+\s+/.test(cleanLine) && !opts.noNumber) return true;
+		// A number (e.g. damage; "5 (1d6 + 2)"), optionally with slash-separated parts (e.g. "30/120 ft.")
+		if (/^\d+(\/\d+)*\s+/.test(cleanLine) && !opts.noNumber) return true;
 		// Opening brackets (e.g. damage; "(1d6 + 2)")
 		if (/^\(/.test(cleanLine) && !opts.noParenthesis) return true;
 		// An ability score name followed by "saving throw"
@@ -777,7 +779,7 @@ class ConvertUtil {
 	 * "Big Attack. Lorem ipsum..." vs "Lorem ipsum..."
 	 */
 	static isNameLine (line) {
-		const spl = line.split(/[.!?]/);
+		const spl = this._getMergedSplitName({line});
 		if (spl.map(it => it.trim()).filter(Boolean).length === 1) return false;
 
 		// ignore everything inside parentheses
@@ -809,6 +811,16 @@ class ConvertUtil {
 	static isListItemLine (line) { return line.trim().startsWith("•"); }
 
 	static splitNameLine (line, isKeepPunctuation) {
+		const spl = this._getMergedSplitName({line});
+		const rawName = spl[0];
+		const entry = line.substring(rawName.length + 1, line.length).trim();
+		const name = this.getCleanTraitActionName(rawName);
+		const out = {name, entry};
+		if (isKeepPunctuation) out.name += spl[1].trim();
+		return out;
+	}
+
+	static _getMergedSplitName ({line}) {
 		let spl = line.split(/([.!?:])/g);
 
 		// Handle e.g. "1. Freezing Ray. ..."
@@ -819,12 +831,15 @@ class ConvertUtil {
 			];
 		}
 
-		const rawName = spl[0];
-		const entry = line.substring(rawName.length + 1, line.length).trim();
-		const name = this.getCleanTraitActionName(rawName);
-		const out = {name, entry};
-		if (isKeepPunctuation) out.name += spl[1].trim();
-		return out;
+		// Handle e.g. "Mr. Blue" or "If Mr. Blue"
+		for (let i = 0; i < spl.length - 2; ++i) {
+			const toCheck = `${spl[i]}${spl[i + 1]}`;
+			if (!toCheck.split(" ").some(it => ConvertUtil._CONTRACTIONS.has(it))) continue;
+			spl[i] = `${spl[i]}${spl[i + 1]}${spl[i + 2]}`;
+			spl.splice(i + 1, 2);
+		}
+
+		return spl;
 	}
 
 	static getCleanTraitActionName (name) {
@@ -896,6 +911,7 @@ class ConvertUtil {
 		return new RegExp(`\\s*${start.escapeRegexp()}\\s*?(?::|\\.|\\b)\\s*`, "i");
 	}
 }
+ConvertUtil._CONTRACTIONS = new Set(["Mr.", "Mrs.", "Ms.", "Dr."]);
 
 class AlignmentUtil {
 

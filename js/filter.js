@@ -1191,7 +1191,7 @@ class Filter extends FilterBase {
 	 * @param [opts.umbrellaItems] Items which should, when set active, show everything in the filter. E.g. "All".
 	 * @param [opts.umbrellaExcludes] Items which should ignore the state of any `umbrellaItems`
 	 * @param [opts.isSortByDisplayItems] If items should be sorted by their display value, rather than their internal value.
-	 * @param [opts.isSrdFilter] If this filter's items include the "SRD" tag.
+	 * @param [opts.isMiscFilter] If this is the Misc. filter (containing "SRD" and "Basic Rules" tags).
 	 */
 	constructor (opts) {
 		super(opts);
@@ -1211,7 +1211,9 @@ class Filter extends FilterBase {
 		this._umbrellaItems = Filter._getAsFilterItems(opts.umbrellaItems);
 		this._umbrellaExcludes = Filter._getAsFilterItems(opts.umbrellaExcludes);
 		this._isSortByDisplayItems = !!opts.isSortByDisplayItems;
-		this._isSrdFilter = !!opts.isSrdFilter;
+		this._isReprintedFilter = !!opts.isMiscFilter && this._items.some(it => it.item === "Reprinted");
+		this._isSrdFilter = !!opts.isMiscFilter && this._items.some(it => it.item === "SRD");
+		this._isBasicRulesFilter = !!opts.isMiscFilter && this._items.some(it => it.item === "Basic Rules");
 
 		Filter._validateItemNests(this._items, this._nests);
 
@@ -1229,7 +1231,9 @@ class Filter extends FilterBase {
 		this._pillGroupsMeta = {};
 	}
 
+	get isReprintedFilter () { return this._isReprintedFilter; }
 	get isSrdFilter () { return this._isSrdFilter; }
+	get isBasicRulesFilter () { return this._isBasicRulesFilter; }
 
 	getSaveableState () {
 		return {
@@ -2177,6 +2181,11 @@ class SourceFilter extends Filter {
 			new ContextUtil.Action(
 				"Select SRD Sources",
 				() => this._doSetPinsSrd(),
+				{title: `Select System Reference Document Sources.`},
+			),
+			new ContextUtil.Action(
+				"Select Basic Rules Sources",
+				() => this._doSetPinsBasicRules(),
 			),
 			null,
 			new ContextUtil.Action(
@@ -2247,8 +2256,30 @@ class SourceFilter extends Filter {
 		Object.keys(this._state).forEach(k => this._state[k] = SourceFilter._SRD_SOURCES.has(k) ? 1 : 0);
 
 		const srdFilter = this._filterBox.filters.find(it => it.isSrdFilter);
-		if (!srdFilter) return;
-		srdFilter.setValue("SRD", 1);
+		if (srdFilter) srdFilter.setValue("SRD", 1);
+
+		const basicRulesFilter = this._filterBox.filters.find(it => it.isBasicRulesFilter);
+		if (basicRulesFilter) basicRulesFilter.setValue("Basic Rules", 0);
+
+		// also disable "Reprinted" otherwise some Deities are missing
+		const reprintedFilter = this._filterBox.filters.find(it => it.isReprintedFilter);
+		if (reprintedFilter) reprintedFilter.setValue("Reprinted", 0);
+	}
+
+	_doSetPinsBasicRules () {
+		SourceFilter._BASIC_RULES_SOURCES = SourceFilter._BASIC_RULES_SOURCES || new Set([SRC_PHB, SRC_MM, SRC_DMG]);
+
+		Object.keys(this._state).forEach(k => this._state[k] = SourceFilter._BASIC_RULES_SOURCES.has(k) ? 1 : 0);
+
+		const basicRulesFilter = this._filterBox.filters.find(it => it.isBasicRulesFilter);
+		if (basicRulesFilter) basicRulesFilter.setValue("Basic Rules", 1);
+
+		const srdFilter = this._filterBox.filters.find(it => it.isSrdFilter);
+		if (srdFilter) srdFilter.setValue("SRD", 0);
+
+		// also disable "Reprinted" otherwise some Deities are missing
+		const reprintedFilter = this._filterBox.filters.find(it => it.isReprintedFilter);
+		if (reprintedFilter) reprintedFilter.setValue("Reprinted", 0);
 	}
 
 	static getCompleteFilterSources (ent) {
@@ -2435,6 +2466,7 @@ SourceFilter._DEFAULT_META = {
 	isIncludeOtherSources: false,
 };
 SourceFilter._SRD_SOURCES = null;
+SourceFilter._BASIC_RULES_SOURCES = null;
 
 class RangeFilter extends FilterBase {
 	/**

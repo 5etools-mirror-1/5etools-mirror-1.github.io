@@ -1522,57 +1522,36 @@
 		{
 			"name": "Blue Slaad",
 			"source": "MM",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
+			"_copy": {
+				"name": "Slaadi",
+				"source": "MM",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
 							"type": "entries",
 							"entries": [
-								"The bone hooks that protrude from the back of a blue slaad's hands inflict a terrible transformative disease on humanoids wounded by them. This infection, called chaos phage, transforms its victim into a fully grown red slaad\u2014or green slaad if the host was a spellcaster able to cast 3rd level spells or higher.",
 								{
 									"type": "entries",
-									"name": "Slaadi",
 									"entries": [
-										"In the Ever-Changing Chaos of Limbo, bits of forest and meadow, ruined castles, and isolated islands drift through a tumult of fire, water, earth, and wind. The foremost inhabitants of this inhospitable plane are the toad-like slaadi. Slaadi are undisciplined and have no formal hierarchy, although weaker slaadi obey stronger ones under threat of annihilation.",
-										{
-											"name": "The Spawning Stone",
-											"entries": [
-												" Long ago, Primus, overlord of the modrons, created a gigantic, geometrically complex stone imbued with the power of law. He then cast it adrift in Limbo, believing that the stone would bring order to the chaos of that plane and halt the spread of chaos to other planes. As the stone's power grew, it became possible for creatures with ordered minds, such as modrons and githzerai, to create enclaves in Limbo. However, Primus's creation had an unforeseen side effect: the chaotic energy absorbed by the stone spawned the horrors that came to be known as slaadi. Sages refer to Primus's massive creation as the Spawning Stone for this reason.",
-												"The slaadi wiped out every last modron enclave in Limbo. As creatures of utter chaos, slaadi loathe modrons and attack them on sight. Nonetheless, Primus stands by his creation and either doesn't perceive the slaadi as threats or chooses to ignore them."
-											],
-											"type": "entries"
-										},
-										{
-											"name": "Birth and Transformation",
-											"entries": [
-												" Slaadi have horrific cycles of reproduction. Slaadi reproduce either by implanting humanoid hosts with eggs or by infecting them with a transformative disease called chaos phage. Each color of slaad reproduces or transforms in a different way, with red slaadi spawning blue and green slaadi, and blue slaadi spawning red and green. Each green slaad undergoes a lifelong cycle of transformation into the more powerful gray and death slaadi. With each transformation, the slaad retains its memories."
-											],
-											"type": "entries"
-										},
-										{
-											"name": "Shapechangers",
-											"entries": [
-												" Some slaadi can transform into the humanoid creatures from which they were originally spawned. These slaadi return to the Material Plane to sow discord in the guise of their former selves."
-											],
-											"type": "entries"
-										}
+										"The bone hooks that protrude from the back of a blue slaad's hands inflict a terrible transformative disease on humanoids wounded by them. This infection, called chaos phage, transforms its victim into a fully grown red slaad\u2014or green slaad if the host was a spellcaster able to cast 3rd level spells or higher."
 									]
 								}
 							]
 						}
-					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/MM/Blue Slaad.jpg"
+					},
+					"images": {
+						"mode": "prependArr",
+						"items": {
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "bestiary/MM/Blue Slaad.jpg"
+							}
+						}
 					}
 				}
-			]
+			}
 		},
 		{
 			"name": "Bone Devil",
@@ -3038,57 +3017,36 @@
 		{
 			"name": "Death Slaad",
 			"source": "MM",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
+			"_copy": {
+				"name": "Slaadi",
+				"source": "MM",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
 							"type": "entries",
 							"entries": [
-								"Death slaadi are suffused with energy from the Negative Energy Plane and exemplify evil's corruption of chaos, and they take sadistic pleasure in bringing harm to others. They propagate their race by dragooning mobs of red and blue slaadi and invading other planes. Humanoids who survive the incursion become incubators for new slaadi.",
 								{
 									"type": "entries",
-									"name": "Slaadi",
 									"entries": [
-										"In the Ever-Changing Chaos of Limbo, bits of forest and meadow, ruined castles, and isolated islands drift through a tumult of fire, water, earth, and wind. The foremost inhabitants of this inhospitable plane are the toad-like slaadi. Slaadi are undisciplined and have no formal hierarchy, although weaker slaadi obey stronger ones under threat of annihilation.",
-										{
-											"name": "The Spawning Stone",
-											"entries": [
-												" Long ago, Primus, overlord of the modrons, created a gigantic, geometrically complex stone imbued with the power of law. He then cast it adrift in Limbo, believing that the stone would bring order to the chaos of that plane and halt the spread of chaos to other planes. As the stone's power grew, it became possible for creatures with ordered minds, such as modrons and githzerai, to create enclaves in Limbo. However, Primus's creation had an unforeseen side effect: the chaotic energy absorbed by the stone spawned the horrors that came to be known as slaadi. Sages refer to Primus's massive creation as the Spawning Stone for this reason.",
-												"The slaadi wiped out every last modron enclave in Limbo. As creatures of utter chaos, slaadi loathe modrons and attack them on sight. Nonetheless, Primus stands by his creation and either doesn't perceive the slaadi as threats or chooses to ignore them."
-											],
-											"type": "entries"
-										},
-										{
-											"name": "Birth and Transformation",
-											"entries": [
-												" Slaadi have horrific cycles of reproduction. Slaadi reproduce either by implanting humanoid hosts with eggs or by infecting them with a transformative disease called chaos phage. Each color of slaad reproduces or transforms in a different way, with red slaadi spawning blue and green slaadi, and blue slaadi spawning red and green. Each green slaad undergoes a lifelong cycle of transformation into the more powerful gray and death slaadi. With each transformation, the slaad retains its memories."
-											],
-											"type": "entries"
-										},
-										{
-											"name": "Shapechangers",
-											"entries": [
-												" Some slaadi can transform into the humanoid creatures from which they were originally spawned. These slaadi return to the Material Plane to sow discord in the guise of their former selves."
-											],
-											"type": "entries"
-										}
+										"Death slaadi are suffused with energy from the Negative Energy Plane and exemplify evil's corruption of chaos, and they take sadistic pleasure in bringing harm to others. They propagate their race by dragooning mobs of red and blue slaadi and invading other planes. Humanoids who survive the incursion become incubators for new slaadi."
 									]
 								}
 							]
 						}
-					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/MM/Death Slaad.jpg"
+					},
+					"images": {
+						"mode": "prependArr",
+						"items": {
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "bestiary/MM/Death Slaad.jpg"
+							}
+						}
 					}
 				}
-			]
+			}
 		},
 		{
 			"name": "Death Tyrant",
@@ -4625,9 +4583,14 @@
 											"name": "Absolute Law and Order",
 											"entries": [
 												" Under the direction of their leader, Primus, modrons increase order in the multiverse in accordance with laws beyond the comprehension of mortal minds. Their own minds are networked in a hierarchal pyramid, in which each modron receives commands from superiors and delegates orders to underlings. A modron carries out commands with total obedience, utmost efficiency, and an absence of morality or ego. Modrons have no sense of self beyond what is necessary to fulfill their duties. They exist as a unified collective, divided by ranks, yet they always refer to themselves collectively. To a modron, there is no \"I,\" but only \"we\" or \"us.\"",
-												"Variant: Rogue Modrons",
-												"A modron unit sometimes becomes defective, either through natural decay or exposure to chaotic forces. Rogue modrons don't act in accordance with Primus's wishes and directives, breaking laws, disobeying orders, and even engaging in violence. Other modrons hunt down such rogues.",
-												"A rogue modron loses the Axiomatic Mind trait and can have any alignment other than lawful neutral. Otherwise, it has the same statistics as a regular modron of its rank."
+												{
+													"type": "inset",
+													"name": "Variant: Rogue Modrons",
+													"entries": [
+														"A modron unit sometimes becomes defective, either through natural decay or exposure to chaotic forces. Rogue modrons don't act in accordance with Primus's wishes and directives, breaking laws, disobeying orders, and even engaging in violence. Other modrons hunt down such rogues.",
+														"A rogue modron loses the Axiomatic Mind trait and can have any alignment other than lawful neutral. Otherwise, it has the same statistics as a regular modron of its rank."
+													]
+												}
 											],
 											"type": "entries"
 										},
@@ -4937,7 +4900,13 @@
 									"entries": [
 										"The most beautiful and striking of all lesser and greater devils, the erinyes are fierce and disciplined warriors. Sweeping down from the skies, they bring swift death to creatures that have wronged their masters or defied the edicts of Asmodeus. The erinyes appear as male or female humanoids with statuesque builds and large feathery wings. Most wear stylized armor and horned helms, and carry exquisite swords and bows. A few also use ropes of entanglement to ensnare powerful foes.",
 										"Legends tell that the first erinyes were angels that fell from the Upper Planes because of temptation or misdeed. Erinyes are always willing to take advantage of being mistaken for celestials in their missions of conquest and corruption.",
-										"Variant: Rope of Entanglement Some erinyes carry a {@item rope of entanglement} (detailed in the Dungeon Master's Guide). When such an erinyes uses its Multiattack, the erinyes can use the rope in place of two of the attacks."
+										{
+											"type": "inset",
+											"name": "Variant: Rope of Entanglement",
+											"entries": [
+												"Some erinyes carry a {@item rope of entanglement} (detailed in the Dungeon Master's Guide). When such an erinyes uses its Multiattack, the erinyes can use the rope in place of two of the attacks."
+											]
+										}
 									]
 								}
 							]
@@ -6150,13 +6119,25 @@
 							"type": "entries",
 							"entries": [
 								"A giant lizard can be ridden or used as a draft animal. Lizardfolk also keep them as pets, and subterranean giant lizards are used as mounts and pack animals by drow, duergar, and other Underdark dwellers.",
-								"Variant: Giant Lizard Traits",
-								"Some giant lizards have one or both of the following traits. Hold Breath. The lizard can hold its breath for 15 minutes. (A lizard that has this trait also has a swimming speed of 30 feet.)",
 								{
-									"name": "Spider Climb",
-									"type": "entries",
+									"type": "inset",
+									"name": "Variant: Giant Lizard Traits",
 									"entries": [
-										"The lizard can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+										"Some giant lizards have one or both of the following traits.",
+										{
+											"type": "entries",
+											"name": "Hold Breath",
+											"entries": [
+												"The lizard can hold its breath for 15 minutes. (A lizard that has this trait also has a swimming speed of 30 feet.)"
+											]
+										},
+										{
+											"name": "Spider Climb",
+											"type": "entries",
+											"entries": [
+												"The lizard can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+											]
+										}
 									]
 								}
 							]
@@ -7057,70 +7038,37 @@
 		{
 			"name": "Gray Slaad",
 			"source": "MM",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
+			"_copy": {
+				"name": "Slaadi",
+				"source": "MM",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
 							"type": "entries",
 							"entries": [
-								"Outside of Limbo, gray slaadi act as living extensions of the will of their masters, the death slaadi. A gray slaad journeys to the Material Plane on errands of doom, often taking humanoid form. A gray slaad learns how to master the use of a greatsword and imbue it with its own innate magic.",
-								"A gray slaad that eats the entire corpse of a dead death slaad instantly transforms into a death slaad.",
 								{
 									"type": "entries",
-									"name": "Slaadi",
 									"entries": [
-										"In the Ever-Changing Chaos of Limbo, bits of forest and meadow, ruined castles, and isolated islands drift through a tumult of fire, water, earth, and wind. The foremost inhabitants of this inhospitable plane are the toad-like slaadi. Slaadi are undisciplined and have no formal hierarchy, although weaker slaadi obey stronger ones under threat of annihilation.",
-										{
-											"name": "The Spawning Stone",
-											"entries": [
-												" Long ago, Primus, overlord of the modrons, created a gigantic, geometrically complex stone imbued with the power of law. He then cast it adrift in Limbo, believing that the stone would bring order to the chaos of that plane and halt the spread of chaos to other planes. As the stone's power grew, it became possible for creatures with ordered minds, such as modrons and githzerai, to create enclaves in Limbo. However, Primus's creation had an unforeseen side effect: the chaotic energy absorbed by the stone spawned the horrors that came to be known as slaadi. Sages refer to Primus's massive creation as the Spawning Stone for this reason.",
-												"The slaadi wiped out every last modron enclave in Limbo. As creatures of utter chaos, slaadi loathe modrons and attack them on sight. Nonetheless, Primus stands by his creation and either doesn't perceive the slaadi as threats or chooses to ignore them.",
-												"Variant: Slaad Control Gems",
-												"As a slaad emerges from the Spawning Stone, the stone magically implants a fragment of itself in the slaad's brain. This fragment takes the form of a magic gem roughly the size and shape of a human child's fist. The gem is the same color as the slaad. Another creature can use magic to draw forth a slaad's gem and use it to subjugate the slaad. The slaad must obey whoever possesses its gem. If a slaad's gem is destroyed, the slaad can no longer be controlled in this way.",
-												"A slaad born from something other than the Spawning Stone has no gem in its brain, but it gains one if it ever comes into contact with the Spawning Stone. Slaadi on Limbo are attracted to the Spawning Stone, so most end up with a gem. A slaad with a control gem in its brain has the following additional trait.",
-												"A {@spell greater restoration} spell cast on the slaad destroys the gem without harming the slaad.",
-												"Someone who is proficient in Wisdom ({@skill Medicine}) can remove the gem from an {@condition incapacitated} slaad. Each try requires 1 minute of uninterrupted work and a successful DC 20 Wisdom ({@skill Medicine}) check. Each failed attempt deals 22 ({@damage 4d10}) psychic damage to the slaad."
-											],
-											"type": "entries"
-										},
-										{
-											"name": "Birth and Transformation",
-											"entries": [
-												" Slaadi have horrific cycles of reproduction. Slaadi reproduce either by implanting humanoid hosts with eggs or by infecting them with a transformative disease called chaos phage. Each color of slaad reproduces or transforms in a different way, with red slaadi spawning blue and green slaadi, and blue slaadi spawning red and green. Each green slaad undergoes a lifelong cycle of transformation into the more powerful gray and death slaadi. With each transformation, the slaad retains its memories."
-											],
-											"type": "entries"
-										},
-										{
-											"name": "Shapechangers",
-											"entries": [
-												" Some slaadi can transform into the humanoid creatures from which they were originally spawned. These slaadi return to the Material Plane to sow discord in the guise of their former selves."
-											],
-											"type": "entries"
-										},
-										{
-											"name": "Control Gem",
-											"entries": [
-												" Implanted in the slaad's brain is a magic control gem. The slaad must obey whoever possesses the gem and is immune to being {@condition charmed} while so controlled. Certain spells can be used to acquire the gem. If the slaad fails its saving throw against imprisonment, the spell can transfer the gem to the spellcaster's open hand, instead of imprisoning the slaad. A {@spell wish} spell, if cast in the slaad's presence, can be worded to acquire the gem."
-											],
-											"type": "entries"
-										}
+										"Outside of Limbo, gray slaadi act as living extensions of the will of their masters, the death slaadi. A gray slaad journeys to the Material Plane on errands of doom, often taking humanoid form. A gray slaad learns how to master the use of a greatsword and imbue it with its own innate magic.",
+										"A gray slaad that eats the entire corpse of a dead death slaad instantly transforms into a death slaad."
 									]
 								}
 							]
 						}
-					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/MM/Gray Slaad.jpg"
+					},
+					"images": {
+						"mode": "prependArr",
+						"items": {
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "bestiary/MM/Gray Slaad.jpg"
+							}
+						}
 					}
 				}
-			]
+			}
 		},
 		{
 			"name": "Green Dragon",
@@ -7259,70 +7207,37 @@
 		{
 			"name": "Green Slaad",
 			"source": "MM",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
+			"_copy": {
+				"name": "Slaadi",
+				"source": "MM",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
 							"type": "entries",
 							"entries": [
-								"Green slaadi are surprisingly intelligent and possess innate spellcasting ability. A green slaad can change its shape to appear as a humanoid. If it was born of a humanoid host, the slaad usually adopts its host's form.",
-								"At some unpredictable point in its existence, a green slaad unlocks the means to magically, instantly, and permanently transform itself into a gray slaad. Unlocking this knowledge can take years, even decades.",
 								{
 									"type": "entries",
-									"name": "Slaadi",
 									"entries": [
-										"In the Ever-Changing Chaos of Limbo, bits of forest and meadow, ruined castles, and isolated islands drift through a tumult of fire, water, earth, and wind. The foremost inhabitants of this inhospitable plane are the toad-like slaadi. Slaadi are undisciplined and have no formal hierarchy, although weaker slaadi obey stronger ones under threat of annihilation.",
-										{
-											"name": "The Spawning Stone",
-											"entries": [
-												" Long ago, Primus, overlord of the modrons, created a gigantic, geometrically complex stone imbued with the power of law. He then cast it adrift in Limbo, believing that the stone would bring order to the chaos of that plane and halt the spread of chaos to other planes. As the stone's power grew, it became possible for creatures with ordered minds, such as modrons and githzerai, to create enclaves in Limbo. However, Primus's creation had an unforeseen side effect: the chaotic energy absorbed by the stone spawned the horrors that came to be known as slaadi. Sages refer to Primus's massive creation as the Spawning Stone for this reason.",
-												"The slaadi wiped out every last modron enclave in Limbo. As creatures of utter chaos, slaadi loathe modrons and attack them on sight. Nonetheless, Primus stands by his creation and either doesn't perceive the slaadi as threats or chooses to ignore them.",
-												"Variant: Slaad Control Gems",
-												"As a slaad emerges from the Spawning Stone, the stone magically implants a fragment of itself in the slaad's brain. This fragment takes the form of a magic gem roughly the size and shape of a human child's fist. The gem is the same color as the slaad. Another creature can use magic to draw forth a slaad's gem and use it to subjugate the slaad. The slaad must obey whoever possesses its gem. If a slaad's gem is destroyed, the slaad can no longer be controlled in this way.",
-												"A slaad born from something other than the Spawning Stone has no gem in its brain, but it gains one if it ever comes into contact with the Spawning Stone. Slaadi on Limbo are attracted to the Spawning Stone, so most end up with a gem. A slaad with a control gem in its brain has the following additional trait.",
-												"A {@spell greater restoration} spell cast on the slaad destroys the gem without harming the slaad.",
-												"Someone who is proficient in Wisdom ({@skill Medicine}) can remove the gem from an {@condition incapacitated} slaad. Each try requires 1 minute of uninterrupted work and a successful DC 20 Wisdom ({@skill Medicine}) check. Each failed attempt deals 22 ({@damage 4d10}) psychic damage to the slaad."
-											],
-											"type": "entries"
-										},
-										{
-											"name": "Birth and Transformation",
-											"entries": [
-												" Slaadi have horrific cycles of reproduction. Slaadi reproduce either by implanting humanoid hosts with eggs or by infecting them with a transformative disease called chaos phage. Each color of slaad reproduces or transforms in a different way, with red slaadi spawning blue and green slaadi, and blue slaadi spawning red and green. Each green slaad undergoes a lifelong cycle of transformation into the more powerful gray and death slaadi. With each transformation, the slaad retains its memories."
-											],
-											"type": "entries"
-										},
-										{
-											"name": "Shapechangers",
-											"entries": [
-												" Some slaadi can transform into the humanoid creatures from which they were originally spawned. These slaadi return to the Material Plane to sow discord in the guise of their former selves."
-											],
-											"type": "entries"
-										},
-										{
-											"name": "Control Gem",
-											"entries": [
-												" Implanted in the slaad's brain is a magic control gem. The slaad must obey whoever possesses the gem and is immune to being {@condition charmed} while so controlled. Certain spells can be used to acquire the gem. If the slaad fails its saving throw against imprisonment, the spell can transfer the gem to the spellcaster's open hand, instead of imprisoning the slaad. A {@spell wish} spell, if cast in the slaad's presence, can be worded to acquire the gem."
-											],
-											"type": "entries"
-										}
+										"Green slaadi are surprisingly intelligent and possess innate spellcasting ability. A green slaad can change its shape to appear as a humanoid. If it was born of a humanoid host, the slaad usually adopts its host's form.",
+										"At some unpredictable point in its existence, a green slaad unlocks the means to magically, instantly, and permanently transform itself into a gray slaad. Unlocking this knowledge can take years, even decades."
 									]
 								}
 							]
 						}
-					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/MM/Green Slaad.jpg"
+					},
+					"images": {
+						"mode": "prependArr",
+						"items": {
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "bestiary/MM/Green Slaad.jpg"
+							}
+						}
 					}
 				}
-			]
+			}
 		},
 		{
 			"name": "Grell",
@@ -8590,20 +8505,25 @@
 									"entries": [
 										"Found most commonly on the cold layers of Stygia and Cania, ice devils serve as commanders of the infernal armies of the Nine Hells, tormenting lesser devils as an outlet for their anger and resentment. Coveting the power of their pit fiend superiors, ice devils work ceaselessly toward promotion, slaughtering the enemies of the Nine Hells and claiming as many souls as they can for their archdevil masters.",
 										"Resembling a giant bipedal insect, an ice devil has clawed hands and feet, powerful mandibles, and a long tail covered in razor-sharp spikes. Some carry barbed spears whose icy touch can render a foe all but helpless in combat.",
-										"Variant: Ice Devil Spear",
-										"Some ice devils have the following action options.",
 										{
-											"name": "Multiattack",
-											"type": "entries",
+											"type": "inset",
+											"name": "Variant: Ice Devil Spear",
 											"entries": [
-												"The devil makes two attacks: one with its spear and one with its tail."
-											]
-										},
-										{
-											"name": "Ice Spear",
-											"type": "entries",
-											"entries": [
-												"Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 14 ({@damage 2d8 + 5}) piercing damage + 10 ({@damage 3d6}) cold damage. If the target is a creature, it must succeed on a DC 15 Constitution saving throw, or for 1 minute, its speed is reduced by 10 feet; it can take either an action or a bonus action on each of its turns, not both; and it can't take reactions. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+												"Some ice devils have the following action options.",
+												{
+													"name": "Multiattack",
+													"type": "entries",
+													"entries": [
+														"The devil makes two attacks: one with its spear and one with its tail."
+													]
+												},
+												{
+													"name": "Ice Spear",
+													"type": "entries",
+													"entries": [
+														"Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 14 ({@damage 2d8 + 5}) piercing damage + 10 ({@damage 3d6}) cold damage. If the target is a creature, it must succeed on a DC 15 Constitution saving throw, or for 1 minute, its speed is reduced by 10 feet; it can take either an action or a bonus action on each of its turns, not both; and it can't take reactions. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+													]
+												}
 											]
 										}
 									]
@@ -8684,13 +8604,18 @@
 									"entries": [
 										"Imps are found throughout the Lower Planes, either running errands for their infernal masters, spying on rivals, or misleading and waylaying mortals. An imp will proudly serve an evil master of any kind, but it can't be relied on to carry out tasks with any speed or efficiency.",
 										"An imp can assume animal form at will, but in its natural state it resembles a diminutive red-skinned humanoid with a barbed tail, small horns, and leathery wings. It strikes while {@condition invisible}, attacking with its poison stinger.",
-										"Variant: Imp Familiar",
-										"Imps can be found in the service to mortal spellcasters, acting as advisors, spies, and familiars. An imp urges its master to acts of evil, knowing the mortal's soul is a prize the imp might ultimately claim. Imps display an unusual loyalty to their masters, and an imp can be quite dangerous if its master is threatened. Some such imps have the following trait.",
 										{
-											"name": "Familiar",
-											"type": "entries",
+											"type": "inset",
+											"name": "Variant: Imp Familiar",
 											"entries": [
-												"The imp can enter into a contract to serve another creature as a familiar, forming a telepathic bond with its willing master. While the two are bonded, the master can sense what the imp senses as long as they are within 1 mile of each other. While the imp is within 10 feet of its master, the master shares the imp's Magic Resistance trait. If its master violates the terms of the contract, the imp can end its service as a familiar, ending the telepathic bond."
+												"Imps can be found in the service to mortal spellcasters, acting as advisors, spies, and familiars. An imp urges its master to acts of evil, knowing the mortal's soul is a prize the imp might ultimately claim. Imps display an unusual loyalty to their masters, and an imp can be quite dangerous if its master is threatened. Some such imps have the following trait.",
+												{
+													"name": "Familiar",
+													"type": "entries",
+													"entries": [
+														"The imp can enter into a contract to serve another creature as a familiar, forming a telepathic bond with its willing master. While the two are bonded, the master can sense what the imp senses as long as they are within 1 mile of each other. While the imp is within 10 feet of its master, the master shares the imp's Magic Resistance trait. If its master violates the terms of the contract, the imp can end its service as a familiar, ending the telepathic bond."
+													]
+												}
 											]
 										}
 									]
@@ -9125,7 +9050,7 @@
 									]
 								},
 								{
-									"type": "entries",
+									"type": "inset",
 									"name": "Variant: Kuo-toa Monitor",
 									"entries": [
 										"A kuo-toa monitor has a challenge rating of 3 (700 XP). It has the same statistics as a kuo-toa whip except that it adds its Wisdom modifier to its Armor Class (AC 13), loses the Spellcaster trait, and replaces the whip's action options with the following action options.",
@@ -10331,9 +10256,14 @@
 											"name": "Absolute Law and Order",
 											"entries": [
 												" Under the direction of their leader, Primus, modrons increase order in the multiverse in accordance with laws beyond the comprehension of mortal minds. Their own minds are networked in a hierarchal pyramid, in which each modron receives commands from superiors and delegates orders to underlings. A modron carries out commands with total obedience, utmost efficiency, and an absence of morality or ego. Modrons have no sense of self beyond what is necessary to fulfill their duties. They exist as a unified collective, divided by ranks, yet they always refer to themselves collectively. To a modron, there is no \"I,\" but only \"we\" or \"us.\"",
-												"Variant: Rogue Modrons",
-												"A modron unit sometimes becomes defective, either through natural decay or exposure to chaotic forces. Rogue modrons don't act in accordance with Primus's wishes and directives, breaking laws, disobeying orders, and even engaging in violence. Other modrons hunt down such rogues.",
-												"A rogue modron loses the Axiomatic Mind trait and can have any alignment other than lawful neutral. Otherwise, it has the same statistics as a regular modron of its rank."
+												{
+													"type": "inset",
+													"name": "Variant: Rogue Modrons",
+													"entries": [
+														"A modron unit sometimes becomes defective, either through natural decay or exposure to chaotic forces. Rogue modrons don't act in accordance with Primus's wishes and directives, breaking laws, disobeying orders, and even engaging in violence. Other modrons hunt down such rogues.",
+														"A rogue modron loses the Axiomatic Mind trait and can have any alignment other than lawful neutral. Otherwise, it has the same statistics as a regular modron of its rank."
+													]
+												}
 											],
 											"type": "entries"
 										},
@@ -11621,9 +11551,14 @@
 											"name": "Absolute Law and Order",
 											"entries": [
 												" Under the direction of their leader, Primus, modrons increase order in the multiverse in accordance with laws beyond the comprehension of mortal minds. Their own minds are networked in a hierarchal pyramid, in which each modron receives commands from superiors and delegates orders to underlings. A modron carries out commands with total obedience, utmost efficiency, and an absence of morality or ego. Modrons have no sense of self beyond what is necessary to fulfill their duties. They exist as a unified collective, divided by ranks, yet they always refer to themselves collectively. To a modron, there is no \"I,\" but only \"we\" or \"us.\"",
-												"Variant: Rogue Modrons",
-												"A modron unit sometimes becomes defective, either through natural decay or exposure to chaotic forces. Rogue modrons don't act in accordance with Primus's wishes and directives, breaking laws, disobeying orders, and even engaging in violence. Other modrons hunt down such rogues.",
-												"A rogue modron loses the Axiomatic Mind trait and can have any alignment other than lawful neutral. Otherwise, it has the same statistics as a regular modron of its rank."
+												{
+													"type": "inset",
+													"name": "Variant: Rogue Modrons",
+													"entries": [
+														"A modron unit sometimes becomes defective, either through natural decay or exposure to chaotic forces. Rogue modrons don't act in accordance with Primus's wishes and directives, breaking laws, disobeying orders, and even engaging in violence. Other modrons hunt down such rogues.",
+														"A rogue modron loses the Axiomatic Mind trait and can have any alignment other than lawful neutral. Otherwise, it has the same statistics as a regular modron of its rank."
+													]
+												}
 											],
 											"type": "entries"
 										},
@@ -12019,8 +11954,13 @@
 									"entries": [
 										"Pseudodragons can't speak, but they communicate using a limited form of telepathy that allows them to share basic ideas such as hunger, curiosity, or affection. When it bonds with a companion, a pseudodragon can communicate what it sees and hears even over long distances.",
 										"A pseudodragon often vocalizes animal noises. A rasping purr indicates pleasure, while a hiss means unpleasant surprise. A bird-like chirping represents desire, and a growl always means anger or discontent.",
-										"Variant: Pseudodragon Familiar",
-										"Some pseudodragons are willing to serve spellcasters as a familiar. Such pseudodragons have the following trait."
+										{
+											"type": "inset",
+											"name": "Variant: Pseudodragon Familiar",
+											"entries": [
+												"Some pseudodragons are willing to serve spellcasters as a familiar. Such pseudodragons have the following trait."
+											]
+										}
 									]
 								},
 								{
@@ -12141,9 +12081,14 @@
 											"name": "Absolute Law and Order",
 											"entries": [
 												" Under the direction of their leader, Primus, modrons increase order in the multiverse in accordance with laws beyond the comprehension of mortal minds. Their own minds are networked in a hierarchal pyramid, in which each modron receives commands from superiors and delegates orders to underlings. A modron carries out commands with total obedience, utmost efficiency, and an absence of morality or ego. Modrons have no sense of self beyond what is necessary to fulfill their duties. They exist as a unified collective, divided by ranks, yet they always refer to themselves collectively. To a modron, there is no \"I,\" but only \"we\" or \"us.\"",
-												"Variant: Rogue Modrons",
-												"A modron unit sometimes becomes defective, either through natural decay or exposure to chaotic forces. Rogue modrons don't act in accordance with Primus's wishes and directives, breaking laws, disobeying orders, and even engaging in violence. Other modrons hunt down such rogues.",
-												"A rogue modron loses the Axiomatic Mind trait and can have any alignment other than lawful neutral. Otherwise, it has the same statistics as a regular modron of its rank."
+												{
+													"type": "inset",
+													"name": "Variant: Rogue Modrons",
+													"entries": [
+														"A modron unit sometimes becomes defective, either through natural decay or exposure to chaotic forces. Rogue modrons don't act in accordance with Primus's wishes and directives, breaking laws, disobeying orders, and even engaging in violence. Other modrons hunt down such rogues.",
+														"A rogue modron loses the Axiomatic Mind trait and can have any alignment other than lawful neutral. Otherwise, it has the same statistics as a regular modron of its rank."
+													]
+												}
 											],
 											"type": "entries"
 										},
@@ -12538,57 +12483,36 @@
 		{
 			"name": "Red Slaad",
 			"source": "MM",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
+			"_copy": {
+				"name": "Slaadi",
+				"source": "MM",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
 							"type": "entries",
 							"entries": [
-								"When a red slaad claws a humanoid creature, it can inject an egg from a gland under one of its claws. The egg works its way into its host and gestates, eventually forming a slaad tadpole. Such a tadpole then eats its way out of the host's body, feeds on the host's remains, and then seeks any other fresh meat it can find. The tadpole transforms into a fully grown blue slaad-or green slaad if the host had the ability to cast 3rd level spells or higher-within {@dice 2d12} hours.",
 								{
 									"type": "entries",
-									"name": "Slaadi",
 									"entries": [
-										"In the Ever-Changing Chaos of Limbo, bits of forest and meadow, ruined castles, and isolated islands drift through a tumult of fire, water, earth, and wind. The foremost inhabitants of this inhospitable plane are the toad-like slaadi. Slaadi are undisciplined and have no formal hierarchy, although weaker slaadi obey stronger ones under threat of annihilation.",
-										{
-											"name": "The Spawning Stone",
-											"entries": [
-												" Long ago, Primus, overlord of the modrons, created a gigantic, geometrically complex stone imbued with the power of law. He then cast it adrift in Limbo, believing that the stone would bring order to the chaos of that plane and halt the spread of chaos to other planes. As the stone's power grew, it became possible for creatures with ordered minds, such as modrons and githzerai, to create enclaves in Limbo. However, Primus's creation had an unforeseen side effect: the chaotic energy absorbed by the stone spawned the horrors that came to be known as slaadi. Sages refer to Primus's massive creation as the Spawning Stone for this reason.",
-												"The slaadi wiped out every last modron enclave in Limbo. As creatures of utter chaos, slaadi loathe modrons and attack them on sight. Nonetheless, Primus stands by his creation and either doesn't perceive the slaadi as threats or chooses to ignore them."
-											],
-											"type": "entries"
-										},
-										{
-											"name": "Birth and Transformation",
-											"entries": [
-												" Slaadi have horrific cycles of reproduction. Slaadi reproduce either by implanting humanoid hosts with eggs or by infecting them with a transformative disease called chaos phage. Each color of slaad reproduces or transforms in a different way, with red slaadi spawning blue and green slaadi, and blue slaadi spawning red and green. Each green slaad undergoes a lifelong cycle of transformation into the more powerful gray and death slaadi. With each transformation, the slaad retains its memories."
-											],
-											"type": "entries"
-										},
-										{
-											"name": "Shapechangers",
-											"entries": [
-												" Some slaadi can transform into the humanoid creatures from which they were originally spawned. These slaadi return to the Material Plane to sow discord in the guise of their former selves."
-											],
-											"type": "entries"
-										}
+										"When a red slaad claws a humanoid creature, it can inject an egg from a gland under one of its claws. The egg works its way into its host and gestates, eventually forming a slaad tadpole. Such a tadpole then eats its way out of the host's body, feeds on the host's remains, and then seeks any other fresh meat it can find. The tadpole transforms into a fully grown blue slaad-or green slaad if the host had the ability to cast 3rd level spells or higher-within {@dice 2d12} hours."
 									]
 								}
 							]
 						}
-					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/MM/Red Slaad.jpg"
+					},
+					"images": {
+						"mode": "prependArr",
+						"items": {
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "bestiary/MM/Red Slaad.jpg"
+							}
+						}
 					}
 				}
-			]
+			}
 		},
 		{
 			"name": "Reef Shark",
@@ -13634,46 +13558,71 @@
 		{
 			"name": "Slaad Tadpole",
 			"source": "MM",
+			"_copy": {
+				"name": "Slaadi",
+				"source": "MM",
+				"_mod": {
+					"images": {
+						"mode": "prependArr",
+						"items": {
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "bestiary/MM/Slaad Tadpole.png"
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"name": "Slaadi",
+			"source": "MM",
 			"entries": [
 				{
-					"type": "entries",
+					"type": "section",
+					"name": "Slaadi",
 					"entries": [
+						"In the Ever-Changing Chaos of Limbo, bits of forest and meadow, ruined castles, and isolated islands drift through a tumult of fire, water, earth, and wind. The foremost inhabitants of this inhospitable plane are the toad-like slaadi. Slaadi are undisciplined and have no formal hierarchy, although weaker slaadi obey stronger ones under threat of annihilation.",
 						{
-							"type": "entries",
+							"name": "The Spawning Stone",
 							"entries": [
-								"In the Ever-Changing Chaos of Limbo, bits of forest and meadow, ruined castles, and isolated islands drift through a tumult of fire, water, earth, and wind. The foremost inhabitants of this inhospitable plane are the toad-like slaadi. Slaadi are undisciplined and have no formal hierarchy, although weaker slaadi obey stronger ones under threat of annihilation.",
+								" Long ago, Primus, overlord of the modrons, created a gigantic, geometrically complex stone imbued with the power of law. He then cast it adrift in Limbo, believing that the stone would bring order to the chaos of that plane and halt the spread of chaos to other planes. As the stone's power grew, it became possible for creatures with ordered minds, such as modrons and githzerai, to create enclaves in Limbo. However, Primus's creation had an unforeseen side effect: the chaotic energy absorbed by the stone spawned the horrors that came to be known as slaadi. Sages refer to Primus's massive creation as the Spawning Stone for this reason.",
+								"The slaadi wiped out every last modron enclave in Limbo. As creatures of utter chaos, slaadi loathe modrons and attack them on sight. Nonetheless, Primus stands by his creation and either doesn't perceive the slaadi as threats or chooses to ignore them.",
 								{
-									"name": "The Spawning Stone",
-									"type": "entries",
+									"type": "inset",
+									"name": "Variant: Slaad Control Gems",
 									"entries": [
-										"Long ago, Primus, overlord of the modrons, created a gigantic, geometrically complex stone imbued with the power of law. He then cast it adrift in Limbo, believing that the stone would bring order to the chaos of that plane and halt the spread of chaos to other planes. As the stone's power grew, it became possible for creatures with ordered minds, such as modrons and githzerai, to create enclaves in Limbo. However, Primus's creation had an unforeseen side effect: the chaotic energy absorbed by the stone spawned the horrors that came to be known as slaadi. Sages refer to Primus's massive creation as the Spawning Stone for this reason.",
-										"The slaadi wiped out every last modron enclave in Limbo. As creatures of utter chaos, slaadi loathe modrons and attack them on sight. Nonetheless, Primus stands by his creation and either doesn't perceive the slaadi as threats or chooses to ignore them."
-									]
-								},
-								{
-									"name": "Birth and Transformation",
-									"type": "entries",
-									"entries": [
-										"Slaadi have horrific cycles of reproduction. Slaadi reproduce either by implanting humanoid hosts with eggs or by infecting them with a transformative disease called chaos phage. Each color of slaad reproduces or transforms in a different way, with red slaadi spawning blue and green slaadi, and blue slaadi spawning red and green. Each green slaad undergoes a lifelong cycle of transformation into the more powerful gray and death slaadi. With each transformation, the slaad retains its memories."
-									]
-								},
-								{
-									"name": "Shapechangers",
-									"type": "entries",
-									"entries": [
-										"Some slaadi can transform into the humanoid creatures from which they were originally spawned. These slaadi return to the Material Plane to sow discord in the guise of their former selves."
-									]
-								},
-								{
-									"name": "Control Gem",
-									"type": "entries",
-									"entries": [
-										"Implanted in the slaad's brain is a magic control gem. The slaad must obey whoever possesses the gem and is immune to being {@condition charmed} while so controlled. Certain spells can be used to acquire the gem. If the slaad fails its saving throw against imprisonment, the spell can transfer the gem to the spellcaster's open hand, instead of imprisoning the slaad. A {@spell wish} spell, if cast in the slaad's presence, can be worded to acquire the gem.",
-										"A {@spell greater restoration} spell cast on the slaad destroys the gem without harming the slaad.",
-										"Someone who is proficient in Wisdom ({@skill Medicine}) can remove the gem from an {@condition incapacitated} slaad. Each try requires 1 minute of uninterrupted work and a successful DC 20 Wisdom ({@skill Medicine}) check. Each failed attempt deals 22 ({@damage 4d10}) psychic damage to the slaad."
+										"As a slaad emerges from the Spawning Stone, the stone magically implants a fragment of itself in the slaad's brain. This fragment takes the form of a magic gem roughly the size and shape of a human child's fist. The gem is the same color as the slaad. Another creature can use magic to draw forth a slaad's gem and use it to subjugate the slaad. The slaad must obey whoever possesses its gem. If a slaad's gem is destroyed, the slaad can no longer be controlled in this way.",
+										"A slaad born from something other than the Spawning Stone has no gem in its brain, but it gains one if it ever comes into contact with the Spawning Stone. Slaadi on Limbo are attracted to the Spawning Stone, so most end up with a gem. A slaad with a control gem in its brain has the following additional trait.",
+										{
+											"type": "entries",
+											"name": "Control Gem",
+											"entries": [
+												"Implanted in the slaad's brain is a magic control gem. The slaad must obey whoever possesses the gem and is immune to being {@condition charmed} while so controlled.",
+												"Certain spells can be used to acquire the gem. If the slaad fails its saving throw against imprisonment, the spell can transfer the gem to the spellcaster's open hand, instead of imprisoning the slaad. A {@spell wish} spell, if cast in the slaad's presence, can be worded to acquire the gem.",
+												"A {@spell greater restoration} spell cast on the slaad destroys the gem without harming the slaad.",
+												"Someone who is proficient in Wisdom ({@skill Medicine}) can remove the gem from an {@condition incapacitated} slaad. Each try requires 1 minute of uninterrupted work and a successful DC 20 Wisdom ({@skill Medicine}) check. Each failed attempt deals 22 ({@damage 4d10}) psychic damage to the slaad."
+											]
+										}
 									]
 								}
-							]
+							],
+							"type": "entries"
+						},
+						{
+							"name": "Birth and Transformation",
+							"entries": [
+								" Slaadi have horrific cycles of reproduction. Slaadi reproduce either by implanting humanoid hosts with eggs or by infecting them with a transformative disease called chaos phage. Each color of slaad reproduces or transforms in a different way, with red slaadi spawning blue and green slaadi, and blue slaadi spawning red and green. Each green slaad undergoes a lifelong cycle of transformation into the more powerful gray and death slaadi. With each transformation, the slaad retains its memories."
+							],
+							"type": "entries"
+						},
+						{
+							"name": "Shapechangers",
+							"entries": [
+								" Some slaadi can transform into the humanoid creatures from which they were originally spawned. These slaadi return to the Material Plane to sow discord in the guise of their former selves."
+							],
+							"type": "entries"
 						}
 					]
 				}

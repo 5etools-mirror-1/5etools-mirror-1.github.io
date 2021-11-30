@@ -99,6 +99,8 @@ class RendererMarkdown {
 	_renderList (entry, textStack, meta, options) {
 		if (!entry.items) return;
 
+		if (textStack[0] && textStack[0].slice(-1) !== "\n") textStack[0] += "\n";
+
 		const listDepth = Math.max(meta._typeStack.filter(it => it === "list").length - 1, 0);
 
 		if (entry.name) textStack[0] += `##### ${entry.name}`;
@@ -122,6 +124,7 @@ class RendererMarkdown {
 
 				const cacheDepth = this._adjustDepth(meta, 1);
 				this._recursiveRender(entry.items[i], textStack, meta, {suffix: "\n"});
+				if (textStack[0].slice(-2) === "\n\n") textStack[0] = textStack[0].slice(-1);
 				meta.depth = cacheDepth;
 			}
 		}
@@ -422,7 +425,7 @@ class RendererMarkdown {
 			addedDataCreature = true;
 		}
 
-		const mon = entry.dataCreature;
+		const {dataCreature: mon, legendaryGroup} = entry;
 
 		const monTypes = Parser.monTypeToFullObj(mon.type);
 		this.isSkipStylingItemLinks = true;
@@ -447,6 +450,9 @@ class RendererMarkdown {
 		const legendaryActionsPart = mon.legendary ? `\n>### Legendary Actions\n>${Renderer.monster.getLegendaryActionIntro(mon, RendererMarkdown.get())}\n>\n${RendererMarkdown.monster._getRenderedLegendarySection(mon.legendary, 1, meta)}` : "";
 		const mythicActionsPart = mon.mythic ? `\n>### Mythic Actions\n>${Renderer.monster.getMythicActionIntro(mon, RendererMarkdown.get())}\n>\n${RendererMarkdown.monster._getRenderedLegendarySection(mon.mythic, 1, meta)}` : "";
 
+		const legendaryGroupLairPart = legendaryGroup?.lairActions ? `\n>### Lair Actions\n${RendererMarkdown.monster._getRenderedSection(legendaryGroup.lairActions, -1, meta)}` : "";
+		const legendaryGroupRegionalPart = legendaryGroup?.regionalEffects ? `\n>### Regional Effects\n${RendererMarkdown.monster._getRenderedSection(legendaryGroup.regionalEffects, -1, meta)}` : "";
+
 		const footerPart = mon.footer ? `\n${RendererMarkdown.monster._getRenderedSection(mon.footer, 0, meta)}` : "";
 
 		const unbreakablePart = `___
@@ -467,7 +473,7 @@ class RendererMarkdown {
 ${mon.pbNote || Parser.crToNumber(mon.cr) < VeCt.CR_CUSTOM ? `>- **Proficiency Bonus** ${mon.pbNote ?? UiUtil.intToBonus(Parser.crToPb(mon.cr))}` : ""}
 >___`;
 
-		let breakablePart = `${traitsPart}${actionsPart}${bonusActionsPart}${reactionsPart}${legendaryActionsPart}${mythicActionsPart}${footerPart}`;
+		let breakablePart = `${traitsPart}${actionsPart}${bonusActionsPart}${reactionsPart}${legendaryActionsPart}${mythicActionsPart}${legendaryGroupLairPart}${legendaryGroupRegionalPart}${footerPart}`;
 
 		if (RendererMarkdown._isAddColumnBreaks) {
 			let charAllowanceFirstCol = 2200 - unbreakablePart.length;
@@ -501,7 +507,7 @@ ${mon.pbNote || Parser.crToNumber(mon.cr) < VeCt.CR_CUSTOM ? `>- **Proficiency B
 ___
 - **Casting Time:** ${Parser.spTimeListToFull(sp.time)}
 - **Range:** ${Parser.spRangeToFull(sp.range)}
-- **Components:** ${Parser.spComponentsToFull(sp.components, sp.level)}
+- **Components:** ${Parser.spComponentsToFull(sp.components, sp.level, {isPlainText: true})}
 - **Duration:** ${Parser.spDurationToFull(sp.duration)}
 ---\n`;
 

@@ -800,6 +800,9 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"conditionInflictLegendary": [
+				"restrained"
+			],
 			"conditionInflictSpell": [
 				"blinded",
 				"charmed",
@@ -1074,9 +1077,6 @@
 					"cr": "8",
 					"variant": null
 				}
-			],
-			"conditionInflictLegendary": [
-				"restrained"
 			]
 		},
 		{
@@ -2560,6 +2560,9 @@
 				"frightened",
 				"incapacitated"
 			],
+			"conditionInflictLegendary": [
+				"restrained"
+			],
 			"conditionInflictSpell": [
 				"blinded",
 				"charmed",
@@ -2834,9 +2837,6 @@
 					"cr": "9",
 					"variant": null
 				}
-			],
-			"conditionInflictLegendary": [
-				"restrained"
 			]
 		},
 		{
@@ -9236,6 +9236,11 @@
 				"RW",
 				"THW"
 			],
+			"conditionInflict": [
+				"charmed",
+				"frightened",
+				"poisoned"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true,
@@ -9342,11 +9347,6 @@
 					},
 					"variant": null
 				}
-			],
-			"conditionInflict": [
-				"charmed",
-				"frightened",
-				"poisoned"
 			]
 		},
 		{

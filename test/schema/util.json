@@ -3,7 +3,7 @@
 	"$id": "util.json",
 	"title": "Util",
 	"description": "Utility definitions to be used in other schemas.",
-	"version": "1.11.0",
+	"version": "1.11.1",
 	"definitions": {
 		"metaBlock": {
 			"type": "object",
@@ -2780,6 +2780,9 @@
 				"boolean",
 				"string"
 			]
+		},
+		"basicRules": {
+			"type": "boolean"
 		},
 		"fluffObject": {
 			"type": "object",
