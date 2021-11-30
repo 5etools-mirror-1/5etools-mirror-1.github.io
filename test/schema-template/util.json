@@ -1016,7 +1016,10 @@
 
 		"dataCondition": {
 			"type": "string",
-			"enum": [
+			"$$ifSiteElse_key": {
+				"keySite": "enum",
+				"keyBrew": "examples",
+				"value": [
 				"blinded",
 				"charmed",
 				"deafened",
@@ -1034,7 +1037,8 @@
 				"unconscious",
 
 				"disease"
-			]
+				]
+			}
 		},
 
 		"dataDamageType": {
@@ -1441,7 +1445,10 @@
 			"uniqueItems": true,
 			"items": {
 				"type": "string",
-				"enum": [
+				"$$ifSiteElse_key": {
+					"keySite": "enum",
+					"keyBrew": "examples",
+					"value": [
 					"blinded",
 					"charmed",
 					"deafened",
@@ -1457,7 +1464,8 @@
 					"restrained",
 					"stunned",
 					"unconscious"
-				]
+					]
+				}
 			}
 		},
 
