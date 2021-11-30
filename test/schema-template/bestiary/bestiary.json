@@ -98,8 +98,15 @@
 					}
 				},
 				"group": {
-					"description": "A group name, indexed by search. E.g. searching \"Lycanthrope\" would otherwise fail to find anything",
-					"type": ["string", "null"]
+					"description": "A group name, indexed by search. E.g. searching \"Lycanthrope\" would otherwise fail to find anything.\nOnly works on the bestiary page, not in the full site search.",
+					"type": [
+						"string",
+						"null",
+						"array"
+					],
+					"items": {
+						"type": "string"
+					}
 				},
 				"level": {
 					"description": "Used in sidekicks, which can have levels (and generally do not have alignment)",

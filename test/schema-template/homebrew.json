@@ -331,6 +331,9 @@
 		"spell": {
 			"$ref": "spells/spells.json#/properties/spell"
 		},
+		"spellFluff": {
+			"$ref": "spells/fluff-spells.json#/properties/spellFluff"
+		},
 		"roll20Spell": {
 			"description": "Based on the Roll20 JSON data, example available here: https://app.roll20.net/compendium/dnd5e/Spells:Fireball.json",
 			"$ref": "spells/roll20.json#/properties/spell"
