@@ -5,6 +5,7 @@
 			"source": "PHB",
 			"page": 211,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "C",
 			"time": [
@@ -95,6 +96,7 @@
 			"source": "PHB",
 			"page": 211,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -580,6 +582,9 @@
 			"savingThrow": [
 				"wisdom"
 			],
+			"affectsCreatureType": [
+				"beast"
+			],
 			"miscTags": [
 				"SGT"
 			],
@@ -682,6 +687,9 @@
 						"If you cast this spell using a spell slot of 3rd level or higher, the duration of the spell increases by 48 hours for each slot level above 2nd."
 					]
 				}
+			],
+			"affectsCreatureType": [
+				"beast"
 			],
 			"miscTags": [
 				"SGT"
@@ -817,6 +825,9 @@
 						"When you cast this spell using a spell slot of 4th level or higher, you animate or reassert control over two additional undead creatures for each slot level above 3rd. Each of the creatures must come from a different corpse or pile of bones."
 					]
 				}
+			],
+			"affectsCreatureType": [
+				"humanoid"
 			],
 			"miscTags": [
 				"PRM",
@@ -1201,6 +1212,7 @@
 			"source": "PHB",
 			"page": 213,
 			"srd": true,
+			"basicRules": true,
 			"level": 8,
 			"school": "A",
 			"time": [
@@ -1400,6 +1412,7 @@
 			"source": "PHB",
 			"page": 214,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "D",
 			"time": [
@@ -1628,6 +1641,7 @@
 			"source": "PHB",
 			"page": 215,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -1917,6 +1931,7 @@
 			"source": "PHB",
 			"page": 215,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "N",
 			"time": [
@@ -1986,6 +2001,7 @@
 			"source": "PHB",
 			"page": 215,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "D",
 			"time": [
@@ -2579,6 +2595,10 @@
 			],
 			"conditionInflict": [
 				"charmed"
+			],
+			"affectsCreatureType": [
+				"beast",
+				"plant"
 			],
 			"miscTags": [
 				"PRM"
@@ -3181,6 +3201,7 @@
 			"source": "PHB",
 			"page": 217,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -3675,6 +3696,7 @@
 			"source": "PHB",
 			"page": 218,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "V",
 			"time": [
@@ -3791,6 +3813,7 @@
 			"source": "PHB",
 			"page": 219,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -3939,6 +3962,20 @@
 			],
 			"savingThrow": [
 				"constitution"
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"SGT"
@@ -4443,6 +4480,7 @@
 			"source": "PHB",
 			"page": 219,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "I",
 			"time": [
@@ -4697,6 +4735,7 @@
 			"source": "PHB",
 			"page": 220,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -5065,6 +5104,9 @@
 			"savingThrow": [
 				"charisma"
 			],
+			"affectsCreatureType": [
+				"humanoid"
+			],
 			"areaTags": [
 				"S"
 			],
@@ -5152,6 +5194,7 @@
 			"source": "PHB",
 			"page": 221,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "V",
 			"time": [
@@ -5221,6 +5264,7 @@
 			"source": "PHB",
 			"page": 221,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -5266,6 +5310,9 @@
 			],
 			"savingThrow": [
 				"wisdom"
+			],
+			"affectsCreatureType": [
+				"humanoid"
 			],
 			"miscTags": [
 				"SGT"
@@ -6289,6 +6336,7 @@
 			"source": "PHB",
 			"page": 223,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -6369,6 +6417,21 @@
 			],
 			"savingThrow": [
 				"wisdom"
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"construct",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"SGT"
@@ -6518,6 +6581,7 @@
 			"source": "PHB",
 			"page": 223,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "D",
 			"time": [
@@ -6873,6 +6937,7 @@
 			"source": "PHB",
 			"page": 224,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "D",
 			"time": [
@@ -7084,6 +7149,7 @@
 			"source": "PHB",
 			"page": 224,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "V",
 			"time": [
@@ -8967,6 +9033,7 @@
 			"source": "PHB",
 			"page": 228,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -9364,6 +9431,9 @@
 					]
 				}
 			],
+			"affectsCreatureType": [
+				"humanoid"
+			],
 			"miscTags": [
 				"PRM",
 				"SMN"
@@ -9594,6 +9664,9 @@
 			"savingThrow": [
 				"wisdom"
 			],
+			"affectsCreatureType": [
+				"humanoid"
+			],
 			"miscTags": [
 				"SGT"
 			],
@@ -9730,6 +9803,7 @@
 			"source": "PHB",
 			"page": 230,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -9764,6 +9838,20 @@
 						"When you cast this spell using a spell slot of 2nd level or higher, the healing increases by {@scaledice 1d8|1-9|1d8} for each slot level above 1st."
 					]
 				}
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"HL"
@@ -9879,6 +9967,7 @@
 			"source": "PHB",
 			"page": 230,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -9969,6 +10058,7 @@
 			"source": "PHB",
 			"page": 230,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -10384,6 +10474,7 @@
 			"source": "PHB",
 			"page": 230,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "A",
 			"time": [
@@ -10568,6 +10659,7 @@
 			"source": "PHB",
 			"page": 230,
 			"srd": true,
+			"basicRules": true,
 			"level": 7,
 			"school": "V",
 			"time": [
@@ -10839,6 +10931,14 @@
 				"For the duration, you know if there is an aberration, celestial, elemental, fey, fiend, or undead within 30 feet of you, as well as where the creature is located. Similarly, you know if there is a place or object within 30 feet of you that has been magically consecrated or desecrated.",
 				"The spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt."
 			],
+			"affectsCreatureType": [
+				"aberration",
+				"celestial",
+				"elemental",
+				"fey",
+				"fiend",
+				"undead"
+			],
 			"classes": {
 				"fromClassList": [
 					{
@@ -10887,6 +10987,7 @@
 			"source": "PHB",
 			"page": 231,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "D",
 			"time": [
@@ -11225,6 +11326,7 @@
 			"source": "PHB",
 			"page": 233,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "C",
 			"time": [
@@ -11357,6 +11459,7 @@
 			"source": "PHB",
 			"page": 233,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "I",
 			"time": [
@@ -11539,6 +11642,7 @@
 			"source": "PHB",
 			"page": 233,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "T",
 			"time": [
@@ -11662,6 +11766,13 @@
 			"savingThrow": [
 				"charisma"
 			],
+			"affectsCreatureType": [
+				"celestial",
+				"elemental",
+				"fey",
+				"fiend",
+				"undead"
+			],
 			"areaTags": [
 				"ST"
 			],
@@ -11683,6 +11794,7 @@
 			"source": "PHB",
 			"page": 234,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -11965,6 +12077,7 @@
 			"source": "PHB",
 			"page": 234,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "D",
 			"time": [
@@ -12285,6 +12398,9 @@
 			"savingThrow": [
 				"wisdom"
 			],
+			"affectsCreatureType": [
+				"beast"
+			],
 			"miscTags": [
 				"SGT"
 			],
@@ -12407,6 +12523,7 @@
 			"source": "PHB",
 			"page": 235,
 			"srd": true,
+			"basicRules": true,
 			"level": 8,
 			"school": "E",
 			"time": [
@@ -12489,6 +12606,7 @@
 			"source": "PHB",
 			"page": 235,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "E",
 			"time": [
@@ -12538,6 +12656,9 @@
 			],
 			"savingThrow": [
 				"wisdom"
+			],
+			"affectsCreatureType": [
+				"humanoid"
 			],
 			"miscTags": [
 				"SGT"
@@ -12752,6 +12873,7 @@
 			"source": "PHB",
 			"page": 236,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "I",
 			"time": [
@@ -12939,6 +13061,7 @@
 			"source": "PHB",
 			"page": 236,
 			"srd": true,
+			"basicRules": true,
 			"level": 8,
 			"school": "V",
 			"time": [
@@ -13902,6 +14025,7 @@
 			"source": "PHB",
 			"page": 238,
 			"srd": true,
+			"basicRules": true,
 			"level": 7,
 			"school": "T",
 			"time": [
@@ -14395,6 +14519,7 @@
 			"source": "PHB",
 			"page": 239,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -15236,6 +15361,7 @@
 			"source": "PHB",
 			"page": 240,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "D",
 			"time": [
@@ -15364,6 +15490,7 @@
 			"source": "PHB",
 			"page": 241,
 			"srd": true,
+			"basicRules": true,
 			"level": 7,
 			"school": "N",
 			"time": [
@@ -15428,6 +15555,7 @@
 			"source": "PHB",
 			"page": 242,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -15729,6 +15857,7 @@
 			"source": "PHB",
 			"page": 242,
 			"srd": true,
+			"basicRules": true,
 			"level": 7,
 			"school": "V",
 			"time": [
@@ -15788,6 +15917,7 @@
 			"source": "PHB",
 			"page": 241,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "V",
 			"time": [
@@ -16050,6 +16180,7 @@
 			"source": "PHB",
 			"page": 242,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "V",
 			"time": [
@@ -16268,6 +16399,7 @@
 			"source": "PHB",
 			"page": 242,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "C",
 			"time": [
@@ -16520,6 +16652,7 @@
 			"source": "PHB",
 			"page": 243,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "T",
 			"time": [
@@ -16811,6 +16944,13 @@
 				"necrotic",
 				"radiant"
 			],
+			"affectsCreatureType": [
+				"celestial",
+				"elemental",
+				"fey",
+				"fiend",
+				"undead"
+			],
 			"miscTags": [
 				"PRM"
 			],
@@ -16896,6 +17036,7 @@
 			"source": "PHB",
 			"page": 244,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "D",
 			"time": [
@@ -16964,6 +17105,7 @@
 			"source": "PHB",
 			"page": 244,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "A",
 			"time": [
@@ -17501,6 +17643,7 @@
 			"source": "PHB",
 			"page": 244,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "C",
 			"time": [
@@ -17938,6 +18081,7 @@
 			"source": "PHB",
 			"page": 245,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "A",
 			"time": [
@@ -18371,6 +18515,7 @@
 			"source": "PHB",
 			"page": 246,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "I",
 			"time": [
@@ -18614,6 +18759,7 @@
 			"source": "PHB",
 			"page": 246,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "A",
 			"time": [
@@ -18769,6 +18915,7 @@
 			"source": "PHB",
 			"page": 246,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "C",
 			"time": [
@@ -19024,6 +19171,7 @@
 			"source": "PHB",
 			"page": 248,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "D",
 			"time": [
@@ -19122,6 +19270,7 @@
 			"source": "PHB",
 			"page": 248,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -19764,6 +19913,7 @@
 			"source": "PHB",
 			"page": 249,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "N",
 			"time": [
@@ -19997,6 +20147,7 @@
 			"source": "PHB",
 			"page": 250,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "V",
 			"time": [
@@ -20033,6 +20184,20 @@
 					]
 				}
 			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
+			],
 			"miscTags": [
 				"HL",
 				"SGT"
@@ -20058,6 +20223,7 @@
 			"source": "PHB",
 			"page": 250,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -20092,6 +20258,20 @@
 						"When you cast this spell using a spell slot of 2nd level or higher, the healing increases by {@scaledice 1d4|1-9|1d4} for each slot level above 1st."
 					]
 				}
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"HL",
@@ -20375,6 +20555,7 @@
 			"source": "PHB",
 			"page": 250,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "C",
 			"time": [
@@ -20741,6 +20922,21 @@
 			"savingThrow": [
 				"wisdom"
 			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"construct",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
+			],
 			"miscTags": [
 				"SGT"
 			],
@@ -20871,6 +21067,7 @@
 			"source": "PHB",
 			"page": 251,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "E",
 			"time": [
@@ -20918,6 +21115,9 @@
 			],
 			"savingThrow": [
 				"wisdom"
+			],
+			"affectsCreatureType": [
+				"humanoid"
 			],
 			"miscTags": [
 				"SGT"
@@ -21089,6 +21289,7 @@
 			"source": "PHB",
 			"page": 251,
 			"srd": true,
+			"basicRules": true,
 			"level": 8,
 			"school": "A",
 			"time": [
@@ -21449,6 +21650,7 @@
 			"source": "PHB",
 			"page": 252,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "V",
 			"time": [
@@ -21602,6 +21804,7 @@
 			"source": "PHB",
 			"page": 252,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "D",
 			"time": [
@@ -21781,6 +21984,7 @@
 			"source": "PHB",
 			"page": 252,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "A",
 			"time": [
@@ -21968,6 +22172,7 @@
 			"source": "PHB",
 			"page": 253,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "N",
 			"time": [
@@ -22296,6 +22501,7 @@
 			"source": "PHB",
 			"page": 254,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "I",
 			"time": [
@@ -22601,6 +22807,7 @@
 			"source": "PHB",
 			"page": 254,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -22969,6 +23176,7 @@
 			"source": "PHB",
 			"page": 255,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -23104,6 +23312,7 @@
 			"source": "PHB",
 			"page": 255,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -23222,6 +23431,7 @@
 			"source": "PHB",
 			"page": 255,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -23416,6 +23626,7 @@
 			"source": "PHB",
 			"page": 255,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "V",
 			"time": [
@@ -23584,6 +23795,10 @@
 			"entries": [
 				"Describe or name a specific kind of beast or plant. Concentrating on the voice of nature in your surroundings, you learn the direction and distance to the closest creature or plant of that kind within 5 miles, if any are present."
 			],
+			"affectsCreatureType": [
+				"beast",
+				"plant"
+			],
 			"classes": {
 				"fromClassList": [
 					{
@@ -23632,6 +23847,7 @@
 			"source": "PHB",
 			"page": 256,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "D",
 			"time": [
@@ -23996,6 +24212,7 @@
 			"source": "PHB",
 			"page": 256,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "A",
 			"time": [
@@ -24065,6 +24282,7 @@
 			"source": "PHB",
 			"page": 256,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "C",
 			"time": [
@@ -24308,6 +24526,13 @@
 			"savingThrow": [
 				"charisma"
 			],
+			"affectsCreatureType": [
+				"celestial",
+				"elemental",
+				"fey",
+				"fiend",
+				"undead"
+			],
 			"miscTags": [
 				"SGT"
 			],
@@ -24442,6 +24667,9 @@
 			"savingThrow": [
 				"charisma"
 			],
+			"affectsCreatureType": [
+				"humanoid"
+			],
 			"miscTags": [
 				"SGT"
 			],
@@ -24466,6 +24694,7 @@
 			"source": "PHB",
 			"page": 257,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -24653,6 +24882,7 @@
 			"source": "PHB",
 			"page": 257,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -24830,6 +25060,7 @@
 			"source": "PHB",
 			"page": 258,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "I",
 			"time": [
@@ -24914,6 +25145,7 @@
 			"source": "PHB",
 			"page": 258,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "V",
 			"time": [
@@ -24949,6 +25181,20 @@
 						"When you cast this spell using a spell slot of 6th level or higher, the healing increases by {@scaledice 3d8|5-9|1d8} for each slot level above 5th."
 					]
 				}
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"HL"
@@ -25031,6 +25277,7 @@
 			"source": "PHB",
 			"page": 258,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "V",
 			"time": [
@@ -25058,6 +25305,20 @@
 			"entries": [
 				"A flood of healing energy flows from you into injured creatures around you. You restore up to 700 hit points, divided as you choose among any number of creatures that you can see within range. Creatures healed by this spell are also cured of all diseases and any effect making them {@condition blinded} or {@condition deafened}. This spell has no effect on undead or constructs."
 			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
+			],
 			"miscTags": [
 				"HL",
 				"SGT"
@@ -25079,6 +25340,7 @@
 			"source": "PHB",
 			"page": 258,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "V",
 			"time": [
@@ -25113,6 +25375,20 @@
 						"When you cast this spell using a spell slot of 4th level or higher, the healing increases by {@scaledice 1d4|3-9|1d4} for each slot level above 3rd."
 					]
 				}
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"HL",
@@ -25187,6 +25463,7 @@
 			"source": "PHB",
 			"page": 258,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "E",
 			"time": [
@@ -25265,6 +25542,7 @@
 			"source": "PHB",
 			"page": 258,
 			"srd": true,
+			"basicRules": true,
 			"level": 8,
 			"school": "C",
 			"time": [
@@ -25733,6 +26011,7 @@
 			"source": "PHB",
 			"page": 259,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "V",
 			"time": [
@@ -25846,6 +26125,7 @@
 			"source": "PHB",
 			"page": 260,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "I",
 			"time": [
@@ -26318,6 +26598,7 @@
 			"source": "PHB",
 			"page": 260,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "C",
 			"time": [
@@ -26973,6 +27254,7 @@
 			"source": "PHB",
 			"page": 262,
 			"srd": "Arcane Sword",
+			"basicRules": true,
 			"level": 7,
 			"school": "V",
 			"time": [
@@ -27510,6 +27792,7 @@
 			"source": "PHB",
 			"page": 264,
 			"srd": "Irresistible Dance",
+			"basicRules": true,
 			"level": 6,
 			"school": "E",
 			"time": [
@@ -27691,6 +27974,7 @@
 			"source": "PHB",
 			"page": 264,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "T",
 			"time": [
@@ -27848,6 +28132,20 @@
 			],
 			"abilityCheck": [
 				"intelligence"
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"SGT"
@@ -28270,6 +28568,12 @@
 			"savingThrow": [
 				"charisma"
 			],
+			"affectsCreatureType": [
+				"celestial",
+				"elemental",
+				"fey",
+				"fiend"
+			],
 			"miscTags": [
 				"SMN"
 			],
@@ -28577,6 +28881,7 @@
 			"source": "PHB",
 			"page": 266,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "C",
 			"time": [
@@ -28798,6 +29103,20 @@
 			"entries": [
 				"A wave of healing energy washes over the creature you touch. The target regains all its hit points. If the creature is {@condition charmed}, {@condition frightened}, {@condition paralyzed}, or {@condition stunned}, the condition ends. If the creature is {@condition prone}, it can use its reaction to stand up. This spell has no effect on undead or constructs."
 			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
+			],
 			"miscTags": [
 				"HL"
 			],
@@ -28835,6 +29154,7 @@
 			"source": "PHB",
 			"page": 266,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "E",
 			"time": [
@@ -28893,6 +29213,7 @@
 			"source": "PHB",
 			"page": 267,
 			"srd": true,
+			"basicRules": true,
 			"level": 8,
 			"school": "E",
 			"time": [
@@ -28958,6 +29279,7 @@
 			"source": "PHB",
 			"page": 267,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -28992,6 +29314,20 @@
 						"When you cast this spell using a spell slot of 3rd level or higher, the healing increases by {@scaledice 2d8|2-9|1d8} for each slot level above 2nd."
 					]
 				}
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"HL",
@@ -29034,6 +29370,7 @@
 			"source": "PHB",
 			"page": 267,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "T",
 			"time": [
@@ -29627,6 +29964,7 @@
 			"source": "PHB",
 			"page": 270,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -29896,6 +30234,14 @@
 			"entries": [
 				"Until the spell ends, one willing creature you touch is protected against certain types of creatures: aberrations, celestials, elementals, fey, fiends, and undead.",
 				"The protection grants several benefits. Creatures of those types have disadvantage on attack rolls against the target. The target also can't be {@condition charmed}, {@condition frightened}, or possessed by them. If the target is already {@condition charmed}, {@condition frightened}, or possessed by such a creature, the target has advantage on any new saving throw against the relevant effect."
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"celestial",
+				"elemental",
+				"fey",
+				"fiend",
+				"undead"
 			],
 			"areaTags": [
 				"ST"
@@ -30257,6 +30603,7 @@
 			"source": "PHB",
 			"page": 270,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "N",
 			"time": [
@@ -30290,6 +30637,21 @@
 				"This spell also neutralizes any poisons and cures nonmagical diseases that affected the creature at the time it died. This spell doesn't, however, remove magical diseases, curses, or similar effects; if these aren't first removed prior to casting the spell, they take effect when the creature returns to life. The spell can't return an undead creature to life.",
 				"This spell closes all mortal wounds, but it doesn't restore missing body parts. If the creature is lacking body parts or organs integral for its survival\u2014its head, for instance\u2014the spell automatically fails.",
 				"Coming back from the dead is an ordeal. The target takes a \u22124 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a long rest, the penalty is reduced by 1 until it disappears."
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"construct",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"HL"
@@ -30617,6 +30979,7 @@
 			"source": "PHB",
 			"page": 271,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -30859,6 +31222,7 @@
 			"source": "PHB",
 			"page": 271,
 			"srd": true,
+			"basicRules": true,
 			"level": 7,
 			"school": "T",
 			"time": [
@@ -31109,6 +31473,9 @@
 				},
 				"The reincarnated creature recalls its former life and experiences. It retains the capabilities it had in its original form, except it exchanges its original race for the new one and changes its racial traits accordingly."
 			],
+			"affectsCreatureType": [
+				"humanoid"
+			],
 			"miscTags": [
 				"HL"
 			],
@@ -31126,6 +31493,7 @@
 			"source": "PHB",
 			"page": 271,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -31181,6 +31549,7 @@
 			"source": "PHB",
 			"page": 272,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "A",
 			"time": [
@@ -31255,6 +31624,7 @@
 			"source": "PHB",
 			"page": 272,
 			"srd": true,
+			"basicRules": true,
 			"level": 7,
 			"school": "N",
 			"time": [
@@ -31289,6 +31659,9 @@
 				"This spell closes all mortal wounds and restores any missing body parts.",
 				"Coming back from the dead is an ordeal. The target takes a \u22124 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a long rest, the penalty is reduced by 1 until it disappears.",
 				"Casting this spell to restore life to a creature that has been dead for one year or longer taxes you greatly. Until you finish a long rest, you can't cast spells again, and you have disadvantage on all attack rolls, ability checks, and saving throws."
+			],
+			"affectsCreatureType": [
+				"undead"
 			],
 			"miscTags": [
 				"HL"
@@ -31374,6 +31747,7 @@
 			"source": "PHB",
 			"page": 272,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "N",
 			"time": [
@@ -31633,6 +32007,7 @@
 			"source": "PHB",
 			"page": 272,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -31725,6 +32100,7 @@
 			"source": "PHB",
 			"page": 272,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "A",
 			"time": [
@@ -32873,6 +33249,20 @@
 				"When you transform, you choose whether your equipment falls to the ground, merges into the new form, or is worn by it. Worn equipment functions as normal. The DM determines whether it is practical for the new form to wear a piece of equipment, based on the creature's shape and size. Your equipment doesn't change shape or size to match the new form, and any equipment that the new form can't wear must either fall to the ground or merge into your new form. Equipment that merges has no effect in that state.",
 				"During this spell's duration, you can use your action to assume a different form following the same restrictions and rules for the original form, with one exception: if your new form has more hit points than your current one, your hit points remain at their current value."
 			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
+			],
 			"classes": {
 				"fromClassList": [
 					{
@@ -32898,6 +33288,7 @@
 			"source": "PHB",
 			"page": 275,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -33059,6 +33450,7 @@
 			"source": "PHB",
 			"page": 275,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "A",
 			"time": [
@@ -33213,6 +33605,7 @@
 			"source": "PHB",
 			"page": 275,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "A",
 			"time": [
@@ -33372,6 +33765,7 @@
 			"source": "PHB",
 			"page": 275,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -33465,6 +33859,7 @@
 			"source": "PHB",
 			"page": 275,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "I",
 			"time": [
@@ -33619,6 +34014,7 @@
 			"source": "PHB",
 			"page": 276,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "I",
 			"time": [
@@ -33730,6 +34126,10 @@
 				"If the simulacrum is damaged, you can repair it in an alchemical laboratory, using rare herbs and minerals worth 100 gp per hit point it regains. The simulacrum lasts until it drops to 0 hit points, at which point it reverts to snow and melts instantly.",
 				"If you cast this spell again, any currently active duplicates you created with this spell are instantly destroyed."
 			],
+			"affectsCreatureType": [
+				"beast",
+				"humanoid"
+			],
 			"areaTags": [
 				"ST"
 			],
@@ -33747,6 +34147,7 @@
 			"source": "PHB",
 			"page": 276,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -33792,6 +34193,22 @@
 			],
 			"conditionInflict": [
 				"unconscious"
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"construct",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant",
+				"undead"
 			],
 			"areaTags": [
 				"S"
@@ -34200,6 +34617,7 @@
 			"source": "PHB",
 			"page": 277,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "N",
 			"time": [
@@ -34225,6 +34643,20 @@
 			],
 			"entries": [
 				"You touch a living creature that has 0 hit points. The creature becomes stable. This spell has no effect on undead or constructs."
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"areaTags": [
 				"ST"
@@ -34326,6 +34758,9 @@
 			"entries": [
 				"You gain the ability to comprehend and verbally communicate with beasts for the duration. The knowledge and awareness of many beasts is limited by their intelligence, but at minimum, beasts can give you information about nearby locations and monsters, including whatever they can perceive or have perceived within the past day. You might be able to persuade a beast to perform a small favor for you, at the DM's discretion."
 			],
+			"affectsCreatureType": [
+				"beast"
+			],
 			"classes": {
 				"fromClassList": [
 					{
@@ -34400,6 +34835,7 @@
 			"source": "PHB",
 			"page": 277,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "N",
 			"time": [
@@ -34432,6 +34868,21 @@
 			"entries": [
 				"You grant the semblance of life and intelligence to a corpse of your choice within range, allowing it to answer the questions you pose. The corpse must still have a mouth and can't be undead. The spell fails if the corpse was the target of this spell within the last 10 days.",
 				"Until the spell ends, you can ask the corpse up to five questions. The corpse knows only what it knew in life, including the languages it knew. Answers are usually brief, cryptic, or repetitive, and the corpse is under no compulsion to offer a truthful answer if you are hostile to it or it recognizes you as an enemy. This spell doesn't return the creature's soul to its body, only its animating spirit. Thus, the corpse can't learn new information, doesn't comprehend anything that has happened since it died, and can't speculate about future events."
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"construct",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"classes": {
 				"fromClassList": [
@@ -34614,6 +35065,7 @@
 			"source": "PHB",
 			"page": 277,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -34887,6 +35339,7 @@
 			"source": "PHB",
 			"page": 278,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "C",
 			"time": [
@@ -34992,6 +35445,7 @@
 			"source": "PHB",
 			"page": 278,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -35462,6 +35916,7 @@
 			"source": "PHB",
 			"page": 278,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "A",
 			"time": [
@@ -35747,6 +36202,7 @@
 			"source": "PHB",
 			"page": 279,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "E",
 			"time": [
@@ -35933,6 +36389,7 @@
 			"source": "PHB",
 			"page": 279,
 			"srd": true,
+			"basicRules": true,
 			"level": 8,
 			"school": "V",
 			"time": [
@@ -36445,6 +36902,7 @@
 			"source": "PHB",
 			"page": 281,
 			"srd": true,
+			"basicRules": true,
 			"level": 7,
 			"school": "C",
 			"time": [
@@ -36813,6 +37271,7 @@
 			"source": "PHB",
 			"page": 282,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "T",
 			"time": [
@@ -37093,6 +37552,7 @@
 			"source": "PHB",
 			"page": 282,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -37315,6 +37775,7 @@
 			"source": "PHB",
 			"page": 283,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "T",
 			"time": [
@@ -37671,6 +38132,7 @@
 			"source": "PHB",
 			"page": 284,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "N",
 			"time": [
@@ -37728,6 +38190,7 @@
 			"source": "PHB",
 			"page": 284,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "D",
 			"time": [
@@ -38194,6 +38657,7 @@
 			"source": "PHB",
 			"page": 285,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "V",
 			"time": [
@@ -38585,6 +39049,7 @@
 			"source": "PHB",
 			"page": 287,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "V",
 			"time": [
@@ -38807,6 +39272,7 @@
 			"source": "PHB",
 			"page": 287,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -39197,6 +39663,7 @@
 			"source": "PHB",
 			"page": 287,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "C",
 			"time": [

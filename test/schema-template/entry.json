@@ -4,7 +4,7 @@
 
 	"title": "Entry",
 	"description": "A recursively renderable object.",
-	"version": "1.5.1",
+	"version": "1.5.2",
 
 	"definitions" : {
 		"_arrayOfSpell": {
@@ -75,9 +75,11 @@
 					"type": "string"
 				}
 			},
-			"required": [
-				"type"
-			]
+			"$$ifSite": {
+				"required": [
+					"type"
+				]
+			}
 		},
 
 		"entrySection": {
@@ -1201,7 +1203,7 @@
 			"properties": {
 				"type": {"const": "dataCreature"},
 				"dataCreature": {
-					"$ref" : "bestiary.json#/definitions/creature"
+					"$ref" : "bestiary/bestiary.json#/definitions/creature"
 				}
 			},
 			"required": [
@@ -1214,7 +1216,7 @@
 			"properties": {
 				"type": {"const": "dataSpell"},
 				"dataSpell": {
-					"$ref" : "spells.json#/definitions/spell"
+					"$ref" : "spells/spells.json#/definitions/spell"
 				}
 			},
 			"required": [

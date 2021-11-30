@@ -9,7 +9,7 @@ class PageFilterVariantRules extends PageFilter {
 
 		this._sourceFilter = new SourceFilter();
 		this._ruleTypeFilter = new Filter({header: "Rule Type", items: ["O", "V", "VO", "VV", "U"], displayFn: Parser.ruleTypeToFull});
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD"], isSrdFilter: true});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD"], isMiscFilter: true});
 	}
 
 	static mutateForFilters (rule) {

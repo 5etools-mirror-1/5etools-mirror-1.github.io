@@ -1,6 +1,7 @@
 const fs = require("fs");
 require("../js/utils");
 const ut = require("./util.js");
+const path = require("path");
 
 const DIR_IN = "./test/schema-template/";
 const DIR_OUT = "./test/schema/";
@@ -73,7 +74,7 @@ class SchemaPreprocessor {
 		const merged = {};
 		v.forEach(toMerge => {
 			// handle any mergeable children
-			toMerge = this._recurse({root, obj: toMerge});
+			toMerge = this._recurse({root, obj: toMerge, isBrew});
 			// resolve references
 			toMerge = this._getResolvedRefJson({root, toMerge, dirSource});
 			// merge
@@ -123,16 +124,16 @@ class SchemaPreprocessor {
 	static _getResolvedRefJson ({root, toMerge, dirSource}) {
 		if (!toMerge.$ref) return toMerge;
 
-		const [file, path] = toMerge.$ref.split("#");
-		const pathParts = path.split("/").filter(Boolean);
+		const [file, defPath] = toMerge.$ref.split("#");
+		const pathParts = defPath.split("/").filter(Boolean);
 
 		if (!file) {
 			const refData = MiscUtil.get(root, ...pathParts);
-			if (!refData) throw new Error(`Could not find referenced data for "${path}" in local file!`);
+			if (!refData) throw new Error(`Could not find referenced data for "${defPath}" in local file!`);
 			return refData;
 		}
 
-		const externalSchema = ut.readJson(`${dirSource}/${file}`);
+		const externalSchema = ut.readJson(path.join(dirSource, file));
 		const refData = MiscUtil.get(externalSchema, ...pathParts);
 
 		// Convert any `#/ ...` definitions to refer to the original file, as the schema will be copied into our file
@@ -148,7 +149,7 @@ class SchemaPreprocessor {
 			},
 		);
 
-		if (!refData) throw new Error(`Could not find referenced data for path "${path}" in file "${file}"!`);
+		if (!refData) throw new Error(`Could not find referenced data for path "${defPath}" in file "${file}"!`);
 		return refData;
 	}
 }
@@ -160,22 +161,25 @@ class SchemaCompiler {
 
 		console.log("Compiling schema...");
 
+		const dirOut = path.normalize(ut.ArgParser.ARGS.output ?? DIR_OUT);
+
 		const filesTemplate = ut.listFiles({dir: "./test/schema-template", whitelistFileExts: [".json"]});
 
 		filesTemplate.forEach(filePath => {
-			const filePathOut = filePath.replace(DIR_IN, DIR_OUT);
-			const filePathOutParts = filePathOut.split("/");
-			const dirPathOut = filePathOutParts.slice(0, -1).join("/");
+			filePath = path.normalize(filePath);
+			const filePathPartRelative = path.relative(DIR_IN, filePath);
+			const filePathOut = path.join(dirOut, filePathPartRelative);
+			const dirPathOut = path.dirname(filePathOut);
 			const compiled = SchemaPreprocessor.preprocess({
 				schema: ut.readJson(filePath, "utf8"),
 				isBrew: ut.ArgParser.ARGS.homebrew,
-				dirSource: filePath.split("/").slice(0, -1).join("/"),
+				dirSource: path.dirname(filePath),
 			});
 			fs.mkdirSync(dirPathOut, {recursive: true});
 			fs.writeFileSync(filePathOut, JSON.stringify(compiled, null, "\t"), "utf-8");
 		});
 
-		console.log("Schema compiled.");
+		console.log(`Schema compiled and output to ${dirOut}`);
 	}
 }
 

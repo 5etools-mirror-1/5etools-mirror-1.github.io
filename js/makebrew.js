@@ -211,10 +211,23 @@ class PageUi {
 				<option value="creatureBuilder">Creature</option>
 				<option value="legendaryGroupBuilder">Legendary Group</option>
 				<option value="spellBuilder">Spell</option>
+				<option value="none" class="italic">Everything Else?</option>
 			</select>
-		`).appendTo($wrpMode).change(() => {
-			this._setActiveBuilder(this._$selBuilderMode.val());
-		});
+		`)
+			.appendTo($wrpMode)
+			.change(() => {
+				const val = this._$selBuilderMode.val();
+				if (val === "none") {
+					InputUiUtil.pGetUserBoolean({
+						title: "Homebrew Builder Support",
+						htmlDescription: `<p>The Homebrew Builder only supports a limited set of entity types. For everything else, you will need to <a href="https://github.com/TheGiddyLimit/homebrew/blob/master/README.md" rel="noopener noreferrer">manually</a> create or convert content.</p>`,
+						isAlert: true,
+					});
+					this._$selBuilderMode.val(this._settings.activeBuilder);
+					return;
+				}
+				this._setActiveBuilder(val);
+			});
 
 		const $btnManageHomebrew = $(`<button class="btn btn-xs btn-info">Manage Homebrew</button>`)
 			.click(() => BrewUtil.manageBrew());

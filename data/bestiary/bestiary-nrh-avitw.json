@@ -1,0 +1,162 @@
+{
+	"_meta": {
+		"otherSources": {
+			"monster": {
+				"NRH-TCMC": "NRH-AVitW"
+			}
+		}
+	},
+	"monster": [
+		{
+			"name": "Chimeric Fox",
+			"source": "NRH-AVitW",
+			"page": 8,
+			"size": "T",
+			"type": "beast",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 2,
+				"formula": "1d4"
+			},
+			"speed": {
+				"walk": 30,
+				"burrow": 5
+			},
+			"str": 2,
+			"dex": 16,
+			"con": 11,
+			"int": 3,
+			"wis": 12,
+			"cha": 6,
+			"skill": {
+				"perception": "+3",
+				"stealth": "+5"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"cr": "0",
+			"trait": [
+				{
+					"name": "Chimeric Creation",
+					"entries": [
+						"The fox has fur that changes color to match its surroundings, giving it advantage on Dexterity (Stealth) checks."
+					]
+				},
+				{
+					"name": "Keen Hearing",
+					"entries": [
+						"The fox has advantage on Wisdom (Perception) checks that rely on hearing."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one creature. {@h}1 piercing damage."
+					]
+				}
+			],
+			"traitTags": [
+				"Keen Senses"
+			],
+			"senseTags": [
+				"D"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW"
+			]
+		},
+		{
+			"name": "Scarlet Sentinel",
+			"source": "NRH-AVitW",
+			"page": 10,
+			"size": "M",
+			"type": "construct",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				8
+			],
+			"hp": {
+				"average": 39,
+				"formula": "6d8 + 12"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 15,
+			"dex": 6,
+			"con": 14,
+			"int": 1,
+			"wis": 6,
+			"cha": 1,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 8,
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"paralyzed",
+				"petrified",
+				"poisoned"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"name": "Immutable Form",
+					"entries": [
+						"The Scarlet Sentinel is immune to any spell or effect that would alter its form."
+					]
+				},
+				{
+					"name": "Magic Resistance",
+					"entries": [
+						"The Scarlet Sentinel has advantage on saving throws against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Magic Weapons",
+					"entries": [
+						"The Scarlet Sentinel's weapon attacks are magical."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Slam",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d8 + 2}) bludgeoning damage."
+					]
+				}
+			],
+			"traitTags": [
+				"Immutable Form",
+				"Magic Resistance",
+				"Magic Weapons"
+			],
+			"senseTags": [
+				"D"
+			],
+			"damageTags": [
+				"B"
+			],
+			"miscTags": [
+				"MW"
+			]
+		}
+	]
+}

@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "magicvariants.json",
-	"version": "1.5.0",
+	"version": "1.5.1",
 	"type": "object",
 	"properties": {
 		"variant": {
@@ -207,6 +207,9 @@
 							},
 							"srd": {
 								"$ref": "util.json#/definitions/srd"
+							},
+							"basicRules": {
+								"$ref": "util.json#/definitions/basicRules"
 							},
 							"otherSources": {
 								"$ref": "util.json#/definitions/otherSources"

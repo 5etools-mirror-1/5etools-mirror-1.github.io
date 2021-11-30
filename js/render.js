@@ -900,7 +900,7 @@ function Renderer () {
 		this._handleTrackDepth(entry, 1);
 
 		textStack[0] += `<${this.wrapperTag} class="rd__b-inset" ${dataString}>`;
-		textStack[0] += `<span class="rd__h rd__h--2-inset" data-title-index="${this._headerIndex++}" ${this._getEnumeratedTitleRel(entry.name)}><span class="entry-title-inner">Variant: ${entry.name}</span></span>`;
+		textStack[0] += `<span class="rd__h rd__h--2-inset" data-title-index="${this._headerIndex++}" ${this._getEnumeratedTitleRel(entry.name)}><span class="entry-title-inner">Variant: ${entry.name}</span>${this._getPagePart(entry, true)}</span>`;
 		const len = entry.entries.length;
 		for (let i = 0; i < len; ++i) {
 			const cacheDepth = meta.depth;
@@ -2462,10 +2462,13 @@ Renderer.utils = {
 		const baseText = `${isText ? `` : `<i title="${Parser.sourceJsonToFull(it.source)}${sourceSub}">`}${Parser.sourceJsonToAbv(it.source)}${sourceSub}${isText ? "" : `</i>`}${Renderer.utils.isDisplayPage(it.page) ? `, page ${it.page}` : ""}`;
 		const addSourceText = Renderer.utils._getAltSourceHtmlOrText(it, "additionalSources", "Additional information from", isText);
 		const otherSourceText = Renderer.utils._getAltSourceHtmlOrText(it, "otherSources", "Also found in", isText);
-		const srdText = it.srd ? `Available in the ${isText ? "" : `<span title="Systems Reference Document">`}SRD${isText ? "" : `</span>`}${typeof it.srd === "string" ? ` (as &quot;${it.srd}&quot;)` : ""}` : "";
 		const externalSourceText = Renderer.utils._getAltSourceHtmlOrText(it, "externalSources", "External sources:", isText);
 
-		return `${[baseText, addSourceText, otherSourceText, srdText, externalSourceText].filter(it => it).join(". ")}${baseText && (addSourceText || otherSourceText || srdText || externalSourceText) ? "." : ""}`;
+		const srdText = it.srd ? `${isText ? "" : `the <span title="Systems Reference Document">`}SRD${isText ? "" : `</span>`}${typeof it.srd === "string" ? ` (as &quot;${it.srd}&quot;)` : ""}` : "";
+		const basicRulesText = it.basicRules ? `the Basic Rules${typeof it.basicRules === "string" ? ` (as &quot;${it.basicRules}&quot;)` : ""}` : "";
+		const srdAndBasicRulesText = (srdText || basicRulesText) ? `Available in ${[srdText, basicRulesText].filter(it => it).join(" and ")}` : "";
+
+		return `${[baseText, addSourceText, otherSourceText, srdAndBasicRulesText, externalSourceText].filter(it => it).join(". ")}${baseText && (addSourceText || otherSourceText || srdAndBasicRulesText || externalSourceText) ? "." : ""}`;
 	},
 
 	async _pHandleNameClick (ele) {
@@ -4330,6 +4333,15 @@ Renderer.optionalfeature = {
 		return it.previousVersion ? `<tr><td colspan="6"><p class="mt-2">${Renderer.get().render(`{@i An earlier version of this ${it.featureType.map(t => Parser.optFeatureTypeToFull(t)).join("/")} is available in }${Parser.sourceJsonToFull(it.previousVersion.source)} {@i as {@optfeature ${it.previousVersion.name}|${it.previousVersion.source}}.}`)}</p></td></tr>` : "";
 	},
 
+	getTypeText (it) {
+		const commonPrefix = it.featureType.length > 1 ? MiscUtil.findCommonPrefix(it.featureType.map(fs => Parser.optFeatureTypeToFull(fs))) : "";
+
+		return [
+			commonPrefix.trim() || null,
+			it.featureType.map(ft => Parser.optFeatureTypeToFull(ft).substring(commonPrefix.length)).join("/"),
+		].filter(Boolean).join(" ");
+	},
+
 	getCompactRenderedString (it) {
 		const renderer = Renderer.get();
 		const renderStack = [];
@@ -4343,6 +4355,7 @@ Renderer.optionalfeature = {
 		renderer.recursiveRender({entries: it.entries}, renderStack, {depth: 1});
 		renderStack.push(`</td></tr>`);
 		renderStack.push(Renderer.optionalfeature.getPreviouslyPrintedText(it));
+		renderStack.push(`<tr><td colspan="6"><p>${Renderer.get().render(`{@note Type: ${Renderer.optionalfeature.getTypeText(it)}}`)}</p></td></tr>`);
 
 		return renderStack.join("");
 	},
@@ -8291,7 +8304,7 @@ Renderer.hover = {
 					evt.stopPropagation();
 
 					const dimensions = opts.fnGetPopoutSize ? opts.fnGetPopoutSize() : {width: 600, height: $content.height()};
-					const win = open(
+					const win = window.open(
 						"",
 						opts.title || "",
 						`width=${dimensions.width},height=${dimensions.height}location=0,menubar=0,status=0,titlebar=0,toolbar=0`,
@@ -8731,6 +8744,13 @@ Renderer.hover = {
 			const itHash = (opts.fnGetHash || UrlUtil.URL_TO_HASH_BUILDER[page])(it);
 			if (opts.fnMutateItem) opts.fnMutateItem(listProp, it);
 			Renderer.hover._addToCache(page, it.source, itHash, it);
+
+			DataUtil.proxy.getVersions(listProp, it)
+				.forEach(v => {
+					const vHash = (opts.fnGetHash || UrlUtil.URL_TO_HASH_BUILDER[page])(v);
+					if (opts.fnMutateItem) opts.fnMutateItem(listProp, v);
+					Renderer.hover._addToCache(page, v.source, vHash, v);
+				});
 		});
 	},
 

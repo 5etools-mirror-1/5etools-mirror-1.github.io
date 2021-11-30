@@ -521,14 +521,17 @@ class BookUtil {
 		return this._booksHashChange_handleNotFound({$contents, bookId});
 	}
 
-	static _booksHashChange_getCleanName (name) {
-		// prevent TftYP names from causing the header to wrap
-		return name.includes(Parser.SOURCE_JSON_TO_FULL[SRC_TYP]) ? name.replace(Parser.SOURCE_JSON_TO_FULL[SRC_TYP], Parser.sourceJsonToAbv(SRC_TYP)) : name;
+	static _booksHashChange_getCleanName (fromIndex) {
+		if (fromIndex.parentSource) {
+			const fullParentSource = Parser.sourceJsonToFull(fromIndex.parentSource);
+			return fromIndex.name.replace(new RegExp(`^${fullParentSource.escapeRegexp()}: `, "i"), `<span title="${Parser.sourceJsonToFull(fromIndex.parentSource).qq()}">${Parser.sourceJsonToAbv(fromIndex.parentSource).qq()}</span>: `);
+		}
+		return fromIndex.name;
 	}
 
 	static async _booksHashChange_pHandleFound ({fromIndex, homebrewData, bookId, hashParts, $contents}) {
 		document.title = `${fromIndex.name} - 5etools`;
-		$(`.book-head-header`).html(this._booksHashChange_getCleanName(fromIndex.name));
+		$(`.book-head-header`).html(this._booksHashChange_getCleanName(fromIndex));
 		$(`.book-head-message`).html("Browse content. Press F to find, and G to go to page.");
 		await this._pLoadChapter(fromIndex, bookId, hashParts, homebrewData, $contents);
 		NavBar.highlightCurrentPage();

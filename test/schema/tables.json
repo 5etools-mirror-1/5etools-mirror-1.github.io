@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "tables.json",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "object",
 	"properties": {
 		"table": {
@@ -90,10 +90,17 @@
 					"rows": {
 						"type": "array",
 						"items": {
-							"type": "array",
-							"items": {
-								"$ref": "entry.json"
-							}
+							"anyOf": [
+								{
+									"type": "array",
+									"items": {
+										"$ref": "entry.json"
+									}
+								},
+								{
+									"$ref": "entry.json#/definitions/entryTableRow"
+								}
+							]
 						}
 					},
 					"footnotes": {

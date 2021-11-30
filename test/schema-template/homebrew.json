@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.7.0",
+	"version": "1.7.1",
 	"type": "object",
 	"description": "Homebrew for 5etools. Should include arrays titled similarly to the main site data, e.g. `spell` or `class`",
 
@@ -262,6 +262,34 @@
 			],
 			"additionalProperties": false
 		},
+		"blacklist": {
+			"description": "An array of objects to blacklist from display on the site.\nUse of this in public brew files is strongly discouraged.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"displayName": {
+						"type": "string"
+					},
+					"hash": {
+						"type": "string"
+					},
+					"category": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"displayName",
+					"hash",
+					"category",
+					"source"
+				],
+				"additionalProperties": false
+			}
+		},
 		"makebrewCreatureTrait": {
 			"description": "Additional trait templates which can be used in the homebrew builder.",
 			"type": "array",
@@ -321,6 +349,7 @@
 						"type": "string"
 					},
 					"data": {
+						"type": "object",
 						"description": "Foundry data",
 						"properties": {
 							"target.value": {
@@ -380,6 +409,9 @@
 		},
 		"background": {
 			"$ref": "backgrounds.json#/properties/background"
+		},
+		"backgroundFluff": {
+			"$ref": "fluff-backgrounds.json#/properties/backgroundFluff"
 		},
 		"condition": {
 			"$ref": "conditionsdiseases.json#/properties/condition"

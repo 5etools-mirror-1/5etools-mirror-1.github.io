@@ -488,7 +488,7 @@ class MakeCards extends BaseComponent {
 			this._ct_rule(),
 			this._ct_property("Casting Time", Parser.spTimeListToFull(sp.time)),
 			this._ct_property("Range", Parser.spRangeToFull(sp.range)),
-			this._ct_property("Components", Parser.spComponentsToFull(sp.components, sp.level)),
+			this._ct_property("Components", Parser.spComponentsToFull(sp.components, sp.level, {isPlainText: true})),
 			this._ct_property("Duration", Parser.spDurationToFull(sp.duration)),
 			this._ct_rule(),
 			...this._ct_renderEntries(sp.entries, 2),

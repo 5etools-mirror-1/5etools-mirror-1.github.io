@@ -297,7 +297,7 @@ class CreatureParser extends BaseParser {
 					isTraits = false;
 
 					isActions = ConvertUtil.isStatblockLineHeaderStart("ACTION", curLine.toUpperCase())
-						|| ConvertUtil.isStatblockLineHeaderStart("ACTIONs", curLine.toUpperCase());
+						|| ConvertUtil.isStatblockLineHeaderStart("ACTIONS", curLine.toUpperCase());
 					if (isActions) {
 						const mActionNote = /actions:?\s*\((.*?)\)/gi.exec(curLine);
 						if (mActionNote) stats.actionNote = mActionNote[1];
@@ -382,7 +382,8 @@ class CreatureParser extends BaseParser {
 				curTrait = {};
 			}
 
-			["trait", "action", "bonus", "reaction", "legendary", "mythic"].forEach(prop => this._doMergeNumberedLists(stats, prop));
+			CreatureParser._PROPS_ENTRIES.forEach(prop => this._doMergeBulletedLists(stats, prop));
+			CreatureParser._PROPS_ENTRIES.forEach(prop => this._doMergeNumberedLists(stats, prop));
 			["action"].forEach(prop => this._doMergeBreathWeaponLists(stats, prop));
 
 			// Remove keys if they are empty
@@ -410,6 +411,41 @@ class CreatureParser extends BaseParser {
 		this._doStatblockPostProcess(stats, false, options);
 		const statsOut = PropOrder.getOrdered(stats, "monster");
 		options.cbOutput(statsOut, options.isAppend);
+	}
+
+	static _doMergeBulletedLists (stats, prop) {
+		if (!stats[prop]) return;
+
+		stats[prop]
+			.forEach(block => {
+				if (!block?.entries?.length) return;
+
+				for (let i = 0; i < block.entries.length; ++i) {
+					const curLine = block.entries[i];
+
+					if (typeof curLine !== "string" || !curLine.trim().endsWith(":")) continue;
+
+					let lst = null;
+					let offset = 1;
+
+					while (block.entries.length) {
+						let nxtLine = block.entries[i + offset];
+
+						if (typeof nxtLine !== "string" || !nxtLine.trim().startsWith("•")) break;
+
+						nxtLine = nxtLine.replace(/^•\s*/, "");
+
+						if (!lst) {
+							lst = {type: "list", items: [nxtLine]};
+							block.entries[i + offset] = lst;
+							offset++;
+						} else {
+							lst.items.push(nxtLine);
+							block.entries.splice(i + offset, 1);
+						}
+					}
+				}
+			});
 	}
 
 	static _doMergeNumberedLists (stats, prop) {
@@ -1320,6 +1356,14 @@ CreatureParser.SKILL_SPACE_MAP = {
 	"sleightofhand": "sleight of hand",
 	"animalhandling": "animal handling",
 };
+CreatureParser._PROPS_ENTRIES = [
+	"trait",
+	"action",
+	"bonus",
+	"reaction",
+	"legendary",
+	"mythic",
+];
 
 if (typeof module !== "undefined") {
 	module.exports = {

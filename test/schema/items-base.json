@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "items-base.json",
-	"version": "1.4.6",
+	"version": "1.4.7",
 	"definitions": {
 		"itemLookup": {
 			"type": "array",
@@ -168,6 +168,9 @@
 					},
 					"srd": {
 						"$ref": "util.json#/definitions/srd"
+					},
+					"basicRules": {
+						"$ref": "util.json#/definitions/basicRules"
 					},
 					"otherSources": {
 						"$ref": "util.json#/definitions/otherSources"

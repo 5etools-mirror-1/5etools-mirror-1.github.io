@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "backgrounds.json",
-	"version": "1.2.2",
+	"version": "1.2.3",
 	"type": "object",
 	"definitions": {
 		"backgroundData": {
@@ -36,6 +36,9 @@
 				},
 				"srd": {
 					"$ref": "util.json#/definitions/srd"
+				},
+				"basicRules": {
+					"$ref": "util.json#/definitions/basicRules"
 				},
 				"otherSources": {
 					"$ref": "util.json#/definitions/otherSources"
@@ -147,6 +150,9 @@
 						},
 						"srd": {
 							"$ref": "util.json#/definitions/srd"
+						},
+						"basicRules": {
+							"$ref": "util.json#/definitions/basicRules"
 						},
 						"otherSources": {
 							"$ref": "util.json#/definitions/otherSources"
@@ -262,6 +268,9 @@
 						},
 						"srd": {
 							"$ref": "util.json#/definitions/srd"
+						},
+						"basicRules": {
+							"$ref": "util.json#/definitions/basicRules"
 						},
 						"otherSources": {
 							"$ref": "util.json#/definitions/otherSources"

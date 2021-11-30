@@ -40,7 +40,7 @@ class LootGenUi extends BaseComponent {
 	addHookAll (hookProp, hook) { return this._addHookAll(hookProp, hook); }
 
 	async pInit () {
-		this._data = await DataUtil.loadJSON(`${Renderer.get().baseUrl}/data/loot.json`);
+		this._data = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/loot.json`);
 		const tablesMagicItems = await ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
 			.pMap(async letter => {
 				return {
@@ -131,20 +131,42 @@ class LootGenUi extends BaseComponent {
 
 		const {$stgLhs: $stgLhs_, $stgRhs: $stgRhs_} = this._render_$getStages({$stg, $stgLhs, $stgRhs});
 
+		const menuOthers = ContextUtil.getMenu([
+			new ContextUtil.Action(
+				"Gems/Art Objects Generator",
+				() => {
+					this._setActiveTab({tab: tabMetaGemsArtObjects});
+				},
+			),
+		]);
+
 		const iptTabMetas = [
 			new TabUiUtil.TabMeta({name: "Random Treasure by CR", hasBorder: true, hasBackground: true}),
 			new TabUiUtil.TabMeta({name: "Loot Tables", hasBorder: true, hasBackground: true}),
 			new TabUiUtil.TabMeta({name: "Party Loot", hasBorder: true, hasBackground: true}),
 			new TabUiUtil.TabMeta({name: "Dragon Hoard", hasBorder: true, hasBackground: true}),
+			new TabUiUtil.TabMeta({name: "Gems/Art Objects Generator", isHeadHidden: true, hasBackground: true}),
+			new TabUiUtil.TabMeta({
+				type: "buttons",
+				buttons: [
+					{
+						html: `<span class="glyphicon glyphicon-option-vertical"></span>`,
+						title: "Other Generators",
+						type: "default",
+						pFnClick: evt => ContextUtil.pOpenMenu(evt, menuOthers),
+					},
+				],
+			}),
 		];
 
 		const tabMetas = this._renderTabs(iptTabMetas, {$parent: $stgLhs_});
-		const [tabMetaFindTreasure, tabMetaLootTables, tabMetaPartyLoot, tabMetaDragonHoard] = tabMetas;
+		const [tabMetaFindTreasure, tabMetaLootTables, tabMetaPartyLoot, tabMetaDragonHoard, tabMetaGemsArtObjects] = tabMetas;
 
 		this._render_tabFindTreasure({tabMeta: tabMetaFindTreasure});
 		this._render_tabLootTables({tabMeta: tabMetaLootTables});
 		this._render_tabPartyLoot({tabMeta: tabMetaPartyLoot});
 		this._render_tabDragonHoard({tabMeta: tabMetaDragonHoard});
+		this._render_tabGemsArtObjects({tabMeta: tabMetaGemsArtObjects});
 
 		this._render_output({$wrp: $stgRhs_});
 	}
@@ -273,13 +295,15 @@ class LootGenUi extends BaseComponent {
 				breakdown[type] = (breakdown[type] || 0) + 1;
 			});
 
-		return new LootGenOutputGemsArtObjects({
-			type,
-			typeRoll,
-			typeTable: lootMeta.typeTable,
-			count,
-			breakdown,
-		});
+		return [
+			new LootGenOutputGemsArtObjects({
+				type,
+				typeRoll,
+				typeTable: lootMeta.typeTable,
+				count,
+				breakdown,
+			}),
+		];
 	}
 
 	_doHandleClickRollLoot_hoard_gemsArtObjects_getTypeInfo ({lootMeta}) {
@@ -722,6 +746,115 @@ class LootGenUi extends BaseComponent {
 		});
 	}
 
+	_render_tabGemsArtObjects ({tabMeta}) {
+		const $cbIsUseGems = ComponentUiUtil.$getCbBool(this, "gao_isUseGems");
+		const $cbIsUseArtObjects = ComponentUiUtil.$getCbBool(this, "gao_isUseArtObjects");
+
+		const $iptTargetGoldAmount = ComponentUiUtil.$getIptInt(this, "gao_targetGoldAmount", 0, {min: 0})
+			.keydown(evt => {
+				if (evt.key !== "Enter") return;
+				$iptTargetGoldAmount.change();
+				$btnRoll.click();
+			});
+
+		const $btnRoll = $(`<button class="btn btn-default btn-xs mr-2">Roll Loot</button>`)
+			.click(() => this._goa_pDoHandleClickRollLoot());
+
+		const $btnClear = $(`<button class="btn btn-danger btn-xs">Clear Output</button>`)
+			.click(() => this._doClearOutput());
+
+		$$`<div class="flex-col py-2 px-3">
+			<h4 class="mt-1 mb-3">Gem/Art Object Generator</h4>
+
+			<label class="split-v-center mb-3">
+				<div class="mr-2 w-66 no-shrink">Include Gems</div>
+				${$cbIsUseGems}
+			</label>
+
+			<label class="split-v-center mb-3">
+				<div class="mr-2 w-66 no-shrink">Include Art Objects</div>
+				${$cbIsUseArtObjects}
+			</label>
+
+			<label class="split-v-center mb-3">
+				<div class="mr-2 w-66 no-shrink">Target Gold Amount</div>
+				${$iptTargetGoldAmount}
+			</label>
+
+			<div class="flex-v-center mb-2">
+				${$btnRoll}
+				${$btnClear}
+			</div>
+
+			<hr class="hr-3">
+
+			<div class="ve-small italic">${this.constructor._er(`This custom generator randomly selects gems/art objects up to the target gold amount.`)}</div>
+		</div>`.appendTo(tabMeta.$wrpTab);
+	}
+
+	async _goa_pDoHandleClickRollLoot () {
+		if (this._state.gao_targetGoldAmount <= 0) return JqueryUtil.doToast({content: "Please enter a target gold amount!", type: "warning"});
+
+		if (!this._state.gao_isUseGems && !this._state.gao_isUseArtObjects) return JqueryUtil.doToast({content: `Please select at least one of "Include Gems" and/or "Include Art Objects"`, type: "warning"});
+
+		const typeMap = {};
+		[{prop: "gems", stateProp: "gao_isUseGems"}, {prop: "artObjects", stateProp: "gao_isUseArtObjects"}]
+			.forEach(({prop, stateProp}) => {
+				if (!this._state[stateProp]) return;
+				this._data[prop]
+					.forEach(({type, table}) => {
+						(typeMap[type] = typeMap[type] || []).push({prop, table});
+					});
+			});
+
+		const types = Object.keys(typeMap).map(it => Number(it)).sort(SortUtil.ascSort).reverse();
+		if (this._state.gao_targetGoldAmount < types.last()) return JqueryUtil.doToast({content: `Could not generate any gems/art objects for a gold amount of ${this._state.gao_targetGoldAmount}! Please increase the target gold amount.`, type: "warning"});
+
+		// Map of <prop> -> <type> -> {<count>, <breakdown>}
+		const generated = {};
+
+		let budget = this._state.gao_targetGoldAmount;
+		while (budget >= types.last()) {
+			const validTypes = types.filter(it => it <= budget);
+			const type = RollerUtil.rollOnArray(validTypes);
+			const typeMetas = typeMap[type];
+			const {prop, table} = RollerUtil.rollOnArray(typeMetas);
+			const rolled = RollerUtil.rollOnArray(table);
+
+			const genMeta = MiscUtil.getOrSet(generated, prop, type, {});
+			genMeta.count = (genMeta.count || 0) + 1;
+			genMeta.breakdown = genMeta.breakdown || {};
+			genMeta.breakdown[rolled] = (genMeta.breakdown[rolled] || 0) + 1;
+
+			budget -= type;
+		}
+
+		const [gems, artObjects] = ["gems", "artObjects"]
+			.map(prop => {
+				return generated[prop]
+					? Object.entries(generated[prop])
+						.sort(([typeA], [typeB]) => SortUtil.ascSort(Number(typeB), Number(typeA)))
+						.map(([type, {count, breakdown}]) => {
+							type = Number(type);
+
+							return new LootGenOutputGemsArtObjects({
+								type,
+								count,
+								breakdown,
+							});
+						})
+					: null;
+			});
+
+		const lootOutput = new this._ClsLootGenOutput({
+			type: `Gems/Art Objects`,
+			name: `Gems/Art Objects: Roughly ${this._state.gao_targetGoldAmount.toLocaleString()} gp`,
+			gems,
+			artObjects,
+		});
+		this._doAddOutput({lootOutput});
+	}
+
 	_render_output ({$wrp}) {
 		this._$wrpOutputRows = $(`<div class="w-100 h-100 flex-col overflow-y-auto smooth-scroll"></div>`);
 
@@ -769,6 +902,12 @@ class LootGenUi extends BaseComponent {
 			// region Dragon hoard
 			dh_dragonAge: "Wyrmling",
 			dh_isPreferRandomMagicItems: false,
+			// endregion
+
+			// region Gems/Art Objects
+			gao_isUseGems: true,
+			gao_isUseArtObjects: true,
+			gao_targetGoldAmount: 100,
 			// endregion
 		};
 	}
@@ -946,8 +1085,8 @@ class LootGenOutput {
 		if (this._coins) toSend.currency = this._coins;
 
 		const entityInfos = [];
-		if (this._gems) entityInfos.push(...await this._pDoSendToFoundry_getGemsArtObjectsMetas({loot: this._gems}));
-		if (this._artObjects) entityInfos.push(...await this._pDoSendToFoundry_getGemsArtObjectsMetas({loot: this._artObjects}));
+		if (this._gems?.length) entityInfos.push(...await this._pDoSendToFoundry_getGemsArtObjectsMetas({loot: this._gems}));
+		if (this._artObjects?.length) entityInfos.push(...await this._pDoSendToFoundry_getGemsArtObjectsMetas({loot: this._artObjects}));
 
 		if (this._magicItemsByTable?.length) {
 			for (const magicItemsByTable of this._magicItemsByTable) {
@@ -985,34 +1124,36 @@ class LootGenOutput {
 		const uidToCount = {};
 		const specialItemMetas = {}; // For any rows which don't actually map to an item
 
-		Object.entries(loot.breakdown)
-			.forEach(([entry, count]) => {
-				let cntFound = 0;
-				entry.replace(/{@item ([^}]+)}/g, (...m) => {
-					cntFound++;
-					const [name, source] = m[1].toLowerCase().split("|").map(it => it.trim()).filter(Boolean);
-					const uid = `${name}|${source || SRC_DMG}`.toLowerCase();
-					uidToCount[uid] = (uidToCount[uid] || 0) + count;
-					return "";
+		loot.forEach(lt => {
+			Object.entries(lt.breakdown)
+				.forEach(([entry, count]) => {
+					let cntFound = 0;
+					entry.replace(/{@item ([^}]+)}/g, (...m) => {
+						cntFound++;
+						const [name, source] = m[1].toLowerCase().split("|").map(it => it.trim()).filter(Boolean);
+						const uid = `${name}|${source || SRC_DMG}`.toLowerCase();
+						uidToCount[uid] = (uidToCount[uid] || 0) + count;
+						return "";
+					});
+
+					if (cntFound) return;
+
+					// If we couldn't find any real items in this row, prepare a dummy item
+					const uidFaux = entry.toLowerCase().trim();
+
+					specialItemMetas[uidFaux] = specialItemMetas[uidFaux] || {
+						count: 0,
+						item: {
+							name: Renderer.stripTags(entry).uppercaseFirst(),
+							source: SRC_DMG,
+							type: "OTH",
+							rarity: "unknown",
+						},
+					};
+
+					specialItemMetas[uidFaux].count += count;
 				});
-
-				if (cntFound) return;
-
-				// If we couldn't find any real items in this row, prepare a dummy item
-				const uidFaux = entry.toLowerCase().trim();
-
-				specialItemMetas[uidFaux] = specialItemMetas[uidFaux] || {
-					count: 0,
-					item: {
-						name: Renderer.stripTags(entry).uppercaseFirst(),
-						source: SRC_DMG,
-						type: "OTH",
-						rarity: "unknown",
-					},
-				};
-
-				specialItemMetas[uidFaux].count += count;
-			});
+		});
 
 		const out = [];
 		for (const [uid, count] of Object.entries(uidToCount)) {
@@ -1045,8 +1186,8 @@ class LootGenOutput {
 
 		const totalValue = [
 			this._coins ? CurrencyUtil.getAsCopper(this._coins) : 0,
-			this._gems ? this._gems.type * this._gems.count * 100 : 0,
-			this._artObjects ? this._artObjects.type * this._artObjects.count * 100 : 0,
+			this._gems?.length ? this._gems.map(it => it.type * it.count * 100).sum() : 0,
+			this._artObjects?.length ? this._artObjects.map(it => it.type * it.count * 100).sum() : 0,
 		].sum();
 
 		return $(`<li class="italic ve-muted">A total of ${(totalValue / 100).toLocaleString()} gp worth of coins, art objects, and/or gems, as follows:</li>`);
@@ -1081,14 +1222,16 @@ class LootGenOutput {
 	}
 
 	_render_$getPtGemsArtObjects ({loot, name}) {
-		if (!loot) return null;
+		if (!loot?.length) return null;
 
-		return $$`
-			<li>${(loot.type).toLocaleString()} gp ${name} (×${loot.count}; worth ${((loot.type * loot.count)).toLocaleString()} gp total):</li>
+		return loot.map(lt => {
+			return $$`
+			<li>${(lt.type).toLocaleString()} gp ${name} (×${lt.count}; worth ${((lt.type * lt.count)).toLocaleString()} gp total):</li>
 			<ul>
-				${Object.entries(loot.breakdown).map(([result, count]) => `<li>${Renderer.get().render(result)}${count > 1 ? `, ×${count}` : ""}</li>`).join("")}
+				${Object.entries(lt.breakdown).map(([result, count]) => `<li>${Renderer.get().render(result)}${count > 1 ? `, ×${count}` : ""}</li>`).join("")}
 			</ul>
 		`;
+		});
 	}
 
 	_render_$getPtMagicItems () {

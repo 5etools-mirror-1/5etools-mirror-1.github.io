@@ -12,7 +12,7 @@ _addSwFilenames(cssFiles);
 
 const dataFiles = ut.listFiles({
 	dir: `data`,
-	blacklistFilePrefixes: ["roll20-module-", "srd-spells.json", "roll20.json"],
+	blacklistFilePrefixes: ["srd-spells.json", "roll20.json"],
 	whitelistFileExts: [".json"],
 });
 _addSwFilenames(dataFiles);

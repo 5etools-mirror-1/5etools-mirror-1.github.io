@@ -1,0 +1,228 @@
+{
+	"_meta": {
+		"otherSources": {
+			"monster": {
+				"NRH-TCMC": "NRH-CoI"
+			}
+		}
+	},
+	"monster": [
+		{
+			"name": "Clown",
+			"source": "NRH-CoI",
+			"page": 7,
+			"size": "M",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"puffy shirt"
+					]
+				}
+			],
+			"hp": {
+				"average": 11,
+				"formula": "2d8 + 2"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 13,
+			"dex": 12,
+			"con": 12,
+			"int": 10,
+			"wis": 11,
+			"cha": 10,
+			"skill": {
+				"perception": "+2"
+			},
+			"passive": 12,
+			"languages": [
+				"Common"
+			],
+			"cr": "1/8",
+			"action": [
+				{
+					"name": "Colorful Club",
+					"entries": [
+						"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d4 + 1}) bludgeoning damage."
+					]
+				}
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"B"
+			],
+			"miscTags": [
+				"MW"
+			]
+		},
+		{
+			"name": "Imelda",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "NRH-CoI",
+			"page": 11,
+			"size": "M",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"C",
+				"G"
+			],
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"{@item hide armor|PHB}"
+					]
+				}
+			],
+			"hp": {
+				"average": 49,
+				"formula": "9d8 + 9"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 18,
+			"dex": 12,
+			"con": 12,
+			"int": 10,
+			"wis": 11,
+			"cha": 10,
+			"skill": {
+				"athletics": "+6"
+			},
+			"passive": 10,
+			"languages": [
+				"Common"
+			],
+			"cr": "2",
+			"trait": [
+				{
+					"name": "Reckless",
+					"entries": [
+						"At the start of her turn, Imelda can gain advantage on all melee weapon attack rolls during that turn, but attack rolls against her have advantage until the start of her next turn."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Fist",
+					"entries": [
+						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d4 + 4}) bludgeoning damage."
+					]
+				}
+			],
+			"traitTags": [
+				"Reckless"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"B"
+			],
+			"miscTags": [
+				"MW"
+			]
+		},
+		{
+			"name": "Magnifico",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "NRH-CoI",
+			"page": 9,
+			"size": "M",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 27,
+				"formula": "6d8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 15,
+			"con": 10,
+			"int": 12,
+			"wis": 14,
+			"cha": 16,
+			"skill": {
+				"deception": "+5",
+				"insight": "+4",
+				"investigation": "+3",
+				"perception": "+6",
+				"persuasion": "+5",
+				"sleight of hand": "+6",
+				"stealth": "+4"
+			},
+			"passive": 16,
+			"languages": [
+				"Common"
+			],
+			"cr": "1/2",
+			"trait": [
+				{
+					"name": "Cunning Action",
+					"entries": [
+						"On each of his turns, Magnifico can use a bonus action to take the Dash, Disengage, or Hide action."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Shortsword",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage."
+					]
+				},
+				{
+					"name": "Hand Crossbow",
+					"entries": [
+						"{@atk rw} {@hit 4} to hit, range 30/120 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage."
+					]
+				}
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW",
+				"RNG",
+				"RW"
+			]
+		}
+	]
+}

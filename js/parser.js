@@ -1155,12 +1155,15 @@ Parser.DIST_TYPES = [
 	{type: RNG_UNLIMITED, hasAmount: false},
 ];
 
-Parser.spComponentsToFull = function (comp, level) {
+Parser.spComponentsToFull = function (comp, level, {isPlainText = false} = {}) {
 	if (!comp) return "None";
 	const out = [];
 	if (comp.v) out.push("V");
 	if (comp.s) out.push("S");
-	if (comp.m != null) out.push(`M${comp.m !== true ? ` (${comp.m.text != null ? comp.m.text : comp.m})` : ""}`);
+	if (comp.m != null) {
+		const fnRender = isPlainText ? Renderer.stripTags.bind(Renderer) : Renderer.get().render.bind(Renderer.get());
+		out.push(`M${comp.m !== true ? ` (${fnRender(comp.m.text != null ? comp.m.text : comp.m)})` : ""}`);
+	}
 	if (comp.r) out.push(`R (${level} gp)`);
 	return out.join(", ") || "None";
 };
@@ -2379,6 +2382,14 @@ SRC_SCREEN = "Screen";
 SRC_SCREEN_WILDERNESS_KIT = "ScreenWildernessKit";
 SRC_HEROES_FEAST = "HF";
 SRC_CM = "CM";
+SRC_NRH = "NRH";
+SRC_NRH_TCMC = "NRH-TCMC";
+SRC_NRH_AVitW = "NRH-AVitW";
+SRC_NRH_ASS = "NRH-ASS"; // lmao
+SRC_NRH_CoI = "NRH-CoI";
+SRC_NRH_TLT = "NRH-TLT";
+SRC_NRH_AWoL = "NRH-AWoL";
+SRC_NRH_AT = "NRH-AT";
 
 SRC_AL_PREFIX = "AL";
 
@@ -2478,6 +2489,7 @@ UA_PREFIX = "Unearthed Arcana: ";
 UA_PREFIX_SHORT = "UA: ";
 TftYP_NAME = "Tales from the Yawning Portal";
 AitFR_NAME = "Adventures in the Forgotten Realms";
+NRH_NAME = "NERDS Restoring Harmony";
 
 Parser.SOURCE_JSON_TO_FULL = {};
 Parser.SOURCE_JSON_TO_FULL[SRC_CoS] = "Curse of Strahd";
@@ -2562,6 +2574,14 @@ Parser.SOURCE_JSON_TO_FULL[SRC_SCREEN] = "Dungeon Master's Screen";
 Parser.SOURCE_JSON_TO_FULL[SRC_SCREEN_WILDERNESS_KIT] = "Dungeon Master's Screen: Wilderness Kit";
 Parser.SOURCE_JSON_TO_FULL[SRC_HEROES_FEAST] = "Heroes' Feast";
 Parser.SOURCE_JSON_TO_FULL[SRC_CM] = "Candlekeep Mysteries";
+Parser.SOURCE_JSON_TO_FULL[SRC_NRH] = NRH_NAME;
+Parser.SOURCE_JSON_TO_FULL[SRC_NRH_TCMC] = `${NRH_NAME}: The Candy Mountain Caper`;
+Parser.SOURCE_JSON_TO_FULL[SRC_NRH_AVitW] = `${NRH_NAME}: A Voice in the Wilderness`;
+Parser.SOURCE_JSON_TO_FULL[SRC_NRH_ASS] = `${NRH_NAME}: A Sticky Situation`;
+Parser.SOURCE_JSON_TO_FULL[SRC_NRH_CoI] = `${NRH_NAME}: Circus of Illusions`;
+Parser.SOURCE_JSON_TO_FULL[SRC_NRH_TLT] = `${NRH_NAME}: The Lost Tomb`;
+Parser.SOURCE_JSON_TO_FULL[SRC_NRH_AWoL] = `${NRH_NAME}: A Web of Lies`;
+Parser.SOURCE_JSON_TO_FULL[SRC_NRH_AT] = `${NRH_NAME}: Adventure Together`;
 Parser.SOURCE_JSON_TO_FULL[SRC_ALCoS] = `${AL_PREFIX}Curse of Strahd`;
 Parser.SOURCE_JSON_TO_FULL[SRC_ALEE] = `${AL_PREFIX}Elemental Evil`;
 Parser.SOURCE_JSON_TO_FULL[SRC_ALRoD] = `${AL_PREFIX}Rage of Demons`;
@@ -2726,6 +2746,14 @@ Parser.SOURCE_JSON_TO_ABV[SRC_SCREEN] = "Screen";
 Parser.SOURCE_JSON_TO_ABV[SRC_SCREEN_WILDERNESS_KIT] = "Wild";
 Parser.SOURCE_JSON_TO_ABV[SRC_HEROES_FEAST] = "HF";
 Parser.SOURCE_JSON_TO_ABV[SRC_CM] = "CM";
+Parser.SOURCE_JSON_TO_ABV[SRC_NRH] = "NRH";
+Parser.SOURCE_JSON_TO_ABV[SRC_NRH_TCMC] = "NRH-TCMC";
+Parser.SOURCE_JSON_TO_ABV[SRC_NRH_AVitW] = "NRH-AVitW";
+Parser.SOURCE_JSON_TO_ABV[SRC_NRH_ASS] = "NRH-ASS";
+Parser.SOURCE_JSON_TO_ABV[SRC_NRH_CoI] = "NRH-CoI";
+Parser.SOURCE_JSON_TO_ABV[SRC_NRH_TLT] = "NRH-TLT";
+Parser.SOURCE_JSON_TO_ABV[SRC_NRH_AWoL] = "NRH-AWoL";
+Parser.SOURCE_JSON_TO_ABV[SRC_NRH_AT] = "NRH-AT";
 Parser.SOURCE_JSON_TO_ABV[SRC_ALCoS] = "ALCoS";
 Parser.SOURCE_JSON_TO_ABV[SRC_ALEE] = "ALEE";
 Parser.SOURCE_JSON_TO_ABV[SRC_ALRoD] = "ALRoD";
@@ -2889,6 +2917,14 @@ Parser.SOURCE_JSON_TO_DATE[SRC_SCREEN] = "2015-01-20";
 Parser.SOURCE_JSON_TO_DATE[SRC_SCREEN_WILDERNESS_KIT] = "2020-11-17";
 Parser.SOURCE_JSON_TO_DATE[SRC_HEROES_FEAST] = "2020-10-27";
 Parser.SOURCE_JSON_TO_DATE[SRC_CM] = "2021-03-16";
+Parser.SOURCE_JSON_TO_DATE[SRC_NRH] = "2021-09-01";
+Parser.SOURCE_JSON_TO_DATE[SRC_NRH_TCMC] = "2021-09-01";
+Parser.SOURCE_JSON_TO_DATE[SRC_NRH_AVitW] = "2021-09-01";
+Parser.SOURCE_JSON_TO_DATE[SRC_NRH_ASS] = "2021-09-01";
+Parser.SOURCE_JSON_TO_DATE[SRC_NRH_CoI] = "2021-09-01";
+Parser.SOURCE_JSON_TO_DATE[SRC_NRH_TLT] = "2021-09-01";
+Parser.SOURCE_JSON_TO_DATE[SRC_NRH_AWoL] = "2021-09-01";
+Parser.SOURCE_JSON_TO_DATE[SRC_NRH_AT] = "2021-09-01";
 Parser.SOURCE_JSON_TO_DATE[SRC_ALCoS] = "2016-03-15";
 Parser.SOURCE_JSON_TO_DATE[SRC_ALEE] = "2015-04-07";
 Parser.SOURCE_JSON_TO_DATE[SRC_ALRoD] = "2015-09-15";
@@ -3023,6 +3059,14 @@ Parser.SOURCES_ADVENTURES = new Set([
 	SRC_AitFR_DN,
 	SRC_AitFR_FCD,
 	SRC_WBtW,
+	SRC_NRH,
+	SRC_NRH_TCMC,
+	SRC_NRH_AVitW,
+	SRC_NRH_ASS,
+	SRC_NRH_CoI,
+	SRC_NRH_TLT,
+	SRC_NRH_AWoL,
+	SRC_NRH_AT,
 
 	SRC_AWM,
 ]);
@@ -3048,6 +3092,14 @@ Parser.SOURCES_NON_STANDARD_WOTC = new Set([
 	SRC_AitFR_FCD,
 	SRC_DoD,
 	SRC_MaBJoV,
+	SRC_NRH,
+	SRC_NRH_TCMC,
+	SRC_NRH_AVitW,
+	SRC_NRH_ASS,
+	SRC_NRH_CoI,
+	SRC_NRH_TLT,
+	SRC_NRH_AWoL,
+	SRC_NRH_AT,
 ]);
 // region Source categories
 
@@ -3173,6 +3225,14 @@ Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE = {};
 	SRC_AitFR_DN,
 	SRC_AitFR_FCD,
 	SRC_WBtW,
+	SRC_NRH,
+	SRC_NRH_TCMC,
+	SRC_NRH_AVitW,
+	SRC_NRH_ASS,
+	SRC_NRH_CoI,
+	SRC_NRH_TLT,
+	SRC_NRH_AWoL,
+	SRC_NRH_AT,
 ].forEach(src => {
 	Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE[src] = src;
 	Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE[src.toLowerCase()] = src;

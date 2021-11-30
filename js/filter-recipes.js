@@ -29,7 +29,7 @@ class PageFilterRecipes extends PageFilter {
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
 			items: ["SRD"],
-			isSrdFilter: true,
+			isMiscFilter: true,
 			displayFn: PageFilterRecipes._miscTagToFull,
 		});
 	}

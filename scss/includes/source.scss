@@ -50,6 +50,7 @@
 	$rgb-source-DoD: #fe4935;
 	$rgb-source-MaBJoV: #7a2854;
 	$rgb-source-FTD: #b82a15;
+	$rgb-source-NRH: #bd335b;
 
 	&PHB {
 		color: $rgb-source-PHB !important;
@@ -375,6 +376,24 @@
 		color: $rgb-source-FTD !important;
 		border-color: $rgb-source-FTD !important;
 		text-decoration-color: $rgb-source-FTD !important;
+	}
+
+	&NRH {
+		color: $rgb-source-NRH !important;
+		border-color: $rgb-source-NRH !important;
+		text-decoration-color: $rgb-source-NRH !important;
+
+		&-TCMC,
+		&-AVitW,
+		&-ASS,
+		&-CoI,
+		&-TLT,
+		&-AWoL,
+		&-AT {
+			color: $rgb-source-NRH !important;
+			border-color: $rgb-source-NRH !important;
+			text-decoration-color: $rgb-source-NRH !important;
+		}
 	}
 }
 

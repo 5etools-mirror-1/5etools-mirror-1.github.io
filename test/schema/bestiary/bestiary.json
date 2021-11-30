@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.19.0",
+	"version": "1.19.1",
 	"title": "Bestiary Schema",
 	"$id": "bestiary.json",
 	"type": "object",
@@ -958,6 +958,9 @@
 				"srd": {
 					"$ref": "../util.json#/definitions/srd"
 				},
+				"basicRules": {
+					"$ref": "../util.json#/definitions/basicRules"
+				},
 				"summonedBySpell": {
 					"description": "The spell used to summon this creature; specifically for TCE-esque summon spells.",
 					"type": "string"
@@ -1914,6 +1917,9 @@
 						},
 						"srd": {
 							"$ref": "../util.json#/definitions/srd"
+						},
+						"basicRules": {
+							"$ref": "../util.json#/definitions/basicRules"
 						},
 						"summonedBySpell": {
 							"description": "The spell used to summon this creature; specifically for TCE-esque summon spells.",
@@ -2886,6 +2892,9 @@
 						},
 						"srd": {
 							"$ref": "../util.json#/definitions/srd"
+						},
+						"basicRules": {
+							"$ref": "../util.json#/definitions/basicRules"
 						},
 						"summonedBySpell": {
 							"description": "The spell used to summon this creature; specifically for TCE-esque summon spells.",

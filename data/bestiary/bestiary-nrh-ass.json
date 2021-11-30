@@ -1,0 +1,83 @@
+{
+	"_meta": {
+		"otherSources": {
+			"monster": {
+				"NRH-TCMC": "NRH-ASS"
+			}
+		}
+	},
+	"monster": [
+		{
+			"name": "Goon",
+			"source": "NRH-ASS",
+			"page": 7,
+			"otherSources": [
+				{
+					"source": "NRH-AT",
+					"page": 11
+				}
+			],
+			"size": "M",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 12,
+					"from": [
+						"{@item leather armor|PHB}"
+					]
+				}
+			],
+			"hp": {
+				"average": 9,
+				"formula": "2d8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 12,
+			"con": 10,
+			"int": 10,
+			"wis": 11,
+			"cha": 10,
+			"passive": 10,
+			"languages": [
+				"Common"
+			],
+			"cr": "1/8",
+			"trait": [
+				{
+					"name": "Goon Grit",
+					"entries": [
+						"The goon has advantage on saving throws against being {@condition charmed}, intimidated, or persuaded."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Scimitar",
+					"entries": [
+						"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d6 + 1}) slashing damage"
+					]
+				}
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"S"
+			],
+			"miscTags": [
+				"MW"
+			]
+		}
+	]
+}

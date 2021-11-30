@@ -3,7 +3,7 @@
 	"$id": "entry.json",
 	"title": "Entry",
 	"description": "A recursively renderable object.",
-	"version": "1.5.1",
+	"version": "1.5.2",
 	"definitions": {
 		"_arrayOfSpell": {
 			"type": "array",
@@ -1463,7 +1463,7 @@
 					"const": "dataCreature"
 				},
 				"dataCreature": {
-					"$ref": "bestiary.json#/definitions/creature"
+					"$ref": "bestiary/bestiary.json#/definitions/creature"
 				}
 			},
 			"required": [
@@ -1478,7 +1478,7 @@
 					"const": "dataSpell"
 				},
 				"dataSpell": {
-					"$ref": "spells.json#/definitions/spell"
+					"$ref": "spells/spells.json#/definitions/spell"
 				}
 			},
 			"required": [

@@ -267,6 +267,9 @@
 			"conditionInflict": [
 				"charmed"
 			],
+			"affectsCreatureType": [
+				"beast"
+			],
 			"miscTags": [
 				"SGT"
 			],
@@ -565,6 +568,20 @@
 			"savingThrow": [
 				"wisdom"
 			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
+			],
 			"miscTags": [
 				"SGT"
 			],
@@ -675,6 +692,9 @@
 						"You touch adult humanoids willing to be bonded together in marriage. For the next 7 days, each target gains a +2 bonus to AC while they are within 30 feet of each other. A creature can benefit from this rite again only if widowed."
 					]
 				}
+			],
+			"affectsCreatureType": [
+				"humanoid"
 			],
 			"miscTags": [
 				"MAC"
@@ -2243,13 +2263,13 @@
 		{
 			"name": "Find Greater Steed",
 			"source": "XGE",
+			"page": 156,
 			"additionalSources": [
 				{
 					"source": "FTD",
 					"page": 190
 				}
 			],
-			"page": 156,
 			"level": 4,
 			"school": "C",
 			"time": [
@@ -2701,6 +2721,20 @@
 						"When you cast this spell using a spell slot of 3rd level or higher, the healing increases by {@scaledice 1d6|2-9|1d6} for each slot level above 2nd."
 					]
 				}
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"HL",
@@ -5447,6 +5481,9 @@
 				},
 				"A creature that can see the sensor (such as one using {@spell see invisibility} or {@sense truesight}) sees a translucent image of the tormented humanoid whose soul you caged."
 			],
+			"affectsCreatureType": [
+				"humanoid"
+			],
 			"miscTags": [
 				"HL"
 			],
@@ -5900,6 +5937,13 @@
 			],
 			"savingThrow": [
 				"charisma"
+			],
+			"affectsCreatureType": [
+				"celestial",
+				"elemental",
+				"fey",
+				"fiend",
+				"undead"
 			],
 			"miscTags": [
 				"HL",

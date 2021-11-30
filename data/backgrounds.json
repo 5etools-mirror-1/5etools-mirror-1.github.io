@@ -10,6 +10,7 @@
 			"source": "PHB",
 			"page": 127,
 			"srd": true,
+			"basicRules": true,
 			"skillProficiencies": [
 				{
 					"insight": true,
@@ -4339,6 +4340,7 @@
 			"name": "Criminal",
 			"source": "PHB",
 			"page": 129,
+			"basicRules": true,
 			"skillProficiencies": [
 				{
 					"deception": true,
@@ -7447,6 +7449,7 @@
 			"name": "Folk Hero",
 			"source": "PHB",
 			"page": 131,
+			"basicRules": true,
 			"skillProficiencies": [
 				{
 					"animal handling": true,
@@ -10008,7 +10011,7 @@
 			"startingEquipment": [
 				{
 					"_": [
-						"monster hunter's pack|cos",
+						"monster hunter's pack|vrgr",
 						"common clothes|phb",
 						{
 							"item": "Horror Trinket|VRGR",
@@ -10038,7 +10041,7 @@
 						{
 							"type": "item",
 							"name": "Equipment",
-							"entry": "{@item Monster hunter's pack|cos} (containing a {@item chest|PHB}, a {@item crowbar|PHB}, a {@item hammer|PHB}, three wooden stakes, a {@item holy symbol|PHB}, a {@item Holy Water (flask)|PHB|flask of holy water}, a {@item Manacles|PHB|set of manacles}, a {@item steel mirror|PHB}, a {@item Oil (flask)|PHB|flask of oil}, a {@item tinderbox|PHB}, and 3 {@item Torch|PHB|torches}), a set of {@item common clothes|phb}, one {@item trinket|CoS} of special significance (choose one or roll on the {@item Horror Trinket|VRGR|Horror Trinkets} table), and 1 sp"
+							"entry": "{@item Monster hunter's pack|vrgr} (containing a {@item chest|PHB}, a {@item crowbar|PHB}, a {@item hammer|PHB}, three wooden stakes, a {@item holy symbol|PHB}, a {@item Holy Water (flask)|PHB|flask of holy water}, a {@item Manacles|PHB|set of manacles}, a {@item steel mirror|PHB}, a {@item Oil (flask)|PHB|flask of oil}, a {@item tinderbox|PHB}, and 3 {@item Torch|PHB|torches}), a set of {@item common clothes|phb}, one {@item trinket|CoS} of special significance (choose one or roll on the {@item Horror Trinket|VRGR|Horror Trinkets} table), and 1 sp"
 						}
 					]
 				},
@@ -13876,6 +13879,7 @@
 			"name": "Noble",
 			"source": "PHB",
 			"page": 135,
+			"basicRules": true,
 			"skillProficiencies": [
 				{
 					"history": true,
@@ -16415,6 +16419,7 @@
 			"name": "Sage",
 			"source": "PHB",
 			"page": 137,
+			"basicRules": true,
 			"skillProficiencies": [
 				{
 					"arcana": true,
@@ -18945,6 +18950,7 @@
 			"name": "Soldier",
 			"source": "PHB",
 			"page": 140,
+			"basicRules": true,
 			"skillProficiencies": [
 				{
 					"athletics": true,
@@ -20490,6 +20496,7 @@
 			"name": "Variant Criminal (Spy)",
 			"source": "PHB",
 			"page": 130,
+			"basicRules": true,
 			"_copy": {
 				"name": "Criminal",
 				"source": "PHB",

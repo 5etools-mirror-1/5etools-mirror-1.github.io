@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "spells.json",
-	"version": "1.7.0",
+	"version": "1.7.2",
 	"title": "Spells",
 	"type": "object",
 
@@ -17,17 +17,21 @@
 				},
 				"school": {
 					"type": "string",
-					"enum": [
-						"A",
-						"V",
-						"E",
-						"I",
-						"D",
-						"N",
-						"T",
-						"C",
-						"P"
-					]
+					"$$ifSiteElse_key": {
+						"keySite": "enum",
+						"keyBrew": "examples",
+						"value": [
+							"A",
+							"V",
+							"E",
+							"I",
+							"D",
+							"N",
+							"T",
+							"C",
+							"P"
+						]
+					}
 				},
 				"$$ifBrew": {
 					"subschools": {
@@ -36,6 +40,13 @@
 						"items": {
 							"type": "string"
 						}
+					},
+					"fluff": {
+						"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source",
+						"$ref": "../util.json#/definitions/fluffObject"
+					},
+					"roll20Spell": {
+						"$ref": "roll20.json#/properties/spell"
 					}
 				},
 				"meta": {
@@ -392,8 +403,17 @@
 						"enum": ["FMV", "HL", "MAC", "PRM", "SCL", "SMN", "SGT", "THP", "TP"]
 					}
 				},
+				"affectsCreatureType": {
+					"type": "array",
+					"items": {
+						"$ref": "../util.json#/definitions/creatureType"
+					}
+				},
 				"srd": {
 					"$ref": "../util.json#/definitions/srd"
+				},
+				"basicRules": {
+					"$ref": "../util.json#/definitions/basicRules"
 				},
 				"scalingLevelDice": {
 					"oneOf": [
@@ -520,7 +540,15 @@
 					"items": {
 						"type": "string",
 						"description": "The examples given are short forms that are automatically expanded to \"discharged\", \"dispelled\" & \"triggered\".\nHomebrew files should state custom end conditions in full.",
-						"enum": ["dispel", "trigger", "discharge"]
+						"$$ifSiteElse_key": {
+							"keySite": "enum",
+							"keyBrew": "examples",
+							"value": [
+								"dispel",
+								"trigger",
+								"discharge"
+							]
+						}
 					}
 				},
 				"condition": {

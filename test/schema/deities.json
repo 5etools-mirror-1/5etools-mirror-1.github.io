@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "deities.json",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"type": "object",
 	"definitions": {
 		"deityData": {
@@ -108,6 +108,9 @@
 				},
 				"srd": {
 					"$ref": "util.json#/definitions/srd"
+				},
+				"basicRules": {
+					"$ref": "util.json#/definitions/basicRules"
 				},
 				"customExtensionOf": {
 					"type": "string"
@@ -282,6 +285,9 @@
 						},
 						"srd": {
 							"$ref": "util.json#/definitions/srd"
+						},
+						"basicRules": {
+							"$ref": "util.json#/definitions/basicRules"
 						},
 						"customExtensionOf": {
 							"type": "string"
@@ -459,6 +465,9 @@
 						},
 						"srd": {
 							"$ref": "util.json#/definitions/srd"
+						},
+						"basicRules": {
+							"$ref": "util.json#/definitions/basicRules"
 						},
 						"customExtensionOf": {
 							"type": "string"

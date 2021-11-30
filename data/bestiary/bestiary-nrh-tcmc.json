@@ -1,0 +1,127 @@
+{
+	"_meta": {
+		"dependencies": {
+			"monster": [
+				"MM"
+			]
+		}
+	},
+	"monster": [
+		{
+			"name": "Mr. Honeycutt",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "NRH-TCMC",
+			"page": 10,
+			"otherSources": [
+				{
+					"source": "NRH-AVitW",
+					"page": 9
+				},
+				{
+					"source": "NRH-ASS",
+					"page": 9
+				},
+				{
+					"source": "NRH-CoI",
+					"page": 10
+				},
+				{
+					"source": "NRH-TLT",
+					"page": 9
+				},
+				{
+					"source": "NRH-AWoL",
+					"page": 7
+				},
+				{
+					"source": "NRH-AT",
+					"page": 12
+				}
+			],
+			"_copy": {
+				"name": "Wererat",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the wererat",
+						"with": "Mr. Honeycutt",
+						"flags": "i"
+					}
+				}
+			}
+		},
+		{
+			"name": "Slurmy",
+			"isNamedCreature": true,
+			"source": "NRH-TCMC",
+			"page": 10,
+			"size": "S",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"goblinoid"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 11,
+				"formula": "2d8 + 2"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 8,
+			"dex": 14,
+			"con": 12,
+			"int": 8,
+			"wis": 14,
+			"cha": 8,
+			"skill": {
+				"perception": "+4"
+			},
+			"passive": 12,
+			"languages": [
+				"Common"
+			],
+			"cr": "1/8",
+			"trait": [
+				{
+					"name": "Nimble Escape",
+					"entries": [
+						"Slurmy can take the Disengage or Hide action as a bonus action on each of their turns."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Claw",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) slashing damage."
+					]
+				}
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"S"
+			],
+			"miscTags": [
+				"MW"
+			]
+		}
+	]
+}

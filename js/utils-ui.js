@@ -1090,7 +1090,7 @@ class TabUiUtil extends TabUiUtilBase {
 		super.decorate(obj);
 
 		obj.__$getBtnTab = function ({tabMeta, _propProxy, propActive, ixTab}) {
-			return $(`<button class="btn btn-default ui-tab__btn-tab-head">${tabMeta.name.qq()}</button>`)
+			return $(`<button class="btn btn-default ui-tab__btn-tab-head ${tabMeta.isHeadHidden ? "ve-hidden" : ""}">${tabMeta.name.qq()}</button>`)
 				.click(() => obj[_propProxy][propActive] = ixTab);
 		};
 
@@ -1100,8 +1100,25 @@ class TabUiUtil extends TabUiUtilBase {
 
 		obj.__renderTypedTabMeta = function ({tabMeta, ixTab}) {
 			switch (tabMeta.type) {
+				case "buttons": return obj.__renderTypedTabMeta_buttons({tabMeta, ixTab});
 				default: throw new Error(`Unhandled tab type "${tabMeta.type}"`);
 			}
+		};
+
+		obj.__renderTypedTabMeta_buttons = function ({tabMeta, ixTab}) {
+			const $btns = tabMeta.buttons.map((meta, j) => {
+				const $btn = $(`<button class="btn ui-tab__btn-tab-head ${meta.type ? `btn-${meta.type}` : "btn-primary"}" ${meta.title ? `title="${meta.title.qq()}"` : ""}>${meta.html}</button>`)
+					.click(evt => meta.pFnClick(evt, $btn));
+				return $btn;
+			});
+
+			const $btnTab = $$`<div class="btn-group flex-v-right flex-h-right ml-2 w-100">${$btns}</div>`;
+
+			return {
+				...tabMeta,
+				ix: ixTab,
+				$btnTab,
+			};
 		};
 
 		obj.__$getDispTabTitle = function () { return null; };
@@ -1112,6 +1129,7 @@ TabUiUtil.TabMeta = class extends TabUiUtilBase.TabMeta {
 		super(opts);
 		this.hasBorder = opts.hasBorder;
 		this.hasBackground = opts.hasBackground;
+		this.isHeadHidden = opts.isHeadHidden;
 	}
 };
 
@@ -1974,6 +1992,7 @@ class InputUiUtil {
 	 * @param [opts.isGlobal] If the stored setting is global when "remember" options are passed.
 	 * @param [opts.fnRemember] Custom function to run when saving the "yes and remember" option.
 	 * @param [opts.isSkippable] If the prompt is skippable.
+	 * @param [opts.isAlert] If this prompt is just a notification/alert.
 	 * @return {Promise} A promise which resolves to true/false if the user chose, or null otherwise.
 	 */
 	static async pGetUserBoolean (opts) {
@@ -2000,7 +2019,7 @@ class InputUiUtil {
 			const $btnTrue = $(`<button class="btn btn-primary flex-v-center mr-3"><span class="glyphicon glyphicon-ok mr-2"></span><span>${opts.textYes || "OK"}</span></button>`)
 				.click(() => doClose(true, true));
 
-			const $btnFalse = $(`<button class="btn btn-default btn-sm flex-v-center"><span class="glyphicon glyphicon-remove mr-2"></span><span>${opts.textNo || "Cancel"}</span></button>`)
+			const $btnFalse = opts.isAlert ? null : $(`<button class="btn btn-default btn-sm flex-v-center"><span class="glyphicon glyphicon-remove mr-2"></span><span>${opts.textNo || "Cancel"}</span></button>`)
 				.click(() => doClose(true, false));
 
 			const $btnSkip = !opts.isSkippable ? null : $(`<button class="btn btn-default btn-sm ml-3"><span class="glyphicon glyphicon-forward"></span><span>${opts.textSkip || "Skip"}</span></button>`)

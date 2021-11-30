@@ -4,7 +4,7 @@
 
 	"title": "Util",
 	"description": "Utility definitions to be used in other schemas.",
-	"version": "1.11.0",
+	"version": "1.11.1",
 
 	"definitions" : {
 		"metaBlock": {
@@ -234,26 +234,30 @@
 
 		"skillNameLower": {
 			"type": "string",
-			"enum": [
-				"athletics",
-				"acrobatics",
-				"sleight of hand",
-				"stealth",
-				"arcana",
-				"history",
-				"investigation",
-				"nature",
-				"religion",
-				"animal handling",
-				"insight",
-				"medicine",
-				"perception",
-				"survival",
-				"deception",
-				"intimidation",
-				"performance",
-				"persuasion"
-			]
+			"$$ifSiteElse_key": {
+				"keySite": "enum",
+				"keyBrew": "examples",
+				"value": [
+					"athletics",
+					"acrobatics",
+					"sleight of hand",
+					"stealth",
+					"arcana",
+					"history",
+					"investigation",
+					"nature",
+					"religion",
+					"animal handling",
+					"insight",
+					"medicine",
+					"perception",
+					"survival",
+					"deception",
+					"intimidation",
+					"performance",
+					"persuasion"
+				]
+			}
 		},
 
 		"skillProficiencies": {
@@ -298,7 +302,12 @@
 						"additionalProperties": false
 					}
 				},
-				"additionalProperties": false
+				"$$ifSite": {
+					"additionalProperties": false
+				},
+				"$$ifBrew": {
+					"additionalProperties": {"type": "boolean"}
+				}
 			}
 		},
 
@@ -421,7 +430,12 @@
 						}
 					}
 				},
-				"additionalProperties": false
+				"$$ifSite": {
+					"additionalProperties": false
+				},
+				"$$ifBrew": {
+					"additionalProperties": {"type": "boolean"}
+				}
 			}
 		},
 
@@ -1045,9 +1059,13 @@
 		"dataOptionalfeatureType": {
 			"type": "string",
 			"description": "AF: Alchemical Formula\n AI: Artificer Infusion\n AS: Arcane Shot\n AS:V1-UA: Arcane Shot, V1 (UA)\n AS:V2-UA: Arcane Shot, V2 (UA)\n ED: Elemental Discipline\n EI: Eldritch Invocation\n FS:B: Fighting Style; Bard\n FS:F: Fighting Style; Fighter\n FS:P: Fighting Style; Paladin\n FS:R: Fighting Style; Ranger\n IWM:A: Infernal War Machine Upgrade, Armor\n IWM:G: Infernal War Machine Upgrade, Gadget\n IWM:W: Infernal War Machine Variant, Weapon\n MM: Metamagic\n MV: Maneuver\n MV:B: Maneuver, Battle Master\n MV:C2-UA: Maneuver, Cavalier V2 (UA)\n OR: Onomancy Resonant\n OTH: Other\n PB: Pact Boon\n RN: Rune Knight Rune\n SHP:F: Ship Upgrade, Figurehead\n SHP:H: Ship Upgrade, Hull\n SHP:M: Ship Upgrade, Movement\n SHP:O: Ship Upgrade, Miscellaneous\n SHP:W: Ship Upgrade, Weapon",
-			"enum": [
-				"ED", "EI", "MM", "MV", "MV:B", "OTH", "FS:F", "FS:B", "FS:R", "FS:P", "MV:C2-UA", "AS:V1-UA", "AS:V2-UA", "AS", "PB", "AI", "SHP:H", "SHP:M", "SHP:W", "SHP:F", "SHP:O", "IWM:W", "IWM:A", "IWM:G", "OR", "RN", "AF"
-			]
+			"$$ifSiteElse_key": {
+				"keySite": "enum",
+				"keyBrew": "examples",
+				"value": [
+					"ED", "EI", "MM", "MV", "MV:B", "OTH", "FS:F", "FS:B", "FS:R", "FS:P", "MV:C2-UA", "AS:V1-UA", "AS:V2-UA", "AS", "PB", "AI", "SHP:H", "SHP:M", "SHP:W", "SHP:F", "SHP:O", "IWM:W", "IWM:A", "IWM:G", "OR", "RN", "AF"
+				]
+			}
 		},
 
 		"damageImmunityArray": {
@@ -1797,6 +1815,10 @@
 
 		"srd": {
 			"type": ["boolean", "string"]
+		},
+
+		"basicRules": {
+			"type": "boolean"
 		},
 
 		"fluffObject": {

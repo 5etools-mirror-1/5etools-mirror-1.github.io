@@ -1844,5 +1844,11 @@
 		"date": "2021-11-23",
 		"title": "Autoschematic",
 		"txt": "- This Is Your Life \"life events\" may now be individually re-rolled, and the page layout has been fixed \n- Fixed Items page Source filter \"Include References\" failing to include references\n- (Brew) Reworked JSON schema to better support homebrew, by moving to a custom pre-processor capable of outputting two different schema sets; one for the site, one for homebrew. This allows the homebrew schema to be more permissive, without sacrificing the efficacy of the site's tests (thanks to @ Lyra and @ Jenny for the brew schema improvements).\n- (Brew) Fixed deletion of item `\"variant\"` and `\"baseitem\"` entities failing to fully clean up items\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.144.0",
+		"date": "2021-11-30",
+		"title": "Degeneration",
+		"txt": "- Added NERDS Restoring Harmony adventures\n- Added \"Gem/Art Object Generator\" mode to Loot Generator, which outputs a random selection of gems/art objects up to a given gold value\n- Added FTD \"Customizing Dragons\" variants to appropriate dragon statblocks in the Bestiary\n- Added \"Basic Rules\" filter to list pages (thanks @ benru)\n- Added lair actions/regional actions to Bestiary markdown popout content\n- (Brew) Added support for custom conditions to Bestiary/Spells Page condition filters\n= (Brew) Added support for @tags in spell components\n- (Brew) Fixed various homebrew schema issues (thanks @ Lyra)\n- (Brew) Improved Creature Text Converter handling of contractions and bulleted lists\n- (Fixed typos/added tags)"
 	}
 ]

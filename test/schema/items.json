@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "items.json",
-	"version": "1.11.0",
+	"version": "1.11.1",
 	"type": "object",
 	"definitions": {
 		"itemData": {
@@ -362,6 +362,9 @@
 				},
 				"srd": {
 					"$ref": "util.json#/definitions/srd"
+				},
+				"basicRules": {
+					"$ref": "util.json#/definitions/basicRules"
 				},
 				"packContents": {
 					"type": "array",
@@ -881,6 +884,9 @@
 						},
 						"srd": {
 							"$ref": "util.json#/definitions/srd"
+						},
+						"basicRules": {
+							"$ref": "util.json#/definitions/basicRules"
 						},
 						"packContents": {
 							"type": "array",
@@ -1403,6 +1409,9 @@
 						},
 						"srd": {
 							"$ref": "util.json#/definitions/srd"
+						},
+						"basicRules": {
+							"$ref": "util.json#/definitions/basicRules"
 						},
 						"packContents": {
 							"type": "array",

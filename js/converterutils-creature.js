@@ -157,6 +157,7 @@ class AcConvert {
 								froms.push(fromLow);
 							} else {
 								if (cbMan) cbMan(fromLow, `AC requires manual checking: ${mon.name} ${mon.source} p${mon.page}`);
+								froms.push(fromLow);
 								nuAc.push(fromClean);
 							}
 						}
