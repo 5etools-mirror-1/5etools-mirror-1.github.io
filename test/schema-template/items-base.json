@@ -237,7 +237,12 @@
 					"additionalProperties": false
 				},
 				"$$ifBrew": {
-					"additionalProperties": {"type": "boolean"}
+					"additionalProperties": {
+						"type": [
+							"boolean",
+							"integer",
+							"string"
+					}
 				}
 			}
 		},
