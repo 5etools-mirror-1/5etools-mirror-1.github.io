@@ -187,6 +187,45 @@
 				"keyBrew": "examples",
 				"value": ["energy cell", "modern bullet", "blowgun needle|phb", "crossbow bolt|phb", "arrow|phb", "renaissance bullet", "sling bullet|phb"]
 			}
+		},
+
+		"$$ifBrew": {
+			"fluff": {
+				"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source.",
+				"anyOf": [
+					{
+						"description": "References \"itemFluff\" array items",
+						"type": "object",
+						"properties": {
+							"_itemFluff": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"source": {
+										"type": "string"
+									}
+								}
+							},
+							"_appendItemFluff": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"source": {
+										"type": "string"
+									}
+								}
+							}
+						}
+					},
+					{
+						"$ref": "util.json#/definitions/fluffObject"
+					}
+				]
+			}
 		}
 	}
 }
