@@ -213,7 +213,18 @@
 							"source",
 							"page"
 						],
-						"additionalProperties": false
+						"$$ifSite": {
+							"additionalProperties": false
+						},
+						"$$ifBrew": {
+							"additionalProperties": {
+								"type": [
+									"boolean",
+									"integer",
+									"string"
+								]
+							}
+						}
 					},
 					"excludes": {
 						"type": "object",
@@ -245,7 +256,13 @@
 							"additionalProperties": false
 						},
 						"$$ifBrew": {
-							"additionalProperties": {"type": "boolean"}
+							"additionalProperties": {
+								"type": [
+									"boolean",
+									"integer",
+									"string"
+								]
+							}
 						}
 					},
 					"noDisplay": {
