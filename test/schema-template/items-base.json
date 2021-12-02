@@ -233,7 +233,12 @@
 					"source",
 					"page"
 				],
-				"additionalProperties": false
+				"$$ifSite": {
+					"additionalProperties": false
+				},
+				"$$ifBrew": {
+					"additionalProperties": {"type": "boolean"}
+				}
 			}
 		},
 		"itemProperty": {

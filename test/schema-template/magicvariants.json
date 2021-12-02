@@ -42,7 +42,12 @@
 								"net": {"type": "boolean"},
 								"weaponCategory": {"$ref": "shared-items.json#/definitions/itemWeaponCategory"}
 							},
-							"additionalProperties": false
+							"$$ifSite": {
+								"additionalProperties": false
+							},
+							"$$ifBrew": {
+								"additionalProperties": {"type": "boolean"}
+							}
 						}
 					},
 					"inherits": {
@@ -236,7 +241,12 @@
 								"type": "boolean"
 							}
 						},
-						"additionalProperties": false
+						"$$ifSite": {
+							"additionalProperties": false
+						},
+						"$$ifBrew": {
+							"additionalProperties": {"type": "boolean"}
+						}
 					},
 					"noDisplay": {
 						"type": "boolean"
