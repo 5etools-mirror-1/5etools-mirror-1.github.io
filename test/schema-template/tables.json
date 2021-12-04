@@ -104,6 +104,10 @@
 					"data": {
 						"type": "object"
 					},
+					"isNameGenerator": {
+						"type": "boolean",
+						"description": "Uses the result rolled to construct a name from multiple columns, such as Prefix, Given, Family, Suffix names etc."
+					},
 					"$$ifBrew": {
 						"intro": {
 							"description": "Primarily for homebrew use.",
