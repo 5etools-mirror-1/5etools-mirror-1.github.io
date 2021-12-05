@@ -140,38 +140,42 @@
 
 		"toolNameLower": {
 			"type": "string",
-			"enum": [
-				"artisan's tools",
+			"$$ifSiteElse_key": {
+				"keySite": "enum",
+				"keyBrew": "examples",
+				"value": [
+					"artisan's tools",
 
-				"alchemist's supplies",
-				"brewer's supplies",
-				"calligrapher's supplies",
-				"carpenter's tools",
-				"cartographer's tools",
-				"cobbler's tools",
-				"cook's utensils",
-				"glassblower's tools",
-				"jeweler's tools",
-				"leatherworker's tools",
-				"mason's tools",
-				"painter's supplies",
-				"potter's tools",
-				"smith's tools",
-				"tinker's tools",
-				"weaver's tools",
-				"woodcarver's tools",
+					"alchemist's supplies",
+					"brewer's supplies",
+					"calligrapher's supplies",
+					"carpenter's tools",
+					"cartographer's tools",
+					"cobbler's tools",
+					"cook's utensils",
+					"glassblower's tools",
+					"jeweler's tools",
+					"leatherworker's tools",
+					"mason's tools",
+					"painter's supplies",
+					"potter's tools",
+					"smith's tools",
+					"tinker's tools",
+					"weaver's tools",
+					"woodcarver's tools",
 
-				"disguise kit",
-				"forgery kit",
-				"gaming set",
-				"herbalism kit",
-				"musical instrument",
-				"navigator's tools",
-				"thieves' tools",
-				"poisoner's kit",
-				"vehicles (land)",
-				"vehicles (water)"
-			]
+					"disguise kit",
+					"forgery kit",
+					"gaming set",
+					"herbalism kit",
+					"musical instrument",
+					"navigator's tools",
+					"thieves' tools",
+					"poisoner's kit",
+					"vehicles (land)",
+					"vehicles (water)"
+				]
+			}
 		},
 
 		"toolProficiencies": {
@@ -228,6 +232,9 @@
 						},
 						"additionalProperties": false
 					}
+				},
+				"$$ifBrew": {
+					"additionalProperties": {"type": "boolean"}
 				}
 			}
 		},
