@@ -9,7 +9,15 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": ["land", "sea", "air"]
+				"$$ifSiteElse_key": {
+					"keySite": "enum",
+					"keyBrew": "examples",
+					"value": [
+					"land",
+					"sea",
+					"air"
+					]
+				}
 			}
 		},
 
