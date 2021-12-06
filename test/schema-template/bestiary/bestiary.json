@@ -626,19 +626,35 @@
 				"altArt": {
 					"type": "array",
 					"items": {
-						"type": "object",
-						"properties": {
-							"name": {
-								"type": "string"
+						"anyOf":[
+							{
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"source": {
+										"type": "string"
+									},
+									"page": {
+										"type": "integer"
+									}
+								},
+								"required": ["name", "source"]
 							},
-							"source": {
-								"type": "string"
-							},
-							"page": {
-								"type": "integer"
+							{
+								"$$ifBrew_item": {
+									"type": "object",
+									"description": "An URL pointing to an alternative token for the creature.",
+									"properties": {
+										"tokenUrl": {
+											"type": "string"
+										}
+									},
+									"additionalProperties": false
+								}
 							}
-						},
-						"required": ["name", "source"]
+						]
 					}
 				},
 				"$$ifBrew": {
