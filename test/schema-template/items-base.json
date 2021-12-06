@@ -153,6 +153,12 @@
 							"description": "ID of a value conversion table. Homebrew only.",
 							"type": "string"
 						},
+						"foundryType":{
+							"description": "Homebrew only: used to manually specify the exact Foundry item type an item should be imported as. \n\"CONFIG.Item.typeLabels\" correct as of Foundry v0.8.9",
+							"type": "string",
+							"enum": ["weapon", "equipment", "consumable", "tool", "loot", "class", "spell", "feat", "backpack"]
+						},
+						"foundryData": {"$ref": "util.json#/definitions/foundryDataObject"},
 						"fluff": {
 							"$ref": "shared-items.json#/definitions/fluff"
 						}
