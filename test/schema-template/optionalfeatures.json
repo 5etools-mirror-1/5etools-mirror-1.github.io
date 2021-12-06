@@ -91,6 +91,9 @@
 				},
 				"proficiencyTags": {
 					"$ref": "util.json#/definitions/proficiencyTags"
+				},
+				"$$ifBrew": {
+					"foundryData": {"$ref": "util.json#/definitions/foundryDataObject"}
 				}
 			},
 			"required": [
