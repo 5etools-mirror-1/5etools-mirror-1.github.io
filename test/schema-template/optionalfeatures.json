@@ -93,7 +93,13 @@
 					"$ref": "util.json#/definitions/proficiencyTags"
 				},
 				"$$ifBrew": {
-					"foundryData": {"$ref": "util.json#/definitions/foundryDataObject"}
+					"foundryData": {"$ref": "util.json#/definitions/foundryDataObject"},
+					"foundryEffects": {
+						"type": "array",
+						"items": {
+							"$ref": "util.json#/definitions/foundryEffectObject"
+						}
+					}
 				}
 			},
 			"required": [
