@@ -171,6 +171,10 @@
 				"source": {
 					"type": "string"
 				},
+				"sourceSub": {
+					"type": "string",
+					"description": "Sub-source text that is shown when hovered."
+				},
 				"otherSources": {
 					"$ref": "../util.json#/definitions/otherSources"
 				},
