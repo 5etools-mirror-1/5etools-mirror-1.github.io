@@ -321,7 +321,7 @@
 				},
 				"subclassFeatures": {
 					"type": "array",
-					"description": "Format: \"<name>|<className>|<classSource>|<subclassShortName>|<subclassSource>|<level>|<source>\"\nPHB is assumed for sources.\nfeatureSource is assumed to be the same as subclassSource.",
+					"description": "Format: \" name | className | classSource | subclassShortName | subclassSource | level | source\"\nPHB is assumed for sources.\nfeatureSource is assumed to be the same as subclassSource.",
 					"items": {
 						"oneOf": [
 							{
@@ -644,7 +644,7 @@
 				},
 				"classFeatures": {
 					"type": "array",
-					"description": "Format: \"<name>|<className>|<classSource>|<level>|<source>\" , PHB is assumed as classSource and featureSource is assumed to be the same as classSource.",
+					"description": "Format: \" name | className | classSource | level | source \" , PHB is assumed as classSource and featureSource is assumed to be the same as classSource.",
 					"items": {
 						"oneOf": [
 							{
