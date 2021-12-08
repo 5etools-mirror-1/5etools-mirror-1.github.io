@@ -30,7 +30,8 @@
 						"To the NERDS, the colors beginning to flicker and drain out of Harmony is an unsettling mystery. What brings the colors to Harmony is an enigma to them. All they can do is hope the power comes back on and restores the vibrancy of Harmony's colors once more.",
 						"But one group knows what's up, and that group is the Lorekeeper Society\u2014a secret society sworn to protect Harmony. The Lorekeepers know about the power of the Prismatic Well, but its true location is lost even to themselves. However, they have a way to find the well using an ancient artifact known as the Amulet of Harmony, but to activate it they need to find the six Gems of Power. Once activated, the amulet guides whoever controls it to the secret location of the Prismatic Well. But once activated, the amulet also has the power to turn off the well.",
 						"The Gems of Power were long ago hidden away for safekeeping in dungeons, forests, and towers. No one in the Lorekeeper Society knows the details of the magical beasts and traps guarding the gems, but our heroic NERDS are more than up to the challenge of restoring Harmony!"
-					]
+					],
+					"id": "001"
 				},
 				{
 					"type": "entries",
@@ -46,9 +47,11 @@
 							"entries": [
 								"In solo play, there's always a chance the character can die. In the case of a single adventurer, this death results in the end of play; which isn't optimal for an afternoon of fun! One way to avoid death is to have healing readily available to the adventurer. If they're without healing, have the character find the odd {@item potion of healing} lying in a dusty crate or have them discover a special healing plant on their journey that, if eaten, puts them back to full hit points.",
 								"In the case of an untimely death, you can have a helpful NPC (like Mr. Honeycutt) save the day and revive them, or you can have them forego death saving throws and wake up as they're being dragged someplace unpleasant."
-							]
+							],
+							"id": "003"
 						}
-					]
+					],
+					"id": "002"
 				},
 				{
 					"type": "entries",
@@ -65,7 +68,8 @@
 								"Orange returns to Mr. Honeycutt with the gem."
 							]
 						}
-					]
+					],
+					"id": "004"
 				},
 				{
 					"type": "entries",
@@ -75,7 +79,8 @@
 						"Hand the character sheet (see \"Orange the Fighter,\" below) to your player and let them familiarize themselves with Orange.",
 						"All creatures or NPCs that are bolded have stat blocks, which are included at the end of the adventure along with any magic items the characters can earn.",
 						"Whenever you're both ready, you can start the session."
-					]
+					],
+					"id": "005"
 				},
 				{
 					"type": "section",
@@ -90,7 +95,8 @@
 							"entries": [
 								"You're at the gym early in the morning before the students arrive, getting in an hour of training when two tough-looking goons swagger into the room. One locks the door behind them as the other sneers at you. They have swords, and you can tell instantly that they aren't blunted for training.",
 								"\"Time for a little candy-coated nap!\" one goon says with a gap-toothed grin."
-							]
+							],
+							"id": "007"
 						},
 						"The two {@creature goon|NRH-ASS|goons} begin swaggering up to Orange, ready for a fight. They've been sent by Mr. Graystone to capture or kill Orange. Emo the Beholder has seen how Mr. Honeycutt is recruiting all the heroes in Harmony to look for the Gems of Power, and they want to put an end to Honeycutt's chances of foiling their master plan.",
 						"Orange can try intimidating the two toughs, but it'll be difficult as they're fairly determined to carry out their grim task. To intimidate them, Orange must make a successful DC 15 Charisma ({@skill Intimidation}) check followed by a successful DC 15 Strength ({@skill Athletics}) check to show just how powerful they are. If both checks succeed, the goons run off, leaving their swords behind.",
@@ -111,11 +117,14 @@
 									"entries": [
 										"After much research, Mr. Honeycutt says he's finally ascertained where the Peach Gem is: it's hidden in a ruined mausoleum notorious for monster activity. He needs a fighter like Orange to go into the mausoleum, return the gem to the Lorekeeper Society, and help him solve the mystery of the color outages.",
 										"If Orange agrees to help, Mr. Honeycutt offers a reward of 20 gp for the return of the gem. He also gives Orange a {@item necklace of fireballs} with one bead remaining. As he gives the item to Orange, Mr. Honeycutt says, \"I hope you never have to use this.\""
-									]
+									],
+									"id": "009"
 								}
-							]
+							],
+							"id": "008"
 						}
-					]
+					],
+					"id": "006"
 				},
 				{
 					"type": "section",
@@ -129,7 +138,8 @@
 							"entries": [
 								"You see a crumbling building being reclaimed by the forest. Stone walls poke through the vegetation and the courtyard's flagstones are covered with leaves and broken by tree roots.",
 								"Oddly, the birds don't sing here which makes the area unnaturally quiet."
-							]
+							],
+							"id": "00b"
 						},
 						"The entrance (area M1) can be found with a quick search inside the collapsed walls of the mausoleum. Sweeping aside a thick covering of vines, Orange finds an iron-barred gate with an old, rusted padlock. Breaking the padlock requires a successful DC 12 Strength check. If Orange has a tool, like a crowbar, or uses a creative way to open the padlock, they have advantage on the check.",
 						"All the doors in the mausoleum are made of rotting wood. They have AC 10, 8 hit points, and immunity to poison and psychic damage.",
@@ -146,7 +156,8 @@
 										"path": "adventure/NRH-ASS/006.webp"
 									}
 								}
-							]
+							],
+							"id": "00c"
 						},
 						{
 							"type": "entries",
@@ -159,7 +170,8 @@
 									"page": 4,
 									"entries": [
 										"You see a stone staircase descending down into darkness. Thin root tendrils hang from the ceiling and the moss-covered walls glisten and drip."
-									]
+									],
+									"id": "00e"
 								},
 								"The staircase leads down to a corridor that ends in a rotting wood door which can be easily opened or broken down. However, lurking on the ceiling of this corridor is a {@creature gray ooze}.",
 								{
@@ -172,11 +184,14 @@
 											"entries": [
 												"The gray ooze uses its False Appearance trait to blend in with the tunnel's wet stone walls. When a creature approaches within 60 feet of the gray ooze, it senses its next snack and either waits for its target to come within reach of a pseudopod or begins a slow pursuit.",
 												"Defeating the gray ooze isn't essential to move on, but its ability to corrode metal provides a taste of what's to come deeper in the mausoleum. This encounter is an opportunity for Orange to learn about Oozes firsthand and to devise tactics against them."
-											]
+											],
+											"id": "010"
 										}
-									]
+									],
+									"id": "00f"
 								}
-							]
+							],
+							"id": "00d"
 						},
 						{
 							"type": "entries",
@@ -189,7 +204,8 @@
 									"page": 4,
 									"entries": [
 										"The walls are covered with trails of slime, some of which drips on the floor and forms slick pools. Four alcoves, each with a rotted wood door, line the corridor."
-									]
+									],
+									"id": "012"
 								},
 								{
 									"type": "entries",
@@ -200,9 +216,11 @@
 											"page": 4,
 											"entries": [
 												"Each tomb (A\u2013D) is a 10-foot-wide, 15-foot-long room with a stone sarcophagus at the far end. Due to the slippery nature of the slime, the floors are considered difficult terrain."
-											]
+											],
+											"id": "014"
 										}
-									]
+									],
+									"id": "013"
 								},
 								{
 									"type": "entries",
@@ -217,9 +235,11 @@
 											"page": 5,
 											"entries": [
 												"The inscription reads: \"Two warriors, so great was their love, they were buried together.\""
-											]
+											],
+											"id": "016"
 										}
-									]
+									],
+									"id": "015"
 								},
 								{
 									"type": "entries",
@@ -233,9 +253,11 @@
 											"page": 5,
 											"entries": [
 												"The inscription reads: \"Here lies Professor Fizzwidget, inventor of sweet candy treats for all of Harmony.\""
-											]
+											],
+											"id": "018"
 										}
-									]
+									],
+									"id": "017"
 								},
 								{
 									"type": "entries",
@@ -248,7 +270,8 @@
 											"page": 5,
 											"entries": [
 												"Hovering in the middle of the tunnel is an assortment of trinkets, equipment, and bones. An odd, shimmering surface reveals a gelatinous form filling the passageway wall-to-wall."
-											]
+											],
+											"id": "01a"
 										},
 										"Orange has discovered a {@creature gelatinous cube} that's behaving oddly!",
 										{
@@ -257,7 +280,8 @@
 											"page": 5,
 											"entries": [
 												"The gelatinous cube is weakened from its attempts to digest the Peach Gem and a magic sword, both of which it has engulfed. When Orange discovers the {@creature gelatinous cube}, it only has 40 hit points remaining and it doesn't have its Transparent trait."
-											]
+											],
+											"id": "01b"
 										},
 										{
 											"type": "entries",
@@ -265,7 +289,8 @@
 											"page": 5,
 											"entries": [
 												"Even in its weakened stat, a gelatinous cube is no easy task. Hopefully, Orange uses the last bead of the necklace of fireballs to finish off the cube. If that doesn't work, have {@creature Mr. Honeycutt|NRH-TCMC} arrive with four {@creature guard||guards} to help Orange defeat the cube. Have the cube attack the guards first before attacking Mr. Honeycutt or Orange."
-											]
+											],
+											"id": "01c"
 										},
 										{
 											"type": "entries",
@@ -313,7 +338,8 @@
 													]
 												},
 												"When the gelatinous cube is reduced to 24 hit points or fewer, it spits out the {@item +1 greatsword}, the {@item potion of healing}, and the glowing orange gem (the Peach Gem), and makes its retreat by dashing away."
-											]
+											],
+											"id": "01d"
 										},
 										{
 											"type": "entries",
@@ -321,9 +347,11 @@
 											"page": 5,
 											"entries": [
 												"The sarcophagus and its inscriptions have been scratched off."
-											]
+											],
+											"id": "01e"
 										}
-									]
+									],
+									"id": "019"
 								},
 								{
 									"type": "entries",
@@ -337,11 +365,14 @@
 											"page": 5,
 											"entries": [
 												"\"Here lies the First Librarian of the Great Library of Harmony.\""
-											]
+											],
+											"id": "020"
 										}
-									]
+									],
+									"id": "01f"
 								}
-							]
+							],
+							"id": "011"
 						},
 						{
 							"type": "entries",
@@ -349,9 +380,11 @@
 							"page": 5,
 							"entries": [
 								"Arriving back in Harmony, Orange is invited to meet with Mr. Honeycutt at the local tavern. On return of the Peach Gem, Mr. Honeycutt is visibly relieved. He offers Orange membership in the Lorekeeper Society and asks if Orange will help him put an end to those who'd steal the color from Harmony. He's close to figuring out who's behind the color outages and feels as if he's going to need the help of heroes to stop them."
-							]
+							],
+							"id": "021"
 						}
-					]
+					],
+					"id": "00a"
 				},
 				{
 					"type": "section",
@@ -369,7 +402,8 @@
 								"{@item +1 weapon||Weapon, +1}"
 							]
 						}
-					]
+					],
+					"id": "022"
 				},
 				{
 					"type": "image",
@@ -385,7 +419,8 @@
 						"path": "adventure/NRH-ASS/sheet006.webp"
 					}
 				}
-			]
+			],
+			"id": "000"
 		}
 	]
 }

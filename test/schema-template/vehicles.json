@@ -9,7 +9,15 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": ["land", "sea", "air"]
+				"$$ifSiteElse_key": {
+					"keySite": "enum",
+					"keyBrew": "examples",
+					"value": [
+						"land",
+						"sea",
+						"air"
+					]
+				}
 			}
 		},
 
@@ -45,7 +53,9 @@
 					"items": {
 						"$ref": "util.json#/definitions/dataOptionalfeatureType",
 						"type": "string",
-						"pattern": "^(SHP|IWM):.*"
+						"$$ifSite": {
+							"pattern": "^(SHP|IWM):.*"
+						}
 					}
 				},
 				"hasFluff": {"type": "boolean"},
@@ -75,7 +85,12 @@
 				"vehicleType": {"const": "SHIP"},
 				"terrain": {"$ref": "#/definitions/vehicleTerrain"},
 				"size": {
-					"$ref": "util.json#/definitions/size"
+					"$$ifSite": {
+						"$ref": "util.json#/definitions/size"
+					},
+					"$$ifBrew": {
+						"type": "string"
+					}
 				},
 				"dimensions": {
 					"type": "array",
@@ -378,7 +393,12 @@
 				"vehicleType": {"const": "INFWAR"},
 				"terrain": {"$ref": "#/definitions/vehicleTerrain"},
 				"size": {
-					"$ref": "util.json#/definitions/size"
+					"$$ifSite": {
+						"$ref": "util.json#/definitions/size"
+					},
+					"$$ifBrew": {
+						"type": "string"
+					}
 				},
 				"weight": {
 					"type": "integer"

@@ -51,6 +51,7 @@
 	$rgb-source-MaBJoV: #7a2854;
 	$rgb-source-FTD: #b82a15;
 	$rgb-source-NRH: #bd335b;
+	$rgb-source-SCC: #be9c56;
 
 	&PHB {
 		color: $rgb-source-PHB !important;
@@ -393,6 +394,21 @@
 			color: $rgb-source-NRH !important;
 			border-color: $rgb-source-NRH !important;
 			text-decoration-color: $rgb-source-NRH !important;
+		}
+	}
+
+	&SCC {
+		color: $rgb-source-SCC !important;
+		border-color: $rgb-source-SCC !important;
+		text-decoration-color: $rgb-source-SCC !important;
+
+		&-CK,
+		&-HfMT,
+		&-TMM,
+		&-ARiR {
+			color: $rgb-source-SCC !important;
+			border-color: $rgb-source-SCC !important;
+			text-decoration-color: $rgb-source-SCC !important;
 		}
 	}
 }

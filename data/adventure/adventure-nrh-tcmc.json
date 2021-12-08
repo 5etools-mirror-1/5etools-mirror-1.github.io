@@ -29,7 +29,8 @@
 						"Ever jealous of the cheery dispositions and colorful deliciousness of the NERDS, Emo the beholder and his hired muscle, Mr. Greystone, have struck a blow against the NERDS' beloved city of Harmony. After years of searching, the nefarious duo have found the sacred Prismatic Well that gives Harmony its vibrant and fabulous colors. Now, with access to the Prismatic Well, Emo and Mr. Greystone have begun to leech the color from the city of Harmony. If they aren't stopped, the city will gradually turn gray, with everything eventually becoming black and white.",
 						"To the NERDS, the colors beginning to flicker and drain out of Harmony is an unsettling mystery. What brings the colors to Harmony is an enigma to them. All they can do is hope the power comes back on and restores the vibrancy of Harmony's colors once more. But one group knows what's up, and that group is the Lorekeeper Society\u2014a secret society sworn to protect Harmony. The Lorekeepers know about the power of the Prismatic Well, but its true location is lost even to themselves. However, they have a way to find the well using an ancient artifact known as the Amulet of Harmony, but to activate it they need to find the six Gems of Power. Once activated, the amulet guides whoever controls it to the secret location of the Prismatic Well. But once activated, the amulet also has the power to turn off the well.",
 						"The Gems of Power were long ago hidden away for safekeeping in dungeons, forests, and towers. No one in the Lorekeeper Society knows the details of the magical beasts and traps guarding the gems, but our heroic NERDS are more than up to the challenge of restoring Harmony!"
-					]
+					],
+					"id": "001"
 				},
 				{
 					"type": "entries",
@@ -44,9 +45,11 @@
 							"entries": [
 								"In solo play, there's always a chance the character can die. In the case of a single adventurer, this death results in the end of play; which isn't optimal for an afternoon of fun! One way to avoid death is to have healing readily available to the adventurer. If they're without healing, have the character find the odd {@item potion of healing} lying in a dusty crate or have them discover a special healing plant on their journey that, if eaten, puts them back to full hit points.",
 								"In the case of an untimely death, you can have a helpful NPC (like Mr. Honeycutt) save the day and revive them, or you can have them forego death saving throws and wake up as they're being dragged someplace unpleasant."
-							]
+							],
+							"id": "003"
 						}
-					]
+					],
+					"id": "002"
 				},
 				{
 					"type": "entries",
@@ -63,7 +66,8 @@
 								"Pink eventually gets into the abandoned mine, avoids the traps, opens the treasure box, gets past the kobolds, and recovers the gem."
 							]
 						}
-					]
+					],
+					"id": "004"
 				},
 				{
 					"type": "entries",
@@ -72,7 +76,8 @@
 					"entries": [
 						"Hand the character sheet (see \"Pink the Rogue,\" below) to your player and let them familiarize themselves with Pink.",
 						"All creatures or NPCs that are bolded have stat blocks, which are included at the end of the adventure along with any magic items the characters can earn. Whenever you're both ready, you can start the session."
-					]
+					],
+					"id": "005"
 				},
 				{
 					"type": "section",
@@ -89,7 +94,8 @@
 								"One thing unites the city: its vibrant color. The legend of Harmony's founding tells of a magical spark that ignited the lands in spellbinding hues. Nobody knows the origin of the spark, but many have sought its source in the hopes of discovering the extent of its power.",
 								"Recently however, a strange phenomenon has shaken the citizens of Harmony. In the past few weeks, color outages have been reported throughout the city with very few clues as to what might be causing them.",
 								"This morning, you wake up to an unusually colorless day. Worried murmurings can already be heard outside your room. As you look around, you notice a scrap of paper has been slipped under your door."
-							]
+							],
+							"id": "007"
 						},
 						"If Pink reads the note, read the following:",
 						{
@@ -103,7 +109,8 @@
 									],
 									"by": "Mr. Honeycutt"
 								}
-							]
+							],
+							"id": "008"
 						},
 						"The central marketplace is a ten-minute walk from the inn where Pink has a room. The innkeeper, Mauve, knows Pink and has breakfast ready when Pink comes downstairs.",
 						{
@@ -118,10 +125,12 @@
 									"page": 3,
 									"entries": [
 										"The sprawling central market of Harmony is a maze of shop stalls and a riot of sounds and sights. Face painters and s torytellers delight their audiences. Vendors sell all kinds of wares from lanterns to shoes to spell components. The scent of delicious treats wafts through the air."
-									]
+									],
+									"id": "00a"
 								},
 								"Allow a moment for your player to roleplay here, exploring the market and interacting with the vendors. Florists bemoan the faded color in their flowers, other merchants say color is a natural resource that's now running out, some even wonder if Harmony has been cursed."
-							]
+							],
+							"id": "009"
 						},
 						{
 							"type": "entries",
@@ -143,9 +152,11 @@
 									"entries": [
 										"Wererats and other good lycanthropes have long been members of the Lorekeeper Society. Being able to turn into an innocuous animal has allowed the Lorekeeper Society to remain secret for many centuries.",
 										"Mr. Honeycutt is the current Magister of the Lorekeeper Society and being a wererat lets him to keep a secretive eye on all matters\u2014big and small\u2014within Harmony."
-									]
+									],
+									"id": "00c"
 								}
-							]
+							],
+							"id": "00b"
 						},
 						{
 							"type": "entries",
@@ -165,7 +176,8 @@
 											"entries": [
 												"Forgive the scrutiny, but I needed to be sure you weren't a doppelganger. One can never be too cautious, especially in these colorless times where the very fate of Harmony hangs in the balance.",
 												"My name is Mr. Honeycutt, and I belong to the Lorekeeper Society. You haven't heard of us, but we've been watching you and right now, we need your help."
-											]
+											],
+											"id": "00f"
 										},
 										"Honeycutt goes on to explain that the Lorekeeper Society needs the Coral Gem recovered. The Society hid the gem for safekeeping centuries ago in the catacombs under Candy Mountain\u2014a once bustling mine that's long since been abandoned\u2014but now they need the gem back. Mr. Honeycutt won't go into details about why, only that the gem is needed to solve the mystery of the color outages.",
 										"Mr. Honeycutt knows of two entrances to the catacombs and can point Pink in the direction to either path:",
@@ -178,11 +190,14 @@
 										},
 										"Mr. Honeycutt assumes Pink will do the job out of civic duty, but if Pink asks for monetary compensation, Mr. Honeycutt hands Pink a pouch containing 20 gp.",
 										"Unless Pink has other questions, Mr. Honeycutt gives them a {@item potion of healing} and leaves Pink to choose their path."
-									]
+									],
+									"id": "00e"
 								}
-							]
+							],
+							"id": "00d"
 						}
-					]
+					],
+					"id": "006"
 				},
 				{
 					"type": "section",
@@ -197,7 +212,8 @@
 							"page": 5,
 							"entries": [
 								"Ask your player if they're comfortable with scary situations. If not, feel free to make this tunnel a mildly spooky walk in the dark with no monsters or traps. If they enjoy a good scare, then proceed with the adventure as written."
-							]
+							],
+							"id": "011"
 						},
 						{
 							"type": "entries",
@@ -210,7 +226,8 @@
 									"page": 5,
 									"entries": [
 										"Something pale and glistening darts past you, just beyond your torchlight, and dashes into a hole in the wall."
-									]
+									],
+									"id": "013"
 								},
 								"When your player is really freaked out, read this:",
 								{
@@ -218,10 +235,12 @@
 									"page": 5,
 									"entries": [
 										"From up ahead (or is it coming from behind you?), you hear a rasping voice that says, \"Ooooh. It smells like fresh meat has come down into the darky-dark just for Slurmy to feast on.\""
-									]
+									],
+									"id": "014"
 								},
 								"{@creature Slurmy|NRH-TCMC} is a wretched, carnivorous creature with slimy, mottled green skin; spooky yellow eyes; long, hooked claws; and a mouth filled with needle-sharp fangs. Slurmy has lived here for decades, feasting on rats and other vermin."
-							]
+							],
+							"id": "012"
 						},
 						{
 							"type": "entries",
@@ -229,7 +248,8 @@
 							"page": 5,
 							"entries": [
 								"As with anything in Harmony, the chance for friendship is possible. If Slurmy is treated with exceptional kindness, offered food, and won over with a successful DC 14 Charisma ({@skill Persuasion}) check, then a truce is possible and maybe even friendship. You can make this friendship automatic without the need for a roll, if you wish."
-							]
+							],
+							"id": "015"
 						},
 						{
 							"type": "entries",
@@ -258,7 +278,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "016"
 						},
 						{
 							"type": "entries",
@@ -285,7 +306,8 @@
 											"page": 6,
 											"entries": [
 												"An overgrown dirt road leads up to a rusty iron gate set into a stone wall. Two guards that look like armored, gray mannequins stand either side of the gate. They have no discernible features."
-											]
+											],
+											"id": "019"
 										},
 										"Pink can use creative methods to get past the two {@creature guard||guards} at the gate. Here are a few ideas:",
 										{
@@ -306,9 +328,11 @@
 											"entries": [
 												"Although it's old and neglected, the 20-foot-high stone wall surrounding the mine is still formidable. To scale the wall, Pink must succeed on two consecutive DC 10 Strength ({@skill Athletics}) checks. If the first check fails, Pink falls 10 feet and takes 3 ({@damage 1d6}) bludgeoning damage. If the second check fails, Pink falls 20 feet and takes 7 ({@damage 2d6}) bludgeoning damage.",
 												"If Pink has climbing gear, they gain advantage on the checks."
-											]
+											],
+											"id": "01a"
 										}
-									]
+									],
+									"id": "018"
 								},
 								{
 									"type": "entries",
@@ -316,7 +340,8 @@
 									"page": 6,
 									"entries": [
 										"Inside the main gate are many old, dilapidated buildings in various stages of disrepair and collapse. After a brief glance, Pink easily finds the entrance to the mine\u2014a gate made of iron bars secured by a chain and padlock. Picking the lock quietly requires a successful DC 12 Dexterity ({@skill Sleight of Hand}) check. On a failure, the door still opens, but the noise alerts the kobolds in area C5d and any nearby guards. Using thieves' tools grants Pink advantage on the roll."
-									]
+									],
+									"id": "01b"
 								},
 								{
 									"type": "entries",
@@ -329,10 +354,12 @@
 											"page": 6,
 											"entries": [
 												"A staircase carved from the stone descends into the dark. Footprints are visible in the dust and the cobwebs have been recently broken."
-											]
+											],
+											"id": "01d"
 										},
 										"The staircase descends 40 feet and ends at a wooden door. A successful DC 14 Intelligence ({@skill Nature}) check reveals the footprints belong to a kobold."
-									]
+									],
+									"id": "01c"
 								},
 								{
 									"type": "entries",
@@ -345,10 +372,12 @@
 											"page": 6,
 											"entries": [
 												"You see a roughly hewn 30-foot-square room that still has old, rusted picks, shovels, crowbars, a wheelbarrow, and a wooden mining cart in it. Everything is covered with a thick layer of dust and cobwebs. A sloped passage exits to the north. Footprints can be seen all over the floor but most head north."
-											]
+											],
+											"id": "01f"
 										},
 										"The wooden mining cart still is operational, but unless Pink oils its wheels before rolling it, the cart makes a terrible racket that alerts the kobolds in area C5d."
-									]
+									],
+									"id": "01e"
 								},
 								{
 									"type": "entries",
@@ -363,9 +392,11 @@
 											"page": 7,
 											"entries": [
 												"If Pink needs extra healing, you can have the rock candy heal {@dice 2d4} hit points once per day if eaten."
-											]
+											],
+											"id": "021"
 										}
-									]
+									],
+									"id": "020"
 								},
 								{
 									"type": "entries",
@@ -378,11 +409,13 @@
 											"page": 7,
 											"entries": [
 												"This area has assorted rubble and junk scattered about. The cavern wall has crude hack marks on it, as if someone has been wildly swinging at it with a pickaxe."
-											]
+											],
+											"id": "023"
 										},
 										"The room has nothing of value in it, but if Pink makes a successful DC 12 Wisdom ({@skill Perception}) check, they discover a secret door (see \"Path 1: The Secret Tunnel,\" above) that looks like a boulder set in the wall. The secret door reveals a tunnel that leads all the way back to the city of Harmony.",
 										"If the player chose Path 2 and didn't take Path 1, let them go about 100 feet into the tunnel before reminding them that this could be the second entrance to the mine that leads back to Harmony. If they ignore that and continue, then have them encounter Slurmy and the traps before emerging near the marketplace."
-									]
+									],
+									"id": "022"
 								},
 								{
 									"type": "entries",
@@ -394,11 +427,13 @@
 											"page": 7,
 											"entries": [
 												"This cavern has piles of rubble within it, but there's still a good vein of red rock candy visible in the wall."
-											]
+											],
+											"id": "025"
 										},
 										"If eaten, the rock candy is sweet and delicious. If Pink wants to work for 5 minutes, a pouchful of rock candy worth 5 sp can be mined from the wall. If the kobolds are in area C5d, any noise here alerts them.",
 										"There's nothing else of interest in the room."
-									]
+									],
+									"id": "024"
 								},
 								{
 									"type": "entries",
@@ -406,7 +441,8 @@
 									"entries": [
 										"The shaft leading to this area has a trip wire strung across the floor at ankle height. A successful DC 14 Wisdom ({@skill Perception}) check is needed to find it. If the trip wire is triggered, a net filled with old cans falls on the intruders. Pink must make a successful DC 14 Dexterity saving throw or get tangled in the net and be {@condition restrained}. Pink must repeat the saving throw at the end of each of their turns. On a success, Pink escapes from the trap.",
 										"The racket alerts the two {@creature kobold||kobolds} in area C5d, who arrive 1 round after the trap triggers."
-									]
+									],
+									"id": "026"
 								},
 								{
 									"type": "entries",
@@ -422,7 +458,8 @@
 											"entries": [
 												"The stone box weighs 3,000 lb. and is made of quartzite\u2014a very hard type of stone. The box is covered with runes and glyphs. It has a keyhole and six buttons. The lock is trapped and requires a successful DC 15 Dexterity ({@skill Sleight of Hand}) check to open. On a failure, a poison needle shoots out. Whoever is picking the lock must roll a {@dice d6}. On a 2\u20136, they're hit by the needle and fall asleep for 8 hours. On a 1, the needle misses. Either way the box remains closed.",
 												"If Pink manages to unlock the box, then the kobolds dash out and try to steal the gem. If Pink is ready for them, the kobolds try to intimidate, barter with, or beg Pink to hand it over. Mr. Greystone has been quite clear what will happen to the kobolds if they fail, and it isn't pleasant in the slightest."
-											]
+											],
+											"id": "028"
 										},
 										{
 											"type": "entries",
@@ -431,7 +468,8 @@
 											"entries": [
 												"If Pink wants to make friends with the kobolds, Pink must promise that they'll protect the kobolds against the wrath of Mr. Greystone and then make a successful DC 14 Charisma ({@skill Persuasion}) check. If they do, the kobolds agree to leave Pink with the gem and not cause any more trouble.",
 												"If Pink won't give it up without a fight, the kobolds fight 1 round of combat. As soon as one takes damage, they flee and yell all about what's going to happen to Pink when Mr. Greystone finds out."
-											]
+											],
+											"id": "029"
 										},
 										{
 											"type": "entries",
@@ -439,9 +477,11 @@
 											"page": 8,
 											"entries": [
 												"The Coral Gem is a fist-sized gemstone worth 250 gp and it glows with a soft, pink light. It has no magic properties of its own."
-											]
+											],
+											"id": "02a"
 										}
-									]
+									],
+									"id": "027"
 								},
 								{
 									"type": "entries",
@@ -451,9 +491,11 @@
 										"If Pink makes a successful DC 12 Intelligence ({@skill Nature}) check, they know this is the fossil of a blue dragon. Pink knows that as well as being ferocious hunters that breathe lightning to stun or kill their prey, blue dragons are among the most intelligent of the dragons.",
 										"If Pink carefully chips away at the rock for 20 minutes and makes a successful DC 15 Dexterity check, they can free a perfect dragon tooth from the stone. If the kobolds are still in area C5d, they're alerted by any attempts to chip free a fossil.",
 										"The dragon tooth is worth 20 gp to an alchemist or collector. It would take about 6 months' work to free the entire skeleton which would sell for 1500 gp to a museum."
-									]
+									],
+									"id": "02b"
 								}
-							]
+							],
+							"id": "017"
 						},
 						{
 							"type": "entries",
@@ -462,9 +504,11 @@
 							"entries": [
 								"When Pink returns to Harmony, they're met by Mr. Honeycutt at the inn where Pink is staying. If Pink hands over the Coral Gem, Mr. Honeycutt breathes a sigh of relief and then shakes Pink's hand with vigor while thanking them profusely. Mr. Honeycutt invites Red to join the Lorekeeper Society. If Red accepts, Mr. Honeycutt then reaches into his satchel and gives Pink a pair of gloves of thievery (see below) with the hopes that Pink will put them to good use in the days to come. \"The battle isn't over yet,\" Mr. Honeycutt exclaims to Pink. \"There's still more work to be done before the color can come back to Harmony. The Lorekeeper Society will be in touch.\"",
 								"Mr. Honeycutt then bows and heads out the door. As he does, he flips the bartender a gold piece. Mauve does a double take then nods approvingly at Pink."
-							]
+							],
+							"id": "02c"
 						}
-					]
+					],
+					"id": "010"
 				},
 				{
 					"type": "section",
@@ -478,7 +522,8 @@
 								"{@item Gloves of Thievery}"
 							]
 						}
-					]
+					],
+					"id": "02d"
 				},
 				{
 					"type": "image",
@@ -494,7 +539,8 @@
 						"path": "adventure/NRH-TCMC/sheet002.webp"
 					}
 				}
-			]
+			],
+			"id": "000"
 		}
 	]
 }

@@ -1,130 +1,187 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "tables.json",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"type": "object",
-	"properties": {
-		"table": {
-			"type": "array",
-			"items": {
-				"type": "object",
-				"properties": {
-					"name": {
-						"type": "string"
-					},
-					"source": {
-						"type": "string"
-					},
-					"page": {
-						"type": "integer"
-					},
-					"otherSources": {
-						"$ref": "util.json#/definitions/otherSources"
-					},
-					"chapter": {
-						"type": "object",
-						"properties": {
-							"name": {
-								"type": "string"
-							},
-							"ordinal": {
-								"type": "object",
-								"properties": {
-									"type": {
-										"type": "string",
-										"enum": ["chapter", "appendix", "part", "episode"]
-									},
-									"identifier": {
-										"type": ["integer", "string"]
-									}
+	"definitions": {
+		"tableData": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"type": {
+					"type": "string",
+					"default": "table",
+					"enum": [
+						"table",
+						"tableGroup"
+					]
+				},
+				"source": {
+					"type": "string"
+				},
+				"page": {
+					"type": "integer"
+				},
+				"otherSources": {
+					"$ref": "util.json#/definitions/otherSources"
+				},
+				"chapter": {
+					"type": "object",
+					"properties": {
+						"name": {
+							"type": "string"
+						},
+						"ordinal": {
+							"type": "object",
+							"properties": {
+								"type": {
+									"type": "string",
+									"enum": ["chapter", "appendix", "part", "episode"]
 								},
-								"additionalProperties": false,
-								"required": [
-									"type",
-									"identifier"
-								]
-							},
-							"index": {
-								"type": "integer"
-							}
-						}
-					},
-					"caption": {
-						"type": "string"
-					},
-					"style": {
-						"type": "string"
-					},
-					"colLabels": {
-						"type": "array",
-						"items": {
-							"type": "string"
-						}
-					},
-					"colStyles": {
-						"type": "array",
-						"items": {
-							"type": "string"
-						}
-					},
-					"rowLabels": {
-						"type": "array",
-						"items": {
-							"type": "string"
-						}
-					},
-					"rowStyles": {
-						"type": "array",
-						"items": {
-							"type": "string"
-						}
-					},
-					"rows": {
-						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"type": "array",
-									"items": {
-										"$ref": "entry.json"
-									}
-								},
-								{
-									"$ref": "entry.json#/definitions/entryTableRow"
+								"identifier": {
+									"type": ["integer", "string"]
 								}
+							},
+							"additionalProperties": false,
+							"required": [
+								"type",
+								"identifier"
 							]
+						},
+						"index": {
+							"type": "integer"
 						}
-					},
-					"footnotes": {
+					}
+				},
+				"caption": {
+					"type": "string"
+				},
+				"style": {
+					"type": "string"
+				},
+				"colLabels": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"colStyles": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"rowLabels": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"rowStyles": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"rows": {
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"type": "array",
+								"items": {
+									"$ref": "entry.json"
+								}
+							},
+							{
+								"$ref": "entry.json#/definitions/entryTableRow"
+							}
+						]
+					}
+				},
+				"tables": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/tableData"
+					}
+				},
+				"footnotes": {
+					"type": "array",
+					"items": {
+						"$ref": "entry.json"
+					}
+				},
+				"data": {
+					"type": "object"
+				},
+				"isNameGenerator": {
+					"type": "boolean",
+					"description": "Uses the result rolled to construct a name from multiple columns, such as Prefix, Given, Family, Suffix names etc."
+				},
+				"isStriped": {
+					"type": "boolean"
+				},
+				"$$ifBrew": {
+					"intro": {
+						"description": "Primarily for homebrew use.",
 						"type": "array",
 						"items": {
 							"$ref": "entry.json"
 						}
 					},
-					"data": {
-						"type": "object"
-					},
-					"$$ifBrew": {
-						"intro": {
-							"description": "Primarily for homebrew use.",
-							"type": "array",
-							"items": {
-								"$ref": "entry.json"
-							}
-						},
-						"outro": {
-							"description": "Primarily for homebrew use.",
-							"type": "array",
-							"items": {
-								"$ref": "entry.json"
-							}
+					"outro": {
+						"description": "Primarily for homebrew use.",
+						"type": "array",
+						"items": {
+							"$ref": "entry.json"
 						}
 					}
+				}
+			},
+			"additionalProperties": false,
+			"if": {
+				"properties": {
+					"type":{
+						"const": "tableGroup"
+					}
 				},
-				"required": ["name", "source", "rows"],
-				"additionalProperties": false
+				"required": [
+					"type"
+				]
+			},
+			"then": {
+				"required": [
+					"name",
+					"source",
+					"tables"
+				]
+			},
+			"else": {
+				"required": [
+					"name",
+					"source",
+					"rows"
+				]
 			}
 		}
 	},
+
+	"properties": {
+		"table": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"$ref": "#/definitions/tableData"
+			}
+		},
+		"_meta": {
+			"$ref": "util.json#/definitions/metaBlock"
+		}
+	},
+	"required": [
+		"table"
+	],
 	"additionalProperties": false
 }

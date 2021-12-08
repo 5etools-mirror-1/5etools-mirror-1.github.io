@@ -12,7 +12,8 @@
 						"Vezska, a member of the Golgari Swarm, came upon a discarded magic item on her travels throughout the Undercity of the Tenth District. She surreptitiously had the item identified as a {@item vial of thought capture|azfyt}, an item allows the user to encode and store thought strands. As a findbroker, Vezska takes discarded items and resells them to surface dwellers. Once she determined what she had, Vezska put out to her network that she was in possession of the item and got a prospective client within hours.",
 						"The client promised a handsome sum of zinos (gold pieces) to Vezska but had a catch\u2013the vial had to be delivered to them with three specific thoughts already captured. Vezska accepted the deal, got the information from the client on the individuals and thoughts that needed capturing, and contacted the adventurers for help.",
 						"The vial belongs to a powerful operative of House Dimir, the guild of secrets and spies. Its absence from its owner's possession will not go undetected for too long..."
-					]
+					],
+					"id": "001"
 				},
 				{
 					"type": "section",
@@ -27,7 +28,8 @@
 							"type": "insetReadaloud",
 							"entries": [
 								"Text that appears in a box like this is meant to be read aloud or paraphrased for the players when their characters first arrive at a location or under a specific circumstance, as described in the text."
-							]
+							],
+							"id": "003"
 						},
 						{
 							"type": "entries",
@@ -37,7 +39,8 @@
 								"Vezska presents an errand list to the adventurers, which includes names of three individuals and the specific thoughts that they need to store within the vial. Once all three thoughts are captured within the vial, the adventurers can return to Vezska to collect their reward. She will deliver the \"filled\" vial to her client.",
 								"The adventurers must visit three individuals and find a way to get the thoughts out of each one. Each individual has reasons for holding back their information, so the party must find a way to obtain the specific thoughts\u2013through deception, negotiation, or coercion. Once they have all three thoughts, they can return to Vezska and collect their reward.",
 								"It's not just that easy, though. The {@item vial of thought capture|azfyt} is a prized item among House Dimir, a guild that trades in knowledge and secrets. The magic item has a built-in silent alarm system to notify the owner if someone uses it. After it is first activated while in possession of the characters, the Dimir operative that owns the item is notified pending retrieval specialists to reacquire the vial from the party by whatever means necessary."
-							]
+							],
+							"id": "004"
 						},
 						{
 							"type": "entries",
@@ -119,9 +122,11 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "005"
 						}
-					]
+					],
+					"id": "002"
 				},
 				{
 					"type": "image",
@@ -141,7 +146,8 @@
 								"You wait in the dim glow of a fetid sewer chamber below the streets of the Tenth District. The rhythmic dripping is sometimes interrupted by a sloshing or scrabbling sound from somewhere nearby as you wait for your employer, a specialist in tracking down forgotten and discarded items, to show.",
 								"After a few more minutes of waiting, a tattooed elf wearing supple leather armor and a fungal shawl arrives from one of the tunnel passages. She strides over to your group.",
 								"\"Sorry I'm running a bit behind. Let's get down to business.\""
-							]
+							],
+							"id": "007"
 						},
 						"Vezska, a Devkarin elf {@creature scout} and findbroker for the Golgari Swarm has arrived to give an employment offer to the party.",
 						"If they haven't done so already, the players may want to establish connections between some of the characters before their introductions. Personal connections between characters could include:",
@@ -197,9 +203,11 @@
 										"This dark blue vial allows you to read another's surface thoughts and capture them as thought strands, storing the strands within the vial. As an action, you can activate the vial to target a creature you can see within 10 feet of you to learn its surface thoughts and pull the thoughts learned out of the creature's head as a tangible glowing string of energy known as a thought strand. The strands can be stored in the vial for up to 24 hours or until the vial reaches capacity, in which case the oldest strands dissipate. A creature affected by the vial knows that its thoughts are being probed.",
 										"The vial can also store thought strands created by the {@spell encode thoughts|GGR} cantrip. It does not extend the duration of those strands beyond 8 hours, but stored strands do not disappear if you cast {@spell encode thoughts|GGR} again during the duration of the cantrip.",
 										"The vial has 3 charges and can store up to 3 thought strands. It regains all its charges daily at dusk."
-									]
+									],
+									"id": "009"
 								}
-							]
+							],
+							"id": "008"
 						},
 						{
 							"type": "entries",
@@ -227,9 +235,11 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "00a"
 						}
-					]
+					],
+					"id": "006"
 				},
 				{
 					"type": "image",
@@ -256,7 +266,8 @@
 											"name": "Use Contacts",
 											"entries": [
 												"If a character has an appropriate contact to press for information, they can reach out to that contact for assistance. It takes one hour to arrange a meeting with the contact and {@dice 1d6} hours for the contact to find the individual's place of work and residence. If the contact is not particularly suited to find the requested individual, the time it takes to find their location is doubled."
-											]
+											],
+											"id": "00e"
 										},
 										{
 											"type": "entries",
@@ -272,13 +283,17 @@
 													]
 												},
 												"It takes roughly a half an hour to travel to where Argona or Delrim are found no matter where the characters are in the city, thanks to public transit. The journey through the rubblebelt to visit Herringbone takes about two hours."
-											]
+											],
+											"id": "00f"
 										}
-									]
+									],
+									"id": "00d"
 								}
-							]
+							],
+							"id": "00c"
 						}
-					]
+					],
+					"id": "00b"
 				},
 				{
 					"type": "section",
@@ -308,11 +323,13 @@
 										"If a character in the party is a member of House Dimir, they are aware of what thought strands are and how valuable a commodity they represent to the guild of secrets. The character might sympathize with the operative who lost the vial and try to side with them in order to curry favor with their guild.",
 										"It's okay for this character to have this sort of conflict and possibly their own agenda, so long as it doesn't create too much tension within the rest of the party. Remind the player that there are many cells within the Dimir and they are operating in a relatively independent fashion. Some cells may be at odds with others, so it's not unreasonable to be keeping the operative from retrieving their lost vial.",
 										"In the end, the disposition of the vial after Vezska gives it to her client could serve as a fertile seed for another adventure for that character, amongst the many other secrets that this adventure presents"
-									]
+									],
+									"id": "012"
 								},
 								"If the spies succeed in stealing the item, but the party notices the theft, a chase through the streets of the Tenth District ensues. You can use the {@table Urban Chase Complications|dmg} table in the {@book Dungeon Master's Guide|dmg|8|chases} to adjudicate the chase.",
 								"If the spies manage to steal the vial and escape the party, their mission has failed. They can still attempt to find each individual and the answers to the questions, but it's only for their use."
-							]
+							],
+							"id": "011"
 						},
 						{
 							"type": "image",
@@ -321,7 +338,8 @@
 								"path": "adventure/AZfyT/flying horror.webp"
 							}
 						}
-					]
+					],
+					"id": "010"
 				},
 				{
 					"type": "section",
@@ -348,13 +366,16 @@
 													"entries": [
 														"The zeppelid journey to Millennial Platform boasts a breathtaking view of the endless city, including the nine guildhalls and domed Chamber of the Guildpact.",
 														"The garden grounds where Argona works are a short walk away near an elegantly carved marble building ringed on three sides by manicured topiaries depicting all manner of beasts."
-													]
+													],
+													"id": "017"
 												},
 												"A frustrated looking roan centaur with fiery red hair and tribal tattoos makes her way through the topiaries swinging a pair of shears in her hands.",
 												"Argona is attempting to trim the topiaries, but she's having problems. The topiaries are animated, and don't particularly take well to trimmings. Normally, the Conclave would assign a druid to this task, but Argona has been asked to do it to help her \"get in touch with her peaceful self.\" It's not going well so far."
-											]
+											],
+											"id": "016"
 										}
-									]
+									],
+									"id": "015"
 								},
 								{
 									"type": "entries",
@@ -372,7 +393,8 @@
 												"Anything else creative that a character tries might be effective. In general, the difficulty of any check to succeed is DC 15, but you can give advantage if others are helping."
 											]
 										}
-									]
+									],
+									"id": "018"
 								},
 								{
 									"type": "entries",
@@ -383,21 +405,26 @@
 											"type": "insetReadaloud",
 											"entries": [
 												"\"That was a lot of work for the name of a book. Well, it's called Gardening Heals and I returned it back to the Ismeri Library only a few days overdue.\""
-											]
+											],
+											"id": "01a"
 										},
 										"If the characters helped her with the topiaries or succeeded on the check to convince her by 5 or more, she offers up an additional piece of information.",
 										{
 											"type": "insetReadaloud",
 											"entries": [
 												"\"One other thing about that book... I was reading it by candlelight one night and I swore I saw some other faded writing through the pages. Didn't look like any sort of thing I could read, and I never saw it again.\""
-											]
+											],
+											"id": "01b"
 										},
 										"The party can choose to capture this additional insight in the thought strand, or they can leave it out."
-									]
+									],
+									"id": "019"
 								}
-							]
+							],
+							"id": "014"
 						}
-					]
+					],
+					"id": "013"
 				},
 				{
 					"type": "image",
@@ -421,7 +448,8 @@
 									"type": "insetReadaloud",
 									"entries": [
 										"The address provided for Delrim resides in the Blistercoils, an industrial neighborhood dotted with workshops and labs. The exact address lies down a deep descending staircase, the air pounding with the sound of rushing water. The waterwheels that power much of the city must be near."
-									]
+									],
+									"id": "01e"
 								},
 								"The stairway terminates in a steel door with a brownish metal box bolted to the left wall. The box contains nine sets of earplugs, as well as a big green button. Pushing the button alerts the occupants inside the room that someone is calling outside.",
 								"The door has a sliding slot on the inside for someone to look outside. It is locked and requires a successful DC 16 Dexterity check with thieves' tools to pick the lock or a successful DC 20 Strength ({@skill Athletics}) check to break down the door.",
@@ -430,7 +458,8 @@
 									"type": "insetReadaloud",
 									"entries": [
 										"The door opens on a messy 30-foot-square laboratory that looks both well-used and lived in. A giant apparatus composed of dozens of conduction coils is attached to one wall. Tethered by many cables to this device is a bulbous cylinder with a protruding extension, pointed directly at an engineering book on a table. Written on the side of the cylinder are the words \"Phase Transference Emitter.\""
-									]
+									],
+									"id": "01f"
 								},
 								"For anyone to hear anything in the lab, characters must yell or find some other way to communicate (such as a {@spell message} cantrip). Delrim doesn't wait long for the characters to initiate conversation before yelling \"ARE YOU READY? LET'S BEGIN!\" He then throws a switch near the apparatus and the conduction coils crackle with electricity.",
 								{
@@ -449,10 +478,12 @@
 											"type": "insetReadaloud",
 											"entries": [
 												"The smell of ozone fills the room as the apparatus crackles to life. Almost instantly, the coils are laced with electricity so intense it bathes the room in a blue-white light. The Phase Transference Emitter fires a blue beam at the book on the table, and it disappears."
-											]
+											],
+											"id": "021"
 										},
 										"Electricity lances out from the coils powering the emitter as smoke streams and sparks fly from the cylinder's housing, the emitter swings crazily around. Delrim's triumphant expression turns to one of panic as he realizes his experiment has failed with potentially disastrous consequences. The {@trap malfunctioning Phase Transference Emitter|AZFYT} must be disabled or destroyed before it causes too much havoc. It has become a trap!"
-									]
+									],
+									"id": "020"
 								},
 								{
 									"type": "entries",
@@ -463,21 +494,26 @@
 											"type": "insetReadaloud",
 											"entries": [
 												"\"I was at Ismeri Library in the philosophy section, looking for books from my reading list for my Ethics in Research class when I discovered a secret passage on the top shelf of the second bookcase in the section. It was a crawlspace that you needed a ladder to access, or the ability to fly, or climb, or something like that. Certainly not obvious to anyone at all. It terminated at a locked metal door with some odd symbols on it."
-											]
+											],
+											"id": "023"
 										},
 										"If the characters managed to shut down the experiment without it exploding, Delrim can log the results of his work and asks the party to verify his findings with their signatures. If they agree, he provides them with an additional detail:",
 										{
 											"type": "insetReadaloud",
 											"entries": [
 												"Delrim fishes in his handbag for a piece of paper and holds it out to you. \"Before I took off, I managed to make a rubbing of some of the symbols on that door. I don't know what they mean since I haven't had time to research them, but you can take them with you.\""
-											]
+											],
+											"id": "024"
 										},
 										"This information does not need to be captured in the thought strand if the party wants to withhold it. Any character that participated in {@adventure Krenko's Way|kkw} notices that these markings are similar to the ones found on a door to Falish's home. Otherwise, the markings are just a curiosity that have no further impact on this adventure."
-									]
+									],
+									"id": "022"
 								}
-							]
+							],
+							"id": "01d"
 						}
-					]
+					],
+					"id": "01c"
 				},
 				{
 					"type": "image",
@@ -507,7 +543,8 @@
 									"type": "insetReadaloud",
 									"entries": [
 										"The rubblebelt is a ruinous zone of decrepit buildings and overgrowth. The information you obtained leads you to an encampment in an old plaza, reclaimed by the wild. An old tower still stands about 80 above the ground. Thin trees cling to the ruins here and there, and you can some hide tents dotted around the plaza proper. A bonfire is crackling in the center of the area."
-									]
+									],
+									"id": "027"
 								},
 								"A {@creature rubblebelt stalker|GGR} stands watch in the tower, and whistles down to the rest of his band when he spots the party approaching. Two {@creature anarch|GGR|anarchs} are out near the bonfire, and they head to the beast pens to fetch their two {@creature boar|mm|boars} before heading to meet the party. Both the rubblebelt stalker and anarchs are found in the appendix.",
 								"Herringbone ({@creature noble} with AC 12) heads down from his room in the tower to join the two anarchs in welcoming the party. The assembled group meets the party just north of the bonfire.",
@@ -515,7 +552,8 @@
 									"type": "insetReadaloud",
 									"entries": [
 										"Herringbone is an impeccably dressed elf with a fine suit, gilded rapier, and a feathered cap smiles wide at you as you walk up. You catch the glint of a couple of gold teeth in his mouth."
-									]
+									],
+									"id": "028"
 								},
 								"If the characters explain what they're here for, Herringbone listens intently to their request, and then flat out refuses to give them the information they're looking for. If they mention capturing the information in a thought strand, Herringbone is emphatic in his rebuke, and asks the party to leave before these Gruul give them a bad day.",
 								"The Gruul are spoiling for a fight and are ready to attack whenever Herringbone says he's done talking with the party. The rubblebelt stalker starts making his way down from his post in the tower during the conversation and attempts to hide amongst the trees just to the north of the meeting area.",
@@ -554,7 +592,8 @@
 												}
 											]
 										}
-									]
+									],
+									"id": "029"
 								},
 								{
 									"type": "entries",
@@ -565,21 +604,26 @@
 											"type": "insetReadaloud",
 											"entries": [
 												"\"The scorchbringer is in the personal vault of Velren, a pontiff in the Orzhov Syndicate. Good luck with that.\""
-											]
+											],
+											"id": "02b"
 										},
 										"If the party charmed Herringbone, offered up the Golgari charm as barter, or succeeded by 5 or more on a Charisma check to obtain the information, Herringbone offers just a bit more.",
 										{
 											"type": "insetReadaloud",
 											"entries": [
 												"Oh, one other thing of note. That scorchbringer's special. It's mizzium-infused and can cut through pretty much anything. That's what caught my interest."
-											]
+											],
+											"id": "02c"
 										},
 										"This additional information does not need to be captured in the thought strand at the party's discretion."
-									]
+									],
+									"id": "02a"
 								}
-							]
+							],
+							"id": "026"
 						}
-					]
+					],
+					"id": "025"
 				},
 				{
 					"type": "section",
@@ -591,13 +635,15 @@
 							"entries": [
 								"At the appointed time, Vezska appears from the same passage as before, but she brought along four kraul, bristling with weapons. Vezska smiles as she approaches with her escort.",
 								"\"Don't mind them. They're just insurance. They're not necessary, right?\""
-							]
+							],
+							"id": "02e"
 						},
 						"Vezska brought four {@creature kraul warrior|GGR|kraul warriors} here just in case the party is thinking about absconding with the vial. If they hand off the vial (with or without all the thought strands), she doesn't initiate combat.",
 						"If the group succeeds in obtaining all the thought strands and hands the vial over to Vezska, they receive their promised payment. In addition, all party members receive one renown with their guilds, as Vezska spreads the word on their reliability.",
 						"If the group doesn't succeed in obtaining all the thought strands but hands over the vial, Vezska is disappointed but offers the party 100 zinos for their efforts. They do not receive a renown reward.",
 						"Of course, if the group keeps the vial and defeats Vezska, they've made potential enemies with some of the Golgari. If the vial is returned to House Dimir, all non-Golgari characters earn one renown, and Dimir characters earn two renown."
-					]
+					],
+					"id": "02d"
 				},
 				{
 					"type": "section",
@@ -615,9 +661,11 @@
 								"Are there any NPCs that could become future contacts for one or more characters?"
 							]
 						}
-					]
+					],
+					"id": "02f"
 				}
-			]
+			],
+			"id": "000"
 		}
 	]
 }

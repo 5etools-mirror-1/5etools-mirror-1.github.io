@@ -219,6 +219,12 @@
 							]
 						}
 					},
+					"lootTables": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
 					"hasFluff": {
 						"type": "boolean"
 					},

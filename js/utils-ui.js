@@ -269,37 +269,33 @@ class UiUtil {
 
 	static getEntriesAsText (entryArray) {
 		if (!entryArray || !entryArray.length) return "";
-		const lines = JSON.stringify(entryArray, null, 2)
-			.replace(/^\s*\[/, "").replace(/]\s*$/, "")
-			.split("\n")
-			.filter(it => it.trim())
+
+		return entryArray
 			.map(it => {
-				const trim = it.replace(/^\s\s/, "");
-				const mQuotes = /^"(.*?)",?$/.exec(trim);
-				if (mQuotes) return mQuotes[1]; // if string, strip quotes
-				else return `  ${trim}`; // if object, indent
-			});
+				if (typeof it === "string" || typeof it === "number") return it;
 
-		let out = "";
-		const len = lines.length;
-		for (let i = 0; i < len; ++i) {
-			out += lines[i];
-
-			if (i < len - 1) {
-				out += "\n";
-				if (!lines[i].startsWith("  ")) out += "\n";
-			}
-		}
-		return out;
+				return JSON.stringify(it, null, 2)
+					.split("\n")
+					.map(it => `  ${it}`) // Indent non-string content
+				;
+			})
+			.flat()
+			.join("\n");
 	}
 
 	static getTextAsEntries (text) {
 		try {
-			const lines = [];
-			text.split("\n").filter(it => it.trim()).forEach(it => {
-				if (/^\s/.exec(it)) lines.push(it); // keep indented lines as-is
-				else lines.push(`"${it.replace(/"/g, `\\"`)}",`); // wrap strings
-			});
+			const lines = text
+				.split("\n")
+				.filter(it => it.trim())
+				.map(it => {
+					if (/^\s/.exec(it)) return it; // keep indented lines as-is
+					return `"${it.replace(/"/g, `\\"`)}",`; // wrap strings
+				})
+				.map(it => {
+					if (/[}\]]$/.test(it.trim())) return `${it},`; // Add trailing commas to closing `}`/`]`
+					return it;
+				});
 			if (lines.length) lines[lines.length - 1] = lines.last().replace(/^(.*?),?$/, "$1"); // remove trailing comma
 			return JSON.parse(`[${lines.join("")}]`);
 		} catch (e) {
@@ -4368,6 +4364,8 @@ class ComponentUiUtil {
 	 * @param [opts.fnDisplay] Function which takes a value and returns display text.
 	 * @param [opts.required] Values which are required.
 	 * @param [opts.ixsRequired] Indexes of values which are required.
+	 * @param [opts.isSearchable] If a search input should be created.
+	 * @param [opts.fnGetSearchText] Function which takes a value and returns search text.
 	 */
 	static getMetaWrpMultipleChoice (comp, prop, opts) {
 		opts = opts || {};
@@ -4376,6 +4374,7 @@ class ComponentUiUtil {
 		const rowMetas = [];
 		const $eles = [];
 		const ixsSelectionOrder = [];
+		const $elesSearchable = {};
 
 		const propIsAcceptable = this.getMetaWrpMultipleChoice_getPropIsAcceptable(prop);
 		const propPulse = this.getMetaWrpMultipleChoice_getPropPulse(prop);
@@ -4474,10 +4473,16 @@ class ComponentUiUtil {
 					},
 				});
 
-				$eles.push($$`<label class="flex-v-center py-1 stripe-even">
+				const $ele = $$`<label class="flex-v-center py-1 stripe-even">
 					<div class="col-1 flex-vh-center">${$cb}</div>
 					<div class="col-11 flex-v-center">${displayValue}</div>
-				</label>`);
+				</label>`;
+				$eles.push($ele);
+
+				if (opts.isSearchable) {
+					const searchText = `${opts.fnGetSearchText ? opts.fnGetSearchText(v, ixValueFrozen) : v}`.toLowerCase().trim();
+					($elesSearchable[searchText] = $elesSearchable[searchText] || []).push($ele);
+				}
 
 				ixValue++;
 			});
@@ -4489,10 +4494,29 @@ class ComponentUiUtil {
 
 		comp.__state[propIxMax] = ixValue;
 
+		let $iptSearch;
+		if (opts.isSearchable) {
+			const compSub = BaseComponent.fromObject({search: ""});
+			$iptSearch = ComponentUiUtil.$getIptStr(compSub, "search");
+			const hkSearch = () => {
+				const cleanSearch = compSub._state.search.trim().toLowerCase();
+				if (!cleanSearch) {
+					Object.values($elesSearchable).forEach($eles => $eles.forEach($ele => $ele.removeClass("ve-hidden")));
+					return;
+				}
+
+				Object.entries($elesSearchable)
+					.forEach(([searchText, $eles]) => $eles.forEach($ele => $ele.toggleVe(searchText.includes(cleanSearch))));
+			};
+			compSub._addHookBase("search", hkSearch);
+			hkSearch();
+		}
+
 		// Always return this as a "meta" object
 		const unhook = () => rowMetas.forEach(it => it.unhook());
 		return {
 			$ele: $$`<div class="flex-col w-100 overflow-y-auto">${$eles}</div>`,
+			$iptSearch,
 			rowMetas, // Return this to allow for creating custom UI
 			propIsAcceptable,
 			propPulse,

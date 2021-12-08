@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.19.1",
+	"version": "1.20.0",
 	"title": "Bestiary Schema",
 	"$id": "bestiary.json",
 	"type": "object",
@@ -108,11 +108,14 @@
 					}
 				},
 				"group": {
-					"description": "A group name, indexed by search. E.g. searching \"Lycanthrope\" would otherwise fail to find anything",
+					"description": "A group name, indexed by search. E.g. searching \"Lycanthrope\" would otherwise fail to find anything.\nOnly works on the bestiary page, not in the full site search.",
 					"type": [
-						"string",
-						"null"
-					]
+						"null",
+						"array"
+					],
+					"items": {
+						"type": "string"
+					}
 				},
 				"level": {
 					"description": "Used in sidekicks, which can have levels (and generally do not have alignment)",
@@ -176,6 +179,10 @@
 				},
 				"source": {
 					"type": "string"
+				},
+				"sourceSub": {
+					"type": "string",
+					"description": "Sub-source text that is shown when hovered."
 				},
 				"otherSources": {
 					"$ref": "../util.json#/definitions/otherSources"
@@ -718,21 +725,25 @@
 				"altArt": {
 					"type": "array",
 					"items": {
-						"type": "object",
-						"properties": {
-							"name": {
-								"type": "string"
-							},
-							"source": {
-								"type": "string"
-							},
-							"page": {
-								"type": "integer"
+						"anyOf": [
+							{
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"source": {
+										"type": "string"
+									},
+									"page": {
+										"type": "integer"
+									}
+								},
+								"required": [
+									"name",
+									"source"
+								]
 							}
-						},
-						"required": [
-							"name",
-							"source"
 						]
 					}
 				},
@@ -1068,11 +1079,14 @@
 							}
 						},
 						"group": {
-							"description": "A group name, indexed by search. E.g. searching \"Lycanthrope\" would otherwise fail to find anything",
+							"description": "A group name, indexed by search. E.g. searching \"Lycanthrope\" would otherwise fail to find anything.\nOnly works on the bestiary page, not in the full site search.",
 							"type": [
-								"string",
-								"null"
-							]
+								"null",
+								"array"
+							],
+							"items": {
+								"type": "string"
+							}
 						},
 						"level": {
 							"description": "Used in sidekicks, which can have levels (and generally do not have alignment)",
@@ -1136,6 +1150,10 @@
 						},
 						"source": {
 							"type": "string"
+						},
+						"sourceSub": {
+							"type": "string",
+							"description": "Sub-source text that is shown when hovered."
 						},
 						"otherSources": {
 							"$ref": "../util.json#/definitions/otherSources"
@@ -1678,21 +1696,25 @@
 						"altArt": {
 							"type": "array",
 							"items": {
-								"type": "object",
-								"properties": {
-									"name": {
-										"type": "string"
-									},
-									"source": {
-										"type": "string"
-									},
-									"page": {
-										"type": "integer"
+								"anyOf": [
+									{
+										"type": "object",
+										"properties": {
+											"name": {
+												"type": "string"
+											},
+											"source": {
+												"type": "string"
+											},
+											"page": {
+												"type": "integer"
+											}
+										},
+										"required": [
+											"name",
+											"source"
+										]
 									}
-								},
-								"required": [
-									"name",
-									"source"
 								]
 							}
 						},
@@ -2043,11 +2065,14 @@
 							}
 						},
 						"group": {
-							"description": "A group name, indexed by search. E.g. searching \"Lycanthrope\" would otherwise fail to find anything",
+							"description": "A group name, indexed by search. E.g. searching \"Lycanthrope\" would otherwise fail to find anything.\nOnly works on the bestiary page, not in the full site search.",
 							"type": [
-								"string",
-								"null"
-							]
+								"null",
+								"array"
+							],
+							"items": {
+								"type": "string"
+							}
 						},
 						"level": {
 							"description": "Used in sidekicks, which can have levels (and generally do not have alignment)",
@@ -2111,6 +2136,10 @@
 						},
 						"source": {
 							"type": "string"
+						},
+						"sourceSub": {
+							"type": "string",
+							"description": "Sub-source text that is shown when hovered."
 						},
 						"otherSources": {
 							"$ref": "../util.json#/definitions/otherSources"
@@ -2653,21 +2682,25 @@
 						"altArt": {
 							"type": "array",
 							"items": {
-								"type": "object",
-								"properties": {
-									"name": {
-										"type": "string"
-									},
-									"source": {
-										"type": "string"
-									},
-									"page": {
-										"type": "integer"
+								"anyOf": [
+									{
+										"type": "object",
+										"properties": {
+											"name": {
+												"type": "string"
+											},
+											"source": {
+												"type": "string"
+											},
+											"page": {
+												"type": "integer"
+											}
+										},
+										"required": [
+											"name",
+											"source"
+										]
 									}
-								},
-								"required": [
-									"name",
-									"source"
 								]
 							}
 						},

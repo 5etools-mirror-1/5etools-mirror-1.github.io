@@ -995,7 +995,7 @@ class BuilderUi {
 		const $ipt = $(`<textarea class="form-control form-control--minimal resize-vertical" ${options.placeholder ? `placeholder="${options.placeholder}"` : ""}/>`)
 			.val(UiUtil.getEntriesAsText(initialState))
 			.change(() => {
-				const raw = $ipt.val().trim();
+				const raw = $ipt.val();
 				let out = raw || !options.nullable ? UiUtil.getTextAsEntries(raw) : null;
 
 				if (out && options.fnPostProcess) {

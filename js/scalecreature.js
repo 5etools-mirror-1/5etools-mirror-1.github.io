@@ -276,10 +276,12 @@
 
 	_calcNewAbility (mon, prop, modifier) {
 		// at least 1
-		return Math.max(1,
+		const out = Math.max(1,
 			((modifier + 5) * 2)
 			+ (mon[prop] % 2), // add trailing odd numbers from the original ability, just for fun
 		);
+		// Avoid breaking 30 unless we really mean to
+		return out === 31 ? 30 : out;
 	},
 
 	_rng: null,
@@ -1342,7 +1344,7 @@
 	_wepThrownFinesse: ["dagger", "dart"],
 	_wepFinesse: ["dagger", "dart", "rapier", "scimitar", "shortsword", "whip"],
 	_wepThrown: ["handaxe", "javelin", "light hammer", "spear", "trident", "net"],
-	_getModBeingScaled (strMod, dexMod, modFromAbil, name, content) {
+	_getAbilBeingScaled ({strMod, dexMod, modFromAbil, name, content}) {
 		const guessMod = () => {
 			name = name.toLowerCase();
 			content = content.replace(/{@atk ([A-Za-z,]+)}/gi, (_, p1) => Renderer.attackTagToFull(p1)).toLowerCase();
@@ -1404,26 +1406,50 @@
 				const curToHit = Number(m1);
 
 				const modFromAbil = curToHit - (offsetEnchant + pbOut);
-				const modBeingScaled = name != null ? this._getModBeingScaled(strMod, dexMod, modFromAbil, name, str) : null; // ignore spell attacks here, as they'll be scaled using DCs later
+				// Handle e.g. "Hobgoblin Warlord" expertise on attacks
+				const modFromAbilExpertise = curToHit - (offsetEnchant + (pbOut * 2));
+				// Handle e.g. "Ghast" lack of proficiency on attacks
+				const modFromAbilNoProf = curToHit - offsetEnchant;
 
-				const origToHitNoEnch = curToHit + (pbIn - pbOut) - offsetEnchant;
+				// ignore spell attacks here, as they'll be scaled using DCs later
+				const abilBeingScaled = name != null
+					? this._getAbilBeingScaled({strMod, dexMod, modFromAbil, name, content: str})
+					: null;
+				const abilBeingScaledExpertise = name != null
+					? this._getAbilBeingScaled({strMod, dexMod, modFromAbil: modFromAbilExpertise, name, content: str})
+					: null;
+				const abilBeingScaledNoProf = name != null
+					? this._getAbilBeingScaled({strMod, dexMod, modFromAbil: modFromAbilNoProf, name, content: str})
+					: null;
+
+				const {abil, profMult} = [
+					abilBeingScaled ? {abil: abilBeingScaled, profMult: 1} : null,
+					abilBeingScaledExpertise ? {abil: abilBeingScaledExpertise, profMult: 2} : null,
+					abilBeingScaledNoProf ? {abil: abilBeingScaledNoProf, profMult: 0} : null,
+				].filter(Boolean)[0] || {abil: null, profMult: 1};
+
+				const pbInMult = profMult * pbIn;
+				const pbOutMult = profMult * pbOut;
+
+				const origToHitNoEnch = curToHit + (pbInMult - pbOutMult) - offsetEnchant;
 				const targetToHitNoEnch = getAdjustedHitFlat(origToHitNoEnch);
 
 				if (origToHitNoEnch === targetToHitNoEnch) return m0; // this includes updated PB, so just return it
 
-				if (modBeingScaled != null) {
-					const modDiff = (targetToHitNoEnch - pbOut) - (origToHitNoEnch - pbIn);
+				if (abil != null) {
+					const modDiff = (targetToHitNoEnch - pbOutMult) - (origToHitNoEnch - pbInMult);
 					const modFromAbilOut = modFromAbil + modDiff;
 
 					// Written out in full to make ctrl-F easier
 					const tmpModListProp = {
 						"str": `_strTmpMods`,
 						"dex": `_dexTmpMods`,
-					}[modBeingScaled];
+					}[abil];
 
 					mon[tmpModListProp] = mon[tmpModListProp] || [];
 					mon[tmpModListProp].push(modFromAbilOut);
 				}
+
 				return `{@hit ${targetToHitNoEnch + offsetEnchant}}`;
 			});
 		};
@@ -1599,12 +1625,18 @@
 						const modFromAbil = modifier ? Number(modifier) - offsetEnchant : null;
 
 						// try to figure out which mod we're going to be scaling
-						const modBeingScaled = this._getModBeingScaled(originalStrMod, originalDexMod, modFromAbil, it.name, toUpdate);
-						const originalAbilMod = modBeingScaled === "str" ? strMod : modBeingScaled === "dex" ? dexMod : null;
+						const abilBeingScaled = this._getAbilBeingScaled({
+							strMod: originalStrMod,
+							dexMod: originalDexMod,
+							modFromAbil,
+							name: it.name,
+							content: toUpdate,
+						});
+						const originalAbilMod = abilBeingScaled === "str" ? strMod : abilBeingScaled === "dex" ? dexMod : null;
 
 						const getAdjustedDamMod = () => {
-							if (modBeingScaled === "str" && mon._strTmpMod != null) return mon._strTmpMod;
-							if (modBeingScaled === "dex" && mon._dexTmpMod != null) return mon._dexTmpMod;
+							if (abilBeingScaled === "str" && mon._strTmpMod != null) return mon._strTmpMod;
+							if (abilBeingScaled === "dex" && mon._dexTmpMod != null) return mon._dexTmpMod;
 
 							if (modFromAbil == null) return 0 - offsetEnchant; // ensure enchanted equipment is ignored even with +0 base damage mod
 
@@ -1623,14 +1655,14 @@
 							// - minimum number of dice is 1
 							// - minimum DPR range is 0-1, which can be achieved with e.g. 1d4-1 (avg 1) or 1d4-2 (avg 0)
 							// therefore, this provides a sanity check: this should only occur when something's broken
-							if (modOut < -5) throw new Error(`Ability modifier ${modBeingScaled != null ? `(${modBeingScaled})` : ""} was below -5 (${modOut})! Original dice expression was ${diceExp}.`);
+							if (modOut < -5) throw new Error(`Ability modifier ${abilBeingScaled != null ? `(${abilBeingScaled})` : ""} was below -5 (${modOut})! Original dice expression was ${diceExp}.`);
 
 							if (originalAbilMod != null && modOut !== originalAbilMod) {
 								// Written out in full to make ctrl-F easier
 								const [tmpModProp, maxDprKey] = {
 									"str": [`_strTmpMod`, `_maxDprStr`],
 									"dex": [`_dexTmpMod`, `_maxDprDex`],
-								}[modBeingScaled];
+								}[abilBeingScaled];
 
 								let updateTempMod = true;
 								if (mon[tmpModProp] != null && mon[tmpModProp] !== modOut) {
@@ -1657,7 +1689,7 @@
 								}
 
 								reqAbilAdjust.push({
-									ability: modBeingScaled,
+									ability: abilBeingScaled,
 									mod: modOut,
 									adjustedDpr,
 								});

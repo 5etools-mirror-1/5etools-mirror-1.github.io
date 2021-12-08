@@ -29,7 +29,8 @@
 						"Ever jealous of the cheery dispositions and colorful deliciousness of the NERDS, Emo the beholder and his hired muscle, Mr. Greystone, have struck a blow against the NERDS' beloved city of Harmony. After years of searching, the nefarious duo have found the sacred Prismatic Well that gives Harmony its vibrant and fabulous colors. Now, with access to the Prismatic Well, Emo and Mr. Greystone have begun to leech the color from the city of Harmony. If they aren't stopped, the city will gradually turn gray, with everything eventually becoming black and white.",
 						"To the NERDS, the colors beginning to flicker and drain out of Harmony is an unsettling mystery. What brings the colors to Harmony is an enigma to them. All they can do is hope the power comes back on and restores the vibrancy of Harmony's colors once more. But one group knows what's up, and that group is the Lorekeeper Society\u2014a secret society sworn to protect Harmony. The Lorekeepers know about the power of the Prismatic Well, but its true location is lost even to themselves. However, they have a way to find the well using an ancient artifact known as the Amulet of Harmony, but to activate it they need to find the six Gems of Power. Once activated, the amulet guides whoever controls it to the secret location of the Prismatic Well. But once activated, the amulet also has the power to turn off the well.",
 						"The Gems of Power were long ago hidden away for safekeeping in dungeons, forests, and towers. No one in the Lorekeeper Society knows the details of the magical beasts and traps guarding the gems, but our heroic NERDS are more than up to the challenge of restoring Harmony!"
-					]
+					],
+					"id": "001"
 				},
 				{
 					"type": "entries",
@@ -45,9 +46,11 @@
 							"entries": [
 								"In solo play, there's always a chance the character can die. In the case of a single adventurer, this death results in the end of play; which isn't optimal for an afternoon of fun! One way to avoid death is to have healing readily available to the adventurer. If they're without healing, have the character find the odd {@item potion of healing} lying in a dusty crate or have them discover a special healing plant on their journey that, if eaten, puts them back to full hit points.",
 								"In the case of an untimely death, you can have a helpful NPC (like Mr. Honeycutt) save the day and revive them, or you can have them forego death saving throws and wake up as they're being dragged someplace unpleasant."
-							]
+							],
+							"id": "003"
 						}
-					]
+					],
+					"id": "002"
 				},
 				{
 					"type": "entries",
@@ -64,7 +67,8 @@
 								"After dealing with the spider, Yellow unlocks a puzzle chest that contains the Saffron Gem."
 							]
 						}
-					]
+					],
+					"id": "004"
 				},
 				{
 					"type": "entries",
@@ -74,7 +78,8 @@
 						"Give the character sheet (see \"Yellow the Cleric\", below) to your player and let them familiarize themselves with Yellow.",
 						"All creatures or NPCs that are bolded have stat blocks, which are included at the end of the adventure along with any magic items the characters can earn.",
 						"Whenever you're both ready, you can start the session."
-					]
+					],
+					"id": "005"
 				},
 				{
 					"type": "section",
@@ -88,7 +93,8 @@
 							"entries": [
 								"The clerics at the Monastery of Inspiration are seeking answers to the color outages taking place across Harmony. Many spend their days reading thick tomes filled with ancient knowledge, while others work with the community to inspire a sense of togetherness.",
 								"Today, you are sitting near a fountain pondering the mystery of the color outages when you see a bee floundering in the water about to drown. You remember a saying from your elder at the monastery that all living things, no matter how small or if they cause you fear, are to be spared, as such is the way of the order."
-							]
+							],
+							"id": "007"
 						},
 						"If Yellow saves the bee, they gain an unlikely ally later in the adventure.",
 						"After the encounter with the bee, read the following:",
@@ -97,7 +103,8 @@
 							"page": 3,
 							"entries": [
 								"As you go back to pondering what you can do to solve the mystery of the color outages, a small man wearing horn-rimmed glasses approaches you and smiles."
-							]
+							],
+							"id": "008"
 						},
 						"The man introduces himself as {@creature Mr. Honeycutt|NRH-TCMC}, the Magister of the Lorekeeper Society. He asks Yellow if they have some time to talk about a matter of great importance, stating that all the colors of Harmony are at stake. If Yellow agrees, read or paraphrase the following:",
 						{
@@ -105,7 +112,8 @@
 							"page": 3,
 							"entries": [
 								"I belong to a secret order that has sworn to protect Harmony. These color outages are being caused by a nefarious force that is still unknown to us, but we need your help to recover an item that will aid us in rooting out the evil. The item is called the Saffron Gem. It's been lost for some time, but my recent studies have me almost certain of its location. Can you help us recover it?"
-							]
+							],
+							"id": "009"
 						},
 						"Mr. Honeycutt gives Yellow an old map that highlights a location deep within Darkwood Forest. There is a cryptic note written on the map: \"Follow the sweetness.\"",
 						"Mr. Honeycutt wishes Yellow a safe trip and tells Yellow that he will await them at the Jenny Wren, a local tavern. If Yellow asks for money, Mr. Honeycutt gives them a pouch of 25 gp.",
@@ -119,11 +127,14 @@
 									"entries": [
 										"On the journey through Darkwood, Yellow has a chance to spot some healing herbs that, if collected and brewed into a tea, can act as a {@item potion of healing}. To find enough herbs to make a single dose of the tea, Yellow must first succeed on a DC 12 Intelligence ({@skill Nature}) check to find the herbs and then make a successful DC 12 Intelligence ({@skill Medicine}) check to brew them into a medicine. There are only enough herbs for one potion.",
 										"As Yellow draws nearer to the temple, they begin to smell a sweetness in the air\u2014the unmistakable scent of honey."
-									]
+									],
+									"id": "00b"
 								}
-							]
+							],
+							"id": "00a"
 						}
-					]
+					],
+					"id": "006"
 				},
 				{
 					"type": "section",
@@ -137,7 +148,8 @@
 							"entries": [
 								"An ancient temple lies in ruin. Its vaulted ceilings, now collapsed, were once shaped like honeycombs. Bee-shaped statuary lie broken about the crumbled outline of the temple foundation.",
 								"In the courtyard, a ring of moss-covered stones encircles a well. The well has a hoist and a bucket. The sweet scent wafts from the well, as bees congregate around its edge."
-							]
+							],
+							"id": "00d"
 						},
 						{
 							"type": "image",
@@ -168,11 +180,14 @@
 											"page": 4,
 											"entries": [
 												"Area T2 is the nest of a giant spider. Make sure that your player does not have arachnophobia (a deep fear of spiders) before moving on with the following scene. If your player isn't comfortable with spiders, area T2 is instead guarded by a skeleton and area T1 is filled with bones instead of spiderwebs."
-											]
+											],
+											"id": "010"
 										}
-									]
+									],
+									"id": "00f"
 								}
-							]
+							],
+							"id": "00e"
 						},
 						{
 							"type": "entries",
@@ -181,7 +196,8 @@
 							"entries": [
 								"If Yellow enters the narrow tunnel that leads from the well to area T2, they see that the tunnel is filled with an increasingly thick network of spiderwebs that crisscrosses the area. To reach area T2, Yellow must pick their way carefully through the webs.",
 								"For every 10 feet Yellow travels through the webs, have them make a DC 13 Dexterity check. On a failure, they touch a web which sends a vibration and alerts Szikzith (see area T2). Szikzith either waits in ambush or comes down into the tunnel to investigate. On a success, Yellow has surprise."
-							]
+							],
+							"id": "011"
 						},
 						{
 							"type": "entries",
@@ -195,7 +211,8 @@
 									"entries": [
 										"This room is shaped like a giant beehive and covered in honeycombs and spiderwebs. The walls are carved in hexagonal patterns that curve upward to a domed ceiling 40 feet overhead. Large chunks of beehive hang from the walls, and honey drips from the combs.",
 										"On the floor, under a dense mat of spiderwebs, there's a chest atop a 4-foot-tall stone plinth."
-									]
+									],
+									"id": "013"
 								},
 								"This is the lair of {@creature Szikzith|NRH-AWoL}, an awakened giant wolf spider. Szikzith is greedy and scheming and has developed a taste for honey. She wants all the honey she can get\u2014but she's eaten so much of the delicious honey that there's no more within the beehive room and she has become too fat to escape through the small tunnel.",
 								"Szikzith guards her lair, and if she finds out that there's something Yellow wants\u2014like the chest\u2014she demands that they bring honey to her. Szikzith is not very smart, so she can be tricked with a successful DC 13 Intelligence ({@skill Deception}) check. Szikzith is also not above going back on a deal and demanding more honey if she feels like she can intimidate Yellow into getting more. Reward your player for good roleplaying here.",
@@ -211,11 +228,14 @@
 												"Getting the Saffron Gem Once Szikzith is dealt with, Yellow must cut through the webs to uncover a locked chest that's beautifully decorated with bee and flower motifs. There's a riddle written on the lid of the chest: \"I'm a comb but not for hair.\"",
 												"The chest has five rotating disks on its side. Each disk is carved with the letters of the alphabet and can be rotated independently of the others to create different letter-alignment combinations. To unlock the chest, the disks must be aligned so the topmost letters spell out \"HONEY.\"",
 												"If your player doesn't like solving puzzles or they become frustrated, let Yellow open the chest with a successful DC 10 Intelligence check. Inside the chest is the Saffron Stone."
-											]
+											],
+											"id": "015"
 										}
-									]
+									],
+									"id": "014"
 								}
-							]
+							],
+							"id": "012"
 						},
 						{
 							"type": "entries",
@@ -224,9 +244,11 @@
 							"entries": [
 								"If Yellow returns to the monastery to meet with Mr. Honeycutt and delivers the Saffron Gem as promised, Mr. Honeycutt thanks Yellow profusely. He offers Yellow membership in the Lorekeeper Society and asks if Yellow will help him put an end to those who would \"dare to dull the vibrant soul of Harmony\". Mr. Honeycutt says that he's close to figuring out the culprits behind the color outages and he feels like he's going to need the help of heroes to stop them.",
 								"Mr. Honeycutt also hands Yellow a long wooden box, thanking him for \"going above and beyond in service to the city of Harmony.\" Inside the box is a {@item mace of disruption}."
-							]
+							],
+							"id": "016"
 						}
-					]
+					],
+					"id": "00c"
 				},
 				{
 					"type": "section",
@@ -240,7 +262,8 @@
 								"{@item Mace of Disruption}"
 							]
 						}
-					]
+					],
+					"id": "017"
 				},
 				{
 					"type": "image",
@@ -256,7 +279,8 @@
 						"path": "adventure/NRH-AWoL/sheet012.webp"
 					}
 				}
-			]
+			],
+			"id": "000"
 		}
 	]
 }

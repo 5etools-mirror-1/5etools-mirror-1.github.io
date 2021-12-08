@@ -1302,6 +1302,25 @@
 		{
 			"name": "Faerie Dragon",
 			"source": "FTB",
+			"lairActions": [
+				"As they are presented in the {@book Monster Manual|MM}, faerie dragons don't have access to lair actions while in their lairs. At your discretion, a {@creature Faerie Dragon (Green)||green} or {@creature Faerie Dragon (Violet)||older faerie dragon} can take one of the following lair actions on initiative count 20 (losing initiative ties):",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Chaotic Aura.",
+							"entry": "The faerie dragon creates misdirecting currents of air and magic around itself. Until initiative count 20 on the next round, whenever a ranged attack roll misses the dragon, reroll the attack against a random creature within 30 feet of the dragon that doesn't have total cover against the attack."
+						},
+						{
+							"type": "item",
+							"name": "Grasping Plants.",
+							"entry": "The faerie dragon causes roots and vines to temporarily grow around it; until initiative count 20 on the next round, the ground within 20 feet of the dragon is {@book difficult terrain|PHB|8|Difficult Terrain}."
+						}
+					]
+				}
+			],
 			"regionalEffects": [
 				"The region containing a faerie dragon's lair can be transformed by its presence, creating one or more of the following effects:",
 				{

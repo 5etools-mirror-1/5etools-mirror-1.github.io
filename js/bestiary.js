@@ -193,7 +193,7 @@ class BestiaryPage extends ListPageMultiSource {
 				source,
 				type,
 				cr,
-				group: mon.group || "",
+				group: mon.group ? [mon.group].flat().join(",") : "",
 				alias: (mon.alias || []).map(it => `"${it}"`).join(","),
 			},
 			{
@@ -206,8 +206,6 @@ class BestiaryPage extends ListPageMultiSource {
 	}
 
 	handleFilterChange () {
-		if (Hist.initialLoad) return;
-
 		const f = this._pageFilter.filterBox.getValues();
 		this._list.filter(li => {
 			const m = this._dataList[li.ix];

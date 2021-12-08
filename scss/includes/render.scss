@@ -88,7 +88,7 @@ $rgb-inset-border: #656565;
 
 		&title-link {
 			opacity: 0.3;
-			font-size: 14px;
+			font-size: 12px;
 			font-weight: normal;
 
 			&--inset {
@@ -286,6 +286,11 @@ $rgb-inset-border: #656565;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+
+			&-no-name {
+				justify-content: flex-end;
+				float: right;
+			}
 		}
 
 		&h--2-flow-block {
@@ -307,6 +312,17 @@ $rgb-inset-border: #656565;
 		// statsInlineHeadSubVariant
 		&h--4 {
 			font-style: italic;
+		}
+
+		&h-toggle {
+			font-family: Arial, sans-serif;
+			font-size: 12px;
+			opacity: 0.3;
+			font-weight: normal;
+		}
+
+		&ele-toggled-hidden {
+			display: none !important;
 		}
 
 		&b--3 > p,

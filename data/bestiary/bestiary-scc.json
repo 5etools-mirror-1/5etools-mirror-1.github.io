@@ -1,0 +1,5615 @@
+{
+	"monster": [
+		{
+			"name": "Archaic",
+			"source": "SCC",
+			"page": 184,
+			"size": "G",
+			"type": "celestial",
+			"alignment": [
+				"N"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 20,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 245,
+				"formula": "14d20 + 98"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 25,
+			"dex": 10,
+			"con": 24,
+			"int": 27,
+			"wis": 24,
+			"cha": 20,
+			"save": {
+				"dex": "+6",
+				"int": "+14",
+				"wis": "+13",
+				"cha": "+11"
+			},
+			"skill": {
+				"arcana": "+20",
+				"deception": "+11",
+				"history": "+20",
+				"perception": "+13"
+			},
+			"senses": [
+				"truesight 120 ft."
+			],
+			"passive": 23,
+			"resist": [
+				"force"
+			],
+			"immune": [
+				"poison",
+				"psychic"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"paralyzed",
+				"petrified",
+				"poisoned",
+				"stunned"
+			],
+			"languages": [
+				"all"
+			],
+			"cr": "18",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The archaic casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 22}):"
+					],
+					"will": [
+						"{@spell detect magic}",
+						"{@spell divination}",
+						"{@spell sending}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell banishment}",
+							"{@spell forcecage}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Enigmatic Mind",
+					"entries": [
+						"The archaic's mind can't be read, creatures can communicate telepathically with the archaic only if it allows, and magic can't determine whether the archaic is lying."
+					]
+				},
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"If the archaic fails a saving throw, it can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Unusual Nature",
+					"entries": [
+						"The archaic doesn't require air, food, drink, or sleep."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The archaic makes two Force Strike attacks. It can also use Gravity Shift, if available."
+					]
+				},
+				{
+					"name": "Force Strike",
+					"entries": [
+						"{@atk ms,rs} {@hit 14} to hit, reach 15 ft. or range 120 ft., one target. {@h}19 ({@damage 2d10 + 8}) force damage, and the target is pulled up to 10 feet toward the archaic or pushed 10 feet away from it, as the archaic chooses."
+					]
+				},
+				{
+					"name": "Gravity Shift {@recharge 5}",
+					"entries": [
+						"The archaic reverses gravity for one creature it can see within 100 feet of itself. The creature must succeed on a {@dc 22} Wisdom saving throw or fall 100 feet upward. If the falling creature encounters a solid object (such as a ceiling) in this fall, it strikes the object just as it would during a downward fall. If the creature reaches the top of the area without striking anything, it hovers there until the start of the archaic's next turn, at which time gravity returns to normal and the creature falls."
+					]
+				},
+				{
+					"name": "Teleport",
+					"entries": [
+						"The archaic teleports to an unoccupied space that it can see within 120 feet of itself."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Spell Mimicry (1/Day)",
+					"entries": [
+						"Immediately after a creature the archaic can see casts a spell of 5th level or lower, that creature must succeed on a {@dc 22} Charisma saving throw, or the archaic immediately casts the same spell at the same level ({@hit 14} to hit with spell attacks, spell save {@dc 22}), requiring no material components and choosing the spell's targets."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Strike",
+					"entries": [
+						"The archaic makes one Force Strike attack."
+					]
+				},
+				{
+					"name": "Teleport",
+					"entries": [
+						"The archaic uses Teleport."
+					]
+				},
+				{
+					"name": "Unravel Magic (Costs 2 Actions)",
+					"entries": [
+						"The archaic targets one creature it can see within 120 feet of itself. The target must succeed on a {@dc 22} Constitution saving throw or take 35 ({@damage 10d6}) force damage, and each spell of 5th level or lower on the target ends."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"senseTags": [
+				"U"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Teleport"
+			],
+			"languageTags": [
+				"XX"
+			],
+			"damageTags": [
+				"O"
+			],
+			"miscTags": [
+				"RCH"
+			],
+			"conditionInflictSpell": [
+				"incapacitated"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Art Elemental Mascot",
+			"source": "SCC",
+			"page": 185,
+			"size": "S",
+			"type": "elemental",
+			"alignment": [
+				"N"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				11
+			],
+			"hp": {
+				"average": 18,
+				"formula": "4d6 + 4"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 6,
+			"dex": 13,
+			"con": 12,
+			"int": 8,
+			"wis": 11,
+			"cha": 15,
+			"skill": {
+				"performance": "+4"
+			},
+			"passive": 10,
+			"resist": [
+				"cold",
+				"fire"
+			],
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"poisoned"
+			],
+			"languages": [
+				"understands the languages of its creator but can't speak"
+			],
+			"cr": "1/4",
+			"trait": [
+				{
+					"name": "Death Burst",
+					"entries": [
+						"When the elemental dies, it explodes in a burst of colored light. Each creature within 5 feet of the elemental must succeed on a {@dc 11} Constitution saving throw or be {@condition blinded} for 1 minute. A {@condition blinded} creature can repeat the save at the end of each of its turns, ending the effect on itself on a success."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Joyful Flare",
+					"entries": [
+						"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}6 ({@damage 2d4 + 1}) fire damage."
+					]
+				},
+				{
+					"name": "Melancholic Bolt",
+					"entries": [
+						"{@atk rw} {@hit 3} to hit, range 30 ft., one target. {@h}6 ({@damage 2d4 + 1}) cold damage."
+					]
+				},
+				{
+					"name": "Captivating Artistry (1/Day)",
+					"entries": [
+						"The elemental targets one creature it can see within 30 feet of itself. The target must succeed on a {@dc 12} Charisma saving throw or be {@condition charmed} for 1 minute. The {@condition charmed} target can repeat the save at the end of each of its turns, ending the effect on itself on a success."
+					]
+				}
+			],
+			"traitTags": [
+				"Death Burst"
+			],
+			"languageTags": [
+				"CS"
+			],
+			"damageTags": [
+				"C",
+				"F"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RW"
+			],
+			"conditionInflict": [
+				"blinded",
+				"charmed"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Beledros Witherbloom",
+			"isNamedCreature": true,
+			"source": "SCC",
+			"page": 186,
+			"size": "G",
+			"type": {
+				"type": "dragon",
+				"tags": [
+					"druid"
+				]
+			},
+			"alignment": [
+				"N",
+				"G"
+			],
+			"ac": [
+				{
+					"ac": 22,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 444,
+				"formula": "24d20 + 192"
+			},
+			"speed": {
+				"walk": 40,
+				"fly": 80,
+				"swim": 40
+			},
+			"str": 28,
+			"dex": 14,
+			"con": 27,
+			"int": 18,
+			"wis": 28,
+			"cha": 17,
+			"save": {
+				"dex": "+9",
+				"con": "+15",
+				"wis": "+16",
+				"cha": "+10"
+			},
+			"skill": {
+				"arcana": "+18",
+				"medicine": "+16",
+				"nature": "+18",
+				"perception": "+16"
+			},
+			"senses": [
+				"blindsight 120 ft."
+			],
+			"passive": 26,
+			"immune": [
+				"necrotic",
+				"poison"
+			],
+			"conditionImmune": [
+				"poisoned"
+			],
+			"languages": [
+				"Common",
+				"Draconic",
+				"Druidic",
+				"Sylvan"
+			],
+			"cr": "24",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"Beledros casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability:"
+					],
+					"daily": {
+						"1e": [
+							"{@spell greater restoration}",
+							"{@spell mass cure wounds}",
+							"{@spell plant growth}",
+							"{@spell revivify}",
+							"{@spell speak with dead}"
+						]
+					},
+					"ability": "wis",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"If Beledros fails a saving throw, she can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Unusual Nature",
+					"entries": [
+						"Beledros doesn't require air, food, or drink."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Beledros makes one Bite attack and two Claw attacks."
+					]
+				},
+				{
+					"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 16} to hit, reach 15 ft., one target. {@h}14 ({@damage 1d10 + 9}) piercing damage plus 6 ({@damage 1d12}) necrotic damage."
+					]
+				},
+				{
+					"name": "Claw",
+					"entries": [
+						"{@atk mw} {@hit 16} to hit, reach 10 ft., one target. {@h}12 ({@damage 1d6 + 9}) slashing damage. If the target is a Huge or smaller creature, it is knocked {@condition prone}."
+					]
+				},
+				{
+					"name": "Decaying Breath {@recharge 5}",
+					"entries": [
+						"Beledros exhales decaying energy in a 90-foot cone. Each creature in that area must make a {@dc 23} Constitution saving throw, taking 39 ({@damage 6d12}) necrotic damage and 39 ({@damage 6d12}) poison damage on a failed save, or half as much damage on a successful one. A creature that takes damage from the breath can't regain hit points until the start of Beledros's next turn."
+					]
+				},
+				{
+					"name": "Miasmal Flow",
+					"entries": [
+						"Beledros becomes a swirling cloud of green mist and can move up to half her flying speed without provoking opportunity attacks, then resumes her true form. During this movement, she can move through creatures and objects as if they were difficult terrain. If she moves through a creature, it must succeed on a {@dc 23} Constitution saving throw or become {@condition poisoned} until the end of its next turn. If Beledros ends this move inside an object, she takes 5 ({@damage 1d10}) force damage and is shunted to the nearest unoccupied space."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Claw",
+					"entries": [
+						"Beledros makes one Claw attack."
+					]
+				},
+				{
+					"name": "Miasmal Flow (Costs 2 Actions)",
+					"entries": [
+						"Beledros uses Miasmal Flow."
+					]
+				},
+				{
+					"name": "Teeming with Life (Costs 3 Actions)",
+					"entries": [
+						"Beledros magically summons {@dice 1d4} pest mascots in unoccupied spaces she can see within 60 feet of herself. The pests obey her commands and take their turns immediately after hers. Any creature, other than a pest, takes 9 ({@damage 2d8}) poison damage if it starts its turn within 5 feet of one or more of these pests. When one of these pests drops to 0 hit points, Beledros regains 9 hit points. These pests disappear after 10 minutes, when Beledros dies, or when she uses this action again."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"Breath Weapon",
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"DR",
+				"DU",
+				"S"
+			],
+			"damageTags": [
+				"I",
+				"N",
+				"O",
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Brackish Trudge",
+			"source": "SCC",
+			"page": 187,
+			"size": "L",
+			"type": "plant",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 12,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 68,
+				"formula": "8d10 + 24"
+			},
+			"speed": {
+				"walk": 30,
+				"swim": 30
+			},
+			"str": 20,
+			"dex": 10,
+			"con": 17,
+			"int": 4,
+			"wis": 14,
+			"cha": 4,
+			"skill": {
+				"perception": "+4"
+			},
+			"senses": [
+				"blindsight 10 ft."
+			],
+			"passive": 14,
+			"resist": [
+				"fire"
+			],
+			"cr": "3",
+			"trait": [
+				{
+					"name": "Fungal Fortitude",
+					"entries": [
+						"If damage reduces the trudge to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the trudge drops to 1 hit point instead."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Tusk",
+					"entries": [
+						"{@atk mw} {@hit 7} to hit, reach 10 ft., one target. {@h}16 ({@damage 2d10 + 5}) piercing damage plus 3 ({@damage 1d6}) poison damage. If the target is a creature, it must succeed on a {@dc 15} Strength saving throw or be knocked {@condition prone}."
+					]
+				}
+			],
+			"senseTags": [
+				"B"
+			],
+			"damageTags": [
+				"I",
+				"P"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Cogwork Archivist",
+			"source": "SCC",
+			"page": 188,
+			"size": "L",
+			"type": "construct",
+			"alignment": [
+				"L",
+				"N"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 90,
+				"formula": "12d10 + 24"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 18,
+			"dex": 10,
+			"con": 15,
+			"int": 17,
+			"wis": 11,
+			"cha": 6,
+			"skill": {
+				"arcana": "+5",
+				"history": "+5",
+				"nature": "+5",
+				"perception": "+2",
+				"religion": "+5"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 12,
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"petrified",
+				"poisoned"
+			],
+			"languages": [
+				"all"
+			],
+			"cr": "4",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The archivist casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability:"
+					],
+					"will": [
+						"{@spell dancing lights}",
+						"{@spell prestidigitation}"
+					],
+					"daily": {
+						"2": [
+							"{@spell silence}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Magic Resistance",
+					"entries": [
+						"The archivist has advantage on saving throws against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The archivist makes two Grasping Limb attacks."
+					]
+				},
+				{
+					"name": "Grasping Limb",
+					"entries": [
+						"{@atk mw} {@hit 6} to hit, reach 15 ft., one target. {@h}13 ({@damage 2d8 + 4}) bludgeoning damage, and the target is {@condition grappled} (escape {@dc 14}). The archivist can have no more than two targets {@condition grappled} at a time."
+					]
+				}
+			],
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"XX"
+			],
+			"damageTags": [
+				"B"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"grappled"
+			],
+			"conditionInflictSpell": [
+				"deafened"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Daemogoth",
+			"source": "SCC",
+			"page": 189,
+			"size": "H",
+			"type": "fiend",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 157,
+				"formula": "15d12 + 60"
+			},
+			"speed": {
+				"walk": 40,
+				"climb": 40
+			},
+			"str": 19,
+			"dex": 15,
+			"con": 19,
+			"int": 21,
+			"wis": 14,
+			"cha": 18,
+			"save": {
+				"int": "+9",
+				"wis": "+6",
+				"cha": "+8"
+			},
+			"skill": {
+				"arcana": "+13",
+				"deception": "+12",
+				"history": "+9",
+				"perception": "+6"
+			},
+			"senses": [
+				"truesight 120 ft."
+			],
+			"passive": 16,
+			"immune": [
+				"psychic"
+			],
+			"conditionImmune": [
+				"frightened"
+			],
+			"languages": [
+				"Abyssal",
+				"Infernal",
+				"telepathy 120 ft."
+			],
+			"cr": "10",
+			"trait": [
+				{
+					"name": "Pact of Pain",
+					"entries": [
+						"Using a 10-minute ritual, the daemogoth can forge a magical bond with a willing creature it touches throughout the ritual. The creature becomes bound by the pact until it dies, the daemogoth dies, or the pact is broken by any effect that can remove a curse.",
+						"The daemogoth chooses one spell from the necromancy or enchantment school that is 3rd level or lower. The bound creature can cast that spell using this pact, requiring no material components and using Intelligence as the spellcasting ability. When it casts the spell, the creature takes 7 ({@damage 2d6}) psychic damage, which can't break the creature's concentration on a spell. Once the bound creature casts the spell in this way, it can't do so again until it finishes a long rest."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The daemogoth makes three Agonizing Burst attacks. It can use Terrify, if available, in place of one of the attacks."
+					]
+				},
+				{
+					"name": "Agonizing Burst",
+					"entries": [
+						"{@atk ms,rs} {@hit 9} to hit, reach 10 ft. or range 120 ft., one target. {@h}11 ({@damage 2d10}) force damage. If the target is a creature, the daemogoth regains 5 hit points."
+					]
+				},
+				{
+					"name": "Terrify {@recharge 4}",
+					"entries": [
+						"The daemogoth targets one creature it can see within 120 feet of itself. The target must make a {@dc 17} Wisdom saving throw. On a failed save, the target takes 33 ({@damage 6d10}) psychic damage and is {@condition frightened} of the daemogoth until the end of the daemogoth's next turn, and the daemogoth regains 5 hit points. On a successful save, the target takes half as much damage and isn't {@condition frightened}, and the daemogoth doesn't heal."
+					]
+				}
+			],
+			"senseTags": [
+				"U"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"AB",
+				"I",
+				"TP"
+			],
+			"damageTags": [
+				"O",
+				"Y"
+			],
+			"miscTags": [
+				"RCH"
+			],
+			"conditionInflict": [
+				"frightened"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Daemogoth Titan",
+			"source": "SCC",
+			"page": 190,
+			"size": "G",
+			"type": "fiend",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 203,
+				"formula": "11d20 + 88"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 26,
+			"dex": 10,
+			"con": 26,
+			"int": 24,
+			"wis": 18,
+			"cha": 20,
+			"save": {
+				"int": "+12",
+				"wis": "+9",
+				"cha": "+10"
+			},
+			"skill": {
+				"arcana": "+17",
+				"deception": "+15",
+				"history": "+12",
+				"perception": "+9"
+			},
+			"senses": [
+				"truesight 120 ft."
+			],
+			"passive": 19,
+			"immune": [
+				"psychic"
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened"
+			],
+			"languages": [
+				"Abyssal",
+				"Infernal",
+				"telepathy 120 ft."
+			],
+			"cr": "16",
+			"trait": [
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"If the titan fails a saving throw, it can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Pact of Suffering",
+					"entries": [
+						"Using a 10-minute long ritual, the titan can forge a magical bond with a willing creature it touches throughout the ritual. The creature becomes bound by the pact until it dies, the titan dies, or the pact is broken by a wish spell.",
+						"The titan chooses one spell from the necromancy or enchantment school that is 8th level or lower. The bound creature can cast that spell using this pact, requiring no material components and using Intelligence as the spellcasting ability. When it casts the spell, the creature takes 21 ({@damage 6d6}) psychic damage, which can't break the creature's concentration on a spell. Once the bound creature casts the spell in this way, it can't do so again until it finishes a long rest."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The titan makes two Agonizing Burst attacks."
+					]
+				},
+				{
+					"name": "Agonizing Burst",
+					"entries": [
+						"{@atk ms,rs} {@hit 12} to hit, reach 15 ft. or range 120 ft., one target. {@h}17 ({@damage 3d6 + 7}) force damage. If the target is a creature, the titan regains 5 hit points."
+					]
+				},
+				{
+					"name": "Teleport",
+					"entries": [
+						"The titan teleports to an unoccupied space it can see within 120 feet of itself."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Attack",
+					"entries": [
+						"The titan makes one Agonizing Burst attack."
+					]
+				},
+				{
+					"name": "Stalking Nightmare (Costs 2 Actions)",
+					"entries": [
+						"The titan uses Teleport, after which it can target one creature within 20 feet of itself that it can see. The target must make a {@dc 20} Constitution saving throw. On a failed save, the target takes 22 ({@damage 4d10}) necrotic damage, and the titan regains 10 hit points. On a successful save, the target takes half as much damage, and the titan doesn't heal."
+					]
+				},
+				{
+					"name": "Terrorize (Costs 3 Actions)",
+					"entries": [
+						"The titan targets one creature it can see within 120 feet of itself. The target must make a {@dc 20} Wisdom saving throw. On a failed save, the target takes 38 ({@damage 7d10}) psychic damage and is {@condition frightened} of the titan until the end of the target's next turn, and the titan regains 15 hit points. On a successful save, the target takes half as much damage and isn't {@condition frightened}, and the titan doesn't heal."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"senseTags": [
+				"U"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Teleport"
+			],
+			"languageTags": [
+				"AB",
+				"I",
+				"TP"
+			],
+			"damageTags": [
+				"N",
+				"O",
+				"Y"
+			],
+			"miscTags": [
+				"RCH"
+			],
+			"conditionInflict": [
+				"frightened"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "First-Year Student",
+			"source": "SCC",
+			"page": 191,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"wizard"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				11
+			],
+			"hp": {
+				"average": 33,
+				"formula": "6d8 + 6"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 8,
+			"dex": 12,
+			"con": 13,
+			"int": 12,
+			"wis": 10,
+			"cha": 11,
+			"passive": 10,
+			"languages": [
+				"Common plus any two languages"
+			],
+			"cr": "1/2",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The student casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 11}):"
+					],
+					"will": [
+						"{@spell mage hand}",
+						"{@spell prestidigitation}"
+					],
+					"daily": {
+						"1": [
+							"{@spell detect magic}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Excited to Be Here",
+					"entries": [
+						"The student has advantage on initiative rolls."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Magic Flare",
+					"entries": [
+						"{@atk ms,rs} {@hit 3} to hit, reach 5 ft. or range 60 ft., one target. {@h}7 ({@damage 1d12 + 1}) force damage."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Beginner's Luck (2/Day)",
+					"entries": [
+						"When the student fails a saving throw, it can reroll the {@dice d20}. It must use the new roll."
+					]
+				}
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"O"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Fractal Mascot",
+			"source": "SCC",
+			"page": 192,
+			"size": "S",
+			"type": "construct",
+			"alignment": [
+				"N"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 27,
+				"formula": "6d6 + 6"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 12,
+			"dex": 14,
+			"con": 13,
+			"int": 7,
+			"wis": 10,
+			"cha": 5,
+			"passive": 10,
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"poisoned"
+			],
+			"languages": [
+				"understands the languages of its creator but can't speak"
+			],
+			"cr": "1/4",
+			"trait": [
+				{
+					"name": "Relative Density",
+					"entries": [
+						"The fractal can move through creatures and objects as if they were difficult terrain. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Quantum Strike",
+					"entries": [
+						"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d4 + 1}) force damage, or 6 ({@damage 2d4 + 1}) force damage if the fractal is Medium or bigger."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Augment",
+					"entries": [
+						"The fractal's size increases by one category. While the fractal is Medium or bigger, it makes Strength checks and Strength saving throws with advantage. The fractal can become no larger than Huge via this bonus action."
+					]
+				},
+				{
+					"name": "Diminish",
+					"entries": [
+						"The fractal's size decreases by one category. While the fractal is Tiny, it makes attack rolls, Dexterity checks, and Dexterity saving throws with advantage. The fractal can become no smaller than 1 foot in height via this bonus action."
+					]
+				}
+			],
+			"languageTags": [
+				"CS"
+			],
+			"damageTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Galazeth Prismari",
+			"isNamedCreature": true,
+			"source": "SCC",
+			"page": 193,
+			"size": "G",
+			"type": {
+				"type": "dragon",
+				"tags": [
+					"sorcerer"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 21,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 402,
+				"formula": "23d20 + 161"
+			},
+			"speed": {
+				"walk": 40,
+				"fly": 80
+			},
+			"str": 26,
+			"dex": 14,
+			"con": 25,
+			"int": 18,
+			"wis": 20,
+			"cha": 26,
+			"save": {
+				"dex": "+9",
+				"con": "+14",
+				"wis": "+12",
+				"cha": "+15"
+			},
+			"skill": {
+				"acrobatics": "+16",
+				"arcana": "+18",
+				"perception": "+12",
+				"performance": "+22"
+			},
+			"senses": [
+				"blindsight 120 ft."
+			],
+			"passive": 22,
+			"resist": [
+				"lightning"
+			],
+			"immune": [
+				"cold",
+				"fire"
+			],
+			"languages": [
+				"Common",
+				"Draconic"
+			],
+			"cr": "23",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"Galazeth casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 23}):"
+					],
+					"daily": {
+						"1e": [
+							"{@spell control water}",
+							"{@spell gust of wind}",
+							"{@spell wall of stone}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"If Galazeth fails a saving throw, he can choose to succeed instead."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Galazeth makes one Bite attack and two Claw attacks."
+					]
+				},
+				{
+					"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 15} to hit, reach 15 ft., one target. {@h}13 ({@damage 1d10 + 8}) piercing damage plus 5 ({@damage 1d10}) lightning damage."
+					]
+				},
+				{
+					"name": "Claw",
+					"entries": [
+						"{@atk mw} {@hit 15} to hit, reach 10 ft., one target. {@h}11 ({@damage 1d6 + 8}) slashing damage. If the target is a Large or smaller creature, it is knocked {@condition prone}."
+					]
+				},
+				{
+					"name": "Dancing Elements Breath {@recharge 5}",
+					"entries": [
+						"Galazeth exhales a blast of flames and ice in a 90-foot cone. Each creature in that area must make a {@dc 22} Dexterity saving throw, gaining no benefit from cover (other than total cover) and taking 38 ({@damage 7d10}) fire damage and 38 ({@damage 7d10}) cold damage on a failed save, or half as much damage on a successful one."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Claw",
+					"entries": [
+						"Galazeth makes one Claw attack."
+					]
+				},
+				{
+					"name": "Lightning Flash (Costs 2 Actions)",
+					"entries": [
+						"Galazeth moves up to half his flying speed without provoking opportunity attacks. When he passes within 15 feet of a creature during this move, that creature must succeed on a {@dc 22} Dexterity saving throw or take 11 ({@damage 2d10}) lightning damage. A creature can take this damage no more than once during the move."
+					]
+				},
+				{
+					"name": "Flowing Creation (Costs 3 Actions)",
+					"entries": [
+						"Galazeth magically summons {@dice 1d4} art elemental mascots in unoccupied spaces he can see within 60 feet of himself. The art elementals obey his commands and take their turns immediately after his. Any creature, other than an art elemental, takes 5 ({@damage 1d10}) cold, fire, or lightning damage (Galazeth's choice) if it ends its turn within 5 feet of one or more of these elementals. When one of these elementals drops to 0 hit points, Galazeth can fly up to 20 feet without provoking opportunity attacks. These elementals disappear after 10 minutes, when Galazeth dies, or when he uses this action again."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"Breath Weapon",
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"DR"
+			],
+			"damageTags": [
+				"C",
+				"F",
+				"L",
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Groff",
+			"source": "SCC",
+			"page": 194,
+			"size": "L",
+			"type": "plant",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 68,
+				"formula": "8d10 + 24"
+			},
+			"speed": {
+				"walk": 30,
+				"swim": 30
+			},
+			"str": 20,
+			"dex": 10,
+			"con": 17,
+			"int": 4,
+			"wis": 13,
+			"cha": 7,
+			"skill": {
+				"perception": "+3",
+				"stealth": "+4"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"cr": "4",
+			"trait": [
+				{
+					"name": "False Appearance",
+					"entries": [
+						"If the groff is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the groff move or act, that creature must succeed on a {@dc 18} Intelligence (Investigation) check to discern that the groff isn't an ordinary moss-covered bog patch."
+					]
+				},
+				{
+					"name": "Hold Breath",
+					"entries": [
+						"The groff can hold its breath for up to 1 hour."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The groff makes one Bite attack and one Swamp Claw attack."
+					]
+				},
+				{
+					"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}9 ({@damage 1d8 + 5}) piercing damage."
+					]
+				},
+				{
+					"name": "Swamp Claw",
+					"entries": [
+						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d6 + 5}) slashing damage. If the target is a Medium or smaller creature, it must succeed on a {@dc 15} Strength saving throw or become engulfed by the groff. While engulfed, the target can't breathe, is {@condition restrained}, and takes 10 ({@damage 3d6}) poison damage at the start of each of its turns. When the groff moves, the engulfed target moves with it. The groff can have only one target engulfed at a time.",
+						"An engulfed target can repeat the saving throw at the end of its turns. On a success, the target escapes and enters the nearest unoccupied space."
+					]
+				}
+			],
+			"traitTags": [
+				"False Appearance",
+				"Hold Breath"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"I",
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Inkling Mascot",
+			"source": "SCC",
+			"page": 195,
+			"size": "T",
+			"type": "ooze",
+			"alignment": [
+				"N"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 18,
+				"formula": "4d4 + 8"
+			},
+			"speed": {
+				"walk": 10,
+				"fly": {
+					"number": 30,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 10,
+			"dex": 16,
+			"con": 14,
+			"int": 6,
+			"wis": 7,
+			"cha": 11,
+			"skill": {
+				"stealth": "+5"
+			},
+			"senses": [
+				"blindsight 60 ft."
+			],
+			"passive": 8,
+			"immune": [
+				"psychic"
+			],
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"deafened",
+				"exhaustion",
+				"prone"
+			],
+			"languages": [
+				"understands the languages of its creator but can't speak"
+			],
+			"cr": "1/4",
+			"trait": [
+				{
+					"name": "Amorphous",
+					"entries": [
+						"The inkling can move through a space as narrow as 1 inch wide without squeezing."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Blot",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d4 + 3}) psychic damage."
+					]
+				},
+				{
+					"name": "Ink Spray (1/Day)",
+					"entries": [
+						"The inkling sprays viscous ink at one creature within 15 feet of itself. The target must succeed on a {@dc 12} Constitution saving throw or be {@condition blinded} until the end of the inkling's next turn."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Shadow Stealth",
+					"entries": [
+						"While in dim light or darkness, the inkling takes the Hide action."
+					]
+				}
+			],
+			"traitTags": [
+				"Amorphous"
+			],
+			"senseTags": [
+				"B"
+			],
+			"languageTags": [
+				"CS"
+			],
+			"damageTags": [
+				"Y"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"blinded"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Lorehold Apprentice",
+			"source": "SCC",
+			"page": 197,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"wizard"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 33,
+				"formula": "6d8 + 6"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 14,
+			"con": 13,
+			"int": 15,
+			"wis": 12,
+			"cha": 11,
+			"save": {
+				"con": "+3",
+				"int": "+4"
+			},
+			"skill": {
+				"history": "+6",
+				"insight": "+3",
+				"investigation": "+6"
+			},
+			"passive": 11,
+			"languages": [
+				"Common plus any two languages"
+			],
+			"cr": "2",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The apprentice casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 12}):"
+					],
+					"will": [
+						"{@spell guidance}",
+						"{@spell light}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell comprehend languages}",
+							"{@spell locate object}",
+							"{@spell mage armor}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Scroll Bash",
+					"entries": [
+						"{@atk ms} {@hit 4} to hit, reach 30 ft., one target. {@h}7 ({@damage 1d10 + 2}) bludgeoning damage plus 9 ({@damage 2d8}) thunder damage."
+					]
+				},
+				{
+					"name": "Reduce to Memory {@recharge}",
+					"entries": [
+						"Thundering golden energy erupts around a creature the apprentice can see within 90 feet of it. The creature must make a {@dc 12} Constitution saving throw, taking 33 ({@damage 6d10}) thunder damage on a failed save, or half as much damage on a successful one. A Construct has disadvantage on the saving throw."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Learn from the Past (2/Day)",
+					"entries": [
+						"When another creature within 60 feet of the apprentice misses a target with an attack roll, the apprentice magically enables the attacker to reroll the attack roll. It must use the new roll."
+					]
+				}
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"B",
+				"T"
+			],
+			"miscTags": [
+				"RCH"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Lorehold Pledgemage",
+			"source": "SCC",
+			"page": 197,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"wizard"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 60,
+				"formula": "11d8 + 11"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 16,
+			"con": 13,
+			"int": 17,
+			"wis": 12,
+			"cha": 11,
+			"save": {
+				"con": "+3",
+				"int": "+5"
+			},
+			"skill": {
+				"history": "+7",
+				"insight": "+3",
+				"investigation": "+7"
+			},
+			"passive": 11,
+			"languages": [
+				"Common plus any two languages"
+			],
+			"cr": "4",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The pledgemage casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 13}):"
+					],
+					"will": [
+						"{@spell guidance}",
+						"{@spell light}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell comprehend languages}",
+							"{@spell locate object}"
+						],
+						"1e": [
+							"{@spell mage armor}",
+							"{@spell speak with dead}",
+							"{@spell stone shape}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The pledgemage makes two Scroll Bash attacks."
+					]
+				},
+				{
+					"name": "Scroll Bash",
+					"entries": [
+						"{@atk ms} {@hit 5} to hit, reach 30 ft., one target. {@h}8 ({@damage 1d10 + 3}) bludgeoning damage plus 9 ({@damage 2d8}) thunder damage."
+					]
+				},
+				{
+					"name": "Reduce to Memory {@recharge 5}",
+					"entries": [
+						"Thundering golden energy erupts around a creature the pledgemage can see within 90 feet of it. The creature must make a {@dc 13} Constitution saving throw, taking 44 ({@damage 8d10}) thunder damage on a failed save, or half as much damage on a successful one. A Construct has disadvantage on the saving throw."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Chronal Break (1/Day)",
+					"entries": [
+						"The pledgemage chooses a point within 30 feet of itself, shunting the minds of nearby creatures out of this moment in time. Each creature in a 10-foot-radius sphere centered on that point must succeed on a {@dc 13} Wisdom saving throw or be {@condition incapacitated} until the end of the pledgemage's next turn."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Learn from the Past (2/Day)",
+					"entries": [
+						"When another creature within 60 feet of the pledgemage misses a target with an attack roll, the pledgemage magically enables the attacker to reroll the attack roll. It must use the new roll."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"B",
+				"T"
+			],
+			"miscTags": [
+				"AOE",
+				"RCH"
+			],
+			"conditionInflict": [
+				"incapacitated"
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Lorehold Professor of Chaos",
+			"source": "SCC",
+			"page": 198,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"wizard"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 110,
+				"formula": "17d8 + 34"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 14,
+			"int": 19,
+			"wis": 15,
+			"cha": 13,
+			"save": {
+				"con": "+5",
+				"int": "+7",
+				"wis": "+5",
+				"cha": "+4"
+			},
+			"skill": {
+				"arcana": "+7",
+				"history": "+7",
+				"perception": "+5"
+			},
+			"passive": 15,
+			"languages": [
+				"Common plus any four languages"
+			],
+			"cr": "7",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The professor casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability:"
+					],
+					"will": [
+						"{@spell comprehend languages}",
+						"{@spell dancing lights}",
+						"{@spell guidance}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell locate object}",
+							"{@spell mage armor}",
+							"{@spell passwall}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Voice from the Past (1/Day)",
+					"entries": [
+						"The professor can cast the contact other plane spell to contact a long-dead spirit, using Intelligence as the spellcasting ability."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The professor makes two Spectral Scroll attacks. It can also use Weight of History, if available."
+					]
+				},
+				{
+					"name": "Spectral Scroll",
+					"entries": [
+						"{@atk ms} {@hit 7} to hit, reach 30 ft., one target. {@h}15 ({@damage 2d10 + 4}) force damage. If the target is a creature, it must succeed on a {@dc 15} Strength saving throw or be knocked {@condition prone}."
+					]
+				},
+				{
+					"name": "Weight of History {@recharge 5}",
+					"entries": [
+						"The professor magically compresses time around up to six creatures of its choice that it can see within 30 feet of itself. Each target must succeed on a {@dc 15} Wisdom saving throw or be {@condition restrained} for 1 minute, but the {@condition restrained} target's speed is halved instead of being reduced to 0. At the start of each of its turns, the {@condition restrained} target takes 4 ({@damage 1d8}) force damage. A {@condition restrained} target can repeat the save at the end of each of its turns, ending the effect on itself on a success."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"O"
+			],
+			"miscTags": [
+				"RCH"
+			],
+			"conditionInflict": [
+				"prone",
+				"restrained"
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Lorehold Professor of Order",
+			"source": "SCC",
+			"page": 198,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"wizard"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 104,
+				"formula": "16d8 + 32"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 14,
+			"int": 19,
+			"wis": 15,
+			"cha": 13,
+			"save": {
+				"con": "+5",
+				"int": "+7",
+				"wis": "+5",
+				"cha": "+4"
+			},
+			"skill": {
+				"arcana": "+7",
+				"history": "+7",
+				"perception": "+5"
+			},
+			"passive": 15,
+			"resist": [
+				"force"
+			],
+			"languages": [
+				"Common plus any four languages"
+			],
+			"cr": "7",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The professor casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 15}):"
+					],
+					"will": [
+						"{@spell comprehend languages}",
+						"{@spell guidance}",
+						"{@spell light}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell dimension door}",
+							"{@spell locate object}",
+							"{@spell mage armor}",
+							"{@spell stone shape}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Voice from the Past (1/Day)",
+					"entries": [
+						"The professor can cast the contact other plane spell to contact a long-dead spirit, using Intelligence as the spellcasting ability."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The professor makes two Repelling Burst attacks. It can also use Force Barrier, if available."
+					]
+				},
+				{
+					"name": "Repelling Burst",
+					"entries": [
+						"{@atk ms} {@hit 7} to hit, reach 30 ft., one target. {@h}13 ({@damage 2d8 + 4}) force damage. If the target is a Large or smaller creature, it must succeed on a {@dc 15} Strength saving throw or be pushed up to 10 feet directly away from the professor and become {@condition restrained} until the start of professor's next turn."
+					]
+				},
+				{
+					"name": "Force Barrier {@recharge 5}",
+					"entries": [
+						"The professor magically creates a wall of translucent, golden force within 90 feet of itself. The wall lasts for 1 minute or until the professor uses this action again. The barrier can be a vertical or horizontal plane up to 30 feet on a side or a 10-foot-radius hemispherical dome with a floor. The wall provides total cover. It has AC 17, 30 hit points, and immunity to poison and psychic damage."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Arcane Stasis (2/Day)",
+					"entries": [
+						"When a creature the professor can see within 60 feet of it casts a spell, the professor can magically lock the casting in the moment before completion. The spellcaster must succeed on a {@dc 15} saving throw using the spell's spellcasting ability, or the spell fails and is wasted."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"O"
+			],
+			"miscTags": [
+				"AOE",
+				"RCH"
+			],
+			"conditionInflict": [
+				"restrained"
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Mage Hunter",
+			"source": "SCC",
+			"page": 199,
+			"size": "L",
+			"type": "monstrosity",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 85,
+				"formula": "10d10 + 30"
+			},
+			"speed": {
+				"walk": 40,
+				"climb": {
+					"number": 40,
+					"condition": "(hunter form only)"
+				},
+				"fly": {
+					"number": 10,
+					"condition": "(hover sentry form only)"
+				},
+				"canHover": true
+			},
+			"str": 19,
+			"dex": 15,
+			"con": 16,
+			"int": 11,
+			"wis": 17,
+			"cha": 10,
+			"save": {
+				"int": "+3",
+				"wis": "+6",
+				"cha": "+3"
+			},
+			"skill": {
+				"perception": "+9",
+				"stealth": "+5"
+			},
+			"senses": [
+				"blindsight 120 ft. (blind beyond this radius)"
+			],
+			"passive": 19,
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"deafened",
+				"frightened",
+				"prone"
+			],
+			"languages": [
+				"understands Common but can't speak"
+			],
+			"cr": "5",
+			"trait": [
+				{
+					"name": "Magic Sense",
+					"entries": [
+						"The hunter knows the location of every spellcaster, active spell, and magic item within 120 feet of itself."
+					]
+				},
+				{
+					"name": "Spider Climb (Hunter Form Only)",
+					"entries": [
+						"The hunter can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack (Hunter Form Only)",
+					"entries": [
+						"The hunter makes two Claw attacks."
+					]
+				},
+				{
+					"name": "Claw (Hunter Form Only)",
+					"entries": [
+						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}15 ({@damage 2d10 + 4}) slashing damage."
+					]
+				},
+				{
+					"name": "Tail",
+					"entries": [
+						"{@atk mw} {@hit 7} to hit, reach 10 ft., one target. {@h}22 ({@damage 4d8 + 4}) piercing damage, and the target is {@condition grappled} (escape {@dc 15}). Until this grapple ends, the target is {@condition restrained}, and the hunter can't make a Tail attack against another target."
+					]
+				},
+				{
+					"name": "Mage Tracker (Sentry Form Only)",
+					"entries": [
+						"The hunter emits a pulse of energy that helps it better locate its magical quarry. Each creature within 120 feet of the hunter that has the ability to cast spells must succeed on a {@dc 14} Wisdom saving throw or be mystically marked by the hunter for 1 hour.",
+						"While marked, a creature can't become hidden from the hunter and gains no benefit from the {@condition invisible} condition against the hunter. Additionally, while a marked creature is on the same plane of existence as the hunter, the hunter always knows the distance and direction to the creature."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Shift Form",
+					"entries": [
+						"The hunter folds into its drone-like sentry form or unfolds into its hunter form. Its game statistics are the same in each form."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Consume and Destroy",
+					"entries": [
+						"When the hunter takes damage from a spell, it takes only half the triggering damage (rounded down). If the creature that cast the spell is within 60 feet of the hunter, that creature must succeed on a {@dc 14} Dexterity saving throw or take the other half of the damage."
+					]
+				}
+			],
+			"traitTags": [
+				"Spider Climb"
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"CS"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"grappled",
+				"restrained"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Murgaxor",
+			"isNamedCreature": true,
+			"source": "SCC",
+			"page": 180,
+			"size": "M",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"bullywug",
+					"warlock"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"blood aegis"
+					]
+				}
+			],
+			"hp": {
+				"average": 127,
+				"formula": "15d8 + 60"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 18,
+			"int": 20,
+			"wis": 12,
+			"cha": 12,
+			"save": {
+				"con": "+8",
+				"int": "+9",
+				"wis": "+5",
+				"cha": "+5"
+			},
+			"skill": {
+				"deception": "+9",
+				"medicine": "+5",
+				"survival": "+5"
+			},
+			"passive": 11,
+			"resist": [
+				"necrotic"
+			],
+			"conditionImmune": [
+				"exhaustion"
+			],
+			"languages": [
+				"Common plus any four languages"
+			],
+			"cr": "9",
+			"trait": [
+				{
+					"name": "Blood Aegis",
+					"entries": [
+						"The AC of Murgaxor includes his Constitution modifier while he isn't wearing armor or wielding a shield."
+					]
+				},
+				{
+					"name": "Oriq Mask",
+					"entries": [
+						"Murgaxor wears an Oriq mask. While wearing the mask, Murgaxor can't be targeted by any divination magic or perceived through magical scrying sensors, and he adds double his proficiency bonus to Charisma (Deception) checks (included above)."
+					]
+				},
+				{
+					"name": "Sanguine Sense",
+					"entries": [
+						"While Murgaxor isn't {@condition blinded}, he can see any creature that isn't an Undead or a Construct within 60 feet of himself, even through total cover, heavily obscured areas, invisibility, or any other phenomena that would prevent sight."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Murgaxor makes two Blood Lash attacks."
+					]
+				},
+				{
+					"name": "Blood Lash",
+					"entries": [
+						"{@atk ms} {@hit 9} to hit, reach 10 ft., one target. {@h}21 ({@damage 3d10 + 5}) necrotic damage. If the target is a creature, it can't regain hit points until the start of Murgaxor's next turn."
+					]
+				},
+				{
+					"name": "Blood Boil {@recharge 4}",
+					"entries": [
+						"Murgaxor chooses a point within 150 feet of himself, and a 20-foot radius sphere centered on that point fills with a burst of searing, blood-red mist. Each creature of Murgaxor's choice that he can see in that area must make a {@dc 17} Constitution saving throw. On a failed save, a creature takes 38 ({@damage 7d10}) necrotic damage and is {@condition incapacitated} until the end of its next turn. On a success, a creature takes half as much damage and isn't {@condition incapacitated}. A creature dies if reduced to 0 hit points by this necrotic damage."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"N"
+			],
+			"miscTags": [
+				"AOE",
+				"RCH"
+			],
+			"conditionInflict": [
+				"incapacitated"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Oracle of Strixhaven",
+			"source": "SCC",
+			"page": 200,
+			"size": "M",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human",
+					"wizard"
+				]
+			},
+			"alignment": [
+				"N",
+				"G"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 150,
+				"formula": "20d8 + 60"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": {
+					"number": 15,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 12,
+			"dex": 15,
+			"con": 16,
+			"int": 21,
+			"wis": 20,
+			"cha": 18,
+			"save": {
+				"con": "+8",
+				"int": "+10",
+				"wis": "+10",
+				"cha": "+9"
+			},
+			"skill": {
+				"arcana": "+15",
+				"insight": "+15",
+				"investigation": "+15",
+				"nature": "+10",
+				"perception": "+10"
+			},
+			"passive": 20,
+			"conditionImmune": [
+				"charmed",
+				"frightened"
+			],
+			"languages": [
+				"all"
+			],
+			"cr": "15",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The Oracle casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 18}):"
+					],
+					"will": [
+						"{@spell detect magic}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell dispel magic}",
+							"{@spell mage armor}",
+							"{@spell remove curse}",
+							"{@spell sending}"
+						],
+						"1e": [
+							"{@spell power word stun}",
+							"{@spell scrying} (as an action)",
+							"{@spell wall of force}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"If the Oracle fails a saving throw, she can choose to succeed instead."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The Oracle makes two Magic Flare attacks. She can also use Paradoxy, if available."
+					]
+				},
+				{
+					"name": "Magic Flare",
+					"entries": [
+						"{@atk ms,rs} {@hit 10} to hit, reach 5 ft. or range 60 ft., one target. {@h}24 ({@damage 3d12 + 5}) force damage."
+					]
+				},
+				{
+					"name": "Paradoxy {@recharge 4}",
+					"entries": [
+						"Momentary warps in reality appear at three different points the Oracle can see within 120 feet of her. Each creature in a 20-foot-radius sphere centered on each point must make a {@dc 18} Strength saving throw. On a failed save, a creature takes 33 ({@damage 6d10}) force damage and is pulled up to 15 feet in a straight line toward the center of the sphere. On a successful save, the creature takes half as much damage and isn't pulled. A creature caught in the area of multiple warps is affected by only one, which the Oracle chooses."
+					]
+				},
+				{
+					"name": "Teleport",
+					"entries": [
+						"The Oracle teleports, along with any equipment she is wearing or carrying, to an unoccupied space she can see within 60 feet of herself."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Vector Shift",
+					"entries": [
+						"The Oracle teleports one creature she can see within 60 feet of herself, along with any equipment it is wearing or carrying, to an unoccupied space within 30 feet of herself. An unwilling target must succeed on a {@dc 18} Charisma saving throw to avoid the effect."
+					]
+				},
+				{
+					"name": "Spellcasting (Costs 2 Actions)",
+					"entries": [
+						"The Oracle uses Spellcasting."
+					]
+				},
+				{
+					"name": "Vortex Jaunt (Costs 2 Actions)",
+					"entries": [
+						"The Oracle uses Teleport, and immediately after she disappears, each creature within 30 feet of the space she left must succeed on a {@dc 18} Constitution saving throw or take 16 ({@damage 3d10}) force damage."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Teleport"
+			],
+			"languageTags": [
+				"XX"
+			],
+			"damageTags": [
+				"O"
+			],
+			"miscTags": [
+				"AOE"
+			],
+			"conditionInflictSpell": [
+				"stunned"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Oriq Blood Mage",
+			"source": "SCC",
+			"page": 201,
+			"size": "M",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"warlock"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"blood aegis"
+					]
+				}
+			],
+			"hp": {
+				"average": 127,
+				"formula": "15d8 + 60"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 18,
+			"int": 20,
+			"wis": 12,
+			"cha": 12,
+			"save": {
+				"con": "+8",
+				"int": "+9",
+				"wis": "+5",
+				"cha": "+5"
+			},
+			"skill": {
+				"deception": "+9",
+				"medicine": "+5",
+				"survival": "+5"
+			},
+			"passive": 11,
+			"resist": [
+				"necrotic"
+			],
+			"conditionImmune": [
+				"exhaustion"
+			],
+			"languages": [
+				"Common plus any four languages"
+			],
+			"cr": "9",
+			"trait": [
+				{
+					"name": "Blood Aegis",
+					"entries": [
+						"The AC of the blood mage includes its Constitution modifier while it isn't wearing armor or wielding a shield."
+					]
+				},
+				{
+					"name": "Oriq Mask",
+					"entries": [
+						"The blood mage wears an Oriq mask. While wearing the mask, the blood mage can't be targeted by any divination magic or perceived through magical scrying sensors, and it adds double its proficiency bonus to Charisma (Deception) checks (included above)."
+					]
+				},
+				{
+					"name": "Sanguine Sense",
+					"entries": [
+						"While the blood mage isn't {@condition blinded}, it can see any creature that isn't an Undead or a Construct within 60 feet of itself, even through total cover, heavily obscured areas, invisibility, or any other phenomena that would prevent sight."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The blood mage makes two Blood Lash attacks."
+					]
+				},
+				{
+					"name": "Blood Lash",
+					"entries": [
+						"{@atk ms} {@hit 9} to hit, reach 10 ft., one target. {@h}21 ({@damage 3d10 + 5}) necrotic damage. If the target is a creature, it can't regain hit points until the start of the blood mage's next turn."
+					]
+				},
+				{
+					"name": "Blood Boil {@recharge 4}",
+					"entries": [
+						"The blood mage chooses a point within 150 feet of itself, and a 20-foot radius sphere centered on that point fills with a burst of searing, blood-red mist. Each creature of the blood mage's choice that it can see in that area must make a {@dc 17} Constitution saving throw. On a failed save, a creature takes 38 ({@damage 7d10}) necrotic damage and is {@condition incapacitated} until the end of its next turn. On a success, a creature takes half as much damage and isn't {@condition incapacitated}. A creature dies if reduced to 0 hit points by this necrotic damage."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"N"
+			],
+			"miscTags": [
+				"AOE",
+				"RCH"
+			],
+			"conditionInflict": [
+				"incapacitated"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Oriq Recruiter",
+			"source": "SCC",
+			"page": 202,
+			"size": "M",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"warlock"
+				]
+			},
+			"alignment": [
+				"L",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"misdirecting defense"
+					]
+				}
+			],
+			"hp": {
+				"average": 55,
+				"formula": "10d8 + 10"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 14,
+			"con": 12,
+			"int": 17,
+			"wis": 15,
+			"cha": 18,
+			"save": {
+				"int": "+5",
+				"wis": "+4",
+				"cha": "+6"
+			},
+			"skill": {
+				"arcana": "+5",
+				"deception": "+8",
+				"insight": "+4",
+				"persuasion": "+6"
+			},
+			"passive": 12,
+			"resist": [
+				"psychic"
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened"
+			],
+			"languages": [
+				"Common plus any two languages"
+			],
+			"cr": "4",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The recruiter casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 14}):"
+					],
+					"will": [
+						"{@spell disguise self}",
+						"{@spell silent image}"
+					],
+					"daily": {
+						"1": [
+							"{@spell suggestion}"
+						],
+						"2": [
+							"{@spell charm person}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Misdirecting Defense",
+					"entries": [
+						"The AC of the recruiter includes its Charisma modifier while it isn't wearing armor or wielding a shield."
+					]
+				},
+				{
+					"name": "Oriq Mask",
+					"entries": [
+						"The recruiter wears an Oriq mask. While wearing the mask, the recruiter can't be targeted by any divination magic or perceived through magical scrying sensors, and it adds double its proficiency bonus to Charisma (Deception) checks (included above)."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The recruiter makes two Psychic Knife attacks. It can use Spellcasting in place of one of the attacks."
+					]
+				},
+				{
+					"name": "Psychic Knife",
+					"entries": [
+						"{@atk ms,rs} {@hit 6} to hit, reach 5 ft. or range 30 ft., one creature. {@h}21 ({@damage 5d6 + 4}) psychic damage."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"Y"
+			],
+			"conditionInflictSpell": [
+				"charmed"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Pest Mascot",
+			"source": "SCC",
+			"page": 203,
+			"size": "T",
+			"type": "monstrosity",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 22,
+				"formula": "4d4 + 12"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 17,
+			"int": 5,
+			"wis": 13,
+			"cha": 4,
+			"skill": {
+				"perception": "+3"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"cr": "1/4",
+			"trait": [
+				{
+					"name": "Regeneration",
+					"entries": [
+						"The pest regains 5 hit points at the start of its turn if it has at least 1 hit point. If it takes fire damage, this trait doesn't function at the start of the pest's next turn."
+					]
+				},
+				{
+					"name": "Spiny Hide",
+					"entries": [
+						"At the start of each of its turns, the pest deals 2 ({@damage 1d4}) piercing damage to any creature grappling it or that it is grappling."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
+					]
+				}
+			],
+			"traitTags": [
+				"Regeneration"
+			],
+			"senseTags": [
+				"D"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Prismari Apprentice",
+			"source": "SCC",
+			"page": 205,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"sorcerer"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 44,
+				"formula": "8d8 + 8"
+			},
+			"speed": {
+				"walk": 35
+			},
+			"str": 10,
+			"dex": 14,
+			"con": 13,
+			"int": 12,
+			"wis": 13,
+			"cha": 15,
+			"save": {
+				"dex": "+4",
+				"cha": "+4"
+			},
+			"skill": {
+				"acrobatics": "+4",
+				"athletics": "+4",
+				"performance": "+6"
+			},
+			"passive": 11,
+			"languages": [
+				"Common plus any two languages"
+			],
+			"cr": "2",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The apprentice casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 12}):"
+					],
+					"will": [
+						"{@spell minor illusion}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell gust of wind}",
+							"{@spell mage armor}",
+							"{@spell silent image}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Elemental Strike",
+					"entries": [
+						"{@atk ms,rs} {@hit 4} to hit, reach 5 ft. or range 60 ft., one target. {@h}10 ({@damage 3d6}) fire or cold damage (the apprentice's choice)."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Surge of Artistry (Recharge 4-6)",
+					"entries": [
+						"The apprentice moves up to its speed, surrounding itself with elemental magic as it moves. Until the end of its turn, the apprentice can move through the space of other creatures. The first time the apprentice enters a creature's space on a turn, that creature must succeed on a {@dc 12} Dexterity saving throw or be knocked {@condition prone}. If the apprentice ends its turn in another creature's space, the apprentice takes 5 ({@damage 1d10}) force damage and is pushed into the nearest unoccupied space."
+					]
+				}
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"C",
+				"F",
+				"O"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Prismari Pledgemage",
+			"source": "SCC",
+			"page": 205,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"sorcerer"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 66,
+				"formula": "12d8 + 12"
+			},
+			"speed": {
+				"walk": 35
+			},
+			"str": 10,
+			"dex": 15,
+			"con": 13,
+			"int": 12,
+			"wis": 14,
+			"cha": 17,
+			"save": {
+				"dex": "+4",
+				"cha": "+5"
+			},
+			"skill": {
+				"acrobatics": "+4",
+				"athletics": "+4",
+				"performance": "+7"
+			},
+			"passive": 12,
+			"languages": [
+				"Common plus any two languages"
+			],
+			"cr": "4",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The pledgemage casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 13}):"
+					],
+					"will": [
+						"{@spell minor illusion}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell gust of wind}",
+							"{@spell silent image}"
+						],
+						"1e": [
+							"{@spell mage armor}",
+							"{@spell water walk}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Evasion",
+					"entries": [
+						"If the pledgemage is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the pledgemage instead takes no damage if it succeeds on the saving throw and only half damage if it fails, provided it isn't {@condition incapacitated}."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The pledgemage makes two Elemental Strike attacks."
+					]
+				},
+				{
+					"name": "Elemental Strike",
+					"entries": [
+						"{@atk ms,rs} {@hit 5} to hit, reach 5 ft. or range 60 ft., one target. {@h}12 ({@damage 3d6 + 2}) fire or cold damage (the pledgemage's choice)."
+					]
+				},
+				{
+					"name": "Showstopper (1/Day)",
+					"entries": [
+						"The pledgemage shines with elemental magic, targeting one creature it can see within 60 feet of itself. The target must make a {@dc 13} Wisdom saving throw. On a failed save, the target takes 28 ({@damage 8d6}) fire or cold damage (the pledgemage's choice) and is {@condition stunned} until the start of the pledgemage's next turn. On a successful save, the target takes half as much damage and isn't {@condition stunned}."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Surge of Artistry (Recharge 4-6)",
+					"entries": [
+						"The pledgemage moves up to its speed, surrounding itself with elemental magic as it moves. Until the end of its turn, the pledgemage can move through the space of other creatures. The first time the pledgemage enters a creature's space on a turn, that creature must succeed on a {@dc 13} Dexterity saving throw or be knocked {@condition prone}. If the pledgemage ends its turn in another creature's space, the pledgemage takes 5 ({@damage 1d10}) force damage and is pushed into the nearest unoccupied space."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"C",
+				"F",
+				"O"
+			],
+			"conditionInflict": [
+				"prone",
+				"stunned"
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Prismari Professor of Expression",
+			"source": "SCC",
+			"page": 206,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"sorcerer"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 97,
+				"formula": "15d8 + 30"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 14,
+			"dex": 16,
+			"con": 15,
+			"int": 15,
+			"wis": 13,
+			"cha": 19,
+			"save": {
+				"dex": "+6",
+				"int": "+5",
+				"wis": "+4",
+				"cha": "+7"
+			},
+			"skill": {
+				"acrobatics": "+6",
+				"arcana": "+5",
+				"athletics": "+5",
+				"perception": "+4",
+				"performance": "+10"
+			},
+			"passive": 14,
+			"resist": [
+				"fire",
+				"lightning"
+			],
+			"languages": [
+				"Common plus any four languages"
+			],
+			"cr": "7",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The professor casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 15}):"
+					],
+					"will": [
+						"{@spell minor illusion}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell fog cloud}",
+							"{@spell gust of wind}",
+							"{@spell mage armor}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The professor makes three Cinder Strike attacks."
+					]
+				},
+				{
+					"name": "Cinder Strike",
+					"entries": [
+						"{@atk ms} {@hit 7} to hit, reach 15 ft., one target. {@h}13 ({@damage 2d8 + 4}) fire damage."
+					]
+				},
+				{
+					"name": "Lightning Flourish {@recharge}",
+					"entries": [
+						"The professor unleashes arcs of magical lightning at up to two creatures it can see within 60 feet of itself. Each target must make a {@dc 15} Dexterity saving throw, taking 35 ({@damage 10d6}) lightning damage on a failed save, or half as much damage on a successful one."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Flaming Leap",
+					"entries": [
+						"The professor is wreathed in flames and jumps up to 30 feet in any direction. When the professor lands, the flames erupt in a 10-foot radius around the professor and then vanish. Each creature of the professor's choice in that area must succeed on a {@dc 15} Dexterity saving throw or take 7 ({@damage 2d6}) fire damage."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"F",
+				"L"
+			],
+			"miscTags": [
+				"AOE",
+				"RCH"
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Prismari Professor of Perfection",
+			"source": "SCC",
+			"page": 206,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"sorcerer"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 97,
+				"formula": "15d8 + 30"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 14,
+			"dex": 16,
+			"con": 15,
+			"int": 15,
+			"wis": 13,
+			"cha": 19,
+			"save": {
+				"dex": "+6",
+				"int": "+5",
+				"wis": "+4",
+				"cha": "+7"
+			},
+			"skill": {
+				"acrobatics": "+6",
+				"arcana": "+5",
+				"athletics": "+5",
+				"perception": "+4",
+				"performance": "+10"
+			},
+			"passive": 14,
+			"resist": [
+				"cold"
+			],
+			"languages": [
+				"Common plus any four languages"
+			],
+			"cr": "7",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The professor casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 15}):"
+					],
+					"will": [
+						"{@spell minor illusion}"
+					],
+					"daily": {
+						"1": [
+							"{@spell wall of ice}"
+						],
+						"2e": [
+							"{@spell control water}",
+							"{@spell create or destroy water}",
+							"{@spell mage armor}",
+							"{@spell stone shape}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Water Walking",
+					"entries": [
+						"The professor can walk across water and other liquids as if they were solid ground."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The professor makes three Tidal Strike attacks."
+					]
+				},
+				{
+					"name": "Tidal Strike",
+					"entries": [
+						"{@atk ms,rs} {@hit 7} to hit, reach 5 ft. or range 60 ft., one target. {@h}13 ({@damage 2d8 + 4}) cold damage."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Rushing Wave",
+					"entries": [
+						"The professor is momentarily surrounded by a swirling wave of water and moves up to 30 feet. When the professor moves within 5 feet of any other creature during this bonus action, that creature must succeed on a {@dc 15} Strength saving throw, or the creature is knocked {@condition prone} and it can't take reactions until the start of its next turn. A creature can suffer this effect only once during a turn."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"C"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Quandrix Apprentice",
+			"source": "SCC",
+			"page": 208,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"wizard"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				11
+			],
+			"hp": {
+				"average": 44,
+				"formula": "8d8 + 8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 12,
+			"con": 13,
+			"int": 15,
+			"wis": 14,
+			"cha": 11,
+			"save": {
+				"int": "+4",
+				"wis": "+4"
+			},
+			"skill": {
+				"arcana": "+6",
+				"investigation": "+6",
+				"nature": "+4"
+			},
+			"passive": 12,
+			"languages": [
+				"Common plus any two languages"
+			],
+			"cr": "2",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The apprentice casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 12}):"
+					],
+					"will": [
+						"{@spell guidance}",
+						"{@spell mage hand}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell enlarge/reduce}",
+							"{@spell mage armor}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The apprentice makes two Exponential Lash attacks."
+					]
+				},
+				{
+					"name": "Exponential Lash",
+					"entries": [
+						"{@atk ms,rs} {@hit 4} to hit, reach 5 ft. or range 60 ft., one target. {@h}5 ({@damage 1d6 + 2}) force damage, and the apprentice can cause one creature it can see within 30 feet of the target to take 9 ({@damage 2d6 + 2}) force damage."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"O"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Quandrix Pledgemage",
+			"source": "SCC",
+			"page": 208,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"wizard"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 66,
+				"formula": "12d8 + 12"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 14,
+			"con": 13,
+			"int": 17,
+			"wis": 14,
+			"cha": 11,
+			"save": {
+				"int": "+5",
+				"wis": "+4"
+			},
+			"skill": {
+				"arcana": "+7",
+				"investigation": "+7",
+				"nature": "+5"
+			},
+			"passive": 12,
+			"languages": [
+				"Common plus any two languages"
+			],
+			"cr": "4",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The pledgemage casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 13}):"
+					],
+					"will": [
+						"{@spell guidance}",
+						"{@spell mage hand}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell dimension door}",
+							"{@spell enlarge/reduce}",
+							"{@spell mage armor}",
+							"{@spell plant growth}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The pledgemage makes two Exponential Lash attacks."
+					]
+				},
+				{
+					"name": "Exponential Lash",
+					"entries": [
+						"{@atk ms,rs} {@hit 5} to hit, reach 5 ft. or range 60 ft., one target. {@h}6 ({@damage 1d6 + 3}) force damage, and the pledgemage can cause one creature it can see within 30 feet of the target to take 10 ({@damage 2d6 + 3}) force damage."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Vortex Calculus (Recharge 4-6)",
+					"entries": [
+						"The pledgemage teleports, along with any equipment it is wearing or carrying, to an unoccupied space it can see within 60 feet of itself. Immediately after it teleports, each creature within 20 feet of the space it left must make a {@dc 13} Constitution saving throw. On a failed save, a creature takes 7 ({@damage 2d6}) force damage and is moved 10 feet in a random horizontal direction. On a successful save, a creature takes half as much damage and isn't moved."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"O"
+			],
+			"miscTags": [
+				"AOE"
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Quandrix Professor of Substance",
+			"source": "SCC",
+			"page": 209,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"wizard"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 104,
+				"formula": "16d8 + 32"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 14,
+			"int": 19,
+			"wis": 14,
+			"cha": 13,
+			"save": {
+				"con": "+5",
+				"int": "+7",
+				"wis": "+5",
+				"cha": "+4"
+			},
+			"skill": {
+				"arcana": "+10",
+				"investigation": "+10",
+				"nature": "+7",
+				"perception": "+5"
+			},
+			"passive": 15,
+			"resist": [
+				"force"
+			],
+			"languages": [
+				"Common plus any four languages"
+			],
+			"cr": "7",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The professor casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 15}):"
+					],
+					"will": [
+						"{@spell guidance}",
+						"{@spell mage hand}",
+						"{@spell mending} (as an action)"
+					],
+					"daily": {
+						"1e": [
+							"{@spell creation} (as an action)",
+							"{@spell dimension door}",
+							"{@spell mage armor}",
+							"{@spell plant growth}",
+							"{@spell polymorph}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The professor makes two Spatial Blade attacks."
+					]
+				},
+				{
+					"name": "Spatial Blade",
+					"entries": [
+						"{@atk ms,rs} {@hit 7} to hit (the target can't benefit from cover less than total cover), reach 5 ft. or range 120 ft., one target. {@h}13 ({@damage 2d8 + 4}) force damage, or 22 ({@damage 4d8 + 4}) force damage if the professor is Large or larger, and the professor can push the target horizontally up to 10 feet away."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Dilation (Recharge 5-6)",
+					"entries": [
+						"The professor magically alters its physical form until it uses this bonus action again, until it is {@condition incapacitated} or dies, or until it dismisses the effect (no action required). Choose one of the following options:"
+					]
+				},
+				{
+					"name": "Expand",
+					"entries": [
+						"The professor becomes Large if there is sufficient room for it to grow. It has advantage on attack rolls and on ability checks and saving throws that rely on Strength."
+					]
+				},
+				{
+					"name": "Contract",
+					"entries": [
+						"The professor becomes Small. Its walking speed increases to 60 feet, attack rolls against it have disadvantage, and it has advantage on ability checks and saving throws that rely on Dexterity."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Avoidant Translation (2/Day)",
+					"entries": [
+						"When the professor is hit by an attack roll, it can increase its AC by 3 against that attack, potentially causing it to miss. The professor can then teleport, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"O"
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Quandrix Professor of Theory",
+			"source": "SCC",
+			"page": 209,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"wizard"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 97,
+				"formula": "15d8 + 30"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 14,
+			"int": 19,
+			"wis": 15,
+			"cha": 13,
+			"save": {
+				"con": "+5",
+				"int": "+7",
+				"wis": "+5",
+				"cha": "+4"
+			},
+			"skill": {
+				"arcana": "+10",
+				"insight": "+5",
+				"investigation": "+10",
+				"perception": "+5"
+			},
+			"passive": 15,
+			"resist": [
+				"psychic"
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened"
+			],
+			"languages": [
+				"Common plus any four languages"
+			],
+			"cr": "7",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The professor casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 15}):"
+					],
+					"will": [
+						"{@spell guidance}",
+						"{@spell mage hand}",
+						"{@spell minor illusion}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell mage armor}",
+							"{@spell major image}",
+							"{@spell mirage arcane} (as an action)",
+							"{@spell Rary's telepathic bond}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The professor makes two Heuristic Lance attacks. It can also use Overriding Theorem, if available."
+					]
+				},
+				{
+					"name": "Heuristic Lance",
+					"entries": [
+						"{@atk ms,rs} {@hit 7} to hit, reach 5 ft. or range 60 ft., one creature. {@h}13 ({@damage 2d8 + 4}) psychic damage, and the target is {@condition poisoned} until the end of its next turn."
+					]
+				},
+				{
+					"name": "Overriding Theorem {@recharge 4}",
+					"entries": [
+						"The professor magically influences the mind of up to two creatures it can see within 60 feet of itself. Each target must succeed on a {@dc 15} Intelligence saving throw or become {@condition charmed} by the professor until the start of the professor's next turn. The {@condition charmed} creature must immediately use its reaction, if available, to move up its speed toward another creature of the professor's choice and make one melee attack against that other creature."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Divide by Zero (2/Day)",
+					"entries": [
+						"When the professor sees another creature within 60 feet of itself casting a spell, the professor can try to nullify the spell's formation. The creature must succeed on a {@dc 15} saving throw using the spell's spellcasting ability, or the spell fails and is wasted."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"Y"
+			],
+			"conditionInflict": [
+				"charmed",
+				"poisoned"
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Relic Sloth",
+			"source": "SCC",
+			"page": 210,
+			"size": "H",
+			"type": "beast",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 76,
+				"formula": "8d12 + 24"
+			},
+			"speed": {
+				"walk": 20,
+				"climb": 20
+			},
+			"str": 20,
+			"dex": 9,
+			"con": 17,
+			"int": 2,
+			"wis": 12,
+			"cha": 8,
+			"skill": {
+				"perception": "+3"
+			},
+			"passive": 13,
+			"cr": "2",
+			"action": [
+				{
+					"name": "Claws",
+					"entries": [
+						"{@atk mw} {@hit 7} to hit, reach 10 ft., one target. {@h}14 ({@damage 2d8 + 5}) slashing damage, and the target is {@condition grappled} (escape {@dc 15}). The relic sloth can grapple no more than two targets at a time."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Slow but Sturdy",
+					"entries": [
+						"When the relic sloth is subjected to an effect that would move it out of its current space or knock it {@condition prone}, it is neither moved nor knocked {@condition prone}."
+					]
+				}
+			],
+			"damageTags": [
+				"S"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"grappled"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Ruin Grinder",
+			"source": "SCC",
+			"page": 211,
+			"size": "L",
+			"type": "construct",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 82,
+				"formula": "11d10 + 22"
+			},
+			"speed": {
+				"walk": 30,
+				"burrow": 30
+			},
+			"str": 22,
+			"dex": 13,
+			"con": 15,
+			"int": 3,
+			"wis": 10,
+			"cha": 1,
+			"senses": [
+				"blindsight 60 ft. (blind beyond this radius)"
+			],
+			"passive": 10,
+			"immune": [
+				"fire",
+				"poison"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"petrified",
+				"poisoned"
+			],
+			"languages": [
+				"understands the languages of its creator but can't speak"
+			],
+			"cr": "5",
+			"trait": [
+				{
+					"name": "Fire Absorption",
+					"entries": [
+						"Whenever the ruin grinder is subjected to fire damage, it regains a number of hit points equal to half the fire damage dealt."
+					]
+				},
+				{
+					"name": "Siege Monster",
+					"entries": [
+						"The ruin grinder deals double damage to objects and structures."
+					]
+				},
+				{
+					"name": "Tunneler",
+					"entries": [
+						"The ruin grinder can burrow through solid rock at half its burrowing speed and leaves a 10-foot-diameter tunnel in its wake."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The ruin grinder makes two Excavator attacks."
+					]
+				},
+				{
+					"name": "Excavator",
+					"entries": [
+						"{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d6 + 6}) force damage. If the target is a Huge or smaller creature, it must succeed on a {@dc 17} Strength saving throw or be pushed up to 10 feet away and knocked {@condition prone}."
+					]
+				}
+			],
+			"traitTags": [
+				"Damage Absorption",
+				"Siege Monster"
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"CS"
+			],
+			"damageTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Scufflecup Teacup",
+			"source": "SCC",
+			"page": 159,
+			"size": "T",
+			"type": "construct",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 5,
+				"formula": "2d4"
+			},
+			"speed": {
+				"walk": 20
+			},
+			"str": 4,
+			"dex": 14,
+			"con": 10,
+			"int": 3,
+			"wis": 3,
+			"cha": 1,
+			"senses": [
+				"blindsight 30 ft. (blind beyond this radius)"
+			],
+			"passive": 6,
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"blinded",
+				"exhaustion",
+				"poisoned"
+			],
+			"cr": "0",
+			"action": [
+				{
+					"name": "Slam",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d3 + 2}) bludgeoning damage."
+					]
+				}
+			],
+			"senseTags": [
+				"B"
+			],
+			"damageTags": [
+				"B"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Shadrix Silverquill",
+			"isNamedCreature": true,
+			"source": "SCC",
+			"page": 212,
+			"size": "G",
+			"type": {
+				"type": "dragon",
+				"tags": [
+					"bard"
+				]
+			},
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 21,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 363,
+				"formula": "22d20 + 132"
+			},
+			"speed": {
+				"walk": 40,
+				"fly": 80
+			},
+			"str": 25,
+			"dex": 14,
+			"con": 23,
+			"int": 18,
+			"wis": 18,
+			"cha": 26,
+			"save": {
+				"dex": "+9",
+				"con": "+13",
+				"wis": "+11",
+				"cha": "+15"
+			},
+			"skill": {
+				"arcana": "+18",
+				"deception": "+15",
+				"perception": "+11",
+				"persuasion": "+15"
+			},
+			"senses": [
+				"blindsight 120 ft."
+			],
+			"passive": 21,
+			"immune": [
+				"psychic",
+				"radiant"
+			],
+			"languages": [
+				"all"
+			],
+			"cr": "22",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"Shadrix casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 23}):"
+					],
+					"daily": {
+						"1e": [
+							"{@spell darkness}",
+							"{@spell daylight}",
+							"{@spell hypnotic pattern}",
+							"{@spell sending}",
+							"{@spell suggestion}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"If Shadrix fails a saving throw, he can choose to succeed instead."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Shadrix makes one Bite attack and two Claw attacks."
+					]
+				},
+				{
+					"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 14} to hit, reach 15 ft., one target. {@h}12 ({@damage 1d10 + 7}) piercing damage plus 4 ({@damage 1d8}) radiant damage."
+					]
+				},
+				{
+					"name": "Claw",
+					"entries": [
+						"{@atk mw} {@hit 14} to hit, reach 10 ft., one target. {@h}10 ({@damage 1d6 + 7}) slashing damage. If the target is a creature, it is wracked with despair and has disadvantage on attack rolls until the end of its next turn."
+					]
+				},
+				{
+					"name": "Illuminating Shadow Breath {@recharge 5}",
+					"entries": [
+						"Shadrix exhales an entwined burst of blinding radiance and unnerving shadow in a 90-foot cone. Each creature in that area must make a {@dc 21} Constitution saving throw. On a failed save, a creature takes 31 ({@damage 7d8}) radiant damage and 31 ({@damage 7d8}) psychic damage and is {@condition blinded} until the start of Shadrix's next turn. On a successful save, a creature takes half as much damage and isn't {@condition blinded}."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Claw",
+					"entries": [
+						"Shadrix makes one Claw attack."
+					]
+				},
+				{
+					"name": "Shadow Slip (Costs 2 Actions)",
+					"entries": [
+						"Shadrix becomes an inky cloud of shadow and can move up to half his flying speed without provoking opportunity attacks, then resumes his true form. During this movement, he can move through creatures and objects as if they were difficult terrain. If he moves through a creature, it must succeed on a {@dc 21} Constitution saving throw or become {@condition blinded} until the end of its next turn. If Shadrix ends this move inside an object, he takes 5 ({@damage 1d10}) force damage and is shunted to the nearest unoccupied space."
+					]
+				},
+				{
+					"name": "Flash of Inspiration (Costs 3 Actions)",
+					"entries": [
+						"Shadrix magically summons {@dice 1d4} inkling mascots in unoccupied spaces he can see within 60 feet of himself. The inklings obey his commands and take their turns immediately after his. While any of these inklings live, Shadrix has advantage on attack rolls and saving throws. These inklings disappear after 10 minutes, when Shadrix dies, or when he uses this action again."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"Breath Weapon",
+				"Multiattack"
+			],
+			"languageTags": [
+				"XX"
+			],
+			"damageTags": [
+				"O",
+				"P",
+				"R",
+				"S",
+				"Y"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"blinded"
+			],
+			"conditionInflictSpell": [
+				"charmed",
+				"incapacitated"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Silverquill Apprentice",
+			"source": "SCC",
+			"page": 214,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"bard"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 44,
+				"formula": "8d8 + 8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 14,
+			"con": 13,
+			"int": 12,
+			"wis": 11,
+			"cha": 15,
+			"save": {
+				"dex": "+4",
+				"cha": "+4"
+			},
+			"skill": {
+				"deception": "+4",
+				"performance": "+6",
+				"persuasion": "+6"
+			},
+			"passive": 10,
+			"languages": [
+				"Common plus any two languages"
+			],
+			"cr": "2",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The apprentice casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 12}):"
+					],
+					"will": [
+						"{@spell dancing lights}",
+						"{@spell friends}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell command}",
+							"{@spell mage armor}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Ink Blade",
+					"entries": [
+						"{@atk ms,rs} {@hit 4} to hit, reach 5 ft. or range 60 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage plus 9 ({@damage 2d8}) psychic damage."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Rousing Verse",
+					"entries": [
+						"When a creature the apprentice can see within 30 feet of it fails a saving throw, the apprentice magically weaves together stirring prose, allowing the creature to reroll the saving throw and use the higher result."
+					]
+				}
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"P",
+				"Y"
+			],
+			"conditionInflictSpell": [
+				"prone"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Silverquill Pledgemage",
+			"source": "SCC",
+			"page": 214,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"bard"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 66,
+				"formula": "12d8 + 12"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 16,
+			"con": 13,
+			"int": 12,
+			"wis": 11,
+			"cha": 17,
+			"save": {
+				"dex": "+5",
+				"wis": "+2",
+				"cha": "+5"
+			},
+			"skill": {
+				"deception": "+5",
+				"performance": "+7",
+				"persuasion": "+7"
+			},
+			"passive": 10,
+			"languages": [
+				"Common plus any two languages"
+			],
+			"cr": "4",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The pledgemage casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 13}):"
+					],
+					"will": [
+						"{@spell dancing lights}",
+						"{@spell friends}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell command}",
+							"{@spell confusion}",
+							"{@spell mage armor}",
+							"{@spell tongues}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Ink Blade",
+					"entries": [
+						"{@atk ms,rs} {@hit 5} to hit, reach 5 ft. or range 60 ft., one target. {@h}5 ({@damage 1d8 + 3}) piercing damage plus 10 ({@damage 3d6}) psychic damage."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Demotivate (2/Day)",
+					"entries": [
+						"The pledgemage hurls magical insults at one creature it can see within 30 feet of itself. The target must succeed on a {@dc 13} Wisdom saving throw or become {@condition frightened} of the pledgemage for 1 minute. While {@condition frightened} in this way, the target can't take reactions, its speed is halved, and any hit the pledgemage scores against the creature is a critical hit. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Rousing Verse",
+					"entries": [
+						"When a creature the pledgemage can see within 30 feet of it fails a saving throw, the pledgemage magically weaves together stirring prose, allowing the creature to reroll the saving throw and use the higher result."
+					]
+				}
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"P",
+				"Y"
+			],
+			"conditionInflict": [
+				"frightened"
+			],
+			"conditionInflictSpell": [
+				"prone"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Silverquill Professor of Radiance",
+			"source": "SCC",
+			"page": 215,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"bard"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 97,
+				"formula": "15d8 + 30"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 14,
+			"int": 16,
+			"wis": 13,
+			"cha": 19,
+			"save": {
+				"dex": "+5",
+				"int": "+6",
+				"wis": "+4",
+				"cha": "+7"
+			},
+			"skill": {
+				"arcana": "+6",
+				"deception": "+7",
+				"performance": "+10",
+				"persuasion": "+10"
+			},
+			"passive": 11,
+			"resist": [
+				"radiant"
+			],
+			"languages": [
+				"Common plus any four languages"
+			],
+			"cr": "7",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The professor casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 15}):"
+					],
+					"will": [
+						"{@spell dancing lights}",
+						"{@spell friends}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell bless}",
+							"{@spell command}",
+							"{@spell cure wounds}",
+							"{@spell daylight}",
+							"{@spell mage armor}"
+						],
+						"1e": [
+							"{@spell hypnotic pattern}",
+							"{@spell tongues}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The professor makes two Radiant Strike attacks. The professor can replace one of the attacks with a use of Spellcasting."
+					]
+				},
+				{
+					"name": "Radiant Strike",
+					"entries": [
+						"{@atk ms,rs} {@hit 7} to hit, reach 5 ft. or range 120 ft., one target. {@h}17 ({@damage 3d8 + 4}) radiant damage. If the target is a creature, it must succeed on a {@dc 15} Constitution saving throw be {@condition blinded} until the end of its next turn."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"R"
+			],
+			"conditionInflict": [
+				"blinded"
+			],
+			"conditionInflictSpell": [
+				"charmed",
+				"incapacitated",
+				"prone"
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Silverquill Professor of Shadow",
+			"source": "SCC",
+			"page": 215,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"bard"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 97,
+				"formula": "15d8 + 30"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 14,
+			"int": 16,
+			"wis": 13,
+			"cha": 19,
+			"save": {
+				"dex": "+5",
+				"int": "+6",
+				"wis": "+4",
+				"cha": "+7"
+			},
+			"skill": {
+				"arcana": "+6",
+				"deception": "+10",
+				"persuasion": "+7",
+				"stealth": "+5"
+			},
+			"senses": [
+				"darkvision 300 ft."
+			],
+			"passive": 11,
+			"resist": [
+				"necrotic"
+			],
+			"languages": [
+				"Common plus any four languages"
+			],
+			"cr": "7",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The professor casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 15}):"
+					],
+					"will": [
+						"{@spell dancing lights}",
+						"{@spell friends}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell bane}",
+							"{@spell command}",
+							"{@spell darkness}",
+							"{@spell mage armor}"
+						],
+						"1e": [
+							"{@spell tongues}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Devil's Sight",
+					"entries": [
+						"Magical darkness doesn't impede the professor's darkvision."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The professor makes two Ink Lance attacks. The professor can replace one of the attacks with a use of Spellcasting."
+					]
+				},
+				{
+					"name": "Ink Lance",
+					"entries": [
+						"{@atk ms,rs} {@hit 7} to hit, reach 5 ft. or range 120 ft., one target. {@h}17 ({@damage 3d8 + 4}) necrotic damage. If the target is a creature, it must succeed on a {@dc 15} Constitution saving throw be {@condition blinded} until the end of its next turn."
+					]
+				}
+			],
+			"traitTags": [
+				"Devil's Sight"
+			],
+			"senseTags": [
+				"SD"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"N"
+			],
+			"conditionInflict": [
+				"blinded"
+			],
+			"conditionInflictSpell": [
+				"prone"
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Spirit Statue Mascot",
+			"source": "SCC",
+			"page": 216,
+			"size": "M",
+			"type": "construct",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 26,
+				"formula": "4d8 + 8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 14,
+			"dex": 9,
+			"con": 15,
+			"int": 12,
+			"wis": 13,
+			"cha": 8,
+			"skill": {
+				"arcana": "+5",
+				"history": "+5",
+				"perception": "+3"
+			},
+			"passive": 13,
+			"languages": [
+				"any languages it knew in life"
+			],
+			"cr": "1/4",
+			"trait": [
+				{
+					"name": "Death Burst",
+					"entries": [
+						"When the spirit statue is reduced to 0 hit points, the statue crumbles, and the spirit returns to the afterlife in a burst of ghostly white flame. Each creature within 5 feet of it must succeed on a {@dc 12} Constitution saving throw or take 3 ({@damage 1d6}) radiant damage."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Slam",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage."
+					]
+				},
+				{
+					"name": "Counsel of the Past (2/Day)",
+					"entries": [
+						"The spirit statue touches one creature. Once within the next 10 minutes, that creature can roll a {@dice d4} and add the number rolled to one ability check of its choice, immediately after rolling the {@dice d20}."
+					]
+				}
+			],
+			"traitTags": [
+				"Death Burst"
+			],
+			"languageTags": [
+				"LF"
+			],
+			"damageTags": [
+				"B",
+				"R"
+			],
+			"miscTags": [
+				"AOE",
+				"MW"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Strixhaven Campus Guide",
+			"source": "SCC",
+			"page": 217,
+			"size": "S",
+			"type": "construct",
+			"alignment": [
+				"L",
+				"G"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 31,
+				"formula": "7d6 + 7"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 15,
+			"dex": 14,
+			"con": 13,
+			"int": 10,
+			"wis": 12,
+			"cha": 12,
+			"save": {
+				"dex": "+4"
+			},
+			"skill": {
+				"insight": "+3",
+				"persuasion": "+3"
+			},
+			"senses": [
+				"blindsight 60 ft."
+			],
+			"passive": 11,
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"blinded",
+				"deafened",
+				"exhaustion",
+				"paralyzed",
+				"petrified",
+				"poisoned"
+			],
+			"languages": [
+				"Common plus any three languages"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"name": "Campus Knowledge",
+					"entries": [
+						"While at Strixhaven, the guide can't become lost by magical or nonmagical means. The guide also has advantage on ability checks made to locate creatures or objects at Strixhaven."
+					]
+				},
+				{
+					"name": "Univocal Speech",
+					"entries": [
+						"When the guide speaks, any creature that knows at least one language and can hear the guide understands what it says."
+					]
+				},
+				{
+					"name": "Unusual Nature",
+					"entries": [
+						"The guide doesn't require air, food, drink, or sleep."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The guide makes two Slam attacks."
+					]
+				},
+				{
+					"name": "Slam",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d8 + 2}) bludgeoning damage."
+					]
+				},
+				{
+					"name": "Smile and Wave",
+					"entries": [
+						"Each creature of the guide's choice that is within 30 feet of the guide must succeed on a {@dc 11} Wisdom saving throw or be magically {@condition charmed} by the guide for 1 hour.",
+						"A {@condition charmed} target must move on its turn toward the guide, trying to get within 5 feet of the guide. The target doesn't move into obviously dangerous ground, such as a fire or a pit. Whenever the {@condition charmed} target takes damage, it can repeat the saving throw, ending the effect on itself on a success.",
+						"A target that successfully saves is immune to any guide's Smile and Wave ability for the next 24 hours."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Need Directions",
+					"entries": [
+						"The guide takes the Help action."
+					]
+				}
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"B"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"charmed"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Tanazir Quandrix",
+			"isNamedCreature": true,
+			"source": "SCC",
+			"page": 218,
+			"size": "G",
+			"type": {
+				"type": "dragon",
+				"tags": [
+					"wizard"
+				]
+			},
+			"alignment": [
+				"L",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 21,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 444,
+				"formula": "24d20 + 192"
+			},
+			"speed": {
+				"walk": 40,
+				"fly": {
+					"number": 80,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 28,
+			"dex": 14,
+			"con": 27,
+			"int": 28,
+			"wis": 18,
+			"cha": 17,
+			"save": {
+				"dex": "+9",
+				"con": "+15",
+				"wis": "+11",
+				"cha": "+10"
+			},
+			"skill": {
+				"arcana": "+23",
+				"investigation": "+23",
+				"nature": "+16",
+				"perception": "+18"
+			},
+			"senses": [
+				"blindsight 120 ft."
+			],
+			"passive": 28,
+			"immune": [
+				"force",
+				"psychic"
+			],
+			"languages": [
+				"Common",
+				"Draconic",
+				"telepathy 120 ft."
+			],
+			"cr": "24",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"Tanazir casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 24}):"
+					],
+					"daily": {
+						"1e": [
+							"{@spell divination}",
+							"{@spell enlarge/reduce}",
+							"{@spell mirage arcane} (as an action)",
+							"{@spell polymorph}",
+							"{@spell scrying} (as an action)",
+							"{@spell seeming}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"If Tanazir fails a saving throw, she can choose to succeed instead."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Tanazir makes one Bite attack and two Claw attacks."
+					]
+				},
+				{
+					"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 16} to hit, reach 15 ft., one target. {@h}14 ({@damage 1d10 + 9}) piercing damage plus 7 ({@damage 2d6}) force damage."
+					]
+				},
+				{
+					"name": "Claw",
+					"entries": [
+						"{@atk mw} {@hit 16} to hit, reach 10 ft., one target. {@h}16 ({@damage 2d6 + 9}) slashing damage. If the target is a creature, it is addled by recursive thoughts, reducing its speed to 0 until the start of Tanazir's next turn."
+					]
+				},
+				{
+					"name": "Diminution Breath {@recharge 5}",
+					"entries": [
+						"Tanazir exhales a weakening equation in a 90-foot cone. Each creature in that area must make a {@dc 23} Constitution saving throw. On a failed save, a creature takes 45 ({@damage 13d6}) force damage and 45 ({@damage 13d6}) psychic damage and is weakened until the start of Tanazir's next turn. While weakened, it has disadvantage on the following rolls that rely on Strength: attack rolls, ability checks, and saving throws. On a successful save, a creature takes half as much damage and isn't weakened."
+					]
+				},
+				{
+					"name": "Teleport",
+					"entries": [
+						"Tanazir teleports to an unoccupied space she can see within 100 feet of herself."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Claw",
+					"entries": [
+						"Tanazir makes one Claw attack."
+					]
+				},
+				{
+					"name": "Fold Space (Costs 2 Actions)",
+					"entries": [
+						"Tanazir uses Teleport, and each other creature within 20 feet of the space she left must succeed on a {@dc 24} Strength saving throw or be pulled up to 30 feet closer to the center of that space and take 16 ({@damage 3d10}) force damage."
+					]
+				},
+				{
+					"name": "Fractal Refraction (Costs 3 Actions)",
+					"entries": [
+						"Tanazir magically summons {@dice 1d4} fractal mascots in unoccupied spaces she can see within 120 feet of herself. The fractals obey her commands and take their turns immediately after hers. While any of these fractals remain, attack rolls made against Tanazir have disadvantage. A summoned fractal disappears after 1 minute, when it or Tanazir dies, or when she uses this action again."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"Breath Weapon",
+				"Multiattack",
+				"Teleport"
+			],
+			"languageTags": [
+				"C",
+				"DR",
+				"TP"
+			],
+			"damageTags": [
+				"O",
+				"P",
+				"S",
+				"Y"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RCH"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Velomachus Lorehold",
+			"isNamedCreature": true,
+			"source": "SCC",
+			"page": 219,
+			"size": "G",
+			"type": {
+				"type": "dragon",
+				"tags": [
+					"wizard"
+				]
+			},
+			"alignment": [
+				"L",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 21,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 487,
+				"formula": "25d20 + 225"
+			},
+			"speed": {
+				"walk": 40,
+				"climb": 40,
+				"fly": 80
+			},
+			"str": 30,
+			"dex": 14,
+			"con": 29,
+			"int": 30,
+			"wis": 20,
+			"cha": 18,
+			"save": {
+				"dex": "+10",
+				"con": "+17",
+				"wis": "+13",
+				"cha": "+12"
+			},
+			"skill": {
+				"arcana": "+18",
+				"history": "+18",
+				"investigation": "+18",
+				"perception": "+13"
+			},
+			"senses": [
+				"blindsight 120 ft."
+			],
+			"passive": 23,
+			"immune": [
+				"thunder"
+			],
+			"languages": [
+				"all"
+			],
+			"cr": "25",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"Velomachus casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability:"
+					],
+					"daily": {
+						"1e": [
+							"{@spell contact other plane} (as an action, contacting a long-dead spirit)",
+							"{@spell divination}",
+							"{@spell move earth}",
+							"{@spell wall of force}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"If Velomachus fails a saving throw, she can choose to succeed instead."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Velomachus makes one Bite attack and two Claw attacks."
+					]
+				},
+				{
+					"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 18} to hit, reach 15 ft., one target. {@h}15 ({@damage 1d10 + 10}) piercing damage plus 6 ({@damage 1d12}) thunder damage."
+					]
+				},
+				{
+					"name": "Claw",
+					"entries": [
+						"{@atk mw} {@hit 18} to hit, reach 10 ft., one target. {@h}13 ({@damage 1d6 + 10}) slashing damage. If the target is a Huge or smaller creature, it is knocked {@condition prone}."
+					]
+				},
+				{
+					"name": "Battle Tide Breath {@recharge 5}",
+					"entries": [
+						"Velomachus exhales thunderous sound in a 90-foot cone. Each creature in that area must make a {@dc 25} Constitution saving throw. On a failure, a creature takes 45 ({@damage 7d12}) force damage and 45 ({@damage 7d12}) thunder damage and is pushed up to 20 feet in a horizontal direction of Velomachus' choice. On a success, the creature takes half as much damage and isn't pushed. Objects that aren't being worn or carried take the damage and are pushed as if they were creatures that failed the saving throw."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Claw",
+					"entries": [
+						"Velomachus makes one Claw attack."
+					]
+				},
+				{
+					"name": "Chaotic Flow (Costs 2 Actions)",
+					"entries": [
+						"Velomachus moves up to half her flying speed. If a creature hits or misses her with an opportunity attack during this move, the attacker takes 19 ({@damage 3d12}) thunder damage."
+					]
+				},
+				{
+					"name": "Repeating History (Costs 3 Actions)",
+					"entries": [
+						"Velomachus magically summons {@dice 1d4} spirit statue mascots in unoccupied spaces she can see within 60 feet of herself. The spirit statues obey her commands and take their turns immediately after hers. Any creature, other than a spirit statue or Velomachus, is {@condition restrained} if it starts its turn within 5 feet of one or more of these spirit statues. This {@condition restrained} condition lasts until the end of the creature's turn. These spirit statues disappear after 10 minutes, when Velomachus dies, or when she uses this action again."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"Breath Weapon",
+				"Multiattack"
+			],
+			"languageTags": [
+				"XX"
+			],
+			"damageTags": [
+				"O",
+				"P",
+				"S",
+				"T"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Witherbloom Apprentice",
+			"source": "SCC",
+			"page": 221,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"druid"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"{@item leather armor|PHB}"
+					]
+				}
+			],
+			"hp": {
+				"average": 44,
+				"formula": "8d8 + 8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 14,
+			"con": 13,
+			"int": 12,
+			"wis": 15,
+			"cha": 11,
+			"save": {
+				"con": "+3",
+				"wis": "+4"
+			},
+			"skill": {
+				"medicine": "+4",
+				"nature": "+5",
+				"perception": "+6"
+			},
+			"passive": 16,
+			"languages": [
+				"Common plus any two languages"
+			],
+			"cr": "2",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The apprentice casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability:"
+					],
+					"will": [
+						"{@spell druidcraft}",
+						"{@spell spare the dying}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell pass without trace}"
+						]
+					},
+					"ability": "wis",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Regeneration",
+					"entries": [
+						"The apprentice regains 5 hit points at the start of its turn if it has at least 1 hit point."
+					]
+				},
+				{
+					"name": "Verdant Talisman",
+					"entries": [
+						"At the end of a 10-minute ritual, the apprentice can touch one willing creature (including itself) and bestow upon it a small talisman imbued with magic. Upon receiving the talisman, the creature gains 10 temporary hit points, and it can add {@dice 1d6} to its initiative rolls while it wears the talisman. These benefits last for 1 hour or until the apprentice conducts another ritual to bestow another talisman. When the benefits expire, the talisman crumbles to dust."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Briar Vine",
+					"entries": [
+						"{@atk ms} {@hit 4} to hit, reach 15 ft., one target. {@h}7 ({@damage 1d10 + 2}) piercing damage plus 9 ({@damage 2d8}) poison damage. If the target is a Large or smaller creature, the apprentice can pull it up to 10 feet closer to itself."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Wither Burst",
+					"entries": [
+						"When the apprentice sees a creature within 30 feet of itself drop to 0 hit points, the apprentice channels the expended life essence and targets another creature it can see within 30 feet of itself. The target must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. While {@condition poisoned} in this way, the target takes 3 ({@damage 1d6}) poison damage at the start of each of its turns. The target can repeat the save at the end of each of its turns, ending the effect on itself on a success."
+					]
+				}
+			],
+			"traitTags": [
+				"Regeneration"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"I",
+				"P"
+			],
+			"miscTags": [
+				"RCH"
+			],
+			"conditionInflict": [
+				"poisoned"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Witherbloom Pledgemage",
+			"source": "SCC",
+			"page": 222,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"druid"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 12,
+					"from": [
+						"15 with vociferous form"
+					]
+				}
+			],
+			"hp": {
+				"average": 66,
+				"formula": "12d8 + 12"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 15,
+			"con": 13,
+			"int": 14,
+			"wis": 17,
+			"cha": 11,
+			"save": {
+				"con": "+3",
+				"wis": "+5"
+			},
+			"skill": {
+				"medicine": "+5",
+				"nature": "+6",
+				"perception": "+7"
+			},
+			"passive": 17,
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"poisoned"
+			],
+			"languages": [
+				"Common plus any two languages"
+			],
+			"cr": "4",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The apprentice casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability:"
+					],
+					"will": [
+						"{@spell druidcraft}",
+						"{@spell spare the dying}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell death ward}",
+							"{@spell pass without trace}",
+							"{@spell speak with plants}"
+						]
+					},
+					"ability": "wis",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Regeneration",
+					"entries": [
+						"As long as the pledgemage has at least 1 hit point remaining, the pledgemage regains 5 hit points at the start of its turn."
+					]
+				},
+				{
+					"name": "Verdant Talisman",
+					"entries": [
+						"At the end of a 10-minute ritual, the pledgemage can touch one willing creature (including itself) and bestow upon it a small talisman imbued with magic. Upon receiving the talisman, the creature gains 10 temporary hit points, and it can add {@dice 1d6} to its initiative rolls while it wears the talisman. These benefits last for 1 hour or until the pledgemage conducts another ritual to bestow another talisman. When the benefits expire, the talisman crumbles to dust."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Briar Vine",
+					"entries": [
+						"{@atk ms} {@hit 5} to hit, reach 15 ft., one target. {@h}8 ({@damage 1d10 + 3}) piercing damage plus 18 ({@damage 4d8}) poison damage. If the target is a Large or smaller creature, the apprentice can pull it up to 10 feet closer to itself."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Vociferous Form (1/Day)",
+					"entries": [
+						"The pledgemage transforms into an avatar of plants and shadow. While in this form, the pledgemage adds its Wisdom modifier to its AC if it isn't wearing armor or wielding a shield, and it has advantage on attack rolls against any creature missing hit points. This form lasts for 1 minute or until the pledgemage is reduced to 0 hit points."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Wither Burst",
+					"entries": [
+						"When the pledgemage sees a creature within 30 feet of itself drop to 0 hit points, the pledgemage channels the expended life essence and targets another creature it can see within 30 feet of itself. The target must succeed on a {@dc 13} Constitution saving throw or become {@condition poisoned} for 1 minute. While {@condition poisoned} in this way, the target takes 3 ({@damage 1d6}) poison damage at the start of each of its turns. The target can repeat the save at the end of each of its turns, ending the effect on itself on a success."
+					]
+				}
+			],
+			"traitTags": [
+				"Regeneration"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"I",
+				"P"
+			],
+			"miscTags": [
+				"RCH"
+			],
+			"conditionInflict": [
+				"poisoned"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Witherbloom Professor of Decay",
+			"source": "SCC",
+			"page": 223,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"druid"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"{@item hide armor|PHB}"
+					]
+				}
+			],
+			"hp": {
+				"average": 105,
+				"formula": "14d8 + 42"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 16,
+			"int": 16,
+			"wis": 19,
+			"cha": 13,
+			"save": {
+				"con": "+6",
+				"int": "+6",
+				"wis": "+7",
+				"cha": "+4"
+			},
+			"skill": {
+				"arcana": "+6",
+				"medicine": "+7",
+				"nature": "+6",
+				"survival": "+7"
+			},
+			"passive": 14,
+			"resist": [
+				"necrotic"
+			],
+			"languages": [
+				"Common plus any four languages"
+			],
+			"cr": "7",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The professor casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability (spell save {@dc 15}):"
+					],
+					"will": [
+						"{@spell druidcraft}",
+						"{@spell spare the dying}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell antilife shell}",
+							"{@spell bane}",
+							"{@spell feign death}",
+							"{@spell speak with dead}"
+						]
+					},
+					"ability": "wis",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Essence Transfer (1/Day)",
+					"entries": [
+						"The professor can cast the animate dead spell, using Wisdom as the spellcasting ability."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The professor makes two Mortality Spear attacks. It can replace one of the attacks with a use of Spellcasting."
+					]
+				},
+				{
+					"name": "Mortality Spear",
+					"entries": [
+						"{@atk ms,rs} {@hit 7} to hit, reach 5 ft. or range 120 ft., one target. {@h}17 ({@damage 3d8 + 4}) necrotic damage, and the target can't regain hit points until the start of the professor's next turn."
+					]
+				},
+				{
+					"name": "Essence Pulse {@recharge 5}",
+					"entries": [
+						"The professor creates a life-draining vortex in a 30-foot-radius sphere centered on itself. Each creature of the professor's choice that it can see within that area must make a {@dc 15} Constitution saving throw, taking 23 ({@damage 5d8}) necrotic damage on a failed save, or half as much damage on a successful one. The professor then regains 10 hit points. An affected creature's hit point maximum is reduced by an amount equal to the necrotic damage taken. This reduction lasts until the creature finishes a long rest. The creature dies if its hit point maximum is reduced to 0."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"N"
+			],
+			"miscTags": [
+				"AOE"
+			],
+			"conditionInflictSpell": [
+				"blinded",
+				"incapacitated"
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Witherbloom Professor of Growth",
+			"source": "SCC",
+			"page": 223,
+			"size": "M",
+			"sizeNote": "or small",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"druid"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"{@item hide armor|PHB}"
+					]
+				}
+			],
+			"hp": {
+				"average": 112,
+				"formula": "15d8 + 45"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 13,
+			"con": 16,
+			"int": 16,
+			"wis": 19,
+			"cha": 13,
+			"save": {
+				"con": "+6",
+				"int": "+6",
+				"wis": "+7",
+				"cha": "+4"
+			},
+			"skill": {
+				"arcana": "+6",
+				"medicine": "+7",
+				"nature": "+6",
+				"survival": "+7"
+			},
+			"passive": 14,
+			"resist": [
+				"poison"
+			],
+			"conditionImmune": [
+				"poisoned"
+			],
+			"languages": [
+				"Common plus any four languages"
+			],
+			"cr": "7",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The professor casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability:"
+					],
+					"will": [
+						"{@spell druidcraft}",
+						"{@spell spare the dying}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell greater restoration}",
+							"{@spell lesser restoration}",
+							"{@spell mass cure wounds}",
+							"{@spell pass without trace}",
+							"{@spell plant growth}",
+							"{@spell revivify}"
+						]
+					},
+					"ability": "wis",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The professor makes two Verdant Lash attacks."
+					]
+				},
+				{
+					"name": "Verdant Lash",
+					"entries": [
+						"{@atk ms} {@hit 7} to hit, reach 30 ft., one target. {@h}11 ({@damage 2d6 + 4}) piercing damage plus 7 ({@damage 2d6}) poison damage, and the target must succeed on a {@dc 15} Strength saving throw or be pulled up to 10 feet closer to the professor."
+					]
+				},
+				{
+					"name": "Summon Nature's Avatar (Recharges after a Short or Long Rest)",
+					"entries": [
+						"The professor magically summons a Groff. The groff appears in an unoccupied space within 60 feet of the professor, acts as the professor's ally, and takes its turns immediately after the professor's. The professor can communicate telepathically with this groff while it remains. The groff remains for 10 minutes, until it or the professor dies, or until the professor dismisses it as an action."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"I",
+				"P"
+			],
+			"miscTags": [
+				"RCH"
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Y'demi",
+			"isNamedCreature": true,
+			"source": "SCC",
+			"page": 172,
+			"size": "M",
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human",
+					"warlock"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"blood aegis"
+					]
+				}
+			],
+			"hp": {
+				"average": 127,
+				"formula": "15d8 + 60"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 18,
+			"int": 20,
+			"wis": 12,
+			"cha": 12,
+			"save": {
+				"con": "+8",
+				"int": "+9",
+				"wis": "+5",
+				"cha": "+5"
+			},
+			"skill": {
+				"deception": "+9",
+				"medicine": "+5",
+				"survival": "+5"
+			},
+			"passive": 11,
+			"resist": [
+				"necrotic"
+			],
+			"conditionImmune": [
+				"exhaustion"
+			],
+			"languages": [
+				"Common plus any four languages"
+			],
+			"cr": "9",
+			"trait": [
+				{
+					"name": "Blood Aegis",
+					"entries": [
+						"The AC of Y'demi includes her Constitution modifier while she isn't wearing armor or wielding a shield."
+					]
+				},
+				{
+					"name": "Oriq Mask",
+					"entries": [
+						"Y'demi wears an Oriq mask. While wearing the mask, Y'demi can't be targeted by any divination magic or perceived through magical scrying sensors, and she adds double her proficiency bonus to Charisma (Deception) checks (included above)."
+					]
+				},
+				{
+					"name": "Sanguine Sense",
+					"entries": [
+						"While Y'demi isn't {@condition blinded}, she can see any creature that isn't an Undead or a Construct within 60 feet of itself, even through total cover, heavily obscured areas, invisibility, or any other phenomena that would prevent sight."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Y'demi makes two Blood Lash attacks."
+					]
+				},
+				{
+					"name": "Blood Lash",
+					"entries": [
+						"{@atk ms} {@hit 9} to hit, reach 10 ft., one target. {@h}21 ({@damage 3d10 + 5}) necrotic damage. If the target is a creature, it can't regain hit points until the start of the Y'demi's next turn."
+					]
+				},
+				{
+					"name": "Blood Boil {@recharge 4}",
+					"entries": [
+						"Y'demi chooses a point within 150 feet of itself, and a 20-foot radius sphere centered on that point fills with a burst of searing, blood-red mist. Each creature of Y'demi's choice that she can see in that area must make a {@dc 17} Constitution saving throw. On a failed save, a creature takes 38 ({@damage 7d10}) necrotic damage and is {@condition incapacitated} until the end of its next turn. On a success, a creature takes half as much damage and isn't {@condition incapacitated}. A creature dies if reduced to 0 hit points by this necrotic damage."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Sanguine Tentacles (1/Day)",
+					"entries": [
+						"The blood in the copper basin disappears as tentacles of congealed blood fill a 10-foot cube centered at a point on the ground that Y'demi can see within 15 feet of her. The effect lasts for 1 minute, during which time that area is difficult terrain. Any creature entering that area for the first time on a turn or starting its turn there must succeed on a {@dc 13} Dexterity saving throw or be {@condition restrained} by the tentacles. A creature that starts its turn {@condition restrained} by the tentacles takes 10 ({@damage 3d6}) bludgeoning damage. A creature {@condition restrained} by the tentacles can use its action to make either a {@dc 13} Strength (Athletics) check or a {@dc 13} Dexterity (Acrobatics) check, ending the {@condition restrained} condition on itself on a success."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"B",
+				"N"
+			],
+			"miscTags": [
+				"AOE",
+				"RCH"
+			],
+			"conditionInflict": [
+				"incapacitated",
+				"restrained"
+			],
+			"hasFluff": true
+		}
+	]
+}

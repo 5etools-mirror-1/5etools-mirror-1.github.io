@@ -38,6 +38,9 @@ class AreaTagger {
 						if (!obj.id) obj.id = this._getNewTag();
 					});
 
+				if (obj.id) return obj;
+				if (obj.type === "image" && !obj.id && obj.mapRegions) obj.id = this._getNewTag();
+
 				return obj;
 			},
 		};

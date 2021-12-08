@@ -448,7 +448,18 @@
 					}
 				}
 			},
-			"additionalProperties": false
+			"$$ifSite": {
+				"additionalProperties": false
+			},
+			"$$ifBrew": {
+				"additionalProperties": {
+					"type": [
+						"boolean",
+						"integer",
+						"string"
+					]
+				}
+			}
 		},
 
 		"item": {

@@ -2307,11 +2307,13 @@
 									]
 								}
 							],
+							"title": "Map 1",
 							"imageType": "map",
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/002-102-thumb.png"
-							}
+							},
+							"id": "add"
 						},
 						{
 							"type": "image",
@@ -2321,7 +2323,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "add",
+								"autoScale": true
+							}
 						},
 						{
 							"type": "entries",
@@ -3869,6 +3876,7 @@
 							},
 							"width": 2259,
 							"height": 3000,
+							"title": "Map 2",
 							"mapRegions": [
 								{
 									"area": "0ff",
@@ -5413,7 +5421,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/005-202-thumb.png"
-							}
+							},
+							"id": "bdb"
 						},
 						{
 							"type": "image",
@@ -5423,7 +5432,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "bdb",
+								"autoScale": true
+							}
 						},
 						{
 							"type": "entries",
@@ -7083,6 +7097,7 @@
 							},
 							"width": 2259,
 							"height": 3000,
+							"title": "Map 3",
 							"mapRegions": [
 								{
 									"area": "229",
@@ -9154,7 +9169,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/009-302-thumb.png"
-							}
+							},
+							"id": "bdc"
 						},
 						{
 							"type": "image",
@@ -9164,7 +9180,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "bdc",
+								"autoScale": true
+							}
 						},
 						{
 							"type": "entries",
@@ -10839,6 +10860,7 @@
 							},
 							"width": 2259,
 							"height": 3000,
+							"title": "Map 4",
 							"mapRegions": [
 								{
 									"area": "245",
@@ -11643,7 +11665,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/012-402-thumb.png"
-							}
+							},
+							"id": "bdd"
 						},
 						{
 							"type": "image",
@@ -11653,7 +11676,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "bdd",
+								"autoScale": true
+							}
 						},
 						"Unless otherwise noted, all tunnels on this level are 20 feet high, and caverns are 30 to 50 feet high. Most of the floors on this level are uneven and covered in dirt and bat guano. Because of this soft ground, Wisdom ({@skill Survival}) checks made to track creatures on this level are made with advantage.",
 						{
@@ -12588,6 +12616,7 @@
 							},
 							"width": 2259,
 							"height": 3000,
+							"title": "Map 5",
 							"mapRegions": [
 								{
 									"area": "2a9",
@@ -14285,7 +14314,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/016-502-thumb.png"
-							}
+							},
+							"id": "bde"
 						},
 						{
 							"type": "image",
@@ -14295,7 +14325,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "bde",
+								"autoScale": true
+							}
 						},
 						{
 							"type": "entries",
@@ -15479,6 +15514,7 @@
 							},
 							"width": 2259,
 							"height": 3000,
+							"title": "Map 6",
 							"mapRegions": [
 								{
 									"area": "36a",
@@ -17140,7 +17176,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/019-602-thumb.png"
-							}
+							},
+							"id": "bdf"
 						},
 						{
 							"type": "image",
@@ -17150,7 +17187,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "bdf",
+								"autoScale": true
+							}
 						},
 						"Many of the stone doors on this level have been demolished by the umber hulks. Creatures can move through the debris without penalty.",
 						"Quartz pillars found throughout the Lost Level shed bright light in a 20-foot radius and dim light for an additional 20 feet. Casting a successful {@spell dispel magic} spell on a pillar (DC 12) extinguishes its magical light forever, as does destroying the pillar. A quartz pillar is a Huge object with AC 11, 50 hit points, and immunity to poison and psychic damage. The quartz pillars aren't load-bearing, and their destruction won't trigger a roof collapse. Characters who have the Stonecunning trait can discern this fact by examining the pillars (no check required).",
@@ -18674,6 +18716,7 @@
 							},
 							"width": 2513,
 							"height": 3338,
+							"title": "Map 7",
 							"mapRegions": [
 								{
 									"area": "3ee",
@@ -20137,7 +20180,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/022-702-thumb.png"
-							}
+							},
+							"id": "be0"
 						},
 						{
 							"type": "image",
@@ -20147,7 +20191,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "be0",
+								"autoScale": true
+							}
 						},
 						{
 							"type": "entries",
@@ -21401,6 +21450,7 @@
 							},
 							"width": 2259,
 							"height": 3000,
+							"title": "Map 8",
 							"mapRegions": [
 								{
 									"area": "49b",
@@ -22385,7 +22435,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/025-802-thumb.png"
-							}
+							},
+							"id": "be1"
 						},
 						{
 							"type": "image",
@@ -22395,7 +22446,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2955
+							"height": 2955,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "be1",
+								"autoScale": true
+							}
 						},
 						"This entire level is wet and humid. Ordinary frogs, toads, and insects thrive here.",
 						{
@@ -23258,6 +23314,7 @@
 							},
 							"width": 2259,
 							"height": 3000,
+							"title": "Map 9",
 							"mapRegions": [
 								{
 									"area": "4b6",
@@ -24800,7 +24857,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/028-902-thumb.png"
-							}
+							},
+							"id": "be2"
 						},
 						{
 							"type": "image",
@@ -24810,7 +24868,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "be2",
+								"autoScale": true
+							}
 						},
 						{
 							"type": "entries",
@@ -26501,6 +26564,7 @@
 							},
 							"width": 2259,
 							"height": 3000,
+							"title": "Map 10",
 							"mapRegions": [
 								{
 									"area": "56a",
@@ -28108,7 +28172,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/031-10-02-thumb.png"
-							}
+							},
+							"id": "be3"
 						},
 						{
 							"type": "image",
@@ -28118,7 +28183,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "be3",
+								"autoScale": true
+							}
 						},
 						{
 							"type": "entries",
@@ -29605,6 +29675,7 @@
 							},
 							"width": 2259,
 							"height": 3000,
+							"title": "Map 11",
 							"mapRegions": [
 								{
 									"area": "628",
@@ -30910,7 +30981,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/036-11-02-thumb.png"
-							}
+							},
+							"id": "be4"
 						},
 						{
 							"type": "image",
@@ -30920,7 +30992,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "be4",
+								"autoScale": true
+							}
 						},
 						{
 							"type": "entries",
@@ -31663,6 +31740,7 @@
 							},
 							"width": 2513,
 							"height": 3338,
+							"title": "Map 12",
 							"mapRegions": [
 								{
 									"area": "67a",
@@ -33260,7 +33338,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/039-12-02-thumb.png"
-							}
+							},
+							"id": "be5"
 						},
 						{
 							"type": "image",
@@ -33270,7 +33349,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "be5",
+								"autoScale": true
+							}
 						},
 						"A 2-foot-thick layer of fog covers the floor in many of the Maze Level's tunnels and caves; the area within the fog is heavily obscured. The fog can be cleared away by a {@spell gust of wind} spell or similar magic. Fog that is cleared away returns in 1 minute.",
 						"The stench of death pervades the entire level, growing stronger as the characters get closer to area 8a.",
@@ -34372,6 +34456,7 @@
 							},
 							"width": 2513,
 							"height": 3338,
+							"title": "Map 13",
 							"mapRegions": [
 								{
 									"area": "6d6",
@@ -35163,7 +35248,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/042-13-02-thumb.png"
-							}
+							},
+							"id": "be6"
 						},
 						{
 							"type": "image",
@@ -35173,7 +35259,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "be6",
+								"autoScale": true
+							}
 						},
 						{
 							"type": "entries",
@@ -35905,6 +35996,7 @@
 							},
 							"width": 2513,
 							"height": 3338,
+							"title": "Map 14",
 							"mapRegions": [
 								{
 									"area": "726",
@@ -37304,7 +37396,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/045-14-02-thumb.png"
-							}
+							},
+							"id": "be7"
 						},
 						{
 							"type": "image",
@@ -37314,7 +37407,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "be7",
+								"autoScale": true
+							}
 						},
 						{
 							"type": "entries",
@@ -38755,6 +38853,7 @@
 							},
 							"width": 2513,
 							"height": 3338,
+							"title": "Map 15",
 							"mapRegions": [
 								{
 									"area": "7e4",
@@ -40065,7 +40164,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/048-15-02-thumb.png"
-							}
+							},
+							"id": "be8"
 						},
 						{
 							"type": "image",
@@ -40075,7 +40175,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "be8",
+								"autoScale": true
+							}
 						},
 						"The Obstacle Course is mostly devoid of furnishings, since the level was designed explicitly to dispose of intruders in an efficient yet entertaining manner.",
 						{
@@ -41931,6 +42036,7 @@
 							},
 							"width": 2513,
 							"height": 3338,
+							"title": "Map 16",
 							"mapRegions": [
 								{
 									"area": "838",
@@ -43359,7 +43465,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/052-16-02-thumb.png"
-							}
+							},
+							"id": "be9"
 						},
 						{
 							"type": "image",
@@ -43369,7 +43476,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "be9",
+								"autoScale": true
+							}
 						},
 						{
 							"type": "entries",
@@ -44472,6 +44584,7 @@
 							},
 							"width": 2513,
 							"height": 3338,
+							"title": "Map 17",
 							"mapRegions": [
 								{
 									"area": "8a6",
@@ -45407,7 +45520,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/055-17-02-thumb.png"
-							}
+							},
+							"id": "bea"
 						},
 						{
 							"type": "image",
@@ -45417,7 +45531,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "bea",
+								"autoScale": true
+							}
 						},
 						"The caverns surrounding the mind flayer colony are dark and damp. The space occupied by the colony is smoothly carved from solid stone. Throughout this level, adventurers hear the constant thunder of the underground river, which is especially loud in {@area area 12|8cb|x} and slightly less so in {@area areas 16|8e4|x} through {@area 20|8f0}.",
 						{
@@ -46285,6 +46404,7 @@
 							},
 							"width": 2513,
 							"height": 3338,
+							"title": "Map 18",
 							"mapRegions": [
 								{
 									"area": "91c",
@@ -47291,7 +47411,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/058-18-02-thumb.png"
-							}
+							},
+							"id": "beb"
 						},
 						{
 							"type": "image",
@@ -47301,7 +47422,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2850
+							"height": 2850,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "beb",
+								"autoScale": true
+							}
 						},
 						{
 							"type": "entries",
@@ -48422,6 +48548,7 @@
 							},
 							"width": 2513,
 							"height": 3338,
+							"title": "Map 19",
 							"mapRegions": [
 								{
 									"area": "9b5",
@@ -49052,7 +49179,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/061-19-02-thumb.png"
-							}
+							},
+							"id": "bec"
 						},
 						{
 							"type": "image",
@@ -49062,7 +49190,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2850
+							"height": 2850,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "bec",
+								"autoScale": true
+							}
 						},
 						{
 							"type": "inset",
@@ -49808,6 +49941,7 @@
 							},
 							"width": 2513,
 							"height": 3338,
+							"title": "Map 20",
 							"mapRegions": [
 								{
 									"area": "9c0",
@@ -51084,7 +51218,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/066-20-02-thumb.png"
-							}
+							},
+							"id": "bed"
 						},
 						{
 							"type": "image",
@@ -51094,7 +51229,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "bed",
+								"autoScale": true
+							}
 						},
 						{
 							"type": "entries",
@@ -52179,6 +52319,7 @@
 							},
 							"width": 2513,
 							"height": 3338,
+							"title": "Map 21",
 							"mapRegions": [
 								{
 									"area": "a29",
@@ -53370,7 +53511,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/069-21-02-thumb.png"
-							}
+							},
+							"id": "bee"
 						},
 						{
 							"type": "image",
@@ -53380,7 +53522,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "bee",
+								"autoScale": true
+							}
 						},
 						{
 							"type": "entries",
@@ -54338,6 +54485,7 @@
 							},
 							"width": 2513,
 							"height": 3338,
+							"title": "Map 22",
 							"mapRegions": [
 								{
 									"area": "a9d",
@@ -55557,7 +55705,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/072-22-02-thumb.png"
-							}
+							},
+							"id": "bef"
 						},
 						{
 							"type": "image",
@@ -55567,7 +55716,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "bef",
+								"autoScale": true
+							}
 						},
 						"The following features apply throughout Shadowdusk Hold unless otherwise noted in an area's description:",
 						{
@@ -56861,6 +57015,7 @@
 							},
 							"width": 2513,
 							"height": 3338,
+							"title": "Map 23",
 							"mapRegions": [
 								{
 									"area": "b45",
@@ -57870,7 +58025,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/076-23-02-thumb.png"
-							}
+							},
+							"id": "bf0"
 						},
 						{
 							"type": "image",
@@ -57880,7 +58036,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2175,
-							"height": 2925
+							"height": 2925,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "bf0",
+								"autoScale": true
+							}
 						},
 						{
 							"type": "entries",
@@ -59048,6 +59209,7 @@
 							},
 							"width": 2513,
 							"height": 3338,
+							"title": "Map 24",
 							"mapRegions": [
 								{
 									"area": "b91",
@@ -59371,7 +59533,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/081-24-02-thumb.png"
-							}
+							},
+							"id": "bf1"
 						},
 						{
 							"type": "image",
@@ -59381,7 +59544,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2250,
-							"height": 2850
+							"height": 2850,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "bf1",
+								"autoScale": true
+							}
 						},
 						{
 							"type": "inset",
@@ -59538,6 +59706,7 @@
 							},
 							"width": 2513,
 							"height": 3338,
+							"title": "Map 25",
 							"mapRegions": [
 								{
 									"area": "bab",
@@ -60305,7 +60474,8 @@
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/WDMM/thumbnail/083-24-04-thumb.png"
-							}
+							},
+							"id": "bf2"
 						},
 						{
 							"type": "image",
@@ -60315,7 +60485,12 @@
 							},
 							"title": "(Player Version)",
 							"width": 2100,
-							"height": 2850
+							"height": 2850,
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "bf2",
+								"autoScale": true
+							}
 						},
 						"The town has no general store, and some merchandise that is abundant in Waterdeep simply isn't available here. Prices in Skullport are five times higher than normal. If an NPC is mentioned by name with no pointer to a stat block, assume the NPC is a {@creature commoner}.",
 						{
@@ -60543,6 +60718,7 @@
 									},
 									"width": 2513,
 									"height": 1668,
+									"title": "Map 26",
 									"mapRegions": [
 										{
 											"area": "bb2",
@@ -60695,7 +60871,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/WDMM/thumbnail/085-24-06-thumb.png"
-									}
+									},
+									"id": "bf3"
 								},
 								{
 									"type": "image",
@@ -60705,7 +60882,12 @@
 									},
 									"title": "(Player Version)",
 									"width": 2100,
-									"height": 1500
+									"height": 1500,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "bf3",
+										"autoScale": true
+									}
 								}
 							]
 						},

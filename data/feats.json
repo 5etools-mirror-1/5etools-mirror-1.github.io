@@ -4476,7 +4476,7 @@
 				}
 			],
 			"entries": [
-				"You are skilled in the creation of servos\u2014tiny constructs that function as personal assistants. You can cast the {@spell find familiar} spell as a ritual, creating a servo to serve as your familiar instead of an animal. A servo's statistics appear in the \"Artifact Creatures\" section of this document. In every other way, a servo familiar functions as described in the {@spell find familiar} spell.",
+				"You are skilled in the creation of {@creature servo|psk|servos}\u2014tiny constructs that function as personal assistants. You can cast the {@spell find familiar} spell as a ritual, creating a {@creature servo|psk} to serve as your familiar instead of an animal. A {@creature servo|psk}'s statistics appear in the \"Artifact Creatures\" section of this document. In every other way, a servo familiar functions as described in the {@spell find familiar} spell.",
 				"You can communicate telepathically with your servo familiar and perceive through its senses as long as you are on the same plane of existence. You can speak through your servo in your own voice.",
 				"Additionally, when you take the {@action Attack} action, you can forgo one of your own attacks to allow your servo familiar to make one attack of its own."
 			]
@@ -5049,6 +5049,500 @@
 					"items": [
 						"You gain proficiency in the {@skill Stealth} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
 						"If you are hidden, you can move up to 10 feet in the open without revealing yourself if you end the move in a position where you're not clearly visible."
+					]
+				}
+			]
+		},
+		{
+			"name": "Strixhaven Initiate",
+			"source": "SCC",
+			"page": 36,
+			"additionalSpells": [
+				{
+					"name": "Lorehold 1",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"light#c",
+							"sacred flame#c"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=cleric;wizard"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Lorehold 2",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"light#c",
+							"thaumaturgy#c"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=cleric;wizard"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Lorehold 3",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"sacred flame#c",
+							"thaumaturgy#c"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=cleric;wizard"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Prismari 1",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"fire bolt#c",
+							"prestidigitation#c"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=bard;sorcerer"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Prismari 2",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"fire bolt#c",
+							"ray of frost#c"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=bard;sorcerer"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Prismari 3",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"prestidigitation#c",
+							"ray of frost#c"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=bard;sorcerer"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Quandrix 1",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"druidcraft#c",
+							"guidance#c"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=druid;wizard"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Quandrix 2",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"druidcraft#c",
+							"mage hand#c"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=druid;wizard"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Quandrix 3",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"guidance#c",
+							"mage hand#c"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=druid;wizard"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Silverquill 1",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"sacred flame#c",
+							"thaumaturgy#c"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=bard;cleric"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Silverquill 2",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"sacred flame#c",
+							"vicious mockery#c"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=bard;cleric"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Silverquill 3",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"thaumaturgy#c",
+							"vicious mockery#c"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=bard;cleric"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Witherbloom 1",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"chill touch#c",
+							"druidcraft#c"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=druid;wizard"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Witherbloom 2",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"chill touch#c",
+							"spare the dying#c"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=druid;wizard"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Witherbloom 3",
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							"druidcraft#c",
+							"spare the dying#c"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=druid;wizard"
+									}
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"You have studied some magical theory and have learned a few spells associated with Strixhaven University.",
+				"Choose one of Strixhaven's colleges: Lorehold, Prismari, Quandrix, Silverquill, or Witherbloom. You learn two cantrips and one 1st-level spell based on the college you choose, as specified in the Strixhaven Spells table.",
+				"You can cast the chosen 1st-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spell using any spell slots you have.",
+				"Your spellcasting ability for this feat's spells is Intelligence, Wisdom, or Charisma (choose when you select this feat).",
+				{
+					"type": "table",
+					"caption": "Strixhaven Spells",
+					"colLabels": [
+						"College",
+						"Cantrips",
+						"1st-Level Spell"
+					],
+					"colStyles": [
+						"col-2",
+						"col-5",
+						"col-5"
+					],
+					"rows": [
+						[
+							"Lorehold",
+							"Choose two from {@spell light}, {@spell sacred flame}, and {@spell thaumaturgy}.",
+							"Choose one 1st-level {@filter cleric or wizard spell|spells|level=1|class=cleric;wizard}."
+						],
+						[
+							"Prismari",
+							"Choose two from {@spell fire bolt}, {@spell prestidigitation}, and {@spell ray of frost}.",
+							"Choose one 1st-level {@filter bard or sorcerer spell|spells|level=1|class=bard;sorcerer}."
+						],
+						[
+							"Quandrix",
+							"Choose two from {@spell druidcraft}, {@spell guidance}, and {@spell mage hand}.",
+							"Choose one 1st-level {@filter druid or wizard spell|spells|level=1|class=druid;wizard}."
+						],
+						[
+							"Silverquill",
+							"Choose two from {@spell sacred flame}, {@spell thaumaturgy}, and {@spell vicious mockery}.",
+							"Choose one 1st-level {@filter bard or cleric spell|spells|level=1|class=bard;cleric}."
+						],
+						[
+							"Witherbloom",
+							"Choose two from {@spell chill touch}, {@spell druidcraft}, and {@spell spare the dying}.",
+							"Choose one 1st-level {@filter druid or wizard spell|spells|level=1|class=druid;wizard}."
+						]
+					]
+				}
+			]
+		},
+		{
+			"name": "Strixhaven Mascot",
+			"source": "SCC",
+			"page": 37,
+			"prerequisite": [
+				{
+					"level": 4,
+					"feat": [
+						"Strixhaven Initiate|SCC"
+					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"_": {
+							"ritual": [
+								"find familiar"
+							]
+						}
+					}
+				}
+			],
+			"entries": [
+				"You have learned how to summon a Strixhaven mascot to assist you, granting you these benefits:",
+				{
+					"type": "list",
+					"items": [
+						"You can cast the {@spell find familiar} spell as a ritual. Your familiar can take the form of the mascot associated with the college you chose for the Strixhaven Initiate feat: a {@creature spirit statue mascot|scc} (Lorehold), an {@creature art elemental mascot|scc} (Prismari), a {@creature fractal mascot|scc} (Quandrix), an {@creature inkling mascot|scc} (Silverquill), or a {@creature pest mascot|scc} (Witherbloom).",
+						"When you take the {@action Attack} action on your turn, you can forgo one attack to allow your mascot familiar to make one attack of its own with its reaction.",
+						"If your mascot familiar is within 60 feet of you, you can teleport as an action, swapping places with the familiar. If your destination space is too small for you to occupy, the teleportation fails and is wasted. Once you teleport in this way, you can't do so again until you finish a long rest, unless you expend a spell slot of 2nd level or higher to do it again."
 					]
 				}
 			]

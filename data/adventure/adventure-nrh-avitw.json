@@ -29,7 +29,8 @@
 						"Ever jealous of the cheery dispositions and colorful deliciousness of the NERDS, Emo the beholder and his hired muscle, Mr. Greystone, have struck a blow against the NERDS' beloved city of Harmony. After years of searching, the nefarious duo have found the sacred Prismatic Well that gives Harmony its vibrant and fabulous colors. Now, with access to the Prismatic Well, Emo and Mr. Greystone have begun to leech the color from the city of Harmony. If they aren't stopped, the city will gradually turn gray, with everything eventually becoming black and white.",
 						"To the NERDS, the colors beginning to flicker and drain out of Harmony is an unsettling mystery. What brings the colors to Harmony is an enigma to them. All they can do is hope the power comes back on and restores the vibrancy of Harmony's colors once more. But one group knows what's up, and that group is the Lorekeeper Society\u2014a secret society sworn to protect Harmony. The Lorekeepers know about the power of the Prismatic Well, but its true location is lost even to themselves. However, they have a way to find the well using an ancient artifact known as the Amulet of Harmony, but to activate it they need to find the six Gems of Power. Once activated, the amulet guides whoever controls it to the secret location of the Prismatic Well. But once activated, the amulet also has the power to turn off the well.",
 						"The Gems of Power were long ago hidden away for safekeeping in dungeons, forests, and towers. No one in the Lorekeeper Society knows the details of the magical beasts and traps guarding the gems, but our heroic NERDS are more than up to the challenge of restoring Harmony!"
-					]
+					],
+					"id": "001"
 				},
 				{
 					"type": "entries",
@@ -44,9 +45,11 @@
 							"entries": [
 								"In solo play, there's always a chance the character can die. In the case of a single adventurer, this death results in the end of play; which isn't optimal for an afternoon of fun! One way to avoid death is to have healing readily available to the adventurer. If they're without healing, have the character find the odd {@item potion of healing} lying in a dusty crate or have them discover a special healing plant on their journey that, if eaten, puts them back to full hit points.",
 								"In the case of an untimely death, you can have a helpful NPC (like Mr. Honeycutt) save the day and revive them, or you can have them forego death saving throws and wake up as they're being dragged someplace unpleasant."
-							]
+							],
+							"id": "003"
 						}
-					]
+					],
+					"id": "002"
 				},
 				{
 					"type": "entries",
@@ -63,7 +66,8 @@
 								"They must then face the Scarlet Sentinel, a living statue that guards the Crimson Gem."
 							]
 						}
-					]
+					],
+					"id": "004"
 				},
 				{
 					"type": "entries",
@@ -72,7 +76,8 @@
 					"entries": [
 						"Hand the character sheet (see \"Red the Ranger,\" below) to your player and let them familiarize themselves with Red.",
 						"All creatures or NPCs that are bolded have stat blocks, which are included at the end of the adventure along with any magic items the characters can earn. Whenever you're both ready, you can start the session."
-					]
+					],
+					"id": "005"
 				},
 				{
 					"type": "section",
@@ -86,7 +91,8 @@
 							"entries": [
 								"You're in the forests on the outskirts of the city of Harmony, investigating what the locals are calling \"color outages\" occurring across the city. The forest is usually filled with lush colors from the plants and wildlife that fill the area, but you've found the strange color outages dulling the city have struck here too\u2014fading the flowers and graying the leaves.",
 								"Entrusted with protecting and preserving the forest, you've been searching for natural causes that might be behind the outages, but have had no luck so far determining the source. As you hunt for more clues, a little bird lands next to you with a tiny scrap of parchment in its beak."
-							]
+							],
+							"id": "007"
 						},
 						"If Red makes a successful DC 12 Wisdom ({@skill Animal Handling}) check, the bird flies over and drops the parchment into their hand and then flies away. If Red holds out their finger as a perch or offers the bird some tasty seeds, they have advantage on the check. If Red opens the note, read:",
 						{
@@ -98,13 +104,16 @@
 									"type": "entries",
 									"name": "\u2014Mr. Honeycutt",
 									"page": 3,
-									"entries": []
+									"entries": [],
+									"id": "009"
 								}
-							]
+							],
+							"id": "008"
 						},
 						"Red knows Mr. Honeycutt to be a kindly, soft-spoken librarian at the Harmony Library.",
 						"Red also knows where Old Oak Grove is. With a successful DC 12 Intelligence ({@skill Nature}) check, Red remembers how to get there in under 15 minutes and arrives before Elowen is ambushed (see \"Arriving Before the Ambush,\" below). On a failed check, it takes Red 25 minutes to get there and they arrive while Elowen is being ambushed (see \"Arriving During the Ambush,\" below)."
-					]
+					],
+					"id": "006"
 				},
 				{
 					"type": "entries",
@@ -117,7 +126,8 @@
 							"page": 4,
 							"entries": [
 								"You enter a grove of ancient trees. One in particular you know well, the Old Oak. Its thick, gnarled branches twist up into the sky and birds chirp in its gently creaking boughs. Near the Old Oak, a small sapling with a tiny face looks around as if expecting someone."
-							]
+							],
+							"id": "00b"
 						},
 						"If Red goes to investigate, the sapling, a young {@creature awakened shrub}, introduces herself as Elowen Greenleaf. She knows all about Red the Ranger and recommended Red to Mr. Honeycutt to help unravel and solve the mystery of the color outages.",
 						{
@@ -127,7 +137,8 @@
 							"entries": [
 								"Elowen Greenleaf is dressed in a Sapling Scout uniform that includes a green sash with stitched-on badges. She's precocious and eager to earn merit badges by being a helpful member of the forest community\u2014but she's also secretly a member of the Lorekeeper Society.",
 								"She tells Red she's involved in a matter of great importance: Mr. Honeycutt has entrusted her with a mission to find the Crimson Gem, one of the six Gems of Power. But there's a problem, and it's why they need the help of a ranger. The gem is guarded by the legendary Scarlet Sentinel, and no one knows how to get past it. All Elowen has to go on is a tattered map."
-							]
+							],
+							"id": "00c"
 						},
 						{
 							"type": "entries",
@@ -135,7 +146,8 @@
 							"page": 4,
 							"entries": [
 								"Elowen has a pair of binoculars, a compass, a box of Sapling Scout wafers, and a sewing kit."
-							]
+							],
+							"id": "00d"
 						},
 						{
 							"type": "entries",
@@ -155,7 +167,8 @@
 									]
 								},
 								"Elowen entreats Red to help her find the Crimson Gem and sweetly offers to embroider a Sapling Scout merit badge for them as a reward."
-							]
+							],
+							"id": "00e"
 						},
 						{
 							"type": "entries",
@@ -174,11 +187,14 @@
 									"page": 4,
 									"entries": [
 										"The glyphs represent the three plants that must be touched in the correct order to open the magic door at the entrance to the temple (see area R1, below). The plants are foxglove, spider plant, and catspaw, respectively."
-									]
+									],
+									"id": "010"
 								}
-							]
+							],
+							"id": "00f"
 						}
-					]
+					],
+					"id": "00a"
 				},
 				{
 					"type": "entries",
@@ -191,13 +207,15 @@
 							"page": 4,
 							"entries": [
 								"As you enter the Old Oak Grove, you hear a cry of alarm and what sounds like arrows whistling through the air. Near the Old Oak, you see a small sapling with a tiny, {@condition frightened} face flanked by two gnarled thorn bushes that look threatening."
-							]
+							],
+							"id": "012"
 						},
 						"A successful DC 10 Intelligence ({@skill Nature}) check reveals that the thorn bushes are two {@creature twig blight||twig blights}, while the {@condition frightened} sapling wearing a green sash with stitched-on badges is an {@creature awakened shrub}, Elowen Greenleaf.",
 						"Red can deal with the twig blights in a number of ways. Trying to intimidate or persuade them is difficult and Red must make a successful DC 15 Charisma ({@skill Intimidation} or {@skill Persuasion}) check to change their minds.",
 						"The {@creature twig blight||twig blights} have orders from the shadowy Mr. Greystone to find the Scarlet Sentinel and retrieve the Crimson Gem. For what purpose, they don't know, but what they do know is that bringing Elowen Greenleaf back to their master is a good first step to finding the gem.",
 						"Should all go successfully, after the conflict, have Red and Elowen meet (see \"Meeting Elowen,\" above)."
-					]
+					],
+					"id": "011"
 				},
 				{
 					"type": "entries",
@@ -212,7 +230,8 @@
 							"page": 5,
 							"entries": [
 								"To find Lemondrop Ledges, Red must succeed on three consecutive DC 12 Wisdom ({@skill Survival}) checks. If Red uses Elowen's map, they have advantage on the checks. If a check fails, Elowen can assist by rolling herself, but as she hasn't completed her Sapling Scout orienteering course yet, she doesn't have advantage on her roll."
-							]
+							],
+							"id": "014"
 						},
 						{
 							"type": "entries",
@@ -226,9 +245,11 @@
 									"page": 5,
 									"entries": [
 										"These deciduous fruiting trees have silvery bark, distinctive spiky, green leaves, and clusters of small, lemon-sweet fruit. Birds, bees, and other forest animals love these fruits as it gives them a boost of energy. Eating three or more fruits grants Red the benefits of an enhance ability (bear's endurance) spell (no concentration required)."
-									]
+									],
+									"id": "016"
 								}
-							]
+							],
+							"id": "015"
 						},
 						{
 							"type": "entries",
@@ -237,7 +258,8 @@
 							"entries": [
 								"The entrance to the Temple of the Scarlet Sentinel is in the cliff face across the ravine from Lemondrop Ledges and requires a successful DC 14 Wisdom ({@skill Perception}) check to spot. If Elowen or Red remember to use the binoculars Elowen has in her Sapling Scout pack, they have advantage on the check. If the check fails, they still find the entrance, but two twig blights sneak up on them and attack while they're busy looking for it.",
 								"Getting to the entrance means climbing down the 100-foot cliff into the ravine, crossing the ravine, then climbing halfway up the other side. However, to the north, a precarious-looking rope bridge crosses the ravine, should the adventurers choose that path."
-							]
+							],
+							"id": "017"
 						},
 						{
 							"type": "entries",
@@ -246,7 +268,8 @@
 							"entries": [
 								"Whether Red is climbing up the cliff or rappelling down it, they must make a DC 12 Strength ({@skill Athletics}) check for every 15 feet of movement (rounded up). Using climbing gear or anchoring themselves to a tree with a rope gives them advantage on the check. If the check fails, and the character isn't anchored to a tree by a rope, any falling character takes 3 ({@damage 1d6}) bludgeoning damage for every 10 feet fall.",
 								"Crossing the base of the ravine poses no difficulty to Red."
-							]
+							],
+							"id": "018"
 						},
 						{
 							"type": "entries",
@@ -260,11 +283,14 @@
 									"page": 6,
 									"entries": [
 										"A rope bridge is a great place to throw in some peril for your player to deal with. You can have a horde of needle blights chase them so they have to cross the bridge, or you can have needle blights harass them as they're halfway across. Feel free to invent fun complications for your player as they navigate across it\u2014nothing creates more tension than the rope bridge being sawed through as your heroes run for their lives, or when the heroes must cut the ropes as a bunch of needle blights scramble across after them!"
-									]
+									],
+									"id": "01a"
 								}
-							]
+							],
+							"id": "019"
 						}
-					]
+					],
+					"id": "013"
 				},
 				{
 					"type": "entries",
@@ -294,9 +320,11 @@
 										"If Red makes a successful DC 12 Intelligence ({@skill Nature}) check, they find carved into the door the same three species of plant depicted on the map: foxglove, spider plant, and catspaw.",
 										"Pressing them in that order triggers the door's magic. Glowing lines emerge around the archway as a seam forms in the solid stone, then stone grinds on stone as the door swings open.",
 										"If the player struggles to solve the puzzle, have Elowen give Red a vital clue that puts them on the right track."
-									]
+									],
+									"id": "01d"
 								}
-							]
+							],
+							"id": "01c"
 						},
 						{
 							"type": "entries",
@@ -309,10 +337,12 @@
 									"page": 6,
 									"entries": [
 										"The air smells dank and stale as you look into a dark tunnel that leads into the cliff. Colorful pictograms on the either side of the tunnel show a variety of scenes: happy NERDS frolicking beside a well from which a rainbow of colors pours forth; the city of Harmony being built; an amulet that has six colorful gemstones in it; and a scene of a great library being built."
-									]
+									],
+									"id": "01f"
 								},
 								"Coming from a room at the far end of the tunnel, Red can see a faint, reddish glow."
-							]
+							],
+							"id": "01e"
 						},
 						{
 							"type": "entries",
@@ -325,7 +355,8 @@
 									"page": 6,
 									"entries": [
 										"In the center of the room, you see a faintly glowing red gemstone hovering above a 12-foot-tall statue of a warrior that sits atop a stone dais. The gemstone's glow dimly lights the room. On the floor, a large red circle etched with strange sigils surrounds the statue and extends across most of the room, leaving only a 5-foot wide path around the edge of the circular chamber. As if sensing your presence, the statue's eyes snap open and glow red."
-									]
+									],
+									"id": "021"
 								},
 								"On a raised dais in the center of the room stands the Scarlet Sentinel. It's made from blood onyx and depicts a strange, humanlike creature with elongated arms and fangs that jut from its wide mouth. Any creature that moves into the red circle painted on the floor, even if they cross the boundary without touching the floor, activates the sentinel, which instantly attacks the nearest living thing. As soon as there's nothing alive within the circle, the sentinel returns to the dais and goes dormant\u2014except for its ominously glowing eyes.",
 								{
@@ -341,11 +372,14 @@
 												"Red and Elowen can work together with one of them luring the sentinel away while the other grabs the gem with a net or a long pole. This requires quick and flawless execution as one hit from the sentinel can spell certain death."
 											]
 										}
-									]
+									],
+									"id": "022"
 								}
-							]
+							],
+							"id": "020"
 						}
-					]
+					],
+					"id": "01b"
 				},
 				{
 					"type": "entries",
@@ -356,7 +390,8 @@
 						"Mr. Honeycutt is overjoyed at the return of the Crimson Gem (unless it's in pieces) and wants to know everything about the adventure while he scribbles copious notes in his black notebook.",
 						"For their troubles, he awards Elowen with a shiny badge of merit for outstanding service and promotes her to Sapling Scout First Class. To Red, he gives a pouch containing 20 gp and invites Red to join the Lorekeeper Society. If Red accepts, Mr. Honeycutt gives Red a magic cloak pin with the emblem of the Lorekeeper Society on it. The Lorekeeper pin acts as a {@item necklace of adaptation}.",
 						"Elowen also gives Red a newly stitched merit badge for acts of heroism and bravery."
-					]
+					],
+					"id": "023"
 				},
 				{
 					"type": "section",
@@ -370,7 +405,8 @@
 								"{@item Necklace of Adaptation}"
 							]
 						}
-					]
+					],
+					"id": "024"
 				},
 				{
 					"type": "image",
@@ -386,7 +422,8 @@
 						"path": "adventure/NRH-AVitW/sheet004.webp"
 					}
 				}
-			]
+			],
+			"id": "000"
 		}
 	]
 }

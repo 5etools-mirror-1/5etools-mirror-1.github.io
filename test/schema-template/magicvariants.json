@@ -40,9 +40,15 @@
 								"type": {"$ref": "shared-items.json#/definitions/itemType"},
 								"scfType": {"$ref": "shared-items.json#/definitions/itemScfType"},
 								"net": {"type": "boolean"},
-								"weaponCategory": {"$ref": "shared-items.json#/definitions/itemWeaponCategory"}
+								"weaponCategory": {"$ref": "shared-items.json#/definitions/itemWeaponCategory"},
+								"property": {"type": "string"}
 							},
-							"additionalProperties": false
+							"$$ifSite": {
+								"additionalProperties": false
+							},
+							"$$ifBrew": {
+								"additionalProperties": {"type": "boolean"}
+							}
 						}
 					},
 					"inherits": {
@@ -208,7 +214,18 @@
 							"source",
 							"page"
 						],
-						"additionalProperties": false
+						"$$ifSite": {
+							"additionalProperties": false
+						},
+						"$$ifBrew": {
+							"additionalProperties": {
+								"type": [
+									"boolean",
+									"integer",
+									"string"
+								]
+							}
+						}
 					},
 					"excludes": {
 						"type": "object",
@@ -230,13 +247,34 @@
 								"type": "integer"
 							},
 							"property": {
-								"type": "string"
+								"oneOf": [
+									{
+										"type": "string"
+									},
+									{
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									}
+								]
 							},
 							"net": {
 								"type": "boolean"
 							}
 						},
-						"additionalProperties": false
+						"$$ifSite": {
+							"additionalProperties": false
+						},
+						"$$ifBrew": {
+							"additionalProperties": {
+								"type": [
+									"boolean",
+									"integer",
+									"string"
+								]
+							}
+						}
 					},
 					"noDisplay": {
 						"type": "boolean"

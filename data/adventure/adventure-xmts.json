@@ -20,9 +20,11 @@
 						"Ixalan is a land of exploration and discovery. But the Legion of Dusk\u2014a vampire society that formed from an alliance of nobles and the church\u2014has recently arrived from overseas to expand its territories. The legion's army seeks to conquer the island, and the vampires have erected numerous forts in the south. However, their plans have been met with resistance from the inhabitants of Ixalan.",
 						"The Sun Empire rules the coast, and has managed to tame dinosaurs enough to work alongside them. Meanwhile, the River Heralds\u2014a loose society of nomadic merfolk tribes\u2014move throughout the interior of Ixalan, at one with nature. These two groups have long held an uneasy accord.",
 						"At sea, forces of the piratical Brazen Coalition harry the naval forces of the Legion of Dusk, which make landfall to plunder the bounty of Ixalan as they see fit. But even so, not all vampires view the current ruling establishment as the final authority. The Order of the Five Sacraments, a vampire church sect that believes in establishing a trade relationship with the Sun Empire, hopes to undermine the plans of the would-be conquerors."
-					]
+					],
+					"id": "001"
 				}
-			]
+			],
+			"id": "000"
 		},
 		{
 			"type": "section",
@@ -41,7 +43,8 @@
 						"path": "adventure/XMtS/2.webp"
 					}
 				}
-			]
+			],
+			"id": "002"
 		},
 		{
 			"type": "section",
@@ -64,9 +67,11 @@
 						"This adventure uses {@i Magic: The Gathering} cards to help build momentum toward adventure progression, and to reward interactive play.",
 						"You'll need a handful of Treasure token cards (found in Ixalan booster packs) and a number of cards detailing treasures from the Ixalan set. See \"{@adventure Appendix D: Hidden Plunder|XMtS|8}\" at the end of this adventure for the card list, then shuffle those nontoken cards to make an item deck.",
 						"Whenever a player advances an objective, makes an important discovery, or has a good idea, give that player a Treasure token. A player cannot have more than one Treasure token for his or her character. Random encounters then provide an opportunity to uncover a treasure cache. When searching an area, players roll against each other to find treasure, allowing one player to redeem a Treasure token and draw from the item deck."
-					]
+					],
+					"id": "004"
 				}
-			]
+			],
+			"id": "003"
 		},
 		{
 			"type": "section",
@@ -78,13 +83,15 @@
 					"type": "insetReadaloud",
 					"entries": [
 						"Your time in the prison cells of Conqueror's Foothold is drawing to an end\u2014as are your lives. Like all those deemed enemies of the Legion of Dusk, you are set to be executed to feed the vampires who command the fortress. On the night before the full moon, you have been moved to the executioner's chamber, next in line to be sacrificed."
-					]
+					],
+					"id": "006"
 				},
 				{
 					"type": "insetReadaloud",
 					"entries": [
 						"But what your captors don't know is that each of you has made a bargain with the cleric, Alante. In exchange for your lives and retrieval of the legendary relic known as the Hierophant's Chalice, you have been promised various favors from the Order of the Five Sacraments\u2014a vampiric sect that opposes the Legion of Dusk's thirst for conquest. During your brief time in Conqueror's Foothold, Alante has been able to communicate a plan of escape by sending message spells at various interludes. Tonight marks the night that plan comes to fruition."
-					]
+					],
+					"id": "007"
 				},
 				{
 					"type": "entries",
@@ -97,7 +104,8 @@
 							"entries": [
 								"You stand in a large holding cell awaiting the executioner's summons. Outside the cell window, a nearly full moon hangs high in the cloudless sky. In the center of the executioner's chamber, a greataxe lies across a stone block. Chains lined with butcher hooks hang above metal vats stacked and waiting to collect the blood of the executed, and reminding you of your imminent appointment with death.",
 								"The guards open the metal grate that seals your cell. Stepping into the chamber beyond, you see the cleric who will oversee your sacrifice. That's your cue. It's time to issue last rites. . . to the guards."
-							]
+							],
+							"id": "009"
 						},
 						"The characters have no gear, except for Alante. They are unarmored and can make only unarmed strikes, dealing bludgeoning damage equal to 1 + Strength modifier.",
 						"The Legion of Dusk troops stationed at Conqueror's Foothold are loyal to Vona, Butcher of Magan. Two human {@creature guard|mm|guards} have escorted the cleric Alante into the cell. One guard carries a set of keys that can be used to open the prison cells, the main door, and the executioner's hatch (see below). The perimeter of the room is lined with five other cell blocks, each large enough to hold five prisoners but empty at present.",
@@ -113,11 +121,14 @@
 										"A character who succeeds on a DC 10 Intelligence ({@skill Investigation}) check notes that the slick walls of the chute offer no handholds. This makes it a straight drop into the ocean, and prevents anyone from getting back up this way. Characters who jump through the hatch take no damage when they hit the water, and can then easily swim to shore.",
 										"One hour after the characters escape, a new group of guards enters the executioner's block and sounds an alert (see \"{@adventure Conqueror's Foothold|XMtS|3|conqueror's foothold},\" below).",
 										"Any character who succeeds on a DC 15 Wisdom ({@skill Perception} or {@skill Survival}) check notices a {@creature hunter shark} in the water. Any party member who takes damage during the fight with the guards attracts its attention and causes the shark to attack."
-									]
+									],
+									"id": "00b"
 								}
-							]
+							],
+							"id": "00a"
 						}
-					]
+					],
+					"id": "008"
 				},
 				{
 					"type": "entries",
@@ -129,7 +140,8 @@
 							"type": "insetReadaloud",
 							"entries": [
 								"The bastioned fortification of Conqueror's Foothold towers high above the sheer cliff side. Waves crash along the rocky shoreline, their caps lit by moonlight."
-							]
+							],
+							"id": "00d"
 						},
 						"Artinoq's raptor companion, Sharkbait, waits on the beach with a rucksack containing ten days' {@item rations (1 day)|phb|rations}. Once he sees his companion, he leads the party to a hidden cache buried in the sand, which contains all their confiscated gear. Alante managed to smuggle it out of the fortress a few days ago.",
 						"To the north, a trail leads to the Field of Ruin. Following this path through to the northwest mountain passage will take the characters through the Primal Wellspring region, bypassing the strongholds of the Legion of Dusk.",
@@ -144,7 +156,8 @@
 									"entries": [
 										"One hour after the characters fought the guards, another patrol enters the executioner's chamber and discovers the escape. A bell-toll alarm sounds out within the fort, and a patrol of twelve {@creature guard|mm|guards} is sent out to comb the area for the prisoners and the duplicitous Alante. Additionally, beacon towers between Conqueror's Foothold, Fort Leor, and Fort Durron light up, making it difficult for characters who are not with the Legion of Dusk to move along the beach unseen. Any Dexterity ({@skill Stealth}) checks made by the characters to avoid guards are made with disadvantage.",
 										"Two hours after the escape, Vona discovers that Alante is attempting to claim the {@i Hierophant's Chalice} before he does. The Butcher of Magan assembles a force and sends them out to find the relic first. Vona's relic hunters are comprised of two vampire soldiers (use {@creature guard} statistics), a human cleric (use {@creature priest} statistics), and a human {@creature scout}, all on horseback. They take the most direct route to the Temple of Aclazotz, past Fort Leor and Fort Durron across the beach. However, they subsequently become lost in the Unclaimed Territory, and can be randomly encountered there."
-									]
+									],
+									"id": "00f"
 								},
 								{
 									"type": "entries",
@@ -156,19 +169,23 @@
 											"type": "insetReadaloud",
 											"entries": [
 												"Rising from the surf, skeletons dressed in tattered clothes of pirates shamble toward the shore!"
-											]
+											],
+											"id": "011"
 										},
 										"The six {@creature skeleton|mm|skeletons} attack, gaining surprise if all the characters fail to notice them."
-									]
+									],
+									"id": "010"
 								}
-							]
+							],
+							"id": "00e"
 						},
 						{
 							"type": "inset",
 							"name": "Exploring Ixalan",
 							"entries": [
 								"Traveling from Conqueror's Foothold to the Temple of Aclazotz takes three days by way of the beach or four days through the mountains. While moving through certain terrain ({@adventure Fort Leor and Fort Durron|XMtS|3|fort leor and fort durron}, {@adventure Primal Wellspring|XMtS|3|primal wellspring}, and {@adventure Uncharted Territory|XMtS|3|unclaimed territory}), random encounters might be triggered. Roll a {@dice d20} to check for an encounter once during the day and once during the night. If the result is 18 or higher by day, or 15 or higher at night, a random encounter occurs. Refer to the encounter tables in each region to determine what the adventurers meet, and reroll if the result doesn't make sense given the circumstances."
-							]
+							],
+							"id": "012"
 						},
 						{
 							"type": "image",
@@ -177,7 +194,8 @@
 								"path": "adventure/XMtS/3.webp"
 							}
 						}
-					]
+					],
+					"id": "00c"
 				},
 				{
 					"type": "entries",
@@ -189,7 +207,8 @@
 							"type": "insetReadaloud",
 							"entries": [
 								"Dozens upon dozens of bodies are strewn about the field in various states of decomposition. The ruined banners of fallen war parties billow in the sea breeze."
-							]
+							],
+							"id": "014"
 						},
 						"The characters can follow a river north to a mountain passage through the Primal Wellspring. To the south is the shoreline. Fort Leor and Fort Durron are to the west, within sight of the beach.",
 						"A successful DC 15 Wisdom ({@skill Perception}) check reveals the presence of scavengers in the field. Three medium raptors (use {@creature deinonychus|vgm} statistics) feast on corpses to the west. If the characters notice the raptors, they can attempt a group {@skill Stealth} check against the creatures' passive Wisdom ({@skill Perception}) of 13. On a failed group check, or if the characters don't notice the raptors, the raptors spot the party and attack.",
@@ -270,9 +289,11 @@
 												]
 											]
 										}
-									]
+									],
+									"id": "016"
 								}
-							]
+							],
+							"id": "015"
 						},
 						{
 							"type": "image",
@@ -281,7 +302,8 @@
 								"path": "adventure/XMtS/4.webp"
 							}
 						}
-					]
+					],
+					"id": "013"
 				},
 				{
 					"type": "entries",
@@ -293,14 +315,16 @@
 							"type": "insetReadaloud",
 							"entries": [
 								"Fort Leor stands in the middle of the beach, alongside a river that winds down from the northern mountains to empty into the ocean. Surrounded by a wooden palisade, armed patrols march along the fort's parapet walls."
-							]
+							],
+							"id": "018"
 						},
 						"Fort Durron, near the Temple of Aclazotz, is a stronghold isolated on an island and home to the armada of the Legion of Dusk. It takes one day to travel here from Fort Leor.",
 						{
 							"type": "insetReadaloud",
 							"entries": [
 								"Fort Durron rises tall on an island to the south. Another bastioned fortress, not unlike Conqueror's Foothold, its looming presence in the distance is made even more ominous by the Dusk Legion dreadnought moored at its stone pier."
-							]
+							],
+							"id": "019"
 						},
 						{
 							"type": "entries",
@@ -310,11 +334,14 @@
 									"name": "Avoiding Notice",
 									"entries": [
 										"The characters must pass near each fort. They can use magic or attempt a group Dexterity ({@skill Stealth}) check (DC 15 to succeed during the day, DC 10 to succeed at night) to travel unseen. At either fort, if the characters are spotted, a patrol of twelve {@creature guard|mm|guards} mounted on {@creature riding horse|mm|riding horses} moves to intercept. The guards ask the characters their reasons for traveling through the area, and if not convinced by their story, move to attack and apprehend them."
-									]
+									],
+									"id": "01b"
 								}
-							]
+							],
+							"id": "01a"
 						}
-					]
+					],
+					"id": "017"
 				},
 				{
 					"type": "entries",
@@ -326,7 +353,8 @@
 							"type": "insetReadaloud",
 							"entries": [
 								"Following the natural path up through mountainous terrain, you eventually make your way down again, moving through a lush canopy of vines into a vivid jungle. Ahead of you, a waterfall erupts from a great stone sculpture jutting out from the side of a cliff, sourced by a powerful spring."
-							]
+							],
+							"id": "01d"
 						},
 						"The area around the waterfall spring is covered in thick foliage and tangles of vines, making it difficult terrain. Because there is no natural path through this region, the party's navigator must succeed on a DC 15 Wisdom ({@skill Survival}) check to find the way through to the next region. If the party is moving at a slow pace, the navigator gains a +5 bonus to the check, while a fast pace imposes a \u22125 penalty. The party's navigator can repeat the check after the party spends {@dice 1d6} hours trying to get back on course.",
 						{
@@ -342,11 +370,14 @@
 											"type": "insetReadaloud",
 											"entries": [
 												"The gaping maw of an enormous breast surfaces from the pool, its giant red fin sluicing water across the shore."
-											]
+											],
+											"id": "020"
 										}
-									]
+									],
+									"id": "01f"
 								}
-							]
+							],
+							"id": "01e"
 						},
 						{
 							"type": "image",
@@ -355,7 +386,8 @@
 								"path": "adventure/XMtS/5.webp"
 							}
 						}
-					]
+					],
+					"id": "01c"
 				},
 				{
 					"type": "entries",
@@ -367,7 +399,8 @@
 							"type": "insetReadaloud",
 							"entries": [
 								"The mist of the mountains clears to reveal a rainforest. The tall trees and foliage around you are alive with movement, and macaws and parrots sing a cacophonous tune."
-							]
+							],
+							"id": "022"
 						},
 						{
 							"type": "entries",
@@ -389,7 +422,8 @@
 										},
 										"Any character who succeeds on a DC 10 Wisdom ({@skill Insight}) check determines that Mavren believes he's working for some higher purpose, but that he is also hiding something. If a  character succeeds on a DC 20 Charisma ({@skill Intimidation} or {@skill Persuasion}) check after pressing Mavren, the cleric reveals through his ravings that the Temple of Aclazotz is the home of his demonic master.",
 										"Mavren can lead the party directly to the Temple of Aclazotz. If the characters decline his aid, the party's navigator must succeed on a DC 15 Wisdom ({@skill Survival}) check to find the way to the temple. If the party is moving at a slow pace, the navigator gains a +5 bonus to the check, while a fast pace imposes a \u22125 penalty. The party's navigator can repeat the check after the party spends {@dice 1d6} hours trying to get back on course."
-									]
+									],
+									"id": "024"
 								},
 								{
 									"type": "entries",
@@ -434,9 +468,11 @@
 												]
 											]
 										}
-									]
+									],
+									"id": "025"
 								}
-							]
+							],
+							"id": "023"
 						},
 						{
 							"type": "image",
@@ -445,7 +481,8 @@
 								"path": "adventure/XMtS/6.webp"
 							}
 						}
-					]
+					],
+					"id": "021"
 				},
 				{
 					"type": "entries",
@@ -456,7 +493,8 @@
 							"type": "insetReadaloud",
 							"entries": [
 								"Nearly hidden by the jungle, a stone temple is overgrown with vines. Its broad steps lead up to a darkened entrance, and are caked with a red-black substance. Absolute silence hangs in the area around the temple, as though the site is devoid of life."
-							]
+							],
+							"id": "027"
 						},
 						"Any character who succeeds on a DC 10 Intelligence ({@skill Investigation}) check reveals the substance on the steps to be blood. It is impossible to determine how many bodies have been dragged into this temple.",
 						{
@@ -468,7 +506,8 @@
 									"entries": [
 										"If Marven led the adventurers here, he urges them to enter quickly, before they wake the creature that lurks in the area.",
 										"The creatures mutts succeed on a DC 15 group Dexterity ({@skill Stealth}) check to pass undetected by this {@creature chupacabra|psx}, which attacks if it senses any intrusion into its territory. Marven abandons and retreats into the temple if the characters are attacked."
-									]
+									],
+									"id": "029"
 								},
 								{
 									"type": "image",
@@ -486,11 +525,13 @@
 											"type": "insetReadaloud",
 											"entries": [
 												"The trail from the steps leads into a stone chamber. A strong stench fills the air and the temperature is significantly cooler here than it was outside in the humidity of the rainforest. In the center of the chamber stands a lone altar, upon which lies a corpse."
-											]
+											],
+											"id": "02b"
 										},
 										"Creatures who move within ten feet of the altar note that the corpse is little more than a dessicated husk. It wears the robes of a marshal from the Legion of Dusk and holds an ornate silver goblet in its hands.",
 										"Any creature who succeeds on a DC 15 Intelligence ({@skill Arcana} or {@skill History}) check recognizes the remains as those of Arguel, the prophet rumored to have brought the {@i Hierophant's Chalice} to the temple. A source of endless blood, the chalice activates when a single drop of blood is placed within it, filling to the brim with sanguineous fluid."
-									]
+									],
+									"id": "02a"
 								},
 								{
 									"type": "entries",
@@ -499,9 +540,11 @@
 										"Hanging from the ceiling above the altar are four blight keepers (use {@creature giant bat} statistics) and a demon named Zotz (use {@creature vrock} statistics). If Mavren fled from the chupacabra attack, he alerts Zotz, his demonic master, of the party's presence outside. Otherwise, if the characters arrive by day, they find the creatures sleeping and can surprise them if they attack at once and make no loud noise. At night, the characters must succeed on a DC 10 group Dexterity ({@skill Stealth}) check to enter the temple undetected and get the drop on the demon and its minions.",
 										"The spawn of a forgotten bat-god, the demon Zotz means to spread plague and corruption across Ixalan. He has long used his influence upon the insane Mavren to bring prey to the temple. Seeing how the {@i Hierophant's Chalice} could be used as a means to broker peace between the Legion of Dusk and the local inhabitants by reducing the need for blood sacrifices, Zotz protects the item and attempts to corrupt it with his demonic essence.",
 										"Mavren aids his master in combat. If he survives after Zotz is defeated, the cleric is no longer under the sway of the demon, but he remembers and is haunted by all the horrible things he's done in Zotz's name."
-									]
+									],
+									"id": "02c"
 								}
-							]
+							],
+							"id": "028"
 						},
 						{
 							"type": "image",
@@ -510,9 +553,11 @@
 								"path": "adventure/XMtS/8.webp"
 							}
 						}
-					]
+					],
+					"id": "026"
 				}
-			]
+			],
+			"id": "005"
 		},
 		{
 			"type": "section",
@@ -520,7 +565,8 @@
 			"name": "Conclusion",
 			"entries": [
 				"After retrieving the {@i Hierophant's Chalice} from the Temple of Aclazotz, the characters can make their way south to a rendezvous point south of Fort Durron, previously arranged by Alante. They are met by two emissaries from the Order of the Five Sacraments, who fulfill the terms of the various agreements made with the party members."
-			]
+			],
+			"id": "02d"
 		},
 		{
 			"page": 9,
@@ -554,7 +600,8 @@
 						"{@creature Vrock}"
 					]
 				}
-			]
+			],
+			"id": "02e"
 		},
 		{
 			"type": "section",
@@ -602,7 +649,8 @@
 					},
 					"title": "Temple of Aclazotz"
 				}
-			]
+			],
+			"id": "02f"
 		},
 		{
 			"type": "section",
@@ -616,7 +664,8 @@
 						"path": "adventure/XMtS/map of ixalan.webp"
 					}
 				}
-			]
+			],
+			"id": "030"
 		},
 		{
 			"type": "section",
@@ -714,7 +763,8 @@
 						]
 					]
 				}
-			]
+			],
+			"id": "031"
 		},
 		{
 			"type": "section",
@@ -829,7 +879,8 @@
 						]
 					]
 				}
-			]
+			],
+			"id": "032"
 		}
 	]
 }

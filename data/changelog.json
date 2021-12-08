@@ -1849,6 +1849,13 @@
 		"ver": "1.144.0",
 		"date": "2021-11-30",
 		"title": "Degeneration",
-		"txt": "- Added NERDS Restoring Harmony adventures\n- Added \"Gem/Art Object Generator\" mode to Loot Generator, which outputs a random selection of gems/art objects up to a given gold value\n- Added FTD \"Customizing Dragons\" variants to appropriate dragon statblocks in the Bestiary\n- Added \"Basic Rules\" filter to list pages (thanks @ benru)\n- Added lair actions/regional actions to Bestiary markdown popout content\n- (Brew) Added support for custom conditions to Bestiary/Spells Page condition filters\n= (Brew) Added support for @tags in spell components\n- (Brew) Fixed various homebrew schema issues (thanks @ Lyra)\n- (Brew) Improved Creature Text Converter handling of contractions and bulleted lists\n- (Fixed typos/added tags)"
+		"txt": "- Added NERDS Restoring Harmony adventures\n- Added \"Gem/Art Object Generator\" mode to Loot Generator, which outputs a random selection of gems/art objects up to a given gold value\n- Added FTD \"Customizing Dragons\" variants to appropriate dragon statblocks in the Bestiary\n- Added \"Basic Rules\" filter to list pages (thanks @ benru)\n- Added lair actions/regional actions to Bestiary markdown popout content\n- (Brew) Added support for custom conditions to Bestiary/Spells Page condition filters\n- (Brew) Added support for @tags in spell components\n- (Brew) Fixed various homebrew schema issues (thanks @ Lyra)\n- (Brew) Improved Creature Text Converter handling of contractions and bulleted lists\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.145.0",
+		"date": "2021-12-08",
+		"title": "School of WUB and RG",
+		"titleAlt": "Avada Kedavra My Man",
+		"txt": "- Added Strixhaven: A Curriculum of Chaos\n- Text headers are now (mostly) collapsible\n- Improved CR Scaler handling of some attack rolls\n- Fixed CR Scaler allowing ability scores of 31\n- Fixed CR Calculator CON mod calculation\n- Fixed Bestiary/Spells Page failing to apply filters from URL\n- Fixed Bestiary/Spells Page failing to load some sources on page load\n- (Brew) Improved handling of JSON data in entry input fields\n- (Brew) Fixed homebrew schema issues (thanks @ Lyra)\n- (Fixed typos/added tags)"
 	}
 ]

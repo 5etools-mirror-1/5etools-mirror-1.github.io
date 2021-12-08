@@ -175,7 +175,8 @@
 								"Each of the characters included in this set has two personality traits (one positive and one negative), an ideal, a bond, and a flaw. These elements can make the character easier and more fun to roleplay. Personality traits provide a glimpse into the character's likes, dislikes, accomplishments, fears, attitude, or mannerisms. An ideal is something that the character believes in or strives for above all else. A character's bond represents a connection to a person, place, or event in the world-someone the character cares about, a place the holds a special connection, or a treasured possession. A flaw is a characteristic that someone else can exploit to bring the character to ruin or cause the character to act against his or her best interests.",
 								"When a player roleplays a negative personality trait or gives in to the drawbacks presented by a bond or flaw, you can give that player one inspiration as a reward. A player with inspiration can use it in a situation where his or her character's personality traits, ideal, or bond relate to what's happening. Spending inspiration gives the character advantage on one ability check, attack roll, or saving throw.",
 								"A character can have only one inspiration at a time."
-							]
+							],
+							"id": "19c"
 						}
 					]
 				},
@@ -200,7 +201,13 @@
 									},
 									"title": "The Sword Coast",
 									"width": 4950,
-									"height": 6750
+									"height": 6750,
+									"imageType": "map",
+									"grid": {
+										"type": "hexColsOdd",
+										"size": 264,
+										"offsetX": 60
+									}
 								},
 								{
 									"type": "image",
@@ -210,7 +217,14 @@
 									},
 									"title": "The Sword Coast (Player)",
 									"width": 2648,
-									"height": 3625
+									"height": 3625,
+									"imageType": "mapPlayer",
+									"grid": {
+										"type": "hexColsOdd",
+										"size": 143,
+										"offsetX": 16,
+										"offsetY": -15
+									}
 								}
 							]
 						}
@@ -317,7 +331,8 @@
 							},
 							"title": "Cragmaw Hideout",
 							"width": 4937,
-							"height": 3439
+							"height": 3439,
+							"imageType": "map"
 						},
 						{
 							"type": "image",
@@ -327,7 +342,8 @@
 							},
 							"title": "Cragmaw Hideout (Player)",
 							"width": 4500,
-							"height": 3136
+							"height": 3136,
+							"imageType": "mapPlayer"
 						},
 						"{@b Adventure Maps}",
 						"Maps that appear in this adventure are for the DM's eyes only.",
@@ -913,7 +929,8 @@
 							},
 							"title": "Phandalin",
 							"width": 4950,
-							"height": 3450
+							"height": 3450,
+							"imageType": "map"
 						},
 						{
 							"type": "image",
@@ -923,7 +940,8 @@
 							},
 							"title": "Phandalin (Player)",
 							"width": 4000,
-							"height": 2788
+							"height": 2788,
+							"imageType": "mapPlayer"
 						},
 						"The following sections detail specific locations in town."
 					]
@@ -1317,7 +1335,8 @@
 							},
 							"title": "Redbrand Hideout",
 							"width": 4950,
-							"height": 3450
+							"height": 3450,
+							"imageType": "map"
 						},
 						{
 							"type": "image",
@@ -1327,7 +1346,8 @@
 							},
 							"title": "Redbrand Hideout (Player)",
 							"width": 4500,
-							"height": 3136
+							"height": 3136,
+							"imageType": "mapPlayer"
 						},
 						{
 							"type": "entries",
@@ -1956,7 +1976,8 @@
 											},
 											"title": "The Sword Coast",
 											"width": 4950,
-											"height": 6750
+											"height": 6750,
+											"imageType": "map"
 										},
 										{
 											"type": "image",
@@ -1966,7 +1987,8 @@
 											},
 											"title": "The Sword Coast (Player)",
 											"width": 2648,
-											"height": 3625
+											"height": 3625,
+											"imageType": "mapPlayer"
 										}
 									]
 								}
@@ -2268,7 +2290,8 @@
 							},
 							"title": "Ruins of Thundertree",
 							"width": 4950,
-							"height": 3450
+							"height": 3450,
+							"imageType": "map"
 						},
 						{
 							"type": "image",
@@ -2278,7 +2301,8 @@
 							},
 							"title": "Ruins of Thundertree (Player)",
 							"width": 4500,
-							"height": 3136
+							"height": 3136,
+							"imageType": "mapPlayer"
 						},
 						{
 							"type": "entries",
@@ -2790,7 +2814,8 @@
 							},
 							"title": "Cragmaw Castle",
 							"width": 4950,
-							"height": 3450
+							"height": 3450,
+							"imageType": "map"
 						},
 						{
 							"type": "image",
@@ -2800,7 +2825,8 @@
 							},
 							"title": "Cragmaw Castle (Player)",
 							"width": 4500,
-							"height": 3136
+							"height": 3136,
+							"imageType": "mapPlayer"
 						},
 						{
 							"type": "entries",
@@ -3411,7 +3437,8 @@
 							},
 							"title": "Wave Echo Cave",
 							"width": 4950,
-							"height": 6750
+							"height": 6750,
+							"imageType": "map"
 						},
 						{
 							"type": "image",
@@ -3421,7 +3448,8 @@
 							},
 							"title": "Wave Echo Cave (Player)",
 							"width": 4500,
-							"height": 6136
+							"height": 6136,
+							"imageType": "mapPlayer"
 						}
 					]
 				},
@@ -4077,115 +4105,22 @@
 					"id": "19b",
 					"entries": [
 						{
-							"type": "entries",
-							"name": "+1 Armor",
-							"id": "19c",
-							"entries": [
-								"The most basic form of magic armor is a superb product of physical and magical craft. You have a +1 bonus to your Armor Class while wearing this armor.",
-								"A suit of +1 armor never rusts or deteriorates, and it magically resizes to fit its wearer."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "+1 Weapon",
-							"id": "19d",
-							"entries": [
-								"Magic weapons are unmistakably finer in quality than their ordinary counterparts. You have a +1 bonus to the attack rolls and damage rolls you make with this weapon.",
-								"Some +1 weapons (swords in particular) have additional properties, such as shedding light."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Boots of Striding and Springing",
-							"id": "19e",
-							"entries": [
-								"Your speed while you wear these boots becomes 30 feet, unless your walking speed is higher, and your speed is not reduced if you are encumbered or wearing heavy armor. In addition, whenever you jump, you can jump three times the normal distance."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Gauntlets of Ogre Power",
-							"id": "19f",
-							"entries": [
-								"While you wear these gauntlets, your Strength becomes 19. If your Strength is already 19 or higher, the gauntlets have no effect on you."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Potion of Flying",
-							"id": "1a0",
-							"entries": [
-								"This potion gives you a flying speed equal to your walking speed for 1 hour. If the potion wears off while you're flying and nothing else is holding you aloft, you must use your movement to descend. If you fail to land before 1 minute passes, you fall."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Potion of Healing",
-							"id": "1a1",
-							"entries": [
-								"When you drink this potion, you regain 2d4 + 2 hit points."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Potion of Invisibility",
-							"id": "1a2",
-							"entries": [
-								"When you drink this potion, you\u2014along with the clothing, armor, weapons, and other equipment on your person\u2014become invisible for 1 hour. The invisibility ends if you attack or cast a spell."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Potion of Vitality",
-							"id": "1a3",
-							"entries": [
-								"Drinking this potion removes any {@condition exhaustion} you are suffering, cures any disease or poison affecting you, and maximizes the effect of any Hit Die you spend to regain hit points within the next 24 hours."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Ring of Protection",
-							"id": "1a4",
-							"entries": [
-								"While you are wearing this ring and are attuned to it, you have a +1 bonus to your Armor Class and saving throws."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Spell Scroll",
-							"id": "1a5",
-							"entries": [
-								"A spell scroll bears the words of a single spell, written in a mystical cipher. If the spell is on your class's spell list, you can use an action to read the scroll and cast its spell without providing any material components. Otherwise, the scroll is unintelligible.",
-								"If the spell is on your class's spell list but of a higher level than you can normally cast, you must make an ability check using your spellcasting ability to determine whether you cast it successfully. The DC equals 10 + the spell's level. On a failed check, the spell disappears from the scroll with no other effect.",
-								"Once the spell is cast, the words on the scroll fade, and the scroll itself crumbles to dust."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Spider Staff",
-							"id": "1a6",
-							"entries": [
-								"The top of this black, adamantine staff is shaped like a spider. The staff weighs 6 pounds. You must be attuned to the staff to gain its benefits and cast its spells. The staff can be wielded as a quarterstaff. It deals Id6 extra poison damage on a hit when used to make a weapon attack.",
-								"The staff has 10 charges, which are used to fuel the spells within it. With the staff in hand, you can use your action to cast one of the following spells from the staff if the spell is on your class's spell list: spider climb (1 charge) or web (2 charges, spell save DC 15). No components are required.",
-								"The staff regains 1d6+4 expended charges each day at dusk. If you expend the staff's last charge, roll a d20. On a 1, the staff crumbles to dust and is destroyed."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Staff of Defense",
-							"id": "1a7",
-							"entries": [
-								"This slender, hollow staff is made of glass yet is as strong as oak. It weighs 3 pounds. You must be attuned to the staff to gain its benefits and cast its spells. While holding the staff, you have a +1 bonus to your Armor Class.",
-								"The staff has 10 charges, which are used to fuel the spells within it. With the staff in hand, you can use your action to cast one of the following spells from the staff if the spell is on your class's spell list: mage armor (1 charge) or shield (2 charges). No components are required. The staff regains 1d6+4 expended charges each day at dawn. If you expend the staff's last charge, roll a d20. On a 1, the staff shatters and is destroyed."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Wand of Magic Missiles",
-							"id": "1a8",
-							"entries": [
-								"This wand has 7 charges. With the wand in hand, you can use your action to fire the magic missile spell from the wand\u2014no components required\u2014and expend 1 to 3 of the wand's charges. For each charge you expend beyond 1, the spell's level increases by 1. You can use this wand even if you are incapable of casting spells.",
-								"The wand regains 1d6+1 expended charges each day at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand crumbles into ash and is destroyed."
+							"type": "list",
+							"columns": 3,
+							"items": [
+								"{@item +1 Armor}",
+								"{@item +1 Weapon}",
+								"{@item Boots of Striding and Springing}",
+								"{@item Gauntlets of Ogre Power}",
+								"{@item Potion of Flying}",
+								"{@item Potion of Healing}",
+								"{@item Potion of Invisibility}",
+								"{@item Potion of Vitality}",
+								"{@item Ring of Protection}",
+								"{@item Spell Scroll}",
+								"{@item Spider Staff|LMoP}",
+								"{@item Staff of Defense|LMoP}",
+								"{@item Wand of Magic Missiles}"
 							]
 						}
 					]

@@ -261,7 +261,7 @@ function calculateCr () {
 
 	const hitDice = calculateHd();
 	const hitDiceSize = $("#hdval").html();
-	const conMod = Math.floor(($("#con").val() - 10) / 2);
+	const conMod = Parser.getAbilityModNumber($("#con").val());
 	const hashParts = [
 		$("#expectedcr").val(), // 0
 		$("#ac").val(), // 1
@@ -300,7 +300,7 @@ function calculateCr () {
 
 function calculateHd () {
 	const avgHp = $("#hdval").html().split("d")[1] / 2 + 0.5;
-	const conMod = Math.round(($("#con").val() - 10) / 2);
+	const conMod = Parser.getAbilityModNumber($("#con").val());
 	let curHd = Math.round(parseInt($("#hp").val()) / (avgHp + conMod));
 	if (!curHd) curHd = 1;
 	return curHd;
@@ -308,7 +308,7 @@ function calculateHd () {
 
 function calculateHp () {
 	const avgHp = $("#hdval").html().split("d")[1] / 2 + 0.5;
-	const conMod = Math.floor(($("#con").val() - 10) / 2);
+	const conMod = Parser.getAbilityModNumber($("#con").val());
 	return Math.floor((avgHp + conMod) * $("#hd").val());
 }
 

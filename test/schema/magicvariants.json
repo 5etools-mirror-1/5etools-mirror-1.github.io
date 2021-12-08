@@ -68,6 +68,9 @@
 								},
 								"weaponCategory": {
 									"$ref": "shared-items.json#/definitions/itemWeaponCategory"
+								},
+								"property": {
+									"type": "string"
 								}
 							},
 							"additionalProperties": false
@@ -268,7 +271,17 @@
 								"type": "integer"
 							},
 							"property": {
-								"type": "string"
+								"oneOf": [
+									{
+										"type": "string"
+									},
+									{
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									}
+								]
 							},
 							"net": {
 								"type": "boolean"

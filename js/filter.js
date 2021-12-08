@@ -771,37 +771,37 @@ class FilterBox extends ProxyBase {
 				} else if (FilterUtil.SUB_HASH_PREFIXES.has(prefix)) throw new Error(`Could not find filter with header ${urlHeader} for subhash ${data.raw}`);
 			});
 
-		if (consumed.size || force) {
-			this._setFromSubHashState(urlHeaderToFilter, filterBoxState);
+		if (!consumed.size && !force) return subHashes;
 
-			Object.entries(statePerFilter).forEach(([urlHeader, state]) => {
-				const filter = urlHeaderToFilter[urlHeader];
-				filter.setFromSubHashState(state);
+		this._setFromSubHashState(urlHeaderToFilter, filterBoxState);
+
+		Object.entries(statePerFilter).forEach(([urlHeader, state]) => {
+			const filter = urlHeaderToFilter[urlHeader];
+			filter.setFromSubHashState(state);
+		});
+
+		// reset any other state/meta state/etc
+		Object.keys(urlHeaderToFilter)
+			.filter(k => !updatedUrlHeaders.has(k))
+			.forEach(k => {
+				const filter = urlHeaderToFilter[k];
+				filter.resetShallow(true);
 			});
 
-			// reset any other state/meta state/etc
-			Object.keys(urlHeaderToFilter)
-				.filter(k => !updatedUrlHeaders.has(k))
-				.forEach(k => {
-					const filter = urlHeaderToFilter[k];
-					filter.resetShallow(true);
-				});
+		const [link] = Hist.getHashParts();
 
-			const [link] = Hist.getHashParts();
+		const outSub = [];
+		Object.values(unpacked)
+			.filter(v => !consumed.has(v.raw))
+			.forEach(v => outSub.push(v.raw));
 
-			const outSub = [];
-			Object.values(unpacked)
-				.filter(v => !consumed.has(v.raw))
-				.forEach(v => outSub.push(v.raw));
+		Hist.setSuppressHistory(true);
+		Hist.replaceHistoryHash(`${link}${outSub.length ? `${HASH_PART_SEP}${outSub.join(HASH_PART_SEP)}` : ""}`);
 
-			Hist.setSuppressHistory(true);
-			Hist.replaceHistoryHash(`${link}${outSub.length ? `${HASH_PART_SEP}${outSub.join(HASH_PART_SEP)}` : ""}`);
-
-			if (filterInitialSearch && ($iptSearch || this._$iptSearch)) ($iptSearch || this._$iptSearch).val(filterInitialSearch).change().keydown().keyup();
-			this.fireChangeEvent();
-			Hist.hashChange();
-			return outSub;
-		} else return subHashes;
+		if (filterInitialSearch && ($iptSearch || this._$iptSearch)) ($iptSearch || this._$iptSearch).val(filterInitialSearch).change().keydown().keyup();
+		this.fireChangeEvent();
+		Hist.hashChange();
+		return outSub;
 	}
 
 	_setFromSubHashState (urlHeaderToFilter, filterBoxState) {
@@ -1406,7 +1406,6 @@ class Filter extends FilterBase {
 		const hook = () => {
 			const val = FilterBox._PILL_STATES[this._state[item.item]];
 			btnPill.attr("state", val);
-			if (item.pFnChange) item.pFnChange(item.item, val);
 		};
 		this._addHook("state", item.item, hook);
 		hook();
@@ -1446,7 +1445,12 @@ class Filter extends FilterBase {
 			},
 		}).attr("state", FilterBox._PILL_STATES[this._state[item.item]]);
 
-		const hook = () => btnMini.attr("state", FilterBox._PILL_STATES[this._state[item.item]]);
+		const hook = () => {
+			const val = FilterBox._PILL_STATES[this._state[item.item]];
+			btnMini.attr("state", val);
+			// Bind change handlers in the mini-pill render step, as the mini-pills should always be available.
+			if (item.pFnChange) item.pFnChange(item.item, val);
+		};
 		this._addHook("state", item.item, hook);
 
 		const hideHook = () => btnMini.toggleClass("ve-hidden", this._filterBox.isMinisHidden(this.header));

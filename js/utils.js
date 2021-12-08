@@ -7,7 +7,7 @@ if (IS_NODE) require("./parser.js");
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 IS_DEPLOYED = undefined;
-VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.144.0"/* 5ETOOLS_VERSION__CLOSE */;
+VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.145.0"/* 5ETOOLS_VERSION__CLOSE */;
 DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 // for the roll20 script to set
 IS_VTT = false;
@@ -7074,10 +7074,8 @@ if (!IS_VTT && typeof window !== "undefined") {
 		$(document.body)
 			.on("click", `[data-packed-dice]`, evt => {
 				Renderer.dice.pRollerClickUseData(evt, evt.currentTarget);
-			})
-			.on("click", `[data-rd-data-embed-header]`, evt => {
-				Renderer.events.handleClick_dataEmbedHeader(evt, evt.currentTarget);
 			});
+		Renderer.events.bindGeneric();
 	});
 
 	if (location.origin === VeCt.LOC_ORIGIN_CANCER) {

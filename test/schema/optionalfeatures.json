@@ -5,9 +5,6 @@
 	"title": "Optional Features",
 	"type": "object",
 	"definitions": {
-		"prerequisite": {
-			"$ref": "util.json#/definitions/prerequisite"
-		},
 		"featureType": {
 			"type": "array",
 			"items": {
@@ -22,7 +19,7 @@
 					"type": "string"
 				},
 				"prerequisite": {
-					"$ref": "#/definitions/prerequisite"
+					"$ref": "util.json#/definitions/prerequisite"
 				},
 				"entries": {
 					"type": "array",

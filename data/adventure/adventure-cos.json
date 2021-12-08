@@ -3629,7 +3629,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/007-001-thumb.png"
-									}
+									},
+									"id": "0bc"
 								},
 								{
 									"type": "image",
@@ -3639,7 +3640,11 @@
 									},
 									"title": "Player Version",
 									"width": 5025,
-									"height": 3225
+									"height": 3225,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "0bc"
+									}
 								}
 							]
 						},
@@ -3856,7 +3861,8 @@
 											},
 											"title": "Map 2.2: Tser Pool Encampment",
 											"width": 1000,
-											"height": 615
+											"height": 615,
+											"imageType": "map"
 										},
 										{
 											"type": "image",
@@ -3866,7 +3872,9 @@
 											},
 											"title": "Player Version",
 											"width": 1950,
-											"height": 1200
+											"height": 1200,
+											"imageType": "mapPlayer",
+											"mapName": "Map 2.2: Tser Pool Encampment (Player Version)"
 										}
 									]
 								},
@@ -4539,7 +4547,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/013-003-thumb.png"
-									}
+									},
+									"id": "0bd"
 								},
 								{
 									"type": "image",
@@ -4549,7 +4558,11 @@
 									},
 									"title": "Player Version",
 									"width": 1950,
-									"height": 2475
+									"height": 2475,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "0bd"
+									}
 								}
 							]
 						},
@@ -4891,7 +4904,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoS/thumbnail/018-004-thumb.png"
-											}
+											},
+											"id": "11c"
 										},
 										{
 											"type": "image",
@@ -4901,7 +4915,11 @@
 											},
 											"title": "Player Version",
 											"width": 2400,
-											"height": 1650
+											"height": 1650,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "11c"
+											}
 										}
 									]
 								},
@@ -6063,7 +6081,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/024-005-thumb.png"
-									}
+									},
+									"id": "132"
 								},
 								{
 									"type": "image",
@@ -6072,9 +6091,13 @@
 										"path": "adventure/CoS/024-005-player.jpg"
 									},
 									"title": "Map 2: Walls of Ravenloft (Player Version)",
-									"imageType": "map",
+									"imageType": "mapPlayer",
 									"width": 2750,
-									"height": 3797
+									"height": 3797,
+									"mapParent": {
+										"id": "132",
+										"autoScale": true
+									}
 								}
 							]
 						},
@@ -7120,7 +7143,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/025-006-thumb.png"
-									}
+									},
+									"id": "16f"
 								},
 								{
 									"type": "image",
@@ -7129,9 +7153,13 @@
 										"path": "adventure/CoS/025-006-player.jpg"
 									},
 									"title": "Map 3: Main Floor (Player Version)",
-									"imageType": "map",
+									"imageType": "mapPlayer",
 									"width": 3715,
-									"height": 1836
+									"height": 1836,
+									"mapParent": {
+										"id": "16f",
+										"autoScale": true
+									}
 								}
 							]
 						},
@@ -8186,7 +8214,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/028-007-thumb.png"
-									}
+									},
+									"id": "172"
 								},
 								{
 									"type": "image",
@@ -8195,9 +8224,13 @@
 										"path": "adventure/CoS/028-007-player.jpg"
 									},
 									"title": "Map 4: Court of the Count (Player Version)",
-									"imageType": "map",
+									"imageType": "mapPlayer",
 									"width": 2380,
-									"height": 1330
+									"height": 1330,
+									"mapParent": {
+										"id": "172",
+										"autoScale": true
+									}
 								}
 							]
 						},
@@ -9294,7 +9327,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/030-008-thumb.png"
-									}
+									},
+									"id": "182"
 								},
 								{
 									"type": "image",
@@ -9303,9 +9337,13 @@
 										"path": "adventure/CoS/030-008-player.png"
 									},
 									"title": "Map 5: Rooms of Weeping (Player Version)",
-									"imageType": "map",
+									"imageType": "mapPlayer",
 									"width": 2660,
-									"height": 1680
+									"height": 1680,
+									"mapParent": {
+										"id": "182",
+										"autoScale": true
+									}
 								}
 							]
 						},
@@ -10091,7 +10129,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/033-009-thumb.png"
-									}
+									},
+									"id": "191"
 								},
 								{
 									"type": "image",
@@ -10100,9 +10139,13 @@
 										"path": "adventure/CoS/033-009-player.png"
 									},
 									"title": "Map 6: Spires of Ravenloft (Player Version)",
-									"imageType": "map",
+									"imageType": "mapPlayer",
 									"width": 2520,
-									"height": 1540
+									"height": 1540,
+									"mapParent": {
+										"id": "191",
+										"autoScale": true
+									}
 								}
 							]
 						},
@@ -11054,7 +11097,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoS/thumbnail/036-010-thumb.png"
-											}
+											},
+											"id": "441"
 										},
 										{
 											"type": "image",
@@ -11063,9 +11107,13 @@
 												"path": "adventure/CoS/036-010-player.jpg"
 											},
 											"title": "Maps 7-10: Spires and Tower of Ravenloft (Player Version)",
-											"imageType": "map",
+											"imageType": "mapPlayer",
 											"width": 1190,
-											"height": 3290
+											"height": 3290,
+											"mapParent": {
+												"id": "441",
+												"autoScale": true
+											}
 										}
 									]
 								},
@@ -13543,7 +13591,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/038-011-thumb.png"
-									}
+									},
+									"id": "459"
 								},
 								{
 									"type": "image",
@@ -13552,9 +13601,13 @@
 										"path": "adventure/CoS/038-011-player.jpg"
 									},
 									"title": "Map 11: Larders of Ill Omen & Map 12: Dungeon and Catacombs (Player Version)",
-									"imageType": "map",
+									"imageType": "mapPlayer",
 									"width": 2450,
-									"height": 3010
+									"height": 3010,
+									"mapParent": {
+										"id": "459",
+										"autoScale": true
+									}
 								}
 							]
 						},
@@ -13757,7 +13810,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoS/thumbnail/039-012-thumb.png"
-											}
+											},
+											"id": "46e"
 										},
 										{
 											"type": "image",
@@ -13767,7 +13821,11 @@
 											},
 											"title": "Player Version",
 											"width": 1200,
-											"height": 3300
+											"height": 3300,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "46e"
+											}
 										}
 									]
 								},
@@ -14180,7 +14238,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/042-cos04-17-thumb.png"
-									}
+									},
+									"id": "483"
 								},
 								"The water is 3 feet deep in the hallway and opaque. The steps on both sides of the hallway descend another 2 feet before ending at the iron doors to the north and south.",
 								"The floor beneath the water isn't as solid as one might expect. There is a safe path around several weight-sensitive trapdoors (see the Traps in Area K73 diagram), but the water makes it impossible to see where the trapdoors are. For every 10 pounds of weight on a trapdoor, there is a {@chance 5|5 percent} chance that the trapdoor will open. The 10-foot-deep pit under each trapdoor contains a magic teleport trap that activates as soon as the trapdoor opens. Any Medium or smaller creature on a trapdoor when it opens plunges into the pit and is teleported to a cell in either {@area area K74|272|x} or {@area K75|284|x}, as the diagram indicates.",
@@ -16009,7 +16068,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/047-013-thumb.png"
-									}
+									},
+									"id": "49f"
 								},
 								{
 									"type": "image",
@@ -16019,7 +16079,11 @@
 									},
 									"title": "Player Version",
 									"width": 1950,
-									"height": 1200
+									"height": 1200,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "49f"
+									}
 								}
 							]
 						},
@@ -16653,7 +16717,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoS/thumbnail/050-014-thumb.png"
-											}
+											},
+											"id": "4ce"
 										},
 										{
 											"type": "image",
@@ -16663,7 +16728,11 @@
 											},
 											"title": "Player Version",
 											"width": 2400,
-											"height": 3300
+											"height": 3300,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "4ce"
+											}
 										}
 									]
 								},
@@ -17598,7 +17667,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoS/thumbnail/055-015-thumb.png"
-											}
+											},
+											"id": "4eb"
 										},
 										{
 											"type": "image",
@@ -17608,7 +17678,11 @@
 											},
 											"title": "Player Version",
 											"width": 2400,
-											"height": 3300
+											"height": 3300,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "4eb"
+											}
 										}
 									]
 								},
@@ -18717,7 +18791,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoS/thumbnail/058-016-thumb.png"
-											}
+											},
+											"id": "514"
 										},
 										{
 											"type": "image",
@@ -18727,7 +18802,11 @@
 											},
 											"title": "Player Version",
 											"width": 2400,
-											"height": 3300
+											"height": 3300,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "514"
+											}
 										}
 									]
 								},
@@ -19411,7 +19490,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoS/thumbnail/063-cos05-13-thumb.png"
-											}
+											},
+											"id": "5b4"
 										},
 										{
 											"type": "image",
@@ -19421,7 +19501,12 @@
 											},
 											"title": "Player Version",
 											"width": 2400,
-											"height": 1650
+											"height": 1650,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "5b4",
+												"autoScale": true
+											}
 										}
 									]
 								},
@@ -20186,7 +20271,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoS/thumbnail/066-018-thumb.png"
-											}
+											},
+											"id": "5ba"
 										},
 										{
 											"type": "image",
@@ -20196,7 +20282,11 @@
 											},
 											"title": "Player Version",
 											"width": 2400,
-											"height": 3300
+											"height": 3300,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "5ba"
+											}
 										}
 									]
 								},
@@ -20864,7 +20954,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoS/thumbnail/072-019-thumb.png"
-											}
+											},
+											"id": "5cf"
 										},
 										{
 											"type": "image",
@@ -20874,7 +20965,11 @@
 											},
 											"title": "Player Version",
 											"width": 2400,
-											"height": 1650
+											"height": 1650,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "5cf"
+											}
 										}
 									]
 								}
@@ -21891,7 +21986,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/077-020-thumb.png"
-									}
+									},
+									"id": "5eb"
 								},
 								{
 									"type": "image",
@@ -21901,7 +21997,11 @@
 									},
 									"title": "Player Version",
 									"width": 4800,
-									"height": 6600
+									"height": 6600,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "5eb"
+									}
 								}
 							]
 						},
@@ -23247,7 +23347,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoS/thumbnail/079-021-thumb.png"
-											}
+											},
+											"id": "602"
 										},
 										{
 											"type": "image",
@@ -23257,7 +23358,11 @@
 											},
 											"title": "Player Version",
 											"width": 2400,
-											"height": 3300
+											"height": 3300,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "602"
+											}
 										}
 									]
 								}
@@ -24060,7 +24165,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/083-022-thumb.png"
-									}
+									},
+									"id": "619"
 								},
 								{
 									"type": "image",
@@ -24070,7 +24176,11 @@
 									},
 									"title": "Player Version",
 									"width": 1950,
-									"height": 2475
+									"height": 2475,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "619"
+									}
 								}
 							]
 						},
@@ -24953,7 +25063,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/086-023-thumb.png"
-									}
+									},
+									"id": "631"
 								},
 								{
 									"type": "image",
@@ -24963,7 +25074,11 @@
 									},
 									"title": "Player Version",
 									"width": 2400,
-									"height": 3300
+									"height": 3300,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "631"
+									}
 								}
 							]
 						},
@@ -25367,7 +25482,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoS/thumbnail/090-024-thumb.png"
-											}
+											},
+											"id": "6bb"
 										},
 										{
 											"type": "image",
@@ -25377,7 +25493,11 @@
 											},
 											"title": "Player Version",
 											"width": 2400,
-											"height": 1650
+											"height": 1650,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "6bb"
+											}
 										}
 									]
 								}
@@ -26338,7 +26458,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/095-025-thumb.png"
-									}
+									},
+									"id": "6bc"
 								},
 								{
 									"type": "image",
@@ -26348,7 +26469,11 @@
 									},
 									"title": "Player Version",
 									"width": 2400,
-									"height": 3300
+									"height": 3300,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "6bc"
+									}
 								}
 							]
 						},
@@ -26850,7 +26975,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/099-026-thumb.png"
-									}
+									},
+									"id": "6bd"
 								},
 								{
 									"type": "image",
@@ -26860,7 +26986,11 @@
 									},
 									"title": "Player Version",
 									"width": 1575,
-									"height": 1575
+									"height": 1575,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "6bd"
+									}
 								}
 							]
 						},
@@ -26997,7 +27127,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoS/thumbnail/101-cos10-02-thumb.png"
-											}
+											},
+											"id": "6be"
 										},
 										{
 											"type": "image",
@@ -27007,7 +27138,12 @@
 											},
 											"title": "Player Version",
 											"width": 1125,
-											"height": 1125
+											"height": 1125,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "6be",
+												"autoScale": true
+											}
 										}
 									]
 								},
@@ -27653,7 +27789,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoS/thumbnail/105-027-thumb.png"
-											}
+											},
+											"id": "6bf"
 										},
 										{
 											"type": "image",
@@ -27663,7 +27800,11 @@
 											},
 											"title": "Player Version",
 											"width": 1200,
-											"height": 3300
+											"height": 3300,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "6bf"
+											}
 										}
 									]
 								},
@@ -28659,7 +28800,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/111-028-thumb.png"
-									}
+									},
+									"id": "6c0"
 								},
 								{
 									"type": "image",
@@ -28669,7 +28811,11 @@
 									},
 									"title": "Player Version",
 									"width": 2400,
-									"height": 3300
+									"height": 3300,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "6c0"
+									}
 								}
 							]
 						},
@@ -30122,7 +30268,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/117-029-thumb.png"
-									}
+									},
+									"id": "6c1"
 								},
 								{
 									"type": "image",
@@ -30132,7 +30279,11 @@
 									},
 									"title": "Player Version",
 									"width": 2400,
-									"height": 3300
+									"height": 3300,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "6c1"
+									}
 								}
 							]
 						},
@@ -31920,7 +32071,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoS/thumbnail/120-030-thumb.png"
-											}
+											},
+											"id": "6c2"
 										},
 										{
 											"type": "image",
@@ -31930,7 +32082,11 @@
 											},
 											"title": "Player Version",
 											"width": 2400,
-											"height": 3300
+											"height": 3300,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "6c2"
+											}
 										}
 									]
 								}
@@ -32937,7 +33093,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/124-031-thumb.png"
-									}
+									},
+									"id": "6c3"
 								},
 								{
 									"type": "image",
@@ -32947,7 +33104,11 @@
 									},
 									"title": "Player Version",
 									"width": 1950,
-									"height": 2475
+									"height": 2475,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "6c3"
+									}
 								}
 							]
 						},
@@ -34040,7 +34201,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/127-032-thumb.png"
-									}
+									},
+									"id": "6c4"
 								},
 								{
 									"type": "image",
@@ -34050,7 +34212,11 @@
 									},
 									"title": "Player Version",
 									"width": 2400,
-									"height": 3300
+									"height": 3300,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "6c4"
+									}
 								}
 							]
 						},
@@ -34483,7 +34649,8 @@
 					"name": "Gothic Trinkets",
 					"entries": [
 						"When rolling for a trinket, consider using the {@item trinket|CoS|Gothic Trinkets table}, which is designed for a gothic game."
-					]
+					],
+					"id": "6c5"
 				}
 			],
 			"id": "00a"
@@ -36013,7 +36180,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoS/thumbnail/134-deathhousedm-thumb.png"
-									}
+									},
+									"id": "6c6"
 								},
 								{
 									"type": "image",
@@ -36023,7 +36191,11 @@
 									},
 									"title": "Player Version",
 									"width": 5455,
-									"height": 7500
+									"height": 7500,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "6c6"
+									}
 								}
 							]
 						},

@@ -6,10 +6,6 @@
 	"type": "object",
 
 	"definitions": {
-		"prerequisite": {
-			"$ref": "util.json#/definitions/prerequisite"
-		},
-
 		"featureType": {
 			"type": "array",
 			"items": {"$ref": "util.json#/definitions/dataOptionalfeatureType"},
@@ -23,7 +19,7 @@
 					"type": "string"
 				},
 				"prerequisite": {
-					"$ref": "#/definitions/prerequisite"
+					"$ref": "util.json#/definitions/prerequisite"
 				},
 				"entries": {
 					"type": "array",
@@ -95,6 +91,15 @@
 				},
 				"proficiencyTags": {
 					"$ref": "util.json#/definitions/proficiencyTags"
+				},
+				"$$ifBrew": {
+					"foundryData": {"$ref": "util.json#/definitions/foundryDataObject"},
+					"foundryEffects": {
+						"type": "array",
+						"items": {
+							"$ref": "util.json#/definitions/foundryEffectObject"
+						}
+					}
 				}
 			},
 			"required": [

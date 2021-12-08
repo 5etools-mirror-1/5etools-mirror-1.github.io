@@ -190,6 +190,9 @@ class ListPage {
 		Hist.init(true);
 
 		ListPage._checkShowAllExcluded(this._dataList, this._$pgContent);
+
+		this.handleFilterChange();
+
 		window.dispatchEvent(new Event("toolsLoaded"));
 	}
 
@@ -257,7 +260,7 @@ class ListPage {
 
 		this._list.update();
 		this._filterBox.render();
-		this.handleFilterChange();
+		if (!Hist.initialLoad) this.handleFilterChange();
 
 		ListUtil.setOptions({
 			itemList: this._dataList,
