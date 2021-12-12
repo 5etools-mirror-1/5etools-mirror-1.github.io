@@ -114,7 +114,8 @@
 											"title": "Map 1: The Sword Coast",
 											"width": 2105,
 											"height": 2933,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "0f8"
 										},
 										{
 											"type": "image",
@@ -125,7 +126,11 @@
 											"title": "(Player Version)",
 											"width": 2153,
 											"height": 3000,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "0f8",
+												"autoScale": true
+											}
 										}
 									]
 								}
@@ -298,7 +303,8 @@
 									"title": "Map 2: Leilon Under Construction",
 									"width": 3600,
 									"height": 2280,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "0f9"
 								},
 								{
 									"type": "image",
@@ -309,7 +315,10 @@
 									"title": "(Player Version)",
 									"width": 3600,
 									"height": 2280,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "0f9"
+									}
 								}
 							]
 						},
@@ -749,7 +758,8 @@
 													"title": "Map 3: Caverns with Bahamut Shrine",
 													"width": 3600,
 													"height": 2280,
-													"imageType": "map"
+													"imageType": "map",
+													"id": "0fa"
 												},
 												{
 													"type": "image",
@@ -760,7 +770,10 @@
 													"title": "(Player Version)",
 													"width": 3600,
 													"height": 2280,
-													"imageType": "mapPlayer"
+													"imageType": "mapPlayer",
+													"mapParent": {
+														"id": "0fa"
+													}
 												}
 											]
 										},
@@ -1099,7 +1112,8 @@
 											"title": "Map 4: Claugiyliamatar's lair",
 											"width": 3600,
 											"height": 2280,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "0fb"
 										},
 										{
 											"type": "image",
@@ -1110,7 +1124,10 @@
 											"title": "(Player Version)",
 											"width": 3600,
 											"height": 2280,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "0fb"
+											}
 										}
 									]
 								},
@@ -1706,7 +1723,8 @@
 											"title": "Map 5: Deathknight-Dreadnaught",
 											"width": 3600,
 											"height": 2280,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "0fc"
 										},
 										{
 											"type": "image",
@@ -1717,7 +1735,10 @@
 											"title": "(Player Version)",
 											"width": 3600,
 											"height": 2280,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "0fc"
+											}
 										}
 									]
 								},
@@ -2109,7 +2130,8 @@
 									"title": "Map 6: Ruins of Iniarv's Tower",
 									"width": 3600,
 									"height": 2280,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "0fd"
 								},
 								{
 									"type": "image",
@@ -2120,7 +2142,10 @@
 									"title": "(Player Version)",
 									"width": 3600,
 									"height": 2280,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "0fd"
+									}
 								}
 							]
 						},
@@ -2340,7 +2365,8 @@
 									"title": "Map 7: Leilon Point Farming Community",
 									"width": 3600,
 									"height": 2280,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "0fe"
 								},
 								{
 									"type": "image",
@@ -2351,7 +2377,10 @@
 									"title": "(Player Version)",
 									"width": 3600,
 									"height": 2280,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "0fe"
+									}
 								}
 							]
 						},

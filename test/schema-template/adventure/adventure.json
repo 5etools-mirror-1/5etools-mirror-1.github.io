@@ -13,10 +13,12 @@
 					"source": {"type": "string"}
 				},
 
-				"data": {
-					"type": "array",
-					"items": {
-						"$ref": "../entry.json"
+				"$$ifNotFast": {
+					"data": {
+						"type": "array",
+						"items": {
+							"$ref": "../entry.json"
+						}
 					}
 				}
 			},

@@ -1713,7 +1713,8 @@
 													"title": "Map 10.1: Arauthator's Iceberg and Lair",
 													"width": 3960,
 													"height": 5700,
-													"imageType": "map"
+													"imageType": "map",
+													"id": "114"
 												},
 												{
 													"type": "image",
@@ -1724,7 +1725,10 @@
 													"title": "(Player Version)",
 													"width": 3960,
 													"height": 5700,
-													"imageType": "mapPlayer"
+													"imageType": "mapPlayer",
+													"mapParent": {
+														"id": "114"
+													}
 												}
 											]
 										}
@@ -2425,7 +2429,8 @@
 															"title": "Map 11.1: Tomb of Diderius",
 															"width": 4050,
 															"height": 3000,
-															"imageType": "map"
+															"imageType": "map",
+															"id": "24a"
 														},
 														{
 															"type": "image",
@@ -2436,7 +2441,10 @@
 															"title": "(Player Version)",
 															"width": 4050,
 															"height": 3000,
-															"imageType": "mapPlayer"
+															"imageType": "mapPlayer",
+															"mapParent": {
+																"id": "24a"
+															}
 														}
 													]
 												}
@@ -3202,7 +3210,8 @@
 															"title": "Map 12.1: Neronvain's Stronghold",
 															"width": 6000,
 															"height": 4444,
-															"imageType": "map"
+															"imageType": "map",
+															"id": "24b"
 														},
 														{
 															"type": "image",
@@ -3213,7 +3222,10 @@
 															"title": "(Player Version)",
 															"width": 6000,
 															"height": 4444,
-															"imageType": "mapPlayer"
+															"imageType": "mapPlayer",
+															"mapParent": {
+																"id": "24b"
+															}
 														}
 													]
 												}
@@ -4204,7 +4216,8 @@
 											"title": "Map 15.1: Xonthal's Tower",
 											"width": 1980,
 											"height": 2850,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "24c"
 										},
 										{
 											"type": "image",
@@ -4215,7 +4228,11 @@
 											"title": "(Player Version)",
 											"width": 3300,
 											"height": 4750,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "24c",
+												"autoScale": true
+											}
 										}
 									]
 								}
@@ -5215,7 +5232,8 @@
 											"title": "Map 17.1: the Well of Dragons",
 											"width": 1980,
 											"height": 2850,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "24d"
 										},
 										{
 											"type": "image",
@@ -5226,7 +5244,11 @@
 											"title": "(Player Version)",
 											"width": 3300,
 											"height": 4750,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "24d",
+												"autoScale": true
+											}
 										}
 									]
 								}
@@ -5472,7 +5494,8 @@
 									"title": "Map 17.2: Tiamat's Temple",
 									"width": 1980,
 									"height": 2850,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "24e"
 								},
 								{
 									"type": "image",
@@ -5483,7 +5506,11 @@
 									"title": "(Player Version)",
 									"width": 3300,
 									"height": 4750,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "24e",
+										"autoScale": true
+									}
 								}
 							]
 						},

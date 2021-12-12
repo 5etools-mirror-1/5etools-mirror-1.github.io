@@ -996,7 +996,8 @@
 													"title": "Map 3.1: the Tomb of Horrors (Under Construction)",
 													"width": 2352,
 													"height": 2698,
-													"imageType": "map"
+													"imageType": "map",
+													"id": "1b5"
 												},
 												{
 													"type": "image",
@@ -1007,7 +1008,10 @@
 													"title": "(Player Version)",
 													"width": 2352,
 													"height": 2698,
-													"imageType": "mapPlayer"
+													"imageType": "mapPlayer",
+													"mapParent": {
+														"id": "1b5"
+													}
 												}
 											]
 										}
@@ -1978,7 +1982,8 @@
 													"title": "Map 4.1: Temple of Moloch",
 													"width": 5100,
 													"height": 6600,
-													"imageType": "map"
+													"imageType": "map",
+													"id": "1b6"
 												},
 												{
 													"type": "image",
@@ -1989,7 +1994,10 @@
 													"title": "(Player Version)",
 													"width": 5100,
 													"height": 6600,
-													"imageType": "mapPlayer"
+													"imageType": "mapPlayer",
+													"mapParent": {
+														"id": "1b6"
+													}
 												}
 											]
 										}

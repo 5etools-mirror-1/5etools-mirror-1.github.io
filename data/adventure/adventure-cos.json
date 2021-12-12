@@ -3862,7 +3862,8 @@
 											"title": "Map 2.2: Tser Pool Encampment",
 											"width": 1000,
 											"height": 615,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "0bc"
 										},
 										{
 											"type": "image",
@@ -3874,7 +3875,11 @@
 											"width": 1950,
 											"height": 1200,
 											"imageType": "mapPlayer",
-											"mapName": "Map 2.2: Tser Pool Encampment (Player Version)"
+											"mapName": "Map 2.2: Tser Pool Encampment (Player Version)",
+											"mapParent": {
+												"id": "0bc",
+												"autoScale": true
+											}
 										}
 									]
 								},

@@ -164,7 +164,8 @@
 											"title": "Map: The Sword Coast",
 											"width": 2105,
 											"height": 2933,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "25b"
 										},
 										{
 											"type": "image",
@@ -175,7 +176,11 @@
 											"title": "(Player Version)",
 											"width": 2153,
 											"height": 3000,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "25b",
+												"autoScale": true
+											}
 										}
 									]
 								},
@@ -501,7 +506,8 @@
 											"title": "Map: Phandalin",
 											"width": 2550,
 											"height": 1830,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "25c"
 										},
 										{
 											"type": "image",
@@ -512,7 +518,11 @@
 											"title": "(Player Version)",
 											"width": 3000,
 											"height": 2153,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "25c",
+												"autoScale": true
+											}
 										}
 									]
 								},
@@ -953,7 +963,8 @@
 											"title": "Map: Axeholm",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "25d"
 										},
 										{
 											"type": "image",
@@ -964,7 +975,10 @@
 											"title": "(Player Version)",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "25d"
+											}
 										}
 									]
 								},
@@ -1369,7 +1383,8 @@
 									"title": "Map: Butterskull Ranch",
 									"width": 2888,
 									"height": 1838,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "25e"
 								},
 								{
 									"type": "image",
@@ -1380,7 +1395,10 @@
 									"title": "(Player Version)",
 									"width": 2888,
 									"height": 1838,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "25e"
+									}
 								}
 							]
 						},
@@ -1662,7 +1680,8 @@
 											"title": "Map: Circle of Thunder",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "25f"
 										},
 										{
 											"type": "image",
@@ -1673,7 +1692,10 @@
 											"title": "(Player Version)",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "25f"
+											}
 										}
 									]
 								},
@@ -1859,7 +1881,8 @@
 											"title": "Map: Dragon Barrow",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "260"
 										},
 										{
 											"type": "image",
@@ -1870,7 +1893,10 @@
 											"title": "(Player Version)",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "260"
+											}
 										}
 									]
 								},
@@ -2016,7 +2042,8 @@
 											"title": "Map: Dwarven Excavation",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "261"
 										},
 										{
 											"type": "image",
@@ -2027,7 +2054,10 @@
 											"title": "(Player Version)",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "261"
+											}
 										}
 									]
 								},
@@ -2323,7 +2353,8 @@
 											"title": "Falcon's Hunting Lodge",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "262"
 										},
 										{
 											"type": "image",
@@ -2334,7 +2365,10 @@
 											"title": "(Player Version)",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "262"
+											}
 										}
 									]
 								},
@@ -2641,7 +2675,8 @@
 											"title": "Map: Gnomengarde",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "263"
 										},
 										{
 											"type": "image",
@@ -2652,7 +2687,10 @@
 											"title": "(Player Version)",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "263"
+											}
 										}
 									]
 								},
@@ -3007,7 +3045,8 @@
 											"title": "Map: Icespire Hold",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "264"
 										},
 										{
 											"type": "image",
@@ -3018,7 +3057,10 @@
 											"title": "(Player Version)",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "264"
+											}
 										}
 									]
 								},
@@ -3394,7 +3436,8 @@
 											"title": "Map: Logger's Camp",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "265"
 										},
 										{
 											"type": "image",
@@ -3405,7 +3448,10 @@
 											"title": "(Player Version)",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "265"
+											}
 										}
 									]
 								},
@@ -3592,7 +3638,8 @@
 											"title": "Map: Mountain's Toe Gold Mine",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "266"
 										},
 										{
 											"type": "image",
@@ -3603,7 +3650,10 @@
 											"title": "(Player Version)",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "266"
+											}
 										}
 									]
 								},
@@ -3818,7 +3868,8 @@
 											"title": "Map: Shrine of Savras",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "267"
 										},
 										{
 											"type": "image",
@@ -3829,7 +3880,10 @@
 											"title": "(Player Version)",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "267"
+											}
 										}
 									]
 								},
@@ -4022,7 +4076,8 @@
 											"title": "Map: Tower of Storms",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "268"
 										},
 										{
 											"type": "image",
@@ -4033,7 +4088,10 @@
 											"title": "(Player Version)",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "268"
+											}
 										}
 									]
 								},
@@ -4280,7 +4338,8 @@
 											"title": "Map: Umbrage Hill",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "269"
 										},
 										{
 											"type": "image",
@@ -4291,7 +4350,10 @@
 											"title": "(Player Version)",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "269"
+											}
 										}
 									]
 								},
@@ -4437,7 +4499,8 @@
 											"title": "Map: Woodland Manse",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "26a"
 										},
 										{
 											"type": "image",
@@ -4448,7 +4511,10 @@
 											"title": "(Player Version)",
 											"width": 2888,
 											"height": 1838,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "26a"
+											}
 										}
 									]
 								},

@@ -113,7 +113,8 @@
 											"title": "Map 1: The Sword Coast",
 											"width": 2105,
 											"height": 2933,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "0fc"
 										},
 										{
 											"type": "image",
@@ -124,7 +125,11 @@
 											"title": "(Player Version)",
 											"width": 2153,
 											"height": 3000,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "0fc",
+												"autoScale": true
+											}
 										}
 									]
 								}
@@ -582,7 +587,8 @@
 									"title": "Map 2: Wayside Inn",
 									"width": 3600,
 									"height": 2280,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "0fd"
 								},
 								{
 									"type": "image",
@@ -593,7 +599,10 @@
 									"title": "(Player Version)",
 									"width": 3600,
 									"height": 2280,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "0fd"
+									}
 								}
 							]
 						},
@@ -723,7 +732,8 @@
 									"title": "Map 3: Leilon Under Construction",
 									"width": 3600,
 									"height": 2280,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "0fe"
 								},
 								{
 									"type": "image",
@@ -734,7 +744,10 @@
 									"title": "(Player Version)",
 									"width": 3600,
 									"height": 2280,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "0fe"
+									}
 								}
 							]
 						},
@@ -1133,7 +1146,8 @@
 									"title": "Map 4: Backlot in Town",
 									"width": 2835,
 									"height": 3600,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "0ff"
 								},
 								{
 									"type": "image",
@@ -1144,7 +1158,10 @@
 									"title": "(Player Version)",
 									"width": 2835,
 									"height": 3600,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "0ff"
+									}
 								}
 							]
 						},
@@ -1362,7 +1379,8 @@
 											"title": "Map 5: Wayside Inn",
 											"width": 3600,
 											"height": 2280,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "100"
 										},
 										{
 											"type": "image",
@@ -1373,7 +1391,10 @@
 											"title": "(Player Version)",
 											"width": 3600,
 											"height": 2280,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "100"
+											}
 										}
 									]
 								}
@@ -1593,7 +1614,8 @@
 									"title": "Map 6: Ruined Tower (Leilon)",
 									"width": 3600,
 									"height": 2280,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "101"
 								},
 								{
 									"type": "image",
@@ -1604,7 +1626,10 @@
 									"title": "(Player Version)",
 									"width": 3600,
 									"height": 2280,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "101"
+									}
 								}
 							]
 						},
@@ -2019,7 +2044,8 @@
 											"title": "Map 7: Lizardfolk Camp",
 											"width": 3600,
 											"height": 2280,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "102"
 										},
 										{
 											"type": "image",
@@ -2030,7 +2056,10 @@
 											"title": "(Player Version)",
 											"width": 3600,
 											"height": 2280,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "102"
+											}
 										}
 									]
 								},
@@ -2336,7 +2365,8 @@
 									"title": "Map 8: Caverns at Thunder Cliffs",
 									"width": 3600,
 									"height": 2280,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "103"
 								},
 								{
 									"type": "image",
@@ -2347,7 +2377,10 @@
 									"title": "(Player Version)",
 									"width": 3600,
 									"height": 2280,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "103"
+									}
 								}
 							]
 						},

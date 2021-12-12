@@ -1898,7 +1898,8 @@
 									"title": "Map 1.1: bremen",
 									"width": 2208,
 									"height": 3000,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "388"
 								},
 								{
 									"type": "image",
@@ -1909,7 +1910,10 @@
 									"title": "Player Version",
 									"width": 2208,
 									"height": 3000,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "388"
+									}
 								}
 							]
 						},
@@ -2387,7 +2391,8 @@
 									"title": "Map 1.2: bryn shander",
 									"width": 3000,
 									"height": 2143,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "67c"
 								},
 								{
 									"type": "image",
@@ -2398,7 +2403,10 @@
 									"title": "Player Version",
 									"width": 3000,
 									"height": 2143,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "67c"
+									}
 								}
 							]
 						},
@@ -2795,7 +2803,8 @@
 									"title": "Map 1.3: caer-dineval",
 									"width": 2202,
 									"height": 3000,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "67d"
 								},
 								{
 									"type": "image",
@@ -2806,7 +2815,11 @@
 									"title": "Player Version",
 									"width": 2201,
 									"height": 3000,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "67d",
+										"autoScale": true
+									}
 								}
 							]
 						},
@@ -3005,7 +3018,8 @@
 											"title": "Map 1.4: Keep at Caer-Dineval",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "6fd"
 										},
 										{
 											"type": "image",
@@ -3016,7 +3030,10 @@
 											"title": "Player Version",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "6fd"
+											}
 										}
 									]
 								},
@@ -3605,7 +3622,8 @@
 									"title": "Map 1.5: caer-konig",
 									"width": 2206,
 									"height": 3000,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "6ff"
 								},
 								{
 									"type": "image",
@@ -3616,7 +3634,10 @@
 									"title": "Player Version",
 									"width": 2206,
 									"height": 3000,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "6ff"
+									}
 								}
 							]
 						},
@@ -3810,7 +3831,8 @@
 											"title": "Map 1.6: duergar outpost",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "700"
 										},
 										{
 											"type": "image",
@@ -3821,7 +3843,10 @@
 											"title": "Player Version",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "700"
+											}
 										}
 									]
 								},
@@ -4202,7 +4227,8 @@
 									"title": "Map 1.7: Dougan's Hole",
 									"width": 2202,
 									"height": 3000,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "701"
 								},
 								{
 									"type": "image",
@@ -4213,7 +4239,10 @@
 									"title": "Player Version",
 									"width": 2202,
 									"height": 3000,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "701"
+									}
 								}
 							]
 						},
@@ -4337,7 +4366,8 @@
 											"title": "Map 1.8: Frost Giant Ice Lodge",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "702"
 										},
 										{
 											"type": "image",
@@ -4348,7 +4378,10 @@
 											"title": "Player Version",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "702"
+											}
 										}
 									]
 								},
@@ -4690,7 +4723,8 @@
 									"title": "Map 1.9: easthaven",
 									"width": 3000,
 									"height": 2139,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "703"
 								},
 								{
 									"type": "image",
@@ -4701,7 +4735,10 @@
 									"title": "Player Version",
 									"width": 3000,
 									"height": 2139,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "703"
+									}
 								}
 							]
 						},
@@ -4980,7 +5017,8 @@
 											"title": "Map 1.10: Cauldron Caves",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "704"
 										},
 										{
 											"type": "image",
@@ -4991,7 +5029,10 @@
 											"title": "Player Version",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "704"
+											}
 										}
 									]
 								},
@@ -5253,7 +5294,8 @@
 											"title": "Map 1.11: easthaven town hall",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "705"
 										},
 										{
 											"type": "image",
@@ -5264,7 +5306,10 @@
 											"title": "Player Version",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "705"
+											}
 										}
 									]
 								},
@@ -5665,7 +5710,8 @@
 									"title": "Map 1.12: good mead",
 									"width": 2196,
 									"height": 3000,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "706"
 								},
 								{
 									"type": "image",
@@ -5676,7 +5722,10 @@
 									"title": "Player Version",
 									"width": 2196,
 									"height": 3000,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "706"
+									}
 								}
 							]
 						},
@@ -5797,7 +5846,8 @@
 											"title": "Map 1.13: verbeeg lair",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "707"
 										},
 										{
 											"type": "image",
@@ -5808,7 +5858,10 @@
 											"title": "Player Version",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "707"
+											}
 										}
 									]
 								},
@@ -6248,7 +6301,8 @@
 									"title": "Map 1.14: lonelywood",
 									"width": 2199,
 									"height": 3000,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "708"
 								},
 								{
 									"type": "image",
@@ -6259,7 +6313,10 @@
 									"title": "Player Version",
 									"width": 2199,
 									"height": 3000,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "708"
+									}
 								}
 							]
 						},
@@ -6452,7 +6509,8 @@
 											"title": "Map 1.15: Elven Tomb",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "709"
 										},
 										{
 											"type": "image",
@@ -6463,7 +6521,10 @@
 											"title": "Player Version",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "709"
+											}
 										}
 									]
 								},
@@ -6877,7 +6938,8 @@
 									"title": "Map 1.16: targos",
 									"width": 2196,
 									"height": 3000,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "70a"
 								},
 								{
 									"type": "image",
@@ -6888,7 +6950,10 @@
 									"title": "Player Version",
 									"width": 2196,
 									"height": 3000,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "70a"
+									}
 								}
 							]
 						},
@@ -7009,7 +7074,8 @@
 											"title": "Map 1.17: kelvin's cairn",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "70b"
 										},
 										{
 											"type": "image",
@@ -7020,7 +7086,10 @@
 											"title": "Player Version",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "70b"
+											}
 										}
 									]
 								},
@@ -7400,7 +7469,8 @@
 									"title": "Map 1.18: termalaine",
 									"width": 2196,
 									"height": 3000,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "70c"
 								},
 								{
 									"type": "image",
@@ -7411,7 +7481,10 @@
 									"title": "Player Version",
 									"width": 2196,
 									"height": 3000,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "70c"
+									}
 								}
 							]
 						},
@@ -7566,7 +7639,8 @@
 											"title": "Map 1.19: gem mine",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "70d"
 										},
 										{
 											"type": "image",
@@ -7577,7 +7651,10 @@
 											"title": "Player Version",
 											"width": 4000,
 											"height": 2765,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "70d"
+											}
 										}
 									]
 								},
@@ -9052,7 +9129,8 @@
 									"title": "Map 2.1: icewind dale",
 									"width": 2550,
 									"height": 1704,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "70e"
 								},
 								{
 									"type": "image",
@@ -9063,7 +9141,11 @@
 									"title": "Player Version",
 									"width": 6000,
 									"height": 4215,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "70e",
+										"autoScale": true
+									}
 								}
 							]
 						},
@@ -9089,7 +9171,8 @@
 											"title": "Map 2.2: angajuk's bell",
 											"width": 2210,
 											"height": 3000,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "70f"
 										},
 										{
 											"type": "image",
@@ -9100,7 +9183,10 @@
 											"title": "Player Version",
 											"width": 2210,
 											"height": 3000,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "70f"
+											}
 										}
 									]
 								},
@@ -9302,7 +9388,8 @@
 													"title": "Map 2.3: black cabin",
 													"width": 2210,
 													"height": 3000,
-													"imageType": "map"
+													"imageType": "map",
+													"id": "710"
 												},
 												{
 													"type": "image",
@@ -9313,7 +9400,10 @@
 													"title": "Player Version",
 													"width": 2210,
 													"height": 3000,
-													"imageType": "mapPlayer"
+													"imageType": "mapPlayer",
+													"mapParent": {
+														"id": "710"
+													}
 												}
 											]
 										}
@@ -9640,7 +9730,8 @@
 													"title": "Map 2.4: cackling chasm",
 													"width": 2210,
 													"height": 3000,
-													"imageType": "map"
+													"imageType": "map",
+													"id": "711"
 												},
 												{
 													"type": "image",
@@ -9651,7 +9742,10 @@
 													"title": "Player Version",
 													"width": 2210,
 													"height": 3000,
-													"imageType": "mapPlayer"
+													"imageType": "mapPlayer",
+													"mapParent": {
+														"id": "711"
+													}
 												}
 											]
 										}
@@ -9896,7 +9990,8 @@
 													"title": "Map 2.5: Cave of the Berserkers",
 													"width": 2210,
 													"height": 3000,
-													"imageType": "map"
+													"imageType": "map",
+													"id": "712"
 												},
 												{
 													"type": "image",
@@ -9907,7 +10002,10 @@
 													"title": "Player Version",
 													"width": 2210,
 													"height": 3000,
-													"imageType": "mapPlayer"
+													"imageType": "mapPlayer",
+													"mapParent": {
+														"id": "712"
+													}
 												}
 											]
 										}
@@ -10122,7 +10220,8 @@
 															"title": "Map 2.6: dark duchess",
 															"width": 4000,
 															"height": 2765,
-															"imageType": "map"
+															"imageType": "map",
+															"id": "713"
 														},
 														{
 															"type": "image",
@@ -10133,7 +10232,10 @@
 															"title": "Player Version",
 															"width": 4000,
 															"height": 2765,
-															"imageType": "mapPlayer"
+															"imageType": "mapPlayer",
+															"mapParent": {
+																"id": "713"
+															}
 														}
 													]
 												}
@@ -10621,7 +10723,8 @@
 															"title": "Map 2.7: id ascendant",
 															"width": 4000,
 															"height": 2765,
-															"imageType": "map"
+															"imageType": "map",
+															"id": "714"
 														},
 														{
 															"type": "image",
@@ -10632,7 +10735,10 @@
 															"title": "Player Version",
 															"width": 4000,
 															"height": 2765,
-															"imageType": "mapPlayer"
+															"imageType": "mapPlayer",
+															"mapParent": {
+																"id": "714"
+															}
 														}
 													]
 												}
@@ -10957,7 +11063,8 @@
 											"title": "Map 2.8: jarlmoot",
 											"width": 2210,
 											"height": 3000,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "715"
 										},
 										{
 											"type": "image",
@@ -10968,7 +11075,10 @@
 											"title": "Player Version",
 											"width": 2210,
 											"height": 3000,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "715"
+											}
 										}
 									]
 								},
@@ -11335,7 +11445,8 @@
 															"title": "Map 2.9: karkolohk",
 															"width": 4000,
 															"height": 2765,
-															"imageType": "map"
+															"imageType": "map",
+															"id": "716"
 														},
 														{
 															"type": "image",
@@ -11346,7 +11457,10 @@
 															"title": "Player Version",
 															"width": 4000,
 															"height": 2765,
-															"imageType": "mapPlayer"
+															"imageType": "mapPlayer",
+															"mapParent": {
+																"id": "716"
+															}
 														}
 													]
 												}
@@ -11683,7 +11797,8 @@
 																	"title": "Map 2.10: Lost Spire of Netheril",
 																	"width": 4000,
 																	"height": 2765,
-																	"imageType": "map"
+																	"imageType": "map",
+																	"id": "717"
 																},
 																{
 																	"type": "image",
@@ -11694,7 +11809,10 @@
 																	"title": "Player Version",
 																	"width": 4000,
 																	"height": 2765,
-																	"imageType": "mapPlayer"
+																	"imageType": "mapPlayer",
+																	"mapParent": {
+																		"id": "717"
+																	}
 																}
 															]
 														}
@@ -12278,7 +12396,8 @@
 																	"title": "Map 2.11: reghed tribe camp",
 																	"width": 2210,
 																	"height": 3000,
-																	"imageType": "map"
+																	"imageType": "map",
+																	"id": "718"
 																},
 																{
 																	"type": "image",
@@ -12289,7 +12408,10 @@
 																	"title": "Player Version",
 																	"width": 2210,
 																	"height": 3000,
-																	"imageType": "mapPlayer"
+																	"imageType": "mapPlayer",
+																	"mapParent": {
+																		"id": "718"
+																	}
 																}
 															]
 														}
@@ -12482,7 +12604,8 @@
 													"title": "Map 2.12: revel's end",
 													"width": 3684,
 													"height": 5000,
-													"imageType": "map"
+													"imageType": "map",
+													"id": "719"
 												},
 												{
 													"type": "image",
@@ -12493,7 +12616,10 @@
 													"title": "Player Version",
 													"width": 3684,
 													"height": 5000,
-													"imageType": "mapPlayer"
+													"imageType": "mapPlayer",
+													"mapParent": {
+														"id": "719"
+													}
 												}
 											]
 										}
@@ -12958,7 +13084,8 @@
 													"title": "Map 2.13: skytower shelter",
 													"width": 2210,
 													"height": 3000,
-													"imageType": "map"
+													"imageType": "map",
+													"id": "71a"
 												},
 												{
 													"type": "image",
@@ -12969,7 +13096,10 @@
 													"title": "Player Version",
 													"width": 2210,
 													"height": 3000,
-													"imageType": "mapPlayer"
+													"imageType": "mapPlayer",
+													"mapParent": {
+														"id": "71a"
+													}
 												}
 											]
 										}
@@ -13327,7 +13457,8 @@
 													"title": "Map 2.14: wyrmdoom crag",
 													"width": 2210,
 													"height": 3000,
-													"imageType": "map"
+													"imageType": "map",
+													"id": "71b"
 												},
 												{
 													"type": "image",
@@ -13338,7 +13469,10 @@
 													"title": "Player Version",
 													"width": 2210,
 													"height": 3000,
-													"imageType": "mapPlayer"
+													"imageType": "mapPlayer",
+													"mapParent": {
+														"id": "71b"
+													}
 												}
 											]
 										}
@@ -13801,7 +13935,8 @@
 											"title": "Map 3.1: Sunblight (Xardorok's Fortress)",
 											"width": 3684,
 											"height": 5000,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "71c"
 										},
 										{
 											"type": "image",
@@ -13812,7 +13947,10 @@
 											"title": "Player Version",
 											"width": 3684,
 											"height": 5000,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "71c"
+											}
 										}
 									]
 								}
@@ -15816,7 +15954,8 @@
 											"title": "Map 5.1: island of solstice",
 											"width": 3684,
 											"height": 5000,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "71d"
 										},
 										{
 											"type": "image",
@@ -15827,7 +15966,10 @@
 											"title": "Player Version",
 											"width": 3684,
 											"height": 5000,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "71d"
+											}
 										}
 									]
 								}
@@ -16128,7 +16270,8 @@
 															"title": "Map 5.2: grimskalle",
 															"width": 3684,
 															"height": 5000,
-															"imageType": "map"
+															"imageType": "map",
+															"id": "71e"
 														},
 														{
 															"type": "image",
@@ -16139,7 +16282,10 @@
 															"title": "Player Version",
 															"width": 3684,
 															"height": 5000,
-															"imageType": "mapPlayer"
+															"imageType": "mapPlayer",
+															"mapParent": {
+																"id": "71e"
+															}
 														}
 													]
 												}
@@ -17276,7 +17422,8 @@
 											"title": "Map 6.1: caves of hunger",
 											"width": 4421,
 											"height": 6000,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "71f"
 										},
 										{
 											"type": "image",
@@ -17287,7 +17434,10 @@
 											"title": "Player Version",
 											"width": 4421,
 											"height": 6000,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "71f"
+											}
 										}
 									]
 								}
@@ -18423,7 +18573,8 @@
 									"title": "Map 7.2: Necropolis of Ythryn",
 									"width": 5000,
 									"height": 3100,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "720"
 								},
 								{
 									"type": "image",
@@ -18434,7 +18585,10 @@
 									"title": "Player Version",
 									"width": 5000,
 									"height": 3100,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "720"
+									}
 								}
 							]
 						},
@@ -19549,7 +19703,8 @@
 															"title": "Map 7.3: spire of iriolarthas",
 															"width": 4000,
 															"height": 2765,
-															"imageType": "map"
+															"imageType": "map",
+															"id": "721"
 														},
 														{
 															"type": "image",
@@ -19560,7 +19715,10 @@
 															"title": "Player Version",
 															"width": 4000,
 															"height": 2765,
-															"imageType": "mapPlayer"
+															"imageType": "mapPlayer",
+															"mapParent": {
+																"id": "721"
+															}
 														}
 													]
 												}

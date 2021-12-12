@@ -1857,5 +1857,10 @@
 		"title": "School of WUB and RG",
 		"titleAlt": "Avada Kedavra My Man",
 		"txt": "- Added Strixhaven: A Curriculum of Chaos\n- Text headers are now (mostly) collapsible\n- Improved CR Scaler handling of some attack rolls\n- Fixed CR Scaler allowing ability scores of 31\n- Fixed CR Calculator CON mod calculation\n- Fixed Bestiary/Spells Page failing to apply filters from URL\n- Fixed Bestiary/Spells Page failing to load some sources on page load\n- (Brew) Improved handling of JSON data in entry input fields\n- (Brew) Fixed homebrew schema issues (thanks @ Lyra)\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.145.1",
+		"date": "2021-12-09",
+		"txt": "- Added Strixhaven tokens\n- (Brew) Fixed error when attempting to display valid entry JSON in Homebrew Builder output\n- (Brew) Added \"fast\" schema compilation mode, which can (hopefully) be used for live IDE linting [a precompiled version is available in the brew repo]\n- (Fixed typos/added tags)"
 	}
 ]

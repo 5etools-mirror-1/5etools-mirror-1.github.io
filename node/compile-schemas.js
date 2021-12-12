@@ -7,8 +7,8 @@ const DIR_IN = "./test/schema-template/";
 const DIR_OUT = "./test/schema/";
 
 class SchemaPreprocessor {
-	static preprocess ({schema, isBrew = false, dirSource}) {
-		this._recurse({root: schema, obj: schema, isBrew, dirSource});
+	static preprocess ({schema, isBrew = false, isFast = false, dirSource}) {
+		this._recurse({root: schema, obj: schema, isBrew, isFast, dirSource});
 		return schema;
 	}
 
@@ -43,38 +43,39 @@ class SchemaPreprocessor {
 		bKeys.forEach(bk => a[bk] = b[bk]);
 	}
 
-	static _recurse ({root, obj, isBrew, dirSource}) {
+	static _recurse ({root, obj, isBrew, isFast, dirSource}) {
 		if (typeof obj !== "object") return obj;
 
 		if (obj instanceof Array) {
 			return obj
 				.filter(d => d.$$ifBrew_item ? isBrew : d.$$ifSite_item ? !isBrew : true)
 				.map(d => {
-					if (d.$$ifBrew_item) return this._recurse({root, obj: d.$$ifBrew_item, isBrew, dirSource});
-					if (d.$$ifSite_item) return this._recurse({root, obj: d.$$ifSite_item, isBrew, dirSource});
-					return this._recurse({root, obj: d, isBrew, dirSource});
+					if (d.$$ifBrew_item) return this._recurse({root, obj: d.$$ifBrew_item, isBrew, isFast, dirSource});
+					if (d.$$ifSite_item) return this._recurse({root, obj: d.$$ifSite_item, isBrew, isFast, dirSource});
+					return this._recurse({root, obj: d, isBrew, isFast, dirSource});
 				});
 		}
 
 		Object.entries(obj)
 			.forEach(([k, v]) => {
 				switch (k) {
-					case "$$merge": return this._recurse_$$merge({root, obj, k, v, isBrew, dirSource});
-					case "$$ifBrew": return this._recurse_$$ifBrew({root, obj, k, v, isBrew, dirSource});
-					case "$$ifSite": return this._recurse_$$ifSite({root, obj, k, v, isBrew, dirSource});
-					case "$$ifSiteElse_key": return this._recurse_$$ifSiteElse_key({root, obj, k, v, isBrew, dirSource});
-					default: return obj[k] = this._recurse({root, obj: v, isBrew, dirSource});
+					case "$$merge": return this._recurse_$$merge({root, obj, k, v, isBrew, isFast, dirSource});
+					case "$$ifBrew": return this._recurse_$$ifBrew({root, obj, k, v, isBrew, isFast, dirSource});
+					case "$$ifSite": return this._recurse_$$ifSite({root, obj, k, v, isBrew, isFast, dirSource});
+					case "$$ifNotFast": return this._recurse_$$ifNotFast({root, obj, k, v, isBrew, isFast, dirSource});
+					case "$$ifSiteElse_key": return this._recurse_$$ifSiteElse_key({root, obj, k, v, isBrew, isFast, dirSource});
+					default: return obj[k] = this._recurse({root, obj: v, isBrew, isFast, dirSource});
 				}
 			});
 
 		return obj;
 	}
 
-	static _recurse_$$merge ({root, obj, k, v, isBrew, dirSource}) {
+	static _recurse_$$merge ({root, obj, k, v, isBrew, isFast, dirSource}) {
 		const merged = {};
 		v.forEach(toMerge => {
 			// handle any mergeable children
-			toMerge = this._recurse({root, obj: toMerge, isBrew});
+			toMerge = this._recurse({root, obj: toMerge, isBrew, isFast});
 			// resolve references
 			toMerge = this._getResolvedRefJson({root, toMerge, dirSource});
 			// merge
@@ -89,13 +90,18 @@ class SchemaPreprocessor {
 		this._mutMergeObjects(obj, merged);
 	}
 
-	static _recurse_$$ifBrew ({root, obj, k, v, isBrew, dirSource}) {
+	static _recurse_$$ifBrew ({root, obj, k, v, isBrew, isFast, dirSource}) {
 		if (!isBrew) return void delete obj[k];
 		this._recurse_$$if({root, obj, k, v});
 	}
 
-	static _recurse_$$ifSite ({root, obj, k, v, isBrew, dirSource}) {
+	static _recurse_$$ifSite ({root, obj, k, v, isBrew, isFast, dirSource}) {
 		if (isBrew) return void delete obj[k];
+		this._recurse_$$if({root, obj, k, v});
+	}
+
+	static _recurse_$$ifNotFast ({root, obj, k, v, isBrew, isFast, dirSource}) {
+		if (isFast) return void delete obj[k];
 		this._recurse_$$if({root, obj, k, v});
 	}
 
@@ -115,7 +121,7 @@ class SchemaPreprocessor {
 		delete obj[k];
 	}
 
-	static _recurse_$$ifSiteElse_key ({root, obj, k, v, isBrew, dirSource}) {
+	static _recurse_$$ifSiteElse_key ({root, obj, k, v, isBrew, isFast, dirSource}) {
 		const key = v[isBrew ? "keyBrew" : "keySite"];
 		obj[k] = {[key]: v.value};
 		return this._recurse_$$if({root, obj, k, v: obj[k]});
@@ -173,6 +179,7 @@ class SchemaCompiler {
 			const compiled = SchemaPreprocessor.preprocess({
 				schema: ut.readJson(filePath, "utf8"),
 				isBrew: ut.ArgParser.ARGS.homebrew,
+				isFast: ut.ArgParser.ARGS.fast,
 				dirSource: path.dirname(filePath),
 			});
 			fs.mkdirSync(dirPathOut, {recursive: true});

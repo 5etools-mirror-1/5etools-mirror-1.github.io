@@ -542,7 +542,8 @@
 									"imageType": "map",
 									"title": "Map 1.1: Candlekeep",
 									"width": 1710,
-									"height": 2316
+									"height": 2316,
+									"id": "426"
 								},
 								{
 									"type": "image",
@@ -553,7 +554,11 @@
 									"imageType": "mapPlayer",
 									"title": "Player Version",
 									"width": 2400,
-									"height": 3256
+									"height": 3256,
+									"mapParent": {
+										"id": "426",
+										"autoScale": true
+									}
 								}
 							]
 						},
@@ -921,7 +926,8 @@
 											"imageType": "map",
 											"title": "Map 2.1: fistandia's mansion",
 											"width": 3000,
-											"height": 2135
+											"height": 2135,
+											"id": "47b"
 										},
 										{
 											"type": "image",
@@ -932,7 +938,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 3000,
-											"height": 2135
+											"height": 2135,
+											"mapParent": {
+												"id": "47b"
+											}
 										}
 									]
 								}
@@ -1876,7 +1885,8 @@
 									"imageType": "map",
 									"title": "Map 3.1: amberdune hideout",
 									"width": 2163,
-									"height": 3000
+									"height": 3000,
+									"id": "47c"
 								},
 								{
 									"type": "image",
@@ -1887,7 +1897,10 @@
 									"imageType": "mapPlayer",
 									"title": "Player Version",
 									"width": 2163,
-									"height": 3000
+									"height": 3000,
+									"mapParent": {
+										"id": "47c"
+									}
 								}
 							]
 						},
@@ -2553,7 +2566,8 @@
 											"imageType": "map",
 											"title": "Map 4.01: chalet brantifax",
 											"width": 3000,
-											"height": 2042
+											"height": 2042,
+											"id": "47d"
 										},
 										{
 											"type": "image",
@@ -2564,7 +2578,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 3000,
-											"height": 2042
+											"height": 2042,
+											"mapParent": {
+												"id": "47d"
+											}
 										}
 									]
 								}
@@ -3046,7 +3063,8 @@
 															"imageType": "map",
 															"title": "Map 4.02: harrn mausoleum",
 															"width": 2207,
-															"height": 3000
+															"height": 3000,
+															"id": "563"
 														},
 														{
 															"type": "image",
@@ -3057,7 +3075,10 @@
 															"imageType": "mapPlayer",
 															"title": "Player Version",
 															"width": 2207,
-															"height": 3000
+															"height": 3000,
+															"mapParent": {
+																"id": "563"
+															}
 														}
 													]
 												}
@@ -3423,7 +3444,8 @@
 											"imageType": "map",
 											"title": "Map 5.1: vermeillon",
 											"width": 3000,
-											"height": 2062
+											"height": 2062,
+											"id": "564"
 										},
 										{
 											"type": "image",
@@ -3434,7 +3456,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 3000,
-											"height": 2062
+											"height": 2062,
+											"mapParent": {
+												"id": "564"
+											}
 										}
 									]
 								},
@@ -3596,7 +3621,8 @@
 											"imageType": "map",
 											"title": "Map 5.2: mayor duvezin's house",
 											"width": 2168,
-											"height": 3000
+											"height": 3000,
+											"id": "565"
 										},
 										{
 											"type": "image",
@@ -3607,7 +3633,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 2168,
-											"height": 3000
+											"height": 3000,
+											"mapParent": {
+												"id": "565"
+											}
 										}
 									]
 								},
@@ -3819,7 +3848,8 @@
 											"imageType": "map",
 											"title": "Map 5.3: platinum mine",
 											"width": 3000,
-											"height": 2132
+											"height": 2132,
+											"id": "566"
 										},
 										{
 											"type": "image",
@@ -3830,7 +3860,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 3000,
-											"height": 2132
+											"height": 2132,
+											"mapParent": {
+												"id": "566"
+											}
 										}
 									]
 								},
@@ -4885,7 +4918,8 @@
 									"imageType": "map",
 									"title": "Map 6.1: firefly cellar",
 									"width": 2199,
-									"height": 3000
+									"height": 3000,
+									"id": "567"
 								},
 								{
 									"type": "image",
@@ -4896,7 +4930,10 @@
 									"imageType": "mapPlayer",
 									"title": "Player Version",
 									"width": 2199,
-									"height": 3000
+									"height": 3000,
+									"mapParent": {
+										"id": "567"
+									}
 								}
 							]
 						},
@@ -5684,7 +5721,8 @@
 											"imageType": "map",
 											"title": "Map 7.1: temple of the restful lily",
 											"width": 2185,
-											"height": 3000
+											"height": 3000,
+											"id": "568"
 										},
 										{
 											"type": "image",
@@ -5695,7 +5733,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 2185,
-											"height": 3000
+											"height": 3000,
+											"mapParent": {
+												"id": "568"
+											}
 										}
 									]
 								},
@@ -6055,7 +6096,8 @@
 															"imageType": "map",
 															"title": "Map 7.2: temple of the restful lily",
 															"width": 2063,
-															"height": 1425
+															"height": 1425,
+															"id": "569"
 														},
 														{
 															"type": "image",
@@ -6066,7 +6108,10 @@
 															"imageType": "mapPlayer",
 															"title": "Player Version",
 															"width": 2063,
-															"height": 1425
+															"height": 1425,
+															"mapParent": {
+																"id": "569"
+															}
 														}
 													]
 												}
@@ -6520,7 +6565,8 @@
 											"imageType": "map",
 											"title": "Map 8.1: grippli village",
 											"width": 3000,
-											"height": 2134
+											"height": 2134,
+											"id": "56a"
 										},
 										{
 											"type": "image",
@@ -6531,7 +6577,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 3000,
-											"height": 2134
+											"height": 2134,
+											"mapParent": {
+												"id": "56a"
+											}
 										}
 									]
 								},
@@ -6607,7 +6656,8 @@
 											"imageType": "map",
 											"title": "Map 8.02: temple",
 											"width": 2206,
-											"height": 3000
+											"height": 3000,
+											"id": "56b"
 										},
 										{
 											"type": "image",
@@ -6618,7 +6668,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 2206,
-											"height": 3000
+											"height": 3000,
+											"mapParent": {
+												"id": "56b"
+											}
 										}
 									]
 								},
@@ -7169,7 +7222,8 @@
 											"imageType": "map",
 											"title": "Map 9.1: greenfast",
 											"width": 3000,
-											"height": 2134
+											"height": 2134,
+											"id": "56c"
 										},
 										{
 											"type": "image",
@@ -7180,7 +7234,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 3000,
-											"height": 2134
+											"height": 2134,
+											"mapParent": {
+												"id": "56c"
+											}
 										}
 									]
 								},
@@ -7311,7 +7368,8 @@
 											"imageType": "map",
 											"title": "Map 9.2: temple of the burnt tongue cult",
 											"width": 2199,
-											"height": 3000
+											"height": 3000,
+											"id": "56d"
 										},
 										{
 											"type": "image",
@@ -7322,7 +7380,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 2199,
-											"height": 3000
+											"height": 3000,
+											"mapParent": {
+												"id": "56d"
+											}
 										}
 									]
 								}
@@ -8051,7 +8112,8 @@
 											"imageType": "map",
 											"title": "Map 10.1: hags hovel",
 											"width": 3000,
-											"height": 2133
+											"height": 2133,
+											"id": "56e"
 										},
 										{
 											"type": "image",
@@ -8062,7 +8124,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 3000,
-											"height": 2133
+											"height": 2133,
+											"mapParent": {
+												"id": "56e"
+											}
 										}
 									]
 								},
@@ -8168,7 +8233,8 @@
 											"imageType": "map",
 											"title": "Map 10.2: pool of eternal spring",
 											"width": 3000,
-											"height": 2044
+											"height": 2044,
+											"id": "56f"
 										},
 										{
 											"type": "image",
@@ -8179,7 +8245,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 3000,
-											"height": 2044
+											"height": 2044,
+											"mapParent": {
+												"id": "56f"
+											}
 										}
 									]
 								},
@@ -8597,7 +8666,8 @@
 											"imageType": "map",
 											"title": "Map 11.1: the barn door",
 											"width": 3000,
-											"height": 2068
+											"height": 2068,
+											"id": "570"
 										},
 										{
 											"type": "image",
@@ -8608,7 +8678,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 3000,
-											"height": 2068
+											"height": 2068,
+											"mapParent": {
+												"id": "570"
+											}
 										}
 									]
 								},
@@ -8869,7 +8942,8 @@
 											"imageType": "map",
 											"title": "Map 11.1: under the barn door",
 											"width": 2053,
-											"height": 1415
+											"height": 1415,
+											"id": "571"
 										},
 										{
 											"type": "image",
@@ -8880,7 +8954,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 2053,
-											"height": 1415
+											"height": 1415,
+											"mapParent": {
+												"id": "571"
+											}
 										}
 									]
 								},
@@ -9441,7 +9518,8 @@
 											"imageType": "map",
 											"title": "Map 12.1: zikran's laboratory",
 											"width": 3000,
-											"height": 2069
+											"height": 2069,
+											"id": "572"
 										},
 										{
 											"type": "image",
@@ -9452,7 +9530,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 3000,
-											"height": 2069
+											"height": 2069,
+											"mapParent": {
+												"id": "572"
+											}
 										}
 									]
 								},
@@ -9710,7 +9791,8 @@
 											"imageType": "map",
 											"title": "Map 12.2: cloud giants keep",
 											"width": 2214,
-											"height": 3000
+											"height": 3000,
+											"id": "573"
 										},
 										{
 											"type": "image",
@@ -9721,7 +9803,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 2214,
-											"height": 3000
+											"height": 3000,
+											"mapParent": {
+												"id": "573"
+											}
 										}
 									]
 								},
@@ -10187,7 +10272,8 @@
 											"imageType": "map",
 											"title": "Map 13.1: wisteria vale",
 											"width": 3000,
-											"height": 2044
+											"height": 2044,
+											"id": "574"
 										},
 										{
 											"type": "image",
@@ -10198,7 +10284,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 3000,
-											"height": 2044
+											"height": 2044,
+											"mapParent": {
+												"id": "574"
+											}
 										}
 									]
 								},
@@ -10365,7 +10454,8 @@
 											"imageType": "map",
 											"title": "Map 13.2: the manor",
 											"width": 3000,
-											"height": 2044
+											"height": 2044,
+											"id": "575"
 										},
 										{
 											"type": "image",
@@ -10376,7 +10466,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 3000,
-											"height": 2044
+											"height": 2044,
+											"mapParent": {
+												"id": "575"
+											}
 										}
 									]
 								},
@@ -11206,7 +11299,8 @@
 															"imageType": "map",
 															"title": "Map 14.1: temple of the immortal lotus",
 															"width": 3000,
-															"height": 2075
+															"height": 2075,
+															"id": "576"
 														},
 														{
 															"type": "image",
@@ -11217,7 +11311,10 @@
 															"imageType": "mapPlayer",
 															"title": "Player Version",
 															"width": 3000,
-															"height": 2075
+															"height": 2075,
+															"mapParent": {
+																"id": "576"
+															}
 														}
 													]
 												}
@@ -11929,7 +12026,8 @@
 											"imageType": "map",
 											"title": "Map 15.1: tomb of valin sarnaster",
 											"width": 2094,
-											"height": 2840
+											"height": 2840,
+											"id": "577"
 										},
 										{
 											"type": "image",
@@ -11940,7 +12038,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 2094,
-											"height": 2840
+											"height": 2840,
+											"mapParent": {
+												"id": "577"
+											}
 										}
 									]
 								},
@@ -13057,7 +13158,8 @@
 											"imageType": "map",
 											"title": "Map 16.1: haven of the red quill",
 											"width": 3000,
-											"height": 2071
+											"height": 2071,
+											"id": "578"
 										},
 										{
 											"type": "image",
@@ -13068,7 +13170,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 3000,
-											"height": 2071
+											"height": 2071,
+											"mapParent": {
+												"id": "578"
+											}
 										}
 									]
 								},
@@ -13836,7 +13941,8 @@
 									"imageType": "map",
 									"title": "Map 17.1: haruun",
 									"width": 2206,
-									"height": 3000
+									"height": 3000,
+									"id": "579"
 								},
 								{
 									"type": "image",
@@ -13847,7 +13953,10 @@
 									"imageType": "mapPlayer",
 									"title": "Player Version",
 									"width": 2206,
-									"height": 3000
+									"height": 3000,
+									"mapParent": {
+										"id": "579"
+									}
 								}
 							]
 						},
@@ -14155,7 +14264,8 @@
 											"imageType": "map",
 											"title": "Map 17.2: necropolis and mastaba",
 											"width": 2186,
-											"height": 3000
+											"height": 3000,
+											"id": "57a"
 										},
 										{
 											"type": "image",
@@ -14166,7 +14276,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 2186,
-											"height": 3000
+											"height": 3000,
+											"mapParent": {
+												"id": "57a"
+											}
 										}
 									]
 								}
@@ -14673,7 +14786,8 @@
 											"imageType": "map",
 											"title": "Map 18.1: lykortha expanse",
 											"width": 3000,
-											"height": 2073
+											"height": 2073,
+											"id": "57b"
 										},
 										{
 											"type": "image",
@@ -14684,7 +14798,10 @@
 											"imageType": "mapPlayer",
 											"title": "Player Version",
 											"width": 3000,
-											"height": 2073
+											"height": 2073,
+											"mapParent": {
+												"id": "57b"
+											}
 										}
 									]
 								},

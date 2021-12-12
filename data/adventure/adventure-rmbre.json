@@ -126,7 +126,8 @@
 													"title": "Map 1.1: the Lost Dungeon of Rickedness",
 													"width": 5100,
 													"height": 2202,
-													"imageType": "map"
+													"imageType": "map",
+													"id": "10b"
 												},
 												{
 													"type": "image",
@@ -137,7 +138,11 @@
 													"title": "(Player Version)",
 													"width": 4709,
 													"height": 1845,
-													"imageType": "mapPlayer"
+													"imageType": "mapPlayer",
+													"mapParent": {
+														"id": "10b",
+														"autoScale": true
+													}
 												}
 											]
 										}

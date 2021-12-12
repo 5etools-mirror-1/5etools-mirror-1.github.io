@@ -107,7 +107,8 @@
 											"title": "Map 1: The Sword Coast",
 											"width": 2105,
 											"height": 2933,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "12f"
 										},
 										{
 											"type": "image",
@@ -118,7 +119,11 @@
 											"title": "(Player Version)",
 											"width": 2153,
 											"height": 3000,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "12f",
+												"autoScale": true
+											}
 										}
 									]
 								}
@@ -302,7 +307,8 @@
 							"title": "Map 2: Leilon Town",
 							"width": 3600,
 							"height": 2280,
-							"imageType": "map"
+							"imageType": "map",
+							"id": "130"
 						},
 						{
 							"type": "image",
@@ -313,7 +319,10 @@
 							"title": "(Player Version)",
 							"width": 3600,
 							"height": 2280,
-							"imageType": "mapPlayer"
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "130"
+							}
 						}
 					]
 				},
@@ -779,7 +788,8 @@
 											"title": "Map 3: Dumathoin's Gulch",
 											"width": 2835,
 											"height": 3600,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "131"
 										},
 										{
 											"type": "image",
@@ -790,7 +800,10 @@
 											"title": "(Player Version)",
 											"width": 2835,
 											"height": 3600,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "131"
+											}
 										}
 									]
 								},
@@ -1003,7 +1016,8 @@
 									"title": "Map 4: Ebondeath's Mausoleum",
 									"width": 3600,
 									"height": 2279,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "132"
 								},
 								{
 									"type": "image",
@@ -1014,7 +1028,10 @@
 									"title": "(Player Version)",
 									"width": 3600,
 									"height": 2279,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "132"
+									}
 								}
 							]
 						},
@@ -1349,7 +1366,8 @@
 											"title": "Map 5: Icingdeath and Twinkle",
 											"width": 3600,
 											"height": 2279,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "133"
 										},
 										{
 											"type": "image",
@@ -1360,7 +1378,10 @@
 											"title": "(Player Version)",
 											"width": 3600,
 											"height": 2279,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "133"
+											}
 										}
 									]
 								}
@@ -2562,7 +2583,8 @@
 											"title": "Map 6: Storm Lord's Hideout",
 											"width": 3600,
 											"height": 2280,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "134"
 										},
 										{
 											"type": "image",
@@ -2573,7 +2595,10 @@
 											"title": "(Player Version)",
 											"width": 3600,
 											"height": 2280,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "134"
+											}
 										}
 									]
 								}
@@ -2882,7 +2907,8 @@
 											"title": "Map 7: Thalivar's Beacon",
 											"width": 3600,
 											"height": 2280,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "135"
 										},
 										{
 											"type": "image",
@@ -2893,7 +2919,10 @@
 											"title": "(Player Version)",
 											"width": 3600,
 											"height": 2280,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "135"
+											}
 										}
 									]
 								},

@@ -296,8 +296,10 @@ class UiUtil {
 					if (/[}\]]$/.test(it.trim())) return `${it},`; // Add trailing commas to closing `}`/`]`
 					return it;
 				});
-			if (lines.length) lines[lines.length - 1] = lines.last().replace(/^(.*?),?$/, "$1"); // remove trailing comma
-			return JSON.parse(`[${lines.join("")}]`);
+			const json = `[\n${lines.join("")}\n]`
+				// remove trailing commas
+				.replace(/(.*?)(,)(:?\s*]|\s*})/g, "$1$3");
+			return JSON.parse(json);
 		} catch (e) {
 			const lines = text.split("\n").filter(it => it.trim());
 			const slice = lines.join(" \\ ").substring(0, 30);

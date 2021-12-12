@@ -2,7 +2,10 @@ const fs = require("fs");
 const ut = require("./util.js");
 
 let swFiles = [];
-const _addSwFilenames = (list) => swFiles = swFiles.concat(list.map(it => `/${it}`));
+const _addSwFilenames = (list, {isRemoveExtension = false} = {}) => {
+	if (isRemoveExtension) list = list.map(it => it.split(".").slice(0, -1).join("."));
+	swFiles = swFiles.concat(list.map(it => `/${it}`));
+};
 
 const audioFiles = ut.listFiles({dir: "audio", whitelistFileExts: [".mp3"]});
 _addSwFilenames(audioFiles);
@@ -40,7 +43,11 @@ _addSwFilenames(libFiles);
 const searchFiles = ut.listFiles({dir: "search", whitelistFileExts: [".json"]});
 _addSwFilenames(searchFiles);
 
-const rootFiles = ut.listFiles({dir: ".", whitelistFileExts: [".html", ".webmanifest", ".png"], whitelistDirs: []})
+const rootFilesHtml = ut.listFiles({dir: ".", whitelistFileExts: [".html"], whitelistDirs: []})
+	.map(it => it.substring(2));
+_addSwFilenames(rootFilesHtml, {isRemoveExtension: !!process.env.VET_SW_REMOVE_EXTENSION_HTML});
+
+const rootFiles = ut.listFiles({dir: ".", whitelistFileExts: [".webmanifest", ".png"], whitelistDirs: []})
 	.map(it => it.substring(2));
 _addSwFilenames(rootFiles);
 

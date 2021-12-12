@@ -1588,7 +1588,20 @@
 			"description": "Used to create fake item entries for groups of related items, often referred to as a single item (e.g. arcane foci)",
 			"type": "array",
 			"items": {
-				"$ref": "#/definitions/item"
+				"type": "object",
+				"$ref": "#/definitions/item",
+				"oneOf": [
+					{
+						"required": [
+							"items"
+						]
+					},
+					{
+						"required": [
+							"_copy"
+						]
+					}
+				]
 			}
 		},
 		"_meta": {

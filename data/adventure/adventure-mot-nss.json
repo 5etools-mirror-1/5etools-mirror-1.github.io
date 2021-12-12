@@ -430,7 +430,8 @@
 											"title": "Map 4.16: Cour of Orestes",
 											"width": 3825,
 											"height": 2250,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "000"
 										},
 										{
 											"type": "image",
@@ -441,7 +442,10 @@
 											"title": "Player Version",
 											"width": 3825,
 											"height": 2250,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "000"
+											}
 										}
 									]
 								},

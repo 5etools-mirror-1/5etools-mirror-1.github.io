@@ -506,7 +506,7 @@
 			"items": {
 				"type":"object",
 				"$ref": "#/definitions/item",
-				"anyOf": [
+				"oneOf": [
 					{
 						"required": [
 							"items"
