@@ -3456,6 +3456,10 @@ Renderer.utils = {
 		}
 		return out;
 	},
+
+	initFullEntries_ (ent, {propEntries = "entries", propFullEntries = "_fullEntries"} = {}) {
+		ent[propFullEntries] = ent[propFullEntries] || (ent[propEntries] ? MiscUtil.copy(ent[propEntries]) : []);
+	},
 };
 
 Renderer.feat = {
@@ -3488,14 +3492,15 @@ Renderer.feat = {
 		return `Increase your ${abbChoicesText} by ${abilityObj.choose.amount}, to a maximum of 20.`;
 	},
 
-	mergeAbilityIncrease: function (feat) {
-		if (!feat.ability || feat._hasMergedAbility || !feat.ability.length) return;
+	initFullEntries (feat) {
+		if (!feat.ability || feat._fullEntries || !feat.ability.length) return;
 
-		feat._hasMergedAbility = true;
 		const abilsToDisplay = feat.ability.filter(it => !it.hidden);
 		if (!abilsToDisplay.length) return;
 
-		const targetList = feat.entries.find(e => e.type === "list");
+		Renderer.utils.initFullEntries_(feat);
+
+		const targetList = feat._fullEntries.find(e => e.type === "list");
 
 		// FTD+ style
 		if (targetList.items.every(it => it.type === "item")) {
@@ -3509,7 +3514,7 @@ Renderer.feat = {
 		}
 
 		// this should never happen, but display sane output anyway, and throw an out-of-order exception
-		abilsToDisplay.forEach(abilObj => feat.entries.unshift(Renderer.feat._mergeAbilityIncrease_getListItemText(abilObj)));
+		abilsToDisplay.forEach(abilObj => feat._fullEntries.unshift(Renderer.feat._mergeAbilityIncrease_getListItemText(abilObj)));
 
 		setTimeout(() => {
 			throw new Error(`Could not find object of type "list" in "entries" for feat "${feat.name}" from source "${feat.source}" when merging ability scores! Reformat the feat to include a "list"-type entry.`);
@@ -3528,14 +3533,14 @@ Renderer.feat = {
 		const renderStack = [];
 
 		const prerequisite = Renderer.utils.getPrerequisiteHtml(feat.prerequisite);
-		Renderer.feat.mergeAbilityIncrease(feat);
+		Renderer.feat.initFullEntries(feat);
 		renderStack.push(`
 			${Renderer.utils.getExcludedTr({entity: feat, dataProp: "feat", page: UrlUtil.PG_FEATS})}
 			${opts.isSkipNameRow ? "" : Renderer.utils.getNameTr(feat, {page: UrlUtil.PG_FEATS})}
 			<tr class="text"><td colspan="6" class="text">
 			${prerequisite ? `<p><i>${prerequisite}</i></p>` : ""}
 		`);
-		renderer.recursiveRender({entries: feat.entries}, renderStack, {depth: 2});
+		renderer.recursiveRender({entries: feat._fullEntries || feat.entries}, renderStack, {depth: 2});
 		renderStack.push(`</td></tr>`);
 
 		return renderStack.join("");
@@ -3814,6 +3819,11 @@ Renderer.spell = {
 		return {isClassSpell, variantClassSpells};
 	},
 
+	uninitClasses (spell) {
+		delete spell._tmpClasses;
+		delete spell._tmpRaces;
+	},
+
 	// TODO(Future)
 	//   - Pre-generate this information, and load it as a JSON file?
 	//   - Allow the user to filter for e.g. "variant subclass" spells, "variant race" spells?
@@ -3842,6 +3852,7 @@ Renderer.spell = {
 		const hashSorcererClockworkSoul = UrlUtil.URL_TO_HASH_BUILDER["subclass"]({className: Renderer.spell.STR_SORCERER, classSource: SRC_PHB, name: Renderer.spell.STR_CLOCKWORK_SOUL, source: SRC_TCE});
 
 		const hashElfHigh = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RACES]({name: "Elf (High)", source: SRC_PHB});
+		const hashHalfElfVariantSunMoon = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RACES]({name: "Half-Elf (Variant; Moon Elf or Sun Elf Descent)", source: SRC_SCAG});
 
 		// add eldritch knight and arcane trickster
 		if (isWizardSpell || variantWizardSpells.length) {
@@ -3966,6 +3977,27 @@ Renderer.spell = {
 							variantClassSpells: variantWizardSpells,
 							raceName: "Elf (High)",
 							raceBaseName: "Elf",
+						});
+					}
+				}
+
+				const isExcludedVariantMoonSunElf = ExcludeUtil.isExcluded(hashHalfElfVariantSunMoon, "race", SRC_SCAG, {isNoCount: true});
+
+				if (!isExcludedVariantMoonSunElf) {
+					if (isWizardSpell) {
+						Renderer.spell._initClasses_addRaceSpell({
+							spell,
+							raceName: "Half-Elf (Variant; Moon Elf or Sun Elf Descent)",
+							raceBaseName: "Half-Elf",
+						});
+					}
+
+					if (variantWizardSpells.length) {
+						Renderer.spell._initClasses_addVariantRaceSpells({
+							spell,
+							variantClassSpells: variantWizardSpells,
+							raceName: "Half-Elf (Variant; Moon Elf or Sun Elf Descent)",
+							raceBaseName: "Half-Elf",
 						});
 					}
 				}
@@ -6444,11 +6476,11 @@ Renderer.item = {
 	},
 
 	_initFullEntries (item) {
-		item._fullEntries = item._fullEntries || (item.entries ? MiscUtil.copy(item.entries) : []);
+		Renderer.utils.initFullEntries_(item);
 	},
 
 	_initFullAdditionalEntries (item) {
-		item._fullAdditionalEntries = item._fullAdditionalEntries || (item.additionalEntries ? MiscUtil.copy(item.additionalEntries) : []);
+		Renderer.utils.initFullEntries_(item, {propEntries: "additionalEntries", propFullEntries: "_fullAdditionalEntries"});
 	},
 
 	/**

@@ -455,7 +455,7 @@
 					"entries": [
 						"Giant society (such as it is) is defined in large part by the ordning, a caste system imposed upon the giants by their gods, chief among them Annam the All-Father. The ordning determines where a giant stands among his or her ilk. Traditionally, storm giants have stood at the top of the ordning. Tall and powerful, they struggle to keep the weaker races of giants from despoiling the realms of small folk and sparking conflict. The greatest storm giants are powerful seers, skilled at identifying and interpreting cosmic signs and divine omens. The aloof and aristocratic cloud giants, one step below the storm giants, rarely condescend to deal with lesser giants or small folk. Extravagance defines their culture and their place in the ordning. Below them are the tyrannical, warmongering fire giants and the merciless, predatory frost giants. Fire giants rank themselves by their forging skill, whereas frost giants rank themselves by their martial prowess. Near the bottom of the ordning are the xenophobic stone giants, who mostly live underground and regard the surface world as a realm of dreams. How well they sculpt stone determines their place among their peers. The lowest and smallest of the true giants are the hill giants, as gluttonous as they are loathsome. Hill giants are dullards who live in fear of their more powerful giant cousins. In hill giant society, the biggest rule.",
 						"Dragons are the ancient enemies of giants. Thousands of years ago, the last great empire of giants-Ostoria-fell after a long and brutal conflict with dragons. Little of Ostoria remains in what is now called the Savage Frontier. The civilizations of small folk have taken over the land once ruled by giants. Although evil giants make occasional forays into territory settled by small folk, their ambitions have long been curtailed by their lack of cohesion and the imposition of good-aligned storm giants and cloud giants whose memories of ancient, glorious Ostoria have faded over time.",
-						"The recent efforts by dragons to bring Tiamat into the world (as told in the adventures {@i Hoard of the Dragon Queen} and {@i The Rise of Tiamat}) and the attempts by small folk to thwart them so upset the giant gods that Annam the All-Father shattered the ordning between the giants to break his \"children\" out of their complacency, pitting the six giant types against one another while keeping some semblance of order within each type. In so doing, Annam has spurred cloud, fire, frost, stone, and hill giants to challenge the established hierarchy and reforge their destiny. All the giants sensed the upheaval instantly, and now the giant types fiercely compete against one another, striving to create a new ordning through their deeds and accomplishments. These giants' calamitous endeavors have not only put the settlements of humans and other small folk in jeopardy but also attracted the attention of the giants' ancient enemies-the dragons-who will not abide the rise of another giant empire.",
+						"The recent efforts by dragons to bring Tiamat into the world (as told in the adventures {@adventure Hoard of the Dragon Queen|HotDQ} and {@adventure The Rise of Tiamat|HotDQ}) and the attempts by small folk to thwart them so upset the giant gods that Annam the All-Father shattered the ordning between the giants to break his \"children\" out of their complacency, pitting the six giant types against one another while keeping some semblance of order within each type. In so doing, Annam has spurred cloud, fire, frost, stone, and hill giants to challenge the established hierarchy and reforge their destiny. All the giants sensed the upheaval instantly, and now the giant types fiercely compete against one another, striving to create a new ordning through their deeds and accomplishments. These giants' calamitous endeavors have not only put the settlements of humans and other small folk in jeopardy but also attracted the attention of the giants' ancient enemies-the dragons-who will not abide the rise of another giant empire.",
 						"Small folk can only speculate as to the cause of the giants' unrest. It remains to be seen whether the old ordning between the giant types will be restored, or whether a new hierarchy will replace the old one, knocking the storm giants from their lofty perch."
 					]
 				},
@@ -2230,7 +2230,7 @@
 							"width": 412,
 							"height": 541
 						},
-						"Ever since the ordning shattered, Zephyros has been using {@i contact other} plane spells to find a way to set things right. Failed castings of the spell have driven him insane on multiple occasions. He has recovered from the madness, yet it has accentuated his eccentricity. His magical investigations led him to Nightstone. He had nothing to do with the cloud giant attack on the settlement and is horrified to learn of the damage his fellow giants caused.",
+						"Ever since the ordning shattered, Zephyros has been using {@i contact other} plane spells to find a way to set things right. Failed castings of the spell have driven him insane on multiple occasions. He has recovered from the insanity, yet it has accentuated his eccentricity. His magical investigations led him to Nightstone. He had nothing to do with the cloud giant attack on the settlement and is horrified to learn of the damage his fellow giants caused.",
 						"Zephyros holds \"small folk\" in higher regard than most giants. If the characters introduce themselves to him, a wide smile settles on the cloud giant's face as he realizes they are the ones mentioned by the mysterious planar entities with which he has spoken. Convinced that the characters can restore the ordning, Zephyros offers to transport them to one destination of their choice in the North. That is the extent of his involvement. The planar entities with whom Zephyros has spoken via the {@spell contact other plane} spell warned him against taking a more direct hand in events. The party's destination should coincide with Morak's quest. After safely delivering the characters to their destination, Zephyros and his tower depart for the Moonshae Isles.",
 						"If the characters ask Zephyros to take them somewhere other than Bryn Shander, Goldenfields, or Triboar, Zephyros (eccentric wizard that he is) gets a little befuddled and ends up taking them to one of these places by accident.",
 						"Zephyros is a cloud giant, with the following changes:",
@@ -2238,24 +2238,40 @@
 							"type": "list",
 							"items": [
 								"Zephyros is neutral good.",
-								"He has an Intelligence score of 18 (+4) and the spellcasting feature described below.",
+								"He has an Intelligence score of 18 (+4) and the spellcasting action option described below.",
 								"He carries a giant-sized staff of the magi instead of a morningstar. As an action, he can make two melee attacks with the staff. Each attack has a +15 bonus to hit and deals 20 ({@dice 3d6+10}) bludgeoning damage on a hit, or 23 ({@dice 3d8+10}) bludgeoning damage if used with two hands. This damage is considered magical.",
 								"He has a challenge rating of 13 (10,000 XP)."
 							]
 						},
-						"{@b Spellcasting.} Zephyros is a 12th-level spellcaster. His spellcasting ability is Intelligence (spell save DC 17, +11 to hit with spell attacks). He has the following wizard spells prepared:",
 						{
-							"type": "list",
-							"style": "list-hang-notitle",
-							"items": [
-								"Cantrips (at will): {@spell mending}, {@spell message}, {@spell prestidigitation}, {@spell ray of frost}, {@spell shocking grasp}",
-								"1st level (4 slots): {@spell charm person}, {@spell comprehend languages}, {@spell magic missile}, {@spell shield}",
-								"2nd level (3 slots): {@spell crown of madness}, {@spell gust of wind}, {@spell levitate}",
-								"3rd level (3 slots): {@spell nondetection}, {@spell protection from energy}, {@spell tongues}",
-								"4th level (3 slots): {@spell conjure minor elementals}, {@spell greater invisibility}, {@spell Otiluke's resilient sphere}",
-								"5th level (2 slots): {@spell cone of cold}, {@spell contact other plane}",
-								"6th level (1 slot): {@spell mass suggestion}"
-							]
+							"name": "Spellcasting",
+							"type": "spellcasting",
+							"headerEntries": [
+								"Zephyros casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 17}, {@hit 11} to hit with spell attacks):"
+							],
+							"will": [
+								"{@spell message}",
+								"{@spell prestidigitation}",
+								"{@spell ray of frost}"
+							],
+							"daily": {
+								"2e": [
+									"{@spell gust of wind}",
+									"{@spell levitate}",
+									"{@spell magic missile}"
+								],
+								"1e": [
+									"{@spell cone of cold}",
+									"{@spell contact other plane} (cast as 1 action)",
+									"{@spell greater invisibility}",
+									"{@spell mass suggestion}",
+									"{@spell nondetection}",
+									"{@spell Otiluke's resilient sphere}",
+									"{@spell protection from energy}",
+									"{@spell tongues}"
+								]
+							},
+							"ability": "int"
 						},
 						"Zephyros's tower has no fitting accommodations for small folk, but the cloud giant wizard allows the party to camp on the first floor. He requests that the characters confine their activities to the first floor and stay away from the second floor and the aerie. Zephyros controls the tower's movements using a navigation orb on the second floor.",
 						"The Tower of Zephyros Travel Times table summarizes how long it takes the tower to travel from Nightstone to Bryn Shander, Goldenfields, or Triboar. Regardless of their ultimate destination, the characters have at least one encounter en route (see the \"Unfriendly Skies\" section for details).",
@@ -2379,11 +2395,11 @@
 							"name": "Treasure:",
 							"id": "092",
 							"entries": [
-								"Amarath's \"smiling bag\" is actually a {@item bag of holding}. The bag becomes empty once the invisible stalker leaves it. N'von carries a pouch containing ten pinches of pixie dust. He offers the pouch to Zephyros as a gift (see \"Development\").",
-								"One pinch of the pixie dust can substitute for the material components of any enchantment spell of 3rd level or lower. The pixie dust has other magical effects as well. If a pinch of pixie dust is sprinkled on a creature, roll percentile dice and consult the Pixie Dust table to determine the effect.",
+								"Amarath's \"smiling bag\" is actually a {@item bag of holding}. The bag becomes empty once the invisible stalker leaves it. N'von carries a pouch containing ten pinches of faerie dust. He offers the pouch to Zephyros as a gift (see \"Development\").",
+								"One pinch of the faerie dust can substitute for the material components of any enchantment spell of 3rd level or lower. The faerie dust has other magical effects as well. If a pinch of faerie dust is sprinkled on a creature, roll percentile dice and consult the Faerie dust table to determine the effect.",
 								{
 									"type": "table",
-									"caption": "Pixie Dust",
+									"caption": "Faerie Dust",
 									"colLabels": [
 										"d100",
 										"Magical Effect"
@@ -2419,9 +2435,9 @@
 							"id": "093",
 							"entries": [
 								"If a battle erupts between the characters and the cultists, Zephyros (eccentric wizard that he is) watches the chaos unfold from a safe distance. Only if the characters are near defeat does the cloud giant cast a {@spell mass suggestion} spell on the cultists and the invisible stalker, urging them to leave at once and never return.",
-								"If the characters allow the cultists to speak to Zephyros, they offer him the pouch of pixie dust as a gift and urge him to help Yan-C-Bin \"return the world to its primordial state, as it was at the dawn of history.\" The cultists are hazy on how this can be achieved and more interested in a yes or no from the giant.",
+								"If the characters allow the cultists to speak to Zephyros, they offer him the pouch of faerie dust as a gift and urge him to help Yan-C-Bin \"return the world to its primordial state, as it was at the dawn of history.\" The cultists are hazy on how this can be achieved and more interested in a yes or no from the giant.",
 								"Zephyros accepts whatever counsel the characters wish to offer. Unless the characters advise him to send away the cultists, Zephyros accepts the cultists' gift and allows them to remain in his tower while he considers their offer. He then retreats to the second floor and casts {@spell contact other plane} to determine the best course of action. If he fails the spell's Intelligence saving throw, he remains catatonic until he finishes a long rest. If the save is successful, he determines with the aid of the spell that the cult's interests are opposed to his own, and politely asks the cultists to leave. The cultists grudgingly concede to his request and take their leave, but not before Amarath chastises the cloud giant wizard for his \"foolish and shortsighted decision.\"",
-								"After his business with the cultists is concluded, Zephyros feels bad about keeping their gift and gives the pouch of pixie dust to the characters, believing they might get more use out of it than he will."
+								"After his business with the cultists is concluded, Zephyros feels bad about keeping their gift and gives the pouch of faerie dust to the characters, believing they might get more use out of it than he will."
 							]
 						}
 					]
@@ -4158,13 +4174,13 @@
 					"name": "Northlanders",
 					"id": "128",
 					"entries": [
-						"The terms Northlander, Northfolk, and Northmen are interchangeable. They refer to one of several tall, fair-haired, seagoing peoples that ply the cold northern waters and dwell on the islands of the west, including Tuern, Gundarlun, Ruathym, the Purple Rocks, and the Korinn Archipelago. Northfolk ancestors built small villages along the Sword Coast that have since become cities, including fabled Illusk (now Luskan), Eigersstor (now Neverwinter), and Nimoar's Hold (now Waterdeep). These early Northlanders farmed the rocky coastlines, fished coastal waters, and hunted seals and whales on the open sea. A few tribes of Northlanders braved and explored the orc-infested interior of the Savage Frontier, and these became the ancestors of the Uthgardt barbarians and the present-day denizens of Icewind Dale.",
-						"Although Northlanders are often referred to as barbarians, not all of them fit this description. Along the Sword Coast, some tribes have become fairly civilized, primarily due to the growth of the coastal cities and the increasing influence of outsiders. These people farm, fish, and mine their rugged lands, then shrewdly trade their goods with foreign buyers. Many once-feared tribes have become merchants whose bartering skills are equal to or better than the warlike talents of their ancestors, such that many a Northlander merchant earns more booty than their raiding neighbors."
+						"The terms Northlander, Northfolk, and Northmen are interchangeable. They refer to one of several tall, fair-haired, seagoing peoples that ply the cold northern waters and dwell on the islands of the west, including Tuern, Gundarlun, Ruathym, the Purple Rocks, and the Korinn Archipelago. Northfolk ancestors built small villages along the Sword Coast that have since become cities, including fabled Illusk (now Luskan), Eigersstor (now Neverwinter), and Nimoar's Hold (now Waterdeep). These early Northlanders farmed the rocky coastlines, fished coastal waters, and hunted seals and whales on the open sea. A few clans of Northlanders explored the monster-infested interior of the Savage Frontier, and they became the ancestors of the Uthgardt tribes and the present-day denizens of Icewind Dale.",
+						"Northlanders farm, fish, and mine their rugged lands, then shrewdly trade their goods with foreign buyers. Many once-feared tribes have become merchants whose bartering skills are equal to or better than the warlike talents of their ancestors, such that many a Northlander merchant is wealthier than their raiding neighbors."
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Reghed Barbarians",
+					"name": "Reghed Nomads",
 					"id": "129",
 					"entries": [
 						"The frozen tundra of Icewind Dale is home to the nomadic Reghed barbarians. They are named after the Reghed Glacier that forms a towering ice wall along the eastern boundary of their domain. Markedly taller than most southerners, with some males approaching seven feet in height, Reghed barbarians have blue eyes and hair of blond, red, or light brown. Their skin is bronzed from the sun and cracked by the wind, giving their faces the look of tough leather set in an expressionless mask. They dress in leather and furs. At one time, scores of Reghed tribes roamed the frozen north. Now, due to wars with orcs and battles against their own kind, not to mention the encroachment of civilization, only four Reghed tribes remain. They follow herds of reindeer on the animals' annual migrations, moving southwest in the winter and northeast in the summer. The barbarians live in large, round tents made of deerskin and supported by beams of wood or whalebone.",
@@ -4217,10 +4233,10 @@
 				},
 				{
 					"type": "entries",
-					"name": "Uthgardt Barbarians",
+					"name": "Uthgardt",
 					"id": "12e",
 					"entries": [
-						"The Uthgardt barbarians are a black-haired and blue eyed people-large, hale, bloodthirsty folk with inhuman dispositions. Few Uthgardt are willing to trade with civilized folk. Most are vicious raiders who pillage and destroy any caravan or homestead they come across.",
+						"The Uthgardt are a black-haired and blue eyed people—large, hale, territorial folk who don’t trust outsiders. Few Uthgardt are willing to trade with non-Uthgardt settlements. Many are raiders who pillage and destroy any caravan or homestead they come across.",
 						"Uthgardt barbarians take their name from Uthgar Gardolfsson, a great hero-chief who battled giants and conquered much of the North before ascending to godhood. In addition to revering Uthgar, each tribe venerates a totem animal spirit after which the tribe is named.",
 						"Numerous Uthgardt tribes have been vanquished over the years, and at least one tribe previously thought to be extinct has returned in force. There are currently eleven known Uthgardt tribes scattered throughout the North. Each tribe claims a vast tract of wilderness as its hunting grounds-territory that often overlaps with the hunting grounds of other Uthgardt tribes as well as land claimed by civilized races, orcs, dragons, goblinoids, and other monsters. Encounters with Uthgardt barbarians can occur almost anywhere in the Savage Frontier.",
 						{
@@ -4330,12 +4346,11 @@
 				},
 				{
 					"type": "entries",
-					"name": "Orcs and Half-Orcs",
+					"name": "Orcs",
 					"id": "13a",
 					"entries": [
-						"The history of the North is replete with tales of orc hordes spilling out of the mountains to attack the mines, ranches, farmsteads, and settlements of other folk. Like the Reghed barbarians of Icewind Dale and the Uthgardt barbarians scattered throughout the frontier, orcs gather in tribes. When a particularly strong orc chieftain unites multiple tribes under one banner, the resulting horde typically rampages across the land, laying waste to strongholds and slaughtering other creatures in its path. Reghed and Uthgardt barbarians usually put aside their territorial rivalries to oppose and destroy a rampaging orc horde. Civilized communities form their own coalitions to combat rampaging orcs, with mixed results. The War of the Silver Marches (1484-1485 DR), the latest such conflict, saw orcs fighting alongside white dragons and frost giants. Though the orcs and their mighty allies were defeated and sent scurrying back to their mountain lairs, numerous settlements throughout the Silver Marches were ravaged and left in ruins, among them the fortress-city of Sundabar.",
-						"Not all orc chieftains are bent on destruction: King Obould Many-Arrows forged a tenuous alliance with his dwarf neighbors and helped maintain peace in the Silver Marches during his tumultuous reign.",
-						"Half-orcs in the North are often burdened with the evil reputation of their orc cousins. It takes a half-orc of great character to step out of the shadow of evil and live as an equal among the civilized races."
+						"The history of the North is replete with tales of orc hordes spilling out of the mountains to attack the mines, ranches, farmsteads, and settlements of other folk. These orcs hear the call of Gruumsh, the one-eyed god of slaughter, and must satisfy his hunger for carnage lest he visit ruin upon them. When a particularly strong orc chieftain unites multiple clans under one banner, the resulting horde typically rampages across the land, laying waste to strongholds and slaughtering other creatures in its path. Reghed and Uthgardt clans usually put aside their territorial rivalries to oppose and destroy a rampaging orc horde. Settlements throughout the North form their own coalitions to combat rampaging orcs, with mixed results. The War of the Silver Marches (1484–1485 DR), the latest such conflict, saw orcs fighting alongside white dragons and frost giants. Though the orcs and their mighty allies were defeated and sent scurrying back to their mountain lairs, numerous settlements throughout the Silver Marches were left in ruins, among them the fortress-city of Sundabar.",
+						"Not all orc chieftains are bent on destruction: King Obould Many-Arrows forged a tenuous alliance with his dwarf neighbors and helped maintain peace in the Silver Marches during his tumultuous reign."
 					]
 				},
 				{
@@ -4405,7 +4420,7 @@
 									"\u2014"
 								],
 								[
-									"Barbarians",
+									"Uthgardt Marauders",
 									"09\u201418",
 									"08\u201432",
 									"05\u201424",
@@ -4624,24 +4639,6 @@
 				},
 				{
 					"type": "entries",
-					"name": "Barbarians",
-					"id": "142",
-					"entries": [
-						"The characters encounter a hostile group of Uthgardt barbarians consisting of {@dice 4d6} {@creature tribal warrior||tribal warriors} and an {@creature Uthgardt shaman|SKT}. If the group has twenty or more tribal warriors, add {@dice 1d3} {@creature berserker||berserkers} and a tribal chieftain (a {@creature berserker} with 90 hit points) to the group. If the encounter occurs during the day, the Uthgardt are prowling the countryside while hunting wild game; if the encounter occurs at night, they are camped.",
-						"Use the information in the \"Uthgardt Barbarians\" section to choose an appropriate tribe based on the location where the encounter takes place. If these Uthgardt belong to the Gray Wolf tribe, use the {@creature werewolf} statistics for the chieftain and the berserkers, and give the chieftain 90 hit points. Also give the Gray Wolf chieftain {@dice 1d4} {@creature wolf||wolves} as animal companions.",
-						"The barbarians carry no treasure.",
-						{
-							"type": "entries",
-							"name": "Sea",
-							"id": "143",
-							"entries": [
-								"If this encounter occurs at sea, the characters encounter {@dice 1d3} longships, each with ten {@creature berserker||berserkers} and thirty {@creature tribal warrior||tribal warriors} aboard. One of the berserkers serves as the captain. These hostile, bloodthirsty Northfolk raiders hail from Gundarlun, the Korinn Archipelago, Tuern, or the Whalebones. The longships have a speed of 3 miles per hour. If the vessel the characters are in moves at least as fast, the characters can flee from the barbarians and avoid an altercation."
-							]
-						}
-					]
-				},
-				{
-					"type": "entries",
 					"name": "Battlefield",
 					"id": "144",
 					"entries": [
@@ -4849,6 +4846,7 @@
 					"id": "159",
 					"entries": [
 						"The characters come across {@dice 3d6+2} {@creature orc||orcs}. There is a {@chance 25|25 percent} chance that these orcs have prisoners in tow. A sample group of prisoners is presented here, but you can create others.",
+						"The characters come across {@dice 2d6 + 2} {@creature orc||orcs}. There is a {@chance 75|75 percent} chance that the orcs are friendly and looking for a suitable place to build a homestead. Otherwise, the orcs are hostile and have prisoners in tow. A sample group of prisoners is presented here, but you can create others.",
 						"The prisoners are {@dice 1d4+2} strongheart halfling {@creature commoner||commoners} belonging to the Woodhew clan. The oldest among them is a feisty old gardener named Ollie Woodhew. The orcs set fire to the Woodhew homestead and captured these family members as they tried to flee. One of the orcs even broke Ollie's favorite walking stick.",
 						{
 							"type": "entries",
@@ -4899,6 +4897,24 @@
 						"{@b Road/Trail:} Either {@dice 3d6} peasants fleeing their homes after a frost giant, hill giant, or stone giant attack; an angry mob of {@dice 6d6} peasants looking to reclaim their land or avenge dead loved ones; or a lone merchant or minstrel in a horse-drawn wagon who is relocating to a safer settlement",
 						"{@b Sea:} Either a friendly vessel carrying {@dice 6d6} crew and passengers who saw a cloud giant castle or a frost giant greatship, or {@dice 1d4} survivors floating on debris after their ship was sunk by a frost giant greatship",
 						"{@b Tundra:} {@dice 1d4} hunters or trappers who narrowly escaped from a fire giant or a frost giant but were forced to leave a companion behind"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Uthgardt Marauders",
+					"id": "142",
+					"entries": [
+						"The characters encounter a hostile group of Uthgardt barbarians consisting of {@dice 4d6} {@creature tribal warrior||tribal warriors} and an {@creature Uthgardt shaman|SKT}. If the group has twenty or more tribal warriors, add {@dice 1d3} {@creature berserker||berserkers} and a tribal chieftain (a {@creature berserker} with 90 hit points) to the group. If the encounter occurs during the day, the Uthgardt are prowling the countryside while hunting wild game; if the encounter occurs at night, they are camped.",
+						"Use the information in the \"Uthgardt\" section to choose an appropriate tribe based on the location where the encounter takes place. If these Uthgardt belong to the Gray Wolf tribe, use the {@creature werewolf} statistics for the chieftain and the berserkers, and give the chieftain 90 hit points. Also give the Gray Wolf chieftain {@dice 1d4} {@creature wolf||wolves} as animal companions.",
+						"The barbarians carry no treasure.",
+						{
+							"type": "entries",
+							"name": "Sea",
+							"id": "143",
+							"entries": [
+								"If this encounter occurs at sea, the characters encounter {@dice 1d3} longships, each with ten {@creature berserker||berserkers} and thirty {@creature tribal warrior||tribal warriors} aboard. One of the berserkers serves as the captain. These hostile, bloodthirsty Northfolk raiders hail from Gundarlun, the Korinn Archipelago, Tuern, or the Whalebones. The longships have a speed of 3 miles per hour. If the vessel the characters are in moves at least as fast, the characters can flee from the barbarians and avoid an altercation."
+							]
+						}
 					]
 				},
 				{
@@ -5155,7 +5171,7 @@
 					"entries": [
 						"This walled compound served as a hostelry on the High Road between Waterdeep and Neverwinter in the days when trade between the two cities flourished. It fell into disuse when that trade stopped after the eruption of Mount Hotenow (see the \"Neverwinter\" section). Now that Neverwinter has recovered and commerce has resumed, the road has been rebuilt and the roadhouse repaired and put to use as a supply depot and wagon park. It stands on the west side of the road, a stone's throw from the edge of the Mere of Dead Men. Fog drifting off the mere engulfs the roadhouse at night and lingers well into the following afternoon. The sounds of the marsh, from croaking frogs to buzzing insects, are only somewhat dampened by the roadhouse's walls and doors.",
 						"The superintendent of the Carnath Roadhouse is a brusque but well-educated half-orc named Bog Luck (N male half-orc {@creature veteran}). Accustomed to doing business with shady traders and contraband, he doesn't trouble his clients with too many questions. He simply takes their money while assuring them that the gates and walls of the roadhouse are strong enough to hold back any threat. Bog Luck employs four stable boys and a cook named Gristle Pete (N male Tethyrian human {@creature commoner||commoners}), though he doesn't pay them much.",
-						"The Carnath Roadhouse figures prominently in {@i Hoard of the Dragon Queen}. That adventure also includes a map of the roadhouse. Bandits and monsters lurk near the road both north and south of the roadhouse."
+						"The Carnath Roadhouse figures prominently in {@adventure Hoard of the Dragon Queen|HotDQ}. That adventure also includes a map of the roadhouse. Bandits and monsters lurk near the road both north and south of the roadhouse."
 					]
 				},
 				{
@@ -5477,7 +5493,7 @@
 					"name": "Flint Rock",
 					"id": "192",
 					"entries": [
-						"The spirit mound of the Elk tribe (see the \"Uthgardt Barbarians\" section earlier in this chapter) is situated in the midst of the Evermoors atop a gnarly knob of flinty stone that's perpetually shrouded in fog. Its rings, cairns, and altar mound are created from piles of heaped rock, barren of plant growth. The altar is a rectangular slab of stone 10 feet long, 6 feet wide, and 3 feet tall, its surfaces worn smooth by time. The enormous basin surrounding the altar mound is shaped like the silhouette of a leaping elk stag, although this image isn't readily apparent when the area is seen from ground level. Buried under the cairns are the bones of the Elk tribe's greatest warriors.",
+						"The spirit mound of the Elk tribe (see the \"Uthgardt\" section earlier in this chapter) is situated in the midst of the Evermoors atop a gnarly knob of flinty stone that's perpetually shrouded in fog. Its rings, cairns, and altar mound are created from piles of heaped rock, barren of plant growth. The altar is a rectangular slab of stone 10 feet long, 6 feet wide, and 3 feet tall, its surfaces worn smooth by time. The enormous basin surrounding the altar mound is shaped like the silhouette of a leaping elk stag, although this image isn't readily apparent when the area is seen from ground level. Buried under the cairns are the bones of the Elk tribe's greatest warriors.",
 						{
 							"type": "image",
 							"href": {
@@ -6282,7 +6298,7 @@
 							"id": "1d6",
 							"entries": [
 								"Klauth spies on trespassers from afar. If the characters harm his animals or get too nosy, a sudden rage overcomes him, and he launches a series of hit-and-run attacks. Jets of fire and bolts of lightning spring forth as he swoops down on foes-the discharges of wands he has learned to control. All of Klauthen Vale is considered his lair, and he can use his lair actions anywhere within it.",
-								"Klauth is an {@creature ancient red dragon}, with the following additional features that increase his challenge rating to 25 (75,000 XP):",
+								"Klauth is an {@creature ancient red dragon}, with the Dual Wand Wielder trait, Special Equipment trait, and Spellcasting action option described below, all of which increase his challenge rating to 25 (75,000 XP):",
 								{
 									"type": "entries",
 									"name": "Dual Wand Wielder",
@@ -6300,19 +6316,38 @@
 									]
 								},
 								{
-									"type": "entries",
-									"name": "Innate Spellcasting",
-									"id": "1d9",
-									"entries": [
-										"Klauth's spellcasting ability is Charisma (spell save DC 22). He can innately cast the following spells, requiring no material components:",
-										{
-											"type": "list",
-											"style": "list-hang-notitle",
-											"items": [
-												"1/day each: {@spell banishment}, {@spell etherealness}, {@spell find the path}, {@spell locate object}, {@spell prismatic spray}, {@spell suggestion}"
-											]
-										}
-									]
+									"name": "Spellcasting",
+									"headerEntries": [
+										"Klauth casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 22}):"
+									],
+									"will": [
+										"{@spell comprehend languages}",
+										"{@spell detect magic}",
+										"{@spell mage hand}",
+										"{@spell minor illusion}",
+										"{@spell prestidigitation}"
+									],
+									"daily": {
+										"2e": [
+											"{@spell darkness}",
+											"{@spell detect thoughts}",
+											"{@spell ice storm}"
+										],
+										"1e": [
+											"{@spell banishment}",
+											"{@spell cloudkill}",
+											"{@spell disintegrate}",
+											"{@spell etherealness}",
+											"{@spell find the path} (cast as 1 action)",
+											"{@spell greater invisibility}",
+											"{@spell haste}",
+											"{@spell locate object}",
+											"{@spell mass suggestion}",
+											"{@spell mirage arcane} (cast as 1 action)",
+											"{@spell prismatic spray}"
+										]
+									},
+									"ability": "cha"
 								},
 								{
 									"type": "entries",
@@ -6361,21 +6396,36 @@
 							"entries": [
 								"Claugiyliamatar rarely meddles in the affairs of small folk. Even so, her collection of crystal balls allows her to stay abreast of events happening in the world. She is aware that giants have become nuisances once more, and that adventurers have their work cut out for them. As the characters travel through her forest, Old Gnawbone's woodland spies (birds, rodents, and other harmless forest critters) warn her of their presence. She decides on a whim to leave her lair and confront them. The characters hear something enormous approaching them through the dark woods and tangled underbrush, and they might be startled when a great green dragon's head bursts into view with the tenderized corpse of an Uthgardt barbarian dangling from its mouth.",
 								"If the characters attack Claugiyliamatar, she breathes poison gas at them, takes to the air, and returns to her hidden lair. If the characters restrain themselves, she tells them (in Common) to travel north to the Valley of Khedrun and search for a giant temple called the Eye of the All-Father. \"Therein,\" she says, \"you'll learn what must be done to end the giant menace.\" She also tells them to keep an eye out for a frost giant wearing a helm made from a white dragon's skull, as he can help them. (See the \"Harshnag\" section later in this chapter.) Once she has imparted this information, Old Gnawbone takes flight and returns to her lair to finish her meal.",
-								"Claugiyliamatar is an {@creature ancient green dragon}, with the following additional features that increase her challenge rating to 23 (50,000 XP).",
+								"Claugiyliamatar is an {@creature ancient green dragon}, with the following additional action option:",
 								{
-									"type": "entries",
-									"name": "Innate Spellcasting",
-									"id": "1de",
-									"entries": [
-										"Claugiyliamatar's spellcasting ability is Charisma (spell save DC 19). She can innately cast the following spells, requiring no material components:",
-										{
-											"type": "list",
-											"style": "list-hang-notitle",
-											"items": [
-												"1/day each: {@spell invisibility}, {@spell legend lore}, {@spell protection from energy}, {@spell true seeing}"
-											]
-										}
-									]
+									"name": "Spellcasting",
+									"type": "spellcasting",
+									"headerEntries": [
+										"Claugiyliamatar casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 19}):"
+									],
+									"will": [
+										"{@spell detect magic}",
+										"{@spell druidcraft}",
+										"{@spell speak with animals}"
+									],
+									"daily": {
+										"2e": [
+											"{@spell animal messenger}",
+											"{@spell cure wounds}",
+											"{@spell dispel magic}",
+											"{@spell entangle}",
+											"{@spell invisibility}"
+										],
+										"1e": [
+											"{@spell blight}",
+											"{@spell legend lore} (cast as 1 action)",
+											"{@spell locate creature}",
+											"{@spell pass without trace}",
+											"{@spell protection from energy}",
+											"{@spell true seeing}"
+										]
+									},
+									"ability": "cha"
 								},
 								{
 									"type": "entries",
@@ -6592,7 +6642,7 @@
 					"name": "Morgur's Mound",
 					"id": "1f4",
 					"entries": [
-						"The spirit mound of the lost Thunderbeast tribe (see the \"Uthgardt Barbarians\" section earlier in this chapter), Morgur's Mound stands in the Crags and is named after Uthgar's brother. The mound (see map 3.7) is shaped like a crude, long-necked, wingless dragon-the Uthgardt impression of a thunderbeast. A ridge of dragon bones juts from the head, neck, back, and tail of the mound. Enormous cairns encircle the mound out to a range of a quarter mile. Beneath them lie the bones of revered Thunderbeast tribal warriors.",
+						"The spirit mound of the lost Thunderbeast tribe (see the \"Uthgardt\" section earlier in this chapter), Morgur's Mound stands in the Crags and is named after Uthgar's brother. The mound (see map 3.7) is shaped like a crude, long-necked, wingless dragon-the Uthgardt impression of a thunderbeast. A ridge of dragon bones juts from the head, neck, back, and tail of the mound. Enormous cairns encircle the mound out to a range of a quarter mile. Beneath them lie the bones of revered Thunderbeast tribal warriors.",
 						"The Thunderbeast tribe has not visited its spirit mound in years, leaving it ripe for plunderers. Several dig sites left by previous expeditions attest to the mound's popularity among treasure hunters.",
 						{
 							"type": "image",
@@ -6905,7 +6955,7 @@
 					"name": "Parnast",
 					"id": "20d",
 					"entries": [
-						"Parnast is an unremarkable village nestled between the foothills of the Graypeak Mountains and the Weathercote Forest. A map and description of Parnast appear in the adventure {@i Hoard of the Dragon Queen}."
+						"Parnast is an unremarkable village nestled between the foothills of the Graypeak Mountains and the Weathercote Forest. A map and description of Parnast appear in the adventure {@adventure Hoard of the Dragon Queen|HotDQ}."
 					]
 				},
 				{
@@ -7143,26 +7193,36 @@
 					"entries": [
 						"A closely packed stand of towering shadowtop trees lies in the High Forest. The dark canopies of the trees form a high roof that permits only hints of sunlight to touch the ground beneath. Shadowtop Cathedral is an important meeting place for the Emerald Enclave. The forest within 50 miles of the site is seeded with {@creature awakened tree||awakened trees} and {@creature awakened shrub||awakened shrubs} that are loyal to the enclave. These plants hide the trails that lead to Shadowtop Cathedral. If the awakened plants spot a creature openly wearing or carrying the symbol of the Emerald Enclave, the plants move aside to reveal hidden trails. Other creatures searching the forest for trails have disadvantage on ability checks made to find them and to avoid becoming lost.",
 						"When the characters first arrive at Shadowtop Cathedral, no one else is present, and there are no tracks on the ground. Each day at dawn, highsun, and dusk, there is a cumulative {@chance 10|10 percent} chance that a friendly {@creature druid} (NG male or female moon elf) visits the site. The druid doesn't stay long but urges characters seeking assistance to wait for the cathedral's caretaker to return. If they heed the druid's advice, assume that the caretaker returns at the next dawn.",
-						"The primary caretaker of Shadowtop Cathedral is a xenophobic, moss-covered treant named Turlang. He visits the site only occasionally. When he's not at the cathedral, Turlang wanders the forest, frightening off interlopers. He has the statistics of a {@creature treant}, with 200 hit points and the following additional feature.",
+						"The primary caretaker of Shadowtop Cathedral is a xenophobic, moss-covered treant named Turlang. He visits the site only occasionally. When he's not at the cathedral, Turlang wanders the forest, frightening off interlopers. He uses the {@creature treant} stat block, has 200 hit points, and has the following additional action option:",
 						{
-							"type": "entries",
 							"name": "Spellcasting",
-							"id": "223",
-							"entries": [
-								"Turlang is a 9th-level spellcaster. His spellcasting ability is Wisdom (spell save DC 15; +7 to hit with spell attacks). He has the following druid spells prepared:",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"Cantrips (at will): {@spell druidcraft}, {@spell guidance}, {@spell resistance}",
-										"1st level (4 slots): {@spell detect magic}, {@spell entangle}, {@spell goodberry}, {@spell speak with animals}",
-										"2nd level (3 slots): {@spell animal messenger}, {@spell gust of wind}, {@spell pass without trace}",
-										"3rd level (3 slots): {@spell plant growth}, {@spell speak with plants}",
-										"4th level (3 slots): {@spell conjure woodland beings}, {@spell hallucinatory terrain}",
-										"5th level (1 slot): {@spell commune with nature}"
-									]
-								}
-							]
+							"type": "spellcasting",
+							"headerEntries": [
+								"Turlang casts one of the following spells, requiring no material spell components and using Wisdom as the spellcasting ability (spell save {@dc 15}):"
+							],
+							"will": [
+								"{@spell druidcraft}",
+								"{@spell guidance}",
+								"{@spell resistance}",
+								"{@spell speak with plants}"
+							],
+							"daily": {
+								"2e": [
+									"{@spell animal messenger}",
+									"{@spell detect magic}",
+									"{@spell entangle}",
+									"{@spell goodberry}",
+									"{@spell gust of wind}",
+									"{@spell pass without trace}",
+									"{@spell speak with animals}"
+								],
+								"1e": [
+									"{@spell commune with nature} (cast as 1 action)",
+									"{@spell conjure woodland beings}",
+									"{@spell hallucinatory terrain} (cast as 1 action)"
+								]
+							},
+							"ability": "wis"
 						}
 					]
 				},
@@ -7575,8 +7635,7 @@
 									"items": [
 										"The young cloud giants have an Intelligence score of 10 (+0) and Wisdom and Charisma scores of 12 (+1).",
 										"They have the following skills: Insight +4, Perception +4. They have a passive Wisdom (Perception) score of 14.",
-										"They speak Common and Giant.",
-										"They have the cloud giant's innate spellcasting and keen smell features."
+										"They speak Common and Giant."
 									]
 								},
 								"These cloud giants are cartographers engaged in remapping the Sword Coast while searching for ancient battlegrounds and long-lost relics of Ostoria. They mean no harm to Waterdeep, but the city intrigues them, for they believe it was built on an old giant settlement that was destroyed by dragons tens of thousands of years ago. The cloud giants plan to meet with the city's leaders to learn more about Waterdeep's history and determine whether any remnants of Ostoria survive today. The family's noble patriarch is a scholarly and cautious cloud giant named Count Nimbolo. His wife, Countess Mulara, is distrusting of \"small folk\" and doesn't allow the characters to move about her home unescorted.",
@@ -7712,7 +7771,7 @@
 							"name": "Suggested Encounter",
 							"id": "257",
 							"entries": [
-								"If the characters search the ruins of the Sly Fox, they encounter a runaway child from the Blue Bear tribe (see the \"Uthgardt Barbarians\" section earlier in this chapter). He is hiding in the inn's hearth, and characters who have a passive Wisdom (Perception) score of 12 or higher spot him as they search the ruin. Orok is a nine-year-old human boy armed with a rusty dagger and a homemade sling. He is covered head to toe with soot and grime, and he has sticks woven into his flea-ridden mane of black hair. He is smart enough not to attack well-armed adventurers but has no qualms about trying to harm anyone who antagonizes him. Orok has the statistics of a {@creature kobold}, with the following changes:",
+								"If the characters search the ruins of the Sly Fox, they encounter a runaway child from the Blue Bear tribe (see the \"Uthgardt\" section earlier in this chapter). He is hiding in the inn's hearth, and characters who have a passive Wisdom (Perception) score of 12 or higher spot him as they search the ruin. Orok is a nine-year-old human boy armed with a rusty dagger and a homemade sling. He is covered head to toe with soot and grime, and he has sticks woven into his flea-ridden mane of black hair. He is smart enough not to attack well-armed adventurers but has no qualms about trying to harm anyone who antagonizes him. Orok has the statistics of a {@creature kobold}, with the following changes:",
 								{
 									"type": "list",
 									"items": [
@@ -8670,7 +8729,7 @@
 									"entries": [
 										"If the characters want to try to help Eigeron by slaying Blagothkus, they must first learn where Blagothkus is located. They can ask the oracle, but its answer is vague (see \"Words of the Divine Oracle\"). Neither Harshnag nor Eigeron's spirit knows what \"Parnast\" is, though characters might surmise that it's a place.",
 										"Parnast is a village that appears on few maps, and few folk know of it. Characters who consult with a member of the Surveyors', Map & Chartmakers' Guild in Waterdeep or any learned sage in Everlund or Silverymoon can procure a map for 100 gp that shows Parnast's location. The village lies between the Graypeak Mountains and the Weathercote Forest, near the western edge of the desert of Anauroch. If they travel to Parnast, the characters see Blagothkus's flying castle hovering nearby, its towers casting long shadows over the village.",
-										"What happens if the characters decide to pursue Blagothkus is beyond the scope of this adventure. Statistics for the evil cloud giant and detailed plans of his flying castle are provided in the {@i Hoard of the Dragon Queen} adventure. If the characters are intent on confronting Blagothkus, you can run the final chapter of that adventure, which is an appropriate challenge for a party of 7th-level adventurers. Also see the information about Blagothkus presented in the {@i \"Hoard of the Dragon Queen\"} section in appendix A of this book."
+										"What happens if the characters decide to pursue Blagothkus is beyond the scope of this adventure. Statistics for the evil cloud giant and detailed plans of his flying castle are provided in the {@adventure Hoard of the Dragon Queen|HotDQ} adventure. If the characters are intent on confronting Blagothkus, you can run the final chapter of that adventure, which is an appropriate challenge for a party of 7th-level adventurers. Also see the information about Blagothkus presented in the {@i \"Hoard of the Dragon Queen\"} section in appendix A of this book."
 									]
 								}
 							]
@@ -11920,7 +11979,7 @@
 										"He has 189 hit points.",
 										"He has a {@item blod stone|skt} bolted to a 50-pound iron chain that he wears around his neck.",
 										"He speaks Common, Giant, and Giant Owl.",
-										"He has Wisdom and Charisma scores of 16 (+3) and gains the spellcasting feature described below."
+										"He has Wisdom and Charisma scores of 16 (+3) and gains the Spellcasting action option described below"
 									]
 								},
 								{
@@ -14110,31 +14169,41 @@
 										"Sansuri's alignment is neutral evil.",
 										"She speaks Auran, Common, and Giant.",
 										"She wields a spear instead of a morningstar. In melee, she uses the weapon with both hands, dealing the same damage as a morningstar.",
-										"She has an Intelligence score of 16 (+3) and gains the Spellcasting feature described below.",
+										"She has an Intelligence score of 16 (+3) and gains the Spellcasting action option described below.",
 										"She has a challenge rating of 11 (7,200 XP)."
 									]
 								},
 								{
-									"type": "entries",
 									"name": "Spellcasting",
-									"id": "416",
-									"entries": [
-										"Sansuri is a 13th-level spellcaster. Her spellcasting ability is Intelligence (spell save DC 15; +7 to hit with spell attacks). She has the following wizard spells prepared:",
-										{
-											"type": "list",
-											"style": "list-hang-notitle",
-											"items": [
-												"Cantrips (at will): {@spell mage hand}, {@spell mending}, {@spell message}, {@spell prestidigitation}, {@spell ray of frost}",
-												"1st level (4 slots): {@spell identify}, {@spell magic missile}, {@spell shield}, {@spell unseen servant}",
-												"2nd level (3 slots): {@spell arcane lock}, {@spell gust of wind}, {@spell invisibility}",
-												"3rd level (3 slots): {@spell haste}, {@spell hypnotic pattern}, {@spell lightning bolt}",
-												"4th level (3 slots): {@spell ice storm}, {@spell stoneskin}",
-												"5th level (2 slots): {@spell Bigby's hand}, {@spell wall of force}",
-												"6th level (1 slot): {@spell globe of invulnerability}",
-												"7th level (1 slot): {@spell Mordenkainen's sword}"
-											]
-										}
-									]
+									"type": "spellcasting",
+									"headerEntries": [
+										"Sansuri casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 15}; {@hit 7} to hit with spell attacks):"
+									],
+									"will": [
+										"{@spell mage hand}",
+										"{@spell message}",
+										"{@spell prestidigitation}",
+										"{@spell ray of frost}"
+									],
+									"daily": {
+										"2e": [
+											"{@spell arcane lock}",
+											"{@spell gust of wind}",
+											"{@spell invisibility}",
+											"{@spell magic missile}",
+											"{@spell unseen servant}"
+										],
+										"1e": [
+											"{@spell globe of invulnerability}",
+											"{@spell haste}",
+											"{@spell hypnotic pattern}",
+											"{@spell ice storm}",
+											"{@spell lightning bolt}",
+											"{@spell Mordenkainen's sword}",
+											"{@spell wall of force}"
+										]
+									},
+									"ability": "int"
 								}
 							]
 						},
@@ -16537,8 +16606,14 @@
 						"Khaspere Drylund's treachery convinces Slarkrethel that enemies are close to finding and freeing King Hekaton. The kraken leaves its lair in the darkest depths of the Trackless Sea and swims toward the {@i Morkoth}. The same magic that Slarkrethel placed on the {@i Morkoth} to conceal it from divination spells allows the kraken to locate the ship unerringly.",
 						"If the characters free Hekaton and leave the {@i Morkoth} within an hour of doing so, Slarkrethel arrives too late to stop them. If the characters are still aboard the {@i Morkoth} an hour after freeing Hekaton, the kraken pays them an unannounced visit. The kraken announces its arrival by wrapping its gigantic tentacles around the hull of the {@i Morkoth}. All creatures aboard the ship are surprised unless they are swimming beneath the vessel and can see the enormous kraken approaching from directly below the craft. Once the kraken strikes, all creatures in this encounter must roll initiative. Slarkrethel wants to terrify and humble the adventurers, not annihilate them, so it mainly uses its tentacles to crush the {@i Morkoth} and pull it into the depths. Under no circumstances does the kraken allow the ship to fall into enemy hands. As an action, the kraken can attack the {@i Morkoth} with all ten of its tentacles and deal 250 bludgeoning damage to the ship on each of its turns, accounting for the Morkoth's damage threshold and the kraken's siege monster feature. Assuming the ship has all its hit points when Slarkrethel attacks, the vessel is destroyed after the kraken's second turn in combat. While crushing the ship, the kraken can't take other actions but can use its legendary actions as normal. Hekaton isn't afraid to face the kraken, and the kraken in turn has no qualms about killing the storm giant king (see \"Development\").",
 						"{@creature Slarkrethel|SKT} is a {@creature kraken}, with the following changes:",
-						"Slarkrethel has a challenge rating of 25 (75,000 XP).",
-						"It gains the Legendary Resistance and Spellcasting features described below, and it casts foresight on itself before it attacks.",
+						{
+						    "type": "list",
+						    "items": [
+
+								 "Slarkrethel has a challenge rating of 25 (75,000 XP).",
+								 "It gains the Legendary Resistance trait and the Spellcasting action option described below, and it casts {@spell foresight} on itself before it attacks."
+							 ]
+						},
 						{
 							"type": "entries",
 							"name": "Legendary Resistance (3/Day)",
@@ -16548,27 +16623,38 @@
 							]
 						},
 						{
-							"type": "entries",
 							"name": "Spellcasting",
-							"id": "4e0",
-							"entries": [
-								"Slarkrethel is a 20th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 22; +14 to hit with spell attacks). It has the following wizard spells prepared:",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"1st level (4 slots): {@spell comprehend languages}, {@spell detect magic}, {@spell identify}, {@spell sleep}",
-										"2nd level (3 slots): {@spell blindness/deafness}, {@spell detect thoughts}, {@spell suggestion}",
-										"3rd level (3 slots): {@spell fly}, {@spell nondetection}, {@spell sending}",
-										"4th level (3 slots): {@spell arcane eye}, {@spell ice storm}, {@spell locate creature}",
-										"5th level (3 slots): {@spell cloudkill}, {@spell scrying}, {@spell telekinesis}",
-										"6th level (2 slots): {@spell chain lightning}, {@spell flesh to stone}, {@spell mass suggestion}",
-										"7th level (2 slots): {@spell delayed blast fireball}, {@spell sequester}, {@spell teleport}",
-										"8th level (1 slot): {@spell control weather}, {@spell feeblemind}",
-										"9th level (1 slot): {@spell foresight}, {@spell power word kill}"
-									]
-								}
-							]
+							"type": "spellcasting",
+							"headerEntries": [
+								"Slarkrethel casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 22}):"
+							],
+							"will": [
+								"{@spell detect magic}",
+								"{@spell detect thoughts}",
+								"{@spell sending}"
+							],
+							"daily": {
+								"2e": [
+									"{@spell control weather} (cast as 1 action)",
+									"{@spell fly}",
+									"{@spell ice storm}"
+								],
+								"1e": [
+									"{@spell arcane eye}",
+									"{@spell chain lightning}",
+									"{@spell feeblemind}",
+									"{@spell foresight}",
+									"{@spell locate creature}",
+									"{@spell mass suggestion}",
+									"{@spell nondetection}",
+									"{@spell power word kill}",
+									"{@spell scrying} (cast as 1 action)",
+									"{@spell sequester}",
+									"{@spell telekinesis}",
+									"{@spell teleport}"
+								]
+							},
+							"ability": "int"
 						},
 						{
 							"type": "entries",
@@ -16960,12 +17046,12 @@
 				},
 				{
 					"type": "entries",
-					"name": "Hoard of the Dragon Queen",
+					"name": "Tyranny of Dragons",
 					"id": "503",
 					"entries": [
-						"{@i Hoard of the Dragon Queen} is the first of a two-part adventure in the Tyranny of Dragons story, which deals with the rise of evil dragons and their attempt to free Tiamat from the Nine Hells. If you use {@i Hoard of the Dragon Queen} as a springboard into this adventure, you must change the timing of events so that the Tyranny of Dragons story and the events that precipitate {@i Storm King's Thunder} happen concurrently, with Annam the All-Father breaking the ordning to stir the giants before Tiamat is brought into the world.",
-						"Early in {@i Hoard of the Dragon Queen}, the characters join a caravan traveling from Baldur's Gate to Waterdeep. By the time they reach Waterdeep, they should be 5th level. You can use the party's arrival in Waterdeep to shift attention away from the Tyranny of Dragons story by dropping reports of giant sightings near the temple-farm of Goldenfields. The Emerald Enclave is looking for adventurers to help patrol Goldenfields' borders. If the characters take the bait, Goldenfields becomes the starting point for this adventure (see chapter 2). Although you forgo the last half of {@i Hoard of the Dragon Queen} in favor of this new adventure, there's nothing stopping you from returning to {@i Hoard of the Dragon Queen} and its sequel, {@i The Rise of Tiamat}, later.",
-						"The climax of {@i Hoard of the Dragon Queen} takes place in Skyreach Castle, a flying fortress belonging to a cloud giant, Blagothkus. You can make him a pivotal figure in this adventure by having his castle appear when the characters are around 7th or 8th level, giving them a chance to meet the evil cloud giant and convince him to aid their cause. The characters might also want to confront him after meeting the ghost of his dead son, Eigeron, in chapter 4, \"The Chosen Path.\" The shattering of the ordning has the following effects on Blagothkus:",
+						"{@i Tyranny of Dragons} deals with the rise of evil dragons and their attempt to free Tiamat from the Nine Hells. If you use {@i Tyranny of Dragons} as a springboard into this adventure, you must change the timing of events so that the {@i Tyranny of Dragons} story and the events that precipitate {@i Storm King’s Thunder} happen concurrently, with Annam the All-Father breaking the ordning to stir the giants before Tiamat is brought into the world.",
+						"Early in {@i Tyranny of Dragons}, the characters join a caravan traveling from Baldur’s Gate to Waterdeep. By the time they reach Waterdeep, they should be 5th level. You can use the party’s arrival in Waterdeep to shift attention away from the {@i Tyranny of Dragons} story by dropping reports of giant sightings near the temple-farm of Goldenfields. The Emerald Enclave is looking for adventurers to help patrol Goldenfields’ borders. If the characters take the bait, Goldenfields becomes the starting point for this adventure (see chapter 2). Although you forgo most of {@i Tyranny of Dragons} in favor of this new adventure, there’s nothing stopping you from returning to {@i Tyranny of Dragons} later.",
+						"Part of {@i Tyranny of Dragons} takes place in Skyreach Castle, a flying fortress belonging to a cloud giant named Blagothkus. You can make him a pivotal figure in this adventure by having his castle appear when the characters are around 7th or 8th level, giving them a chance to meet the evil cloud giant and convince him to aid their cause. The characters might also want to confront him after meeting the ghost of his dead son, Eigeron, in chapter 4, “The Chosen Path.” The shattering of the ordning has the following effects on Blagothkus:",
 						{
 							"type": "list",
 							"items": [

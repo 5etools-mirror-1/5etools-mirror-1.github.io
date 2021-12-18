@@ -3,7 +3,7 @@
 	"$id": "util.json",
 	"title": "Util",
 	"description": "Utility definitions to be used in other schemas.",
-	"version": "1.11.2",
+	"version": "1.11.3",
 	"definitions": {
 		"metaBlock": {
 			"type": "object",
@@ -1052,6 +1052,20 @@
 					"poisoner's kit": {
 						"type": "boolean"
 					}
+				}
+			}
+		},
+		"additionalFeatsArray": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"any": {
+						"type": "integer"
+					}
+				},
+				"additionalProperties": {
+					"type": "boolean"
 				}
 			}
 		},

@@ -1715,7 +1715,7 @@
 						{
 							"type": "entries",
 							"entries": [
-								"Uthgardt barbarians are suspicious and resentful of most kinds of magic. Seldom do they choose to become shamans. Instead, the role is thrust upon those who are born with a strong connection to the spirit world. To be a shaman is to stand apart from the tribe, with one foot in the land of the living and the other in the land of the dead. Those who walk the shadowed path between two lands do so because the spirits of the dead compel them. Other Uthgardt fear and respect a shaman's power.",
+								"The Uthgardt are suspicious and resentful of most kinds of magic. Seldom do they choose to become shamans. Instead, the role is thrust upon those who are born with a strong connection to the spirit world. To be a shaman is to stand with one foot in the land of the living and the other in the land of the dead. Those who walk the shadowed path between two lands do so because the spirits of the dead compel them. Other Uthgardt fear and respect a shaman's power.",
 								"An Uthgardt shaman must possess a sacred bundle to cast spells. A sacred bundle is made up of sticks, bones, feathers, tufts of fur, and stones that have been \"touched\" by spirits. It takes a month for a shaman to assemble a sacred bundle, and a shaman can use only one such bundle at a time. A sacred bundle benefits only the shaman who created it, and it doesn't replace the normal components of a spell.",
 								"In addition to the spells that all Uthgardt shamans can cast, a shaman of a particular tribe gains additional spells based on tribal affiliation (see the \"Uthgardt Sha man Tribal Spells\" sidebar).",
 								"By communing with their ancestors' spirits, Uthgardt shamans can also learn secret rituals. These rituals almost always require some sort of blood sacrifice, and their effects are usually transformative. For example, some Black Raven shamans know a ritual that allows them to hatch giant ravens from normal raven eggs, and some shamans of the Griffon tribe can transform them selves into griffons by performing a ritual that requires them to drink copious amounts of horse blood.",
@@ -1724,17 +1724,17 @@
 									"name": "Uthgardt Shaman Tribal Spells",
 									"entries": [
 										"Depending on an Uthgardt shaman's tribe, the shaman's Innate Spellcasting feature gains additional spells the shaman can cast once per day.",
-										"Black Lion:animate dead, chill touch, feign death, revivify",
-										"Black Raven:animal messenger(raven only),feather fall, polymorph(into a raven only)",
-										"Blue Bear:enhance ability(bear's endurance only),heroism",
-										"Elk:expeditious retreat, find steed(elk only),haste",
-										"Gray Wolf:beast sense(wolf or dire wolf only),moonbeam, speak with animals(wolf or dire wolf only)",
-										"Great Worm:crusader's mantle, divine favor, hypnotic pattern",
-										"Griffon:feather fall, fly",
-										"Sky Pony:divine favor, feather fall, lightning bolt",
-										"Red Tiger:beast sense(tiger only),enhance ability(cat's grace only),jump",
-										"Thunderbeast:enhance ability(bull's strength only),pass without trace, stoneskin",
-										"Tree Ghost:barkskin, druidcraft, plant growth, speak with plants"
+										"Black Lion: {@spell chill touch}, {@spell feign death}, {@spell revivify}",
+										"Black Raven: {@spell animal messenger} (raven only), {@spell polymorph} (self only; into a raven only)",
+										"Blue Bear: {@spell enhance ability} (bear's endurance only), {@spell heroism}",
+										"Elk: {@spell find steed} (cast as 1 action; elk only, {@spell haste}",
+										"Gray Wolf: {@spell beast sense} (wolf or dire wolf only), {@spell moonbeam}, {@spell speak with animals} (wolf or dire wolf only)",
+										"Great Worm: {@spell crusader's mantle}, {@spell hypnotic pattern}",
+										"Griffon: {@spell beast sense} (birds only), {@spell fly}",
+										"Sky Pony: {@spell gust of wind}, {@spell witch bolt}",
+										"Red Tiger: {@spell enhance ability} (cat's grace only), {@spell jump}",
+										"Thunderbeast: {@spell enhance ability} (bull's strength only), {@spell pass without trace}",
+										"Tree Ghost: {@spell barkskin}, {@spell speak with plants}"
 									]
 								}
 							]
@@ -1765,22 +1765,22 @@
 								{
 									"type": "entries",
 									"entries": [
-										"Yakfolk, known among themselves as Yikaria (\"the Lucky Chosen\" in their language), are ogre-sized humanoids. Their heads resemble disgruntled yaks, complete with curved horns and dour expressions. Their hulking bodies are coated with thick fur and hair, and many outsiders can't tell the males and females apart.",
+										"Yakfolk, known among themselves as Yikaria (\"the Lucky Chosen\" in their language), are ogre-sized bipeds with curved horns and dour expressions. Their hulking bodies are coated with thick fur and hair, and many outsiders can't tell the males and females apart.",
 										{
-											"name": "Yakfolk Society",
 											"type": "entries",
+											"name": "Servants of the Forgotten God",
 											"entries": [
-												"Other civilized races treat yakfolk as \"bogeymen\"-a scary race of evil, ruthless, and powerful savages. They dwell in secluded settlements sheltered from the worst of nature's abuse, including mountain valleys, soaring plateaus, and desert oases. In these seemingly idyllic hideaways, the yakfolk rule over humanoid slaves with iron fists. For all their learning and culture, yakfolk are enormously evil overlords. They care for their hapless subjects only to the extent that a live slave is more useful than a dead one, and keeping one alive is easier than laboring oneself. It's not that yakfolk are lazy-quite the contrary. They simply consider most menial tasks beneath them.",
-												"Outsiders that stumble into an enclave of yakfolk are usually surprised and pleased to find what appears to be a utopia, and the yakfolk foster that image until the strangers can be disarmed and enslaved.",
-												"Yakfolk have a drive for learning, particularly when it comes to the secrets of elemental magic and dark knowledge that might serve to corrupt or dominate others. Knowledge that the yakfolk can't gain or use is to be destroyed. Unsentimental by nature, yakfolk parents pack children off to communal creches once they are weaned, never to recognize them again. Yakfolk feel no loyalty to their families-only to their god and race."
+												"Yakfolk are the creations of a malevolent deity they call the Forgotten God. The worship of this nameless deity directs their lives. The deity takes the form of a male Yikaria, but its face is worn smooth into a featureless mask. The deity is appeased by sacrifice, which its followers carry out by capturing Humanoids and putting them to death by fire (immolation), earth (live burial), water (drowning), or air (throwing the victims off a great height). Sacrifices ensure the Forgotten God's benevolence.",
+												"The Forgotten God enabled the yakfolk to enslave dao for a time. It is said that the Forgotten God journeyed to the Elemental Plane of Earth and, through guile and deception, defeated the Grand Khan of the dao. The price of that defeat was harsh: the dao were forced to serve the Forgotten God and its minions\u2014and forbidden to attack them\u2014\"for a thousand years and a year.\" The sentence has since expired, and yakfolk can no longer summon dao as they once did, but fear of the Forgotten God has kept the dao from seeking vengeance."
 											]
 										},
 										{
-											"name": "Servants of the Forgotten God",
 											"type": "entries",
+											"name": "Yakfolk Society",
 											"entries": [
-												"Yakfolk function as a malignant theocracy in service to the Forgotten God. The worship of this savage, nameless deity directs their lives. The god takes the form of a male Yikaria, but the deity's face is worn smooth into a featureless mask. The deity is appeased by sacrifice, which the followers carry out by offering slaves in the Manner Elemental-that is, by fire (immolation), earth (live burial), water (drown ing), or air (throwing the victim off a great height). Sac rifices are meant to ensure the benevolence of the deity and to punish disobedient slaves.",
-												"The Forgotten God enabled the yakfolk to enslave dao for a time. It is said that the Forgotten God journeyed to the Elemental Plane of Earth and, through guile and deception, defeated the Grand Khan of the dao. The price of that defeat was harsh: the dao were forced to serve the Forgotten God and its minions-and forbidden to attack them-\"for a thousand years and a year.\" The sentence has since expired, and yakfolk can no longer summon dao as they once did, but fear of the Forgotten God has kept the dao from seeking vengeance."
+												"Yakfolk dwell in secluded settlements sheltered from the worst of nature's abuse, including mountain valleys, soaring plateaus, and desert oases. Outsiders that stumble into an enclave of yakfolk are usually surprised and pleased to find what appears to be a utopia, and the yakfolk foster that image until the strangers can be disarmed and taken prisoner.",
+												"In their seemingly idyllic hideaways, the yakfolk rule with iron fists, and for all their learning and culture, they are enormously evil overlords. Yakfolk care for their hapless prisoners only to the extent that a live one is more useful than a dead one, and putting a prisoner to work is easier than laboring oneself. It's not that yakfolk are lazy\u2014quite the contrary. They simply consider most menial tasks beneath them.",
+												"Yakfolk have a drive for learning, particularly when it comes to the secrets of elemental magic and dark knowledge that might serve to corrupt or dominate others. Knowledge that the yakfolk can't gain or use is to be destroyed. Unsentimental by nature, yakfolk parents pack children off to communal creches once they are weaned, never to recognize them again. Yakfolk feel no loyalty to their families\u2014only to their god and race."
 											]
 										},
 										{

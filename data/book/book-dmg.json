@@ -4343,7 +4343,7 @@
 												],
 												[
 													"8-9",
-													"{@bold Mad Ambition.} The character gains the following flaw: \"I am destined to rule the Abyss, and my companions are tools to that end.\""
+													"{@bold “Overwhelming Ambition.} The character gains the following flaw: \"I am destined to rule the Abyss, and my companions are tools to that end.\""
 												],
 												[
 													"10",
@@ -7644,7 +7644,7 @@
 												],
 												[
 													"4",
-													"Slurs words, lisps, or stutters"
+													"Speaks in an unusually formal manner"
 												],
 												[
 													"5",
@@ -8152,7 +8152,7 @@
 												],
 												[
 													"8",
-													"Specific phobia"
+													"Prone to sudden suspicion"
 												],
 												[
 													"9",
@@ -8646,88 +8646,609 @@
 							],
 							"colStyles": [
 								"col-2 text-center",
-								"col-10"
+								"col-2 text-center",
+								"col-8"
 							],
 							"rows": [
 								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 1
+										}
+									},
+									"Agricultural devastation ({@dice d4|d4|Agricultural devastation})",
+									""
+								],
+								[
+									"",
 									"1",
-									"Agricultural devastation"
+									"Blight"
+								],
+								[
+									"",
+									"2",
+									"Crop failure"
+								],
+								[
+									"",
+									"3",
+									"Drought"
+								],
+								[
+									"",
+									"4",
+									"Famine"
 								],
 								[
 									"2",
-									"Assault or beatings"
+									"Assault or beatings",
+									""
 								],
 								[
 									"3",
-									"Bounty hunting or assassination"
+									"Bounty hunting or assassination",
+									""
 								],
 								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 4
+										}
+									},
+									"Captivity or coercion ({@dice d10|d10|Captivity or coercion})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Bribery"
+								],
+								[
+									"",
+									"2",
+									"Enticement"
+								],
+								[
+									"",
+									"3",
+									"Eviction"
+								],
+								[
+									"",
 									"4",
-									"Captivity or coercion"
+									"Imprisonment"
 								],
 								[
+									"",
 									"5",
-									"Confidence scams"
+									"Kidnapping"
 								],
 								[
+									"",
 									"6",
-									"Defamation"
+									"Legal intimidation"
+								],
+								[
+									"",
+									"7",
+									"Press gangs"
+								],
+								[
+									"",
+									"8",
+									"Shackling"
+								],
+								[
+									"",
+									"9",
+									"Slavery"
+								],
+								[
+									"",
+									"10",
+									"Threats or harassment"
+								],
+								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 5
+										}
+									},
+									"Confidence scams ({@dice d6|d6|Confidence scams})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Breach of contract"
+								],
+								[
+									"",
+									"2",
+									"Cheating"
+								],
+								[
+									"",
+									"3",
+									"Fast talking"
+								],
+								[
+									"",
+									"4",
+									"Fine print"
+								],
+								[
+									"",
+									"5",
+									"Fraud or swindling"
+								],
+								[
+									"",
+									"6",
+									"Quackery or tricks"
+								],
+								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 6
+										}
+									},
+									"Defamation ({@dice d4|d4|Defamation})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Framing"
+								],
+								[
+									"",
+									"2",
+									"Gossiping or slander"
+								],
+								[
+									"",
+									"3",
+									"Humiliation"
+								],
+								[
+									"",
+									"4",
+									"Libel or insults"
 								],
 								[
 									"7",
-									"Dueling"
+									"Dueling",
+									""
 								],
 								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 8
+										}
+									},
+									"Execution ({@dice d8|d8|Execution})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Beheading"
+								],
+								[
+									"",
+									"2",
+									"Burning at the stake"
+								],
+								[
+									"",
+									"3",
+									"Burying alive"
+								],
+								[
+									"",
+									"4",
+									"Crucifixion"
+								],
+								[
+									"",
+									"5",
+									"Drawing and quartering"
+								],
+								[
+									"",
+									"6",
+									"Hanging"
+								],
+								[
+									"",
+									"7",
+									"Impalement"
+								],
+								[
+									"",
 									"8",
-									"Execution"
+									"Sacrifice (living)"
 								],
 								[
 									"9",
-									"Impersonation or disguise"
+									"Impersonation or disguise",
+									""
 								],
 								[
 									"10",
-									"Lying or perjury"
+									"Lying or perjury",
+									""
 								],
 								[
-									"11",
-									"Magical mayhem"
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 11
+										}
+									},
+									"Magical mayhem ({@dice d8|d8|Magical mayhem})",
+									""
 								],
 								[
-									"12",
-									"Murder"
+									"",
+									"1",
+									"Hauntings"
+								],
+								[
+									"",
+									"2",
+									"Illusions"
+								],
+								[
+									"",
+									"3",
+									"Infernal bargains"
+								],
+								[
+									"",
+									"4",
+									"Mind control"
+								],
+								[
+									"",
+									"5",
+									"Petrification"
+								],
+								[
+									"",
+									"6",
+									"Raising or animating the dead"
+								],
+								[
+									"",
+									"7",
+									"Summoning monsters"
+								],
+								[
+									"",
+									"8",
+									"Weather control"
+								],
+								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 12
+										}
+									},
+									"Murder ({@dice d10|d10|Murder})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Assassination"
+								],
+								[
+									"",
+									"2",
+									"Cannibalism"
+								],
+								[
+									"",
+									"3",
+									"Dismemberment"
+								],
+								[
+									"",
+									"4",
+									"Drowning"
+								],
+								[
+									"",
+									"5",
+									"Electrocution"
+								],
+								[
+									"",
+									"6",
+									"Euthanasia (involuntary)"
+								],
+								[
+									"",
+									"7",
+									"Disease"
+								],
+								[
+									"",
+									"8",
+									"Poisoning"
+								],
+								[
+									"",
+									"9",
+									"Stabbing"
+								],
+								[
+									"",
+									"10",
+									"Strangulation or suffocation"
 								],
 								[
 									"13",
-									"Neglect"
+									"Neglect",
+									""
 								],
 								[
-									"14",
-									"Politics"
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 14
+										}
+									},
+									"Politics ({@dice d6|d6|Politics})",
+									""
 								],
 								[
-									"15",
-									"Religion"
+									"",
+									"1",
+									"Betrayal or treason"
+								],
+								[
+									"",
+									"2",
+									"Confiscating property"
+								],
+								[
+									"",
+									"3",
+									"Conspiracy"
+								],
+								[
+									"",
+									"4",
+									"Espionage or Spying"
+								],
+								[
+									"",
+									"5",
+									"Oppressive Laws"
+								],
+								[
+									"",
+									"6",
+									"Raising taxes"
+								],
+								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 15
+										}
+									},
+									"Religion ({@dice d4|d4|Religion})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Curses"
+								],
+								[
+									"",
+									"2",
+									"Desecration"
+								],
+								[
+									"",
+									"3",
+									"False gods"
+								],
+								[
+									"",
+									"4",
+									"Heresy or cults"
 								],
 								[
 									"16",
-									"Stalking"
+									"Stalking",
+									""
+								],
+								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 15
+										}
+									},
+									"Theft or Property Crime ({@dice d10|d10|Theft or Property Crime})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Arson"
+								],
+								[
+									"",
+									"2",
+									"Blackmail or extortion"
+								],
+								[
+									"",
+									"3",
+									"Burglary"
+								],
+								[
+									"",
+									"4",
+									"Counterfeiting"
+								],
+								[
+									"",
+									"5",
+									"Highway robbery"
+								],
+								[
+									"",
+									"6",
+									"Looting"
+								],
+								[
+									"",
+									"7",
+									"Mugging"
+								],
+								[
+									"",
+									"8",
+									"Poaching"
+								],
+								[
+									"",
+									"9",
+									"Seizing property"
+								],
+								[
+									"",
+									"10",
+									"Smuggling"
 								],
 								[
 									"17",
-									"Theft or Property Crime"
+									"Theft or Property Crime",
+									""
 								],
 								[
-									"18",
-									"Torture"
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 18
+										}
+									},
+									"Torture ({@dice d6|d6|Torture})",
+									""
 								],
 								[
-									"19",
-									"Vice"
+									"",
+									"1",
+									"Acid"
 								],
 								[
-									"20",
-									"Warfare"
+									"",
+									"2",
+									"Blinding"
+								],
+								[
+									"",
+									"3",
+									"Branding"
+								],
+								[
+									"",
+									"4",
+									"Racking"
+								],
+								[
+									"",
+									"5",
+									"Thumbscrews"
+								],
+								[
+									"",
+									"6",
+									"Whipping"
+								],
+								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 19
+										}
+									},
+									"Vice ({@dice d4|d4|Vice})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Adultery"
+								],
+								[
+									"",
+									"2",
+									"Drugs or alcohol"
+								],
+								[
+									"",
+									"3",
+									"Gambling"
+								],
+								[
+									"",
+									"4",
+									"Seduction"
+								],
+								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 20
+										}
+									},
+									"Warfare ({@dice d6|d6|Warfare})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Ambush"
+								],
+								[
+									"",
+									"2",
+									"Invasion"
+								],
+								[
+									"",
+									"3",
+									"Massacre"
+								],
+								[
+									"",
+									"4",
+									"Mercenaries"
+								],
+								[
+									"",
+									"5",
+									"Rebellion"
+								],
+								[
+									"",
+									"6",
+									"Terrorism"
 								]
 							]
 						},
@@ -10852,7 +11373,7 @@
 								],
 								[
 									"18",
-									"Hidden slavers' den"
+									"Hidden thieves' den"
 								],
 								[
 									"19",
@@ -10940,7 +11461,7 @@
 								],
 								[
 									"16-17",
-									"Caters to specific race or guild"
+									"Caters to specific guild"
 								],
 								[
 									"18",
@@ -10948,7 +11469,7 @@
 								],
 								[
 									"19-20",
-									"Brothel"
+									"Music venue"
 								]
 							]
 						},
@@ -23325,9 +23846,8 @@
 									"items": [
 										"Why does my campaign need the race to be playable?",
 										"What does the race look like?",
-										"How would I describe the race's culture?",
 										"Where do the members of this race live?",
-										"Are there interesting conflicts built into the race's history and culture that make the race compelling from a storytelling standpoint?",
+										"Are there interesting conflicts built into the race's history that make the race compelling from a storytelling standpoint?",
 										"What is the race's relationship to the other playable races?",
 										"What classes and backgrounds are well suited to members of the race?",
 										"What are the race's signature traits?",
@@ -23344,16 +23864,6 @@
 										"A simple way to modify an existing race is to change its appearance. Changes to a race's appearance need not affect its game elements. For example, you could transform halflings into anthropomorphic mice without changing their racial traits at all."
 									],
 									"id": "386"
-								},
-								{
-									"type": "entries",
-									"name": "Cultural Alterations",
-									"page": 285,
-									"entries": [
-										"In your world, elves might be desert nomads instead of forest dwellers, halflings might live in cloud cities, and dwarves might be sailors instead of miners. When you change the culture of a race, you can also make minor alterations to the race's proficiencies and traits to reflect that culture.",
-										"For example, imagine that the dwarves of your world are seafarers and inventors of gunpowder. You could add the pistol and musket to the list of weapons that dwarves are proficient with, and give them proficiency with waterborne vehicles instead of artisan's tools. These two small changes tell a different story than the default assumptions about dwarves in the Player's Handbook, without changing the power level of the race."
-									],
-									"id": "387"
 								},
 								{
 									"type": "entries",

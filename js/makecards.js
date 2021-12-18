@@ -541,11 +541,11 @@ class MakeCards extends BaseComponent {
 
 	static _getCardContents_feat (feat) {
 		const prerequisite = Renderer.utils.getPrerequisiteHtml(feat.prerequisite, {isListMode: true});
-		Renderer.feat.mergeAbilityIncrease(feat);
+		Renderer.feat.initFullEntries(feat);
 		return [
 			prerequisite ? this._ct_property("Prerequisites", prerequisite) : null,
 			prerequisite ? this._ct_rule() : null,
-			...this._ct_renderEntries(feat.entries, 2),
+			...this._ct_renderEntries(feat._fullEntries || feat.entries, 2),
 		].filter(Boolean);
 	}
 	// endregion

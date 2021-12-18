@@ -3171,11 +3171,11 @@
 				},
 				{
 					"type": "entries",
-					"name": "Mad Monkey Fever",
+					"name": "Blue Mist Fever",
 					"id": "0c4",
 					"entries": [
-						"A magical mist creeps through the jungles of Chult. Contact with this thin, blue, odorless mist can infect giants and humanoids with {@disease mad monkey fever|toa}. A {@spell dispel magic} spell destroys the mist in a 20-foot square starting at a point chosen by the caster within the spell's range. An encounter with this mist typically covers {@dice 1d6} such areas (400-2,400 square feet).",
-						"A giant or humanoid that comes into contact with the mist must succeed on a DC 13 Constitution saving throw or become infected with {@disease mad monkey fever|toa}. The infected creature gains a random form of long-term madness (roll on the {@table Long-Term Madness} table in chapter 8 of the Dungeon Master's Guide) that manifests {@dice 1d6} hours after infection and lasts for the duration ({@dice 1d10 × 10} hours). If the madness is allowed to run its full course, the creature must repeat the saving throw at the end of the madness. If the second saving throw fails, the creature suffers another bout of long-term madness (roll again on the table) that lasts for the normal duration. The madness symptoms continue until the disease ends."
+						"A magical mist creeps through the jungles of Chult. Contact with this thin, blue, odorless mist can infect giants and humanoids with {@disease blue mist fever|toa}. A {@spell dispel magic} spell destroys the mist in a 20-foot square starting at a point chosen by the caster within the spell's range. An encounter with this mist typically covers {@dice 1d6} such areas (400-2,400 square feet).",
+						"A giant or humanoid that comes into contact with the mist must succeed on a DC 13 Constitution saving throw or become infected with {@disease blue mist fever|toa}. The infected creature gains a random form of long-term madness (roll on the {@table Long-Term Madness} table in chapter 8 of the Dungeon Master's Guide) that manifests {@dice 1d6} hours after infection and lasts for the duration ({@dice 1d10 × 10} hours). If the madness is allowed to run its full course, the creature must repeat the saving throw at the end of the madness. If the second saving throw fails, the creature suffers another bout of long-term madness (roll again on the table) that lasts for the normal duration. The madness symptoms continue until the disease ends."
 					]
 				},
 				{
@@ -3701,13 +3701,13 @@
 					"id": "0f4",
 					"entries": [
 						"Commander Breakbone understands war well enough when it involves battle lines, waving banners, trumpets, and supply trains, but this war of ambush and creeping through the jungle only mystifies and frustrates him. He spends most of his time in his command tent, poring over inaccurate maps and reviewing reports about the camp's supplies. His two immediate subordinates, Ord Firebeard and Perne Salhana, do a commendable job of managing the camp in the absence of effective leadership from Breakbone.",
-						"Commander Breakbone has two immediate problems. If characters arrived by boat, he needs them to carry messages and seven sick soldiers downriver to Port Nyanzaru. Each soldier is suffering from {@disease mad monkey fever|toa}, {@disease shivering sickness|toa}, or {@disease throat leeches|toa} (see {@i \"Diseases\"}.) If characters arrived on foot, Breakbone insists that they lead a detachment of his soldiers (consisting of four {@creature guard||guards} and four {@creature tribal warrior||tribal warriors}) on a two-week patrol back in the direction they came from; their orders are to destroy any undead they encounter. If either request is refused, Breakbone orders the characters arrested and tied hand and foot in separate guard towers, to await trial for insubordination during a military emergency. If they're found guilty, the penalty is to be stripped of all gear, tied to trees in the forest, and left for the carnivores or the undead.",
+						"Commander Breakbone has two immediate problems. If characters arrived by boat, he needs them to carry messages and seven sick soldiers downriver to Port Nyanzaru. Each soldier is suffering from {@disease blue mist fever|toa}, {@disease shivering sickness|toa}, or {@disease throat leeches|toa} (see {@i \"Diseases\"}.) If characters arrived on foot, Breakbone insists that they lead a detachment of his soldiers (consisting of four {@creature guard||guards} and four {@creature tribal warrior||tribal warriors}) on a two-week patrol back in the direction they came from; their orders are to destroy any undead they encounter. If either request is refused, Breakbone orders the characters arrested and tied hand and foot in separate guard towers, to await trial for insubordination during a military emergency. If they're found guilty, the penalty is to be stripped of all gear, tied to trees in the forest, and left for the carnivores or the undead.",
 						{
 							"type": "entries",
 							"name": "Quest: Carry Messages",
 							"id": "0f5",
 							"entries": [
-								"Commander Breakbone, at Camp Vengeance has tasked us with carring messages and seven sick soldiers downriver to Port Nyanzaru. Each soldier is suffering from {@disease mad monkey fever|toa}, {@disease shivering sickness|toa}, or {@disease throat leeches|toa}."
+								"Commander Breakbone, at Camp Vengeance has tasked us with carring messages and seven sick soldiers downriver to Port Nyanzaru. Each soldier is suffering from {@disease blue mist fever|toa}, {@disease shivering sickness|toa}, or {@disease throat leeches|toa}."
 							]
 						},
 						{
@@ -6343,7 +6343,7 @@
 								"The journal contains a picture of Vorn's control amulet but provides no clues to the amulet's current whereabouts. As reward for finding and retrieving the construct and its control amulet, Wakanga offered us a spellbook containing fifteen spells."
 							]
 						},
-						"The statue is actually a deactivated {@creature shield guardian} that once served as a wizard's bodyguard. The wizard died from extreme bad luck decades ago-he fell out of a tree during a particularly bad bout of {@disease mad monkey fever|toa}, hit his head on a rock that knocked him unconscious, and rolled into a puddle, where he drowned. The shield guardian has stood impassive and unmoving, awaiting orders, ever since. A character with proficiency in the Arcana skill recognizes the shield guardian for what it is with a successful DC 10 Intelligence (Arcana) check.",
+						"The statue is actually a deactivated {@creature shield guardian} that once served as a wizard's bodyguard. The wizard died from extreme bad luck decades ago-he fell out of a tree during a particularly bad bout of {@disease blue mist fever|toa}, hit his head on a rock that knocked him unconscious, and rolled into a puddle, where he drowned. The shield guardian has stood impassive and unmoving, awaiting orders, ever since. A character with proficiency in the Arcana skill recognizes the shield guardian for what it is with a successful DC 10 Intelligence (Arcana) check.",
 						"A character who searches the area and succeeds on a DC 10 Wisdom (Survival) check finds footprints in the dirt-evidence of nomadic tribes of goblins, grungs, and vegepygmies that revere the construct as a lesser god. They trim back the jungle vines and creepers that would otherwise swallow the construct, and they leave offerings at its feet. The area around it for several miles is a \"neutral zone\" where these tribes allow each other to enter without triggering conflict.",
 						"Anyone who finds the shield guardian's control amulet (see {@i \"Yellyark,\"}) can animate the construct and take control of it. Reactivating the construct and marching it away infuriates local goblin, grung, and vegepygmy tribes. Random encounters with such creatures are automatically hostile unless characters placate the tribes with treasure or convince them of Vorn's \"wish\" to be moved elsewhere."
 					]
@@ -7135,12 +7135,12 @@
 									"Assassin vines"
 								],
 								[
-									"51-55",
-									"Collapsing floor (and roll again)"
+									"51-60",
+									"Blue mist (and roll again)"
 								],
 								[
-									"56-65",
-									"Mad monkey mist (and roll again)"
+									"61-65",
+									"Collapsing floor (and roll again)"
 								],
 								[
 									"66-70",
@@ -7202,7 +7202,7 @@
 								],
 								[
 									"56-65",
-									"Mad monkey mist (and roll again)"
+									"Blue mist (and roll again)"
 								],
 								[
 									"66-70",
@@ -7226,10 +7226,10 @@
 				},
 				{
 					"type": "entries",
-					"name": "Mad Monkey Mist",
+					"name": "Blue Mist",
 					"id": "22d",
 					"entries": [
-						"A thin, odorless blue mist lingers inside the ruin. Characters who enter the building expose themselves to {@disease mad monkey fever|toa} (see {@i \"Diseases\"}). Roll again on the Ruin Interior table to see if there's anything else in the building.",
+						"A thin, odorless blue mist lingers inside the ruin. Characters who enter the building expose themselves to {@disease blue mist fever|toa} (see {@i \"Diseases\"}). Roll again on the Ruin Interior table to see if there's anything else in the building.",
 						{
 							"type": "table",
 							"caption": "Ruin Interior",
@@ -7256,7 +7256,7 @@
 								],
 								[
 									"56-65",
-									"Mad monkey mist (and roll again)"
+									"Blue mist (and roll again)"
 								],
 								[
 									"66-70",
@@ -9971,7 +9971,7 @@
 									"type": "list",
 									"items": [
 										"Tahvo, a ten-year-old boy (LG male Chultan human noncombatant with AC 10 and 2 hit points), wears a flower garland and prays constantly to Tymora.",
-										"Sev, a {@creature yuan-ti pureblood} who looks human except for his forked tongue, succumbed to {@disease mad monkey fever|toa} and is confined here until he regains his sanity. Roll on the Long-Term Madness table in chapter 8 of the {@i Dungeon Master's Guide} to determine Sev's form of madness.",
+										"Sev, a {@creature yuan-ti pureblood} who looks human except for his forked tongue, succumbed to {@disease blue mist fever|toa} and is confined here until he regains his sanity. Roll on the Long-Term Madness table in chapter 8 of the {@i Dungeon Master's Guide} to determine Sev's form of madness.",
 										"Oloma Authdamar (CG female Turami human {@creature scout}) is a former crew member of the {@i Star Goddess} (see chapter 2). She leapt from a porthole as the ship crashed, and the yuan-ti captured her in the jungle. Oloma carries a concealed dagger.",
 										"Pottery Shard, a {@creature tabaxi minstrel|ToA}, was kidnapped while traveling from Port Nyanzaru to Fort Beluarian.",
 										"Gorvax, a {@creature firenewt warrior|VGM} is eager to escape and return to the Valley of Lost Honor.",
@@ -13065,7 +13065,7 @@
 							"id": "427",
 							"entries": [
 								"If the lever on the west balcony is pulled, the fiendish statue unclenches its fists to reveal a marble-sized object in the palm of each hand (see \"Treasure\" below). Simultaneously, howling winds rise up and fill the room. Returning the lever to its original up position causes the winds to abate and the statue's fists to close.",
-								"Have all party members roll initiative whenever the winds begin to howl. While the winds are howling, any creature not standing on a floating platform that starts its turn in the room must succeed on a DC 20 Wisdom saving throw or gain a random form of short-term madness, determined by rolling on the Short-Term Madness table in chapter 8 of the {@i Dungeon Master's Guide}. Constructs and undead are immune to this madness. In addition, the winds cause creatures in the room to suffer disadvantage on all Strength-based skill checks, including checks made to jump to and from the floating platforms and checks made to climb the walls."
+								"Have all party members roll initiative whenever the winds begin to howl. While the winds are howling, any creature not standing on a floating platform that starts its turn in the room must make a DC 20 Wisdom saving throw, taking 16 ({@damage 3d10}) psychic damage on a failed save, or half as much damage on a successful one. Constructs and undead are immune to this madness. In addition, the winds cause creatures in the room to suffer disadvantage on all Strength-based skill checks, including checks made to jump to and from the floating platforms and checks made to climb the walls."
 							]
 						},
 						{
@@ -17347,7 +17347,7 @@
 										],
 										[
 											"71-72",
-											"{@area Mad monkey mist|5d6|x}"
+											"{@area Magic mist|5d6|x}"
 										],
 										[
 											"73",
@@ -17634,7 +17634,7 @@
 										],
 										[
 											"36-39",
-											"{@area Mad monkey mist|5d6|x}"
+											"{@area Magic mist|5d6|x}"
 										],
 										[
 											"40-41",
@@ -18411,7 +18411,7 @@
 										],
 										[
 											"69-70",
-											"{@area Mad monkey mist|5d6|x}"
+											"{@area Magic mist|5d6|x}"
 										],
 										[
 											"71-72",
@@ -18674,7 +18674,7 @@
 										],
 										[
 											"59-60",
-											"{@area Mad monkey mist|5d6|x}"
+											"{@area Magic mist|5d6|x}"
 										],
 										[
 											"61",
@@ -18941,7 +18941,7 @@
 										],
 										[
 											"67-69",
-											"{@area Mad monkey mist|5d6|x}"
+											"{@area Magic mist|5d6|x}"
 										],
 										[
 											"70",
@@ -19982,10 +19982,10 @@
 				},
 				{
 					"type": "entries",
-					"name": "Mad Monkey Mist",
+					"name": "Blue Mist",
 					"id": "5d6",
 					"entries": [
-						"A bank of blue mist drifts toward the party, covering an area of 1d6 20-foot squares. Any character with a passive Wisdom (Perception) score of 13 or higher notices the mist and can warn others of its approach. If the encounter occurs while the party is camped, the mist drifts through the camp at a speed of 5 feet per round. Characters who come into contact with the mist are exposed to {@disease mad monkey fever|toa} (see {@i \"Diseases\"})."
+						"A bank of blue mist drifts toward the party, covering an area of 1d6 20-foot squares. Any character with a passive Wisdom (Perception) score of 13 or higher notices the mist and can warn others of its approach. If the encounter occurs while the party is camped, the mist drifts through the camp at a speed of 5 feet per round. Characters who come into contact with the mist are exposed to {@disease blue mist fever|toa} (see {@i \"Diseases\"})."
 					]
 				},
 				{
@@ -20807,7 +20807,7 @@
 							"name": "Yahcha",
 							"id": "60e",
 							"entries": [
-								"A yahcha (pronounced YAH-chah) is a harmless, meaty beetle about the size of a human hand, which feeds on worms and maggots. It moves slowly (walking speed 10 feet) and is easy to catch. A creature with {@disease mad monkey fever|toa} that eats a raw or cooked yahcha can immediately make a saving throw with advantage against that disease (see {@i \"Diseases,\"})."
+								"A yahcha (pronounced YAH-chah) is a harmless, meaty beetle about the size of a human hand, which feeds on worms and maggots. It moves slowly (walking speed 10 feet) and is easy to catch. A creature with {@disease blue mist fever|toa} that eats a raw or cooked yahcha can immediately make a saving throw with advantage against that disease (see {@i \"Diseases,\"})."
 							]
 						},
 						{

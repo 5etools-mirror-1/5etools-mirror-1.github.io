@@ -347,6 +347,8 @@ PropOrder._BACKGROUND = [
 		],
 	}),
 
+	"feats",
+
 	"skillProficiencies",
 	"languageProficiencies",
 	"toolProficiencies",

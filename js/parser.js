@@ -2022,6 +2022,14 @@ Parser.bookOrdinalToAbv = (ordinal, preNoSuff) => {
 	}
 };
 
+Parser.IMAGE_TYPE_TO_FULL = {
+	"map": "Map",
+	"mapPlayer": "Map (Player)",
+};
+Parser.imageTypeToFull = function (imageType) {
+	return Parser._parse_aToB(Parser.IMAGE_TYPE_TO_FULL, imageType, "Other");
+};
+
 Parser.nameToTokenName = function (name) {
 	return name
 		.toAscii()

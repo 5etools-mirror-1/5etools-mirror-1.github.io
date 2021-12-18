@@ -507,7 +507,7 @@ class SpellBuilder extends Builder {
 						text: $iptMaterial.val().trim() || true,
 					};
 					// TODO add support for "optional" consume type
-					if ($cbConsumed.prop("checked")) out.m.consumed = true;
+					if ($cbConsumed.prop("checked")) out.m.consume = true;
 					if ($iptCost.val().trim()) {
 						out.m.cost = UiUtil.strToInt($iptCost.val());
 						$iptCost.val(out.m.cost);

@@ -211,13 +211,6 @@
 					]
 				},
 				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Due to their celestial heritage, aasimar are often good. However, some aasimar fall into evil, rejecting their heritage."
-					]
-				},
-				{
 					"type": "entries",
 					"name": "Size",
 					"entries": [
@@ -314,13 +307,6 @@
 					"type": "entries",
 					"entries": [
 						"Aasimar mature at the same rate as humans, but they can live up to 160 years."
-					]
-				},
-				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Imbued with celestial power, most aasimar are good. Outcast aasimar are most often neutral or even evil."
 					]
 				},
 				{
@@ -1089,13 +1075,6 @@
 					]
 				},
 				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Bugbears endure a harsh existence that demands each of them to remain self-sufficient, even at the expense of their fellows. They tend to be chaotic evil."
-					]
-				},
-				{
 					"type": "entries",
 					"name": "Size",
 					"entries": [
@@ -1777,7 +1756,11 @@
 				}
 			],
 			"darkvision": 60,
-			"feats": 1,
+			"feats": [
+				{
+					"any": 1
+				}
+			],
 			"skillProficiencies": [
 				{
 					"any": 1
@@ -2068,13 +2051,6 @@
 					"type": "entries",
 					"entries": [
 						"Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of a 10-year-old human child by the age of 3, and reach adulthood by 15. They live to be around 80."
-					]
-				},
-				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Dragonborn tend to extremes, making a conscious choice for one side or the other in the cosmic war between good and evil (represented by Bahamut and Tiamat, respectively). Most dragonborn are good, but those who side with Tiamat can be terrible villains."
 					]
 				},
 				{
@@ -3665,13 +3641,6 @@
 					]
 				},
 				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Most dwarves are lawful, believing firmly in the benefits of a well-ordered society. They tend toward good as well, with a strong sense of fair play and a belief that everyone deserves to share in the benefits of a just order."
-					]
-				},
-				{
 					"type": "entries",
 					"name": "Size",
 					"entries": [
@@ -4144,13 +4113,6 @@
 					]
 				},
 				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Elves love freedom, variety, and self-expression, so they lean strongly toward the gentler aspects of chaos. They value and protect others' freedom as well as their own, and they are more often good than not."
-					]
-				},
-				{
 					"type": "entries",
 					"name": "Size",
 					"entries": [
@@ -4300,7 +4262,7 @@
 						{
 							"name": "Drow Magic",
 							"entries": [
-								"You know the {@spell dancing lights} cantrip. When you reach 3rd level, you can cast the {@spell faerie fire} spell once per day; you must finish a long rest in order to cast the spell again using this trait. When you reach 5th level, you can also cast the {@spell darkness} spell once per day; you must finish a long rest in order to cast the spell again using this trait. Charisma is your spellcasting ability for these spells."
+								"You know the {@spell dancing lights} cantrip. When you reach 3rd level, you can cast the {@spell faerie fire} spell once with this trait; you regain the ability to cast it when you finish a long rest. When you reach 5th level, you can also cast the {@spell darkness} spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells."
 							],
 							"type": "entries"
 						},
@@ -5917,13 +5879,6 @@
 					]
 				},
 				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"As people who follow the rhythm of nature and see themselves as its caretakers, firbolg are typically neutral good. Evil firbolg are rare and are usually the sworn enemies of the rest of their kind."
-					]
-				},
-				{
 					"type": "entries",
 					"name": "Size",
 					"entries": [
@@ -6792,13 +6747,6 @@
 					]
 				},
 				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Gnomes are most often good. Those who tend toward law are sages, engineers, researchers, scholars, investigators, or inventors. Those who tend toward chaos are minstrels, tricksters, wanderers, or fanciful jewelers. Gnomes are good-hearted, and even the tricksters among them are more playful than vicious."
-					]
-				},
-				{
 					"type": "entries",
 					"name": "Size",
 					"entries": [
@@ -7367,8 +7315,7 @@
 				"_mod": {
 					"entries": [
 						{
-							"mode": "replaceArr",
-							"replace": "Alignment",
+							"mode": "appendArr",
 							"items": {
 								"name": "Alignment",
 								"type": "entries",
@@ -7406,8 +7353,7 @@
 				"_mod": {
 					"entries": [
 						{
-							"mode": "replaceArr",
-							"replace": "Alignment",
+							"mode": "appendArr",
 							"items": {
 								"name": "Alignment",
 								"type": "entries",
@@ -7492,13 +7438,6 @@
 					]
 				},
 				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Goblins are typically neutral evil, as they care only for their own needs. A few goblins might tend toward good or neutrality, but only rarely."
-					]
-				},
-				{
 					"type": "entries",
 					"name": "Size",
 					"entries": [
@@ -7547,8 +7486,7 @@
 				"_mod": {
 					"entries": [
 						{
-							"mode": "replaceArr",
-							"replace": "Alignment",
+							"mode": "appendArr",
 							"items": {
 								"name": "Alignment",
 								"type": "entries",
@@ -7842,13 +7780,6 @@
 					"type": "entries",
 					"entries": [
 						"Goliaths have lifespans comparable to humans. They enter adulthood in their late teens and usually live less than a century."
-					]
-				},
-				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Goliath society, with its clear roles and tasks, has a strong lawful bent. The goliath sense of fairness, balanced with an emphasis on self sufficiency and personal accountability, pushes them toward neutrality."
 					]
 				},
 				{
@@ -8173,13 +8104,6 @@
 					]
 				},
 				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Half-elves share the chaotic bent of their elven heritage. They value both personal freedom and creative expression, demonstrating neither love of leaders nor desire for followers. They chafe at rules, resent others' demands, and sometimes prove unreliable, or at least unpredictable."
-					]
-				},
-				{
 					"type": "entries",
 					"name": "Size",
 					"entries": [
@@ -8243,13 +8167,6 @@
 									"name": "Skill Versatility",
 									"entries": [
 										"You gain proficiency in two skills of your choice."
-									],
-									"type": "entries"
-								},
-								{
-									"name": "Keen Senses",
-									"entries": [
-										"You have proficiency in the {@skill Perception} skill."
 									],
 									"type": "entries"
 								},
@@ -8352,13 +8269,6 @@
 									"name": "Skill Versatility",
 									"entries": [
 										"You gain proficiency in two skills of your choice."
-									],
-									"type": "entries"
-								},
-								{
-									"name": "Keen Senses",
-									"entries": [
-										"You have proficiency in the {@skill Perception} skill."
 									],
 									"type": "entries"
 								},
@@ -8716,13 +8626,6 @@
 									"type": "entries"
 								},
 								{
-									"name": "Keen Senses",
-									"entries": [
-										"You have proficiency in the {@skill Perception} skill."
-									],
-									"type": "entries"
-								},
-								{
 									"name": "Elf Weapon Training",
 									"entries": [
 										"You have proficiency with the {@item longsword|phb}, {@item shortsword|phb}, {@item shortbow|phb}, and {@item longbow|phb}."
@@ -8832,13 +8735,6 @@
 									"name": "Skill Versatility",
 									"entries": [
 										"You gain proficiency in two skills of your choice."
-									],
-									"type": "entries"
-								},
-								{
-									"name": "Keen Senses",
-									"entries": [
-										"You have proficiency in the {@skill Perception} skill."
 									],
 									"type": "entries"
 								},
@@ -9274,13 +9170,6 @@
 					"type": "entries",
 					"entries": [
 						"A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century."
-					]
-				},
-				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Most halflings are lawful good. As a rule, they are good-hearted and kind, hate to see others in pain, and have no tolerance for oppression. They are also very orderly and traditional, leaning heavily on the support of their community and the comfort of their old ways."
 					]
 				},
 				{
@@ -9961,8 +9850,7 @@
 				"_mod": {
 					"entries": [
 						{
-							"mode": "replaceArr",
-							"replace": "Alignment",
+							"mode": "appendArr",
 							"items": {
 								"name": "Alignment",
 								"entries": [
@@ -10112,13 +10000,6 @@
 					]
 				},
 				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Hobgoblin society is built on fidelity to a rigid, unforgiving code of conduct. As such, they tend toward lawful evil."
-					]
-				},
-				{
 					"type": "entries",
 					"name": "Size",
 					"entries": [
@@ -10193,13 +10074,6 @@
 					"type": "entries",
 					"entries": [
 						"Humans reach adulthood in their late teens and live less than a century."
-					]
-				},
-				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Humans tend toward no particular alignment. The best and the worst are found among them."
 					]
 				},
 				{
@@ -10982,7 +10856,11 @@
 							}
 						}
 					],
-					"feats": 1,
+					"feats": [
+						{
+							"any": 1
+						}
+					],
 					"skillProficiencies": [
 						{
 							"any": 1
@@ -11034,7 +10912,11 @@
 				"mature": 20,
 				"max": 100
 			},
-			"feats": 1,
+			"feats": [
+				{
+					"any": 1
+				}
+			],
 			"skillProficiencies": [
 				{
 					"any": 1
@@ -11705,13 +11587,6 @@
 					]
 				},
 				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Kenku are chaotic creatures, rarely making enduring commitments, and they care mostly for preserving their own hides. They are generally chaotic neutral in outlook."
-					]
-				},
-				{
 					"type": "entries",
 					"name": "Size",
 					"entries": [
@@ -11966,13 +11841,6 @@
 					"type": "entries",
 					"entries": [
 						"Kobolds reach adulthood at age 6 and can live up to 120 years but rarely do so."
-					]
-				},
-				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Kobolds are fundamentally selfish, making them evil, but their reliance on the strength of their group makes them trend toward law."
 					]
 				},
 				{
@@ -12402,13 +12270,6 @@
 					"type": "entries",
 					"entries": [
 						"Lizardfolk are a little bulkier and taller than humans, and their colorful frills make them appear even larger. Your size is Medium."
-					]
-				},
-				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Most lizardfolk are neutral. They see the world as a place of predators and prey, where life and death are natural processes. They wish only to survive, and prefer to leave other creatures to their own devices."
 					]
 				},
 				{
@@ -12914,11 +12775,25 @@
 							"nature": true
 						}
 					],
+					"additionalSpells": [
+						{
+							"ability": "wis",
+							"known": {
+								"1": {
+									"_": [
+										{
+											"choose": "level=0|class=Wizard"
+										}
+									]
+								}
+							}
+						}
+					],
 					"entries": [
 						{
 							"name": "Cantrip",
 							"entries": [
-								"You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it."
+								"You know one cantrip of your choice from the {@filter wizard spell list|spells|class=wizard|level=0}. Intelligence is your spellcasting ability for it."
 							],
 							"type": "entries"
 						},
@@ -13809,8 +13684,7 @@
 							}
 						},
 						{
-							"mode": "replaceArr",
-							"replace": "Alignment",
+							"mode": "appendArr",
 							"items": {
 								"name": "Alignment",
 								"type": "entries",
@@ -14027,13 +13901,6 @@
 					"type": "entries",
 					"entries": [
 						"Orcs reach adulthood at age 12 and live up to 50 years."
-					]
-				},
-				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Orcs are vicious raiders, who believe that the world should be theirs. They also respect strength above all else and believe the strong must bully the weak to ensure that weakness does not spread like a disease. They are usually chaotic evil."
 					]
 				},
 				{
@@ -15839,13 +15706,6 @@
 					]
 				},
 				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Tabaxi tend toward chaotic alignments, as they let impulse and fancy guide their decisions. They are rarely evil, with most of them driven by curiosity rather than greed or other dark impulses."
-					]
-				},
-				{
 					"type": "entries",
 					"name": "Size",
 					"entries": [
@@ -16077,7 +15937,7 @@
 				{
 					"name": "Infernal Legacy",
 					"entries": [
-						"You know the {@spell thaumaturgy} cantrip. Once you reach 3rd level, you can cast the {@spell hellish rebuke} spell as a 2nd-level spell; you must finish a long rest in order to cast the spell again using this trait. Once you reach 5th level, you can also cast the {@spell darkness} spell; you must finish a long rest in order to cast the spell again using this trait. Charisma is your spellcasting ability for these spells."
+						"You know the {@spell thaumaturgy} cantrip. Once you reach 3rd level, you can cast the {@spell hellish rebuke} spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the {@spell darkness} spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells."
 					],
 					"type": "entries"
 				},
@@ -17417,8 +17277,7 @@
 				"_mod": {
 					"entries": [
 						{
-							"mode": "replaceArr",
-							"replace": "Alignment",
+							"mode": "appendArr",
 							"items": {
 								"name": "Alignment",
 								"type": "entries",
@@ -17508,13 +17367,6 @@
 					"type": "entries",
 					"entries": [
 						"Tritons reach maturity around age 15 and can live up to 200 years."
-					]
-				},
-				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Tritons tend toward lawful good. As guardians of the darkest reaches of the sea, their culture pushes them toward order and benevolence."
 					]
 				},
 				{
@@ -18742,13 +18594,6 @@
 					"type": "entries",
 					"entries": [
 						"Purebloods mature at the same rate as humans and have lifespans similar in length to theirs."
-					]
-				},
-				{
-					"name": "Alignment",
-					"type": "entries",
-					"entries": [
-						"Purebloods are devoid of emotion and see others as tools to manipulate. They care little for law or chaos and are typically neutral evil."
 					]
 				},
 				{

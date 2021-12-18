@@ -4,7 +4,6 @@
  */
 
 const fs = require("fs");
-const xmlbuilder = require("xmlbuilder");
 require("../js/utils");
 require("../js/render");
 require("../js/render-dice");
@@ -14,7 +13,7 @@ function rd (path) {
 }
 
 const IS_DEV_MODE = false;
-const BASE_SITE_URL = "https://5e.tools/";
+const BASE_SITE_URL = process.env.VET_BASE_SITE_URL || "https://5e.tools/";
 const version = rd("package.json").version;
 
 const lastMod = (() => {
@@ -192,34 +191,37 @@ async function main () {
 	console.log(`Wrote ${total} files.`);
 
 	let sitemapLinkCount = 0;
-	const $urlSet = xmlbuilder
-		.create("urlset", {version: "1.0", encoding: "UTF-8"})
-		.att("xmlns", "https://www.sitemaps.org/schemas/sitemap/0.9");
+	let sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+	sitemap += `<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 
-	const $urlRoot = $urlSet.ele("url");
-	$urlRoot.ele("loc", BASE_SITE_URL);
-	$urlRoot.ele("lastmod", lastMod);
-	$urlRoot.ele("changefreq", "monthly");
+	sitemap += `<url>
+	<loc>${BASE_SITE_URL}</loc>
+	<lastmod>${lastMod}</lastmod>
+	<changefreq>monthly</changefreq>
+</url>\n`;
 	sitemapLinkCount++;
 
 	Object.keys(baseSitemapData).forEach(url => {
-		const $url = $urlSet.ele("url");
-		$url.ele("loc", `${BASE_SITE_URL}${url}`);
-		$url.ele("lastmod", lastMod);
-		$url.ele("changefreq", "monthly");
+		sitemap += `<url>
+	<loc>${BASE_SITE_URL}${url}</loc>
+	<lastmod>${lastMod}</lastmod>
+	<changefreq>monthly</changefreq>
+</url>\n`;
 		sitemapLinkCount++;
 	});
 
 	Object.keys(siteMapData).forEach(url => {
-		const $url = $urlSet.ele("url");
-		$url.ele("loc", `${BASE_SITE_URL}${url}`);
-		$url.ele("lastmod", lastMod);
-		$url.ele("changefreq", "weekly");
+		sitemap += `<url>
+	<loc>${BASE_SITE_URL}${url}</loc>
+	<lastmod>${lastMod}</lastmod>
+	<changefreq>weekly</changefreq>
+</url>\n`;
 		sitemapLinkCount++;
 	});
 
-	const xml = $urlSet.end({pretty: true});
-	fs.writeFileSync("./sitemap.xml", xml, "utf-8");
+	sitemap += `</urlset>\n`;
+
+	fs.writeFileSync("./sitemap.xml", sitemap, "utf-8");
 	console.log(`Wrote ${sitemapLinkCount.toLocaleString()} URL${sitemapLinkCount === 1 ? "" : "s"} to sitemap.xml`);
 }
 

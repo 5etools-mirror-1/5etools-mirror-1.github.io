@@ -269,6 +269,7 @@ class UiUtil {
 
 	static getEntriesAsText (entryArray) {
 		if (!entryArray || !entryArray.length) return "";
+		if (!(entryArray instanceof Array)) return UiUtil.getEntriesAsText([entryArray]);
 
 		return entryArray
 			.map(it => {

@@ -1233,7 +1233,13 @@
 				{
 					"name": "Stake to the Heart",
 					"entries": [
-						"If a piercing weapon made of wood is driven into Bodhi's heart while she is {@condition incapacitated} in her resting place, Bodhi Irenicus the vampire is {@condition paralyzed} until the stake is removed. Sunlight Hypersensitivity. Bodhi Irenicus takes 20 radiant damage when she starts her turn in sunlight. While in sunlight, she has disadvantage on attack rolls and ability checks."
+						"If a piercing weapon made of wood is driven into Bodhi's heart while she is {@condition incapacitated} in her resting place, Bodhi Irenicus the vampire is {@condition paralyzed} until the stake is removed."
+					]
+				},
+				{
+					"name": "Sunlight Hypersensitivity",
+					"entries": [
+						"Bodhi Irenicus takes 20 radiant damage when she starts her turn in sunlight. While in sunlight, she has disadvantage on attack rolls and ability checks."
 					]
 				},
 				{
@@ -7529,6 +7535,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},

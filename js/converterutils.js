@@ -784,6 +784,7 @@ class ConvertUtil {
 
 		// ignore everything inside parentheses
 		const namePart = ConvertUtil.getWithoutParens(spl[0]);
+		if (!namePart) return false; // (If this is _everything_ cancel)
 
 		const reStopwords = new RegExp(`^(${StrUtil.TITLE_LOWER_WORDS.join("|")})$`, "i");
 		const tokens = namePart.split(/([ ,;:]+)/g);

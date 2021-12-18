@@ -28,6 +28,7 @@ const MSG = {
 	ClassDataCheck: "",
 	RaceDataCheck: "",
 	FeatDataCheck: "",
+	BackgroundDataCheck: "",
 	BestiaryDataCheck: "",
 	RefTagCheck: "",
 };
@@ -130,6 +131,22 @@ class TestTagsUtil {
 						});
 					});
 			});
+	}
+
+	static testAdditionalFeats (file, msgProp, obj) {
+		if (!obj.feats) return;
+
+		obj.feats.forEach(featsObj => {
+			Object.entries(featsObj)
+				.forEach(([k, v]) => {
+					if (k === "any") return;
+
+					const url = getEncoded(k, "feat");
+					if (!ALL_URLS.has(url)) {
+						MSG[msgProp] += `Missing link: ${url} in file ${file} (evaluates to "${url}") in "feats"\nSimilar URLs were:\n${getSimilar(url)}\n`;
+					}
+				});
+		});
 	}
 }
 
@@ -863,6 +880,7 @@ class ClassDataCheck {
 class RaceDataCheck {
 	static _handleRaceOrSubraceRaw (file, rsr, r) {
 		TestTagsUtil.testAdditionalSpells(file, "RaceDataCheck", rsr);
+		TestTagsUtil.testAdditionalFeats(file, "RaceDataCheck", rsr);
 	}
 
 	static run () {
@@ -877,7 +895,6 @@ class RaceDataCheck {
 
 class FeatDataCheck {
 	static _handleFeat (file, feat) {
-		// if (feat.additionalSpells?.length > 1 && feat.additionalSpells.some(it => !it.name)) console.log(feat.name)
 		TestTagsUtil.testAdditionalSpells(file, "FeatDataCheck", feat);
 	}
 
@@ -885,6 +902,19 @@ class FeatDataCheck {
 		const file = `data/feats.json`;
 		const featJson = require(`../${file}`);
 		featJson.feat.forEach(f => this._handleFeat(file, f));
+	}
+}
+
+class BackgroundDataCheck {
+	static _handleBackground (file, bg) {
+		TestTagsUtil.testAdditionalSpells(file, "BackgroundDataCheck", bg);
+		TestTagsUtil.testAdditionalFeats(file, "BackgroundDataCheck", bg);
+	}
+
+	static run () {
+		const file = `data/backgrounds.json`;
+		const backgroundJson = require(`../${file}`);
+		backgroundJson.background.forEach(f => this._handleBackground(file, f));
 	}
 }
 
@@ -1144,6 +1174,7 @@ async function main () {
 	ClassDataCheck.run();
 	RaceDataCheck.run();
 	FeatDataCheck.run();
+	BackgroundDataCheck.run();
 	BestiaryDataCheck.run();
 
 	let outMessage = "";

@@ -1,9 +1,9 @@
 class RenderFeats {
 	static $getRenderedFeat (feat) {
 		const prerequisite = Renderer.utils.getPrerequisiteHtml(feat.prerequisite);
-		Renderer.feat.mergeAbilityIncrease(feat);
+		Renderer.feat.initFullEntries(feat);
 		const renderStack = [];
-		Renderer.get().setFirstSection(true).recursiveRender({entries: feat.entries}, renderStack, {depth: 2});
+		Renderer.get().setFirstSection(true).recursiveRender({entries: feat._fullEntries || feat.entries}, renderStack, {depth: 2});
 
 		return $$`
 			${Renderer.utils.getBorderTr()}

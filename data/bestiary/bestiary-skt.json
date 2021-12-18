@@ -633,73 +633,39 @@
 				"name": "Ancient Green Dragon",
 				"source": "MM"
 			},
-			"cr": "23",
 			"spellcasting": [
 				{
-					"name": "Innate Spellcasting",
+					"name": "Spellcasting",
 					"headerEntries": [
-						"Claugiyliamatar's innate spellcasting ability is Charisma (spell save {@dc 19}). Claugiyliamatar can innately cast the following spells, requiring no material components:"
+						"Claugiyliamatar casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 19}):"
+					],
+					"will": [
+						"{@spell detect magic}",
+						"{@spell druidcraft}",
+						"{@spell speak with animals}"
 					],
 					"daily": {
+						"2e": [
+							"{@spell animal messenger}",
+							"{@spell cure wounds}",
+							"{@spell dispel magic}",
+							"{@spell entangle}",
+							"{@spell invisibility}"
+						],
 						"1e": [
-							"{@spell invisibility}",
-							"{@spell legend lore}",
+							"{@spell blight}",
+							"{@spell legend lore} (cast as 1 action)",
+							"{@spell locate creature}",
+							"{@spell pass without trace}",
 							"{@spell protection from energy}",
 							"{@spell true seeing}"
 						]
 					},
-					"ability": "cha"
-				},
-				{
-					"name": "Spellcasting",
-					"headerEntries": [
-						"Claugiyliamatar is an 8th-level spellcaster. Her spellcasting ability is Wisdom (spell save {@dc 18}, {@hit 10} to hit with spell attacks). She has the following druid spells prepared:"
-					],
-					"spells": {
-						"0": {
-							"spells": [
-								"{@spell druidcraft}",
-								"{@spell mending}",
-								"{@spell produce flame}"
-							]
-						},
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell cure wounds}",
-								"{@spell detect magic}",
-								"{@spell entangle}",
-								"{@spell speak with animals}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell animal messenger}",
-								"{@spell pass without trace}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell dispel magic}",
-								"{@spell plant growth}"
-							]
-						},
-						"4": {
-							"slots": 2,
-							"spells": [
-								"{@spell blight}",
-								"{@spell locate creature}",
-								"{@spell stoneskin}"
-							]
-						}
-					},
-					"ability": "wis"
+					"ability": "cha",
+					"displayAs": "action"
 				}
 			],
 			"spellcastingTags": [
-				"CD",
 				"I"
 			],
 			"hasToken": true
@@ -943,71 +909,34 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Sansuri is a 13th-level spellcaster. Her spellcasting ability is Intelligence (spell save {@dc 15}; {@hit 7} to hit with spell attacks). She has the following wizard spells prepared:"
+						"Sansuri casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 15}; {@hit 7} to hit with spell attacks):"
 					],
-					"spells": {
-						"0": {
-							"spells": [
-								"{@spell mage hand}",
-								"{@spell mending}",
-								"{@spell message}",
-								"{@spell prestidigitation}",
-								"{@spell ray of frost}"
-							]
-						},
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell identify}",
-								"{@spell magic missile}",
-								"{@spell shield}",
-								"{@spell unseen servant}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell arcane lock}",
-								"{@spell gust of wind}",
-								"{@spell invisibility}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell haste}",
-								"{@spell hypnotic pattern}",
-								"{@spell lightning bolt}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell ice storm}",
-								"{@spell stoneskin}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell Bigby's hand}",
-								"{@spell wall of force}"
-							]
-						},
-						"6": {
-							"slots": 1,
-							"spells": [
-								"{@spell globe of invulnerability}"
-							]
-						},
-						"7": {
-							"slots": 1,
-							"spells": [
-								"{@spell Mordenkainen's sword}"
-							]
-						}
+					"will": [
+						"{@spell mage hand}",
+						"{@spell message}",
+						"{@spell prestidigitation}",
+						"{@spell ray of frost}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell arcane lock}",
+							"{@spell gust of wind}",
+							"{@spell invisibility}",
+							"{@spell magic missile}",
+							"{@spell unseen servant}"
+						],
+						"1e": [
+							"{@spell globe of invulnerability}",
+							"{@spell haste}",
+							"{@spell hypnotic pattern}",
+							"{@spell ice storm}",
+							"{@spell lightning bolt}",
+							"{@spell Mordenkainen's sword}",
+							"{@spell wall of force}"
+						]
 					},
-					"ability": "wis"
+					"ability": "int",
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -1066,7 +995,6 @@
 				"P"
 			],
 			"spellcastingTags": [
-				"CW",
 				"I"
 			],
 			"miscTags": [
@@ -2550,20 +2478,24 @@
 			"cr": "23",
 			"spellcasting": [
 				{
-					"name": "Innate Spellcasting",
+					"name": "Spellcasting",
 					"headerEntries": [
-						"Iymrith's innate spellcasting ability is Charisma (spell save {@dc 20}). Iymrith's stone shape can create a living gargoyle instead of altering the stone as described in the spell description. She can innately cast the following spells, requiring no material components:"
+						"Iymrith casts one of the following spells, requiring no spell components and using Charisma as the spellcasting ability (spell save {@dc 20}):"
 					],
 					"daily": {
-						"1": [
-							"{@spell counterspell}",
+						"1e": [
 							"{@spell detect magic}",
+							"{@spell dispel magic}",
 							"{@spell ice storm}",
 							"{@spell stone shape}",
 							"{@spell teleport}"
 						]
 					},
-					"ability": "cha"
+					"footerEntries": [
+						"When she casts her {@spell stone shape} spell, Iymrith can shape the targeted stone into a living {@creature gargoyle} instead of altering the stone as described in the spell's description. This transformation is permanent and can't be reversed or dispelled."
+					],
+					"ability": "cha",
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -2744,32 +2676,19 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Jarl Storvald is a 9th-level spellcaster. His spellcasting ability is Wisdom (spell save {@dc 16}, {@hit 8} to hit with spell attacks). He knows the following ranger spells:"
+						"Storvald casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability:"
 					],
-					"spells": {
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell hunter's mark}",
-								"{@spell jump}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell locate animals or plants}",
-								"{@spell locate object}"
-							]
-						},
-						"3": {
-							"slots": 2,
-							"spells": [
-								"{@spell water breathing}",
-								"{@spell water walk}"
-							]
-						}
+					"daily": {
+						"1e": [
+							"{@spell jump}",
+							"{@spell locate animals or plants}",
+							"{@spell locate object}",
+							"{@spell water breathing}",
+							"{@spell water walk}"
+						]
 					},
-					"ability": "wis"
+					"ability": "wis",
+					"displayAs": "action"
 				}
 			],
 			"action": [
@@ -3204,92 +3123,39 @@
 			"cr": "25",
 			"spellcasting": [
 				{
-					"name": "Innate Spellcasting",
-					"headerEntries": [
-						"Klauth's spellcasting ability is Charisma (spell save {@dc 22}). He can innately cast the following spells, requiring no material components:"
-					],
-					"daily": {
-						"1": [
-							"{@spell banishment}",
-							"{@spell etherealness}",
-							"{@spell find the path}",
-							"{@spell locate object}",
-							"{@spell prismatic spray}",
-							"{@spell suggestion}"
-						]
-					},
-					"ability": "cha"
-				},
-				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Klauth is a 14th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 20} {@hit 12} to hit with spell attacks). He has the following wizard spells prepared:"
+						"Klauth casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 22}):"
 					],
-					"spells": {
-						"0": {
-							"spells": [
-								"{@spell mage hand}",
-								"{@spell mending}",
-								"{@spell minor illusion}",
-								"{@spell prestidigitation}"
-							]
-						},
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell comprehend languages}",
-								"{@spell detect magic}",
-								"{@spell expeditious retreat}",
-								"{@spell identify}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell darkness}",
-								"{@spell detect thoughts}",
-								"{@spell Melf's acid arrow}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell clairvoyance}",
-								"{@spell haste}",
-								"{@spell nondetection}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell greater invisibility}",
-								"{@spell ice storm}",
-								"{@spell stoneskin}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell Bigby's hand}",
-								"{@spell cloudkill}",
-								"{@spell scrying}"
-							]
-						},
-						"6": {
-							"slots": 1,
-							"spells": [
-								"{@spell disintegrate}",
-								"{@spell mass suggestion}"
-							]
-						},
-						"7": {
-							"slots": 1,
-							"spells": [
-								"{@spell mirage arcane}"
-							]
-						}
+					"will": [
+						"{@spell comprehend languages}",
+						"{@spell detect magic}",
+						"{@spell mage hand}",
+						"{@spell minor illusion}",
+						"{@spell prestidigitation}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell darkness}",
+							"{@spell detect thoughts}",
+							"{@spell ice storm}"
+						],
+						"1e": [
+							"{@spell banishment}",
+							"{@spell cloudkill}",
+							"{@spell disintegrate}",
+							"{@spell etherealness}",
+							"{@spell find the path} (cast as 1 action)",
+							"{@spell greater invisibility}",
+							"{@spell haste}",
+							"{@spell locate object}",
+							"{@spell mass suggestion}",
+							"{@spell mirage arcane} (cast as 1 action)",
+							"{@spell prismatic spray}"
+						]
 					},
-					"ability": "int"
+					"ability": "cha",
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -3397,7 +3263,6 @@
 				"S"
 			],
 			"spellcastingTags": [
-				"CW",
 				"I"
 			],
 			"miscTags": [
@@ -3648,14 +3513,12 @@
 			"cr": "23",
 			"spellcasting": [
 				{
-					"name": "Innate Spellcasting",
+					"name": "Spellcasting",
 					"headerEntries": [
-						"Maegera's spell casting ability is Charisma. Maegera's can innately cast the following spell (spell save {@dc 19}), requiring no material components:"
+						"Maegera casts fireball (spell save {@dc 19}), requiring no material components and using Charisma as the spellcasting ability."
 					],
-					"will": [
-						"{@spell fireball}"
-					],
-					"ability": "cha"
+					"ability": "cha",
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -4198,41 +4061,22 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Naxene is a 6th level spellcaster. Her spellcasting ability is Intelligence (spell save {@dc 13}; {@hit 5} to hit with spell attacks). She has the following wizard spells prepared:"
+						"Naxene casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 13}; {@hit 5} to hit with spell attacks):"
 					],
-					"spells": {
-						"0": {
-							"spells": [
-								"{@spell fire bolt}",
-								"{@spell light}",
-								"{@spell mage hand}",
-								"{@spell prestidigitation}"
-							]
-						},
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell mage armor}",
-								"{@spell magic missile}",
-								"{@spell shield}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell misty step}",
-								"{@spell suggestion}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell fly}",
-								"{@spell lightning bolt}"
-							]
-						}
+					"will": [
+						"{@spell fire bolt} ({@damage 1d10} fire damage)",
+						"{@spell light}",
+						"{@spell mage hand}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell mage armor}",
+							"{@spell magic missile}",
+							"{@spell suggestion}"
+						]
 					},
-					"ability": "int"
+					"ability": "int",
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -4311,6 +4155,27 @@
 				"insight": "+9",
 				"perception": "+9"
 			},
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The giant casts one of the following spells, requiring no material spell components and using Charisma as the spellcasting ability (spell save {@dc 17}):"
+					],
+					"will": [
+						"{@spell detect magic}",
+						"{@spell levitate}",
+						"{@spell light}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell control weather} (cast as 1 action)",
+							"{@spell water breathing}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
 			"damageTags": [
 				"B",
 				"L",
@@ -4555,6 +4420,27 @@
 				"deception": "+14",
 				"perception": "+9"
 			},
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The giant casts one of the following spells, requiring no material spell components and using Charisma as the spellcasting ability (spell save {@dc 17}):"
+					],
+					"will": [
+						"{@spell detect magic}",
+						"{@spell levitate}",
+						"{@spell light}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell control weather} (cast as 1 action)",
+							"{@spell water breathing}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
 			"damageTags": [
 				"B",
 				"L",
@@ -4661,27 +4547,21 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Othovir is a 2nd-level spellcaster. His spellcasting ability is Charisma (spell save {@dc 13}; {@hit 5} to hit with spell attacks). He has the following sorcerer spells prepared:"
+						"Othovir casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 13}; {@hit 5} to hit with spell attacks):"
 					],
-					"spells": {
-						"0": {
-							"spells": [
-								"{@spell blade ward}",
-								"{@spell fire bolt}",
-								"{@spell mending}",
-								"{@spell prestidigitation}"
-							]
-						},
-						"1": {
-							"slots": 3,
-							"spells": [
-								"{@spell mage armor}",
-								"{@spell thunderwave}",
-								"{@spell witch bolt}"
-							]
-						}
+					"will": [
+						"{@spell fire bolt} ({@damage 1d10} fire damage)",
+						"{@spell prestidigitation}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell mage armor}",
+							"{@spell thunderwave}",
+							"{@spell witch bolt}"
+						]
 					},
-					"ability": "cha"
+					"ability": "cha",
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -5123,6 +5003,27 @@
 				"athletics": "+14",
 				"perception": "+9"
 			},
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The giant casts one of the following spells, requiring no material spell components and using Charisma as the spellcasting ability (spell save {@dc 17}):"
+					],
+					"will": [
+						"{@spell detect magic}",
+						"{@spell levitate}",
+						"{@spell light}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell control weather} (cast as 1 action)",
+							"{@spell water breathing}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
 			"damageTags": [
 				"B",
 				"L",
@@ -5689,82 +5590,36 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Slarkrethel is a 20th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 22}, {@hit 14} to hit with spell attacks). Slarkrethel has the following wizard spells prepared:"
+						"Slarkrethel casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 22}):"
 					],
-					"spells": {
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell comprehend languages}",
-								"{@spell detect magic}",
-								"{@spell identify}",
-								"{@spell sleep}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell blindness/deafness}",
-								"{@spell detect thoughts}",
-								"{@spell suggestion}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell fly}",
-								"{@spell nondetection}",
-								"{@spell sending}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell arcane eye}",
-								"{@spell ice storm}",
-								"{@spell locate creature}"
-							]
-						},
-						"5": {
-							"slots": 3,
-							"spells": [
-								"{@spell cloudkill}",
-								"{@spell scrying}",
-								"{@spell telekinesis}"
-							]
-						},
-						"6": {
-							"slots": 2,
-							"spells": [
-								"{@spell chain lightning}",
-								"{@spell flesh to stone}",
-								"{@spell mass suggestion}"
-							]
-						},
-						"7": {
-							"slots": 2,
-							"spells": [
-								"{@spell delayed blast fireball}",
-								"{@spell sequester}",
-								"{@spell teleport}"
-							]
-						},
-						"8": {
-							"slots": 1,
-							"spells": [
-								"{@spell control weather}",
-								"{@spell feeblemind}"
-							]
-						},
-						"9": {
-							"slots": 1,
-							"spells": [
-								"{@spell foresight}",
-								"{@spell power word kill}"
-							]
-						}
+					"will": [
+						"{@spell detect magic}",
+						"{@spell detect thoughts}",
+						"{@spell sending}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell control weather} (cast as 1 action)",
+							"{@spell fly}",
+							"{@spell ice storm}"
+						],
+						"1e": [
+							"{@spell arcane eye}",
+							"{@spell chain lightning}",
+							"{@spell feeblemind}",
+							"{@spell foresight}",
+							"{@spell locate creature}",
+							"{@spell mass suggestion}",
+							"{@spell nondetection}",
+							"{@spell power word kill}",
+							"{@spell scrying} (cast as 1 action)",
+							"{@spell sequester}",
+							"{@spell telekinesis}",
+							"{@spell teleport}"
+						]
 					},
-					"ability": "int"
+					"ability": "int",
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -5876,9 +5731,6 @@
 				"I",
 				"L",
 				"P"
-			],
-			"spellcastingTags": [
-				"CW"
 			],
 			"miscTags": [
 				"AOE",
@@ -6339,11 +6191,15 @@
 			"name": "Tressym",
 			"source": "SKT",
 			"page": 242,
+			"otherSources": [
+				{
+					"source": "IMR"
+				}
+			],
 			"size": "T",
-			"type": "beast",
+			"type": "monstrosity",
 			"alignment": [
-				"C",
-				"N"
+				"A"
 			],
 			"ac": [
 				12
@@ -6479,59 +6335,36 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Turlang is a 9th-level spellcaster. His spellcasting ability is Wisdom (spell save {@dc 15}, {@hit 7} to hit with spell attacks). Turlang has the following druid spells prepared:"
+						"Turlang casts one of the following spells, requiring no material spell components and using Wisdom as the spellcasting ability (spell save {@dc 15}):"
 					],
-					"spells": {
-						"0": {
-							"spells": [
-								"{@spell druidcraft}",
-								"{@spell guidance}",
-								"{@spell resistance}"
-							]
-						},
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell detect magic}",
-								"{@spell entangle}",
-								"{@spell goodberry}",
-								"{@spell speak with animals}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell animal messenger}",
-								"{@spell gust of wind}",
-								"{@spell pass without trace}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell plant growth}",
-								"{@spell speak with plants}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell conjure woodland beings}",
-								"{@spell hallucinatory terrain}"
-							]
-						},
-						"5": {
-							"slots": 1,
-							"spells": [
-								"{@spell commune with nature}"
-							]
-						}
+					"will": [
+						"{@spell druidcraft}",
+						"{@spell guidance}",
+						"{@spell resistance}",
+						"{@spell speak with plants}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell animal messenger}",
+							"{@spell detect magic}",
+							"{@spell entangle}",
+							"{@spell goodberry}",
+							"{@spell gust of wind}",
+							"{@spell pass without trace}",
+							"{@spell speak with animals}"
+						],
+						"1e": [
+							"{@spell commune with nature} (cast as 1 action)",
+							"{@spell conjure woodland beings}",
+							"{@spell hallucinatory terrain} (cast as 1 action)"
+						]
 					},
-					"ability": "wis"
+					"ability": "wis",
+					"displayAs": "action"
 				}
 			],
 			"spellcastingTags": [
-				"CD"
+				"I"
 			],
 			"hasToken": true
 		},
@@ -6715,8 +6548,7 @@
 				]
 			},
 			"alignment": [
-				"N",
-				"E"
+				"A"
 			],
 			"ac": [
 				{
@@ -6753,29 +6585,28 @@
 			"cr": "2",
 			"spellcasting": [
 				{
-					"name": "Innate Spellcasting",
+					"name": "Spellcasting (Requires a Sacred Bundle)",
 					"headerEntries": [
-						"The shaman can innately cast the following spells. Its spellcasting ability is Wisdom (spell save {@dc 12}, {@hit 4} to hit with spell attacks)."
+						"The shaman casts one of the following spells, using Wisdom as the spellcasting ability (spell save {@dc 12}; {@hit 4} to hit with spell attacks):"
 					],
 					"will": [
 						"{@spell dancing lights}",
-						"{@spell message}",
 						"{@spell mage hand}",
+						"{@spell message}",
 						"{@spell thaumaturgy}"
 					],
 					"daily": {
-						"1": [
-							"{@spell augury}",
+						"1e": [
+							"{@spell augury} (cast as 1 action)",
 							"{@spell bestow curse}",
 							"{@spell cordon of arrows}",
 							"{@spell detect magic}",
-							"{@spell hex}",
-							"{@spell prayer of healing}",
 							"{@spell speak with dead}",
 							"{@spell spirit guardians}"
 						]
 					},
-					"ability": "wis"
+					"ability": "wis",
+					"displayAs": "action"
 				}
 			],
 			"action": [
@@ -6869,6 +6700,27 @@
 				"perception": "+9",
 				"survival": "+9"
 			},
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The giant casts one of the following spells, requiring no material spell components and using Charisma as the spellcasting ability (spell save {@dc 17}):"
+					],
+					"will": [
+						"{@spell detect magic}",
+						"{@spell levitate}",
+						"{@spell light}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell control weather} (cast as 1 action)",
+							"{@spell water breathing}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
 			"damageTags": [
 				"B",
 				"L",
@@ -7250,40 +7102,6 @@
 				"Common",
 				"Giant"
 			],
-			"spellcasting": [
-				{
-					"name": "Innate Spellcasting",
-					"headerEntries": [
-						"The giant's innate spellcasting ability is Charisma. It can innately cast the following spells, requiring no material components:"
-					],
-					"will": [
-						"{@spell detect magic}",
-						"{@spell fog cloud}",
-						"{@spell light}"
-					],
-					"daily": {
-						"3e": [
-							"{@spell feather fall}",
-							"{@spell fly}",
-							"{@spell misty step}",
-							"{@spell telekinesis}"
-						],
-						"1e": [
-							"{@spell control weather}",
-							"{@spell gaseous form}"
-						]
-					},
-					"ability": "cha"
-				}
-			],
-			"trait": [
-				{
-					"name": "Keen Smell",
-					"entries": [
-						"The giant has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
-					]
-				}
-			],
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -7441,66 +7259,32 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Zephyros is a 12th-level spellcaster. his spellcasting ability is Intelligence (spell save {@dc 17}; {@hit 11} to hit with spell attacks). He has the following wizard spells prepared:"
+						"Zephyros casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 17}, {@hit 11} to hit with spell attacks):"
 					],
-					"spells": {
-						"0": {
-							"spells": [
-								"{@spell mending}",
-								"{@spell message}",
-								"{@spell prestidigitation}",
-								"{@spell ray of frost}",
-								"{@spell shocking grasp}"
-							]
-						},
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell charm person}",
-								"{@spell comprehend languages}",
-								"{@spell magic missile}",
-								"{@spell shield}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell crown of madness}",
-								"{@spell gust of wind}",
-								"{@spell levitate}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell nondetection}",
-								"{@spell protection from energy}",
-								"{@spell tongues}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell conjure minor elementals}",
-								"{@spell greater invisibility}",
-								"{@spell Otiluke's resilient sphere}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell cone of cold}",
-								"{@spell contact other plane}"
-							]
-						},
-						"6": {
-							"slots": 1,
-							"spells": [
-								"{@spell mass suggestion}"
-							]
-						}
+					"will": [
+						"{@spell message}",
+						"{@spell prestidigitation}",
+						"{@spell ray of frost}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell gust of wind}",
+							"{@spell levitate}",
+							"{@spell magic missile}"
+						],
+						"1e": [
+							"{@spell cone of cold}",
+							"{@spell contact other plane} (cast as 1 action)",
+							"{@spell greater invisibility}",
+							"{@spell mass suggestion}",
+							"{@spell nondetection}",
+							"{@spell Otiluke's resilient sphere}",
+							"{@spell protection from energy}",
+							"{@spell tongues}"
+						]
 					},
-					"ability": "int"
+					"ability": "int",
+					"displayAs": "action"
 				}
 			],
 			"trait": [

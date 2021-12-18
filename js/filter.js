@@ -394,9 +394,12 @@ class FilterBox extends ProxyBase {
 		return this;
 	}
 
-	off (identifier) {
+	off (identifier, fn = null) {
 		const [eventName, namespace] = identifier.split(".");
-		this._eventListeners[eventName] = (this._eventListeners[eventName] || []).filter(it => it.namespace !== namespace);
+		this._eventListeners[eventName] = (this._eventListeners[eventName] || []).filter(it => {
+			if (fn != null) return it.namespace !== namespace || it.fn !== fn;
+			return it.namespace !== namespace;
+		});
 		if (!this._eventListeners[eventName].length) delete this._eventListeners[eventName];
 		return this;
 	}
