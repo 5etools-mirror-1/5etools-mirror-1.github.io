@@ -356,6 +356,8 @@ PropOrder._BACKGROUND = [
 
 	"additionalSpells",
 
+	"fromFeature",
+
 	"entries",
 
 	"hasFluff",
@@ -935,6 +937,8 @@ PropOrder._ITEM = [
 	"attachedSpells",
 	"spellScrollLevel",
 	"lootTables",
+
+	"seeAlsoVehicle",
 
 	"hasFluff",
 	"hasFluffImages",

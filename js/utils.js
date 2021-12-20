@@ -7,7 +7,7 @@ if (IS_NODE) require("./parser.js");
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 IS_DEPLOYED = undefined;
-VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.145.2"/* 5ETOOLS_VERSION__CLOSE */;
+VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.145.3"/* 5ETOOLS_VERSION__CLOSE */;
 DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 // for the roll20 script to set
 IS_VTT = false;
@@ -975,7 +975,8 @@ MiscUtil = {
 	COLOR_BLOODIED: "#f7a100",
 	COLOR_DEFEATED: "#cc0000",
 
-	copy (obj) {
+	copy (obj, safe = false) {
+		if (safe && obj === undefined) return undefined; // Generally use "unsafe," as this helps identify bugs.
 		return JSON.parse(JSON.stringify(obj));
 	},
 
@@ -1347,7 +1348,7 @@ MiscUtil = {
 		return new Promise(resolve => setTimeout(() => resolve(resolveAs), msecs));
 	},
 
-	GENERIC_WALKER_ENTRIES_KEY_BLACKLIST: new Set(["caption", "type", "colLabels", "name", "colStyles", "style", "shortName", "subclassShortName"]),
+	GENERIC_WALKER_ENTRIES_KEY_BLACKLIST: new Set(["caption", "type", "colLabels", "name", "colStyles", "style", "shortName", "subclassShortName", "id", "path"]),
 
 	/**
 	 * @param [opts]

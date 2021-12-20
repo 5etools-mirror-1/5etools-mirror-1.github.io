@@ -871,7 +871,7 @@
 										{
 											"type": "item",
 											"name": "Feats:",
-											"entry": "{@feat Sharpshooter}"
+											"entry": "{@feat Piercer|TCE}, {@feat Sharpshooter}"
 										}
 									]
 								},
@@ -961,7 +961,7 @@
 										{
 											"type": "item",
 											"name": "Feats:",
-											"entry": "{@feat Defensive Duelist}, {@feat Dual Wielder}, {@feat Observant}, {@feat Savage Attacker}, {@feat Weapon Master}"
+											"entry": "{@feat Defensive Duelist}, {@feat Dual Wielder}, {@feat Martial Adept}, {@feat Observant}, {@feat Savage Attacker}"
 										}
 									]
 								},
@@ -991,7 +991,7 @@
 										{
 											"type": "item",
 											"name": "Feats:",
-											"entry": "{@feat Athlete}, {@feat Charger}, {@feat Dual Wielder}, {@feat Durable}, {@feat Grappler}, {@feat Savage Attacker}, {@feat Tough}, {@feat Weapon Master}"
+											"entry": "{@feat Athlete}, {@feat Charger}, {@feat Dual Wielder}, {@feat Durable}, {@feat Grappler}, {@feat Martial Adept}, {@feat Savage Attacker}, {@feat Tough}"
 										}
 									]
 								},
@@ -1021,7 +1021,7 @@
 										{
 											"type": "item",
 											"name": "Feats:",
-											"entry": "{@feat Athlete}, {@feat Grappler}, {@feat Polearm Master}, {@feat Sentinel}, {@feat Shield Master}"
+											"entry": "{@feat Athlete}, {@feat Grappler}, {@feat Piercer|TCE}, {@feat Polearm Master}, {@feat Sentinel}, {@feat Shield Master}"
 										}
 									]
 								},
@@ -6298,7 +6298,7 @@
 												],
 												[
 													"19\u201324",
-													"Creatures in the region don't cast reflections. Wisdom ({@skill Insight}) checks made against those creatures have disadvantage, and the creatures have disadvantage on Charisma ({@skill Persuasion}) checks made against anyone who notices their lack of reflection. When they leave the region, creatures regain their reflections, and the effect ends."
+													"Creatures in the region don't cast reflections. Wisdom ({@skill Insight}) checks made against those creatures have disadvantage, and the creatures have disadvantage on Charisma ({@skill Persuasion}) checks made against anyone who notices their lack of {@creature reflection|TCE}. When they leave the region, creatures regain their reflections, and the effect ends."
 												],
 												[
 													"25\u201334",
@@ -6314,7 +6314,7 @@
 												],
 												[
 													"47\u201352",
-													"Mirrors and other highly reflective surfaces allow magical transport while in the region. Any creature that touches its reflection in an object that it isn't wearing or carrying can immediately cast the {@spell misty step} spell, requiring no components."
+													"Mirrors and other highly reflective surfaces allow magical transport while in the region. Any creature that touches its {@creature reflection|TCE} in an object that it isn't wearing or carrying can immediately cast the {@spell misty step} spell, requiring no components."
 												],
 												[
 													"53\u201358",
@@ -6338,7 +6338,7 @@
 												],
 												[
 													"83\u201388",
-													"The next time one character in the party sees their reflection in the region, that reflection of comes to life and engages its counterpart in conversation. It offers to answer one question posed to it as if the creature cast the {@spell divination} spell. After answering the question, the reflection returns to normal."
+													"The next time one character in the party sees their {@creature reflection|TCE} in the region, that {@creature reflection|TCE} of comes to life and engages its counterpart in conversation. It offers to answer one question posed to it as if the creature cast the {@spell divination} spell. After answering the question, the {@creature reflection|TCE} returns to normal."
 												],
 												[
 													"89\u201394",

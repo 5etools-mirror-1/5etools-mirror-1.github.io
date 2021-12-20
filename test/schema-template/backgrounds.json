@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "backgrounds.json",
-	"version": "1.2.4",
+	"version": "1.2.5",
 	"type": "object",
 
 	"definitions": {
@@ -52,6 +52,13 @@
 				},
 				"additionalSpells": {
 					"$ref": "util.json#/definitions/additionalSpellsArray"
+				},
+				"fromFeature": {
+					"description": "A lookup of other properties which should be tied to the \"Feature: ...\" entry. This is used when e.g. customizing a background during import to a VTT.",
+					"type": "object",
+					"patternProperties": {
+						"^.*$": {"type": "boolean", "const": true}
+					}
 				},
 				"hasFluff": {"type": "boolean"},
 				"hasFluffImages": {"type": "boolean"},

@@ -11,7 +11,7 @@
 						"type": "internal",
 						"path": "adventure/DC/000-hf9lp-ebondeaths-lair.jpg"
 					},
-					"title": "Ebondeath's Lair",
+					"title": "{@creature Ebondeath|DC}'s Lair",
 					"width": 1164,
 					"height": 1600
 				},
@@ -158,7 +158,7 @@
 							"name": "Kryptgarden Forest",
 							"id": "00a",
 							"entries": [
-								"This ancient forest tucked behind the Sword Mountains contains the ruins of bygone dwarven civilizations. The abandoned lair of the green dragon Claugiyliamatar, nicknamed the Old Gnawbone, is found in these woods. During {@adventure Sleeping Dragons Wake|SDW}, {@creature Claugiyliamatar|SKT} was possessed by the wraith of the ancient dracolich Chardansearavitriol, also known as Ebondeath, which now loyally serves the worshipers of Myrkul (see \"{@area Mere of Dead Men|00c|x}\")."
+								"This ancient forest tucked behind the Sword Mountains contains the ruins of bygone dwarven civilizations. The abandoned lair of the green dragon Claugiyliamatar, nicknamed the Old Gnawbone, is found in these woods. During {@adventure Sleeping Dragons Wake|SDW}, {@creature Claugiyliamatar|SKT} was possessed by the wraith of the ancient dracolich Chardansearavitriol, also known as {@creature Ebondeath|DC}, which now loyally serves the worshipers of Myrkul (see \"{@area Mere of Dead Men|00c|x}\")."
 							]
 						},
 						{
@@ -241,7 +241,7 @@
 							"entries": [
 								"The ruined town of Leilon was once a fortified settlement on the High Road midway between the cities of Neverwinter and Waterdeep. The Lord Protector of Neverwinter, Dagult Neverember, hired a group of his citizens to rebuild the town, a construction project that has recently completed. They hope to create a fortified waypoint for travelers and merchants that can ward off the threats of the surrounding wilderness.",
 								"Two forces of evil are on the rise nearby, eager to control the region around Leilon and eventually the Sword Coast for themselves. The first is a cult of Talos, god of storms, led by their champion Fheralai Stormsworm. The cult's headquarters are inside a death knight dreadnaught, an undead galleon, which prowls the coast looking for trade ships to plunder.",
-								"Ularan Mortus, a priest of Myrkul, god of death, and his followers are raising an army of undead to lay siege to the city of Neverwinter. The spirit of the dead black dragon Chardansearavitriol, known also as Ebondeath, has recently allied with Ularan Mortus to steal a mythical artifact called the {@item ruinstone|DC} from a tower inside Leilon.",
+								"Ularan Mortus, a priest of Myrkul, god of death, and his followers are raising an army of undead to lay siege to the city of Neverwinter. The spirit of the dead black dragon Chardansearavitriol, known also as {@creature Ebondeath|DC}, has recently allied with Ularan Mortus to steal a mythical artifact called the {@item ruinstone|DC} from a tower inside Leilon.",
 								"The people of Leilon have just begun to uncover the threats both groups pose to the region. They need the help of adventurers if they want their rebuilt settlement to survive the danger."
 							]
 						},
@@ -675,7 +675,7 @@
 									"name": "Ebondeath's Mausoleum Quest",
 									"id": "037",
 									"entries": [
-										"\"The dread mage Ularan Mortus, leader of the cult of Myrkul, has roused the spirit of the undead dragon Ebondeath. Seek out Ebondeath's mausoleum in the Mere of Dead Men, destroy the dragon's spirit, and then return to Neverwinter to collect a reward of 8,000 gp.\" If the characters undertake this quest, see \"{@adventure Ebondeath's Mausoleum|DC|3}.\""
+										"\"The dread mage Ularan Mortus, leader of the cult of Myrkul, has roused the spirit of the undead dragon {@creature Ebondeath|DC}. Seek out {@creature Ebondeath|DC}'s mausoleum in the Mere of Dead Men, destroy the dragon's spirit, and then return to Neverwinter to collect a reward of 8,000 gp.\" If the characters undertake this quest, see \"{@adventure Ebondeath's Mausoleum|DC|3}.\""
 									]
 								}
 							]
@@ -928,21 +928,21 @@
 			"name": "Ebondeath's Mausoleum",
 			"id": "051",
 			"entries": [
-				"\"Ebondeath's Mausoleum\" is balanced for characters of 12th level.",
+				"\"{@creature Ebondeath|DC}'s Mausoleum\" is balanced for characters of 12th level.",
 				{
 					"type": "section",
 					"name": "Location Overview",
 					"id": "052",
 					"entries": [
-						"Over a thousand years ago, the black dragon Chardansearavitriol, commonly known as Ebondeath, settled in the Mere of Dead Men, making his lair in the ruined citadel of Uthtower. Ebondeath became a dracolich and was worshiped by the Cult of the Dragon until the death god Myrkul's influence waned across Faerûn and the dragon's bones turned to dust.",
-						"With Myrkul's return to the pantheon, his worshipers have quested across the seas to rekindle Ebondeath's spirit. Led by the death priest Ularan Mortus, they unearthed the dragon's mausoleum and awakened its slumbering soul, binding it to the unwilling body of the ancient green dragon Claugiyliamatar. Ularan Mortus hoped to use the dragon to capture the {@item ruinstone|DC}, an artifact of great power. While they remain on the Sword Coast, Ularan Mortus and his cultists have claimed Ebondeath's mausoleum as their headquarters in the area.",
-						"Following the \"{@adventure Leilon Besieged|DC|5}\" quest, Ebondeath returns to the mausoleum: either in spirit form without the artifact, or in Claugiyliamatar's body if it succeeded in stealing the {@item ruinstone|DC}. In response, Lord Protector Neverember of Neverwinter offers the characters a purse of 8,000 gp to end the threat posed by the dragon.",
+						"Over a thousand years ago, the black dragon Chardansearavitriol, commonly known as {@creature Ebondeath|DC}, settled in the Mere of Dead Men, making his lair in the ruined citadel of Uthtower. {@creature Ebondeath|DC} became a dracolich and was worshiped by the Cult of the Dragon until the death god Myrkul's influence waned across Faerûn and the dragon's bones turned to dust.",
+						"With Myrkul's return to the pantheon, his worshipers have quested across the seas to rekindle {@creature Ebondeath|DC}'s spirit. Led by the death priest Ularan Mortus, they unearthed the dragon's mausoleum and awakened its slumbering soul, binding it to the unwilling body of the ancient green dragon Claugiyliamatar. Ularan Mortus hoped to use the dragon to capture the {@item ruinstone|DC}, an artifact of great power. While they remain on the Sword Coast, Ularan Mortus and his cultists have claimed {@creature Ebondeath|DC}'s mausoleum as their headquarters in the area.",
+						"Following the \"{@adventure Leilon Besieged|DC|5}\" quest, {@creature Ebondeath|DC} returns to the mausoleum: either in spirit form without the artifact, or in Claugiyliamatar's body if it succeeded in stealing the {@item ruinstone|DC}. In response, Lord Protector Neverember of Neverwinter offers the characters a purse of 8,000 gp to end the threat posed by the dragon.",
 						{
 							"type": "entries",
 							"name": "Quest Goals",
 							"id": "053",
 							"entries": [
-								"To succeed in this quest, the characters must break into the mausoleum and destroy Ebondeath's malevolent spirit."
+								"To succeed in this quest, the characters must break into the mausoleum and destroy {@creature Ebondeath|DC}'s malevolent spirit."
 							]
 						}
 					]
@@ -952,7 +952,7 @@
 					"name": "Travel to the Tomb",
 					"id": "054",
 					"entries": [
-						"Once the party agrees to the contract, sages from Candlekeep send a messenger (via teleportation) with written directions to Ebondeath's Mausoleum. The mausoleum lies under the Uthtower, an ancient keep swallowed by the mere. Trekking on foot into the salt marshes is arduous work, with or without a barge, and the journey takes well over a day.",
+						"Once the party agrees to the contract, sages from Candlekeep send a messenger (via teleportation) with written directions to {@creature Ebondeath|DC}'s Mausoleum. The mausoleum lies under the Uthtower, an ancient keep swallowed by the mere. Trekking on foot into the salt marshes is arduous work, with or without a barge, and the journey takes well over a day.",
 						"Due to the recent proliferation (and likely destruction) of a great deal of undead from this region, the characters are likely to simply have a miserable day trudging through the muck. However, if you so wish, feel free to through in an encounter or two with undead that are fleeing the site of the battle at Leilon."
 					]
 				},
@@ -968,7 +968,7 @@
 							"name": "Mausoleum Features",
 							"id": "056",
 							"entries": [
-								"Ebondeath's mausoleum has the following general features.",
+								"{@creature Ebondeath|DC}'s mausoleum has the following general features.",
 								{
 									"type": "entries",
 									"name": "Lighting",
@@ -1013,7 +1013,7 @@
 										"type": "internal",
 										"path": "adventure/DC/007-nokov-map-ebondeaths-mausoleum_dm.jpg"
 									},
-									"title": "Map 4: Ebondeath's Mausoleum",
+									"title": "Map 4: {@creature Ebondeath|DC}'s Mausoleum",
 									"width": 3600,
 									"height": 2279,
 									"imageType": "map",
@@ -1040,7 +1040,7 @@
 							"name": "Mausoleum Locations",
 							"id": "05b",
 							"entries": [
-								"The following locations are keyed to the map of Ebondeath's Mausoleum:",
+								"The following locations are keyed to the map of {@creature Ebondeath|DC}'s Mausoleum:",
 								{
 									"type": "entries",
 									"name": "E1. Entry Hall",
@@ -1139,7 +1139,7 @@
 									"name": "E6. Halls of the Fiend",
 									"id": "066",
 									"entries": [
-										"The hallways are haunted by the grotesque vestige of Ebondeath's first high priest. This creature squirms along the passages and can be encountered anywhere in the area or in the nearby Vaults of the Uthlords (area E7). The vestige appears as a bloated, drowned {@creature death knight} with horribly long arms. Its Longsword attack is replaced with the following attack:",
+										"The hallways are haunted by the grotesque vestige of {@creature Ebondeath|DC}'s first high priest. This creature squirms along the passages and can be encountered anywhere in the area or in the nearby Vaults of the Uthlords (area E7). The vestige appears as a bloated, drowned {@creature death knight} with horribly long arms. Its Longsword attack is replaced with the following attack:",
 										"{@b Ghoulish Claws}. {@i Melee Weapon Attack}: +11 to hit, reach 5 ft., one target. {@i Hit}: 7 ({@dice 1d4 + 5}) slashing damage, plus 18 ({@dice 4d8}) necrotic damage. If the target is a creature other than an undead, it must succeed on a DC 10 Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 									]
 								},
@@ -1163,7 +1163,7 @@
 											"id": "069",
 											"entries": [
 												"Graven steps ascend into a wide, octagonal chamber with a high, vaulted ceiling. The mosaic floor is littered with rubble, and a pool of murky water floods the far side of the chamber. Strange fungi cling to the moist walls.",
-												"To the north, an arched hallway plunges into the dark. As you approach, a hollow voice booms from beyond: \"Who dares disturb the rest of Chardansearavitriol the Ebondeath?\""
+												"To the north, an arched hallway plunges into the dark. As you approach, a hollow voice booms from beyond: \"Who dares disturb the rest of Chardansearavitriol the {@creature Ebondeath|DC}?\""
 											]
 										},
 										"The characters now face {@creature Ebondeath|DC}. If the dragon fled Leilon in spirit form (see the \"{@adventure Leilon Besieged|DC|5}\" quest), the party faces a spectral version of the dragon. This has the statistics a {@creature ghost}, with the following important modifications:",
@@ -1175,8 +1175,8 @@
 												"Legendary Resistance (3/Day). If the dragon fails a saving throw, it can choose to succeed instead."
 											]
 										},
-										"Ebondeath uses its possession ability to jump between party members and turn them against each other. It fights to the end to protect its resting place.",
-										"If Ebondeath left the \"{@adventure Leilon Besieged|DC|5}\" quest in {@creature Claugiyliamatar|SKT|Claugiyliamatar's} body, the party is now in trouble. {@creature Ebondeath|DC} has the statistics of {@creature Claugiyliamatar|SKT}, except his breath weapon deals necrotic damage instead of poison damage due to Ebondeath's possession. If the characters slay the dragon, they must then also face the ghost within!"
+										"{@creature Ebondeath|DC} uses its possession ability to jump between party members and turn them against each other. It fights to the end to protect its resting place.",
+										"If {@creature Ebondeath|DC} left the \"{@adventure Leilon Besieged|DC|5}\" quest in {@creature Claugiyliamatar|SKT|Claugiyliamatar's} body, the party is now in trouble. {@creature Ebondeath|DC} has the statistics of {@creature Claugiyliamatar|SKT}, except his breath weapon deals necrotic damage instead of poison damage due to {@creature Ebondeath|DC}'s possession. If the characters slay the dragon, they must then also face the ghost within!"
 									]
 								},
 								{
@@ -1202,7 +1202,7 @@
 							"name": "Conclusion",
 							"id": "06c",
 							"entries": [
-								"Characters who destroy Ebondeath's spirit can report their success to the authorities in Neverwinter, who award them a purse of 8,000 gp. If this is the final quest, their adventure ends here (see \"{@adventure Ending the Adventure|DC|8}\" for more information)."
+								"Characters who destroy {@creature Ebondeath|DC}'s spirit can report their success to the authorities in Neverwinter, who award them a purse of 8,000 gp. If this is the final quest, their adventure ends here (see \"{@adventure Ending the Adventure|DC|8}\" for more information)."
 							]
 						}
 					]
@@ -2025,8 +2025,8 @@
 					"id": "0b9",
 					"entries": [
 						"The attack begins just before dawn, when Ularan Mortus assaults the south gate with a huge force of ghouls. Soon after, an even larger force of zombies emerges from the mere to invade the quayside. The defenders rally to protect the town but are outnumbered.",
-						"While the defenders struggle to hold the perimeter, Fheralai Stormsworn's forces breach the north gate and pour forward to seize the town square. Ularan Mortus responds by deploying his dragon, Ebondeath, which swoops in from the east and decimates Stormsworn's forces gathered in the square. The cultists of Talos are forced to fall back and regroup.",
-						"As Ularan Mortus's army forces its way into Leilon, Ebondeath reaches the House of Thalivar and searches for the {@item ruinstone|DC}. Unless stopped, it claims the stone and flies back to its hiding place in the mere. Ularan Mortus withdraws in victory to his headquarters. Stormsworn's troops intercept his entourage outside town, but her reduced forces are beaten back. The remaining members of both sides retreat to their respective headquarters."
+						"While the defenders struggle to hold the perimeter, Fheralai Stormsworn's forces breach the north gate and pour forward to seize the town square. Ularan Mortus responds by deploying his dragon, {@creature Ebondeath|DC}, which swoops in from the east and decimates Stormsworn's forces gathered in the square. The cultists of Talos are forced to fall back and regroup.",
+						"As Ularan Mortus's army forces its way into Leilon, {@creature Ebondeath|DC} reaches the House of Thalivar and searches for the {@item ruinstone|DC}. Unless stopped, it claims the stone and flies back to its hiding place in the mere. Ularan Mortus withdraws in victory to his headquarters. Stormsworn's troops intercept his entourage outside town, but her reduced forces are beaten back. The remaining members of both sides retreat to their respective headquarters."
 					]
 				},
 				{
@@ -2205,7 +2205,7 @@
 												"Chaos reigns in the town square. On one side, Leilon's defenders make a valiant stand against the invaders, while on the other, fleeing townsfolk clog the thoroughfare leading out of town. Screams of panic suddenly echo through the crowd. Looking up, you see a huge green dragon swoop out of the storm!"
 											]
 										},
-										"Ularan Mortus has sent his dragon to crush his enemies. {@creature Claugiyliamatar|SKT} is an ancient green dragon, except her breath weapon deals necrotic damage instead of poison damage as a result of Ebondeath's possession. If the party has not yet silenced the drummers (see Event 8: \"Thunder Drums\"), the magic storm cloud above town unleashes targeted bolts of lightning during combat. At the end of each round, ask each player to roll a {@dice d20}, and then roll a {@dice d20} for the dragon. Whoever gets the lowest result is targeted by the effect of a {@spell call lightning} spell.",
+										"Ularan Mortus has sent his dragon to crush his enemies. {@creature Claugiyliamatar|SKT} is an ancient green dragon, except her breath weapon deals necrotic damage instead of poison damage as a result of {@creature Ebondeath|DC}'s possession. If the party has not yet silenced the drummers (see Event 8: \"Thunder Drums\"), the magic storm cloud above town unleashes targeted bolts of lightning during combat. At the end of each round, ask each player to roll a {@dice d20}, and then roll a {@dice d20} for the dragon. Whoever gets the lowest result is targeted by the effect of a {@spell call lightning} spell.",
 										"The dragon attacks any enemy forces gathered here, including cultists of Talos, but switches to attack the party if they present a threat. If the dragon loses over 100 hit points or is forced to use its Legendary Resistance feature more than once, it retreats into the clouds. If the dragon retreats, the defenders are inspired to turn the tide of battle against their enemies.",
 										{
 											"type": "list",
@@ -2381,7 +2381,7 @@
 														"\"To arms!\" she shouts. \"Leilon needs you!\""
 													]
 												},
-												"{@creature Claugiyliamatar|SKT} is an ancient green dragon, except her breath weapon deals necrotic damage instead of poison damage as a result of Ebondeath's possession, and she has only 192 hit points. During combat, the Swords of Leilon intervene to aid the party, granting advantage to up to three characters' attacks each round. If the dragon drops to 50 or fewer hit points, it flies off and crashes in the nearby streets. Go to Event 14: \"Old Gnawbone.\""
+												"{@creature Claugiyliamatar|SKT} is an ancient green dragon, except her breath weapon deals necrotic damage instead of poison damage as a result of {@creature Ebondeath|DC}'s possession, and she has only 192 hit points. During combat, the Swords of Leilon intervene to aid the party, granting advantage to up to three characters' attacks each round. If the dragon drops to 50 or fewer hit points, it flies off and crashes in the nearby streets. Go to Event 14: \"Old Gnawbone.\""
 											]
 										},
 										{
@@ -2397,7 +2397,7 @@
 														"Before you can act, the dragon extends a ghostly claw from its body and snatches a glowing red stone from the air above its head. With a triumphant roar, it kicks back from the tower, causing the building to collapse in a shower of dust and rubble! As the smoke clears, you see the dragon gliding away over the distant hills."
 													]
 												},
-												"Ebondeath has escaped with the {@item ruinstone|DC} and the Swords of Leilon are lost. To resolve the quest, go to Event 15: \"Divine Contention.\""
+												"{@creature Ebondeath|DC} has escaped with the {@item ruinstone|DC} and the Swords of Leilon are lost. To resolve the quest, go to Event 15: \"Divine Contention.\""
 											]
 										}
 									]
@@ -2415,7 +2415,7 @@
 												"The dragon has crash-landed on Aubrey's Peculiarities Shoppe, reducing the building to a pile of broken masonry. Bleeding badly and covered with arrows, the dragon struggles to rise to its feet. As you approach it, the specter of another dragon emerges from its body and flies away to the south, fading from sight! As the spirit leaves its body, the dragon slumps exhausted to the ground."
 											]
 										},
-										"Ebondeath's spirit has fled its host body, leaving Claugiyliamatar weakened and vulnerable. The characters can slay the dragon here, or at your discretion, negotiate terms for her surrender. {@creature Claugiyliamatar|SKT} is an ancient green dragon, but she has only 50 hit points and all her attacks are made at disadvantage due to her exhausted state. If the party survives, mark {@b one victory} and proceed to \"{@area Conclusion|0e0|x}.\""
+										"{@creature Ebondeath|DC}'s spirit has fled its host body, leaving Claugiyliamatar weakened and vulnerable. The characters can slay the dragon here, or at your discretion, negotiate terms for her surrender. {@creature Claugiyliamatar|SKT} is an ancient green dragon, but she has only 50 hit points and all her attacks are made at disadvantage due to her exhausted state. If the party survives, mark {@b one victory} and proceed to \"{@area Conclusion|0e0|x}.\""
 									]
 								},
 								{
@@ -2423,7 +2423,7 @@
 									"name": "Event 15. Divine Contention",
 									"id": "0dd",
 									"entries": [
-										"As Ebondeath's spirit departs with the {@item ruinstone|DC}, the characters gain an opportunity to strike at Ularan Mortus. Read the following aloud:",
+										"As {@creature Ebondeath|DC}'s spirit departs with the {@item ruinstone|DC}, the characters gain an opportunity to strike at Ularan Mortus. Read the following aloud:",
 										{
 											"type": "insetReadaloud",
 											"id": "0de",

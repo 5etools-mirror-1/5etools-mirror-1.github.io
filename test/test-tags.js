@@ -287,7 +287,29 @@ class ClassLinkCheck {
 }
 ClassLinkCheck.RE = /{@class (.*?)(\|(.*?))?(\|(.*?))?(\|(.*?))?(\|(.*?))?(\|(.*?))?(\|(.*?))?}/g;
 
-class ItemDataCheck {
+class GenericDataCheck {
+	static _doCheckSeeAlso ({entity, prop, propMsg, tag, file}) {
+		if (!entity[prop]) return;
+
+		const defaultSource = Parser.getTagSource(tag).toLowerCase();
+
+		const deduped = entity[prop].map(it => {
+			it = it.toLowerCase();
+			if (!it.includes("|")) it += `|${defaultSource}`;
+			return it;
+		}).unique();
+		if (deduped.length !== entity[prop].length) {
+			MSG[propMsg] += `Duplicate "${prop}" in ${file} for ${entity.source}, ${entity.name}\n`;
+		}
+
+		entity[prop].forEach(s => {
+			const url = getEncoded(s, tag);
+			if (!ALL_URLS.has(url)) MSG[propMsg] += `Missing link: ${s} in file ${file} (evaluates to "${url}") in "${prop}"\nSimilar URLs were:\n${getSimilar(url)}\n`;
+		});
+	}
+}
+
+class ItemDataCheck extends GenericDataCheck {
 	static _checkArrayDuplicates (file, name, source, arr, prop, tag) {
 		const asUrls = arr
 			.map(it => {
@@ -370,6 +392,8 @@ class ItemDataCheck {
 			}
 		}
 
+		this._doCheckSeeAlso({entity: root, prop: "seeAlsoVehicle", propMsg: "ItemDataCheck", tag: "vehicle", file});
+
 		if (root.reqAttuneTags) this._checkReqAttuneTags(file, root, name, source, "reqAttuneTags");
 		if (root.reqAttuneAltTags) this._checkReqAttuneTags(file, root, name, source, "reqAttuneAltTags");
 	}
@@ -387,7 +411,7 @@ class ItemDataCheck {
 	}
 }
 
-class ActionData {
+class ActionData extends GenericDataCheck {
 	static run () {
 		const file = `data/actions.json`;
 		const actions = require(`../${file}`);
@@ -397,21 +421,7 @@ class ActionData {
 				if (!ALL_URLS.has(url)) MSG.ActionDataCheck += `Missing link: ${it.fromVariant} in file ${file} (evaluates to "${url}")\nSimilar URLs were:\n${getSimilar(url)}\n`;
 			}
 
-			if (it.seeAlsoAction) {
-				const deduped = it.seeAlsoAction.map(it => {
-					it = it.toLowerCase();
-					if (!it.includes("|")) it += `|phb`;
-					return it;
-				}).unique();
-				if (deduped.length !== it.seeAlsoAction.length) {
-					MSG.ActionDataCheck += `Duplicate "seeAlsoAction" in ${file} for ${it.source}, ${it.name}\n`;
-				}
-
-				it.seeAlsoAction.forEach(s => {
-					const url = getEncoded(s, "action");
-					if (!ALL_URLS.has(url)) MSG.ActionDataCheck += `Missing link: ${s} in file ${file} (evaluates to "${url}") in "seeAlsoAction"\nSimilar URLs were:\n${getSimilar(url)}\n`;
-				});
-			}
+			this._doCheckSeeAlso({entity: it, prop: "seeAlsoAction", propMsg: "ActionDataCheck", tag: "action", file});
 		});
 	}
 }

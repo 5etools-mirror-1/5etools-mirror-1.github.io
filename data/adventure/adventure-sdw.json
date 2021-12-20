@@ -581,7 +581,7 @@
 									"name": "Bronze Shrine Quest",
 									"id": "02b",
 									"entries": [
-										"\"Go north along the coast and track the bronze dragon Lhammaruntosz, the Claws of the Coast, to her lair. This location looks like a bronze dragon carved into the side of a cliff overlooking the sea. Ask for a chance to worship at the shrine to Bahamut so you may receive visions of the threats facing Leilon. Report the threats you divine to the town council to collect a reward of 1,000 gp.\" If the characters undertake this quest, see \"{@adventure Bronze Shrine|SDW|2}.\""
+										"\"Go north along the coast and track the bronze dragon {@creature Lhammaruntosz|SDW}, the Claws of the Coast, to her lair. This location looks like a bronze dragon carved into the side of a cliff overlooking the sea. Ask for a chance to worship at the shrine to Bahamut so you may receive visions of the threats facing Leilon. Report the threats you divine to the town council to collect a reward of 1,000 gp.\" If the characters undertake this quest, see \"{@adventure Bronze Shrine|SDW|2}.\""
 									]
 								},
 								{
@@ -635,20 +635,20 @@
 					"width": 2560,
 					"height": 1770
 				},
-				"\"Bronze Shrine\" is balanced for characters of 10th level, though characters of 9th level can survive this quest if they are cautious and rest between encounters. Characters of any level that attempt to fight Lhammaruntosz to the death will likely meet their demise.",
+				"\"Bronze Shrine\" is balanced for characters of 10th level, though characters of 9th level can survive this quest if they are cautious and rest between encounters. Characters of any level that attempt to fight {@creature Lhammaruntosz|SDW} to the death will likely meet their demise.",
 				{
 					"type": "section",
 					"name": "Location Overview",
 					"id": "030",
 					"entries": [
-						"{@creature Lhammaruntosz|SDW}, a bronze dragon with the ability to heal quickly, spent decades defending Leilon and the surrounding area as the captain of the Scaly Eye, a fleet that battled pirates and other threats. To honor her deeds, the Swords of Leilon constructed the Bronze Shrine, a massive temple to Bahamut, god of metallic dragons, in a cliff overlooking the sea. The shrine's face is carved in Lhammaruntosz's likeness and includes quarters for the rest of the Scaly Eye and a magic statue of Bahamut, which the dragon can use to commune with the deity.",
-						"In recent decades Lhammaruntosz has retreated inside the shrine, becoming reclusive due to a attack by a disguised demon which has driven her mad. She leaves on rare occasions to hunt for food, returning as soon as possible. Members of the Scaly Eye still live within the Bronze Shrine, as Lhammaruntosz has ordered them to stay on as her guardians.",
+						"{@creature Lhammaruntosz|SDW}, a bronze dragon with the ability to heal quickly, spent decades defending Leilon and the surrounding area as the captain of the Scaly Eye, a fleet that battled pirates and other threats. To honor her deeds, the Swords of Leilon constructed the Bronze Shrine, a massive temple to Bahamut, god of metallic dragons, in a cliff overlooking the sea. The shrine's face is carved in {@creature Lhammaruntosz|SDW}'s likeness and includes quarters for the rest of the Scaly Eye and a magic statue of Bahamut, which the dragon can use to commune with the deity.",
+						"In recent decades {@creature Lhammaruntosz|SDW} has retreated inside the shrine, becoming reclusive due to a attack by a disguised demon which has driven her mad. She leaves on rare occasions to hunt for food, returning as soon as possible. Members of the Scaly Eye still live within the Bronze Shrine, as {@creature Lhammaruntosz|SDW} has ordered them to stay on as her guardians.",
 						{
 							"type": "entries",
 							"name": "Quest Goals",
 							"id": "031",
 							"entries": [
-								"To complete the Bronze Shrine Quest (see \"{@area The Quest Board|025|x}\"), adventurers must talk with Lhammaruntosz and receive a vision of the green dragon Claugiyliamatar."
+								"To complete the Bronze Shrine Quest (see \"{@area The Quest Board|025|x}\"), adventurers must talk with {@creature Lhammaruntosz|SDW} and receive a vision of the green dragon Claugiyliamatar."
 							]
 						}
 					]
@@ -676,7 +676,7 @@
 						},
 						"There are four entrances into the Bronze Shrine. The first is at the jetty ({@area area B1|03d|x}), but it may be covered by high tide when the characters arrive. While covered, a character can still see the entrance through the waves with a successful DC 15 Wisdom ({@skill Perception}) check. See {@area area B1|03d|x} for more information.",
 						"A staircase hidden by bushes at the top of the cliff leads to {@area area B5|044|x}. A character on top of the cliff with a passive Wisdom ({@skill Perception}) score of 15 or higher notices the tunnel.",
-						"A character could attempt to climb through the windows of {@area areas B7|047|x} or {@area B8|049|x}, 60 feet above the surface of the water. The windows are latched from the inside. Unlatching a window requires a successful DC 15 Dexterity check using {@item thieves' tools|PHB}. The glass in the windows has AC 13, 5 hit points, and immunity to poison and psychic damage. If Lhammaruntosz notices the characters entering her lair through the windows, she assumes they are thieves and attacks.",
+						"A character could attempt to climb through the windows of {@area areas B7|047|x} or {@area B8|049|x}, 60 feet above the surface of the water. The windows are latched from the inside. Unlatching a window requires a successful DC 15 Dexterity check using {@item thieves' tools|PHB}. The glass in the windows has AC 13, 5 hit points, and immunity to poison and psychic damage. If {@creature Lhammaruntosz|SDW} notices the characters entering her lair through the windows, she assumes they are thieves and attacks.",
 						"The final entrance to the shrine is hidden beneath the waves. A character with a passive Wisdom ({@skill Perception}) score of 18 or higher looking into the water in front of the shrine, or a character submerged beneath the water's surface, notices a 30-foot-radius tunnel opening in the cliff 50 feet below the surface of the water. This tunnel is filled with water and leads 50 feet up into {@area area B7|047|x}.",
 						{
 							"type": "entries",
@@ -719,7 +719,7 @@
 											"name": "Rage of Bahamut",
 											"id": "03a",
 											"entries": [
-												"If a creature kills Lhammaruntosz or a Scaly Eye member while inside the temple, a spectral dragon appears and attacks the creature. The dragon makes an attack roll with a +10 bonus to hit and deals 22 ({@dice 4d10}) psychic damage on a hit. After attacking once, the dragon disappears."
+												"If a creature kills {@creature Lhammaruntosz|SDW} or a Scaly Eye member while inside the temple, a spectral dragon appears and attacks the creature. The dragon makes an attack roll with a +10 bonus to hit and deals 22 ({@dice 4d10}) psychic damage on a hit. After attacking once, the dragon disappears."
 											]
 										},
 										{
@@ -782,8 +782,8 @@
 											"name": "Scaly Eye Members",
 											"id": "03e",
 											"entries": [
-												"Members of the Scaly Eye in the shrine are loyal to and worried for Lhammaruntosz, or Mother Wyrm, as they call her. Most of the dragon's followers have left the shrine or died of old age, leaving only a few guardians, mostly older humans and a few dwarves and elves. Members of the Scaly Eye wear faded blue tabards displaying a single staring eye weeping a spreading fan of tears, above which arches an eyebrow.",
-												"Scaly Eye members are {@creature Swashbuckler|VGM|swashbucklers} who may attack the characters when they notice them, but a successful DC 15 Charisma ({@skill Intimidation} or {@skill Persuasion}) check convinces a Scaly Eye member to stand down. If the characters can then convince a Scaly Eye member they mean no harm, the member shares all of the information in the \"{@area Location Overview|030|x}\" section except for the details about the alkilith (because they wouldn't know about the demon, only that Lhammaruntosz has been acting strange for several years, which is cause enough for concern). That member then offers to escort them through the complex, convincing other members of the Scaly Eye to not attack the characters and pointing out other hazards.",
+												"Members of the Scaly Eye in the shrine are loyal to and worried for {@creature Lhammaruntosz|SDW}, or Mother Wyrm, as they call her. Most of the dragon's followers have left the shrine or died of old age, leaving only a few guardians, mostly older humans and a few dwarves and elves. Members of the Scaly Eye wear faded blue tabards displaying a single staring eye weeping a spreading fan of tears, above which arches an eyebrow.",
+												"Scaly Eye members are {@creature Swashbuckler|VGM|swashbucklers} who may attack the characters when they notice them, but a successful DC 15 Charisma ({@skill Intimidation} or {@skill Persuasion}) check convinces a Scaly Eye member to stand down. If the characters can then convince a Scaly Eye member they mean no harm, the member shares all of the information in the \"{@area Location Overview|030|x}\" section except for the details about the alkilith (because they wouldn't know about the demon, only that {@creature Lhammaruntosz|SDW} has been acting strange for several years, which is cause enough for concern). That member then offers to escort them through the complex, convincing other members of the Scaly Eye to not attack the characters and pointing out other hazards.",
 												{
 													"type": "entries",
 													"name": "Scaly Eye Names",
@@ -819,9 +819,9 @@
 									"name": "B3. Scaly Eye Tombs",
 									"id": "042",
 									"entries": [
-										"At both ends of this hall a carving on the south wall reads, \"Silence for the fallen heroes, please.\" Ninety interment niches line the walls of this hall, each with the name of a deceased Scaly Eye member carved beneath their tomb. Whenever a Scaly Eye member dies, Lhammaruntosz carves a new niche in the wall.",
+										"At both ends of this hall a carving on the south wall reads, \"Silence for the fallen heroes, please.\" Ninety interment niches line the walls of this hall, each with the name of a deceased Scaly Eye member carved beneath their tomb. Whenever a Scaly Eye member dies, {@creature Lhammaruntosz|SDW} carves a new niche in the wall.",
 										"Telna Urkil, the {@creature ghost} of a female gnome and former Scaly Eye member, watches this area from the Ethereal Plane. If the characters display disrespectful behavior toward the interred dead, such as shouting in the hall, looking through niches for items to steal, or similar actions, Telna appears before them, uses her Horrifying Visage action, then flees.",
-										"If the characters make a gesture to honor the interred dead, such as moving through the area with purposeful silence, offering a prayer in front of a niche, leaving a small offering in the hall, or similar actions, Telna appears before them and shares her history with the characters, as well as all the information in the \"{@area Location Overview|030|x}\" section, except for the details about the alkilith. She does not know what is causing Lhammaruntosz's madness, but she does believe there is an outside force affecting the dragon. She begs the characters to find the source and destroy it or use magic to heal the dragon's mind."
+										"If the characters make a gesture to honor the interred dead, such as moving through the area with purposeful silence, offering a prayer in front of a niche, leaving a small offering in the hall, or similar actions, Telna appears before them and shares her history with the characters, as well as all the information in the \"{@area Location Overview|030|x}\" section, except for the details about the alkilith. She does not know what is causing {@creature Lhammaruntosz|SDW}'s madness, but she does believe there is an outside force affecting the dragon. She begs the characters to find the source and destroy it or use magic to heal the dragon's mind."
 									]
 								},
 								{
@@ -853,7 +853,7 @@
 											"name": "Treasure",
 											"id": "046",
 											"entries": [
-												"The treasure around the statue consists of a {@item scimitar of speed}, a {@item cloak of the manta ray}, a masterwork painting of a ship at sea set in a gold frame worth 500 gp, five white pearls worth 100 gp each, 623 pp, and 8,329 gp. If Lhammaruntosz or Scaly Eye members notice the characters carrying stolen treasure, they attack."
+												"The treasure around the statue consists of a {@item scimitar of speed}, a {@item cloak of the manta ray}, a masterwork painting of a ship at sea set in a gold frame worth 500 gp, five white pearls worth 100 gp each, 623 pp, and 8,329 gp. If {@creature Lhammaruntosz|SDW} or Scaly Eye members notice the characters carrying stolen treasure, they attack."
 											]
 										}
 									]
@@ -888,14 +888,14 @@
 												"Two great circular windows in this chamber look out on the ocean, the sea air causing a crust of green barnacles to grow around the glass of the southernmost pane. Before that window sits a great dragon, her scales a deep bronze. Her eyes are wide and wild as she stares at the ocean."
 											]
 										},
-										"The barnacles on the window are actually a disguised {@creature alkilith|MTF} whose False Appearance feature makes it appear to be barnacles instead of a fungus (see {@adventure appendix A|SDW|8}). Lhammaruntosz has been in the presence of the alkilith for so long that her madness does not wane if she leaves the creature's presence. When she looks out the alkilith's window, she experiences hallucinations of her friends dying, her enemies triumphing, and other unspeakable horrors.",
+										"The barnacles on the window are actually a disguised {@creature alkilith|MTF} whose False Appearance feature makes it appear to be barnacles instead of a fungus (see {@adventure appendix A|SDW|8}). {@creature Lhammaruntosz|SDW} has been in the presence of the alkilith for so long that her madness does not wane if she leaves the creature's presence. When she looks out the alkilith's window, she experiences hallucinations of her friends dying, her enemies triumphing, and other unspeakable horrors.",
 										"{@creature Lhammaruntosz|SDW} is an {@creature adult bronze dragon}, with the following additional features that increase her challenge rating to 16 (15,000 XP):",
 										{
 											"type": "entries",
 											"name": "Innate Spellcasting",
 											"id": "04b",
 											"entries": [
-												"Lhammaruntosz's spellcasting ability is Charisma (spell save DC 17). She can innately cast the following spells, requiring no material components:",
+												"{@creature Lhammaruntosz|SDW}'s spellcasting ability is Charisma (spell save DC 17). She can innately cast the following spells, requiring no material components:",
 												"1/day each: {@spell create food and water}, {@spell detect thoughts}, {@spell fog cloud}, {@spell speak with animals}"
 											]
 										},
@@ -904,7 +904,7 @@
 											"name": "Regeneration",
 											"id": "04c",
 											"entries": [
-												"Lhammaruntosz regains 5 hit points at the start of her turn."
+												"{@creature Lhammaruntosz|SDW} regains 5 hit points at the start of her turn."
 											]
 										},
 										{
@@ -912,7 +912,7 @@
 											"name": "Spellcasting",
 											"id": "04d",
 											"entries": [
-												"Lhammaruntosz is an 8th-level spellcaster. Her spellcasting ability is Charisma (spell save DC 17; +9 to hit with spell attacks). She has the following sorcerer spells prepared:",
+												"{@creature Lhammaruntosz|SDW} is an 8th-level spellcaster. Her spellcasting ability is Charisma (spell save DC 17; +9 to hit with spell attacks). She has the following sorcerer spells prepared:",
 												{
 													"type": "list",
 													"style": "list-hang-notitle",
@@ -924,10 +924,10 @@
 														"4th level (2 slots): {@spell dimension door}, {@spell stoneskin}"
 													]
 												},
-												"When the dragon notices the characters, she begins muttering out loud to herself, wondering if the characters are intruders or friends. Each round, a character must speak with Lhammaruntosz as an action, and succeed on a DC 18 Charisma ({@skill Persuasion}) check to keep her from attacking. If the characters fail a check, attack the dragon or the alkilith, or the initiative count reaches 0 and no character has successfully made the check that round, Lhammaruntosz attacks.",
+												"When the dragon notices the characters, she begins muttering out loud to herself, wondering if the characters are intruders or friends. Each round, a character must speak with {@creature Lhammaruntosz|SDW} as an action, and succeed on a DC 18 Charisma ({@skill Persuasion}) check to keep her from attacking. If the characters fail a check, attack the dragon or the alkilith, or the initiative count reaches 0 and no character has successfully made the check that round, {@creature Lhammaruntosz|SDW} attacks.",
 												"A character who succeeds on a DC 20 Intelligence ({@skill Arcana}) check knows the barnacles are a madness-inducing demon called an alkilith.",
-												"The characters can alleviate Lhammaruntosz of her madness temporarily by casting {@spell calm emotions}, which suppresses it. However, a greater restoration spell is required to cure her permanently unless the characters manage to destroy the alkilith, which also cures the dragon's madness. When Lhammaruntosz's madness is cured, she immediately falls {@condition unconscious} for 5 minutes while her mind heals.",
-												"If the characters cure Lhammaruntosz and the alkilith is still alive, it attacks, fighting to the death."
+												"The characters can alleviate {@creature Lhammaruntosz|SDW} of her madness temporarily by casting {@spell calm emotions}, which suppresses it. However, a greater restoration spell is required to cure her permanently unless the characters manage to destroy the alkilith, which also cures the dragon's madness. When {@creature Lhammaruntosz|SDW}'s madness is cured, she immediately falls {@condition unconscious} for 5 minutes while her mind heals.",
+												"If the characters cure {@creature Lhammaruntosz|SDW} and the alkilith is still alive, it attacks, fighting to the death."
 											]
 										}
 									]
@@ -939,26 +939,26 @@
 							"name": "Lhammaruntosz's Thanks",
 							"id": "04e",
 							"entries": [
-								"If the characters save Lhammaruntosz, she thanks them when she wakes. The dragon is restored to her noble self. She tells the characters that they must receive Bahamut's blessing as a reward for saving her and escorts them to the statue in {@area area B6|045|x}. Read the following boxed text aloud when the characters receive Bahamut's blessing:",
+								"If the characters save {@creature Lhammaruntosz|SDW}, she thanks them when she wakes. The dragon is restored to her noble self. She tells the characters that they must receive Bahamut's blessing as a reward for saving her and escorts them to the statue in {@area area B6|045|x}. Read the following boxed text aloud when the characters receive Bahamut's blessing:",
 								{
 									"type": "insetReadaloud",
 									"id": "04f",
 									"entries": [
 										"You stand at the foot of the magnificent statue of Bahamut as the Claws of the Coast softly chants a prayer in Draconic. In a flash of light you find yourself in Leilon, but the town is covered in a cloud of putrid green gas. Bloated, asphyxiated corpses lie on broken ground and dying townsfolk crawl through the streets, gasping for breath. At the center of it all stands an enormous green dragon, grinning a bloody smile as the upper half of Merrygold Brightshine's severed corpse hangs from her mouth.",
-										"In another flash of light, you are back in the statue chamber, and Lhammaruntosz has a grave look on her face. \"You must take action swiftly to save Leilon!\""
+										"In another flash of light, you are back in the statue chamber, and {@creature Lhammaruntosz|SDW} has a grave look on her face. \"You must take action swiftly to save Leilon!\""
 									]
 								},
-								"After the vision, Lhammaruntosz explains the following to the characters:",
+								"After the vision, {@creature Lhammaruntosz|SDW} explains the following to the characters:",
 								{
 									"type": "list",
 									"items": [
 										"The green dragon they saw in the vision was Claugiyliamatar, nicknamed Old Gnawbone because of her appetite for humanoid flesh.",
 										"Claugiyliamatar lives in a cave at the north end of Kryptgarden Forest, where the woods meet the Sword Mountains.",
 										"The green dragon is wicked, but she has not attacked a settlement in decades. She does not want to attract ire of the cities of the Sword Coast.",
-										"Lhammaruntosz believes there is still time to reason with the green dragon and talk her out of her course of action. If the characters can give Claugiliamatar what she wants, they should be able to stop her from destroying Leilon."
+										"{@creature Lhammaruntosz|SDW} believes there is still time to reason with the green dragon and talk her out of her course of action. If the characters can give Claugiliamatar what she wants, they should be able to stop her from destroying Leilon."
 									]
 								},
-								"Lhammaruntosz then urges the characters to go to Claugiyliamatar's lair at once (see \"{@adventure Claugiyliamatar's Lair|SDW|3}\" for more information). The bronze dragon will not travel with them, for she knows her presence would only anger Claugiyliamatar.",
+								"{@creature Lhammaruntosz|SDW} then urges the characters to go to Claugiyliamatar's lair at once (see \"{@adventure Claugiyliamatar's Lair|SDW|3}\" for more information). The bronze dragon will not travel with them, for she knows her presence would only anger Claugiyliamatar.",
 								"If the characters report their vision to the Leilon town council, the councillors also beg them to go to Claugiyliamatar's lair and speak to the green dragon.",
 								{
 									"type": "entries",
@@ -969,7 +969,7 @@
 											"name": "Treasure",
 											"id": "051",
 											"entries": [
-												"In addition to giving the characters the vision, Lhammaruntosz rewards them with their choice of her {@item scimitar of speed} or her {@item cloak of the manta ray}. If the characters have already stolen one of these items, she does not offer them a reward."
+												"In addition to giving the characters the vision, {@creature Lhammaruntosz|SDW} rewards them with their choice of her {@item scimitar of speed} or her {@item cloak of the manta ray}. If the characters have already stolen one of these items, she does not offer them a reward."
 											]
 										}
 									]

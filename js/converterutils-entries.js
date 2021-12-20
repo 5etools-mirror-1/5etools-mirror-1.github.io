@@ -16,8 +16,10 @@ class TagJsons {
 		await ItemTag.pInit();
 	}
 
-	static mutTagObject (json, {keySet, isOptimistic = true} = {}) {
+	static mutTagObject (json, {keySet, isOptimistic = true, creaturesToTag = null} = {}) {
 		TagJsons.OPTIMISTIC = isOptimistic;
+
+		const fnCreatureTagSpecific = CreatureTag.getFnTryRunSpecific(creaturesToTag);
 
 		Object.keys(json)
 			.forEach(k => {
@@ -40,6 +42,8 @@ class TagJsons {
 							obj = HazardTag.tryRun(obj);
 							obj = ChanceTag.tryRun(obj);
 							obj = DiceConvert.getTaggedEntry(obj);
+
+							if (fnCreatureTagSpecific) obj = fnCreatureTagSpecific(obj);
 
 							return obj;
 						},
@@ -154,6 +158,8 @@ class ItemTag {
 		// region Other items
 		const otherItems = standardItems.filter(it => {
 			if (toolTypes.has(it.type)) return false;
+			// Disallow specific items
+			if (it.name === "Wave" && it.source === SRC_DMG) return false;
 			// Allow all non-specific-variant DMG items
 			if (it.source === SRC_DMG && !Renderer.item.isMundane(it) && it._category !== "Specific Variant") return true;
 			// Allow "sufficiently complex name" items
@@ -304,6 +310,57 @@ class HazardTag {
 	}
 }
 HazardTag._RE_HAZARD_SEE = /\b(High Altitude|Brown Mold|Green Slime|Webs|Yellow Mold|Extreme Cold|Extreme Heat|Heavy Precipitation|Strong Wind|Desecrated Ground|Frigid Water|Quicksand|Razorvine|Slippery Ice|Thin Ice)( \(see)/gi;
+
+class CreatureTag {
+	/**
+	 * Dynamically create a walker which can be re-used.
+	 */
+	static getFnTryRunSpecific (creaturesToTag) {
+		if (!creaturesToTag?.length) return null;
+
+		// region Create a regular expression per source
+		const bySource = {};
+		creaturesToTag.forEach(({name, source}) => {
+			(bySource[source] = bySource[source] || []).push(name);
+		});
+		const res = Object.entries(bySource)
+			.mergeMap(([source, names]) => {
+				const re = new RegExp(`\\b(${names.map(it => it.escapeRegexp()).join("|")})\\b`, "gi");
+				return {[source]: re};
+			});
+		// endregion
+
+		const fnTag = strMod => {
+			Object.entries(res)
+				.forEach(([source, re]) => {
+					strMod = strMod.replace(re, (...m) => `{@creature ${m[0]}${source !== SRC_DMG ? `|${source}` : ""}}`);
+				});
+			return strMod;
+		};
+
+		return (it) => {
+			return TagJsons.WALKER.walk(
+				it,
+				{
+					string: (str) => {
+						const ptrStack = {_: ""};
+						TaggerUtils.walkerStringHandler(
+							["@creature"],
+							ptrStack,
+							0,
+							0,
+							str,
+							{
+								fnTag,
+							},
+						);
+						return ptrStack._;
+					},
+				},
+			);
+		};
+	}
+}
 
 class ChanceTag {
 	static tryRun (it) {

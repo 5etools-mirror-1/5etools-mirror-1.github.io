@@ -913,10 +913,10 @@ class LootGenUi extends BaseComponent {
 	}
 }
 LootGenUi._CHALLENGE_RATING_RANGES = {
-	0: "1\u20134",
+	0: "0\u20134",
 	5: "5\u201310",
 	11: "11\u201316",
-	17: "17\u201320",
+	17: "17+",
 };
 LootGenUi._PARTY_LOOT_LEVEL_RANGES = {
 	4: "1\u20134",

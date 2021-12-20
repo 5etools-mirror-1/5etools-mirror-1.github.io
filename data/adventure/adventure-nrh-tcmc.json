@@ -44,7 +44,7 @@
 							"name": "TPK: Total Party Kill",
 							"entries": [
 								"In solo play, there's always a chance the character can die. In the case of a single adventurer, this death results in the end of play; which isn't optimal for an afternoon of fun! One way to avoid death is to have healing readily available to the adventurer. If they're without healing, have the character find the odd {@item potion of healing} lying in a dusty crate or have them discover a special healing plant on their journey that, if eaten, puts them back to full hit points.",
-								"In the case of an untimely death, you can have a helpful NPC (like Mr. Honeycutt) save the day and revive them, or you can have them forego death saving throws and wake up as they're being dragged someplace unpleasant."
+								"In the case of an untimely death, you can have a helpful NPC (like {@creature Mr. Honeycutt|NRH-TCMC}) save the day and revive them, or you can have them forego death saving throws and wake up as they're being dragged someplace unpleasant."
 							],
 							"id": "003"
 						}
@@ -60,9 +60,9 @@
 						{
 							"type": "list",
 							"items": [
-								"Pink the Rogue receives a mysterious message to meet a \"Mr. Honeycutt\" at the central marketplace.",
-								"After hanging out in the marketplace, Pink meets Mr. Honeycutt, who asks them to find and recover the Coral Gem in the abandoned mine under Candy Mountain. Mr. Honeycutt gives Pink two ways to get there (as the DM, you may find you like a particular path, so you can choose to have Mr. Honeycutt give Pink only one option).",
-								"Path 1 is a long tunnel that has a nasty monster, Slurmy, who tries to eat Pink. Path 2 is an infiltration over the wall, past guards and into the mine.",
+								"Pink the Rogue receives a mysterious message to meet a \"{@creature Mr. Honeycutt|NRH-TCMC}\" at the central marketplace.",
+								"After hanging out in the marketplace, Pink meets {@creature Mr. Honeycutt|NRH-TCMC}, who asks them to find and recover the Coral Gem in the abandoned mine under Candy Mountain. {@creature Mr. Honeycutt|NRH-TCMC} gives Pink two ways to get there (as the DM, you may find you like a particular path, so you can choose to have {@creature Mr. Honeycutt|NRH-TCMC} give Pink only one option).",
+								"Path 1 is a long tunnel that has a nasty monster, {@creature Slurmy|NRH-TCMC}, who tries to eat Pink. Path 2 is an infiltration over the wall, past guards and into the mine.",
 								"Pink eventually gets into the abandoned mine, avoids the traps, opens the treasure box, gets past the kobolds, and recovers the gem."
 							]
 						}
@@ -107,7 +107,7 @@
 									"entries": [
 										"I know you are a NERD with a particular set of skills. Please meet me in the central marketplace this morning. I will be wearing a suit and horn-rimmed spectacles."
 									],
-									"by": "Mr. Honeycutt"
+									"by": "{@creature Mr. Honeycutt|NRH-TCMC}"
 								}
 							],
 							"id": "008"
@@ -151,7 +151,7 @@
 									"page": 4,
 									"entries": [
 										"Wererats and other good lycanthropes have long been members of the Lorekeeper Society. Being able to turn into an innocuous animal has allowed the Lorekeeper Society to remain secret for many centuries.",
-										"Mr. Honeycutt is the current Magister of the Lorekeeper Society and being a wererat lets him to keep a secretive eye on all matters\u2014big and small\u2014within Harmony."
+										"{@creature Mr. Honeycutt|NRH-TCMC} is the current Magister of the Lorekeeper Society and being a wererat lets him to keep a secretive eye on all matters\u2014big and small\u2014within Harmony."
 									],
 									"id": "00c"
 								}
@@ -169,27 +169,27 @@
 									"name": "The Proposal",
 									"page": 4,
 									"entries": [
-										"When he's sure they're alone, Mr. Honeycutt activates his {@item gem of seeing}. His spectacles glow with magic as he looks Pink up and down. He then tells Pink the following:",
+										"When he's sure they're alone, {@creature Mr. Honeycutt|NRH-TCMC} activates his {@item gem of seeing}. His spectacles glow with magic as he looks Pink up and down. He then tells Pink the following:",
 										{
 											"type": "insetReadaloud",
 											"page": 4,
 											"entries": [
 												"Forgive the scrutiny, but I needed to be sure you weren't a doppelganger. One can never be too cautious, especially in these colorless times where the very fate of Harmony hangs in the balance.",
-												"My name is Mr. Honeycutt, and I belong to the Lorekeeper Society. You haven't heard of us, but we've been watching you and right now, we need your help."
+												"My name is {@creature Mr. Honeycutt|NRH-TCMC}, and I belong to the Lorekeeper Society. You haven't heard of us, but we've been watching you and right now, we need your help."
 											],
 											"id": "00f"
 										},
-										"Honeycutt goes on to explain that the Lorekeeper Society needs the Coral Gem recovered. The Society hid the gem for safekeeping centuries ago in the catacombs under Candy Mountain\u2014a once bustling mine that's long since been abandoned\u2014but now they need the gem back. Mr. Honeycutt won't go into details about why, only that the gem is needed to solve the mystery of the color outages.",
-										"Mr. Honeycutt knows of two entrances to the catacombs and can point Pink in the direction to either path:",
+										"Honeycutt goes on to explain that the Lorekeeper Society needs the Coral Gem recovered. The Society hid the gem for safekeeping centuries ago in the catacombs under Candy Mountain\u2014a once bustling mine that's long since been abandoned\u2014but now they need the gem back. {@creature Mr. Honeycutt|NRH-TCMC} won't go into details about why, only that the gem is needed to solve the mystery of the color outages.",
+										"{@creature Mr. Honeycutt|NRH-TCMC} knows of two entrances to the catacombs and can point Pink in the direction to either path:",
 										{
 											"type": "list",
 											"items": [
-												"Hidden behind a fake wall near the central marketplace is the entrance to a secret tunnel that leads all the way to the catacombs under Candy Mountain. Mr. Honeycutt says that while this path offers a secret way into the mine, it could be perilous as it's unknown how well the tunnel has held up over the years.",
-												"At the base of Candy Mountain is the entrance to the old, abandoned mine. Mr. Honeycutt says the entire complex is surrounded by a slippery stone wall and guarded by eerie, faceless guards."
+												"Hidden behind a fake wall near the central marketplace is the entrance to a secret tunnel that leads all the way to the catacombs under Candy Mountain. {@creature Mr. Honeycutt|NRH-TCMC} says that while this path offers a secret way into the mine, it could be perilous as it's unknown how well the tunnel has held up over the years.",
+												"At the base of Candy Mountain is the entrance to the old, abandoned mine. {@creature Mr. Honeycutt|NRH-TCMC} says the entire complex is surrounded by a slippery stone wall and guarded by eerie, faceless guards."
 											]
 										},
-										"Mr. Honeycutt assumes Pink will do the job out of civic duty, but if Pink asks for monetary compensation, Mr. Honeycutt hands Pink a pouch containing 20 gp.",
-										"Unless Pink has other questions, Mr. Honeycutt gives them a {@item potion of healing} and leaves Pink to choose their path."
+										"{@creature Mr. Honeycutt|NRH-TCMC} assumes Pink will do the job out of civic duty, but if Pink asks for monetary compensation, {@creature Mr. Honeycutt|NRH-TCMC} hands Pink a pouch containing 20 gp.",
+										"Unless Pink has other questions, {@creature Mr. Honeycutt|NRH-TCMC} gives them a {@item potion of healing} and leaves Pink to choose their path."
 									],
 									"id": "00e"
 								}
@@ -204,7 +204,7 @@
 					"name": "Path 1: The Secret Tunnel",
 					"page": 5,
 					"entries": [
-						"Following Mr. Honeycutt's directions, Pink finds the dead-end alleyway. If Pink breaks through the fake wall, they see a dusty, stone staircase that descends 20 feet beneath the city, turning into a dark tunnel that leads east under Harmony. This tunnel is on average 10 feet wide and 10 feet tall and is roughly hewn from the dirt and rock. The tunnel eventually opens out into area C5a in Candy Mountain Mine (see below).",
+						"Following {@creature Mr. Honeycutt|NRH-TCMC}'s directions, Pink finds the dead-end alleyway. If Pink breaks through the fake wall, they see a dusty, stone staircase that descends 20 feet beneath the city, turning into a dark tunnel that leads east under Harmony. This tunnel is on average 10 feet wide and 10 feet tall and is roughly hewn from the dirt and rock. The tunnel eventually opens out into area C5a in Candy Mountain Mine (see below).",
 						"As Pink goes deeper along the tunnel, they can see holes in the walls and ceiling. These holes are too small for Pink to crawl into, but big enough for something unpleasant to hide in.",
 						{
 							"type": "entries",
@@ -234,11 +234,11 @@
 									"type": "insetReadaloud",
 									"page": 5,
 									"entries": [
-										"From up ahead (or is it coming from behind you?), you hear a rasping voice that says, \"Ooooh. It smells like fresh meat has come down into the darky-dark just for Slurmy to feast on.\""
+										"From up ahead (or is it coming from behind you?), you hear a rasping voice that says, \"Ooooh. It smells like fresh meat has come down into the darky-dark just for {@creature Slurmy|NRH-TCMC} to feast on.\""
 									],
 									"id": "014"
 								},
-								"{@creature Slurmy|NRH-TCMC} is a wretched, carnivorous creature with slimy, mottled green skin; spooky yellow eyes; long, hooked claws; and a mouth filled with needle-sharp fangs. Slurmy has lived here for decades, feasting on rats and other vermin."
+								"{@creature Slurmy|NRH-TCMC} is a wretched, carnivorous creature with slimy, mottled green skin; spooky yellow eyes; long, hooked claws; and a mouth filled with needle-sharp fangs. {@creature Slurmy|NRH-TCMC} has lived here for decades, feasting on rats and other vermin."
 							],
 							"id": "012"
 						},
@@ -247,7 +247,7 @@
 							"name": "Friend or Foe?",
 							"page": 5,
 							"entries": [
-								"As with anything in Harmony, the chance for friendship is possible. If Slurmy is treated with exceptional kindness, offered food, and won over with a successful DC 14 Charisma ({@skill Persuasion}) check, then a truce is possible and maybe even friendship. You can make this friendship automatic without the need for a roll, if you wish."
+								"As with anything in Harmony, the chance for friendship is possible. If {@creature Slurmy|NRH-TCMC} is treated with exceptional kindness, offered food, and won over with a successful DC 14 Charisma ({@skill Persuasion}) check, then a truce is possible and maybe even friendship. You can make this friendship automatic without the need for a roll, if you wish."
 							],
 							"id": "015"
 						},
@@ -256,7 +256,7 @@
 							"name": "Sneaky Slurmy",
 							"page": 5,
 							"entries": [
-								"If friendship isn't on the table, then Slurmy gives chase, hoping to flush Pink into a trap and gain the advantage for an easy meal.",
+								"If friendship isn't on the table, then {@creature Slurmy|NRH-TCMC} gives chase, hoping to flush Pink into a trap and gain the advantage for an easy meal.",
 								"There are two traps:",
 								{
 									"type": "list",
@@ -266,14 +266,14 @@
 											"type": "item",
 											"name": "Pit Trap",
 											"entries": [
-												"While navigating the dark tunnel and being harassed by Slurmy, Pink must make a successful DC 14 Wisdom ({@skill Perception}) check or fall into the pit, taking 3 ({@damage 1d6}) piercing damage from the spikes. Slurmy knows exactly where this pit trap is (and can easily avoid it) and cheers gleefully if Pink falls in. But if Pink manages to avoid the pit, Slurmy's curses echo through the tunnel. If Pink falls in, Slurmy waits for Pink to climb out and then attacks."
+												"While navigating the dark tunnel and being harassed by {@creature Slurmy|NRH-TCMC}, Pink must make a successful DC 14 Wisdom ({@skill Perception}) check or fall into the pit, taking 3 ({@damage 1d6}) piercing damage from the spikes. {@creature Slurmy|NRH-TCMC} knows exactly where this pit trap is (and can easily avoid it) and cheers gleefully if Pink falls in. But if Pink manages to avoid the pit, {@creature Slurmy|NRH-TCMC}'s curses echo through the tunnel. If Pink falls in, {@creature Slurmy|NRH-TCMC} waits for Pink to climb out and then attacks."
 											]
 										},
 										{
 											"type": "item",
 											"name": "Cave-In",
 											"entries": [
-												"Here, the ceiling has given away, resulting in a pile of loose boulders and treacherous footing that goes on for 50 feet. Treat the rubble as difficult terrain. Once Pink is halfway across, Slurmy attacks from a hole in the ceiling. Slurmy isn't affected by the difficult terrain and moves normally."
+												"Here, the ceiling has given away, resulting in a pile of loose boulders and treacherous footing that goes on for 50 feet. Treat the rubble as difficult terrain. Once Pink is halfway across, {@creature Slurmy|NRH-TCMC} attacks from a hole in the ceiling. {@creature Slurmy|NRH-TCMC} isn't affected by the difficult terrain and moves normally."
 											]
 										}
 									]
@@ -286,7 +286,7 @@
 							"name": "Path 2: Candy Mountain Mine",
 							"page": 6,
 							"entries": [
-								"Mr. Honeycutt's directions help Pink find Candy Mountain without much trouble. Pink can either hike through the woods or follow the main road to the entrance of the abandoned mine set into the side of the mountain face.",
+								"{@creature Mr. Honeycutt|NRH-TCMC}'s directions help Pink find Candy Mountain without much trouble. Pink can either hike through the woods or follow the main road to the entrance of the abandoned mine set into the side of the mountain face.",
 								"The following locations are keyed to the Candy Mountain Mine map:",
 								{
 									"type": "image",
@@ -413,7 +413,7 @@
 											"id": "023"
 										},
 										"The room has nothing of value in it, but if Pink makes a successful DC 12 Wisdom ({@skill Perception}) check, they discover a secret door (see \"Path 1: The Secret Tunnel,\" above) that looks like a boulder set in the wall. The secret door reveals a tunnel that leads all the way back to the city of Harmony.",
-										"If the player chose Path 2 and didn't take Path 1, let them go about 100 feet into the tunnel before reminding them that this could be the second entrance to the mine that leads back to Harmony. If they ignore that and continue, then have them encounter Slurmy and the traps before emerging near the marketplace."
+										"If the player chose Path 2 and didn't take Path 1, let them go about 100 feet into the tunnel before reminding them that this could be the second entrance to the mine that leads back to Harmony. If they ignore that and continue, then have them encounter {@creature Slurmy|NRH-TCMC} and the traps before emerging near the marketplace."
 									],
 									"id": "022"
 								},
@@ -502,8 +502,8 @@
 							"name": "Completing the Mission",
 							"page": 8,
 							"entries": [
-								"When Pink returns to Harmony, they're met by Mr. Honeycutt at the inn where Pink is staying. If Pink hands over the Coral Gem, Mr. Honeycutt breathes a sigh of relief and then shakes Pink's hand with vigor while thanking them profusely. Mr. Honeycutt invites Red to join the Lorekeeper Society. If Red accepts, Mr. Honeycutt then reaches into his satchel and gives Pink a pair of gloves of thievery (see below) with the hopes that Pink will put them to good use in the days to come. \"The battle isn't over yet,\" Mr. Honeycutt exclaims to Pink. \"There's still more work to be done before the color can come back to Harmony. The Lorekeeper Society will be in touch.\"",
-								"Mr. Honeycutt then bows and heads out the door. As he does, he flips the bartender a gold piece. Mauve does a double take then nods approvingly at Pink."
+								"When Pink returns to Harmony, they're met by {@creature Mr. Honeycutt|NRH-TCMC} at the inn where Pink is staying. If Pink hands over the Coral Gem, {@creature Mr. Honeycutt|NRH-TCMC} breathes a sigh of relief and then shakes Pink's hand with vigor while thanking them profusely. {@creature Mr. Honeycutt|NRH-TCMC} invites Red to join the Lorekeeper Society. If Red accepts, {@creature Mr. Honeycutt|NRH-TCMC} then reaches into his satchel and gives Pink a pair of gloves of thievery (see below) with the hopes that Pink will put them to good use in the days to come. \"The battle isn't over yet,\" {@creature Mr. Honeycutt|NRH-TCMC} exclaims to Pink. \"There's still more work to be done before the color can come back to Harmony. The Lorekeeper Society will be in touch.\"",
+								"{@creature Mr. Honeycutt|NRH-TCMC} then bows and heads out the door. As he does, he flips the bartender a gold piece. Mauve does a double take then nods approvingly at Pink."
 							],
 							"id": "02c"
 						}

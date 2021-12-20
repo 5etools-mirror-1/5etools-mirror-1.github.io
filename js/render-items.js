@@ -3,7 +3,8 @@ class RenderItems {
 		const [damage, damageType, propertiesTxt] = Renderer.item.getDamageAndPropertiesText(item);
 		const [typeRarityText, subTypeText, tierText] = Renderer.item.getTypeRarityAndAttunementText(item);
 
-		const renderedText = Renderer.item.getRenderedEntries(item);
+		let renderedText = Renderer.item.getRenderedEntries(item);
+		if (item.seeAlsoVehicle) renderedText += `<div>${Renderer.get().render(`{@note See also: ${item.seeAlsoVehicle.map(it => `{@vehicle ${it}}`).join(", ")}.}`)}</div>`;
 
 		const textLeft = [Parser.itemValueToFullMultiCurrency(item), Parser.itemWeightToFull(item)].filter(Boolean).join(", ").uppercaseFirst();
 		const textRight = [damage, damageType, propertiesTxt].filter(Boolean).join(" ");

@@ -811,9 +811,9 @@
 								{
 									"type": "list",
 									"items": [
-										"Grutha, the chief's wife, coming from the great hall ({@area 11|048}) to get her pet cave bear from her room (see {@area 7|040})",
+										"{@creature Grutha|TftYP}, the chief's wife, coming from the great hall ({@area 11|048}) to get her pet cave bear from her room (see {@area 7|040})",
 										"A {@creature hill giant} with four {@creature dire wolf||dire wolves} from the open yard ({@area 22|05a}) going to the barracks ({@area 4|03a})",
-										"Chief Nosnra (see {@area 11|048}) and two {@creature ogre||ogres} going to get some trophies from the chief's hall ({@area 6|03e}) to show off in the great hall",
+										"{@creature Chief Nosnra|TftYP} (see {@area 11|048}) and two {@creature ogre||ogres} going to get some trophies from the chief's hall ({@area 6|03e}) to show off in the great hall",
 										"1d4+1 young hill giants (use the {@creature orc} statistics) from the dormitory ({@area 3|039}) heading through the open yard ({@area 22|05a}) to raid the pantry ({@area 18A|055})"
 									]
 								},
@@ -1151,7 +1151,7 @@
 					"name": "5. Maids' Chamber",
 					"id": "03c",
 					"entries": [
-						"Three hill giant servants (use the {@creature ogre} statistics) are in this room, along with the usual furnishings. Only the nasty old matron, a normal {@creature hill giant}, is inclined to fight, but she dominates the others and orders them to attack if necessary. If the matron is slain, the three others cease hostilities and cooperate with the characters by describing Chief Nosnra's sanctum (areas 8, 9, and 10) and telling how to get there safely-if they are allowed to have the matron's hoard.",
+						"Three hill giant servants (use the {@creature ogre} statistics) are in this room, along with the usual furnishings. Only the nasty old matron, a normal {@creature hill giant}, is inclined to fight, but she dominates the others and orders them to attack if necessary. If the matron is slain, the three others cease hostilities and cooperate with the characters by describing {@creature Chief Nosnra|TftYP}'s sanctum (areas 8, 9, and 10) and telling how to get there safely-if they are allowed to have the matron's hoard.",
 						{
 							"type": "entries",
 							"name": "Treasure",
@@ -1184,7 +1184,7 @@
 					"name": "7. Chamber of the Chief's Wife",
 					"id": "040",
 					"entries": [
-						"Grutha, the chief's wife, is at feast in the great hall ({@area 11|048}), while her pet cave bear (use the cave bear variant with the {@creature polar bear} statistics) stays in her room. The creature acts as a guard and immediately attacks any intruder, for it can smell the person at the door. The bear makes no noise until it attacks.",
+						"{@creature Grutha|TftYP}, the chief's wife, is at feast in the great hall ({@area 11|048}), while her pet cave bear (use the cave bear variant with the {@creature polar bear} statistics) stays in her room. The creature acts as a guard and immediately attacks any intruder, for it can smell the person at the door. The bear makes no noise until it attacks.",
 						"The room has a bed, a small table, a chair, a stool, two chests, and a coffer, plus rugs, hides, and the like. The chests contain only clothing, since she is wearing her jewelry at the banquet.",
 						{
 							"type": "entries",
@@ -1274,8 +1274,8 @@
 						{
 							"type": "list",
 							"items": [
-								"Chief Nosnra fights as a {@creature frost giant} with no immunities. He has AC 17 from splint armor. The chief is seated at the head table.",
-								"Nosnra's wife, Grutha, is a {@creature hill giant}. She sits beside the chief.",
+								"{@creature Chief Nosnra|TftYP} fights as a {@creature frost giant} with no immunities. He has AC 17 from splint armor. The chief is seated at the head table.",
+								"Nosnra's wife, {@creature Grutha|TftYP}, is a {@creature hill giant}. She sits beside the chief.",
 								"The chief's cave bear (use the cave bear variant with the {@creature polar bear} statistics) is licking up spills under the head table at Nosnra's feet.",
 								"The subchief, also seated at the head table, is a hill giant that fights as a {@creature stone giant}, without Stone Camouflage. His AC is from splint armor.",
 								"A {@creature cloud giant} ambassador stands near the firepit.",
@@ -1289,7 +1289,7 @@
 							"name": "Treasure",
 							"id": "04a",
 							"entries": [
-								"Each giant wears one to four pieces of jewelry worth 250 gp each. Ogres each wear one or two pieces worth 100 gp each. The subchief, decked out for the occasion, has four pieces. Nosnra and Grutha also wear four pieces of jewelry each, worth 1,000 gp per item. The bear has a jewel-studded collar with six rubies, worth a total of 250 gp."
+								"Each giant wears one to four pieces of jewelry worth 250 gp each. Ogres each wear one or two pieces worth 100 gp each. The subchief, decked out for the occasion, has four pieces. Nosnra and {@creature Grutha|TftYP} also wear four pieces of jewelry each, worth 1,000 gp per item. The bear has a jewel-studded collar with six rubies, worth a total of 250 gp."
 							]
 						},
 						"The largest ogre has a key to the chest in {@area 21|058}."
@@ -1390,7 +1390,7 @@
 					"id": "056",
 					"entries": [
 						"A large common room in the extreme north end of the stronghold has various cots, tables, chairs, stools, and the like. It is cluttered with old clothing and junk. Six hill giant servants (use the {@creature ogre} statistics) are here, and a few are flirting with a handsome male {@creature hill giant}. The giant enters combat to show off for his admirers. He will not call for help unless his current hit points drop to less than half of his hit point maximum. On the round when this happens, he begins to shout. Some of the servants aid him if he starts to cry out, but others prefer to avoid direct conflict, perhaps taking the opportunity to hurt or disadvantage a character from the blind side.",
-						"The giant warrior is the keeper of the wolves in {@area 22|05a}. His whip is hanging beside the door in the southeast corner of this room; this whip need only be shown to the wolves to make them whimper, cower, and fall back."
+						"The giant warrior is {@creature the keeper|TftYP} of the wolves in {@area 22|05a}. His whip is hanging beside the door in the southeast corner of this room; this whip need only be shown to the wolves to make them whimper, cower, and fall back."
 					]
 				},
 				{
@@ -1527,7 +1527,7 @@
 									"type": "list",
 									"items": [
 										"Four {@creature ogre||ogres} seeking some orcs",
-										"The Keeper (see {@area 2|069}), out inspecting, accompanied by an {@creature ape} (one of his pets)",
+										"{@creature The Keeper|TftYP} (see {@area 2|069}), out inspecting, accompanied by an {@creature ape} (one of his pets)",
 										"Twelve rebel {@creature orc||orcs} out raiding for food, two armed with heavy crossbows and poisoned bolts"
 									]
 								},
@@ -1634,12 +1634,12 @@
 								"type": "internal",
 								"path": "adventure/TftYP/AtGThe-Keeper.jpg"
 							},
-							"title": "The Keeper",
+							"title": "{@creature The Keeper|TftYP}",
 							"width": 678,
 							"height": 800
 						},
-						"Residing here is the Keeper, a ghastly {@creature hill giant} (use the stone giant statistics, without Stone Camouflage) that is hunchbacked and twisted, and has only one good eye. He is thoroughly wicked, strong, and remorseless. In his lair, he is never without his two pet {@creature ape||apes} (which have 30 hit points each). One is on guard to the north of the door, the other resting on a platform built above the door.",
-						"The Keeper wears a thick chain mail shirt (accounting for his AC), and he fights with a giant-sized {@item +1 battleaxe} that gives him a +10 bonus to hit. He has a reach of 15 feet with the weapon, which deals 20 (3d8+7) slashing damage on a hit.",
+						"Residing here is {@creature the Keeper|TftYP}, a ghastly {@creature hill giant} (use the stone giant statistics, without Stone Camouflage) that is hunchbacked and twisted, and has only one good eye. He is thoroughly wicked, strong, and remorseless. In his lair, he is never without his two pet {@creature ape||apes} (which have 30 hit points each). One is on guard to the north of the door, the other resting on a platform built above the door.",
+						"{@creature The Keeper|TftYP} wears a thick chain mail shirt (accounting for his AC), and he fights with a giant-sized {@item +1 battleaxe} that gives him a +10 bonus to hit. He has a reach of 15 feet with the weapon, which deals 20 (3d8+7) slashing damage on a hit.",
 						{
 							"type": "entries",
 							"name": "Treasure",
@@ -2014,7 +2014,7 @@
 							"name": "Treasure",
 							"id": "093",
 							"entries": [
-								"This wine is a gift to Chief Nosnra, in return for his good services, from the creatures that are masterminding the attacks by the giants, although at best the characters can only guess at this fact. Due to its potency and quality, it has a market value of 500 gp per cask if characters can transport it safely out of the dungeon and back to civilization."
+								"This wine is a gift to {@creature Chief Nosnra|TftYP}, in return for his good services, from the creatures that are masterminding the attacks by the giants, although at best the characters can only guess at this fact. Due to its potency and quality, it has a market value of 500 gp per cask if characters can transport it safely out of the dungeon and back to civilization."
 							]
 						}
 					]
@@ -2485,7 +2485,7 @@
 					"name": "8. South Cavern",
 					"id": "0b7",
 					"entries": [
-						"Ogre mercenaries that serve Jarl Grugnur dwell here. There are currently six {@creature ogre||ogres} here. All fight fiercely when ordered to do so, or when they come upon intruders. Also in the place are five chests, twelve sacks, and three barrels, as well as many piles of the usual skins and hides used for beds.",
+						"Ogre mercenaries that serve {@creature Jarl Grugnur|TftYP} dwell here. There are currently six {@creature ogre||ogres} here. All fight fiercely when ordered to do so, or when they come upon intruders. Also in the place are five chests, twelve sacks, and three barrels, as well as many piles of the usual skins and hides used for beds.",
 						{
 							"type": "entries",
 							"name": "Treasure",
@@ -2588,13 +2588,13 @@
 							"width": 2500,
 							"height": 1600
 						},
-						"This place is the home of six {@creature yeti||yetis} that act as scouts for the frost giants. The yeti leader at the location marked A has a frost brand greatsword. It fights with this weapon instead of its claws, dealing 11 (2d6+4) slashing damage plus 3 (1d6) cold damage on a hit, and carving great chunks out of those held fast by his Chilling Gaze.",
+						"This place is the home of six {@creature yeti||yetis} that act as scouts for the frost giants. The {@creature yeti leader|TftYP} at the location marked A has a frost brand greatsword. It fights with this weapon instead of its claws, dealing 11 (2d6+4) slashing damage plus 3 (1d6) cold damage on a hit, and carving great chunks out of those held fast by his Chilling Gaze.",
 						{
 							"type": "entries",
 							"name": "Treasure",
 							"id": "0c3",
 							"entries": [
-								"The yeti leader has a hoard of eleven ivory tusks, each weighing 2 pounds and worth 200 gp, buried under a mound of snow."
+								"The {@creature yeti leader|TftYP} has a hoard of eleven ivory tusks, each weighing 2 pounds and worth 200 gp, buried under a mound of snow."
 							]
 						}
 					]
@@ -2937,7 +2937,7 @@
 							"name": "Treasure",
 							"id": "0d3",
 							"entries": [
-								"The fourth bag searched contains a gold-inlayed skull with a report from Chief Nosnra to Jarl Grugnur on a piece of parchment rolled up inside it. This document serves as a token of free passage to the hall of the fire giants. The biggest hill giant knows that they are bound south to {@creature King Snurre|tftyp|King Snurre's} realm after seeing the jarl, intending to take a message to the fire giant king."
+								"The fourth bag searched contains a gold-inlayed skull with a report from {@creature Chief Nosnra|TftYP} to {@creature Jarl Grugnur|TftYP} on a piece of parchment rolled up inside it. This document serves as a token of free passage to the hall of the fire giants. The biggest hill giant knows that they are bound south to {@creature King Snurre|tftyp|King Snurre's} realm after seeing the jarl, intending to take a message to the fire giant king."
 							]
 						},
 						"In addition, each hill giant wears a fur cloak worth 1,000 gp.",
@@ -3719,7 +3719,7 @@
 					"name": "12. Audience Alcove and Throne Dais",
 					"id": "0fa",
 					"entries": [
-						"A stone outcrop partially encloses an area in the south of the jarl's cavern. A enormous ivory and bone throne, decorated with skulls, silver, and gems, rests near the south wall of this alcove. Hung behind it, spread out against the rough wall, is a white dragon hide. Before the throne on the floor is the skin of a huge polar bear. Three ivory stools are off to one side of the throne; these are the seats of the jarl's lieutenants.",
+						"A stone outcrop partially encloses an area in the south of the jarl's cavern. A enormous ivory and bone throne, decorated with skulls, silver, and gems, rests near the south wall of this alcove. Hung behind it, spread out against the rough wall, is a white dragon hide. Before the throne on the floor is the skin of a {@creature huge polar bear|TftYP}. Three ivory stools are off to one side of the throne; these are the seats of the jarl's lieutenants.",
 						{
 							"type": "entries",
 							"name": "Treasure",
@@ -3814,7 +3814,7 @@
 							"name": "19. East Chamber",
 							"id": "106",
 							"entries": [
-								"This slightly smaller area holds one {@creature frost giant}, one frost giant servant, and two young frost giants."
+								"This slightly smaller area holds one {@creature frost giant}, one {@creature frost giant servant|TftYP}, and two young frost giants."
 							]
 						}
 					]
@@ -3824,7 +3824,7 @@
 					"name": "20. Jarl's Antecavern and Trophy Hall",
 					"id": "107",
 					"entries": [
-						"Jarl Grugnur receives visitors in a chamber on the southern edge of the lower level. The eastern half of the cavern is a private audience hall, with pelts and skins on the walls and floor, a table, and four chairs. Some worthless scrolls are on the table, and on the walls of this area hang two normal shields, a heavy crossbow, two normal two-handed swords, and a pair of huge ivory tusks of no value. A few worthless furs and tapestries hang on the short sections of wall to the north. Both halves of the hall are illuminated by caged fire beetles. To the east a set of well-worn steps, each about 3 feet high, lead up to an exit screened by thick, leathery hides.",
+						"{@creature Jarl Grugnur|TftYP} receives visitors in a chamber on the southern edge of the lower level. The eastern half of the cavern is a private audience hall, with pelts and skins on the walls and floor, a table, and four chairs. Some worthless scrolls are on the table, and on the walls of this area hang two normal shields, a heavy crossbow, two normal two-handed swords, and a pair of huge ivory tusks of no value. A few worthless furs and tapestries hang on the short sections of wall to the north. Both halves of the hall are illuminated by caged fire beetles. To the east a set of well-worn steps, each about 3 feet high, lead up to an exit screened by thick, leathery hides.",
 						{
 							"type": "image",
 							"href": {
@@ -3901,8 +3901,8 @@
 								"The western part of this chamber contains a huge table, four chairs, three wardrobes, five chests, five trunks, and seven coffers. The walls are hung with heavy tapestries and various pelts and skins, all of no particular worth."
 							]
 						},
-						"Jarl Grugnur (use the {@creature cloud giant} statistics, plus immunity to cold damage but without Keen Smell and Innate Spellcasting) sits at the table in his chain mail jack with his {@item arrow-catching shield} nearby (AC 18, or AC 20 against ranged attacks, with his shield; AC 16 without it). At his hip is his +2 longsword. The jarl has a +14 bonus to hit with the weapon and deals 23 (3d8+10) slashing damage on a hit. In his hand is a platinum drinking horn set with eight gems.",
-						"Across the table is Estia, his lady (use the {@creature cloud giant} statistics, altered as for Grugnur), a fierce beauty with a cloak of saber-tooth tiger hide about her and an iron {@item +2 morningstar} at her hip. On the table in front of her is a gold flagon set with eight gems (1,200 gp).",
+						"{@creature Jarl Grugnur|TftYP} (use the {@creature cloud giant} statistics, plus immunity to cold damage but without Keen Smell and Innate Spellcasting) sits at the table in his chain mail jack with his {@item arrow-catching shield} nearby (AC 18, or AC 20 against ranged attacks, with his shield; AC 16 without it). At his hip is his +2 longsword. The jarl has a +14 bonus to hit with the weapon and deals 23 (3d8+10) slashing damage on a hit. In his hand is a platinum drinking horn set with eight gems.",
+						"Across the table is {@creature Estia|TftYP}, his lady (use the {@creature cloud giant} statistics, altered as for Grugnur), a fierce beauty with a cloak of saber-tooth tiger hide about her and an iron {@item +2 morningstar} at her hip. On the table in front of her is a gold flagon set with eight gems (1,200 gp).",
 						"Two {@creature winter wolf||winter wolves} are crouched under the table.",
 						{
 							"type": "entries",
@@ -4232,7 +4232,7 @@
 								"type": "internal",
 								"path": "adventure/TftYP/AtGKing-Snurre.jpg"
 							},
-							"title": "King Snurre",
+							"title": "{@creature King Snurre|TftYP}",
 							"width": 325,
 							"height": 800
 						},
@@ -4446,7 +4446,7 @@
 					"id": "136",
 					"entries": [
 						"A corridor heads westward from the pillared hallway. The corridor and the chamber beyond contain furnishings of various sizes. The smallest of them are a table, a plush chair with a footstool, and a couch. Other items are more or less human-sized, including a long table, two benches, two chairs, and twelve chests. Finally, there are four huge chairs, a table, and a footstool sized for giants. Rugs on the floor, tapestries on the walls, and bronze cressets with flaming torches complete the decor.",
-						"Eight {@creature gnoll} servants/bodyguards are lounging in this area, awaiting orders. They obey only the commands of {@creature King Snurre|tftyp}, Queen Frupy, or the Advisor-who is is a grossly fat but very strong and quite fast renegade mountain dwarf named Obmi (see {@area 12A|138}).",
+						"Eight {@creature gnoll} servants/bodyguards are lounging in this area, awaiting orders. They obey only the commands of {@creature King Snurre|tftyp}, Queen Frupy, or the Advisor-who is is a grossly fat but very strong and quite fast renegade mountain dwarf named {@creature Obmi|TftYP} (see {@area 12A|138}).",
 						{
 							"type": "entries",
 							"name": "Treasure",
@@ -4462,26 +4462,26 @@
 					"name": "12A. Obmi's Study",
 					"id": "138",
 					"entries": [
-						"The door to this study appears to be locked from the outside, suggesting that the place is vacant (Obmi is very clever). He can see through the door by means of a peephole, and if he sees intruders who are battling the gnolls and winning he will yell for them to help him, claiming to be a victim and a prisoner of the giants.",
-						"In fact, at first sight, this chamber appears to be a cell rather than a truly comfortable study. Obmi is at work in the room, poring over several scrolls atop his plain wooden desk, searching for solutions for the problems besetting his King. The dwarf has been Snurre's advisor for twenty-five years, having spent five years as a slave before that. A case against the north wall contains various maps, scrolls, and papers, all written in Giant or Dwarvish.",
+						"The door to this study appears to be locked from the outside, suggesting that the place is vacant ({@creature Obmi|TftYP} is very clever). He can see through the door by means of a peephole, and if he sees intruders who are battling the gnolls and winning he will yell for them to help him, claiming to be a victim and a prisoner of the giants.",
+						"In fact, at first sight, this chamber appears to be a cell rather than a truly comfortable study. {@creature Obmi|TftYP} is at work in the room, poring over several scrolls atop his plain wooden desk, searching for solutions for the problems besetting his King. The dwarf has been Snurre's advisor for twenty-five years, having spent five years as a slave before that. A case against the north wall contains various maps, scrolls, and papers, all written in Giant or Dwarvish.",
 						{
 							"type": "image",
 							"href": {
 								"type": "internal",
 								"path": "adventure/TftYP/AtGObmi.jpg"
 							},
-							"title": "Obmi",
+							"title": "{@creature Obmi|TftYP}",
 							"width": 831,
 							"height": 800
 						},
-						"If he finds himself at a disadvantage, Obmi (use the {@creature assassin} statistics, with 16 Strength and Charisma and the ability to make three melee attacks using Multiattack) tells the characters that the giants have held him-a prince of his people-captive for ten years, trying to trick information out of him or to subvert his loyalty to dwarfdom when torture failed. He further claims that several humans in black robes aid the giants in their questioning. Finally, he asks to be allowed his armor and weapons in order to gain sweet revenge upon Snurre, and he claims to know exactly where the king will be.",
-						"While in his study, Obmi has only a studded leather jacket and a long knife (the equivalent of a shortsword, coated with one dose of the poison noted in the assassin statistics). If worst comes to worst, he bolts for room 12B and bars the door once he is inside.",
+						"If he finds himself at a disadvantage, {@creature Obmi|TftYP} (use the {@creature assassin} statistics, with 16 Strength and Charisma and the ability to make three melee attacks using Multiattack) tells the characters that the giants have held him-a prince of his people-captive for ten years, trying to trick information out of him or to subvert his loyalty to dwarfdom when torture failed. He further claims that several humans in black robes aid the giants in their questioning. Finally, he asks to be allowed his armor and weapons in order to gain sweet revenge upon Snurre, and he claims to know exactly where the king will be.",
+						"While in his study, {@creature Obmi|TftYP} has only a studded leather jacket and a long knife (the equivalent of a shortsword, coated with one dose of the poison noted in the assassin statistics). If worst comes to worst, he bolts for room 12B and bars the door once he is inside.",
 						{
 							"type": "entries",
 							"name": "Treasure",
 							"id": "139",
 							"entries": [
-								"Obmi uses a plain wooden box as a footstool. It seemingly holds only old clothes of his-but beneath a false bottom, which requires a successful DC 15 Wisdom (Perception) check to find, some gems are hidden: two worth 500 gp each, eight worth 100 gp each, twenty-three worth 50 gp each, forty-one worth 10 gp each, and eighteen worth 5 gp each."
+								"{@creature Obmi|TftYP} uses a plain wooden box as a footstool. It seemingly holds only old clothes of his-but beneath a false bottom, which requires a successful DC 15 Wisdom (Perception) check to find, some gems are hidden: two worth 500 gp each, eight worth 100 gp each, twenty-three worth 50 gp each, forty-one worth 10 gp each, and eighteen worth 5 gp each."
 							]
 						}
 					]
@@ -4491,14 +4491,14 @@
 					"name": "12B. Obmi's Bedchamber",
 					"id": "13a",
 					"entries": [
-						"In a larger chamber adjacent to his study, the renegade dwarf has a soft bed, a small stand, a table and chair, a cabinet, two iron chests, and an arming rack. His {@item dwarven plate} and {@item +1 shield} (AC 20, or AC 23 with his shield) are laid on the rack near the door, and his {@item +1 battleaxe} and {@item +1 warhammer} (each deals 1d8+4 damage in Obmi's hands) hang on the wall above. Underneath the armor are his {@item gauntlets of ogre power} (giving him an additional +1 to attack and damage rolls with melee weapons). His {@item ring of invisibility} is on a small stand near his bed.",
-						"Upon entering the room Obmi will palm the ring, don the armor, put on the gauntlets, thong the axe to his belt, heft the hammer, and grab the shield. At the first good opportunity he will attack the party and raise a cry for help, but he will do so only when he knows help will be able to come. He knows a bit about the drow, and he will bargain with that information, or anything else, to save his life. If offered no quarter, he will fight to the very end.",
+						"In a larger chamber adjacent to his study, the renegade dwarf has a soft bed, a small stand, a table and chair, a cabinet, two iron chests, and an arming rack. His {@item dwarven plate} and {@item +1 shield} (AC 20, or AC 23 with his shield) are laid on the rack near the door, and his {@item +1 battleaxe} and {@item +1 warhammer} (each deals 1d8+4 damage in {@creature Obmi|TftYP}'s hands) hang on the wall above. Underneath the armor are his {@item gauntlets of ogre power} (giving him an additional +1 to attack and damage rolls with melee weapons). His {@item ring of invisibility} is on a small stand near his bed.",
+						"Upon entering the room {@creature Obmi|TftYP} will palm the ring, don the armor, put on the gauntlets, thong the axe to his belt, heft the hammer, and grab the shield. At the first good opportunity he will attack the party and raise a cry for help, but he will do so only when he knows help will be able to come. He knows a bit about the drow, and he will bargain with that information, or anything else, to save his life. If offered no quarter, he will fight to the very end.",
 						{
 							"type": "entries",
 							"name": "Treasure",
 							"id": "13b",
 							"entries": [
-								"In addition to Obmi's magical gear, both of the iron chests contain valuables. One chest holds 900 gp. The other holds 100 pp and a bejeweled silver ewer and silver bowl (each item worth 500 gp)."
+								"In addition to {@creature Obmi|TftYP}'s magical gear, both of the iron chests contain valuables. One chest holds 900 gp. The other holds 100 pp and a bejeweled silver ewer and silver bowl (each item worth 500 gp)."
 							]
 						}
 					]
@@ -4661,7 +4661,7 @@
 					"name": "23. Kennel Keeper's Quarters",
 					"id": "14e",
 					"entries": [
-						"Herein dwell the Keeper and his mate, two {@creature fire giant||fire giants} who will rush to the aid of their charges if they hear a commotion outside. Their chamber contains a large bed, a table, two chairs, a bench, a chest, a cabinet, three barrels (beer, mead, and ale), two buckets (his and hers), and a crate (holding dried meat for the hounds). Burning torches light the place. Pegs on the walls hold wearing apparel and the giants' bags. A shield, a battleaxe, and a javelin lean against the wall to the north. Hides and pelts decorate the floor and walls, and a number of skins and furs are heaped on the bed and the bench.",
+						"Herein dwell {@creature the Keeper|TftYP} and his mate, two {@creature fire giant||fire giants} who will rush to the aid of their charges if they hear a commotion outside. Their chamber contains a large bed, a table, two chairs, a bench, a chest, a cabinet, three barrels (beer, mead, and ale), two buckets (his and hers), and a crate (holding dried meat for the hounds). Burning torches light the place. Pegs on the walls hold wearing apparel and the giants' bags. A shield, a battleaxe, and a javelin lean against the wall to the north. Hides and pelts decorate the floor and walls, and a number of skins and furs are heaped on the bed and the bench.",
 						{
 							"type": "entries",
 							"name": "Treasure",
@@ -4916,9 +4916,9 @@
 					"name": "4. Storage Room",
 					"id": "162",
 					"entries": [
-						"This room, illuminated by four torches set in wall cressets, has been cleaned out to serve as quarters for four {@creature hill giant||hill giants}. If they survived or escaped the assault on the steading, Chief Nosnra and his wife are among the occupants.",
+						"This room, illuminated by four torches set in wall cressets, has been cleaned out to serve as quarters for four {@creature hill giant||hill giants}. If they survived or escaped the assault on the steading, {@creature Chief Nosnra|TftYP} and his wife are among the occupants.",
 						"If only ordinary hill giants are here, the room contains nothing more than four heaps of skins for bedding, a table, and two chests.",
-						"If Nosnra and Grutha are present, the place has two cots, two heaps of skins, a trunk, a chain, a table, and two chests.",
+						"If Nosnra and {@creature Grutha|TftYP} are present, the place has two cots, two heaps of skins, a trunk, a chain, a table, and two chests.",
 						{
 							"type": "entries",
 							"name": "Treasure",
@@ -5338,7 +5338,7 @@
 					"name": "13. Guest Chamber",
 					"id": "187",
 					"entries": [
-						"If Jarl Grugnur and his lady, Estia, survived the assault on the glacial rift, they will be sequestered in this chamber, accompanied by a {@creature frost giant} that serves as a door guard. If the jarl and his lady are not present, the room contains two frost giants, recently arrived messengers.",
+						"If {@creature Jarl Grugnur|TftYP} and his lady, {@creature Estia|TftYP}, survived the assault on the glacial rift, they will be sequestered in this chamber, accompanied by a {@creature frost giant} that serves as a door guard. If the jarl and his lady are not present, the room contains two frost giants, recently arrived messengers.",
 						"The place is dimly lit by a few torches. It holds eight cots, a long table, two benches, two chairs, three stools, two buckets, six chests, a large box, and a cabinet. Hides on the floors and pelts on the cots help to make this place more comfortable and familiar for frost giant guests. Pegs hold clothing and three giants' bags.",
 						{
 							"type": "entries",
@@ -5576,7 +5576,7 @@
 					"id": "19b",
 					"entries": [
 						"Two {@creature fire giant||fire giants} are stationed here as a reserve on Snurre's order (acting on instructions from the drow, of course). One rests in the northeast end while the other keeps watch, patrolling between the spots marked G. Each has several rocks nearby for throwing. They have a typical giant's bag apiece, and the room also has piles of hides for bedding, a hamper or two, and some personal gear.",
-						"In a crisis situation, this is where {@creature King Snurre|tftyp}, Queen Frupy, Obmi, and other important fire giants and guests will retreat to, along with whatever valuables they can salvage."
+						"In a crisis situation, this is where {@creature King Snurre|tftyp}, Queen Frupy, {@creature Obmi|TftYP}, and other important fire giants and guests will retreat to, along with whatever valuables they can salvage."
 					]
 				},
 				{
@@ -5745,8 +5745,8 @@
 					"entries": [
 						"The arrows to the north of the entry passage on the map mark the location of a trap. A character must succeed on a DC 20 Wisdom (Perception) check to spot a tripwire made of fine spidersilk that is stretched across the entrance of the cavern. If an intruder steps on the wire, the act triggers a torrent of small iron spheres, each ¼ inch in diameter, that pour out of hidden containers on the eastern wall. These little spheres coat the floor in the final 40 feet of the passageway and the first 20 feet of the cavern itself.",
 						"If they fall, the iron balls make a loud noise, and any creature moving across the affected area must succeed on a DC 10 Dexterity saving throw or fall prone. A creature that moves through the area at half speed doesn't need to make the saving throw.",
-						"There are nine female drow in the place. Five are normal {@creature drow}, and three others are {@creature drow elite warrior||drow elite warriors}. These eight guards protect Nedylene, a {@creature drow priestess of Lolth} who is opposed to anything Eclavdra attempts. She is here to check up on her rival, and she will be suspicious of any creature entering her current abode. On the other hand, she will not be averse to seeing her rival's plans go wrong, so negotiation is a possibility.",
-						"Nedylene wields a {@item +2 whip} and carries a {@item staff of swarming insects} in addition to her other gear"
+						"There are nine female drow in the place. Five are normal {@creature drow}, and three others are {@creature drow elite warrior||drow elite warriors}. These eight guards protect {@creature Nedylene|TftYP}, a {@creature drow priestess of Lolth} who is opposed to anything Eclavdra attempts. She is here to check up on her rival, and she will be suspicious of any creature entering her current abode. On the other hand, she will not be averse to seeing her rival's plans go wrong, so negotiation is a possibility.",
+						"{@creature Nedylene|TftYP} wields a {@item +2 whip} and carries a {@item staff of swarming insects} in addition to her other gear"
 					]
 				},
 				{

@@ -25,7 +25,7 @@
 					"name": "Story Summary",
 					"page": 2,
 					"entries": [
-						"Ever jealous of the cheery dispositions and colorful deliciousness of the NERDS, Emo the beholder and his hired muscle, Mr. Greystone, have struck a blow against the NERDS' beloved city of Harmony. After years of searching, the nefarious duo have found the sacred Prismatic Well that gives Harmony its vibrant and fabulous colors. Now, with access to the Prismatic Well, Emo and Mr. Greystone have begun to leech the color from the city of Harmony. If they aren't stopped, the city will gradually turn gray, with everything eventually becoming black and white.",
+						"Ever jealous of the cheery dispositions and colorful deliciousness of the NERDS, {@creature Emo|NRH-AT} the beholder and his hired muscle, {@creature Mr. Greystone|NRH-AT}, have struck a blow against the NERDS' beloved city of Harmony. After years of searching, the nefarious duo have found the sacred Prismatic Well that gives Harmony its vibrant and fabulous colors. Now, with access to the Prismatic Well, {@creature Emo|NRH-AT} and {@creature Mr. Greystone|NRH-AT} have begun to leech the color from the city of Harmony. If they aren't stopped, the city will gradually turn gray, with everything eventually becoming black and white.",
 						"To the NERDS, the colors beginning to flicker and drain out of Harmony is an unsettling mystery. What brings the colors to Harmony is an enigma to them. All they can do is hope the power comes back on and restores the vibrancy of Harmony's colors once more.",
 						"But one group knows what's up, and that group is the Lorekeeper Society\u2014a secret society sworn to protect Harmony. The Lorekeepers know about the power of the Prismatic Well, but its true location is lost even to themselves. However, they have a way to find the well using an ancient artifact known as the Amulet of Harmony, but to activate it they need to find the six Gems of Power. Once activated, the amulet guides whoever controls it to the secret location of the Prismatic Well. But once activated, the amulet also has the power to turn off the well.",
 						"The Gems of Power were long ago hidden away for safekeeping in dungeons, forests, and towers. No one in the Lorekeeper Society knows the details of the magical beasts and traps guarding the gems, but our heroic NERDS are more than up to the challenge of restoring Harmony!"
@@ -56,8 +56,8 @@
 					"name": "Adventure Outline",
 					"page": 3,
 					"entries": [
-						"After a meeting with Mr. Honeycutt, the adventurers all realize the stakes\u2014Harmony and all of its colors are in their hands! Mr. Honeycutt gives them the Amulet of Harmony to help them find the location of the {@item Prismatic Well|NRH-AT}. The amulet leads them to the winding passageways within Mystery Mountain. Ultimately, they have a showdown with the brutish Mr. Greystone and his melancholy partner, Emo.",
-						"The party must defeat Mr. Greystone and help Emo find a home and friends. Then they can use the amulet to restore the {@item Prismatic Well|NRH-AT} to full power and head back to Harmony as heroes of the land!",
+						"After a meeting with Mr. Honeycutt, the adventurers all realize the stakes\u2014Harmony and all of its colors are in their hands! Mr. Honeycutt gives them the Amulet of Harmony to help them find the location of the {@item Prismatic Well|NRH-AT}. The amulet leads them to the winding passageways within Mystery Mountain. Ultimately, they have a showdown with the brutish {@creature Mr. Greystone|NRH-AT} and his melancholy partner, {@creature Emo|NRH-AT}.",
+						"The party must defeat {@creature Mr. Greystone|NRH-AT} and help {@creature Emo|NRH-AT} find a home and friends. Then they can use the amulet to restore the {@item Prismatic Well|NRH-AT} to full power and head back to Harmony as heroes of the land!",
 						{
 							"type": "inset",
 							"name": "Note for the Dungeon Master",
@@ -217,7 +217,7 @@
 							"name": "M1. Cave Entrance",
 							"page": 4,
 							"entries": [
-								"The entrance to Mystery Mountain is hidden behind the exposed roots of a tree that sits over the door. A character who succeeds on a DC 12 Wisdom ({@skill Perception}) roll finds the door in under five minutes. On a failure, the party must search for half an hour before discovering the door and has a 50% chance of encountering six {@creature skeleton||skeletons} on patrol for Mr. Greystone. Whoever is attuned to the {@item Amulet of Harmony|NRH-AT} has advantage on the check to notice the door.",
+								"The entrance to Mystery Mountain is hidden behind the exposed roots of a tree that sits over the door. A character who succeeds on a DC 12 Wisdom ({@skill Perception}) roll finds the door in under five minutes. On a failure, the party must search for half an hour before discovering the door and has a 50% chance of encountering six {@creature skeleton||skeletons} on patrol for {@creature Mr. Greystone|NRH-AT}. Whoever is attuned to the {@item Amulet of Harmony|NRH-AT} has advantage on the check to notice the door.",
 								"Behind the roots, the entrance is carved into the granite cliff. There are lightning bolts carved into the granite door, and it has a keyhole but no handle.",
 								{
 									"type": "entries",
@@ -227,7 +227,7 @@
 											"name": "Unlocking the Door",
 											"page": 5,
 											"entries": [
-												"The key to the door is in Mr. Greystone's pocket, so the lock must be picked with a successful DC 15 Dexterity ({@skill Sleight of Hand}) check. On a failure, the character who attempted to pick the lock takes 6 ({@damage 1d12}) lightning damage and is pushed back 5 feet.",
+												"The key to the door is in {@creature Mr. Greystone|NRH-AT}'s pocket, so the lock must be picked with a successful DC 15 Dexterity ({@skill Sleight of Hand}) check. On a failure, the character who attempted to pick the lock takes 6 ({@damage 1d12}) lightning damage and is pushed back 5 feet.",
 												"Once the door is open, the party can see a cobweb-filled tunnel leading into the darkness of Mystery Mountain."
 											],
 											"id": "017"
@@ -244,7 +244,7 @@
 							"page": 5,
 							"entries": [
 								"A noxious-smelling gas fills the tunnel ahead of this cave with hazy greenish smoke. The gas extinguishes any non-magical light. A creature that enters the gas must make a DC 13 Constitution saving throw or take 7 ({@damage 2d6}) poison damage and become {@condition blinded} for 1 minute. On a successful save, a creature takes half as much damage and isn't {@condition blinded}. A {@condition blinded} creature can make a DC 15 Constitution saving throw at the end of each of its turns, ending the blindness on a success. If another creature makes a successful DC 12 Intelligence ({@skill Medicine}) check, the {@condition blinded} creature makes their next Constitution save with advantage.",
-								"The gas is coming from a 4-foot-square wooden box sitting on a table in the center of the room. The box has five wooden levers on its side. On the box is a brass plaque that says, \"Mr. Greystone's Gaseous Box.\"",
+								"The gas is coming from a 4-foot-square wooden box sitting on a table in the center of the room. The box has five wooden levers on its side. On the box is a brass plaque that says, \"{@creature Mr. Greystone|NRH-AT}'s Gaseous Box.\"",
 								"If the correct lever is pulled, the gas stops coming from the box, and it takes about 5 minutes to dissipate from the area.",
 								"If an incorrect lever is pulled or the box takes more than 5 points of damage, it explodes. Each creature within 15 feet of it must make a DC 12 Dexterity saving throw, taking 7 ({@damage 2d6}) piercing damage on a failed save or half as much on a successful one.",
 								{
@@ -273,7 +273,7 @@
 							"name": "M3. Skeleton Room",
 							"page": 5,
 							"entries": [
-								"In this room are ten {@creature skeleton||skeletons}, all in matching coveralls with a logo on the back that reads, \"Mr. Greystone's Garden Care.\" The skeletons are standing around gardening equipment\u2014two wheelbarrows, a scythe, rakes, hoes, a pickaxe, and some pruning shears.",
+								"In this room are ten {@creature skeleton||skeletons}, all in matching coveralls with a logo on the back that reads, \"{@creature Mr. Greystone|NRH-AT}'s Garden Care.\" The skeletons are standing around gardening equipment\u2014two wheelbarrows, a scythe, rakes, hoes, a pickaxe, and some pruning shears.",
 								"The skeletons are dormant until they are attacked or until something makes a noise to alert them. The party can sneak past or sneak up to the skeletons with a successful DC 13 group Dexterity ({@skill Stealth}) check.",
 								"If the party attacks the dormant skeletons, the skeletons are surprised (see the rules for Surprise in the D&D Basic Rules) and the party has advantage on their attacks during the first round of combat.",
 								"Other than the gardening equipment, there's nothing of value in the room."
@@ -329,7 +329,7 @@
 							"name": "M5. Flumph Cloister",
 							"page": 6,
 							"entries": [
-								"This room is occupied by Maude, a {@creature bugbear chief}, and her four {@creature goon|NRH-ASS|goons}, who are poking and prodding a dozen trembling {@creature flumph||flumphs}. The bugbear and the goons are all wearing \"Mr. Greystone's Garden Care\" coveralls. There are crates with supplies and what looks like arcane lab equipment scattered about. A character who succeeds on a DC 13 Intelligence ({@skill Arcana}) check can tell that this equipment is most likely used to siphon magical energy\u2014possibly from the {@item Prismatic Well|NRH-AT}.",
+								"This room is occupied by {@creature Maude|NRH-AT}, a {@creature bugbear chief}, and her four {@creature goon|NRH-ASS|goons}, who are poking and prodding a dozen trembling {@creature flumph||flumphs}. The bugbear and the goons are all wearing \"{@creature Mr. Greystone|NRH-AT}'s Garden Care\" coveralls. There are crates with supplies and what looks like arcane lab equipment scattered about. A character who succeeds on a DC 13 Intelligence ({@skill Arcana}) check can tell that this equipment is most likely used to siphon magical energy\u2014possibly from the {@item Prismatic Well|NRH-AT}.",
 								"Maud's goons are laughing as they turn the flumphs upside-down and try to make them turn a stronger shade of purple\u2014a particularly twisted activity in these times when colors are all but gone from the world.",
 								{
 									"type": "entries",
@@ -339,7 +339,7 @@
 											"name": "Dealing with Trouble",
 											"page": 6,
 											"entries": [
-												"Maude, the bugbear chief, is charged with protecting the secret door to the {@item Prismatic Well|NRH-AT} in area M6. If the characters are getting close to the door, she commands her goons to attack. Maude is arrogant, but she isn't a dummy, and she tries to put off the party by telling them lies like:",
+												"{@creature Maude|NRH-AT}, the bugbear chief, is charged with protecting the secret door to the {@item Prismatic Well|NRH-AT} in area M6. If the characters are getting close to the door, she commands her goons to attack. {@creature Maude|NRH-AT} is arrogant, but she isn't a dummy, and she tries to put off the party by telling them lies like:",
 												{
 													"type": "list",
 													"items": [
@@ -349,7 +349,7 @@
 														"They're in the wrong place."
 													]
 												},
-												"If the adventurers show Maude the {@item Amulet of Harmony|NRH-AT}, she demands that they give it to her, saying that her boss will pay handsomely for it. If the adventurers refuse, Maude tells the goons to get it."
+												"If the adventurers show {@creature Maude|NRH-AT} the {@item Amulet of Harmony|NRH-AT}, she demands that they give it to her, saying that her boss will pay handsomely for it. If the adventurers refuse, {@creature Maude|NRH-AT} tells the goons to get it."
 											],
 											"id": "023"
 										},
@@ -363,7 +363,7 @@
 													"type": "list",
 													"items": [
 														"GuBu knows the location of the secret door in this room and will help the party as best they can. GuBu is willing to do just about anything (except for sacrificing themselves or one of their cloister mates) to get rid of the bugbears so they can go back to their idyllic underground existence.",
-														"GuBu has overheard the \"Gray Man\" talking to Maude about \"killing Emo.\" If asked about \"Emo,\" GuBu responds that Emo is a \"sad ball\" and that all the flumphs feel sad for it and hope it will get better. GuBu wonders if the sad ball would one day like to join their cloister.",
+														"GuBu has overheard the \"Gray Man\" talking to {@creature Maude|NRH-AT} about \"killing {@creature Emo|NRH-AT}.\" If asked about \"{@creature Emo|NRH-AT},\" GuBu responds that {@creature Emo|NRH-AT} is a \"sad ball\" and that all the flumphs feel sad for it and hope it will get better. GuBu wonders if the sad ball would one day like to join their cloister.",
 														"The Gray Man is scary, dangerous, and wants to \"destroy all the color.\" GuBu telepathically shudders at the thought."
 													]
 												}
@@ -401,14 +401,14 @@
 									],
 									"id": "027"
 								},
-								"The spherical monster is {@creature Emo|NRH-AT}, a {@creature beholder}. The brutish man is Mr. Greystone and the small monster with a single eye is Furzle, Mr. Greystone's {@creature nothic} assistant.",
+								"The spherical monster is {@creature Emo|NRH-AT}, a {@creature beholder}. The brutish man is {@creature Mr. Greystone|NRH-AT} and the small monster with a single eye is Furzle, {@creature Mr. Greystone|NRH-AT}'s {@creature nothic} assistant.",
 								{
 									"type": "entries",
 									"name": "Roleplaying Mr. Greystone",
 									"page": 7,
 									"entries": [
-										"Mr. Greystone makes it clear that he wants things black and white. He is sick and tired of all the \"color and variety in Harmony.\" Mr. Greystone wants to destroy the well and return things the \"good old days when things were less...colorful.\" He's grown weary of Emo's \"lack of a spine\" and would gladly sacrifice the beholder if would mean destroying the well.",
-										"If Mr. Greystone sees the {@item Amulet of Harmony|NRH-AT}, he knows that it's his ticket to a colorless world and does everything in his power to get it\u2014whether it's offering the party 2000 gp or threatening to give them all a thrashing they won't soon forget. Mr. Greystone is partial to the latter."
+										"{@creature Mr. Greystone|NRH-AT} makes it clear that he wants things black and white. He is sick and tired of all the \"color and variety in Harmony.\" {@creature Mr. Greystone|NRH-AT} wants to destroy the well and return things the \"good old days when things were less...colorful.\" He's grown weary of {@creature Emo|NRH-AT}'s \"lack of a spine\" and would gladly sacrifice the beholder if would mean destroying the well.",
+										"If {@creature Mr. Greystone|NRH-AT} sees the {@item Amulet of Harmony|NRH-AT}, he knows that it's his ticket to a colorless world and does everything in his power to get it\u2014whether it's offering the party 2000 gp or threatening to give them all a thrashing they won't soon forget. {@creature Mr. Greystone|NRH-AT} is partial to the latter."
 									],
 									"id": "028"
 								},
@@ -417,9 +417,9 @@
 									"name": "Roleplaying Emo",
 									"page": 7,
 									"entries": [
-										"Emo is a beholder that has studied the joy-inducing effects of the {@item Prismatic Well|NRH-AT} and came to the plane of Harmony to cure its melancholy. Emo believes that if they can absorb all the magical colors, then somehow their sadness will be cured, and they can live happily ever after. They don't care about Harmony and its citizens because they are very self-absorbed.",
-										"Although they are immensely powerful, Emo is not a fighter and only attacks in self-defense. However, if the party is nice to Emo and is having trouble fighting Mr. Greystone, then Emo is likely to help the party out, since Greystone has been mean to Emo.",
-										"If Emo is offered kindness and friendship\u2014such as a home within the flumph cloister\u2014they are willing to change their plan. Convincing Emo to give up their apparatus and try another way to find happiness requires a successful DC 14 Charisma ({@skill Persuasion}) check. If GuBu is present, or the characters offer Emo a home within the flumph cloister, the check is made with advantage."
+										"{@creature Emo|NRH-AT} is a beholder that has studied the joy-inducing effects of the {@item Prismatic Well|NRH-AT} and came to the plane of Harmony to cure its melancholy. {@creature Emo|NRH-AT} believes that if they can absorb all the magical colors, then somehow their sadness will be cured, and they can live happily ever after. They don't care about Harmony and its citizens because they are very self-absorbed.",
+										"Although they are immensely powerful, {@creature Emo|NRH-AT} is not a fighter and only attacks in self-defense. However, if the party is nice to {@creature Emo|NRH-AT} and is having trouble fighting {@creature Mr. Greystone|NRH-AT}, then {@creature Emo|NRH-AT} is likely to help the party out, since Greystone has been mean to {@creature Emo|NRH-AT}.",
+										"If {@creature Emo|NRH-AT} is offered kindness and friendship\u2014such as a home within the flumph cloister\u2014they are willing to change their plan. Convincing {@creature Emo|NRH-AT} to give up their apparatus and try another way to find happiness requires a successful DC 14 Charisma ({@skill Persuasion}) check. If GuBu is present, or the characters offer {@creature Emo|NRH-AT} a home within the flumph cloister, the check is made with advantage."
 									],
 									"id": "029"
 								},
@@ -428,7 +428,7 @@
 									"name": "Roleplaying Furzle",
 									"page": 7,
 									"entries": [
-										"Furzle is very loyal to Mr. Greystone (out of fear) and loves to give secret information to its master. But if Furzle becomes {@condition frightened} or is reduced to half its hit point maximum, it runs away screaming, abandoning its master. Furzle is smart and does everything it can to survive, even if that means making friends."
+										"Furzle is very loyal to {@creature Mr. Greystone|NRH-AT} (out of fear) and loves to give secret information to its master. But if Furzle becomes {@condition frightened} or is reduced to half its hit point maximum, it runs away screaming, abandoning its master. Furzle is smart and does everything it can to survive, even if that means making friends."
 									],
 									"id": "02a"
 								}
@@ -440,7 +440,7 @@
 							"name": "Harmony Restored",
 							"page": 7,
 							"entries": [
-								"If the adventurers succeed in defeating Mr. Greystone and undoing Emo's plan to absorb the colors of Harmony, they can use the {@item Amulet of Harmony|NRH-AT} to restore the {@item Prismatic Well|NRH-AT} (see \"Opening the Box\" above). If they do this, the colors of the well are dazzling as they shoot upward through the ceiling of the cavern, which glows and hums with the power of the colors.",
+								"If the adventurers succeed in defeating {@creature Mr. Greystone|NRH-AT} and undoing {@creature Emo|NRH-AT}'s plan to absorb the colors of Harmony, they can use the {@item Amulet of Harmony|NRH-AT} to restore the {@item Prismatic Well|NRH-AT} (see \"Opening the Box\" above). If they do this, the colors of the well are dazzling as they shoot upward through the ceiling of the cavern, which glows and hums with the power of the colors.",
 								{
 									"type": "entries",
 									"entries": [
@@ -449,7 +449,7 @@
 											"name": "Emo and the Flumphs",
 											"page": 8,
 											"entries": [
-												"If the adventurers convince Emo to join the flumph cloister, GuBu listens to Emo's story of being an oddball and feeling left out, and welcomes Emo into their cloister. All the flumphs turn bright shades of yellow and green, their color restored. They thank the party telepathically in a delightful chorus of gratitude."
+												"If the adventurers convince {@creature Emo|NRH-AT} to join the flumph cloister, GuBu listens to {@creature Emo|NRH-AT}'s story of being an oddball and feeling left out, and welcomes {@creature Emo|NRH-AT} into their cloister. All the flumphs turn bright shades of yellow and green, their color restored. They thank the party telepathically in a delightful chorus of gratitude."
 											],
 											"id": "02d"
 										},
@@ -482,7 +482,7 @@
 							"name": "Harmony Undone",
 							"page": 8,
 							"entries": [
-								"If the adventurers fail, Mr. Greystone either uses the {@item Amulet of Harmony|NRH-AT} to destroy the {@item Prismatic Well|NRH-AT} or has Emo figure out a way to suck all the color from the well, resulting in a black and white world devoid of joy and wonder.",
+								"If the adventurers fail, {@creature Mr. Greystone|NRH-AT} either uses the {@item Amulet of Harmony|NRH-AT} to destroy the {@item Prismatic Well|NRH-AT} or has {@creature Emo|NRH-AT} figure out a way to suck all the color from the well, resulting in a black and white world devoid of joy and wonder.",
 								"Of course, this can never happen! If all goes wrong, Mr. Honeycutt and Headmaster Gustava arrive in the nick of time to make sure that evil is defeated, Harmony is restored, and all colors once again vibrantly empower the world."
 							],
 							"id": "030"

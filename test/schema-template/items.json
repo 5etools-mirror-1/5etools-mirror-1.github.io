@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "items.json",
-	"version": "1.11.1",
+	"version": "1.11.2",
 	"type": "object",
 	"definitions": {
 		"itemData": {
@@ -413,6 +413,13 @@
 					"type": "boolean"
 				},
 				"spellScrollLevel": {"type": "integer"},
+				"seeAlsoVehicle": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"description": "UIDs of \"vehicle\"s to be linked in a \"See Also\" footnote.\nEx.: \"rowboat|gos\"."
+					}
+				},
 				"reqAttuneTags": {
 					"$ref": "util.json#/definitions/reqAttuneTags"
 				},

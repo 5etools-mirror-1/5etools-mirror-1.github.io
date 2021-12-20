@@ -105,6 +105,8 @@ class ModalFilter {
 
 	get pageFilter () { return this._pageFilter; }
 
+	get allData () { return this._allData; }
+
 	_$getWrpList () { return $(`<div class="list ui-list__wrp overflow-x-hidden overflow-y-auto h-100 min-h-0"></div>`); }
 
 	_$getColumnHeaderPreviewAll (opts) {

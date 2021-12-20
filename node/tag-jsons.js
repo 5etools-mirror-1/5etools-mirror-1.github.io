@@ -29,13 +29,15 @@ function run (args) {
 		}
 	}
 
+	const creatureList = getTaggableCreatureList(args.bestiaryFile);
+
 	files.forEach(file => {
 		console.log(`Tagging file "${file}"`);
 		const json = ut.readJson(file);
 
 		if (json instanceof Array) return;
 
-		TagJsons.mutTagObject(json);
+		TagJsons.mutTagObject(json, {creaturesToTag: creatureList});
 
 		const outPath = args.inplace ? file : file.replace("./data/", "./trash/");
 		if (!args.inplace) {
@@ -44,6 +46,21 @@ function run (args) {
 		}
 		fs.writeFileSync(outPath, CleanUtil.getCleanJson(json));
 	});
+}
+
+/**
+ * Return creatures from the provided bestiary which are one of:
+ * - A named creature
+ * - A copy of a creature
+ * - An NPC
+ * as these creatures are likely to be missed by the automated tagging during conversion.
+ */
+function getTaggableCreatureList (filename) {
+	if (!filename) return [];
+	const bestiaryJson = ut.readJson(filename);
+	return (bestiaryJson.monster || [])
+		.filter(it => it.isNamedCreature || it.isNpc || it._copy)
+		.map(it => ({name: it.name, source: it.source}));
 }
 
 function setUp () {
@@ -69,6 +86,7 @@ function loadSpells () {
  * file="./data/my-file.json"
  * filePrefix="./data/dir/"
  * inplace
+ * bestiaryFile="./data/my-file.json"
  */
 async function main () {
 	ut.ArgParser.parse();
@@ -84,6 +102,8 @@ if (typeof module !== "undefined") {
 	if (require.main === module) {
 		main().then(() => console.log("Run complete.")).catch(e => { throw e; });
 	} else {
-		module.exports = TagJsons;
+		module.exports = {
+			getTaggableCreatureList,
+		};
 	}
 }

@@ -424,7 +424,22 @@ class DiceConvert {
 					"dmg2",
 				]),
 			});
-			DiceConvert._walkerHandlers = {string: DiceConvert._walkerStringHandler.bind(DiceConvert, isTagHits)};
+			DiceConvert._walkerHandlers = {
+				string: (str) => {
+					const ptrStack = {_: ""};
+					TaggerUtils.walkerStringHandler(
+						["@dice", "@hit", "@damage", "@scaledice", "@scaledamage", "@d20"],
+						ptrStack,
+						0,
+						0,
+						str,
+						{
+							fnTag: this._walkerStringHandler.bind(this, isTagHits),
+						},
+					);
+					return ptrStack._;
+				},
+			};
 		}
 		entry = MiscUtil.copy(entry);
 		return DiceConvert._walker.walk(entry, DiceConvert._walkerHandlers);
@@ -433,14 +448,14 @@ class DiceConvert {
 	static _walkerStringHandler (isTagHits, str) {
 		if (isTagHits) {
 			// replace e.g. "+X to hit"
-			str = str.replace(/([-+])?\d+(?= to hit)/g, function (match) {
+			str = str.replace(/\b([-+])?\d+(?= to hit)\b/g, function (match) {
 				const cleanMatch = match.startsWith("+") ? match.replace("+", "") : match;
 				return `{@hit ${cleanMatch}}`;
 			});
 		}
 
 		// re-tag + format dice
-		str = str.replace(/(\s*[-+]\s*)?(([1-9]\d*)?d([1-9]\d*)(\s*?[-+×x*÷/]\s*?(\d,\d|\d)+(\.\d+)?)?)+(?:\s*\+\s*\bPB\b)?/gi, (...m) => {
+		str = str.replace(/\b(\s*[-+]\s*)?(([1-9]\d*)?d([1-9]\d*)(\s*?[-+×x*÷/]\s*?(\d,\d|\d)+(\.\d+)?)?)+(?:\s*\+\s*\bPB\b)?\b/gi, (...m) => {
 			const expanded = m[0].replace(/([^0-9d.,PB])/gi, " $1 ").replace(/\s+/g, " ");
 			return `{@dice ${expanded}}`;
 		});
