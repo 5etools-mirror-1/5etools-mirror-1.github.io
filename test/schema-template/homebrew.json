@@ -507,6 +507,9 @@
 		"recipe": {
 			"$ref": "recipes.json#/properties/recipe"
 		},
+		"recipeFluff": {
+			"$ref": "fluff-recipes.json#/properties/recipeFluff"
+		},
 		"classFeature": {
 			"$ref": "class/class.json#/properties/classFeature"
 		},
