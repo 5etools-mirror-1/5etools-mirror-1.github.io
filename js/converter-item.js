@@ -313,8 +313,11 @@ class ItemParser extends BaseParser {
 			case "axe": stats.requires = [{"axe": true}]; break;
 			case "armor": stats.requires = [{"armor": true}]; break;
 			case "bow": stats.requires = [{"bow": true}, {"crossbow": true}]; break;
+			case "bludgeoning": stats.requires = [{"dmgType": "B"}]; break;
+			case "piercing": stats.requires = [{"dmgType": "P"}]; break;
+			case "slashing": stats.requires = [{"dmgType": "S"}]; break;
 			default: {
-				stats.require = [{[genericType]: true}];
+				stats.requires = [{[genericType]: true}];
 				options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Tagline part "${genericType}" requires manual conversion`);
 				break;
 			}

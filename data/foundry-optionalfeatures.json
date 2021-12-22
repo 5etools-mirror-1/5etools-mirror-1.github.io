@@ -27,21 +27,23 @@
 		{
 			"name": "Devil's Sight",
 			"source": "PHB",
-			"actorDataMod": {
-				"attributes.senses.darkvision": [
-					{
-						"mode": "setMax",
-						"value": 120
-					}
-				],
-				"attributes.senses.special": [
-					{
-						"mode": "appendStr",
-						"joiner": ", ",
-						"str": "Devil's Sight"
-					}
-				]
-			}
+			"effects": [
+				{
+					"name": "Enhanced Vision",
+					"changes": [
+						{
+							"key": "data.attributes.senses.darkvision",
+							"mode": "OVERRIDE",
+							"value": "120"
+						},
+						{
+							"key": "data.attributes.senses.special",
+							"mode": "ADD",
+							"value": "Devil's Sight"
+						}
+					]
+				}
+			]
 		},
 		{
 			"name": "Armor of Shadows",

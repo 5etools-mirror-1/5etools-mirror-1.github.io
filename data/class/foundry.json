@@ -644,6 +644,29 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Primal Champion",
+			"source": "PHB",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"level": 20,
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "data.abilities.str.value",
+							"mode": "ADD",
+							"value": 4
+						},
+						{
+							"key": "data.abilities.con.value",
+							"mode": "ADD",
+							"value": 4
+						}
+					]
+				}
+			]
 		}
 	],
 	"subclassFeature": [
@@ -4875,6 +4898,26 @@
 					}
 				]
 			}
+		},
+		{
+			"name": "Blessing of the All Father",
+			"source": "UAGiantSoulSorcerer",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Giant Soul (UA)",
+			"subclassSource": "UAGiantSoulSorcerer",
+			"level": 18,
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "data.abilities.con.value",
+							"mode": "ADD",
+							"value": 2
+						}
+					]
+				}
+			]
 		}
 	]
 }

@@ -1404,7 +1404,7 @@ class LootGenMagicItem extends BaseComponent {
 		}
 
 		if (row.choose?.fromGeneric) {
-			const subItems = (await row.choose?.fromGeneric.pMap(nameOrUid => this._pGetMagicItemRoll_pGetItem({nameOrUid})))
+			const subItems = (await row.choose.fromGeneric.pMap(nameOrUid => this._pGetMagicItemRoll_pGetItem({nameOrUid})))
 				.map(it => it.variants.map(({specificVariant}) => specificVariant))
 				.flat();
 
@@ -1424,7 +1424,7 @@ class LootGenMagicItem extends BaseComponent {
 		}
 
 		if (row.choose?.fromGroup) {
-			const subItems = (await ((await row.choose?.fromGroup.pMap(nameOrUid => this._pGetMagicItemRoll_pGetItem({nameOrUid})))
+			const subItems = (await ((await row.choose.fromGroup.pMap(nameOrUid => this._pGetMagicItemRoll_pGetItem({nameOrUid})))
 				.pMap(it => it.items.pMap(x => this._pGetMagicItemRoll_pGetItem({nameOrUid: x})))))
 				.flat();
 

@@ -68,6 +68,23 @@
 
 // region New
 .nav2 {
+	&-list__ {
+		&label {
+			padding: 0 20px;
+		}
+
+		&disp-source {
+			display: inline-block;
+			height: 15px;
+			border-left: 1px solid;
+			position: relative;
+			border-right: 1px solid;
+			top: 2px;
+			margin-right: 7px;
+			margin-left: 4px;
+		}
+	}
+
 	&-accord__ {
 		&head {
 			padding: 3px 7px 3px 20px;

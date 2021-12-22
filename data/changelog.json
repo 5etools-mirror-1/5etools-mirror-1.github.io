@@ -1798,7 +1798,7 @@
 		"ver": "1.138.0",
 		"date": "2021-10-04",
 		"title": "Twilight Delights",
-		"txt": "- Added Domains of Delight: A Feywild Accessory <https://5etools-mirror-1.github.io/book.html#dod>\n- Added \"Toggle Spell Points Mode\" button to Classes page [under the new cog menu, above the sidebar]\n- Added \"Feature Level\" filter to Classes page\n- Added \"Lineage\" filter to Races page\n- Added \"Adult Age\" filter to Races page\n- Added \"Speed Adjustment\" filter to Items page\n- Added \"lock\" button to Bestiary Encounter Builder rows; locking a row prevents it from being randomized/adjusted away\n- Bestiary page \"Shapechanger\" filter now includes creatures with a \"Change Shape\" action\n- Added \"Breath Weapon\" filter to Bestiary\n- Added \"None [Language]\" filter to Bestiary\n- Added \"Reset All\" button to Statgen\n- Added GoS' Lizardfolk names table to Names page\n- Added OpenSearch metadata file, allowing the site to easily be added as a custom search engine [ymmv]\n- Fixed Languages page \"Has Fonts\" filter failing to include languages with generic script-based fonts (thanks @ cum pope)\n- (Fixed typos/added tags)"
+		"txt": "- Added Domains of Delight: A Feywild Accessory\n- Added \"Toggle Spell Points Mode\" button to Classes page [under the new cog menu, above the sidebar]\n- Added \"Feature Level\" filter to Classes page\n- Added \"Lineage\" filter to Races page\n- Added \"Adult Age\" filter to Races page\n- Added \"Speed Adjustment\" filter to Items page\n- Added \"lock\" button to Bestiary Encounter Builder rows; locking a row prevents it from being randomized/adjusted away\n- Bestiary page \"Shapechanger\" filter now includes creatures with a \"Change Shape\" action\n- Added \"Breath Weapon\" filter to Bestiary\n- Added \"None [Language]\" filter to Bestiary\n- Added \"Reset All\" button to Statgen\n- Added GoS' Lizardfolk names table to Names page\n- Added OpenSearch metadata file, allowing the site to easily be added as a custom search engine [ymmv]\n- Fixed Languages page \"Has Fonts\" filter failing to include languages with generic script-based fonts (thanks @ cum pope)\n- (Fixed typos/added tags)"
 	},
 	{
 		"ver": "1.138.1",
@@ -1873,5 +1873,11 @@
 		"ver": "1.145.3",
 		"date": "2021-12-19",
 		"txt": "- Applied 2021-12-13 TCE errata, which was missing from the previous update\n- Added \"See Also\" section at the bottom of Items Page vehicle entries, which links to a matching vehicle in the Vehicles page (where available)\n- Added/updated tokens to creatures either lacking them, or using \"name text on background\" as a token (thanks @ Pip)\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.146.0",
+		"date": "2021-12-22",
+		"title": "Cartography and Calculations",
+		"txt": "- Added Maps page <https://5e.tools/maps.html>, which displays maps from all adventures/books (including loaded homebrew) in one scrollable page\n- Added category names to divisions in navbar Adventures/Books sections\n- Added source color indicators to navbar Adventures/Books sections\n- Added various math functions to the dice roller (`min`, `max`, `sign`, `abs`, ...)\n- Added support for simple \"implicit amount\" modifiers to the dice roller, e.g. \"kh1\" may now be written as \"kh\"\n- Fixed dice roller throwing a console error, rather than providing user feedback, on failing to parse input\n- (Brew) Fixed Item Text Converter failing to parse bludgeoning/piercing/slashing damage type prerequisites, and failing to respect word boundaries when tagging spells\n- (Fixed typos/added tags)"
 	}
 ]

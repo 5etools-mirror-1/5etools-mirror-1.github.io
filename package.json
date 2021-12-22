@@ -1,7 +1,7 @@
 {
 	"name": "5etools",
 	"author": "TheGiddyLimit",
-	"version": "1.145.3",
+	"version": "1.146.0",
 	"license": "MIT",
 	"description": "A site dedicated to making playing games with your friends as easy as possible.",
 	"scripts": {
@@ -15,7 +15,7 @@
 		"test:styles": "stylelint scss/*.scss scss/includes/*.scss",
 		"test:data": "node test/test-all.js",
 		"test": "npm run test:js && npm run test:styles && npm run test:data",
-		"build:css": "node-sass --source-map=true --output-style=compressed scss/ -o css/",
+		"build:css": "sass --style=compressed scss/:css/",
 		"build:deploy:dev": "bash build/deploy-prep-dev.sh",
 		"build:deploy:prod": "bash build/deploy-prep-prod.sh",
 		"build:deploy:prod:cdn": "bash build/deploy-prep-prod--cdn.sh",
@@ -32,15 +32,15 @@
 	},
 	"devDependencies": {
 		"ajv": "^8.8.2",
-		"eslint": "^7.32.0",
+		"eslint": "^8.5.0",
 		"http-server": "^0.12.3",
-		"node-sass": "^5.0.0",
 		"probe-image-size": "^6.0.0",
 		"readline-sync": "^1.4.10",
+		"sass": "^1.45.0",
 		"simple-git": "2.34.2",
 		"stylelint": "^13.13.1",
 		"stylelint-config-sass-guidelines": "^8.0.0",
-		"terser": "^5.6.0-beta"
+		"terser": "^5.10.0"
 	},
 	"bugs": {
 		"url": "https://github.com/5etools-mirror-1/5etools-mirror-1.github.io/issues"

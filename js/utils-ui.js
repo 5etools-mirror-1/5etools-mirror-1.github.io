@@ -3923,19 +3923,31 @@ class ComponentUiUtil {
 	 * @param [opts] Options Object.
 	 * @param [opts.$ele] Element to use.
 	 * @param [opts.asMeta] If a meta-object should be returned containing the hook and the input.
+	 * @param [opts.displayNullAsIndeterminate]
 	 * @return {JQuery}
 	 */
 	static $getCbBool (component, prop, opts) {
 		opts = opts || {};
 
-		const $cb = (opts.$ele || $(`<input type="checkbox">`))
-			.keydown(evt => {
-				if (evt.key === "Escape") $cb.blur();
-			})
-			.change(() => component._state[prop] = $cb.prop("checked"));
-		const hook = () => $cb.prop("checked", !!component._state[prop]);
+		const cb = e_({
+			tag: "input",
+			type: "checkbox",
+			keydown: evt => {
+				if (evt.key === "Escape") cb.blur();
+			},
+			change: () => {
+				component._state[prop] = cb.checked;
+			},
+		});
+
+		const hook = () => {
+			cb.checked = !!component._state[prop];
+			if (opts.displayNullAsIndeterminate) cb.indeterminate = component._state[prop] == null;
+		};
 		component._addHookBase(prop, hook);
 		hook();
+
+		const $cb = $(cb);
 
 		return opts.asMeta ? ({$cb, unhook: () => component._removeHookBase(prop, hook)}) : $cb;
 	}

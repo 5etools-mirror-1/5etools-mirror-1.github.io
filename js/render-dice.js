@@ -3,6 +3,7 @@ Renderer.dice = {
 		name: "Avandra", // goddess of luck
 	},
 	POS_INFINITE: 100000000000000000000, // larger than this, and we start to see "e" numbers appear
+	_SYMBOL_PARSE_FAILED: Symbol("parseFailed"),
 
 	_$wrpRoll: null,
 	_$minRoll: null,
@@ -116,22 +117,36 @@ Renderer.dice = {
 			});
 		const $outRoll = $(`<div class="out-roll">`);
 		const $iptRoll = $(`<input class="ipt-roll form-control" autocomplete="off" spellcheck="false">`)
-			.on("keypress", async e => {
-				if (e.which === 13) { // return
-					await Renderer.dice.pRoll2($iptRoll.val(), {
+			.on("keypress", async evt => {
+				evt.stopPropagation();
+				if (evt.key !== "Enter") return;
+
+				const strDice = $iptRoll.val();
+				const result = await Renderer.dice.pRoll2(
+					strDice,
+					{
 						isUser: true,
 						name: "Anon",
-					});
-					$iptRoll.val("");
+					},
+				);
+				$iptRoll.val("");
+
+				if (result === Renderer.dice._SYMBOL_PARSE_FAILED) {
+					Renderer.dice._showInvalid();
+					$iptRoll.addClass("form-control--error");
 				}
-				e.stopPropagation();
-			}).on("keydown", (e) => {
+			}).on("keydown", (evt) => {
+				$iptRoll.removeClass("form-control--error");
+
 				// arrow keys only work on keydown
-				if (e.which === 38) { // up arrow
-					e.preventDefault();
+				if (evt.key === "ArrowUp") {
+					evt.preventDefault();
 					Renderer.dice._prevHistory();
-				} else if (e.which === 40) { // down arrow
-					e.preventDefault();
+					return;
+				}
+
+				if (evt.key === "ArrowDown") {
+					evt.preventDefault();
 					Renderer.dice._nextHistory();
 				}
 			});
@@ -498,6 +513,7 @@ Renderer.dice = {
 				rolledBy.label = head;
 			}
 			const wrpTree = Renderer.dice.lang.getTree3(str);
+			if (!wrpTree) return Renderer.dice._SYMBOL_PARSE_FAILED;
 			return Renderer.dice._pHandleRoll2(wrpTree, rolledBy, opts);
 		}
 	},
@@ -681,13 +697,14 @@ Renderer.dice = {
 		Renderer.dice._scrollBottom();
 	},
 
+	_showInvalid () {
+		Renderer.dice._showMessage("Invalid input! Try &quot;/help&quot;", Renderer.dice.SYSTEM_USER);
+	},
+
 	_validCommands: new Set(["/c", "/cls", "/clear"]),
 	_handleCommand (com, rolledBy) {
 		Renderer.dice._showMessage(`<span class="out-roll-item-code">${com}</span>`, rolledBy); // parrot the user's command back to them
 		const PREF_MACRO = "/macro";
-		function showInvalid () {
-			Renderer.dice._showMessage("Invalid input! Try &quot;/help&quot;", Renderer.dice.SYSTEM_USER);
-		}
 
 		function checkLength (arr, desired) {
 			return arr.length === desired;
@@ -731,6 +748,8 @@ Renderer.dice = {
 					<li>Rounding; <span class="out-roll-item-code">floor(1.5)</span>, <span class="out-roll-item-code">ceil(1.5)</span>, <span class="out-roll-item-code">round(1.5)</span></li>
 
 					<li>Average; <span class="out-roll-item-code">avg(8d6)</span></li>
+
+					<li>Other functions; <span class="out-roll-item-code">sign(1d6-3)</span>, <span class="out-roll-item-code">abs(1d6-3)</span>, ...etc.</li>
 				</ul>
 				Up and down arrow keys cycle input history.<br>
 				Anything before a colon is treated as a label (<span class="out-roll-item-code">Fireball: 8d6</span>)<br>
@@ -744,7 +763,7 @@ Use <span class="out-roll-item-code">${PREF_MACRO} list</span> to list saved mac
 		} else if (com.startsWith(PREF_MACRO)) {
 			const [_, mode, ...others] = com.split(/\s+/);
 
-			if (!["list", "add", "remove", "clear"].includes(mode)) showInvalid();
+			if (!["list", "add", "remove", "clear"].includes(mode)) Renderer.dice._showInvalid();
 			else {
 				switch (mode) {
 					case "list":
@@ -753,20 +772,20 @@ Use <span class="out-roll-item-code">${PREF_MACRO} list</span> to list saved mac
 								Renderer.dice._showMessage(`<span class="out-roll-item-code">#${name}</span> \u2014 ${Renderer.dice.storage[name]}`, Renderer.dice.SYSTEM_USER);
 							});
 						} else {
-							showInvalid();
+							Renderer.dice._showInvalid();
 						}
 						break;
 					case "add": {
 						if (checkLength(others, 2)) {
 							const [name, macro] = others;
-							if (name.includes(" ") || name.includes("#")) showInvalid();
+							if (name.includes(" ") || name.includes("#")) Renderer.dice._showInvalid();
 							else {
 								Renderer.dice.storage[name] = macro;
 								pSave()
 									.then(() => Renderer.dice._showMessage(`Saved macro <span class="out-roll-item-code">#${name}</span>`, Renderer.dice.SYSTEM_USER));
 							}
 						} else {
-							showInvalid();
+							Renderer.dice._showInvalid();
 						}
 						break;
 					}
@@ -780,7 +799,7 @@ Use <span class="out-roll-item-code">${PREF_MACRO} list</span> to list saved mac
 								Renderer.dice._showMessage(`Macro <span class="out-roll-item-code">#${others[0]}</span> not found`, Renderer.dice.SYSTEM_USER);
 							}
 						} else {
-							showInvalid();
+							Renderer.dice._showInvalid();
 						}
 						break;
 				}
@@ -795,7 +814,7 @@ Use <span class="out-roll-item-code">${PREF_MACRO} list</span> to list saved mac
 					Renderer.dice._$lastRolledBy = null;
 					break;
 			}
-		} else showInvalid();
+		} else Renderer.dice._showInvalid();
 	},
 
 	_pHandleSavedRoll (id, rolledBy, opts) {
@@ -875,7 +894,7 @@ Renderer.dice.lang = {
 
 	// region Lexer
 	_M_NUMBER_CHAR: /[0-9.]/,
-	_M_SYMBOL_CHAR: /[-+/*^=><florceidhkxunavgsmpb,]/,
+	_M_SYMBOL_CHAR: /[-+/*^=><florceidhkxunavgsmpbtqw,]/,
 
 	_M_NUMBER: /^[\d.,]+$/,
 	_lex3 (str) {
@@ -993,6 +1012,17 @@ Renderer.dice.lang = {
 			case "ceil": self.tokenStack.push(Renderer.dice.tk.CEIL); break;
 			case "round": self.tokenStack.push(Renderer.dice.tk.ROUND); break;
 			case "avg": self.tokenStack.push(Renderer.dice.tk.AVERAGE); break;
+			case "sign": self.tokenStack.push(Renderer.dice.tk.SIGN); break;
+			case "abs": self.tokenStack.push(Renderer.dice.tk.ABS); break;
+			case "cbrt": self.tokenStack.push(Renderer.dice.tk.CBRT); break;
+			case "sqrt": self.tokenStack.push(Renderer.dice.tk.SQRT); break;
+			case "exp": self.tokenStack.push(Renderer.dice.tk.EXP); break;
+			case "log": self.tokenStack.push(Renderer.dice.tk.LOG); break;
+			case "random": self.tokenStack.push(Renderer.dice.tk.RANDOM); break;
+			case "trunc": self.tokenStack.push(Renderer.dice.tk.TRUNC); break;
+			case "pow": self.tokenStack.push(Renderer.dice.tk.POW); break;
+			case "max": self.tokenStack.push(Renderer.dice.tk.MAX); break;
+			case "min": self.tokenStack.push(Renderer.dice.tk.MIN); break;
 			case "d": self.tokenStack.push(Renderer.dice.tk.DICE); break;
 			case "dh": self.tokenStack.push(Renderer.dice.tk.DROP_HIGHEST); break;
 			case "kh": self.tokenStack.push(Renderer.dice.tk.KEEP_HIGHEST); break;
@@ -1037,6 +1067,9 @@ Renderer.dice.lang = {
 			syms: lexed,
 			sym: null,
 			lastAccepted: null,
+			// Workaround for comma-separated numbers--if we're e.g. inside a dice pool, treat the commas as dice pool
+			//   separators. Otherwise, merge together adjacent numbers, to convert e.g. "1,000,000" to "1000000".
+			isIgnoreCommas: true,
 		};
 
 		this._parse3_nextSym(self);
@@ -1073,20 +1106,10 @@ Renderer.dice.lang = {
 		else throw new Error(`Unexpected end of input: Expected <code>${symbol}</code>`);
 	},
 
-	_parse3_factor (self) {
+	_parse3_factor (self, {isSilent = false} = {}) {
 		if (this._parse3_accept(self, Renderer.dice.tk.TYP_NUMBER)) {
-			// Workaround for comma-separated numbers--if we're inside a dice pool, treat the commas as dice pool separators.
-			//   Otherwise, merge together adjacent numbers.
-			let braceCount = 0;
-			self.syms.find(it => {
-				if (it.type === Renderer.dice.tk.BRACE_OPEN.type) braceCount++;
-				else if (it.type === Renderer.dice.tk.BRACE_CLOSE.type) braceCount--;
-				return it === self.sym;
-			});
-
-			if (braceCount) {
-				return new Renderer.dice.parsed.Factor(self.lastAccepted);
-			} else {
+			// Workaround for comma-separated numbers
+			if (self.isIgnoreCommas) {
 				// Combine comma-separated parts
 				const syms = [self.lastAccepted];
 				while (this._parse3_accept(self, Renderer.dice.tk.COMMA)) {
@@ -1096,6 +1119,8 @@ Renderer.dice.lang = {
 				const sym = Renderer.dice.tk.NUMBER(syms.map(it => it.value).join(""));
 				return new Renderer.dice.parsed.Factor(sym);
 			}
+
+			return new Renderer.dice.parsed.Factor(self.lastAccepted);
 		} else if (this._parse3_accept(self, Renderer.dice.tk.PB)) {
 			return new Renderer.dice.parsed.Factor(Renderer.dice.tk.PB);
 		} else if (this._parse3_accept(self, Renderer.dice.tk.SUMMON_SPELL_LEVEL)) {
@@ -1103,10 +1128,20 @@ Renderer.dice.lang = {
 		} else if (this._parse3_accept(self, Renderer.dice.tk.SUMMON_CLASS_LEVEL)) {
 			return new Renderer.dice.parsed.Factor(Renderer.dice.tk.SUMMON_CLASS_LEVEL);
 		} else if (
+			// Single-arg functions
 			this._parse3_match(self, Renderer.dice.tk.FLOOR)
 			|| this._parse3_match(self, Renderer.dice.tk.CEIL)
 			|| this._parse3_match(self, Renderer.dice.tk.ROUND)
-			|| this._parse3_match(self, Renderer.dice.tk.AVERAGE)) {
+			|| this._parse3_match(self, Renderer.dice.tk.AVERAGE)
+			|| this._parse3_match(self, Renderer.dice.tk.SIGN)
+			|| this._parse3_match(self, Renderer.dice.tk.ABS)
+			|| this._parse3_match(self, Renderer.dice.tk.CBRT)
+			|| this._parse3_match(self, Renderer.dice.tk.SQRT)
+			|| this._parse3_match(self, Renderer.dice.tk.EXP)
+			|| this._parse3_match(self, Renderer.dice.tk.LOG)
+			|| this._parse3_match(self, Renderer.dice.tk.RANDOM)
+			|| this._parse3_match(self, Renderer.dice.tk.TRUNC)
+		) {
 			const children = [];
 
 			children.push(this._parse3_nextSym(self));
@@ -1115,11 +1150,49 @@ Renderer.dice.lang = {
 			this._parse3_expect(self, Renderer.dice.tk.PAREN_CLOSE);
 
 			return new Renderer.dice.parsed.Function(children);
+		} else if (
+			// 2-arg functions
+			this._parse3_match(self, Renderer.dice.tk.POW)
+		) {
+			self.isIgnoreCommas = false;
+
+			const children = [];
+
+			children.push(this._parse3_nextSym(self));
+			this._parse3_expect(self, Renderer.dice.tk.PAREN_OPEN);
+			children.push(this._parse3_expression(self));
+			this._parse3_expect(self, Renderer.dice.tk.COMMA);
+			children.push(this._parse3_expression(self));
+			this._parse3_expect(self, Renderer.dice.tk.PAREN_CLOSE);
+
+			self.isIgnoreCommas = true;
+
+			return new Renderer.dice.parsed.Function(children);
+		} else if (
+			// N-arg functions
+			this._parse3_match(self, Renderer.dice.tk.MAX)
+			|| this._parse3_match(self, Renderer.dice.tk.MIN)
+		) {
+			self.isIgnoreCommas = false;
+
+			const children = [];
+
+			children.push(this._parse3_nextSym(self));
+			this._parse3_expect(self, Renderer.dice.tk.PAREN_OPEN);
+			children.push(this._parse3_expression(self));
+			while (this._parse3_accept(self, Renderer.dice.tk.COMMA)) children.push(this._parse3_expression(self));
+			this._parse3_expect(self, Renderer.dice.tk.PAREN_CLOSE);
+
+			self.isIgnoreCommas = true;
+
+			return new Renderer.dice.parsed.Function(children);
 		} else if (this._parse3_accept(self, Renderer.dice.tk.PAREN_OPEN)) {
 			const exp = this._parse3_expression(self);
 			this._parse3_expect(self, Renderer.dice.tk.PAREN_CLOSE);
 			return new Renderer.dice.parsed.Factor(exp, {hasParens: true});
 		} else if (this._parse3_accept(self, Renderer.dice.tk.BRACE_OPEN)) {
+			self.isIgnoreCommas = false;
+
 			const children = [];
 
 			children.push(this._parse3_expression(self));
@@ -1127,11 +1200,15 @@ Renderer.dice.lang = {
 
 			this._parse3_expect(self, Renderer.dice.tk.BRACE_CLOSE);
 
+			self.isIgnoreCommas = true;
+
 			const modPart = [];
 			this._parse3__dice_modifiers(self, modPart);
 
 			return new Renderer.dice.parsed.Pool(children, modPart[0]);
 		} else {
+			if (isSilent) return null;
+
 			if (self.sym) throw new Error(`Unexpected input: <code>${self.sym}</code>`);
 			else throw new Error(`Unexpected end of input`);
 		}
@@ -1140,7 +1217,7 @@ Renderer.dice.lang = {
 	_parse3_dice (self) {
 		const children = [];
 
-		// if we've omitting the X in XdY, add it here
+		// if we've omitted the X in XdY, add it here
 		if (this._parse3_match(self, Renderer.dice.tk.DICE)) children.push(new Renderer.dice.parsed.Factor(Renderer.dice.tk.NUMBER(1)));
 		else children.push(this._parse3_factor(self));
 
@@ -1183,13 +1260,25 @@ Renderer.dice.lang = {
 			|| this._parse3_match(self, Renderer.dice.tk.MARGIN_SUCCESS_LTEQ)
 		) {
 			const nxtSym = this._parse3_nextSym(self);
-			const nxtFactor = this._parse3_factor(self);
+			const nxtFactor = this._parse3__dice_modifiers_nxtFactor(self, nxtSym);
 
 			if (nxtSym.isSuccessMode) modsMeta.isSuccessMode = true;
 			modsMeta.mods.push({modSym: nxtSym, numSym: nxtFactor});
 		}
 
 		if (modsMeta.mods.length) children.push(modsMeta);
+	},
+
+	_parse3__dice_modifiers_nxtFactor (self, nxtSym) {
+		if (nxtSym.diceModifierImplicit == null) return this._parse3_factor(self, {isSilent: true});
+
+		const fallback = new Renderer.dice.parsed.Factor(Renderer.dice.tk.NUMBER(nxtSym.diceModifierImplicit));
+		if (self.sym == null) return fallback;
+
+		const out = this._parse3_factor(self, {isSilent: true});
+		if (out) return out;
+
+		return fallback;
 	},
 
 	_parse3_exponent (self) {
@@ -1243,6 +1332,7 @@ Renderer.dice.tk = {
 		 * @param asString
 		 * @param [opts] Options object.
 		 * @param [opts.isDiceModifier] If the token is a dice modifier, e.g. "dl"
+		 * @param [opts.diceModifierImplicit] If the dice modifier has an implicit value (e.g. "kh" is shorthand for "kh1")
 		 * @param [opts.isSuccessMode] If the token is a "success"-based dice modifier, e.g. "cs="
 		 */
 		constructor (type, value, asString, opts) {
@@ -1251,6 +1341,7 @@ Renderer.dice.tk = {
 			this.value = value;
 			this._asString = asString;
 			if (opts.isDiceModifier) this.isDiceModifier = true;
+			if (opts.diceModifierImplicit) this.diceModifierImplicit = true;
 			if (opts.isSuccessMode) this.isSuccessMode = true;
 		}
 
@@ -1289,11 +1380,22 @@ Renderer.dice.tk.FLOOR = Renderer.dice.tk._new("FLOOR", "floor");
 Renderer.dice.tk.CEIL = Renderer.dice.tk._new("CEIL", "ceil");
 Renderer.dice.tk.ROUND = Renderer.dice.tk._new("ROUND", "round");
 Renderer.dice.tk.AVERAGE = Renderer.dice.tk._new("AVERAGE", "avg");
+Renderer.dice.tk.SIGN = Renderer.dice.tk._new("SIGN", "sign");
+Renderer.dice.tk.ABS = Renderer.dice.tk._new("ABS", "abs");
+Renderer.dice.tk.CBRT = Renderer.dice.tk._new("CBRT", "cbrt");
+Renderer.dice.tk.SQRT = Renderer.dice.tk._new("SQRT", "sqrt");
+Renderer.dice.tk.EXP = Renderer.dice.tk._new("EXP", "exp");
+Renderer.dice.tk.LOG = Renderer.dice.tk._new("LOG", "log");
+Renderer.dice.tk.RANDOM = Renderer.dice.tk._new("RANDOM", "random");
+Renderer.dice.tk.TRUNC = Renderer.dice.tk._new("TRUNC", "trunc");
+Renderer.dice.tk.POW = Renderer.dice.tk._new("POW", "pow");
+Renderer.dice.tk.MAX = Renderer.dice.tk._new("MAX", "max");
+Renderer.dice.tk.MIN = Renderer.dice.tk._new("MIN", "min");
 Renderer.dice.tk.DICE = Renderer.dice.tk._new("DICE", "d");
-Renderer.dice.tk.DROP_HIGHEST = Renderer.dice.tk._new("DH", "dh", {isDiceModifier: true});
-Renderer.dice.tk.KEEP_HIGHEST = Renderer.dice.tk._new("KH", "kh", {isDiceModifier: true});
-Renderer.dice.tk.DROP_LOWEST = Renderer.dice.tk._new("DL", "dl", {isDiceModifier: true});
-Renderer.dice.tk.KEEP_LOWEST = Renderer.dice.tk._new("KL", "kl", {isDiceModifier: true});
+Renderer.dice.tk.DROP_HIGHEST = Renderer.dice.tk._new("DH", "dh", {isDiceModifier: true, diceModifierImplicit: 1});
+Renderer.dice.tk.KEEP_HIGHEST = Renderer.dice.tk._new("KH", "kh", {isDiceModifier: true, diceModifierImplicit: 1});
+Renderer.dice.tk.DROP_LOWEST = Renderer.dice.tk._new("DL", "dl", {isDiceModifier: true, diceModifierImplicit: 1});
+Renderer.dice.tk.KEEP_LOWEST = Renderer.dice.tk._new("KL", "kl", {isDiceModifier: true, diceModifierImplicit: 1});
 Renderer.dice.tk.REROLL_EXACT = Renderer.dice.tk._new("REROLL", "r", {isDiceModifier: true});
 Renderer.dice.tk.REROLL_GT = Renderer.dice.tk._new("REROLL_GT", "r>", {isDiceModifier: true});
 Renderer.dice.tk.REROLL_GTEQ = Renderer.dice.tk._new("REROLL_GTEQ", "r>=", {isDiceModifier: true});
@@ -1541,27 +1643,34 @@ Renderer.dice.parsed = {
 		_max (meta) { return this._invoke("max", meta); }
 
 		_invoke (fnName, meta) {
-			const [symFunc, symExp] = this._nodes;
+			const [symFunc] = this._nodes;
 			switch (symFunc.type) {
-				case Renderer.dice.tk.FLOOR.type: {
-					this.addToMeta(meta, "floor(");
-					const out = Math.floor(symExp[fnName](meta));
-					this.addToMeta(meta, ")");
-					return out;
-				}
-				case Renderer.dice.tk.CEIL.type: {
-					this.addToMeta(meta, "ceil(");
-					const out = Math.ceil(symExp[fnName](meta));
-					this.addToMeta(meta, ")");
-					return out;
-				}
-				case Renderer.dice.tk.ROUND.type: {
-					this.addToMeta(meta, "round(");
-					const out = Math.round(symExp[fnName](meta));
+				case Renderer.dice.tk.FLOOR.type:
+				case Renderer.dice.tk.CEIL.type:
+				case Renderer.dice.tk.ROUND.type:
+				case Renderer.dice.tk.SIGN.type:
+				case Renderer.dice.tk.CBRT.type:
+				case Renderer.dice.tk.SQRT.type:
+				case Renderer.dice.tk.EXP.type:
+				case Renderer.dice.tk.LOG.type:
+				case Renderer.dice.tk.RANDOM.type:
+				case Renderer.dice.tk.TRUNC.type:
+				case Renderer.dice.tk.POW.type:
+				case Renderer.dice.tk.MAX.type:
+				case Renderer.dice.tk.MIN.type: {
+					const [, ...symExps] = this._nodes;
+					this.addToMeta(meta, `${symFunc.toString()}(`);
+					const args = [];
+					symExps.forEach((symExp, i) => {
+						if (i !== 0) this.addToMeta(meta, `, `);
+						args.push(symExp[fnName](meta));
+					});
+					const out = Math[symFunc.toString()](...args);
 					this.addToMeta(meta, ")");
 					return out;
 				}
 				case Renderer.dice.tk.AVERAGE.type: {
+					const [, symExp] = this._nodes;
 					return symExp.avg(meta);
 				}
 				default: throw new Error(`Unimplemented!`);
@@ -1572,10 +1681,22 @@ Renderer.dice.parsed = {
 			let out;
 			const [symFunc, symExp] = this._nodes;
 			switch (symFunc.type) {
-				case Renderer.dice.tk.FLOOR.type: out = "floor"; break;
-				case Renderer.dice.tk.CEIL.type: out = "ceil"; break;
-				case Renderer.dice.tk.ROUND.type: out = "round"; break;
-				case Renderer.dice.tk.AVERAGE.type: out = "avg"; break;
+				case Renderer.dice.tk.FLOOR.type:
+				case Renderer.dice.tk.CEIL.type:
+				case Renderer.dice.tk.ROUND.type:
+				case Renderer.dice.tk.AVERAGE.type:
+				case Renderer.dice.tk.SIGN.type:
+				case Renderer.dice.tk.ABS.type:
+				case Renderer.dice.tk.CBRT.type:
+				case Renderer.dice.tk.SQRT.type:
+				case Renderer.dice.tk.EXP.type:
+				case Renderer.dice.tk.LOG.type:
+				case Renderer.dice.tk.RANDOM.type:
+				case Renderer.dice.tk.TRUNC.type:
+				case Renderer.dice.tk.POW.type:
+				case Renderer.dice.tk.MAX.type:
+				case Renderer.dice.tk.MIN.type:
+					out = symFunc.toString(); break;
 				default: throw new Error(`Unimplemented!`);
 			}
 			out += `(${symExp.toString()})`;

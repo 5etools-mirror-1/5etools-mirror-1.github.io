@@ -1,0 +1,62 @@
+@import "includes/vars";
+
+.maps {
+	.rd__wrp-map {
+		max-width: initial;
+		margin: 0;
+	}
+
+	&-menu {
+		background: $rgb-bg;
+		font-size: 1.12rem;
+		border-top: 1px solid $rgb-border-grey;
+		width: 235px;
+
+		@media only screen and (max-width: $width-screen-sm) {
+			max-height: 600px;
+		}
+
+		&__ {
+			&label-cb {
+				border-bottom: 1px solid $rgb-border-grey;
+
+				&:hover {
+					background-color: $rgb-bg--alt;
+				}
+
+				&--chapter {
+					padding-left: 20px;
+				}
+			}
+		}
+	}
+
+	&-gallery {
+		&__wrp-chapter {
+			border: 1px solid $rgb-border-grey--trans;
+			border-radius: 5px;
+		}
+	}
+}
+
+.night-mode .maps {
+	&-menu {
+		background: $rgb-bg--night;
+		border-top-color: $rgb-border-grey--trans-night;
+
+		&__label-cb {
+			border-bottom-color: $rgb-border-grey--night;
+
+			&:hover {
+				background-color: $rgb-bg--alt-night;
+			}
+		}
+	}
+
+	&-gallery {
+		&__wrp-chapter {
+			background: $rgb-bg--night;
+			border-color: $rgb-border-grey--trans-night;
+		}
+	}
+}

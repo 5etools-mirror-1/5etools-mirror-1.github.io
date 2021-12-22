@@ -154,6 +154,10 @@ i > i {
 	transform: translateZ(0) !important;
 }
 
+.scrollbar-stable {
+	scrollbar-gutter: stable;
+}
+
 .overflow-auto {
 	overflow-x: auto;
 	overflow-y: auto;

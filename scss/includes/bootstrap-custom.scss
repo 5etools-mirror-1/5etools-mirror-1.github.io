@@ -50,11 +50,6 @@ input {
 	min-width: 0;
 }
 
-label {
-	font-weight: initial;
-	margin: 0;
-}
-
 input[type=checkbox],
 input[type=radio] {
 	margin: 0;
@@ -224,7 +219,7 @@ body::-webkit-scrollbar {
 	&:hover {
 		color: #262626;
 		text-decoration: none;
-		background-color: whitesmoke;
+		background-color: $rgb-bg--alt;
 	}
 }
 

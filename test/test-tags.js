@@ -38,50 +38,110 @@ const WALKER = MiscUtil.getWalker({
 	isNoModification: true,
 });
 
-const TAG_TO_PAGE = Renderer.hover.TAG_TO_PAGE;
-
-const VALID_SKILLS = new Set([
-	"Acrobatics",
-	"Animal Handling",
-	"Arcana",
-	"Athletics",
-	"Deception",
-	"History",
-	"Insight",
-	"Intimidation",
-	"Investigation",
-	"Medicine",
-	"Nature",
-	"Perception",
-	"Performance",
-	"Persuasion",
-	"Religion",
-	"Sleight of Hand",
-	"Stealth",
-	"Survival",
-]);
-
 const ALL_URLS = new Set();
-const CLASS_SUBCLASS_LOOKUP = {};
 
-function isIgnoredFile (file) {
-	return file === "./data/changelog.json";
-}
+class TagTestUtil {
+	static _CLASS_SUBCLASS_LOOKUP = {};
 
-function isIgnoredDir (directory) {
-	return false;
-}
+	static async pInit () {
+		await this._pInit_pPopulateUrls();
+		await this._pInit_pPopulateClassSubclassIndex();
+	}
 
-function fileRecurse (file, fileHandler, doParse, filenameMatcher) {
-	if (file.endsWith(".json") && !isIgnoredFile(file) && (filenameMatcher == null || filenameMatcher.test(file.split("/").last()))) {
-		doParse ? fileHandler(file, JSON.parse(fs.readFileSync(file, "utf-8"))) : fileHandler(file);
-		Object.keys(MSG).forEach(k => {
-			if (MSG[k] && MSG[k].trim() && MSG[k].slice(-5) !== "\n---\n") MSG[k] = `${MSG[k].trimRight()}\n---\n`;
+	static async _pInit_pPopulateUrls () {
+		const primaryIndex = od.Omnidexer.decompressIndex(await utS.UtilSearchIndex.pGetIndex(false, true));
+		primaryIndex.forEach(it => ALL_URLS.add(`${UrlUtil.categoryToPage(it.c)}#${(it.u).toLowerCase().trim()}`));
+		const highestId = primaryIndex.last().id;
+		const secondaryIndexItem = od.Omnidexer.decompressIndex(await utS.UtilSearchIndex.pGetIndexAdditionalItem(highestId + 1, false));
+		secondaryIndexItem.forEach(it => ALL_URLS.add(`${UrlUtil.categoryToPage(it.c)}#${(it.u).toLowerCase().trim()}`));
+	}
+
+	static async _pInit_pPopulateClassSubclassIndex () {
+		ut.patchLoadJson();
+		const classData = await DataUtil.class.loadJSON();
+		ut.unpatchLoadJson();
+
+		const tmpClassIxFeatures = {};
+		classData.class.forEach(cls => {
+			cls.name = cls.name.toLowerCase();
+			cls.source = (cls.source || SRC_PHB).toLowerCase();
+
+			this._CLASS_SUBCLASS_LOOKUP[cls.source] = this._CLASS_SUBCLASS_LOOKUP[cls.source] || {};
+			this._CLASS_SUBCLASS_LOOKUP[cls.source][cls.name] = {};
+
+			const ixFeatures = [];
+			cls.classFeatures.forEach((levelFeatures, ixLevel) => {
+				levelFeatures.forEach((_, ixFeature) => {
+					ixFeatures.push(`${ixLevel}-${ixFeature}`);
+				});
+			});
+			MiscUtil.set(tmpClassIxFeatures, cls.source, cls.name, ixFeatures);
 		});
-	} else if (fs.lstatSync(file).isDirectory() && !isIgnoredDir(file)) fs.readdirSync(file).forEach(nxt => fileRecurse(`${file}/${nxt}`, fileHandler, doParse, filenameMatcher));
+
+		classData.subclass.forEach(sc => {
+			sc.shortName = (sc.shortName || sc.name).toLowerCase();
+			sc.source = (sc.source || sc.classSource).toLowerCase();
+			sc.className = sc.className.toLowerCase();
+			sc.classSource = sc.classSource.toLowerCase();
+
+			if (sc.className === VeCt.STR_GENERIC.toLowerCase() && sc.classSource === VeCt.STR_GENERIC.toLowerCase()) return;
+
+			this._CLASS_SUBCLASS_LOOKUP[sc.classSource][sc.className][sc.source] = this._CLASS_SUBCLASS_LOOKUP[sc.classSource][sc.className][sc.source] || {};
+			this._CLASS_SUBCLASS_LOOKUP[sc.classSource][sc.className][sc.source][sc.shortName] = MiscUtil.copy(MiscUtil.get(tmpClassIxFeatures, sc.classSource, sc.className));
+		});
+	}
+
+	static getSubclassFeatureIndex (className, classSource, subclassName, subclassSource) {
+		classSource = classSource || Parser.getTagSource("class");
+		subclassSource = subclassSource || SRC_PHB;
+
+		className = className.toLowerCase();
+		classSource = classSource.toLowerCase();
+		subclassName = subclassName.toLowerCase();
+		subclassSource = subclassSource.toLowerCase();
+
+		return MiscUtil.get(this._CLASS_SUBCLASS_LOOKUP, classSource, className, subclassSource, subclassName);
+	}
+
+	static _isIgnoredFile (file) {
+		return file === "./data/changelog.json";
+	}
+
+	static _isIgnoredDir (directory) {
+		return false;
+	}
+
+	static fileRecurse (file, fileHandler, doParse, filenameMatcher) {
+		if (file.endsWith(".json") && !this._isIgnoredFile(file) && (filenameMatcher == null || filenameMatcher.test(file.split("/").last()))) {
+			doParse ? fileHandler(file, JSON.parse(fs.readFileSync(file, "utf-8"))) : fileHandler(file);
+			Object.keys(MSG).forEach(k => {
+				if (MSG[k] && MSG[k].trim() && MSG[k].slice(-5) !== "\n---\n") MSG[k] = `${MSG[k].trimRight()}\n---\n`;
+			});
+		} else if (fs.lstatSync(file).isDirectory() && !this._isIgnoredDir(file)) fs.readdirSync(file).forEach(nxt => this.fileRecurse(`${file}/${nxt}`, fileHandler, doParse, filenameMatcher));
+	}
 }
 
-class TestTagsUtil {
+class GenericDataCheck {
+	static _doCheckSeeAlso ({entity, prop, propMsg, tag, file}) {
+		if (!entity[prop]) return;
+
+		const defaultSource = Parser.getTagSource(tag).toLowerCase();
+
+		const deduped = entity[prop].map(it => {
+			it = it.toLowerCase();
+			if (!it.includes("|")) it += `|${defaultSource}`;
+			return it;
+		}).unique();
+		if (deduped.length !== entity[prop].length) {
+			MSG[propMsg] += `Duplicate "${prop}" in ${file} for ${entity.source}, ${entity.name}\n`;
+		}
+
+		entity[prop].forEach(s => {
+			const url = getEncoded(s, tag);
+			if (!ALL_URLS.has(url)) MSG[propMsg] += `Missing link: ${s} in file ${file} (evaluates to "${url}") in "${prop}"\nSimilar URLs were:\n${getSimilar(url)}\n`;
+		});
+	}
+
 	static _testAdditionalSpells_testSpellExists (file, msgProp, spellOrObj) {
 		if (typeof spellOrObj === "object") {
 			if (spellOrObj.choose) {
@@ -100,7 +160,7 @@ class TestTagsUtil {
 		}
 	}
 
-	static testAdditionalSpells (file, msgProp, obj) {
+	static _testAdditionalSpells (file, msgProp, obj) {
 		if (!obj.additionalSpells) return;
 		obj.additionalSpells
 			.forEach(additionalSpellOption => {
@@ -133,7 +193,7 @@ class TestTagsUtil {
 			});
 	}
 
-	static testAdditionalFeats (file, msgProp, obj) {
+	static _testAdditionalFeats (file, msgProp, obj) {
 		if (!obj.feats) return;
 
 		obj.feats.forEach(featsObj => {
@@ -150,18 +210,10 @@ class TestTagsUtil {
 	}
 }
 
-const PRIMITIVE_HANDLERS = {
-	undefined: [],
-	boolean: [],
-	number: [],
-	string: [],
-	object: [],
-};
-
 // Runs multiple handlers on each file, to avoid re-reading each file for each handler
 class ParsedJsonChecker {
 	static runAll () {
-		fileRecurse("./data", (file, contents) => {
+		TagTestUtil.fileRecurse("./data", (file, contents) => {
 			ParsedJsonChecker._FILE_HANDLERS.forEach(handler => handler(file, contents));
 		}, true);
 	}
@@ -169,8 +221,23 @@ class ParsedJsonChecker {
 	static register (clazz) {
 		ParsedJsonChecker._FILE_HANDLERS.push(clazz);
 	}
+
+	static addPrimitiveHandler (primitiveType, handler) {
+		ParsedJsonChecker._PRIMITIVE_HANDLERS[primitiveType].push(handler);
+	}
+
+	static checkFile (file, contents) {
+		return ut.dataRecurse(file, contents, this._PRIMITIVE_HANDLERS);
+	}
 }
 ParsedJsonChecker._FILE_HANDLERS = [];
+ParsedJsonChecker._PRIMITIVE_HANDLERS = {
+	undefined: [],
+	boolean: [],
+	number: [],
+	string: [],
+	object: [],
+};
 
 function getSimilar (url) {
 	// scan for a list of similar entries, to aid debugging
@@ -182,31 +249,19 @@ function getSimilar (url) {
 	return JSON.stringify(similarUrls, null, 2);
 }
 
-function getSubclassFeatureIndex (className, classSource, subclassName, subclassSource) {
-	classSource = classSource || Parser.getTagSource("class");
-	subclassSource = subclassSource || SRC_PHB;
-
-	className = className.toLowerCase();
-	classSource = classSource.toLowerCase();
-	subclassName = subclassName.toLowerCase();
-	subclassSource = subclassSource.toLowerCase();
-
-	return MiscUtil.get(CLASS_SUBCLASS_LOOKUP, classSource, className, subclassSource, subclassName);
-}
-
 function getEncoded (str, tag) {
 	const [name, source] = str.split("|");
-	return `${TAG_TO_PAGE[tag]}#${UrlUtil.encodeForHash([name, Parser.getTagSource(tag, source)])}`.toLowerCase().trim();
+	return `${Renderer.hover.TAG_TO_PAGE[tag]}#${UrlUtil.encodeForHash([name, Parser.getTagSource(tag, source)])}`.toLowerCase().trim();
 }
 
 function getEncodedDeity (str, tag) {
 	const [name, pantheon, source] = str.split("|");
-	return `${TAG_TO_PAGE[tag]}#${UrlUtil.encodeForHash([name, pantheon, Parser.getTagSource(tag, source)])}`.toLowerCase().trim();
+	return `${Renderer.hover.TAG_TO_PAGE[tag]}#${UrlUtil.encodeForHash([name, pantheon, Parser.getTagSource(tag, source)])}`.toLowerCase().trim();
 }
 
 class LinkCheck {
 	static addHandlers () {
-		PRIMITIVE_HANDLERS.string.push(LinkCheck.checkString);
+		ParsedJsonChecker.addPrimitiveHandler("string", LinkCheck.checkString);
 	}
 
 	static checkString (file, str) {
@@ -238,7 +293,7 @@ class LinkCheck {
 				}
 			}
 
-			const url = `${TAG_TO_PAGE[tag]}#${UrlUtil.encodeForHash(toEncode)}`.toLowerCase().trim()
+			const url = `${Renderer.hover.TAG_TO_PAGE[tag]}#${UrlUtil.encodeForHash(toEncode)}`.toLowerCase().trim()
 				.replace(/%5c/gi, ""); // replace slashes
 			if (!ALL_URLS.has(url)) {
 				MSG.LinkCheck += `Missing link: ${match[0]} in file ${file} (evaluates to "${url}")\nSimilar URLs were:\n${getSimilar(url)}\n`;
@@ -247,7 +302,7 @@ class LinkCheck {
 
 		while ((match = LinkCheck.SKILL_RE.exec(str))) {
 			const skill = match[1];
-			if (!VALID_SKILLS.has(skill)) {
+			if (!Parser.SKILL_JSON_TO_FULL[skill]) {
 				MSG.LinkCheck += `Unknown skill: ${match[0]} in file ${file} (evaluates to "${skill}")\n`;
 			}
 		}
@@ -258,7 +313,7 @@ LinkCheck.SKILL_RE = /{@skill (.*?)(\|.*?)?}/g;
 
 class ClassLinkCheck {
 	static addHandlers () {
-		PRIMITIVE_HANDLERS.string.push(ClassLinkCheck.checkString);
+		ParsedJsonChecker.addPrimitiveHandler("string", ClassLinkCheck.checkString);
 	}
 
 	static checkString (file, str) {
@@ -274,7 +329,7 @@ class ClassLinkCheck {
 
 			if (!subclassShortName) return; // Regular tags will be handled by the general tag checker
 
-			const featureIndex = getSubclassFeatureIndex(className, classSource, subclassShortName, subclassSource);
+			const featureIndex = TagTestUtil.getSubclassFeatureIndex(className, classSource, subclassShortName, subclassSource);
 			if (!featureIndex) {
 				MSG.LinkCheck += `Missing subclass link: ${match[0]} in file ${file} -- could not find subclass with matching shortname/source\n`;
 			}
@@ -286,28 +341,6 @@ class ClassLinkCheck {
 	}
 }
 ClassLinkCheck.RE = /{@class (.*?)(\|(.*?))?(\|(.*?))?(\|(.*?))?(\|(.*?))?(\|(.*?))?(\|(.*?))?}/g;
-
-class GenericDataCheck {
-	static _doCheckSeeAlso ({entity, prop, propMsg, tag, file}) {
-		if (!entity[prop]) return;
-
-		const defaultSource = Parser.getTagSource(tag).toLowerCase();
-
-		const deduped = entity[prop].map(it => {
-			it = it.toLowerCase();
-			if (!it.includes("|")) it += `|${defaultSource}`;
-			return it;
-		}).unique();
-		if (deduped.length !== entity[prop].length) {
-			MSG[propMsg] += `Duplicate "${prop}" in ${file} for ${entity.source}, ${entity.name}\n`;
-		}
-
-		entity[prop].forEach(s => {
-			const url = getEncoded(s, tag);
-			if (!ALL_URLS.has(url)) MSG[propMsg] += `Missing link: ${s} in file ${file} (evaluates to "${url}") in "${prop}"\nSimilar URLs were:\n${getSimilar(url)}\n`;
-		});
-	}
-}
 
 class ItemDataCheck extends GenericDataCheck {
 	static _checkArrayDuplicates (file, name, source, arr, prop, tag) {
@@ -382,7 +415,7 @@ class ItemDataCheck extends GenericDataCheck {
 		}
 
 		if (root.baseItem) {
-			const url = `${TAG_TO_PAGE.item}#${UrlUtil.encodeForHash(root.baseItem.split("|"))}`
+			const url = `${Renderer.hover.TAG_TO_PAGE.item}#${UrlUtil.encodeForHash(root.baseItem.split("|"))}`
 				.toLowerCase()
 				.trim()
 				.replace(/%5c/gi, "");
@@ -426,7 +459,7 @@ class ActionData extends GenericDataCheck {
 	}
 }
 
-class DeityDataCheck {
+class DeityDataCheck extends GenericDataCheck {
 	static run () {
 		const file = `data/deities.json`;
 		const deities = require(`../${file}`);
@@ -441,7 +474,7 @@ class DeityDataCheck {
 
 class BraceCheck {
 	static addHandlers () {
-		PRIMITIVE_HANDLERS.string.push(BraceCheck.checkString);
+		ParsedJsonChecker.addPrimitiveHandler("string", BraceCheck.checkString);
 	}
 
 	static checkString (file, str) {
@@ -465,7 +498,7 @@ class BraceCheck {
 
 class FilterCheck {
 	static addHandlers () {
-		PRIMITIVE_HANDLERS.string.push(FilterCheck.checkString);
+		ParsedJsonChecker.addPrimitiveHandler("string", FilterCheck.checkString);
 	}
 
 	static checkString (file, str) {
@@ -473,32 +506,38 @@ class FilterCheck {
 			const spl = m1.split("|");
 			if (spl.length < 3) {
 				MSG.FilterCheck += `Filter tag "${str}" was too short!\n`;
-			} else {
-				const missingEq = [];
-				for (let i = 2; i < spl.length; ++i) {
-					const part = spl[i];
-					if (!part.includes("=")) {
-						missingEq.push(part);
-					}
+				return m0;
+			}
 
-					const hasOpenRange = part.startsWith("[");
-					const hasCloseRange = part.startsWith("]");
-					if (hasOpenRange || hasCloseRange) {
-						if (!(hasOpenRange && hasCloseRange)) {
-							MSG.FilterCheck += `Malformed range expression in filter tag "${str}"`;
-						}
+			if (!UrlUtil.PG_TO_NAME[`${spl[1]}.html`]) {
+				MSG.FilterCheck += `Unknown page in filter tag "${str}"\n`;
+			}
 
-						const [header, values] = part.split("=");
-						const valuesSpl = values.replace(/^\[/, "").replace(/]$/, "").split(";");
-						if (valuesSpl.length > 2) {
-							MSG.FilterCheck += `Too many values in range expression in filter tag "${str}" (expected 1-2)`;
-						}
-					}
+			const missingEq = [];
+			for (let i = 2; i < spl.length; ++i) {
+				const part = spl[i];
+				if (!part.includes("=")) {
+					missingEq.push(part);
 				}
-				if (missingEq.length) {
-					MSG.FilterCheck += `Missing equals in filter tag "${str}" in part${missingEq.length > 1 ? "s" : ""} ${missingEq.join(", ")}\n`;
+
+				const hasOpenRange = part.startsWith("[");
+				const hasCloseRange = part.startsWith("]");
+				if (hasOpenRange || hasCloseRange) {
+					if (!(hasOpenRange && hasCloseRange)) {
+						MSG.FilterCheck += `Malformed range expression in filter tag "${str}"\n`;
+					}
+
+					const [header, values] = part.split("=");
+					const valuesSpl = values.replace(/^\[/, "").replace(/]$/, "").split(";");
+					if (valuesSpl.length > 2) {
+						MSG.FilterCheck += `Too many values in range expression in filter tag "${str}" (expected 1-2)\n`;
+					}
 				}
 			}
+			if (missingEq.length) {
+				MSG.FilterCheck += `Missing equals in filter tag "${str}" in part${missingEq.length > 1 ? "s" : ""} ${missingEq.join(", ")}\n`;
+			}
+
 			return m0;
 		});
 	}
@@ -506,7 +545,7 @@ class FilterCheck {
 
 class ScaleDiceCheck {
 	static addHandlers () {
-		PRIMITIVE_HANDLERS.string.push(ScaleDiceCheck.checkString);
+		ParsedJsonChecker.addPrimitiveHandler("string", ScaleDiceCheck.checkString);
 	}
 
 	static checkString (file, str) {
@@ -534,7 +573,7 @@ class ScaleDiceCheck {
 
 class StripTagTest {
 	static addHandlers () {
-		PRIMITIVE_HANDLERS.string.push(StripTagTest.checkString);
+		ParsedJsonChecker.addPrimitiveHandler("string", StripTagTest.checkString);
 	}
 
 	static checkString (file, str) {
@@ -555,7 +594,7 @@ StripTagTest._seenErrors = new Set();
 
 class TableDiceTest {
 	static addHandlers () {
-		PRIMITIVE_HANDLERS.object.push(TableDiceTest.checkTable);
+		ParsedJsonChecker.addPrimitiveHandler("string", TableDiceTest.checkTable);
 	}
 
 	static checkTable (file, obj) {
@@ -684,11 +723,11 @@ class AreaCheck {
 AreaCheck.errorSet = new Set();
 AreaCheck.fileMatcher = /\/(adventure-).*\.json/;
 
-class LootDataCheck {
+class LootDataCheck extends GenericDataCheck {
 	static run () {
 		function handleItem (it) {
 			const toCheck = typeof it === "string" ? {name: it, source: SRC_DMG} : it;
-			const url = `${TAG_TO_PAGE["item"]}#${UrlUtil.encodeForHash([toCheck.name, toCheck.source])}`.toLowerCase().trim();
+			const url = `${Renderer.hover.TAG_TO_PAGE["item"]}#${UrlUtil.encodeForHash([toCheck.name, toCheck.source])}`.toLowerCase().trim();
 			if (!ALL_URLS.has(url)) MSG.LootCheck += `Missing link: ${JSON.stringify(it)} in file "${LootDataCheck.file}" (evaluates to "${url}")\nSimilar URLs were:\n${getSimilar(url)}\n`;
 		}
 
@@ -716,7 +755,7 @@ class LootDataCheck {
 }
 LootDataCheck.file = `data/loot.json`;
 
-class SpellDataCheck {
+class SpellDataCheck extends GenericDataCheck {
 	static run () {
 		const classIndex = JSON.parse(fs.readFileSync(SpellDataCheck._FILE_CLASS_INDEX, "utf8"));
 
@@ -771,7 +810,7 @@ SpellDataCheck._FILE_CLASS_INDEX = `data/class/index.json`;
 SpellDataCheck._FILE_SPELL_INDEX = `data/spells/index.json`;
 SpellDataCheck._CLASS_LIST = [];
 
-class ClassDataCheck {
+class ClassDataCheck extends GenericDataCheck {
 	static _doCheckClass (file, data, cls) {
 		// region Check `classFeatures` -> `classFeature` links
 		const featureLookup = {};
@@ -838,7 +877,7 @@ class ClassDataCheck {
 			if (!subclassFeatureLookup[hash]) MSG.ClassDataCheck += `Missing subclass feature: ${uid} in file ${file} not found in the files "subclassFeature" array\n`;
 		});
 
-		TestTagsUtil.testAdditionalSpells(file, "ClassDataCheck", sc);
+		this._testAdditionalSpells(file, "ClassDataCheck", sc);
 	}
 
 	static run () {
@@ -887,10 +926,10 @@ class ClassDataCheck {
 	}
 }
 
-class RaceDataCheck {
+class RaceDataCheck extends GenericDataCheck {
 	static _handleRaceOrSubraceRaw (file, rsr, r) {
-		TestTagsUtil.testAdditionalSpells(file, "RaceDataCheck", rsr);
-		TestTagsUtil.testAdditionalFeats(file, "RaceDataCheck", rsr);
+		this._testAdditionalSpells(file, "RaceDataCheck", rsr);
+		this._testAdditionalFeats(file, "RaceDataCheck", rsr);
 	}
 
 	static run () {
@@ -903,9 +942,9 @@ class RaceDataCheck {
 	}
 }
 
-class FeatDataCheck {
+class FeatDataCheck extends GenericDataCheck {
 	static _handleFeat (file, feat) {
-		TestTagsUtil.testAdditionalSpells(file, "FeatDataCheck", feat);
+		this._testAdditionalSpells(file, "FeatDataCheck", feat);
 	}
 
 	static run () {
@@ -915,10 +954,10 @@ class FeatDataCheck {
 	}
 }
 
-class BackgroundDataCheck {
+class BackgroundDataCheck extends GenericDataCheck {
 	static _handleBackground (file, bg) {
-		TestTagsUtil.testAdditionalSpells(file, "BackgroundDataCheck", bg);
-		TestTagsUtil.testAdditionalFeats(file, "BackgroundDataCheck", bg);
+		this._testAdditionalSpells(file, "BackgroundDataCheck", bg);
+		this._testAdditionalFeats(file, "BackgroundDataCheck", bg);
 	}
 
 	static run () {
@@ -928,7 +967,7 @@ class BackgroundDataCheck {
 	}
 }
 
-class BestiaryDataCheck {
+class BestiaryDataCheck extends GenericDataCheck {
 	static _handleCreature (file, mon) {
 		if (mon.summonedBySpell) {
 			const url = getEncoded(mon.summonedBySpell, "spell");
@@ -1104,58 +1143,8 @@ class RefTagCheck {
 RefTagCheck._RE_TAG = /^ref[A-Z]/;
 RefTagCheck._TO_CHECK = [];
 
-class TagTester {
-	static async pInit () {
-		await this._pInit_pPopulateUrls();
-		await this._pInit_pPopulateClassSubclassIndex();
-	}
-
-	static async _pInit_pPopulateUrls () {
-		const primaryIndex = od.Omnidexer.decompressIndex(await utS.UtilSearchIndex.pGetIndex(false, true));
-		primaryIndex.forEach(it => ALL_URLS.add(`${UrlUtil.categoryToPage(it.c)}#${(it.u).toLowerCase().trim()}`));
-		const highestId = primaryIndex.last().id;
-		const secondaryIndexItem = od.Omnidexer.decompressIndex(await utS.UtilSearchIndex.pGetIndexAdditionalItem(highestId + 1, false));
-		secondaryIndexItem.forEach(it => ALL_URLS.add(`${UrlUtil.categoryToPage(it.c)}#${(it.u).toLowerCase().trim()}`));
-	}
-
-	static async _pInit_pPopulateClassSubclassIndex () {
-		ut.patchLoadJson();
-		const classData = await DataUtil.class.loadJSON();
-		ut.unpatchLoadJson();
-
-		const tmpClassIxFeatures = {};
-		classData.class.forEach(cls => {
-			cls.name = cls.name.toLowerCase();
-			cls.source = (cls.source || SRC_PHB).toLowerCase();
-
-			CLASS_SUBCLASS_LOOKUP[cls.source] = CLASS_SUBCLASS_LOOKUP[cls.source] || {};
-			CLASS_SUBCLASS_LOOKUP[cls.source][cls.name] = {};
-
-			const ixFeatures = [];
-			cls.classFeatures.forEach((levelFeatures, ixLevel) => {
-				levelFeatures.forEach((_, ixFeature) => {
-					ixFeatures.push(`${ixLevel}-${ixFeature}`);
-				});
-			});
-			MiscUtil.set(tmpClassIxFeatures, cls.source, cls.name, ixFeatures);
-		});
-
-		classData.subclass.forEach(sc => {
-			sc.shortName = (sc.shortName || sc.name).toLowerCase();
-			sc.source = (sc.source || sc.classSource).toLowerCase();
-			sc.className = sc.className.toLowerCase();
-			sc.classSource = sc.classSource.toLowerCase();
-
-			if (sc.className === VeCt.STR_GENERIC.toLowerCase() && sc.classSource === VeCt.STR_GENERIC.toLowerCase()) return;
-
-			CLASS_SUBCLASS_LOOKUP[sc.classSource][sc.className][sc.source] = CLASS_SUBCLASS_LOOKUP[sc.classSource][sc.className][sc.source] || {};
-			CLASS_SUBCLASS_LOOKUP[sc.classSource][sc.className][sc.source][sc.shortName] = MiscUtil.copy(MiscUtil.get(tmpClassIxFeatures, sc.classSource, sc.className));
-		});
-	}
-}
-
 async function main () {
-	await TagTester.pInit();
+	await TagTestUtil.pInit();
 
 	LinkCheck.addHandlers();
 	ClassLinkCheck.addHandlers();
@@ -1165,7 +1154,7 @@ async function main () {
 	StripTagTest.addHandlers();
 	TableDiceTest.addHandlers();
 
-	ParsedJsonChecker.register((file, contents) => ut.dataRecurse(file, contents, PRIMITIVE_HANDLERS));
+	ParsedJsonChecker.register(ParsedJsonChecker.checkFile.bind(ParsedJsonChecker));
 	ParsedJsonChecker.register(AreaCheck.checkFile.bind(AreaCheck));
 	ParsedJsonChecker.register(EscapeCharacterCheck.checkFile.bind(EscapeCharacterCheck));
 	ParsedJsonChecker.register(DuplicateEntityCheck.checkFile.bind(DuplicateEntityCheck));

@@ -334,14 +334,14 @@ $flt-ignore--hover: #e6e6e6;
 		&mini-view {
 			border-left: $rgb-border-grey 1px solid;
 			border-right: $rgb-border-grey 1px solid;
-			background: linear-gradient(to top, $rgb-border-grey, whitesmoke 1px);
+			background: linear-gradient(to top, $rgb-border-grey, $rgb-bg--alt 1px);
 			display: flex;
 			flex-wrap: wrap;
 			flex-shrink: 0;
 
 			&--no-sort-buttons {
 				border-bottom: 1px solid $rgb-border-grey;
-				background: whitesmoke;
+				background: $rgb-bg--alt;
 				border-bottom-left-radius: 3px;
 				border-bottom-right-radius: 3px;
 				min-height: 3px;

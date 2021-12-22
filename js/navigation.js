@@ -78,6 +78,8 @@ class NavBar {
 		this._addElement_li(NavBar._CAT_DUNGEON_MASTER, "crcalculator.html", "CR Calculator");
 		this._addElement_li(NavBar._CAT_DUNGEON_MASTER, "encountergen.html", "Encounter Generator");
 		this._addElement_li(NavBar._CAT_DUNGEON_MASTER, "lootgen.html", "Loot Generator");
+		this._addElement_divider(NavBar._CAT_DUNGEON_MASTER);
+		this._addElement_li(NavBar._CAT_DUNGEON_MASTER, "maps.html", "Maps");
 
 		this._addElement_dropdown(null, NavBar._CAT_REFERENCES);
 		this._addElement_li(NavBar._CAT_REFERENCES, "actions.html", "Actions");
@@ -211,16 +213,17 @@ class NavBar {
 			},
 		].forEach(({prop, parentCategory, page, fnSort}) => {
 			const metas = adventureBookIndex[prop]
-				.filter(it => !ExcludeUtil.isExcluded(UrlUtil.encodeForHash(it.id.toLowerCase()), prop, it.source, {isNoCount: true}));
+				.filter(it => !ExcludeUtil.isExcluded(UrlUtil.encodeForHash(it.id), prop, it.source, {isNoCount: true}));
 
 			if (!metas.length) return;
 
-			NavBar._GROUP_ORDER[prop]
-				.forEach(group => {
+			NavBar._ADV_BOOK_GROUPS[prop]
+				.forEach(({group, displayName}) => {
 					const inGroup = metas.filter(it => (it.group || "other") === group);
 					if (!inGroup.length) return;
 
 					this._addElement_divider(parentCategory);
+					this._addElement_label(parentCategory, displayName, {isAddDateSpacer: true});
 
 					const seenYears = new Set();
 
@@ -238,6 +241,7 @@ class NavBar {
 										indexMeta.parentName,
 										{
 											date: isNewYear ? year : null,
+											source: indexMeta.parentSource,
 											isAddDateSpacer: !isNewYear,
 										},
 									);
@@ -269,6 +273,7 @@ class NavBar {
 									aHash: indexMeta.id,
 									date: isNewYear ? year : null,
 									isAddDateSpacer: !isNewYear,
+									source: indexMeta.source,
 									isSide: true,
 								},
 							);
@@ -291,6 +296,7 @@ class NavBar {
 	 * @param [opts.isExternal] - If the item is an external link.
 	 * @param [opts.date] - A date to prefix the list item with.
 	 * @param [opts.isAddDateSpacer] - True if this item has no date, but is in a list of items with dates.
+	 * @param [opts.source] - A source associated with this item, which should be displayed as a colored marker.
 	 * @param [opts.isInAccordion] - True if this item is inside an accordion.
 	 *        FIXME(Future) this is a bodge; refactor the navbar CSS to avoid using Bootstrap.
 	 */
@@ -318,7 +324,7 @@ class NavBar {
 
 		const a = document.createElement("a");
 		a.href = href;
-		a.innerHTML = `${this._addElement_getDatePrefix({date: opts.date, isAddDateSpacer: opts.isAddDateSpacer})}${aText}`;
+		a.innerHTML = `${this._addElement_getDatePrefix({date: opts.date, isAddDateSpacer: opts.isAddDateSpacer})}${this._addElement_getSourcePrefix({source: opts.source})}${aText}`;
 		a.classList.add("nav__link");
 		if (opts.isInAccordion) a.classList.add(`nav2-accord__lnk-item`, `inline-block`, `w-100`);
 
@@ -346,6 +352,7 @@ class NavBar {
 		{
 			date = null,
 			isAddDateSpacer = false,
+			source = null,
 		} = {},
 	) {
 		const parentNode = this._getNode(parentCategory);
@@ -364,7 +371,7 @@ class NavBar {
 		};
 
 		const dispText = document.createElement("div");
-		dispText.innerHTML = `${this._addElement_getDatePrefix({date, isAddDateSpacer})}${category}`;
+		dispText.innerHTML = `${this._addElement_getDatePrefix({date, isAddDateSpacer})}${this._addElement_getSourcePrefix({source})}${category}`;
 
 		const dispToggle = document.createElement("div");
 		dispToggle.textContent = NavBar.NodeAccordion.getDispToggleDisplayHtml(false);
@@ -392,7 +399,8 @@ class NavBar {
 		parentNode.children[category] = node;
 	}
 
-	static _addElement_getDatePrefix ({date, isAddDateSpacer}) { return `${(date != null || isAddDateSpacer) ? `<span class="ve-muted ve-small mr-2 page__nav-date inline-block text-right">${date || ""}</span>` : ""}`; }
+	static _addElement_getDatePrefix ({date, isAddDateSpacer}) { return `${(date != null || isAddDateSpacer) ? `<div class="ve-muted ve-small mr-2 page__nav-date inline-block text-right inline-block">${date || ""}</div>` : ""}`; }
+	static _addElement_getSourcePrefix ({source}) { return `${source != null ? `<div class="nav2-list__disp-source ${Parser.sourceJsonToColor(source)}" ${BrewUtil.sourceJsonToStyle(source)}></div>` : ""}`; }
 
 	static _addElement_divider (parentCategory) {
 		const parentNode = this._getNode(parentCategory);
@@ -400,6 +408,17 @@ class NavBar {
 		const li = document.createElement("li");
 		li.setAttribute("role", "presentation");
 		li.className = "divider";
+
+		parentNode.body.appendChild(li);
+	}
+
+	static _addElement_label (parentCategory, html, {date, isAddDateSpacer} = {}) {
+		const parentNode = this._getNode(parentCategory);
+
+		const li = document.createElement("li");
+		li.setAttribute("role", "presentation");
+		li.className = "italic ve-muted ve-small nav2-list__label";
+		li.innerHTML = `${this._addElement_getDatePrefix({date, isAddDateSpacer})}${html}`;
 
 		parentNode.body.appendChild(li);
 	}
@@ -631,20 +650,20 @@ NavBar._ALT_CHILD_PAGES = {
 	"book.html": "books.html",
 	"adventure.html": "adventures.html",
 };
-NavBar._GROUP_ORDER = {
+NavBar._ADV_BOOK_GROUPS = {
 	"book": [
-		"core",
-		"supplement",
-		"supplement-alt",
-		"homebrew",
-		"screen",
-		"other",
+		{group: "core", displayName: "Core"},
+		{group: "supplement", displayName: "Supplements"},
+		{group: "supplement-alt", displayName: "Extras"},
+		{group: "homebrew", displayName: "Homebrew"},
+		{group: "screen", displayName: "Screens"},
+		{group: "other", displayName: "Miscellaneous"},
 	],
 	"adventure": [
-		"supplement",
-		"supplement-alt",
-		"homebrew",
-		"other",
+		{group: "supplement", displayName: "Supplements"},
+		{group: "supplement-alt", displayName: "Extras"},
+		{group: "homebrew", displayName: "Homebrew"},
+		{group: "other", displayName: "Miscellaneous"},
 	],
 };
 NavBar._CAT_RULES = "Rules";
