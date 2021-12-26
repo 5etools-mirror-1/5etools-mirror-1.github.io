@@ -1,0 +1,2023 @@
+{
+	"data":[
+		{
+			"type": "section",
+			"name": "Screen",
+			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/ScreenDungeonKit/ScreenFront.png"
+					},
+					"title": "Screen Front"
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/ScreenDungeonKit/ScreenBack.png"
+					},
+					"title": "Screen Back"
+				},
+				{
+					"type": "table",
+					"caption": "Setting a DC",
+					"colLabels":[
+						"Difficulty",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"Very Easy",
+							"5"
+						],
+						[
+							"Easy",
+							"10"
+						],
+						[
+							"Moderate",
+							"15"
+						],
+						[
+							"Hard",
+							"20"
+						],
+						[
+							"Very Hard",
+							"25"
+						],
+						[
+							"Nearly Impossible",
+							"30"
+						]
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Monster Motivation",
+					"colLabels": [
+						"d20",
+						"Goal"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1\u20132",
+							"Find a sanctuary"
+						],
+						[
+							"3\u20135",
+							"Conquer the dungeon"
+						],
+						[
+							"6\u20138",
+							"Seek an item"
+						],
+						[
+							"9\u201311",
+							"Slay a rival"
+						],
+						[
+							"12\u201313",
+							"Hide from enemies"
+						],
+						[
+							"14\u201315",
+							"Recover from a battle"
+						],
+						[
+							"16\u201317",
+							"Avoid danger"
+						],
+						[
+							"18\u201320",
+							"Seek wealth"
+						]
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Damage by Level and Severity",
+					"colLabels": [
+						"Character Level",
+						"Setback",
+						"Dangerous",
+						"Deadly"
+					],
+					"colStyles": [
+						"col-3",
+						"col-3",
+						"col-3",
+						"col-3"
+					],
+					"rows": [
+						[
+							"1\u20134",
+							"{@dice 1d10}",
+							"{@dice 2d10}",
+							"{@dice 4d10}"
+						],
+						[
+							"5\u201310",
+							"{@dice 2d10}",
+							"{@dice 4d10}",
+							"{@dice 10d10}"
+						],
+						[
+							"11\u201316",
+							"{@dice 4d10}",
+							"{@dice 10d10}",
+							"{@dice 18d10}"
+						],
+						[
+							"17\u201320",
+							"{@dice 10d10}",
+							"{@dice 18d10}",
+							"{@dice 24d10}"
+						]
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Improvising Damage",
+					"colLabels": [
+						"Dice",
+						"Examples"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"{@dice 1d10}",
+							"Burned by coals, hit by a falling bookcase, pricked by a poison needle"
+						],
+						[
+							"{@dice 2d10}",
+							"Being struck by lightning, stumbling into a fire pit"
+						],
+						[
+							"{@dice 4d10}",
+							"Hit by falling rubble in a collapsing tunnel, stumbling into a vat of acid"
+						],
+						[
+							"{@dice 10d10}",
+							"Crushed by compacting walls, hit by whirling steel blades, wading through a lava stream"
+						],
+						[
+							"{@dice 18d10}",
+							"Being submerged in lava, being hit by a crashing flying fortress"
+						],
+						[
+							"{@dice 24d10}",
+							"Tumbling into a vortex of fire on the Elemental Plane of Fire, being crushed in the jaws of a godlike creature or a moon-sized monster"
+						]
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Object Armor Class",
+					"colLabels": [
+						"Substance",
+						"AC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"Cloth, paper, rope",
+							"11"
+						],
+						[
+							"Crystal, glass, ice",
+							"13"
+						],
+						[
+							"Wood, bone",
+							"15"
+						],
+						[
+							"Stone",
+							"17"
+						],
+						[
+							"Iron, steel",
+							"19"
+						],
+						[
+							"Mithral",
+							"21"
+						],
+						[
+							"Adamantine",
+							"23"
+						]
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Object Hit Points",
+					"colLabels": [
+						"Size",
+						"Fragile",
+						"Resilient"
+					],
+					"colStyles": [
+						"col-6",
+						"col-3 text-center",
+						"col-3 text-center"
+					],
+					"rows": [
+						[
+							"Tiny ({@item glass bottle|phb|bottle}, {@item lock|phb})",
+							"2 ({@dice 1d4})",
+							"5 ({@dice 2d4})"
+						],
+						[
+							"Small ({@item chest|phb}, {@item lute|phb})",
+							"3 ({@dice 1d6})",
+							"10 ({@dice 3d6})"
+						],
+						[
+							"Medium ({@item barrel|phb}, chandelier)",
+							"4 ({@dice 1d8})",
+							"18 ({@dice 4d8})"
+						],
+						[
+							"Large ({@item cart|phb}, 10-ft.-by-10-ft. window)",
+							"5 ({@dice 1d10})",
+							"27 ({@dice 5d10})"
+						]
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Skills and Associated Abilities",
+					"colLabels": [
+						"Skill",
+						"Ability"
+					],
+					"colStyles": [
+						"col-6",
+						"col-6"
+					],
+					"rows": [
+						[
+							"{@skill Acrobatics}",
+							"Dexterity"
+						],
+						[
+							"{@skill Animal Handling}",
+							"Wisdom"
+						],
+						[
+							"{@skill Arcana}",
+							"Intelligence"
+						],
+						[
+							"{@skill Athletics}",
+							"Strength"
+						],
+						[
+							"{@skill Deception}",
+							"Charisma"
+						],
+						[
+							"{@skill History}",
+							"Intelligence"
+						],
+						[
+							"{@skill Insight}",
+							"Wisdom"
+						],
+						[
+							"{@skill Intimidation}",
+							"Charisma"
+						],
+						[
+							"{@skill Investigation}",
+							"Intelligence"
+						],
+						[
+							"{@skill Medicine}",
+							"Wisdom"
+						],
+						[
+							"{@skill Nature}",
+							"Intelligence"
+						],
+						[
+							"{@skill Perception}",
+							"Wisdom"
+						],
+						[
+							"{@skill Performance}",
+							"Charisma"
+						],
+						[
+							"{@skill Persuasion}",
+							"Charisma"
+						],
+						[
+							"{@skill Religion}",
+							"Intelligence"
+						],
+						[
+							"{@skill Sleight of Hand}",
+							"Dexterity"
+						],
+						[
+							"{@skill Stealth}",
+							"Dexterity"
+						],
+						[
+							"{@skill Survival}",
+							"Wisdom"
+						]
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Long Jump",
+					"entries": [
+						"Move 10+ feet, and jump a number of feet up to your Strength score. When you make a standing long jump, you can leap only half that distance."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "High Jump",
+					"entries": [
+						"Move 10+ feet, and jump a number of feet equal to 3 + your Strength modifier. When you make a standing high jump, you can jump only half that distance."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Suffocating",
+					"entries": [
+						"You can hold your breath for a number of minutes equal to 1 + your Constitution modifier (minimum Of 30 seconds).",
+						"If you run out of breath or you're choking, you can survive for a number of rounds equal to your Constitution modifier (minimum of 1 round). At the start of your next turn, you drop to O hit points and are dying, and you can't regain hit points or be stabilized until you can breathe again."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Concentration",
+					"entries": [
+						"If a spell must be maintained with {@condition concentration}, its description specifies how long you can concentrate on it. You can end concentration at any time (no action required). The following factors can break concentration:",
+						{
+							"type": "list",
+							"items": [
+								"You cast another spell that requires concentration.",
+								"You take damage. Succeed on a Constitution saving throw to maintain your concentration, with a DC equal to 10 or half the damage you take (round down), whichever number is higher.",
+								"You're {@condition incapacitated} or killed.",
+								"You're overwhelmed by an enormous distraction, such as a wave crashing into you. Succeed on a DC 10 Constitution saving throw to maintain your concentration."
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Exhaustion",
+					"entries": [
+						{
+							"type": "table",
+							"colLabels": [
+								"Level",
+								"Effect"
+							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-11"
+							],
+							"rows": [
+								[
+									"1",
+									"Disadvantage on ability checks"
+								],
+								[
+									"2",
+									"Speed halved"
+								],
+								[
+									"3",
+									"Disadvantage on attack rolls and saving throws"
+								],
+								[
+									"4",
+									"Hit point maximum halved"
+								],
+								[
+									"5",
+									"Speed reduced to 0"
+								],
+								[
+									"6",
+									"Death"
+								]
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Conditions",
+					"entries": [
+						{
+							"type": "inlineBlock",
+							"entries": [
+								"For a full list of the conditions, see the ",
+								{
+									"type": "link",
+									"href": {
+										"type": "internal",
+										"path": "conditionsdiseases.html"
+									},
+									"text": "conditions"
+								},
+								" page. The conditions are:",
+								{
+									"type": "list",
+									"items": [
+										"{@condition blinded}",
+										"{@condition charmed}",
+										"{@condition deafened}",
+										"{@condition exhaustion}",
+										"{@condition frightened}",
+										"{@condition grappled}",
+										"{@condition incapacitated}",
+										"{@condition invisible}",
+										"{@condition paralyzed}",
+										"{@condition petrified}",
+										"{@condition poisoned}",
+										"{@condition prone}",
+										"{@condition restrained}",
+										"{@condition stunned}",
+										"{@condition unconscious}"
+									],
+									"columns": 3
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "State of Ruin",
+					"entries": [
+						"Roll on this table to randomly determine the general conditions of the dungeon area.",
+						{
+							"type": "table",
+							"colLabels": [
+								"d6",
+								"Quality",
+								"Effect"
+							],
+							"colStyles": [
+								"col-1 text-center",
+								"col-2",
+								"col-9"
+							],
+							"rows": [
+								[
+									"1",
+									"Perilous",
+									"The area is dangerously worn and prone to collapse. Any impacts or damage to the structure, including from spells and other areas of effect, have a 50 percent chance of causing a collapse (see the {@table Improvising Damage|DMG} table)."
+								],
+								[
+									"2",
+									"Crumbling",
+									"Areas within the dungeon section are choked with rubble and have a {@chance 50} chance of being difficult terrain. Half cover and hiding places are plentiful."
+								],
+								[
+									"3",
+									"Neglected",
+									"One dungeon {@5etools hazard|trapshazards.html} such as {@hazard brown mold}, {@hazard yellow mold}, or {@hazard green slime} is abundant."
+								],
+								[
+									"4",
+									"Abandoned",
+									"Most of the dungeon is deserted and quiet as a tomb. Dexterity ({@skill Stealth}) checks have disadvantage because any sounds stand out as unusual."
+								],
+								[
+									"5",
+									"Secure",
+									"Ability checks made to break down doors, open locks, or similar breaking and entering activities have disadvantage."
+								],
+								[
+									"6",
+									"Thriving",
+									"The dungeon is heavily populated. Any loud noises or other attention-drawing phenomena require a check for Dungeon Encounters (see below)."
+								]
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Dungeon Encounters",
+					"entries":[
+						"Once during each day and each night that the adventurers spend exploring a dungeon, you can roll a d20 to see if an encounter occurs. On a 1, roll on the table below. You can use the Monster Motivation table to randomly determine a creature's goals.",
+						{
+							"type": "table",
+							"colLabels": [
+								"d6",
+								"Encounter"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"rows": [
+								[
+									"1",
+									"A lone, powerful creature appears! You choose the creature, selecting one with a challenge rating that is 1\u20133 higher than the level of the player characters. The creature lives in the dungeon or is passing through, and it is hostile toward the group only if they provoke it."
+								],
+								[
+									"2\u20134",
+									"Hostile creatures prowl nearby! You choose the creatures, selecting five with a challenge rating equal to the level of the player characters. These creatures are either monsters native to the dungeon or hostile explorers."
+								],
+								[
+									"5",
+									"A patch of brown mold, green slime, or yellow mold lies nearby. "
+								],
+								[
+									"6",
+									"A group of friendly explorers crosses the player characters' path. The explorers have 2d4 goods for sale that cost 1 gp or less, which you can select from the Adventuring Gear table in the Player's Handbook."
+								]
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Dungeon Chambers",
+					"entries": [
+						"To randomly determine the purpose of a dungeon chamber, roll on the table below.",
+						{
+							"type": "table",
+							"colLabels": [
+								"d100",
+								"Purpose"
+							],
+							"colStyles": [
+								"col-4 text-center",
+								"col-8"
+							],
+							"rows": [
+								[
+									"01",
+									"Antechamber"
+								],
+								[
+									"02\u201303",
+									"Armory"
+								],
+								[
+									"04",
+									"Audience chamber"
+								],
+								[
+									"05",
+									"Aviary"
+								],
+								[
+									"06\u201307",
+									"Banquet room"
+								],
+								[
+									"08\u201310",
+									"Barracks"
+								],
+								[
+									"11",
+									"Bath or latrine"
+								],
+								[
+									"12",
+									"Bedroom"
+								],
+								[
+									"13",
+									"Bestiary"
+								],
+								[
+									"14\u201316",
+									"Cell"
+								],
+								[
+									"17",
+									"Chantry"
+								],
+								[
+									"18",
+									"Chapel"
+								],
+								[
+									"19\u201320",
+									"Cistern"
+								],
+								[
+									"21",
+									"Classroom"
+								],
+								[
+									"22",
+									"Closet"
+								],
+								[
+									"23\u201324",
+									"Conjuring room"
+								],
+								[
+									"25\u201326",
+									"Court"
+								],
+								[
+									"27\u201329",
+									"Crypt"
+								],
+								[
+									"30\u201331",
+									"Dining room"
+								],
+								[
+									"32\u201333",
+									"Divination room"
+								],
+								[
+									"34",
+									"Dormitory"
+								],
+								[
+									"35",
+									"Dressing room"
+								],
+								[
+									"36\u201337",
+									"Gallery"
+								],
+								[
+									"38\u201339",
+									"Game room"
+								],
+								[
+									"40\u201342",
+									"Guardroom"
+								],
+								[
+									"43\u201344",
+									"Hall"
+								],
+								[
+									"45\u201346",
+									"Hall, great"
+								],
+								[
+									"47\u201348",
+									"Hallway"
+								],
+								[
+									"49",
+									"Kennel"
+								],
+								[
+									"50\u201351",
+									"Kitchen"
+								],
+								[
+									"52\u201353",
+									"Laboratory"
+								],
+								[
+									"54\u201356",
+									"Library"
+								],
+								[
+									"57\u201358",
+									"Lounge"
+								],
+								[
+									"59",
+									"Meditation chamber"
+								],
+								[
+									"60",
+									"Nursery"
+								],
+								[
+									"61",
+									"Observatory"
+								],
+								[
+									"62",
+									"Office"
+								],
+								[
+									"63\u201364",
+									"Pantry"
+								],
+								[
+									"65\u201366",
+									"Pen or Prison"
+								],
+								[
+									"67\u201368",
+									"Reception room"
+								],
+								[
+									"69\u201370",
+									"Refectory"
+								],
+								[
+									"71",
+									"Robing room"
+								],
+								[
+									"72",
+									"Salon"
+								],
+								[
+									"73\u201374",
+									"Shrine"
+								],
+								[
+									"75\u201376",
+									"Sitting room"
+								],
+								[
+									"77\u201378",
+									"Smithy"
+								],
+								[
+									"79",
+									"Stable"
+								],
+								[
+									"80\u201381",
+									"Storage room"
+								],
+								[
+									"82\u201383",
+									"Strong room"
+								],
+								[
+									"84\u201385",
+									"Study"
+								],
+								[
+									"86\u201388",
+									"Temple"
+								],
+								[
+									"89\u201390",
+									"Throne room"
+								],
+								[
+									"91",
+									"Torture chamber"
+								],
+								[
+									"92\u201393",
+									"Training room"
+								],
+								[
+									"94\u201395",
+									"Trophy room"
+								],
+								[
+									"96",
+									"Vestibule"
+								],
+								[
+									"97",
+									"Waiting room"
+								],
+								[
+									"98",
+									"Well"
+								],
+								[
+									"99\u201300",
+									"Workshop"
+								]
+							]
+						}
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Travel Pace",
+					"colLabels": [
+						"Pace",
+						"Distance Traveled per Minute",
+						"Distance Traveled per Hour",
+						"Distance Traveled per Day",
+						"Effect"
+					],
+					"colStyles": [
+						"col-2",
+						"col-2",
+						"col-2",
+						"col-2",
+						"col-4"
+					],
+					"rows": [
+						[
+							"Fast",
+							"400 feet",
+							"4 miles",
+							"30 miles",
+							"-5 penalty to passive Wisdom ({@skill Perception}) scores"
+						],
+						[
+							"Normal",
+							"300 feet",
+							"3 miles",
+							"24 miles",
+							"-"
+						],
+						[
+							"Slow",
+							"200 feet",
+							"2 miles",
+							"18 miles",
+							"Able to use stealth"
+						]
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Cover",
+					"colLabels": [
+						"Cover",
+						"Effect"
+					],
+					"colStyles": [
+						"col-3",
+						"col-9"
+					],
+					"rows": [
+						[
+							"Half cover",
+							"+2 bonus to AC and Dexterity saving throws against attacks and effects that originate on the opposite side of the cover"
+						],
+						[
+							"Three-quarters cover",
+							"+5 bonus to AC and Dexterity saving throws against attacks and effects that originate on the opposite side of the cover"
+						],
+						[
+							"Total cover",
+							"Can't be targeted directly by an attack or a spell"
+						]
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Light",
+					"colLabels": [
+						"Source",
+						"Bright Light",
+						"Dim Light",
+						"Duration"
+					],
+					"colStyles": [
+						"col-3",
+						"col-3",
+						"col-3",
+						"col-3"
+					],
+					"rows": [
+						[
+							"{@item Candle|phb}",
+							"5 ft.",
+							"+ 5 ft.",
+							"1 hour"
+						],
+						[
+							"{@item Lamp|phb}",
+							"15 ft.",
+							"+ 30 ft.",
+							"6 hours"
+						],
+						[
+							"{@item Bullseye Lantern|phb|Lantern, bullseye}",
+							"60 ft. cone",
+							"+ 60 ft.",
+							"6 hours"
+						],
+						[
+							"{@item Hooded Lantern|phb|Lantern, hooded}",
+							"30 ft.",
+							"+ 30 ft.",
+							"6 hours"
+						],
+						{
+							"type": "row",
+							"style": "row-indent-first",
+							"row": [
+								"Lowered hood",
+								"\u2014",
+								"+ 5 ft.",
+								"\u2014"
+							]
+						},
+						[
+							"{@item Torch|phb}",
+							"20 ft.",
+							"+ 20 ft.",
+							"1 hour"
+						]
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Obscured Areas",
+					"colLabels": [
+						"Obscureness",
+						"Effect",
+						"Examples"
+					],
+					"colStyles": [
+						"col-3",
+						"col-5",
+						"col-4"
+					],
+					"rows": [
+						[
+							"Lightly obscured",
+							"Creatures have disadvantage on Wisdom ({@skill Perception}) checks that rely on sight.",
+							"Dim light, patchy fog, moderate foliage"
+						],
+						[
+							"Heavily obscured",
+							"Vision is blocked; creatures are effectively {@condition blinded}.",
+							"Darkness, opaque fog, dense foliage"
+						]
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Tracking DCs",
+					"colLabels": [
+						"Ground Surface",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"Soft surface such as snow",
+							"10"
+						],
+						[
+							"Dirt or grass",
+							"15"
+						],
+						[
+							"Bare stone",
+							"20"
+						],
+						[
+							"Each day since the creature passed",
+							"+5"
+						],
+						[
+							"Creature left a trail such as blood",
+							"-5"
+						]
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Visibility Outdoors",
+					"colLabels": [
+						"Environment",
+						"Distance"
+					],
+					"colStyles": [
+						"col-6",
+						"col-6"
+					],
+					"rows": [
+						[
+							"Clear day, no obstructions",
+							"2 miles"
+						],
+						[
+							"Rain",
+							"1 mile"
+						],
+						[
+							"Fog",
+							"100 to 300 feet"
+						],
+						[
+							"From a height",
+							"× 20"
+						]
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Audible Distance",
+					"colLabels": [
+						"Noise",
+						"Distance"
+					],
+					"colStyles": [
+						"col-6",
+						"col-6"
+					],
+					"rows": [
+						[
+							"Trying to be quiet",
+							"{@dice 2d6 × 5} feet"
+						],
+						[
+							"Normal noise level",
+							"{@dice 2d6 × 10} feet"
+						],
+						[
+							"Very loud",
+							"{@dice 2d6 × 50} feet"
+						]
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Food, Drink, and Lodging",
+					"colLabels": [
+						"Item",
+						"Cost"
+					],
+					"colStyles": [
+						"col-6",
+						"col-6 text-right"
+					],
+					"rows": [
+						[
+							"{@i Ale}",
+							""
+						],
+						{
+							"type": "row",
+							"style": "row-indent-first",
+							"row": [
+								"{@item Ale (Gallon)|PHB|Gallon}",
+								"2 sp"
+							]
+						},
+						{
+							"type": "row",
+							"style": "row-indent-first",
+							"row": [
+								"{@item Ale (mug)|phb|Mug}",
+								"4 cp"
+							]
+						},
+						[
+							"Banquet (per person)",
+							"10 gp"
+						],
+						[
+							"{@item loaf of bread|phb|Bread, loaf}",
+							"2 cp"
+						],
+						[
+							"{@item hunk of cheese|phb|Cheese, hunk}",
+							"1 sp"
+						],
+						[
+							"{@i Inn stay (per day)}",
+							""
+						],
+						{
+							"type": "row",
+							"style": "row-indent-first",
+							"row": [
+								"Squalid",
+								"7 cp"
+							]
+						},
+						{
+							"type": "row",
+							"style": "row-indent-first",
+							"row": [
+								"Poor",
+								"1 sp"
+							]
+						},
+						{
+							"type": "row",
+							"style": "row-indent-first",
+							"row": [
+								"Modest",
+								"5 sp"
+							]
+						},
+						{
+							"type": "row",
+							"style": "row-indent-first",
+							"row": [
+								"Comfortable",
+								"8 sp"
+							]
+						},
+						{
+							"type": "row",
+							"style": "row-indent-first",
+							"row": [
+								"Wealthy",
+								"2 gp"
+							]
+						},
+						{
+							"type": "row",
+							"style": "row-indent-first",
+							"row": [
+								"Aristocratic",
+								"4 gp"
+							]
+						},
+						[
+							"{@i Meals (per day)}",
+							""
+						],
+						{
+							"type": "row",
+							"style": "row-indent-first",
+							"row": [
+								"Squalid",
+								"3 cp"
+							]
+						},
+						{
+							"type": "row",
+							"style": "row-indent-first",
+							"row": [
+								"Poor",
+								"6 cp"
+							]
+						},
+						{
+							"type": "row",
+							"style": "row-indent-first",
+							"row": [
+								"Modest",
+								"3 sp"
+							]
+						},
+						{
+							"type": "row",
+							"style": "row-indent-first",
+							"row": [
+								"Comfortable",
+								"5 sp"
+							]
+						},
+						{
+							"type": "row",
+							"style": "row-indent-first",
+							"row": [
+								"Wealthy",
+								"8 sp"
+							]
+						},
+						{
+							"type": "row",
+							"style": "row-indent-first",
+							"row": [
+								"Aristocratic",
+								"2 gp"
+							]
+						},
+						[
+							"{@item chunk of meat|phb|Meat, chunk}",
+							"3 sp"
+						],
+						[
+							"{@i Wine}",
+							""
+						],
+						{
+							"type": "row",
+							"style": "row-indent-first",
+							"row": [
+								"{@item common wine (pitcher)|phb|Common (pitcher)}",
+								"2 sp"
+							]
+						},
+						{
+							"type": "row",
+							"style": "row-indent-first",
+							"row": [
+								"{@item fine wine (bottle)|phb|Fine (bottle)}",
+								"10 gp"
+							]
+						}
+					]
+				},
+				{
+					"type": "table",
+					"caption": "Foraging DCs",
+					"colLabels": [
+						"Food and Water Availability",
+						"DC"
+					],
+					"colStyles": [
+						"col-10",
+						"col-2 text-center"
+					],
+					"rows": [
+						[
+							"Abundant food and water sources",
+							"10"
+						],
+						[
+							"Limited food and water sources",
+							"15"
+						],
+						[
+							"Very little, if any, food and water sources",
+							"20"
+						]
+					]
+				}
+			]
+		},
+		{
+			"type": "section",
+			"name": "Included Accessories",
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Condition and Hazard Cards",
+					"entries": [
+						"The reference cards can be found below:",
+						{
+							"type": "gallery",
+							"images": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/1-1.webp"
+									},
+									"title": "{@condition Deafened}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/1-2.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/2-1.webp"
+									},
+									"title": "{@condition Charmed}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/2-2.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/3-1.webp"
+									},
+									"title": "{@condition Blinded}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/3-2.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/4-1.webp"
+									},
+									"title": "{@condition Incapacitated}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/4-2.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/5-1.webp"
+									},
+									"title": "{@condition Grappled}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/5-2.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/6-1.webp"
+									},
+									"title": "{@condition Frightened}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/6-2.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/7-1.webp"
+									},
+									"title": "{@condition Petrified}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/7-2.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/8-1.webp"
+									},
+									"title": "{@condition Paralyzed}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/8-2.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/9-1.webp"
+									},
+									"title": "{@condition Invisible}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/9-2.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/10-1.webp"
+									},
+									"title": "{@condition Restrained}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/10-2.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/11-1.webp"
+									},
+									"title": "{@condition Prone}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/11-2.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/12-1.webp"
+									},
+									"title": "{@condition Poisoned}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/12-2.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/13-1.webp"
+									},
+									"title": "{@condition Exhaustion}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/13-2.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/14-1.webp"
+									},
+									"title": "{@condition Unconscious}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/14-2.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/15-1.webp"
+									},
+									"title": "{@condition Stunned}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/15-2.webp"
+									}
+								}
+							]
+						},
+						"Hazard cards can be found below:",
+						{
+							"type": "gallery",
+							"images": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/16-1.webp"
+									},
+									"title": "{@hazard Brown Mold}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/16-2.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/17-1.webp"
+									},
+									"title": "{@hazard Green Slime}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/17-2.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/18-1.webp"
+									},
+									"title": "{@hazard Yellow Mold}"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/18-2.webp"
+									}
+								}
+							]
+						},
+						"The full pages for printing can be found below:",
+						{
+							"type": "gallery",
+							"images": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/Print1.png"
+									},
+									"title": "Page 1"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/Print2.png"
+									},
+									"title": "Page 2"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/Print3.png"
+									},
+									"title": "Page 3"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Conditions/Print4.png"
+									},
+									"title": "Page 4"
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Initiative Cards",
+					"entries": [
+						"The initiative cards can be found below:",
+						{
+							"type": "gallery",
+							"images": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Initiative/1.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Initiative/2.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Initiative/3.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Initiative/4.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Initiative/5.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Initiative/6.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Initiative/7.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Initiative/8.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Initiative/9.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Initiative/Back.webp"
+									}
+								}
+							]
+						},
+						"The full pages for printing can be found below:",
+						{
+							"type": "gallery",
+							"images": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Initiative/PrintInitiative.png"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Initiative/PrintBack.png"
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Geomorph Cards",
+					"entries": [
+						"36 geomorph cards, perfect for dealing a random dungeon layout with interlocking map sections:",
+						{
+							"type": "gallery",
+							"images": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/001.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/002.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/003.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/004.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/005.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/006.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/007.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/008.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/009.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/010.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/011.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/012.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/013.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/014.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/015.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/016.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/017.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/018.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/019.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/020.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/021.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/022.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/023.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/024.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/025.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/026.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/027.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/028.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/029.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/030.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/031.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/032.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/033.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/034.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/035.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/036.webp"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/Back.webp"
+									}
+								}
+							]
+						},
+						"The full pages for printing can be found below:",
+						{
+							"type": "gallery",
+							"images": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/Print1.png"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/Print2.png"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/Print3.png"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/Print4.png"
+									}
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/PrintBack.png"
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Card Box",
+					"entries": [
+						"A box for all your cards.",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/ScreenDungeonKit/DeckBox.png"
+							},
+							"title": "Card Box"
+						}
+					]
+				}
+			]
+		}
+	]
+}
