@@ -532,5 +532,8 @@
 			"$ref": "class/foundry.json#/properties/subclassFeature"
 		}
 	},
-	"additionalProperties": false
+	"additionalProperties": false,
+	"required": [
+		"_meta"
+	]
 }
