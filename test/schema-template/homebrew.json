@@ -291,27 +291,7 @@
 			}
 		},
 		"makebrewCreatureTrait": {
-			"description": "Additional trait templates which can be used in the homebrew builder.",
-			"type": "array",
-			"items": {
-				"type": "object",
-				"properties": {
-					"name": {
-						"type": "string"
-					},
-					"source": {
-						"type": "string"
-					},
-					"entries": {
-						"type": "array"
-					}
-				},
-				"required": [
-					"name",
-					"source",
-					"entries"
-				]
-			}
+			"$ref": "makebrew-creature.json#/properties/makebrewCreatureTrait"
 		},
 		"adventure": {
 			"$ref": "adventures.json#/properties/adventure"

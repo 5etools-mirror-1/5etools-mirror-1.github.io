@@ -8,11 +8,15 @@
 			"type": "string"
 		},
 		"makebrewCreatureTrait": {
+			"description": "Additional trait templates which can be used in the homebrew builder.",
 			"type": "array",
 			"items": {
 				"type": "object",
 				"properties": {
 					"name": {
+						"type": "string"
+					},
+					"source": {
 						"type": "string"
 					},
 					"entries": {
@@ -21,7 +25,12 @@
 							"$ref": "entry.json"
 						}
 					}
-				}
+				},
+				"required": [
+					"name",
+					{"$$ifBrew_item": "source"},
+					"entries"
+				]
 			}
 		}
 	},
