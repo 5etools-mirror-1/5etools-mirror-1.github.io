@@ -3,7 +3,6 @@
 	"version": "1.7.1",
 	"type": "object",
 	"description": "Homebrew for 5etools. Should include arrays titled similarly to the main site data, e.g. `spell` or `class`",
-
 	"properties": {
 		"_meta": {
 			"description": "Metadata for the included data arrays",
@@ -262,6 +261,10 @@
 			],
 			"additionalProperties": false
 		},
+		"$schema": {
+			"description": "An optional key that allows you specify the schema you want to verify against in compatible IDEs.\nIt is  advised that you leave this key out when submitting to the repo.",
+			"type": "string"
+		},
 		"blacklist": {
 			"description": "An array of objects to blacklist from display on the site.\nUse of this in public brew files is strongly discouraged.",
 			"type": "array",
@@ -290,14 +293,26 @@
 				"additionalProperties": false
 			}
 		},
-		"makebrewCreatureTrait": {
-			"$ref": "makebrew-creature.json#/properties/makebrewCreatureTrait"
-		},
 		"adventure": {
 			"$ref": "adventures.json#/properties/adventure"
 		},
+		"adventureData": {
+			"$ref": "adventure/adventure.json#/properties/data"
+		},
+		"monster": {
+			"$ref": "bestiary/bestiary.json#/properties/monster"
+		},
+		"monsterFluff": {
+			"$ref": "bestiary/fluff-bestiary.json#/properties/monsterFluff"
+		},
+		"legendaryGroup": {
+			"$ref": "bestiary/legendarygroups.json#/properties/legendaryGroup"
+		},
 		"book": {
 			"$ref": "books.json#/properties/book"
+		},
+		"bookData": {
+			"$ref": "book/book.json#/properties/data"
 		},
 		"class": {
 			"$ref": "class/class.json#/properties/class"
@@ -305,8 +320,17 @@
 		"subclass": {
 			"$ref": "class/class.json#/properties/subclass"
 		},
+		"classFeature": {
+			"$ref": "class/class.json#/properties/classFeature"
+		},
 		"subclassFeature": {
 			"$ref": "class/class.json#/properties/subclassFeature"
+		},
+		"foundryClassFeature": {
+			"$ref": "class/foundry.json#/properties/classFeature"
+		},
+		"foundrySubclassFeature": {
+			"$ref": "class/foundry.json#/properties/subclassFeature"
 		},
 		"spell": {
 			"$ref": "spells/spells.json#/properties/spell"
@@ -319,58 +343,11 @@
 			"$ref": "spells/roll20.json#/properties/spell"
 		},
 		"foundrySpell": {
-			"type": "array",
-			"items": {
-				"type": "object",
-				"properties": {
-					"name": {
-						"description": "Used to link spells in the homebrew to this extra Foundry data",
-						"type": "string"
-					},
-					"source": {
-						"description": "Used to link spells in the homebrew to this extra Foundry data",
-						"type": "string"
-					},
-					"data": {
-						"type": "object",
-						"description": "Foundry data",
-						"properties": {
-							"target.value": {
-								"type": "integer"
-							},
-							"target.units": {
-								"type": "string"
-							},
-							"target.type": {
-								"description": "From Foundry's `CONFIG.DND5E.targetTypes`",
-								"type": "string",
-								"enum": [
-									"ally",
-									"creature",
-									"cylinder",
-									"cone",
-									"cube",
-									"enemy",
-									"line",
-									"none",
-									"object",
-									"radius",
-									"self",
-									"space",
-									"sphere",
-									"square",
-									"wall"
-								]
-							}
-						}
-					}
-				},
-				"required": [
-					"name",
-					"source"
-				],
-				"additionalProperties": false
-			}
+			"description": "Based on the Foundry VTT spell data, examples available here: https://gitlab.com/foundrynet/dnd5e/-/tree/master/packs/src/spells",
+			"$ref": "spells/foundry.json#/properties/spell"
+		},
+		"action": {
+			"$ref": "actions.json#/properties/action"
 		},
 		"item": {
 			"$ref": "items.json#/properties/item"
@@ -390,20 +367,41 @@
 		"variant": {
 			"$ref": "magicvariants.json#/properties/variant"
 		},
+		"linkedLootTables": {
+			"$ref": "magicvariants.json#/properties/linkedLootTables"
+		},
+		"itemFluff": {
+			"$ref": "fluff-items.json#/properties/itemFluff"
+		},
 		"background": {
 			"$ref": "backgrounds.json#/properties/background"
 		},
 		"backgroundFluff": {
 			"$ref": "fluff-backgrounds.json#/properties/backgroundFluff"
 		},
+		"charoption": {
+			"$ref": "charcreationoptions.json#/properties/charoption"
+		},
+		"charoptionFluff": {
+			"$ref": "fluff-charcreationoptions.json#/properties/charoptionFluff"
+		},
 		"condition": {
 			"$ref": "conditionsdiseases.json#/properties/condition"
+		},
+		"conditionFluff": {
+			"$ref": "fluff-conditionsdiseases.json#/properties/conditionFluff"
 		},
 		"disease": {
 			"$ref": "conditionsdiseases.json#/properties/disease"
 		},
 		"status": {
 			"$ref": "conditionsdiseases.json#/properties/status"
+		},
+		"cult": {
+			"$ref": "cultsboons.json#/properties/cult"
+		},
+		"boon": {
+			"$ref": "cultsboons.json#/properties/boon"
 		},
 		"deity": {
 			"$ref": "deities.json#/properties/deity"
@@ -414,8 +412,56 @@
 		"feat": {
 			"$ref": "feats.json#/properties/feat"
 		},
+		"language": {
+			"$ref": "languages.json#/properties/language"
+		},
+		"languageFluff": {
+			"$ref": "fluff-languages.json#/properties/languageFluff"
+		},
+		"individual": {
+			"$ref": "loot.json#/properties/individual"
+		},
+		"hoard": {
+			"$ref": "loot.json#/properties/hoard"
+		},
+		"gems": {
+			"$ref": "loot.json#/properties/gems"
+		},
+		"artObjects": {
+			"$ref": "loot.json#/properties/artObjects"
+		},
+		"magicItems": {
+			"$ref": "loot.json#/properties/magicItems"
+		},
+		"dragonMundaneItems": {
+			"$ref": "loot.json#/properties/dragonMundaneItems"
+		},
+		"dragon": {
+			"$ref": "loot.json#/properties/dragon"
+		},
+		"makebrewCreatureTrait": {
+			"$ref": "makebrew-creature.json#/properties/makebrewCreatureTrait"
+		},
+		"reducedItemProperty": {
+			"$ref": "makecards.json#/properties/reducedItemProperty"
+		},
+		"reducedItemType": {
+			"$ref": "makecards.json#/properties/reducedItemType"
+		},
+		"monsterfeatures": {
+			"$ref": "monsterfeatures.json#/properties/monsterfeatures"
+		},
+		"cr": {
+			"$ref": "msbcr.json#/properties/cr"
+		},
+		"name": {
+			"$ref": "names.json#/properties/name"
+		},
 		"object": {
 			"$ref": "objects.json#/properties/object"
+		},
+		"optionalfeature": {
+			"$ref": "optionalfeatures.json#/properties/optionalfeature"
 		},
 		"psionic": {
 			"$ref": "psionics.json#/properties/psionic"
@@ -429,11 +475,20 @@
 		"raceFluff": {
 			"$ref": "fluff-races.json#/properties/raceFluff"
 		},
+		"raceFluffMeta": {
+			"$ref": "fluff-races.json#/properties/raceFluffMeta"
+		},
+		"recipe": {
+			"$ref": "recipes.json#/properties/recipe"
+		},
+		"recipeFluff": {
+			"$ref": "fluff-recipes.json#/properties/recipeFluff"
+		},
+		"renderdemo": {
+			"$ref": "renderdemo.json#/properties/data"
+		},
 		"reward": {
 			"$ref": "rewards.json#/properties/reward"
-		},
-		"ship": {
-			"$ref": "vehicles.json#/properties/vehicle"
 		},
 		"table": {
 			"$ref": "tables.json#/properties/table"
@@ -444,36 +499,8 @@
 		"hazard": {
 			"$ref": "trapshazards.json#/properties/hazard"
 		},
-		"optionalfeature": {
-			"$ref": "optionalfeatures.json#/properties/optionalfeature"
-		},
 		"variantrule": {
 			"$ref": "variantrules.json#/properties/variantrule"
-		},
-		"legendaryGroup": {
-			"$ref": "bestiary/legendarygroups.json#/properties/legendaryGroup"
-		},
-		"language": {
-			"$ref": "languages.json#/properties/language"
-		},
-		"monster": {
-			"$ref": "bestiary/bestiary.json#/properties/monster"
-		},
-		"itemFluff": {
-			"$ref": "fluff-items.json#/properties/itemFluff"
-		},
-		"monsterFluff": {
-			"$ref": "bestiary/fluff-bestiary.json#/properties/monsterFluff"
-		},
-		"bookData": {
-			"$ref": "book/book.json#/properties/data"
-		},
-		"adventureData": {
-			"$ref": "adventure/adventure.json#/properties/data"
-		},
-		"$schema": {
-			"description": "An optional key that allows you specify the schema you want to verify against.\nIt is strongly advised that you leave this key out when submitting to the repo.\nTo reduce work it is advised that you set up your environment to use the same schema for all homebrew files.",
-			"type": "string"
 		},
 		"vehicle": {
 			"$ref": "vehicles.json#/properties/vehicle"
@@ -481,35 +508,8 @@
 		"vehicleUpgrade": {
 			"$ref": "vehicles.json#/properties/vehicleUpgrade"
 		},
-		"action": {
-			"$ref": "actions.json#/properties/action"
-		},
-		"recipe": {
-			"$ref": "recipes.json#/properties/recipe"
-		},
-		"recipeFluff": {
-			"$ref": "fluff-recipes.json#/properties/recipeFluff"
-		},
-		"classFeature": {
-			"$ref": "class/class.json#/properties/classFeature"
-		},
-		"cult": {
-			"$ref": "cultsboons.json#/properties/cult"
-		},
-		"boon": {
-			"$ref": "cultsboons.json#/properties/boon"
-		},
-		"charoption": {
-			"$ref": "charcreationoptions.json#/properties/charoption"
-		},
-		"name": {
-			"$ref": "names.json#/properties/name"
-		},
-		"foundryClassFeature": {
-			"$ref": "class/foundry.json#/properties/classFeature"
-		},
-		"foundrySubclassFeature": {
-			"$ref": "class/foundry.json#/properties/subclassFeature"
+		"vehicleFluff": {
+			"$ref": "fluff-vehicles.json#/properties/vehicleFluff"
 		}
 	},
 	"additionalProperties": false,
