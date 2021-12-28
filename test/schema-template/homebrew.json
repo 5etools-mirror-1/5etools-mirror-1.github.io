@@ -364,6 +364,12 @@
 		"itemType": {
 			"$ref": "items-base.json#/properties/itemType"
 		},
+		"itemEntry": {
+			"$ref": "items-base.json#/properties/itemEntry"
+		},
+		"itemTypeAdditionalEntries": {
+			"$ref": "items-base.json#/properties/itemTypeAdditionalEntries"
+		},
 		"variant": {
 			"$ref": "magicvariants.json#/properties/variant"
 		},
