@@ -480,7 +480,19 @@
 					"type": "integer"
 				},
 				"unit": {
-					"type": "string"
+					"type": "string",
+					"$$ifSiteElse_key": {
+						"keySite": "enum",
+						"keyBrew": "examples",
+						"value": [
+							"action",
+							"bonus",
+							"reaction",
+							"round",
+							"minute",
+							"hour"
+						]
+					}
 				},
 				"condition": {
 					"type": "string"
