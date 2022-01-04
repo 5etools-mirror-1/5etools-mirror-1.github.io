@@ -1,0 +1,1312 @@
+{
+	"fileType": "5etools",
+	"siteVersion": "1.147.0",
+	"sync": {
+		"HOMEBREW_META_STORAGE": {
+			"sources": [
+				{
+					"json": "LMoP(HB)",
+					"abbreviation": "LMoP(HB)",
+					"full": "Lost Mines of Phandelver (Homebrew)",
+					"url": "",
+					"authors": [],
+					"convertedBy": [
+						"elentir"
+					]
+				}
+			]
+		}
+	},
+	"async": {
+		"ENCOUNTER_SAVED_STORAGE": {
+			"savedEncounters": {},
+			"activeKey": null
+		},
+		"SUBLIST_RESIZE_bestiary.html": "130px",
+		"brewbuilderState_makebrew.html": {
+			"builders": {
+				"creatureBuilder": {
+					"s": {
+						"name": "Drider (The Black Spider)",
+						"source": "LMoP(HB)",
+						"size": "L",
+						"type": "monstrosity",
+						"alignment": [
+							"N",
+							"E"
+						],
+						"ac": [
+							{
+								"ac": 19,
+								"from": [
+									"natural armor"
+								]
+							},
+							{
+								"ac": 16,
+								"from": [
+									"Paragon Fury"
+								]
+							}
+						],
+						"hp": {
+							"special": "Paragon Fortitude: 62 (Pool 1), 61 (Pool 2)"
+						},
+						"speed": {
+							"walk": 30,
+							"climb": 30
+						},
+						"str": 16,
+						"dex": 16,
+						"con": 18,
+						"int": 16,
+						"wis": 14,
+						"cha": 13,
+						"skill": {
+							"stealth": "+9",
+							"perception": "+5",
+							"arcana": "+5"
+						},
+						"senses": [
+							"darkvision 120 ft."
+						],
+						"passive": 15,
+						"languages": [
+							"Elvish",
+							"Undercommon"
+						],
+						"spellcasting": [
+							{
+								"name": "Innate Spellcasting",
+								"headerEntries": [
+									"The drider's innate spellcasting ability is Wisdom (spell save {@dc 13}). The drider can innately cast the following spells, requiring no material components:"
+								],
+								"will": [
+									"{@spell dancing lights}"
+								],
+								"daily": {
+									"1e": [
+										"{@spell darkness}",
+										"{@spell faerie fire}"
+									]
+								},
+								"ability": "wis",
+								"type": "spellcasting"
+							}
+						],
+						"trait": [
+							{
+								"name": "Fey Ancestry",
+								"entries": [
+									"The drider has advantage on saving throws against being {@condition charmed}, and magic can't put the drider to sleep."
+								]
+							},
+							{
+								"name": "Spider Climb",
+								"entries": [
+									"The drider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+								]
+							},
+							{
+								"name": "Sunlight Sensitivity",
+								"entries": [
+									"While in sunlight, the drider has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+								]
+							},
+							{
+								"name": "Web Walker",
+								"entries": [
+									"The drider ignores movement restrictions caused by webbing."
+								]
+							},
+							{
+								"name": "Paragon Fury",
+								"entries": [
+									"Nezznar may take one additional turn in each round of combat for each of his hit point pools that have been reduced to zero. Nezznar determines initiative normally for his first turn, though he gains advantage on the roll. Each subsequent turn Nezznar gains is inserted immediately after any one PC's turn in the initiative order. In addition, Nezznar's AC is reduced to 16."
+								]
+							},
+							{
+								"name": "Paragon Fortitude",
+								"entries": [
+									"The creature has multiple pools of hit points, each of which is tracked separately. All damage and healing must be completely applied to only one pool. When a pool is reduced to zero, all ongoing conditions and effects affecting the creature end. Once a pool is reduced to zero, that pool cannot receive any healing until after a long rest. If all hit of the point pools are reduced to zero, the creature is killed."
+								]
+							}
+						],
+						"action": [
+							{
+								"name": "Multiattack",
+								"entries": [
+									"The drider makes three attacks, either with its longsword or its longbow. It can replace one of those attacks with a bite attack."
+								]
+							},
+							{
+								"name": "Bite",
+								"entries": [
+									"{@atk mw} {@hit 6} to hit, reach 5 ft., one creature. {@h}2 ({@damage 1d4}) piercing damage plus 9 ({@damage 2d8}) poison damage."
+								]
+							},
+							{
+								"name": "Longsword",
+								"entries": [
+									"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) slashing damage, or 8 ({@damage 1d10 + 3}) slashing damage if used with two hands."
+								]
+							},
+							{
+								"name": "Longbow",
+								"entries": [
+									"{@atk rw} {@hit 6} to hit, range 150/600 ft., one target. {@h}7 ({@damage 1d8 + 3}) piercing damage plus 4 ({@damage 1d8}) poison damage."
+								]
+							},
+							{
+								"name": "Spectral Lash",
+								"entries": [
+									"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}11 ({@damage 1d10 + 6}) necrotic damage. Nezznar can't use this ability unless Paragon Fury is activated."
+								]
+							}
+						],
+						"environment": [
+							"underdark"
+						],
+						"soundClip": {
+							"type": "external",
+							"url": "https://5e.tools/audio/bestiary/drider.mp3"
+						},
+						"traitTags": [
+							"Fey Ancestry",
+							"Spider Climb",
+							"Sunlight Sensitivity",
+							"Web Walker"
+						],
+						"senseTags": [
+							"SD"
+						],
+						"actionTags": [
+							"Multiattack"
+						],
+						"languageTags": [
+							"E",
+							"U"
+						],
+						"damageTags": [
+							"P",
+							"I",
+							"S",
+							"N"
+						],
+						"spellcastingTags": [
+							"I"
+						],
+						"miscTags": [
+							"MW",
+							"RW",
+							"RNG"
+						],
+						"hasFluff": true,
+						"hasFluffImages": true,
+						"tokenUrl": "https://5e.tools/img/MM/Drider.png",
+						"fluff": {
+							"name": "Drider",
+							"source": "MM",
+							"entries": [
+								{
+									"type": "entries",
+									"entries": [
+										{
+											"type": "entries",
+											"entries": [
+												"When a drow shows great promise, Lolth summons it to the Demonweb Pits for a test of faith and strength. Those that pass the test rise higher in the Spider Queen's favor. Those that fail are transformed into driders-a horrid hybrid of a drow and a giant spider that serves as a living reminder of Lolth's power. Only drow can be turned into driders, and the power to create these creatures resides with Lolth alone.",
+												{
+													"type": "entries",
+													"name": "Scarred for Life",
+													"entries": [
+														"Drow transformed into driders return to the Material Plane as twisted and debased creatures. Driven by madness, they disappear into the Underdark to become hermits and hunters, either wandering alone or leading packs of giant spiders.",
+														"On rare occasion, a drider returns to the fringes of drow society despite its curse, most often to fulfill some longstanding vow or vendetta from its former life. Drow fear and shun the driders, holding them in lower esteem than slaves. However, they tolerate the presence of these creatures as living representatives of Lolth's will, and a reminder of the fate that awaits all who fail the Spider Queen."
+													]
+												}
+											]
+										}
+									]
+								}
+							],
+							"images": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "bestiary/MM/Drider.jpg"
+									}
+								}
+							]
+						},
+						"save": {
+							"int": "+5",
+							"wis": "+4"
+						},
+						"alias": [
+							"Nezznar"
+						],
+						"isNpc": true,
+						"cr": "6",
+						"__prop": "monster",
+						"_pTypes": {
+							"type": "monstrosity",
+							"tags": [],
+							"asText": "monstrosity"
+						},
+						"_pCr": "6",
+						"_fCr": [
+							"6"
+						]
+					},
+					"m": {
+						"ixBrew": 1,
+						"profSave": {},
+						"profSkill": {
+							"stealth": 2,
+							"perception": 1
+						},
+						"autoCalc": {
+							"proficiency": true,
+							"hpAverage": true,
+							"hpModifier": true,
+							"passivePerception": true
+						},
+						"ixActiveTab__input": 5,
+						"ixActiveTab__output": 3
+					},
+					"_m": {
+						"isEntrySaved": true
+					}
+				},
+				"legendaryGroupBuilder": {
+					"s": {
+						"name": "New Legendary Group",
+						"lairActions": [],
+						"regionalEffects": [],
+						"mythicEncounter": [],
+						"source": ""
+					},
+					"m": {},
+					"_m": {
+						"isEntrySaved": true
+					}
+				},
+				"spellBuilder": {
+					"s": {
+						"name": "New Spell",
+						"level": 1,
+						"school": "A",
+						"time": [
+							{
+								"number": 1,
+								"unit": "action"
+							}
+						],
+						"range": {
+							"type": "point",
+							"distance": {
+								"type": "self"
+							}
+						},
+						"duration": [
+							{
+								"type": "instant"
+							}
+						],
+						"classes": {
+							"fromClassList": [
+								{
+									"name": "Wizard",
+									"source": "PHB"
+								}
+							]
+						},
+						"entries": [],
+						"source": ""
+					},
+					"m": {},
+					"_m": {
+						"isEntrySaved": true
+					}
+				}
+			}
+		},
+		"brewbuilderSettings_makebrew.html": {
+			"activeBuilder": "creatureBuilder",
+			"activeSource": "LMoP(HB)"
+		},
+		"HOMEBREW_STORAGE": {
+			"monster": [
+				{
+					"name": "Drider (The Black Spider)",
+					"source": "DriderBlackSpider",
+					"size": "L",
+					"type": "monstrosity",
+					"alignment": [
+						"N",
+						"E"
+					],
+					"ac": [
+						{
+							"ac": 19,
+							"from": [
+								"natural armor"
+							]
+						},
+						{
+							"ac": 16,
+							"condition": "Paragon Fury",
+							"braces": true
+						}
+					],
+					"hp": {
+						"special": "Paragon Fortitude: 62 (Pool 1), 61 (Pool 2)"
+					},
+					"speed": {
+						"walk": 30,
+						"climb": 30
+					},
+					"str": 16,
+					"dex": 16,
+					"con": 18,
+					"int": 16,
+					"wis": 14,
+					"cha": 13,
+					"skill": {
+						"stealth": "+9",
+						"perception": "+5",
+						"arcana": "+5"
+					},
+					"senses": [
+						"darkvision 120 ft."
+					],
+					"passive": 15,
+					"languages": [
+						"Elvish",
+						"Undercommon"
+					],
+					"cr": "6",
+					"spellcasting": [
+						{
+							"name": "Innate Spellcasting",
+							"headerEntries": [
+								"The drider's innate spellcasting ability is Wisdom (spell save {@dc 13}). The drider can innately cast the following spells, requiring no material components:"
+							],
+							"will": [
+								"{@spell dancing lights}"
+							],
+							"daily": {
+								"1e": [
+									"{@spell darkness}",
+									"{@spell faerie fire}"
+								]
+							},
+							"ability": "wis",
+							"type": "spellcasting"
+						}
+					],
+					"trait": [
+						{
+							"name": "Fey Ancestry",
+							"entries": [
+								"The drider has advantage on saving throws against being {@condition charmed}, and magic can't put the drider to sleep."
+							]
+						},
+						{
+							"name": "Spider Climb",
+							"entries": [
+								"The drider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+							]
+						},
+						{
+							"name": "Sunlight Sensitivity",
+							"entries": [
+								"While in sunlight, the drider has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+							]
+						},
+						{
+							"name": "Web Walker",
+							"entries": [
+								"The drider ignores movement restrictions caused by webbing."
+							]
+						},
+						{
+							"name": "Paragon Fury",
+							"entries": [
+								"Nezznar may take one additional turn in each round of combat for each of his hit point pools that have been reduced to zero. Nezznar determines initiative normally for his first turn, though he gains advantage on the roll. Each subsequent turn Nezznar gains is inserted immediately after any one PC's turn in the initiative order. In addition, Nezznar's AC is reduced to 16."
+							]
+						},
+						{
+							"name": "Paragon Fortitude",
+							"entries": [
+								"The creature has multiple pools of hit points, each of which is tracked separately. All damage and healing must be completely applied to only one pool. When a pool is reduced to zero, all ongoing conditions and effects affecting the creature end. Once a pool is reduced to zero, that pool cannot receive any healing until after a long rest. If all hit of the point pools are reduced to zero, the creature is killed."
+							]
+						}
+					],
+					"action": [
+						{
+							"name": "Multiattack",
+							"entries": [
+								"The drider makes three attacks, either with its longsword or its longbow. It can replace one of those attacks with a bite attack."
+							]
+						},
+						{
+							"name": "Bite",
+							"entries": [
+								"{@atk mw} {@hit 6} to hit, reach 5 ft., one creature. {@h}2 ({@damage 1d4}) piercing damage plus 9 ({@damage 2d8}) poison damage."
+							]
+						},
+						{
+							"name": "Longsword",
+							"entries": [
+								"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) slashing damage, or 8 ({@damage 1d10 + 3}) slashing damage if used with two hands."
+							]
+						},
+						{
+							"name": "Longbow",
+							"entries": [
+								"{@atk rw} {@hit 6} to hit, range 150/600 ft., one target. {@h}7 ({@damage 1d8 + 3}) piercing damage plus 4 ({@damage 1d8}) poison damage."
+							]
+						},
+						{
+							"name": "Spectral Lash",
+							"entries": [
+								"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}11 ({@damage 1d10 + 6}) necrotic damage. Nezznar can't use this ability unless Paragon Fury is activated."
+							]
+						}
+					],
+					"environment": [
+						"underdark"
+					],
+					"soundClip": {
+						"type": "external",
+						"url": "https://5e.tools/audio/bestiary/drider.mp3"
+					},
+					"traitTags": [
+						"Fey Ancestry",
+						"Spider Climb",
+						"Sunlight Sensitivity",
+						"Web Walker"
+					],
+					"senseTags": [
+						"SD"
+					],
+					"actionTags": [
+						"Multiattack"
+					],
+					"languageTags": [
+						"E",
+						"U"
+					],
+					"damageTags": [
+						"P",
+						"I",
+						"S",
+						"N"
+					],
+					"spellcastingTags": [
+						"I"
+					],
+					"miscTags": [
+						"MW",
+						"RW",
+						"RNG"
+					],
+					"hasFluff": true,
+					"hasFluffImages": true,
+					"tokenUrl": "https://5e.tools/img/MM/Drider.png",
+					"fluff": {
+						"name": "Drider",
+						"source": "MM",
+						"entries": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"When a drow shows great promise, Lolth summons it to the Demonweb Pits for a test of faith and strength. Those that pass the test rise higher in the Spider Queen's favor. Those that fail are transformed into driders-a horrid hybrid of a drow and a giant spider that serves as a living reminder of Lolth's power. Only drow can be turned into driders, and the power to create these creatures resides with Lolth alone.",
+											{
+												"type": "entries",
+												"name": "Scarred for Life",
+												"entries": [
+													"Drow transformed into driders return to the Material Plane as twisted and debased creatures. Driven by madness, they disappear into the Underdark to become hermits and hunters, either wandering alone or leading packs of giant spiders.",
+													"On rare occasion, a drider returns to the fringes of drow society despite its curse, most often to fulfill some longstanding vow or vendetta from its former life. Drow fear and shun the driders, holding them in lower esteem than slaves. However, they tolerate the presence of these creatures as living representatives of Lolth's will, and a reminder of the fate that awaits all who fail the Spider Queen."
+												]
+											}
+										]
+									}
+								]
+							}
+						],
+						"images": [
+							{
+								"type": "image",
+								"href": {
+									"type": "internal",
+									"path": "bestiary/MM/Drider.jpg"
+								}
+							}
+						]
+					},
+					"save": {
+						"int": "+5",
+						"wis": "+4"
+					},
+					"alias": [
+						"Nezznar"
+					],
+					"isNpc": true,
+					"uniqueId": "1f53a7cf96b7cc8c562530c2e53c594c"
+				},
+				{
+					"name": "Drider (The Black Spider)",
+					"source": "LMoP(HB)",
+					"size": "L",
+					"type": "monstrosity",
+					"alignment": [
+						"N",
+						"E"
+					],
+					"ac": [
+						{
+							"ac": 19,
+							"from": [
+								"natural armor"
+							]
+						},
+						{
+							"ac": 16,
+							"from": [
+								"Paragon Fury"
+							]
+						}
+					],
+					"hp": {
+						"special": "Paragon Fortitude: 62 (Pool 1), 61 (Pool 2)"
+					},
+					"speed": {
+						"walk": 30,
+						"climb": 30
+					},
+					"str": 16,
+					"dex": 16,
+					"con": 18,
+					"int": 16,
+					"wis": 14,
+					"cha": 13,
+					"skill": {
+						"stealth": "+9",
+						"perception": "+5",
+						"arcana": "+5"
+					},
+					"senses": [
+						"darkvision 120 ft."
+					],
+					"passive": 15,
+					"languages": [
+						"Elvish",
+						"Undercommon"
+					],
+					"spellcasting": [
+						{
+							"name": "Innate Spellcasting",
+							"headerEntries": [
+								"The drider's innate spellcasting ability is Wisdom (spell save {@dc 13}). The drider can innately cast the following spells, requiring no material components:"
+							],
+							"will": [
+								"{@spell dancing lights}"
+							],
+							"daily": {
+								"1e": [
+									"{@spell darkness}",
+									"{@spell faerie fire}"
+								]
+							},
+							"ability": "wis",
+							"type": "spellcasting"
+						}
+					],
+					"trait": [
+						{
+							"name": "Fey Ancestry",
+							"entries": [
+								"The drider has advantage on saving throws against being {@condition charmed}, and magic can't put the drider to sleep."
+							]
+						},
+						{
+							"name": "Spider Climb",
+							"entries": [
+								"The drider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+							]
+						},
+						{
+							"name": "Sunlight Sensitivity",
+							"entries": [
+								"While in sunlight, the drider has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+							]
+						},
+						{
+							"name": "Web Walker",
+							"entries": [
+								"The drider ignores movement restrictions caused by webbing."
+							]
+						},
+						{
+							"name": "Paragon Fury",
+							"entries": [
+								"Nezznar may take one additional turn in each round of combat for each of his hit point pools that have been reduced to zero. Nezznar determines initiative normally for his first turn, though he gains advantage on the roll. Each subsequent turn Nezznar gains is inserted immediately after any one PC's turn in the initiative order. In addition, Nezznar's AC is reduced to 16."
+							]
+						},
+						{
+							"name": "Paragon Fortitude",
+							"entries": [
+								"The creature has multiple pools of hit points, each of which is tracked separately. All damage and healing must be completely applied to only one pool. When a pool is reduced to zero, all ongoing conditions and effects affecting the creature end. Once a pool is reduced to zero, that pool cannot receive any healing until after a long rest. If all hit of the point pools are reduced to zero, the creature is killed."
+							]
+						}
+					],
+					"action": [
+						{
+							"name": "Multiattack",
+							"entries": [
+								"The drider makes three attacks, either with its longsword or its longbow. It can replace one of those attacks with a bite attack."
+							]
+						},
+						{
+							"name": "Bite",
+							"entries": [
+								"{@atk mw} {@hit 6} to hit, reach 5 ft., one creature. {@h}2 ({@damage 1d4}) piercing damage plus 9 ({@damage 2d8}) poison damage."
+							]
+						},
+						{
+							"name": "Longsword",
+							"entries": [
+								"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) slashing damage, or 8 ({@damage 1d10 + 3}) slashing damage if used with two hands."
+							]
+						},
+						{
+							"name": "Longbow",
+							"entries": [
+								"{@atk rw} {@hit 6} to hit, range 150/600 ft., one target. {@h}7 ({@damage 1d8 + 3}) piercing damage plus 4 ({@damage 1d8}) poison damage."
+							]
+						},
+						{
+							"name": "Spectral Lash",
+							"entries": [
+								"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}11 ({@damage 1d10 + 6}) necrotic damage. Nezznar can't use this ability unless Paragon Fury is activated."
+							]
+						}
+					],
+					"environment": [
+						"underdark"
+					],
+					"soundClip": {
+						"type": "external",
+						"url": "https://5e.tools/audio/bestiary/drider.mp3"
+					},
+					"traitTags": [
+						"Fey Ancestry",
+						"Spider Climb",
+						"Sunlight Sensitivity",
+						"Web Walker"
+					],
+					"senseTags": [
+						"SD"
+					],
+					"actionTags": [
+						"Multiattack"
+					],
+					"languageTags": [
+						"E",
+						"U"
+					],
+					"damageTags": [
+						"P",
+						"I",
+						"S",
+						"N"
+					],
+					"spellcastingTags": [
+						"I"
+					],
+					"miscTags": [
+						"MW",
+						"RW",
+						"RNG"
+					],
+					"hasFluff": true,
+					"hasFluffImages": true,
+					"tokenUrl": "https://5e.tools/img/MM/Drider.png",
+					"fluff": {
+						"name": "Drider",
+						"source": "MM",
+						"entries": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"When a drow shows great promise, Lolth summons it to the Demonweb Pits for a test of faith and strength. Those that pass the test rise higher in the Spider Queen's favor. Those that fail are transformed into driders-a horrid hybrid of a drow and a giant spider that serves as a living reminder of Lolth's power. Only drow can be turned into driders, and the power to create these creatures resides with Lolth alone.",
+											{
+												"type": "entries",
+												"name": "Scarred for Life",
+												"entries": [
+													"Drow transformed into driders return to the Material Plane as twisted and debased creatures. Driven by madness, they disappear into the Underdark to become hermits and hunters, either wandering alone or leading packs of giant spiders.",
+													"On rare occasion, a drider returns to the fringes of drow society despite its curse, most often to fulfill some longstanding vow or vendetta from its former life. Drow fear and shun the driders, holding them in lower esteem than slaves. However, they tolerate the presence of these creatures as living representatives of Lolth's will, and a reminder of the fate that awaits all who fail the Spider Queen."
+												]
+											}
+										]
+									}
+								]
+							}
+						],
+						"images": [
+							{
+								"type": "image",
+								"href": {
+									"type": "internal",
+									"path": "bestiary/MM/Drider.jpg"
+								}
+							}
+						]
+					},
+					"save": {
+						"int": "+5",
+						"wis": "+4"
+					},
+					"alias": [
+						"Nezznar"
+					],
+					"isNpc": true,
+					"cr": "6",
+					"uniqueId": "ea5da3009c5c860b629c7d98572b6ca3"
+				}
+			]
+		},
+		"SUBLIST_RESIZE_charcreationoptions.html": "130px",
+		"SUBLIST_RESIZE_feats.html": "130px",
+		"SUBLIST_RESIZE_optionalfeatures.html": "130px",
+		"DMSCREEN_STORAGE": {
+			"w": 4,
+			"h": 3,
+			"ctc": false,
+			"fs": false,
+			"lk": false,
+			"ps": [
+				{
+					"x": 0,
+					"y": 0,
+					"w": 1,
+					"h": 1,
+					"t": 0
+				},
+				{
+					"x": 0,
+					"y": 1,
+					"w": 1,
+					"h": 1,
+					"t": 0
+				},
+				{
+					"x": 0,
+					"y": 2,
+					"w": 1,
+					"h": 1,
+					"t": 0
+				},
+				{
+					"x": 1,
+					"y": 1,
+					"w": 1,
+					"h": 1,
+					"t": 0
+				},
+				{
+					"x": 1,
+					"y": 2,
+					"w": 1,
+					"h": 1,
+					"t": 0
+				},
+				{
+					"x": 2,
+					"y": 0,
+					"w": 1,
+					"h": 1,
+					"t": 0
+				},
+				{
+					"x": 2,
+					"y": 1,
+					"w": 1,
+					"h": 1,
+					"t": 0
+				},
+				{
+					"x": 2,
+					"y": 2,
+					"w": 1,
+					"h": 1,
+					"t": 0
+				},
+				{
+					"x": 3,
+					"y": 0,
+					"w": 1,
+					"h": 1,
+					"t": 0
+				},
+				{
+					"x": 3,
+					"y": 1,
+					"w": 1,
+					"h": 1,
+					"t": 0
+				},
+				{
+					"x": 3,
+					"y": 2,
+					"w": 1,
+					"h": 1,
+					"t": 0
+				},
+				{
+					"x": 1,
+					"y": 0,
+					"w": 1,
+					"h": 1,
+					"t": 0
+				}
+			],
+			"ex": [
+				{
+					"x": 1,
+					"y": 0,
+					"w": 1,
+					"h": 1,
+					"t": 1,
+					"c": {
+						"p": "bestiary.html",
+						"s": "MM",
+						"u": "adult%20brass%20dragon_mm"
+					}
+				}
+			]
+		},
+		"SUBLIST_RESIZE_backgrounds.html": "130px",
+		"SUBLIST_RESIZE_variantrules.html": "130px",
+		"SUBLIST_RESIZE_tables.html": "130px",
+		"SUBLIST_RESIZE_recipes.html": "130px",
+		"converterState_converter.html": {
+			"state": {
+				"hasAppended": false,
+				"converter": "Creature",
+				"sourceJson": "",
+				"inputSeparator": "===",
+				"availableSources": [
+					"LMoP(HB)"
+				]
+			},
+			"Creature": {
+				"state": {
+					"mode": "txt",
+					"page": 0,
+					"isTitleCase": false,
+					"source": ""
+				}
+			},
+			"Item": {
+				"state": {
+					"mode": "txt",
+					"page": 0,
+					"isTitleCase": false,
+					"source": ""
+				}
+			},
+			"Feat": {
+				"state": {
+					"mode": "txt",
+					"page": 0,
+					"isTitleCase": false,
+					"source": ""
+				}
+			},
+			"Spell": {
+				"state": {
+					"mode": "txt",
+					"page": 0,
+					"isTitleCase": false,
+					"source": ""
+				}
+			},
+			"Table": {
+				"state": {
+					"mode": "html"
+				}
+			}
+		},
+		"converterInput_converter.html": "Test",
+		"cardState_makecards.html": {
+			"state": {
+				"state": {
+					"color_creature": "#008000",
+					"icon_creature": "imp-laugh",
+					"color_item": "#696969",
+					"icon_item": "crossed-swords",
+					"color_spell": "#4a6898",
+					"icon_spell": "magic-swirl",
+					"color_race": "#a7894b",
+					"icon_race": "family-tree",
+					"color_background": "#a74b8d",
+					"icon_background": "farmer",
+					"color_feat": "#aca300",
+					"icon_feat": "mighty-force"
+				}
+			},
+			"listItems": [
+				{
+					"page": "bestiary.html",
+					"source": "LMoP(HB)",
+					"hash": "drider%20(the%20black%20spider)_lmop(hb)",
+					"color": "#008000",
+					"icon": "imp-laugh",
+					"count": 1,
+					"entityType": "creature"
+				}
+			]
+		},
+		"filterBoxState_races.html": {
+			"box": {
+				"meta": {
+					"modeCombineFilters": "and",
+					"isSummaryHidden": false,
+					"isBrewDefaultHidden": false
+				},
+				"minisHidden": {},
+				"combineAs": {}
+			},
+			"filters": {
+				"Source": {
+					"meta": {
+						"combineBlue": "or",
+						"combineRed": "or",
+						"isHidden": false,
+						"isMobileHeaderHidden": true,
+						"isIncludeOtherSources": false
+					},
+					"state": {
+						"DMG": 1,
+						"EEPC": 1,
+						"EGW": 1,
+						"VGM": 1,
+						"PSK": 0,
+						"UA2021TravelersOfTheMultiverse": 0,
+						"PSA": 0,
+						"PSD": 0,
+						"ERLW": 1,
+						"GGR": 1,
+						"MOT": 1,
+						"UACentaursMinotaurs": 0,
+						"UAWGE": 0,
+						"UAEberron": 0,
+						"UARacesOfEberron": 0,
+						"TCE": 1,
+						"UA2021GothicLineages": 0,
+						"VRGR": 1,
+						"PHB": 1,
+						"FTD": 1,
+						"UA2021DraconicOptions": 0,
+						"PSZ": 0,
+						"UA2021FolkOfTheFeywild": 0,
+						"WBtW": 1,
+						"MTF": 1,
+						"UAEladrinAndGith": 0,
+						"AWM": 0,
+						"PSX": 0,
+						"IDRotF": 1,
+						"OGA": 0,
+						"PSI": 0,
+						"LR": 0,
+						"UARacesOfRavnica": 0,
+						"UAWaterborneAdventures": 0,
+						"SCC": 1,
+						"UAGothicHeroes": 0,
+						"TTP": 0,
+						"AI": 1
+					},
+					"nestsHidden": {}
+				},
+				"Ability Bonus (Including Subrace)": {
+					"meta": {
+						"isHidden": false,
+						"isMobileHeaderHidden": true
+					},
+					"state": {
+						"Strength +any": 0,
+						"Strength -any": 0,
+						"Dexterity +any": 0,
+						"Dexterity -any": 0,
+						"Constitution +any": 0,
+						"Constitution -any": 0,
+						"Intelligence +any": 1,
+						"Intelligence -any": 0,
+						"Wisdom +any": 0,
+						"Wisdom -any": 0,
+						"Charisma +any": 0,
+						"Charisma -any": 0,
+						"Strength +1": 0,
+						"Dexterity +1": 0,
+						"Constitution +1": 0,
+						"Intelligence +1": 0,
+						"Wisdom +1": 0,
+						"Charisma +1": 0,
+						"Strength +2": 0,
+						"Dexterity +2": 0,
+						"Constitution +2": 0,
+						"Intelligence +2": 0,
+						"Wisdom +2": 0,
+						"Charisma +2": 0,
+						"Strength ‒2": 0,
+						"Dexterity ‒2": 0,
+						"Constitution ‒2": 0,
+						"Intelligence ‒2": 0,
+						"Wisdom ‒2": 0,
+						"Charisma ‒2": 0,
+						"Strength ‒1": 0,
+						"Dexterity ‒1": 0,
+						"Constitution ‒1": 0,
+						"Intelligence ‒1": 0,
+						"Wisdom ‒1": 0,
+						"Charisma ‒1": 0,
+						"Strength ‒4": 0,
+						"Dexterity ‒4": 0,
+						"Constitution ‒4": 0,
+						"Intelligence ‒4": 0,
+						"Wisdom ‒4": 0,
+						"Charisma ‒4": 0,
+						"Strength ‒3": 0,
+						"Dexterity ‒3": 0,
+						"Constitution ‒3": 0,
+						"Intelligence ‒3": 0,
+						"Wisdom ‒3": 0,
+						"Charisma ‒3": 0,
+						"Strength ‒6": 0,
+						"Dexterity ‒6": 0,
+						"Constitution ‒6": 0,
+						"Intelligence ‒6": 0,
+						"Wisdom ‒6": 0,
+						"Charisma ‒6": 0,
+						"Strength ‒5": 0,
+						"Dexterity ‒5": 0,
+						"Constitution ‒5": 0,
+						"Intelligence ‒5": 0,
+						"Wisdom ‒5": 0,
+						"Charisma ‒5": 0
+					}
+				},
+				"Size": {
+					"meta": {
+						"combineBlue": "or",
+						"combineRed": "or",
+						"isHidden": false,
+						"isMobileHeaderHidden": true
+					},
+					"state": {
+						"M": 0,
+						"S": 0,
+						"V": 0
+					},
+					"nestsHidden": {}
+				},
+				"Speed": {
+					"meta": {
+						"combineBlue": "or",
+						"combineRed": "or",
+						"isHidden": false,
+						"isMobileHeaderHidden": true
+					},
+					"state": {
+						"Climb": 0,
+						"Fly": 0,
+						"Swim": 0,
+						"Walk (Fast)": 0,
+						"Walk": 0,
+						"Walk (Slow)": 0
+					},
+					"nestsHidden": {}
+				},
+				"Traits": {
+					"meta": {
+						"combineBlue": "or",
+						"combineRed": "or",
+						"isHidden": false,
+						"isMobileHeaderHidden": true
+					},
+					"state": {
+						"Amphibious": 0,
+						"Armor Proficiency": 0,
+						"Blindsight": 0,
+						"Condition Immunity": 0,
+						"Damage Immunity": 0,
+						"Damage Resistance": 0,
+						"Darkvision": 0,
+						"Superior Darkvision": 0,
+						"Dragonmark": 0,
+						"Feat": 0,
+						"Improved Resting": 0,
+						"Monstrous Race": 0,
+						"Natural Armor": 0,
+						"NPC Race": 2,
+						"Powerful Build": 0,
+						"Skill Proficiency": 0,
+						"Spellcasting": 0,
+						"Sunlight Sensitivity": 0,
+						"Tool Proficiency": 0,
+						"Unarmed Strike": 0,
+						"Uncommon Race": 0,
+						"Weapon Proficiency": 0,
+						"Magic Resistance": 0
+					},
+					"nestsHidden": {}
+				},
+				"Languages": {
+					"meta": {
+						"combineBlue": "or",
+						"combineRed": "or",
+						"isHidden": false,
+						"isMobileHeaderHidden": true
+					},
+					"state": {
+						"Abyssal": 0,
+						"Celestial": 0,
+						"Choose": 0,
+						"Common": 0,
+						"Draconic": 0,
+						"Dwarvish": 0,
+						"Elvish": 0,
+						"Giant": 0,
+						"Gnomish": 0,
+						"Goblin": 0,
+						"Halfling": 0,
+						"Infernal": 0,
+						"Orc": 0,
+						"Other": 0,
+						"Primordial": 0,
+						"Sylvan": 0,
+						"Undercommon": 0,
+						"Auran": 0,
+						"Terran": 0,
+						"Aquan": 0
+					},
+					"nestsHidden": {}
+				},
+				"Base Race": {
+					"meta": {
+						"combineBlue": "or",
+						"combineRed": "or",
+						"isHidden": false,
+						"isMobileHeaderHidden": true
+					},
+					"state": {},
+					"nestsHidden": {}
+				},
+				"Creature Type": {
+					"meta": {
+						"combineBlue": "or",
+						"combineRed": "or",
+						"isHidden": false,
+						"isMobileHeaderHidden": true
+					},
+					"state": {
+						"aberration": 0,
+						"beast": 0,
+						"celestial": 0,
+						"construct": 0,
+						"dragon": 0,
+						"elemental": 0,
+						"fey": 0,
+						"fiend": 0,
+						"giant": 0,
+						"humanoid": 0,
+						"monstrosity": 0,
+						"ooze": 0,
+						"plant": 0,
+						"undead": 0
+					},
+					"nestsHidden": {}
+				},
+				"Miscellaneous": {
+					"meta": {
+						"combineBlue": "or",
+						"combineRed": "or",
+						"isHidden": false,
+						"isMobileHeaderHidden": true
+					},
+					"state": {
+						"Base Race": 0,
+						"Key Race": 0,
+						"Lineage": 0,
+						"Modified Copy": 0,
+						"SRD": 0,
+						"Basic Rules": 0,
+						"Has Images": 0,
+						"Has Info": 0
+					},
+					"nestsHidden": {}
+				},
+				"Adult Age": {
+					"meta": {
+						"isUseDropdowns": false,
+						"isHidden": false,
+						"isMobileHeaderHidden": true
+					},
+					"state": {
+						"min": 0,
+						"max": 750,
+						"curMin": 0,
+						"curMax": 750
+					}
+				},
+				"Ability Bonus (Including Subrace) (Legacy)": {
+					"meta": {
+						"combineBlue": "or",
+						"combineRed": "or",
+						"isHidden": false,
+						"isMobileHeaderHidden": true
+					},
+					"state": {
+						"Player Choice": 0,
+						"Any Strength Increase": 0,
+						"Any Dexterity Increase": 0,
+						"Any Constitution Increase": 0,
+						"Any Intelligence Increase": 0,
+						"Any Wisdom Increase": 0,
+						"Any Charisma Increase": 0,
+						"Strength +2": 0,
+						"Strength +1": 0,
+						"Dexterity +2": 0,
+						"Dexterity +1": 0,
+						"Constitution +2": 0,
+						"Constitution +1": 0,
+						"Intelligence +2": 0,
+						"Intelligence +1": 0,
+						"Wisdom +2": 0,
+						"Wisdom +1": 0,
+						"Charisma +2": 0,
+						"Charisma +1": 0,
+						"Intelligence -2": 0,
+						"Charisma -2": 0,
+						"Strength -2": 0,
+						"Strength -4": 0,
+						"Intelligence -4": 0,
+						"Charisma -4": 0,
+						"Intelligence -6": 0,
+						"Wisdom -4": 0
+					},
+					"nestsHidden": {}
+				}
+			}
+		}
+	}
+}
