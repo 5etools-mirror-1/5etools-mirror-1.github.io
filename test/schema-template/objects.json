@@ -101,6 +101,7 @@
 				},
 				"actionEntries": {
 					"type": "array",
+					"description": "Actions available with the object, like firing a siege weapon. Uses the normal entries data.",
 					"items": {
 						"$ref": "entry.json"
 					}

@@ -263,7 +263,13 @@
 		},
 		"$schema": {
 			"description": "An optional key that allows you specify the schema you want to verify against in compatible IDEs.\nIt is  advised that you leave this key out when submitting to the repo.",
-			"type": "string"
+			"type": "string",
+			"examples": [
+				"../_schema-fast/homebrew.json",
+				"../_schema/homebrew.json",
+				"https://raw.githubusercontent.com/TheGiddyLimit/homebrew/master/_schema-fast/homebrew.json",
+				"https://raw.githubusercontent.com/TheGiddyLimit/homebrew/master/_schema/homebrew.json"
+			]
 		},
 		"blacklist": {
 			"description": "An array of objects to blacklist from display on the site.\nUse of this in public brew files is strongly discouraged.",
@@ -275,7 +281,8 @@
 						"type": "string"
 					},
 					"hash": {
-						"type": "string"
+						"type": "string",
+						"description": "A unique reference for the removed item. Use the blacklist tool on the site to generate this."
 					},
 					"category": {
 						"type": "string"

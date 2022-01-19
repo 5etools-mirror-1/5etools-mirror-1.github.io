@@ -207,7 +207,10 @@
 									"$ref": "shared-items.json#/definitions/fluff"
 								}
 							},
-							"hasRefs": {"type": "boolean"}
+							"hasRefs": {
+								"type": "boolean",
+								"description": "Whether this item has references within its data to dedicated itemEntries."
+							}
 						},
 						"required": [
 							"rarity",

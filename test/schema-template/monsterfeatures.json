@@ -32,7 +32,8 @@
 						"type": "string"
 					},
 					"hasNumberParam": {
-						"type": "boolean"
+						"type": "boolean",
+						"description": "Whether this feature requires an automatic input when applied."
 					}
 				},
 				"required": [
