@@ -111,7 +111,7 @@
 			"name": "Cult of Baphomet",
 			"source": "MPMM",
 			"page": 58,
-			"type": "Diabolical",
+			"type": "Demonic",
 			"entries": [
 				"Baphomet grants his cultists special abilities. All his devotees gain the Labyrinthine Recall trait below. He grants his rank-and-file followers the Unerring Tracker trait, and cult leaders gain the Incite the Hunters trait.",
 				{
@@ -219,7 +219,7 @@
 			"name": "Cult of Demogorgon",
 			"source": "MPMM",
 			"page": 90,
-			"type": "Diabolical",
+			"type": "Demonic",
 			"entries": [
 				"Demogorgon's followers are typically lone killers driven by the whispering voice of their master. His most blessed followers gain the Two Minds of Chaos trait.",
 				{
@@ -374,12 +374,12 @@
 			"name": "Cult of Fraz-Urb'luu",
 			"source": "MPMM",
 			"page": 129,
-			"type": "Diabolical",
+			"type": "Demonic",
 			"entries": [
 				"Fraz-Urb'luu grants his cultists the Liar's Eye trait.",
 				{
 					"type": "entries",
-					"name": "Liar's Eye.",
+					"name": "Liar's Eye",
 					"entries": [
 						"This creature has advantage on Wisdom ({@skill Insight} or {@skill Perception}) checks.",
 						"As a bonus action, the creature detects the location of all illusions and hidden creatures within 15 feet of it."
@@ -405,7 +405,7 @@
 							]
 						},
 						{
-							"name": "Indomitable Strength (Recharge 5-6)",
+							"name": "Indomitable Strength {@recharge 5}",
 							"type": "entries",
 							"entries": [
 								"As a reaction when this creature takes damage, it can roll a {@dice d10} and subtract the number rolled from the damage."
@@ -555,7 +555,7 @@
 			"name": "Cult of Graz'zt",
 			"source": "MPMM",
 			"page": 148,
-			"type": "Diabolical",
+			"type": "Demonic",
 			"entries": [
 				"Graz'zt grants his cultists special abilities. His cultists can gain the Joy from Pain trait, while his cult leaders can gain the Master of Pleasures trait.",
 				{
@@ -604,7 +604,7 @@
 			"name": "Cult of Juiblex",
 			"source": "MPMM",
 			"page": 160,
-			"type": "Diabolical",
+			"type": "Demonic",
 			"entries": [
 				"The Faceless Lord grants its cultists special abilities. Lesser followers can gain the Liquid Movement trait. The most dedicated devotees of ooze can also gain the Slimy Organs trait.",
 				{
@@ -823,7 +823,7 @@
 			"name": "Cult of Orcus",
 			"source": "MPMM",
 			"page": 204,
-			"type": "Diabolical",
+			"type": "Demonic",
 			"entries": [
 				"Orcus grants his rank-and-file cultists the Undying Soul trait, and his cult leaders can gain the Aura of Death trait.",
 				{
@@ -860,7 +860,7 @@
 			"type": "Elder Evil",
 			"entries": [
 				{
-					"name": "Tharizdun's Spark (Recharge 6)",
+					"name": "Tharizdun's Spark {@recharge 6}",
 					"type": "entries",
 					"entries": [
 						"As a bonus action, the cultist touches a simple or martial weapon or a natural weapon, if it has one. The next creature hit by the touched weapon must succeed on a {@dc 15} Wisdom saving throw or have disadvantage on all ability checks. The affected creature can repeat the saving throw at the end of each minute, ending the effect on itself on a success."
@@ -889,7 +889,7 @@
 											"type": "entries",
 											"name": "The Sign of the Black Earth",
 											"entries": [
-												" The symbol of the earth cult signifies purpose and stability. Cultists sometimes identify themselves with a hand gesture: they make a triangle by touching the thumbs and forefingers of both hands together."
+												"The symbol of the earth cult signifies purpose and stability. Cultists sometimes identify themselves with a hand gesture: they make a triangle by touching the thumbs and forefingers of both hands together."
 											]
 										}
 									]
@@ -915,7 +915,7 @@
 											"type": "entries",
 											"name": "Traits",
 											"entries": [
-												" Unlike many of his followers, Marlos is genteel and well-spoken. He delights in witty banter and pointed repartee, although he is quick to make a cutting remark or jest at someone elses expense. Marlos takes pleasure in mocking others, especially if he can do so in a clever or elegant way. Marloss previous life had been a constant search for pleasure, but the only thing that now stirs his loveless soul is refined cruelty. He can be driven to fits of blind, unreasoning jealousy if he is outshone by another urbane and attractive individual."
+												"Unlike many of his followers, Marlos is genteel and well-spoken. He delights in witty banter and pointed repartee, although he is quick to make a cutting remark or jest at someone elses expense. Marlos takes pleasure in mocking others, especially if he can do so in a clever or elegant way. Marloss previous life had been a constant search for pleasure, but the only thing that now stirs his loveless soul is refined cruelty. He can be driven to fits of blind, unreasoning jealousy if he is outshone by another urbane and attractive individual."
 											]
 										}
 									]
@@ -954,7 +954,7 @@
 											"type": "entries",
 											"name": "The Sign of the Crushing Wave",
 											"entries": [
-												" Water cultists use a simple hand sign to identify one another when a token of recognition is required: crossing the forefingers and overlapping the thumbs to create an X-shape linked by a line across the bottom. It stands for waters eternal surge and retreat, a cycle of unending change."
+												"Water cultists use a simple hand sign to identify one another when a token of recognition is required: crossing the forefingers and overlapping the thumbs to create an X-shape linked by a line across the bottom. It stands for waters eternal surge and retreat, a cycle of unending change."
 											]
 										}
 									]
@@ -980,7 +980,7 @@
 											"type": "entries",
 											"name": "Traits",
 											"entries": [
-												" Gar is covered in barnacles, and he wears an artificial arm in the shape of a crabs claw over the stump of his left arm. He never uses two words when one will do, and he believes that anyone addressing him with courtesy is either insincere or subtly mocking him. The water prophets primary motivation is retribution; the world has been cruel to him, and he intends to make everyone else suffer as he has. He longs to be near the ocean again and is distressed by the fact that the driving force behind his visions keeps him so far from the sea."
+												"Gar is covered in barnacles, and he wears an artificial arm in the shape of a crabs claw over the stump of his left arm. He never uses two words when one will do, and he believes that anyone addressing him with courtesy is either insincere or subtly mocking him. The water prophets primary motivation is retribution; the world has been cruel to him, and he intends to make everyone else suffer as he has. He longs to be near the ocean again and is distressed by the fact that the driving force behind his visions keeps him so far from the sea."
 											]
 										}
 									]
@@ -1019,7 +1019,7 @@
 											"type": "entries",
 											"name": "The Sign of the Eternal Flame",
 											"entries": [
-												" The symbol of the fire cult is reminiscent of a bowl-like brazier with a burning flame. Fire cultists sometimes identify themselves with a symbolic hand sign: holding one hand in a fist, thumb up, and laying the other hand over the fist as if to cover the bowl but allow the flame to show. Members of the cult can also be identified by their burn scars."
+												"The symbol of the fire cult is reminiscent of a bowl-like brazier with a burning flame. Fire cultists sometimes identify themselves with a symbolic hand sign: holding one hand in a fist, thumb up, and laying the other hand over the fist as if to cover the bowl but allow the flame to show. Members of the cult can also be identified by their burn scars."
 											]
 										}
 									]
@@ -1044,7 +1044,7 @@
 											"type": "entries",
 											"name": "Traits",
 											"entries": [
-												" Vanifer is an extraordinary manipulator. She collects allies and followers with her wiles, using them as she needs and discarding them the moment they lose their usefulness. Its a testament to her natural talent that many of her victims are pathetically eager to bask in the glow of her attention again if she discovers she needs something else from them. While Vanifer puts on the airs of a rich noble, she despises those raised with great wealth, and her sensibilities favor the coarse. Vanifer is ambitious above all else, and as undisputed master of the fire cult, she intends to make the Eternal Flame the strongest and most feared cult of all."
+												"Vanifer is an extraordinary manipulator. She collects allies and followers with her wiles, using them as she needs and discarding them the moment they lose their usefulness. Its a testament to her natural talent that many of her victims are pathetically eager to bask in the glow of her attention again if she discovers she needs something else from them. While Vanifer puts on the airs of a rich noble, she despises those raised with great wealth, and her sensibilities favor the coarse. Vanifer is ambitious above all else, and as undisputed master of the fire cult, she intends to make the Eternal Flame the strongest and most feared cult of all."
 											]
 										}
 									]
@@ -1083,7 +1083,7 @@
 											"type": "entries",
 											"name": "The Sign of the Howling Hatred",
 											"entries": [
-												" The symbol of elemental air is an inverted triangle with three branching lines above it. Some believe it stands for the funnel cloud of a tornado, while others see it as the superiority of winged creatures over the ground. Some maintain it is an ancient rune that stands for the elemental lord Yan-C-Bin. Whatever their interpretations, the air cultists use the symbol as a secret password of sorts. By touching the thumbs and little fingers together and closing the rest of the fingers into a fist, an air cultist forms an inverted triangle that is a mark of membership in the cult."
+												"The symbol of elemental air is an inverted triangle with three branching lines above it. Some believe it stands for the funnel cloud of a tornado, while others see it as the superiority of winged creatures over the ground. Some maintain it is an ancient rune that stands for the elemental lord Yan-C-Bin. Whatever their interpretations, the air cultists use the symbol as a secret password of sorts. By touching the thumbs and little fingers together and closing the rest of the fingers into a fist, an air cultist forms an inverted triangle that is a mark of membership in the cult."
 											]
 										}
 									]
@@ -1109,7 +1109,7 @@
 											"type": "entries",
 											"name": "Traits",
 											"entries": [
-												" No one can deny Aerisis grace, but she also possesses a violent temper that reveals itself whenever she is denied what she wants. Aerisi is prone to flights of fancy and impulsive decadence. She doesn't see herself as evil because she lacks the capacity to empathize with anyone else. Those who worship and please her are good, and those who defy her are wicked and must be punished. Her wish to lash the world with storms and destruction is, at its root, a temper tantrum against the elven society that dared to impose its strictures on her."
+												"No one can deny Aerisis grace, but she also possesses a violent temper that reveals itself whenever she is denied what she wants. Aerisi is prone to flights of fancy and impulsive decadence. She doesn't see herself as evil because she lacks the capacity to empathize with anyone else. Those who worship and please her are good, and those who defy her are wicked and must be punished. Her wish to lash the world with storms and destruction is, at its root, a temper tantrum against the elven society that dared to impose its strictures on her."
 											]
 										}
 									]
@@ -1152,7 +1152,7 @@
 			"name": "Cult of Yeenoghu",
 			"source": "MPMM",
 			"page": 270,
-			"type": "Diabolical",
+			"type": "Demonic",
 			"entries": [
 				"Yeenoghu grants special abilities to his cultists. His most devoted followers gain the Gnashing Jaws action and the Rampage bonus action, while cult leaders gain the Aura of Bloodthirst trait.",
 				{
@@ -1160,21 +1160,21 @@
 					"entries": [
 						{
 							"type": "entries",
-							"name": "Gnashing Jaws.",
+							"name": "Gnashing Jaws",
 							"entries": [
 								"{@atk mw} bonus to hit equal to this creature's proficiency bonus plus its Strength modifier, reach 5 ft., one target. {@h}{@dice 1d4} + this creature's Strength modifier piercing damage."
 							]
 						},
 						{
 							"type": "entries",
-							"name": "Rampage.",
+							"name": "Rampage",
 							"entries": [
 								"When this creature reduces a creature to 0 hit points with a melee attack on its turn, it can take a bonus action to move up to half its speed and make one Gnashing Jaws attack."
 							]
 						},
 						{
 							"type": "entries",
-							"name": "Aura of Bloodthirst.",
+							"name": "Aura of Bloodthirst",
 							"entries": [
 								"If this creature isn't incapacitated, any creature that has Rampage can make its Gnashing Jaws attack as a bonus action while within 10 feet of this creature."
 							]
@@ -1195,14 +1195,14 @@
 					"entries": [
 						{
 							"type": "entries",
-							"name": "Ferocious Surge (Recharges after a Short or Long Rest).",
+							"name": "Ferocious Surge (Recharges after a Short or Long Rest)",
 							"entries": [
 								"When this creature hits with an attack roll that isn't a critical hit, it can turn the hit into a critical hit."
 							]
 						},
 						{
 							"type": "entries",
-							"name": "Infernal Tactics.",
+							"name": "Infernal Tactics",
 							"entries": [
 								"Immediately after rolling initiative, this creature can choose  and up to three allies it can see if it isn't {@condition incapacitated}. It can swap the initiative results of the chosen creatures among them."
 							]
@@ -1213,6 +1213,12 @@
 		},
 		{
 			"name": "Cult of Zariel",
+			"reprintedAs": [
+				{
+					"tag": "boon",
+					"uid": "Cult of Zariel|MPMM"
+				}
+			],
 			"source": "MTF",
 			"page": 21,
 			"type": "Diabolical",
@@ -1283,7 +1289,7 @@
 			"name": "Cult of Zuggtmoy",
 			"source": "MPMM",
 			"page": 281,
-			"type": "Diabolical",
+			"type": "Demonic",
 			"entries": [
 				"Zuggtmoy's cultists are primarily mindless victims of her children's strange spores. The spores burrow into a victim's brain, turning it into a fanatic servitor. Each victim gains the Spore Kissed trait.",
 				{
@@ -1291,7 +1297,7 @@
 					"entries": [
 						{
 							"type": "entries",
-							"name": "Spore Kissed.",
+							"name": "Spore Kissed",
 							"entries": [
 								"This creature is immune to the {@condition charmed} and {@condition frightened} conditions. In addition, if it is reduced to 0 hit points, each creature within 10 feet of it takes poison damage equal to its number of Hit Dice."
 							]

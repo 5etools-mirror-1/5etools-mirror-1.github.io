@@ -856,7 +856,7 @@
 				{
 					"name": "False Appearance",
 					"entries": [
-						"If the alkilith is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the alkilith move or act, that creature must succeed on a {@dc 18} Intelligence (Investigation) check to discern that the alkilith isn't ordinary slime or fungus."
+						"If the alkilith is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the alkilith move or act, that creature must succeed on a {@dc 18} Intelligence ({@skill Investigation}) check to discern that the alkilith isn't ordinary slime or fungus."
 					]
 				},
 				{
@@ -1189,7 +1189,7 @@
 				{
 					"name": "Devil's Sight",
 					"entries": [
-						"Magical darkness doesn't impede the amnizu's darkvision."
+						"Magical darkness doesn't impede the amnizu's {@sense darkvision}."
 					]
 				},
 				{
@@ -2392,7 +2392,7 @@
 			],
 			"bonus": [
 				{
-					"name": "Fey Step (Recharge 4-6)",
+					"name": "Fey Step {@recharge 4}",
 					"entries": [
 						"The eladrin teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see."
 					]
@@ -3054,7 +3054,7 @@
 				{
 					"name": "Shadow Stealth",
 					"entries": [
-						"While in dim light or darkness, the banderhobb takes the Hide action."
+						"While in dim light or darkness, the banderhobb takes the {@action Hide} action."
 					]
 				}
 			],
@@ -3258,7 +3258,7 @@
 				{
 					"name": "Charge (Costs 2 Actions)",
 					"entries": [
-						"Baphomet moves up to his speed without provoking opportunity attacks, then makes a Gore attack."
+						"Baphomet moves up to his speed without provoking {@action opportunity attack||opportunity attacks}, then makes a Gore attack."
 					]
 				}
 			],
@@ -3549,7 +3549,7 @@
 				{
 					"name": "Soul Feeding",
 					"entries": [
-						"The barghest can feed on the corpse of a Fey or Humanoid it killed within the past 10 minutes. This feeding takes at least 1 minute, and it destroys the corpse. The victim's soul is trapped in the barghest for 24 hours, after which time it is digested and the person is incapable of being revived. If the barghest dies before the soul is digested, the soul is released. While a soul is trapped in the barghest, any magic that tries to restore the soul to life has a 50 percent chance of failing and being wasted."
+						"The barghest can feed on the corpse of a Fey or Humanoid it killed within the past 10 minutes. This feeding takes at least 1 minute, and it destroys the corpse. The victim's soul is trapped in the barghest for 24 hours, after which time it is digested and the person is incapable of being revived. If the barghest dies before the soul is digested, the soul is released. While a soul is trapped in the barghest, any magic that tries to restore the soul to life has a {@chance 50} chance of failing and being wasted."
 					]
 				}
 			],
@@ -4006,7 +4006,7 @@
 				{
 					"name": "Devil's Sight",
 					"entries": [
-						"Magical darkness doesn't impede the abishai's darkvision."
+						"Magical darkness doesn't impede the abishai's {@sense darkvision}."
 					]
 				},
 				{
@@ -4046,7 +4046,7 @@
 				{
 					"name": "Shadow Stealth",
 					"entries": [
-						"While in dim light or darkness, the abishai takes the Hide action."
+						"While in dim light or darkness, the abishai takes the {@action Hide} action."
 					]
 				}
 			],
@@ -4347,7 +4347,7 @@
 				{
 					"name": "Devil's Sight",
 					"entries": [
-						"Magical darkness doesn't impede the abishai's darkvision."
+						"Magical darkness doesn't impede the abishai's {@sense darkvision}."
 					]
 				},
 				{
@@ -4667,14 +4667,14 @@
 									"name": "Slippery Oil",
 									"type": "item",
 									"entries": [
-										"The boggle has advantage on Dexterity (Acrobatics) checks made to escape bonds and end grapples, and it can move through openings large enough for a Tiny creature without squeezing."
+										"The boggle has advantage on Dexterity ({@skill Acrobatics}) checks made to escape bonds and end grapples, and it can move through openings large enough for a Tiny creature without squeezing."
 									]
 								},
 								{
 									"name": "Sticky Oil",
 									"type": "item",
 									"entries": [
-										"The boggle has advantage on Strength (Athletics) checks made to grapple and any ability check made to maintain a hold on another creature, a surface, or an object. The boggle can also climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+										"The boggle has advantage on Strength ({@skill Athletics}) checks made to grapple and any ability check made to maintain a hold on another creature, a surface, or an object. The boggle can also climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
 									]
 								}
 							]
@@ -4821,7 +4821,7 @@
 				{
 					"name": "Shadow Stealth",
 					"entries": [
-						"While in dim light or darkness, the boneclaw takes the Hide action."
+						"While in dim light or darkness, the boneclaw takes the {@action Hide} action."
 					]
 				}
 			],
@@ -5744,7 +5744,7 @@
 				{
 					"name": "Sunlight Sensitivity",
 					"entries": [
-						"While in sunlight, the chitine has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+						"While in sunlight, the chitine has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
 					]
 				},
 				{
@@ -6014,7 +6014,7 @@
 				{
 					"name": "Sunlight Sensitivity",
 					"entries": [
-						"While in sunlight, the choldrith has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+						"While in sunlight, the choldrith has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
 					]
 				},
 				{
@@ -6150,7 +6150,7 @@
 				{
 					"name": "Earth Armor",
 					"entries": [
-						"The clockwork doesn't provoke opportunity attacks when it burrows."
+						"The clockwork doesn't provoke {@action opportunity attack||opportunity attacks} when it burrows."
 					]
 				},
 				{
@@ -6285,21 +6285,21 @@
 							"style": "list-hang-notitle",
 							"items": [
 								{
-									"name": "1-2: Confusion.",
+									"name": "1\u20132: Confusion.",
 									"type": "item",
 									"entries": [
-										"On its next turn, the target must use its action to make one weapon attack against a random creature it can see within 30 feet of it, using whatever weapon it has in hand and moving beforehand if necessary to get in range. If it's holding no weapon, it makes an unarmed strike. If no creature is visible within 30 feet, it takes the Dash action, moving toward the nearest creature."
+										"On its next turn, the target must use its action to make one weapon attack against a random creature it can see within 30 feet of it, using whatever weapon it has in hand and moving beforehand if necessary to get in range. If it's holding no weapon, it makes an unarmed strike. If no creature is visible within 30 feet, it takes the {@action Dash} action, moving toward the nearest creature."
 									]
 								},
 								{
-									"name": "3-4: Paralysis.",
+									"name": "3\u20134: Paralysis.",
 									"type": "item",
 									"entries": [
 										"The target is {@condition paralyzed} until the end of its next turn."
 									]
 								},
 								{
-									"name": "5-6: Poison.",
+									"name": "5\u20136: Poison.",
 									"type": "item",
 									"entries": [
 										"The target takes 13 ({@damage 3d8}) poison damage."
@@ -6720,7 +6720,7 @@
 			],
 			"bonus": [
 				{
-					"name": "Cloud Step (Recharge 4-6)",
+					"name": "Cloud Step {@recharge 4}",
 					"entries": [
 						"The giant teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
 					]
@@ -7159,7 +7159,7 @@
 				{
 					"name": "Light Sensitivity",
 					"entries": [
-						"While in bright light, the darkling has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+						"While in bright light, the darkling has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
 					]
 				}
 			],
@@ -7719,7 +7719,7 @@
 				{
 					"name": "Devil's Sight",
 					"entries": [
-						"Magical darkness doesn't impede the deathlock's darkvision."
+						"Magical darkness doesn't impede the deathlock's {@sense darkvision}."
 					]
 				},
 				{
@@ -7886,7 +7886,7 @@
 				{
 					"name": "Sunlight Sensitivity",
 					"entries": [
-						"While in sunlight, the deathlock has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+						"While in sunlight, the deathlock has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
 					]
 				},
 				{
@@ -8420,21 +8420,21 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "1\u20132 Beguiling Gaze",
+									"name": "1\u20132: Beguiling Gaze",
 									"entries": [
 										"The target is {@condition stunned} until the start of Demogorgon's next turn or until Demogorgon is no longer within line of sight."
 									]
 								},
 								{
 									"type": "item",
-									"name": "3\u20134 Confusing Gaze",
+									"name": "3\u20134: Confusing Gaze",
 									"entries": [
 										"The target suffers the effect of the {@spell confusion} spell without making a saving throw. The effect lasts until the start of Demogorgon's next turn. Demogorgon doesn't need to concentrate on the spell."
 									]
 								},
 								{
 									"type": "item",
-									"name": "5\u20136 Hypnotic Gaze",
+									"name": "5\u20136: Hypnotic Gaze",
 									"entries": [
 										"The target is {@condition charmed} by Demogorgon until the start of Demogorgon's next turn. Demogorgon chooses how the {@condition charmed} target uses its action, reaction, and movement."
 									]
@@ -10388,7 +10388,8 @@
 				{
 					"name": "Spectral Dagger (Recharges after a Short or Long Rest)",
 					"entries": [
-						"The drow conjures a floating, spectral dagger within 60 feet of itself. The drow can make a melee spell attack ({@hit 10} to hit) against one creature within 5 feet of the dagger. On a hit, the target takes 9 ({@damage 1d8 + 5}) force damage. The dagger lasts for 1 minute. As a bonus action on later turns, the drow can move the dagger up to 20 feet and repeat the attack against one creature within 5 feet of the dagger."
+						"The drow conjures a floating, spectral dagger within 60 feet of itself. The drow can make a melee spell attack ({@hit 10} to hit) against one creature within 5 feet of the dagger. On a hit, the target takes 9 ({@damage 1d8 + 5}) force damage.",
+						"The dagger lasts for 1 minute. As a bonus action on later turns, the drow can move the dagger up to 20 feet and repeat the attack against one creature within 5 feet of the dagger."
 					]
 				}
 			],
@@ -10960,7 +10961,7 @@
 				{
 					"name": "Multiattack",
 					"entries": [
-						"The duergar makes two Iron Fist attacks and two Stomping Foot attacks. After one of the attacks, the duergar can move up to its speed without provoking opportunity attacks. It can replace one of the attacks with a use of Flame Jet."
+						"The duergar makes two Iron Fist attacks and two Stomping Foot attacks. After one of the attacks, the duergar can move up to its speed without provoking {@action opportunity attack||opportunity attacks}. It can replace one of the attacks with a use of Flame Jet."
 					]
 				},
 				{
@@ -12989,7 +12990,7 @@
 				{
 					"name": "Flyby",
 					"entries": [
-						"The tempest doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+						"The tempest doesn't provoke {@action opportunity attack||opportunity attacks} when it flies out of an enemy's reach."
 					]
 				},
 				{
@@ -13001,7 +13002,7 @@
 				{
 					"name": "Living Storm",
 					"entries": [
-						"The tempest is always at the center of a storm {@dice 1d6 + 4} miles in diameter. Heavy precipitation in the form of either rain or snow falls there, causing the area to be lightly obscured. Heavy rain also extinguishes open flames and imposes disadvantage on Wisdom (Perception) checks that rely on hearing. In addition, strong winds swirl in the area covered by the storm. The winds impose disadvantage on ranged attack rolls. They also extinguish open flames and disperse fog."
+						"The tempest is always at the center of a storm {@dice 1d6 + 4} miles in diameter. Heavy precipitation in the form of either rain or snow falls there, causing the area to be lightly obscured. Heavy rain also extinguishes open flames and imposes disadvantage on Wisdom ({@skill Perception}) checks that rely on hearing. In addition, strong winds swirl in the area covered by the storm. The winds impose disadvantage on ranged attack rolls. They also extinguish open flames and disperse fog."
 					]
 				},
 				{
@@ -13748,7 +13749,7 @@
 				{
 					"name": "Devil's Sight",
 					"entries": [
-						"Magical darkness doesn't impede the firenewt's darkvision."
+						"Magical darkness doesn't impede the firenewt's {@sense darkvision}."
 					]
 				},
 				{
@@ -14572,7 +14573,7 @@
 				{
 					"name": "Extra Heads",
 					"entries": [
-						"The giant has a 25 percent chance of having more than one head. If it has more than one, it has advantage on Wisdom (Perception) checks and on saving throws against being {@condition blinded}, {@condition charmed}, {@condition deafened}, {@condition frightened}, {@condition stunned}, or knocked {@condition unconscious}."
+						"The giant has a {@chance 25} chance of having more than one head. If it has more than one, it has advantage on Wisdom ({@skill Perception}) checks and on saving throws against being {@condition blinded}, {@condition charmed}, {@condition deafened}, {@condition frightened}, {@condition stunned}, or knocked {@condition unconscious}."
 					]
 				},
 				{
@@ -15013,7 +15014,7 @@
 				{
 					"name": "Mimicry",
 					"entries": [
-						"The gazer can mimic simple sounds of speech it has heard, in any language. A creature that hears the sounds can tell they are imitations with a successful {@dc 10} Wisdom (Insight) check."
+						"The gazer can mimic simple sounds of speech it has heard, in any language. A creature that hears the sounds can tell they are imitations with a successful {@dc 10} Wisdom ({@skill Insight}) check."
 					]
 				}
 			],
@@ -15759,7 +15760,7 @@
 			],
 			"bonus": [
 				{
-					"name": "Astral Step (Recharge 4-6)",
+					"name": "Astral Step {@recharge 4}",
 					"entries": [
 						"The githyanki teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see."
 					]
@@ -15891,7 +15892,7 @@
 			],
 			"bonus": [
 				{
-					"name": "Astral Step (Recharge 4-6)",
+					"name": "Astral Step {@recharge 4}",
 					"entries": [
 						"The githyanki teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see."
 					]
@@ -16490,7 +16491,7 @@
 				{
 					"name": "Sudden Rush",
 					"entries": [
-						"Until the end of the turn, the gnoll's speed increases by 60 feet and it doesn't provoke opportunity attacks."
+						"Until the end of the turn, the gnoll's speed increases by 60 feet and it doesn't provoke {@action opportunity attack||opportunity attacks}."
 					]
 				}
 			],
@@ -17031,7 +17032,7 @@
 			],
 			"reaction": [
 				{
-					"name": "Negate Spell (Recharge 5-6)",
+					"name": "Negate Spell {@recharge 5}",
 					"entries": [
 						"Graz'zt tries to interrupt a spell he sees a creature casting within 60 feet of him. If the spell is 3rd level or lower, the spell fails and has no effect. If the spell is 4th level or higher, Graz'zt makes a Charisma check against a DC of 10 + the spell's level. On a success, the spell fails and has no effect."
 					]
@@ -17205,7 +17206,7 @@
 				{
 					"name": "Devil's Sight",
 					"entries": [
-						"Magical darkness doesn't impede the abishai's darkvision."
+						"Magical darkness doesn't impede the abishai's {@sense darkvision}."
 					]
 				},
 				{
@@ -18538,21 +18539,21 @@
 							"style": "list-hang-notitle",
 							"items": [
 								{
-									"name": "1-2: Bonemelt Sprayer.",
+									"name": "1\u20132: Bonemelt Sprayer.",
 									"type": "item",
 									"entries": [
 										"The hellfire engine spews acidic flame in a 60-foot cone. Each creature in the cone must make a {@dc 20} Dexterity saving throw, taking 11 ({@damage 2d10}) fire damage plus 18 ({@damage 4d8}) acid damage on a failed save, or half as much damage on a successful one. Creatures that fail the saving throw are drenched in burning acid and take 5 ({@damage 1d10}) fire damage plus 9 ({@damage 2d8}) acid damage at the end of their turns. An affected creature or another creature within 5 feet of it can take an action to scrape off the burning fuel."
 									]
 								},
 								{
-									"name": "3-4: Lightning Flail.",
+									"name": "3\u20134: Lightning Flail.",
 									"type": "item",
 									"entries": [
-										"Melee Weapon Attack: {@hit 10} to hit, reach 15 ft., one creature. {@h}18 ({@damage 3d8 + 5}) bludgeoning damage plus 22 ({@damage 5d8}) lightning damage. Up to three other creatures of the hellfire engine's choice that it can see within 30 feet of the target must each make a {@dc 20} Dexterity saving throw, taking 22 ({@damage 5d8}) lightning damage on a failed save, or half as much damage on a successful one."
+										"{@atk mw} {@hit 10} to hit, reach 15 ft., one creature. {@h}18 ({@damage 3d8 + 5}) bludgeoning damage plus 22 ({@damage 5d8}) lightning damage. Up to three other creatures of the hellfire engine's choice that it can see within 30 feet of the target must each make a {@dc 20} Dexterity saving throw, taking 22 ({@damage 5d8}) lightning damage on a failed save, or half as much damage on a successful one."
 									]
 								},
 								{
-									"name": "5-6: Thunder Cannon.",
+									"name": "5\u20136: Thunder Cannon.",
 									"type": "item",
 									"entries": [
 										"The hellfire engine targets a point within 120 feet of it that it can see. Each creature within 30 feet of that point must make a {@dc 20} Dexterity saving throw, taking 27 ({@damage 5d10}) bludgeoning damage plus 19 ({@damage 3d12}) thunder damage on a failed save, or half as much damage on a successful one.",
@@ -18836,7 +18837,7 @@
 				{
 					"name": "Dart",
 					"entries": [
-						"Ranged Weapon Attack. {@hit 5} to hit, range 20/60 ft., one target. {@h}5 ({@damage 1d4 + 3}) piercing damage."
+						"{@atk rw} {@hit 5} to hit, range 20/60 ft., one target. {@h}5 ({@damage 1d4 + 3}) piercing damage."
 					]
 				},
 				{
@@ -20046,7 +20047,7 @@
 				{
 					"name": "Move",
 					"entries": [
-						"The ki-rin moves up to half its speed without provoking opportunity attacks."
+						"The ki-rin moves up to half its speed without provoking {@action opportunity attack||opportunity attacks}."
 					]
 				},
 				{
@@ -20304,14 +20305,14 @@
 								{
 									"name": "1: Acid.",
 									"entries": [
-										"The kobold hurls a {@item acid (vial)|PHB|flask of acid}. Ranged Weapon Attack: {@hit 4} to hit, range 5/20 ft., one target. {@h}7 ({@damage 2d6}) acid damage."
+										"The kobold hurls a {@item acid (vial)|PHB|flask of acid}. {@atk rw} {@hit 4} to hit, range 5/20 ft., one target. {@h}7 ({@damage 2d6}) acid damage."
 									],
 									"type": "item"
 								},
 								{
 									"name": "2: Alchemist's Fire.",
 									"entries": [
-										"The kobold throws a {@item Alchemist's Fire (flask)|PHB|flask of alchemist's fire}. Ranged Weapon Attack: {@hit 4} to hit, range 5/20 ft., one target. {@h}2 ({@damage 1d4}) fire damage at the start of each of the target's turns. The target can end this damage by using its action to make a {@dc 10} Dexterity check to extinguish the flames."
+										"The kobold throws a {@item Alchemist's Fire (flask)|PHB|flask of alchemist's fire}. {@atk rw} {@hit 4} to hit, range 5/20 ft., one target. {@h}2 ({@damage 1d4}) fire damage at the start of each of the target's turns. The target can end this damage by using its action to make a {@dc 10} Dexterity check to extinguish the flames."
 									],
 									"type": "item"
 								},
@@ -20325,7 +20326,7 @@
 								{
 									"name": "4: Green Slime Pot.",
 									"entries": [
-										"The kobold throws a clay pot full of green slime at the target, and it breaks open on impact. Ranged Weapon Attack: {@hit 4} to hit, range 5/20 ft., one target. {@h}5 ({@damage 1d10}) acid damage, and the target is covered in slime until a creature uses its action to scrape or wash the slime off. A target covered in the slime takes 5 ({@damage 1d10}) acid damage at the start of each of its turns."
+										"The kobold throws a clay pot full of green slime at the target, and it breaks open on impact. {@atk rw} {@hit 4} to hit, range 5/20 ft., one target. {@h}5 ({@damage 1d10}) acid damage, and the target is covered in slime until a creature uses its action to scrape or wash the slime off. A target covered in the slime takes 5 ({@damage 1d10}) acid damage at the start of each of its turns."
 									],
 									"type": "item"
 								},
@@ -20339,7 +20340,7 @@
 								{
 									"name": "6: Scorpion on a Stick.",
 									"entries": [
-										"The kobold makes a melee attack with a {@creature scorpion} tied to the end of a 5-foot-long pole. Melee Weapon Attack: {@hit 4} to hit, reach 5 ft., one target. {@h}1 piercing damage, and the target must make a {@dc 9} Constitution saving throw, taking 4 ({@damage 1d8}) poison damage on a failed save, or half as much damage on a successful one."
+										"The kobold makes a melee attack with a {@creature scorpion} tied to the end of a 5-foot-long pole. {@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}1 piercing damage, and the target must make a {@dc 9} Constitution saving throw, taking 4 ({@damage 1d8}) poison damage on a failed save, or half as much damage on a successful one."
 									],
 									"type": "item"
 								},
@@ -20636,7 +20637,7 @@
 				{
 					"name": "Stone Camouflage",
 					"entries": [
-						"The korred has advantage on Dexterity (Stealth) checks made to hide in rocky terrain."
+						"The korred has advantage on Dexterity ({@skill Stealth}) checks made to hide in rocky terrain."
 					]
 				}
 			],
@@ -21022,7 +21023,7 @@
 				{
 					"name": "Mimicry",
 					"entries": [
-						"The leucrotta can mimic Beast sounds and Humanoid voices. A creature that hears the sounds can tell they are imitations only with a successful {@dc 14} Wisdom (Insight) check."
+						"The leucrotta can mimic Beast sounds and Humanoid voices. A creature that hears the sounds can tell they are imitations only with a successful {@dc 14} Wisdom ({@skill Insight}) check."
 					]
 				},
 				{
@@ -21056,7 +21057,7 @@
 				{
 					"name": "Kicking Retreat",
 					"entries": [
-						"Immediately after the leucrotta makes a Hooves attack, it takes the Disengage action."
+						"Immediately after the leucrotta makes a Hooves attack, it takes the {@action Disengage} action."
 					]
 				}
 			],
@@ -21667,19 +21668,23 @@
 				{
 					"name": "Unarmed Strike",
 					"entries": [
-						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) bludgeoning damage. Once per turn, the adept can cause one of the following additional effects (choose one or roll a {@dice d4}):"
-					]
-				},
-				{
-					"name": "1-2",
-					"entries": [
-						"Knock Down. The target must succeed on a {@dc 13} Dexterity saving throw or be knocked {@condition prone}."
-					]
-				},
-				{
-					"name": "3-4",
-					"entries": [
-						"Push. The target must succeed on a {@dc 13} Strength saving throw or be pushed up to 10 feet directly away from the adept."
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) bludgeoning damage. Once per turn, the adept can cause one of the following additional effects (choose one or roll a {@dice d4}):",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "1\u20132: Knock Down.",
+									"entry": "The target must succeed on a {@dc 13} Dexterity saving throw or be knocked {@condition prone}."
+								},
+								{
+									"type": "item",
+									"name": "3\u20134: Push.",
+									"entry": "The target must succeed on a {@dc 13} Strength saving throw or be pushed up to 10 feet directly away from the adept."
+								}
+							]
+						}
 					]
 				},
 				{
@@ -21980,7 +21985,7 @@
 				{
 					"name": "Cunning Action",
 					"entries": [
-						"The thief takes the Dash, Disengage, or Hide action."
+						"The thief takes the {@action Dash}, {@action Disengage}, or {@action Hide} action."
 					]
 				}
 			],
@@ -22338,7 +22343,7 @@
 					"name": "Shadow Teleport {@recharge 5}",
 					"entries": [
 						"The meazel, any equipment it is wearing or carrying, and any creature it is grappling teleport to an unoccupied space within 500 feet of it, provided that the starting space and the destination are in dim light or darkness. The destination must be a place the meazel has seen before, but it need not be within line of sight. If the destination space is occupied, the teleportation leads to the nearest unoccupied space.",
-						"Any other creature the meazel teleports becomes cursed for 1 hour or until the curse is ended by remove curse or greater restoration. Until this curse ends, every Undead and every creature native to the Shadowfell within 300 feet of the cursed creature can sense it, which prevents that creature from hiding from them."
+						"Any other creature the meazel teleports becomes cursed for 1 hour or until the curse is ended by {@spell remove curse} or {@spell greater restoration}. Until this curse ends, every Undead and every creature native to the Shadowfell within 300 feet of the cursed creature can sense it, which prevents that creature from hiding from them."
 					]
 				}
 			],
@@ -22346,7 +22351,7 @@
 				{
 					"name": "Shadow Stealth",
 					"entries": [
-						"While in dim light or darkness, the meazel takes the Hide action."
+						"While in dim light or darkness, the meazel takes the {@action Hide} action."
 					]
 				}
 			],
@@ -22447,7 +22452,7 @@
 				{
 					"name": "Light Sensitivity",
 					"entries": [
-						"While in bright light, the meenlock has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+						"While in bright light, the meenlock has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
 					]
 				}
 			],
@@ -22461,7 +22466,7 @@
 			],
 			"bonus": [
 				{
-					"name": "Shadow Teleport (Recharge 5-6)",
+					"name": "Shadow Teleport {@recharge 5}",
 					"entries": [
 						"The meenlock teleports to an unoccupied space within 30 feet of it, provided that both the space it's teleporting from and its destination are in dim light or darkness. The destination need not be within line of sight."
 					]
@@ -22573,7 +22578,7 @@
 				{
 					"name": "Devil's Sight",
 					"entries": [
-						"Magical darkness doesn't impede the merregon's darkvision."
+						"Magical darkness doesn't impede the merregon's {@sense darkvision}."
 					]
 				},
 				{
@@ -23158,7 +23163,7 @@
 				{
 					"name": "Breath of Despair {@recharge 5}",
 					"entries": [
-						"Moloch exhales in a 30-foot cube. Each creature in that area must succeed on a {@dc 21} Wisdom saving throw or take 27 ({@damage 5d10}) psychic damage, drop whatever it is holding, and become {@condition frightened} of Moloch for 1 minute. While {@condition frightened} in this way, a creature must take the Dash action and move away from Moloch by the safest available route on each of its turns, unless there is nowhere to move, in which case it needn't take the Dash action. If the creature ends its turn in a location where it doesn't have line of sight to Moloch, the creature can repeat the saving throw, ending the effect on itself on a success."
+						"Moloch exhales in a 30-foot cube. Each creature in that area must succeed on a {@dc 21} Wisdom saving throw or take 27 ({@damage 5d10}) psychic damage, drop whatever it is holding, and become {@condition frightened} of Moloch for 1 minute. While {@condition frightened} in this way, a creature must take the {@action Dash} action and move away from Moloch by the safest available route on each of its turns, unless there is nowhere to move, in which case it needn't take the {@action Dash} action. If the creature ends its turn in a location where it doesn't have line of sight to Moloch, the creature can repeat the saving throw, ending the effect on itself on a success."
 					]
 				},
 				{
@@ -23383,7 +23388,7 @@
 				{
 					"name": "Move",
 					"entries": [
-						"The molydeus moves without provoking opportunity attacks."
+						"The molydeus moves without provoking {@action opportunity attack||opportunity attacks}."
 					]
 				},
 				{
@@ -23560,7 +23565,7 @@
 				{
 					"name": "Hypnosis",
 					"entries": [
-						"The morkoth projects a 30-foot cone of magical energy. Each creature in that area must make a {@dc 17} Wisdom saving throw. On a failed save, the creature is {@condition charmed} by the morkoth for 1 minute. While {@condition charmed} in this way, the target tries to get as close to the morkoth as possible, using its actions to Dash until it is within 5 feet of the morkoth. A {@condition charmed} target can repeat the saving throw at the end of each of its turns and whenever it takes damage, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature has advantage on saving throws against the morkoth's Hypnosis for 24 hours."
+						"The morkoth projects a 30-foot cone of magical energy. Each creature in that area must make a {@dc 17} Wisdom saving throw. On a failed save, the creature is {@condition charmed} by the morkoth for 1 minute. While {@condition charmed} in this way, the target tries to get as close to the morkoth as possible, using its actions to {@action Dash} until it is within 5 feet of the morkoth. A {@condition charmed} target can repeat the saving throw at the end of each of its turns and whenever it takes damage, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature has advantage on saving throws against the morkoth's Hypnosis for 24 hours."
 					]
 				}
 			],
@@ -23681,22 +23686,22 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "1-3:",
+									"name": "1\u20133:",
 									"entry": "The giant makes three Fist attacks against one random creature within reach. If no creatures are within reach, the giant flies into a rage and gains advantage on all attack rolls until the end of its next turn."
 								},
 								{
 									"type": "item",
-									"name": "4-5:",
+									"name": "4\u20135:",
 									"entry": "The giant makes one Fist attack against each creature within reach. If no creatures are within reach, the giant makes one Fist attack against itself."
 								},
 								{
 									"type": "item",
-									"name": "6-7:",
+									"name": "6\u20137:",
 									"entry": "The giant makes one Bite attack against one random creature within reach. If no other creatures are within reach, its eyes glaze over and it is {@condition stunned} until the start of its next turn."
 								},
 								{
 									"type": "item",
-									"name": "8-10:",
+									"name": "8\u201310:",
 									"entry": "The giant makes one Bite attack and two Fist attacks against one random creature within reach. If no creatures are within reach, the giant flies into a rage and gains advantage on all attack rolls until the end of its next turn."
 								}
 							]
@@ -24018,7 +24023,7 @@
 					]
 				},
 				{
-					"name": "Paralysis (Recharge 6)",
+					"name": "Paralysis {@recharge 6}",
 					"entries": [
 						"The nagpa forces each creature within 30 feet of it to make a {@dc 20} Wisdom saving throw, excluding"
 					]
@@ -24674,7 +24679,7 @@
 				{
 					"name": "Devil's Sight",
 					"entries": [
-						"Magical darkness doesn't impede the neogi's darkvision."
+						"Magical darkness doesn't impede the neogi's {@sense darkvision}."
 					]
 				},
 				{
@@ -25139,7 +25144,7 @@
 				{
 					"name": "Nimble Escape",
 					"entries": [
-						"The nilbog takes the Disengage or Hide action."
+						"The nilbog takes the {@action Disengage} or {@action Hide} action."
 					]
 				}
 			],
@@ -25899,7 +25904,7 @@
 				{
 					"name": "Corrupted Healing {@recharge}",
 					"entries": [
-						"The oinoloth touches one willing creature within 5 feet of it. The target regains all its hit points. In addition, the oinoloth can end one disease on the target or remove one of the following conditions from it: {@condition blinded}, {@condition deafened}, {@condition paralyzed}, or {@condition poisoned}. The target then gains 1 level of {@condition exhaustion}, and its hit point maximum is reduced by 7 ({@dice 2d6}). This reduction can be removed only by a wish spell or by casting greater restoration on the target three times within the same hour. The target dies if its hit point maximum is reduced to 0."
+						"The oinoloth touches one willing creature within 5 feet of it. The target regains all its hit points. In addition, the oinoloth can end one disease on the target or remove one of the following conditions from it: {@condition blinded}, {@condition deafened}, {@condition paralyzed}, or {@condition poisoned}. The target then gains 1 level of {@condition exhaustion}, and its hit point maximum is reduced by 7 ({@dice 2d6}). This reduction can be removed only by a {@spell wish} spell or by casting {@spell greater restoration} on the target three times within the same hour. The target dies if its hit point maximum is reduced to 0."
 					]
 				},
 				{
@@ -25911,7 +25916,7 @@
 			],
 			"bonus": [
 				{
-					"name": "Bringer of Plagues (Recharge 5-6)",
+					"name": "Bringer of Plagues {@recharge 5}",
 					"entries": [
 						"The oinoloth blights the area in a 30-foot-radius sphere centered on itself. The blight lasts for 24 hours. While the area is blighted, all normal plants there wither and die.",
 						"Furthermore, when a creature moves into the blighted area or starts its turn there, that creature must make a {@dc 16} Constitution saving throw. On a failed save, the creature takes 14 ({@damage 4d6}) poison damage and is {@condition poisoned}. On a successful save, the creature is immune to the oinoloth's Bringer of Plagues for the next 24 hours.",
@@ -26568,7 +26573,7 @@
 				{
 					"name": "Flyby",
 					"entries": [
-						"The phoenix doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+						"The phoenix doesn't provoke {@action opportunity attack||opportunity attacks} when it flies out of an enemy's reach."
 					]
 				},
 				{
@@ -26711,7 +26716,7 @@
 				{
 					"name": "Flyby",
 					"entries": [
-						"The quetzalcoatlus doesn't provoke an opportunity attack when it flies out of an enemy's reach."
+						"The quetzalcoatlus doesn't provoke an {@action opportunity attack} when it flies out of an enemy's reach."
 					]
 				}
 			],
@@ -26934,7 +26939,7 @@
 				{
 					"name": "Devil's Sight",
 					"entries": [
-						"Magical darkness doesn't impede the abishai's darkvision."
+						"Magical darkness doesn't impede the abishai's {@sense darkvision}."
 					]
 				},
 				{
@@ -27075,7 +27080,7 @@
 				{
 					"name": "Iron Boots",
 					"entries": [
-						"The redcap has disadvantage on Dexterity (Stealth) checks."
+						"The redcap has disadvantage on Dexterity ({@skill Stealth}) checks."
 					]
 				},
 				{
@@ -27738,21 +27743,21 @@
 							"style": "list-hang-notitle",
 							"items": [
 								{
-									"name": "1-2: Bite.",
+									"name": "1\u20132: Bite.",
 									"type": "item",
 									"entries": [
 										"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
 									]
 								},
 								{
-									"name": "3-4: Poison Quills.",
+									"name": "3\u20134: Poison Quills.",
 									"type": "item",
 									"entries": [
 										"{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}3 ({@damage 1d6}) poison damage, and the target must succeed on a {@dc 12} Constitution saving throw or be {@condition poisoned} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 									]
 								},
 								{
-									"name": "5-6: Tentacle.",
+									"name": "5\u20136: Tentacle.",
 									"type": "item",
 									"entries": [
 										"{@atk mw} {@hit 4} to hit, reach 10 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage, and the target is {@condition grappled} (escape {@dc 12}) if it is a Medium or smaller creature. Until this grapple ends, the sea spawn can't use this tentacle on another target."
@@ -27913,7 +27918,7 @@
 			],
 			"reaction": [
 				{
-					"name": "Misty Escape (Recharge 6)",
+					"name": "Misty Escape {@recharge 6}",
 					"entries": [
 						"When the shadar-kai takes damage, it turns {@condition invisible} and teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see. It remains {@condition invisible} until the start of its next turn or until it attacks or casts a spell."
 					]
@@ -28043,21 +28048,21 @@
 							"style": "list-hang-notitle",
 							"items": [
 								{
-									"name": "1-2: Decay.",
+									"name": "1\u20132: Decay.",
 									"type": "item",
 									"entries": [
 										"The target takes 22 ({@damage 4d10}) necrotic damage."
 									]
 								},
 								{
-									"name": "3-4: Grapple.",
+									"name": "3\u20134: Grapple.",
 									"type": "item",
 									"entries": [
 										"The target is {@condition grappled} (escape {@dc 14}) if it is a Medium or smaller creature. Until the grapple ends, the target is {@condition restrained}, and the shadar-kai can't grapple another target."
 									]
 								},
 								{
-									"name": "5-6: Topple.",
+									"name": "5\u20136: Topple.",
 									"type": "item",
 									"entries": [
 										"The target is knocked {@condition prone}."
@@ -28827,83 +28832,83 @@
 							],
 							"rows": [
 								[
-									"01-05",
+									"01\u201305",
 									"The color of the target's hair, eyes, and skin becomes blue, red, yellow, or patterned."
 								],
 								[
-									"06-10",
+									"06\u201310",
 									"The target's eyes push out of its head at the end of stalks."
 								],
 								[
-									"11-15",
+									"11\u201315",
 									"The target's hands grow claws, which can be used as daggers."
 								],
 								[
-									"16-20",
+									"16\u201320",
 									"One of the target's legs grows longer than the other, reducing its walking speed by 10 feet."
 								],
 								[
-									"21-25",
+									"21\u201325",
 									"The target's eyes become beacons, filling a 15- foot cone with dim light when they are open."
 								],
 								[
-									"26-30",
+									"26\u201330",
 									"A pair of wings, either feathered or leathery, sprout from the target's back, granting it a flying speed of 30 feet."
 								],
 								[
-									"31-35",
+									"31\u201335",
 									"The target's ears tear free from its head and scurry away; the target is {@condition deafened}."
 								],
 								[
-									"36-40",
+									"36\u201340",
 									"Two of the target's teeth turn into short tusks."
 								],
 								[
-									"41-45",
+									"41\u201345",
 									"The target's skin develops bark-like scales, granting it a +1 bonus to AC but reducing its Charisma score by 2 (to a minimum of 1)."
 								],
 								[
-									"46-50",
+									"46\u201350",
 									"The target's arms and legs switch places, preventing the target from moving unless it crawls."
 								],
 								[
-									"51-55",
+									"51\u201355",
 									"The target's arms become tentacles with fingers on the ends, increasing its reach by 5 feet."
 								],
 								[
-									"56-60",
+									"56\u201360",
 									"The target's legs grow incredibly long and springy, increasing its walking speed by 10 feet."
 								],
 								[
-									"61-65",
+									"61\u201365",
 									"The target grows a long, thin tail, which it can use as a whip."
 								],
 								[
-									"66-70",
+									"66\u201370",
 									"The target's entire eyes turn black, and it gains {@sense darkvision} out to a range of 120 feet."
 								],
 								[
-									"71-75",
+									"71\u201375",
 									"The target swells, tripling its weight."
 								],
 								[
-									"76-80",
+									"76\u201380",
 									"The target becomes thin and skeletal, halving its weight."
 								],
 								[
-									"81-85",
+									"81\u201385",
 									"The target's head triples in size."
 								],
 								[
-									"86-90",
+									"86\u201390",
 									"The target's ears become wings, giving it a flying speed of 5 feet."
 								],
 								[
-									"91-95",
+									"91\u201395",
 									"The target's body becomes unusually brittle, causing the target to have vulnerability to bludgeoning, piercing, and slashing damage."
 								],
 								[
-									"96-00",
+									"96\u201300",
 									"The target grows another head, causing it to have advantage on saving throws against being {@condition charmed}, {@condition frightened}, or {@condition stunned}."
 								]
 							]
@@ -29239,7 +29244,7 @@
 				{
 					"name": "Move",
 					"entries": [
-						"The skull lord moves up to its speed without provoking opportunity attacks."
+						"The skull lord moves up to its speed without provoking {@action opportunity attack||opportunity attacks}."
 					]
 				},
 				{
@@ -29359,7 +29364,7 @@
 				{
 					"name": "False Appearance",
 					"entries": [
-						"If the slithering tracker is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the slithering tracker move or act, that creature must succeed on a {@dc 18} Intelligence (Investigation) check to discern that the slithering tracker isn't a puddle."
+						"If the slithering tracker is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the slithering tracker move or act, that creature must succeed on a {@dc 18} Intelligence ({@skill Investigation}) check to discern that the slithering tracker isn't a puddle."
 					]
 				},
 				{
@@ -29394,7 +29399,7 @@
 				{
 					"name": "Watery Stealth",
 					"entries": [
-						"If underwater, the slithering tracker takes the Hide action, and it makes the Dexterity (Stealth) check with advantage."
+						"If underwater, the slithering tracker takes the {@action Hide} action, and it makes the Dexterity ({@skill Stealth}) check with advantage."
 					]
 				}
 			],
@@ -29810,7 +29815,7 @@
 			],
 			"bonus": [
 				{
-					"name": "Fey Step (Recharge 4-6)",
+					"name": "Fey Step {@recharge 4}",
 					"entries": [
 						"The eladrin teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see."
 					]
@@ -30342,7 +30347,7 @@
 				{
 					"name": "Flurry of Claws {@recharge 5}",
 					"entries": [
-						"The mangier makes six Claw attacks. Either before or after these attacks, it can move up to its speed without provoking opportunity attacks."
+						"The mangier makes six Claw attacks. Either before or after these attacks, it can move up to its speed without provoking {@action opportunity attack||opportunity attacks}."
 					]
 				}
 			],
@@ -30350,7 +30355,7 @@
 				{
 					"name": "Shadow Stealth",
 					"entries": [
-						"While in dim light or darkness, the mangier takes the Hide action."
+						"While in dim light or darkness, the mangier takes the {@action Hide} action."
 					]
 				}
 			],
@@ -30459,7 +30464,7 @@
 				{
 					"name": "Out-Of-Phase Movement",
 					"entries": [
-						"The seer can move through other creatures and objects as if they were difficult terrain, and its movement doesn't provoke opportunity attacks.",
+						"The seer can move through other creatures and objects as if they were difficult terrain, and its movement doesn't provoke {@action opportunity attack||opportunity attacks}.",
 						"Each creature it moves through takes 5 ({@damage 1d10}) psychic damage; no creature can take this damage more than once per turn.",
 						"The seer takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
 					]
@@ -30740,7 +30745,7 @@
 				"walk": 40
 			},
 			"str": 20,
-			"dex": 0,
+			"dex": 9,
 			"con": 17,
 			"int": 2,
 			"wis": 11,
@@ -30916,13 +30921,13 @@
 				{
 					"name": "Cunning Opportunist",
 					"entries": [
-						"The stone cursed has advantage on the attack rolls of opportunity attacks."
+						"The stone cursed has advantage on the attack rolls of {@action opportunity attack||opportunity attacks}."
 					]
 				},
 				{
 					"name": "False Appearance",
 					"entries": [
-						"If the stone cursed is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the stone cursed move or act, that creature must succeed on a {@dc 18} Intelligence (Investigation) check to discern that the stone cursed isn't a statue."
+						"If the stone cursed is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the stone cursed move or act, that creature must succeed on a {@dc 18} Intelligence ({@skill Investigation}) check to discern that the stone cursed isn't a statue."
 					]
 				},
 				{
@@ -31057,7 +31062,7 @@
 				{
 					"name": "Petrifying Touch",
 					"entries": [
-						"The giant touches one Medium or smaller creature within 10 feet of it that is {@condition charmed} by it. The target must make a {@dc 17} Constitution saving throw. On a failed save, the target becomes {@condition petrified}, and the giant can adhere the target to its stony body. {@spell Greater restoration} spells and other magic that can undo petrification have no effect on a {@condition petrified} creature adhered to the giant unless the giant is dead, in which case the magic works normally, freeing the {@condition petrified} creature as well as ending the {@condition petrified} condition on it."
+						"The giant touches one Medium or smaller creature within 10 feet of it that is {@condition charmed} by it. The target must make a {@dc 17} Constitution saving throw. On a failed save, the target becomes {@condition petrified}, and the giant can adhere the target to its stony body. {@spell greater restoration} spells and other magic that can undo petrification have no effect on a {@condition petrified} creature adhered to the giant unless the giant is dead, in which case the magic works normally, freeing the {@condition petrified} creature as well as ending the {@condition petrified} condition on it."
 					]
 				}
 			],
@@ -31359,7 +31364,7 @@
 			],
 			"bonus": [
 				{
-					"name": "Fey Step (Recharge 4-6)",
+					"name": "Fey Step {@recharge 4}",
 					"entries": [
 						"The eladrin teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see."
 					]
@@ -32418,7 +32423,7 @@
 				{
 					"name": "Frightful Word",
 					"entries": [
-						"Titivilus targets one creature he can see within 10 feet of him. The target must succeed on a {@dc 21} Wisdom saving throw or become {@condition frightened} of him for 1 minute. While {@condition frightened} in this way, the target must take the Dash action and move away from Titivilus by the safest available route on each of its turns, unless there is nowhere to move, in which case it needn't take the Dash action. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"Titivilus targets one creature he can see within 10 feet of him. The target must succeed on a {@dc 21} Wisdom saving throw or become {@condition frightened} of him for 1 minute. While {@condition frightened} in this way, the target must take the {@action Dash} action and move away from Titivilus by the safest available route on each of its turns, unless there is nowhere to move, in which case it needn't take the {@action Dash} action. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 					]
 				},
 				{
@@ -32931,7 +32936,7 @@
 								{
 									"type": "item",
 									"name": "Darkvision.",
-									"entry": "The transmuter has darkvision out to a range of 60 feet."
+									"entry": "The transmuter has {@sense darkvision} out to a range of 60 feet."
 								},
 								{
 									"type": "item",
@@ -33046,7 +33051,7 @@
 				{
 					"name": "False Appearance",
 					"entries": [
-						"If the trapper is motionless on a floor, wall, or ceiling at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the trapper move or act, that creature must succeed on a {@dc 18} Intelligence (Investigation) check to discern that the trapper isn't part of the floor, wall, or ceiling."
+						"If the trapper is motionless on a floor, wall, or ceiling at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the trapper move or act, that creature must succeed on a {@dc 18} Intelligence ({@skill Investigation}) check to discern that the trapper isn't part of the floor, wall, or ceiling."
 					]
 				},
 				{
@@ -35081,7 +35086,7 @@
 				{
 					"name": "Devil's Sight",
 					"entries": [
-						"Magical darkness doesn't impede the abishai's darkvision."
+						"Magical darkness doesn't impede the abishai's {@sense darkvision}."
 					]
 				},
 				{
@@ -35127,7 +35132,7 @@
 				{
 					"name": "Vicious Reprisal",
 					"entries": [
-						"In response to taking damage, the abishai makes one Bite attack against a random creature within 5 feet of it. If no creature is within reach, the abishai moves up to half its speed toward an enemy it can see, without provoking opportunity attacks."
+						"In response to taking damage, the abishai makes one Bite attack against a random creature within 5 feet of it. If no creature is within reach, the abishai moves up to half its speed toward an enemy it can see, without provoking {@action opportunity attack||opportunity attacks}."
 					]
 				}
 			],
@@ -35273,7 +35278,7 @@
 			],
 			"bonus": [
 				{
-					"name": "Fey Step (Recharge 4-6)",
+					"name": "Fey Step {@recharge 4}",
 					"entries": [
 						"The eladrin teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see."
 					]
@@ -35619,7 +35624,7 @@
 				{
 					"name": "Low Cunning",
 					"entries": [
-						"The xvart takes the Disengage action."
+						"The xvart takes the {@action Disengage} action."
 					]
 				}
 			],
@@ -35752,7 +35757,7 @@
 				{
 					"name": "Low Cunning",
 					"entries": [
-						"The xvart takes the Disengage action."
+						"The xvart takes the {@action Disengage} action."
 					]
 				}
 			],
@@ -36858,7 +36863,7 @@
 				{
 					"name": "Devil's Sight",
 					"entries": [
-						"Magical darkness doesn't impede the yuan-ti's darkvision."
+						"Magical darkness doesn't impede the yuan-ti's {@sense darkvision}."
 					]
 				},
 				{
@@ -37045,7 +37050,7 @@
 				{
 					"name": "Devil's Sight",
 					"entries": [
-						"Magical darkness doesn't impede the yuan-ti's darkvision."
+						"Magical darkness doesn't impede the yuan-ti's {@sense darkvision}."
 					]
 				},
 				{
@@ -37240,7 +37245,7 @@
 				{
 					"name": "Devil's Sight",
 					"entries": [
-						"Magical darkness doesn't impede the yuan-ti's darkvision."
+						"Magical darkness doesn't impede the yuan-ti's {@sense darkvision}."
 					]
 				},
 				{
@@ -37648,7 +37653,7 @@
 				{
 					"name": "Devil's Sight",
 					"entries": [
-						"Magical darkness doesn't impede Zariel's darkvision."
+						"Magical darkness doesn't impede Zariel's {@sense darkvision}."
 					]
 				},
 				{
@@ -37904,7 +37909,7 @@
 					]
 				},
 				{
-					"name": "Mind Control Spores (Recharge 5-6)",
+					"name": "Mind Control Spores {@recharge 5}",
 					"entries": [
 						"Zuggtmoy releases spores that burst out in a cloud that fills a 20-foot-radius sphere centered on her, and it lingers for 1 minute. Humanoids and Beasts in the cloud when it appears, or that enter it later, must make a {@dc 19} Wisdom saving throw. On a successful save, a creature can't be infected by these spores for 24 hours. On a failed save, the creature is infected with a disease called the influence of Zuggtmoy for 24 hours. While infected in this way, the creature is {@condition charmed} by her and can't be reinfected by these spores."
 					]
