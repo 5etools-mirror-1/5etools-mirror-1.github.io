@@ -2325,9 +2325,16 @@
 										"type": "internal",
 										"path": "adventure/WDH/Xanathar-Guild-Hideout-DM.jpg"
 									},
-									"title": "DMs' Map\u2014{@creature Xanathar|WDH} Guild Hideout",
+									"title": "DMs' Map\u2014Xanathar Guild Hideout",
 									"width": 1158,
 									"height": 800,
+									"mapParent": {
+										"id": "Xanathar-Guild-Hideout-DM",
+										"offsetX": -16,
+										"offsetY": -27,
+										"scaleX": 0.7334,
+										"scaleY": 0.7235
+									},
 									"mapRegions": [
 										{
 											"area": "078",
@@ -2725,12 +2732,12 @@
 								},
 								{
 									"type": "image",
-									"imageType": "map",
+									"imageType": "mapPlayer",
 									"href": {
 										"type": "internal",
 										"path": "adventure/WDH/Xanathar-Guild-Hideout-Players.jpg"
 									},
-									"title": "Players' Map\u2014{@creature Xanathar|WDH} Guild Hideout",
+									"title": "Players' Map\u2014Xanathar Guild Hideout",
 									"width": 1650,
 									"height": 1150
 								}
