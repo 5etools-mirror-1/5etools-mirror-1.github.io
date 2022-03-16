@@ -1,10 +1,16 @@
 "use strict";
 
 class BooksList {
-	static getDateStr (it) {
-		if (!it.published) return "\u2014";
-		const date = new Date(it.published);
+	static getDateStr (book) {
+		if (!book.published) return "\u2014";
+		const date = new Date(book.published);
 		return DatetimeUtil.getDateStr(date);
+	}
+
+	static getGroupStr (book) {
+		const group = book.group || "other";
+		const entry = SourceUtil.ADV_BOOK_GROUPS.find(it => it.group === group);
+		return entry.displayName;
 	}
 
 	constructor (options) {

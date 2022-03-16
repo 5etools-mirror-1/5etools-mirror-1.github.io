@@ -223,7 +223,7 @@ class NavBar {
 
 			if (!metas.length) return;
 
-			NavBar._ADV_BOOK_GROUPS[prop]
+			SourceUtil.ADV_BOOK_GROUPS
 				.forEach(({group, displayName}) => {
 					const inGroup = metas.filter(it => (it.group || "other") === group);
 					if (!inGroup.length) return;
@@ -655,23 +655,6 @@ NavBar._MIN_MOVE_PX = 3;
 NavBar._ALT_CHILD_PAGES = {
 	"book.html": "books.html",
 	"adventure.html": "adventures.html",
-};
-NavBar._ADV_BOOK_GROUPS = {
-	"book": [
-		{group: "core", displayName: "Core"},
-		{group: "supplement", displayName: "Supplements"},
-		{group: "setting", displayName: "Settings"},
-		{group: "supplement-alt", displayName: "Extras"},
-		{group: "homebrew", displayName: "Homebrew"},
-		{group: "screen", displayName: "Screens"},
-		{group: "other", displayName: "Miscellaneous"},
-	],
-	"adventure": [
-		{group: "supplement", displayName: "Supplements"},
-		{group: "supplement-alt", displayName: "Extras"},
-		{group: "homebrew", displayName: "Homebrew"},
-		{group: "other", displayName: "Miscellaneous"},
-	],
 };
 NavBar._CAT_RULES = "Rules";
 NavBar._CAT_BOOKS = "Books";

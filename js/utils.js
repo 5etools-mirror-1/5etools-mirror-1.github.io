@@ -364,6 +364,16 @@ CleanUtil._TAG_DASH_EXPAND_REGEX = /({@[a-zA-Z])([\u2014\u2013])/g;
 
 // SOURCES =============================================================================================================
 SourceUtil = {
+	ADV_BOOK_GROUPS: [
+		{group: "core", displayName: "Core"},
+		{group: "supplement", displayName: "Supplements"},
+		{group: "setting", displayName: "Settings"},
+		{group: "supplement-alt", displayName: "Extras"},
+		{group: "homebrew", displayName: "Homebrew"},
+		{group: "screen", displayName: "Screens"},
+		{group: "other", displayName: "Miscellaneous"},
+	],
+
 	_subclassReprintLookup: {},
 	async pInitSubclassReprintLookup () {
 		SourceUtil._subclassReprintLookup = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/generated/gendata-subclass-lookup.json`);
@@ -2523,6 +2533,14 @@ SortUtil = {
 					},
 				});
 			});
+	},
+
+	ascSortSourceGroup (a, b) {
+		const agrp = a.group || "other";
+		const bgrp = b.group || "other";
+		const aidx = SourceUtil.ADV_BOOK_GROUPS.findIndex(it => it.group === agrp);
+		const bidx = SourceUtil.ADV_BOOK_GROUPS.findIndex(it => it.group === bgrp);
+		return aidx - bidx;
 	},
 
 	ascSortAdventure (a, b) {
