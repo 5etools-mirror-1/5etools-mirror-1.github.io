@@ -6,7 +6,7 @@ IS_NODE = typeof module !== "undefined";
 if (IS_NODE) require("./parser.js");
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
-IS_DEPLOYED = undefined;
+IS_DEPLOYED="v1.152.0";
 VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.152.0"/* 5ETOOLS_VERSION__CLOSE */;
 DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 // for the roll20 script to set
