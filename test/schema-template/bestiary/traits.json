@@ -9,7 +9,7 @@
 			"properties": {
 				"name": {"type": "string"},
 				"source": {"type": "string"},
-				"page": {"$ref": "util.json#/definitions/page"},
+				"page": {"$ref": "../util.json#/definitions/page"},
 
 				"ref": {"type": "string"},
 

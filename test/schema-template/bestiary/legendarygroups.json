@@ -13,7 +13,7 @@
 				"source": {
 					"type": "string"
 				},
-				"page": {"$ref": "util.json#/definitions/page"},
+				"page": {"$ref": "../util.json#/definitions/page"},
 				"additionalSources": {
 					"$ref": "../util.json#/definitions/additionalSources"
 				},
