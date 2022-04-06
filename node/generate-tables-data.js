@@ -7,12 +7,12 @@ Object.assign(global, require("../js/hist.js"));
 
 class GenTables {
 	_doLoadAdventureData () {
-		return ut.readJson(`./data/adventures.json`).adventure
+		return ut.readJson(`${this._baseDir}/adventures.json`).adventure
 			.map(idx => {
 				if (GenTables.ADVENTURE_WHITELIST[idx.id]) {
 					return {
 						adventure: idx,
-						adventureData: JSON.parse(fs.readFileSync(`./data/adventure/adventure-${idx.id.toLowerCase()}.json`, "utf-8")),
+						adventureData: JSON.parse(fs.readFileSync(`${this._baseDir}/adventure/adventure-${idx.id.toLowerCase()}.json`, "utf-8")),
 					};
 				}
 			})
@@ -20,19 +20,20 @@ class GenTables {
 	}
 
 	_doLoadBookData () {
-		return ut.readJson(`./data/books.json`).book
+		return ut.readJson(`${this._baseDir}/books.json`).book
 			.map(idx => {
 				if (!GenTables.BOOK_BLACKLIST[idx.id]) {
 					return {
 						book: idx,
-						bookData: JSON.parse(fs.readFileSync(`./data/book/book-${idx.id.toLowerCase()}.json`, "utf-8")),
+						bookData: JSON.parse(fs.readFileSync(`${this._baseDir}/book/book-${idx.id.toLowerCase()}.json`, "utf-8")),
 					};
 				}
 			})
 			.filter(it => it);
 	}
 
-	async pRun () {
+	async pRun (baseDir) {
+		this._baseDir = baseDir;
 		const output = {tables: [], tableGroups: []};
 
 		this._addBookAndAdventureData(output);
@@ -40,7 +41,7 @@ class GenTables {
 		await this._pAddVariantRuleData(output);
 
 		const toSave = JSON.stringify({table: output.tables, tableGroup: output.tableGroups});
-		fs.writeFileSync(`./data/generated/gendata-tables.json`, toSave, "utf-8");
+		fs.writeFileSync(`${this._baseDir}/generated/gendata-tables.json`, toSave, "utf-8");
 		console.log("Regenerated table data.");
 	}
 
@@ -100,7 +101,7 @@ class GenTables {
 
 	async _pAddVariantRuleData (output) {
 		ut.patchLoadJson();
-		const variantRuleData = await DataUtil.loadJSON(`./data/variantrules.json`);
+		const variantRuleData = await DataUtil.loadJSON(`${this._baseDir}/variantrules.json`);
 		ut.unpatchLoadJson();
 
 		variantRuleData.variantrule.forEach(it => {
@@ -116,4 +117,6 @@ GenTables.ADVENTURE_WHITELIST = {
 };
 
 const generator = new GenTables();
-module.exports = generator.pRun();
+Object.entries(DataUtil.contentLanguages).forEach(([k, v]) => {
+	module.exports = generator.pRun(v.baseDir);
+});

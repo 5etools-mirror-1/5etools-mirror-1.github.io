@@ -23,11 +23,11 @@ UtilBookReference = {
 		}
 	},
 
-	getIndex (...refTypes) {
-		const index = require(`../data/books.json`);
+	getIndex (baseDir, ...refTypes) {
+		const index = require(`${baseDir}/books.json`);
 		const books = {};
 		index.book.forEach(b => {
-			books[b.id.toLowerCase()] = require(`../data/book/book-${b.id.toLowerCase()}.json`);
+			books[b.id.toLowerCase()] = require(`${baseDir}/book/book-${b.id.toLowerCase()}.json`);
 		});
 
 		const outJson = {
