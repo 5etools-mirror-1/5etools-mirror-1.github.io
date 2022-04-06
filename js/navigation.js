@@ -118,6 +118,18 @@ class NavBar {
 		this._addElement_li(NavBar._CAT_UTILITIES, "privacy-policy.html", "Privacy Policy");
 
 		this._addElement_dropdown(null, NavBar._CAT_SETTINGS);
+		if (Object.keys(DataUtil.contentLanguages).length > 1) {
+			this._addElement_dropdown(NavBar._CAT_SETTINGS, NavBar._CAT_LANGUAGE, { isSide: true });
+			Object.entries(DataUtil.contentLanguages).forEach(([k, v]) => {
+				this._addElement_button(
+					NavBar._CAT_LANGUAGE,
+					{
+						html: v.name,
+						click: () => { DataUtil.setLanguage(k); },
+					},
+				);
+			});
+		};
 		this._addElement_button(
 			NavBar._CAT_SETTINGS,
 			{
@@ -664,6 +676,7 @@ NavBar._CAT_ADVENTURES = "Adventures";
 NavBar._CAT_REFERENCES = "References";
 NavBar._CAT_UTILITIES = "Utilities";
 NavBar._CAT_SETTINGS = "Settings";
+NavBar._CAT_LANGUAGE = "Content Language";
 
 NavBar._navbar = null;
 

@@ -2601,11 +2601,26 @@ DataUtil = {
 	_merging: {},
 	_merged: {},
 
+	defaultContentLanguage: 'en',
+	contentLanguages: {
+		'en': { name: 'English', baseDir: 'data/' },
+		//'de': { name: 'Deutsch', baseDir: 'data.de/' },
+	},
+
 	async _pLoad (url) {
+		language = StorageUtil.syncGet("contentLanguage")
+		if (!language) {
+			language = this.defaultContentLanguage;
+		}
+		if (language in DataUtil.contentLanguages) {
+			url = url.replace("data/", DataUtil.contentLanguages[language].baseDir);
+		}
+
 		if (DataUtil._loading[url]) {
 			await DataUtil._loading[url];
 			return DataUtil._loaded[url];
 		}
+		console.log("loading " + url);
 
 		DataUtil._loading[url] = new Promise((resolve, reject) => {
 			const request = new XMLHttpRequest();
@@ -2625,6 +2640,16 @@ DataUtil = {
 
 		await DataUtil._loading[url];
 		return DataUtil._loaded[url];
+	},
+
+	setLanguage(language) {
+		StorageUtil.syncSet("contentLanguage", language);
+		if (typeof location != "undefined") {
+			// Without the setTimeout chrome will not reload books/quickref
+			setTimeout(function () {
+				window.location.reload();
+			},100);
+		}
 	},
 
 	_mutAddProps (data) {
