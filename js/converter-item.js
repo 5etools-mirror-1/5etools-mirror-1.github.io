@@ -138,7 +138,10 @@ class ItemParser extends BaseParser {
 
 	// SHARED PARSING FUNCTIONS ////////////////////////////////////////////////////////////////////////////////////////
 	static _setCleanTaglineInfo (stats, curLine, options) {
-		const parts = curLine.split(",").map(it => it.trim()).filter(Boolean);
+		// split on first comma not inside parentheses
+		// \s*(?![^()]*\)) : not inside parentheses
+		// (.*) : only first
+		const parts = curLine.split(/,\s*(?![^()]*\))(.*)/s).map(it => it.trim()).filter(Boolean);
 
 		const handlePartRarity = (rarity) => {
 			rarity = rarity.trim().toLowerCase();
