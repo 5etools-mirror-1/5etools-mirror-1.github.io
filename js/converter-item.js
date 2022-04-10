@@ -79,10 +79,13 @@ class ItemParser extends BaseParser {
 		}
 
 		const statsOut = this._getFinalState(item, options);
-		options.cbOutput(statsOut, options.isAppend);
+		const prop = statsOut.__prop
+		delete statsOut.__prop
+
+		options.cbOutput(statsOut, options.isAppend, prop);
 	}
 
-	static _getFinalState (item, options) {
+	static _getFinalState (item, options, prop) {
 		if (!item.entries.length) delete item.entries;
 		else this._setWeight(item, options);
 
@@ -91,9 +94,6 @@ class ItemParser extends BaseParser {
 		this._doItemPostProcess(item, options);
 		this._setCleanTaglineInfo_handleGenericType(item, options);
 		this._doVariantPostProcess(item, options);
-
-		const prop = item.__prop
-		delete item.__prop
 
 		return PropOrder.getOrdered(item, prop || "item");
 	}
@@ -267,13 +267,11 @@ class ItemParser extends BaseParser {
 						.replace(/(a|an|any)\s+/, "")
 						.split(variantListPattern)
 						;
-					options.cbWarning("Subparts: " + baseItems);
 					let genericsNumBefore = genericVariantBases.length;
 					baseItems.forEach((itemName) => {
 						let item = ItemParser.getItem(itemName);
 						if (!item) throw new Error(`Could not find base item "${itemName}"`);
 						genericVariantBases.push(item);
-						options.cbWarning(`item: ${item.name}`);
 					});
 					if (genericVariantBases.length == genericsNumBefore) {
 						if (!item) throw new Error(`Could not find base item "${baseItem}"`);
@@ -367,9 +365,12 @@ class ItemParser extends BaseParser {
 	}
 
 	static _setCleanTaglineInfo_handleGenericType (stats, options) {
-		if (!stats.__genericType) return;
+		if (!(stats.__genericType || stats.__genericVariantBases)) return;
+
 		const genericType = stats.__genericType;
+		const genericVariantBases = stats.__genericVariantBases;
 		delete stats.__genericType;
+		delete stats.__genericVariantBases;
 
 		let prefixSuffixName = stats.name;
 		prefixSuffixName = prefixSuffixName.replace(/^weapon /i, "");
@@ -385,20 +386,20 @@ class ItemParser extends BaseParser {
 
 		stats.__prop = "variant";
 		stats.type = "GV";
-		switch (genericType) {
-			case "weapon": stats.requires = [{"weapon": true}]; break;
-			case "sword": stats.requires = [{"sword": true}]; break;
-			case "axe": stats.requires = [{"axe": true}]; break;
-			case "armor": stats.requires = [{"armor": true}]; break;
-			case "bow": stats.requires = [{"bow": true}, {"crossbow": true}]; break;
-			case "bludgeoning": stats.requires = [{"dmgType": "B"}]; break;
-			case "piercing": stats.requires = [{"dmgType": "P"}]; break;
-			case "slashing": stats.requires = [{"dmgType": "S"}]; break;
-			default: {
-				stats.requires = [{[genericType]: true}];
-				options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Tagline part "${genericType}" requires manual conversion`);
-				break;
+		if (genericType) {
+			switch (genericType) {
+				case "weapon": stats.requires = [{"weapon": true}]; break;
+				case "sword": stats.requires = [{"sword": true}]; break;
+				case "armor": stats.requires = [{"armor": true}]; break;
+				default: throw new Error(`Unhandled generic type "${genericType}"`);
 			}
+		} else if (genericVariantBases) {
+			stats.requires = [];
+			genericVariantBases.forEach(item => {
+				stats.requires.push({
+					"name": item.name
+				});
+			});
 		}
 	}
 
