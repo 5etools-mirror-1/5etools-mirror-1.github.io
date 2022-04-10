@@ -91,7 +91,11 @@ class ItemParser extends BaseParser {
 		this._doItemPostProcess(item, options);
 		this._setCleanTaglineInfo_handleGenericType(item, options);
 		this._doVariantPostProcess(item, options);
-		return PropOrder.getOrdered(item, item.__prop || "item");
+
+		const prop = item.__prop
+		delete item.__prop
+
+		return PropOrder.getOrdered(item, prop || "item");
 	}
 
 	// SHARED UTILITY FUNCTIONS ////////////////////////////////////////////////////////////////////////////////////////
