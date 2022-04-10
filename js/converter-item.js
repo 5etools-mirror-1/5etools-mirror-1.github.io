@@ -169,6 +169,7 @@ class ItemParser extends BaseParser {
 
 		let baseItem = null;
 		let genericType = null;
+		let genericVariantBases = []; // in case it's a variant of a specific list of items
 
 		for (let i = 0; i < parts.length; ++i) {
 			let part = parts[i];
@@ -246,11 +247,34 @@ class ItemParser extends BaseParser {
 			}
 
 			const mBaseWeapon = /^(weapon|staff) \(([^)]+)\)$/i.exec(part);
-			const mBaseArmor = /^armor \((?<type>[^)]+)\)$/i.exec(part);
+			const mBaseArmor = /^armor \(([^)]+)\)$/i.exec(part);
+
+			// list separated by commas and/or "or"s
+			// example: weapon (dagger, shortsword), weapon (maul or warhammer), 
+			// armor (plate, half plate, or splint)
+			const variantListPattern = /(?:\s+or|\s*,(?! but)|\s+and)(?: or)?\s+/i;
+
 			if (mBaseWeapon) {
 				if (mBaseWeapon[1].toLowerCase() === "staff") stats.staff = true;
 				baseItem = ItemParser.getItem(mBaseWeapon[2]);
-				if (!baseItem) throw new Error(`Could not find base item "${mBaseWeapon[2]}"`);
+				if (!baseItem) {
+					// check if the items are a list
+					let baseItems = mBaseWeapon[2]
+						.replace(/(a|an|any)\s+/, "")
+						.split(variantListPattern)
+						;
+					options.cbWarning("Subparts: " + baseItems);
+					let genericsNumBefore = genericVariantBases.length;
+					baseItems.forEach((itemName) => {
+						let item = ItemParser.getItem(itemName);
+						if (!item) throw new Error(`Could not find base item "${itemName}"`);
+						genericVariantBases.push(item);
+						options.cbWarning(`item: ${item.name}`);
+					});
+					if (genericVariantBases.length == genericsNumBefore) {
+						if (!item) throw new Error(`Could not find base item "${baseItem}"`);
+					}
+				}
 				continue;
 			} else if (mBaseArmor) {
 				if (this._setCleanTaglineInfo_isMutAnyArmor(stats, mBaseArmor)) continue;
@@ -268,6 +292,7 @@ class ItemParser extends BaseParser {
 		this._setCleanTaglineInfo_handleBaseItem(stats, baseItem, options);
 		// Stash the genericType for later processing/removal
 		if (genericType) stats.__genericType = genericType;
+		if (genericVariantBases.length != 0) stats.__genericVariantBases = genericVariantBases;
 	}
 
 	static _setCleanTaglineInfo_getArmorBaseItem (name) {
