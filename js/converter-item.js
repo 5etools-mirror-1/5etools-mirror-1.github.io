@@ -24,6 +24,14 @@ class ItemParser extends BaseParser {
 		return null;
 	}
 
+	static _getBaseItem (itemName, category) {
+		let baseItem = ItemParser.getItem(itemName);
+		if (!baseItem && category.toLowerCase() === "armor") {
+			baseItem = ItemParser.getItem(`${itemName} armor`); // "armor (plate)" -> "plate armor"
+		}
+		return baseItem;
+	}
+
 	/**
 	 * Parses items from raw text pastes
 	 * @param inText Input text.
@@ -180,7 +188,7 @@ class ItemParser extends BaseParser {
 		};
 
 		let baseItem = null;
-		let genericType = null;
+		let genericTypes = [];
 		let genericVariantBases = []; // in case it's a variant of a specific list of items
 		let genericVariantExceptions = [];
 
@@ -246,10 +254,10 @@ class ItemParser extends BaseParser {
 
 			// region weapon/armor
 			if (partLower === "weapon" || partLower === "weapon (any)") {
-				genericType = "weapon";
+				genericTypes.push("weapon");
 				continue;
 			} else if (partLower === "armor" || partLower === "armor (any)") {
-				genericType = "armor";
+				genericTypes.push("armor");
 				continue;
 			} else {
 				const mWeaponAnyX = /^weapon \(any ([^)]+)\)$/i.exec(part);
@@ -259,18 +267,74 @@ class ItemParser extends BaseParser {
 				}
 			}
 
-			const mBaseWeapon = /^(weapon|staff) \(([^)]+)\)$/i.exec(part);
-			const mBaseArmor = /^armor \(([^)]+)\)$/i.exec(part);
+			const baseCats = ["weapon", "staff", "armor"];
+			const exceptionSeps = ["except", "but\\s*(?:not)?", "without"];
 
-			// list separated by commas and/or "or"s
 			// example: weapon (dagger, shortsword), weapon (maul or warhammer), 
 			// armor (plate, half plate, or splint)
-			const variantListPattern = /(?:\s+or|\s*,(?! but)|\s+and)(?: or)?\s+/i;
+			// list separated by commas and/or "or"s
+			const variantListPattern = /(?:\s+or|\s*,|\s+and)(?: or)?\s+/i;
+			const mBaseItem = new RegExp(
+				`(${baseCats.join("|")}) \\((.+?)(?:,?\\s*(${exceptionSeps.join("|")})\\s(.*))?\\)`, "i"
+			).exec(part);
 
-			const checkExceptions = subcategory => {
-				const exceptionsSplit = subcategory.split(/,?\s*(?:except|but(?:\s*not)?)\s*/);
-				if (exceptionsSplit.length > 1) {
-					const exceptions = exceptionsSplit[1].split(variantListPattern).map(s => s.trim());
+			if (mBaseItem) {
+				const [_, category, subcategory, exceptSep, except] = mBaseItem;
+				const categoryL = category.toLowerCase();
+				options.cbWarning(`${category} | ${subcategory} | ${exceptSep} | ${except}`);
+				
+				if (categoryL === "staff") stats.staff = true;
+				baseItem = this._getBaseItem(subcategory, category);
+
+				if (!baseItem) {
+					// check if the items are a list
+					let handled = false;
+					let baseItems = subcategory
+						.replace(/(a|an|any)\s+/, "")
+						.split(variantListPattern)
+						;
+					
+					baseItems.forEach((itemName) => {
+						let found = false;
+						if (categoryL === "weapon" || categoryL === "staff") {
+							found = true;
+							switch (itemName) {
+								case "melee": case "melee weapon":
+									genericTypes.push("melee"); break;
+								case "ranged": case "ranged weapon":
+									genericTypes.push("ranged"); break;
+								case "sword": genericTypes.push("sword"); break;
+								case "axe": genericTypes.push("axe"); break;
+								case "bow": genericTypes.push("bow"); break;
+								case "crossbow": genericTypes.push("crossbow"); break;
+								default: found = false;
+							}
+						} else if (categoryL === "armor") {
+							found = true;
+							if (/^heavy/i.test(itemName)) {
+								genericTypes.push("heavy armor");
+							} else if (/^medium/i.test(itemName)) {
+								genericTypes.push("medium armor");
+							} else if (/^light/i.test(itemName)) {
+								genericTypes.push("light armor");
+							}		
+						}
+
+						if (!found) {
+							let item = this._getItem(itemName, category);
+							if (!item) throw new Error(`Could not find base item "${itemName}"`);
+							genericVariantBases.push(item);
+						}
+						handled = true;
+					});
+					if (!handled) {
+						if (!baseItem) throw new Error(`Could not find base item "${subcategory}"`);
+					}
+				}
+
+				// handle exceptions (but not <item>, except <item>, etc.)
+				if (exceptSep && (genericTypes.length > 0 || genericVariantBases.length > 0)) {
+					const exceptions = except.split(variantListPattern).map(s => s.trim());
 					exceptions.forEach(exceptionName => {
 						let item = ItemParser.getItem(exceptionName);
 						if (!item) item = ItemParser.getItem(`${exceptionName} armor`); // "armor (plate)" -> "plate armor"
@@ -278,94 +342,6 @@ class ItemParser extends BaseParser {
 						genericVariantExceptions.push(item.name); // correct capitalization
 					});
 				}
-			};
-
-			if (mBaseWeapon) {
-				if (mBaseWeapon[1].toLowerCase() === "staff") stats.staff = true;
-				baseItem = ItemParser.getItem(mBaseWeapon[2]);
-				if (!baseItem) {
-					// check if the items are a list
-					let handled = false;
-					let baseItems = mBaseWeapon[2]
-						.replace(/(a|an|any)\s+/, "")
-						.split(variantListPattern)
-						;
-					baseItems.forEach((itemName) => {
-						let found = true;
-						switch (itemName) {
-							case "melee": case "melee weapon":
-								genericType = "melee"; break;
-							case "ranged": case "ranged weapon":
-								genericType = "ranged"; break;
-							case "sword": genericType = "sword"; break;
-							case "axe": genericType = "axe"; break;
-							case "bow": genericType = "bow"; break;
-							case "crossbow":
-								if (genericType === "bow") {
-									genericType = "bow or crossbow";
-								} else {
-									genericType = "crossbow"
-								}
-								break;
-							default: found = false;
-						}
-
-						if (!found) {
-							let item = ItemParser.getItem(itemName);
-							if (!item) throw new Error(`Could not find base item "${itemName}"`);
-							genericVariantBases.push(item);
-						}
-						handled = true;
-					});
-					if (!handled) {
-						if (!baseItem) throw new Error(`Could not find base item "${mBaseWeapon[2]}"`);
-					}
-				}
-				if (genericType || genericVariantBases.length > 0) 
-					checkExceptions(mBaseWeapon[2]);
-				continue;
-			} else if (mBaseArmor) {
-				baseItem = ItemParser.getItem(mBaseArmor[1]);
-				if (!baseItem) baseItem = ItemParser.getItem(`${mBaseArmor[1]} armor`); // "armor (plate)" -> "plate armor"
-
-				if (!baseItem) {
-					let trimmed = mBaseArmor[1]
-						.replace(/(a|an|any)\s+/, "")
-						.trim()
-						;
-
-					let handled = false;
-					// check armor types
-					if (/^heavy/.test(trimmed)) {
-						genericType = "heavy armor";
-						handled = true;
-					} else if (/^medium/.test(trimmed)) {
-						genericType = "medium armor";
-						handled = true;
-					} else if (/^light/.test(trimmed)) {
-						genericType = "light armor";
-						handled = true;
-					}
-
-					if (!handled) {
-						let baseItems = trimmed
-							.split(variantListPattern)
-							;
-						baseItems.forEach((itemName) => {
-							let item = ItemParser.getItem(itemName);
-							if (!item) item = ItemParser.getItem(`${itemName} armor`); // "armor (plate)" -> "plate armor"
-							if (!item) throw new Error(`Could not find base item "${itemName}"`);
-							genericVariantBases.push(item);
-							handled = true;
-						});
-					}
-					if (!handled) {
-						if (!baseItem) throw new Error(`Could not find base item "${mBaseArmor[1]}"`);
-					}
-				}
-				if (genericType || genericVariantBases.length > 0) 
-					checkExceptions(mBaseArmor[1]);
-
 				continue;
 			}
 			// endregion
@@ -376,7 +352,7 @@ class ItemParser extends BaseParser {
 
 		this._setCleanTaglineInfo_handleBaseItem(stats, baseItem, options);
 		// Stash the genericType for later processing/removal
-		if (genericType) stats.__genericType = genericType;
+		if (genericTypes.length != 0) stats.__genericTypes = genericTypes;
 		if (genericVariantBases.length != 0) stats.__genericVariantBases = genericVariantBases;
 		if (genericVariantExceptions.length != 0) stats.__genericVariantExceptions = genericVariantExceptions;
 	}
@@ -449,12 +425,12 @@ class ItemParser extends BaseParser {
 	}
 
 	static _setCleanTaglineInfo_handleGenericType (stats, options) {
-		if (!(stats.__genericType || stats.__genericVariantBases)) return;
+		if (!(stats.__genericTypes || stats.__genericVariantBases)) return;
 
-		const genericType = stats.__genericType;
+		const genericTypes = stats.__genericTypes;
 		const genericVariantBases = stats.__genericVariantBases;
 		const genericVariantExceptions = stats.__genericVariantExceptions;
-		delete stats.__genericType;
+		delete stats.__genericTypes;
 		delete stats.__genericVariantBases;
 		delete stats.__genericVariantExceptions;
 
@@ -472,22 +448,24 @@ class ItemParser extends BaseParser {
 
 		stats.__prop = "variant";
 		stats.type = "GV";
-		if (genericType) {
-			switch (genericType) {
-				case "weapon": stats.requires = [{"weapon": true}]; break;
-				case "melee": throw new Error("Unimplemented!");
-				case "ranged": throw new Error("Unimplemented!");
-				case "sword": stats.requires = [{"sword": true}]; break;
-				case "axe": stats.requires = [{"axe": true}]; break;
-				case "bow": stats.requires = [{"bow": true}]; break;
-				case "crossbow": stats.requires = [{"crossbow": true}]; break;
-				case "bow or crossbow": stats.requires = [{"bow": true}, {"crossbow": true}]; break;
-				case "armor": stats.requires = [{"armor": true}]; break;
-				case "heavy armor": stats.requires = [{"type": "HA"}]; break;
-				case "medium armor": stats.requires = [{"type": "MA"}]; break;
-				case "light armor": stats.requires = [{"type": "LA"}]; break;
-				default: throw new Error(`Unhandled generic type "${genericType}"`);
-			}
+		if (genericTypes) {
+			stats.requires = [];
+			genericTypes.forEach(genericType => {
+				switch (genericType) {
+					case "weapon": stats.requires.push({"weapon": true}); break;
+					case "melee": stats.requires.push({"type": "M"}); break;
+					case "ranged": rstats.equires.push({"type": "R"}); break;
+					case "sword": stats.requires.push({"sword": true}); break;
+					case "axe": stats.requires.push({"axe": true}); break;
+					case "bow": stats.requires.push({"bow": true}); break;
+					case "crossbow": stats.requires.push({"crossbow": true}); break;
+					case "armor": stats.requires.push({"armor": true}); break;
+					case "heavy armor": stats.requires.push({"type": "HA"}); break;
+					case "medium armor": stats.requires.push({"type": "MA"}); break;
+					case "light armor": stats.requires.push({"type": "LA"}); break;
+					default: throw new Error(`Unhandled generic type "${genericType}"`);
+				}
+			});
 		} else if (genericVariantBases) {
 			stats.requires = [];
 			genericVariantBases.forEach(item => {
