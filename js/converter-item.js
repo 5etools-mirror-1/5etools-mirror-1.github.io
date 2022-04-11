@@ -174,6 +174,7 @@ class ItemParser extends BaseParser {
 		let baseItem = null;
 		let genericType = null;
 		let genericVariantBases = []; // in case it's a variant of a specific list of items
+		let genericVariantExceptions = [];
 
 		for (let i = 0; i < parts.length; ++i) {
 			let part = parts[i];
@@ -258,6 +259,19 @@ class ItemParser extends BaseParser {
 			// armor (plate, half plate, or splint)
 			const variantListPattern = /(?:\s+or|\s*,(?! but)|\s+and)(?: or)?\s+/i;
 
+			const checkExceptions = subcategory => {
+				const exceptionsSplit = subcategory.split(/,?\s*(?:except|but(?:\s*not)?)\s*/);
+				if (exceptionsSplit.length > 1) {
+					const exceptions = exceptionsSplit[1].split(variantListPattern).map(s => s.trim());
+					exceptions.forEach(exceptionName => {
+						let item = ItemParser.getItem(exceptionName);
+						if (!item) item = ItemParser.getItem(`${exceptionName} armor`); // "armor (plate)" -> "plate armor"
+						if (!item) throw new Error(`Could not find exception item "${exceptionName}"`);
+						genericVariantExceptions.push(item.name); // correct capitalization
+					});
+				}
+			};
+
 			if (mBaseWeapon) {
 				if (mBaseWeapon[1].toLowerCase() === "staff") stats.staff = true;
 				baseItem = ItemParser.getItem(mBaseWeapon[2]);
@@ -278,6 +292,8 @@ class ItemParser extends BaseParser {
 						if (!baseItem) throw new Error(`Could not find base item "${mBaseWeapon[2]}"`);
 					}
 				}
+				if (genericType || genericVariantBases.length > 0) 
+					checkExceptions(mBaseWeapon[2]);
 				continue;
 			} else if (mBaseArmor) {
 				baseItem = ItemParser.getItem(mBaseArmor[1]);
@@ -317,6 +333,8 @@ class ItemParser extends BaseParser {
 						if (!baseItem) throw new Error(`Could not find base item "${mBaseArmor[1]}"`);
 					}
 				}
+				if (genericType || genericVariantBases.length > 0) 
+					checkExceptions(mBaseArmor[1]);
 
 				continue;
 			}
@@ -330,6 +348,7 @@ class ItemParser extends BaseParser {
 		// Stash the genericType for later processing/removal
 		if (genericType) stats.__genericType = genericType;
 		if (genericVariantBases.length != 0) stats.__genericVariantBases = genericVariantBases;
+		if (genericVariantExceptions.length != 0) stats.__genericVariantExceptions = genericVariantExceptions;
 	}
 
 	static _setCleanTaglineInfo_getArmorBaseItem (name) {
@@ -404,8 +423,10 @@ class ItemParser extends BaseParser {
 
 		const genericType = stats.__genericType;
 		const genericVariantBases = stats.__genericVariantBases;
+		const genericVariantExceptions = stats.__genericVariantExceptions;
 		delete stats.__genericType;
 		delete stats.__genericVariantBases;
+		delete stats.__genericVariantExceptions;
 
 		let prefixSuffixName = stats.name;
 		prefixSuffixName = prefixSuffixName.replace(/^weapon /i, "");
@@ -438,6 +459,12 @@ class ItemParser extends BaseParser {
 					"name": item.name
 				});
 			});
+		}
+
+		if (genericVariantExceptions) {
+			stats.excludes = {
+				"name": genericVariantExceptions
+			};
 		}
 	}
 
