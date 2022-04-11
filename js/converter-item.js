@@ -318,6 +318,15 @@ class ItemParser extends BaseParser {
 									genericTypes.push("melee"); break;
 								case "ranged": case "ranged weapon":
 									genericTypes.push("ranged"); break;
+								case "piercing": case "piercing weapon":
+									genericTypes.push("piercing"); break;
+								case "slashing": case "slashing weapon":
+								case "edged": case "edged weapon":
+								case "bladed": case "bladed weapon":
+									genericTypes.push("slashing"); break;
+								case "bludgeoning": case "bludgeoning weapon":
+								case "blunt": case "blunt weapon":
+									genericTypes.push("bludgeoning"); break;
 								case "sword": genericTypes.push("sword"); break;
 								case "axe": genericTypes.push("axe"); break;
 								case "bow": genericTypes.push("bow"); break;
@@ -519,6 +528,9 @@ class ItemParser extends BaseParser {
 				switch (genericType) {
 					case "weapon": stats.requires.push({"weapon": true}); break;
 					case "melee": stats.requires.push({"type": "M"}); break;
+					case "piercing": stats.requires.push({"dmgType": "P"}); break;
+					case "slashing": stats.requires.push({"dmgType": "S"}); break;
+					case "bludgeoning": stats.requires.push({"dmgType": "B"}); break;
 					case "ranged": rstats.equires.push({"type": "R"}); break;
 					case "sword": stats.requires.push({"sword": true}); break;
 					case "axe": stats.requires.push({"axe": true}); break;
