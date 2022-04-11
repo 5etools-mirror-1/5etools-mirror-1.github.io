@@ -267,22 +267,57 @@ class ItemParser extends BaseParser {
 						.replace(/(a|an|any)\s+/, "")
 						.split(variantListPattern)
 						;
-					let genericsNumBefore = genericVariantBases.length;
+					let handled = false;
 					baseItems.forEach((itemName) => {
 						let item = ItemParser.getItem(itemName);
 						if (!item) throw new Error(`Could not find base item "${itemName}"`);
 						genericVariantBases.push(item);
+						handled = true;
 					});
-					if (genericVariantBases.length == genericsNumBefore) {
-						if (!item) throw new Error(`Could not find base item "${baseItem}"`);
+					if (!handled) {
+						if (!baseItem) throw new Error(`Could not find base item "${mBaseWeapon[2]}"`);
 					}
 				}
 				continue;
 			} else if (mBaseArmor) {
-				if (this._setCleanTaglineInfo_isMutAnyArmor(stats, mBaseArmor)) continue;
+				baseItem = ItemParser.getItem(mBaseArmor[1]);
+				if (!baseItem) baseItem = ItemParser.getItem(`${mBaseArmor[1]} armor`); // "armor (plate)" -> "plate armor"
 
-				baseItem = this._setCleanTaglineInfo_getArmorBaseItem(mBaseArmor.groups.type);
-				if (!baseItem) throw new Error(`Could not find base item "${mBaseArmor.groups.type}"`);
+				if (!baseItem) {
+					let trimmed = mBaseArmor[1]
+						.replace(/(a|an|any)\s+/, "")
+						.trim()
+						;
+
+					let handled = false;
+					// check armor types
+					if (/^heavy/.test(trimmed)) {
+						genericType = "heavy armor";
+						handled = true;
+					} else if (/^medium/.test(trimmed)) {
+						genericType = "medium armor";
+						handled = true;
+					} else if (/^light/.test(trimmed)) {
+						genericType = "light armor";
+						handled = true;
+					}
+
+					if (!handled) {
+						let baseItems = trimmed
+							.split(variantListPattern)
+							;
+						baseItems.forEach((itemName) => {
+							let item = ItemParser.getItem(itemName);
+							if (!item) throw new Error(`Could not find base item "${itemName}"`);
+							genericVariantBases.push(item);
+							handled = true;
+						});
+					}
+					if (!handled) {
+						if (!baseItem) throw new Error(`Could not find base item "${mBaseArmor[1]}"`);
+					}
+				}
+
 				continue;
 			}
 			// endregion
@@ -391,6 +426,9 @@ class ItemParser extends BaseParser {
 				case "weapon": stats.requires = [{"weapon": true}]; break;
 				case "sword": stats.requires = [{"sword": true}]; break;
 				case "armor": stats.requires = [{"armor": true}]; break;
+				case "heavy armor": stats.requires = [{"type": "HA"}]; break;
+				case "medium armor": stats.requires = [{"type": "MA"}]; break;
+				case "light armor": stats.requires = [{"type": "LA"}]; break;
 				default: throw new Error(`Unhandled generic type "${genericType}"`);
 			}
 		} else if (genericVariantBases) {
