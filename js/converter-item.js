@@ -191,7 +191,6 @@ class ItemParser extends BaseParser {
 		let genericTypes = [];
 		let genericVariantBases = []; // in case it's a variant of a specific list of items
 		let genericVariantExceptions = [];
-		// let genericVariantProperties = [];
 		let genericVariantExceptProperties = [];
 
 		for (let i = 0; i < parts.length; ++i) {
@@ -298,6 +297,19 @@ class ItemParser extends BaseParser {
 						;
 					
 					baseItems.forEach((itemName) => {
+						const propertyMatch = /(.+?)\s*with(?:\s+the)?\s*(.*?)\s+property/i.exec(itemName);
+						let properties = null;
+						if (propertyMatch) {
+							itemName = propertyMatch[1]; // remove the properties from the item name
+							properties = [];
+							// for each property
+							propertyMatch[2].split(variantListPattern).map(s => s.trim()).forEach(property => {
+								const tag = ItemParser._PROPERTY_TO_TAG[property];
+								if (!tag) throw new Error(`Unknown property "${property}"`);
+								properties.push(tag);
+							});
+						}
+
 						let found = false;
 						if (categoryL === "weapon" || categoryL === "staff") {
 							found = true;
@@ -323,11 +335,31 @@ class ItemParser extends BaseParser {
 							}		
 						}
 
+						// if added generic type, set properties
+						// currently every listed generic type has its own properties
+						// (like 'sword or bow with the light property' will only add the
+						// requirement to bows), might change it if it makes more sense
+						// for them to apply globally
+						if (found && properties) {
+							const addedGenericType = genericTypes.pop(genericTypes);
+							genericTypes.push({
+								"type": addedGenericType,
+								"properties": properties,
+							})
+						} 
+
+						// otherwise, check for specific base generic items
 						if (!found) {
 							let item = this._getBaseItem(itemName, category);
-							if (!item) throw new Error(`Could not find generic base item "${itemName}"`);
-							genericVariantBases.push(item);
+							if (item) {
+								if (properties) throw new Error(`Properties not supported for specific base items (item: ${itemName})`)
+
+								found = true;
+								genericVariantBases.push(item);
+							} 
 						}
+						if (!found)
+							throw new Error(`Could not find generic base item "${itemName}"`);
 						handled = true;
 					});
 					if (!handled) {
@@ -376,7 +408,6 @@ class ItemParser extends BaseParser {
 		if (genericTypes.length != 0) stats.__genericTypes = genericTypes;
 		if (genericVariantBases.length != 0) stats.__genericVariantBases = genericVariantBases;
 		if (genericVariantExceptions.length != 0) stats.__genericVariantExceptions = genericVariantExceptions;
-		// if (genericVariantProperties.length != 0) stats.__genericVariantProperties = genericVariantProperties;
 		if (genericVariantExceptProperties.length != 0) stats.__genericVariantExceptProperties = genericVariantExceptProperties;
 	}
 
@@ -448,17 +479,15 @@ class ItemParser extends BaseParser {
 	}
 
 	static _setCleanTaglineInfo_handleGenericType (stats, options) {
-		if (!(stats.__genericTypes || stats.__genericVariantBases || stats.__genericVariantProperties)) return;
+		if (!(stats.__genericTypes || stats.__genericVariantBases)) return;
 
 		const genericTypes = stats.__genericTypes;
 		const genericVariantBases = stats.__genericVariantBases;
 		const genericVariantExceptions = stats.__genericVariantExceptions;
-		// const genericVariantProperties = stats.__genericVariantProperties;
 		const genericVariantExceptProperties = stats.__genericVariantExceptProperties;
 		delete stats.__genericTypes;
 		delete stats.__genericVariantBases;
 		delete stats.__genericVariantExceptions;
-		// delete stats.__genericVariantProperties;
 		delete stats.__genericVariantExceptProperties;
 
 		let prefixSuffixName = stats.name;
@@ -481,6 +510,12 @@ class ItemParser extends BaseParser {
 		stats.requires = [];
 		if (genericTypes) {
 			genericTypes.forEach(genericType => {
+				let properties = null;
+				if (genericType.properties) {
+					properties = genericType.properties;
+					genericType = genericType.type;
+				}
+
 				switch (genericType) {
 					case "weapon": stats.requires.push({"weapon": true}); break;
 					case "melee": stats.requires.push({"type": "M"}); break;
@@ -495,6 +530,12 @@ class ItemParser extends BaseParser {
 					case "light armor": stats.requires.push({"type": "LA"}); break;
 					default: throw new Error(`Unhandled generic type "${genericType}"`);
 				}
+
+				if (properties) {
+					stats.requires[stats.requires.length-1].property = {
+						"includes": properties,
+					}
+				}
 			});
 		}
 		if (genericVariantBases) {
@@ -504,7 +545,6 @@ class ItemParser extends BaseParser {
 				});
 			});
 		}
-
 		if (genericVariantExceptions || genericVariantExceptProperties) {
 			stats.excludes = {};
 		}
