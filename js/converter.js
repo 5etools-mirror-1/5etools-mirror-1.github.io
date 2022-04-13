@@ -862,9 +862,7 @@ class ConverterUi extends BaseComponent {
 			const output = this._outText;
 			if (output && output.trim()) {
 				try {
-					const prop = this.activeConverter.prop;
-					const out = {[prop]: JSON.parse(`[${output}]`)};
-					DataUtil.userDownload(`converter-output`, out);
+					DataUtil.userDownload(`converter-output`, JSON.parse(output));
 				} catch (e) {
 					JqueryUtil.doToast({
 						content: `Current output was not valid JSON. Downloading as <span class="code">.txt</span> instead.`,
