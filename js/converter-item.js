@@ -174,7 +174,10 @@ class ItemParser extends BaseParser {
 				case "artifact": stats.rarity = rarity; return true;
 				case "rarity varies": {
 					stats.rarity = "varies";
-					stats.__prop = "itemGroup";
+					// Do not set itemGroup for now, as it would need a way
+					// to set "items" to properly work and not make the item list
+					// error out
+					// stats.__prop = "itemGroup";
 					return true;
 				}
 				case "unknown rarity": {
