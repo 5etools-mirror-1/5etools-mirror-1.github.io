@@ -389,6 +389,9 @@ class ItemParser extends BaseParser {
 								genericVariantBases.push(item);
 							} 
 						}
+						if (!found && (/\s*/.test(itemName) || itemName === categoryL) )
+							// any item of the category, will use property matches too
+							found = true;
 						if (!found)
 							throw new Error(`Could not find generic base item "${itemName}"`);
 						handled = true;
@@ -399,7 +402,7 @@ class ItemParser extends BaseParser {
 				}
 
 				// handle exceptions (but not <item>, except <item>, etc.)
-				if (exceptSep && (genericTypes.length > 0 || genericVariantBases.length > 0)) {
+				if (exceptSep) {
 					// item exceptions
 					if (exceptSep.toLowerCase() !== "without") {
 						const exceptions = except.split(variantListPattern).map(s => s.trim());
@@ -511,7 +514,14 @@ class ItemParser extends BaseParser {
 	}
 
 	static _setCleanTaglineInfo_handleGenericType (stats, options) {
-		if (!(stats.__genericTypes || stats.__genericVariantBases)) return;
+		if (!(
+			stats.__genericTypes 
+			|| stats.__genericVariantBases 
+			|| stats.__genericVariantExceptions 
+			|| stats.__genericVariantRequiresProperties 
+			|| stats.__genericVariantExceptProperties 
+		))
+			return;
 
 		const genericTypes = stats.__genericTypes;
 		const genericVariantBases = stats.__genericVariantBases;
