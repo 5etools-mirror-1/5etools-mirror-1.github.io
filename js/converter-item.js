@@ -280,13 +280,15 @@ class ItemParser extends BaseParser {
 				}
 			}
 
-			const baseCats = ["weapon", "staff", "armor"];
-			const exceptionSeps = ["except", "but\\s*(?:not)?", "without"];
-
 			// example: weapon (dagger, shortsword), weapon (maul or warhammer), 
 			// armor (plate, half plate, or splint)
 			// list separated by commas and/or "or"s
-			const variantListPattern = /(?:\s+or|\s*,|\s+and)(?: or)?\s+/i;
+			const variantListPattern = /(?:\s+or\s|\s*,|\s+and\s)(?:\sor\s)?\s*/i;
+
+			const baseCats = ["weapon", "staff", "armor"];
+			const exceptionSeps = ["except", "but\\s*(?:not)?", "without"];
+			const stackableTerms = ["melee", "ranged", "piercing", "slashing", "edged", "bladed", "bludgeoning", "blunt"];
+
 			// separates part before exceptions and after exceptions inside the category, in case
 			// of generic variant with things like "armor (heavy but not plate)"
 			const mBaseItem = new RegExp(
@@ -324,27 +326,48 @@ class ItemParser extends BaseParser {
 					baseItems.forEach((itemName) => {
 						let found = false;
 						if (categoryL === "weapon" || categoryL === "staff") {
-							found = true;
-							switch (itemName) {
-								case "melee": case "melee weapon":
-									genericTypes.push("melee"); break;
-								case "ranged": case "ranged weapon":
-									genericTypes.push("ranged"); break;
-								case "piercing": case "piercing weapon":
-									genericTypes.push("piercing"); break;
-								case "slashing": case "slashing weapon":
-								case "edged": case "edged weapon":
-								case "bladed": case "bladed weapon":
-									genericTypes.push("slashing"); break;
-								case "bludgeoning": case "bludgeoning weapon":
-								case "blunt": case "blunt weapon":
-									genericTypes.push("bludgeoning"); break;
-								case "sword": genericTypes.push("sword"); break;
-								case "axe": genericTypes.push("axe"); break;
-								case "bow": genericTypes.push("bow"); break;
-								case "crossbow": genericTypes.push("crossbow"); break;
-								default: found = false;
-							}
+							// List containing terms to check against 
+							// for generic item terms
+							const genericTerms = [];
+
+							itemName = itemName
+								.split(/\s+/)
+								.map(word => {
+									if (stackableTerms.includes(word)) {
+										genericTerms.push(word);
+										return "";
+									}
+									return word;
+								})
+								.join(" ");
+
+							genericTerms.push(itemName);
+
+							found = false;
+							genericTerms.forEach(term => {
+								let foundHere = true;
+								switch (term) {
+									case "melee": case "melee weapon":
+										genericTypes.push("melee"); break;
+									case "ranged": case "ranged weapon":
+										genericTypes.push("ranged"); break;
+									case "piercing": case "piercing weapon":
+										genericTypes.push("piercing"); break;
+									case "slashing": case "slashing weapon":
+									case "edged": case "edged weapon":
+									case "bladed": case "bladed weapon":
+										genericTypes.push("slashing"); break;
+									case "bludgeoning": case "bludgeoning weapon":
+									case "blunt": case "blunt weapon":
+										genericTypes.push("bludgeoning"); break;
+									case "sword": genericTypes.push("sword"); break;
+									case "axe": genericTypes.push("axe"); break;
+									case "bow": genericTypes.push("bow"); break;
+									case "crossbow": genericTypes.push("crossbow"); break;
+									default: foundHere = false;
+								}
+								found = found || foundHere;
+							});
 						} else if (categoryL === "armor") {
 							found = true;
 							if (/^heavy/i.test(itemName)) {
