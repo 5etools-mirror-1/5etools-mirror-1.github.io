@@ -127,34 +127,27 @@ class ItemParser extends BaseParser {
 
 	static _doItemPostProcess_addTags (stats, options) {
 		const manName = stats.name ? `(${stats.name}) ` : "";
-		try {
-			const defaultOptions = name => { return {
-				// For debugging if some options were needed
-				cbMan: str => {
-					if (options.verboseWarnings) {
-						options.cbWarning(`${manName}${name}: ${str}`);
-					}
+		const defaultOptions = name => { return {
+			// For debugging if some options were needed
+			cbMan: str => {
+				if (options.verboseWarnings) {
+					options.cbWarning(`${manName}${name}: ${str}`);
 				}
-			} };
+			}
+		} };
 
-			RechargeTypeTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Recharge type requires manual conversion`)});
-			BonusTag.tryRun(stats, defaultOptions("BonusTag"));
-			ItemMiscTag.tryRun(stats, defaultOptions("ItemMiscTag"));
-			ItemSpellcastingFocusTag.tryRun(stats, defaultOptions("ItemSpellcastingFocusTag"));
-			DamageResistanceTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Damage resistance tagging requires manual conversion`)});
-			DamageImmunityTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Damage immunity tagging requires manual conversion`)});
-			DamageVulnerabilityTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Damage vulnerability tagging requires manual conversion`)});
-			ConditionImmunityTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Condition immunity tagging requires manual conversion`)});
-			ReqAttuneTagTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Attunement requirement tagging requires manual conversion`)});
-			TagJsons.mutTagObject(stats, {keySet: new Set(["entries"]), isOptimistic: false});
-			AttachedSpellTag.tryRun(stats, defaultOptions("AttachedSpellTag"));
-		} catch (e) {
-			JqueryUtil.doToast({
-				content: `Error in tags for ${manName}!`,
-				type: "danger",
-			});
-			setTimeout(() => { throw e });
-		}
+		ChargeTag.tryRun(stats, defaultOptions("ChargeTag"));
+		RechargeTypeTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Recharge type requires manual conversion`)});
+		BonusTag.tryRun(stats, defaultOptions("BonusTag"));
+		ItemMiscTag.tryRun(stats, defaultOptions("ItemMiscTag"));
+		ItemSpellcastingFocusTag.tryRun(stats, defaultOptions("ItemSpellcastingFocusTag"));
+		DamageResistanceTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Damage resistance tagging requires manual conversion`)});
+		DamageImmunityTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Damage immunity tagging requires manual conversion`)});
+		DamageVulnerabilityTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Damage vulnerability tagging requires manual conversion`)});
+		ConditionImmunityTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Condition immunity tagging requires manual conversion`)});
+		ReqAttuneTagTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Attunement requirement tagging requires manual conversion`)});
+		TagJsons.mutTagObject(stats, {keySet: new Set(["entries"]), isOptimistic: false});
+		AttachedSpellTag.tryRun(stats, defaultOptions("AttachedSpellTag"));
 
 		// TODO
 		//  - tag damage type?
@@ -274,12 +267,6 @@ class ItemParser extends BaseParser {
 			} else if (partLower === "armor" || partLower === "armor (any)") {
 				genericTypes.push("armor");
 				continue;
-			} else {
-				const mWeaponAnyX = /^weapon \(any ([^)]+)\)$/i.exec(part);
-				if (mWeaponAnyX) {
-					stats.__genericType = mWeaponAnyX[1].trim().toCamelCase();
-					continue;
-				}
 			}
 
 			// example: weapon (dagger, shortsword), weapon (maul or warhammer), 
@@ -443,51 +430,6 @@ class ItemParser extends BaseParser {
 		if (genericVariantExceptions.length != 0) stats.__genericVariantExceptions = genericVariantExceptions;
 		if (genericVariantRequiresProperties.length != 0) stats.__genericVariantRequiresProperties = genericVariantRequiresProperties;
 		if (genericVariantExceptProperties.length != 0) stats.__genericVariantExceptProperties = genericVariantExceptProperties;
-	}
-
-	static _setCleanTaglineInfo_getArmorBaseItem (name) {
-		let baseItem = ItemParser.getItem(name);
-		if (!baseItem) baseItem = ItemParser.getItem(`${name} armor`); // "armor (plate)" -> "plate armor"
-		return baseItem;
-	}
-
-	static _setCleanTaglineInfo_isMutAnyArmor (stats, mBaseArmor) {
-		if (/^any /i.test(mBaseArmor.groups.type)) {
-			const ptAny = mBaseArmor.groups.type.replace(/^any /i, "");
-			const [ptInclude, ptExclude] = ptAny.split(/\bexcept\b/i).map(it => it.trim()).filter(Boolean);
-
-			const procPart = pt => {
-				switch (pt) {
-					case "light": return {"type": "LA"};
-					case "medium": return {"type": "MA"};
-					case "heavy": return {"type": "HA"};
-					default: {
-						const baseItem = this._setCleanTaglineInfo_getArmorBaseItem(pt);
-						if (!baseItem) throw new Error(`Could not find base item "${pt}"`);
-
-						return {name: baseItem.name};
-					}
-				}
-			};
-
-			if (ptInclude) {
-				stats.requires = [
-					...(stats.requires || []),
-					...ptInclude.split(/\b(?:or|,)\b/g).map(it => it.trim()).filter(Boolean).map(it => procPart(it)),
-				];
-			}
-
-			if (ptExclude) {
-				Object.assign(
-					stats.excludes = stats.excludes || {},
-					ptExclude.split(/\b(?:or|,)\b/g).map(it => it.trim()).filter(Boolean).mergeMap(it => procPart(it)),
-				);
-			}
-
-			return true;
-		}
-
-		return false;
 	}
 
 	static _setCleanTaglineInfo_handleBaseItem (stats, baseItem, options) {

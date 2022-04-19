@@ -607,7 +607,7 @@ class RaceConverter extends BaseConverter {
 	handleParse (input, cbOutput, cbWarning, isAppend) {
 		const opts = {
 			cbWarning,
-			cbOutput,
+			cbOutput: (obj, append, prop) => cbOutput(obj, append, prop || this.prop),
 			isAppend,
 			titleCaseFields: this._titleCaseFields,
 			isTitleCase: this._state.isTitleCase,
