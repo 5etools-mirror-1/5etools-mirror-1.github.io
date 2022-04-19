@@ -63,6 +63,7 @@ class BaseConverter extends BaseComponent {
 		this._renderSidebarConverterOptionsPart(parent, $wrpSidebar);
 		this._renderSidebarPagePart(parent, $wrpSidebar);
 		this._renderSidebarSourcePart(parent, $wrpSidebar);
+		this._renderSidebarDebugPart(parent, $wrpSidebar);
 	}
 
 	_renderSidebar () { throw new Error("Unimplemented!"); }
@@ -224,6 +225,29 @@ class BaseConverter extends BaseComponent {
 
 		ConverterUiUtil.renderSideMenuDivider($wrpSidebar);
 	}
+	
+	_renderSidebarDebugPart (parent, $wrpSidebar) {
+		const $cbRenderTextEachTime = ComponentUiUtil.$getCbBool(this._ui, "renderTextEachTime");
+		$$`<div class="sidemenu__row split-v-center">
+			<label class="sidemenu__row__label sidemenu__row__label--cb-label" title="Should the text in the output be rendered for every converted entry? Slower, but in case an error happens will show the output up to that point"><span>Render Text Every Entry</span>
+			${$cbRenderTextEachTime}
+		</label></div>`.appendTo($wrpSidebar);
+
+		const $cbPrintWarningsToConsole = ComponentUiUtil.$getCbBool(this._ui, "printWarningsToConsole");
+		$$`<div class="sidemenu__row split-v-center">
+			<label class="sidemenu__row__label sidemenu__row__label--cb-label" title="Should converter warnings be printed to console too, instead of only below the output box?"><span>Warnings To Console</span>
+			${$cbPrintWarningsToConsole}
+		</label></div>`.appendTo($wrpSidebar);
+
+		const $cbVerboseWarnings = ComponentUiUtil.$getCbBool(this._ui, "verboseWarnings");
+		$$`<div class="sidemenu__row split-v-center">
+			<label class="sidemenu__row__label sidemenu__row__label--cb-label" title="Should warnings be printed for every part of the text that is possibly a tag but isn't recognized? (For example, damage resistances)"><span>Verbose Warnings</span>
+			${$cbVerboseWarnings}
+		</label></div>`.appendTo($wrpSidebar);
+
+		ConverterUiUtil.renderSideMenuDivider($wrpSidebar);
+	}
+
 	// endregion
 }
 
@@ -894,7 +918,9 @@ class ConverterUi extends BaseComponent {
 				const splitStack = x.stack.split("\n");
 				const atPos = splitStack.length > 1 ? splitStack[1].trim() : "(Unknown location)";
 				const message = `[Error] ${x.message} ${atPos}`;
-				$(`#lastError`).show().html(message);
+				const rtetNotif = (this._state.renderTextEachTime) ? "" : 
+					" (Render Text Every Entry checkbox is off; you can try turning it on to see where the error happened)";
+				$(`#lastError`).show().html(message + rtetNotif);
 				this._editorOut.resize();
 				setTimeout(() => { throw x; });
 			}
@@ -1043,7 +1069,7 @@ ConverterUi._DEFAULT_STATE = {
 	converter: "Creature",
 	sourceJson: "",
 	inputSeparator: "===",
-	renderTextEachTime: true,
+	renderTextEachTime: false,
 	printWarningsToConsole: true,
 	verboseWarnings: false,
 };
