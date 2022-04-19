@@ -880,8 +880,12 @@ class EntryConvert {
 
 	static finalizeEntry (entry) {
 		if (entry.type === "table") {
+			// Convert dices
+			entry.colLabels[0] = DiceConvert.getTaggedEntry(entry.colLabels[0]);
+			entry.rows.map(row => row.map(cell => DiceConvert.getTaggedEntry(cell)));
+
 			let allNumbers = true;
-			// Center number only columns if it's the first column
+			// Center number/dice only columns if it's the first column
 			for (let i = 0; i < entry.rows.length; i++) {
 				const row = entry.rows[i];
 				if (!(

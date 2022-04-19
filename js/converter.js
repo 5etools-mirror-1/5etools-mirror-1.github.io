@@ -521,7 +521,7 @@ Other options are "without the x [or y] property", "Armor (heavy but not x <plat
 | d4 | Spawned demon | Is cool? |
 | --- | ------- | --: |
 | 1 | barlgura | 1 |
-| 2 | shadow demon | 2 |
+| 2 | 1d4 shadow demon | 2 |
 | 3-4 | chasme | 3 |`;
 // endregion
 
