@@ -126,18 +126,26 @@ class ItemParser extends BaseParser {
 	static _doItemPostProcess_addTags (stats, options) {
 		const manName = stats.name ? `(${stats.name}) ` : "";
 		try {
-			ChargeTag.tryRun(stats);
+			const defaultOptions = name => { return {
+				// For debugging if some options were needed
+				cbMan: str => {
+					if (options.verboseWarnings) {
+						options.cbWarning(`${manName}${name}: ${str}`);
+					}
+				}
+			} };
+
 			RechargeTypeTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Recharge type requires manual conversion`)});
-			BonusTag.tryRun(stats);
-			ItemMiscTag.tryRun(stats);
-			ItemSpellcastingFocusTag.tryRun(stats);
+			BonusTag.tryRun(stats, defaultOptions("BonusTag"));
+			ItemMiscTag.tryRun(stats, defaultOptions("ItemMiscTag"));
+			ItemSpellcastingFocusTag.tryRun(stats, defaultOptions("ItemSpellcastingFocusTag"));
 			DamageResistanceTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Damage resistance tagging requires manual conversion`)});
 			DamageImmunityTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Damage immunity tagging requires manual conversion`)});
 			DamageVulnerabilityTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Damage vulnerability tagging requires manual conversion`)});
 			ConditionImmunityTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Condition immunity tagging requires manual conversion`)});
 			ReqAttuneTagTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Attunement requirement tagging requires manual conversion`)});
 			TagJsons.mutTagObject(stats, {keySet: new Set(["entries"]), isOptimistic: false});
-			AttachedSpellTag.tryRun(stats);
+			AttachedSpellTag.tryRun(stats, defaultOptions("AttachedSpellTag"));
 		} catch (e) {
 			JqueryUtil.doToast({
 				content: `Error in tags for ${manName}!`,
