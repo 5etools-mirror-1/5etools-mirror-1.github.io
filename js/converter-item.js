@@ -385,8 +385,6 @@ class ItemParser extends BaseParser {
 						if (!found) {
 							let item = this._getBaseItem(itemName, category);
 							if (item) {
-								if (properties) throw new Error(`Properties not supported for specific base items (item: ${itemName})`)
-
 								found = true;
 								genericVariantBases.push(item);
 							} 
