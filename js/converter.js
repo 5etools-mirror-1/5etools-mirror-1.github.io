@@ -513,16 +513,21 @@ Once the Wreath of the Prism reaches an exalted state, it gains the following be
 • You can affect creatures of challenge rating 15 or lower with the wreath.
 • The save DC of the wreath’s spell increases to 17.
 ===
-Weapon of Conjuring
-Weapon (any sword or piercing weapon with the light property), Very Rare (requires attunement)
+Weapon of Generic Variant Conjuring
+Weapon (any sword or piercing melee weapon with the light property), Very Rare (requires attunement)
 This weapon conjures a random demon on a critical hit. 
 It is also made up for the purpose of a variant example as there was no magic item I could find with both specific variant requirements (like this with the light property) and a table.
-Other options are "without the x [or y] property", "Armor (heavy but not x <plate, etc.>)", "Weapon (longsword or shortsword)", etc.
 | d4 | Spawned demon | Is cool? |
 | --- | ------- | --: |
 | 1 | barlgura | 1 |
 | 2 | 1d4 shadow demon | 2 |
-| 3-4 | chasme | 3 |`;
+| 3-4 | chasme | 3 |
+Other working examples:
+• Weapon (maul or warhammer)
+• Armor (light or medium)
+• Armor (heavy but not plate)
+• Weapon (any melee weapon without the special property)
+• Weapon (any weapon with the heavy property without the special property)`;
 // endregion
 
 class FeatConverter extends BaseConverter {
