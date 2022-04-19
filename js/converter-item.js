@@ -26,6 +26,8 @@ class ItemParser extends BaseParser {
 
 	static _getBaseItem (itemName, category) {
 		let baseItem = ItemParser.getItem(itemName);
+		if (!baseItem) baseItem = ItemParser.getItem(itemName.replace(/s$/i, ""))
+		if (!baseItem) baseItem = ItemParser.getItem(itemName.replace(/es$/i, ""))
 		if (!baseItem && category.toLowerCase() === "armor") {
 			baseItem = ItemParser.getItem(`${itemName} armor`); // "armor (plate)" -> "plate armor"
 		}
@@ -407,8 +409,7 @@ class ItemParser extends BaseParser {
 					if (exceptSep.toLowerCase() !== "without") {
 						const exceptions = except.split(variantListPattern).map(s => s.trim());
 						exceptions.forEach(exceptionName => {
-							let item = ItemParser.getItem(exceptionName);
-							if (!item) item = ItemParser.getItem(`${exceptionName} armor`); // "armor (plate)" -> "plate armor"
+							let item = this._getBaseItem(exceptionName, category);
 							if (!item) throw new Error(`Could not find exception item "${exceptionName}"`);
 							genericVariantExceptions.push(item.name); // correct capitalization
 						});
