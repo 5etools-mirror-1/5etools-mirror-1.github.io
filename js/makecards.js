@@ -501,9 +501,12 @@ class MakeCards extends BaseComponent {
 	static _getCardContents_item (item) {
 		MakeCards.utils.enhanceItemAlt(item);
 
+		const [typeRarityText, subTypeText, tierText] = Renderer.item.getTypeRarityAndAttunementText(item);
 		const [damage, damageType, propertiesTxt] = Renderer.item.getDamageAndPropertiesText(item);
-		const ptValueWeight = [Parser.itemValueToFullMultiCurrency(item), Parser.itemWeightToFull(item)].filter(Boolean).join(", ").uppercaseFirst();
-		const ptDamageProperties = this._ct_htmlToText([damage, damageType, propertiesTxt].filter(Boolean).join(" "));
+		const ptWeight = Parser.itemWeightToFull(item);
+		const ptValue = Parser.itemValueToFullMultiCurrency(item);
+		const ptDamage = this._ct_htmlToText([damage, damageType].filter(Boolean).join(" "));
+		const ptProperties = this._ct_htmlToText([propertiesTxt].filter(Boolean)).substring(2);
 
 		const itemEntries = [];
 		if (item._fullEntries || (item.entries && item.entries.length)) {
@@ -515,10 +518,13 @@ class MakeCards extends BaseComponent {
 		}
 
 		return [
-			this._ct_subtitle(Renderer.item.getTypeRarityAndAttunementText(item).join(", ").uppercaseFirst()),
-			ptValueWeight || ptDamageProperties ? this._ct_rule() : null,
-			ptValueWeight ? this._ct_text(ptValueWeight) : null,
-			ptDamageProperties ? this._ct_text(ptDamageProperties) : null,
+			typeRarityText ? this._ct_htmlToText(this._ct_subtitle(typeRarityText.uppercaseFirst())) : null,
+			ptDamage ? this._ct_property(ptDamage.startsWith('AC') ? "Armor Class" : "Damage",ptDamage) : null,
+			ptProperties ? this._ct_property("Properties",ptProperties.uppercaseFirst()) : null,
+			subTypeText ? this._ct_property("Type",subTypeText.uppercaseFirst()) : null,
+			tierText ? this._ct_property("Tier",tierText.uppercaseFirst()) : null,
+			ptWeight ? this._ct_property("Weight",ptWeight) : null,
+			ptValue ? this._ct_property("Value",ptValue) : null,
 			itemEntries.length ? this._ct_rule() : null,
 			...this._ct_renderEntries(itemEntries, 2),
 			item.charges ? this._ct_boxes(item.charges) : null,
@@ -731,7 +737,22 @@ MakeCards._AVAILABLE_TYPES = {
 		fnGetContents: MakeCards._getCardContents_spell.bind(MakeCards),
 		fnGetTags: (spell) => {
 			const out = ["spell", Parser.sourceJsonToAbv(spell.source), Parser.spLevelToFullLevelText(spell.level), Parser.spSchoolAbvToFull(spell.school)];
+			const fromClassList = Renderer.spell.getCombinedClasses(spell, "fromClassList");
+			const fromOptionalClassList = Renderer.spell.getCombinedClasses(spell, "fromClassListVariant");
+			if (fromClassList.length) {
+				const [current, legacy] = Parser.spClassesToCurrentAndLegacy(fromClassList);
+				for (var className in current) {
+					out.push(current[className].name);
+				}
+			}
+			if (fromOptionalClassList.length) {
+				const [currentOptional, legacy] = Parser.spVariantClassesToCurrentAndLegacy(fromOptionalClassList);
+				for (var classNameOptional in currentOptional) {
+					out.push(currentOptional[classNameOptional].name);
+				}
+			}
 			if (spell.duration.filter(d => d.concentration).length) out.push("concentration");
+			if (spell.hasOwnProperty('meta') && spell.meta.hasOwnProperty('ritual')) out.push("ritual");
 			return out;
 		},
 	},
