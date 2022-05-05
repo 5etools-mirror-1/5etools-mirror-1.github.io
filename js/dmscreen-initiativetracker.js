@@ -1165,10 +1165,8 @@ class InitiativeTracker {
 							handleTurnStart($nxt);
 						} else break;
 					}
+					$iptRound.val(Number($iptRound.val() || 0) + 1);
 				}
-
-				$iptRound.val(Number($iptRound.val() || 0) + 1);
-
 				doUpdateExternalStates();
 			}
 		}
