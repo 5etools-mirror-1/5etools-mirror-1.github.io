@@ -4,12 +4,12 @@
   "dictionaryDefinitions": [
     {
       "name": "dnd-words",
-      "path": "./dnd-words.txt",
+      "path": "./spellcheck/dnd-words.txt",
       "addWords": true
     },
     {
       "name": "javascript-words",
-      "path": "./javascript-words.txt",
+      "path": "./spellcheck/javascript-words.txt",
       "addWords": true
     }
   ],
@@ -18,10 +18,10 @@
     "javascript-words"
   ],
   "ignorePaths": [
-    "node_modules",
-    "..lib/",
     "/dnd-words.txt",
     "/javascript-words.txt",
-    "../js/sw-files.js"
+    "node_modules",
+    "lib/",
+    "js/sw-files.js"
   ]
 }
