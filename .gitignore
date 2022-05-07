@@ -1,13 +1,14 @@
 desktop.ini
 node_modules
 
-
 # IntelliJ project files
 .idea/
 *.iml
 
 # Visual Studio Code project files
-.vscode/
+.vscode/*
+!.vscode/cspell.json
+!.vscode/dnd-words.txt
 
 # Generated files
 sitemap.xml
