@@ -6,13 +6,21 @@
       "name": "dnd-words",
       "path": "./dnd-words.txt",
       "addWords": true
+    },
+    {
+      "name": "javascript-words",
+      "path": "./javascript-words.txt",
+      "addWords": true
     }
   ],
   "dictionaries": [
-    "dnd-words"
+    "dnd-words",
+    "javascript-words"
   ],
   "ignorePaths": [
-    "node_modules",
-    "/dnd-words.txt"
+    "../node_modules",
+    "../lib",
+    "/dnd-words.txt",
+    "/javascript-words.txt"
   ]
 }
