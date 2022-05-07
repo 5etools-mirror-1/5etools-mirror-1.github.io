@@ -15,6 +15,7 @@
 		"test:styles": "stylelint scss/*.scss scss/includes/*.scss",
 		"test:data": "node test/test-all.js",
 		"test": "npm run test:js && npm run test:styles && npm run test:data",
+		"spellcheck:data": "echo \"This can take a few minutes.\" && npx cspell --no-progress --show-context --show-suggestions \"data/**/*.json\"",
 		"build:css": "sass --style=compressed scss/:css/",
 		"build:deploy:dev": "bash build/deploy-prep-dev.sh",
 		"build:deploy:prod": "bash build/deploy-prep-prod.sh",
