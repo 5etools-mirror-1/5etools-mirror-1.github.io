@@ -1,12 +1,20 @@
 "use strict";
 
+
 class InitiativeTracker {
+	
 	static make$Tracker (board, state) {
 		const ALPHA = "ALPHA";
 		const NUM = "NUMBER";
 		const ASC = "ASC";
 		const DESC = "DESC";
-
+		var id = 0;
+		if (!(board.menu.pnl === null)){
+			if (!(board.menu.pnl.tabIndex === null) ) {
+				id = (board.menu.pnl.tabIndex + 1);
+			}
+		} 
+		
 		const _propDefaultFalse = (savedVal) => !!savedVal;
 		const _propDefaultTrue = (savedVal) => savedVal == null ? true : !!savedVal;
 
@@ -14,6 +22,7 @@ class InitiativeTracker {
 			sort: state.s || NUM,
 			dir: state.d || DESC,
 			isLocked: false,
+			tabIdString: state.id || `${id}-dm-init-lockable`,
 			isRollInit: _propDefaultTrue(state.m),
 			isRollHp: _propDefaultFalse(state.m),
 			importIsRollGroups: _propDefaultTrue(state.g),
@@ -158,8 +167,8 @@ class InitiativeTracker {
 
 		const $wrpAddNext = $(`<div class="ve-flex"/>`).appendTo($wrpControls);
 		const $wrpAdd = $(`<div class="btn-group ve-flex"/>`).appendTo($wrpAddNext);
-		const $btnAdd = $(`<button class="btn btn-primary btn-xs dm-init-lockable" title="Add Player"><span class="glyphicon glyphicon-plus"/></button>`).appendTo($wrpAdd);
-		const $btnAddMonster = $(`<button class="btn btn-success btn-xs dm-init-lockable mr-2" title="Add Monster"><span class="glyphicon glyphicon-print"/></button>`).appendTo($wrpAdd);
+		const $btnAdd = $(`<button class="btn btn-primary btn-xs ${cfg.tabIdString}" title="Add Player"><span class="glyphicon glyphicon-plus"/></button>`).appendTo($wrpAdd);
+		const $btnAddMonster = $(`<button class="btn btn-success btn-xs ${cfg.tabIdString} mr-2" title="Add Monster"><span class="glyphicon glyphicon-print"/></button>`).appendTo($wrpAdd);
 		const $btnSetPrevActive = $(`<button class="btn btn-default btn-xs" title="Previous Turn"><span class="glyphicon glyphicon-step-backward"/></button>`)
 			.click(() => setPrevActive());
 		const $btnSetNextActive = $(`<button class="btn btn-default btn-xs mr-2" title="Next Turn"><span class="glyphicon glyphicon-step-forward"/></button>`)
@@ -242,12 +251,12 @@ class InitiativeTracker {
 		$btnLock.on("click", () => {
 			if (cfg.isLocked) {
 				$btnLock.removeClass("btn-success").addClass("btn-danger").title("Lock Tracker");
-				$(".dm-init-lockable").removeClass("disabled");
-				$("input.dm-init-lockable").prop("disabled", false);
+				$(`${cfg.tabIdString}`).removeClass("disabled");
+				$(`input.${cfg.tabIdString}`).prop("disabled", false);
 			} else {
 				$btnLock.removeClass("btn-danger").addClass("btn-success").title("Unlock Tracker");
-				$(".dm-init-lockable").addClass("disabled");
-				$("input.dm-init-lockable").prop("disabled", true);
+				$(`${cfg.tabIdString}`).addClass("disabled");
+				$(`input.${cfg.tabIdString}`).prop("disabled", true);
 			}
 			cfg.isLocked = !cfg.isLocked;
 			handleStatColsChange();
@@ -410,12 +419,12 @@ class InitiativeTracker {
 			});
 
 		const $wrpLoadReset = $(`<div class="btn-group"/>`).appendTo($wrpUtils);
-		const $btnLoad = $(`<button title="Import an encounter from the Bestiary" class="btn btn-success btn-xs dm-init-lockable"><span class="glyphicon glyphicon-upload"/></button>`).appendTo($wrpLoadReset)
+		const $btnLoad = $(`<button title="Import an encounter from the Bestiary" class="btn btn-success btn-xs ${cfg.tabIdString}"><span class="glyphicon glyphicon-upload"/></button>`).appendTo($wrpLoadReset)
 			.click((evt) => {
 				if (cfg.isLocked) return;
 				ContextUtil.pOpenMenu(evt, menu);
 			});
-		$(`<button title="Reset" class="btn btn-danger btn-xs dm-init-lockable"><span class="glyphicon glyphicon-trash"/></button>`).appendTo($wrpLoadReset)
+		$(`<button title="Reset" class="btn btn-danger btn-xs ${cfg.tabIdString}"><span class="glyphicon glyphicon-trash"/></button>`).appendTo($wrpLoadReset)
 			.click(() => {
 				if (cfg.isLocked) return;
 				confirm("Are you sure?") && doReset();
@@ -620,6 +629,7 @@ class InitiativeTracker {
 				piO: cfg.playerInitShowOrdinals,
 				c: cfg.statsCols.filter(it => !it.isDeleted),
 				n: $iptRound.val(),
+				id: `${cfg.tabIdString}`,
 			};
 		}
 
@@ -782,7 +792,7 @@ class InitiativeTracker {
 			const $wrpRow = $(`<div class="dm-init-row ${isActive ? "dm-init-row-active" : ""} overflow-hidden"/>`);
 
 			const $wrpLhs = $(`<div class="dm-init-row-lhs"/>`).appendTo($wrpRow);
-			const $iptName = $(`<input class="form-control input-sm name dm-init-name dm-init-lockable dm-init-row-input ${isMon ? "hidden" : ""}" placeholder="Name">`)
+			const $iptName = $(`<input class="form-control input-sm name dm-init-name ${cfg.tabIdString} dm-init-row-input ${isMon ? "hidden" : ""}" placeholder="Name">`)
 				.disableSpellcheck()
 				.val(name)
 				.appendTo($wrpLhs);
@@ -830,7 +840,7 @@ class InitiativeTracker {
 				if (customName) setCustomName(customName);
 
 				const $wrpBtnsRhs = $(`<div/>`).appendTo($monName);
-				$(`<button class="btn btn-default btn-xs dm-init-lockable" title="Rename" tabindex="-1"><span class="glyphicon glyphicon-pencil"></span></button>`)
+				$(`<button class="btn btn-default btn-xs ${cfg.tabIdString}" title="Rename" tabindex="-1"><span class="glyphicon glyphicon-pencil"></span></button>`)
 					.click(async () => {
 						if (cfg.isLocked) return;
 						const nuName = await InputUiUtil.pGetUserString({title: "Enter Name"});
@@ -838,7 +848,7 @@ class InitiativeTracker {
 						setCustomName(nuName);
 						doSort(cfg.sort);
 					}).appendTo($wrpBtnsRhs);
-				$(`<button class="btn btn-success btn-xs dm-init-lockable" title="Add Another (SHIFT for Roll New)" tabindex="-1"><span class="glyphicon glyphicon-plus"></span></button>`)
+				$(`<button class="btn btn-success btn-xs ${cfg.tabIdString}" title="Add Another (SHIFT for Roll New)" tabindex="-1"><span class="glyphicon glyphicon-plus"></span></button>`)
 					.click(async (evt) => {
 						if (cfg.isLocked) return;
 						await pMakeRow({
@@ -967,7 +977,7 @@ class InitiativeTracker {
 
 			doUpdateHpColors();
 
-			const $iptScore = $(`<input class="form-control input-sm score dm-init-lockable dm-init-row-input text-center dm_init__ipt--rhs" type="number">`)
+			const $iptScore = $(`<input class="form-control input-sm score ${cfg.tabIdString} dm-init-row-input text-center dm_init__ipt--rhs" type="number">`)
 				.on("change", () => doSort(NUM))
 				.click(() => $iptScore.select())
 				.val(init)
@@ -1026,7 +1036,7 @@ class InitiativeTracker {
 			InitiativeTracker.get$btnPlayerVisible(isVisible, doUpdateExternalStates, false, "dm-init-row-btn", "dm_init__btn_eye")
 				.appendTo($wrpRhs);
 
-			$(`<button class="btn btn-danger btn-xs dm-init-row-btn dm-init-lockable" title="Delete" tabindex="-1"><span class="glyphicon glyphicon-trash"/></button>`)
+			$(`<button class="btn btn-danger btn-xs dm-init-row-btn ${cfg.tabIdString}" title="Delete" tabindex="-1"><span class="glyphicon glyphicon-trash"/></button>`)
 				.appendTo($wrpRhs)
 				.on("click", () => {
 					if (cfg.isLocked) return;
@@ -1165,10 +1175,15 @@ class InitiativeTracker {
 							handleTurnStart($nxt);
 						} else break;
 					}
+				
+					$iptRound.val(Number($iptRound.val() || 0) + 1);
 				}
+<<<<<<< HEAD
+=======
 
 				$iptRound.val(Number($iptRound.val() || 0) + 1);
 
+>>>>>>> parent of 55f7d9958... v1.154.2
 				doUpdateExternalStates();
 			}
 		}
