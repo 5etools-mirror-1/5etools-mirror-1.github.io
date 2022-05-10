@@ -63,6 +63,7 @@ class BaseConverter extends BaseComponent {
 		this._renderSidebarConverterOptionsPart(parent, $wrpSidebar);
 		this._renderSidebarPagePart(parent, $wrpSidebar);
 		this._renderSidebarSourcePart(parent, $wrpSidebar);
+		this._renderSidebarDebugPart(parent, $wrpSidebar);
 	}
 
 	_renderSidebar () { throw new Error("Unimplemented!"); }
@@ -224,6 +225,29 @@ class BaseConverter extends BaseComponent {
 
 		ConverterUiUtil.renderSideMenuDivider($wrpSidebar);
 	}
+	
+	_renderSidebarDebugPart (parent, $wrpSidebar) {
+		const $cbRenderTextEachTime = ComponentUiUtil.$getCbBool(this._ui, "renderTextEachTime");
+		$$`<div class="sidemenu__row split-v-center">
+			<label class="sidemenu__row__label sidemenu__row__label--cb-label" title="Should the text in the output be rendered for every converted entry? Slower, but in case an error happens will show the output up to that point"><span>Render Text Every Entry</span>
+			${$cbRenderTextEachTime}
+		</label></div>`.appendTo($wrpSidebar);
+
+		const $cbPrintWarningsToConsole = ComponentUiUtil.$getCbBool(this._ui, "printWarningsToConsole");
+		$$`<div class="sidemenu__row split-v-center">
+			<label class="sidemenu__row__label sidemenu__row__label--cb-label" title="Should converter warnings be printed to console too, instead of only below the output box?"><span>Warnings To Console</span>
+			${$cbPrintWarningsToConsole}
+		</label></div>`.appendTo($wrpSidebar);
+
+		const $cbVerboseWarnings = ComponentUiUtil.$getCbBool(this._ui, "verboseWarnings");
+		$$`<div class="sidemenu__row split-v-center">
+			<label class="sidemenu__row__label sidemenu__row__label--cb-label" title="Should warnings be printed for every part of the text that is possibly a tag but isn't recognized? (For example, damage resistances)"><span>Verbose Warnings</span>
+			${$cbVerboseWarnings}
+		</label></div>`.appendTo($wrpSidebar);
+
+		ConverterUiUtil.renderSideMenuDivider($wrpSidebar);
+	}
+
 	// endregion
 }
 
@@ -253,10 +277,10 @@ class CreatureConverter extends BaseConverter {
 		ConverterUiUtil.renderSideMenuDivider($wrpSidebar);
 	}
 
-	handleParse (input, cbOutput, cbWarning, isAppend) {
+	handleParse (input, cbOutput, cbWarning, isAppend, verboseWarnings) {
 		const opts = {
 			cbWarning,
-			cbOutput,
+			cbOutput: (obj, append, prop) => cbOutput(obj, append, prop || this.prop),
 			isAppend,
 			titleCaseFields: this._titleCaseFields,
 			isTitleCase: this._state.isTitleCase,
@@ -393,10 +417,10 @@ class SpellConverter extends BaseConverter {
 		$wrpSidebar.empty();
 	}
 
-	handleParse (input, cbOutput, cbWarning, isAppend) {
+	handleParse (input, cbOutput, cbWarning, isAppend, verboseWarnings) {
 		const opts = {
 			cbWarning,
-			cbOutput,
+			cbOutput: (obj, append, prop) => cbOutput(obj, append, prop || this.prop),
 			isAppend,
 			titleCaseFields: this._titleCaseFields,
 			isTitleCase: this._state.isTitleCase,
@@ -448,15 +472,16 @@ class ItemConverter extends BaseConverter {
 		$wrpSidebar.empty();
 	}
 
-	handleParse (input, cbOutput, cbWarning, isAppend) {
+	handleParse (input, cbOutput, cbWarning, isAppend, verboseWarnings) {
 		const opts = {
 			cbWarning,
-			cbOutput,
+			cbOutput: (obj, append, prop) => cbOutput(obj, append, prop || this.prop),
 			isAppend,
 			titleCaseFields: this._titleCaseFields,
 			isTitleCase: this._state.isTitleCase,
 			source: this._state.source,
 			page: this._state.page,
+			verboseWarnings,
 		};
 
 		switch (this._state.mode) {
@@ -486,7 +511,23 @@ Once the Wreath of the Prism reaches an awakened state, it gains the following b
 Exalted
 Once the Wreath of the Prism reaches an exalted state, it gains the following benefits:
 • You can affect creatures of challenge rating 15 or lower with the wreath.
-• The save DC of the wreath’s spell increases to 17.`;
+• The save DC of the wreath’s spell increases to 17.
+===
+Weapon of Generic Variant Conjuring
+Weapon (any sword or piercing melee weapon with the light property), Very Rare (requires attunement)
+This weapon conjures a random demon on a critical hit. 
+It is also made up for the purpose of a variant example as there was no magic item I could find with both specific variant requirements (like this with the light property) and a table.
+| d4 | Spawned demon | Is cool? |
+| --- | ------- | --: |
+| 1 | barlgura | 1 |
+| 2 | 1d4 shadow demon | 2 |
+| 3-4 | chasme | 3 |
+Other working examples:
+• Weapon (maul or warhammer)
+• Armor (light or medium)
+• Armor (heavy but not plate)
+• Weapon (any melee weapon without the special property)
+• Weapon (any weapon with the heavy property without the special property)`;
 // endregion
 
 class FeatConverter extends BaseConverter {
@@ -509,10 +550,10 @@ class FeatConverter extends BaseConverter {
 		$wrpSidebar.empty();
 	}
 
-	handleParse (input, cbOutput, cbWarning, isAppend) {
+	handleParse (input, cbOutput, cbWarning, isAppend, verboseWarnings) {
 		const opts = {
 			cbWarning,
-			cbOutput,
+			cbOutput: (obj, append, prop) => cbOutput(obj, append, prop || this.prop),
 			isAppend,
 			titleCaseFields: this._titleCaseFields,
 			isTitleCase: this._state.isTitleCase,
@@ -566,7 +607,7 @@ class RaceConverter extends BaseConverter {
 	handleParse (input, cbOutput, cbWarning, isAppend) {
 		const opts = {
 			cbWarning,
-			cbOutput,
+			cbOutput: (obj, append, prop) => cbOutput(obj, append, prop || this.prop),
 			isAppend,
 			titleCaseFields: this._titleCaseFields,
 			isTitleCase: this._state.isTitleCase,
@@ -627,10 +668,10 @@ class TableConverter extends BaseConverter {
 		$wrpSidebar.empty();
 	}
 
-	handleParse (input, cbOutput, cbWarning, isAppend) {
+	handleParse (input, cbOutput, cbWarning, isAppend, verboseWarnings) {
 		const opts = {
 			cbWarning,
-			cbOutput,
+			cbOutput: (obj, append, prop) => cbOutput(obj, append, prop || this.prop),
 			isAppend,
 			titleCaseFields: this._titleCaseFields,
 			isTitleCase: this._state.isTitleCase,
@@ -766,74 +807,78 @@ class ConverterUi extends BaseComponent {
 			JqueryUtil.doToast({type: "warning", content: "Enabled editing. Note that edits will be overwritten as you parse new statblocks."});
 		});
 
+		const getSource = it => (it.source || (it.inherits ? it.inherits.source : null));
+
 		const $btnSaveLocal = $(`#save_local`).click(async () => {
 			const output = this._outText;
 			if (output && output.trim()) {
 				try {
-					const prop = this.activeConverter.prop;
-					const entries = JSON.parse(`[${output}]`);
+					const props = JSON.parse(output);
+					for (const prop in props) {
+						const entries = props[prop];
 
-					const invalidSources = entries.map(it => !it.source || !BrewUtil.hasSourceJson(it.source) ? (it.name || it.caption || "(Unnamed)").trim() : false).filter(Boolean);
-					if (invalidSources.length) {
-						JqueryUtil.doToast({
-							content: `One or more entries have missing or unknown sources: ${invalidSources.join(", ")}`,
-							type: "danger",
-						});
-						return;
-					}
-
-					// ignore duplicates
-					const _dupes = {};
-					const dupes = [];
-					const dedupedEntries = entries.map(it => {
-						const lSource = it.source.toLowerCase();
-						const lName = it.name.toLowerCase();
-						_dupes[lSource] = _dupes[lSource] || {};
-						if (_dupes[lSource][lName]) {
-							dupes.push(it.name);
-							return null;
-						} else {
-							_dupes[lSource][lName] = true;
-							return it;
+						const invalidSources = entries.map(it => !getSource(it) || !BrewUtil.hasSourceJson(getSource(it)) ? (it.name || it.caption || "(Unnamed)").trim() : false).filter(Boolean);
+						if (invalidSources.length) {
+							JqueryUtil.doToast({
+								content: `One or more entries have missing or unknown sources: ${invalidSources.join(", ")}`,
+								type: "danger",
+							});
+							return;
 						}
-					}).filter(Boolean);
-					if (dupes.length) {
-						JqueryUtil.doToast({
-							type: "warning",
-							content: `Ignored ${dupes.length} duplicate entr${dupes.length === 1 ? "y" : "ies"}`,
-						});
-					}
-
-					// handle overwrites
-					const overwriteMeta = dedupedEntries.map(it => {
-						const ix = (BrewUtil.homebrew[prop] || []).findIndex(bru => bru.name.toLowerCase() === it.name.toLowerCase() && bru.source.toLowerCase() === it.source.toLowerCase());
-						if (~ix) {
-							return {
-								isOverwrite: true,
-								ix,
-								entry: it,
-							};
-						} else return {entry: it, isOverwrite: false};
-					}).filter(Boolean);
-					const willOverwrite = overwriteMeta.map(it => it.isOverwrite).filter(Boolean);
-					if (willOverwrite.length && !confirm(`This will overwrite ${willOverwrite.length} entr${willOverwrite.length === 1 ? "y" : "ies"}. Are you sure?`)) {
-						return;
-					}
-
-					await Promise.all(overwriteMeta.map(meta => {
-						if (meta.isOverwrite) {
-							return BrewUtil.pUpdateEntryByIx(prop, meta.ix, MiscUtil.copy(meta.entry));
-						} else {
-							return BrewUtil.pAddEntry(prop, MiscUtil.copy(meta.entry));
+	
+						// ignore duplicates
+						const _dupes = {};
+						const dupes = [];
+						const dedupedEntries = entries.map(it => {
+							const lSource = getSource(it).toLowerCase();
+							const lName = it.name.toLowerCase();
+							_dupes[lSource] = _dupes[lSource] || {};
+							if (_dupes[lSource][lName]) {
+								dupes.push(it.name);
+								return null;
+							} else {
+								_dupes[lSource][lName] = true;
+								return it;
+							}
+						}).filter(Boolean);
+						if (dupes.length) {
+							JqueryUtil.doToast({
+								type: "warning",
+								content: `Ignored ${dupes.length} duplicate entr${dupes.length === 1 ? "y" : "ies"}`,
+							})
 						}
-					}));
-
-					JqueryUtil.doToast({
-						type: "success",
-						content: `Saved!`,
-					});
-
-					Omnisearch.pAddToIndex("monster", overwriteMeta.filter(meta => !meta.isOverwrite).map(meta => meta.entry));
+	
+						// handle overwrites
+						const overwriteMeta = dedupedEntries.map(it => {
+							const ix = (BrewUtil.homebrew[prop] || []).findIndex(bru => bru.name.toLowerCase() === it.name.toLowerCase() && getSource(bru).toLowerCase() === getSource(it).toLowerCase());
+							if (~ix) {
+								return {
+									isOverwrite: true,
+									ix,
+									entry: it,
+								}
+							} else return {entry: it, isOverwrite: false};
+						}).filter(Boolean);
+						const willOverwrite = overwriteMeta.map(it => it.isOverwrite).filter(Boolean);
+						if (willOverwrite.length && !confirm(`This will overwrite ${willOverwrite.length} entr${willOverwrite.length === 1 ? "y" : "ies"}. Are you sure?`)) {
+							return;
+						}
+	
+						await Promise.all(overwriteMeta.map(meta => {
+							if (meta.isOverwrite) {
+								return BrewUtil.pUpdateEntryByIx(prop, meta.ix, MiscUtil.copy(meta.entry));
+							} else {
+								return BrewUtil.pAddEntry(prop, MiscUtil.copy(meta.entry));
+							}
+						}));
+	
+						JqueryUtil.doToast({
+							type: "success",
+							content: `Saved!`,
+						});
+	
+						Omnisearch.pAddToIndex("monster", overwriteMeta.filter(meta => !meta.isOverwrite).map(meta => meta.entry));	
+					}
 				} catch (e) {
 					JqueryUtil.doToast({
 						content: `Current output was not valid JSON!`,
@@ -858,9 +903,7 @@ class ConverterUi extends BaseComponent {
 			const output = this._outText;
 			if (output && output.trim()) {
 				try {
-					const prop = this.activeConverter.prop;
-					const out = {[prop]: JSON.parse(`[${output}]`)};
-					DataUtil.userDownload(`converter-output`, out);
+					DataUtil.userDownload(`converter-output`, JSON.parse(output));
 				} catch (e) {
 					JqueryUtil.doToast({
 						content: `Current output was not valid JSON. Downloading as <span class="code">.txt</span> instead.`,
@@ -891,7 +934,9 @@ class ConverterUi extends BaseComponent {
 				const splitStack = x.stack.split("\n");
 				const atPos = splitStack.length > 1 ? splitStack[1].trim() : "(Unknown location)";
 				const message = `[Error] ${x.message} ${atPos}`;
-				$(`#lastError`).show().html(message);
+				const rtetNotif = (this._state.renderTextEachTime) ? "" : 
+					" (Render Text Every Entry checkbox is off; you can try turning it on to see where the error happened)";
+				$(`#lastError`).show().html(message + rtetNotif);
 				this._editorOut.resize();
 				setTimeout(() => { throw x; });
 			}
@@ -918,8 +963,13 @@ class ConverterUi extends BaseComponent {
 							this.doCleanAndOutput.bind(this),
 							this.showWarning.bind(this),
 							isAppend || i !== 0, // always clear the output for the first non-append chunk, then append
+							this._state.verboseWarnings,
 						);
 					});
+
+				if (!this._state.renderTextEachTime) {
+					this.doRenderOutput();
+				}
 			});
 		};
 
@@ -973,17 +1023,49 @@ class ConverterUi extends BaseComponent {
 	showWarning (text) {
 		$(`#lastWarnings`).show().append(`<div>[Warning] ${text}</div>`);
 		this._editorOut.resize();
+
+		if (this._state.printWarningsToConsole) console.warn(text);
 	}
 
-	doCleanAndOutput (obj, append) {
+	doCleanAndOutput (obj, append, prop) {
+		prop = prop || "SET_PROP";
 		const asCleanString = CleanUtil.getCleanJson(obj, {isFast: false});
 		if (append) {
-			this._outText = `${asCleanString},\n${this._outText}`;
+			if (!this._outProps[prop]) {
+				this._outProps[prop] = []
+			}
+			this._outProps[prop].push(asCleanString)
 			this._state.hasAppended = true;
 		} else {
-			this._outText = asCleanString;
+			// to track the current rendered props and 
+			// add new items to teir lists more easily
+			this._outProps = {
+				[prop]: [asCleanString]
+			};
+
 			this._state.hasAppended = false;
 		}
+
+		if (this._state.renderTextEachTime) {
+			this.doRenderOutput();
+		}
+	}
+
+	doRenderOutput () {
+		const propToString = prop => `"${prop}": [\n\t`
+			+ this._outProps[prop]
+				.join(",\n")
+				.replace(/\n/g, "\n\t")
+			+ "\n]";
+
+		let outStrings = []
+		for (const prop in this._outProps) {
+			outStrings.push(propToString(prop))
+		}
+		this._outText = `{\n\t${
+			outStrings.join(",\n")
+					  .replace(/\n/g, "\n\t")
+		}\n}`;
 	}
 
 	set _outReadOnly (val) { this._editorOut.setOptions({readOnly: val}); }
@@ -1003,6 +1085,9 @@ ConverterUi._DEFAULT_STATE = {
 	converter: "Creature",
 	sourceJson: "",
 	inputSeparator: "===",
+	renderTextEachTime: false,
+	printWarningsToConsole: true,
+	verboseWarnings: false,
 };
 
 async function doPageInit () {

@@ -6702,15 +6702,18 @@ Renderer.item = {
 		if (!toMatch) return false;
 
 		return Object.entries(toMatch)[method](([k, v]) => {
-			if (v instanceof Array) {
-				return baseItem[k] instanceof Array
-					? baseItem[k].some(it => v.includes(it))
-					: v.includes(baseItem[k]);
+			if (baseItem[k] === v) return true;
+			// for matching only some of an array value, like for item properties
+			if (v.includes) {
+				if (v.includes instanceof Array) {
+					return (baseItem[k] instanceof Array 
+						? baseItem[k].find(it => v.includes.includes(it)) 
+						: v.includes.includes(baseItem[k])
+					);
+				}
+				return baseItem[k] instanceof Array ? baseItem[k].find(it => v.includes === it) : v.includes === baseItem[k];
 			}
-
-			return baseItem[k] instanceof Array
-				? baseItem[k].some(it => v === it)
-				: v === baseItem[k];
+			return false;
 		});
 	},
 

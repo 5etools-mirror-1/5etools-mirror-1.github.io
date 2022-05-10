@@ -24,6 +24,16 @@ class ItemParser extends BaseParser {
 		return null;
 	}
 
+	static _getBaseItem (itemName, category) {
+		let baseItem = ItemParser.getItem(itemName);
+		if (!baseItem) baseItem = ItemParser.getItem(itemName.replace(/s$/i, ""))
+		if (!baseItem) baseItem = ItemParser.getItem(itemName.replace(/es$/i, ""))
+		if (!baseItem && category.toLowerCase() === "armor") {
+			baseItem = ItemParser.getItem(`${itemName} armor`); // "armor (plate)" -> "plate armor"
+		}
+		return baseItem;
+	}
+
 	/**
 	 * Parses items from raw text pastes
 	 * @param inText Input text.
@@ -79,10 +89,13 @@ class ItemParser extends BaseParser {
 		}
 
 		const statsOut = this._getFinalState(item, options);
-		options.cbOutput(statsOut, options.isAppend);
+		const prop = statsOut.__prop
+		delete statsOut.__prop
+
+		options.cbOutput(statsOut, options.isAppend, prop);
 	}
 
-	static _getFinalState (item, options) {
+	static _getFinalState (item, options, prop) {
 		if (!item.entries.length) delete item.entries;
 		else this._setWeight(item, options);
 
@@ -91,7 +104,8 @@ class ItemParser extends BaseParser {
 		this._doItemPostProcess(item, options);
 		this._setCleanTaglineInfo_handleGenericType(item, options);
 		this._doVariantPostProcess(item, options);
-		return PropOrder.getOrdered(item, item.__prop || "item");
+
+		return PropOrder.getOrdered(item, prop || "item");
 	}
 
 	// SHARED UTILITY FUNCTIONS ////////////////////////////////////////////////////////////////////////////////////////
@@ -113,18 +127,27 @@ class ItemParser extends BaseParser {
 
 	static _doItemPostProcess_addTags (stats, options) {
 		const manName = stats.name ? `(${stats.name}) ` : "";
-		ChargeTag.tryRun(stats);
+		const defaultOptions = name => { return {
+			// For debugging if some options were needed
+			cbMan: str => {
+				if (options.verboseWarnings) {
+					options.cbWarning(`${manName}${name}: ${str}`);
+				}
+			}
+		} };
+
+		ChargeTag.tryRun(stats, defaultOptions("ChargeTag"));
 		RechargeTypeTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Recharge type requires manual conversion`)});
-		BonusTag.tryRun(stats);
-		ItemMiscTag.tryRun(stats);
-		ItemSpellcastingFocusTag.tryRun(stats);
+		BonusTag.tryRun(stats, defaultOptions("BonusTag"));
+		ItemMiscTag.tryRun(stats, defaultOptions("ItemMiscTag"));
+		ItemSpellcastingFocusTag.tryRun(stats, defaultOptions("ItemSpellcastingFocusTag"));
 		DamageResistanceTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Damage resistance tagging requires manual conversion`)});
 		DamageImmunityTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Damage immunity tagging requires manual conversion`)});
 		DamageVulnerabilityTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Damage vulnerability tagging requires manual conversion`)});
 		ConditionImmunityTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Condition immunity tagging requires manual conversion`)});
 		ReqAttuneTagTag.tryRun(stats, {cbMan: () => options.cbWarning(`${manName}Attunement requirement tagging requires manual conversion`)});
 		TagJsons.mutTagObject(stats, {keySet: new Set(["entries"]), isOptimistic: false});
-		AttachedSpellTag.tryRun(stats);
+		AttachedSpellTag.tryRun(stats, defaultOptions("AttachedSpellTag"));
 
 		// TODO
 		//  - tag damage type?
@@ -138,7 +161,10 @@ class ItemParser extends BaseParser {
 
 	// SHARED PARSING FUNCTIONS ////////////////////////////////////////////////////////////////////////////////////////
 	static _setCleanTaglineInfo (stats, curLine, options) {
-		const parts = curLine.split(",").map(it => it.trim()).filter(Boolean);
+		// split on first comma not inside parentheses
+		// \s*(?![^()]*\)) : not inside parentheses
+		// (.*) : only first
+		const parts = curLine.split(/,\s*(?![^()]*\))(.*)/s).map(it => it.trim()).filter(Boolean);
 
 		const handlePartRarity = (rarity) => {
 			rarity = rarity.trim().toLowerCase();
@@ -151,7 +177,10 @@ class ItemParser extends BaseParser {
 				case "artifact": stats.rarity = rarity; return true;
 				case "rarity varies": {
 					stats.rarity = "varies";
-					stats.__prop = "itemGroup";
+					// Do not set itemGroup for now, as it would need a way
+					// to set "items" to properly work and not make the item list
+					// error out
+					// stats.__prop = "itemGroup";
 					return true;
 				}
 				case "unknown rarity": {
@@ -165,7 +194,11 @@ class ItemParser extends BaseParser {
 		};
 
 		let baseItem = null;
-		let genericType = null;
+		let genericTypes = [];
+		let genericVariantBases = []; // in case it's a variant of a specific list of items
+		let genericVariantExceptions = [];
+		let genericVariantRequiresProperties = [];
+		let genericVariantExceptProperties = [];
 
 		for (let i = 0; i < parts.length; ++i) {
 			let part = parts[i];
@@ -229,31 +262,159 @@ class ItemParser extends BaseParser {
 
 			// region weapon/armor
 			if (partLower === "weapon" || partLower === "weapon (any)") {
-				genericType = "weapon";
+				genericTypes.push("weapon");
 				continue;
 			} else if (partLower === "armor" || partLower === "armor (any)") {
-				genericType = "armor";
+				genericTypes.push("armor");
 				continue;
-			} else {
-				const mWeaponAnyX = /^weapon \(any ([^)]+)\)$/i.exec(part);
-				if (mWeaponAnyX) {
-					stats.__genericType = mWeaponAnyX[1].trim().toCamelCase();
-					continue;
-				}
 			}
 
-			const mBaseWeapon = /^(weapon|staff) \(([^)]+)\)$/i.exec(part);
-			const mBaseArmor = /^armor \((?<type>[^)]+)\)$/i.exec(part);
-			if (mBaseWeapon) {
-				if (mBaseWeapon[1].toLowerCase() === "staff") stats.staff = true;
-				baseItem = ItemParser.getItem(mBaseWeapon[2]);
-				if (!baseItem) throw new Error(`Could not find base item "${mBaseWeapon[2]}"`);
-				continue;
-			} else if (mBaseArmor) {
-				if (this._setCleanTaglineInfo_isMutAnyArmor(stats, mBaseArmor)) continue;
+			// example: weapon (dagger, shortsword), weapon (maul or warhammer), 
+			// armor (plate, half plate, or splint)
+			// list separated by commas and/or "or"s
+			const variantListPattern = /(?:\s+or\s|\s*,|\s+and\s)(?:\sor\s)?\s*/i;
 
-				baseItem = this._setCleanTaglineInfo_getArmorBaseItem(mBaseArmor.groups.type);
-				if (!baseItem) throw new Error(`Could not find base item "${mBaseArmor.groups.type}"`);
+			const baseCats = ["weapon", "staff", "armor"];
+			const exceptionSeps = ["except", "but\\s*(?:not)?", "without"];
+			const stackableTerms = ["melee", "ranged", "piercing", "slashing", "edged", "bladed", "bludgeoning", "blunt"];
+
+			// separates part before exceptions and after exceptions inside the category, in case
+			// of generic variant with things like "armor (heavy but not plate)"
+			const mBaseItem = new RegExp(
+				`(${baseCats.join("|")}) \\((.+?)(?:,?\\s*(${exceptionSeps.join("|")})\\s(.*))?\\)`, "i"
+			).exec(part);
+
+			if (mBaseItem) {
+				const [_, category, subcategory, exceptSep, except] = mBaseItem;
+				const categoryL = category.toLowerCase();
+
+				if (categoryL === "staff") stats.staff = true;
+				baseItem = this._getBaseItem(subcategory, category);
+
+				if (!baseItem) {
+					let mainSubcategoryPart = subcategory;
+					// check for property specifications
+					const propertyMatch = /(.+?)\s*with(?:\s+the)?\s*(.*?)\s+property/i.exec(mainSubcategoryPart);
+					if (propertyMatch) {
+						mainSubcategoryPart = propertyMatch[1]; // remove the properties from the item name
+						// for each property
+						propertyMatch[2].split(variantListPattern).map(s => s.trim()).forEach(property => {
+							const tag = ItemParser._PROPERTY_TO_TAG[property];
+							if (!tag) throw new Error(`Unknown property "${property}"`);
+							genericVariantRequiresProperties.push(tag);
+						});
+					}
+
+					// check if the items are a list
+					let handled = false;
+					let baseItems = mainSubcategoryPart
+						.replace(/(a|an|any)\s+/, "")
+						.split(variantListPattern)
+						;
+					
+					baseItems.forEach((itemName) => {
+						let found = false;
+						if (categoryL === "weapon" || categoryL === "staff") {
+							// List containing terms to check against 
+							// for generic item terms
+							const genericTerms = [];
+
+							itemName = itemName
+								.split(/\s+/)
+								.map(word => {
+									if (stackableTerms.includes(word)) {
+										genericTerms.push(word);
+										return "";
+									}
+									return word;
+								})
+								.join(" ");
+
+							genericTerms.push(itemName);
+
+							found = false;
+							genericTerms.forEach(term => {
+								let foundHere = true;
+								switch (term) {
+									case "melee": case "melee weapon":
+										genericTypes.push("melee"); break;
+									case "ranged": case "ranged weapon":
+										genericTypes.push("ranged"); break;
+									case "piercing": case "piercing weapon":
+										genericTypes.push("piercing"); break;
+									case "slashing": case "slashing weapon":
+									case "edged": case "edged weapon":
+									case "bladed": case "bladed weapon":
+										genericTypes.push("slashing"); break;
+									case "bludgeoning": case "bludgeoning weapon":
+									case "blunt": case "blunt weapon":
+										genericTypes.push("bludgeoning"); break;
+									case "sword": genericTypes.push("sword"); break;
+									case "axe": genericTypes.push("axe"); break;
+									case "bow": genericTypes.push("bow"); break;
+									case "crossbow": genericTypes.push("crossbow"); break;
+									default: foundHere = false;
+								}
+								found = found || foundHere;
+							});
+						} else if (categoryL === "armor") {
+							found = true;
+							if (/^heavy/i.test(itemName)) {
+								genericTypes.push("heavy armor");
+							} else if (/^medium/i.test(itemName)) {
+								genericTypes.push("medium armor");
+							} else if (/^light/i.test(itemName)) {
+								genericTypes.push("light armor");
+							}		
+						}
+
+						// check for specific base generic items
+						if (!found) {
+							let item = this._getBaseItem(itemName, category);
+							if (item) {
+								found = true;
+								genericVariantBases.push(item);
+							} 
+						}
+						if (!found && (/\s*/.test(itemName) || itemName === categoryL) )
+							// any item of the category, will use property matches too
+							found = true;
+						if (!found)
+							throw new Error(`Could not find generic base item "${itemName}"`);
+						handled = true;
+					});
+					if (!handled) {
+						if (!baseItem) throw new Error(`Could not find base item "${subcategory}"`);
+					}
+				}
+
+				// handle exceptions (but not <item>, except <item>, etc.)
+				if (exceptSep) {
+					// item exceptions
+					if (exceptSep.toLowerCase() !== "without") {
+						const exceptions = except.split(variantListPattern).map(s => s.trim());
+						exceptions.forEach(exceptionName => {
+							let item = this._getBaseItem(exceptionName, category);
+							if (!item) throw new Error(`Could not find exception item "${exceptionName}"`);
+							genericVariantExceptions.push(item.name); // correct capitalization
+						});
+					}
+					// property exceptions
+					// example: any melee weapon without the light or two-handed property
+					else {
+						const propertiesMatch = /^(?:the\s*)?(.*?)\s+property/i.exec(except);
+						if (!propertiesMatch) throw new Error(`Unknown exceptions string "without ${except}"`);
+
+						const exceptProperties = propertiesMatch[1].split(variantListPattern).map(s => s.trim());
+						exceptProperties.forEach(property => {
+							let tag = ItemParser._PROPERTY_TO_TAG[property];
+							if (!tag) throw new Error(`Unknown exception property "${property}"`);
+							if (!genericVariantExceptProperties.includes(tag)) {
+								genericVariantExceptProperties.push(tag);
+							}
+						});
+					}
+				}
 				continue;
 			}
 			// endregion
@@ -264,52 +425,11 @@ class ItemParser extends BaseParser {
 
 		this._setCleanTaglineInfo_handleBaseItem(stats, baseItem, options);
 		// Stash the genericType for later processing/removal
-		if (genericType) stats.__genericType = genericType;
-	}
-
-	static _setCleanTaglineInfo_getArmorBaseItem (name) {
-		let baseItem = ItemParser.getItem(name);
-		if (!baseItem) baseItem = ItemParser.getItem(`${name} armor`); // "armor (plate)" -> "plate armor"
-		return baseItem;
-	}
-
-	static _setCleanTaglineInfo_isMutAnyArmor (stats, mBaseArmor) {
-		if (/^any /i.test(mBaseArmor.groups.type)) {
-			const ptAny = mBaseArmor.groups.type.replace(/^any /i, "");
-			const [ptInclude, ptExclude] = ptAny.split(/\bexcept\b/i).map(it => it.trim()).filter(Boolean);
-
-			const procPart = pt => {
-				switch (pt) {
-					case "light": return {"type": "LA"};
-					case "medium": return {"type": "MA"};
-					case "heavy": return {"type": "HA"};
-					default: {
-						const baseItem = this._setCleanTaglineInfo_getArmorBaseItem(pt);
-						if (!baseItem) throw new Error(`Could not find base item "${pt}"`);
-
-						return {name: baseItem.name};
-					}
-				}
-			};
-
-			if (ptInclude) {
-				stats.requires = [
-					...(stats.requires || []),
-					...ptInclude.split(/\b(?:or|,)\b/g).map(it => it.trim()).filter(Boolean).map(it => procPart(it)),
-				];
-			}
-
-			if (ptExclude) {
-				Object.assign(
-					stats.excludes = stats.excludes || {},
-					ptExclude.split(/\b(?:or|,)\b/g).map(it => it.trim()).filter(Boolean).mergeMap(it => procPart(it)),
-				);
-			}
-
-			return true;
-		}
-
-		return false;
+		if (genericTypes.length != 0) stats.__genericTypes = genericTypes;
+		if (genericVariantBases.length != 0) stats.__genericVariantBases = genericVariantBases;
+		if (genericVariantExceptions.length != 0) stats.__genericVariantExceptions = genericVariantExceptions;
+		if (genericVariantRequiresProperties.length != 0) stats.__genericVariantRequiresProperties = genericVariantRequiresProperties;
+		if (genericVariantExceptProperties.length != 0) stats.__genericVariantExceptProperties = genericVariantExceptProperties;
 	}
 
 	static _setCleanTaglineInfo_handleBaseItem (stats, baseItem, options) {
@@ -335,9 +455,25 @@ class ItemParser extends BaseParser {
 	}
 
 	static _setCleanTaglineInfo_handleGenericType (stats, options) {
-		if (!stats.__genericType) return;
-		const genericType = stats.__genericType;
-		delete stats.__genericType;
+		if (!(
+			stats.__genericTypes 
+			|| stats.__genericVariantBases 
+			|| stats.__genericVariantExceptions 
+			|| stats.__genericVariantRequiresProperties 
+			|| stats.__genericVariantExceptProperties 
+		))
+			return;
+
+		const genericTypes = stats.__genericTypes;
+		const genericVariantBases = stats.__genericVariantBases;
+		const genericVariantExceptions = stats.__genericVariantExceptions;
+		const genericVariantRequiresProperties = stats.__genericVariantRequiresProperties;
+		const genericVariantExceptProperties = stats.__genericVariantExceptProperties;
+		delete stats.__genericTypes;
+		delete stats.__genericVariantBases;
+		delete stats.__genericVariantExceptions;
+		delete stats.__genericVariantRequiresProperties;
+		delete stats.__genericVariantExceptProperties;
 
 		let prefixSuffixName = stats.name;
 		prefixSuffixName = prefixSuffixName.replace(/^weapon /i, "");
@@ -351,22 +487,59 @@ class ItemParser extends BaseParser {
 		if (isSuffix) stats.inherits.nameSuffix = ` ${prefixSuffixName.trim()}`;
 		else stats.inherits.namePrefix = `${prefixSuffixName.trim()} `;
 
+		// check _createSpecificVariants_hasRequiredProperty in render.js
+		// for how requires is used
+
 		stats.__prop = "variant";
 		stats.type = "GV";
-		switch (genericType) {
-			case "weapon": stats.requires = [{"weapon": true}]; break;
-			case "sword": stats.requires = [{"sword": true}]; break;
-			case "axe": stats.requires = [{"axe": true}]; break;
-			case "armor": stats.requires = [{"armor": true}]; break;
-			case "bow": stats.requires = [{"bow": true}, {"crossbow": true}]; break;
-			case "bludgeoning": stats.requires = [{"dmgType": "B"}]; break;
-			case "piercing": stats.requires = [{"dmgType": "P"}]; break;
-			case "slashing": stats.requires = [{"dmgType": "S"}]; break;
-			default: {
-				stats.requires = [{[genericType]: true}];
-				options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Tagline part "${genericType}" requires manual conversion`);
-				break;
+		stats.requires = [];
+		if (genericTypes) {
+			genericTypes.forEach(genericType => {
+				switch (genericType) {
+					case "weapon": stats.requires.push({"weapon": true}); break;
+					case "melee": stats.requires.push({"type": "M"}); break;
+					case "piercing": stats.requires.push({"dmgType": "P"}); break;
+					case "slashing": stats.requires.push({"dmgType": "S"}); break;
+					case "bludgeoning": stats.requires.push({"dmgType": "B"}); break;
+					case "ranged": rstats.equires.push({"type": "R"}); break;
+					case "sword": stats.requires.push({"sword": true}); break;
+					case "axe": stats.requires.push({"axe": true}); break;
+					case "bow": stats.requires.push({"bow": true}); break;
+					case "crossbow": stats.requires.push({"crossbow": true}); break;
+					case "armor": stats.requires.push({"armor": true}); break;
+					case "heavy armor": stats.requires.push({"type": "HA"}); break;
+					case "medium armor": stats.requires.push({"type": "MA"}); break;
+					case "light armor": stats.requires.push({"type": "LA"}); break;
+					default: throw new Error(`Unhandled generic type "${genericType}"`);
+				}
+			});
+		}
+		if (genericVariantBases) {
+			genericVariantBases.forEach(item => {
+				stats.requires.push({
+					"name": item.name
+				});
+			});
+		}
+		if (genericVariantRequiresProperties) {
+			if (stats.requires.length > 0) {
+				stats.requires.forEach(requireObj => {
+					requireObj["property"] = {"includes": genericVariantRequiresProperties};
+				});
+			} else {
+				stats.requires.push({
+					"property": {"includes": genericVariantRequiresProperties}
+				});
 			}
+		}
+		if (genericVariantExceptions || genericVariantExceptProperties) {
+			stats.excludes = {};
+		}
+		if (genericVariantExceptions) {
+			stats.excludes["name"] = genericVariantExceptions;
+		}
+		if (genericVariantExceptProperties) {
+			stats.excludes["property"] = genericVariantExceptProperties;
 		}
 	}
 
@@ -410,6 +583,24 @@ ItemParser._MAPPED_ITEM_NAMES = {
 	"studded leather": "studded leather armor",
 	"leather": "leather armor",
 	"scale": "scale mail",
+	"bolt": "crossbow bolt",
+};
+ItemParser._PROPERTY_TO_TAG = {
+	"thrown": "T",
+	"versatile": "V",
+	"heavy": "H",
+	"two-handed": "2H",
+	"two handed": "2H",
+	"twohanded": "2H",
+	"finesse": "F",
+	"light": "L",
+	"reach": "R",
+	"ammunition": "A",
+	"loading": "LD",
+	"special": "S",
+	"ammunition (futuristic)": "AF",
+	"reload": "RLD",
+	"burst fire": "BF",
 };
 
 if (typeof module !== "undefined") {

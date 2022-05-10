@@ -741,8 +741,14 @@ class EntryConvert {
 			entries,
 		];
 
-		const popList = () => { while (stack.last().type === "list") stack.pop(); };
-		const popNestedEntries = () => { while (stack.length > 1) stack.pop(); };
+		const popList = () => { 
+			while (stack.last().type === "list" || stack.last().type === "table")
+				this.finalizeEntry(stack.pop());
+		}
+		const popNestedEntries = () => { 
+			while (stack.length > 1) 
+				this.finalizeEntry(stack.pop()); 
+		}
 
 		const addEntry = (entry, canCombine) => {
 			canCombine = canCombine && typeof entry === "string";
@@ -766,6 +772,13 @@ class EntryConvert {
 				} else {
 					target.entries.push(entry);
 				}
+			} else if (target.type === "table") {
+				if (canCombine && typeof target.rows.last() === "string") {
+					throw new Error("Cannot combine table entries") // for now?
+				} else {
+					target.rows.push(entry)
+				}
+				return;
 			}
 
 			if (typeof entry !== "string") stack.push(entry);
@@ -774,6 +787,7 @@ class EntryConvert {
 		const getCurrentEntryArray = () => {
 			if (stack.last().type === "list") return stack.last().items;
 			if (stack.last().type === "entries") return stack.last().entries;
+			if (stack.last().type === "table") return stack.last().rows;
 			return stack.last();
 		};
 
@@ -795,6 +809,72 @@ class EntryConvert {
 
 				curLine = curLine.replace(/^\s*•\s*/, "");
 				addEntry(curLine.trim());
+			} else if (ConvertUtil.isTableHeaderSeparator(curLine)) {
+				if (stack.last().type === "table") {
+					const tbl = stack.last()
+
+					let rowStyles = curLine.split(/\s*\|\s*/);
+					rowStyles.pop();
+					rowStyles.shift();
+
+					for (let i = 0; i < rowStyles.length; i++) {
+						let alignment = "";
+						if (/^:-*:$/.test(rowStyles[i])) {
+							alignment = "text-center";
+						} else if (/^-+:$/.test(rowStyles[i])) {
+							alignment = "text-right";
+						}
+						tbl.colStyles[i] = alignment;
+					}
+				} else {
+					throw new Error("Found table header without a related table")
+				}
+			} else if (ConvertUtil.isTableItemLine(curLine)) {
+				let thisRow = curLine.split(/\s*\|\s*/);
+				thisRow.pop();
+				thisRow.shift();
+
+				for (let i = 0; i < thisRow.length; i++) {
+					let cell = thisRow[i];
+					if (ConvertUtil.isNameLine(cell)) {
+						const {name, entry} = ConvertUtil.splitNameLine(cell);	
+						const entryObj = {
+							type: "entries",
+							name,
+							entries: [entry],
+						};
+						thisRow[i] = entryObj;
+					} else if (i == 0) {
+						// for rollable tables
+						const rollMatch = /^(\d+)(?:-(\d+))?$/.exec(cell);
+						if (rollMatch) {
+							const rollObj = {
+								type: "cell",
+								roll: {
+								}
+							};
+							if (!rollMatch[2]) {
+								rollObj.roll.exact = rollMatch[1];
+							} else {
+								rollObj.roll.min = rollMatch[1];
+								rollObj.roll.max = rollMatch[2];
+							}
+							thisRow[i] = rollObj;
+						}
+					}
+				}
+
+				if (stack.last().type !== "table") {
+					const table = {
+						type: "table",
+						colLabels: thisRow,
+						colStyles: [],
+						rows: [],
+					};
+					addEntry(table);
+				} else {
+					addEntry(thisRow);
+				}
 			} else if (ConvertUtil.isNameLine(curLine)) {
 				popNestedEntries(); // this implicitly pops nested lists
 
@@ -828,8 +908,34 @@ class EntryConvert {
 			ptrI._++;
 			curLine = toConvert[ptrI._];
 		}
-
+		// added for final table handling
+		popNestedEntries();
 		return entries;
+	}
+
+	static finalizeEntry (entry) {
+		if (entry.type === "table") {
+			// Convert dices
+			entry.colLabels[0] = DiceConvert.getTaggedEntry(entry.colLabels[0]);
+			entry.rows.map(row => row.map(cell => DiceConvert.getTaggedEntry(cell)));
+
+			let allNumbers = true;
+			// Center number/dice only columns if it's the first column
+			for (let i = 0; i < entry.rows.length; i++) {
+				const row = entry.rows[i];
+				if (!(
+					(typeof row[0] === 'string' && /^\d+(-\d+)?$/.test(row[0]))
+					|| row[0].roll
+				)) {
+					allNumbers = false;
+					break;
+				}
+			}
+
+			if (allNumbers && entry.colStyles[0].trim() === "") {
+				entry.colStyles[0] = "text-center";
+			}
+		}
 	}
 }
 
@@ -879,6 +985,10 @@ class ConvertUtil {
 	}
 
 	static isListItemLine (line) { return line.trim().startsWith("•"); }
+
+	// Detect markdown tables
+	static isTableItemLine (line) { return /^\|(?:[^|]*\|)+$/.test(line) }
+	static isTableHeaderSeparator (line) { return /^\|(?:[\s\-:]*\|)+$/.test(line) }
 
 	static splitNameLine (line, isKeepPunctuation) {
 		const spl = this._getMergedSplitName({line});
