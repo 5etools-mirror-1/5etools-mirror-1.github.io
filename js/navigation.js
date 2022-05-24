@@ -200,6 +200,15 @@ class NavBar {
 				title: "Preload EVERYTHING for offline use.",
 			},
 		);
+		this._addElement_divider(NavBar._CAT_CACHE);
+		this._addElement_button(
+			NavBar._CAT_CACHE,
+			{
+				html: "Reset Preloaded Data",
+				click: (evt) => NavBar.InteractionManager._pOnClick_button_clearOffline(evt),
+				title: "Remove all preloaded data, and clear away any caches.",
+			},
+		);
 	}
 
 	static _getNode (category) {
@@ -767,6 +776,17 @@ NavBar.InteractionManager = class {
 		}
 
 		globalThis.swCacheRoutes(route);
+	}
+
+	static async _pOnClick_button_clearOffline (evt) {
+		evt.preventDefault();
+
+		if (globalThis.swResetAll === undefined) {
+			JqueryUtil.doToast(`The loader was not yet available! Reload the page and try again. If this problem persists, your browser may not support preloading.`);
+			return;
+		}
+
+		globalThis.swResetAll();
 	}
 };
 

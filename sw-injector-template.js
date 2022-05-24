@@ -78,8 +78,17 @@ const swCancelCacheRoutes = () => {
 	}, 1000);
 };
 
+/**
+ * Ask the service worker to remove itself.
+ */
+const swResetAll = () => {
+	wb.messageSW({type: "RESET"});
+	JqueryUtil.doToast({content: "Resetting..."});
+}
+
 // icky global but no bundler, so no other good choice
 globalThis.swCacheRoutes = swCacheRoutes;
+globalThis.swResetAll = swResetAll;
 
 let downloadBar = null;
 

@@ -3,7 +3,7 @@
 import { precacheAndRoute } from "workbox-precaching";
 import { registerRoute } from "workbox-routing";
 import { CacheFirst, NetworkFirst, Strategy, StrategyHandler } from "workbox-strategies";
-import {ExpirationPlugin} from "workbox-expiration";
+import { ExpirationPlugin, CacheExpiration } from "workbox-expiration";
 
 import { createCacheKey } from "workbox-precaching/utils/createCacheKey";
 
@@ -71,6 +71,41 @@ const offlineAlert = async (url) => {
 	}
 };
 
+
+/**
+ * Reset, wiping all caches and un-registering the service worker.
+ *
+ * @return {Promise<void>}
+ */
+const resetAll = async () => {
+	// Clear all caches, as these persist between service workers
+	const cacheNames = await caches.keys();
+	for (const cacheName of cacheNames) {
+		await caches.delete(cacheName);
+
+		// See: https://github.com/GoogleChrome/workbox/issues/2234
+		const cacheExpiration = new CacheExpiration(cacheName, {maxEntries: 1});
+		await cacheExpiration.delete();
+
+		console.log(`deleted cache "${cacheName}"`);
+	}
+
+	await self.registration.unregister();
+
+	const clients = await self.clients.matchAll();
+	clients.forEach(client => client.navigate(client.url));
+};
+
+addEventListener("message", (event) => {
+	switch (event.data.type) {
+		case "RESET": {
+			console.log("Resetting...");
+			event.waitUntil(resetAll());
+			break;
+		}
+	}
+});
+
 /*
 routes take precedence in order listed. if a higher route and a lower route both match a file, the higher route will resolve it
 https://stackoverflow.com/questions/52423473/workbox-routing-registerroute-idempotence
@@ -88,14 +123,19 @@ class RevisionCacheFirst extends Strategy {
 		this.activate = this.activate.bind(this);
 		this.cacheRoutes = this.cacheRoutes.bind(this);
 		addEventListener("message", (event) => {
-			if (event.data.type === "CACHE_ROUTES") {
-				this.cacheRoutesAbortController = new AbortController();
-				event.waitUntil(this.cacheRoutes(event.data, this.cacheRoutesAbortController.signal));
-			}
-			if (event.data.type === "CANCEL_CACHE_ROUTES") {
-				console.log("aborting cache!");
-				this.cacheRoutesAbortController?.abort();
-				this.cacheRoutesAbortController = null;
+			switch (event.data.type) {
+				case "CACHE_ROUTES": {
+					this.cacheRoutesAbortController = new AbortController();
+					event.waitUntil(this.cacheRoutes(event.data, this.cacheRoutesAbortController.signal));
+					break;
+				}
+
+				case "CANCEL_CACHE_ROUTES": {
+					console.log("aborting cache!");
+					this.cacheRoutesAbortController?.abort();
+					this.cacheRoutesAbortController = null;
+					break;
+				}
 			}
 		});
 	}
