@@ -1563,6 +1563,23 @@ class Panel {
 			true,
 		);
 	}
+
+
+	// Populate current panel with creatures from Bestiary encounters
+
+	doPopulate_Encounter (bestiaryList, title = "") {
+		const meta = {};
+		this.setHasTabs(true);
+
+		// Cycle through bestiary encounter data, open one new tab for each.
+		bestiaryList.l.items.forEach(m => {
+				const page = UrlUtil.PG_BESTIARY;
+				const source = UrlUtil.decodeHash(m.h)[1];
+				const creature = m.h;
+				this.doPopulate_Stats(page,source,creature,"","");
+		});
+};
+
 	// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	getTopNeighbours () {
 		return [...new Array(this.width)]
@@ -3072,8 +3089,77 @@ class AddMenuSpecialTab extends AddMenuTab {
 					this.menu.doClose();
 				})
 				.appendTo($wrpBlank);
+			
+			//			
+			// Add Encounter tabs in current panel (ripped from dmscreen.initativetracker)
+			//
+			const $wrpEncounter = $(`<div class="ui-modal__row"><span class="help" title="Open Encounter Creatures in Tabs">Add Encounter Creatures</span></div>`).appendTo($tab);
 
-			this.$tab = $tab;
+			$(`<button class="btn btn-primary btn-sm">Add</button>`)
+			.on("click", async(evt) => {
+			    //
+			    // initialise "upload" context menu
+			    //
+			    let bestiaryList = "";
+			    const menu = ContextUtil.getMenu([
+			        new ContextUtil.Action(
+			            "From Current Bestiary Encounter",
+			            async() => {
+			            const savedState = await EncounterUtil.pGetInitialState();
+			            if (savedState)
+			                bestiaryList = savedState.data;
+			            else {
+			                JqueryUtil.doToast({
+			                    content: `No saved encounter! Please first go to the Bestiary and create one.`,
+			                    type: "warning",
+			                });
+			            }
+						}, 
+					),
+			        new ContextUtil.Action(
+			            "From Saved Bestiary Encounter",
+			            async() => {
+			            const allSaves = Object.values((await EncounterUtil.pGetSavedState()).savedEncounters || {});
+			            if (!allSaves.length)
+			                return JqueryUtil.doToast({
+			                    type: "warning",
+			                    content: "No saved encounters were found! Go to the Bestiary and create some first."
+			                });
+			            const selected = await InputUiUtil.pGetUserEnum({
+			                values: allSaves.map(it => it.name),
+			                placeholder: "Select a save",
+			                title: "Select Saved Encounter",
+			            });
+			            if (selected != null)
+			                bestiaryList = allSaves[selected].data;
+						}, 
+					),
+			        new ContextUtil.Action(
+			            "From Bestiary Encounter File",
+			            async() => {
+			            const {
+			                jsons,
+			                errors
+			            } = await DataUtil.pUserUpload();
+
+			            DataUtil.doHandleFileLoadErrorsGeneric(errors);
+
+			            if (jsons?.length)
+			                bestiaryList = jsons[0];
+						}, 
+					),
+			    ]);
+
+				// Open the menu, read the encounter bestiary list, populate the panel.
+			    await ContextUtil.pOpenMenu(evt, menu);
+			    await this.menu.pnl.doPopulate_Encounter(bestiaryList);
+				// set current panel tab to the first, and close the menu.
+				this.menu.pnl.setActiveTab(0);
+			    this.menu.doClose();
+			})
+
+		.appendTo($wrpEncounter);
+		this.$tab = $tab;
 		}
 	}
 }
