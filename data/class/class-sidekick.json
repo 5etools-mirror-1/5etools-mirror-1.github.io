@@ -554,6 +554,34 @@
 			"name": "Expert Sidekick",
 			"source": "TCE",
 			"page": 142,
+            "startingProficiencies": {
+				"armor": [
+					"light"
+				],
+                "skills": [
+                    {
+                        "choose": {
+                            "from": [
+                                "any"
+                            ],
+                            "count": 5
+                        }
+                    }
+                ],
+                "weapons": [
+					"simple"
+                ],
+                "tools": [
+                    {
+                        "choose": {
+                            "from": [
+                                "any"
+                            ],
+                            "count": 2
+                        }
+                    }
+                ]
+            },
 			"isSidekick": true,
 			"classFeatures": [
 				"Sidekick Class|Expert Sidekick|TCE|1",
@@ -569,6 +597,7 @@
 				"Inspiring Help|Expert Sidekick|TCE|11",
 				"Ability Score Improvement|Expert Sidekick|TCE|12",
 				"Reliable Talent|Expert Sidekick|TCE|14",
+				"Expertise|Expert Sidekick|TCE|15",
 				"Ability Score Improvement|Expert Sidekick|TCE|16",
 				"Sharp Mind|Expert Sidekick|TCE|18",
 				"Ability Score Improvement|Expert Sidekick|TCE|19",
@@ -590,6 +619,7 @@
 			"source": "TCE",
 			"page": 144,
 			"isSidekick": true,
+			"casterProgression": "artificer",
 			"cantripProgression": [
 				2,
 				2,
@@ -634,6 +664,31 @@
 				11,
 				11
 			],
+			"startingProficiencies": {
+				"armor": [
+					"light"
+				],
+                "skills": [
+                    {
+                        "choose": {
+                            "from": [
+                                "arcana", 
+								"history",
+								"insight",
+								"investigation",
+								"medicine",
+								"performance",
+								"persuasion",
+								"religion"
+                            ],
+                            "count": 2
+                        }
+                    }
+                ],
+                "weapons": [
+					"simple"
+                ]
+			},
 			"classTableGroups": [
 				{
 					"colLabels": [
@@ -951,6 +1006,35 @@
 			"source": "TCE",
 			"page": 146,
 			"isSidekick": true,
+			"startingProficiencies": {
+				"armor": [
+					"light",
+					"medium",
+					"heavy",
+					"{@item shield|phb|shields}"
+				],
+                "skills": [
+                    {
+                        "choose": {
+                            "from": [
+								"acrobatics",
+								"animal handling",
+								"athletics",
+								"history",
+								"insight",
+								"intimidation",
+								"perception",
+								"survival"
+                            ],
+                            "count": 2
+                        }
+                    }
+                ],
+                "weapons": [
+					"simple",
+					"martial"
+                ]
+			},
 			"classFeatures": [
 				"Sidekick Class|Warrior Sidekick|TCE|1",
 				"Bonus Proficiencies|Warrior Sidekick|TCE|1",
@@ -995,7 +1079,20 @@
 				"{@i 1st-level Expert feature}",
 				"The sidekick gains proficiency in one saving throw of your choice: Dexterity, Intelligence, or Charisma.",
 				"In addition, the sidekick gains proficiency in five skills of your choice, and it gains proficiency with light armor. If it is a humanoid or has a simple or martial weapon in its stat block, it also gains proficiency with all simple weapons and with two tools of your choice."
-			]
+			],
+            "savingThrowProficiencies": [
+                {
+                    "choose": {
+                        "from": [
+                            "dex",
+                            "int",
+                            "cha"
+                        ],
+                        "count": 1
+                    }
+                }
+            ]
+            
 		},
 		{
 			"name": "Helpful",
@@ -1041,6 +1138,16 @@
 			"className": "Expert Sidekick",
 			"classSource": "TCE",
 			"level": 3,
+			"expertise": [
+				{
+					"choose": {
+						"from": [ 
+							"anyProficientSkill"
+						],
+						"count": 2
+					}
+				}
+			],
 			"entries": [
 				"{@i 3rd-level Expert feature}",
 				"Choose two of the sidekick's skill proficiencies. The sidekick's proficiency bonus is doubled for any ability check it makes that uses any of the chosen proficiencies.",
@@ -1145,6 +1252,28 @@
 			]
 		},
 		{
+			"name": "Expertise",
+			"source": "TCE",
+			"page": 142,
+			"className": "Expert Sidekick",
+			"classSource": "TCE",
+			"level": 15,
+			"expertise": [
+				{
+					"choose": {
+						"from": [ 
+							"anyProficientSkill"
+						],
+						"count": 2
+					}
+				}
+			],
+			"entries": [
+				"{@i 15th-level Expert feature}",
+				"Choose two of the sidekick's skill proficiencies. The sidekick's proficiency bonus is doubled for any ability check it makes that uses any of the chosen proficiencies."
+			]
+		},
+		{
 			"name": "Ability Score Improvement",
 			"source": "TCE",
 			"page": 142,
@@ -1204,7 +1333,19 @@
 				"The sidekick gains proficiency in one saving throw of your choice: Wisdom, Intelligence, or Charisma.",
 				"In addition, the sidekick gains proficiency in two skills of your choice from the following list: {@skill Arcana}, {@skill History}, {@skill Insight}, {@skill Investigation}, {@skill Medicine}, {@skill Performance}, {@skill Persuasion}, and {@skill Religion}.",
 				"The sidekick gains proficiency with light armor, and if it is a humanoid or has a simple or martial weapon in its stat block, it also gains proficiency with all simple weapons."
-			]
+			],
+			"savingThrowProficiencies": [
+                {
+                    "choose": {
+                        "from": [
+                            "wis",
+                            "int",
+                            "cha"
+                        ],
+                        "count": 1
+                    }
+                }
+            ]
 		},
 		{
 			"name": "Sidekick Class",
@@ -1441,7 +1582,19 @@
 				"The sidekick gains proficiency in one saving throw of your choice: Strength, Dexterity, or Constitution.",
 				"In addition, the sidekick gains proficiency in two skills of your choice from the following list: {@skill Acrobatics}, {@skill Animal Handling}, {@skill Athletics}, {@skill Intimidation}, {@skill Nature}, {@skill Perception}, and {@skill Survival}.",
 				"The sidekick gains proficiency with all armor, and if it is a humanoid or has a simple or martial weapon in its stat block, it gains proficiency with shields and all simple and martial weapons."
-			]
+			],
+            "savingThrowProficiencies": [
+                {
+                    "choose": {
+                        "from": [
+                            "str",
+                            "dex",
+                            "con"
+                        ],
+                        "count": 1
+                    }
+                }
+            ]
 		},
 		{
 			"name": "Martial Role",
