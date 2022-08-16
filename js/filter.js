@@ -2227,6 +2227,10 @@ class SourceFilter extends Filter {
 		return SortUtil.ascSort(valA, valB) || SortUtil.ascSortLower(Parser.sourceJsonToFull(a), Parser.sourceJsonToFull(b));
 	}
 
+	static _SORT_BY_RELEASE_DATE (a, b) {
+		return -1 * SortUtil.ascSortDateString(Parser.sourceJsonToDate(a.item), Parser.sourceJsonToDate(b.item));
+	}
+
 	static _getDisplayHtmlMini (item) {
 		item = item.item || item;
 		const isBrewSource = BrewUtil2.hasSourceJson(item);
@@ -2331,6 +2335,11 @@ class SourceFilter extends Filter {
 				"Invert Selection",
 				() => this._doInvertPins(),
 			),
+			null,
+			new ContextUtil.Action(
+				"Sort by Release Date",
+				() => this._doSortByReleaseDate()
+			),
 		]);
 		const btnBurger = e_({
 			tag: "button",
@@ -2420,6 +2429,13 @@ class SourceFilter extends Filter {
 		// also disable "Reprinted" otherwise some Deities are missing
 		const reprintedFilter = this._filterBox.filters.find(it => it.isReprintedFilter);
 		if (reprintedFilter) reprintedFilter.setValue("Reprinted", 0);
+	}
+
+	_doSortByReleaseDate() {
+		this._meta.isSortedByReleaseDate = true;
+		this._itemSortFnMini = SourceFilter._SORT_BY_RELEASE_DATE;
+		this._itemSortFn = SourceFilter._SORT_BY_RELEASE_DATE;
+		this.update();
 	}
 
 	static getCompleteFilterSources (ent) {
@@ -2604,6 +2620,7 @@ class SourceFilter extends Filter {
 }
 SourceFilter._DEFAULT_META = {
 	isIncludeOtherSources: false,
+	isSortedByReleaseDate: false,
 };
 SourceFilter._SRD_SOURCES = null;
 SourceFilter._BASIC_RULES_SOURCES = null;
