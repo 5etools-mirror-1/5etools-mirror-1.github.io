@@ -624,7 +624,7 @@ class DisallowlistUi {
 	}
 
 	async _pImport_getUserUpload () {
-		return DataUtil.pUserUpload({expectedFileTypes: ["content-disallowlist"]});
+		return DataUtil.pUserUpload({expectedFileTypes: ["content-disallowlist", "content-blacklist"]}); // Supports old fileType "content-blacklist"
 	}
 
 	async _pImport (evt) {
@@ -641,7 +641,7 @@ class DisallowlistUi {
 		const json = jsons[0];
 
 		// update storage
-		const nxtList = evt.shiftKey ? MiscUtil.copy(this._excludes).concat(json.disallowlist || []) : json.disallowlist || [];
+		const nxtList = evt.shiftKey ? MiscUtil.copy(this._excludes).concat(json.disallowlist || json.blacklist || []) : json.disallowlist || json.blacklist || []; // Supports old key "blacklist"
 		this._excludes = nxtList;
 		if (this._isAutoSave) await ExcludeUtil.pSetList(nxtList);
 
