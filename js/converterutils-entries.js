@@ -1,6 +1,6 @@
 "use strict";
 
-const LAST_KEY_WHITELIST = new Set([
+const LAST_KEY_ALLOWLIST = new Set([
 	"entries",
 	"entry",
 	"items",
@@ -29,7 +29,7 @@ class TagJsons {
 					{_: json[k]},
 					{
 						object: (obj, lastKey) => {
-							if (lastKey != null && !LAST_KEY_WHITELIST.has(lastKey)) return obj;
+							if (lastKey != null && !LAST_KEY_ALLOWLIST.has(lastKey)) return obj;
 
 							obj = TagCondition.tryRunBasic(obj);
 							obj = SkillTag.tryRun(obj);

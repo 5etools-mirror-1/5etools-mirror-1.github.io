@@ -9,7 +9,7 @@ class GenTables {
 	_doLoadAdventureData () {
 		return ut.readJson(`./data/adventures.json`).adventure
 			.map(idx => {
-				if (GenTables.ADVENTURE_WHITELIST[idx.id]) {
+				if (GenTables.ADVENTURE_ALLOWLIST[idx.id]) {
 					return {
 						adventure: idx,
 						adventureData: JSON.parse(fs.readFileSync(`./data/adventure/adventure-${idx.id.toLowerCase()}.json`, "utf-8")),
@@ -136,7 +136,7 @@ class GenTables {
 	}
 }
 GenTables.BOOK_DISALLOWLIST = {};
-GenTables.ADVENTURE_WHITELIST = {
+GenTables.ADVENTURE_ALLOWLIST = {
 	[SRC_SKT]: true,
 	[SRC_TTP]: true,
 };

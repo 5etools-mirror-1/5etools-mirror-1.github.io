@@ -79,7 +79,7 @@ function isDirectory (path) {
 	return fs.lstatSync(path).isDirectory();
 }
 
-const FILE_EXTENSION_WHITELIST = [
+const FILE_EXTENSION_ALLOWLIST = [
 	".json",
 ];
 
@@ -95,22 +95,22 @@ const FILE_PREFIX_DISALLOWLIST = [
  *
  * @param [opts] Options object.
  * @param [opts.disallowlistFilePrefixes] Disallowlisted filename prefixes (case sensitive).
- * @param [opts.whitelistFileExts] Whitelisted filename extensions (case sensitive).
+ * @param [opts.allowlistFileExts] Allowlisted filename extensions (case sensitive).
  * @param [opts.dir] Directory to list.
- * @param [opts.whitelistDirs] Directory whitelist.
+ * @param [opts.allowlistDirs] Directory allowlist.
  */
 function listFiles (opts) {
 	opts = opts || {};
 	opts.dir = opts.dir || "./data";
 	opts.disallowlistFilePrefixes = opts.disallowlistFilePrefixes || FILE_PREFIX_DISALLOWLIST;
-	opts.whitelistFileExts = opts.whitelistFileExts || FILE_EXTENSION_WHITELIST;
-	opts.whitelistDirs = opts.whitelistDirs || null;
+	opts.allowlistFileExts = opts.allowlistFileExts || FILE_EXTENSION_ALLOWLIST;
+	opts.allowlistDirs = opts.allowlistDirs || null;
 
 	const dirContent = fs.readdirSync(opts.dir, "utf8")
 		.filter(file => {
 			const path = `${opts.dir}/${file}`;
-			if (isDirectory(path)) return opts.whitelistDirs ? opts.whitelistDirs.includes(path) : true;
-			return !opts.disallowlistFilePrefixes.some(it => file.startsWith(it)) && opts.whitelistFileExts.some(it => file.endsWith(it));
+			if (isDirectory(path)) return opts.allowlistDirs ? opts.allowlistDirs.includes(path) : true;
+			return !opts.disallowlistFilePrefixes.some(it => file.startsWith(it)) && opts.allowlistFileExts.some(it => file.endsWith(it));
 		})
 		.map(file => `${opts.dir}/${file}`);
 

@@ -895,13 +895,13 @@ DamageTypeTag._DISALLOWLIST_NAMES = new Set([
 
 class MiscTag {
 	/** @return empty string for easy use in `.replace` */
-	static _addTag ({tagSet, whitelistTags, tag}) {
-		if (whitelistTags != null && !whitelistTags.has(tag)) return "";
+	static _addTag ({tagSet, allowlistTags, tag}) {
+		if (allowlistTags != null && !allowlistTags.has(tag)) return "";
 		tagSet.add(tag);
 		return "";
 	}
 
-	static _handleProp ({m, prop, tagSet, whitelistTags}) {
+	static _handleProp ({m, prop, tagSet, allowlistTags}) {
 		if (!m[prop]) return;
 
 		m[prop].forEach(it => {
@@ -915,27 +915,27 @@ class MiscTag {
 				strEntries.replace(/{@atk ([^}]+)}/g, (...mx) => {
 					const spl = mx[1].split(",");
 					if (spl.includes("rw")) {
-						this._addTag({tagSet, whitelistTags, tag: "RW"});
+						this._addTag({tagSet, allowlistTags, tag: "RW"});
 						hasRangedAttack = true;
 					}
-					if (spl.includes("mw")) this._addTag({tagSet, whitelistTags, tag: "MW"});
+					if (spl.includes("mw")) this._addTag({tagSet, allowlistTags, tag: "MW"});
 				});
 
 				// - reach
 				strEntries.replace(/reach (\d+) ft\./g, (...m) => {
-					if (Number(m[1]) > 5) this._addTag({tagSet, whitelistTags, tag: "RCH"});
+					if (Number(m[1]) > 5) this._addTag({tagSet, allowlistTags, tag: "RCH"});
 				});
 
 				// AoE effects
-				strEntries.replace(/\d+-foot[- ](line|cube|cone|radius|sphere|hemisphere|cylinder)/g, () => this._addTag({tagSet, whitelistTags, tag: "AOE"}));
-				strEntries.replace(/each creature within \d+ feet/gi, () => this._addTag({tagSet, whitelistTags, tag: "AOE"}));
+				strEntries.replace(/\d+-foot[- ](line|cube|cone|radius|sphere|hemisphere|cylinder)/g, () => this._addTag({tagSet, allowlistTags, tag: "AOE"}));
+				strEntries.replace(/each creature within \d+ feet/gi, () => this._addTag({tagSet, allowlistTags, tag: "AOE"}));
 
-				strEntries.replace(/\bhit point maximum is reduced\b/gi, () => this._addTag({tagSet, whitelistTags, tag: "HPR"}));
+				strEntries.replace(/\bhit point maximum is reduced\b/gi, () => this._addTag({tagSet, allowlistTags, tag: "HPR"}));
 			}
 
 			if (it.name) {
 				// thrown weapon (PHB only)
-				if (hasRangedAttack) MiscTag._THROWN_WEAPON_MATCHERS.forEach(r => it.name.replace(r, () => this._addTag({tagSet, whitelistTags, tag: "THW"})));
+				if (hasRangedAttack) MiscTag._THROWN_WEAPON_MATCHERS.forEach(r => it.name.replace(r, () => this._addTag({tagSet, allowlistTags, tag: "THW"})));
 
 				// other ranged weapon (PHB only)
 				MiscTag._RANGED_WEAPON_MATCHERS.forEach(r => it.name.replace(r, () => {
@@ -945,20 +945,20 @@ class MiscTag {
 						// Avoid adding the "ranged attack" tag for spell attacks
 						if (spl.includes("rs")) return;
 					}
-					this._addTag({tagSet, whitelistTags, tag: "RNG"});
+					this._addTag({tagSet, allowlistTags, tag: "RNG"});
 				}));
 			}
 		});
 	}
 
-	static tryRun (m, {isAdditiveOnly = false, whitelistTags = null} = {}) {
+	static tryRun (m, {isAdditiveOnly = false, allowlistTags = null} = {}) {
 		const tagSet = new Set(isAdditiveOnly ? m.miscTags || [] : []);
-		MiscTag._handleProp({m, prop: "action", tagSet, whitelistTags});
-		MiscTag._handleProp({m, prop: "trait", tagSet, whitelistTags});
-		MiscTag._handleProp({m, prop: "reaction", tagSet, whitelistTags});
-		MiscTag._handleProp({m, prop: "bonus", tagSet, whitelistTags});
-		MiscTag._handleProp({m, prop: "legendary", tagSet, whitelistTags});
-		MiscTag._handleProp({m, prop: "mythic", tagSet, whitelistTags});
+		MiscTag._handleProp({m, prop: "action", tagSet, allowlistTags});
+		MiscTag._handleProp({m, prop: "trait", tagSet, allowlistTags});
+		MiscTag._handleProp({m, prop: "reaction", tagSet, allowlistTags});
+		MiscTag._handleProp({m, prop: "bonus", tagSet, allowlistTags});
+		MiscTag._handleProp({m, prop: "legendary", tagSet, allowlistTags});
+		MiscTag._handleProp({m, prop: "mythic", tagSet, allowlistTags});
 		if (tagSet.size) m.miscTags = [...tagSet];
 		else delete m.miscTags;
 	}

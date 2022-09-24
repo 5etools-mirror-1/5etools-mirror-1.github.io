@@ -8,8 +8,8 @@ require("../js/utils");
 
 const files = ut.listFiles({
 	dir: ".",
-	whitelistDirs: [],
-	whitelistFileExts: [".html"],
+	allowlistDirs: [],
+	allowlistFileExts: [".html"],
 });
 
 const ALL_JS_FILES = new Set([]);

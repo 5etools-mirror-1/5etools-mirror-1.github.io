@@ -6912,9 +6912,9 @@ Renderer.item = {
 	/**
 	 * @param item
 	 * @param isCompact
-	 * @param wrappedTypeWhitelist An optional set of: `"note", "type", "property", "variant"`
+	 * @param wrappedTypeAllowlist An optional set of: `"note", "type", "property", "variant"`
 	 */
-	getRenderedEntries (item, {isCompact = false, wrappedTypeWhitelist = null} = {}) {
+	getRenderedEntries (item, {isCompact = false, wrappedTypeAllowlist = null} = {}) {
 		const renderer = Renderer.get();
 
 		const handlersName = {
@@ -6930,7 +6930,7 @@ Renderer.item = {
 			const entry = MiscUtil.copy({type: "entries", entries: item._fullEntries || item.entries});
 			let procEntry = Renderer.item._GET_RENDERED_ENTRIES_WALKER.walk(entry, handlersName);
 			if (handlersVariantName) procEntry = Renderer.item._GET_RENDERED_ENTRIES_WALKER.walk(entry, handlersVariantName);
-			if (wrappedTypeWhitelist) procEntry.entries = procEntry.entries.filter(it => !it?.data?.[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG] || wrappedTypeWhitelist.has(it?.data?.[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]));
+			if (wrappedTypeAllowlist) procEntry.entries = procEntry.entries.filter(it => !it?.data?.[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG] || wrappedTypeAllowlist.has(it?.data?.[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]));
 			renderer.recursiveRender(procEntry, renderStack, {depth: 1});
 		}
 
@@ -6938,7 +6938,7 @@ Renderer.item = {
 			const additionEntries = MiscUtil.copy({type: "entries", entries: item._fullAdditionalEntries || item.additionalEntries});
 			let procAdditionEntries = Renderer.item._GET_RENDERED_ENTRIES_WALKER.walk(additionEntries, handlersName);
 			if (handlersVariantName) procAdditionEntries = Renderer.item._GET_RENDERED_ENTRIES_WALKER.walk(additionEntries, handlersVariantName);
-			if (wrappedTypeWhitelist) procAdditionEntries.entries = procAdditionEntries.entries.filter(it => !it?.data?.[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG] || wrappedTypeWhitelist.has(it?.data?.[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]));
+			if (wrappedTypeAllowlist) procAdditionEntries.entries = procAdditionEntries.entries.filter(it => !it?.data?.[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG] || wrappedTypeAllowlist.has(it?.data?.[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]));
 			renderer.recursiveRender(procAdditionEntries, renderStack, {depth: 1});
 		}
 

@@ -3744,16 +3744,16 @@ function MixinComponentHistory (Cls) {
 			this._histStackRedo = [];
 			this._isHistDisabled = true;
 			this._histPropDisallowlist = new Set();
-			this._histPropWhitelist = null;
+			this._histPropAllowlist = null;
 
 			this._histInitialState = null;
 		}
 
 		set isHistDisabled (val) { this._isHistDisabled = val; }
 		addDisallowlistProps (...props) { props.forEach(p => this._histPropDisallowlist.add(p)); }
-		addWhitelistProps (...props) {
-			this._histPropWhitelist = this._histPropWhitelist || new Set();
-			props.forEach(p => this._histPropWhitelist.add(p));
+		addAllowlistProps (...props) {
+			this._histPropAllowlist = this._histPropAllowlist || new Set();
+			props.forEach(p => this._histPropAllowlist.add(p));
 		}
 
 		/**
@@ -3767,7 +3767,7 @@ function MixinComponentHistory (Cls) {
 			this._addHookAll("state", prop => {
 				if (this._isHistDisabled) return;
 				if (this._histPropDisallowlist.has(prop)) return;
-				if (this._histPropWhitelist && !this._histPropWhitelist.has(prop)) return;
+				if (this._histPropAllowlist && !this._histPropAllowlist.has(prop)) return;
 
 				this.recordHistory();
 			});
@@ -3778,7 +3778,7 @@ function MixinComponentHistory (Cls) {
 
 			// remove any un-tracked properties
 			this._histPropDisallowlist.forEach(prop => delete stateCopy[prop]);
-			if (this._histPropWhitelist) Object.keys(stateCopy).filter(k => !this._histPropWhitelist.has(k)).forEach(k => delete stateCopy[k]);
+			if (this._histPropAllowlist) Object.keys(stateCopy).filter(k => !this._histPropAllowlist.has(k)).forEach(k => delete stateCopy[k]);
 
 			this._histStackUndo.push(stateCopy);
 			this._histStackRedo = [];
@@ -3787,7 +3787,7 @@ function MixinComponentHistory (Cls) {
 		_histAddExcludedProperties (stateCopy) {
 			Object.entries(this._state).forEach(([k, v]) => {
 				if (this._histPropDisallowlist.has(k)) return stateCopy[k] = v;
-				if (this._histPropWhitelist && !this._histPropWhitelist.has(k)) stateCopy[k] = v;
+				if (this._histPropAllowlist && !this._histPropAllowlist.has(k)) stateCopy[k] = v;
 			});
 		}
 

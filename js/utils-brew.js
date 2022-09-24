@@ -1931,9 +1931,9 @@ class ManageBrewUi {
 
 		// region Filter output by selected sources
 		const cpyBrew = MiscUtil.copy(brew.body);
-		const sourceWhitelist = new Set(choices.map(it => it.json));
+		const sourceAllowlist = new Set(choices.map(it => it.json));
 
-		cpyBrew._meta.sources = cpyBrew._meta.sources.filter(it => sourceWhitelist.has(it.json));
+		cpyBrew._meta.sources = cpyBrew._meta.sources.filter(it => sourceAllowlist.has(it.json));
 
 		Object.entries(cpyBrew)
 			.forEach(([k, v]) => {
@@ -1942,7 +1942,7 @@ class ManageBrewUi {
 				cpyBrew[k] = v.filter(it => {
 					const source = SourceUtil.getEntitySource(it);
 					if (!source) return true;
-					return sourceWhitelist.has(source);
+					return sourceAllowlist.has(source);
 				});
 			});
 		// endregion

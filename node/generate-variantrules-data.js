@@ -6,7 +6,7 @@ class GenVariantrules {
 	_doLoadAdventureData () {
 		return ut.readJson(`./data/adventures.json`).adventure
 			.map(idx => {
-				if (GenVariantrules.ADVENTURE_WHITELIST[idx.id]) {
+				if (GenVariantrules.ADVENTURE_ALLOWLIST[idx.id]) {
 					return {
 						adventure: idx,
 						adventureData: JSON.parse(fs.readFileSync(`./data/adventure/adventure-${idx.id.toLowerCase()}.json`, "utf-8")),
@@ -117,7 +117,7 @@ class GenVariantrules {
 	}
 }
 GenVariantrules.BOOK_DISALLOWLIST = {};
-GenVariantrules.ADVENTURE_WHITELIST = {};
+GenVariantrules.ADVENTURE_ALLOWLIST = {};
 GenVariantrules._WALKER = null;
 
 const generator = new GenVariantrules();
