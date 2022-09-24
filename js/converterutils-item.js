@@ -359,7 +359,7 @@ BonusTag._RE_SPEED_BONUS_SPECIFIC = new RegExp(`increas(?:ing|e) your ${BonusTag
 
 class BasicTextClean {
 	static tryRun (it, opts) {
-		const walker = MiscUtil.getWalker({keyBlacklist: new Set(["type"])});
+		const walker = MiscUtil.getWalker({keyDisallowlist: new Set(["type"])});
 		walker.walk(it, {
 			array: (arr) => {
 				return arr.filter(it => {
@@ -404,7 +404,7 @@ class ItemSpellcastingFocusTag {
 		if (it.entries || (it.inherits && it.inherits.entries)) {
 			const tgt = it.entries ? it : it.inherits;
 
-			const walker = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST, isNoModification: true});
+			const walker = MiscUtil.getWalker({keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST, isNoModification: true});
 			walker.walk(
 				tgt,
 				{
@@ -505,7 +505,7 @@ class DamageResistanceImmunityVulnerabilityTag {
 	}
 
 	static tryRun (prop, reOuter, it, opts) {
-		DamageResistanceImmunityVulnerabilityTag._WALKER = DamageResistanceImmunityVulnerabilityTag._WALKER || MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST, isNoModification: true});
+		DamageResistanceImmunityVulnerabilityTag._WALKER = DamageResistanceImmunityVulnerabilityTag._WALKER || MiscUtil.getWalker({keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST, isNoModification: true});
 
 		if (it.entries) this._checkAndTag(prop, reOuter, it, opts);
 		if (it.inherits && it.inherits.entries) this._checkAndTag(prop, reOuter, it.inherits, opts);
@@ -537,7 +537,7 @@ class ConditionImmunityTag {
 	}
 
 	static tryRun (it, opts) {
-		ConditionImmunityTag._WALKER = ConditionImmunityTag._WALKER || MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST, isNoModification: true});
+		ConditionImmunityTag._WALKER = ConditionImmunityTag._WALKER || MiscUtil.getWalker({keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST, isNoModification: true});
 
 		if (it.entries) this._checkAndTag(it, opts);
 		if (it.inherits && it.inherits.entries) this._checkAndTag(it.inherits, opts);

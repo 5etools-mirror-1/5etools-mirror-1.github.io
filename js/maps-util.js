@@ -4,7 +4,7 @@ class MapsUtil {
 	static getImageData ({prop, head, body}) {
 		if (!head || !body) throw new Error(`Both a "head" and a "body" must be specified!`);
 
-		const walker = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST, isNoModification: true});
+		const walker = MiscUtil.getWalker({keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST, isNoModification: true});
 
 		const out = [];
 

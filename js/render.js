@@ -2660,7 +2660,7 @@ Renderer.utils = {
 			isExcluded = isExcluded
 				|| dataProp === "item" ? Renderer.item.isExcluded(entity, {hash}) : ExcludeUtil.isExcluded(hash, dataProp, entity.source);
 		}
-		return isExcluded ? `<div class="text-center text-danger"><b><i>Warning: This content has been <a href="blacklist.html">blacklisted</a>.</i></b></div>` : "";
+		return isExcluded ? `<div class="text-center text-danger"><b><i>Warning: This content has been <a href="disallowlist.html">disallowlisted</a>.</i></b></div>` : "";
 	},
 
 	getSourceAndPageTrHtml (it, {tag, fnUnpackUid} = {}) {
@@ -2985,7 +2985,7 @@ Renderer.utils = {
 		end = end.replace().replace(/[aeiou]/g, "");
 		return `${start}${end}`.toTitleCase();
 	},
-	getPrerequisiteHtml: (prerequisites, {isListMode = false, blacklistKeys = new Set(), isTextOnly = false, isSkipPrefix = false} = {}) => {
+	getPrerequisiteHtml: (prerequisites, {isListMode = false, disallowlistKeys = new Set(), isTextOnly = false, isSkipPrefix = false} = {}) => {
 		if (!prerequisites) return isListMode ? "\u2014" : "";
 
 		let cntPrerequisites = 0;
@@ -2994,7 +2994,7 @@ Renderer.utils = {
 			const prereqsToJoin = Object.entries(pr)
 				.sort(([kA], [kB]) => Renderer.utils._prereqWeights[kA] - Renderer.utils._prereqWeights[kB])
 				.map(([k, v]) => {
-					if (k === "note" || blacklistKeys.has(k)) return false;
+					if (k === "note" || disallowlistKeys.has(k)) return false;
 
 					cntPrerequisites += 1;
 
@@ -3886,7 +3886,7 @@ Renderer.class = {
 
 	getWalkerFilterDereferencedFeatures () {
 		return MiscUtil.getWalker({
-			keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+			keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST,
 			isAllowDeleteObjects: true,
 			isDepthFirst: true,
 		});
@@ -6950,7 +6950,7 @@ Renderer.item = {
 	},
 
 	_GET_RENDERED_ENTRIES_WALKER: MiscUtil.getWalker({
-		keyBlacklist: new Set(["caption", "type", "colLabels", "dataCreature", "dataSpell", "dataItem", "dataObject", "dataTrapHazard", "name"]),
+		keyDisallowlist: new Set(["caption", "type", "colLabels", "dataCreature", "dataSpell", "dataItem", "dataObject", "dataTrapHazard", "name"]),
 	}),
 	_getRenderedEntries_handlerConvertNamesToItalics (item, baseName, str) {
 		if (item._fIsMundane) return str;
@@ -7417,7 +7417,7 @@ Renderer.item = {
 		};
 	},
 
-	_INHERITED_PROPS_BLACKLIST: new Set([
+	_INHERITED_PROPS_DISALLOWLIST: new Set([
 		"entries", // Entries have specific merging
 		"namePrefix", // Name prefix/suffix are meaningless
 		"nameSuffix",
@@ -7427,7 +7427,7 @@ Renderer.item = {
 		genericVariant._isInherited = true;
 
 		for (const prop in genericVariant.inherits) {
-			if (Renderer.item._INHERITED_PROPS_BLACKLIST.has(prop)) continue;
+			if (Renderer.item._INHERITED_PROPS_DISALLOWLIST.has(prop)) continue;
 
 			const val = genericVariant.inherits[prop];
 
@@ -7599,7 +7599,7 @@ Renderer.item = {
 		if (!ent.entriesTemplate) return MiscUtil.copy(ent.entries);
 		return MiscUtil
 			.getWalker({
-				keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+				keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST,
 			})
 			.walk(
 				MiscUtil.copy(ent.entriesTemplate),
@@ -8506,7 +8506,7 @@ Renderer.recipe = {
 			.forEach(prop => {
 				if (!cpyR[prop]) return;
 
-				MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST}).walk(
+				MiscUtil.getWalker({keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST}).walk(
 					cpyR[prop],
 					{
 						object: (obj) => {
@@ -8822,7 +8822,7 @@ Renderer.hover = {
 					"Close Others",
 					() => {
 						const hoverId = Renderer.hover._contextMenuLastClicked?.hoverId;
-						Renderer.hover._doCloseAllWindows({hoverIdBlacklist: new Set([hoverId])});
+						Renderer.hover._doCloseAllWindows({hoverIdDisallowlist: new Set([hoverId])});
 					},
 				),
 				new ContextUtil.Action(
@@ -8850,9 +8850,9 @@ Renderer.hover = {
 		}
 	},
 
-	_doCloseAllWindows ({hoverIdBlacklist = null} = {}) {
+	_doCloseAllWindows ({hoverIdDisallowlist = null} = {}) {
 		Object.entries(Renderer.hover._WINDOW_METAS)
-			.filter(([hoverId, meta]) => hoverIdBlacklist == null || !hoverIdBlacklist.has(Number(hoverId)))
+			.filter(([hoverId, meta]) => hoverIdDisallowlist == null || !hoverIdDisallowlist.has(Number(hoverId)))
 			.forEach(([, meta]) => meta.doClose());
 	},
 
@@ -10284,7 +10284,7 @@ Renderer.hover = {
 	_pWalkAdventureBook_addImageBackReferences (json, page, source, hash) {
 		if (!json) return;
 
-		const walker = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST, isNoModification: true});
+		const walker = MiscUtil.getWalker({keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST, isNoModification: true});
 		walker.walk(
 			json,
 			{
@@ -10488,11 +10488,11 @@ Renderer.hover = {
 		const ptrHasRef = {_: false};
 
 		const walker = MiscUtil.getWalker({
-			keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+			keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST,
 			isNoModification: true,
 		});
 		const walkerMod = MiscUtil.getWalker({
-			keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+			keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST,
 		});
 
 		const handlers = {
@@ -10567,7 +10567,7 @@ Renderer.hover = {
 								: DataUtil.class.unpackUidSubclassFeature(toReplaceMeta.subclassFeature);
 							const refHash = UrlUtil.URL_TO_HASH_BUILDER[prop](refUnpacked);
 
-							// Skip blacklisted
+							// Skip disallowlisted
 							if (ExcludeUtil.isInitialised && ExcludeUtil.isExcluded(refHash, prop, refUnpacked.source, {isNoCount: true})) {
 								cntReplaces++;
 								toReplaceMeta.array[toReplaceMeta.ix] = {};
@@ -10594,7 +10594,7 @@ Renderer.hover = {
 							const refUnpacked = DataUtil.generic.unpackUid(toReplaceMeta.optionalfeature, "optfeature");
 							const refHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_OPT_FEATURES](refUnpacked);
 
-							// Skip blacklisted
+							// Skip disallowlisted
 							if (ExcludeUtil.isInitialised && ExcludeUtil.isExcluded(refHash, "optionalfeature", refUnpacked.source, {isNoCount: true})) {
 								cntReplaces++;
 								toReplaceMeta.array[toReplaceMeta.ix] = {};
@@ -10929,14 +10929,14 @@ Renderer.hover = {
  * @param [opts] Options object.
  * @param [opts.maxDepth] Maximum depth to search for
  * @param [opts.depth] Start depth (used internally when recursing)
- * @param [opts.typeBlacklist] A set of entry types to avoid.
+ * @param [opts.typeDisallowlist] A set of entry types to avoid.
  */
 Renderer.getNames = function (nameStack, entry, opts) {
 	opts = opts || {};
 	if (opts.maxDepth == null) opts.maxDepth = false;
 	if (opts.depth == null) opts.depth = 0;
 
-	if (opts.typeBlacklist && entry.type && opts.typeBlacklist.has(entry.type)) return;
+	if (opts.typeDisallowlist && entry.type && opts.typeDisallowlist.has(entry.type)) return;
 
 	if (opts.maxDepth !== false && opts.depth > opts.maxDepth) return;
 	if (entry.name) nameStack.push(Renderer.stripTags(entry.name));

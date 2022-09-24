@@ -27,7 +27,7 @@ class DmMapper {
 				let hasMaps = false;
 				const walker = MiscUtil.getWalker({
 					isBreakOnReturn: true,
-					keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+					keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST,
 					isNoModification: true,
 				});
 				walker.walk(

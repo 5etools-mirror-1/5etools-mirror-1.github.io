@@ -156,7 +156,7 @@ class FeatParser extends BaseParser {
 
 	static _setAbility (feat, options) {
 		const walker = MiscUtil.getWalker({
-			keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+			keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST,
 			isNoModification: true,
 		});
 		walker.walk(

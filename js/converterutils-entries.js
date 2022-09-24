@@ -56,16 +56,16 @@ class TagJsons {
 
 TagJsons.OPTIMISTIC = true;
 
-TagJsons._BLACKLIST_FILE_PREFIXES = null;
+TagJsons._DISALLOWLIST_FILE_PREFIXES = null;
 
-TagJsons.WALKER_KEY_BLACKLIST = new Set([
-	...MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+TagJsons.WALKER_KEY_DISALLOWLIST = new Set([
+	...MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST,
 	"dataCreature",
 	"dataObject",
 ]);
 
 TagJsons.WALKER = MiscUtil.getWalker({
-	keyBlacklist: TagJsons.WALKER_KEY_BLACKLIST,
+	keyDisallowlist: TagJsons.WALKER_KEY_DISALLOWLIST,
 });
 
 class SpellTag {
@@ -223,8 +223,8 @@ ItemTag._ITEM_NAMES = {};
 ItemTag._ITEM_NAMES_REGEX_TOOLS = null;
 
 ItemTag._WALKER = MiscUtil.getWalker({
-	keyBlacklist: new Set([
-		...TagJsons.WALKER_KEY_BLACKLIST,
+	keyDisallowlist: new Set([
+		...TagJsons.WALKER_KEY_DISALLOWLIST,
 		"packContents", // Avoid tagging item pack contents
 		"items", // Avoid tagging item group item lists
 	]),

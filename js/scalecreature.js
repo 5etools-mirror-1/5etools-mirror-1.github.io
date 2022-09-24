@@ -2240,7 +2240,7 @@
 
 		if (!mon.summonedBySpell || mon.summonedBySpellLevel == null) return mon;
 
-		ScaleSpellSummonedCreature._WALKER = ScaleSpellSummonedCreature._WALKER || MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+		ScaleSpellSummonedCreature._WALKER = ScaleSpellSummonedCreature._WALKER || MiscUtil.getWalker({keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST});
 
 		const state = new ScaleSpellSummonedCreature.State({});
 
@@ -2342,7 +2342,7 @@
 
 		if (!mon.summonedByClass || toClassLevel < 1) return mon;
 
-		ScaleClassSummonedCreature._WALKER = ScaleClassSummonedCreature._WALKER || MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+		ScaleClassSummonedCreature._WALKER = ScaleClassSummonedCreature._WALKER || MiscUtil.getWalker({keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST});
 
 		const className = mon.summonedByClass.split("|")[0].toTitleCase();
 		const state = new ScaleClassSummonedCreature.State({

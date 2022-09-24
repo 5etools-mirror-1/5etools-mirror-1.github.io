@@ -77,7 +77,7 @@ class MiscTagsTagger {
 	static tryRun (sp, options) {
 		const tags = new Set(sp.miscTags || []);
 
-		MiscTagsTagger._WALKER = MiscTagsTagger._WALKER || MiscUtil.getWalker({isNoModification: true, keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+		MiscTagsTagger._WALKER = MiscTagsTagger._WALKER || MiscUtil.getWalker({isNoModification: true, keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST});
 		MiscTagsTagger._WALKER.walk(
 			[sp.entries, sp.entriesHigherLevel],
 			{

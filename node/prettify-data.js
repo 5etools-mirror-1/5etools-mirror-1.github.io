@@ -5,7 +5,7 @@ const ut = require("./util");
 require("../js/utils");
 const PropOrder = require("../js/utils-proporder");
 
-const FILE_BLACKLIST = new Set([
+const FILE_DISALLOWLIST = new Set([
 	"loot.json",
 	"msbcr.json",
 	"monsterfeatures.json",
@@ -32,7 +32,7 @@ const _FILE_PROP_ORDER = [
 	"subclassFeature",
 ];
 
-const KEY_BLACKLIST = new Set(["data", "itemTypeAdditionalEntries", "itemType", "itemProperty", "itemEntry"]);
+const KEY_DISALLOWLIST = new Set(["data", "itemTypeAdditionalEntries", "itemType", "itemProperty", "itemEntry"]);
 
 const PROPS_TO_UNHANDLED_KEYS = {};
 
@@ -115,7 +115,7 @@ function prettifyFolder (folder) {
 	console.log(`Prettifying directory ${folder}...`);
 	const files = ut.listFiles({dir: folder});
 	files
-		.filter(file => file.endsWith(".json") && !FILE_BLACKLIST.has(file.split("/").last()))
+		.filter(file => file.endsWith(".json") && !FILE_DISALLOWLIST.has(file.split("/").last()))
 		.forEach(file => {
 			console.log(`\tPrettifying ${file}...`);
 			let json = ut.readJson(file);
@@ -123,7 +123,7 @@ function prettifyFolder (folder) {
 
 			// region Sort keys within entities
 			Object.entries(json)
-				.filter(([k, v]) => !KEY_BLACKLIST.has(k) && v instanceof Array)
+				.filter(([k, v]) => !KEY_DISALLOWLIST.has(k) && v instanceof Array)
 				.forEach(([k, v]) => {
 					if (PropOrder.hasOrder(k)) {
 						PROPS_TO_UNHANDLED_KEYS[k] = PROPS_TO_UNHANDLED_KEYS[k] || new Set();

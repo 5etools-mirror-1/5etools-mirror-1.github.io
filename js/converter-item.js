@@ -315,7 +315,7 @@ class ItemParser extends BaseParser {
 	static _setCleanTaglineInfo_handleBaseItem (stats, baseItem, options) {
 		if (!baseItem) return;
 
-		const blacklistedProps = new Set([
+		const disallowlistedProps = new Set([
 			"source",
 			"srd",
 			"basicRules",
@@ -324,7 +324,7 @@ class ItemParser extends BaseParser {
 
 		// Apply base item stats only if there's no existing data
 		Object.entries(baseItem)
-			.filter(([k]) => stats[k] === undefined && !k.startsWith("_") && !blacklistedProps.has(k))
+			.filter(([k]) => stats[k] === undefined && !k.startsWith("_") && !disallowlistedProps.has(k))
 			.forEach(([k, v]) => stats[k] = v);
 
 		// Clean unwanted base properties

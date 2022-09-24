@@ -83,7 +83,7 @@ const FILE_EXTENSION_WHITELIST = [
 	".json",
 ];
 
-const FILE_PREFIX_BLACKLIST = [
+const FILE_PREFIX_DISALLOWLIST = [
 	"bookref-",
 	"roll20-",
 	"foundry-",
@@ -94,7 +94,7 @@ const FILE_PREFIX_BLACKLIST = [
  * Recursively list all files in a directory.
  *
  * @param [opts] Options object.
- * @param [opts.blacklistFilePrefixes] Blacklisted filename prefixes (case sensitive).
+ * @param [opts.disallowlistFilePrefixes] Disallowlisted filename prefixes (case sensitive).
  * @param [opts.whitelistFileExts] Whitelisted filename extensions (case sensitive).
  * @param [opts.dir] Directory to list.
  * @param [opts.whitelistDirs] Directory whitelist.
@@ -102,7 +102,7 @@ const FILE_PREFIX_BLACKLIST = [
 function listFiles (opts) {
 	opts = opts || {};
 	opts.dir = opts.dir || "./data";
-	opts.blacklistFilePrefixes = opts.blacklistFilePrefixes || FILE_PREFIX_BLACKLIST;
+	opts.disallowlistFilePrefixes = opts.disallowlistFilePrefixes || FILE_PREFIX_DISALLOWLIST;
 	opts.whitelistFileExts = opts.whitelistFileExts || FILE_EXTENSION_WHITELIST;
 	opts.whitelistDirs = opts.whitelistDirs || null;
 
@@ -110,7 +110,7 @@ function listFiles (opts) {
 		.filter(file => {
 			const path = `${opts.dir}/${file}`;
 			if (isDirectory(path)) return opts.whitelistDirs ? opts.whitelistDirs.includes(path) : true;
-			return !opts.blacklistFilePrefixes.some(it => file.startsWith(it)) && opts.whitelistFileExts.some(it => file.endsWith(it));
+			return !opts.disallowlistFilePrefixes.some(it => file.startsWith(it)) && opts.whitelistFileExts.some(it => file.endsWith(it));
 		})
 		.map(file => `${opts.dir}/${file}`);
 
@@ -178,7 +178,7 @@ module.exports = {
 	dataRecurse,
 	readJson,
 	listFiles,
-	FILE_PREFIX_BLACKLIST,
+	FILE_PREFIX_DISALLOWLIST,
 	patchLoadJson: PatchLoadJson.patchLoadJson,
 	unpatchLoadJson: PatchLoadJson.unpatchLoadJson,
 	ArgParser,

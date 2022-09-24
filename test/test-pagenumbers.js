@@ -3,8 +3,8 @@ const rl = require("readline-sync");
 const fs = require("fs");
 require("../js/utils");
 
-const BLACKLIST_FILE_PREFIXES = [
-	...ut.FILE_PREFIX_BLACKLIST,
+const DISALLOWLIST_FILE_PREFIXES = [
+	...ut.FILE_PREFIX_DISALLOWLIST,
 	"fluff-",
 
 	// specific files
@@ -20,7 +20,7 @@ const BLACKLIST_FILE_PREFIXES = [
 	"characters.json",
 ];
 
-const BLACKLIST_KEYS = new Set([
+const DISALLOWLIST_KEYS = new Set([
 	"_meta",
 	"data",
 	"itemProperty",
@@ -39,7 +39,7 @@ const BLACKLIST_KEYS = new Set([
 ]);
 
 // Sources which only exist in digital form
-const BLACKLIST_SOURCES = new Set([
+const DISALLOWLIST_SOURCES = new Set([
 	"DC",
 	"SLW",
 	"SDW",
@@ -51,19 +51,19 @@ const SUB_KEYS = {};
 function run (isModificationMode) {
 	console.log(`##### Checking for Missing Page Numbers #####`);
 	const FILE_MAP = {};
-	const files = ut.listFiles({dir: `./data`, blacklistFilePrefixes: BLACKLIST_FILE_PREFIXES});
+	const files = ut.listFiles({dir: `./data`, disallowlistFilePrefixes: DISALLOWLIST_FILE_PREFIXES});
 	files
 		.forEach(file => {
 			let mods = 0;
 
 			const json = ut.readJson(file);
 			Object.keys(json)
-				.filter(k => !BLACKLIST_KEYS.has(k))
+				.filter(k => !DISALLOWLIST_KEYS.has(k))
 				.forEach(k => {
 					const data = json[k];
 					if (data instanceof Array) {
 						const noPage = data
-							.filter(it => !BLACKLIST_SOURCES.has(SourceUtil.getEntitySource(it)))
+							.filter(it => !DISALLOWLIST_SOURCES.has(SourceUtil.getEntitySource(it)))
 							.filter(it => !(it.inherits ? it.inherits.page : it.page))
 							.filter(it => !it._copy?._preserve?.page);
 
@@ -79,7 +79,7 @@ function run (isModificationMode) {
 										noPage.push(...subArr
 											// Skip un-named entries, as these are usually found on the page of their parent
 											.filter(subIt => subIt.name)
-											.filter(subIt => !BLACKLIST_SOURCES.has(subIt.source))
+											.filter(subIt => !DISALLOWLIST_SOURCES.has(subIt.source))
 											.filter(subIt => !subIt.page));
 									});
 							});

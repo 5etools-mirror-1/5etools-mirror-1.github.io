@@ -98,7 +98,7 @@ class NavBar {
 		this._addElement_dropdown(null, NavBar._CAT_UTILITIES);
 		this._addElement_li(NavBar._CAT_UTILITIES, "search.html", "Search");
 		this._addElement_divider(NavBar._CAT_UTILITIES);
-		this._addElement_li(NavBar._CAT_UTILITIES, "blacklist.html", "Content Blacklist");
+		this._addElement_li(NavBar._CAT_UTILITIES, "disallowlist.html", "Content Disallowlist");
 		this._addElement_li(NavBar._CAT_UTILITIES, "makebrew.html", "Homebrew Builder");
 		this._addElement_li(NavBar._CAT_UTILITIES, "managebrew.html", "Homebrew Manager");
 		this._addElement_divider(NavBar._CAT_UTILITIES);
@@ -142,7 +142,7 @@ class NavBar {
 			{
 				html: "Save State to File",
 				click: async (evt) => NavBar.InteractionManager._pOnClick_button_saveStateFile(evt),
-				title: "Save any locally-stored data (loaded homebrew, active blacklists, DM Screen configuration,...) to a file.",
+				title: "Save any locally-stored data (loaded homebrew, active disallowlists, DM Screen configuration,...) to a file.",
 			},
 		);
 		this._addElement_button(
@@ -150,7 +150,7 @@ class NavBar {
 			{
 				html: "Load State from File",
 				click: async (evt) => NavBar.InteractionManager._pOnClick_button_loadStateFile(evt),
-				title: "Load previously-saved data (loaded homebrew, active blacklists, DM Screen configuration,...) from a file.",
+				title: "Load previously-saved data (loaded homebrew, active disallowlists, DM Screen configuration,...) from a file.",
 			},
 		);
 		this._addElement_divider(NavBar._CAT_SETTINGS);
@@ -233,7 +233,7 @@ class NavBar {
 	/**
 	 * Adventure/book elements are added as a second, asynchronous, step, as they require loading of:
 	 * - An index JSON file.
-	 * - The user's Blacklist.
+	 * - The user's Disallowlist.
 	 */
 	static async _initAdventureBookElements () {
 		await BrewUtil2.pInit();

@@ -37,7 +37,7 @@ const MSG = {
 };
 
 const WALKER = MiscUtil.getWalker({
-	keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+	keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST,
 	isNoModification: true,
 });
 
@@ -304,8 +304,8 @@ class LinkCheck {
 		}
 	}
 }
-LinkCheck._RE_TAG_BLACKLIST = new Set(["quickref"]);
-LinkCheck.RE = RegExp(`{@(${Object.keys(Parser.TAG_TO_DEFAULT_SOURCE).filter(tag => !LinkCheck._RE_TAG_BLACKLIST.has(tag)).join("|")}) ([^}]*?)}`, "g");
+LinkCheck._RE_TAG_DISALLOWLIST = new Set(["quickref"]);
+LinkCheck.RE = RegExp(`{@(${Object.keys(Parser.TAG_TO_DEFAULT_SOURCE).filter(tag => !LinkCheck._RE_TAG_DISALLOWLIST.has(tag)).join("|")}) ([^}]*?)}`, "g");
 
 class ClassLinkCheck {
 	static addHandlers () {

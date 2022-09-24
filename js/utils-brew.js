@@ -295,7 +295,7 @@ class BrewUtil2 {
 		]);
 		if (!cpyBrews.length) return this._cache_brewsProc = {};
 
-		await this._pGetBrewProcessed_pDoBlacklistExtension({cpyBrews});
+		await this._pGetBrewProcessed_pDoDisallowlistExtension({cpyBrews});
 
 		// Avoid caching the meta merge, as we have our own cache. We might edit the brew, so we don't want a stale copy.
 		const cpyBrewsLoaded = await cpyBrews.pSerialAwaitMap(async ({head, body}) => DataUtil.pDoMetaMerge(head.url || head.docIdLocal, body, {isSkipMetaMergeCache: true}));
@@ -304,11 +304,11 @@ class BrewUtil2 {
 		return this._cache_brewsProc;
 	}
 
-	/** Homebrew files can contain embedded blacklists. */
-	static async _pGetBrewProcessed_pDoBlacklistExtension ({cpyBrews}) {
+	/** Homebrew files can contain embedded disallowlists. */
+	static async _pGetBrewProcessed_pDoDisallowlistExtension ({cpyBrews}) {
 		for (const {body} of cpyBrews) {
-			if (!body?.blacklist?.length || !(body.blacklist instanceof Array)) continue;
-			await ExcludeUtil.pExtendList(body.blacklist);
+			if (!body?.disallowlist?.length || !(body.disallowlist instanceof Array)) continue;
+			await ExcludeUtil.pExtendList(body.disallowlist);
 		}
 	}
 

@@ -1,6 +1,6 @@
 "use strict";
 
-class BlacklistUtil {
+class DisallowlistUtil {
 	static _IGNORED_CATEGORIES = new Set([
 		"_meta",
 		"linkedLootTables",
@@ -62,7 +62,7 @@ class BlacklistUtil {
 	}
 }
 
-class BlacklistUi {
+class DisallowlistUi {
 	constructor (
 		{
 			$wrpContent,
@@ -78,7 +78,7 @@ class BlacklistUi {
 
 		this._excludes = ExcludeUtil.getList();
 
-		this._subBlacklistEntries = {};
+		this._subDisallowlistEntries = {};
 
 		this._allSources = null;
 		this._allCategories = null;
@@ -113,37 +113,37 @@ class BlacklistUi {
 		if (this._isAutoSave) ExcludeUtil.pSetList(MiscUtil.copy(this._excludes)).then(null);
 	}
 
-	async _pInitSubBlacklistEntries () {
+	async _pInitSubDisallowlistEntries () {
 		for (const c of (this._data.class || [])) {
 			const classHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](c);
 
-			const subBlacklist = this._data.classFeature
+			const subDisallowlist = this._data.classFeature
 				.filter(it => it.className === c.name && it.classSource === c.source)
 				.map(it => {
 					const hash = UrlUtil.URL_TO_HASH_BUILDER["classFeature"](it);
 					const displayName = `${this._getDisplayNamePrefix_classFeature(it)}${it.name}`;
 					return {displayName, hash, category: "classFeature", source: it.source};
 				});
-			MiscUtil.set(this._subBlacklistEntries, "class", classHash, subBlacklist);
+			MiscUtil.set(this._subDisallowlistEntries, "class", classHash, subDisallowlist);
 		}
 
 		for (const sc of (this._data.subclass || [])) {
 			const subclassHash = UrlUtil.URL_TO_HASH_BUILDER["subclass"](sc);
 
-			const subBlacklist = this._data.subclassFeature
+			const subDisallowlist = this._data.subclassFeature
 				.filter(it => it.className === sc.className && it.classSource === sc.classSource && it.subclassShortName === sc.shortName && it.subclassSource === sc.source)
 				.map(it => {
 					const hash = UrlUtil.URL_TO_HASH_BUILDER["subclassFeature"](it);
 					const displayName = `${this._getDisplayNamePrefix_subclassFeature(it)}${it.name}`;
 					return {displayName, hash, category: "subclassFeature", source: it.source};
 				});
-			MiscUtil.set(this._subBlacklistEntries, "subclass", subclassHash, subBlacklist);
+			MiscUtil.set(this._subDisallowlistEntries, "subclass", subclassHash, subDisallowlist);
 		}
 
 		for (const it of (this._data.itemGroup || [])) {
 			const itemGroupHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS](it);
 
-			const subBlacklist = (await it.items.pSerialAwaitMap(async uid => {
+			const subDisallowlist = (await it.items.pSerialAwaitMap(async uid => {
 				let [name, source] = uid.split("|");
 				source = Parser.getTagSource("item", source);
 				const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS]({name, source});
@@ -152,18 +152,18 @@ class BlacklistUi {
 				return {displayName: item.name, hash, category: "item", source: item.source};
 			})).filter(Boolean);
 
-			MiscUtil.set(this._subBlacklistEntries, "itemGroup", itemGroupHash, subBlacklist);
+			MiscUtil.set(this._subDisallowlistEntries, "itemGroup", itemGroupHash, subDisallowlist);
 		}
 
 		for (const it of (this._data.race || []).filter(it => it._isBaseRace)) {
 			const baseRaceHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RACES](it);
 
-			const subBlacklist = it._subraces.map(sr => {
+			const subDisallowlist = it._subraces.map(sr => {
 				const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RACES](sr);
 				return {displayName: sr.name, hash, category: "race", source: sr.source};
 			});
 
-			MiscUtil.set(this._subBlacklistEntries, "race", baseRaceHash, subBlacklist);
+			MiscUtil.set(this._subDisallowlistEntries, "race", baseRaceHash, subDisallowlist);
 		}
 	}
 
@@ -185,7 +185,7 @@ class BlacklistUi {
 	_getDisplayNamePrefix_subclassFeature (it) { return `${it.className} (${it.subclassShortName}) ${it.level}: `; }
 
 	async pInit () {
-		await this._pInitSubBlacklistEntries();
+		await this._pInitSubDisallowlistEntries();
 		this._pInit_initUi();
 		this._pInit_render();
 		this._renderList();
@@ -216,7 +216,7 @@ class BlacklistUi {
 
 			<hr class="${this._isCompactUi ? "hr-2" : "hr-5"}">
 
-			<h4 class="my-0">Blacklist</h4>
+			<h4 class="my-0">Disallowlist</h4>
 			<div class="text-muted ${this._isCompactUi ? "mb-2" : "mb-3"}"><i>Rows marked with an asterisk (*) in a field match everything in that field.</i></div>
 
 			<div class="ve-flex-col min-h-0">
@@ -246,24 +246,24 @@ class BlacklistUi {
 
 	_pInit_render () {
 		// region Helper controls
-		const $btnExcludeAllUa = $(this._getBtnHtml_addToBlacklist())
+		const $btnExcludeAllUa = $(this._getBtnHtml_addToDisallowlist())
 			.click(() => this._addAllUa());
-		const $btnIncludeAllUa = $(this._getBtnHtml_removeFromBlacklist())
+		const $btnIncludeAllUa = $(this._getBtnHtml_removeFromDisallowlist())
 			.click(() => this._removeAllUa());
 
-		const $btnExcludeAllSources = $(this._getBtnHtml_addToBlacklist())
+		const $btnExcludeAllSources = $(this._getBtnHtml_addToDisallowlist())
 			.click(() => this._addAllSources());
-		const $btnIncludeAllSources = $(this._getBtnHtml_removeFromBlacklist())
+		const $btnIncludeAllSources = $(this._getBtnHtml_removeFromDisallowlist())
 			.click(() => this._removeAllSources());
 
-		const $btnExcludeAllComedySources = $(this._getBtnHtml_addToBlacklist())
+		const $btnExcludeAllComedySources = $(this._getBtnHtml_addToDisallowlist())
 			.click(() => this._addAllComedySources());
-		const $btnIncludeAllComedySources = $(this._getBtnHtml_removeFromBlacklist())
+		const $btnIncludeAllComedySources = $(this._getBtnHtml_removeFromDisallowlist())
 			.click(() => this._removeAllComedySources());
 
-		const $btnExcludeAllNonForgottenRealmsSources = $(this._getBtnHtml_addToBlacklist())
+		const $btnExcludeAllNonForgottenRealmsSources = $(this._getBtnHtml_addToDisallowlist())
 			.click(() => this._addAllNonForgottenRealms());
-		const $btnIncludeAllNonForgottenRealmsSources = $(this._getBtnHtml_removeFromBlacklist())
+		const $btnIncludeAllNonForgottenRealmsSources = $(this._getBtnHtml_removeFromDisallowlist())
 			.click(() => this._removeAllNonForgottenRealms());
 		// endregion
 
@@ -282,7 +282,7 @@ class BlacklistUi {
 		this._allCategories = [...propSet]
 			.sort((a, b) => SortUtil.ascSort(Parser.getPropDisplayName(a), Parser.getPropDisplayName(b)));
 
-		this._comp = new BlacklistUi.Component();
+		this._comp = new DisallowlistUi.Component();
 
 		const $selSource = ComponentUiUtil.$getSelSearchable(
 			this._comp,
@@ -307,7 +307,7 @@ class BlacklistUi {
 		this._$wrpSelName = $(`<div class="w-100 ve-flex"></div>`);
 		this._doHandleSourceCategorySelChange();
 
-		const $btnAddExclusion = $(`<button class="btn btn-default btn-xs">Add to Blacklist</button>`)
+		const $btnAddExclusion = $(`<button class="btn btn-default btn-xs">Add to Disallowlist</button>`)
 			.click(() => this._pAdd());
 		// endregion
 
@@ -322,7 +322,7 @@ class BlacklistUi {
 			.click(evt => this._pImport(evt));
 		const $btnReset = $(`<button class="btn btn-danger btn-xs">Reset List</button>`)
 			.click(async () => {
-				if (!await InputUiUtil.pGetUserBoolean({title: "Reset Blacklist", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+				if (!await InputUiUtil.pGetUserBoolean({title: "Reset Disallowlist", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
 				this._reset();
 			});
 		// endregion
@@ -394,12 +394,12 @@ class BlacklistUi {
 		</div>`.appendTo(this._$wrpControls.empty());
 	}
 
-	_getBtnHtml_addToBlacklist () {
-		return `<button class="btn btn-danger btn-xs w-20p h-21p ve-flex-vh-center" title="Add to Blacklist"><span class="glyphicon glyphicon-trash"></span></button>`;
+	_getBtnHtml_addToDisallowlist () {
+		return `<button class="btn btn-danger btn-xs w-20p h-21p ve-flex-vh-center" title="Add to Disallowlist"><span class="glyphicon glyphicon-trash"></span></button>`;
 	}
 
-	_getBtnHtml_removeFromBlacklist () {
-		return `<button class="btn btn-success btn-xs w-20p h-21p ve-flex-vh-center" title="Remove from Blacklist"><span class="glyphicon glyphicon-thumbs-up"></span></button>`;
+	_getBtnHtml_removeFromDisallowlist () {
+		return `<button class="btn btn-success btn-xs w-20p h-21p ve-flex-vh-center" title="Remove from Disallowlist"><span class="glyphicon glyphicon-thumbs-up"></span></button>`;
 	}
 
 	_doHandleSourceCategorySelChange () {
@@ -557,9 +557,9 @@ class BlacklistUi {
 		if (this._addExclude(displayName, hash, category, this._comp.source)) {
 			this._addListItem(displayName, hash, category, this._comp.source);
 
-			const subBlacklist = MiscUtil.get(this._subBlacklistEntries, category, hash);
-			if (subBlacklist) {
-				subBlacklist.forEach(it => {
+			const subDisallowlist = MiscUtil.get(this._subDisallowlistEntries, category, hash);
+			if (subDisallowlist) {
+				subDisallowlist.forEach(it => {
 					const {displayName, hash, category, source} = it;
 					this._addExclude(displayName, hash, category, source);
 					this._addListItem(displayName, hash, category, source);
@@ -616,15 +616,15 @@ class BlacklistUi {
 	}
 
 	async _pDoSendToFoundry () {
-		await ExtensionUtil.pDoSend({type: "5etools.blacklist.excludes", data: this._excludes});
+		await ExtensionUtil.pDoSend({type: "5etools.disallowlist.excludes", data: this._excludes});
 	}
 
 	_export () {
-		DataUtil.userDownload(`content-blacklist`, {fileType: "content-blacklist", blacklist: this._excludes});
+		DataUtil.userDownload(`content-disallowlist`, {fileType: "content-disallowlist", disallowlist: this._excludes});
 	}
 
 	async _pImport_getUserUpload () {
-		return DataUtil.pUserUpload({expectedFileTypes: ["content-blacklist"]});
+		return DataUtil.pUserUpload({expectedFileTypes: ["content-disallowlist"]});
 	}
 
 	async _pImport (evt) {
@@ -641,7 +641,7 @@ class BlacklistUi {
 		const json = jsons[0];
 
 		// update storage
-		const nxtList = evt.shiftKey ? MiscUtil.copy(this._excludes).concat(json.blacklist || []) : json.blacklist || [];
+		const nxtList = evt.shiftKey ? MiscUtil.copy(this._excludes).concat(json.disallowlist || []) : json.disallowlist || [];
 		this._excludes = nxtList;
 		if (this._isAutoSave) await ExcludeUtil.pSetList(nxtList);
 
@@ -656,7 +656,7 @@ class BlacklistUi {
 	}
 }
 
-BlacklistUi.Component = class extends BaseComponent {
+DisallowlistUi.Component = class extends BaseComponent {
 	get source () { return this._state.source; }
 	get category () { return this._state.category; }
 	get name () { return this._state.name; }

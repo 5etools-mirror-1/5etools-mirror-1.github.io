@@ -56,7 +56,7 @@ class BackgroundPage extends ListPage {
 		this._pageFilter.mutateAndAddToFilters(bg, isExcluded);
 
 		const eleLi = document.createElement("div");
-		eleLi.className = `lst__row ve-flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
+		eleLi.className = `lst__row ve-flex-col ${isExcluded ? "lst__row--disallowlisted" : ""}`;
 
 		const name = bg.name.replace("Variant ", "");
 		const hash = UrlUtil.autoEncodeHash(bg);

@@ -230,7 +230,7 @@ class TaggerUtils {
 
 class TagCondition {
 	static _getConvertedEntry (mon, entry, {inflictedSet, inflictedWhitelist} = {}) {
-		const walker = MiscUtil.getWalker({keyBlacklist: TagCondition._KEY_BLACKLIST});
+		const walker = MiscUtil.getWalker({keyDisallowlist: TagCondition._KEY_DISALLOWLIST});
 		const nameStack = [];
 		const walkerHandlers = {
 			preObject: (obj) => nameStack.push(obj.name),
@@ -353,7 +353,7 @@ class TagCondition {
 
 	// region Run basic tagging
 	static tryRunBasic (it) {
-		const walker = MiscUtil.getWalker({keyBlacklist: TagCondition._KEY_BLACKLIST});
+		const walker = MiscUtil.getWalker({keyDisallowlist: TagCondition._KEY_DISALLOWLIST});
 		return walker.walk(
 			it,
 			{
@@ -378,8 +378,8 @@ class TagCondition {
 	}
 	// endregion
 }
-TagCondition._KEY_BLACKLIST = new Set([
-	...MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+TagCondition._KEY_DISALLOWLIST = new Set([
+	...MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST,
 	"conditionImmune",
 ]);
 TagCondition._CONDITIONS = [
@@ -473,8 +473,8 @@ class DiceConvert {
 	static _getConvertedEntry (entry, isTagHits = false) {
 		if (!DiceConvert._walker) {
 			DiceConvert._walker = MiscUtil.getWalker({
-				keyBlacklist: new Set([
-					...MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+				keyDisallowlist: new Set([
+					...MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST,
 					"dmg1",
 					"dmg2",
 					"area",
@@ -558,7 +558,7 @@ DiceConvert._walker = null;
 
 class ArtifactPropertiesTag {
 	static tryRun (it, opts) {
-		const walker = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+		const walker = MiscUtil.getWalker({keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST});
 		walker.walk(it, {
 			string: (str) => str.replace(/major beneficial|minor beneficial|major detrimental|minor detrimental/gi, (...m) => {
 				const mode = m[0].trim().toLowerCase();
@@ -576,7 +576,7 @@ class ArtifactPropertiesTag {
 
 class SkillTag {
 	static tryRun (it) {
-		const walker = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+		const walker = MiscUtil.getWalker({keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST});
 		return walker.walk(
 			it,
 			{
@@ -605,7 +605,7 @@ class SkillTag {
 
 class ActionTag {
 	static tryRun (it) {
-		const walker = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+		const walker = MiscUtil.getWalker({keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST});
 		return walker.walk(
 			it,
 			{
@@ -658,7 +658,7 @@ class ActionTag {
 
 class SenseTag {
 	static tryRun (it) {
-		const walker = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+		const walker = MiscUtil.getWalker({keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST});
 		return walker.walk(
 			it,
 			{
@@ -688,7 +688,7 @@ class SenseTag {
 class EntryConvert {
 	static tryRun (stats, prop) {
 		if (!stats[prop]) return;
-		const walker = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+		const walker = MiscUtil.getWalker({keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST});
 		walker.walk(
 			stats,
 			{

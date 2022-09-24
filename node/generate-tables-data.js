@@ -22,7 +22,7 @@ class GenTables {
 	_doLoadBookData () {
 		return ut.readJson(`./data/books.json`).book
 			.map(idx => {
-				if (!GenTables.BOOK_BLACKLIST[idx.id]) {
+				if (!GenTables.BOOK_DISALLOWLIST[idx.id]) {
 					return {
 						book: idx,
 						bookData: JSON.parse(fs.readFileSync(`./data/book/book-${idx.id.toLowerCase()}.json`, "utf-8")),
@@ -135,7 +135,7 @@ class GenTables {
 		});
 	}
 }
-GenTables.BOOK_BLACKLIST = {};
+GenTables.BOOK_DISALLOWLIST = {};
 GenTables.ADVENTURE_WHITELIST = {
 	[SRC_SKT]: true,
 	[SRC_TTP]: true,

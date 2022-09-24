@@ -559,7 +559,7 @@ class PageFilterClassesRaw extends PageFilterClassesBase {
 
 	static _getPostLoadWalker () {
 		PageFilterClassesRaw._WALKER = PageFilterClassesRaw._WALKER || MiscUtil.getWalker({
-			keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+			keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST,
 			isDepthFirst: true,
 		});
 		return PageFilterClassesRaw._WALKER;

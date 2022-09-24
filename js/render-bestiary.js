@@ -6,7 +6,7 @@ class RenderBestiary {
 	 * @param [options.$btnResetScaleCr] CR scaler reset button.
 	 * @param [options.selSummonSpellLevel] Summon spell level selector.
 	 * @param [options.selSummonClassLevel] Summon spell level selector.
-	 * @param [options.isSkipExcludesRender] If the "this entity is blacklisted" display should be skipped.
+	 * @param [options.isSkipExcludesRender] If the "this entity is disallowlisted" display should be skipped.
 	 */
 	static $getRenderedCreature (mon, options) {
 		const renderer = Renderer.get();

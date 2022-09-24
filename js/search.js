@@ -66,12 +66,12 @@ class SearchPage {
 			text: "Include UA",
 		});
 
-		const $btnToggleBlacklisted = this._render_$getBtnToggleFilter({
-			propOmnisearch: "isShowBlacklisted",
-			fnAddHookOmnisearch: "addHookBlacklisted",
-			fnDoToggleOmnisearch: "doToggleBlacklisted",
-			title: "Filter blacklisted content results",
-			text: "Include Blacklisted",
+		const $btnToggleDisallowlisted = this._render_$getBtnToggleFilter({
+			propOmnisearch: "isShowDisallowlisted",
+			fnAddHookOmnisearch: "addHookDisallowlisted",
+			fnDoToggleOmnisearch: "doToggleDisallowlisted",
+			title: "Filter disallowlisted content results",
+			text: "Include Disallowlisted",
 		});
 
 		const $btnToggleSrd = this._render_$getBtnToggleFilter({
@@ -109,7 +109,7 @@ class SearchPage {
 					<div class="ve-flex-v-center btn-group mr-2 mobile__mb-2 mobile__mr-0">
 						${$btnToggleBrew}
 						${$btnToggleUa}
-						${$btnToggleBlacklisted}
+						${$btnToggleDisallowlisted}
 						${$btnToggleSrd}
 					</div>
 					<div class="btn-group ve-flex-v-center">

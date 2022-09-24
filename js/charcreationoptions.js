@@ -53,7 +53,7 @@ class CharCreationOptionsPage extends ListPage {
 		this._pageFilter.mutateAndAddToFilters(it, isExcluded);
 
 		const eleLi = document.createElement("div");
-		eleLi.className = `lst__row ve-flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
+		eleLi.className = `lst__row ve-flex-col ${isExcluded ? "lst__row--disallowlisted" : ""}`;
 
 		const hash = UrlUtil.autoEncodeHash(it);
 		const source = Parser.sourceJsonToAbv(it.source);

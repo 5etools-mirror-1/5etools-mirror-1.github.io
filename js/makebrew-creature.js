@@ -1822,7 +1822,7 @@ class CreatureBuilder extends Builder {
 			.change(() => doUpdateState());
 		if (this._state.languages && this._state.languages.length) $iptLanguages.val(this._state.languages.join(", "));
 
-		const availLanguages = Object.entries(Parser.MON_LANGUAGE_TAG_TO_FULL).filter(([k]) => !CreatureBuilder._LANGUAGE_BLACKLIST.has(k))
+		const availLanguages = Object.entries(Parser.MON_LANGUAGE_TAG_TO_FULL).filter(([k]) => !CreatureBuilder._LANGUAGE_DISALLOWLIST.has(k))
 			.map(([k, v]) => v === "Telepathy" ? "telepathy" : v); // lowercase telepathy
 
 		const $btnAddGeneric = $(`<button class="btn btn-xs btn-default mr-2 mkbru_mon__btn-add-sense-language">Add Language</button>`)
@@ -3231,7 +3231,7 @@ CreatureBuilder._AC_COMMON = {
 	"Unarmored Defense": "unarmored defense",
 	"Natural Armor": "natural armor",
 };
-CreatureBuilder._LANGUAGE_BLACKLIST = new Set(["CS", "X", "XX"]);
+CreatureBuilder._LANGUAGE_DISALLOWLIST = new Set(["CS", "X", "XX"]);
 CreatureBuilder._rowSortOrder = 0;
 
 const creatureBuilder = new CreatureBuilder();

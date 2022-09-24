@@ -205,7 +205,7 @@ class ItemsPage extends ListPage {
 		if (item._fIsMundane) {
 			const eleLi = e_({
 				tag: "div",
-				clazz: `lst__row ve-flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`,
+				clazz: `lst__row ve-flex-col ${isExcluded ? "lst__row--disallowlisted" : ""}`,
 				click: (evt) => this._mundaneList.doSelect(listItem, evt),
 				contextmenu: (evt) => this._openContextMenu(evt, this._mundaneList, listItem),
 				children: [
@@ -250,7 +250,7 @@ class ItemsPage extends ListPage {
 		} else {
 			const eleLi = e_({
 				tag: "div",
-				clazz: `lst__row ve-flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`,
+				clazz: `lst__row ve-flex-col ${isExcluded ? "lst__row--disallowlisted" : ""}`,
 				click: (evt) => this._magicList.doSelect(listItem, evt),
 				contextmenu: (evt) => this._openContextMenu(evt, this._magicList, listItem),
 				children: [
