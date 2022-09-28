@@ -107,11 +107,11 @@ async function main () {
 	const schemaFiles = fs.readdirSync(`${cacheDir}/test/schema`)
 		.filter(file => file.endsWith(".json"));
 
-	const SCHEMA_DISALLOWLIST = new Set([...PRELOAD_COMMON_SINGLE_FILE_SCHEMAS, "homebrew.json"]);
+	const SCHEMA_BLOCKLIST = new Set([...PRELOAD_COMMON_SINGLE_FILE_SCHEMAS, "homebrew.json"]);
 
 	for (let i = 0; i < schemaFiles.length; ++i) {
 		const schemaFile = schemaFiles[i];
-		if (!SCHEMA_DISALLOWLIST.has(schemaFile)) {
+		if (!SCHEMA_BLOCKLIST.has(schemaFile)) {
 			const dataFile = schemaFile; // data and schema filenames match
 
 			console.log(`Testing data/${dataFile}`.padEnd(50), `against schema/${schemaFile}`);

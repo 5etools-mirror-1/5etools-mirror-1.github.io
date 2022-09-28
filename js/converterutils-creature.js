@@ -751,7 +751,7 @@ class DamageTypeTag {
 		if (DamageTypeTag._isInit) return;
 
 		DamageTypeTag._isInit = true;
-		DamageTypeTag._WALKER = MiscUtil.getWalker({isNoModification: true, keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST});
+		DamageTypeTag._WALKER = MiscUtil.getWalker({isNoModification: true, keyBlocklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLOCKLIST});
 		Object.entries(Parser.DMGTYPE_JSON_TO_FULL).forEach(([k, v]) => DamageTypeTag._TYPE_LOOKUP[v] = k);
 	}
 
@@ -808,7 +808,7 @@ class DamageTypeTag {
 		m[prop].forEach(it => {
 			if (
 				it.name
-				&& DamageTypeTag._DISALLOWLIST_NAMES.has(it.name.toLowerCase().trim().replace(/\([^)]+\)/g, ""))
+				&& DamageTypeTag._BLOCKLIST_NAMES.has(it.name.toLowerCase().trim().replace(/\([^)]+\)/g, ""))
 			) return;
 
 			if (!it.entries) return;
@@ -889,7 +889,7 @@ DamageTypeTag._SUMMON_DAMAGE_REGEX = /(?:{@dice |{@damage )[^}]+}(?:\s*\+\s*the 
 DamageTypeTag._TYPE_LOOKUP = {};
 // Avoid parsing these, as they commonly have e.g. "self-damage" sections
 //   Note that these names should exclude parenthetical parts (as these are removed before lookup)
-DamageTypeTag._DISALLOWLIST_NAMES = new Set([
+DamageTypeTag._BLOCKLIST_NAMES = new Set([
 	"vampire weaknesses",
 ]);
 

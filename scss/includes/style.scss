@@ -862,7 +862,7 @@ input[type=checkbox].sidemenu__row__label__cb {
 	}
 }
 
-.row--disallowlisted {
+.row--blocklisted {
 	display: none !important;
 }
 
@@ -1616,7 +1616,7 @@ img.token:hover {
 			background: $rgb-bg--alt;
 		}
 
-		&--disallowlisted {
+		&--blocklisted {
 			display: none !important;
 		}
 
@@ -2298,7 +2298,7 @@ th.border {
 		text-decoration-color: $rgb-off-black;
 	}
 
-	&wrp-bookshelf-item--disallowlisted {
+	&wrp-bookshelf-item--blocklisted {
 		display: none !important;
 	}
 

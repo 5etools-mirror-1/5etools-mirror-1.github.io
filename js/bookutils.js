@@ -1058,7 +1058,7 @@ BookUtil.Search = class {
 		let closestBelow = Number.MIN_SAFE_INTEGER;
 		let closestAbove = Number.MAX_SAFE_INTEGER;
 
-		const walker = MiscUtil.getWalker({keyDisallowlist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_DISALLOWLIST});
+		const walker = MiscUtil.getWalker({keyBlocklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLOCKLIST});
 		walker.walk(
 			toSearch,
 			{

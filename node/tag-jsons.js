@@ -11,8 +11,8 @@ if (typeof module !== "undefined") {
 }
 
 function run (args) {
-	TagJsons._DISALLOWLIST_FILE_PREFIXES = [
-		...ut.FILE_PREFIX_DISALLOWLIST,
+	TagJsons._BLOCKLIST_FILE_PREFIXES = [
+		...ut.FILE_PREFIX_BLOCKLIST,
 
 		// specific files
 		"demo.json",
@@ -22,7 +22,7 @@ function run (args) {
 	if (args.file) {
 		files = [args.file];
 	} else {
-		files = ut.listFiles({dir: `./data`, disallowlistFilePrefixes: TagJsons._DISALLOWLIST_FILE_PREFIXES});
+		files = ut.listFiles({dir: `./data`, blocklistFilePrefixes: TagJsons._BLOCKLIST_FILE_PREFIXES});
 		if (args.filePrefix) {
 			files = files.filter(f => f.startsWith(args.filePrefix));
 			if (!files.length) throw new Error(`No file with prefix "${args.filePrefix}" found!`);

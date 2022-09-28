@@ -1172,7 +1172,7 @@ class ListPage {
 		if (!ExcludeUtil.isAllContentExcluded(list)) return;
 
 		$pagecontent.html(`<tr><th class="border" colspan="6"></th></tr>
-			<tr><td colspan="6">${ExcludeUtil.getAllContentDisallowlistedHtml()}</td></tr>
+			<tr><td colspan="6">${ExcludeUtil.getAllContentBlocklistedHtml()}</td></tr>
 			<tr><th class="border" colspan="6"></th></tr>`);
 	}
 
@@ -1643,6 +1643,6 @@ class ListPage {
 	}
 }
 ListPage._READONLY_WALKER = MiscUtil.getWalker({
-	keyDisallowlist: new Set(["type", "colStyles", "style"]),
+	keyBlocklist: new Set(["type", "colStyles", "style"]),
 	isNoModification: true,
 });

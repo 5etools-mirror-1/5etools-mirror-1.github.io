@@ -276,8 +276,8 @@
 				"https://raw.githubusercontent.com/TheGiddyLimit/homebrew/master/_schema/homebrew.json"
 			]
 		},
-		"disallowlist": {
-			"description": "An array of objects to disallowlist from display on the site.\nUse of this in public brew files is strongly discouraged.",
+		"blocklist": {
+			"description": "An array of objects to blocklist from display on the site.\nUse of this in public brew files is strongly discouraged.",
 			"type": "array",
 			"items": {
 				"type": "object",
@@ -287,7 +287,7 @@
 					},
 					"hash": {
 						"type": "string",
-						"description": "A unique reference for the removed item. Use the disallowlist tool on the site to generate this."
+						"description": "A unique reference for the removed item. Use the blocklist tool on the site to generate this."
 					},
 					"category": {
 						"type": "string"

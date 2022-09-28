@@ -11,7 +11,7 @@ class OptionalFeaturesSublistManager extends SublistManager {
 	}
 
 	pGetSublistItem (it, hash) {
-		const prerequisite = Renderer.utils.getPrerequisiteHtml(it.prerequisite, {isListMode: true, disallowlistKeys: new Set(["level"])});
+		const prerequisite = Renderer.utils.getPrerequisiteHtml(it.prerequisite, {isListMode: true, blocklistKeys: new Set(["level"])});
 		const level = Renderer.optionalfeature.getListPrerequisiteLevelText(it.prerequisite);
 
 		const $ele = $(`<div class="lst__row lst__row--sublist ve-flex-col">
@@ -73,11 +73,11 @@ class OptionalFeaturesPage extends ListPage {
 		this._pageFilter.mutateAndAddToFilters(it, isExcluded);
 
 		const eleLi = document.createElement("div");
-		eleLi.className = `lst__row ve-flex-col ${isExcluded ? "lst__row--disallowlisted" : ""}`;
+		eleLi.className = `lst__row ve-flex-col ${isExcluded ? "lst__row--blocklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(it.source);
 		const hash = UrlUtil.autoEncodeHash(it);
-		const prerequisite = Renderer.utils.getPrerequisiteHtml(it.prerequisite, {isListMode: true, disallowlistKeys: new Set(["level"])});
+		const prerequisite = Renderer.utils.getPrerequisiteHtml(it.prerequisite, {isListMode: true, blocklistKeys: new Set(["level"])});
 		const level = Renderer.optionalfeature.getListPrerequisiteLevelText(it.prerequisite);
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">

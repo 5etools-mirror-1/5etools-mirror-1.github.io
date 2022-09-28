@@ -1,6 +1,6 @@
 "use strict";
 
-class DisallowlistUtil {
+class BlocklistUtil {
 	static _IGNORED_CATEGORIES = new Set([
 		"_meta",
 		"linkedLootTables",
@@ -62,7 +62,7 @@ class DisallowlistUtil {
 	}
 }
 
-class DisallowlistUi {
+class BlocklistUi {
 	constructor (
 		{
 			$wrpContent,
@@ -78,7 +78,7 @@ class DisallowlistUi {
 
 		this._excludes = ExcludeUtil.getList();
 
-		this._subDisallowlistEntries = {};
+		this._subBlocklistEntries = {};
 
 		this._allSources = null;
 		this._allCategories = null;
@@ -113,37 +113,37 @@ class DisallowlistUi {
 		if (this._isAutoSave) ExcludeUtil.pSetList(MiscUtil.copy(this._excludes)).then(null);
 	}
 
-	async _pInitSubDisallowlistEntries () {
+	async _pInitSubBlocklistEntries () {
 		for (const c of (this._data.class || [])) {
 			const classHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](c);
 
-			const subDisallowlist = this._data.classFeature
+			const subBlocklist = this._data.classFeature
 				.filter(it => it.className === c.name && it.classSource === c.source)
 				.map(it => {
 					const hash = UrlUtil.URL_TO_HASH_BUILDER["classFeature"](it);
 					const displayName = `${this._getDisplayNamePrefix_classFeature(it)}${it.name}`;
 					return {displayName, hash, category: "classFeature", source: it.source};
 				});
-			MiscUtil.set(this._subDisallowlistEntries, "class", classHash, subDisallowlist);
+			MiscUtil.set(this._subBlocklistEntries, "class", classHash, subBlocklist);
 		}
 
 		for (const sc of (this._data.subclass || [])) {
 			const subclassHash = UrlUtil.URL_TO_HASH_BUILDER["subclass"](sc);
 
-			const subDisallowlist = this._data.subclassFeature
+			const subBlocklist = this._data.subclassFeature
 				.filter(it => it.className === sc.className && it.classSource === sc.classSource && it.subclassShortName === sc.shortName && it.subclassSource === sc.source)
 				.map(it => {
 					const hash = UrlUtil.URL_TO_HASH_BUILDER["subclassFeature"](it);
 					const displayName = `${this._getDisplayNamePrefix_subclassFeature(it)}${it.name}`;
 					return {displayName, hash, category: "subclassFeature", source: it.source};
 				});
-			MiscUtil.set(this._subDisallowlistEntries, "subclass", subclassHash, subDisallowlist);
+			MiscUtil.set(this._subBlocklistEntries, "subclass", subclassHash, subBlocklist);
 		}
 
 		for (const it of (this._data.itemGroup || [])) {
 			const itemGroupHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS](it);
 
-			const subDisallowlist = (await it.items.pSerialAwaitMap(async uid => {
+			const subBlocklist = (await it.items.pSerialAwaitMap(async uid => {
 				let [name, source] = uid.split("|");
 				source = Parser.getTagSource("item", source);
 				const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS]({name, source});
@@ -152,18 +152,18 @@ class DisallowlistUi {
 				return {displayName: item.name, hash, category: "item", source: item.source};
 			})).filter(Boolean);
 
-			MiscUtil.set(this._subDisallowlistEntries, "itemGroup", itemGroupHash, subDisallowlist);
+			MiscUtil.set(this._subBlocklistEntries, "itemGroup", itemGroupHash, subBlocklist);
 		}
 
 		for (const it of (this._data.race || []).filter(it => it._isBaseRace)) {
 			const baseRaceHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RACES](it);
 
-			const subDisallowlist = it._subraces.map(sr => {
+			const subBlocklist = it._subraces.map(sr => {
 				const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RACES](sr);
 				return {displayName: sr.name, hash, category: "race", source: sr.source};
 			});
 
-			MiscUtil.set(this._subDisallowlistEntries, "race", baseRaceHash, subDisallowlist);
+			MiscUtil.set(this._subBlocklistEntries, "race", baseRaceHash, subBlocklist);
 		}
 	}
 
@@ -185,7 +185,7 @@ class DisallowlistUi {
 	_getDisplayNamePrefix_subclassFeature (it) { return `${it.className} (${it.subclassShortName}) ${it.level}: `; }
 
 	async pInit () {
-		await this._pInitSubDisallowlistEntries();
+		await this._pInitSubBlocklistEntries();
 		this._pInit_initUi();
 		this._pInit_render();
 		this._renderList();
@@ -216,7 +216,7 @@ class DisallowlistUi {
 
 			<hr class="${this._isCompactUi ? "hr-2" : "hr-5"}">
 
-			<h4 class="my-0">Disallowlist</h4>
+			<h4 class="my-0">Blocklist</h4>
 			<div class="text-muted ${this._isCompactUi ? "mb-2" : "mb-3"}"><i>Rows marked with an asterisk (*) in a field match everything in that field.</i></div>
 
 			<div class="ve-flex-col min-h-0">
@@ -246,24 +246,24 @@ class DisallowlistUi {
 
 	_pInit_render () {
 		// region Helper controls
-		const $btnExcludeAllUa = $(this._getBtnHtml_addToDisallowlist())
+		const $btnExcludeAllUa = $(this._getBtnHtml_addToBlocklist())
 			.click(() => this._addAllUa());
-		const $btnIncludeAllUa = $(this._getBtnHtml_removeFromDisallowlist())
+		const $btnIncludeAllUa = $(this._getBtnHtml_removeFromBlocklist())
 			.click(() => this._removeAllUa());
 
-		const $btnExcludeAllSources = $(this._getBtnHtml_addToDisallowlist())
+		const $btnExcludeAllSources = $(this._getBtnHtml_addToBlocklist())
 			.click(() => this._addAllSources());
-		const $btnIncludeAllSources = $(this._getBtnHtml_removeFromDisallowlist())
+		const $btnIncludeAllSources = $(this._getBtnHtml_removeFromBlocklist())
 			.click(() => this._removeAllSources());
 
-		const $btnExcludeAllComedySources = $(this._getBtnHtml_addToDisallowlist())
+		const $btnExcludeAllComedySources = $(this._getBtnHtml_addToBlocklist())
 			.click(() => this._addAllComedySources());
-		const $btnIncludeAllComedySources = $(this._getBtnHtml_removeFromDisallowlist())
+		const $btnIncludeAllComedySources = $(this._getBtnHtml_removeFromBlocklist())
 			.click(() => this._removeAllComedySources());
 
-		const $btnExcludeAllNonForgottenRealmsSources = $(this._getBtnHtml_addToDisallowlist())
+		const $btnExcludeAllNonForgottenRealmsSources = $(this._getBtnHtml_addToBlocklist())
 			.click(() => this._addAllNonForgottenRealms());
-		const $btnIncludeAllNonForgottenRealmsSources = $(this._getBtnHtml_removeFromDisallowlist())
+		const $btnIncludeAllNonForgottenRealmsSources = $(this._getBtnHtml_removeFromBlocklist())
 			.click(() => this._removeAllNonForgottenRealms());
 		// endregion
 
@@ -282,7 +282,7 @@ class DisallowlistUi {
 		this._allCategories = [...propSet]
 			.sort((a, b) => SortUtil.ascSort(Parser.getPropDisplayName(a), Parser.getPropDisplayName(b)));
 
-		this._comp = new DisallowlistUi.Component();
+		this._comp = new BlocklistUi.Component();
 
 		const $selSource = ComponentUiUtil.$getSelSearchable(
 			this._comp,
@@ -307,7 +307,7 @@ class DisallowlistUi {
 		this._$wrpSelName = $(`<div class="w-100 ve-flex"></div>`);
 		this._doHandleSourceCategorySelChange();
 
-		const $btnAddExclusion = $(`<button class="btn btn-default btn-xs">Add to Disallowlist</button>`)
+		const $btnAddExclusion = $(`<button class="btn btn-default btn-xs">Add to Blocklist</button>`)
 			.click(() => this._pAdd());
 		// endregion
 
@@ -322,7 +322,7 @@ class DisallowlistUi {
 			.click(evt => this._pImport(evt));
 		const $btnReset = $(`<button class="btn btn-danger btn-xs">Reset List</button>`)
 			.click(async () => {
-				if (!await InputUiUtil.pGetUserBoolean({title: "Reset Disallowlist", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+				if (!await InputUiUtil.pGetUserBoolean({title: "Reset Blocklist", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
 				this._reset();
 			});
 		// endregion
@@ -394,12 +394,12 @@ class DisallowlistUi {
 		</div>`.appendTo(this._$wrpControls.empty());
 	}
 
-	_getBtnHtml_addToDisallowlist () {
-		return `<button class="btn btn-danger btn-xs w-20p h-21p ve-flex-vh-center" title="Add to Disallowlist"><span class="glyphicon glyphicon-trash"></span></button>`;
+	_getBtnHtml_addToBlocklist () {
+		return `<button class="btn btn-danger btn-xs w-20p h-21p ve-flex-vh-center" title="Add to Blocklist"><span class="glyphicon glyphicon-trash"></span></button>`;
 	}
 
-	_getBtnHtml_removeFromDisallowlist () {
-		return `<button class="btn btn-success btn-xs w-20p h-21p ve-flex-vh-center" title="Remove from Disallowlist"><span class="glyphicon glyphicon-thumbs-up"></span></button>`;
+	_getBtnHtml_removeFromBlocklist () {
+		return `<button class="btn btn-success btn-xs w-20p h-21p ve-flex-vh-center" title="Remove from Blocklist"><span class="glyphicon glyphicon-thumbs-up"></span></button>`;
 	}
 
 	_doHandleSourceCategorySelChange () {
@@ -557,9 +557,9 @@ class DisallowlistUi {
 		if (this._addExclude(displayName, hash, category, this._comp.source)) {
 			this._addListItem(displayName, hash, category, this._comp.source);
 
-			const subDisallowlist = MiscUtil.get(this._subDisallowlistEntries, category, hash);
-			if (subDisallowlist) {
-				subDisallowlist.forEach(it => {
+			const subBlocklist = MiscUtil.get(this._subBlocklistEntries, category, hash);
+			if (subBlocklist) {
+				subBlocklist.forEach(it => {
 					const {displayName, hash, category, source} = it;
 					this._addExclude(displayName, hash, category, source);
 					this._addListItem(displayName, hash, category, source);
@@ -616,15 +616,15 @@ class DisallowlistUi {
 	}
 
 	async _pDoSendToFoundry () {
-		await ExtensionUtil.pDoSend({type: "5etools.disallowlist.excludes", data: this._excludes});
+		await ExtensionUtil.pDoSend({type: "5etools.blocklist.excludes", data: this._excludes});
 	}
 
 	_export () {
-		DataUtil.userDownload(`content-disallowlist`, {fileType: "content-disallowlist", disallowlist: this._excludes});
+		DataUtil.userDownload(`content-blocklist`, {fileType: "content-blocklist", blocklist: this._excludes});
 	}
 
 	async _pImport_getUserUpload () {
-		return DataUtil.pUserUpload({expectedFileTypes: ["content-disallowlist", "content-blacklist"]}); // Supports old fileType "content-blacklist"
+		return DataUtil.pUserUpload({expectedFileTypes: ["content-blocklist", "content-blacklist"]}); // Supports old fileType "content-blacklist"
 	}
 
 	async _pImport (evt) {
@@ -641,7 +641,7 @@ class DisallowlistUi {
 		const json = jsons[0];
 
 		// update storage
-		const nxtList = evt.shiftKey ? MiscUtil.copy(this._excludes).concat(json.disallowlist || json.blacklist || []) : json.disallowlist || json.blacklist || []; // Supports old key "blacklist"
+		const nxtList = evt.shiftKey ? MiscUtil.copy(this._excludes).concat(json.blocklist || json.blacklist || []) : json.blocklist || json.blacklist || []; // Supports old key "blacklist"
 		this._excludes = nxtList;
 		if (this._isAutoSave) await ExcludeUtil.pSetList(nxtList);
 
@@ -656,7 +656,7 @@ class DisallowlistUi {
 	}
 }
 
-DisallowlistUi.Component = class extends BaseComponent {
+BlocklistUi.Component = class extends BaseComponent {
 	get source () { return this._state.source; }
 	get category () { return this._state.category; }
 	get name () { return this._state.name; }

@@ -36,7 +36,7 @@ class PageFilterClassesBase extends PageFilter {
 		});
 
 		// region source
-		this._sourceWalker = MiscUtil.getWalker({keyDisallowlist: new Set(["type", "data"])}).walk;
+		this._sourceWalker = MiscUtil.getWalker({keyBlocklist: new Set(["type", "data"])}).walk;
 		this._sourcePrimitiveHandlers = {
 			string: (obj, lastKey) => {
 				if (lastKey === "source") this._sourceFilter.addItem(obj);

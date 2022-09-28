@@ -1,9 +1,9 @@
 "use strict";
 
-class Disallowlist {
+class Blocklist {
 	static async pInit () {
-		const data = await DisallowlistUtil.pLoadData();
-		const ui = new DisallowlistUi({$wrpContent: $(`#disallowlist-content`), data});
+		const data = await BlocklistUtil.pLoadData();
+		const ui = new BlocklistUi({$wrpContent: $(`#blocklist-content`), data});
 		await ui.pInit();
 		window.dispatchEvent(new Event("toolsLoaded"));
 	}
@@ -12,5 +12,5 @@ class Disallowlist {
 window.addEventListener("load", async () => {
 	await BrewUtil2.pInit();
 	await ExcludeUtil.pInitialise();
-	await Disallowlist.pInit();
+	await Blocklist.pInit();
 });

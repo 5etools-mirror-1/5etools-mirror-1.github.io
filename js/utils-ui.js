@@ -1236,7 +1236,7 @@ class TabUiUtilSide extends TabUiUtilBase {
 	}
 }
 
-// TODO have this respect the disallowlist?
+// TODO have this respect the blocklist?
 class SearchUiUtil {
 	static async pDoGlobalInit () {
 		elasticlunr.clearStopWords();
@@ -3743,14 +3743,14 @@ function MixinComponentHistory (Cls) {
 			this._histStackUndo = [];
 			this._histStackRedo = [];
 			this._isHistDisabled = true;
-			this._histPropDisallowlist = new Set();
+			this._histPropBlocklist = new Set();
 			this._histPropAllowlist = null;
 
 			this._histInitialState = null;
 		}
 
 		set isHistDisabled (val) { this._isHistDisabled = val; }
-		addDisallowlistProps (...props) { props.forEach(p => this._histPropDisallowlist.add(p)); }
+		addBlocklistProps (...props) { props.forEach(p => this._histPropBlocklist.add(p)); }
 		addAllowlistProps (...props) {
 			this._histPropAllowlist = this._histPropAllowlist || new Set();
 			props.forEach(p => this._histPropAllowlist.add(p));
@@ -3766,7 +3766,7 @@ function MixinComponentHistory (Cls) {
 
 			this._addHookAll("state", prop => {
 				if (this._isHistDisabled) return;
-				if (this._histPropDisallowlist.has(prop)) return;
+				if (this._histPropBlocklist.has(prop)) return;
 				if (this._histPropAllowlist && !this._histPropAllowlist.has(prop)) return;
 
 				this.recordHistory();
@@ -3777,7 +3777,7 @@ function MixinComponentHistory (Cls) {
 			const stateCopy = MiscUtil.copy(this._state);
 
 			// remove any un-tracked properties
-			this._histPropDisallowlist.forEach(prop => delete stateCopy[prop]);
+			this._histPropBlocklist.forEach(prop => delete stateCopy[prop]);
 			if (this._histPropAllowlist) Object.keys(stateCopy).filter(k => !this._histPropAllowlist.has(k)).forEach(k => delete stateCopy[k]);
 
 			this._histStackUndo.push(stateCopy);
@@ -3786,7 +3786,7 @@ function MixinComponentHistory (Cls) {
 
 		_histAddExcludedProperties (stateCopy) {
 			Object.entries(this._state).forEach(([k, v]) => {
-				if (this._histPropDisallowlist.has(k)) return stateCopy[k] = v;
+				if (this._histPropBlocklist.has(k)) return stateCopy[k] = v;
 				if (this._histPropAllowlist && !this._histPropAllowlist.has(k)) stateCopy[k] = v;
 			});
 		}
