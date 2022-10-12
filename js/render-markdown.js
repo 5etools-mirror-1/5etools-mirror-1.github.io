@@ -599,6 +599,7 @@ class RendererMarkdown {
 			case "@hit":
 			case "@d20":
 			case "@chance":
+			case "@coin":
 			case "@recharge":
 				textStack[0] += Renderer.stripTags(`{${tag} ${text}}`); break;
 

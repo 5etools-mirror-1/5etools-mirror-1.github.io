@@ -1573,6 +1573,7 @@ function Renderer () {
 			case "@hit":
 			case "@d20":
 			case "@chance":
+			case "@coin":
 			case "@recharge":
 			case "@ability":
 			case "@savingThrow":
@@ -3119,6 +3120,7 @@ Renderer.utils = {
 			case "@hit":
 			case "@d20":
 			case "@chance":
+			case "@coin":
 			case "@recharge": {
 				const fauxEntry = {
 					type: "dice",
@@ -3171,6 +3173,17 @@ Renderer.utils = {
 						fauxEntry.successThresh = Number(rollText);
 						fauxEntry.chanceSuccessText = textSuccess;
 						fauxEntry.chanceFailureText = textFailure;
+						return fauxEntry;
+					}
+					case "@coin": {
+						// format: {@coin |display text|rollbox rollee name|success text|failure text}
+						const [textSuccess, textFailure] = others;
+						fauxEntry.toRoll = "1d2";
+						fauxEntry.successThresh = 1;
+						fauxEntry.successMax = 2;
+						fauxEntry.displayText = (displayText || `Coin Flip`);
+						fauxEntry.chanceSuccessText = (textSuccess || `Heads`);
+						fauxEntry.chanceFailureText = (textFailure || `Tails`);
 						return fauxEntry;
 					}
 					case "@recharge": {
@@ -11096,6 +11109,7 @@ Renderer._stripTagLayer = function (str) {
 					case "@atk": return Renderer.attackTagToFull(text);
 
 					case "@chance":
+					case "@coin":
 					case "@d20":
 					case "@damage":
 					case "@dice":
@@ -11129,6 +11143,9 @@ Renderer._stripTagLayer = function (str) {
 							}
 							case "@chance": {
 								return displayText || `${rollText} percent`;
+							}
+							case "@coin": {
+								return displayText || `flip a coin`;
 							}
 							case "@ability": {
 								const [abil, rawScore] = rollText.split(" ").map(it => it.trim().toLowerCase()).filter(Boolean);
