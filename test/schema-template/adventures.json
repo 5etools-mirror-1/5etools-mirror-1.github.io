@@ -62,6 +62,7 @@
 					"contents": {
 						"description": "The linked Table of Contents of the adventure.",
 						"type": "array",
+						"minItems": 1,
 						"items": {
 							"type": "object",
 							"properties": {
@@ -70,6 +71,7 @@
 								},
 								"headers": {
 									"type": "array",
+									"minItems": 1,
 									"items": {
 										"oneOf": [
 											{

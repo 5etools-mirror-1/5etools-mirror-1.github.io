@@ -363,6 +363,7 @@
 					"oneOf": [
 						{
 							"type": "array",
+							"minItems": 1,
 							"items": {
 								"type": "string"
 							}
@@ -430,6 +431,7 @@
 					"oneOf": [
 						{
 							"type": "array",
+							"minItems": 1,
 							"items": {
 								"type": "object",
 								"properties": {
@@ -468,6 +470,7 @@
 				},
 				"actionHeader": {
 					"type": "array",
+					"minItems": 1,
 					"items": {
 						"$ref": "../entry.json"
 					}
@@ -476,6 +479,7 @@
 					"oneOf": [
 						{
 							"type": "array",
+							"minItems": 1,
 							"items": {
 								"type": "object",
 								"properties": {
@@ -506,12 +510,14 @@
 				},
 				"bonusHeader": {
 					"type": "array",
+					"minItems": 1,
 					"items": {
 						"$ref": "../entry.json"
 					}
 				},
 				"bonus": {
 					"type": "array",
+					"minItems": 1,
 					"items": {
 						"type": "object",
 						"properties": {
@@ -537,12 +543,14 @@
 				},
 				"reactionHeader": {
 					"type": "array",
+					"minItems": 1,
 					"items": {
 						"$ref": "../entry.json"
 					}
 				},
 				"reaction": {
 					"type": "array",
+					"minItems": 1,
 					"items": {
 						"type": "object",
 						"properties": {
@@ -579,6 +587,7 @@
 				},
 				"legendaryHeader": {
 					"type": "array",
+					"minItems": 1,
 					"items": {
 						"$ref": "../entry.json"
 					}
@@ -587,6 +596,7 @@
 					"oneOf": [
 						{
 							"type": "array",
+							"minItems": 1,
 							"items": {
 								"type": "object",
 								"properties": {
@@ -613,12 +623,14 @@
 				},
 				"mythicHeader": {
 					"type": "array",
+					"minItems": 1,
 					"items": {
 						"$ref": "../entry.json"
 					}
 				},
 				"mythic": {
 					"type": "array",
+					"minItems": 1,
 					"items": {
 						"type": "object",
 						"properties": {
@@ -754,6 +766,7 @@
 				},
 				"environment": {
 					"type": "array",
+					"minItems": 1,
 					"items": {
 						"type": "string",
 						"$$ifSiteElse_key": {
