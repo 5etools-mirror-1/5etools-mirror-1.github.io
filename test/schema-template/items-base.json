@@ -312,7 +312,9 @@
 					"$ref": "#/definitions/itemLookupArray"
 				},
 				{
+					"type": "array",
 					"items": {
+						"type": "object",
 						"not": {
 							"required": ["template"]
 						}

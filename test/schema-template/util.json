@@ -396,14 +396,14 @@
 								"items": {
 									"$ref": "#/definitions/skillNameLower"
 								},
-								"uniqueItems": true
+								"uniqueItems": true,
+								"minItems": 2
 							},
 							"count": {
 								"type": "integer"
 							}
 						},
-						"additionalProperties": false,
-						"minItems": 2
+						"additionalProperties": false
 					}
 				},
 				"$$ifSite": {

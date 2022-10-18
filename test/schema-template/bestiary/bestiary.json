@@ -1090,7 +1090,10 @@
 			"items": {
 				"$ref": "#/definitions/creature"
 			},
-			"minItems": 1,
+			"$$ifBrew": {
+				"minItems": 1
+			},
+			"$comment": "This is necessary as some site bestiary files assert only otherSources and do not contain any true data.",
 			"uniqueItems": true
 		},
 		"_meta": {
