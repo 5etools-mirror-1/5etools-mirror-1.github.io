@@ -10,6 +10,7 @@
 		"makebrewCreatureTrait": {
 			"description": "Additional trait templates which can be used in the homebrew builder.",
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {
 				"type": "object",

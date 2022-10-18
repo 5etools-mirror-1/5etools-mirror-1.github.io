@@ -8,6 +8,7 @@
 	"properties": {
 		"variantrule": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {"$ref": "#/definitions/variantrule"}
 		}

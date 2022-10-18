@@ -84,7 +84,9 @@
 					"source"
 				],
 				"additionalProperties": false
-			}
+			},
+			"minItems": 1,
+			"uniqueItems": true
 		},
 		"subclass": {
 			"type": "array",
@@ -119,7 +121,9 @@
 					"classSource"
 				],
 				"additionalProperties": false
-			}
+			},
+			"minItems": 1,
+			"uniqueItems": true
 		},
 		"classFeature": {
 			"type": "array",
@@ -155,7 +159,9 @@
 					"level"
 				],
 				"additionalProperties": false
-			}
+			},
+			"minItems": 1,
+			"uniqueItems": true
 		},
 		"subclassFeature": {
 			"type": "array",
@@ -196,7 +202,9 @@
 					"subclassSource"
 				],
 				"additionalProperties": false
-			}
+			},
+			"minItems": 1,
+			"uniqueItems": true
 		}
 	},
 

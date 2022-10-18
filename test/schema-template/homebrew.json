@@ -20,7 +20,9 @@
 				},
 				"required": ["id", "source", "data"],
 				"additionalProperties": false
-			}
+			},
+			"minItems": 1,
+			"uniqueItems": true
 		}
 	},
 
@@ -93,7 +95,9 @@
 							"version"
 						],
 						"additionalProperties": false
-					}
+					},
+					"minItems": 1,
+					"uniqueItems": true
 				},
 				"spellSchools": {
 					"type": "object",
@@ -219,7 +223,9 @@
 									"coin",
 									"mult"
 								]
-							}
+							},
+							"minItems": 1,
+							"uniqueItems": true
 						}
 					}
 				},
@@ -243,7 +249,9 @@
 							"type": "array",
 							"items": {
 								"type": "string"
-							}
+							},
+							"minItems": 1,
+							"uniqueItems": true
 						}
 					}
 				},
@@ -252,7 +260,9 @@
 					"type": "array",
 					"items": {
 						"type": "string"
-					}
+					},
+					"minItems": 1,
+					"uniqueItems": true
 				},
 				"unlisted": {
 					"description": "If this homebrew file should be ignored/hidden by any indexer.",
@@ -303,7 +313,9 @@
 					"source"
 				],
 				"additionalProperties": false
-			}
+			},
+			"minItems": 1,
+			"uniqueItems": true
 		},
 		"adventure": {
 			"$ref": "adventures.json#/properties/adventure"

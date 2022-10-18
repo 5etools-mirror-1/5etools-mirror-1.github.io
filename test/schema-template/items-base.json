@@ -5,6 +5,7 @@
 	"definitions": {
 		"itemLookupArray": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {"$ref": "#/definitions/itemLookup"}
 		},
@@ -86,6 +87,7 @@
 	"properties": {
 		"baseitem": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {
 				"type": "object",
@@ -320,6 +322,7 @@
 		},
 		"itemEntry": {
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {
@@ -334,6 +337,7 @@
 		},
 		"itemTypeAdditionalEntries": {
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {

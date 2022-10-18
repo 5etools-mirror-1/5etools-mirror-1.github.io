@@ -1087,10 +1087,11 @@
 	"properties": {
 		"monster": {
 			"type": "array",
-			"uniqueItems": true,
 			"items": {
 				"$ref": "#/definitions/creature"
-			}
+			},
+			"minItems": 1,
+			"uniqueItems": true
 		},
 		"_meta": {
 			"$ref": "../util.json#/definitions/metaBlock"

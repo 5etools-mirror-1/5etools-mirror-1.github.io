@@ -144,6 +144,7 @@
 				"creatureTypeTags": {
 					"type": "array",
 					"uniqueItems": true,
+					"minItems": 1,
 					"items": {
 						"type": "string"
 					}
@@ -427,6 +428,7 @@
 		"race": {
 			"type": "array",
 			"uniqueItems": true,
+			"minItems": 1,
 			"items": {
 				"$ref": "#/definitions/race"
 			}
@@ -434,6 +436,7 @@
 		"subrace": {
 			"type": "array",
 			"uniqueItems": true,
+			"minItems": 1,
 			"items": {
 				"$ref": "#/definitions/subrace"
 			}

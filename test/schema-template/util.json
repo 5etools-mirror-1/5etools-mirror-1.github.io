@@ -54,7 +54,8 @@
 				],
 				"additionalProperties": false
 			},
-			"uniqueItems": true
+			"uniqueItems": true,
+			"minItems": 1
 		},
 
 		"additionalSources": {
@@ -74,7 +75,8 @@
 				],
 				"additionalProperties": false
 			},
-			"uniqueItems": true
+			"uniqueItems": true,
+			"minItems": 1
 		},
 
 		"reprintedAs": {
@@ -102,7 +104,8 @@
 					}
 				]
 			},
-			"uniqueItems": true
+			"uniqueItems": true,
+			"minItems": 1
 		},
 
 		"tagNameStats": {
@@ -217,7 +220,8 @@
 					}
 				}
 			},
-			"uniqueItems": true
+			"uniqueItems": true,
+			"minItems": 1
 		},
 
 		"toolNameLower": {
@@ -312,7 +316,8 @@
 										{"type": "string", "enum": ["anyArtisansTool"]}
 									]
 								},
-								"uniqueItems": true
+								"uniqueItems": true,
+								"minItems": 2
 							},
 							"count": {
 								"type": "integer"
@@ -325,7 +330,8 @@
 					"additionalProperties": {"type": "boolean"}
 				}
 			},
-			"uniqueItems": true
+			"uniqueItems": true,
+			"minItems": 1
 		},
 
 		"skillNameLower": {
@@ -396,7 +402,8 @@
 								"type": "integer"
 							}
 						},
-						"additionalProperties": false
+						"additionalProperties": false,
+						"minItems": 2
 					}
 				},
 				"$$ifSite": {
@@ -507,7 +514,8 @@
 													{"$ref": "#/definitions/skillNameLower"},
 													{"type": "string", "enum": ["anySkill", "anyTool", "anyArtisansTool", "anyLanguage", "anyStandardLanguage"]}
 												]
-											}
+											},
+											"minItems": 2
 										},
 										"count": {"type": "integer"}
 									},
@@ -526,7 +534,8 @@
 								}
 							]
 						},
-						"uniqueItems": true
+						"uniqueItems": true,
+						"minItems": 1
 					}
 				},
 				"$$ifSite": {
@@ -536,7 +545,8 @@
 					"additionalProperties": {"type": "boolean"}
 				}
 			},
-			"uniqueItems": true
+			"uniqueItems": true,
+			"minItems": 1
 		},
 
 		"weaponProficiencies": {
@@ -604,7 +614,8 @@
 				},
 				"additionalProperties": false
 			},
-			"uniqueItems": true
+			"uniqueItems": true,
+			"minItems": 1
 		},
 
 		"armorProficiencies": {
@@ -619,7 +630,8 @@
 				},
 				"additionalProperties": false
 			},
-			"uniqueItems": true
+			"uniqueItems": true,
+			"minItems": 1
 		},
 
 		"savingThrowProficiencies": {
@@ -649,7 +661,8 @@
 										"cha"
 									]
 								},
-								"uniqueItems": true
+								"uniqueItems": true,
+								"minItems": 2
 							},
 							"count": {"type": "integer"}
 						},
@@ -659,7 +672,8 @@
 				},
 				"additionalProperties": false
 			},
-			"uniqueItems": true
+			"uniqueItems": true,
+			"minItems": 1
 		},
 
 		"expertise": {
@@ -725,7 +739,8 @@
 					"poisoner's kit": {"type": "boolean"}
 				}
 			},
-			"uniqueItems": true
+			"uniqueItems": true,
+			"minItems": 1
 		},
 
 		"additionalFeatsArray": {
@@ -737,7 +752,8 @@
 				},
 				"additionalProperties": {"type": "boolean"}
 			},
-			"uniqueItems": true
+			"uniqueItems": true,
+			"minItems": 1
 		},
 
 		"proficiencyTag": {
@@ -813,7 +829,8 @@
 											"swim"
 										]
 									},
-									"uniqueItems": true
+									"uniqueItems": true,
+									"minItems": 2
 								},
 								"amount": {
 									"type": "integer"
@@ -891,6 +908,7 @@
 
 		"prerequisite": {
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {
@@ -1267,7 +1285,8 @@
 							}
 						]
 					},
-					"uniqueItems": true
+					"uniqueItems": true,
+					"minItems": 1
 				},
 				{
 					"type": "null"
@@ -1341,7 +1360,8 @@
 							}
 						]
 					},
-					"uniqueItems": true
+					"uniqueItems": true,
+					"minItems": 1
 				},
 				{
 					"type": "null"
@@ -1372,7 +1392,8 @@
 					}
 				]
 			},
-			"uniqueItems": true
+			"uniqueItems": true,
+			"minItems": 1
 		},
 
 		"damageVulnerabilityArray":  {
@@ -1446,7 +1467,8 @@
 					}
 				]
 			},
-			"uniqueItems": true
+			"uniqueItems": true,
+			"minItems": 1
 		},
 
 		"conditionImmunityArray": {
@@ -1486,7 +1508,8 @@
 							}
 						]
 					},
-					"uniqueItems": true
+					"uniqueItems": true,
+					"minItems": 1
 				},
 				{
 					"type": "null"
@@ -1517,7 +1540,8 @@
 					}
 				]
 			},
-			"uniqueItems": true
+			"uniqueItems": true,
+			"minItems": 1
 		},
 
 		"resourcesArray": {
@@ -1632,6 +1656,7 @@
 
 		"genericFluffArray": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {
 				"anyOf": [
@@ -2098,6 +2123,7 @@
 
 		"versionsArray": {
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"$ref": "#/definitions/version"
 			}
@@ -2251,6 +2277,7 @@
 
 		"_additionalSpellArrayOfStringOrChoiceObject": {
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"oneOf": [
 					{"type": "string"},
@@ -2295,6 +2322,7 @@
 		"additionalSpellsArray": {
 			"description": "A collection of additional spells which a feature grants.\nThis array enables import functionality for VTTs, and should be used in addition to \"classSpells\"/\"subclassSpells\"/\"subSubclassSpells\" blocks which enable references on the site.",
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {
@@ -2460,6 +2488,7 @@
 
 		"reqAttuneTags": {
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {
@@ -2492,11 +2521,13 @@
 
 		"adventureBookData": {
 			"type": "array",
-			"items": {"$ref": "entry.json"}
+			"items": {"$ref": "entry.json"},
+			"minItems": 1
 		},
 
 		"optionalfeatureProgression": {
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {
@@ -2569,6 +2600,7 @@
 
 		"foundryAdvancementsArray": {
 			"type": "array",
+			"minItems": 1,
 			"items": {"$ref": "#/definitions/foundryAdvancementObject"},
 			"uniqueItems": true
 		},
@@ -2609,11 +2641,13 @@
 		"foundryEffectsArray": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/foundryEffectObject"},
+			"minItems": 1,
 			"uniqueItems": true
 		},
 
 		"foundrySideDataGenericArray": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {
 				"type": "object",
@@ -2635,6 +2669,7 @@
 
 		"foundrySideDataGenericFeatureArray": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {
 				"type": "object",

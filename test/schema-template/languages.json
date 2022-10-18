@@ -81,6 +81,7 @@
 		"language": {
 			"type": "array",
 			"uniqueItems": true,
+			"minItems": 1,
 			"items": {
 				"$ref": "#/definitions/language"
 			}
@@ -88,6 +89,8 @@
 
 		"languageScript": {
 			"type": "array",
+			"uniqueItems": true,
+			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {

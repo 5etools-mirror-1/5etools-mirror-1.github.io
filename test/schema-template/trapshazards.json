@@ -217,6 +217,7 @@
 	"properties": {
 		"trap": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {
 				"$ref": "#/definitions/trap"
@@ -224,6 +225,7 @@
 		},
 		"hazard": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {
 				"$ref": "#/definitions/hazard"

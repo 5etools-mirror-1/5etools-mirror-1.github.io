@@ -161,6 +161,7 @@
 	"properties": {
 		"cult": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {
 				"$ref": "#/definitions/cult"
@@ -168,6 +169,7 @@
 		},
 		"boon": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {
 				"$ref": "#/definitions/boon"

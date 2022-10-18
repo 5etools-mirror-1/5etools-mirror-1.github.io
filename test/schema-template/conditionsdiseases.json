@@ -59,6 +59,7 @@
 	"properties": {
 		"condition": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {
 				"$ref": "#/definitions/conditionDisease"
@@ -66,6 +67,7 @@
 		},
 		"disease": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {
 				"$ref": "#/definitions/conditionDisease"
@@ -73,6 +75,7 @@
 		},
 		"status": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {
 				"$ref": "#/definitions/conditionDisease"

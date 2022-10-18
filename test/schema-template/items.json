@@ -232,6 +232,8 @@
 				"items": {
 					"description": "This is required for itemGroup entries.",
 					"type": "array",
+					"minItems": 1,
+					"uniqueItems": true,
 					"items": {
 						"type": "string"
 					}
@@ -539,7 +541,8 @@
 			"items": {
 				"$ref": "#/definitions/item"
 			},
-			"uniqueItems": true
+			"uniqueItems": true,
+			"minItems": 1
 		},
 		"itemGroup": {
 			"description": "Used to create fake item entries for groups of related items, often referred to as a single item (e.g. arcane foci)",
@@ -560,7 +563,8 @@
 					}
 				]
 			},
-			"uniqueItems": true
+			"uniqueItems": true,
+			"minItems": 1
 		},
 		"_meta": {
 			"$ref": "util.json#/definitions/metaBlock"

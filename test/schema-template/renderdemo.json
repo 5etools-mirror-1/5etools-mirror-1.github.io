@@ -6,6 +6,7 @@
 	"properties": {
 		"data": {
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"$ref": "entry.json"
 			}

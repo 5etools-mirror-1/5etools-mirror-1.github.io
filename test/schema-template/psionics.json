@@ -37,6 +37,7 @@
 				},
 				"modes": {
 					"type": "array",
+					"minItems": 1,
 					"uniqueItems": true,
 					"items": {
 						"type": "object",
@@ -93,6 +94,7 @@
 							},
 							"submodes": {
 								"type": "array",
+								"minItems": 1,
 								"uniqueItems": true,
 								"items": {
 									"type": "object",
@@ -166,6 +168,7 @@
 	"properties": {
 		"psionic": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {
 				"$ref": "#/definitions/psionic"

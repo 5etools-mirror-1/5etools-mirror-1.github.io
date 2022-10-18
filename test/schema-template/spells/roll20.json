@@ -100,7 +100,9 @@
 	"properties": {
 		"spell": {
 			"type": "array",
-			"items": {"$ref": "#/definitions/spellMeta"}
+			"items": {"$ref": "#/definitions/spellMeta"},
+			"minItems": 1,
+			"uniqueItems": true
 		}
 	}
 }

@@ -74,6 +74,7 @@
 		"_meta": {"$ref": "../util.json#/definitions/metaBlock"},
 		"legendaryGroup": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {"$ref": "#/definitions/legendaryGroup"}
 		}

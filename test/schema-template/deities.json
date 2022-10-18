@@ -16,6 +16,7 @@
 				},
 				"alignment": {
 					"type": "array",
+					"minItems": 1,
 					"items": {
 						"$ref": "util.json#/definitions/alignment"
 					}
@@ -59,6 +60,8 @@
 				},
 				"domains": {
 					"type": "array",
+					"minItems": 1,
+					"uniqueItems": true,
 					"items": {
 						"type": "string",
 						"$$ifSiteElse_key": {
@@ -101,6 +104,8 @@
 				},
 				"altNames": {
 					"type": "array",
+					"minItems": 1,
+					"uniqueItems": true,
 					"items": {
 						"type": "string"
 					}
@@ -158,6 +163,7 @@
 	"properties": {
 		"deity": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {
 				"$ref": "#/definitions/deity"

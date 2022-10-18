@@ -850,22 +850,30 @@
 
 		"class": {
 			"type": "array",
-			"items": {"$ref": "#/definitions/class"}
+			"items": {"$ref": "#/definitions/class"},
+			"minItems": 1,
+			"uniqueItems": true
 		},
 
 		"subclass": {
 			"type": "array",
-			"items": {"$ref": "#/definitions/subclass"}
+			"items": {"$ref": "#/definitions/subclass"},
+			"minItems": 1,
+			"uniqueItems": true
 		},
 
 		"classFeature": {
 			"type": "array",
-			"items": {"$ref": "#/definitions/classFeature"}
+			"items": {"$ref": "#/definitions/classFeature"},
+			"minItems": 1,
+			"uniqueItems": true
 		},
 
 		"subclassFeature": {
 			"type": "array",
-			"items": {"$ref": "#/definitions/subclassFeature"}
+			"items": {"$ref": "#/definitions/subclassFeature"},
+			"minItems": 1,
+			"uniqueItems": true
 		}
 	},
 	"additionalProperties": false

@@ -80,6 +80,7 @@
 	"properties": {
 		"action": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {
 				"$ref": "#/definitions/action"

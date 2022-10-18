@@ -29,6 +29,7 @@
 				},
 				"ability": {
 					"type": "array",
+					"minItems": 1,
 					"items": {
 						"type": "object",
 						"properties": {
@@ -148,6 +149,7 @@
 	"properties": {
 		"feat": {
 			"type": "array",
+			"minItems": 1,
 			"uniqueItems": true,
 			"items": {
 				"$ref": "#/definitions/feat"
