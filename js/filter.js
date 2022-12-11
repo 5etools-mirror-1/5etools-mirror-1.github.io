@@ -2222,12 +2222,19 @@ class SourceFilterItem extends FilterItem {
 }
 
 class SourceFilter extends Filter {
-	static _SORT_ITEMS_MINI (a, b) {
-		a = a.item ?? a;
-		b = b.item ?? b;
-		const valA = BrewUtil2.hasSourceJson(a) ? 2 : SourceUtil.isNonstandardSource(a) ? 1 : 0;
-		const valB = BrewUtil2.hasSourceJson(b) ? 2 : SourceUtil.isNonstandardSource(b) ? 1 : 0;
-		return SortUtil.ascSort(valA, valB) || SortUtil.ascSortLower(Parser.sourceJsonToFull(a), Parser.sourceJsonToFull(b));
+
+	_SORT_OPTIONS = {
+		"ALPHA":  SourceFilter._SORT_BY_ALPHA,
+		"RELEASE_DATE": SourceFilter._SORT_BY_RELEASE_DATE,
+		"DEFAULT": SourceFilter._SORT_BY_ALPHA,
+	}
+
+	static _SORT_BY_ALPHA (a, b) {
+		return SortUtil.ascSortLower(Parser.sourceJsonToFull(a.item), Parser.sourceJsonToFull(b.item));
+	}
+
+	static _SORT_BY_RELEASE_DATE (a, b) {
+		return -1 * SortUtil.ascSortDateString(Parser.sourceJsonToDate(a.item), Parser.sourceJsonToDate(b.item));
 	}
 
 	static _getDisplayHtmlMini (item) {
@@ -2244,8 +2251,8 @@ class SourceFilter extends Filter {
 		opts.displayFn = opts.displayFn === undefined ? item => Parser.sourceJsonToFullCompactPrefix(item.item || item) : opts.displayFn;
 		opts.displayFnMini = opts.displayFnMini === undefined ? SourceFilter._getDisplayHtmlMini.bind(SourceFilter) : opts.displayFnMini;
 		opts.displayFnTitle = opts.displayFnTitle === undefined ? item => Parser.sourceJsonToFull(item.item || item) : opts.displayFnTitle;
-		opts.itemSortFnMini = opts.itemSortFnMini === undefined ? SourceFilter._SORT_ITEMS_MINI.bind(SourceFilter) : opts.itemSortFnMini;
-		opts.itemSortFn = opts.itemSortFn === undefined ? (a, b) => SortUtil.ascSortLower(Parser.sourceJsonToFull(a.item), Parser.sourceJsonToFull(b.item)) : opts.itemSortFn;
+		opts.itemSortFnMini = opts.itemSortFnMini;
+		opts.itemSortFn = opts.itemSortFn === undefined ? SourceFilter._SORT_BY_ALPHA : opts.itemSortFn;
 		opts.groupFn = opts.groupFn === undefined ? SourceUtil.getFilterGroup : opts.groupFn;
 		opts.selFn = opts.selFn === undefined ? PageFilter.defaultSourceSelFn : opts.selFn;
 
@@ -2267,6 +2274,11 @@ class SourceFilter extends Filter {
 		const out = super.removeItem(item);
 		this._tmpState.ixAdded--;
 		return out;
+	}
+
+	reset () {
+		this._setSort();
+		super.reset();
 	}
 
 	_getHeaderControls_addExtraStateBtns (opts, wrpStateBtnsOuter) {
@@ -2333,6 +2345,21 @@ class SourceFilter extends Filter {
 			new ContextUtil.Action(
 				"Invert Selection",
 				() => this._doInvertPins(),
+			),
+			null,
+			new ContextUtil.Action(
+				"Sort Alphabetically",
+				() => {
+					this._setSort("ALPHA");
+					this.update();
+				}
+			),
+			new ContextUtil.Action(
+				"Sort by Release Date",
+				() => {
+					this._setSort("RELEASE_DATE");
+					this.update();
+				}
 			),
 		]);
 		const btnBurger = e_({
@@ -2425,10 +2452,32 @@ class SourceFilter extends Filter {
 		if (reprintedFilter) reprintedFilter.setValue("Reprinted", 0);
 	}
 
+	_setSort(sortType = "DEFAULT") {
+		this._isItemsDirty = true;
+		this._itemSortFn = this._SORT_OPTIONS[sortType];
+		this._meta.sort = sortType;
+	}
+
 	static getCompleteFilterSources (ent) {
 		return ent.otherSources
 			? [ent.source].concat(ent.otherSources.map(src => new SourceFilterItem({item: src.source, isIgnoreRed: true, isOtherSource: true})))
 			: ent.source;
+	}
+
+	_doRenderPills () {
+		const sort = this._meta.sort;
+		if (sort) { 
+			this._setSort(sort);
+		}
+		super._doRenderPills();
+	}
+
+	_doRenderMiniPills () {
+		const sort = this._meta.sort;
+		if (sort) { 
+			this._setSort(sort);
+		}
+		super._doRenderMiniPills();
 	}
 
 	_doRenderPills_doRenderWrpGroup_getHrDivider (group) {
@@ -2607,6 +2656,7 @@ class SourceFilter extends Filter {
 }
 SourceFilter._DEFAULT_META = {
 	isIncludeOtherSources: false,
+	sort: "DEFAULT",
 };
 SourceFilter._SRD_SOURCES = null;
 SourceFilter._BASIC_RULES_SOURCES = null;
