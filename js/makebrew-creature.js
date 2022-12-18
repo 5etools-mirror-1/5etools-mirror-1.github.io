@@ -24,7 +24,11 @@ class CreatureBuilder extends Builder {
 		this._$selLegendaryGroup = null;
 		this._legendaryGroupCache = null;
 
-		// Indexed template creature traits
+		// Indexed template creature actions and traits
+		this._jsonCreatureActions = null;
+		this._indexedActions = null;
+		this._addedHashesCreatureActions = new Set();
+		
 		this._jsonCreatureTraits = null;
 		this._indexedTraits = null;
 		this._addedHashesCreatureTraits = new Set();
@@ -194,6 +198,17 @@ class CreatureBuilder extends Builder {
 		});
 		SearchUtil.removeStemmer(this._indexedTraits);
 		this._jsonCreatureTraits.forEach((it, i) => this._indexedTraits.addDoc({
+			n: it.name,
+			id: i,
+		}));
+		
+		this._jsonCreatureActions = [...jsonCreature.makebrewCreatureAction, ...(brew.makebrewCreatureAction || [])];
+		this._indexedActions = elasticlunr(function () {
+			this.addField("n");
+			this.setRef("id");
+		});
+		SearchUtil.removeStemmer(this._indexedActions);
+		this._jsonCreatureActions.forEach((it, i) => this._indexedActions.addDoc({
 			n: it.name,
 			id: i,
 		}));
@@ -2742,6 +2757,45 @@ class CreatureBuilder extends Builder {
 								${$stageBonusDamage}
 								<div class="ve-flex-v-center ve-flex-h-right mt-2 pb-1 px-1">${$btnConfirm}${$btnReset}</div>
 								</div>`.appendTo($modalInner);
+							});
+						},
+					},
+					{
+						name: "Add Predefined Action",
+						action: () => {
+							let actionIndex;
+							return new Promise(resolve => {
+								const searchWidget = new SearchWidget(
+									{Action: this._indexedActions},
+									async (ix) => {
+										actionIndex = ix;
+										doClose(true);
+									},
+									{
+										defaultCategory: "Action",
+										searchOptions: {
+											fields: {
+												n: {boost: 5, expand: true},
+											},
+											expand: true,
+										},
+										fnTransform: (doc) => doc.id,
+									},
+								);
+								const {$modalInner, doClose} = UiUtil.getShowModal({
+									title: "Select an Action",
+									cbClose: (isDataEntered) => {
+										searchWidget.$wrpSearch.detach();
+										if (!isDataEntered) return resolve(null);
+										const action = MiscUtil.copy(this._jsonCreatureActions[actionIndex]);
+										let name = this._state.shortName && typeof this._state.shortName === "string" ? this._state.shortName : this._state.name;
+										if (!this._state.isNamedCreature) name = (name || "").toLowerCase();
+										action.entries = JSON.parse(JSON.stringify(action.entries).replace(/<\$name\$>/gi, name));
+										resolve(action);
+									},
+								});
+								$modalInner.append(searchWidget.$wrpSearch);
+								searchWidget.doFocus();
 							});
 						},
 					},
