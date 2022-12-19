@@ -2790,7 +2790,39 @@ class CreatureBuilder extends Builder {
 										const action = MiscUtil.copy(this._jsonCreatureActions[actionIndex]);
 										let name = this._state.shortName && typeof this._state.shortName === "string" ? this._state.shortName : this._state.name;
 										if (!this._state.isNamedCreature) name = (name || "").toLowerCase();
-										action.entries = JSON.parse(JSON.stringify(action.entries).replace(/<\$name\$>/gi, name));
+										
+										// Tag-to-textification
+										action.entries = JSON.parse(JSON.stringify(action.entries).replace(/<\$([^$]+)\$>/g, (...m) =>
+										{
+											const parts = m[1].split("__");
+											switch (parts[0]) {
+												case "name": return name;
+												case "dc":
+												{
+													if (!Parser.ABIL_ABVS.includes(parts[1])) return 0;
+													return 8 + Parser.getAbilityModNumber(Number(this._state[parts[1]])) + Parser.crToPb(this._state.cr);
+												}
+												case "to_hit":
+												{
+													if (!Parser.ABIL_ABVS.includes(parts[1])) return 0;
+													const total = Parser.crToPb(this._state.cr) + Parser.getAbilityModNumber(Number(this._state[parts[1]]));
+													return total >= 0 ? `+${total}` : total;
+												}
+												case "damage_mod":
+												{
+													if (!Parser.ABIL_ABVS.includes(parts[1])) return 0;
+													const total = Parser.getAbilityModNumber(Number(this._state[parts[1]]));
+													return total === 0 ? "" : total > 0 ? ` + ${total}` : ` ${total}`;
+												}
+												case "damage_avg":
+												{
+													const replaced = parts[1].replace(/(str|dex|con|int|wis|cha)/gi, (...m2) => Parser.getAbilityModNumber(Number(this._state[m2[0]])));
+													const clean = replaced.replace(/[^-+/*0-9.,]+/g, "");
+													return Math.floor(eval(clean));
+												}
+												default: return m[0];
+											}
+										}));
 										resolve(action);
 									},
 								});
