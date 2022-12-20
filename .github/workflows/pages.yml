@@ -32,13 +32,9 @@ jobs:
          -  name: Checkout
             uses: actions/checkout@master
 
-         # See: https://stackoverflow.com/a/58178121
-         -  name: Set Env
-            run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-
          -  name: Set Deployed Flag
             run: |
-               bash ./.github/set-deployed-flag.sh ${{ env.RELEASE_VERSION }}
+               bash ./.github/set-deployed-flag.sh ${{ github.ref_name }}
 
          # Remove entries from the `.gitignore` so the gh-pages action can correctly add+commit them to the pages branch
          -  name: Build Service Worker
@@ -56,7 +52,7 @@ jobs:
                VET_BASE_SITE_URL: https://5etools-mirror-1.github.io/
                VET_SEO_IS_SKIP_UA_ETC: true
             run: |
-               npm run build:seo -- ${{ env.RELEASE_VERSION }}
+               npm run build:seo -- ${{ github.ref_name }}
 
          -  name: Cleanup
             run: |
