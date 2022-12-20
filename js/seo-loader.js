@@ -1,7 +1,7 @@
 window.addEventListener("load", async () => {
 	Renderer.get().setBaseUrl("/");
 	const fullPage = `${_SEO_PAGE}.html`;
-	const it = await Renderer.hover.pCacheAndGet(fullPage, _SEO_SOURCE, _SEO_HASH);
+	const it = await DataLoader.pCacheAndGet(fullPage, _SEO_SOURCE, _SEO_HASH);
 
 	document.title = `${it.name} - 5etools`;
 	$(`.page__title`).text(`${_SEO_PAGE.toTitleCase()}: ${it.name}`);
@@ -42,7 +42,7 @@ window.addEventListener("load", async () => {
 	}
 
 	if (_SEO_FLUFF) {
-		const fluff = await Renderer.hover.pCacheAndGet(`fluff__${fullPage}`, _SEO_SOURCE, _SEO_HASH);
+		const fluff = await DataLoader.pCacheAndGet(`${fullPage}fluff`, _SEO_SOURCE, _SEO_HASH);
 		if (fluff) {
 			$$`<div class="mt-5 py-2">
 				${Renderer.hover.$getHoverContent_fluff(_SEO_PAGE, fluff, null, {isSkipNameRow: true, isSkipPageRow: true}).addClass("shadow-big stats--book stats--book-large")}

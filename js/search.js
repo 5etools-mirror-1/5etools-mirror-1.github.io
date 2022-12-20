@@ -225,7 +225,7 @@ class SearchPage {
 						{
 							onObserve: () => {
 								const page = UrlUtil.categoryToHoverPage(category);
-								Renderer.hover.pCacheAndGet(
+								DataLoader.pCacheAndGet(
 									page,
 									source,
 									hash,

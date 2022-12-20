@@ -2276,5 +2276,21 @@
 		"date": "2022-12-05",
 		"title": "Seasoned Veterans",
 		"txt": "- Added Monstrous Compendium Volume 2: Dragonlance Creatures content\n- Fixed missing thumbnail images for various adventures/books, including DSotDQ\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.172.0",
+		"date": "2022-12-19",
+		"title": "Winter Breakage",
+		"txt": "- Reworked site-wide data loading, to (hopefully) be more performant, easier to maintain, and allow for the addition of new features in the future. _[This *shouldn't* have any immediate impact, but given the scope of the changes, expect things to be broken.]_\n- Reworked Spells page \"spell list/sources\" section to be auto-generated from class/subclass/etc. data, ensuring the list of ways to acquire a spell is always in sync with the features providing that spell\n    - This fixes a variety of bugs, including many broken links from the Spells page to other pages\n    - This fixes the long-standing issue where new content (subclasses, races, backgrounds, etc.) would not appear in filters on the Spells page, and would not appear in the sources section of a viewed spell\n- Added \"Feat\" and \"Optional Feature\" filters to Spells page\n- Added new \"searchable\" filter UI type (currently used in Spells page \"Background\", \"Feat\", and \"Optional Feature\" filters; Bestiary page \"Spells Known\" filter; and Items page \"Attached Spells\" filter)\n- Added \"Settings\" button to Spells page, which allows toggling of various spell source display elements, to optionally allow for a de-cluttered spell view\n- Added Shadow of the Dragon Queen NPCs\n- Added tokens for remaining Shadow of the Dragon Queen creatures\n- Added page numbers to all Shadow of the Dragon Queen content\n- Added MCV2: Dragonlance Creatures tokens\n- Moved Mythic Odysseys of Theros' \"Piety\" rewards to Supernatural Gifts & Rewards page\n- Fixed application of list syntax (`text:`, etc.) on Items page\n- Fixed Omnidexer failing to index fluff for some entity types (notably items)\n- Fixed various \"CTRL\" hotkeys failing to also support \"CMD\" on MacOS\n- Fixed a variety of layout issues in filters, resulting in a marginally-less-headache-inducing look\n- (Brew) Added the ability to drag-drop JSON files to the page to load them as homebrew\n- (Brew) Added support for `\"all\"` spells matching a filter expression in `additionalSpells`, allowing e.g. the spell list of one class to be copied to the `additionalSpells` of another (see e.g. Arcane Trickster Rogue)\n- (Brew) Added support for \"varies\" rarity on `\"magicvariant\"`s, which additionally has any generated specific variants use the rarity of the base item they were applied to\n- (Brew) Fixed JSON cleaner applying site-specific formatting to `homebrew/` dir\n- (Brew) Fixed Creature Homebrew Builder outputting non-schema-compliant `\"speed\"` data\n- (Brew) Fixed item `\"currencyConversion\"` tables resulting in no item value being rendered\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.172.1",
+		"date": "2022-12-20",
+		"txt": "- Converted Spells page \"Classes\"/\"Subclasses\"/etc. sources to hoverable links\n- SHIFT-clicking a toast message will now dismiss all toast messages\n- Reworked searchable filter keybinds to better match existing filter click keybinds (SHIFT to select one; CTRL to select as red)\n- Fixed spell source generation failing to take class into account, resulting in spells having far more sources than intended\n- Fixed DM Screen Adventure/Book Map Dynamic Viewer failing to load\n- Fixed crash when loading a Classes page URL which contains filter state\n- (Brew) Reworked \"failed to load references\" messages to reduce repetitive spam\n- (Brew) Fixed loading of `\"refOptionalfeature\"`s in class/subclass content\n- (Brew) Fixed Classes page crash on missing features\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.172.2",
+		"date": "2022-12-20",
+		"txt": "- (Brew) Fixed crash when changing chapter in adventures/books"
 	}
 ]

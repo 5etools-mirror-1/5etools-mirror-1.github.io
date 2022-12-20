@@ -3,7 +3,7 @@
 if (typeof module !== "undefined") {
 	const cv = require("./converterutils.js");
 	Object.assign(global, cv);
-	global.PropOrder = require("./utils-proporder.js");
+	require("./utils-proporder.js");
 	Object.assign(global, require("./converterutils-markdown.js"));
 	Object.assign(global, require("./converterutils-race.js"));
 }

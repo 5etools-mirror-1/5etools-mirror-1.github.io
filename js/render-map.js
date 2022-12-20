@@ -1,4 +1,8 @@
 class RenderMap {
+	static _getZoom (mapData) {
+		return this._ZOOM_LEVELS[mapData.ixZoom];
+	}
+
 	static async pShowViewer (evt, ele) {
 		const mapData = JSON.parse(ele.dataset.rdPackedMap);
 
@@ -25,8 +29,8 @@ class RenderMap {
 				$pFnGetPopoutContent: this._$getWindowContent.bind(this, mapData),
 				fnGetPopoutSize: () => {
 					return {
-						width: Math.min(window.innerWidth, Math.round(mapData.getZoom() * mapData.width)),
-						height: Math.min(window.innerHeight, Math.round(mapData.getZoom() * mapData.height) + 32),
+						width: Math.min(window.innerWidth, Math.round(this._getZoom(mapData) * mapData.width)),
+						height: Math.min(window.innerHeight, Math.round(this._getZoom(mapData) * mapData.height) + 32),
 					};
 				},
 				isPopout: !!evt.shiftKey,
@@ -43,7 +47,6 @@ class RenderMap {
 	static async _pMutMapData (mapData) {
 		// Store some additional data on this mapData state object
 		mapData.ixZoom = RenderMap._ZOOM_LEVELS.indexOf(1.0);
-		mapData.getZoom = () => RenderMap._ZOOM_LEVELS[mapData.ixZoom];
 		mapData.activeWindows = {};
 		mapData.loadedImage = await RenderMap._pLoadImage(mapData);
 		if (mapData.loadedImage) {
@@ -96,7 +99,7 @@ class RenderMap {
 				if (lastIxZoom === mapData.ixZoom) return;
 			}
 
-			const zoom = mapData.getZoom();
+			const zoom = this._getZoom(mapData);
 
 			const nxtWidth = Math.round(mapData.width * zoom);
 			const nxtHeight = Math.round(mapData.height * zoom);
@@ -122,7 +125,7 @@ class RenderMap {
 		const zoomChangeDebounced = MiscUtil.debounce(zoomChange, 20);
 
 		const getZoomedPoint = (pt) => {
-			const zoom = mapData.getZoom();
+			const zoom = this._getZoom(mapData);
 
 			return [
 				Math.round(pt[X] * zoom),
@@ -163,7 +166,7 @@ class RenderMap {
 			const cvsSpaceX = clientX - cvsLeftPos;
 			const cvsSpaceY = clientY - cvsTopPos;
 
-			const zoom = mapData.getZoom();
+			const zoom = this._getZoom(mapData);
 
 			const cvsZoomedSpaceX = Math.round((1 / zoom) * cvsSpaceX);
 			const cvsZoomedSpaceY = Math.round((1 / zoom) * cvsSpaceY);
@@ -315,7 +318,7 @@ class RenderMap {
 			${$cvs}
 		</div>`
 			.on("mousewheel DOMMouseScroll", evt => {
-				if (!evt.ctrlKey) return;
+				if (!evt.ctrlKey || evt.metaKey) return;
 				evt.stopPropagation();
 				evt.preventDefault();
 				evt = evt.originalEvent; // Access the underlying properties
@@ -352,7 +355,7 @@ class RenderMap {
 			const fromCache = MiscUtil.get(RenderMap._AREA_CACHE, mapData.source, mapData.hash, areaId);
 			if (fromCache) return fromCache;
 
-			const loaded = await Renderer.hover.pCacheAndGet(mapData.page, mapData.source, mapData.hash);
+			const loaded = await DataLoader.pCacheAndGet(mapData.page, mapData.source, mapData.hash);
 			(RenderMap._AREA_CACHE[mapData.source] =
 				RenderMap._AREA_CACHE[mapData.source] || {})[mapData.hash] =
 				Renderer.adventureBook.getEntryIdLookup((loaded.adventureData || loaded.bookData).data);

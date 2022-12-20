@@ -4,6 +4,7 @@ async function main () {
 	require("./generate-quick-reference");
 	await require("./generate-tables-data");
 	require("./generate-subclass-lookup");
+	await require("./generate-spell-source-lookup.js");
 	require("./generate-nav-adventure-book-index");
 	require("./generate-all-maps");
 	// require("./generate-wotc-homebrew"); // unused

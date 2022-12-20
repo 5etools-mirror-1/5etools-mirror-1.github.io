@@ -942,7 +942,7 @@ class InitiativeTracker {
 
 			if (isMon && (hpVals.curHp === "" || hpVals.maxHp === "" || init === "")) {
 				const doUpdate = async () => {
-					const m = await Renderer.hover.pCacheAndGet(UrlUtil.PG_BESTIARY, source, hash);
+					const m = await DataLoader.pCacheAndGet(UrlUtil.PG_BESTIARY, source, hash);
 
 					// set or roll HP
 					if (!isRollHp && m.hp.average) {
@@ -1077,7 +1077,7 @@ class InitiativeTracker {
 								$ipt.attr("populate-running", true);
 								const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BESTIARY]({name: name, source: source});
 								const populateStats = async () => {
-									const mon = await Renderer.hover.pCacheAndGet(UrlUtil.PG_BESTIARY, source, hash);
+									const mon = await DataLoader.pCacheAndGet(UrlUtil.PG_BESTIARY, source, hash);
 									$ipt.val(meta.get(mon));
 									$ipt.removeAttr("populate-running");
 									doUpdateExternalStates();

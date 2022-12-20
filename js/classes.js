@@ -93,9 +93,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		});
 
 		this._addData(data);
-
-		const homebrew = await BrewUtil2.pGetBrewProcessed();
-		await this._pHandleBrew(homebrew);
+		await this._pAddBrewData();
 
 		this._pageFilter.trimState();
 
@@ -128,13 +126,13 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		window.dispatchEvent(new Event("toolsLoaded"));
 	}
 
-	async _pHandleBrew (homebrew) {
-		const {class: rawClassData, subclass: rawSubclassData} = homebrew;
-		const cpy = MiscUtil.copy({class: rawClassData, subclass: rawSubclassData});
-		if (cpy.class) for (let i = 0; i < cpy.class.length; ++i) cpy.class[i] = await DataUtil.class.pGetDereferencedClassData(cpy.class[i]);
-		if (cpy.subclass) for (let i = 0; i < cpy.subclass.length; ++i) cpy.subclass[i] = await DataUtil.class.pGetDereferencedSubclassData(cpy.subclass[i]);
+	async _pAddBrewData () {
+		const brew = await BrewUtil2.pGetBrewProcessed();
+		if (!brew?.class?.length && !brew?.subclass?.length) return;
 
-		const {isAddedAnyClass, isAddedAnySubclass} = this._addData(cpy);
+		const brewData = await DataUtil.class.loadBrew();
+
+		const {isAddedAnyClass, isAddedAnySubclass} = this._addData(brewData);
 
 		if (isAddedAnySubclass && !Hist.initialLoad) await this._pDoRender();
 	}
@@ -388,7 +386,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 	_getHashState (opts) {
 		opts = opts || {};
 
-		let fromState = opts.state || MiscUtil.copy(this.__state);
+		let fromState = opts.state || MiscUtil.copyFast(this.__state);
 		let cls = opts.class || this.activeClass;
 
 		// region class
@@ -432,7 +430,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 			} else {
 				const featureId = $target.closest(`tr`).attr("data-scroll-id");
 
-				const curState = MiscUtil.copy(this.__state);
+				const curState = MiscUtil.copyFast(this.__state);
 				curState.feature = featureId;
 				const href = `${window.location.href.split("#")[0]}#${this._getHashState({state: curState})}`;
 
@@ -492,7 +490,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 	_doGenerateFilteredActiveClassData () {
 		const f = this.filterBox.getValues();
 
-		const cpyCls = MiscUtil.copy(this.activeClassRaw);
+		const cpyCls = MiscUtil.copyFast(this.activeClassRaw);
 
 		const walker = Renderer.class.getWalkerFilterDereferencedFeatures();
 
@@ -727,7 +725,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		});
 
 		this._fnTableHandleFilterChange = (f) => {
-			const cpyCls = MiscUtil.copy(this.activeClassRaw);
+			const cpyCls = MiscUtil.copyFast(this.activeClassRaw);
 			const isUseSubclassSources = !this._pageFilter.isClassNaturallyDisplayed(f, cpyCls) && this._pageFilter.isAnySubclassDisplayed(f, cpyCls);
 
 			metasTblRows.forEach(metaTblRow => {
@@ -870,7 +868,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 						// defer this for performance
 						setTimeout(() => {
 							// these will modify this._state.feature when clicked
-							const curState = MiscUtil.copy(this.__state);
+							const curState = MiscUtil.copyFast(this.__state);
 							curState.feature = featureId;
 							const href = `#${this._getHashState({state: curState})}`;
 							$lnk.attr("href", href);
@@ -1004,11 +1002,17 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		const $wrpSidebar = $(`#statsprof`).empty();
 		const cls = this.activeClass;
 
-		const $btnToggleSidebar = $(`<div class="cls-side__btn-toggle">[\u2012]</div>`)
-			.click(() => this._state.isHideSidebar = !this._state.isHideSidebar);
+		const $ptsToToggle = [];
+
+		const btnToggleSidebar = e_({
+			tag: "div",
+			clazz: "cls-side__btn-toggle",
+			text: `[\u2012]`,
+			click: () => this._state.isHideSidebar = !this._state.isHideSidebar,
+		});
 		const hkSidebarHidden = () => {
-			$btnToggleSidebar.text(this._state.isHideSidebar ? `[+]` : `[\u2012]`);
-			$(`.cls-side__show-hide`).toggle(!this._state.isHideSidebar);
+			btnToggleSidebar.txt(this._state.isHideSidebar ? `[+]` : `[\u2012]`);
+			$ptsToToggle.forEach($e => $e.toggleVe(!this._state.isHideSidebar));
 		};
 		this._addHookBase("isHideSidebar", hkSidebarHidden);
 		// (call the hook later)
@@ -1035,12 +1039,13 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		if (cls.requirements) {
 			const $ptPrereq = $getRenderedRequirements(cls.requirements);
 
-			$ptRequirements = $$`<tr class="cls-side__show-hide">
+			$ptRequirements = $$`<tr>
 				<td class="cls-side__section" colspan="6">
 					<h5 class="cls-side__section-head">Prerequisites</h5>
 					${$ptPrereq}
 				</td>
 			</tr>`;
+			$ptsToToggle.push($ptRequirements);
 		}
 		// endregion
 
@@ -1049,14 +1054,14 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		if (cls.hd) {
 			const hdEntry = Renderer.class.getHitDiceEntry(cls.hd);
 
-			$ptHp = `<tr class="cls-side__show-hide">
-				<td colspan="6" class="cls-side__section">
+			$ptHp = $(`<tr></tr>`)
+				.fastSetHtml(`<td colspan="6" class="cls-side__section">
 					<h5 class="cls-side__section-head">Hit Points</h5>
 					<div><strong>Hit Dice:</strong> ${Renderer.getEntryDice(hdEntry, "Hit die")}</div>
 					<div><strong>Hit Points at 1st Level:</strong> ${Renderer.class.getHitPointsAtFirstLevel(cls.hd)}</div>
 					<div><strong>Hit Points at Higher Levels:</strong> ${Renderer.class.getHitPointsAtHigherLevels(cls.name, cls.hd, hdEntry)}</div>
-				</td>
-			</tr>`;
+				</td>`);
+			$ptsToToggle.push($ptHp);
 		}
 		// endregion
 
@@ -1075,13 +1080,14 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 			].filter(Boolean).join("");
 			const $dispRendered = $(`<div/>`);
 
-			$ptEquipment = $$`<tr class="cls-side__show-hide">
+			$ptEquipment = $$`<tr>
 				<td class="cls-side__section" colspan="6">
 					<h5 class="cls-side__section-head">Starting Equipment</h5>
 					<div>${$dispRendered}</div>
 				</td>
 			</tr>`;
 			$dispRendered.fastSetHtml(rendered);
+			$ptsToToggle.push($ptEquipment);
 		}
 		// endregion
 
@@ -1126,7 +1132,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 				$ptMcEntries = $(`<div></div>`).fastSetHtml(Renderer.get().setFirstSection(true).render({type: "section", entries: mc.entries}));
 			}
 
-			$ptMulticlassing = $$`<tr class="cls-side__show-hide">
+			$ptMulticlassing = $$`<tr>
 				<td class="cls-side__section" colspan="6">
 					<h5 class="cls-side__section-head">Multiclassing</h5>
 					${$ptMcPrereq}
@@ -1139,15 +1145,28 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 					${$ptMcProfsSkills}
 				</td>
 			</tr>`;
+			$ptsToToggle.push($ptMulticlassing);
 		}
 		// endregion
+
+		const $ptProfs = $$`<tr>
+			<td colspan="6" class="cls-side__section">
+				<h5 class="cls-side__section-head">Proficiencies</h5>
+				<div><b>Armor:</b> <span>${profs.armor ? Renderer.class.getRenderedArmorProfs(profs.armor) : "none"}</span></div>
+				<div><b>Weapons:</b> <span>${profs.weapons ? Renderer.class.getRenderedWeaponProfs(profs.weapons) : "none"}</span></div>
+				<div><b>Tools:</b> <span>${profs.tools ? Renderer.class.getRenderedToolProfs(profs.tools) : "none"}</span></div>
+				<div><b>Saving Throws:</b> <span>${cls.proficiency ? cls.proficiency.map(p => Parser.attAbvToFull(p)).join(", ") : "none"}</span></div>
+				<div><b>Skills:</b> <span>${profs.skills ? Renderer.class.getRenderedSkillProfs(profs.skills) : "none"}</span></div>
+			</td>
+		</tr>`;
+		$ptsToToggle.push($ptProfs);
 
 		$$`<table class="w-100 stats shadow-big">
 			<tr><th class="border" colspan="6"></th></tr>
 			<tr><th colspan="6">
 				<div class="split-v-center pr-1" ${dataPartSendToFoundry}>
 					<div class="cls-side__name">${cls.name}</div>
-					<div class="ve-flex-v-center">${$btnSendToFoundry}${$btnToggleSidebar}</div>
+					<div class="ve-flex-v-center">${$btnSendToFoundry}${btnToggleSidebar}</div>
 				</div>
 			</th></tr>
 			${cls.authors ? `<tr><th colspan="6">By ${cls.authors.join(", ")}</th></tr>` : ""}
@@ -1156,16 +1175,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 
 			${$ptHp}
 
-			<tr class="cls-side__show-hide">
-				<td colspan="6" class="cls-side__section">
-					<h5 class="cls-side__section-head">Proficiencies</h5>
-					<div><b>Armor:</b> <span>${profs.armor ? Renderer.class.getRenderedArmorProfs(profs.armor) : "none"}</span></div>
-					<div><b>Weapons:</b> <span>${profs.weapons ? Renderer.class.getRenderedWeaponProfs(profs.weapons) : "none"}</span></div>
-					<div><b>Tools:</b> <span>${profs.tools ? Renderer.class.getRenderedToolProfs(profs.tools) : "none"}</span></div>
-					<div><b>Saving Throws:</b> <span>${cls.proficiency ? cls.proficiency.map(p => Parser.attAbvToFull(p)).join(", ") : "none"}</span></div>
-					<div><b>Skills:</b> <span>${profs.skills ? Renderer.class.getRenderedSkillProfs(profs.skills) : "none"}</span></div>
-				</td>
-			</tr>
+			${$ptProfs}
 
 			${$ptEquipment}
 
@@ -1288,7 +1298,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 			const filterSet = filterSets[ix];
 			const boxSubhashes = this.filterBox.getBoxSubHashes() || [];
 
-			const cpySubHashes = MiscUtil.copy(filterSet.subHashes);
+			const cpySubHashes = MiscUtil.copyFast(filterSet.subHashes);
 			if (filterSet.isClearSources) {
 				const classifiedSources = this._pageFilter.sourceFilter.getSources();
 				const sourcePart = [...classifiedSources.official, ...classifiedSources.homebrew]
@@ -1677,7 +1687,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 
 	_render_renderAltViews () { // "Hitler was right"
 		const cls = this.activeClass;
-		const cpyCls = MiscUtil.copy(this.activeClassRaw);
+		const cpyCls = MiscUtil.copyFast(this.activeClassRaw);
 
 		// region subclass comparison
 		if (this._subclassComparisonView) this._subclassComparisonView.teardown();
@@ -1737,7 +1747,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 							sc.subclassFeatures
 								.filter(it => it.length && it[0].level === lvl)
 								.forEach(features => {
-									const cpy = MiscUtil.copy(features);
+									const cpy = MiscUtil.copyFast(features);
 
 									// Note that this won't affect the root feature, only those nested inside it. The root
 									//   feature is filtered out elsewhere.
@@ -1970,7 +1980,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 			Renderer.get().setFirstSection(true);
 
 			cls.fluff.forEach((f, i) => {
-				const cpy = MiscUtil.copy(f);
+				const cpy = MiscUtil.copyFast(f);
 
 				if (typeof cpy !== "string") {
 					if (f.source && f.source !== cls.source && cpy.entries) cpy.entries.unshift(`{@note The following information is from ${Parser.sourceJsonToFull(f.source)}${Renderer.utils.isDisplayPage(f.page) ? `, page ${f.page}` : ""}.}`);
@@ -1992,7 +2002,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 
 			lvlFeatures.forEach((feature, ixFeature) => {
 				if (feature.source === cls.source) {
-					feature = MiscUtil.copy(feature);
+					feature = MiscUtil.copyFast(feature);
 					feature._isStandardSource = true;
 				}
 
@@ -2095,7 +2105,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 					? Renderer.get().render(`{@note This subclass was published on ${DatetimeUtil.getDateStr({date: new Date(Parser.sourceJsonToDate(sc.source))})}.}`)
 					: "";
 				const ptSources = ptrIsFirstSubclassLevel._ === true && sc.otherSources ? `{@note {@b Subclass source:} ${Renderer.utils.getSourceAndPageHtml(sc)}}` : "";
-				const toRender = (ptDate || ptSources) && scFeature.entries ? MiscUtil.copy(scFeature) : scFeature;
+				const toRender = (ptDate || ptSources) && scFeature.entries ? MiscUtil.copyFast(scFeature) : scFeature;
 				if (ptDate && toRender.entries) toRender.entries.unshift(ptDate);
 				if (ptSources && toRender.entries) toRender.entries.push(ptSources);
 
@@ -2148,7 +2158,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		return $(`<tr class="cls-main__msg-no-content"><td colspan="6">Toggle a button to view class and subclass information</td></tr>`);
 	}
 
-	_getDefaultState () { return MiscUtil.copy(ClassesPage._DEFAULT_STATE); }
+	_getDefaultState () { return MiscUtil.copyFast(ClassesPage._DEFAULT_STATE); }
 }
 ClassesPage._SC_FILTER_NAMESPACE = "sctabs";
 ClassesPage._DEFAULT_STATE = {
@@ -2218,7 +2228,7 @@ ClassesPage.ClassBookView = class {
 		renderStack.push(`<tr class="text" data-cls-book-fluff="true"><td colspan="6" class="py-3 px-5">`);
 		Renderer.get().setFirstSection(true);
 		(cls.fluff || []).forEach((f, i) => {
-			f = MiscUtil.copy(f);
+			f = MiscUtil.copyFast(f);
 
 			// Remove the name from the first section if it is a copy of the class name
 			if (i === 0 && f.name && f.name.toLowerCase() === cls.name.toLowerCase()) {

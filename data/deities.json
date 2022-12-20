@@ -882,34 +882,18 @@
 								},
 								{
 									"type": "entries",
-									"name": "Athreos's Devotee",
+									"name": "Benefits of Piety",
 									"entries": [
-										"{@i Piety 3+ Athreos trait}",
-										"Your life is intertwined with the fate of the dead. You can cast {@spell gentle repose} with this trait, requiring no material components, a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a long rest. Wisdom is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Athreos's Votary",
-									"entries": [
-										"{@i Piety 10+ Athreos trait}",
-										"You can cast {@spell speak with dead} with this trait, requiring no material components. Once you cast the spell in this way, you can't do so again until you finish a long rest. Wisdom is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Athreos's Disciple",
-									"entries": [
-										"{@i Piety 25+ Athreos trait}",
-										"You can cast {@spell false life} with this trait, requiring no material components. When you do so, you gain an additional 25 temporary hit points. Once you cast the spell in this way, you can't do so again until you finish a long rest. Wisdom is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Champion of the Passage",
-									"entries": [
-										"{@i Piety 50+ Athreos trait}",
-										"You can increase your Intelligence or Wisdom score by 2 and also increase your maximum for that score by 2."
+										{
+											"type": "list",
+											"columns": 2,
+											"items": [
+												"{@reward Athreos's Devotee|MOT}",
+												"{@reward Athreos's Votary|MOT}",
+												"{@reward Athreos's Disciple|MOT}",
+												"{@reward Champion of the Passage|MOT}"
+											]
+										}
 									]
 								}
 							]
@@ -1879,6 +1863,7 @@
 		{
 			"name": "Branchala",
 			"source": "DSotDQ",
+			"page": 14,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"N",
@@ -2127,6 +2112,7 @@
 		{
 			"name": "Chemosh",
 			"source": "DSotDQ",
+			"page": 18,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"L",
@@ -2166,6 +2152,7 @@
 		{
 			"name": "Chislev",
 			"source": "DSotDQ",
+			"page": 16,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"N"
@@ -3375,35 +3362,18 @@
 								},
 								{
 									"type": "entries",
-									"name": "Ephara's Devotee",
+									"name": "Benefits of Piety",
 									"entries": [
-										"{@i Piety 3+ Ephara trait}",
-										"Ephara grants you insight into how people communicate. You can cast {@spell comprehend languages} with this trait, requiring no material component, a number of times equal to your Intelligence modifier (minimum of once). You regain all expended uses when you finish a long rest. Intelligence is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Ephara's Votary",
-									"entries": [
-										"{@i Piety 10+ Ephara trait}",
-										"You gain advantage on Charisma ({@skill Persuasion}) checks while you are within a city.",
-										"In addition, when you fail an Intelligence check or Intelligence saving throw, you can reroll the die, and you must use the new roll. Once you use this reroll, you can't do so again until you finish a long rest."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Ephara's Disciple",
-									"entries": [
-										"{@i Piety 25+ Ephara trait}",
-										"You can cast {@spell Mordenkainen's private sanctum} with this trait, requiring no material components. Once you cast the spell in this way, you can't do so again until you finish a long rest. Intelligence is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Champion of the Polis",
-									"entries": [
-										"{@i Piety 50+ Ephara trait}",
-										"You can increase your Intelligence or Charisma score by 2 and also increase your maximum for that score by 2."
+										{
+											"type": "list",
+											"columns": 2,
+											"items": [
+												"{@reward Ephara's Devotee|MOT}",
+												"{@reward Ephara's Votary|MOT}",
+												"{@reward Ephara's Disciple|MOT}",
+												"{@reward Champion of the Polis|MOT}"
+											]
+										}
 									]
 								}
 							]
@@ -3751,34 +3721,18 @@
 								},
 								{
 									"type": "entries",
-									"name": "Erebos's Devotee",
+									"name": "Benefits of Piety",
 									"entries": [
-										"{@i Piety 3+ Erebos trait}",
-										"As a devotee of Erebos, you have proven yourself an executor of the Underworld's grim laws. You can call on Erebos's favor to cast {@spell bane} with this trait, requiring no material components, a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a long rest. Wisdom is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Erebos's Votary",
-									"entries": [
-										"{@i Piety 10+ Erebos trait}",
-										"You can cast {@spell vampiric touch} with this trait. Once you cast the spell in this way, you can't do so again until you finish a long rest. Wisdom is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Erebos's Disciple",
-									"entries": [
-										"{@i Piety 25+ Erebos trait}",
-										"When a soul is sent to its rightful place, you can draw on the energy of the Underworld to empower you. When a creature dies within 10 feet of you, you can use your reaction to gain a number of temporary hit points equal to your level."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Champion of the Dead",
-									"entries": [
-										"{@i Piety 50+ Erebos trait}",
-										"You can increase your Constitution or Wisdom score by 2 and also increase your maximum for that score by 2."
+										{
+											"type": "list",
+											"columns": 2,
+											"items": [
+												"{@reward Erebos's Devotee|MOT}",
+												"{@reward Erebos's Votary|MOT}",
+												"{@reward Erebos's Disciple|MOT}",
+												"{@reward Champion of the Dead|MOT}"
+											]
+										}
 									]
 								}
 							]
@@ -4160,6 +4114,7 @@
 		{
 			"name": "Gilean",
 			"source": "DSotDQ",
+			"page": 16,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"N"
@@ -4520,6 +4475,7 @@
 		{
 			"name": "Habbakuk",
 			"source": "DSotDQ",
+			"page": 14,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"N",
@@ -5030,34 +4986,18 @@
 								},
 								{
 									"type": "entries",
-									"name": "Heliod's Devotee",
+									"name": "Benefits of Piety",
 									"entries": [
-										"{@i Piety 3+ Heliod trait}",
-										"As a devotee of Heliod, you have proven yourself a worthy champion of the sun god. You can call on Heliod's favor and cast {@spell bless} with this trait, requiring no material components. Heliod's blessing manifests as a nimbus around the affected creatures, causing them to shed dim light in a 5-foot radius until the spell ends. You can cast the spell in this way a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a long rest. Wisdom is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Heliod's Votary",
-									"entries": [
-										"{@i Piety 10+ Heliod trait}",
-										"You can cast {@spell daylight} with this trait. Once you cast the spell in this way, you can't do so again until you finish a long rest. Wisdom is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Heliod's Disciple",
-									"entries": [
-										"{@i Piety 25+ Heliod trait}",
-										"You grow accustomed to the blazing radiance of the sun; you have advantage on saving throws against being {@condition blinded}, and you have resistance to fire damage."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Champion of the Sun",
-									"entries": [
-										"{@i Piety 50+ Heliod trait}",
-										"You can increase your Strength or Wisdom score by 2 and also increase your maximum for that score by 2."
+										{
+											"type": "list",
+											"columns": 2,
+											"items": [
+												"{@reward Heliod's Devotee|MOT}",
+												"{@reward Heliod's Votary|MOT}",
+												"{@reward Heliod's Disciple|MOT}",
+												"{@reward Champion of the Sun|MOT}"
+											]
+										}
 									]
 								}
 							]
@@ -5252,6 +5192,7 @@
 		{
 			"name": "Hiddukel",
 			"source": "DSotDQ",
+			"page": 18,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"C",
@@ -5796,35 +5737,18 @@
 								},
 								{
 									"type": "entries",
-									"name": "Iroas's Devotee",
+									"name": "Benefits of Piety",
 									"entries": [
-										"{@i Piety 3+ Iroas trait}",
-										"As a devotee of Iroas, you have earned his favor through victories won in his name. You can cast {@spell compelled duel} with this trait a number of times equal to your Charisma modifier (minimum of once). You regain all expended uses when you finish a long rest. Charisma is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Iroas's Votary",
-									"entries": [
-										"{@i Piety 10+ Iroas trait}",
-										"You can cast {@spell crusader's mantle} with this trait. Once you cast the spell in this way, you can't do so again until you finish a long rest. Charisma is your spellcasting ability for this spell.",
-										"In addition, you have advantage on saving throws against being {@condition frightened}."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Iroas's Disciple",
-									"entries": [
-										"{@i Piety 25+ Iroas trait}",
-										"As a bonus action, you can call on Iroas's blessing, gaining the following benefit for 1 minute or until you are {@condition incapacitated}: creatures within 30 feet of you can't gain advantage on attack rolls against you. Once you use this trait, you can't do so again until you finish a long rest."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Champion of Victory",
-									"entries": [
-										"{@i Piety 50+ Iroas trait}",
-										"You can increase your Strength or Charisma score by 2 and also increase your maximum for that score by 2."
+										{
+											"type": "list",
+											"columns": 2,
+											"items": [
+												"{@reward Iroas's Devotee|MOT}",
+												"{@reward Iroas's Votary|MOT}",
+												"{@reward Iroas's Disciple|MOT}",
+												"{@reward Champion of Victory|MOT}"
+											]
+										}
 									]
 								}
 							]
@@ -6221,35 +6145,18 @@
 								},
 								{
 									"type": "entries",
-									"name": "Karametra's Devotee",
+									"name": "Benefits of Piety",
 									"entries": [
-										"{@i Piety 3+ Karametra trait}",
-										"As a devotee of Karametra, you have proven yourself a worthy potential champion of the harvest god. As a bonus action, you can invoke her protection; spectral plants cover you, providing you with a +1 bonus to AC for 1 minute. Once you use this trait, you can't use it again until you finish a long rest."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Karametra's Votary",
-									"entries": [
-										"{@i Piety 10+ Karametra trait}",
-										"You can cast {@spell create food and water} with this trait. Once you cast the spell in this way, you can't do so again until you finish a long rest. Wisdom is your spellcasting ability for this spell.",
-										"In addition, you have advantage on saving throws against being {@condition poisoned}."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Karametra's Disciple",
-									"entries": [
-										"{@i Piety 25+ Karametra trait}",
-										"By performing an hour-long ritual, you can conjure enough grapes to fill three vials (4 ounces each) of wine. Each vial serves as a {@item potion of healing} for 24 hours, after which it loses this property. Once you use this trait, you can't do so again until you finish a long rest."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Champion of Harvests",
-									"entries": [
-										"{@i Piety 50+ Karametra trait}",
-										"You can increase your Constitution or Wisdom score by 2 and also increase your maximum for that score by 2."
+										{
+											"type": "list",
+											"columns": 2,
+											"items": [
+												"{@reward Karametra's Devotee|MOT}",
+												"{@reward Karametra's Votary|MOT}",
+												"{@reward Karametra's Disciple|MOT}",
+												"{@reward Champion of Harvests|MOT}"
+											]
+										}
 									]
 								}
 							]
@@ -6611,34 +6518,18 @@
 								},
 								{
 									"type": "entries",
-									"name": "Keranos's Devotee",
+									"name": "Benefits of Piety",
 									"entries": [
-										"{@i Piety 3+ Keranos trait}",
-										"As a devotee of Keranos, you have proven your wisdom and your allegiance to the storm lord. Once on each of your turns when you hit a creature with a weapon attack, you can deal an extra {@dice 1d6} lightning damage to the target. You can use this trait a number of times equal to your Intelligence modifier (minimum of once). You regain all expended uses when you finish a long rest."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Keranos's Votary",
-									"entries": [
-										"{@i Piety 10+ Keranos trait}",
-										"When you fail an Intelligence or a Wisdom saving throw, you can reroll the die, and you must use the new roll. Once you use this trait, you can't do so again until you finish a long rest."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Keranos's Disciple",
-									"entries": [
-										"{@i Piety 25+ Keranos trait}",
-										"The energy of the storm fills your being, granting you advantage on initiative rolls."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Champion of Storms",
-									"entries": [
-										"{@i Piety 50+ Keranos trait}",
-										"You can increase your Intelligence or Wisdom score by 2 and also increase your maximum for that score by 2."
+										{
+											"type": "list",
+											"columns": 2,
+											"items": [
+												"{@reward Keranos's Devotee|MOT}",
+												"{@reward Keranos's Votary|MOT}",
+												"{@reward Keranos's Disciple|MOT}",
+												"{@reward Champion of Storms|MOT}"
+											]
+										}
 									]
 								}
 							]
@@ -6689,6 +6580,7 @@
 		{
 			"name": "Kiri-Jolith",
 			"source": "DSotDQ",
+			"page": 14,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"L",
@@ -6998,35 +6890,18 @@
 								},
 								{
 									"type": "entries",
-									"name": "Klothys's Devotee",
+									"name": "Benefits of Piety",
 									"entries": [
-										"{@i Piety 3+ Klothys trait}",
-										"As a devotee of Klothys, you can manipulate the bonds of destiny that invisibly entangle every living thing. You can cast {@spell command} with this trait a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a long rest. Wisdom is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Klothys's Votary",
-									"entries": [
-										"{@i Piety 10+ Klothys trait}",
-										"You can cast {@spell clairvoyance} with this trait, requiring no material components. Once you cast the spell in this way, you can't do so again until you finish a long rest. Wisdom is your spellcasting ability for this spell.",
-										"In addition, you have advantage on saving throws against being {@condition charmed}."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Klothys's Disciple",
-									"entries": [
-										"{@i Piety 25+ Klothys trait}",
-										"You develop a second sense, allowing you to intuit the tug and pull of destiny. You can't be surprised, provided you aren't {@condition incapacitated}."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Champion of Destiny",
-									"entries": [
-										"{@i Piety 50+ Klothys trait}",
-										"You can increase your Strength or Wisdom score by 2 and also increase your maximum for that score by 2."
+										{
+											"type": "list",
+											"columns": 2,
+											"items": [
+												"{@reward Klothys's Devotee|MOT}",
+												"{@reward Klothys's Votary|MOT}",
+												"{@reward Klothys's Disciple|MOT}",
+												"{@reward Champion of Destiny|MOT}"
+											]
+										}
 									]
 								}
 							]
@@ -7441,36 +7316,18 @@
 								},
 								{
 									"type": "entries",
-									"name": "Kruphix's Devotee",
+									"name": "Benefits of Piety",
 									"entries": [
-										"{@i Piety 3+ Kruphix trait}",
-										"As a devotee of Kruphix, you have proven yourself a devotee of reality's mysteries and laws. You can cast {@spell detect magic} with this trait a number of times equal to your Intelligence modifier (minimum of once). You regain all expended uses when you finish a long rest.",
-										"In addition, you know the {@spell mage hand} cantrip. Intelligence is your spellcasting ability for these spells."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Kruphix's Votary",
-									"entries": [
-										"{@i Piety 10+ Kruphix trait}",
-										"You can cast {@spell detect thoughts} with this trait, requiring no material components. Once you cast the spell in this way, you can't do so again until you finish a long rest. Intelligence is your spellcasting ability for this spell.",
-										"In addition, you have advantage on saving throws against being {@condition charmed}."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Kruphix's Disciple",
-									"entries": [
-										"{@i Piety 25+ Kruphix trait}",
-										"As a true champion of Kruphix, you can use your {@spell mage hand} cantrip to protect yourself. While your spectral hand is within 5 feet of you, you gain a +2 bonus to your AC against ranged attacks."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Champion of Horizons",
-									"entries": [
-										"{@i Piety 50+ Kruphix trait}",
-										"You can increase your Constitution or Intelligence score by 2 and also increase your maximum for that score by 2."
+										{
+											"type": "list",
+											"columns": 2,
+											"items": [
+												"{@reward Kruphix's Devotee|MOT}",
+												"{@reward Kruphix's Votary|MOT}",
+												"{@reward Kruphix's Disciple|MOT}",
+												"{@reward Champion of Horizons|MOT}"
+											]
+										}
 									]
 								}
 							]
@@ -7972,6 +7829,7 @@
 		{
 			"name": "Lunitari",
 			"source": "DSotDQ",
+			"page": 16,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"N"
@@ -8078,6 +7936,7 @@
 		{
 			"name": "Majere",
 			"source": "DSotDQ",
+			"page": 15,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"L",
@@ -8490,6 +8349,7 @@
 		{
 			"name": "Mishakal",
 			"source": "DSotDQ",
+			"page": 15,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"L",
@@ -8796,34 +8656,18 @@
 								},
 								{
 									"type": "entries",
-									"name": "Mogis's Devotee",
+									"name": "Benefits of Piety",
 									"entries": [
-										"{@i Piety 3+ Mogis trait}",
-										"As a devotee of Mogis, you have shown yourself to be a brutal combatant. You can call on Mogis's favor and cast {@spell wrathful smite} with this trait. Mogis's blessing manifest as a blood-red glow around your weapon, causing it to shed dim light in a 5-foot radius until the spell ends. You can cast the spell in this way a number of times equal to your Constitution modifier (minimum of once). You regain all expended uses when you finish a long rest. Constitution is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Mogis's Votary",
-									"entries": [
-										"{@i Piety 10+ Mogis trait}",
-										"You can cast {@spell blinding smite} with this trait. Once you cast the spell in this way, you can't do so again until you finish a long rest. Constitution is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Mogis's Disciple",
-									"entries": [
-										"{@i Piety 25+ Mogis trait}",
-										"Countless battles and vicious visions have given you focus. You have advantage on saving throws against being {@condition charmed} or {@condition frightened}."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Champion of Slaughter",
-									"entries": [
-										"{@i Piety 50+ Mogis trait}",
-										"You can increase your Strength or Constitution score by 2 and also increase your maximum for that score by 2."
+										{
+											"type": "list",
+											"columns": 2,
+											"items": [
+												"{@reward Mogis's Devotee|MOT}",
+												"{@reward Mogis's Votary|MOT}",
+												"{@reward Mogis's Disciple|MOT}",
+												"{@reward Champion of Slaughter|MOT}"
+											]
+										}
 									]
 								}
 							]
@@ -8994,6 +8838,7 @@
 		{
 			"name": "Morgion",
 			"source": "DSotDQ",
+			"page": 18,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"N",
@@ -9375,6 +9220,7 @@
 		{
 			"name": "Nuitari",
 			"source": "DSotDQ",
+			"page": 19,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"L",
@@ -9685,35 +9531,18 @@
 								},
 								{
 									"type": "entries",
-									"name": "Nylea's Devotee",
+									"name": "Benefits of Piety",
 									"entries": [
-										"{@i Piety 3+ Nylea trait}",
-										"As a devotee of Nylea, you have proven yourself a guardian of the wilds. You can cast {@spell hunter's mark} with this trait a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a long rest. Wisdom is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Nylea's Votary",
-									"entries": [
-										"{@i Piety 10+ Nylea trait}",
-										"You can cast {@spell speak with animals} with this trait a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a long rest. Wisdom is your spellcasting ability for this spell.",
-										"In addition, you have advantage on saving throws against being {@condition poisoned}."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Nylea's Disciple",
-									"entries": [
-										"{@i Piety 25+ Nylea trait}",
-										"When a beast is about to attack you, it must make a DC 15 Wisdom saving throw. On a failed save, the creature must choose a different target, or the attack automatically misses you. On a successful save, the creature is immune to this trait for 24 hours."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Champion of the Hunt",
-									"entries": [
-										"{@i Piety 50+ Nylea trait}",
-										"You can increase your Dexterity or Wisdom score by 2 and also increase your maximum for that score by 2."
+										{
+											"type": "list",
+											"columns": 2,
+											"items": [
+												"{@reward Nylea's Devotee|MOT}",
+												"{@reward Nylea's Votary|MOT}",
+												"{@reward Nylea's Disciple|MOT}",
+												"{@reward Champion of the Hunt|MOT}"
+											]
+										}
 									]
 								}
 							]
@@ -9959,6 +9788,7 @@
 		{
 			"name": "Paladine",
 			"source": "DSotDQ",
+			"page": 14,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"L",
@@ -10377,42 +10207,18 @@
 								},
 								{
 									"type": "entries",
-									"name": "Pharika's Devotee",
+									"name": "Benefits of Piety",
 									"entries": [
-										"{@i Piety 3+ Pharika trait}",
-										"As a devotee of Pharika, you have power over affliction. You can cast {@spell ray of sickness} with this trait a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a long rest. Wisdom is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Pharika's Votary",
-									"entries": [
-										"{@i Piety 10+ Pharika trait}",
-										"Pharika's blessing shields you from most maladies. You have advantage on saving throws against being {@condition poisoned}, and you are immune to disease."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Pharika's Disciple",
-									"entries": [
-										"{@i Piety 25+ Pharika trait}",
-										"Pharika blesses you with Pharika's Balm, an effect that can cure or enfeeble. As an action, you can touch a creature and choose one of the following:",
 										{
 											"type": "list",
+											"columns": 2,
 											"items": [
-												"The target regains hit points equal to {@dice 1d8} + your Wisdom modifier, and you can cure the target of one disease or neutralize one poison affecting it.",
-												"The target must succeed on a DC 15 Constitution saving throw, or for 1 minute, the target deals only half damage with weapon attacks. The target can repeat the saving throw at the end of each of its turns, ending the effect on a success."
+												"{@reward Pharika's Devotee|MOT}",
+												"{@reward Pharika's Votary|MOT}",
+												"{@reward Pharika's Disciple|MOT}",
+												"{@reward Champion of Affliction|MOT}"
 											]
-										},
-										"You can use this action a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses when you finish a long rest."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Champion of Affliction",
-									"entries": [
-										"{@i Piety 50+ Pharika trait}",
-										"You can increase your Dexterity or Wisdom score by 2 and also increase your maximum for that score by 2."
+										}
 									]
 								}
 							]
@@ -10675,34 +10481,18 @@
 								},
 								{
 									"type": "entries",
-									"name": "Phenax's Devotee",
+									"name": "Benefits of Piety",
 									"entries": [
-										"{@i Piety 3+ Phenax trait}",
-										"As a devotee of Phenax, you have proven yourself accomplished at deception. You can call on Phenax's blessing and cast {@spell disguise self} with this trait. While the spell is active, your shadow still resembles your original form. You can cast the spell in this way a number of times equal to your Charisma modifier (minimum of once). You regain all expended uses when you finish a long rest. Charisma is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Phenax's Votary",
-									"entries": [
-										"{@i Piety 10+ Phenax trait}",
-										"Your words are inspired by Theros's greatest liar. You have advantage on Charisma ({@skill Deception}) checks."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Phenax's Disciple",
-									"entries": [
-										"{@i Piety 25+ Phenax trait}",
-										"When you are hidden from a creature and miss it with an attack, making the attack doesn't reveal your position."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Champion of Deception",
-									"entries": [
-										"{@i Piety 50+ Phenax trait}",
-										"You can increase your Dexterity or Charisma score by 2 and also increase your maximum for that score by 2."
+										{
+											"type": "list",
+											"columns": 2,
+											"items": [
+												"{@reward Phenax's Devotee|MOT}",
+												"{@reward Phenax's Votary|MOT}",
+												"{@reward Phenax's Disciple|MOT}",
+												"{@reward Champion of Deception|MOT}"
+											]
+										}
 									]
 								}
 							]
@@ -11043,36 +10833,18 @@
 								},
 								{
 									"type": "entries",
-									"name": "Purphoros's Devotee",
+									"name": "Benefits of Piety",
 									"entries": [
-										"{@i Piety 3+ Purphoros trait}",
-										"As a devotee of Purphoros, you have drawn the notice of the forge god with your skill. You can cast {@spell shield of faith} with this trait, requiring no material components, a number of times equal to your Intelligence modifier (minimum of once). You regain all expended uses when you finish a long rest.",
-										"In addition, you know the {@spell mending} cantrip. Intelligence is your spellcasting ability for these spells."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Purphoros's Votary",
-									"entries": [
-										"{@i Piety 10+ Purphoros trait}",
-										"You can cast {@spell heat metal} with this trait, requiring no material components. Once you cast the spell in this way, you can't do so again until you finish a long rest. Intelligence is your spellcasting ability for this spell.",
-										"In addition, you have advantage on saving throws against being knocked {@condition prone}."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Purphoros's Disciple",
-									"entries": [
-										"{@i Piety 25+ Purphoros trait}",
-										"While you are standing and an effect would push you 1 foot or more, you can use your reaction to not be pushed."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Champion of the Forge",
-									"entries": [
-										"{@i Piety 50+ Purphoros trait}",
-										"You can increase your Strength or Intelligence score by 2 and also increase your maximum for that score by 2."
+										{
+											"type": "list",
+											"columns": 2,
+											"items": [
+												"{@reward Purphoros's Devotee|MOT}",
+												"{@reward Purphoros's Votary|MOT}",
+												"{@reward Purphoros's Disciple|MOT}",
+												"{@reward Champion of the Forge|MOT}"
+											]
+										}
 									]
 								}
 							]
@@ -11266,6 +11038,7 @@
 		{
 			"name": "Reorx",
 			"source": "DSotDQ",
+			"page": 16,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"N"
@@ -11402,6 +11175,7 @@
 		{
 			"name": "Sargonnas",
 			"source": "DSotDQ",
+			"page": 19,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"L",
@@ -12034,6 +11808,7 @@
 		{
 			"name": "Shinare",
 			"source": "DSotDQ",
+			"page": 17,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"N"
@@ -12150,6 +11925,7 @@
 		{
 			"name": "Sirrion",
 			"source": "DSotDQ",
+			"page": 17,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"N"
@@ -12246,6 +12022,7 @@
 		{
 			"name": "Solinari",
 			"source": "DSotDQ",
+			"page": 15,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"L",
@@ -12421,6 +12198,7 @@
 		{
 			"name": "Takhisis",
 			"source": "DSotDQ",
+			"page": 18,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"L",
@@ -13016,34 +12794,18 @@
 								},
 								{
 									"type": "entries",
-									"name": "Thassa's Devotee",
+									"name": "Benefits of Piety",
 									"entries": [
-										"{@i Piety 3+ Thassa trait}",
-										"As a devotee of Thassa, you have proven yourself a worthy representative of the god of the sea. You can cast {@spell fog cloud} with this trait. Fog created in this way smells strongly of the sea. You can cast the spell in this way a number of times equal to your Intelligence modifier (minimum of once). You regain all expended uses when you finish a long rest. Intelligence is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Thassa's Votary",
-									"entries": [
-										"{@i Piety 10+ Thassa trait}",
-										"You can cast {@spell blink} with this trait. Once you cast the spell in this way, you can't do so again until you finish a long rest. Intelligence is your spellcasting ability for this spell."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Thassa's Disciple",
-									"entries": [
-										"{@i Piety 25+ Thassa trait}",
-										"You are inspired by the tempestuous, uncontrollable nature of the sea; you have advantage on saving throws against being {@condition charmed} or {@condition restrained}."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Champion of the Sea",
-									"entries": [
-										"{@i Piety 50+ Thassa trait}",
-										"You can increase your Dexterity or Intelligence score by 2 and also increase your maximum for that score by 2."
+										{
+											"type": "list",
+											"columns": 2,
+											"items": [
+												"{@reward Thassa's Devotee|MOT}",
+												"{@reward Thassa's Votary|MOT}",
+												"{@reward Thassa's Disciple|MOT}",
+												"{@reward Champion of the Sea|MOT}"
+											]
+										}
 									]
 								}
 							]
@@ -14879,6 +14641,7 @@
 		{
 			"name": "Zeboim",
 			"source": "DSotDQ",
+			"page": 19,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"C",
@@ -15033,6 +14796,7 @@
 		{
 			"name": "Zivilyn",
 			"source": "DSotDQ",
+			"page": 17,
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"N"

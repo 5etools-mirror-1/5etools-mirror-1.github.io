@@ -21,7 +21,7 @@ class SpellBuilder extends Builder {
 	async pHandleSidebarLoadExistingClick () {
 		const result = await SearchWidget.pGetUserSpellSearch();
 		if (result) {
-			const spell = MiscUtil.copy(await Renderer.hover.pCacheAndGet(result.page, result.source, result.hash));
+			const spell = MiscUtil.copy(await DataLoader.pCacheAndGet(result.page, result.source, result.hash));
 			return this.pHandleSidebarLoadExistingData(spell);
 		}
 	}
@@ -823,6 +823,7 @@ class SpellBuilder extends Builder {
 		const getSubclass = () => {
 			const className = $iptClass.val().trim();
 			const subclassName = $iptSubclass.val().trim();
+			const subclassShortName = $iptSubclassShort.val().trim();
 			if (!className || !subclassName) return null;
 			const out = {
 				class: {
@@ -831,6 +832,7 @@ class SpellBuilder extends Builder {
 				},
 				subclass: {
 					name: $iptSubclass.val(),
+					shortName: $iptSubclassShort.val(),
 					source: $selSubclassSource.val().unescapeQuotes(),
 				},
 			};
@@ -847,6 +849,9 @@ class SpellBuilder extends Builder {
 		const $iptSubclass = $(`<input class="form-control form-control--minimal input-xs">`)
 			.change(() => doUpdateState())
 			.val(subclass.subclass.name);
+		const $iptSubclassShort = $(`<input class="form-control form-control--minimal input-xs">`)
+			.change(() => doUpdateState())
+			.val(subclass.subclass.shortName);
 		const $selSubclassSource = this._$getSelSource("$selSubclassSources", doUpdateState, subclass.subclass.source.escapeQuotes());
 
 		const $iptSubSubclass = $(`<input class="form-control form-control--minimal input-xs">`)
@@ -860,6 +865,7 @@ class SpellBuilder extends Builder {
 			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">Class Name</span>${$iptClass}</div>
 			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">Class Source</span>${$selClassSource}</div>
 			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">Subclass Name</span>${$iptSubclass}</div>
+			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">Subclass Short Name</span>${$iptSubclassShort}</div>
 			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">Subclass Source</span>${$selSubclassSource}</div>
 			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33 help" title="For example, for a Circle of the Coast Land Druid, enter &quot;Coast&quot;">Sub-Subclass Name</span>${$iptSubSubclass}</div>
 			${$wrpBtnRemove}
@@ -1045,7 +1051,7 @@ class SpellBuilder extends Builder {
 		const $tblSpell = $(`<table class="w-100 stats"/>`).appendTo(spellTab.$wrpTab);
 		// Make a copy of the spell, and add the data that would be displayed in the spells page
 		const procSpell = MiscUtil.copy(this._state);
-		Renderer.spell.initClasses(procSpell);
+		Renderer.spell.initBrewSources(procSpell);
 		RenderSpells.$getRenderedSpell(procSpell, this._subclassLookup, {isSkipExcludesRender: true}).appendTo($tblSpell);
 
 		// Info

@@ -1,7 +1,7 @@
 "use strict";
 
 // Global variable for Roll20 compatibility
-(typeof module !== "undefined" ? global : window).ScaleCreature = {
+globalThis.ScaleCreature = {
 	isCrInScaleRange (mon) {
 		if ([VeCt.CR_UNKNOWN, VeCt.CR_CUSTOM].includes(Parser.crToNumber(mon.cr))) return false;
 		// Only allow scaling for creatures in the 0-30 CR range (homebrew may specify e.g. >30)
@@ -304,7 +304,7 @@
 		if (toCr == null || toCr === "Unknown") throw new Error("Attempting to scale unknown CR!");
 
 		this._initRng(mon, toCr);
-		mon = MiscUtil.copy(mon);
+		mon = MiscUtil.copyFast(mon);
 
 		const crIn = mon.cr.cr || mon.cr;
 		const crInNumber = Parser.crToNumber(crIn);
@@ -2205,7 +2205,7 @@
 	},
 };
 
-(typeof module !== "undefined" ? global : window).ScaleSummonedCreature = {
+globalThis.ScaleSummonedCreature = {
 	_mutSimpleSpecialAcItem (acItem) {
 		// Try to convert to "from" AC
 		const mSimpleNatural = /^(\d+) \(natural armor\)$/i.exec(acItem.special);
@@ -2234,9 +2234,9 @@
 	},
 };
 
-(typeof module !== "undefined" ? global : window).ScaleSpellSummonedCreature = {
+globalThis.ScaleSpellSummonedCreature = {
 	async scale (mon, toSpellLevel) {
-		mon = MiscUtil.copy(mon);
+		mon = MiscUtil.copyFast(mon);
 
 		if (!mon.summonedBySpell || mon.summonedBySpellLevel == null) return mon;
 
@@ -2336,9 +2336,9 @@
 	_WALKER: null,
 };
 
-(typeof module !== "undefined" ? global : window).ScaleClassSummonedCreature = {
+globalThis.ScaleClassSummonedCreature = {
 	async scale (mon, toClassLevel) {
-		mon = MiscUtil.copy(mon);
+		mon = MiscUtil.copyFast(mon);
 
 		if (!mon.summonedByClass || toClassLevel < 1) return mon;
 

@@ -1,7 +1,7 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"$id": "spells.json",
-	"version": "1.8.2",
+	"version": "1.9.0",
 	"title": "Spells",
 	"type": "object",
 
@@ -32,28 +32,6 @@
 							"P"
 						]
 					}
-				},
-				"$$ifBrew": {
-					"subschools": {
-						"description": "For homebrew use only.",
-						"type": "array",
-						"items": {
-							"type": "string"
-						},
-						"minItems": 1,
-						"uniqueItems": true
-					},
-					"fluff": {
-						"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source",
-						"$ref": "../util.json#/$defs/fluffObject"
-					},
-					"roll20Spell": {
-						"$ref": "roll20.json#/properties/spell"
-					},
-					"foundrySystem": {"$ref": "../util.json#/$defs/foundrySystemObject"},
-					"foundryFlags": {"$ref": "../util.json#/$defs/foundryFlagsObject"},
-					"foundryEffects": {"$ref": "../util.json#/$defs/foundryEffectsArray"},
-					"foundryImg": {"$ref": "../util.json#/$defs/foundryImg"}
 				},
 				"meta": {
 					"type": "object",
@@ -210,122 +188,6 @@
 						"$ref": "../entry.json"
 					}
 				},
-				"classes": {
-					"type": "object",
-					"properties": {
-						"fromClassList": {
-							"type": "array",
-							"items": {
-								"$ref": "#/$defs/class"
-							},
-							"minItems": 1,
-							"uniqueItems": true
-						},
-						"fromClassListVariant": {
-							"type": "array",
-							"items": {
-								"$ref": "#/$defs/class"
-							},
-							"minItems": 1,
-							"uniqueItems": true
-						},
-						"fromSubclass": {
-							"type": "array",
-							"items": {
-								"type": "object",
-								"properties": {
-									"class": {
-										"$ref": "#/$defs/class"
-									},
-									"subclass": {
-										"type": "object",
-										"properties": {
-											"name": {
-												"type": "string"
-											},
-											"source": {
-												"type": "string"
-											},
-											"subSubclass": {
-												"type": "string"
-											}
-										},
-										"required": [
-											"name",
-											"source"
-										],
-										"additionalProperties": false
-									}
-								},
-								"required": [
-									"class",
-									"subclass"
-								],
-								"additionalProperties": false
-							},
-							"minItems": 1,
-							"uniqueItems": true
-						}
-					},
-					"additionalProperties": false
-				},
-				"races": {
-					"type": "array",
-					"items": {
-						"type": "object",
-						"properties": {
-							"name": {
-								"type": "string"
-							},
-							"source": {
-								"type": "string"
-							},
-							"baseName": {
-								"type": "string"
-							},
-							"baseSource": {
-								"type": "string"
-							}
-						},
-						"required": ["name", "source"]
-					},
-					"minItems": 1,
-					"uniqueItems": true
-				},
-				"backgrounds": {
-					"type": "array",
-					"items": {
-						"type": "object",
-						"properties": {
-							"name": {
-								"type": "string"
-							},
-							"source": {
-								"type": "string"
-							}
-						},
-						"required": ["name", "source"]
-					},
-					"minItems": 1,
-					"uniqueItems": true
-				},
-				"eldritchInvocations": {
-					"type": "array",
-					"items": {
-						"type": "object",
-						"properties": {
-							"name": {
-								"type": "string"
-							},
-							"source": {
-								"type": "string"
-							}
-						},
-						"required": ["name", "source"]
-					},
-					"minItems": 1,
-					"uniqueItems": true
-				},
 				"source": {
 					"type": "string"
 				},
@@ -455,7 +317,168 @@
 					]
 				},
 				"hasFluff": {"type": "boolean"},
-				"hasFluffImages": {"type": "boolean"}
+				"hasFluffImages": {"type": "boolean"},
+
+				"$$ifBrew": {
+					"classes": {
+						"type": "object",
+						"properties": {
+							"fromClassList": {
+								"type": "array",
+								"items": {
+									"$ref": "#/$defs/class"
+								},
+								"minItems": 1,
+								"uniqueItems": true
+							},
+							"fromClassListVariant": {
+								"type": "array",
+								"items": {
+									"$ref": "#/$defs/class"
+								},
+								"minItems": 1,
+								"uniqueItems": true
+							},
+							"fromSubclass": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"class": {
+											"$ref": "#/$defs/class"
+										},
+										"subclass": {
+											"type": "object",
+											"properties": {
+												"name": {
+													"type": "string"
+												},
+												"source": {
+													"type": "string"
+												},
+												"subSubclass": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"name",
+												"source"
+											],
+											"additionalProperties": false
+										}
+									},
+									"required": [
+										"class",
+										"subclass"
+									],
+									"additionalProperties": false
+								},
+								"minItems": 1,
+								"uniqueItems": true
+							}
+						},
+						"additionalProperties": false
+					},
+					"races": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								},
+								"baseName": {
+									"type": "string"
+								},
+								"baseSource": {
+									"type": "string"
+								}
+							},
+							"required": ["name", "source"]
+						},
+						"minItems": 1,
+						"uniqueItems": true
+					},
+					"backgrounds": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								}
+							},
+							"required": ["name", "source"]
+						},
+						"minItems": 1,
+						"uniqueItems": true
+					},
+					"optionalfeatures": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								},
+								"featureType": {
+									"type": "array",
+									"items": {"$ref": "../util.json#/$defs/dataOptionalfeatureType"},
+									"uniqueItems": true
+								}
+							},
+							"required": ["name", "source"]
+						},
+						"minItems": 1,
+						"uniqueItems": true
+					},
+					"feats": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								}
+							},
+							"required": ["name", "source"]
+						},
+						"minItems": 1,
+						"uniqueItems": true
+					},
+					"subschools": {
+						"description": "For homebrew use only.",
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"minItems": 1,
+						"uniqueItems": true
+					},
+					"fluff": {
+						"description": "This is intended to be used for Homebrew only - site data should include a fluff file per source",
+						"$ref": "../util.json#/$defs/fluffObject"
+					},
+					"roll20Spell": {
+						"$ref": "roll20.json#/properties/spell"
+					},
+					"foundrySystem": {"$ref": "../util.json#/$defs/foundrySystemObject"},
+					"foundryFlags": {"$ref": "../util.json#/$defs/foundryFlagsObject"},
+					"foundryEffects": {"$ref": "../util.json#/$defs/foundryEffectsArray"},
+					"foundryImg": {"$ref": "../util.json#/$defs/foundryImg"}
+				}
 			},
 			"additionalProperties": false
 		},

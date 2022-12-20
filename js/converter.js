@@ -1083,9 +1083,10 @@ async function doPageInit () {
 		DataUtil.class.loadJSON(),
 		BrewUtil2.pGetBrewProcessed(), // init homebrew
 	]);
+	const itemsNoGroups = items.filter(it => !it._isItemGroup);
 	SpellcastingTraitConvert.init(spells);
-	ItemParser.init(items, classes);
-	AcConvert.init(items);
+	ItemParser.init(itemsNoGroups, classes);
+	AcConvert.init(itemsNoGroups);
 	TaggerUtils.init({legendaryGroups, spells});
 	await TagJsons.pInit({spells});
 	RaceTraitTag.init({itemsRaw});

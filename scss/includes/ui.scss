@@ -857,7 +857,7 @@ Shared UI components
 		background: $rgb-bg;
 		border: 1px solid $rgb-border-grey;
 		border-top: 0;
-		max-height: 160px;
+		max-height: 200px;
 
 		&:hover,
 		&:active,
@@ -944,11 +944,9 @@ Shared UI components
 
 			&--left {
 				margin-right: 15px;
-				margin-left: 7px;
 			}
 
 			&--right {
-				margin-right: 7px;
 				margin-left: 15px;
 			}
 		}

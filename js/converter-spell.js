@@ -5,7 +5,7 @@ if (typeof module !== "undefined") {
 	Object.assign(global, cv);
 	const cvSpells = require("./converterutils-spell.js");
 	Object.assign(global, cvSpells);
-	global.PropOrder = require("./utils-proporder.js");
+	require("./utils-proporder.js");
 }
 
 class SpellParser extends BaseParser {

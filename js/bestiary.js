@@ -123,7 +123,7 @@ class BestiarySublistManager extends SublistManager {
 				$elesCount: [$eleCount1, $eleCount2],
 				fnsUpdate: [],
 				entity: mon,
-				entityBase: await Renderer.hover.pCacheAndGetHash(
+				entityBase: await DataLoader.pCacheAndGetHash(
 					UrlUtil.PG_BESTIARY,
 					hashBase,
 				),
@@ -274,7 +274,7 @@ class BestiaryPage extends ListPageMultiSource {
 			isMarkdownPopout: true,
 			propEntryData: "monster",
 
-			jsonDir: "data/bestiary/",
+			propLoader: "monster",
 
 			listSyntax: new ListSyntaxBestiary({fnGetDataList: () => this._dataList, pFnGetFluff}),
 		});

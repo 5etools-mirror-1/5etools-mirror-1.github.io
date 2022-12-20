@@ -798,7 +798,21 @@
 						"3": [
 							"minor illusion#c"
 						]
-					}
+					},
+					"innate": {
+						"3": {
+							"resource": {
+								"2": [
+									"darkness",
+									"darkvision",
+									"pass without trace",
+									"silence"
+								]
+							}
+						}
+					},
+					"resourceName": "Ki",
+					"ability": "wis"
 				}
 			],
 			"subclassFeatures": [
@@ -850,6 +864,20 @@
 			"classSource": "PHB",
 			"page": 79,
 			"srd": true,
+			"additionalSpells": [
+				{
+					"innate": {
+						"11": {
+							"daily": {
+								"1": [
+									"sanctuary"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"subclassFeatures": [
 				"Way of the Open Hand|Monk||Open Hand||3",
 				"Wholeness of Body|Monk||Open Hand||6",
@@ -893,6 +921,18 @@
 			"className": "Monk",
 			"classSource": "PHB",
 			"page": 1,
+			"additionalSpells": [
+				{
+					"innate": {
+						"3": {
+							"_": [
+								"sanctuary"
+							]
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"subclassFeatures": [
 				"Way of Tranquility|Monk||Tranquility (UA)|UAMonk|3",
 				"Emissary of Peace|Monk||Tranquility (UA)|UAMonk|6",
@@ -969,6 +1009,21 @@
 				{
 					"source": "SCAG",
 					"page": 131
+				}
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"6": {
+							"resource": {
+								"2": [
+									"burning hands"
+								]
+							}
+						}
+					},
+					"resourceName": "Ki",
+					"ability": "wis"
 				}
 			],
 			"subclassFeatures": [

@@ -46,9 +46,8 @@ class LootGenPage {
 	}
 
 	async _pLoadItems () {
-		const stockItems = await Renderer.item.pBuildList();
-		const homebrew = await BrewUtil2.pGetBrewProcessed();
-		const brewItems = await Renderer.item.pGetItemsFromHomebrew(homebrew);
+		const stockItems = (await Renderer.item.pBuildList()).filter(it => !it._isItemGroup);
+		const brewItems = await Renderer.item.pGetItemsFromHomebrew();
 		return stockItems.concat(brewItems)
 			.filter(it => {
 				return !ExcludeUtil.isExcluded(

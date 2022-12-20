@@ -85,7 +85,6 @@ const FILE_EXTENSION_ALLOWLIST = [
 
 const FILE_PREFIX_BLOCKLIST = [
 	"bookref-",
-	"roll20-",
 	"foundry-",
 	"gendata-",
 ];
@@ -139,11 +138,12 @@ class PatchLoadJson {
 
 	static patchLoadJson () {
 		PatchLoadJson._CACHED = PatchLoadJson._CACHED || DataUtil.loadJSON;
+
 		const loadJsonCache = {};
 		DataUtil.loadJSON = async (url) => {
 			if (!loadJsonCache[url]) {
 				const data = readJson(url);
-				await DataUtil.pDoMetaMerge(url, data);
+				await DataUtil.pDoMetaMerge(url, data, {isSkipMetaMergeCache: true});
 				loadJsonCache[url] = data;
 			}
 			return loadJsonCache[url];
@@ -183,6 +183,28 @@ class ArgParser {
 }
 ArgParser.ARGS = {};
 
+class Timer {
+	static _ID = 0;
+	static _RUNNING = {};
+
+	static start () {
+		const id = this._ID++;
+		this._RUNNING[id] = this._getSecs();
+		return id;
+	}
+
+	static stop (id, {isFormat = true} = {}) {
+		const out = this._getSecs() - this._RUNNING[id];
+		delete this._RUNNING[id];
+		return isFormat ? `${out.toFixed(3)}s` : out;
+	}
+
+	static _getSecs () {
+		const [s, ns] = process.hrtime();
+		return s + (ns / 1000000000);
+	}
+}
+
 module.exports = {
 	dataRecurse,
 	readJson,
@@ -192,4 +214,5 @@ module.exports = {
 	unpatchLoadJson: PatchLoadJson.unpatchLoadJson,
 	ArgParser,
 	rmDirRecursiveSync,
+	Timer,
 };

@@ -54,7 +54,7 @@ class Omnisearch {
 			Renderer.hover.cleanTempWindows();
 			switch (evt.key) {
 				case "Enter":
-					if (evt.ctrlKey) {
+					if (evt.ctrlKey || evt.metaKey) {
 						window.location = `${Renderer.get().baseUrl}${UrlUtil.PG_SEARCH}?${this._$iptSearch.val()}`;
 						break;
 					}
@@ -244,7 +244,7 @@ class Omnisearch {
 					continue;
 				}
 
-				const item = await Renderer.hover.pCacheAndGetHash(UrlUtil.PG_ITEMS, r.doc.u);
+				const item = await DataLoader.pCacheAndGetHash(UrlUtil.PG_ITEMS, r.doc.u);
 				if (!Renderer.item.isExcluded(item, {hash: r.doc.u})) resultsNxt.push(r);
 			}
 			results = resultsNxt;

@@ -755,8 +755,8 @@ ReqAttuneTagTag._EBERRON_MARK_RACES = {
 	"Mark of Detection": ["Half-Elf (Variant; Mark of Detection)|ERLW"],
 	"Mark of Storm": ["Half-Elf (Variant; Mark of Storm)|ERLW"],
 	"Mark of Finding": [
-		"Half-Orc (Mark of Finding)|ERLW",
-		"Human (Mark of Finding)|ERLW",
+		"Half-Orc (Variant; Mark of Finding)|ERLW",
+		"Human (Variant; Mark of Finding)|ERLW",
 	],
 	"Mark of Healing": ["Halfling (Mark of Healing)|ERLW"],
 	"Mark of Hospitality": ["Halfling (Mark of Hospitality)|ERLW"],

@@ -303,7 +303,7 @@ class MakeCards extends BaseComponent {
 		}
 		cardMeta.count = cardMeta.count || 1;
 
-		const loaded = await Renderer.hover.pCacheAndGet(cardMeta.page, cardMeta.source, cardMeta.hash);
+		const loaded = await DataLoader.pCacheAndGet(cardMeta.page, cardMeta.source, cardMeta.hash);
 
 		const $cbSel = $(`<input type="checkbox">`);
 

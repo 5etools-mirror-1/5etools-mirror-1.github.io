@@ -312,11 +312,6 @@ PropOrder._SPELL = [
 	"miscTags",
 	"areaTags",
 
-	"classes",
-	"races",
-	"backgrounds",
-	"eldritchInvocations",
-
 	"hasFluff",
 	"hasFluffImages",
 ];
@@ -611,6 +606,7 @@ PropOrder._LANGUAGE = [
 	"srd",
 	"basicRules",
 	"additionalSources",
+	"otherSources",
 
 	"type",
 	"typicalSpeakers",
@@ -918,7 +914,6 @@ PropOrder._ITEM = [
 	"reqAttuneAltTags",
 
 	"wondrous",
-	"ammunition",
 	"tattoo",
 	"curse",
 	"sentient",
@@ -1351,6 +1346,8 @@ PropOrder._CHAROPTION = [
 	"source",
 	"page",
 
+	"otherSources",
+
 	"prerequisite",
 
 	"optionType",
@@ -1440,3 +1437,5 @@ PropOrder._PROP_TO_LIST = {
 if (typeof module !== "undefined") {
 	module.exports = PropOrder;
 }
+
+globalThis.PropOrder = PropOrder;

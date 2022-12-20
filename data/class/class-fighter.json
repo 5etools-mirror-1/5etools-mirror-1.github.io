@@ -589,6 +589,35 @@
 				12,
 				13
 			],
+			"additionalSpells": [
+				{
+					"expanded": {
+						"3": [
+							{
+								"all": "level=0|class=Wizard"
+							},
+							{
+								"all": "level=1|class=Wizard"
+							}
+						],
+						"7": [
+							{
+								"all": "level=2|class=Wizard"
+							}
+						],
+						"13": [
+							{
+								"all": "level=3|class=Wizard"
+							}
+						],
+						"19": [
+							{
+								"all": "level=4|class=Wizard"
+							}
+						]
+					}
+				}
+			],
 			"subclassTableGroups": [
 				{
 					"subclasses": [
@@ -1165,6 +1194,15 @@
 			"classSource": "PHB",
 			"page": 1,
 			"isReprinted": true,
+			"additionalSpells": [
+				{
+					"known": {
+						"3": [
+							"mage hand#c"
+						]
+					}
+				}
+			],
 			"subclassFeatures": [
 				"Psychic Warrior|Fighter||Psychic Warrior (UA)|UAFighterRogueWizard|3",
 				"Strength of Mind|Fighter||Psychic Warrior (UA)|UAFighterRogueWizard|7",

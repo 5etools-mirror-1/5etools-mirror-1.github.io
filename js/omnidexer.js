@@ -126,7 +126,7 @@ class Omnidexer {
 
 		const hash = arbiter.hashBuilder
 			? arbiter.hashBuilder(ent, i)
-			: UrlUtil.URL_TO_HASH_BUILDER[arbiter.baseUrl](ent);
+			: (UrlUtil.URL_TO_HASH_BUILDER[arbiter.listProp])(ent);
 
 		const id = this.id++;
 
@@ -159,7 +159,7 @@ class Omnidexer {
 				}
 
 				if (!indexDoc.m) {
-					const fluff = await Renderer.hover.pGetHoverableFluff(arbiter.baseUrl, src, hash, {isSilent: true});
+					const fluff = await Renderer.hover.pGetHoverableFluff(arbiter.fluffBaseListProp || arbiter.listProp, src, hash, {isSilent: true});
 					if (fluff?.images?.length) {
 						indexDoc.m = Renderer.utils.getMediaUrl(fluff.images[0], "href", "img");
 					}
@@ -399,6 +399,7 @@ class IndexableFile {
 	 * @param [opts.source] (default "source") JSON property containing the item's source, per item. Can be a chan of properties, e.g. `outer.inner.source`
 	 * @param [opts.page] (default "page") JSON property containing the item's page in the relevant book, per item. Can be a chain of properties, e.g. `outer.inner.page`
 	 * @param opts.listProp the JSON always has a root property containing the list of items. Provide the name of this property here. Can be a chain of properties e.g. `outer.inner.name`
+	 * @param [opts.fluffBaseListProp]
 	 * @param opts.baseUrl the base URL (which page) to use when forming index URLs
 	 * @param [opts.hashBuilder] a function which takes a data item and returns a hash for it. Generally not needed, as UrlUtils has a defined list of hash-building functions for each page.
 	 * @param [opts.test_extraIndex] a function which can optionally be called per item if `doExtraIndex` is true. Used to generate a complete list of links for testing; should not be used for production index. Should return full index objects.
@@ -420,6 +421,7 @@ class IndexableFile {
 		this.source = opts.source;
 		this.page = opts.page;
 		this.listProp = opts.listProp;
+		this.fluffBaseListProp = opts.fluffBaseListProp;
 		this.baseUrl = opts.baseUrl;
 		this.hashBuilder = opts.hashBuilder;
 		this.test_extraIndex = opts.test_extraIndex;
@@ -459,6 +461,7 @@ class IndexableFileItemsBase extends IndexableFile {
 			category: Parser.CAT_ID_ITEM,
 			file: "items-base.json",
 			listProp: "baseitem",
+			fluffBaseListProp: "item",
 			baseUrl: "items.html",
 			isHover: true,
 		});
@@ -483,6 +486,7 @@ class IndexableFileItemGroups extends IndexableFile {
 			category: Parser.CAT_ID_ITEM,
 			file: "items.json",
 			listProp: "itemGroup",
+			fluffBaseListProp: "item",
 			baseUrl: "items.html",
 			isHover: true,
 		});
@@ -497,6 +501,7 @@ class IndexableFileMagicVariants extends IndexableFile {
 			source: "inherits.source",
 			page: "inherits.page",
 			listProp: "magicvariant",
+			fluffBaseListProp: "item",
 			baseUrl: "items.html",
 			hashBuilder: (it) => {
 				return UrlUtil.encodeForHash([it.name, it.inherits.source]);
@@ -535,17 +540,6 @@ class IndexableFileMagicVariants extends IndexableFile {
 			},
 			isHover: true,
 		});
-	}
-
-	pGetDeepIndex (indexer, primary, it) {
-		const revName = Renderer.item.modifierPostToPre(it);
-		if (revName) {
-			return [{
-				d: 1,
-				u: UrlUtil.encodeForHash([revName.name, it.inherits.source]),
-			}];
-		}
-		return [];
 	}
 }
 

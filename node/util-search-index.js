@@ -1,4 +1,5 @@
 require("../js/utils.js");
+require("../js/utils-dataloader.js");
 require("../js/render.js");
 require("../js/omnidexer.js");
 const ut = require("./util.js");
@@ -17,22 +18,15 @@ class UtilSearchIndex {
 	}
 
 	static async pGetIndex ({doLogging = true, noFilter = false} = {}) {
-		ut.patchLoadJson();
-		const out = await UtilSearchIndex._pGetIndex({doLogging, noFilter});
-		ut.unpatchLoadJson();
-		return out;
+		return UtilSearchIndex._pGetIndex({doLogging, noFilter});
 	}
 
 	static async pGetIndexAlternate (forProp, {doLogging = true, noFilter = false} = {}) {
-		ut.patchLoadJson();
 		const opts = {alternate: forProp};
-		const out = UtilSearchIndex._pGetIndex({opts, doLogging, noFilter});
-		ut.unpatchLoadJson();
-		return out;
+		return UtilSearchIndex._pGetIndex({opts, doLogging, noFilter});
 	}
 
 	static async pGetIndexFoundry ({doLogging = true, noFilter = false} = {}) {
-		ut.patchLoadJson();
 		const opts = {
 			isSkipSpecial: true,
 		};
@@ -41,9 +35,7 @@ class UtilSearchIndex {
 			isIncludeUid: true,
 			isIncludeImg: true,
 		};
-		const out = await UtilSearchIndex._pGetIndex({opts, optsAddToIndex, doLogging, noFilter});
-		ut.unpatchLoadJson();
-		return out;
+		return UtilSearchIndex._pGetIndex({opts, optsAddToIndex, doLogging, noFilter});
 	}
 
 	static async _pGetIndex ({opts = {}, optsAddToIndex = {}, doLogging = true, noFilter = false} = {}) {
@@ -56,16 +48,16 @@ class UtilSearchIndex {
 			.filter(indexMeta => opts.alternate ? indexMeta.alternateIndexes && indexMeta.alternateIndexes[opts.alternate] : true);
 
 		for (const indexMeta of toIndexMultiPart) {
-			const dataIndex = require(`../data/${indexMeta.dir}/index.json`);
+			const dataIndex = ut.readJson(`./data/${indexMeta.dir}/index.json`);
 
 			const loadedFiles = Object.entries(dataIndex)
 				.sort(([kA], [kB]) => UtilSearchIndex._sortSources(kA, kB))
 				.map(([_, filename]) => filename);
 
 			for (const filename of loadedFiles) {
-				const filePath = `../data/${indexMeta.dir}/${filename}`;
-				const contents = require(filePath);
-				if (doLogging) console.log(`indexing ${filePath}`);
+				const filePath = `./data/${indexMeta.dir}/${filename}`;
+				const contents = ut.readJson(filePath);
+				if (doLogging) console.log(`\tindexing ${filePath}`);
 				const optsNxt = {isNoFilter: noFilter};
 				if (opts.alternate) optsNxt.alt = indexMeta.alternateIndexes[opts.alternate];
 				await indexer.pAddToIndex(indexMeta, contents, {...optsNxt, ...optsAddToIndex});
@@ -78,15 +70,15 @@ class UtilSearchIndex {
 			.filter(indexMeta => opts.alternate ? indexMeta.alternateIndexes && indexMeta.alternateIndexes[opts.alternate] : true);
 
 		for (const indexMeta of toIndexSingle) {
-			const filePath = `../data/${indexMeta.file}`;
-			const data = require(filePath);
+			const filePath = `./data/${indexMeta.file}`;
+			const data = ut.readJson(filePath);
 
 			if (indexMeta.postLoad) indexMeta.postLoad(data);
 
-			if (doLogging) console.log(`indexing ${filePath}`);
+			if (doLogging) console.log(`\tindexing ${filePath}`);
 			Object.values(data)
 				.filter(it => it instanceof Array)
-				.forEach(it => it.sort((a, b) => UtilSearchIndex._sortSources(a.source || MiscUtil.get(a, "inherits", "source"), b.source || MiscUtil.get(b, "inherits", "source")) || SortUtil.ascSortLower(a.name || MiscUtil.get(a, "inherits", "name") || "", b.name || MiscUtil.get(b, "inherits", "name") || "")));
+				.forEach(it => it.sort((a, b) => UtilSearchIndex._sortSources(SourceUtil.getEntitySource(a), SourceUtil.getEntitySource(b)) || SortUtil.ascSortLower(a.name || MiscUtil.get(a, "inherits", "name") || "", b.name || MiscUtil.get(b, "inherits", "name") || "")));
 
 			const optsNxt = {isNoFilter: noFilter};
 			if (opts.alternate) optsNxt.alt = indexMeta.alternateIndexes[opts.alternate];
@@ -115,13 +107,13 @@ class UtilSearchIndex {
 		const indexer = new Omnidexer(baseIndex);
 
 		await Promise.all(Omnidexer.TO_INDEX.filter(it => it.category === Parser.CAT_ID_ITEM).map(async ti => {
-			const filename = `../data/${ti.file}`;
-			const data = require(filename);
+			const filename = `./data/${ti.file}`;
+			const data = ut.readJson(filename);
 
 			if (ti.postLoad) ti.postLoad(data);
 
 			if (ti.additionalIndexes && ti.additionalIndexes.item) {
-				if (doLogging) console.log(`indexing ${filename}`);
+				if (doLogging) console.log(`\tindexing ${filename}`);
 				const extra = await ti.additionalIndexes.item(indexer, data);
 				extra.forEach(add => indexer.pushToIndex(add));
 			}

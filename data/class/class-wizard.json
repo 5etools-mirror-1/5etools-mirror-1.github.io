@@ -1000,6 +1000,16 @@
 			"className": "Wizard",
 			"classSource": "PHB",
 			"page": 4,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"2": [
+							"bane",
+							"bless"
+						]
+					}
+				}
+			],
 			"subclassFeatures": [
 				"Onomancy|Wizard||Onomancy (UA)|UAClericDruidWizard|2",
 				"Resonant Utterance|Wizard||Onomancy (UA)|UAClericDruidWizard|6",
@@ -1014,6 +1024,40 @@
 			"className": "Wizard",
 			"classSource": "PHB",
 			"page": 3,
+			"additionalSpells": [
+				{
+					"known": {
+						"2": {
+							"_": [
+								{
+									"choose": {
+										"from": [
+											"friends#c",
+											"mage hand#c",
+											"message#c"
+										]
+									}
+								}
+							]
+						},
+						"10": {
+							"daily": {
+								"1e": [
+									{
+										"choose": {
+											"from": [
+												"dominate person",
+												"scrying",
+												"telekinesis"
+											]
+										}
+									}
+								]
+							}
+						}
+					}
+				}
+			],
 			"subclassFeatures": [
 				"Psionics|Wizard||Psionics (UA)|UAFighterRogueWizard|2",
 				"Thought Form|Wizard||Psionics (UA)|UAFighterRogueWizard|6",
@@ -1029,6 +1073,17 @@
 			"className": "Wizard",
 			"classSource": "PHB",
 			"page": 184,
+			"additionalSpells": [
+				{
+					"expanded": {
+						"1": [
+							{
+								"all": "source=EGW"
+							}
+						]
+					}
+				}
+			],
 			"subclassFeatures": [
 				"Chronurgy Magic|Wizard||Chronurgy|EGW|2",
 				"Momentary Stasis|Wizard||Chronurgy|EGW|6",
@@ -1043,6 +1098,17 @@
 			"className": "Wizard",
 			"classSource": "PHB",
 			"page": 185,
+			"additionalSpells": [
+				{
+					"expanded": {
+						"1": [
+							{
+								"all": "source=EGW"
+							}
+						]
+					}
+				}
+			],
 			"subclassFeatures": [
 				"Graviturgy Magic|Wizard||Graviturgy|EGW|2",
 				"Gravity Well|Wizard||Graviturgy|EGW|6",
@@ -3793,7 +3859,7 @@
 			"header": 1,
 			"entries": [
 				"{@i 2nd-level Psionics feature}",
-				"Your study of psionics begins to unleash your mind's potential. When you gain this feature, choose one of the following cantrips: friends, mage hand, or message. You learn that cantrip if you don't already know it, and it doesn't count against the number of wizard cantrips you know. While your psionic focus is on your person, you can cast the chosen cantrip as a bonus action, requiring no components, and with the modification listed below:",
+				"Your study of psionics begins to unleash your mind's potential. When you gain this feature, choose one of the following cantrips: {@spell friends}, {@spell mage hand}, or {@spell message}. You learn that cantrip if you don't already know it, and it doesn't count against the number of wizard cantrips you know. While your psionic focus is on your person, you can cast the chosen cantrip as a bonus action, requiring no components, and with the modification listed below:",
 				{
 					"type": "entries",
 					"name": "Friends",

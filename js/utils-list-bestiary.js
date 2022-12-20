@@ -38,7 +38,7 @@ class EncounterBuilderSublistPlugin extends SublistPlugin {
 
 	/** Get a generic representation of the encounter, which can be used elsewhere. */
 	static async pGetEncounterSummary ({exportedSublist}) {
-		exportedSublist = MiscUtil.copy(exportedSublist);
+		exportedSublist = MiscUtil.copyFast(exportedSublist);
 		await this.pMutLegacyData({exportedSublist});
 
 		const out = this._getDefaultState();
@@ -216,7 +216,7 @@ class EncounterBuilderSublistPlugin extends SublistPlugin {
 			"colsExtraAdvanced",
 			"playersAdvanced",
 		].forEach(k => {
-			exportedSublist[k] = this._state[k] != null ? MiscUtil.copy(this._state[k]) : defaultState[k];
+			exportedSublist[k] = this._state[k] != null ? MiscUtil.copyFast(this._state[k]) : defaultState[k];
 
 			if (isMemoryOnly) return;
 
@@ -253,7 +253,7 @@ class EncounterBuilderSublistPlugin extends SublistPlugin {
 		// Otherwise, pass players on
 		keys
 			.filter(k => prevExportableSublist[k] != null)
-			.forEach(k => this._state[k] = MiscUtil.copy(prevExportableSublist[k]));
+			.forEach(k => this._state[k] = MiscUtil.copyFast(prevExportableSublist[k]));
 	}
 
 	getDownloadName () {
@@ -464,7 +464,7 @@ class EncounterBuilderLegacyStorageMigration {
 
 		await Object.entries(encounters.savedEncounters || {})
 			.pSerialAwaitMap(async ([id, enc]) => {
-				const legacyData = MiscUtil.copy(enc.data || {});
+				const legacyData = MiscUtil.copyFast(enc.data || {});
 				legacyData.name = enc.name || "(Unnamed encounter)";
 				legacyData.saveId = id;
 				legacyData.manager_isSaved = true;

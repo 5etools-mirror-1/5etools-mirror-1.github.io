@@ -1,7 +1,7 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"$id": "magicvariants.json",
-	"version": "1.7.0",
+	"version": "1.8.0",
 	"type": "object",
 	"properties": {
 		"magicvariant": {
@@ -28,9 +28,6 @@
 						"items": {
 							"type": "object",
 							"properties": {
-								"ammunition": {
-									"type": "boolean"
-								},
 								"armor": {
 									"type": "boolean"
 								},
@@ -124,12 +121,7 @@
 								"$ref": "items-shared.json#/$defs/itemTier"
 							},
 							"rarity": {
-								"$ref": "items-shared.json#/$defs/itemRarity",
-								"not": {
-									"enum": [
-										"varies"
-									]
-								}
+								"$ref": "items-shared.json#/$defs/itemRarity"
 							},
 							"source": {
 								"type": "string"

@@ -1,5 +1,76 @@
 class RenderSpells {
-	static $getRenderedSpell (sp, subclassLookup, {isSkipExcludesRender = false} = {}) {
+	static SETTINGS = {
+		isDisplayClasses: new SettingsUtil.Setting({
+			type: "boolean",
+			name: "Spell Sources: Show Classes",
+			help: `Whether or not "Classes" should be shown for a spell.`,
+			defaultVal: true,
+		}),
+		isDisplayClassesLegacy: new SettingsUtil.Setting({
+			type: "boolean",
+			name: "Spell Sources: Show Classes (Legacy)",
+			help: `Whether or not "Classes (legacy)" should be shown for a spell.`,
+			defaultVal: false,
+		}),
+
+		isDisplaySubclasses: new SettingsUtil.Setting({
+			type: "boolean",
+			name: "Spell Sources: Show Subclasses",
+			help: `Whether or not "Subclasses" should be shown for a spell.`,
+			defaultVal: true,
+		}),
+		isDisplaySubclassesLegacy: new SettingsUtil.Setting({
+			type: "boolean",
+			name: "Spell Sources: Show Subclasses (Legacy)",
+			help: `Whether or not "Subclasses (legacy)" should be shown for a spell.`,
+			defaultVal: false,
+		}),
+
+		isDisplayVariantClasses: new SettingsUtil.Setting({
+			type: "boolean",
+			name: "Spell Sources: Optional/Variant Classes",
+			help: `Whether or not "Optional/Variant Classes" should be shown for a spell.`,
+			defaultVal: true,
+		}),
+		isDisplayVariantClassesLegacy: new SettingsUtil.Setting({
+			type: "boolean",
+			name: "Spell Sources: Optional/Variant Classes (Legacy)",
+			help: `Whether or not "Optional/Variant Classes (legacy)" should be shown for a spell.`,
+			defaultVal: false,
+		}),
+
+		isDisplayRaces: new SettingsUtil.Setting({
+			type: "boolean",
+			name: "Spell Sources: Races",
+			help: `Whether or not "Races" should be shown for a spell.`,
+			defaultVal: true,
+		}),
+
+		isDisplayBackgrounds: new SettingsUtil.Setting({
+			type: "boolean",
+			name: "Spell Sources: Backgrounds",
+			help: `Whether or not "Backgrounds" should be shown for a spell.`,
+			defaultVal: true,
+		}),
+
+		isDisplayFeats: new SettingsUtil.Setting({
+			type: "boolean",
+			name: "Spell Sources: Feats",
+			help: `Whether or not "Feats" should be shown for a spell.`,
+			defaultVal: true,
+		}),
+
+		isDisplayOptionalfeatures: new SettingsUtil.Setting({
+			type: "boolean",
+			name: "Spell Sources: Other Options/Features",
+			help: `Whether or not "Other Options/Features" should be shown for a spell.`,
+			defaultVal: true,
+		}),
+	};
+
+	static $getRenderedSpell (sp, subclassLookup, {isSkipExcludesRender = false, settings} = {}) {
+		if (settings == null) settings = SettingsUtil.getDefaultSettings(this.SETTINGS);
+
 		const renderer = Renderer.get();
 
 		const renderStack = [];
@@ -31,15 +102,21 @@ class RenderSpells {
 		const fromClassList = Renderer.spell.getCombinedClasses(sp, "fromClassList");
 		if (fromClassList.length) {
 			const [current, legacy] = Parser.spClassesToCurrentAndLegacy(fromClassList);
-			stackFroms.push(`<div><span class="bold">Classes: </span>${Parser.spMainClassesToFull(current)}</div>`);
-			if (legacy.length) stackFroms.push(`<div class="text-muted"><span class="bold">Classes (legacy): </span>${Parser.spMainClassesToFull(legacy)}</div>`);
+			if (settings.isDisplayClasses) {
+				stackFroms.push(`<div><span class="bold">Classes: </span>${Parser.spMainClassesToFull(current)}</div>`);
+			}
+			if (settings.isDisplayClassesLegacy && legacy.length) {
+				stackFroms.push(`<div class="text-muted"><span class="bold">Classes (legacy): </span>${Parser.spMainClassesToFull(legacy)}</div>`);
+			}
 		}
 
 		const fromSubclass = Renderer.spell.getCombinedClasses(sp, "fromSubclass");
 		if (fromSubclass.length) {
 			const [current, legacy] = Parser.spSubclassesToCurrentAndLegacyFull(sp, subclassLookup);
-			stackFroms.push(`<div><span class="bold">Subclasses: </span>${current}</div>`);
-			if (legacy.length) {
+			if (settings.isDisplaySubclasses) {
+				stackFroms.push(`<div><span class="bold">Subclasses: </span>${current}</div>`);
+			}
+			if (settings.isDisplaySubclassesLegacy && legacy.length) {
 				stackFroms.push(`<div class="text-muted"><span class="bold">Subclasses (legacy): </span>${legacy}</div>`);
 			}
 		}
@@ -47,55 +124,29 @@ class RenderSpells {
 		const fromClassListVariant = Renderer.spell.getCombinedClasses(sp, "fromClassListVariant");
 		if (fromClassListVariant.length) {
 			const [current, legacy] = Parser.spVariantClassesToCurrentAndLegacy(fromClassListVariant);
-			if (current.length) {
+			if (settings.isDisplayVariantClasses && current.length) {
 				stackFroms.push(`<div><span class="bold">Optional/Variant Classes: </span>${Parser.spMainClassesToFull(current)}</div>`);
 			}
-			if (legacy.length) {
+			if (settings.isDisplayVariantClassesLegacy && legacy.length) {
 				stackFroms.push(`<div class="text-muted"><span class="bold">Optional/Variant Classes (legacy): </span>${Parser.spMainClassesToFull(legacy)}</div>`);
 			}
 		}
 
-		const fromSubclassVariant = Renderer.spell.getCombinedClasses(sp, "fromSubclassVariant");
-		if (fromSubclassVariant.length) {
-			const [current, legacy] = Parser.spVariantSubclassesToCurrentAndLegacyFull(sp, subclassLookup);
-			if (current.length) {
-				stackFroms.push(`<div><span class="bold">Optional/Variant Subclasses: </span>${current}</div>`);
-			}
-			if (legacy.length) {
-				stackFroms.push(`<div class="text-muted"><span class="bold">Subclasses (legacy): </span>${legacy}</div>`);
-			}
-		}
-
-		const fromRaces = Renderer.spell.getCombinedRaces(sp);
-		if (fromRaces.length) {
-			fromRaces.sort((a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source));
-			stackFroms.push(`<div><span class="bold">Races: </span>${fromRaces.map(r => `${SourceUtil.isNonstandardSource(r.source) ? `<span class="text-muted">` : ``}${renderer.render(`{@race ${r.name}|${r.source}}`)}${SourceUtil.isNonstandardSource(r.source) ? `</span>` : ``}`).join(", ")}</div>`);
-		}
-
-		const fromRacesVariant = Renderer.spell.getCombinedRaces(sp, {prop: "racesVariant", propTmp: "_tmpRacesVariant"});
-		if (fromRacesVariant.length) {
-			fromRacesVariant.sort((a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source));
-			stackFroms.push(`<div><span class="bold">Optional/Variant Races: </span>${fromRacesVariant.map(r => `<span ${SourceUtil.isNonstandardSource(r.source) ? `class="text-muted"` : ``} title="From a class sSpell list defined in: ${Parser.sourceJsonToFull(r.classDefinedInSource)}">${renderer.render(`{@race ${r.name}|${r.source}}`)}</span>`).join(", ")}</div>`);
-		}
-
-		const fromBackgrounds = Renderer.spell.getCombinedBackgrounds(sp);
-		if (fromBackgrounds.length) {
-			fromBackgrounds.sort((a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source));
-			stackFroms.push(`<div><span class="bold">Backgrounds: </span>${fromBackgrounds.map(r => `${SourceUtil.isNonstandardSource(r.source) ? `<span class="text-muted">` : ``}${renderer.render(`{@background ${r.name}|${r.source}}`)}${SourceUtil.isNonstandardSource(r.source) ? `</span>` : ``}`).join(", ")}</div>`);
-		}
-
-		if (sp.eldritchInvocations) {
-			sp.eldritchInvocations.sort((a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source));
-			stackFroms.push(`<div><span class="bold">Eldritch Invocations: </span>${sp.eldritchInvocations.map(r => `${SourceUtil.isNonstandardSource(r.source) ? `<span class="text-muted">` : ``}${renderer.render(`{@optfeature ${r.name}|${r.source}}`)}${SourceUtil.isNonstandardSource(r.source) ? `</span>` : ``}`).join(", ")}</div>`);
-		}
+		if (settings.isDisplayRaces) this._mutStackPtSpellSource({sp, stackFroms, renderer, title: "Races", propSpell: "races", prop: "race", tag: "race"});
+		if (settings.isDisplayBackgrounds) this._mutStackPtSpellSource({sp, stackFroms, renderer, title: "Backgrounds", propSpell: "backgrounds", prop: "background", tag: "background"});
+		if (settings.isDisplayFeats) this._mutStackPtSpellSource({sp, stackFroms, renderer, title: "Feats", propSpell: "feats", prop: "feat", tag: "feat"});
+		if (settings.isDisplayOptionalfeatures) this._mutStackPtSpellSource({sp, stackFroms, renderer, title: "Other Options/Features", propSpell: "optionalfeatures", prop: "optionalfeature", tag: "optfeature"});
 
 		if (stackFroms.length) {
 			renderStack.push(`<tr class="text"><td colspan="6">${stackFroms.join("")}</td></tr>`);
 		}
 
-		if (sp._scrollNote) {
+		if (
+			sp.level >= 5
+			&& fromClassList?.some(it => it.name === "Wizard" && it?.source === SRC_PHB)
+		) {
 			renderStack.push(`<tr class="text"><td colspan="6"><section class="text-muted">`);
-			renderer.recursiveRender(`{@italic Note: Both the {@class fighter||${Renderer.spell.STR_FIGHTER} (${Renderer.spell.STR_ELD_KNIGHT})|eldritch knight} and the {@class rogue||${Renderer.spell.STR_ROGUE} (${Renderer.spell.STR_ARC_TCKER})|arcane trickster} spell lists include all {@class ${Renderer.spell.STR_WIZARD}} spells. Spells of 5th level or higher may be cast with the aid of a spell scroll or similar.}`, renderStack, {depth: 2});
+			renderer.recursiveRender(`{@italic Note: Both the {@class fighter||Fighter (Eldritch Knight)|eldritch knight} and the {@class rogue||Rogue (Arcane Trickster)|arcane trickster} spell lists include all {@class Wizard} spells. Spells of 5th level or higher may be cast with the aid of a spell scroll or similar.}`, renderStack, {depth: 2});
 			renderStack.push(`</section></td></tr>`);
 		}
 
@@ -105,5 +156,12 @@ class RenderSpells {
 		`);
 
 		return $(renderStack.join(""));
+	}
+
+	static _mutStackPtSpellSource ({sp, stackFroms, renderer, title, propSpell, prop, tag}) {
+		const froms = Renderer.spell.getCombinedGeneric(sp, {propSpell, prop});
+		if (!froms.length) return;
+
+		stackFroms.push(`<div><span class="bold">${title}: </span>${froms.map(it => `${SourceUtil.isNonstandardSource(it.source) ? `<span class="text-muted">` : ``}${renderer.render(`{@${tag} ${it.name}|${it.source}}`)}${SourceUtil.isNonstandardSource(it.source) ? `</span>` : ``}`).join(", ")}</div>`);
 	}
 }

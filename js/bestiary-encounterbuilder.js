@@ -1041,7 +1041,7 @@ class EncounterBuilder extends ProxyBase {
 
 		try {
 			// Fetch original
-			const mon = await Renderer.hover.pCacheAndGetHash(
+			const mon = await DataLoader.pCacheAndGetHash(
 				UrlUtil.PG_BESTIARY,
 				UrlUtil.autoEncodeHash(monScaled),
 			);

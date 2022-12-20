@@ -75,6 +75,7 @@
 		{
 			"name": "Abanasinian",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "standard",
 			"typicalSpeakers": [
 				"Abanasinia"
@@ -234,6 +235,7 @@
 		{
 			"name": "Common",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "standard",
 			"typicalSpeakers": [
 				"Trade language of Ansalon"
@@ -360,6 +362,7 @@
 		{
 			"name": "Draconic",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "rare",
 			"typicalSpeakers": [
 				"Dragons"
@@ -447,6 +450,7 @@
 		{
 			"name": "Dwarvish",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "standard",
 			"typicalSpeakers": [
 				"Abanasinia",
@@ -491,6 +495,7 @@
 		{
 			"name": "Elvish",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "standard",
 			"typicalSpeakers": [
 				"Qualinesti",
@@ -545,6 +550,7 @@
 		{
 			"name": "Ergot",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "standard",
 			"typicalSpeakers": [
 				"Northern Ergoth"
@@ -664,6 +670,7 @@
 		{
 			"name": "Gnomish",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "standard",
 			"typicalSpeakers": [
 				"Sancrist"
@@ -705,6 +712,7 @@
 		{
 			"name": "Goblin",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "rare",
 			"typicalSpeakers": [
 				"Taman Busuk"
@@ -864,6 +872,11 @@
 			"name": "Ice Toad",
 			"source": "RoT",
 			"page": 90,
+			"otherSources": [
+				{
+					"source": "ToD"
+				}
+			],
 			"typicalSpeakers": [
 				"{@creature Ice Toad|RoT|ice toads}"
 			]
@@ -913,6 +926,7 @@
 		{
 			"name": "Istarian",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "rare",
 			"typicalSpeakers": [
 				"Ancient Istarians"
@@ -933,6 +947,7 @@
 		{
 			"name": "Kenderspeak",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "standard",
 			"typicalSpeakers": [
 				"Goodlund",
@@ -943,6 +958,7 @@
 		{
 			"name": "Kharolian",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "standard",
 			"typicalSpeakers": [
 				"Plains of Dust",
@@ -953,6 +969,7 @@
 		{
 			"name": "Khur",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "standard",
 			"typicalSpeakers": [
 				"Khur"
@@ -962,6 +979,7 @@
 		{
 			"name": "Kothian",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "rare",
 			"typicalSpeakers": [
 				"Minotaurs"
@@ -1119,6 +1137,7 @@
 		{
 			"name": "Nerakese",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "rare",
 			"typicalSpeakers": [
 				"Neraka"
@@ -1129,11 +1148,17 @@
 			"name": "Netherese",
 			"source": "HotDQ",
 			"page": 93,
+			"otherSources": [
+				{
+					"source": "ToD"
+				}
+			],
 			"script": "Draconic"
 		},
 		{
 			"name": "Nordmaarian",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "standard",
 			"typicalSpeakers": [
 				"Nordmaar"
@@ -1143,6 +1168,7 @@
 		{
 			"name": "Ogre",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "rare",
 			"typicalSpeakers": [
 				"Blode",
@@ -1192,6 +1218,7 @@
 		{
 			"name": "Primordial",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "rare",
 			"typicalSpeakers": [
 				"Elementals"
@@ -1385,6 +1412,7 @@
 		{
 			"name": "Solamnic",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "standard",
 			"typicalSpeakers": [
 				"Sancrist",
@@ -1422,6 +1450,7 @@
 		{
 			"name": "Sylvan",
 			"source": "DSotDQ",
+			"page": 9,
 			"type": "rare",
 			"typicalSpeakers": [
 				"Fey creatures"

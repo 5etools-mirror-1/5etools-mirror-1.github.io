@@ -1,14 +1,14 @@
 "use strict";
 
 class ListPageMultiSource extends ListPage {
-	constructor ({jsonDir, ...rest}) {
+	constructor ({propLoader, ...rest}) {
 		super({
 			...rest,
 			isLoadDataAfterFilterInit: true,
 			isBindHashHandlerUnknown: true,
 		});
 
-		this._jsonDir = jsonDir;
+		this._propLoader = propLoader;
 		this._loadedSources = {};
 		this._lastFilterValues = null;
 	}
@@ -65,41 +65,50 @@ class ListPageMultiSource extends ListPage {
 		const toLoad = this._loadedSources[src] || this._loadedSources[Object.keys(this._loadedSources).find(k => k.toLowerCase() === src)];
 		if (toLoad.loaded) return;
 
-		const data = await DataUtil.loadJSON(toLoad.url);
+		const data = await DataUtil[this._propLoader].pLoadSingleSource(src);
 		this._addData(data);
 		toLoad.loaded = true;
 	}
 
 	async _pOnLoad_pGetData () {
-		const src2UrlMap = Object.entries(await DataUtil.loadJSON(`${this._jsonDir}index.json`))
-			.filter(([source]) => !ExcludeUtil.isExcluded("*", "*", source, {isNoCount: true}))
-			.mergeMap(([source, filename]) => ({[source]: filename}));
+		const siteSourcesAvail = new Set(
+			Object.keys(await DataUtil[this._propLoader].pLoadIndex())
+				.filter(source => !ExcludeUtil.isExcluded("*", "*", source, {isNoCount: true})),
+		);
 
 		// track loaded sources
-		Object.keys(src2UrlMap).forEach(src => this._loadedSources[src] = {url: this._jsonDir + src2UrlMap[src], loaded: false});
+		siteSourcesAvail
+			.forEach(src => this._loadedSources[src] = {source: src, loaded: false});
 
 		// collect a list of sources to load
-		const sources = Object.keys(src2UrlMap);
-		const defaultSel = sources.filter(s => PageFilter.defaultSourceSelFn(s));
-		const hashSourceRaw = Hist.getHashSource();
-		const hashSource = hashSourceRaw ? Object.keys(src2UrlMap).find(it => it.toLowerCase() === hashSourceRaw.toLowerCase()) : null;
-		const filterSel = await this._filterBox.pGetStoredActiveSources() || defaultSel;
-		const listSel = await this._sublistManager.pGetSelectedSources() || [];
-		const userSel = [...new Set([...filterSel, ...listSel, hashSource].filter(Boolean))];
+		const defaultSel = [...siteSourcesAvail].filter(s => PageFilter.defaultSourceSelFn(s));
+
+		const userSel = [
+			// Selected in filter
+			...await this._filterBox.pGetStoredActiveSources() || defaultSel,
+			// From entities in sublist
+			...await this._sublistManager.pGetSelectedSources() || [],
+			// From current link
+			this._pOnLoad_getLinkHashSource({siteSourcesAvail}),
+		]
+			.filter(Boolean)
+			.unique();
 
 		const allSources = [];
 
 		// add any sources from the user's saved filters, provided they have URLs and haven't already been added
 		if (userSel) {
 			userSel
-				.filter(src => src2UrlMap[src] && !allSources.includes(src))
+				.filter(src => siteSourcesAvail.has(src) && !allSources.includes(src))
 				.forEach(src => allSources.push(src));
 		}
 
 		// if there's no saved filters, load the defaults
 		if (allSources.length === 0) {
 			// remove any sources that don't have URLs
-			defaultSel.filter(src => src2UrlMap[src]).forEach(src => allSources.push(src));
+			defaultSel
+				.filter(src => siteSourcesAvail.has(src))
+				.forEach(src => allSources.push(src));
 		}
 
 		// add source from the current hash, if there is one
@@ -107,7 +116,7 @@ class ListPageMultiSource extends ListPage {
 			const [link] = Hist.getHashParts();
 			const src = link.split(HASH_LIST_SEP)[1];
 			const hashSrcs = {};
-			sources.forEach(src => hashSrcs[UrlUtil.encodeForHash(src)] = src);
+			siteSourcesAvail.forEach(src => hashSrcs[UrlUtil.encodeForHash(src)] = src);
 			const mapped = hashSrcs[src];
 			if (mapped && !allSources.includes(mapped)) {
 				allSources.push(mapped);
@@ -115,14 +124,12 @@ class ListPageMultiSource extends ListPage {
 		}
 
 		// make a list of src : url objects
-		const toLoads = allSources.map(src => ({src: src, url: this._jsonDir + src2UrlMap[src]}));
-
 		// load the sources
 		let toAdd = {};
-		if (toLoads.length > 0) {
-			const dataStack = (await Promise.all(toLoads.map(async toLoad => {
-				const data = await DataUtil.loadJSON(toLoad.url);
-				this._loadedSources[toLoad.src].loaded = true;
+		if (allSources.length > 0) {
+			const dataStack = (await Promise.all(allSources.map(async src => {
+				const data = await DataUtil[this._propLoader].pLoadSingleSource(src);
+				this._loadedSources[src].loaded = true;
 				return data;
 			}))).flat();
 
@@ -142,5 +149,12 @@ class ListPageMultiSource extends ListPage {
 		const homebrew = await (this._brewDataSource ? this._brewDataSource() : BrewUtil2.pGetBrewProcessed());
 
 		return BrewUtil2.getMergedData(toAdd, homebrew);
+	}
+
+	_pOnLoad_getLinkHashSource ({siteSourcesAvail}) {
+		const hashSourceRaw = Hist.getHashSource();
+		return hashSourceRaw
+			? [...siteSourcesAvail].find(it => it.toLowerCase() === hashSourceRaw.toLowerCase())
+			: null;
 	}
 }

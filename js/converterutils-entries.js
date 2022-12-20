@@ -159,7 +159,7 @@ SpellTag._SPELL_NAME_REGEX_CAST = null;
 
 class ItemTag {
 	static async pInit () {
-		const itemArr = await Renderer.item.pBuildList({isAddGroups: true});
+		const itemArr = await Renderer.item.pBuildList();
 
 		const standardItems = itemArr.filter(it => !SourceUtil.isNonstandardSource(it.source));
 

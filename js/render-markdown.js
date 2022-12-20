@@ -506,7 +506,7 @@ class RendererMarkdown {
 	_renderGallery (entry, textStack, meta, options) {
 		const len = entry.images.length;
 		for (let i = 0; i < len; ++i) {
-			const img = MiscUtil.copy(entry.images[i]);
+			const img = MiscUtil.copyFast(entry.images[i]);
 			this._recursiveRender(img, textStack, meta);
 		}
 	}
@@ -920,7 +920,7 @@ ${mon.pbNote || Parser.crToNumber(mon.cr) < VeCt.CR_CUSTOM ? `>- **Proficiency B
 		const renderer = RendererMarkdown.get();
 		const renderStack = [""];
 
-		const cpy = MiscUtil.copy(sectionEntries).map(it => {
+		const cpy = MiscUtil.copyFast(sectionEntries).map(it => {
 			if (it.name && it.entries) {
 				it.name = `${it.name}.`;
 				it.type = it.type || "item";

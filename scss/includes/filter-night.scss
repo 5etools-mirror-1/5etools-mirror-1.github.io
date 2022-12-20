@@ -127,6 +127,20 @@
 		}
 	}
 
+	&-search__ {
+		&wrp-row {
+			&:focus,
+			&:hover {
+				background-color: lighten($rgb-bg--night, 2%);
+			}
+		}
+
+		&wrp-values {
+			background-color: $rgb-bg--night;
+			border-color: $rgb-border-grey--night;
+		}
+	}
+
 	&-src__ {
 		&wrp-slider {
 			background: #333a;

@@ -204,7 +204,7 @@ Renderer.dice = {
 
 		let chosenRollData;
 		if (options.length > 1) {
-			const cpyRollData = MiscUtil.copy(rollData);
+			const cpyRollData = MiscUtil.copyFast(rollData);
 			const menu = ContextUtil.getMenu([
 				new ContextUtil.Action(
 					"Choose Roll",
@@ -257,7 +257,7 @@ Renderer.dice = {
 			results.push(input);
 		}
 
-		const rollDataCpy = MiscUtil.copy(chosenRollData);
+		const rollDataCpy = MiscUtil.copyFast(chosenRollData);
 		rePrompt.lastIndex = 0;
 		rollDataCpy.toRoll = rollDataCpy.toRoll.replace(rePrompt, () => results.shift());
 
@@ -483,7 +483,7 @@ Renderer.dice = {
 		const numRolls = Number($parent.attr("data-rd-namegeneratorrolls"));
 		const $ths = $ele.closest(`table`).find(`th`);
 		for (let i = 0; i < numRolls; ++i) {
-			const cpyRolledBy = MiscUtil.copy(rolledBy);
+			const cpyRolledBy = MiscUtil.copyFast(rolledBy);
 			cpyRolledBy.label = $($ths.get(i + 1)).text().trim();
 
 			const result = await Renderer.dice.pRollEntry(

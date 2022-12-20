@@ -23,7 +23,7 @@ class DmMapper {
 				// Load the adventure/book, and scan it for maps
 				const {propData} = this._getProps({catId: doc.c});
 				const {page, source, hash} = SearchWidget.docToPageSourceHash(doc);
-				const adventureBookPack = await Renderer.hover.pCacheAndGet(page, source, hash);
+				const adventureBookPack = await DataLoader.pCacheAndGet(page, source, hash);
 				let hasMaps = false;
 				const walker = MiscUtil.getWalker({
 					isBreakOnReturn: true,
@@ -56,7 +56,7 @@ class DmMapper {
 		$modalInner.append(`<div class="ve-flex-vh-center w-100 h-100"><i class="dnd-font ve-muted">Loading...</i></div>`);
 
 		const {page, source, hash} = SearchWidget.docToPageSourceHash(chosenDoc);
-		const adventureBookPack = await Renderer.hover.pCacheAndGet(page, source, hash);
+		const adventureBookPack = await DataLoader.pCacheAndGet(page, source, hash);
 
 		const mapDatas = [];
 		const walker = MiscUtil.getWalker();

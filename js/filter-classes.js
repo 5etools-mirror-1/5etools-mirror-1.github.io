@@ -34,16 +34,6 @@ class PageFilterClassesBase extends PageFilter {
 				}
 			},
 		});
-
-		// region source
-		this._sourceWalker = MiscUtil.getWalker({keyBlocklist: new Set(["type", "data"])}).walk;
-		this._sourcePrimitiveHandlers = {
-			string: (obj, lastKey) => {
-				if (lastKey === "source") this._sourceFilter.addItem(obj);
-				return obj;
-			},
-		};
-		// endregion
 	}
 
 	get optionsFilter () { return this._optionsFilter; }
@@ -78,7 +68,17 @@ class PageFilterClassesBase extends PageFilter {
 		});
 	}
 
-	_addEntrySourcesToFilter (entry) { this._sourceWalker(entry, this._sourcePrimitiveHandlers); }
+	_addEntrySourcesToFilter (entry) { this._addEntrySourcesToFilter_walk(entry); }
+
+	_addEntrySourcesToFilter_walk = (obj) => {
+		if ((typeof obj !== "object") || obj == null) return;
+
+		if (obj instanceof Array) return obj.forEach(this._addEntrySourcesToFilter_walk.bind(this));
+
+		if (obj.source) this._sourceFilter.addItem(obj.source);
+		// Assume anything we care about is under `entries`, for performance
+		if (obj.entries) this._addEntrySourcesToFilter_walk(obj.entries);
+	};
 
 	/**
 	 * @param cls

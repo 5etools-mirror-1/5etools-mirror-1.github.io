@@ -2,6 +2,7 @@ const fs = require("fs");
 require("../js/utils");
 const ut = require("./util");
 const UtilGenTables = require("./util-generate-tables-data.js");
+require("../js/utils-dataloader.js");
 require("../js/hist.js");
 
 class GenTables {

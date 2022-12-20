@@ -1379,7 +1379,7 @@ class Makebrew {
 		if (!initialLoadMeta.statemeta) return;
 
 		const [page, source, hash] = initialLoadMeta.statemeta;
-		let toLoad = await Renderer.hover.pCacheAndGet(page, source, hash, {isCopy: true});
+		let toLoad = await DataLoader.pCacheAndGet(page, source, hash, {isCopy: true});
 
 		toLoad = await builder._pHashChange_pHandleSubHashes(sub, toLoad);
 

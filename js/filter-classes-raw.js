@@ -135,15 +135,6 @@ class PageFilterClassesRaw extends PageFilterClassesBase {
 			}
 		}
 
-		// Add synthetic fluff to subclasses
-		data.class.forEach(cls => {
-			(cls.subclasses || []).forEach(sc => {
-				const fluff = Renderer.findEntry(sc.subclassFeatures);
-				MiscUtil.set(fluff, "data", "isSkipFeature");
-				sc._fluff = MiscUtil.copy(fluff);
-			});
-		});
-
 		return data;
 	}
 
@@ -159,7 +150,7 @@ class PageFilterClassesRaw extends PageFilterClassesBase {
 		classFeature.level = level;
 		classFeature.source = source;
 
-		const entityRoot = await Renderer.hover.pCacheAndGet("raw_classFeature", classFeature.source, classFeature.hash, {isCopy: true});
+		const entityRoot = await DataLoader.pCacheAndGet("raw_classFeature", classFeature.source, classFeature.hash, {isCopy: true});
 		const loadedRoot = {
 			type: "classFeature",
 			entity: entityRoot,
@@ -203,7 +194,7 @@ class PageFilterClassesRaw extends PageFilterClassesBase {
 		subclassFeature.level = level;
 		subclassFeature.source = source;
 
-		const entityRoot = await Renderer.hover.pCacheAndGet("raw_subclassFeature", subclassFeature.source, subclassFeature.hash, {isCopy: true});
+		const entityRoot = await DataLoader.pCacheAndGet("raw_subclassFeature", subclassFeature.source, subclassFeature.hash, {isCopy: true});
 		const loadedRoot = {
 			type: "subclassFeature",
 			entity: entityRoot,
@@ -307,7 +298,7 @@ class PageFilterClassesRaw extends PageFilterClassesBase {
 		ent.name = name;
 		ent.source = source;
 
-		const entityRoot = raw != null ? MiscUtil.copy(raw) : await Renderer.hover.pCacheAndGet(`raw_${prop}`, ent.source, ent.hash, {isCopy: true});
+		const entityRoot = raw != null ? MiscUtil.copy(raw) : await DataLoader.pCacheAndGet(`raw_${prop}`, ent.source, ent.hash, {isCopy: true});
 		const loadedRoot = {
 			type: prop,
 			entity: entityRoot,
@@ -421,7 +412,7 @@ class PageFilterClassesRaw extends PageFilterClassesBase {
 						const {source} = unpacked;
 						const hash = UrlUtil.URL_TO_HASH_BUILDER["classFeature"](unpacked);
 
-						let entity = await Renderer.hover.pCacheAndGet("raw_classFeature", source, hash, {isCopy: true});
+						let entity = await DataLoader.pCacheAndGet("raw_classFeature", source, hash, {isCopy: true});
 
 						if (!entity) {
 							this._handleReferenceError(`Failed to load "classFeature" reference "${ent.classFeature}" (not found)`);
@@ -462,7 +453,7 @@ class PageFilterClassesRaw extends PageFilterClassesBase {
 						const {source} = unpacked;
 						const hash = UrlUtil.URL_TO_HASH_BUILDER["subclassFeature"](unpacked);
 
-						let entity = await Renderer.hover.pCacheAndGet("raw_subclassFeature", source, hash, {isCopy: true});
+						let entity = await DataLoader.pCacheAndGet("raw_subclassFeature", source, hash, {isCopy: true});
 
 						if (!entity) {
 							this._handleReferenceError(`Failed to load "subclassFeature" reference "${ent.subclassFeature}" (not found)`);
@@ -504,7 +495,7 @@ class PageFilterClassesRaw extends PageFilterClassesBase {
 						const {source} = unpacked;
 						const hash = UrlUtil.URL_TO_HASH_BUILDER[page](unpacked);
 
-						const entity = await Renderer.hover.pCacheAndGet(page, source, hash, {isCopy: true});
+						const entity = await DataLoader.pCacheAndGet(page, source, hash, {isCopy: true});
 
 						if (!entity) {
 							this._handleReferenceError(`Failed to load "optfeature" reference "${ent.optionalfeature}" (not found)`);

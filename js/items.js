@@ -374,7 +374,7 @@ class ItemsPage extends ListPage {
 			$btnClear,
 			dispPageTagline: document.getElementById(`page__subtitle`),
 			$wrpList: $(`.list.mundane`),
-			syntax: this._listSyntax,
+			syntax: this._listSyntax.build(),
 			isBindFindHotkey: true,
 			optsList: {
 				fnSort: PageFilterItems.sortItems,
@@ -385,7 +385,7 @@ class ItemsPage extends ListPage {
 			$btnReset,
 			$btnClear,
 			$wrpList: $(`.list.magic`),
-			syntax: this._listSyntax,
+			syntax: this._listSyntax.build(),
 			optsList: {
 				fnSort: PageFilterItems.sortItems,
 			},

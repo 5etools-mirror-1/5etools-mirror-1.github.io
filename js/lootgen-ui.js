@@ -62,7 +62,7 @@ class LootGenUi extends BaseComponent {
 			.pMap(async letter => {
 				return {
 					letter,
-					tableEntry: await Renderer.hover.pCacheAndGet(UrlUtil.PG_TABLES, SRC_DMG, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_TABLES]({name: `Magic Item Table ${letter}`, source: SRC_DMG})),
+					tableEntry: await DataLoader.pCacheAndGet(UrlUtil.PG_TABLES, SRC_DMG, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_TABLES]({name: `Magic Item Table ${letter}`, source: SRC_DMG})),
 				};
 			});
 
@@ -1478,7 +1478,7 @@ class LootGenOutput {
 		const out = [];
 		for (const [uid, count] of Object.entries(uidToCount)) {
 			const [name, source] = uid.split("|");
-			const item = await Renderer.hover.pCacheAndGet(UrlUtil.PG_ITEMS, source, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS]({name, source}));
+			const item = await DataLoader.pCacheAndGet(UrlUtil.PG_ITEMS, source, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS]({name, source}));
 			out.push({
 				page: UrlUtil.PG_ITEMS,
 				entity: item,
@@ -1892,7 +1892,7 @@ class LootGenMagicItem extends BaseComponent {
 		nameOrUid = nameOrUid.replace(/{@item ([^}]+)}/g, (...m) => m[1]);
 		const uid = (nameOrUid.includes("|") ? nameOrUid : `${nameOrUid}|${SRC_DMG}`).toLowerCase();
 		const [name, source] = uid.split("|");
-		return Renderer.hover.pCacheAndGet(UrlUtil.PG_ITEMS, source, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS]({name, source}));
+		return DataLoader.pCacheAndGet(UrlUtil.PG_ITEMS, source, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS]({name, source}));
 	}
 
 	/**
@@ -2070,7 +2070,7 @@ class LootGenMagicItemSpellScroll extends LootGenMagicItem {
 				this._state.spell = RollerUtil.rollOnArray(this._spells.filter(it => it.level === this._state.spellLevel));
 			});
 
-		const $dispSpell = $(`<div></div>`);
+		const $dispSpell = $(`<div class="no-wrap"></div>`);
 		const hkSpell = () => {
 			if (!this._state.spell) return $dispSpell.html(`<span class="help-subtle" title="${LootGenMagicItemNull.TOOLTIP_NOTHING.qq()}">(no spell)</span>`);
 			$dispSpell.html(Renderer.get().render(`{@spell ${this._state.spell.name}|${this._state.spell.source}}`));
@@ -2087,8 +2087,8 @@ class LootGenMagicItemSpellScroll extends LootGenMagicItem {
 					<span>(</span>
 					${$btnRerollSpell}
 					${$dispSpell}
-					<span class="ve-muted mx-2">-or-</span>
-					${Renderer.get().render(`{@filter see all ${Parser.spLevelToFullLevelText(this._state.spellLevel, true)} spells|spells|level=${this._state.spellLevel}}`)}
+					<span class="ve-muted mx-2 no-wrap">-or-</span>
+					<div class="no-wrap">${Renderer.get().render(`{@filter see all ${Parser.spLevelToFullLevelText(this._state.spellLevel, true)} spells|spells|level=${this._state.spellLevel}}`)}</div>
 					<span>)</span>
 				</div>
 				${$dispRoll}

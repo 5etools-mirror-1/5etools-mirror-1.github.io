@@ -373,7 +373,7 @@ class SublistManager {
 
 	async _pHandleJsonDownload () {
 		const entities = await this.getPinnedEntities();
-		entities.forEach(ent => DataUtil.cleanJson(MiscUtil.copy(ent)));
+		entities.forEach(ent => DataUtil.cleanJson(MiscUtil.copyFast(ent)));
 		DataUtil.userDownload(`${this._getDownloadName()}-data`, entities);
 	}
 
@@ -654,7 +654,7 @@ class SublistManager {
 		const page = UrlUtil.getCurrentPage();
 
 		for (const it of list.items) {
-			let toSend = await Renderer.hover.pCacheAndGetHash(page, it.h);
+			let toSend = await DataLoader.pCacheAndGetHash(page, it.h);
 
 			toSend = await Renderer.hover.pApplyCustomHashId(UrlUtil.getCurrentPage(), toSend, it.customHashId);
 
@@ -720,6 +720,77 @@ class SublistManager {
 	doSublistDeselectAll () { this._listSub.deselectAll(); }
 }
 
+class ListPageSettingsManager extends BaseComponent {
+	static _SETTINGS = [];
+	static _STORAGE_KEY = "listPageSettings";
+
+	async pInit () {
+		const saved = await this._pLoadSettings();
+		if (!saved) return;
+		this.setStateFrom(saved);
+	}
+
+	async _pLoadSettings () { return StorageUtil.pGetForPage(this.constructor._STORAGE_KEY); }
+
+	async _pSaveSettings () {
+		await StorageUtil.pSetForPage(this.constructor._STORAGE_KEY, this.getSaveableState());
+	}
+
+	_getSettings () { return {}; }
+
+	bindBtnOpen ({btn}) {
+		btn
+			.addEventListener(
+				"click",
+				() => {
+					const $btnReset = $(`<button class="btn btn-default btn-xs" title="Reset"><span class="glyphicon glyphicon-refresh"></span></button>`)
+						.click(() => {
+							this._proxyAssignSimple("state", this._getDefaultState(), true);
+							this._pSaveSettings()
+								.then(() => Hist.hashChange());
+						});
+
+					const {$modalInner} = UiUtil.getShowModal({
+						isIndestructible: true,
+						isHeaderBorder: true,
+						title: "Settings",
+						cbClose: () => {
+							this._pSaveSettings()
+								.then(() => Hist.hashChange());
+						},
+						$titleSplit: $btnReset,
+					});
+
+					const $rows = Object.entries(this._getSettings())
+						.map(([prop, setting]) => {
+							switch (setting.type) {
+								case "boolean": {
+									return $$`<label class="split-v-center stripe-even py-1">
+										<span>${setting.name}</span>
+										${ComponentUiUtil.$getCbBool(this, prop)}
+									</label>`;
+								}
+
+								default: throw new Error(`Unhandled type "${setting.type}"`);
+							}
+						});
+
+					$$($modalInner)`<div class="ve-flex-col">
+						${$rows}
+					</div>`;
+				},
+			);
+	}
+
+	getValues () {
+		return MiscUtil.copyFast(this.__state);
+	}
+
+	_getDefaultState () {
+		return SettingsUtil.getDefaultSettings(this._getSettings());
+	}
+}
+
 class ListPage {
 	/**
 	 * @param opts Options object.
@@ -751,6 +822,7 @@ class ListPage {
 	 * @param [opts.isMarkdownPopout] If the sublist Popout button supports Markdown on CTRL.
 	 * @param [opts.propEntryData]
 	 * @param [opts.listSyntax]
+	 * @param [opts.compSettings]
 	 */
 	constructor (opts) {
 		this._dataSource = opts.dataSource;
@@ -772,6 +844,7 @@ class ListPage {
 		this._isBindHashHandlerUnknown = !!opts.isBindHashHandlerUnknown;
 		this._propEntryData = opts.propEntryData;
 		this._listSyntax = opts.listSyntax || new ListUiUtil.ListSyntax({fnGetDataList: () => this._dataList, pFnGetFluff: opts.pFnGetFluff});
+		this._compSettings = opts.compSettings ? opts.compSettings : null;
 
 		this._renderer = Renderer.get();
 		this._list = null;
@@ -805,6 +878,11 @@ class ListPage {
 
 		await BrewUtil2.pInit();
 		await ExcludeUtil.pInitialise();
+
+		if (this._compSettings) {
+			await this._compSettings.pInit();
+			this._compSettings.bindBtnOpen({btn: document.getElementById("btn-list-settings")});
+		}
 
 		let data;
 		// For pages which can load data without filter state, load the data early
@@ -1200,7 +1278,7 @@ class ListPage {
 			.on("click", async evt => {
 				let url = window.location.href;
 
-				if (evt.ctrlKey) {
+				if (evt.ctrlKey || evt.metaKey) {
 					await MiscUtil.pCopyTextToClipboard(this._filterBox.getFilterTag());
 					JqueryUtil.showCopiedEffect($btn);
 					return;

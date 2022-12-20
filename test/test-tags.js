@@ -3,6 +3,7 @@ require("../js/utils.js");
 require("../js/render.js");
 require("../js/render-dice.js");
 require("../js/hist.js");
+require("../js/utils-dataloader.js");
 const utS = require("../node/util-search-index");
 require("../js/omnidexer.js");
 const ut = require("../node/util.js");
@@ -22,7 +23,6 @@ const MSG = {
 	AreaCheck: "",
 	LootCheck: "",
 	TableDiceTest: "",
-	SpellDataCheck: "",
 	EscapeCharacterCheck: "",
 	DuplicateEntityCheck: "",
 	ClassDataCheck: "",
@@ -90,7 +90,7 @@ class TagTestUtil {
 			if (sc.className === VeCt.STR_GENERIC.toLowerCase() && sc.classSource === VeCt.STR_GENERIC.toLowerCase()) return;
 
 			this._CLASS_SUBCLASS_LOOKUP[sc.classSource][sc.className][sc.source] = this._CLASS_SUBCLASS_LOOKUP[sc.classSource][sc.className][sc.source] || {};
-			this._CLASS_SUBCLASS_LOOKUP[sc.classSource][sc.className][sc.source][sc.shortName] = MiscUtil.copy(MiscUtil.get(tmpClassIxFeatures, sc.classSource, sc.className));
+			this._CLASS_SUBCLASS_LOOKUP[sc.classSource][sc.className][sc.source][sc.shortName] = MiscUtil.copyFast(MiscUtil.get(tmpClassIxFeatures, sc.classSource, sc.className));
 		});
 	}
 
@@ -116,7 +116,7 @@ class TagTestUtil {
 
 	static fileRecurse (file, fileHandler, doParse, filenameMatcher) {
 		if (file.endsWith(".json") && !this._isIgnoredFile(file) && (filenameMatcher == null || filenameMatcher.test(file.split("/").last()))) {
-			doParse ? fileHandler(file, JSON.parse(fs.readFileSync(file, "utf-8"))) : fileHandler(file);
+			doParse ? fileHandler(file, ut.readJson(file)) : fileHandler(file);
 			Object.keys(MSG).forEach(k => {
 				if (MSG[k] && MSG[k].trim() && MSG[k].slice(-5) !== "\n---\n") MSG[k] = `${MSG[k].trimRight()}\n---\n`;
 			});
@@ -147,7 +147,7 @@ class GenericDataCheck {
 
 	static _testAdditionalSpells_testSpellExists (file, msgProp, spellOrObj) {
 		if (typeof spellOrObj === "object") {
-			if (spellOrObj.choose) {
+			if (spellOrObj.choose || spellOrObj.all) {
 				// e.g. "level=0|class=Sorcerer"
 				// (no-op)
 			} else throw new Error(`Unhandled additionalSpells special object: ${JSON.stringify(spellOrObj)}`);
@@ -163,13 +163,19 @@ class GenericDataCheck {
 		}
 	}
 
+	static _ADDITIONAL_SPELLS_IGNORED_KEYS = new Set([
+		"ability",
+		"name",
+		"resourceName",
+	]);
+
 	static _testAdditionalSpells (file, msgProp, obj) {
 		if (!obj.additionalSpells) return;
 		obj.additionalSpells
 			.forEach(additionalSpellOption => {
 				Object.entries(additionalSpellOption)
 					.forEach(([k, levelToSpells]) => {
-						if (k === "ability" || k === "name") return;
+						if (this._ADDITIONAL_SPELLS_IGNORED_KEYS.has(k)) return;
 
 						Object.values(levelToSpells).forEach(spellListOrMeta => {
 							if (spellListOrMeta instanceof Array) {
@@ -181,6 +187,7 @@ class GenericDataCheck {
 									switch (prop) {
 										case "daily":
 										case "rest":
+										case "resource":
 											Object.values(val).forEach(spellList => spellList.forEach(sp => this._testAdditionalSpells_testSpellExists(file, msgProp, sp)));
 											break;
 										case "will":
@@ -756,61 +763,6 @@ class LootDataCheck extends GenericDataCheck {
 }
 LootDataCheck.file = `data/loot.json`;
 
-class SpellDataCheck extends GenericDataCheck {
-	static run () {
-		const classIndex = JSON.parse(fs.readFileSync(SpellDataCheck._FILE_CLASS_INDEX, "utf8"));
-
-		const allClassJsons = Object.values(classIndex)
-			.map(f => JSON.parse(fs.readFileSync(`data/class/${f}`, "utf8")));
-
-		const allClassData = allClassJsons
-			.map(it => (it.class || []))
-			.flat();
-
-		const allSubclassData = allClassJsons
-			.map(it => (it.subclass || []))
-			.flat();
-
-		allClassData
-			.forEach(cls => {
-				const classMeta = {name: cls.name, source: cls.source};
-
-				const matchingSubclasses = allSubclassData.filter(it => it.className === cls.name && it.classSource === cls.source);
-				if (matchingSubclasses.length) classMeta.availableSubclasses = matchingSubclasses.map(sc => ({name: sc.shortName, source: sc.source}));
-
-				SpellDataCheck._CLASS_LIST.push(classMeta);
-			});
-
-		const spellIndex = JSON.parse(fs.readFileSync(SpellDataCheck._FILE_SPELL_INDEX, "utf8"));
-		Object.values(spellIndex).forEach(f => {
-			const data = JSON.parse(fs.readFileSync(`data/spells/${f}`, "utf8"));
-			data.spell.filter(sp => sp.classes).forEach(sp => {
-				if (sp.classes.fromClassList) {
-					const invalidClasses = sp.classes.fromClassList
-						.filter(c => !SpellDataCheck._IGNORED_CLASSES.some(it => it.name === c.name && it.source === c.source))
-						.filter(c => !SpellDataCheck._CLASS_LIST.some(it => it.name === c.name && it.source === c.source));
-					invalidClasses.forEach(ic => MSG.SpellDataCheck += `Invalid class: ${JSON.stringify(ic)} in spell "${sp.name}" in file "${f}"\n`);
-				}
-
-				if (sp.classes.fromSubclass) {
-					sp.classes.fromSubclass.forEach(sc => {
-						const clazz = SpellDataCheck._CLASS_LIST.find(it => it.name === sc.class.name && it.source === sc.class.source);
-						if (!clazz) return MSG.SpellDataCheck += `Invalid subclass class: ${JSON.stringify(sc)} in spell "${sp.name}" in file "${f}"\n`;
-						if (!clazz.availableSubclasses) return MSG.SpellDataCheck += `Subclass class has no known subclasses: ${JSON.stringify(sc)} in spell "${sp.name}" in file "${f}"\n`;
-
-						const isValidSubclass = clazz.availableSubclasses.some(it => it.name === sc.subclass.name && it.source === sc.subclass.source);
-						if (!isValidSubclass) return MSG.SpellDataCheck += `Subclass (shortName) does not exist: ${JSON.stringify(sc)} in spell "${sp.name}" in file "${f}"\n`;
-					});
-				}
-			});
-		});
-	}
-}
-SpellDataCheck._IGNORED_CLASSES = []; // This can be pre-loaded with any exotic UA (see history)
-SpellDataCheck._FILE_CLASS_INDEX = `data/class/index.json`;
-SpellDataCheck._FILE_SPELL_INDEX = `data/spells/index.json`;
-SpellDataCheck._CLASS_LIST = [];
-
 class ClassDataCheck extends GenericDataCheck {
 	static _doCheckClass (file, data, cls) {
 		// region Check `classFeatures` -> `classFeature` links
@@ -975,13 +927,13 @@ class BestiaryDataCheck extends GenericDataCheck {
 	}
 
 	static run () {
-		const index = JSON.parse(fs.readFileSync(`data/bestiary/index.json`, "utf-8"));
+		const index = ut.readJson(`data/bestiary/index.json`, "utf-8");
 		const fileMetas = Object.values(index)
 			.map(filename => {
 				const file = `data/bestiary/${filename}`;
 				return {
 					file,
-					contents: JSON.parse(fs.readFileSync(file, "utf-8")),
+					contents: ut.readJson(file, "utf-8"),
 				};
 			});
 		fileMetas.forEach(({file, contents}) => {
@@ -1021,7 +973,7 @@ class DuplicateEntityCheck {
 			this.checkFile(file, contents, {isSkipVersionCheck: true});
 
 			// Then, merge races+subraces, so we can run a check on versions
-			contents = MiscUtil.copy(contents);
+			contents = MiscUtil.copyFast(contents);
 			contents = DataUtil.race.getPostProcessedSiteJson(contents);
 			isSkipBaseCheck = true;
 		}
@@ -1096,6 +1048,13 @@ class DuplicateEntityCheck {
 				}
 				break;
 			}
+			case "subrace": {
+				if (name != null && source != null) {
+					const key = `${source} :: ${ent.raceSource} :: ${ent.raceName} :: ${name}`;
+					(positions[key] = positions[key] || []).push(keyIx);
+				}
+				break;
+			}
 			default: {
 				if (name != null && source != null) {
 					const key = `${source} :: ${name}`;
@@ -1143,7 +1102,7 @@ class RefTagCheck {
 			const refUnpacked = DataUtil.generic.unpackUid(toCheckMeta[prop], prop);
 			const refHash = UrlUtil.URL_TO_HASH_BUILDER[prop](refUnpacked);
 
-			const cpy = await Renderer.hover.pCacheAndGetHash(prop, refHash, {isCopy: true});
+			const cpy = await DataLoader.pCacheAndGetHash(prop, refHash, {isCopy: true});
 			if (!cpy) {
 				MSG.RefTagCheck += `Missing ref tag: ${toCheck}\n`;
 			}
@@ -1356,7 +1315,6 @@ async function main () {
 	ActionData.run();
 	DeityDataCheck.run();
 	LootDataCheck.run();
-	SpellDataCheck.run();
 	ClassDataCheck.run();
 	RaceDataCheck.run();
 	FeatDataCheck.run();

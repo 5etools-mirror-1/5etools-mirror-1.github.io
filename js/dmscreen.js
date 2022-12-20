@@ -1098,7 +1098,7 @@ class Panel {
 			PANEL_TYP_STATS,
 			meta,
 		);
-		return Renderer.hover.pCacheAndGet(
+		return DataLoader.pCacheAndGet(
 			page,
 			source,
 			hash,
@@ -1296,7 +1296,7 @@ class Panel {
 			PANEL_TYP_CREATURE_SCALED_CR,
 			meta,
 		);
-		return Renderer.hover.pCacheAndGet(
+		return DataLoader.pCacheAndGet(
 			page,
 			source,
 			hash,
@@ -1327,7 +1327,7 @@ class Panel {
 			PANEL_TYP_CREATURE_SCALED_SPELL_SUMMON,
 			meta,
 		);
-		return Renderer.hover.pCacheAndGet(
+		return DataLoader.pCacheAndGet(
 			page,
 			source,
 			hash,
@@ -1360,7 +1360,7 @@ class Panel {
 			PANEL_TYP_CREATURE_SCALED_CLASS_SUMMON,
 			meta,
 		);
-		return Renderer.hover.pCacheAndGet(
+		return DataLoader.pCacheAndGet(
 			page,
 			source,
 			hash,
@@ -3704,6 +3704,7 @@ class NoteBox {
 							evt.type = "mouseover";
 							evt.shiftKey = true;
 							evt.ctrlKey = false;
+							evt.metaKey = false;
 							$(r).trigger(evt);
 						} else if (tag === "link") {
 							const [txt, link] = Renderer.splitTagByPipe(text);

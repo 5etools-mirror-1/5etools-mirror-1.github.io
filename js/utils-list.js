@@ -39,7 +39,7 @@ class ListUtil {
 		return (await exportedSublist
 			.items
 			.pSerialAwaitMap(async ser => {
-				let entity = await Renderer.hover.pCacheAndGetHash(page, ser.h);
+				let entity = await DataLoader.pCacheAndGetHash(page, ser.h);
 
 				if (!entity) return null;
 
@@ -71,7 +71,7 @@ class ListUtil {
 	static _getWithoutManagerState ({saveEntity, prefix}) {
 		if (!saveEntity) return saveEntity;
 
-		const cpy = MiscUtil.copy(saveEntity);
+		const cpy = MiscUtil.copyFast(saveEntity);
 		Object.keys(cpy)
 			.filter(k => k.startsWith(prefix))
 			.forEach(k => delete cpy[k]);
@@ -505,7 +505,7 @@ class SaveManager extends BaseComponent {
 			.click(() => {
 				DataUtil.userDownload(
 					ListUtil.getDownloadNameSaves({page: this._page}),
-					{saves: MiscUtil.copy(this._state.saves)},
+					{saves: MiscUtil.copyFast(this._state.saves)},
 					{
 						fileType: ListUtil.getDownloadFiletypeSaves({page: this._page}),
 					},

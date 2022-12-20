@@ -10,7 +10,11 @@ $flt-ignore: #f0f0f0;
 $flt-ignore--hover: #e6e6e6;
 
 .fltr {
+	$sz-font-pill: 10.5px;
+
 	&__ {
+		$w-margin-pill: 2px;
+
 		&btn-close {
 			min-width: 100px;
 		}
@@ -153,11 +157,11 @@ $flt-ignore--hover: #e6e6e6;
 		}
 
 		&btn_nest {
-			margin: 2px;
+			margin: $w-margin-pill;
 			padding: 2px 6px;
 			white-space: nowrap;
 			text-align: center;
-			font-size: 10.5px;
+			font-size: $sz-font-pill;
 			cursor: pointer;
 			user-select: none;
 			background: $flt-ignore;
@@ -221,6 +225,11 @@ $flt-ignore--hover: #e6e6e6;
 			}
 		}
 
+		&container-pills {
+			margin-right: -$w-margin-pill;
+			margin-left: -$w-margin-pill;
+		}
+
 		&dropdown-divider {
 			border-bottom: $rgb-border-grey 1px dotted;
 			width: 100%;
@@ -254,7 +263,7 @@ $flt-ignore--hover: #e6e6e6;
 			background: $flt-ignore;
 			white-space: nowrap;
 			text-align: center;
-			font-size: 10.5px;
+			font-size: $sz-font-pill;
 			cursor: pointer;
 			user-select: none;
 			border: 1px solid $rgb-border-grey;
@@ -426,8 +435,74 @@ $flt-ignore--hover: #e6e6e6;
 			width: 80px;
 		}
 
+		&hidden--inactive {
+			display: none !important;
+		}
+
 		&hidden--search {
 			display: none !important;
+		}
+	}
+
+	&-search__ {
+		&wrp-search {
+			&:focus,
+			&:focus-within,
+			&:focus-visible,
+			&:active {
+				.fltr-search__wrp-values {
+					display: flex;
+				}
+			}
+		}
+
+		&wrp-row {
+			&:focus,
+			&:hover {
+				background-color: $rgb-bg--alt;
+			}
+		}
+
+		&wrp-values {
+			max-height: 200px;
+			background: $rgb-bg;
+			border: 1px solid $rgb-border-grey;
+			z-index: 1;
+			top: 22px;
+			right: 0;
+			left: 0;
+			display: none;
+			flex-direction: column;
+		}
+
+		&disp-name {
+			font-size: $sz-font-pill;
+		}
+
+		&btn-activate {
+			width: 16px;
+			height: 16px;
+			border-radius: 3px;
+
+			&--yes {
+				background: $rgb-active-blue;
+				color: white;
+				border: 1px solid lighten($rgb-active-blue, $pct-darken-border);
+
+				&:hover {
+					background: darken($rgb-active-blue, $pct-darken-hover);
+				}
+			}
+
+			&--no {
+				background: $rgb-active-red;
+				color: white;
+				border: 1px solid lighten($rgb-active-red, $pct-darken-border);
+
+				&:hover {
+					background: darken($rgb-active-red, $pct-darken-hover);
+				}
+			}
 		}
 	}
 

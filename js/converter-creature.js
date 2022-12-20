@@ -5,7 +5,7 @@ if (typeof module !== "undefined") {
 	Object.assign(global, cv);
 	const cvCreature = require("./converterutils-creature.js");
 	Object.assign(global, cvCreature);
-	global.PropOrder = require("./utils-proporder.js");
+	require("./utils-proporder.js");
 	Object.assign(global, require("./converterutils-markdown.js"));
 	Object.assign(global, require("./converterutils-entries.js"));
 }

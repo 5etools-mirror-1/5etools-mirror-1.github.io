@@ -186,7 +186,7 @@ function Renderer () {
 	};
 
 	this.getTrackedTitles = function () {
-		return MiscUtil.copy(this._trackTitles.titles);
+		return MiscUtil.copyFast(this._trackTitles.titles);
 	};
 
 	this.getTrackedTitlesInverted = function ({isStripTags = false} = {}) {
@@ -211,7 +211,7 @@ function Renderer () {
 	this._handleTrackDepth = function (entry, depth) {
 		if (!entry.name || !this._depthTracker) return;
 
-		this._lastDepthTrackerInheritedProps = MiscUtil.copy(this._lastDepthTrackerInheritedProps);
+		this._lastDepthTrackerInheritedProps = MiscUtil.copyFast(this._lastDepthTrackerInheritedProps);
 		if (entry.source) this._lastDepthTrackerInheritedProps.source = entry.source;
 		if (this._depthTrackerAdditionalPropsInherited?.length) {
 			this._depthTrackerAdditionalPropsInherited.forEach(prop => this._lastDepthTrackerInheritedProps[prop] = entry[prop] || this._lastDepthTrackerInheritedProps[prop]);
@@ -748,7 +748,7 @@ function Renderer () {
 		const headerTag = isInlineTitle ? "span" : `h${Math.min(Math.max(meta.depth + 2, 1), 6)}`;
 		const headerClass = `rd__h--${meta.depth + 1}`; // adjust as the CSS is 0..4 rather than -1..3
 
-		const cachedLastDepthTrackerProps = MiscUtil.copy(this._lastDepthTrackerInheritedProps);
+		const cachedLastDepthTrackerProps = MiscUtil.copyFast(this._lastDepthTrackerInheritedProps);
 		this._handleTrackDepth(entry, meta.depth);
 
 		const pluginDataNamePrefix = this._getPlugins(`${type}_namePrefix`).map(plugin => plugin(entry, textStack, meta, options)).filter(Boolean);
@@ -859,7 +859,7 @@ function Renderer () {
 		const dataString = this._renderEntriesSubtypes_getDataString(entry);
 		textStack[0] += `<${this.wrapperTag} class="rd__b-special rd__b-inset ${entry.style || ""}" ${dataString}>`;
 
-		const cachedLastDepthTrackerProps = MiscUtil.copy(this._lastDepthTrackerInheritedProps);
+		const cachedLastDepthTrackerProps = MiscUtil.copyFast(this._lastDepthTrackerInheritedProps);
 		this._handleTrackDepth(entry, 1);
 
 		const pagePart = this._getPagePart(entry, true);
@@ -892,7 +892,7 @@ function Renderer () {
 		const dataString = this._renderEntriesSubtypes_getDataString(entry);
 		textStack[0] += `<${this.wrapperTag} class="rd__b-special rd__b-inset rd__b-inset--readaloud ${entry.style || ""}" ${dataString}>`;
 
-		const cachedLastDepthTrackerProps = MiscUtil.copy(this._lastDepthTrackerInheritedProps);
+		const cachedLastDepthTrackerProps = MiscUtil.copyFast(this._lastDepthTrackerInheritedProps);
 		this._handleTrackDepth(entry, 1);
 
 		const pagePart = this._getPagePart(entry, true);
@@ -923,7 +923,7 @@ function Renderer () {
 		const dataString = this._renderEntriesSubtypes_getDataString(entry);
 
 		if (entry.name != null && Renderer.ENTRIES_WITH_ENUMERATED_TITLES_LOOKUP[entry.type]) this._handleTrackTitles(entry.name);
-		const cachedLastDepthTrackerProps = MiscUtil.copy(this._lastDepthTrackerInheritedProps);
+		const cachedLastDepthTrackerProps = MiscUtil.copyFast(this._lastDepthTrackerInheritedProps);
 		this._handleTrackDepth(entry, 1);
 
 		const pagePart = this._getPagePart(entry, true);
@@ -949,7 +949,7 @@ function Renderer () {
 		const dataString = this._renderEntriesSubtypes_getDataString(entry);
 
 		if (entry.name != null && Renderer.ENTRIES_WITH_ENUMERATED_TITLES_LOOKUP[entry.type]) this._handleTrackTitles(entry.name);
-		const cachedLastDepthTrackerProps = MiscUtil.copy(this._lastDepthTrackerInheritedProps);
+		const cachedLastDepthTrackerProps = MiscUtil.copyFast(this._lastDepthTrackerInheritedProps);
 		this._handleTrackDepth(entry, 1);
 
 		textStack[0] += `<${this.wrapperTag} class="rd__b-inset-inner" ${dataString}>`;
@@ -981,7 +981,7 @@ function Renderer () {
 
 	this._renderSpellcasting_getEntries = function (entry) {
 		const hidden = new Set(entry.hidden || []);
-		const toRender = [{type: "entries", name: entry.name, entries: entry.headerEntries ? MiscUtil.copy(entry.headerEntries) : []}];
+		const toRender = [{type: "entries", name: entry.name, entries: entry.headerEntries ? MiscUtil.copyFast(entry.headerEntries) : []}];
 
 		if (entry.constant || entry.will || entry.rest || entry.daily || entry.weekly || entry.yearly || entry.ritual) {
 			const tempList = {type: "list", style: "list-hang-notitle", items: [], data: {isSpellList: true}};
@@ -1128,7 +1128,7 @@ function Renderer () {
 		const dataString = this._renderEntriesSubtypes_getDataString(entry);
 
 		if (entry.name != null && Renderer.ENTRIES_WITH_ENUMERATED_TITLES_LOOKUP[entry.type]) this._handleTrackTitles(entry.name);
-		const cachedLastDepthTrackerProps = MiscUtil.copy(this._lastDepthTrackerInheritedProps);
+		const cachedLastDepthTrackerProps = MiscUtil.copyFast(this._lastDepthTrackerInheritedProps);
 		this._handleTrackDepth(entry, 2);
 
 		textStack[0] += `<${this.wrapperTag} class="${Renderer.HEAD_2}" ${dataString}><span class="rd__h rd__h--3" data-title-index="${this._headerIndex++}" ${this._getEnumeratedTitleRel(entry.name)}><span class="entry-title-inner">${entry.name}.</span></span> `;
@@ -1193,7 +1193,7 @@ function Renderer () {
 	this._INLINE_STATBLOCK_STRATEGIES = {
 		"item": new this._InlineStatblockStrategy({
 			pFnPreProcess: async (ent) => {
-				await Renderer.item.populatePropertyAndTypeReference();
+				await Renderer.item.pPopulatePropertyAndTypeReference();
 				Renderer.item.enhanceItem(ent);
 				return ent;
 			},
@@ -1302,7 +1302,7 @@ function Renderer () {
 		const len = entry.images.length;
 		const anyNamed = entry.images.find(it => it.title);
 		for (let i = 0; i < len; ++i) {
-			const img = MiscUtil.copy(entry.images[i]);
+			const img = MiscUtil.copyFast(entry.images[i]);
 			if (anyNamed && !img.title) img._galleryTitlePad = true; // force untitled images to pad to match their siblings
 			delete img.imageType;
 			this._recursiveRender(img, textStack, meta, options);
@@ -1326,7 +1326,7 @@ function Renderer () {
 		const dataString = this._renderEntriesSubtypes_getDataString(entry);
 		textStack[0] += `<${this.wrapperTag} class="rd__b-special rd__b-flow" ${dataString}>`;
 
-		const cachedLastDepthTrackerProps = MiscUtil.copy(this._lastDepthTrackerInheritedProps);
+		const cachedLastDepthTrackerProps = MiscUtil.copyFast(this._lastDepthTrackerInheritedProps);
 		this._handleTrackDepth(entry, 1);
 
 		if (entry.name != null) {
@@ -2125,7 +2125,7 @@ Renderer.getRollableEntryDice = function (
 		pluginResults = null,
 	} = {},
 ) {
-	const toPack = MiscUtil.copy(entry);
+	const toPack = MiscUtil.copyFast(entry);
 	if (typeof toPack.toRoll !== "string") {
 		// handle legacy format
 		toPack.toRoll = Renderer.legacyDiceToString(toPack.toRoll);
@@ -2265,7 +2265,7 @@ Renderer.getAbilityData._doRenderOuter = function (abObj) {
 	return new Renderer._AbilityData();
 
 	function handleAllAbilities (abObj, targetList) {
-		MiscUtil.copy(Parser.ABIL_ABVS)
+		MiscUtil.copyFast(Parser.ABIL_ABVS)
 			.sort((a, b) => SortUtil.ascSort(abObj[b] || 0, abObj[a] || 0))
 			.forEach(shortLabel => handleAbility(abObj, shortLabel, targetList));
 	}
@@ -2537,7 +2537,7 @@ Renderer.utils = {
 			pageLinkPart = SourceUtil.getAdventureBookSourceHref(it.source, it.page);
 
 			// Enable Rivet import for entities embedded in entries
-			if (opts.isEmbeddedEntity) Renderer.hover.addEmbeddedToCache(opts.page, it.source, hash, MiscUtil.copy(it));
+			if (opts.isEmbeddedEntity) Renderer.hover.addEmbeddedToCache(opts.page, it.source, hash, MiscUtil.copyFast(it));
 		}
 
 		const tagPartSourceStart = `<${pageLinkPart ? `a href="${Renderer.get().baseUrl}${pageLinkPart}"` : "span"}`;
@@ -2808,12 +2808,12 @@ Renderer.utils = {
 			const fromList = (BrewUtil2.getBrewProcessedFromCache(prop) || []).find(it => it.name === entry.fluff[mappedPropAppend].name && it.source === entry.fluff[mappedPropAppend].source);
 			if (fromList) {
 				if (fromList.entries) {
-					fluff.entries = MiscUtil.copy(fluff.entries || []);
-					fluff.entries.push(...MiscUtil.copy(fromList.entries));
+					fluff.entries = MiscUtil.copyFast(fluff.entries || []);
+					fluff.entries.push(...MiscUtil.copyFast(fromList.entries));
 				}
 				if (fromList.images) {
-					fluff.images = MiscUtil.copy(fluff.images || []);
-					fluff.images.push(...MiscUtil.copy(fromList.images));
+					fluff.images = MiscUtil.copyFast(fluff.images || []);
+					fluff.images.push(...MiscUtil.copyFast(fromList.images));
 				}
 			}
 		}
@@ -2861,7 +2861,7 @@ Renderer.utils = {
 		$$`<tr class="text">${$td}</tr>`.appendTo($content);
 		$content.append(Renderer.utils.getBorderTr());
 
-		const fluff = MiscUtil.copy((await pFnGetFluff(entity)) || {});
+		const fluff = MiscUtil.copyFast((await pFnGetFluff(entity)) || {});
 		fluff.entries = fluff.entries || [Renderer.utils.HTML_NO_INFO];
 		fluff.images = fluff.images || [Renderer.utils.HTML_NO_IMAGES];
 
@@ -2880,7 +2880,7 @@ Renderer.utils = {
 				const entityLowName = entity.name.toLowerCase().trim();
 
 				if (entryLowName.includes(entityLowName) || entityLowName.includes(entryLowName)) {
-					const cpy = MiscUtil.copy(ent);
+					const cpy = MiscUtil.copyFast(ent);
 					delete cpy.name;
 					return Renderer.get().render(cpy);
 				} else return Renderer.get().render(ent);
@@ -3515,6 +3515,8 @@ Renderer.utils = {
 				if (others.length) {
 					const [subclassShortName, subclassSource, featurePart] = others;
 
+					if (subclassSource) out.source = subclassSource;
+
 					const classStateOpts = {
 						subclass: {
 							shortName: subclassShortName.trim(),
@@ -3630,7 +3632,7 @@ Renderer.utils = {
 						),
 					);
 
-					const cpyObj = MiscUtil.copy(obj);
+					const cpyObj = MiscUtil.copyFast(obj);
 
 					out.push({
 						depth: curDepth,
@@ -3686,7 +3688,7 @@ Renderer.utils = {
 	},
 
 	initFullEntries_ (ent, {propEntries = "entries", propFullEntries = "_fullEntries"} = {}) {
-		ent[propFullEntries] = ent[propFullEntries] || (ent[propEntries] ? MiscUtil.copy(ent[propEntries]) : []);
+		ent[propFullEntries] = ent[propFullEntries] || (ent[propEntries] ? MiscUtil.copyFast(ent[propEntries]) : []);
 	},
 
 	lazy: {
@@ -3872,7 +3874,7 @@ Renderer.events = {
 		const hash = ele.dataset.rdHash.uq();
 		const style = ele.dataset.rdStyle.uq();
 
-		Renderer.hover.pCacheAndGet(page, source || Parser.TAG_TO_DEFAULT_SOURCE[tag], hash)
+		DataLoader.pCacheAndGet(page, source || Parser.TAG_TO_DEFAULT_SOURCE[tag], hash)
 			.then(toRender => {
 				const tr = ele.closest("tr");
 
@@ -3996,6 +3998,20 @@ Renderer.feat = {
 };
 
 Renderer.class = {
+	getCompactRenderedString (cls) {
+		if (cls.__prop === "subclass") return Renderer.subclass.getCompactRenderedString(cls);
+
+		const clsEntry = {
+			type: "section",
+			name: cls.name,
+			source: cls.source,
+			page: cls.page,
+			entries: MiscUtil.copyFast((cls.classFeatures || []).flat()),
+		};
+
+		return Renderer.hover.getGenericCompactRenderedString(clsEntry);
+	},
+
 	getHitDiceEntry (clsHd) { return clsHd ? {toRoll: `${clsHd.number}d${clsHd.faces}`, rollable: true} : null; },
 	getHitPointsAtFirstLevel (clsHd) { return clsHd ? `${clsHd.number * clsHd.faces} + your Constitution modifier` : null; },
 	getHitPointsAtHigherLevels (className, clsHd, hdEntry) { return className && clsHd && hdEntry ? `${Renderer.getEntryDice(hdEntry, "Hit die")} (or ${((clsHd.number * clsHd.faces) / 2 + 1)}) + your Constitution modifier per ${className} level after 1st` : null; },
@@ -4120,6 +4136,20 @@ Renderer.class = {
 	},
 };
 
+Renderer.subclass = {
+	getCompactRenderedString (sc) {
+		const scEntry = {
+			type: "section",
+			name: sc.name,
+			source: sc.source,
+			page: sc.page,
+			entries: MiscUtil.copyFast((sc.subclassFeatures || []).flat()),
+		};
+
+		return Renderer.hover.getGenericCompactRenderedString(scEntry);
+	},
+};
+
 Renderer.spell = {
 	getCompactRenderedString (spell, opts) {
 		opts = opts || {};
@@ -4173,17 +4203,20 @@ Renderer.spell = {
 		return renderStack.join("");
 	},
 
-	_isBrewSpellClassesInit: false,
-	brewSpellClasses: {},
-	brewSpellRaces: {},
+	_brewSourcesCache: null,
 	populateHomebrewLookup (homebrew, {isForce = false} = {}) {
-		if (Renderer.spell._isBrewSpellClassesInit && !isForce) return;
-		Renderer.spell._isBrewSpellClassesInit = true;
+		if (Renderer.spell._brewSourcesCache && !isForce) return;
 
-		if (isForce) {
-			Renderer.spell.brewSpellClasses = {};
-			Renderer.spell.brewSpellRaces = {};
-		}
+		Renderer.spell._brewSourcesCache = {
+			classes: {},
+
+			// region Unused
+			races: {},
+			backgrounds: {},
+			feats: {},
+			optionalfeatures: {},
+			// endregion
+		};
 
 		// region Load homebrew class spell list addons
 		// Three formats are available. A string (shorthand for "spell" format with source "PHB"), "spell" format (object
@@ -4202,39 +4235,19 @@ Renderer.spell = {
 				sc.shortName = sc.shortName || sc.name;
 				sc.source = sc.source || sc.classSource;
 
-				if (sc.subclassSpells) sc.subclassSpells.forEach(it => Renderer.spell._populateHomebrewLookup_handleSpellListItem(it, sc.className, sc.classSource, sc.shortName, sc.source));
-				if (sc.subSubclassSpells) Object.entries(sc.subSubclassSpells).forEach(([ssC, arr]) => arr.forEach(it => Renderer.spell._populateHomebrewLookup_handleSpellListItem(it, sc.className, sc.classSource, sc.shortName, sc.source, ssC)));
-			});
-		}
-		// endregion
-
-		// region Load homebrew race spell list addons
-		// Three formats are available. A string (shorthand for "spell" format with source "PHB"), "spell" format (object
-		//   with a `name` and a `source`), and "race" format (object with a `race` and a `source`).
-		if (homebrew.race) {
-			homebrew.race.forEach(r => {
-				if (r.raceSpells) r.raceSpells.forEach(it => Renderer.spell._populateHomebrewLookup_handleSpellListItemRace(it, r.name, r.source));
-			});
-		}
-
-		if (homebrew.subrace) {
-			homebrew.subrace.forEach(sr => {
-				if (sr.raceSpells) {
-					if (!sr.race?.name || !sr.race?.source || !sr.source) return;
-					const srName = Renderer.race.getSubraceName(sr.race.name, sr.name);
-					sr.raceSpells.forEach(it => Renderer.spell._populateHomebrewLookup_handleSpellListItemRace(it, srName, sr.source, sr.raceName, sr.raceSource));
-				}
+				if (sc.subclassSpells) sc.subclassSpells.forEach(it => Renderer.spell._populateHomebrewLookup_handleSpellListItem(it, sc.className, sc.classSource, sc.shortName, sc.name, sc.source));
+				if (sc.subSubclassSpells) Object.entries(sc.subSubclassSpells).forEach(([ssC, arr]) => arr.forEach(it => Renderer.spell._populateHomebrewLookup_handleSpellListItem(it, sc.className, sc.classSource, sc.shortName, sc.name, sc.source, ssC)));
 			});
 		}
 		// endregion
 	},
 
-	_populateHomebrewLookup_handleSpellListItem (it, className, classSource, subclassShortName, subclassSource, subSubclassName) {
+	_populateHomebrewLookup_handleSpellListItem (it, className, classSource, subclassShortName, subclassName, subclassSource, subSubclassName) {
 		const doAdd = (target) => {
 			if (subclassShortName) {
 				const toAdd = {
 					class: {name: className, source: classSource},
-					subclass: {name: subclassShortName, source: subclassSource},
+					subclass: {name: subclassName || subclassShortName, shortName: subclassShortName, source: subclassSource},
 				};
 				if (subSubclassName) toAdd.subclass.subSubclass = subSubclassName;
 
@@ -4248,57 +4261,36 @@ Renderer.spell = {
 			}
 		};
 
+		// region Duplicate the spell list of another class/subclass/sub-subclass
 		if (it.className) {
-			Renderer.spell.brewSpellClasses.class = Renderer.spell.brewSpellClasses.class || {};
+			Renderer.spell._brewSourcesCache.classes.class = Renderer.spell._brewSourcesCache.classes.class || {};
 
 			const cls = it.className.toLowerCase();
 			const source = (it.classSource || SRC_PHB).toLowerCase();
 
-			Renderer.spell.brewSpellClasses.class[source] = Renderer.spell.brewSpellClasses.class[source] || {};
-			Renderer.spell.brewSpellClasses.class[source][cls] = Renderer.spell.brewSpellClasses.class[source][cls] || {};
+			Renderer.spell._brewSourcesCache.classes.class[source] = Renderer.spell._brewSourcesCache.classes.class[source] || {};
+			Renderer.spell._brewSourcesCache.classes.class[source][cls] = Renderer.spell._brewSourcesCache.classes.class[source][cls] || {};
 
-			doAdd(Renderer.spell.brewSpellClasses.class[source][cls]);
-		} else {
-			Renderer.spell.brewSpellClasses.spell = Renderer.spell.brewSpellClasses.spell || {};
-
-			let [name, source] = `${it}`.toLowerCase().split("|");
-			source = source || SRC_PHB.toLowerCase();
-
-			Renderer.spell.brewSpellClasses.spell[source] = Renderer.spell.brewSpellClasses.spell[source] || {};
-			Renderer.spell.brewSpellClasses.spell[source][name] = Renderer.spell.brewSpellClasses.spell[source][name] || {fromClassList: [], fromSubclass: []};
-
-			doAdd(Renderer.spell.brewSpellClasses.spell[source][name]);
+			return doAdd(Renderer.spell._brewSourcesCache.classes.class[source][cls]);
 		}
-	},
+		// endregion
 
-	_populateHomebrewLookup_handleSpellListItemRace (it, raceName, raceSource, raceBaseName, raceBaseSource) {
-		const toAdd = {
-			name: raceName,
-			source: raceSource,
-		};
-		if (raceBaseName) toAdd.baseName = raceBaseName;
-		if (raceBaseSource) toAdd.baseSource = raceBaseSource;
+		// region Individual spell
+		Renderer.spell._brewSourcesCache.classes.spell = Renderer.spell._brewSourcesCache.classes.spell || {};
 
-		if (it.race) {
-			const race = it.race.toLowerCase();
-			const source = (it.source || SRC_PHB).toLowerCase();
+		let [name, source] = `${it}`.toLowerCase().split("|");
+		source = source || SRC_PHB.toLowerCase();
 
-			const tgt = MiscUtil.set(Renderer.spell, "brewSpellRaces", "race", source, race, []);
+		Renderer.spell._brewSourcesCache.classes.spell[source] = Renderer.spell._brewSourcesCache.classes.spell[source] || {};
+		Renderer.spell._brewSourcesCache.classes.spell[source][name] = Renderer.spell._brewSourcesCache.classes.spell[source][name] || {fromClassList: [], fromSubclass: []};
 
-			tgt.push(toAdd);
-		} else {
-			const name = (typeof it === "string" ? it : it.name).toLowerCase();
-			const source = (typeof it === "string" ? "PHB" : it.source).toLowerCase();
-
-			const tgt = MiscUtil.set(Renderer.spell, "brewSpellRaces", "spell", source, name, []);
-
-			tgt.push(toAdd);
-		}
+		doAdd(Renderer.spell._brewSourcesCache.classes.spell[source][name]);
+		// endregion
 	},
 
 	prePopulateHover (data, opts) {
 		if (opts && opts.isBrew) Renderer.spell.populateHomebrewLookup(data);
-		(data.spell || []).forEach(sp => Renderer.spell.initClasses(sp));
+		(data.spell || []).forEach(sp => Renderer.spell.initBrewSources(sp));
 	},
 
 	getCombinedClasses (sp, prop) {
@@ -4324,6 +4316,7 @@ Renderer.spell = {
 					case "fromSubclassVariant": {
 						const hash = UrlUtil.URL_TO_HASH_BUILDER["subclass"]({
 							name: it.subclass.name,
+							shortName: it.subclass.shortName,
 							source: it.subclass.source,
 							className: it.class.name,
 							classSource: it.class.source,
@@ -4344,559 +4337,129 @@ Renderer.spell = {
 			|| (subclassDefinedInSource != null && ExcludeUtil.isExcluded("*", "subclassFeature", subclassDefinedInSource, {isNoCount: true}));
 	},
 
-	getCombinedRaces (sp, {prop = "races", propTmp = "_tmpRaces"} = {}) {
+	getCombinedGeneric (sp, {propSpell, prop}) {
+		const propSpellTmp = `_tmp${propSpell.uppercaseFirst()}`;
 		return [
-			...(sp[prop] || []),
-			...(sp[propTmp] || []),
+			...(sp[propSpell] || []),
+			...(sp[propSpellTmp] || []),
 		]
 			.filter(it => {
 				if (!ExcludeUtil.isInitialised) return true;
-				const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RACES](it);
-				return !ExcludeUtil.isExcluded(hash, "race", it.source, {isNoCount: true});
-			});
+				const hash = UrlUtil.URL_TO_HASH_BUILDER[prop](it);
+				return !ExcludeUtil.isExcluded(hash, prop, it.source, {isNoCount: true});
+			})
+			.sort(SortUtil.ascSortGenericEntity.bind(SortUtil));
 	},
 
-	getCombinedBackgrounds (sp) {
-		return [
-			...(sp.backgrounds || []),
-			...(sp._tmpBackgrounds || []),
-		]
-			.filter(it => {
-				if (!ExcludeUtil.isInitialised) return true;
-				const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BACKGROUNDS](it);
-				return !ExcludeUtil.isExcluded(hash, "background", it.source, {isNoCount: true});
-			});
+	_BREW_SOURCES_TMP_PROPS: [
+		"_tmpSourcesInit",
+		"_tmpClasses",
+		"_tmpRaces",
+		"_tmpBackgrounds",
+		"_tmpFeats",
+		"_tmpOptionalfeatures",
+	],
+	uninitBrewSources (sp) {
+		Renderer.spell._BREW_SOURCES_TMP_PROPS.forEach(prop => delete sp[prop]);
 	},
 
-	_initClasses_getSpellMeta ({spell, className, classSource}) {
-		classSource = classSource || SRC_PHB;
+	initBrewSources (sp) {
+		if (sp._tmpSourcesInit) return;
+		sp._tmpSourcesInit = true;
 
-		const isClassSpell = spell.classes && spell.classes.fromClassList && spell.classes.fromClassList.some(c => c.name === className && c.source === classSource);
-		const variantClassSpells = (spell?.classes?.fromClassListVariant || []).filter(c => c.name === className && c.source === classSource);
-		return {isClassSpell, variantClassSpells};
+		sp._tmpClasses = {};
+		sp._tmpRaces = [];
+		sp._tmpBackgrounds = [];
+		sp._tmpFeats = [];
+		sp._tmpOptionalfeatures = [];
+
+		const lowName = sp.name.toLowerCase();
+		const lowSource = sp.source.toLowerCase();
+
+		Renderer.spell._initBrewSources_brewClassesSubclasses({sp, lowName, lowSource});
+		Renderer.spell._initBrewSources_brewGeneric({sp, lowName, lowSource, propSpell: "races", prop: "race"});
+		Renderer.spell._initBrewSources_brewGeneric({sp, lowName, lowSource, propSpell: "backgrounds", prop: "background"});
+		Renderer.spell._initBrewSources_brewGeneric({sp, lowName, lowSource, propSpell: "feats", prop: "feat"});
+		Renderer.spell._initBrewSources_brewGeneric({sp, lowName, lowSource, propSpell: "optionalfeatures", prop: "optionalfeature"});
 	},
 
-	uninitClasses (spell) {
-		delete spell._tmpClasses;
-		delete spell._tmpRaces;
-	},
+	_initBrewSources_brewClassesSubclasses ({sp, lowName, lowSource}) {
+		if (!Renderer.spell._brewSourcesCache?.classes) return;
 
-	// TODO(Future)
-	//   - Pre-generate this information, and load it as a JSON file?
-	//   - Allow the user to filter for e.g. "variant subclass" spells, "variant race" spells?
-	//     - Should have "Include Class Variants" and "Include Subclass Variants" toggle buttons for subclass filter
-	//     - Should have "Include Class Variants" and "Include Race Variants" toggle buttons for race filter
-	initClasses (spell) {
-		if (spell._tmpClasses || spell._tmpRaces) return;
-		spell._tmpClasses = {};
-		spell._tmpRaces = [];
-
-		const {isClassSpell: isWizardSpell, variantClassSpells: variantWizardSpells} = Renderer.spell._initClasses_getSpellMeta({spell, className: Renderer.spell.STR_WIZARD});
-		const {isClassSpell: isClericSpell, variantClassSpells: variantClericSpells} = Renderer.spell._initClasses_getSpellMeta({spell, className: Renderer.spell.STR_CLERIC});
-		const {isClassSpell: isDruidSpell, variantClassSpells: variantDruidSpells} = Renderer.spell._initClasses_getSpellMeta({spell, className: Renderer.spell.STR_DRUID});
-		const {isClassSpell: isWarlockSpell, variantClassSpells: variantWarlockSpells} = Renderer.spell._initClasses_getSpellMeta({spell, className: Renderer.spell.STR_WARLOCK});
-		const {isClassSpell: isSorcererSpell, variantClassSpells: variantSorcererSpells} = Renderer.spell._initClasses_getSpellMeta({spell, className: Renderer.spell.STR_SORCERER});
-
-		const hashFighterEldritchKnight = UrlUtil.URL_TO_HASH_BUILDER["subclass"]({className: Renderer.spell.STR_FIGHTER, classSource: SRC_PHB, name: Renderer.spell.STR_ELD_KNIGHT, source: SRC_PHB});
-		const hashRogueArcaneTrickster = UrlUtil.URL_TO_HASH_BUILDER["subclass"]({className: Renderer.spell.STR_ROGUE, classSource: SRC_PHB, name: Renderer.spell.STR_ARC_TCKER, source: SRC_PHB});
-		const hashSorcererDivineSoul = UrlUtil.URL_TO_HASH_BUILDER["subclass"]({className: Renderer.spell.STR_SORCERER, classSource: SRC_PHB, name: Renderer.spell.STR_DIV_SOUL, source: SRC_XGE});
-		const hashSorcererFavoredSoulUaV2 = UrlUtil.URL_TO_HASH_BUILDER["subclass"]({className: Renderer.spell.STR_SORCERER, classSource: SRC_PHB, name: Renderer.spell.STR_FAV_SOUL_V2, source: SRC_UAS});
-		const hashSorcererFavoredSoulUaV3 = UrlUtil.URL_TO_HASH_BUILDER["subclass"]({className: Renderer.spell.STR_SORCERER, classSource: SRC_PHB, name: Renderer.spell.STR_FAV_SOUL_V3, source: SRC_UARSC});
-		const hashClericArcana = UrlUtil.URL_TO_HASH_BUILDER["subclass"]({className: Renderer.spell.STR_CLERIC, classSource: SRC_PHB, name: "Arcana", source: SRC_SCAG});
-		const hashClericNature = UrlUtil.URL_TO_HASH_BUILDER["subclass"]({className: Renderer.spell.STR_CLERIC, classSource: SRC_PHB, name: "Nature", source: SRC_PHB});
-		const hashClericDeath = UrlUtil.URL_TO_HASH_BUILDER["subclass"]({className: Renderer.spell.STR_CLERIC, classSource: SRC_PHB, name: "Death", source: SRC_DMG});
-		const hashSorcererAberrantMind = UrlUtil.URL_TO_HASH_BUILDER["subclass"]({className: Renderer.spell.STR_SORCERER, classSource: SRC_PHB, name: Renderer.spell.STR_ABERRANT_MIND, source: SRC_TCE});
-		const hashSorcererClockworkSoul = UrlUtil.URL_TO_HASH_BUILDER["subclass"]({className: Renderer.spell.STR_SORCERER, classSource: SRC_PHB, name: Renderer.spell.STR_CLOCKWORK_SOUL, source: SRC_TCE});
-
-		const hashElfHigh = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RACES]({name: "Elf (High)", source: SRC_PHB});
-		const hashHalfElfVariantSunMoon = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RACES]({name: "Half-Elf (Variant; Moon Elf or Sun Elf Descent)", source: SRC_SCAG});
-
-		// add eldritch knight and arcane trickster
-		if (isWizardSpell || variantWizardSpells.length) {
-			const isExcludedEk = ExcludeUtil.isExcluded(hashFighterEldritchKnight, "subclass", SRC_PHB, {isNoCount: true});
-			const isExcludedArc = ExcludeUtil.isExcluded(hashRogueArcaneTrickster, "subclass", SRC_PHB, {isNoCount: true});
-
-			if (!isExcludedEk) {
-				if (isWizardSpell) {
-					Renderer.spell._initClasses_addSubclassSpell({
-						spell,
-						className: Renderer.spell.STR_FIGHTER,
-						subclassName: Renderer.spell.STR_ELD_KNIGHT,
-					});
+		if (Renderer.spell._brewSourcesCache.classes.spell) {
+			if (Renderer.spell._brewSourcesCache.classes.spell[lowSource] && Renderer.spell._brewSourcesCache.classes.spell[lowSource][lowName]) {
+				if (Renderer.spell._brewSourcesCache.classes.spell[lowSource][lowName].fromClassList.length) {
+					sp._tmpClasses.fromClassList = sp._tmpClasses.fromClassList || [];
+					sp._tmpClasses.fromClassList.push(...Renderer.spell._brewSourcesCache.classes.spell[lowSource][lowName].fromClassList);
 				}
-
-				if (variantWizardSpells.length) {
-					Renderer.spell._initClasses_addVariantSubclassSpells({
-						spell,
-						variantClassSpells: variantWizardSpells,
-						className: Renderer.spell.STR_FIGHTER,
-						subclassName: Renderer.spell.STR_ELD_KNIGHT,
-					});
-				}
-			}
-
-			if (!isExcludedArc) {
-				if (isWizardSpell) {
-					Renderer.spell._initClasses_addSubclassSpell({
-						spell,
-						className: Renderer.spell.STR_ROGUE,
-						subclassName: Renderer.spell.STR_ARC_TCKER,
-					});
-				}
-
-				if (variantWizardSpells.length) {
-					Renderer.spell._initClasses_addVariantSubclassSpells({
-						spell,
-						variantClassSpells: variantWizardSpells,
-						className: Renderer.spell.STR_ROGUE,
-						subclassName: Renderer.spell.STR_ARC_TCKER,
-					});
-				}
-			}
-
-			if (!isExcludedEk || !isExcludedArc) {
-				if (spell.level > 4) spell._scrollNote = true;
-			}
-		}
-
-		// add divine soul, favored soul v2, favored soul v3
-		if (isClericSpell || variantClericSpells.length) {
-			const isExcludedDivSoul = ExcludeUtil.isExcluded(hashSorcererDivineSoul, "subclass", SRC_PHB, {isNoCount: true});
-			const isExcludedFavSoulv2 = ExcludeUtil.isExcluded(hashSorcererFavoredSoulUaV2, "subclass", SRC_PHB, {isNoCount: true});
-			const isExcludedFavSoulv3 = ExcludeUtil.isExcluded(hashSorcererFavoredSoulUaV3, "subclass", SRC_PHB, {isNoCount: true});
-
-			if (!isExcludedDivSoul) {
-				if (isClericSpell) {
-					const isExistingDivSoul = spell.classes?.fromSubclass && spell.classes?.fromSubclass.some(it => it.class.name === Renderer.spell.STR_SORCERER && it.class.source === SRC_PHB && it.subclass.name === Renderer.spell.STR_DIV_SOUL && it.subclass.source === SRC_XGE);
-					if (!isExistingDivSoul) {
-						Renderer.spell._initClasses_addSubclassSpell({
-							spell,
-							className: Renderer.spell.STR_SORCERER,
-							subclassName: Renderer.spell.STR_DIV_SOUL,
-							subclassSource: SRC_XGE,
-						});
-					}
-				}
-
-				if (variantClericSpells.length) {
-					Renderer.spell._initClasses_addVariantSubclassSpells({
-						spell,
-						variantClassSpells: variantClericSpells,
-						className: Renderer.spell.STR_SORCERER,
-						subclassName: Renderer.spell.STR_DIV_SOUL,
-						subclassSource: SRC_XGE,
-					});
-				}
-			}
-
-			if (!isExcludedFavSoulv2) {
-				if (isClericSpell) {
-					Renderer.spell._initClasses_addSubclassSpell({
-						spell,
-						className: Renderer.spell.STR_SORCERER,
-						subclassName: Renderer.spell.STR_FAV_SOUL_V2,
-						subclassSource: SRC_UAS,
-					});
-				}
-			}
-
-			if (!isExcludedFavSoulv3) {
-				if (isClericSpell) {
-					Renderer.spell._initClasses_addSubclassSpell({
-						spell,
-						className: Renderer.spell.STR_SORCERER,
-						subclassName: Renderer.spell.STR_FAV_SOUL_V3,
-						subclassSource: SRC_UARSC,
-					});
+				if (Renderer.spell._brewSourcesCache.classes.spell[lowSource][lowName].fromSubclass.length) {
+					sp._tmpClasses.fromSubclass = sp._tmpClasses.fromSubclass || [];
+					sp._tmpClasses.fromSubclass.push(...Renderer.spell._brewSourcesCache.classes.spell[lowSource][lowName].fromSubclass);
 				}
 			}
 		}
 
-		// Add Arcana Cleric
-		if (isWizardSpell || variantWizardSpells.length) {
-			const isExcludedArcana = ExcludeUtil.isExcluded(hashClericArcana, "subclass", SRC_PHB, {isNoCount: true});
+		if (Renderer.spell._brewSourcesCache.classes.class && sp.classes && sp.classes.fromClassList) {
+			(sp._tmpClasses = sp._tmpClasses || {}).fromClassList = sp._tmpClasses.fromClassList || [];
 
-			if (spell.level === 0) {
-				const isExcludedHighElf = ExcludeUtil.isExcluded(hashElfHigh, "race", SRC_PHB, {isNoCount: true});
+			// speed over safety
+			outer: for (const srcLower in Renderer.spell._brewSourcesCache.classes.class) {
+				const searchForClasses = Renderer.spell._brewSourcesCache.classes.class[srcLower];
 
-				if (!isExcludedHighElf) {
-					if (isWizardSpell) {
-						Renderer.spell._initClasses_addRaceSpell({
-							spell,
-							raceName: "Elf (High)",
-							raceBaseName: "Elf",
-						});
+				for (const clsLowName in searchForClasses) {
+					const spellHasClass = sp.classes && sp.classes.fromClassList.some(cls => (cls.source || "").toLowerCase() === srcLower && cls.name.toLowerCase() === clsLowName);
+					if (!spellHasClass) continue;
+
+					const fromDetails = searchForClasses[clsLowName];
+
+					if (fromDetails.fromClassList) {
+						sp._tmpClasses.fromClassList.push(...fromDetails.fromClassList);
 					}
 
-					if (variantWizardSpells.length) {
-						Renderer.spell._initClasses_addVariantRaceSpells({
-							spell,
-							variantClassSpells: variantWizardSpells,
-							raceName: "Elf (High)",
-							raceBaseName: "Elf",
-						});
-					}
-				}
-
-				const isExcludedVariantMoonSunElf = ExcludeUtil.isExcluded(hashHalfElfVariantSunMoon, "race", SRC_SCAG, {isNoCount: true});
-
-				if (!isExcludedVariantMoonSunElf) {
-					if (isWizardSpell) {
-						Renderer.spell._initClasses_addRaceSpell({
-							spell,
-							raceName: "Half-Elf (Variant; Moon Elf or Sun Elf Descent)",
-							raceBaseName: "Half-Elf",
-							raceSource: SRC_SCAG,
-						});
+					if (fromDetails.fromSubclass) {
+						sp._tmpClasses.fromSubclass = sp._tmpClasses.fromSubclass || [];
+						sp._tmpClasses.fromSubclass.push(...fromDetails.fromSubclass);
 					}
 
-					if (variantWizardSpells.length) {
-						Renderer.spell._initClasses_addVariantRaceSpells({
-							spell,
-							variantClassSpells: variantWizardSpells,
-							raceName: "Half-Elf (Variant; Moon Elf or Sun Elf Descent)",
-							raceBaseName: "Half-Elf",
-							raceSource: SRC_SCAG,
-						});
-					}
-				}
-
-				if (!isExcludedArcana) {
-					if (isWizardSpell) {
-						Renderer.spell._initClasses_addSubclassSpell({
-							spell,
-							className: Renderer.spell.STR_CLERIC,
-							subclassName: "Arcana",
-							subclassSource: SRC_SCAG,
-						});
-					}
-
-					if (variantWizardSpells.length) {
-						Renderer.spell._initClasses_addVariantSubclassSpells({
-							spell,
-							variantClassSpells: variantWizardSpells,
-							className: Renderer.spell.STR_CLERIC,
-							subclassName: "Arcana",
-							subclassSource: SRC_SCAG,
-						});
-					}
-				}
-			}
-
-			if (!isExcludedArcana && spell.level >= 6) {
-				if (isWizardSpell) {
-					Renderer.spell._initClasses_addSubclassSpell({
-						spell,
-						className: Renderer.spell.STR_CLERIC,
-						subclassName: "Arcana",
-						subclassSource: SRC_SCAG,
-					});
-				}
-
-				if (variantWizardSpells.length) {
-					Renderer.spell._initClasses_addVariantSubclassSpells({
-						spell,
-						variantClassSpells: variantWizardSpells,
-						className: Renderer.spell.STR_CLERIC,
-						subclassName: "Arcana",
-						subclassSource: SRC_SCAG,
-					});
+					// Only add it once regardless of how many classes match
+					break outer;
 				}
 			}
 		}
-
-		// Add Nature cleric
-		if (isDruidSpell || variantDruidSpells.length) {
-			if (spell.level === 0) {
-				const isExcludedNature = ExcludeUtil.isExcluded(hashClericNature, "subclass", SRC_PHB, {isNoCount: true});
-
-				if (!isExcludedNature) {
-					if (isDruidSpell) {
-						Renderer.spell._initClasses_addSubclassSpell({
-							spell,
-							className: Renderer.spell.STR_CLERIC,
-							subclassName: "Nature",
-						});
-					}
-
-					if (variantDruidSpells.length) {
-						Renderer.spell._initClasses_addVariantSubclassSpells({
-							spell,
-							variantClassSpells: variantDruidSpells,
-							className: Renderer.spell.STR_CLERIC,
-							subclassName: "Nature",
-						});
-					}
-				}
-			}
-		}
-
-		// region Add Death Cleric
-		if (spell.level === 0 && spell.school === SKL_ABV_NEC) {
-			const isDeathDomain = ExcludeUtil.isExcluded(hashClericDeath, "subclass", SRC_DMG, {isNoCount: true});
-
-			if (!isDeathDomain) {
-				const isExisting = spell.classes?.fromSubclass && spell.classes?.fromSubclass.some(it => it.class.name === Renderer.spell.STR_CLERIC && it.class.source === SRC_PHB && it.subclass.name === Renderer.spell.STR_DEATH && it.subclass.source === SRC_DMG);
-				if (!isExisting) {
-					Renderer.spell._initClasses_addSubclassSpell({
-						spell,
-						className: Renderer.spell.STR_CLERIC,
-						subclassName: "Death",
-						subclassSource: SRC_DMG,
-					});
-				}
-			}
-		}
-		// endregion
-
-		// region Add Aberrant Mind Sorcerer and Clockwork Soul Sorcerer
-		// Level 0-5, as the feature allows retraining only learned spell levels (and Aberrant Mind has the Mind Sliver cantrip)
-		if (
-			spell.level <= 5
-			&& (isWizardSpell || isWarlockSpell || isSorcererSpell || variantWizardSpells.length || variantWarlockSpells.length || variantSorcererSpells.length)
-		) {
-			if (spell.school === SKL_ABV_DIV || spell.school === SKL_ABV_ENC) {
-				const isExcludedAberrantMind = ExcludeUtil.isExcluded(hashSorcererAberrantMind, "subclass", SRC_TCE, {isNoCount: true});
-
-				if (!isExcludedAberrantMind) {
-					const isExisting = spell.classes?.fromSubclass && spell.classes?.fromSubclass.some(it => it.class.name === Renderer.spell.STR_SORCERER && it.class.source === SRC_PHB && it.subclass.name === Renderer.spell.STR_ABERRANT_MIND && it.subclass.source === SRC_TCE);
-
-					if (!isExisting) {
-						if (isWizardSpell || isWarlockSpell || isSorcererSpell) {
-							Renderer.spell._initClasses_addSubclassSpell({
-								spell,
-								className: Renderer.spell.STR_SORCERER,
-								subclassName: Renderer.spell.STR_ABERRANT_MIND,
-								subclassSource: SRC_TCE,
-							});
-						}
-
-						if (variantWizardSpells.length) {
-							Renderer.spell._initClasses_addVariantSubclassSpells({
-								spell,
-								variantClassSpells: variantWizardSpells,
-								className: Renderer.spell.STR_SORCERER,
-								subclassName: Renderer.spell.STR_ABERRANT_MIND,
-								subclassSource: SRC_TCE,
-							});
-						}
-
-						if (variantWarlockSpells.length) {
-							Renderer.spell._initClasses_addVariantSubclassSpells({
-								spell,
-								variantClassSpells: variantWarlockSpells,
-								className: Renderer.spell.STR_SORCERER,
-								subclassName: Renderer.spell.STR_ABERRANT_MIND,
-								subclassSource: SRC_TCE,
-							});
-						}
-
-						if (variantSorcererSpells.length) {
-							Renderer.spell._initClasses_addVariantSubclassSpells({
-								spell,
-								variantClassSpells: variantSorcererSpells,
-								className: Renderer.spell.STR_SORCERER,
-								subclassName: Renderer.spell.STR_ABERRANT_MIND,
-								subclassSource: SRC_TCE,
-							});
-						}
-					}
-				}
-			}
-
-			// Clockwork Soul doesn't get a cantrip
-			if (spell.level > 0 && (spell.school === SKL_ABV_ABJ || spell.school === SKL_ABV_TRA)) {
-				const isExcludedClockworkSoul = ExcludeUtil.isExcluded(hashSorcererClockworkSoul, "subclass", SRC_TCE, {isNoCount: true});
-
-				if (!isExcludedClockworkSoul) {
-					const isExisting = spell.classes?.fromSubclass && spell.classes?.fromSubclass.some(it => it.class.name === Renderer.spell.STR_SORCERER && it.class.source === SRC_PHB && it.subclass.name === Renderer.spell.STR_CLOCKWORK_SOUL && it.subclass.source === SRC_TCE);
-
-					if (!isExisting) {
-						if (isWizardSpell || isWarlockSpell || isSorcererSpell) {
-							Renderer.spell._initClasses_addSubclassSpell({
-								spell,
-								className: Renderer.spell.STR_SORCERER,
-								subclassName: Renderer.spell.STR_CLOCKWORK_SOUL,
-								subclassSource: SRC_TCE,
-							});
-						}
-
-						if (variantWizardSpells.length) {
-							Renderer.spell._initClasses_addVariantSubclassSpells({
-								spell,
-								variantClassSpells: variantWizardSpells,
-								className: Renderer.spell.STR_SORCERER,
-								subclassName: Renderer.spell.STR_CLOCKWORK_SOUL,
-								subclassSource: SRC_TCE,
-							});
-						}
-
-						if (variantWarlockSpells.length) {
-							Renderer.spell._initClasses_addVariantSubclassSpells({
-								spell,
-								variantClassSpells: variantWarlockSpells,
-								className: Renderer.spell.STR_SORCERER,
-								subclassName: Renderer.spell.STR_CLOCKWORK_SOUL,
-								subclassSource: SRC_TCE,
-							});
-						}
-
-						if (variantSorcererSpells.length) {
-							Renderer.spell._initClasses_addVariantSubclassSpells({
-								spell,
-								variantClassSpells: variantSorcererSpells,
-								className: Renderer.spell.STR_SORCERER,
-								subclassName: Renderer.spell.STR_CLOCKWORK_SOUL,
-								subclassSource: SRC_TCE,
-							});
-						}
-					}
-				}
-			}
-		}
-		// endregion
-
-		const lowName = spell.name.toLowerCase();
-		const lowSource = spell.source.toLowerCase();
-
-		// region Add homebrew class/subclass
-		if (Renderer.spell.brewSpellClasses) {
-			if (Renderer.spell.brewSpellClasses.spell) {
-				if (Renderer.spell.brewSpellClasses.spell[lowSource] && Renderer.spell.brewSpellClasses.spell[lowSource][lowName]) {
-					if (Renderer.spell.brewSpellClasses.spell[lowSource][lowName].fromClassList.length) {
-						spell._tmpClasses.fromClassList = spell._tmpClasses.fromClassList || [];
-						spell._tmpClasses.fromClassList.push(...Renderer.spell.brewSpellClasses.spell[lowSource][lowName].fromClassList);
-					}
-					if (Renderer.spell.brewSpellClasses.spell[lowSource][lowName].fromSubclass.length) {
-						spell._tmpClasses.fromSubclass = spell._tmpClasses.fromSubclass || [];
-						spell._tmpClasses.fromSubclass.push(...Renderer.spell.brewSpellClasses.spell[lowSource][lowName].fromSubclass);
-					}
-				}
-			}
-
-			if (Renderer.spell.brewSpellClasses.class && spell.classes && spell.classes.fromClassList) {
-				(spell._tmpClasses = spell._tmpClasses || {}).fromClassList = spell._tmpClasses.fromClassList || [];
-
-				// speed over safety
-				outer: for (const srcLower in Renderer.spell.brewSpellClasses.class) {
-					const searchForClasses = Renderer.spell.brewSpellClasses.class[srcLower];
-
-					for (const clsLowName in searchForClasses) {
-						const spellHasClass = spell.classes && spell.classes.fromClassList.some(cls => (cls.source || "").toLowerCase() === srcLower && cls.name.toLowerCase() === clsLowName);
-						if (!spellHasClass) continue;
-
-						const fromDetails = searchForClasses[clsLowName];
-
-						if (fromDetails.fromClassList) {
-							spell._tmpClasses.fromClassList.push(...fromDetails.fromClassList);
-						}
-
-						if (fromDetails.fromSubclass) {
-							spell._tmpClasses.fromSubclass = spell._tmpClasses.fromSubclass || [];
-							spell._tmpClasses.fromSubclass.push(...fromDetails.fromSubclass);
-						}
-
-						// Only add it once regardless of how many classes match
-						break outer;
-					}
-				}
-			}
-		}
-		// endregion
-
-		// region Add homebrew races/subraces
-		if (Renderer.spell.brewSpellRaces) {
-			if (Renderer.spell.brewSpellRaces.spell?.[lowSource]?.[lowName]?.length) {
-				spell._tmpRaces = spell._tmpRaces || [];
-				spell._tmpRaces.push(...Renderer.spell.brewSpellRaces.spell[lowSource][lowName]);
-			}
-
-			if (Renderer.spell.brewSpellRaces?.race && spell.races) {
-				spell._tmpRaces = spell._tmpRaces || [];
-
-				// speed over safety
-				outer: for (const srcLower in Renderer.spell.brewSpellRaces.race) {
-					const searchForRaces = Renderer.spell.brewSpellRaces.race[srcLower];
-
-					for (const raceLowName in searchForRaces) {
-						const spellHasRace = spell.races.some(r => (r.source || "").toLowerCase() === srcLower && r.name.toLowerCase() === raceLowName);
-						if (!spellHasRace) continue;
-
-						const fromDetails = searchForRaces[raceLowName];
-
-						spell._tmpRaces.push(...fromDetails);
-
-						// Only add it once regardless of how many classes match
-						break outer;
-					}
-				}
-			}
-		}
-		// endregion
-	},
-	STR_WIZARD: "Wizard",
-	STR_FIGHTER: "Fighter",
-	STR_ROGUE: "Rogue",
-	STR_CLERIC: "Cleric",
-	STR_SORCERER: "Sorcerer",
-	STR_WARLOCK: "Warlock",
-	STR_DRUID: "Druid",
-	STR_ELD_KNIGHT: "Eldritch Knight",
-	STR_ARC_TCKER: "Arcane Trickster",
-	STR_DIV_SOUL: "Divine Soul",
-	STR_FAV_SOUL_V2: "Favored Soul v2 (UA)",
-	STR_FAV_SOUL_V3: "Favored Soul v3 (UA)",
-	STR_ABERRANT_MIND: "Aberrant Mind",
-	STR_CLOCKWORK_SOUL: "Clockwork Soul",
-	STR_DEATH: "Death",
-
-	_initClasses_addSubclassSpell ({spell, className, classSource, subclassName, subclassSource}) {
-		classSource = classSource || SRC_PHB;
-		subclassSource = subclassSource || SRC_PHB;
-
-		(spell._tmpClasses.fromSubclass = spell._tmpClasses.fromSubclass || []).push({
-			class: {name: className, source: classSource},
-			subclass: {name: subclassName, source: subclassSource},
-		});
 	},
 
-	_initClasses_addVariantSubclassSpells ({spell, variantClassSpells, className, classSource, subclassName, subclassSource}) {
-		classSource = classSource || SRC_PHB;
-		subclassSource = subclassSource || SRC_PHB;
+	_initBrewSources_brewGeneric ({sp, lowName, lowSource, propSpell, prop}) {
+		if (!Renderer.spell._brewSourcesCache?.[propSpell]) return;
 
-		(variantClassSpells || []).forEach(it => {
-			(spell._tmpClasses.fromSubclassVariant = spell._tmpClasses.fromSubclassVariant || []).push({
-				class: {name: className, source: classSource, definedInSource: it.definedInSource},
-				subclass: {name: subclassName, source: subclassSource},
-			});
-		});
-	},
+		const propTmp = `_tmp${propSpell.uppercaseFirst()}`;
 
-	_initClasses_addRaceSpell ({spell, raceName, raceSource, raceBaseName, raceBaseSource}) {
-		raceSource = raceSource || SRC_PHB;
-		raceBaseSource = raceBaseSource || SRC_PHB;
+		// If a precise spell has been specified
+		if (Renderer.spell._brewSourcesCache[propSpell]?.spell?.[lowSource]?.[lowName]?.length) {
+			(sp[propTmp] = sp[propTmp] || [])
+				.push(...Renderer.spell._brewSourcesCache[propSpell].spell[lowSource][lowName]);
+		}
 
-		(spell._tmpRaces = spell._tmpRaces || []).push({
-			name: raceName,
-			source: raceSource,
-			baseName: raceBaseName,
-			baseSource: raceBaseSource,
-		});
-	},
+		// If we have a copy of an existing entity's spells
+		if (Renderer.spell._brewSourcesCache?.[propSpell]?.[prop] && sp[propSpell]) {
+			sp[propTmp] = sp[propTmp] || [];
 
-	_initClasses_addVariantRaceSpells ({spell, variantClassSpells, raceName, raceSource, raceBaseName, raceBaseSource}) {
-		raceSource = raceSource || SRC_PHB;
-		raceBaseSource = raceBaseSource || SRC_PHB;
+			// speed over safety
+			outer: for (const srcLower in Renderer.spell._brewSourcesCache[propSpell][prop]) {
+				const searchForExisting = Renderer.spell._brewSourcesCache[propSpell][prop][srcLower];
 
-		(variantClassSpells || []).forEach(it => {
-			(spell._tmpRacesVariant = spell._tmpRacesVariant || []).push({
-				name: raceName,
-				source: raceSource,
-				baseName: raceBaseName,
-				baseSource: raceBaseSource,
-				classDefinedInSource: it.definedInSource,
-			});
-		});
+				for (const lowName in searchForExisting) {
+					const spellHasEnt = sp[propSpell].some(it => (it.source || "").toLowerCase() === srcLower && it.name.toLowerCase() === lowName);
+					if (!spellHasEnt) continue;
+
+					const fromDetails = searchForExisting[lowName];
+
+					sp[propTmp].push(...fromDetails);
+
+					// Only add it once regardless of how many entities match
+					break outer;
+				}
+			}
+		}
 	},
 
 	pGetFluff (sp) {
@@ -5168,7 +4731,7 @@ Renderer.race = {
 
 			// Ignore `"lineage": true`, as it is only used for filters
 			if (r.lineage && r.lineage !== true) {
-				r = MiscUtil.copy(r);
+				r = MiscUtil.copyFast(r);
 
 				if (r.lineage === "VRGR") {
 					r.ability = r.ability || [
@@ -5224,7 +4787,7 @@ Renderer.race = {
 			}
 
 			if (opts.isAddBaseRaces && r.subraces) {
-				const baseRace = MiscUtil.copy(r);
+				const baseRace = MiscUtil.copyFast(r);
 
 				baseRace._isBaseRace = true;
 
@@ -5288,7 +4851,7 @@ Renderer.race = {
 								type: "entries",
 								name: "Traits",
 								entries: [
-									...MiscUtil.copy(baseRace.entries),
+									...MiscUtil.copyFast(baseRace.entries),
 								],
 							},
 						],
@@ -5310,11 +4873,11 @@ Renderer.race = {
 
 	_mergeSubraces (race) {
 		if (!race.subraces) return [race];
-		return MiscUtil.copy(race.subraces).map(s => Renderer.race._getMergedSubrace(race, s));
+		return MiscUtil.copyFast(race.subraces).map(s => Renderer.race._getMergedSubrace(race, s));
 	},
 
 	_getMergedSubrace (race, s) {
-		const cpy = MiscUtil.copy(race);
+		const cpy = MiscUtil.copyFast(race);
 		cpy._baseName = cpy.name;
 		cpy._baseSource = cpy.source;
 		cpy._baseSrd = cpy.srd;
@@ -5432,7 +4995,7 @@ Renderer.race = {
 			let baseRace = nxtData.find(r => r.name === sr.raceName && r.source === sr.raceSource);
 			if (!baseRace) {
 				// copy and remove base-race-specific data
-				baseRace = MiscUtil.copy(_baseRace);
+				baseRace = MiscUtil.copyFast(_baseRace);
 				if (baseRace._rawName) {
 					baseRace.name = baseRace._rawName;
 					delete baseRace._rawName;
@@ -6437,7 +6000,7 @@ Renderer.monster = {
 	},
 
 	getOrderedTraits (mon, {fnGetSpellTraits} = {}) {
-		let traits = mon.trait ? MiscUtil.copy(mon.trait) : null;
+		let traits = mon.trait ? MiscUtil.copyFast(mon.trait) : null;
 
 		if (fnGetSpellTraits) {
 			const spellTraits = fnGetSpellTraits(mon, "trait");
@@ -6448,7 +6011,7 @@ Renderer.monster = {
 	},
 
 	getOrderedActions (mon, {fnGetSpellTraits} = {}) {
-		let actions = mon.action ? MiscUtil.copy(mon.action) : null;
+		let actions = mon.action ? MiscUtil.copyFast(mon.action) : null;
 
 		let spellActions;
 		if (fnGetSpellTraits) {
@@ -6499,7 +6062,7 @@ Renderer.monster = {
 	},
 
 	postProcessFluff (mon, fluff) {
-		const cpy = MiscUtil.copy(fluff);
+		const cpy = MiscUtil.copyFast(fluff);
 
 		// TODO is this good enough? Should additionally check for lair blocks which are not the last, and tag them with
 		//   "data": {"lairRegionals": true}, and insert the lair/regional text there if available (do the current "append" otherwise)
@@ -6513,7 +6076,7 @@ Renderer.monster = {
 						{
 							type: "entries",
 							name,
-							entries: MiscUtil.copy(thisGroup[prop]),
+							entries: MiscUtil.copyFast(thisGroup[prop]),
 						},
 					],
 				});
@@ -6534,7 +6097,7 @@ Renderer.monster = {
 		if (isPlainText) return senses.join(", ");
 
 		if (!Renderer.monster._FN_TAG_SENSES) {
-			Renderer.monster._SENSE_TAG_METAS = [...MiscUtil.copy(Parser.SENSES), ...BrewUtil2.getBrewProcessedFromCache("sense")];
+			Renderer.monster._SENSE_TAG_METAS = [...MiscUtil.copyFast(Parser.SENSES), ...BrewUtil2.getBrewProcessedFromCache("sense")];
 			Renderer.monster._SENSE_TAG_METAS.forEach(it => it._re = new RegExp(`\\b(?<sense>${it.name.escapeRegexp()})\\b`, "gi"));
 			Renderer.monster._FN_TAG_SENSES = str => {
 				Renderer.monster._SENSE_TAG_METAS
@@ -6651,7 +6214,7 @@ Renderer.monster = {
 					initialCr: lastCr,
 					isCompact: true,
 					cbRender: async (targetCr) => {
-						const original = await Renderer.hover.pCacheAndGet(page, source, hash);
+						const original = await DataLoader.pCacheAndGet(page, source, hash);
 						if (Parser.numberToCr(targetCr) === initialCr) {
 							toRender = original;
 							compactReferenceData.type = "stats";
@@ -6682,7 +6245,7 @@ Renderer.monster = {
 		$content
 			.find(".mon__btn-reset-cr")
 			.click(async () => {
-				toRender = await Renderer.hover.pCacheAndGet(page, source, hash);
+				toRender = await DataLoader.pCacheAndGet(page, source, hash);
 				$content.empty().append(fnRender(toRender));
 				meta.windowMeta.$windowTitle.text(toRender._displayName || toRender.name);
 
@@ -6701,7 +6264,7 @@ Renderer.monster = {
 		const $selSummonSpellLevel = $content
 			.find(`[name="mon__sel-summon-spell-level"]`)
 			.change(async () => {
-				const original = await Renderer.hover.pCacheAndGet(page, source, hash);
+				const original = await DataLoader.pCacheAndGet(page, source, hash);
 				const spellLevel = Number($selSummonSpellLevel.val());
 				if (~spellLevel) {
 					toRender = await ScaleSpellSummonedCreature.scale(original, spellLevel);
@@ -6732,7 +6295,7 @@ Renderer.monster = {
 		const $selSummonClassLevel = $content
 			.find(`[name="mon__sel-summon-class-level"]`)
 			.change(async () => {
-				const original = await Renderer.hover.pCacheAndGet(page, source, hash);
+				const original = await DataLoader.pCacheAndGet(page, source, hash);
 				const classLevel = Number($selSummonClassLevel.val());
 				if (~classLevel) {
 					toRender = await ScaleClassSummonedCreature.scale(original, classLevel);
@@ -7082,7 +6645,7 @@ Renderer.item = {
 
 		const renderStack = [];
 		if (item._fullEntries || item.entries?.length) {
-			const entry = MiscUtil.copy({type: "entries", entries: item._fullEntries || item.entries});
+			const entry = MiscUtil.copyFast({type: "entries", entries: item._fullEntries || item.entries});
 			let procEntry = Renderer.item._GET_RENDERED_ENTRIES_WALKER.walk(entry, handlersName);
 			if (handlersVariantName) procEntry = Renderer.item._GET_RENDERED_ENTRIES_WALKER.walk(entry, handlersVariantName);
 			if (wrappedTypeAllowlist) procEntry.entries = procEntry.entries.filter(it => !it?.data?.[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG] || wrappedTypeAllowlist.has(it?.data?.[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]));
@@ -7090,7 +6653,7 @@ Renderer.item = {
 		}
 
 		if (item._fullAdditionalEntries || item.additionalEntries) {
-			const additionEntries = MiscUtil.copy({type: "entries", entries: item._fullAdditionalEntries || item.additionalEntries});
+			const additionEntries = MiscUtil.copyFast({type: "entries", entries: item._fullAdditionalEntries || item.additionalEntries});
 			let procAdditionEntries = Renderer.item._GET_RENDERED_ENTRIES_WALKER.walk(additionEntries, handlersName);
 			if (handlersVariantName) procAdditionEntries = Renderer.item._GET_RENDERED_ENTRIES_WALKER.walk(additionEntries, handlersVariantName);
 			if (wrappedTypeAllowlist) procAdditionEntries.entries = procAdditionEntries.entries.filter(it => !it?.data?.[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG] || wrappedTypeAllowlist.has(it?.data?.[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]));
@@ -7189,14 +6752,13 @@ Renderer.item = {
 		return !Renderer.item._hiddenRarity.has(rarity);
 	},
 
-	_builtLists: {},
 	propertyMap: {},
 	typeMap: {},
 	entryMap: {},
 	_additionalEntriesMap: {},
 	_addProperty (p) {
 		if (Renderer.item.propertyMap[p.abbreviation]) return;
-		const cpy = MiscUtil.copy(p);
+		const cpy = MiscUtil.copyFast(p);
 		Renderer.item.propertyMap[p.abbreviation] = p.name ? cpy : {
 			...cpy,
 			name: (p.entries || p.entriesTemplate)[0].name.toLowerCase(),
@@ -7204,7 +6766,7 @@ Renderer.item = {
 	},
 	_addType (t) {
 		if (Renderer.item.typeMap[t.abbreviation]?.entries || Renderer.item.typeMap[t.abbreviation]?.entriesTemplate) return;
-		const cpy = MiscUtil.copy(t);
+		const cpy = MiscUtil.copyFast(t);
 		Renderer.item.typeMap[t.abbreviation] = t.name ? cpy : {
 			...cpy,
 			name: (t.entries || t.entriesTemplate)[0].name.toLowerCase(),
@@ -7216,7 +6778,7 @@ Renderer.item = {
 	},
 	_addAdditionalEntries (e) {
 		if (Renderer.item._additionalEntriesMap[e.appliesTo]) return;
-		Renderer.item._additionalEntriesMap[e.appliesTo] = MiscUtil.copy(e.entries);
+		Renderer.item._additionalEntriesMap[e.appliesTo] = MiscUtil.copyFast(e.entries);
 	},
 	async _pAddBrewPropertiesAndTypes () {
 		if (typeof BrewUtil2 === "undefined") return;
@@ -7232,7 +6794,7 @@ Renderer.item = {
 		baseItemData.itemType.forEach(t => {
 			// air/water vehicles share a type
 			if (t.abbreviation === "SHP") {
-				const cpy = MiscUtil.copy(t);
+				const cpy = MiscUtil.copyFast(t);
 				cpy.abbreviation = "AIR";
 				Renderer.item._addType(cpy);
 			}
@@ -7244,74 +6806,39 @@ Renderer.item = {
 		baseItemData.baseitem.forEach(it => it._isBaseItem = true);
 	},
 
-	_lockBuildList: null,
-	async _pLockBuildList () {
-		while (Renderer.item._lockBuildList) await Renderer.item._lockBuildList.lock;
-		let unlock = null;
-		const lock = new Promise(resolve => unlock = resolve);
-		Renderer.item._lockBuildList = {
-			lock,
-			unlock,
-		};
+	async _pGetSiteUnresolvedRefItems_pLoadItems () {
+		const itemData = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/items.json`);
+		const items = itemData.item;
+		itemData.itemGroup.forEach(it => it._isItemGroup = true);
+		return [...items, ...itemData.itemGroup];
 	},
 
-	_unlockBuildList () {
-		const lockMeta = Renderer.item._lockBuildList;
-		if (Renderer.item._lockBuildList) {
-			delete Renderer.item._lockBuildList;
-			lockMeta.unlock();
-		}
-	},
-
-	/**
-	 * Runs callback with itemList as argument
-	 * @param [opts] Options object.
-	 * @param [opts.fnCallback] Run with args: allItems.
-	 * @param [opts.urls] Overrides for default URLs.
-	 * @param [opts.isAddGroups] Whether item groups should be included.
-	 */
-	async pBuildList ({isAddGroups = false, urls = {}, fnCallback = null} = {}) {
-		await Renderer.item._pLockBuildList();
-
-		const kBuildList = "builtList";
-		if (Renderer.item._builtLists[kBuildList]) {
-			const cached = isAddGroups ? Renderer.item._builtLists[kBuildList] : Renderer.item._builtLists[kBuildList].filter(it => !it._isItemGroup);
-
-			Renderer.item._unlockBuildList();
-			if (fnCallback) return fnCallback(cached);
-			return cached;
-		}
-
-		// allows URLs to be overridden (used by roll20 script)
-		const itemUrl = urls.items || `${Renderer.get().baseUrl}data/items.json`;
-		const baseItemUrl = urls.baseitems || `${Renderer.get().baseUrl}data/items-base.json`;
-		const magicVariantUrl = urls.magicvariants || `${Renderer.get().baseUrl}data/magicvariants.json`;
-
-		const itemList = await pLoadItems();
-		const baseItems = await Renderer.item._pGetAndProcBaseItems(await DataUtil.loadJSON(baseItemUrl));
-		const [genericVariants, linkedLootTables] = Renderer.item._getAndProcGenericVariants(await DataUtil.loadJSON(magicVariantUrl));
-		Renderer.item._builtLists["genericVariants"] = genericVariants; // Cache generic variants to use with homebrew later
+	async pGetSiteUnresolvedRefItems () {
+		const itemList = await Renderer.item._pGetSiteUnresolvedRefItems_pLoadItems();
+		const baseItemsJson = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/items-base.json`);
+		const baseItems = await Renderer.item._pGetAndProcBaseItems(baseItemsJson);
+		const {genericVariants, linkedLootTables} = await Renderer.item._pGetCacheSiteGenericVariants();
 		const specificVariants = Renderer.item._createSpecificVariants(baseItems, genericVariants, {linkedLootTables});
 		const allItems = [...itemList, ...baseItems, ...genericVariants, ...specificVariants];
 		Renderer.item._enhanceItems(allItems);
-		Renderer.item._builtLists[kBuildList] = allItems;
 
-		// region Find-replace references
-		const itemsWithRefs = allItems.filter(it => it.hasRefs);
-		await Renderer.hover.pDoDereferenceNestedAndCache(itemsWithRefs, "itemEntry", UrlUtil.URL_TO_HASH_BUILDER["itemEntry"], {isMutateOriginal: true, entryProp: "entries"});
-		await Renderer.hover.pDoDereferenceNestedAndCache(itemsWithRefs, "itemEntry", UrlUtil.URL_TO_HASH_BUILDER["itemEntry"], {isMutateOriginal: true, entryProp: "_fullEntries"});
-		// endregion
+		return {
+			item: allItems,
+			itemEntry: baseItemsJson.itemEntry,
+		};
+	},
 
-		Renderer.item._unlockBuildList();
-		if (fnCallback) return fnCallback(allItems);
-		return allItems;
+	_pGettingSiteGenericVariants: null,
+	async _pGetCacheSiteGenericVariants () {
+		Renderer.item._pGettingSiteGenericVariants = Renderer.item._pGettingSiteGenericVariants || (async () => {
+			const [genericVariants, linkedLootTables] = Renderer.item._getAndProcGenericVariants(await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/magicvariants.json`));
+			return {genericVariants, linkedLootTables};
+		})();
+		return Renderer.item._pGettingSiteGenericVariants;
+	},
 
-		async function pLoadItems () {
-			const itemData = await DataUtil.loadJSON(itemUrl);
-			const items = itemData.item;
-			itemData.itemGroup.forEach(it => it._isItemGroup = true);
-			return [...items, ...itemData.itemGroup];
-		}
+	async pBuildList () {
+		return DataLoader.pCacheAndGetAllSite(UrlUtil.PG_ITEMS);
 	},
 
 	async _pGetAndProcBaseItems (baseItemData) {
@@ -7392,7 +6919,7 @@ Renderer.item = {
 	 */
 	_createSpecificVariants_createSpecificVariant (baseItem, genericVariant, opts) {
 		const inherits = genericVariant.inherits;
-		const specificVariant = MiscUtil.copy(baseItem);
+		const specificVariant = MiscUtil.copyFast(baseItem);
 
 		// Update prop
 		specificVariant.__prop = "item";
@@ -7570,9 +7097,15 @@ Renderer.item = {
 	},
 
 	_INHERITED_PROPS_BLOCKLIST: new Set([
-		"entries", // Entries have specific merging
-		"namePrefix", // Name prefix/suffix are meaningless
+		// region Specific merge strategy
+		"entries",
+		"rarity",
+		// endregion
+
+		// region Meaningless on merged item
+		"namePrefix",
 		"nameSuffix",
+		// endregion
 	]),
 	_genericVariants_addInheritedPropertiesToSelf (genericVariant) {
 		if (genericVariant._isInherited) return;
@@ -7585,20 +7118,26 @@ Renderer.item = {
 
 			if (val == null) delete genericVariant[prop];
 			else if (genericVariant[prop]) {
-				if (genericVariant[prop] instanceof Array && val instanceof Array) genericVariant[prop] = MiscUtil.copy(genericVariant[prop]).concat(val);
+				if (genericVariant[prop] instanceof Array && val instanceof Array) genericVariant[prop] = MiscUtil.copyFast(genericVariant[prop]).concat(val);
 				else genericVariant[prop] = val;
 			} else genericVariant[prop] = genericVariant.inherits[prop];
 		}
 
 		if (!genericVariant.entries && genericVariant.inherits.entries) {
-			genericVariant.entries = MiscUtil.copy(Renderer.applyAllProperties(genericVariant.inherits.entries, genericVariant.inherits));
+			genericVariant.entries = MiscUtil.copyFast(Renderer.applyAllProperties(genericVariant.inherits.entries, genericVariant.inherits));
 		}
+
+		if (genericVariant.inherits.rarity == null) delete genericVariant.rarity;
+		else if (genericVariant.inherits.rarity === "varies") {
+			/* No-op, i.e., use current rarity */
+		} else genericVariant.rarity = genericVariant.inherits.rarity;
+
 		if (genericVariant.requires.armor) genericVariant.armor = genericVariant.requires.armor;
 	},
 
 	getItemTypeName (t) {
 		const fullType = Renderer.item.typeMap[t];
-		if (!fullType) throw new Error(`Item type ${t} not found. You probably meant to load the property/type reference first; see \`Renderer.item.populatePropertyAndTypeReference()\`.`);
+		if (!fullType) throw new Error(`Item type ${t} not found. You probably meant to load the property/type reference first; see \`Renderer.item.pPopulatePropertyAndTypeReference()\`.`);
 		return fullType.name || t;
 	},
 
@@ -7619,7 +7158,7 @@ Renderer.item = {
 			item.property.forEach(p => {
 				const entProperty = Renderer.item.propertyMap[p];
 
-				if (!entProperty) throw new Error(`Item property ${p} not found. You probably meant to load the property/type reference first; see \`Renderer.item.populatePropertyAndTypeReference()\`.`);
+				if (!entProperty) throw new Error(`Item property ${p} not found. You probably meant to load the property/type reference first; see \`Renderer.item.pPopulatePropertyAndTypeReference()\`.`);
 
 				if (!entProperty.entries && !entProperty.entriesTemplate) return;
 
@@ -7748,13 +7287,13 @@ Renderer.item = {
 	},
 
 	_enhanceItem_getItemPropertyTypeEntries ({item, ent}) {
-		if (!ent.entriesTemplate) return MiscUtil.copy(ent.entries);
+		if (!ent.entriesTemplate) return MiscUtil.copyFast(ent.entries);
 		return MiscUtil
 			.getWalker({
 				keyBlocklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLOCKLIST,
 			})
 			.walk(
-				MiscUtil.copy(ent.entriesTemplate),
+				MiscUtil.copyFast(ent.entriesTemplate),
 				{
 					string: (str) => {
 						return Renderer.utils.applyTemplate(
@@ -7772,14 +7311,19 @@ Renderer.item = {
 		delete item._fullEntries;
 	},
 
-	async pGetItemsFromHomebrew (homebrew) {
-		(homebrew.itemProperty || []).forEach(p => Renderer.item._addProperty(p));
-		(homebrew.itemType || []).forEach(t => Renderer.item._addType(t));
-		(homebrew.itemEntry || []).forEach(it => Renderer.item._addEntry(it));
-		let items = [...(homebrew.baseitem || []), ...(homebrew.item || [])];
+	async pGetSiteUnresolvedRefItemsFromHomebrew (brew = null) {
+		if (typeof BrewUtil2 === "undefined" && brew == null) return [];
 
-		if (homebrew.itemGroup) {
-			const itemGroups = MiscUtil.copy(homebrew.itemGroup);
+		brew = brew || await BrewUtil2.pGetBrewProcessed();
+
+		(brew.itemProperty || []).forEach(p => Renderer.item._addProperty(p));
+		(brew.itemType || []).forEach(t => Renderer.item._addType(t));
+		(brew.itemEntry || []).forEach(it => Renderer.item._addEntry(it));
+
+		let items = [...(brew.baseitem || []), ...(brew.item || [])];
+
+		if (brew.itemGroup) {
+			const itemGroups = MiscUtil.copyFast(brew.itemGroup);
 			itemGroups.forEach(it => it._isItemGroup = true);
 			items = [...items, ...itemGroups];
 		}
@@ -7789,84 +7333,61 @@ Renderer.item = {
 		let isReEnhanceVariants = false;
 
 		// Get specific variants for brew base items, using official generic variants
-		if (homebrew.baseitem && homebrew.baseitem.length) {
+		if (brew.baseitem && brew.baseitem.length) {
 			isReEnhanceVariants = true;
 
-			if (!Renderer.item._builtLists["genericVariants"]) await Renderer.item.pBuildList(); // Build an item list to populate the cache
+			const {genericVariants} = await Renderer.item._pGetCacheSiteGenericVariants();
 
 			const variants = await Renderer.item.pGetGenericAndSpecificVariants(
-				Renderer.item._builtLists["genericVariants"],
-				{baseItems: homebrew.baseitem || [], isSpecificVariantsOnly: true},
+				genericVariants,
+				{baseItems: brew.baseitem || [], isSpecificVariantsOnly: true},
 			);
 			items = [...items, ...variants];
 		}
 
 		// Get specific and generic variants for official and brew base items, using brew generic variants
-		if (homebrew.magicvariant && homebrew.magicvariant.length) {
+		if (brew.magicvariant && brew.magicvariant.length) {
 			isReEnhanceVariants = true;
 
 			const variants = await Renderer.item.pGetGenericAndSpecificVariants(
-				homebrew.magicvariant,
-				{additionalBaseItems: homebrew.baseitem || []},
+				brew.magicvariant,
+				{additionalBaseItems: brew.baseitem || []},
 			);
 			items = [...items, ...variants];
 		}
 
 		// Regenerate the full entries for the generic variants, as there may be more specific variants to add to their
 		//   specific variant lists.
-		if (isReEnhanceVariants && Renderer.item._builtLists["genericVariants"]) {
-			Renderer.item._builtLists["genericVariants"].forEach(item => {
+		if (isReEnhanceVariants) {
+			const {genericVariants} = await Renderer.item._pGetCacheSiteGenericVariants();
+			genericVariants.forEach(item => {
 				item.variants.sort((a, b) => SortUtil.ascSortLower(a.base.name, b.base.name) || SortUtil.ascSortLower(a.base.source, b.base.source));
 				Renderer.item.unenhanceItem(item);
 				Renderer.item.enhanceItem(item);
 			});
 		}
 
-		// region Find-replace references
-		const itemsWithRefs = items.filter(it => it.hasRefs);
-		await Renderer.hover.pDoDereferenceNestedAndCache(itemsWithRefs, "itemEntry", UrlUtil.URL_TO_HASH_BUILDER["itemEntry"], {isMutateOriginal: true, entryProp: "entries"});
-		await Renderer.hover.pDoDereferenceNestedAndCache(itemsWithRefs, "itemEntry", UrlUtil.URL_TO_HASH_BUILDER["itemEntry"], {isMutateOriginal: true, entryProp: "_fullEntries"});
-		// endregion
-
 		return items;
 	},
 
-	// flip e.g. "longsword +1" to "+1 longsword"
-	modifierPostToPre (item) {
-		const m = /^(?<name>.*)(?:,)? (?<bonus>\+\d+)$/.exec(item.name);
-		if (!m) return null;
-		return {
-			name: `${m.groups.bonus} ${m.groups.name}`,
-			source: item.source,
-		};
+	async pGetItemsFromHomebrew () {
+		if (typeof BrewUtil2 === "undefined") return [];
+		return DataLoader.pCacheAndGetAllBrew(UrlUtil.PG_ITEMS);
 	},
 
-	_isRefPopulated: false,
-	populatePropertyAndTypeReference: () => {
-		if (Renderer.item._isRefPopulated) return Promise.resolve();
-		return new Promise((resolve, reject) => {
-			DataUtil.loadJSON(`${Renderer.get().baseUrl}data/items-base.json`)
-				.then(data => {
-					if (Renderer.item._isRefPopulated) {
-						resolve();
-					} else {
-						try {
-							Object.entries(Parser.ITEM_TYPE_JSON_TO_ABV).forEach(([abv, name]) => Renderer.item._addType({abbreviation: abv, name}));
-							data.itemProperty.forEach(p => Renderer.item._addProperty(p));
-							data.itemType.forEach(t => Renderer.item._addType(t));
-							data.itemEntry.forEach(it => Renderer.item._addEntry(it));
-							data.itemTypeAdditionalEntries.forEach(e => Renderer.item._addAdditionalEntries(e));
-							Renderer.item._pAddBrewPropertiesAndTypes()
-								.then(() => {
-									Renderer.item._isRefPopulated = true;
-									resolve();
-								});
-						} catch (e) {
-							reject(e);
-						}
-					}
-				});
-		});
+	_pPopulatePropertyAndTypeReference: null,
+	pPopulatePropertyAndTypeReference: () => {
+		return Renderer.item._pPopulatePropertyAndTypeReference || (async () => {
+			const data = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/items-base.json`);
+
+			Object.entries(Parser.ITEM_TYPE_JSON_TO_ABV).forEach(([abv, name]) => Renderer.item._addType({abbreviation: abv, name}));
+			data.itemProperty.forEach(p => Renderer.item._addProperty(p));
+			data.itemType.forEach(t => Renderer.item._addType(t));
+			data.itemEntry.forEach(it => Renderer.item._addEntry(it));
+			data.itemTypeAdditionalEntries.forEach(e => Renderer.item._addAdditionalEntries(e));
+
+			await Renderer.item._pAddBrewPropertiesAndTypes();
+		})();
 	},
 
 	// fetch every possible indexable item from official data
@@ -7875,14 +7396,9 @@ Renderer.item = {
 		const [genericVariants, linkedLootTables] = await Renderer.item._getAndProcGenericVariants(rawVariants);
 		const specificVariants = Renderer.item._createSpecificVariants(basicItems, genericVariants, {linkedLootTables});
 
-		const revNames = [];
 		[...genericVariants, ...specificVariants].forEach(item => {
 			if (item.variants) delete item.variants; // prevent circular references
-			const revName = Renderer.item.modifierPostToPre(MiscUtil.copy(item));
-			if (revName) revNames.push(revName);
 		});
-
-		specificVariants.push(...revNames);
 
 		return specificVariants;
 	},
@@ -8045,7 +7561,7 @@ Renderer.rule = {
 
 Renderer.variantrule = {
 	getCompactRenderedString (rule) {
-		const cpy = MiscUtil.copy(rule);
+		const cpy = MiscUtil.copyFast(rule);
 		delete cpy.name;
 		return `
 			${Renderer.utils.getExcludedTr({entity: rule, dataProp: "variantrule", page: UrlUtil.PG_VARIANTRULES})}
@@ -8060,7 +7576,7 @@ Renderer.variantrule = {
 Renderer.table = {
 	getCompactRenderedString (it) {
 		it.type = it.type || "table";
-		const cpy = MiscUtil.copy(it);
+		const cpy = MiscUtil.copyFast(it);
 		delete cpy.name;
 		return `
 			${Renderer.utils.getExcludedTr({entity: it, dataProp: "table", page: UrlUtil.PG_TABLES})}
@@ -8446,7 +7962,7 @@ Renderer.vehicle = {
 
 Renderer.action = {
 	getCompactRenderedString (it) {
-		const cpy = MiscUtil.copy(it);
+		const cpy = MiscUtil.copyFast(it);
 		delete cpy.name;
 		return `${Renderer.utils.getExcludedTr({entity: it, dataProp: "action", page: UrlUtil.PG_ACTIONS})}
 		${Renderer.utils.getNameTr(it, {page: UrlUtil.PG_ACTIONS})}
@@ -8649,13 +8165,13 @@ Renderer.recipe = {
 	},
 
 	populateFullIngredients (r) {
-		r._fullIngredients = Renderer.applyAllProperties(MiscUtil.copy(r.ingredients));
-		if (r.equipment) r._fullEquipment = Renderer.applyAllProperties(MiscUtil.copy(r.equipment));
+		r._fullIngredients = Renderer.applyAllProperties(MiscUtil.copyFast(r.ingredients));
+		if (r.equipment) r._fullEquipment = Renderer.applyAllProperties(MiscUtil.copyFast(r.equipment));
 	},
 
 	_RE_AMOUNT: /(?<tagAmount>{=amount\d+(?:\/[^}]+)?})/g,
 	getScaledRecipe (r, scaleFactor) {
-		const cpyR = MiscUtil.copy(r);
+		const cpyR = MiscUtil.copyFast(r);
 
 		["ingredients", "equipment"]
 			.forEach(prop => {
@@ -8667,7 +8183,7 @@ Renderer.recipe = {
 						object: (obj) => {
 							if (obj.type !== "ingredient") return obj;
 
-							const objOriginal = MiscUtil.copy(obj);
+							const objOriginal = MiscUtil.copyFast(obj);
 
 							Object.keys(obj)
 								.filter(k => /^amount\d+/.test(k))
@@ -9058,7 +8574,7 @@ Renderer.hover = {
 		let meta = Renderer.hover._handleGenericMouseOverStart(evt, ele);
 		if (meta == null) return;
 
-		if (evt.ctrlKey && Renderer.hover._pageToFluffFn(page)) meta.isFluff = true;
+		if ((evt.ctrlKey || evt.metaKey) && Renderer.hover._pageToFluffFn(page)) meta.isFluff = true;
 
 		let toRender;
 		if (preloadId != null) { // FIXME(Future) remove in favor of `customHashId`
@@ -9066,7 +8582,7 @@ Renderer.hover = {
 				case UrlUtil.PG_BESTIARY: {
 					const {_scaledCr: scaledCr, _scaledSpellSummonLevel: scaledSpellSummonLevel, _scaledClassSummonLevel: scaledClassSummonLevel} = Renderer.monster.getUnpackedCustomHashId(preloadId);
 
-					const baseMon = await Renderer.hover.pCacheAndGet(page, source, hash);
+					const baseMon = await DataLoader.pCacheAndGet(page, source, hash);
 					if (scaledCr != null) {
 						toRender = await ScaleCreature.scale(baseMon, scaledCr);
 					} else if (scaledSpellSummonLevel != null) {
@@ -9078,11 +8594,11 @@ Renderer.hover = {
 				}
 			}
 		} else if (customHashId) {
-			toRender = await Renderer.hover.pCacheAndGet(page, source, hash);
+			toRender = await DataLoader.pCacheAndGet(page, source, hash);
 			toRender = await Renderer.hover.pApplyCustomHashId(page, toRender, customHashId);
 		} else {
 			if (meta.isFluff) toRender = await Renderer.hover.pGetHoverableFluff(page, source, hash);
-			else toRender = await Renderer.hover.pCacheAndGet(page, source, hash);
+			else toRender = await DataLoader.pCacheAndGet(page, source, hash);
 		}
 
 		meta.isLoading = false;
@@ -9158,21 +8674,24 @@ Renderer.hover = {
 
 	async pGetHoverableFluff (page, source, hash, opts) {
 		// Try to fetch the fluff directly
-		let toRender = await Renderer.hover.pCacheAndGet(`fluff__${page}`, source, hash, opts);
-		// Fall back on fluff attached to the object itself
-		const entity = await Renderer.hover.pCacheAndGet(page, source, hash, opts);
+		let toRender = await DataLoader.pCacheAndGet(`${page}Fluff`, source, hash, opts);
 
-		const pFnGetFluff = Renderer.hover._pageToFluffFn(page);
-		if (!pFnGetFluff && opts?.isSilent) return null;
+		if (!toRender) {
+			// Fall back on fluff attached to the object itself
+			const entity = await DataLoader.pCacheAndGet(page, source, hash, opts);
 
-		toRender = await pFnGetFluff(entity);
+			const pFnGetFluff = Renderer.hover._pageToFluffFn(page);
+			if (!pFnGetFluff && opts?.isSilent) return null;
+
+			toRender = await pFnGetFluff(entity);
+		}
 
 		if (!toRender) return toRender;
 
 		// For inline homebrew fluff, populate the name/source
 		if (toRender && (!toRender.name || !toRender.source)) {
-			const toRenderParent = await Renderer.hover.pCacheAndGet(page, source, hash, opts);
-			toRender = MiscUtil.copy(toRender);
+			const toRenderParent = await DataLoader.pCacheAndGet(page, source, hash, opts);
+			toRender = MiscUtil.copyFast(toRender);
 			toRender.name = toRenderParent.name;
 			toRender.source = toRenderParent.source;
 		}
@@ -9270,7 +8789,7 @@ Renderer.hover = {
 		const ele = evt.target;
 		const win = evt?.view?.window || window;
 
-		const bcr = ele.getBoundingClientRect();
+		const bcr = ele.getBoundingClientRect().toJSON();
 
 		const isFromBottom = bcr.top > win.innerHeight / 2;
 		const isFromRight = bcr.left > win.innerWidth / 2;
@@ -9282,7 +8801,7 @@ Renderer.hover = {
 			clientX: EventUtil.getClientX(evt),
 			window: win,
 			isPreventFlicker,
-			bcr: MiscUtil.copy(bcr),
+			bcr,
 		};
 	},
 
@@ -9798,7 +9317,7 @@ Renderer.hover = {
 			const eleHov = $hov[0];
 			const wrpContent = $wrpContent[0];
 
-			const bcr = MiscUtil.copy(eleHov.getBoundingClientRect());
+			const bcr = eleHov.getBoundingClientRect().toJSON();
 			const screenHeight = position.window.innerHeight;
 			const screenWidth = position.window.innerWidth;
 
@@ -9940,7 +9459,7 @@ Renderer.hover = {
 		hash = hash.toLowerCase();
 
 		const out = MiscUtil.get(Renderer.hover._linkCache, page, source, hash);
-		if (isCopy && out != null) return MiscUtil.copy(out);
+		if (isCopy && out != null) return MiscUtil.copyFast(out);
 		return out;
 	},
 
@@ -10035,587 +9554,16 @@ Renderer.hover = {
 		return Renderer.get().render(`{@${Parser.getPropTag(prop || ent.__prop)} ${parts.join("|")}}`);
 	},
 
-	_psCacheLoading: {},
-	_flagsCacheLoaded: {},
-	_locks: {},
-	_flags: {},
-
-	/**
-	 * @param page
-	 * @param hash
-	 * @param [opts] Options object.
-	 * @param [opts.isCopy] If a copy, rather than the original entity, should be returned.
-	 */
-	async pCacheAndGetHash (page, hash, opts) {
-		const source = UrlUtil.decodeHash(hash).last();
-		return Renderer.hover.pCacheAndGet(page, source, hash, opts);
+	getRefMetaFromTag (str) {
+		// convert e.g. `"{#itemEntry Ring of Resistance|DMG}"`
+		//   to `{type: "refItemEntry", "itemEntry": "Ring of Resistance|DMG"}`
+		str = str.slice(2, -1);
+		const [tag, ...refParts] = str.split(" ");
+		const ref = refParts.join(" ");
+		const type = `ref${tag.uppercaseFirst()}`;
+		return {type, [tag]: ref};
 	},
-
-	/**
-	 * @param page
-	 * @param source
-	 * @param hash
-	 * @param [opts] Options object.
-	 * @param [opts.isCopy] If a copy, rather than the original entity, should be returned.
-	 * @param [opts.isRequired] If an error should be thrown on a missing entity.
-	 * @param [opts.isSilent] If errors should not be thrown on a missing implementation.
-	 */
-	async pCacheAndGet (page, source, hash, opts) {
-		opts = opts || {};
-
-		page = page.toLowerCase();
-		source = source.toLowerCase();
-		hash = hash.toLowerCase();
-
-		const existingOut = Renderer.hover.getFromCache(page, source, hash, opts);
-		if (existingOut) return existingOut;
-
-		const out = await Renderer.hover._pCacheAndGet(page, source, hash, opts);
-
-		if (!out && opts.isRequired) throw new Error(`Could not find entity for page/prop "${page}" with source "${source}" and hash "${hash}"`);
-		return out;
-	},
-
-	async _pCacheAndGet (page, source, hash, opts) {
-		switch (page) {
-			case "generic":
-			case "hover": return null;
-			case "subclass":
-			case UrlUtil.PG_CLASSES: return Renderer.hover._pCacheAndGet_pLoadClasses(page, source, hash, opts);
-			case UrlUtil.PG_SPELLS: return Renderer.hover._pCacheAndGet_pLoadMultiSource(page, source, hash, opts, `data/spells/`, "spell", Renderer.spell.prePopulateHover);
-			case UrlUtil.PG_BESTIARY: return Renderer.hover._pCacheAndGet_pLoadBestiary(page, source, hash, opts);
-			case UrlUtil.PG_ITEMS: return Renderer.hover._pCacheAndGet_pLoadItems(page, source, hash, opts);
-			case UrlUtil.PG_BACKGROUNDS: return Renderer.hover._pCacheAndGet_pLoadSimple(page, source, hash, opts, "backgrounds.json", "background");
-			case "raw_feat":
-			case UrlUtil.PG_FEATS: return Renderer.hover._pCacheAndGet_pLoadSimple(UrlUtil.PG_FEATS, source, hash, opts, "feats.json", "feat");
-			case "raw_optionalfeature":
-			case UrlUtil.PG_OPT_FEATURES: return Renderer.hover._pCacheAndGet_pLoadSimple(UrlUtil.PG_OPT_FEATURES, source, hash, opts, "optionalfeatures.json", "optionalfeature");
-			case UrlUtil.PG_PSIONICS: return Renderer.hover._pCacheAndGet_pLoadSimple(page, source, hash, opts, "psionics.json", "psionic");
-			case "raw_reward":
-			case UrlUtil.PG_REWARDS: return Renderer.hover._pCacheAndGet_pLoadSimple(UrlUtil.PG_REWARDS, source, hash, opts, "rewards.json", "reward");
-			case UrlUtil.PG_RACES: return Renderer.hover._pCacheAndGet_pLoadCustom(page, source, hash, opts, "races.json", ["race", "subrace"], null, "race", {isAddBaseRaces: true});
-			case UrlUtil.PG_DEITIES: return Renderer.hover._pCacheAndGet_pLoadCustom(page, source, hash, opts, "deities.json", "deity", null, "deity");
-			case UrlUtil.PG_OBJECTS: return Renderer.hover._pCacheAndGet_pLoadSimple(page, source, hash, opts, "objects.json", "object");
-			case UrlUtil.PG_TRAPS_HAZARDS: return Renderer.hover._pCacheAndGet_pLoadSimple(page, source, hash, opts, "trapshazards.json", ["trap", "hazard"]);
-			case UrlUtil.PG_VARIANTRULES: return Renderer.hover._pCacheAndGet_pLoadCustom(page, source, hash, opts, "variantrules.json", "variantrule", null, "variantrule");
-			case UrlUtil.PG_CULTS_BOONS: return Renderer.hover._pCacheAndGet_pLoadSimple(page, source, hash, opts, "cultsboons.json", ["cult", "boon"]);
-			case UrlUtil.PG_CONDITIONS_DISEASES: return Renderer.hover._pCacheAndGet_pLoadSimple(page, source, hash, opts, "conditionsdiseases.json", ["condition", "disease", "status"]);
-			case UrlUtil.PG_TABLES: return Renderer.hover._pCacheAndGet_pLoadCustom(page, source, hash, opts, "tables.json", ["table", "tableGroup"], null, "table");
-			case UrlUtil.PG_VEHICLES: return Renderer.hover._pCacheAndGet_pLoadSimple(page, source, hash, opts, "vehicles.json", ["vehicle", "vehicleUpgrade"]);
-			case UrlUtil.PG_ACTIONS: return Renderer.hover._pCacheAndGet_pLoadSimple(page, source, hash, opts, "actions.json", "action");
-			case UrlUtil.PG_LANGUAGES: return Renderer.hover._pCacheAndGet_pLoadCustom(page, source, hash, opts, "languages.json", "language", null, "language");
-			case "raw_charoption":
-			case UrlUtil.PG_CHAR_CREATION_OPTIONS: return Renderer.hover._pCacheAndGet_pLoadSimple(page, source, hash, opts, "charcreationoptions.json", "charoption");
-			case UrlUtil.PG_RECIPES: return Renderer.hover._pCacheAndGet_pLoadCustom(page, source, hash, opts, "recipes.json", "recipe", null, "recipe");
-			case UrlUtil.PG_CLASS_SUBCLASS_FEATURES: return Renderer.hover._pCacheAndGet_pLoadClassSubclassFeatures(page, source, hash, opts);
-
-			// region adventure/books/references
-			case UrlUtil.PG_QUICKREF: return Renderer.hover._pCacheAndGet_pLoadQuickref(page, source, hash, opts);
-			case UrlUtil.PG_ADVENTURE: return Renderer.hover._pCacheAndGet_pLoadAdventureBook(page, source, hash, opts);
-			case UrlUtil.PG_BOOK: return Renderer.hover._pCacheAndGet_pLoadAdventureBook(page, source, hash, opts);
-			// enregion
-
-			// region per-page fluff
-			case `fluff__${UrlUtil.PG_BESTIARY}`: return Renderer.hover._pCacheAndGet_pLoadMultiSourceFluff(page, source, hash, opts, `data/bestiary/`, "monsterFluff");
-			case `fluff__${UrlUtil.PG_SPELLS}`: return Renderer.hover._pCacheAndGet_pLoadMultiSourceFluff(page, source, hash, opts, `data/spells/`, "spellFluff");
-			case `fluff__${UrlUtil.PG_BACKGROUNDS}`: return Renderer.hover._pCacheAndGet_pLoadSimpleFluff(page, source, hash, opts, "fluff-backgrounds.json", "backgroundFluff");
-			case `fluff__${UrlUtil.PG_FEATS}`: return Renderer.hover._pCacheAndGet_pLoadSimpleFluff(page, source, hash, opts, "fluff-feats.json", "featFluff");
-			case `fluff__${UrlUtil.PG_ITEMS}`: return Renderer.hover._pCacheAndGet_pLoadSimpleFluff(page, source, hash, opts, "fluff-items.json", "itemFluff");
-			case `fluff__${UrlUtil.PG_CONDITIONS_DISEASES}`: return Renderer.hover._pCacheAndGet_pLoadSimpleFluff(page, source, hash, opts, "fluff-conditionsdiseases.json", ["conditionFluff", "diseaseFluff"]);
-			case `fluff__${UrlUtil.PG_RACES}`: return Renderer.hover._pCacheAndGet_pLoadSimpleFluff(page, source, hash, opts, "fluff-races.json", "raceFluff");
-			case `fluff__${UrlUtil.PG_LANGUAGES}`: return Renderer.hover._pCacheAndGet_pLoadSimpleFluff(page, source, hash, opts, "fluff-languages.json", "languageFluff");
-			case `fluff__${UrlUtil.PG_VEHICLES}`: return Renderer.hover._pCacheAndGet_pLoadSimpleFluff(page, source, hash, opts, "fluff-vehicles.json", "vehicleFluff");
-			case `fluff__${UrlUtil.PG_OBJECTS}`: return Renderer.hover._pCacheAndGet_pLoadSimpleFluff(page, source, hash, opts, "fluff-objects.json", "objectFluff");
-			case `fluff__${UrlUtil.PG_CHAR_CREATION_OPTIONS}`: return Renderer.hover._pCacheAndGet_pLoadSimpleFluff(page, source, hash, opts, "fluff-charcreationoptions.json", "charoptionFluff");
-			case `fluff__${UrlUtil.PG_RECIPES}`: return Renderer.hover._pCacheAndGet_pLoadSimpleFluff(page, source, hash, opts, "fluff-recipes.json", "recipeFluff");
-			// endregion
-
-			// region props
-			case "classfeature": return Renderer.hover._pCacheAndGet_pLoadClassFeatures(page, source, hash, opts);
-			case "subclassfeature": return Renderer.hover._pCacheAndGet_pLoadSubclassFeatures(page, source, hash, opts);
-
-			case "raw_class":
-			case "raw_subclass": return Renderer.hover._pCacheAndGet_pLoadClassesRaw(page, source, hash, opts);
-
-			case "raw_classfeature": return Renderer.hover._pCacheAndGet_pLoadClassFeatures(page, source, hash, opts);
-			case "raw_subclassfeature": return Renderer.hover._pCacheAndGet_pLoadSubclassFeatures(page, source, hash, opts);
-
-			case "skill": return Renderer.hover._pCacheAndGet_pLoadSimple(page, source, hash, opts, "skills.json", "skill");
-			case "sense": return Renderer.hover._pCacheAndGet_pLoadSimple(page, source, hash, opts, "senses.json", "sense");
-			case "legendarygroup": return Renderer.hover._pCacheAndGet_pLoadSimple(page, source, hash, opts, "bestiary/legendarygroups.json", "legendaryGroup");
-
-			case "itementry": return Renderer.hover._pCacheAndGet_pLoadSimple(page, source, hash, opts, "items-base.json", "itemEntry");
-			// endregion
-
-			default: {
-				if (opts.isSilent) return null;
-				throw new Error(`No load function defined for page ${page}`);
-			}
-		}
-	},
-
-	async _pCacheAndGet_pDoLoadWithLock (page, source, hash, loadKey, pFnLoad) {
-		if (Renderer.hover._psCacheLoading[loadKey]) await Renderer.hover._psCacheLoading[loadKey];
-
-		if (
-			!Renderer.hover._flagsCacheLoaded[loadKey]
-			|| (
-				(typeof BrewUtil2 !== "undefined" && BrewUtil2.hasSourceJson(source))
-				&& !Renderer.hover.isCached(page, source, hash)
-			)
-		) {
-			Renderer.hover._psCacheLoading[loadKey] = (async () => {
-				await pFnLoad();
-
-				Renderer.hover._flagsCacheLoaded[loadKey] = true;
-			})();
-			await Renderer.hover._psCacheLoading[loadKey];
-		}
-
-		// FIXME this isn't completely thread-safe; if another thread is loading the same brew and has not yet
-		//    completed the load, we will always fail to find
-		if (!Renderer.hover.isCached(page, source, hash) && !Renderer.hover._hasBrewSourceBeenAttempted(source)) {
-			Renderer.hover._setHasBrewSourceBeenAttempted(source);
-			return Renderer.hover._pDoLoadFromBrew(page, source, hash);
-		}
-	},
-
-	/**
-	 * @param data the data
-	 * @param listProp list property in the data
-	 * @param [opts]
-	 * @param [opts.fnMutateItem] optional function to run per item; takes listProp and an item as parameters
-	 * @param [opts.fnGetHash]
-	 */
-	_pCacheAndGet_populate (page, data, listProp, opts) {
-		opts = opts || {};
-
-		data[listProp].forEach(it => {
-			const itHash = (opts.fnGetHash || UrlUtil.URL_TO_HASH_BUILDER[page])(it);
-			if (opts.fnMutateItem) opts.fnMutateItem(listProp, it);
-			Renderer.hover._addToCache(page, it.source, itHash, it);
-
-			DataUtil.proxy.getVersions(listProp, it)
-				.forEach(v => {
-					const vHash = (opts.fnGetHash || UrlUtil.URL_TO_HASH_BUILDER[page])(v);
-					if (opts.fnMutateItem) opts.fnMutateItem(listProp, v);
-					Renderer.hover._addToCache(page, v.source, vHash, v);
-				});
-		});
-	},
-
-	async _pCacheAndGet_pLoadMultiSource (page, source, hash, opts, baseUrl, listProp, fnPrePopulate = null) {
-		const loadKey = `${page}${source}`;
-
-		const isNotLoadedAndIsSourceAvailableBrew = await Renderer.hover._pCacheAndGet_pDoLoadWithLock(
-			page,
-			source,
-			hash,
-			loadKey,
-			async () => {
-				if (typeof BrewUtil2 !== "undefined") {
-					const brewData = await BrewUtil2.pGetBrewProcessed();
-					if (fnPrePopulate) fnPrePopulate(brewData, {isBrew: true});
-					if (brewData[listProp]) Renderer.hover._pCacheAndGet_populate(page, brewData, listProp, {fnGetHash: opts.fnGetHash});
-				}
-				const index = await DataUtil.loadJSON(`${Renderer.get().baseUrl}${baseUrl}${opts.isFluff ? "fluff-" : ""}index.json`);
-				const officialSources = {};
-				Object.entries(index).forEach(([k, v]) => officialSources[k.toLowerCase()] = v);
-
-				const officialSource = officialSources[source.toLowerCase()];
-				if (officialSource) {
-					const data = await DataUtil.loadJSON(`${Renderer.get().baseUrl}${baseUrl}${officialSource}`);
-					if (fnPrePopulate) fnPrePopulate(data, {isBrew: false});
-					Renderer.hover._pCacheAndGet_populate(page, data, listProp, {fnGetHash: opts.fnGetHash});
-				}
-				// (else source to load is 3rd party, which was already handled)
-			},
-		);
-
-		if (isNotLoadedAndIsSourceAvailableBrew) return Renderer.hover.pCacheAndGet(page, source, hash);
-		return Renderer.hover.getFromCache(page, source, hash, opts);
-	},
-
-	async _pCacheAndGet_pLoadMultiSourceFluff (page, source, hash, opts, baseUrl, listProp, fnPrePopulate = null) {
-		const nxtOpts = MiscUtil.copy(opts);
-		nxtOpts.isFluff = true;
-		nxtOpts.fnGetHash = it => UrlUtil.encodeForHash([it.name, it.source]);
-		return Renderer.hover._pCacheAndGet_pLoadMultiSource(page, source, hash, nxtOpts, baseUrl, listProp);
-	},
-
-	async _pCacheAndGet_pLoadSingleBrew (page, opts, listProps, fnMutateItem) {
-		const brewData = typeof BrewUtil2 !== "undefined" ? await BrewUtil2.pGetBrewProcessed() : {};
-		Renderer.hover._pCacheAndGet_doCacheBrewData(brewData, page, opts, listProps, fnMutateItem);
-	},
-
-	async _pCacheAndGet_pLoadCustomBrew (page, opts, listProps, fnMutateItem, loader) {
-		const brewData = await DataUtil[loader].loadBrew();
-		Renderer.hover._pCacheAndGet_doCacheBrewData(brewData, page, opts, listProps, fnMutateItem);
-	},
-
-	_pCacheAndGet_doCacheBrewData (brewData, page, opts, listProps, fnMutateItem) {
-		listProps = listProps instanceof Array ? listProps : [listProps];
-		listProps.forEach(lp => {
-			if (brewData[lp]) Renderer.hover._pCacheAndGet_populate(page, brewData, lp, {fnMutateItem, fnGetHash: opts.fnGetHash});
-		});
-	},
-
-	_pCacheAndGet_handleSingleData (page, opts, data, listProps, fnMutateItem) {
-		if (listProps instanceof Array) listProps.forEach(prop => data[prop] && Renderer.hover._pCacheAndGet_populate(page, data, prop, {fnMutateItem, fnGetHash: opts.fnGetHash}));
-		else Renderer.hover._pCacheAndGet_populate(page, data, listProps, {fnMutateItem, fnGetHash: opts.fnGetHash});
-	},
-
-	async _pCacheAndGet_pLoadSimple (page, source, hash, opts, jsonFile, listProps) {
-		const loadKey = jsonFile;
-
-		const isNotLoadedAndIsSourceAvailableBrew = await Renderer.hover._pCacheAndGet_pDoLoadWithLock(
-			page,
-			source,
-			hash,
-			loadKey,
-			async () => {
-				await Renderer.hover._pCacheAndGet_pLoadSingleBrew(page, opts, listProps);
-				const data = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/${jsonFile}`);
-				Renderer.hover._pCacheAndGet_handleSingleData(page, opts, data, listProps);
-			},
-		);
-
-		if (isNotLoadedAndIsSourceAvailableBrew) return Renderer.hover.pCacheAndGet(page, source, hash);
-		return Renderer.hover.getFromCache(page, source, hash, opts);
-	},
-
-	async _pCacheAndGet_pLoadSimpleFluff (page, source, hash, opts, jsonFile, listProps, fnMutateItem) {
-		const nxtOpts = MiscUtil.copy(opts);
-		nxtOpts.isFluff = true;
-		nxtOpts.fnGetHash = it => UrlUtil.encodeForHash([it.name, it.source]);
-		return Renderer.hover._pCacheAndGet_pLoadSimple(page, source, hash, nxtOpts, jsonFile, listProps, fnMutateItem);
-	},
-
-	async _pCacheAndGet_pLoadCustom (page, source, hash, opts, jsonFile, listProps, itemModifier, loader, loaderLoadJsonArgs = {}, loaderLoadBrewArgs = {}) {
-		const loadKey = jsonFile;
-
-		const isNotLoadedAndIsSourceAvailableBrew = await Renderer.hover._pCacheAndGet_pDoLoadWithLock(
-			page,
-			source,
-			hash,
-			loadKey,
-			async () => {
-				if (DataUtil[loader].loadBrew) await Renderer.hover._pCacheAndGet_pLoadCustomBrew(page, opts, listProps, itemModifier, loader, loaderLoadBrewArgs);
-				else await Renderer.hover._pCacheAndGet_pLoadSingleBrew(page, opts, listProps, itemModifier);
-
-				const data = await DataUtil[loader].loadJSON(loaderLoadJsonArgs);
-				Renderer.hover._pCacheAndGet_handleSingleData(page, opts, data, listProps, itemModifier);
-			},
-		);
-
-		if (isNotLoadedAndIsSourceAvailableBrew) return Renderer.hover.pCacheAndGet(page, source, hash);
-		return Renderer.hover.getFromCache(page, source, hash, opts);
-	},
-
-	async _pCacheAndGet_pLoadBestiary (page, source, hash, opts) {
-		await DataUtil.monster.pPreloadMeta();
-		return Renderer.hover._pCacheAndGet_pLoadMultiSource(page, source, hash, opts, `data/bestiary/`, "monster", data => DataUtil.monster.populateMetaReference(data));
-	},
-
-	async _pCacheAndGet_pLoadItems (page, source, hash, opts) {
-		const loadKey = UrlUtil.PG_ITEMS;
-
-		const isNotLoadedAndIsSourceAvailableBrew = await Renderer.hover._pCacheAndGet_pDoLoadWithLock(
-			page,
-			source,
-			hash,
-			loadKey,
-			async () => {
-				const allItems = await Renderer.item.pBuildList({
-					isAddGroups: true,
-				});
-				// populate brew once the main item properties have been loaded
-				const brewData = typeof BrewUtil2 !== "undefined" ? await BrewUtil2.pGetBrewProcessed() : {};
-				const itemList = await Renderer.item.pGetItemsFromHomebrew(brewData);
-				itemList.forEach(it => {
-					const itHash = UrlUtil.URL_TO_HASH_BUILDER[page](it);
-					Renderer.hover._addToCache(page, it.source, itHash, it);
-					const revName = Renderer.item.modifierPostToPre(it);
-					if (revName) Renderer.hover._addToCache(page, it.source, UrlUtil.URL_TO_HASH_BUILDER[page](revName), it);
-				});
-
-				allItems.forEach(item => {
-					const itemHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS](item);
-					Renderer.hover._addToCache(page, item.source, itemHash, item);
-					const revName = Renderer.item.modifierPostToPre(item);
-					if (revName) Renderer.hover._addToCache(page, item.source, UrlUtil.URL_TO_HASH_BUILDER[page](revName), item);
-				});
-			},
-		);
-
-		if (isNotLoadedAndIsSourceAvailableBrew) return Renderer.hover.pCacheAndGet(page, source, hash);
-		return Renderer.hover.getFromCache(page, source, hash, opts);
-	},
-
-	async _pCacheAndGet_pLoadQuickref (page, source, hash, opts) {
-		const loadKey = UrlUtil.PG_QUICKREF;
-
-		const isNotLoadedAndIsSourceAvailableBrew = await Renderer.hover._pCacheAndGet_pDoLoadWithLock(
-			page,
-			source,
-			hash,
-			loadKey,
-			async () => {
-				const json = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/generated/bookref-quick.json`);
-
-				json.data["bookref-quick"].forEach((chapter, ixChapter) => {
-					const metas = IndexableFileQuickReference.getChapterNameMetas(chapter, {isRequireQuickrefFlag: false});
-
-					metas.forEach(nameMeta => {
-						const hashParts = [
-							"bookref-quick",
-							ixChapter,
-							UrlUtil.encodeForHash(nameMeta.name.toLowerCase()),
-						];
-						if (nameMeta.ixBook) hashParts.push(nameMeta.ixBook);
-
-						const hash = hashParts.join(HASH_PART_SEP);
-
-						Renderer.hover._addToCache(page, nameMeta.source, hash, nameMeta.entry);
-
-						// region Add the hash with the redundant `0` header included
-						if (!nameMeta.ixBook) {
-							hashParts.push(nameMeta.ixBook);
-							const hashAlt = hashParts.join(HASH_PART_SEP);
-							Renderer.hover._addToCache(page, nameMeta.source, hashAlt, nameMeta.entry);
-						}
-						// endregion
-					});
-				});
-			},
-		);
-
-		if (isNotLoadedAndIsSourceAvailableBrew) return Renderer.hover.pCacheAndGet(page, source, hash);
-		return Renderer.hover.getFromCache(page, source, hash, opts);
-	},
-
-	async _pCacheAndGet_pLoadAdventureBook (page, source, hash, opts) {
-		const loadKey = `${page}${source}`;
-
-		const prop = page === UrlUtil.PG_ADVENTURE ? `adventure` : `book`;
-		const propData = `${prop}Data`;
-		const indexFilename = page === UrlUtil.PG_ADVENTURE ? `adventures.json` : `books.json`;
-
-		const isNotLoadedAndIsSourceAvailableBrew = await Renderer.hover._pCacheAndGet_pDoLoadWithLock(
-			page,
-			source,
-			hash,
-			loadKey,
-			async () => {
-				// region Brew
-				const brew = typeof BrewUtil2 !== "undefined" ? await BrewUtil2.pGetBrewProcessed() : {};
-
-				// Get only the ids that exist in both data + contents
-				const brewDataIds = (brew[propData] || []).filter(it => it.id).map(it => it.id);
-				const brewContentsIds = new Set((brew[prop] || []).filter(it => it.id).map(it => it.id));
-				const matchingBrewIds = brewDataIds.filter(id => brewContentsIds.has(id));
-
-				matchingBrewIds.forEach(id => {
-					const brewData = (brew[propData] || []).find(it => it.id === id);
-					const brewContents = (brew[prop] || []).find(it => it.id === id);
-
-					const hashBrew = UrlUtil.URL_TO_HASH_BUILDER[page](brewContents);
-					Renderer.hover._pWalkAdventureBook_addImageBackReferences(brewData, page, source, hashBrew);
-
-					const pack = {
-						[prop]: brewContents,
-						[propData]: brewData,
-					};
-
-					Renderer.hover._addToCache(page, brewContents.source, hashBrew, pack);
-				});
-				// endregion
-
-				const index = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/${indexFilename}`);
-				const fromIndex = index[prop].find(it => UrlUtil.URL_TO_HASH_BUILDER[page](it) === hash);
-				if (fromIndex) {
-					const json = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/${prop}/${prop}-${hash}.json`);
-
-					Renderer.hover._pWalkAdventureBook_addImageBackReferences(json, page, source, hash);
-
-					const pack = {
-						[prop]: fromIndex,
-						[propData]: json,
-					};
-
-					Renderer.hover._addToCache(page, fromIndex.source, hash, pack);
-				}
-			},
-		);
-
-		if (isNotLoadedAndIsSourceAvailableBrew) return Renderer.hover.pCacheAndGet(page, source, hash);
-		return Renderer.hover.getFromCache(page, source, hash, opts);
-	},
-
-	/** Allow maps to reference back to their parent entity. */
-	_pWalkAdventureBook_addImageBackReferences (json, page, source, hash) {
-		if (!json) return;
-
-		const walker = MiscUtil.getWalker({keyBlocklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLOCKLIST, isNoModification: true});
-		walker.walk(
-			json,
-			{
-				object: (obj) => {
-					if (obj.type === "image" && obj.mapRegions) {
-						obj.page = obj.page || page;
-						obj.source = obj.source || source;
-						obj.hash = obj.hash || hash;
-					}
-				},
-			},
-		);
-	},
-
-	async _pCacheAndGet_pLoadClasses (page, source, hash, opts) {
-		const loadKey = UrlUtil.PG_CLASSES;
-
-		const isNotLoadedAndIsSourceAvailableBrew = await Renderer.hover._pCacheAndGet_pDoLoadWithLock(
-			page,
-			source,
-			hash,
-			loadKey,
-			async () => {
-				const classData = await DataUtil.class.loadJSON();
-				const brewData = typeof BrewUtil2 !== "undefined" ? await BrewUtil2.pGetBrewProcessed() : {};
-				await Promise.all((brewData?.class || []).map(cc => Renderer.hover._pCacheAndGet_pLoadClasses_addToIndex(cc)));
-				for (const sc of (brewData?.subclass || [])) await Renderer.hover._pCacheAndGet_pLoadClasses_addSubclassToIndex(sc);
-				await Promise.all(classData.class.map(cc => Renderer.hover._pCacheAndGet_pLoadClasses_addToIndex(cc)));
-				for (const sc of (classData.subclass || [])) await Renderer.hover._pCacheAndGet_pLoadClasses_addSubclassToIndex(sc);
-			},
-		);
-
-		if (isNotLoadedAndIsSourceAvailableBrew) return Renderer.hover.pCacheAndGet(page, source, hash);
-		return Renderer.hover.getFromCache(page, source, hash, opts);
-	},
-
-	async _pCacheAndGet_pLoadClasses_addToIndex (cls, {isRaw = false} = {}) {
-		// add class
-		const clsHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](cls);
-
-		if (isRaw) {
-			Renderer.hover._addToCache("raw_class", cls.source || SRC_PHB, clsHash, cls);
-			return;
-		}
-
-		cls = await DataUtil.class.pGetDereferencedClassData(cls);
-		const clsEntries = {
-			name: cls.name,
-			type: "section",
-			entries: MiscUtil.copy((cls.classFeatures || []).flat()),
-			data: {
-				class: MiscUtil.copy(cls),
-			},
-		};
-		Renderer.hover._addToCache(UrlUtil.PG_CLASSES, cls.source || SRC_PHB, clsHash, clsEntries);
-
-		// add all class features
-		UrlUtil.class.getIndexedClassEntries(cls).forEach(it => Renderer.hover._addToCache(UrlUtil.PG_CLASSES, it.source, it.hash, it.entry));
-	},
-
-	async _pCacheAndGet_pLoadClasses_addSubclassToIndex (sc, {isRaw = false} = {}) {
-		const scHash = UrlUtil.URL_TO_HASH_BUILDER["subclass"](sc);
-
-		if (isRaw) {
-			Renderer.hover._addToCache("raw_subclass", sc.source || SRC_PHB, scHash, sc);
-			return;
-		}
-
-		sc = await DataUtil.class.pGetDereferencedSubclassData(sc);
-
-		const scEntries = {
-			type: "section",
-			entries: MiscUtil.copy((sc.subclassFeatures || []).flat()),
-			data: {
-				class: {name: sc.className, source: sc.classSource},
-				subclass: MiscUtil.copy(sc),
-			},
-		};
-
-		// Always use the class source where available, as these are all keyed as sub-hashes on the classes page
-		Renderer.hover._addToCache(UrlUtil.PG_CLASSES, sc.classSource || sc.source || SRC_PHB, scHash, scEntries);
-
-		// Add a copy using the subclass source, for omnisearch results
-		Renderer.hover._addToCache(UrlUtil.PG_CLASSES, sc.source || SRC_PHB, scHash, scEntries);
-
-		// Add a copy for loading via "statblock" entries
-		Renderer.hover._addToCache("subclass", sc.source || SRC_PHB, scHash, scEntries);
-
-		// add all class/subclass features
-		UrlUtil.class.getIndexedSubclassEntries(sc).forEach(it => Renderer.hover._addToCache(UrlUtil.PG_CLASSES, it.source, it.hash, it.entry));
-	},
-
-	async _pCacheAndGet_pLoadClassesRaw (page, source, hash, opts) {
-		const loadKey = "raw_class";
-
-		const isNotLoadedAndIsSourceAvailableBrew = await Renderer.hover._pCacheAndGet_pDoLoadWithLock(
-			page,
-			source,
-			hash,
-			loadKey,
-			async () => {
-				const classData = await DataUtil.class.loadRawJSON();
-				const brewData = typeof BrewUtil2 !== "undefined" ? await BrewUtil2.pGetBrewProcessed() : {};
-				await Promise.all((brewData.class || []).map(cc => Renderer.hover._pCacheAndGet_pLoadClasses_addToIndex(cc, {isRaw: true})));
-				for (const sc of (brewData.subclass || [])) await Renderer.hover._pCacheAndGet_pLoadClasses_addSubclassToIndex(sc, {isRaw: true});
-				await Promise.all(classData.class.map(cc => Renderer.hover._pCacheAndGet_pLoadClasses_addToIndex(cc, {isRaw: true})));
-				for (const sc of (classData.subclass || [])) await Renderer.hover._pCacheAndGet_pLoadClasses_addSubclassToIndex(sc, {isRaw: true});
-			},
-		);
-
-		if (isNotLoadedAndIsSourceAvailableBrew) return Renderer.hover.pCacheAndGet(page, source, hash);
-		return Renderer.hover.getFromCache(page, source, hash, opts);
-	},
-
-	async _pCacheAndGet_pLoadClassSubclassFeatures (page, source, hash, opts) {
-		const uid = UrlUtil.decodeHash(hash).join("|");
-		if (DataUtil.class.isValidSubclassFeatureUid(uid)) return Renderer.hover._pCacheAndGet_pLoadClassFeatures("subclassfeature", source, hash, opts);
-		return Renderer.hover._pCacheAndGet_pLoadClassFeatures("classfeature", source, hash, opts);
-	},
-
-	async _pCacheAndGet_pLoadClassFeatures (page, source, hash, opts) {
-		const loadKey = page;
-
-		const isNotLoadedAndIsSourceAvailableBrew = await Renderer.hover._pCacheAndGet_pDoLoadWithLock(
-			page,
-			source,
-			hash,
-			loadKey,
-			async () => {
-				const brewData = typeof BrewUtil2 !== "undefined" ? await BrewUtil2.pGetBrewProcessed() : {};
-				// Load official first to ensure availibility for brew, and then load brew with overwrites disabled to avoid clobbering official
-				await Renderer.hover._pCacheAndGet_pLoadOfficialClassAndSubclassFeatures();
-				await Renderer.hover.pDoDereferenceNestedAndCache(brewData.classFeature, "classFeature", UrlUtil.URL_TO_HASH_BUILDER["classFeature"], {isOverwrite: false});
-			},
-		);
-
-		if (isNotLoadedAndIsSourceAvailableBrew) return Renderer.hover.pCacheAndGet(page, source, hash);
-		return Renderer.hover.getFromCache(page, source, hash, opts);
-	},
-
-	async _pCacheAndGet_pLoadSubclassFeatures (page, source, hash, opts) {
-		const loadKey = page;
-
-		const isNotLoadedAndIsSourceAvailableBrew = await Renderer.hover._pCacheAndGet_pDoLoadWithLock(
-			page,
-			source,
-			hash,
-			loadKey,
-			async () => {
-				const brewData = typeof BrewUtil2 !== "undefined" ? await BrewUtil2.pGetBrewProcessed() : {};
-				// Load official first to ensure availibility for brew, and then load brew with overwrites disabled to avoid clobbering official
-				await Renderer.hover._pCacheAndGet_pLoadOfficialClassAndSubclassFeatures();
-				await Renderer.hover.pDoDereferenceNestedAndCache(brewData.subclassFeature, "subclassFeature", UrlUtil.URL_TO_HASH_BUILDER["subclassFeature"], {isOverwrite: false});
-			},
-		);
-
-		if (isNotLoadedAndIsSourceAvailableBrew) return Renderer.hover.pCacheAndGet(page, source, hash);
-		return Renderer.hover.getFromCache(page, source, hash, opts);
-	},
+	// endregion
 
 	// region Apply custom hash IDs
 	async pApplyCustomHashId (page, ent, customHashId) {
@@ -10648,275 +9596,6 @@ Renderer.hover = {
 	},
 	// endregion
 
-	_REF_TYPES: new Set([
-		"refClassFeature",
-		"refSubclassFeature",
-		"refOptionalfeature",
-		"refItemEntry",
-	]),
-	async pDoDereferenceNestedAndCache (entities, page, fnGetHash, {isMutateOriginal = false, entryProp = "entries", isOverwrite = true} = {}) {
-		if (!entities || !entities.length) return;
-
-		const entriesWithRefs = {};
-		const entriesWithoutRefs = {};
-		const ptrHasRef = {_: false};
-
-		const walker = MiscUtil.getWalker({
-			keyBlocklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLOCKLIST,
-			isNoModification: true,
-		});
-		const walkerMod = MiscUtil.getWalker({
-			keyBlocklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLOCKLIST,
-		});
-
-		const handlers = {
-			object: (obj) => {
-				if (ptrHasRef._) return obj;
-				if (Renderer.hover._REF_TYPES.has(obj.type)) ptrHasRef._ = true;
-				return obj;
-			},
-			string: (str) => {
-				if (ptrHasRef._) return str;
-				if (str.startsWith("{#") && str.endsWith("}")) ptrHasRef._ = true;
-				return str;
-			},
-		};
-
-		entities.forEach(ent => {
-			// Cache the raw version
-			//  ...unless we're mutating, in which case, skip it, as this is currently unused
-			const hash = fnGetHash(ent);
-			if (!isMutateOriginal) {
-				const pageRaw = `raw_${page}`;
-				if (isOverwrite || !Renderer.hover.isCached(pageRaw, ent.source, hash)) Renderer.hover._addToCache(pageRaw, ent.source, hash, ent);
-			}
-
-			ptrHasRef._ = false;
-			walker.walk(ent[entryProp], handlers);
-
-			(ptrHasRef._ ? entriesWithRefs : entriesWithoutRefs)[hash] = isMutateOriginal
-				? ent
-				: ptrHasRef._ ? MiscUtil.copy(ent) : ent;
-		});
-
-		let cntDerefLoops = 0;
-		while (Object.keys(entriesWithRefs).length && cntDerefLoops < 25) { // conservatively avoid infinite looping
-			const hashes = Object.keys(entriesWithRefs);
-			for (const hash of hashes) {
-				const ent = entriesWithRefs[hash];
-
-				const toReplaceMetas = [];
-				walker.walk(
-					ent[entryProp],
-					{
-						array: (arr) => {
-							for (let i = 0; i < arr.length; ++i) {
-								const it = arr[i];
-								if (Renderer.hover._REF_TYPES.has(it.type)) {
-									toReplaceMetas.push({
-										...it,
-										array: arr,
-										ix: i,
-									});
-								} else if (typeof it === "string" && it.startsWith("{#") && it.endsWith("}")) {
-									toReplaceMetas.push({
-										string: it,
-										array: arr,
-										ix: i,
-									});
-								}
-							}
-							return arr;
-						},
-					},
-				);
-
-				let cntReplaces = 0;
-				for (let iReplace = 0; iReplace < toReplaceMetas.length; ++iReplace) {
-					const toReplaceMeta = Renderer.hover._pDoDereferenceNestedAndCache_getToReplaceMeta(toReplaceMetas[iReplace]);
-
-					switch (toReplaceMeta.type) {
-						case "refClassFeature":
-						case "refSubclassFeature": {
-							const prop = toReplaceMeta.type === "refClassFeature" ? "classFeature" : "subclassFeature";
-							const refUnpacked = toReplaceMeta.type === "refClassFeature"
-								? DataUtil.class.unpackUidClassFeature(toReplaceMeta.classFeature)
-								: DataUtil.class.unpackUidSubclassFeature(toReplaceMeta.subclassFeature);
-							const refHash = UrlUtil.URL_TO_HASH_BUILDER[prop](refUnpacked);
-
-							// Skip blocklisted
-							if (ExcludeUtil.isInitialised && ExcludeUtil.isExcluded(refHash, prop, refUnpacked.source, {isNoCount: true})) {
-								cntReplaces++;
-								toReplaceMeta.array[toReplaceMeta.ix] = {};
-								break;
-							}
-
-							// Homebrew can e.g. reference cross-file
-							const cpy = entriesWithoutRefs[refHash]
-								? MiscUtil.copy(entriesWithoutRefs[refHash])
-								: Renderer.hover.getFromCache(prop, refUnpacked.source, refHash, {isCopy: true});
-
-							if (cpy) {
-								cntReplaces++;
-								delete cpy.level;
-								delete cpy.header;
-								if (toReplaceMeta.name) cpy.name = toReplaceMeta.name;
-								toReplaceMeta.array[toReplaceMeta.ix] = cpy;
-							}
-
-							break;
-						}
-
-						case "refOptionalfeature": {
-							const refUnpacked = DataUtil.generic.unpackUid(toReplaceMeta.optionalfeature, "optfeature");
-							const refHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_OPT_FEATURES](refUnpacked);
-
-							// Skip blocklisted
-							if (ExcludeUtil.isInitialised && ExcludeUtil.isExcluded(refHash, "optionalfeature", refUnpacked.source, {isNoCount: true})) {
-								cntReplaces++;
-								toReplaceMeta.array[toReplaceMeta.ix] = {};
-								break;
-							}
-
-							const cpy = await Renderer.hover.pCacheAndGetHash(UrlUtil.PG_OPT_FEATURES, refHash, {isCopy: true});
-							if (cpy) {
-								cntReplaces++;
-								delete cpy.featureType;
-								delete cpy.prerequisite;
-								if (toReplaceMeta.name) cpy.name = toReplaceMeta.name;
-								toReplaceMeta.array[toReplaceMeta.ix] = cpy;
-							}
-
-							break;
-						}
-
-						case "refItemEntry": {
-							const refUnpacked = DataUtil.generic.unpackUid(toReplaceMeta.itemEntry, "itemEntry");
-							const refHash = UrlUtil.URL_TO_HASH_BUILDER["itemEntry"](refUnpacked);
-
-							const cpy = await Renderer.hover.pCacheAndGetHash("itemEntry", refHash, {isCopy: true});
-							if (cpy) {
-								cntReplaces++;
-
-								cpy.entriesTemplate = walkerMod.walk(
-									cpy.entriesTemplate,
-									{
-										string: (str) => {
-											return Renderer.utils.applyTemplate(
-												ent,
-												str,
-											);
-										},
-									},
-								);
-
-								toReplaceMeta.array.splice(toReplaceMeta.ix, 1, ...cpy.entriesTemplate);
-
-								// Offset by the length of the array we just merged in (minus one, since we replaced an
-								//   element)
-								toReplaceMetas.slice(iReplace + 1).forEach(it => it.ix += cpy.entriesTemplate.length - 1);
-							}
-
-							break;
-						}
-					}
-				}
-
-				if (cntReplaces === toReplaceMetas.length) {
-					delete entriesWithRefs[hash];
-					entriesWithoutRefs[hash] = ent;
-				}
-			}
-
-			cntDerefLoops++;
-		}
-
-		Object.values(entriesWithoutRefs).forEach(ent => {
-			const hash = fnGetHash(ent);
-			if (isOverwrite || !Renderer.hover.isCached(page, ent.source, hash)) Renderer.hover._addToCache(page, ent.source, hash, ent);
-		});
-
-		// Add the failed-to-resolve entities to the cache nonetheless
-		const entriesWithRefsVals = Object.values(entriesWithRefs);
-		if (entriesWithRefsVals.length) {
-			const missingRefSets = {};
-			walker.walk(
-				entriesWithRefsVals,
-				{
-					object: (obj) => {
-						switch (obj.type) {
-							case "refClassFeature": (missingRefSets["classFeature"] = missingRefSets["classFeature"] || new Set()).add(obj.classFeature); break;
-							case "refSubclassFeature": (missingRefSets["subclassFeature"] = missingRefSets["subclassFeature"] || new Set()).add(obj.subclassFeature); break;
-							case "refOptionalfeature": (missingRefSets["optionalfeature"] = missingRefSets["optionalfeature"] || new Set()).add(obj.optionalfeature); break;
-							case "refItemEntry": (missingRefSets["itemEntry"] = missingRefSets["itemEntry"] || new Set()).add(obj.itemEntry); break;
-						}
-					},
-				},
-			);
-
-			const notificationRefs = Object.entries(missingRefSets)
-				.map(([k, v]) => `${k}: ${[...v].sort(SortUtil.ascSortLower).join(", ")}`)
-				.join("; ");
-
-			const msgStart = `Failed to load references for ${entriesWithRefsVals.length} entr${entriesWithRefsVals.length === 1 ? "y" : "ies"}!`;
-
-			JqueryUtil.doToast({
-				type: "danger",
-				content: `${msgStart} Reference types and values were: ${notificationRefs}`,
-				isAutoHide: false,
-			});
-
-			const cnslRefs = Object.entries(missingRefSets)
-				.map(([k, v]) => `${k}:\n\t${[...v].sort(SortUtil.ascSortLower).join("\n\t")}`)
-				.join("\n");
-
-			setTimeout(() => { throw new Error(`${msgStart}\nReference types and values were:\n${cnslRefs}`); });
-		}
-
-		entriesWithRefsVals.forEach(ent => {
-			const hash = fnGetHash(ent);
-			if (isOverwrite || !Renderer.hover.isCached(page, ent.source, hash)) Renderer.hover._addToCache(page, ent.source, hash, ent);
-		});
-	},
-
-	_pDoDereferenceNestedAndCache_getToReplaceMeta (toReplaceMetaRaw) {
-		if (toReplaceMetaRaw.string == null) return toReplaceMetaRaw;
-
-		const str = toReplaceMetaRaw.string;
-		delete toReplaceMetaRaw.string;
-		return {...toReplaceMetaRaw, ...Renderer.hover.getRefMetaFromTag(str)};
-	},
-
-	getRefMetaFromTag (str) {
-		// convert e.g. `"{#itemEntry Ring of Resistance|DMG}"`
-		//   to `{type: "refItemEntry", "itemEntry": "Ring of Resistance|DMG"}`
-		str = str.slice(2, -1);
-		const [tag, ...refParts] = str.split(" ");
-		const ref = refParts.join(" ");
-		const type = `ref${tag.uppercaseFirst()}`;
-		return {type, [tag]: ref};
-	},
-
-	async _pCacheAndGet_pLoadOfficialClassAndSubclassFeatures () {
-		const lockKey = "classFeature__subclassFeature";
-		if (Renderer.hover._flags[lockKey]) return;
-		if (!Renderer.hover._locks[lockKey]) Renderer.hover._locks[lockKey] = new VeLock();
-		await Renderer.hover._locks[lockKey].pLock();
-		if (Renderer.hover._flags[lockKey]) return;
-
-		try {
-			const rawClassData = await DataUtil.class.loadRawJSON();
-
-			await Renderer.hover.pDoDereferenceNestedAndCache(rawClassData.classFeature, "classFeature", UrlUtil.URL_TO_HASH_BUILDER["classFeature"]);
-			await Renderer.hover.pDoDereferenceNestedAndCache(rawClassData.subclassFeature, "subclassFeature", UrlUtil.URL_TO_HASH_BUILDER["subclassFeature"]);
-
-			Renderer.hover._flags[lockKey] = true;
-		} finally {
-			Renderer.hover._locks[lockKey].unlock();
-		}
-	},
-	// endregion
-
 	getGenericCompactRenderedString (entry, depth = 0) {
 		return `
 			<tr class="text homebrew-hover"><td colspan="6">
@@ -10929,8 +9608,8 @@ Renderer.hover = {
 		switch (page) {
 			case "generic":
 			case "hover": return Renderer.hover.getGenericCompactRenderedString;
-			case UrlUtil.PG_QUICKREF:
-			case UrlUtil.PG_CLASSES: return Renderer.hover.getGenericCompactRenderedString;
+			case UrlUtil.PG_QUICKREF: return Renderer.hover.getGenericCompactRenderedString;
+			case UrlUtil.PG_CLASSES: return Renderer.class.getCompactRenderedString;
 			case UrlUtil.PG_SPELLS: return Renderer.spell.getCompactRenderedString;
 			case UrlUtil.PG_ITEMS: return Renderer.item.getCompactRenderedString;
 			case UrlUtil.PG_BESTIARY: return it => Renderer.monster.getCompactRenderedString(it, {isShowScalers: !isStatic, isScaledCr: it._originalCr != null, isScaledSpellSummon: it._isScaledSpellSummon, isScaledClassSummon: it._isScaledClassSummon});
@@ -10959,8 +9638,6 @@ Renderer.hover = {
 				return Renderer.hover.getGenericCompactRenderedString;
 			case "subclassfeature":
 			case "subclassFeature":
-				return Renderer.hover.getGenericCompactRenderedString;
-			case "subclass":
 				return Renderer.hover.getGenericCompactRenderedString;
 			// endregion
 			default:
@@ -10994,6 +9671,8 @@ Renderer.hover = {
 	},
 
 	isSmallScreen (evt) {
+		if (typeof window === "undefined") return false;
+
 		evt = evt || {};
 		const win = (evt.view || {}).window || window;
 		return win.innerWidth <= 768;
@@ -11010,7 +9689,7 @@ Renderer.hover = {
 	 */
 	$getHoverContent_stats (page, toRender, opts, renderFnOpts) {
 		opts = opts || {};
-		if (page === UrlUtil.PG_RECIPES) opts = {...MiscUtil.copy(opts), isBookContent: true};
+		if (page === UrlUtil.PG_RECIPES) opts = {...MiscUtil.copyFast(opts), isBookContent: true};
 
 		const fnRender = opts.fnRender || Renderer.hover.getFnRenderCompact(page, {isStatic: opts.isStatic});
 		const $out = $$`<table class="w-100 stats ${opts.isBookContent ? `stats--book` : ""}">${fnRender(toRender, renderFnOpts)}</table>`;
@@ -11032,16 +9711,16 @@ Renderer.hover = {
 	 */
 	$getHoverContent_fluff (page, toRender, opts, renderFnOpts) {
 		opts = opts || {};
-		if (page === UrlUtil.PG_RECIPES) opts = {...MiscUtil.copy(opts), isBookContent: true};
+		if (page === UrlUtil.PG_RECIPES) opts = {...MiscUtil.copyFast(opts), isBookContent: true};
 
 		if (!toRender) {
 			return $$`<table class="w-100 stats ${opts.isBookContent ? `stats--book` : ""}"><tr class="text"><td colspan="6" class="p-2 text-center">${Renderer.utils.HTML_NO_INFO}</td></tr></table>`;
 		}
 
-		toRender = MiscUtil.copy(toRender);
+		toRender = MiscUtil.copyFast(toRender);
 
 		if (toRender.images && toRender.images.length) {
-			const cachedImages = MiscUtil.copy(toRender.images);
+			const cachedImages = MiscUtil.copyFast(toRender.images);
 			delete toRender.images;
 
 			toRender.entries = toRender.entries || [];
@@ -11063,7 +9742,7 @@ Renderer.hover = {
 	},
 
 	$getHoverContent_statsCode (toRender, {isSkipClean = false, title = null} = {}) {
-		const cleanCopy = isSkipClean ? toRender : DataUtil.cleanJson(MiscUtil.copy(toRender));
+		const cleanCopy = isSkipClean ? toRender : DataUtil.cleanJson(MiscUtil.copyFast(toRender));
 		return Renderer.hover.$getHoverContent_miscCode(
 			title || [cleanCopy.name, "Source Data"].filter(Boolean).join(" \u2014 "),
 			JSON.stringify(cleanCopy, null, "\t"),
@@ -11404,7 +10083,7 @@ Renderer.getAutoConvertedTableRollMode = function (table) {
  */
 Renderer.getRollableRow = function (row, opts) {
 	opts = opts || {};
-	row = MiscUtil.copy(row);
+	row = MiscUtil.copyFast(row);
 	try {
 		const cleanRow = String(row[0]).trim();
 

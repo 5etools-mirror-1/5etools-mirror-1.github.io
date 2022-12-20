@@ -8,13 +8,7 @@ const BLOCKLIST_FILE_PREFIXES = [
 	"fluff-",
 
 	// specific files
-	"roll20-tables.json",
-	"roll20-items.json",
 	"makebrew-creature.json",
-	"srd-spells.json",
-	"srd-monsters.json",
-	"roll20.json",
-	"spells-stream.json",
 	"makecards.json",
 	"foundry.json",
 	"characters.json",

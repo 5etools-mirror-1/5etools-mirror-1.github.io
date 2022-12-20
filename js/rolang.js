@@ -868,7 +868,7 @@ class Ro_Lang {
 	}
 
 	static pRun (ipt, ctx, resolver) {
-		const ctxCpy = MiscUtil.copy(ctx);
+		const ctxCpy = MiscUtil.copyFast(ctx);
 		const lexer = new Ro_Lexer();
 		const lexed = lexer.lex(ipt);
 		const parser = new Ro_Parser(lexed);

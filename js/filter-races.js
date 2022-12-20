@@ -276,12 +276,14 @@ class AbilityScoreFilter extends FilterBase {
 		this._doRenderMiniPills();
 	}
 
-	getValues () {
+	getValues ({nxtState = null} = {}) {
 		const out = {
 			_totals: {yes: 0},
 		};
 
-		Object.entries(this.__state)
+		const state = nxtState?.[this.header]?.state || this.__state;
+
+		Object.entries(state)
 			.filter(([, value]) => value)
 			.forEach(([uid]) => {
 				out._totals.yes++;
@@ -291,12 +293,9 @@ class AbilityScoreFilter extends FilterBase {
 		return {[this.header]: out};
 	}
 
-	reset (isResetAll) {
-		if (isResetAll) this.resetBase();
-		Object.keys(this._state).forEach(k => delete this._state[k]);
+	_mutNextState_reset (nxtState, {isResetAll = false} = {}) {
+		Object.keys(nxtState[this.header].state).forEach(k => delete nxtState[this.header].state[k]);
 	}
-
-	resetShallow () { return this.reset(); }
 
 	update () {
 		if (this._isItemsDirty) {
@@ -523,8 +522,13 @@ class AbilityScoreFilter extends FilterBase {
 		return out;
 	}
 
-	setFromSubHashState (state) {
-		this.setMetaFromSubHashState(state);
+	getNextStateFromSubhashState (state) {
+		const nxtState = this._getNextState_base();
+
+		if (state == null) {
+			this._mutNextState_reset(nxtState);
+			return nxtState;
+		}
 
 		let hasState = false;
 
@@ -533,22 +537,21 @@ class AbilityScoreFilter extends FilterBase {
 			switch (prop) {
 				case "state": {
 					hasState = true;
-					const nxtState = {};
-
-					Object.keys(this._state).forEach(k => nxtState[k] = 0);
+					Object.keys(nxtState[this.header].state).forEach(k => nxtState[this.header].state[k] = 0);
 
 					vals.forEach(v => {
 						const [statePropLower, state] = v.split("=");
-						const stateProp = Object.keys(this._state).find(k => k.toLowerCase() === statePropLower);
-						if (stateProp) nxtState[stateProp] = Number(state) ? 1 : 0;
+						const stateProp = Object.keys(nxtState[this.header].state).find(k => k.toLowerCase() === statePropLower);
+						if (stateProp) nxtState[this.header].state[stateProp] = Number(state) ? 1 : 0;
 					});
-					this._proxyAssignSimple("state", nxtState, true);
 					break;
 				}
 			}
 		});
 
-		if (!hasState) this.reset();
+		if (!hasState) this._mutNextState_reset(nxtState);
+
+		return nxtState;
 	}
 
 	setFromValues (values) {
@@ -619,6 +622,27 @@ class AbilityScoreFilter extends FilterBase {
 		]
 			.filter(it => it != null)
 			.join("=");
+	}
+
+	getDisplayStatePart ({nxtState = null} = {}) {
+		const state = nxtState?.[this.header]?.state || this.__state;
+
+		const areNotDefaultState = this._getStateNotDefault({nxtState});
+
+		// If _any_ value is non-default, we need to include _all_ values in the tag
+		// The same goes for meta values
+		if (!areNotDefaultState.length) return null;
+
+		const ptState = Object.entries(state)
+			.filter(([, v]) => !!v)
+			.map(([k, v]) => {
+				const item = this._items.find(item => item.uid === k);
+				if (!item) return null; // Should never occur
+				return `${v === 2 ? "not " : ""}${item.getMiniPillDisplayText()}`;
+			})
+			.join(", ");
+
+		return `${this.header}: ${ptState}`;
 	}
 }
 AbilityScoreFilter._MODIFIER_SORT_OFFSET = 10000; // Arbitrarily large value

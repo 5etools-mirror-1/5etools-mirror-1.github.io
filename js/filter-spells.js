@@ -276,7 +276,11 @@ class PageFilterSpells extends PageFilter {
 	static getTblLevelStr (spell) { return `${Parser.spLevelToFull(spell.level)}${spell.meta && spell.meta.ritual ? " (rit.)" : ""}${spell.meta && spell.meta.technomagic ? " (tec.)" : ""}`; }
 
 	static getRaceFilterItem (r) {
-		const addSuffix = (r.source === SRC_DMG || SourceUtil.isNonstandardSource(r.source || SRC_PHB) || BrewUtil2.hasSourceJson(r.source || SRC_PHB)) && !r.name.includes(Parser.sourceJsonToAbv(r.source));
+		const addSuffix = (
+			r.source === SRC_DMG
+			|| SourceUtil.isNonstandardSource(r.source || SRC_PHB)
+			|| (typeof BrewUtil2 !== "undefined" && BrewUtil2.hasSourceJson(r.source || SRC_PHB))
+		) && !r.name.includes(Parser.sourceJsonToAbv(r.source));
 		const name = `${r.name}${addSuffix ? ` (${Parser.sourceJsonToAbv(r.source)})` : ""}`;
 		const opts = {
 			item: name,
@@ -316,7 +320,6 @@ class PageFilterSpells extends PageFilter {
 			nests: {},
 			groupFn: it => it.userData.group,
 		});
-		const backgroundFilter = new Filter({header: "Background"});
 		const metaFilter = new Filter({
 			header: "Components & Miscellaneous",
 			items: [...PageFilterSpells._META_FILTER_BASE_ITEMS, "Ritual", "SRD", "Basic Rules", "Has Images", "Has Token"],
@@ -406,8 +409,9 @@ class PageFilterSpells extends PageFilter {
 		this._variantClassFilter = variantClassFilter;
 		this._classAndSubclassFilter = classAndSubclassFilter;
 		this._raceFilter = raceFilter;
-		this._backgroundFilter = backgroundFilter;
-		this._eldritchInvocationFilter = new Filter({header: "Eldritch Invocation"});
+		this._backgroundFilter = new SearchableFilter({header: "Background"});
+		this._featFilter = new SearchableFilter({header: "Feat"});
+		this._optionalfeaturesFilter = new SearchableFilter({header: "Other Option/Feature"});
 		this._metaFilter = metaFilter;
 		this._schoolFilter = schoolFilter;
 		this._subSchoolFilter = subSchoolFilter;
@@ -428,7 +432,7 @@ class PageFilterSpells extends PageFilter {
 	}
 
 	static mutateForFilters (s) {
-		Renderer.spell.initClasses(s);
+		Renderer.spell.initBrewSources(s);
 
 		// used for sorting
 		s._normalisedTime = PageFilterSpells.getNormalisedTime(s.time);
@@ -450,7 +454,7 @@ class PageFilterSpells extends PageFilter {
 				return this._getSubclassFilterItem({
 					className: c.class.name,
 					classSource: c.class.source,
-					subclassShortName: c.subclass.name,
+					subclassShortName: c.subclass.shortName,
 					subclassSource: c.subclass.source,
 					subSubclassName: c.subclass.subSubclass,
 				});
@@ -469,9 +473,10 @@ class PageFilterSpells extends PageFilter {
 				.map(it => (it.userData.definedInSource && !SourceUtil.isNonstandardSource(it.userData.definedInSource)) ? new FilterItem({item: it.userData.equivalentClassName}) : null)
 				.filter(Boolean),
 		];
-		s._fRaces = Renderer.spell.getCombinedRaces(s).map(PageFilterSpells.getRaceFilterItem);
-		s._fBackgrounds = Renderer.spell.getCombinedBackgrounds(s).map(bg => bg.name);
-		s._fEldritchInvocations = s.eldritchInvocations ? s.eldritchInvocations.map(ei => ei.name) : [];
+		s._fRaces = Renderer.spell.getCombinedGeneric(s, {propSpell: "races", prop: "race"}).map(PageFilterSpells.getRaceFilterItem);
+		s._fBackgrounds = Renderer.spell.getCombinedGeneric(s, {propSpell: "backgrounds", prop: "background"}).map(it => it.name);
+		s._fFeats = Renderer.spell.getCombinedGeneric(s, {propSpell: "feats", prop: "feat"}).map(it => it.name);
+		s._fOptionalfeatures = Renderer.spell.getCombinedGeneric(s, {propSpell: "optionalfeatures", prop: "optionalfeature"}).map(it => it.name);
 		s._fTimeType = s.time.map(t => t.unit);
 		s._fDurationType = PageFilterSpells.getFilterDuration(s);
 		s._fRangeType = PageFilterSpells.getRangeType(s.range);
@@ -482,6 +487,17 @@ class PageFilterSpells extends PageFilter {
 		s._fAffectsCreatureType = s.affectsCreatureType || [...Parser.MON_TYPES];
 	}
 
+	static unmutateForFilters (s) {
+		Renderer.spell.uninitBrewSources(s);
+
+		delete s._normalisedTime;
+		delete s._normalisedRange;
+
+		Object.keys(s)
+			.filter(it => it.startsWith("_f"))
+			.forEach(it => delete s[it]);
+	}
+
 	addToFilters (s, isExcluded) {
 		if (isExcluded) return;
 
@@ -490,7 +506,8 @@ class PageFilterSpells extends PageFilter {
 		this._sourceFilter.addItem(s._fSources);
 		this._metaFilter.addItem(s._fMeta);
 		this._backgroundFilter.addItem(s._fBackgrounds);
-		this._eldritchInvocationFilter.addItem(s._fEldritchInvocations);
+		this._featFilter.addItem(s._fFeats);
+		this._optionalfeaturesFilter.addItem(s._fOptionalfeatures);
 		s._fClasses.forEach(c => this._classFilter.addItem(c));
 		s._fSubclasses.forEach(sc => {
 			this._subclassFilter.addNest(sc.nest, {isHidden: true});
@@ -518,7 +535,8 @@ class PageFilterSpells extends PageFilter {
 			this._classAndSubclassFilter,
 			this._raceFilter,
 			this._backgroundFilter,
-			this._eldritchInvocationFilter,
+			this._featFilter,
+			this._optionalfeaturesFilter,
 			this._metaFilter,
 			this._schoolFilter,
 			this._subSchoolFilter,
@@ -547,7 +565,8 @@ class PageFilterSpells extends PageFilter {
 			],
 			s._fRaces,
 			s._fBackgrounds,
-			s._fEldritchInvocations,
+			s._fFeats,
+			s._fOptionalfeatures,
 			s._fMeta,
 			s.school,
 			s.subschools,
@@ -585,6 +604,8 @@ PageFilterSpells._META_FILTER_BASE_ITEMS = [PageFilterSpells._META_ADD_CONC, Pag
 PageFilterSpells.INCHES_PER_FOOT = 12;
 PageFilterSpells.FEET_PER_MILE = 5280;
 
+globalThis.PageFilterSpells = PageFilterSpells;
+
 class ModalFilterSpells extends ModalFilter {
 	/**
 	 * @param opts
@@ -616,8 +637,10 @@ class ModalFilterSpells extends ModalFilter {
 	}
 
 	async _pInit () {
-		const brew = await BrewUtil2.pGetBrewProcessed();
-		Renderer.spell.populateHomebrewLookup(brew);
+		if (typeof BrewUtil2 !== "undefined") {
+			const brew = await BrewUtil2.pGetBrewProcessed();
+			Renderer.spell.populateHomebrewLookup(brew);
+		}
 	}
 
 	async _pLoadAllData () {
@@ -684,6 +707,8 @@ class ModalFilterSpells extends ModalFilter {
 		return listItem;
 	}
 }
+
+globalThis.ModalFilterSpells = ModalFilterSpells;
 
 class ListSyntaxSpells extends ListUiUtil.ListSyntax {
 	static _INDEXABLE_PROPS = [

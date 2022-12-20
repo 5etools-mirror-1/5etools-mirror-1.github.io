@@ -12,7 +12,7 @@ class BrewDoc {
 		this.body = opts.body;
 	}
 
-	toObject () { return MiscUtil.copy(this); }
+	toObject () { return MiscUtil.copyFast({...this}); }
 
 	static fromValues ({head, body}) {
 		return new this({
@@ -25,7 +25,7 @@ class BrewDoc {
 		const {isCopy = false} = opts;
 		return new this({
 			head: BrewDocHead.fromObject(obj.head, opts),
-			body: isCopy ? MiscUtil.copy(obj.body) : obj.body,
+			body: isCopy ? MiscUtil.copyFast(obj.body) : obj.body,
 		});
 	}
 
@@ -53,7 +53,7 @@ class BrewDoc {
 		const out = {};
 
 		jsons.forEach(json => {
-			json = isCopy ? MiscUtil.copy(json) : json;
+			json = isCopy ? MiscUtil.copyFast(json) : json;
 
 			if (isMutMakeCompatible) this._mergeObjects_mutMakeCompatible(json);
 
@@ -195,7 +195,7 @@ class BrewDocHead {
 		this.isEditable = opts.isEditable;
 	}
 
-	toObject () { return MiscUtil.copy(this); }
+	toObject () { return MiscUtil.copyFast({...this}); }
 
 	static fromValues (
 		{
@@ -218,7 +218,7 @@ class BrewDocHead {
 	}
 
 	static fromObject (obj, {isCopy = false} = {}) {
-		return new this(isCopy ? MiscUtil.copy(obj) : obj);
+		return new this(isCopy ? MiscUtil.copyFast(obj) : obj);
 	}
 
 	mutUpdate ({json}) {
@@ -258,12 +258,71 @@ class BrewUtil2 {
 
 	static _storage = StorageUtil;
 
+	/* -------------------------------------------- */
+
+	static _isInit = false;
+
 	static async pInit () {
+		if (this._isInit) return;
+		this._isInit = true;
+
 		// region Ensure the local homebrew cache is hot, to allow us to fetch from it later in a sync manner.
 		//   This is necessary to replicate the "meta" caching done for non-local brew.
 		await this._pGetBrew_pGetLocalBrew();
 		// endregion
+
+		this._pInit_doBindDragDrop();
 	}
+
+	static _pInit_doBindDragDrop () {
+		document.body.addEventListener("drop", async evt => {
+			if (EventUtil.isInInput(evt)) return;
+
+			evt.stopPropagation();
+			evt.preventDefault();
+
+			const files = evt.dataTransfer?.files;
+			if (!files?.length) return;
+
+			const pFiles = [...files].map((file, i) => {
+				if (!/\.json$/i.test(file.name)) return null;
+
+				return new Promise(resolve => {
+					const reader = new FileReader();
+					reader.onload = () => {
+						let json;
+						try {
+							json = JSON.parse(reader.result);
+						} catch (ignored) {
+							return resolve(null);
+						}
+
+						resolve({name: file.name, json});
+					};
+
+					reader.readAsText(files[i]);
+				});
+			});
+
+			const fileMetas = (await Promise.allSettled(pFiles))
+				.filter(({status}) => status === "fulfilled")
+				.map(({value}) => value)
+				.filter(Boolean);
+
+			await BrewUtil2.pAddBrewsFromFiles(fileMetas);
+
+			if (this.isReloadRequired()) location.reload();
+		});
+
+		document.body.addEventListener("dragover", evt => {
+			if (EventUtil.isInInput(evt)) return;
+
+			evt.stopPropagation();
+			evt.preventDefault();
+		});
+	}
+
+	/* -------------------------------------------- */
 
 	static async pGetCustomUrl () { return this._storage.pGet(this._STORAGE_KEY_CUSTOM_URL); }
 
@@ -272,6 +331,8 @@ class BrewUtil2 {
 			? this._storage.pRemove(this._STORAGE_KEY_CUSTOM_URL)
 			: this._storage.pSet(this._STORAGE_KEY_CUSTOM_URL, val);
 	}
+
+	/* -------------------------------------------- */
 
 	static isReloadRequired () { return this._isDirty; }
 
@@ -303,7 +364,7 @@ class BrewUtil2 {
 	}
 
 	static async _pGetBrewProcessed_ ({lockToken}) {
-		const cpyBrews = MiscUtil.copy([
+		const cpyBrews = MiscUtil.copyFast([
 			...await this.pGetBrew({lockToken}),
 			...this._brewsTemp,
 		]);
@@ -606,7 +667,7 @@ class BrewUtil2 {
 		const brewDocs = [brewDoc];
 		try {
 			lockToken = await this._LOCK.pLock({token: lockToken});
-			const brews = MiscUtil.copy(await this._pGetBrewRaw({lockToken}));
+			const brews = MiscUtil.copyFast(await this._pGetBrewRaw({lockToken}));
 
 			const brewDocsDependencies = await this._pAddBrewDependencies({brewDocs: [brewDoc], brewsRaw: brews, lockToken});
 			brewDocs.push(...brewDocsDependencies);
@@ -636,7 +697,7 @@ class BrewUtil2 {
 	static async _pAddBrewsFromFiles ({files, lockToken}) {
 		const brewDocs = files.map(file => this._getBrewDoc({json: file.json, filename: file.name}));
 
-		const brews = MiscUtil.copy(await this._pGetBrewRaw({lockToken}));
+		const brews = MiscUtil.copyFast(await this._pGetBrewRaw({lockToken}));
 
 		const brewDocsDependencies = await this._pAddBrewDependencies({brewDocs, brewsRaw: brews, lockToken});
 		brewDocs.push(...brewDocsDependencies);
@@ -667,7 +728,7 @@ class BrewUtil2 {
 	static async _pAddBrewFromMemory ({json, lockToken}) {
 		const brewDoc = this._getBrewDoc({json});
 
-		const brews = MiscUtil.copy(await this._pGetBrewRaw({lockToken}));
+		const brews = MiscUtil.copyFast(await this._pGetBrewRaw({lockToken}));
 		const brewsNxt = this._getNextBrews(brews, [brewDoc]);
 		await this.pSetBrew(brewsNxt, {lockToken});
 
@@ -691,7 +752,7 @@ class BrewUtil2 {
 	static _addTempBrewFromMemory ({json}) {
 		const brewDoc = this._getBrewDoc({json});
 
-		const brews = MiscUtil.copy(this.getBrewRawTemp());
+		const brews = MiscUtil.copyFast(this.getBrewRawTemp());
 		const brewsNxt = this._getNextBrews(brews, [brewDoc]);
 		this.setBrewRawTemp(brewsNxt);
 
@@ -708,7 +769,7 @@ class BrewUtil2 {
 	}
 
 	static async _pAddBrewsLazyFinalize_ ({lockToken}) {
-		const brews = MiscUtil.copy(await this._pGetBrewRaw({lockToken}));
+		const brews = MiscUtil.copyFast(await this._pGetBrewRaw({lockToken}));
 		const brewsNxt = this._getNextBrews(brews, this._addLazy_brewsTemp);
 		await this.pSetBrew(brewsNxt, {lockToken});
 		this._addLazy_brewsTemp = [];
@@ -726,7 +787,7 @@ class BrewUtil2 {
 	static async _pPullAllBrews_ ({lockToken, brews}) {
 		let cntPulls = 0;
 
-		brews = brews || MiscUtil.copy(await this._pGetBrewRaw({lockToken}));
+		brews = brews || MiscUtil.copyFast(await this._pGetBrewRaw({lockToken}));
 		const brewsNxt = await brews.pMap(async brew => {
 			if (!this.isPullable(brew)) return brew;
 
@@ -869,7 +930,7 @@ class BrewUtil2 {
 		if (existing) return existing;
 
 		const brew = this._getNewEditableBrewDoc();
-		const brews = [...MiscUtil.copy(await this._pGetBrewRaw()), brew];
+		const brews = [...MiscUtil.copyFast(await this._pGetBrewRaw()), brew];
 		await this.pSetBrew(brews);
 
 		return brew;
@@ -910,7 +971,7 @@ class BrewUtil2 {
 
 		const ixExisting = (brew.body?.[prop] || []).findIndex(it => it.uniqueId === ent.uniqueId);
 		if (!~ixExisting) {
-			const nxt = MiscUtil.copy(brew);
+			const nxt = MiscUtil.copyFast(brew);
 			MiscUtil.getOrSet(nxt.body, prop, []).push(ent);
 
 			await this.pUpdateBrew(nxt);
@@ -918,7 +979,7 @@ class BrewUtil2 {
 			return;
 		}
 
-		const nxt = MiscUtil.copy(brew);
+		const nxt = MiscUtil.copyFast(brew);
 		nxt.body[prop][ixExisting] = ent;
 
 		await this.pUpdateBrew(nxt);
@@ -931,7 +992,7 @@ class BrewUtil2 {
 
 		if (!brew.body?.[prop]?.length) return;
 
-		const nxt = MiscUtil.copy(brew);
+		const nxt = MiscUtil.copyFast(brew);
 		nxt.body[prop] = nxt.body[prop].filter(it => it.uniqueId !== uniqueId);
 
 		if (nxt.body[prop].length === brew.body[prop]) return; // Silently allow no-op deletes
@@ -943,7 +1004,7 @@ class BrewUtil2 {
 		const existing = await this.pGetEditableBrewDoc();
 
 		if (existing) {
-			const nxt = MiscUtil.copy(existing);
+			const nxt = MiscUtil.copyFast(existing);
 			const sources = MiscUtil.getOrSet(nxt.body, "_meta", "sources", []);
 			sources.push(sourceObj);
 
@@ -954,7 +1015,7 @@ class BrewUtil2 {
 
 		const json = {_meta: {sources: [sourceObj]}};
 		const brew = this._getBrewDoc({json, isEditable: true});
-		const brews = [...MiscUtil.copy(await this._pGetBrewRaw()), brew];
+		const brews = [...MiscUtil.copyFast(await this._pGetBrewRaw()), brew];
 		await this.pSetBrew(brews);
 	}
 
@@ -962,7 +1023,7 @@ class BrewUtil2 {
 		const existing = await this.pGetEditableBrewDoc();
 		if (!existing) throw new Error(`Editable brew document does not exist!`);
 
-		const nxt = MiscUtil.copy(existing);
+		const nxt = MiscUtil.copyFast(existing);
 		const sources = MiscUtil.get(nxt.body, "_meta", "sources");
 		if (!sources) throw new Error(`Source "${sourceObj.json}" does not exist in editable brew document!`);
 
@@ -1114,12 +1175,12 @@ class BrewUtil2 {
 						if (typeof val !== "object") return;
 
 						if (val instanceof Array) {
-							(this._cache_metas[prop] = this._cache_metas[prop] || []).push(...MiscUtil.copy(val));
+							(this._cache_metas[prop] = this._cache_metas[prop] || []).push(...MiscUtil.copyFast(val));
 							return;
 						}
 
 						this._cache_metas[prop] = this._cache_metas[prop] || {};
-						Object.assign(this._cache_metas[prop], MiscUtil.copy(val));
+						Object.assign(this._cache_metas[prop], MiscUtil.copyFast(val));
 					});
 			});
 
@@ -1127,7 +1188,7 @@ class BrewUtil2 {
 		this._cache_metas["_sources"] = (this._getBrewMetas() || [])
 			.mergeMap(({_meta}) => {
 				return (_meta?.sources || [])
-					.mergeMap(src => ({[(src.json || "").toLowerCase()]: MiscUtil.copy(src)}));
+					.mergeMap(src => ({[(src.json || "").toLowerCase()]: MiscUtil.copyFast(src)}));
 			});
 	}
 
@@ -1228,12 +1289,12 @@ class BrewUtil2 {
 	 */
 	static getMergedData (data, homebrew) {
 		const out = {};
-		Object.entries(MiscUtil.copy(data))
+		Object.entries(MiscUtil.copyFast(data))
 			.forEach(([prop, val]) => {
 				if (homebrew[prop]) {
 					if (!(homebrew[prop] instanceof Array)) throw new Error(`Brew was not array!`);
 					if (!(val instanceof Array)) throw new Error(`Data was not array!`);
-					out[prop] = [...val, ...MiscUtil.copy(homebrew[prop])];
+					out[prop] = [...val, ...MiscUtil.copyFast(homebrew[prop])];
 					return;
 				}
 				out[prop] = val;
@@ -1931,7 +1992,7 @@ class ManageBrewUi {
 
 		if (!isChooseSources) {
 			const outFilename = filename || brewName || this.constructor._getBrewName(brew);
-			const json = brew.head.isEditable ? MiscUtil.copy(brew.body) : brew.body;
+			const json = brew.head.isEditable ? MiscUtil.copyFast(brew.body) : brew.body;
 			this.constructor._mutExportableEditableData({json: json});
 			return DataUtil.userDownload(outFilename, json, {isSkipAdditionalMetadata: true});
 		}
@@ -1952,7 +2013,7 @@ class ManageBrewUi {
 		// endregion
 
 		// region Filter output by selected sources
-		const cpyBrew = MiscUtil.copy(brew.body);
+		const cpyBrew = MiscUtil.copyFast(brew.body);
 		const sourceAllowlist = new Set(choices.map(it => it.json));
 
 		cpyBrew._meta.sources = cpyBrew._meta.sources.filter(it => sourceAllowlist.has(it.json));
@@ -2111,7 +2172,7 @@ class ManageBrewUi {
 	}
 
 	_pRender_getProcBrew (brew) {
-		brew = MiscUtil.copy(brew);
+		brew = MiscUtil.copyFast(brew);
 		brew.body._meta.sources.sort((a, b) => SortUtil.ascSortLower(a.full || "", b.full || ""));
 		return brew;
 	}
@@ -2707,7 +2768,7 @@ class ManageEditableBrewContentsUi extends BaseComponent {
 
 		TabUiUtil.decorate(this, {isInitMeta: true});
 
-		this._brew = MiscUtil.copy(brew);
+		this._brew = MiscUtil.copyFast(brew);
 		this._isModal = isModal;
 
 		this._isDirty = false;

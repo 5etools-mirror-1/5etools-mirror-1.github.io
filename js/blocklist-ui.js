@@ -147,7 +147,7 @@ class BlocklistUi {
 				let [name, source] = uid.split("|");
 				source = Parser.getTagSource("item", source);
 				const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS]({name, source});
-				const item = await Renderer.hover.pCacheAndGet(UrlUtil.PG_ITEMS, source, hash);
+				const item = await DataLoader.pCacheAndGet(UrlUtil.PG_ITEMS, source, hash);
 				if (!item) return null;
 				return {displayName: item.name, hash, category: "item", source: item.source};
 			})).filter(Boolean);

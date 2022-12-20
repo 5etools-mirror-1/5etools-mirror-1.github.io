@@ -221,6 +221,8 @@ function MixinProxyBase (Cls) {
 
 class ProxyBase extends MixinProxyBase(class {}) {}
 
+globalThis.ProxyBase = ProxyBase;
+
 class UiUtil {
 	/**
 	 * @param string String to parse.
@@ -607,11 +609,15 @@ class UiUtil {
 	static bindTypingEnd ({$ipt, fnKeyup, fnKeypress, fnKeydown, fnClick} = {}) {
 		let timerTyping;
 		$ipt
-			// Trigger on blur, as tabbing out of a field triggers the keyup on the element which was tabbed into. Our
-			//   intent. however, is to trigger on any keyup which began in this field.
-			.on("keyup search paste blur", evt => {
+			.on("keyup search paste", evt => {
 				clearTimeout(timerTyping);
 				timerTyping = setTimeout(() => { fnKeyup(evt); }, UiUtil.TYPE_TIMEOUT_MS);
+			})
+			// Trigger on blur, as tabbing out of a field triggers the keyup on the element which was tabbed into. Our
+			//   intent. however, is to trigger on any keyup which began in this field.
+			.on("blur", evt => {
+				clearTimeout(timerTyping);
+				fnKeyup(evt);
 			})
 			.on("keypress", evt => {
 				if (fnKeypress) fnKeypress(evt);
@@ -1004,6 +1010,8 @@ class ListUiUtil {
 ListUiUtil.HTML_GLYPHICON_EXPAND = `[+]`;
 ListUiUtil.HTML_GLYPHICON_CONTRACT = `[\u2012]`;
 
+globalThis.ListUiUtil = ListUiUtil;
+
 class ProfUiUtil {
 	/**
 	 * @param state Initial state.
@@ -1347,7 +1355,7 @@ class TabUiUtilSide extends TabUiUtilBase {
 class SearchUiUtil {
 	static async pDoGlobalInit () {
 		elasticlunr.clearStopWords();
-		await Renderer.item.populatePropertyAndTypeReference();
+		await Renderer.item.pPopulatePropertyAndTypeReference();
 	}
 
 	static _isNoHoverCat (cat) {
@@ -1786,7 +1794,7 @@ class SearchWidget {
 
 		const nxtOpts = {
 			fnTransform: doc => {
-				const cpy = MiscUtil.copy(doc);
+				const cpy = MiscUtil.copyFast(doc);
 				Object.assign(cpy, SearchWidget.docToPageSourceHash(cpy));
 				cpy.tag = `{@spell ${doc.n.toSpellCase()}${doc.s !== SRC_PHB ? `|${doc.s}` : ""}}`;
 				return cpy;
@@ -1821,7 +1829,7 @@ class SearchWidget {
 			"entity_LegendaryGroups",
 			{
 				fnTransform: doc => {
-					const cpy = MiscUtil.copy(doc);
+					const cpy = MiscUtil.copyFast(doc);
 					Object.assign(cpy, SearchWidget.docToPageSourceHash(cpy));
 					cpy.page = "legendaryGroup";
 					return cpy;
@@ -1850,7 +1858,7 @@ class SearchWidget {
 			"entity_Feats",
 			{
 				fnTransform: doc => {
-					const cpy = MiscUtil.copy(doc);
+					const cpy = MiscUtil.copyFast(doc);
 					Object.assign(cpy, SearchWidget.docToPageSourceHash(cpy));
 					cpy.tag = `{@feat ${doc.n}${doc.s !== SRC_PHB ? `|${doc.s}` : ""}}`;
 					return cpy;
@@ -1879,7 +1887,7 @@ class SearchWidget {
 			"entity_Backgrounds",
 			{
 				fnTransform: doc => {
-					const cpy = MiscUtil.copy(doc);
+					const cpy = MiscUtil.copyFast(doc);
 					Object.assign(cpy, SearchWidget.docToPageSourceHash(cpy));
 					cpy.tag = `{@background ${doc.n}${doc.s !== SRC_PHB ? `|${doc.s}` : ""}}`;
 					return cpy;
@@ -1911,7 +1919,7 @@ class SearchWidget {
 			"entity_Races",
 			{
 				fnTransform: doc => {
-					const cpy = MiscUtil.copy(doc);
+					const cpy = MiscUtil.copyFast(doc);
 					Object.assign(cpy, SearchWidget.docToPageSourceHash(cpy));
 					cpy.tag = `{@race ${doc.n}${doc.s !== SRC_PHB ? `|${doc.s}` : ""}}`;
 					return cpy;
@@ -1940,7 +1948,7 @@ class SearchWidget {
 			"entity_OptionalFeatures",
 			{
 				fnTransform: doc => {
-					const cpy = MiscUtil.copy(doc);
+					const cpy = MiscUtil.copyFast(doc);
 					Object.assign(cpy, SearchWidget.docToPageSourceHash(cpy));
 					cpy.tag = `{@optfeature ${doc.n}${doc.s !== SRC_PHB ? `|${doc.s}` : ""}}`;
 					return cpy;
@@ -2011,7 +2019,7 @@ class SearchWidget {
 
 		const nxtOpts = {
 			fnTransform: doc => {
-				const cpy = MiscUtil.copy(doc);
+				const cpy = MiscUtil.copyFast(doc);
 				Object.assign(cpy, SearchWidget.docToPageSourceHash(cpy));
 				cpy.tag = `{@creature ${doc.n}${doc.s !== SRC_MM ? `|${doc.s}` : ""}}`;
 				return cpy;
@@ -2027,7 +2035,7 @@ class SearchWidget {
 
 	static async __pLoadItemIndex (isBasicIndex) {
 		const dataSource = async () => {
-			const allItems = await Renderer.item.pBuildList();
+			const allItems = (await Renderer.item.pBuildList()).filter(it => !it._isItemGroup);
 			return {
 				item: allItems.filter(it => {
 					if (it.type === "GV") return false;
@@ -2060,7 +2068,7 @@ class SearchWidget {
 			indexName,
 			{
 				fnTransform: doc => {
-					const cpy = MiscUtil.copy(doc);
+					const cpy = MiscUtil.copyFast(doc);
 					Object.assign(cpy, SearchWidget.docToPageSourceHash(cpy));
 					cpy.tag = `{@item ${doc.n}${doc.s !== SRC_DMG ? `|${doc.s}` : ""}}`;
 					return cpy;
@@ -3333,7 +3341,7 @@ function MixinBaseComponent (Cls) {
 			return value;
 		}
 
-		_getState () { return MiscUtil.copy(this.__state); }
+		_getState () { return MiscUtil.copyFast(this.__state); }
 
 		getPod () {
 			this.__pod = this.__pod || {
@@ -3360,7 +3368,7 @@ function MixinBaseComponent (Cls) {
 
 		getBaseSaveableState () {
 			return {
-				state: MiscUtil.copy(this.__state),
+				state: MiscUtil.copyFast(this.__state),
 			};
 		}
 
@@ -3591,7 +3599,7 @@ function MixinBaseComponent (Cls) {
 
 		static fromObject (obj, ...noModCollections) {
 			const comp = new this();
-			Object.entries(MiscUtil.copy(obj)).forEach(([k, v]) => {
+			Object.entries(MiscUtil.copyFast(obj)).forEach(([k, v]) => {
 				if (v == null) comp.__state[k] = v;
 				else if (noModCollections.includes(k) || noModCollections.includes("*")) comp.__state[k] = v;
 				else if (typeof v === "object" && v instanceof Array) comp.__state[k] = BaseComponent._toCollection(v);
@@ -3603,7 +3611,7 @@ function MixinBaseComponent (Cls) {
 		static fromObjectNoMod (obj) { return this.fromObject(obj, "*"); }
 
 		toObject (...noModCollections) {
-			const cpy = MiscUtil.copy(this.__state);
+			const cpy = MiscUtil.copyFast(this.__state);
 			Object.entries(cpy).forEach(([k, v]) => {
 				if (v == null) return;
 
@@ -3620,6 +3628,8 @@ function MixinBaseComponent (Cls) {
 }
 
 class BaseComponent extends MixinBaseComponent(ProxyBase) {}
+
+globalThis.BaseComponent = BaseComponent;
 
 class RenderableCollectionBase {
 	/**
@@ -3784,8 +3794,8 @@ class BaseLayeredComponent extends BaseComponent {
 
 	getBaseSaveableState () {
 		return {
-			state: MiscUtil.copy(this.__state),
-			layers: MiscUtil.copy(this._layers.map(l => l.getSaveableState())),
+			state: MiscUtil.copyFast(this.__state),
+			layers: MiscUtil.copyFast(this._layers.map(l => l.getSaveableState())),
 		};
 	}
 
@@ -3836,7 +3846,7 @@ class CompLayer extends ProxyBase {
 	getSaveableState () {
 		return {
 			name: this._name,
-			data: MiscUtil.copy(this.__data),
+			data: MiscUtil.copyFast(this.__data),
 		};
 	}
 
@@ -3868,7 +3878,7 @@ function MixinComponentHistory (Cls) {
 		 */
 		initHistory () {
 			// Track the initial state, and watch for further modifications
-			this._histInitialState = MiscUtil.copy(this._state);
+			this._histInitialState = MiscUtil.copyFast(this._state);
 			this._isHistDisabled = false;
 
 			this._addHookAll("state", prop => {
@@ -3881,7 +3891,7 @@ function MixinComponentHistory (Cls) {
 		}
 
 		recordHistory () {
-			const stateCopy = MiscUtil.copy(this._state);
+			const stateCopy = MiscUtil.copyFast(this._state);
 
 			// remove any un-tracked properties
 			this._histPropBlocklist.forEach(prop => delete stateCopy[prop]);
@@ -3905,7 +3915,7 @@ function MixinComponentHistory (Cls) {
 
 				const curState = this._histStackUndo.pop();
 				this._histStackRedo.push(curState);
-				const toApply = MiscUtil.copy(this._histStackUndo.last() || this._histInitialState);
+				const toApply = MiscUtil.copyFast(this._histStackUndo.last() || this._histInitialState);
 				this._histAddExcludedProperties(toApply);
 				this._setState(toApply);
 
@@ -3914,7 +3924,7 @@ function MixinComponentHistory (Cls) {
 				const lastHistDisabled = this._isHistDisabled;
 				this._isHistDisabled = true;
 
-				const toApply = MiscUtil.copy(this._histInitialState);
+				const toApply = MiscUtil.copyFast(this._histInitialState);
 				this._histAddExcludedProperties(toApply);
 				this._setState(toApply);
 
@@ -3930,7 +3940,7 @@ function MixinComponentHistory (Cls) {
 
 			const toApplyRaw = this._histStackRedo.pop();
 			this._histStackUndo.push(toApplyRaw);
-			const toApply = MiscUtil.copy(toApplyRaw);
+			const toApply = MiscUtil.copyFast(toApplyRaw);
 			this._histAddExcludedProperties(toApply);
 			this._setState(toApply);
 
@@ -3969,7 +3979,7 @@ function MixinComponentGlobalState (Cls) {
 
 MixinComponentGlobalState._Singleton = class {
 	static async _pSaveState () {
-		return StorageUtil.pSet(VeCt.STORAGE_GLOBAL_COMPONENT_STATE, MiscUtil.copy(MixinComponentGlobalState._Singleton.__stateGlobal));
+		return StorageUtil.pSet(VeCt.STORAGE_GLOBAL_COMPONENT_STATE, MiscUtil.copyFast(MixinComponentGlobalState._Singleton.__stateGlobal));
 	}
 
 	static async _pLoadState () {
@@ -4436,7 +4446,8 @@ class ComponentUiUtil {
 						break;
 					}
 
-					case "Enter": {
+					case "Enter":
+					case "Tab": {
 						const visibleMetaOptions = metaOptions.filter(it => it.isVisible && !it.isForceHidden);
 						if (!visibleMetaOptions.length) return;
 						comp._state[prop] = visibleMetaOptions[0].value;
@@ -4469,7 +4480,7 @@ class ComponentUiUtil {
 			const display = v == null ? (opts.displayNullAs || "\u2014") : opts.fnDisplay ? opts.fnDisplay(v) : v;
 			const additionalStyleClasses = opts.fnGetAdditionalStyleClasses ? opts.fnGetAdditionalStyleClasses(v) : null;
 
-			const $ele = $(`<div class="ve-flex-v-center py-1 px-1 clickable ui-sel2__disp-option ${v == null ? `italic` : ""} ${additionalStyleClasses ? additionalStyleClasses.join(" ") : ""}" tabindex="${i}">${display}</div>`)
+			const $ele = $(`<div class="ve-flex-v-center py-1 px-1 clickable ui-sel2__disp-option ${v == null ? `italic` : ""} ${additionalStyleClasses ? additionalStyleClasses.join(" ") : ""}" tabindex="0">${display}</div>`)
 				.click(() => {
 					if (opts.isDisabled) return;
 
@@ -4692,7 +4703,7 @@ class ComponentUiUtil {
 		opts = opts || {};
 
 		const getSubcompValues = () => {
-			const initialValuesArray = (opts.values || []).concat(opts.isFreeText ? MiscUtil.copy((component._state[prop] || [])) : []);
+			const initialValuesArray = (opts.values || []).concat(opts.isFreeText ? MiscUtil.copyFast((component._state[prop] || [])) : []);
 			const initialValsCompWith = opts.isCaseInsensitive ? component._state[prop].map(it => it.toLowerCase()) : component._state[prop];
 			return initialValuesArray
 				.map(v => opts.isCaseInsensitive ? v.toLowerCase() : v)
@@ -4829,6 +4840,7 @@ class ComponentUiUtil {
 
 		const cntRequired = ((opts.required || []).length) + ((opts.ixsRequired || []).length);
 		const count = opts.count != null ? opts.count - cntRequired : null;
+		const countIncludingRequired = opts.count != null ? count + cntRequired : null;
 		const min = opts.min != null ? opts.min - cntRequired : null;
 		const max = opts.max != null ? opts.max - cntRequired : null;
 
@@ -4881,7 +4893,7 @@ class ComponentUiUtil {
 
 						if (count != null) {
 							// If we're above the max allowed count, deselect a checkbox in FIFO order
-							if (activeRows.length > count) {
+							if (activeRows.length > countIncludingRequired) {
 								// FIFO (`.shift`) makes logical sense, but FILO (`.splice` second-from-last) _feels_ better
 								const ixFirstSelected = ixsSelectionOrder.splice(ixsSelectionOrder.length - 2, 1)[0];
 								if (ixFirstSelected != null) {
@@ -4896,7 +4908,7 @@ class ComponentUiUtil {
 
 						let isAcceptable = false;
 						if (count != null) {
-							if (activeRows.length === count) isAcceptable = true;
+							if (activeRows.length === countIncludingRequired) isAcceptable = true;
 						} else {
 							if (activeRows.length >= (min || 0) && activeRows.length <= (max || Number.MAX_SAFE_INTEGER)) isAcceptable = true;
 						}
@@ -5501,6 +5513,29 @@ ComponentUiUtil.RangeSlider._ALL_SLIDERS = new Set();
 ComponentUiUtil.RangeSlider._W_THUMB_PX = 16;
 ComponentUiUtil.RangeSlider._W_LABEL_PX = 24;
 ComponentUiUtil.RangeSlider._MAX_PIPS = 40;
+
+class SettingsUtil {
+	static Setting = class {
+		constructor (
+			{
+				type,
+				name,
+				help,
+				defaultVal,
+			},
+		) {
+			this.type = type;
+			this.name = name;
+			this.help = help;
+			this.defaultVal = defaultVal;
+		}
+	};
+
+	static getDefaultSettings (settings) {
+		return Object.entries(settings)
+			.mergeMap(([prop, {defaultVal}]) => ({[prop]: defaultVal}));
+	}
+}
 
 // Expose classes for Node/VTTs as appropriate
 const utilsUiExports = {

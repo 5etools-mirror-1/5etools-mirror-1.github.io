@@ -1,5 +1,13 @@
 {
 	"_meta": {
+		"dependencies": {
+			"monster": [
+				"MM"
+			]
+		},
+		"internalCopies": [
+			"monster"
+		],
 		"otherSources": {
 			"monster": {
 				"MM": "DSotDQ"
@@ -8,10 +16,41 @@
 	},
 	"monster": [
 		{
+			"name": "Amelia Ghallen",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 180,
+			"_copy": {
+				"name": "Veteran",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the veteran",
+						"with": "Durstan",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"N",
+				"G"
+			],
+			"hasToken": true
+		},
+		{
 			"name": "Andir Valmakos",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
+			"page": 210,
 			"level": 1,
 			"size": [
 				"M"
@@ -127,6 +166,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -231,6 +271,7 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -395,6 +436,7 @@
 				"charmed",
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -403,6 +445,7 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
+			"page": 211,
 			"level": 1,
 			"size": [
 				"M"
@@ -496,6 +539,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -600,8 +644,128 @@
 				"petrified",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "Bakaris the Younger",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 57,
+			"_copy": {
+				"name": "Noble",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the noble",
+						"with": "Bakaris",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Bakaris Uth Estide",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 54,
+			"_copy": {
+				"name": "Noble",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the noble",
+						"with": "Bakaris",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Becklin Uth Viharin",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 55,
+			"_copy": {
+				"name": "Knight",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the knight",
+						"with": "Becklin",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"L",
+				"G"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Belephaion",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 157,
+			"_copy": {
+				"name": "Young Blue Dragon",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the dragon",
+						"with": "Belephaion",
+						"flags": "i"
+					},
+					"action": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Alter Shape",
+							"entries": [
+								"Belephaion magically transforms into an {@creature eagle} or a {@creature priest}, while retaining his alignment, damage immunities, hit points, Hit Dice, and Intelligence, Wisdom, and Charisma scores. This transformation ends if he is reduced to 0 hit points or uses a bonus action to end it."
+							]
+						}
+					}
+				}
+			},
+			"hasToken": true
 		},
 		{
 			"name": "Bozak Draconian",
@@ -742,8 +906,29 @@
 				"invisible",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "Captain Hask",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 148,
+			"_copy": {
+				"name": "Aurak Draconian",
+				"source": "DSotDQ",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the draconian",
+						"with": "Hask",
+						"flags": "i"
+					}
+				}
+			},
+			"hasToken": true
 		},
 		{
 			"name": "Caradoc",
@@ -908,81 +1093,170 @@
 			"conditionInflict": [
 				"incapacitated"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "Clystran",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 126,
+			"_copy": {
+				"name": "Scout",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the scout",
+						"with": "Clystran",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"N",
+				"G"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Cudgel Ironsmile",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 58,
+			"_copy": {
+				"name": "Veteran",
+				"source": "MM",
+				"_trait": {
+					"name": "Mountain Dwarf",
+					"source": "PHB"
+				},
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the veteran",
+						"with": "Cudgel",
+						"flags": "i"
+					}
+				}
+			},
+			"alignment": [
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Dalamar",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 111,
+			"_copy": {
+				"name": "Mage",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the mage",
+						"with": "Dalamar",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"elf"
+				]
+			},
+			"alignment": [
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Darrett Highwater",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 59,
+			"_copy": {
+				"name": "Knight",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the knight",
+						"with": "Darrett",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"L",
+				"G"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Demelin",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 139,
+			"_copy": {
+				"name": "Archmage",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the archmage",
+						"with": "Demelin",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"elf"
+				]
+			},
+			"alignment": [
+				"N"
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Dracophage Subject",
 			"source": "DSotDQ",
 			"page": 118,
-			"size": [
-				"M"
-			],
-			"type": "monstrosity",
-			"alignment": [
-				"L",
-				"E"
-			],
-			"alignmentPrefix": "typically ",
-			"ac": [
-				{
-					"ac": 15,
-					"from": [
-						"natural armor"
-					]
+			"_copy": {
+				"name": "Kapak Draconian",
+				"source": "DSotDQ",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "draconian",
+						"with": "subject"
+					}
 				}
-			],
-			"hp": {
-				"average": 39,
-				"formula": "6d8 + 12"
 			},
-			"speed": {
-				"walk": 40,
-				"climb": 40
-			},
-			"str": 11,
-			"dex": 17,
-			"con": 14,
-			"int": 12,
-			"wis": 13,
-			"cha": 11,
-			"save": {
-				"dex": "+5"
-			},
-			"skill": {
-				"deception": "+4",
-				"perception": "+3",
-				"stealth": "+7"
-			},
-			"senses": [
-				"darkvision 60 ft."
-			],
-			"passive": 13,
-			"immune": [
-				"poison"
-			],
-			"conditionImmune": [
-				"poisoned"
-			],
-			"languages": [
-				"Common",
-				"Draconic"
-			],
-			"cr": "3",
-			"trait": [
-				{
-					"name": "Death Throes",
-					"entries": [
-						"When the draconian is reduced to 0 hit points, it dissolves into acid that splashes on those around it. Each creature within 5 feet of the draconian must succeed on a {@dc 12} Dexterity saving throw or be covered in acid for 1 minute. A creature covered in the acid takes 7 ({@damage 2d6}) acid damage at the start of each of its turns. A creature can use its action to scrape or wash the acid off itself or another creature."
-					]
-				},
-				{
-					"name": "Glide",
-					"entries": [
-						"When the draconian falls and isn't {@condition incapacitated}, it subtracts up to 100 feet from the fall when calculating the fall's damage, and it can move up to 2 feet horizontally for every 1 foot it descends."
-					]
-				}
-			],
 			"action": [
 				{
 					"name": "Claw",
@@ -993,16 +1267,6 @@
 					]
 				}
 			],
-			"traitTags": [
-				"Death Burst"
-			],
-			"senseTags": [
-				"D"
-			],
-			"languageTags": [
-				"C",
-				"DR"
-			],
 			"damageTags": [
 				"A",
 				"I",
@@ -1012,6 +1276,7 @@
 				"AOE",
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1108,6 +1373,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1211,6 +1477,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1303,8 +1570,61 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "Durstan Rial",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 97,
+			"_copy": {
+				"name": "Knight",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the knight",
+						"with": "Durstan",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Duskwalker",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 150,
+			"_copy": {
+				"name": "Treant",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the treant",
+						"with": "Duskwalker",
+						"flags": "i"
+					}
+				}
+			},
+			"alignment": [
+				"N"
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Fewmaster Gholcag",
@@ -1380,6 +1700,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1531,6 +1852,7 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1539,6 +1861,7 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
+			"page": 211,
 			"level": 1,
 			"size": [
 				"M"
@@ -1661,88 +1984,75 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "Hulking Shadow",
+			"source": "DSotDQ",
+			"page": 174,
+			"_copy": {
+				"name": "Clay Golem",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "golem",
+						"with": "shadow"
+					}
+				}
+			},
+			"type": "undead",
+			"hasToken": true
+		},
+		{
+			"name": "Ignia",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 184,
+			"_copy": {
+				"name": "Young Red Dragon",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the dragon",
+						"with": "Ignia",
+						"flags": "i"
+					}
+				}
+			},
+			"size": [
+				"H"
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Incomplete Dragon Skeleton",
 			"source": "DSotDQ",
 			"page": 138,
-			"size": [
-				"L"
-			],
-			"type": "undead",
-			"alignment": [
-				"L",
-				"E"
-			],
-			"ac": [
-				{
-					"ac": 15,
-					"from": [
-						"natural armor"
-					]
+			"_copy": {
+				"name": "Bone Naga (Spirit)",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "naga",
+						"with": "skeleton"
+					}
 				}
-			],
-			"hp": {
-				"average": 58,
-				"formula": "9d10 + 9"
 			},
-			"speed": {
-				"walk": 30
-			},
-			"str": 15,
-			"dex": 16,
-			"con": 12,
-			"int": 15,
-			"wis": 15,
-			"cha": 16,
-			"senses": [
-				"darkvision 60 ft."
-			],
-			"passive": 12,
-			"immune": [
-				"poison"
-			],
-			"conditionImmune": [
-				"charmed",
-				"exhaustion",
-				"paralyzed",
-				"poisoned"
-			],
-			"languages": [
-				"Common plus one other language"
-			],
-			"cr": "4",
-			"action": [
-				{
-					"name": "Bite",
-					"entries": [
-						"{@atk mw} {@hit 5} to hit, reach 10 ft., one creature. {@h}10 ({@damage 2d6 + 3}) piercing damage plus 10 ({@damage 3d6}) poison damage."
-					]
-				}
-			],
-			"senseTags": [
-				"D"
-			],
-			"languageTags": [
-				"C",
-				"X"
-			],
-			"damageTags": [
-				"I",
-				"P"
-			],
-			"miscTags": [
-				"MW",
-				"RCH"
-			]
+			"spellcasting": null,
+			"hasToken": true
 		},
 		{
 			"name": "Iriad",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
+			"page": 212,
 			"level": 1,
 			"size": [
 				"M"
@@ -1849,8 +2159,33 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "Ishvern",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 114,
+			"_copy": {
+				"name": "Sea Elf Scout",
+				"source": "DSotDQ",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the scout",
+						"with": "Ishvern",
+						"flags": "i"
+					}
+				}
+			},
+			"alignment": [
+				"N",
+				"G"
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Istarian Drone",
@@ -1962,8 +2297,39 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "Jeyev Veldrews",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 75,
+			"_copy": {
+				"name": "Bandit Captain",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the captain",
+						"with": "Jeyev",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Kalaman Soldier",
@@ -2042,6 +2408,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2195,6 +2562,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2312,8 +2680,33 @@
 				"paralyzed",
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "Karavarix",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 183,
+			"_copy": {
+				"name": "Greater Death Dragon",
+				"source": "DSotDQ",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the dragon",
+						"with": "Karavarix",
+						"flags": "i"
+					}
+				}
+			},
+			"alignment": [
+				"C",
+				"E"
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Kender Skirmisher",
@@ -2394,6 +2787,7 @@
 				"MW",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2541,6 +2935,7 @@
 				"frightened",
 				"incapacitated"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2671,6 +3066,7 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2679,6 +3075,7 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
+			"page": 213,
 			"level": 1,
 			"size": [
 				"M"
@@ -2773,6 +3170,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2925,6 +3323,7 @@
 			"conditionInflictSpell": [
 				"charmed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3122,8 +3521,82 @@
 				"paralyzed",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "Lorry Wanwillow",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 177,
+			"_copy": {
+				"name": "Vampire",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the vampire",
+						"with": "Lorry",
+						"flags": "i"
+					},
+					"trait": {
+						"mode": "replaceArr",
+						"replace": "Shapechanger",
+						"items": {
+							"name": "Shapechanger",
+							"entries": [
+								"If Lorry isn't in sunlight or running water, it can use its action to polymorph into a Tiny rat or a Medium cloud of mist, or back into its true form.",
+								"While in bat form, Lorry can't speak, its walking speed is 5 feet, and it has a flying speed of 30 feet. Its statistics, other than its size and speed, are unchanged. Anything it is wearing transforms with it, but nothing it is carrying does. It reverts to its true form if it dies.",
+								"While in mist form, Lorry can't take any actions, speak, or manipulate objects. It is weightless, has a flying speed of 20 feet, can hover, and can enter a hostile creature's space and stop there. In addition, if air can pass through a space, the mist can do so without squeezing, and it can't pass through water. It has advantage on Strength, Dexterity, and Constitution saving throws, and it is immune to all nonmagical damage, except the damage it takes from sunlight."
+							]
+						}
+					}
+				}
+			},
+			"type": {
+				"type": "undead",
+				"tags": [
+					"shapechanger",
+					"kender"
+				]
+			},
+			"alignment": [
+				"C",
+				"E"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Raven Uth Vogler",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 53,
+			"_copy": {
+				"name": "Scout",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the scout",
+						"with": "Raven",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"N",
+				"G"
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Red Ruin",
@@ -3238,8 +3711,29 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "Sarlamir",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 102,
+			"_copy": {
+				"name": "Skeletal Knight",
+				"source": "DSotDQ",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the skeletal knight",
+						"with": "Sarlamir",
+						"flags": "i"
+					}
+				}
+			},
+			"hasToken": true
 		},
 		{
 			"name": "Sea Elf Scout",
@@ -3354,6 +3848,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -3464,6 +3959,7 @@
 				"frightened",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3576,14 +4072,44 @@
 				"MW",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "Tatina Rookledust",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 87,
+			"_copy": {
+				"name": "Acolyte",
+				"source": "MM",
+				"_trait": {
+					"name": "Rock Gnome",
+					"source": "PHB"
+				},
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the acolyte",
+						"with": "Tatina",
+						"flags": "i"
+					}
+				}
+			},
+			"alignment": [
+				"N",
+				"G"
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Tem Temble",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "DSotDQ",
+			"page": 213,
 			"level": 1,
 			"size": [
 				"S"
@@ -3710,8 +4236,35 @@
 				"MW",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "Undead Soldier",
+			"source": "DSotDQ",
+			"page": 96,
+			"_copy": {
+				"name": "Wight",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "wight",
+						"with": "soldier"
+					}
+				}
+			},
+			"ac": [
+				{
+					"ac": 18,
+					"from": [
+						"{@item plate armor|phb}"
+					]
+				}
+			],
+			"trait": null,
+			"hasToken": true
 		},
 		{
 			"name": "Virruza",
@@ -3719,168 +4272,29 @@
 			"isNamedCreature": true,
 			"source": "DSotDQ",
 			"page": 119,
-			"size": [
-				"L"
-			],
-			"type": "aberration",
-			"alignment": [
-				"C",
-				"N"
-			],
-			"ac": [
-				{
-					"ac": 16,
-					"from": [
-						"natural armor"
-					]
-				}
-			],
-			"hp": {
-				"average": 127,
-				"formula": "15d10 + 45"
-			},
-			"speed": {
-				"walk": 30
-			},
-			"str": 18,
-			"dex": 15,
-			"con": 16,
-			"int": 11,
-			"wis": 8,
-			"cha": 12,
-			"skill": {
-				"arcana": "+3",
-				"perception": "+2"
-			},
-			"senses": [
-				"blindsight 30 ft.",
-				"darkvision 60 ft."
-			],
-			"passive": 12,
-			"resist": [
-				"acid",
-				"cold",
-				"fire",
-				"lightning",
-				"thunder"
-			],
-			"languages": [
-				"Slaad",
-				"telepathy 60 ft."
-			],
-			"cr": "8",
-			"spellcasting": [
-				{
-					"name": "Innate Spellcasting",
-					"headerEntries": [
-						"Virruza's innate spellcasting ability is Charisma (spell save {@dc 12}). Virruza can innately cast the following spells, requiring no material components:"
-					],
-					"will": [
-						"{@spell detect magic}",
-						"{@spell detect thoughts}",
-						"{@spell mage hand}"
-					],
-					"daily": {
-						"1": [
-							"{@spell fireball}"
-						],
-						"2e": [
-							"{@spell fear}",
-							"{@spell invisibility} (self only)"
-						]
+			"_copy": {
+				"name": "Green Slaad",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the slaad",
+						"with": "Virruza",
+						"flags": "i"
 					},
-					"ability": "cha"
+					"trait": {
+						"mode": "replaceArr",
+						"replace": "Shapechanger",
+						"items": {
+							"name": "Death Throes",
+							"entries": [
+								"When Virruza is reduced to 0 hit points, he turns into a puddle of acid and splashes acid on those around him. Each creature within 5 feet of him must succeed on a DC 12 Dexterity saving throw or be covered in acid for 1 minute. A creature can use its action to scrape or wash the acid off itself or another creature. A creature covered in the acid takes 7 ({@dice 2d6}) acid damage at the start of each of its turns."
+							]
+						}
+					}
 				}
-			],
-			"trait": [
-				{
-					"name": "Death Throes",
-					"entries": [
-						"When Virruza is reduced to 0 hit points, he turns into a puddle of acid and splashes acid on those around him. Each creature within 5 feet of him must succeed on a {@dc 12} Dexterity saving throw or be covered in acid for 1 minute. A creature can use its action to scrape or wash the acid off itself or another creature. A creature covered in the acid takes 7 ({@damage 2d6}) acid damage at the start of each of its turns."
-					]
-				},
-				{
-					"name": "Magic Resistance",
-					"entries": [
-						"Virruza has advantage on saving throws against spells and other magical effects."
-					]
-				},
-				{
-					"name": "Regeneration",
-					"entries": [
-						"Virruza regains 10 hit points at the start of his turn if he has at least 1 hit point."
-					]
-				}
-			],
-			"action": [
-				{
-					"name": "Multiattack",
-					"entries": [
-						"Virruza makes three attacks: one with his bite and two with his claws or staff. Alternatively, he uses his Hurl Flame twice."
-					]
-				},
-				{
-					"name": "Bite",
-					"entries": [
-						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) piercing damage."
-					]
-				},
-				{
-					"name": "Claw",
-					"entries": [
-						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d6 + 4}) slashing damage."
-					]
-				},
-				{
-					"name": "Staff",
-					"entries": [
-						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) bludgeoning damage."
-					]
-				},
-				{
-					"name": "Hurl Flame",
-					"entries": [
-						"{@atk rs} {@hit 4} to hit, range 60 ft., one target. {@h}10 ({@damage 3d6}) fire damage. The fire ignites flammable objects that aren't being worn or carried."
-					]
-				}
-			],
-			"traitTags": [
-				"Death Burst",
-				"Magic Resistance",
-				"Regeneration"
-			],
-			"senseTags": [
-				"B",
-				"D"
-			],
-			"actionTags": [
-				"Multiattack"
-			],
-			"languageTags": [
-				"OTH",
-				"TP"
-			],
-			"damageTags": [
-				"A",
-				"B",
-				"F",
-				"P",
-				"S"
-			],
-			"damageTagsSpell": [
-				"F"
-			],
-			"spellcastingTags": [
-				"I"
-			],
-			"miscTags": [
-				"AOE",
-				"MW"
-			],
-			"conditionInflictSpell": [
-				"frightened",
-				"invisible"
-			],
+			},
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3979,6 +4393,7 @@
 				"MW",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4116,8 +4531,39 @@
 			"conditionInflict": [
 				"frightened"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "Wyhan",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DSotDQ",
+			"page": 79,
+			"_copy": {
+				"name": "Mage",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the mage",
+						"with": "Wyhan",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"L",
+				"E"
+			],
+			"hasToken": true
 		}
 	]
 }

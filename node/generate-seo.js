@@ -3,19 +3,17 @@
  */
 
 const fs = require("fs");
-require("../js/utils");
-require("../js/render");
-require("../js/render-dice");
-
-function rd (path) {
-	return JSON.parse(fs.readFileSync(path, "utf-8"));
-}
+require("../js/utils.js");
+require("../js/utils-dataloader.js");
+require("../js/render.js");
+require("../js/render-dice.js");
+const ut = require("./util.js");
 
 const IS_DEV_MODE = !!process.env.VET_SEO_IS_DEV_MODE;
 const BASE_SITE_URL = process.env.VET_BASE_SITE_URL || "https://5e.tools/";
 const isSkipUaEtc = !!process.env.VET_SEO_IS_SKIP_UA_ETC;
 const isOnlyVanilla = !!process.env.VET_SEO_IS_ONLY_VANILLA;
-const version = rd("package.json").version;
+const version = ut.readJson("package.json").version;
 
 const lastMod = (() => {
 	const date = new Date();
@@ -95,6 +93,7 @@ const getTemplateDev = (page, source, hash, textStyle, isFluff) => `<!DOCTYPE ht
 <script type="text/javascript" src="/js/omnidexer.js"></script>
 <script type="text/javascript" src="/js/omnisearch.js"></script>
 <script type="text/javascript" src="/js/filter.js"></script>
+<script type="text/javascript" src="/js/utils-dataloader.js"></script>
 <script type="text/javascript" src="/js/utils-brew.js"></script>
 <script type="text/javascript" src="/js/render.js"></script>
 <script type="text/javascript" src="/js/render-dice.js"></script>
@@ -103,24 +102,15 @@ const getTemplateDev = (page, source, hash, textStyle, isFluff) => `<!DOCTYPE ht
 <script type="text/javascript" src="/js/render-${page}.js"></script>
 <script type="text/javascript" src="/js/seo-loader.js"></script></body></html>`;
 
-// Monkey patch
-(() => {
-	DataUtil.loadJSON = async (url) => {
-		const data = rd(url);
-		await DataUtil.pDoMetaMerge(url, data);
-		return data;
-	};
-})();
-
 const toGenerate = [
 	{
 		page: "spells",
 		pGetEntries: () => {
-			const index = rd(`data/spells/index.json`);
+			const index = ut.readJson(`data/spells/index.json`);
 			const fileData = Object.entries(index)
 				.filter(([source]) => !isSkipUaEtc || !SourceUtil.isNonstandardSourceWotc(source))
 				.filter(([source]) => !isOnlyVanilla || Parser.SOURCES_VANILLA.has(source))
-				.map(([_, filename]) => rd(`data/spells/${filename}`));
+				.map(([_, filename]) => ut.readJson(`data/spells/${filename}`));
 			return fileData.map(it => MiscUtil.copy(it.spell)).reduce((a, b) => a.concat(b));
 		},
 		style: 1,
@@ -129,11 +119,11 @@ const toGenerate = [
 	{
 		page: "bestiary",
 		pGetEntries: () => {
-			const index = rd(`data/bestiary/index.json`);
+			const index = ut.readJson(`data/bestiary/index.json`);
 			const fileData = Object.entries(index)
 				.filter(([source]) => !isSkipUaEtc || !SourceUtil.isNonstandardSourceWotc(source))
 				.filter(([source]) => !isOnlyVanilla || Parser.SOURCES_VANILLA.has(source))
-				.map(([source, filename]) => ({source: source, json: rd(`data/bestiary/${filename}`)}));
+				.map(([source, filename]) => ({source: source, json: ut.readJson(`data/bestiary/${filename}`)}));
 			// Filter to prevent duplicates from "otherSources" copies
 			return fileData.map(it => MiscUtil.copy(it.json.monster.filter(mon => mon.source === it.source))).reduce((a, b) => a.concat(b));
 		},
@@ -143,7 +133,7 @@ const toGenerate = [
 	{
 		page: "items",
 		pGetEntries: async () => {
-			const out = await Renderer.item.pBuildList();
+			const out = (await Renderer.item.pBuildList()).filter(it => !it._isItemGroup);
 			return out
 				.filter(it => !isSkipUaEtc || !SourceUtil.isNonstandardSourceWotc(it.source))
 				.filter(it => !isOnlyVanilla || Parser.SOURCES_VANILLA.has(it.source));
@@ -158,6 +148,8 @@ const toGenerate = [
 const siteMapData = {};
 
 async function main () {
+	ut.patchLoadJson();
+
 	let total = 0;
 	console.log(`Generating SEO pages...`);
 	await Promise.all(toGenerate.map(async meta => {
@@ -231,6 +223,8 @@ async function main () {
 
 	fs.writeFileSync("./sitemap.xml", sitemap, "utf-8");
 	console.log(`Wrote ${sitemapLinkCount.toLocaleString()} URL${sitemapLinkCount === 1 ? "" : "s"} to sitemap.xml`);
+
+	ut.unpatchLoadJson();
 }
 
 main().then(() => console.log(`SEO page generation complete.`)).catch(e => console.error(e));

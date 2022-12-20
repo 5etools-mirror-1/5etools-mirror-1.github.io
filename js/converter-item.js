@@ -5,7 +5,7 @@ if (typeof module !== "undefined") {
 	Object.assign(global, cv);
 	const cvItem = require("./converterutils-item.js");
 	Object.assign(global, cvItem);
-	global.PropOrder = require("./utils-proporder.js");
+	require("./utils-proporder.js");
 	Object.assign(global, require("./converterutils-entries.js"));
 }
 
@@ -196,7 +196,7 @@ class ItemParser extends BaseParser {
 				const [rarityRaw, ...rest] = part.split("(");
 				const rarity = rarityRaw.trim().toLowerCase();
 
-				const isHandledRarity = handlePartRarity(rarity);
+				const isHandledRarity = rarity ? handlePartRarity(rarity) : true;
 				if (!isHandledRarity) options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Rarity "${rarityRaw}" requires manual conversion`);
 
 				let attunement = rest.join("(");

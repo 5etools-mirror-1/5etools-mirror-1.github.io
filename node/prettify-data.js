@@ -3,7 +3,7 @@
 const fs = require("fs");
 const ut = require("./util");
 require("../js/utils");
-const PropOrder = require("../js/utils-proporder");
+require("../js/utils-proporder.js");
 
 const FILE_BLOCKLIST = new Set([
 	"loot.json",
@@ -15,11 +15,7 @@ const FILE_BLOCKLIST = new Set([
 	"life.json",
 	"makecards.json",
 	"renderdemo.json",
-	"roll20-items.json",
-	"roll20-spells.json",
-	"roll20-tables.json",
 	"foundry.json",
-	"roll20.json",
 	"makebrew-creature.json",
 ]);
 
@@ -83,9 +79,9 @@ function getFnListSort (prop) {
 		case "recipeFluff":
 		case "sense":
 		case "skill":
-			return (a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source);
+			return SortUtil.ascSortGenericEntity.bind(SortUtil);
 		case "deity":
-			return (a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source) || SortUtil.ascSortLower(a.pantheon, b.pantheon);
+			return SortUtil.ascSortDeity.bind(SortUtil);
 		case "class":
 			return (a, b) => SortUtil.ascSortDateString(Parser.sourceJsonToDate(b.source), Parser.sourceJsonToDate(a.source)) || SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source);
 		case "subclass":
@@ -107,8 +103,8 @@ function getFnListSort (prop) {
 			|| SortUtil.ascSortLower(a.raceSource, b.raceSource)
 			|| SortUtil.ascSortLower(a.name || "", b.name || "")
 			|| SortUtil.ascSortLower(a.source, b.source);
-		case "adventure": return (a, b) => SortUtil.ascSortAdventure(a, b);
-		case "book": return (a, b) => SortUtil.ascSortBook(a, b);
+		case "adventure": return SortUtil.ascSortAdventure.bind(SortUtil);
+		case "book": return SortUtil.ascSortBook.bind(SortUtil);
 		default: throw new Error(`Unhandled prop "${prop}"`);
 	}
 }

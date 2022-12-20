@@ -163,7 +163,7 @@ class NavBar {
 			},
 		);
 		this._addElement_dropdown(NavBar._CAT_SETTINGS, NavBar._CAT_CACHE, {isSide: true});
-		this._addElement_label(NavBar._CAT_CACHE, `Note that visiting a page will automatically preload data for that page.<br>Note that data which is already preloaded will not be overwritten, unless it is out of date.`);
+		this._addElement_label(NavBar._CAT_CACHE, `<p>Preload data for offline use.</p><p>Note that visiting a page will automatically preload data for that page.</p><p>Note that data which is already preloaded will not be overwritten, unless it is out of date.</p>`);
 		this._addElement_button(
 			NavBar._CAT_CACHE,
 			{
@@ -257,7 +257,7 @@ class NavBar {
 				fnSort: SortUtil.ascSortAdventure.bind(SortUtil),
 			},
 		].forEach(({prop, parentCategory, page, fnSort}) => {
-			const formBrew = MiscUtil.copy(brew?.[prop] || []);
+			const formBrew = MiscUtil.copyFast(brew?.[prop] || []);
 			formBrew.forEach(it => {
 				if (it.parentSource) it.parentName = Parser.sourceJsonToFull(it.parentSource);
 			});

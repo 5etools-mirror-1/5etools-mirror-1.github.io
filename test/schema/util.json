@@ -3,7 +3,7 @@
 	"$id": "util.json",
 	"title": "Util",
 	"description": "Utility definitions to be used in other schemas.",
-	"version": "1.13.3",
+	"version": "1.13.4",
 	"$defs": {
 		"metaBlock": {
 			"type": "object",
@@ -3165,7 +3165,7 @@
 					"description": "Spells keyed by character/class level.",
 					"oneOf": [
 						{
-							"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+							"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 						},
 						{
 							"$ref": "#/$defs/_additionalSpellLevelObject"
@@ -3176,7 +3176,7 @@
 					"description": "Spells keyed by spell level, access to which is gated behind the character advancing to a point where they could cast those spells with e.g. a Spellcasting class feature (Mark spells from ERLW races)",
 					"oneOf": [
 						{
-							"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+							"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 						},
 						{
 							"$ref": "#/$defs/_additionalSpellLevelObject"
@@ -3189,7 +3189,7 @@
 					"description": "Spells gained when gaining a particular feature, regardless of level or caster level",
 					"oneOf": [
 						{
-							"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+							"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 						},
 						{
 							"$ref": "#/$defs/_additionalSpellLevelObject"
@@ -3211,11 +3211,11 @@
 				},
 				"will": {
 					"description": "At-will spells",
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"ritual": {
 					"description": "Ritual-only spells",
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"resource": {
 					"description": "Spells which cost a specific resource to use (such as Ki), but otherwise have no restrictions",
@@ -3223,7 +3223,7 @@
 				},
 				"_": {
 					"description": "Spells which do not fall into the above categories (i.e. have no specific recharge, and are simply known)",
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				}
 			},
 			"additionalProperties": false
@@ -3232,69 +3232,82 @@
 			"type": "object",
 			"properties": {
 				"1": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"2": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"3": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"4": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"5": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"6": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"7": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"8": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"9": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"9e": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"8e": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"7e": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"6e": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"5e": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"4e": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"3e": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"2e": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				},
 				"1e": {
-					"$ref": "#/$defs/_additionalSpellArrayOfStringOrChoiceObject"
+					"$ref": "#/$defs/_additionalSpellArrayOfStringOrFilterObject"
 				}
 			},
 			"additionalProperties": false
 		},
-		"_additionalSpellArrayOfStringOrChoiceObject": {
+		"_additionalSpellArrayOfStringOrFilterObject": {
 			"type": "array",
 			"minItems": 1,
 			"items": {
 				"oneOf": [
 					{
 						"type": "string"
+					},
+					{
+						"type": "object",
+						"properties": {
+							"all": {
+								"type": "string",
+								"description": "A range of spells to be added, formatted similarly to the options in a {@filter ...} tag. \nFor example: \"level=0|class=Wizard\""
+							}
+						},
+						"required": [
+							"all"
+						],
+						"additionalProperties": false
 					},
 					{
 						"type": "object",

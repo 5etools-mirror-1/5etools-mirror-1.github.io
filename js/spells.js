@@ -51,6 +51,14 @@ class SpellsSublistManager extends SublistManager {
 	}
 }
 
+class SpellsPageSettingsManager extends ListPageSettingsManager {
+	_getSettings () {
+		return {
+			...RenderSpells.SETTINGS,
+		};
+	}
+}
+
 class SpellsPage extends ListPageMultiSource {
 	constructor () {
 		const pFnGetFluff = Renderer.spell.pGetFluff.bind(Renderer.spell);
@@ -113,9 +121,11 @@ class SpellsPage extends ListPageMultiSource {
 
 			isMarkdownPopout: true,
 
-			jsonDir: "data/spells/",
+			propLoader: "spell",
 
 			listSyntax: new ListSyntaxSpells({fnGetDataList: () => this._dataList, pFnGetFluff}),
+
+			compSettings: new SpellsPageSettingsManager(),
 		});
 
 		this._lastFilterValues = null;
@@ -304,7 +314,7 @@ class SpellsPage extends ListPageMultiSource {
 		const spell = this._dataList[id];
 
 		const buildStatsTab = () => {
-			this._$pgContent.append(RenderSpells.$getRenderedSpell(spell, this._subclassLookup));
+			this._$pgContent.append(RenderSpells.$getRenderedSpell(spell, this._subclassLookup, {settings: this._compSettings.getValues()}));
 		};
 
 		const buildFluffTab = (isImageTab) => {

@@ -71,7 +71,7 @@
 				{"$ref": "util.json#/$defs/rarity"},
 				{
 					"type": "string",
-					"description": "\"None\" is for mundane items. \"Unknown (Magic)\" is for miscellaneous magical items. \"Unknown\" is for miscellaneous mundane items. \"Varies\" is for item groups.",
+					"description": "\"none\" is for mundane items. \"unknown (magic)\" is for miscellaneous magical items. \"unknown\" is for miscellaneous mundane items. \"varies\" is for item groups, or for magic variants, where it has the special functionality of maintaining a base item's rarity when creating specific variants.",
 					"enum": [
 						"none",
 						"unknown",
