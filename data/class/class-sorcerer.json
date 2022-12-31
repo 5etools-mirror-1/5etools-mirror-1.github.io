@@ -225,8 +225,8 @@
 				},
 				{
 					"colLabels": [
-						"{@filter Cantrips Known|spells|level=0|class=Cleric}",
-						"{@filter Spells Known|spells|class=Cleric}"
+						"{@filter Cantrips Known|spells|level=0|class=sorcerer}",
+						"{@filter Spells Known|spells|class=sorcerer}"
 					],
 					"rows": [
 						[
@@ -314,15 +314,15 @@
 				{
 					"title": "Spell Slots per Spell Level",
 					"colLabels": [
-						"{@filter 1st|spells|level=1|class=Cleric}",
-						"{@filter 2nd|spells|level=2|class=Cleric}",
-						"{@filter 3rd|spells|level=3|class=Cleric}",
-						"{@filter 4th|spells|level=4|class=Cleric}",
-						"{@filter 5th|spells|level=5|class=Cleric}",
-						"{@filter 6th|spells|level=6|class=Cleric}",
-						"{@filter 7th|spells|level=7|class=Cleric}",
-						"{@filter 8th|spells|level=8|class=Cleric}",
-						"{@filter 9th|spells|level=9|class=Cleric}"
+						"{@filter 1st|spells|level=1|class=sorcerer}",
+						"{@filter 2nd|spells|level=2|class=sorcerer}",
+						"{@filter 3rd|spells|level=3|class=sorcerer}",
+						"{@filter 4th|spells|level=4|class=sorcerer}",
+						"{@filter 5th|spells|level=5|class=sorcerer}",
+						"{@filter 6th|spells|level=6|class=sorcerer}",
+						"{@filter 7th|spells|level=7|class=sorcerer}",
+						"{@filter 8th|spells|level=8|class=sorcerer}",
+						"{@filter 9th|spells|level=9|class=sorcerer}"
 					],
 					"rowsSpellProgression": [
 						[
