@@ -1463,7 +1463,7 @@
 		{
 			"name": "Chain (Chain Devil)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 10 ft., one target. {@h}<$damage_avg__7+str$> ({@damage 2d6<$damage_mod__str$>}) slashing damage. The target is {@condition grappled} (escape DC <$dc_str$>) if the <$short_name$> isn't already grappling a creature. Until this grapple ends, the target is {@condition restrained} and takes 7 ({@damage 2d6}) piercing damage at the start of each of its turns."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 10 ft., one target. {@h}<$damage_avg__7+str$> ({@damage 2d6<$damage_mod__str$>}) slashing damage. The target is {@condition grappled} (escape DC <$dc__str$>) if the <$short_name$> isn't already grappling a creature. Until this grapple ends, the target is {@condition restrained} and takes 7 ({@damage 2d6}) piercing damage at the start of each of its turns."
 			]
 		},
 		{
@@ -1495,13 +1495,13 @@
 		{
 			"name": "Constrict (Behir)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one Large or smaller creature. {@h}17 ({@damage 2d10<$damage_mod__str$>}) bludgeoning damage plus 17 ({@damage 2d10<$damage_mod__str$>}) slashing damage. The target is {@condition grappled} (escape DC <$dc_str$>) if the <$short_name$> isn't already constricting a creature, and the target is {@condition restrained} until this grapple ends."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one Large or smaller creature. {@h}17 ({@damage 2d10<$damage_mod__str$>}) bludgeoning damage plus 17 ({@damage 2d10<$damage_mod__str$>}) slashing damage. The target is {@condition grappled} (escape DC <$dc__str$>) if the <$short_name$> isn't already constricting a creature, and the target is {@condition restrained} until this grapple ends."
 			]
 		},
 		{
 			"name": "Constrict (Constrictor Snake)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}<$damage_avg__4+str$> ({@damage 1d8<$damage_mod__str$>}) bludgeoning damage, and the target is {@condition grappled} (escape DC <$dc_str$>). Until this grapple ends, the creature is {@condition restrained}, and the <$short_name$> can't constrict another target."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}<$damage_avg__4+str$> ({@damage 1d8<$damage_mod__str$>}) bludgeoning damage, and the target is {@condition grappled} (escape DC <$dc__str$>). Until this grapple ends, the creature is {@condition restrained}, and the <$short_name$> can't constrict another target."
 			]
 		},
 		{
@@ -1895,7 +1895,7 @@
 		{
 			"name": "Tail (Marilith)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 10 ft., one creature. {@h}<$damage_avg__11+str$> ({@damage 2d10<$damage_mod__str$>}) bludgeoning damage. If the target is Medium or smaller, it is {@condition grappled} (escape DC <$dc_str$>). Until this grapple ends, the target is {@condition restrained}, the <$short_name$> can automatically hit the target with its tail, and the <$short_name$> can't make tail attacks against other targets."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 10 ft., one creature. {@h}<$damage_avg__11+str$> ({@damage 2d10<$damage_mod__str$>}) bludgeoning damage. If the target is Medium or smaller, it is {@condition grappled} (escape DC <$dc__str$>). Until this grapple ends, the target is {@condition restrained}, the <$short_name$> can automatically hit the target with its tail, and the <$short_name$> can't make tail attacks against other targets."
 			]
 		},
 		{
