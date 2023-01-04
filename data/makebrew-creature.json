@@ -1433,37 +1433,37 @@
 		{
 			"name": "Bite (Cloaker)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}10 ({@damage 2d6 + 3}) piercing damage, and if the target is Large or smaller, the <$short_name$> attaches to it. If the <$short_name$> has advantage against the target, the <$short_name$> attaches to the target's head, and the target is {@condition blinded} and unable to breathe while the <$short_name$> is attached. While attached, the <$short_name$> can make this attack only against the target and has advantage on the attack roll. The <$short_name$> can detach itself by spending 5 feet of its movement. A creature, including the target, can take its action to detach the <$short_name$> by succeeding on a {@dc 16} Strength check."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}<$damage_avg__6+str$> ({@damage  2d6<$damage_mod__str$>}) piercing damage, and if the target is Large or smaller, the <$short_name$> attaches to it. If the <$short_name$> has advantage against the target, the <$short_name$> attaches to the target's head, and the target is {@condition blinded} and unable to breathe while the <$short_name$> is attached. While attached, the <$short_name$> can make this attack only against the target and has advantage on the attack roll. The <$short_name$> can detach itself by spending 5 feet of its movement. A creature, including the target, can take its action to detach the <$short_name$> by succeeding on a DC <$dc__str$> check."
 			]
 		},
 		{
 			"name": "Bite (Cockatrice)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}3 ({@damage 1d4 + 1}) piercing damage, and the target must succeed on a {@dc 11} Constitution saving throw against being magically {@condition petrified}. On a failed save, the creature begins to turn to stone and is {@condition restrained}. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is {@condition petrified} for 24 hours."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}<$damage_avg__2.5+str$> ({@damage 1d4<$damage_mod__str$>}) piercing damage, and the target must succeed on a DC <$dc__con$> saving throw against being magically {@condition petrified}. On a failed save, the creature begins to turn to stone and is {@condition restrained}. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is {@condition petrified} for 24 hours."
 			]
 		},
 		{
 			"name": "Bite (Death Dog)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage. If the target is a creature, it must succeed on a {@dc 12} Constitution saving throw against disease or become {@condition poisoned} until the disease is cured. Every 24 hours that elapse, the creature must repeat the saving throw, reducing its hit point maximum by 5 ({@dice 1d10}) on a failure. This reduction lasts until the disease is cured. The creature dies if the disease reduces its hit point maximum to 0."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one target. {@h}<$damage_avg__3+str$> ({@damage 1d6<$damage_mod__str$>}) piercing damage. If the target is a creature, it must succeed on a DC <$dc__con$> saving throw against disease or become {@condition poisoned} until the disease is cured. Every 24 hours that elapse, the creature must repeat the saving throw, reducing its hit point maximum by 5 ({@dice 1d10}) on a failure. This reduction lasts until the disease is cured. The creature dies if the disease reduces its hit point maximum to 0."
 			]
 		},
 		{
 			"name": "Bite (Kraken)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one target. {@h}23 ({@damage 3d8 + 10}) piercing damage. If the target is a Large or smaller creature {@condition grappled} by the <$short_name$>, that creature is swallowed, and the grapple ends. While swallowed, the creature is {@condition blinded} and {@condition restrained}, it has total cover against attacks and other effects outside the <$short_name$>, and it takes 42 ({@damage 12d6}) acid damage at the start of each of the <$short_name$>'s turns. If the <$short_name$> takes 50 damage or more on a single turn from a creature inside it, the <$short_name$> must succeed on a {@dc 25} Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall {@condition prone} in a space within 10 feet of the <$short_name$>. If the <$short_name$> dies, a swallowed creature is no longer {@condition restrained} by it and can escape from the corpse using 15 feet of movement, exiting {@condition prone}."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one target. {@h}<$damage_avg__12+str$> ({@damage 3d8<$damage_mod__str$>}) piercing damage. If the target is a Large or smaller creature {@condition grappled} by the <$short_name$>, that creature is swallowed, and the grapple ends. While swallowed, the creature is {@condition blinded} and {@condition restrained}, it has total cover against attacks and other effects outside the <$short_name$>, and it takes 42 ({@damage 12d6}) acid damage at the start of each of the <$short_name$>'s turns. If the <$short_name$> takes 50 damage or more on a single turn from a creature inside it, the <$short_name$> must succeed on a DC <$dc__con$> saving throw at the end of that turn or regurgitate all swallowed creatures, which fall {@condition prone} in a space within 10 feet of the <$short_name$>. If the <$short_name$> dies, a swallowed creature is no longer {@condition restrained} by it and can escape from the corpse using 15 feet of movement, exiting {@condition prone}."
 			]
 		},
 		{
 			"name": "Blinding Breath (Dust Mephit)",
 			"entries": [
-				"The <$short_name$> exhales a 15-foot cone of blinding dust. Each creature in that area must succeed on a {@dc 10} Dexterity saving throw or be {@condition blinded} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+				"The <$short_name$> exhales a 15-foot cone of blinding dust. Each creature in that area must succeed on a DC <$dc__dex$> Dexterity saving throw or be {@condition blinded} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 			]
 		},
 		{
 			"name": "Chain (Chain Devil)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 10 ft., one target. {@h}11 ({@damage 2d6 + 4}) slashing damage. The target is {@condition grappled} (escape {@dc 14}) if the <$short_name$> isn't already grappling a creature. Until this grapple ends, the target is {@condition restrained} and takes 7 ({@damage 2d6}) piercing damage at the start of each of its turns."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 10 ft., one target. {@h}<$damage_avg__7+str$> ({@damage 2d6<$damage_mod__str$>}) slashing damage. The target is {@condition grappled} (escape DC <$dc_str$>) if the <$short_name$> isn't already grappling a creature. Until this grapple ends, the target is {@condition restrained} and takes 7 ({@damage 2d6}) piercing damage at the start of each of its turns."
 			]
 		},
 		{
@@ -1489,19 +1489,19 @@
 		{
 			"name": "Claw (Rakshasa)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) slashing damage, and the target is cursed if it is a creature. The magical curse takes effect whenever the target takes a short or long rest, filling the target's thoughts with horrible images and dreams. The cursed target gains no benefit from finishing a short or long rest. The curse lasts until it is lifted by a {@spell remove curse} spell or similar magic."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one target. {@h}<$damage_avg__7+str$> ({@damage 2d6<$damage_mod__str$>}) slashing damage, and the target is cursed if it is a creature. The magical curse takes effect whenever the target takes a short or long rest, filling the target's thoughts with horrible images and dreams. The cursed target gains no benefit from finishing a short or long rest. The curse lasts until it is lifted by a {@spell remove curse} spell or similar magic."
 			]
 		},
 		{
 			"name": "Constrict (Behir)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one Large or smaller creature. {@h}17 ({@damage 2d10 + 6}) bludgeoning damage plus 17 ({@damage 2d10 + 6}) slashing damage. The target is {@condition grappled} (escape {@dc 16}) if the <$short_name$> isn't already constricting a creature, and the target is {@condition restrained} until this grapple ends."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one Large or smaller creature. {@h}17 ({@damage 2d10<$damage_mod__str$>}) bludgeoning damage plus 17 ({@damage 2d10<$damage_mod__str$>}) slashing damage. The target is {@condition grappled} (escape DC <$dc_str$>) if the <$short_name$> isn't already constricting a creature, and the target is {@condition restrained} until this grapple ends."
 			]
 		},
 		{
 			"name": "Constrict (Constrictor Snake)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}6 ({@damage 1d8 + 2}) bludgeoning damage, and the target is {@condition grappled} (escape {@dc 14}). Until this grapple ends, the creature is {@condition restrained}, and the <$short_name$> can't constrict another target."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}<$damage_avg__4+str$> ({@damage 1d8<$damage_mod__str$>}) bludgeoning damage, and the target is {@condition grappled} (escape DC <$dc_str$>). Until this grapple ends, the creature is {@condition restrained}, and the <$short_name$> can't constrict another target."
 			]
 		},
 		{
@@ -1513,16 +1513,16 @@
 		{
 			"name": "Create Whirlwind (Djinni)",
 			"entries": [
-				"A 5-foot-radius, 30-foot-tall cylinder of swirling air magically forms on a point the <$short_name$> can see within 120 feet of it. The whirlwind lasts as long as the <$short_name$> maintains concentration (as if concentrating on a spell). Any creature but the <$short_name$> that enters the whirlwind must succeed on a {@dc 18} Strength saving throw or be {@condition restrained} by it. The <$short_name$> can move the whirlwind up to 60 feet as an action, and creatures {@condition restrained} by the whirlwind move with it. The whirlwind ends if the <$short_name$> loses sight of it.",
-				"A creature can use its action to free a creature {@condition restrained} by the whirlwind, including itself, by succeeding on a {@dc 18} Strength check. If the check succeeds, the creature is no longer {@condition restrained} and moves to the nearest space outside the whirlwind."
+				"A 5-foot-radius, 30-foot-tall cylinder of swirling air magically forms on a point the <$short_name$> can see within 120 feet of it. The whirlwind lasts as long as the <$short_name$> maintains concentration (as if concentrating on a spell). Any creature but the <$short_name$> that enters the whirlwind must succeed on a DC <$dc__str$> saving throw or be {@condition restrained} by it. The <$short_name$> can move the whirlwind up to 60 feet as an action, and creatures {@condition restrained} by the whirlwind move with it. The whirlwind ends if the <$short_name$> loses sight of it.",
+				"A creature can use its action to free a creature {@condition restrained} by the whirlwind, including itself, by succeeding on a DC <$dc__str$> Strength check. If the check succeeds, the creature is no longer {@condition restrained} and moves to the nearest space outside the whirlwind."
 			]
 		},
 		{
 			"name": "Crush (Darkmantle)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}6 ({@damage 1d6 + 3}) bludgeoning damage, and the <$short_name$> attaches to the target. If the target is Medium or smaller and the <$short_name$> has advantage on the attack roll, it attaches by engulfing the target's head, and the target is also {@condition blinded} and unable to breathe while the <$short_name$> is attached in this way.",
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}<$damage_avg__3+str$> ({@damage 1d6<$damage_mod__str$>}) bludgeoning damage, and the <$short_name$> attaches to the target. If the target is Medium or smaller and the <$short_name$> has advantage on the attack roll, it attaches by engulfing the target's head, and the target is also {@condition blinded} and unable to breathe while the <$short_name$> is attached in this way.",
 				"While attached to the target, the <$short_name$> can attack no other creature except the target but has advantage on its attack rolls. The <$short_name$>'s speed also becomes 0, it can't benefit from any bonus to its speed, and it moves with the target.",
-				"A creature can detach the <$short_name$> by making a successful {@dc 13} Strength check as an action. On its turn, the <$short_name$> can detach itself from the target by using 5 feet of movement."
+				"A creature can detach the <$short_name$> by making a successful DC <$dc__str$> Strength check as an action. On its turn, the <$short_name$> can detach itself from the target by using 5 feet of movement."
 			]
 		},
 		{
@@ -1534,7 +1534,7 @@
 		{
 			"name": "Deadly Leap (Bulette)",
 			"entries": [
-				"If the <$short_name$> jumps at least 15 feet as part of its movement, it can then use this action to land on its feet in a space that contains one or more other creatures. Each of those creatures must succeed on a {@dc 16} Strength or Dexterity saving throw (target's choice) or be knocked {@condition prone} and take 14 ({@damage 3d6 + 4}) bludgeoning damage plus 14 ({@damage 3d6 + 4}) slashing damage. On a successful save, the creature takes only half the damage, isn't knocked {@condition prone}, and is pushed 5 feet out of the <$short_name$>'s space into an unoccupied space of the creature's choice. If no unoccupied space is within range, the creature instead falls {@condition prone} in the <$short_name$>'s space."
+				"If the <$short_name$> jumps at least 15 feet as part of its movement, it can then use this action to land on its feet in a space that contains one or more other creatures. Each of those creatures must succeed on a DC <$dc__str$> or Dexterity saving throw (target's choice) or be knocked {@condition prone} and take 14 ({@damage 3d6<$damage_mod__str$>}) bludgeoning damage plus 14 ({@damage 3d6<$damage_mod__str$>}) slashing damage. On a successful save, the creature takes only half the damage, isn't knocked {@condition prone}, and is pushed 5 feet out of the <$short_name$>'s space into an unoccupied space of the creature's choice. If no unoccupied space is within range, the creature instead falls {@condition prone} in the <$short_name$>'s space."
 			]
 		},
 		{
@@ -1546,13 +1546,13 @@
 		{
 			"name": "Disrupt Life (Lich)",
 			"entries": [
-				"Each non-undead creature within 20 feet of the <$short_name$> must make a {@dc 18} Constitution saving throw against this magic, taking 21 ({@damage 6d6}) necrotic damage on a failed save, or half as much damage on a successful one."
+				"Each non-undead creature within 20 feet of the <$short_name$> must make a DC <$dc__con$> Constitution saving throw against this magic, taking 21 ({@damage 6d6}) necrotic damage on a failed save, or half as much damage on a successful one."
 			]
 		},
 		{
 			"name": "Draining Kiss (Succubus/Incubus)",
 			"entries": [
-				"The <$short_name$> kisses a creature {@condition charmed} by it or a willing creature. The target must make a {@dc 15} Constitution saving throw against this magic, taking 32 ({@damage 5d10 + 5}) psychic damage on a failed save, or half as much damage on a successful one. The target's hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0."
+				"The <$short_name$> kisses a creature {@condition charmed} by it or a willing creature. The target must make a DC <$dc__con$> Constitution saving throw against this magic, taking 32 ({@damage 5d10<$damage_mod__str$>}) psychic damage on a failed save, or half as much damage on a successful one. The target's hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0."
 			]
 		},
 		{
@@ -1567,13 +1567,13 @@
 				"The <$short_name$> moves up to its speed. While doing so, it can enter Large or smaller creatures' spaces. Whenever the <$short_name$> enters a creature's space, the creature must make a DC <$dc__dex$> Dexterity saving throw.",
 				"On a successful save, the creature can choose to be pushed 5 feet back or to the side of the <$short_name$>. A creature that chooses not to be pushed suffers the consequences of a failed saving throw.",
 				"On a failed save, the <$short_name$> enters the creature's space, and the creature takes 10 ({@damage 3d6}) acid damage and is engulfed. The engulfed creature can't breathe, is {@condition restrained}, and takes 21 ({@damage 6d6}) acid damage at the start of each of the <$short_name$>'s turns. When the <$short_name$> moves, the engulfed creature moves with it.",
-				"An engulfed creature can try to escape by taking an action to make a {@dc 12} Strength check. On a success, the creature escapes and enters a space of its choice within 5 feet of the <$short_name$>."
+				"An engulfed creature can try to escape by taking an action to make a DC <$dc__str$> Strength check. On a success, the creature escapes and enters a space of its choice within 5 feet of the <$short_name$>."
 			]
 		},
 		{
 			"name": "Engulf (Shambling Mound)",
 			"entries": [
-				"The <$short_name$> engulfs a Medium or smaller creature {@condition grappled} by it. The engulfed target is {@condition blinded}, {@condition restrained}, and unable to breathe, and it must succeed on a {@dc 14} Constitution saving throw at the start of each of the <$short_name$>'s turns or take 13 ({@damage 2d8 + 4}) bludgeoning damage. If the <$short_name$> moves, the engulfed target moves with it. The <$short_name$> can have only one creature engulfed at a time."
+				"The <$short_name$> engulfs a Medium or smaller creature {@condition grappled} by it. The engulfed target is {@condition blinded}, {@condition restrained}, and unable to breathe, and it must succeed on a DC <$dc__con$> saving throw at the start of each of the <$short_name$>'s turns or take 13 ({@damage 2d8<$damage_mod__str$>}) bludgeoning damage. If the <$short_name$> moves, the engulfed target moves with it. The <$short_name$> can have only one creature engulfed at a time."
 			]
 		},
 		{
@@ -1610,7 +1610,7 @@
 		{
 			"name": "Fetid Cloud (Dretch)",
 			"entries": [
-				"A 10-foot radius of disgusting green gas extends out from the <$short_name$>. The gas spreads around corners, and its area is lightly obscured. It lasts for 1 minute or until a strong wind disperses it. Any creature that starts its turn in that area must succeed on a {@dc 11} Constitution saving throw or be {@condition poisoned} until the start of its next turn. While {@condition poisoned} in this way, the target can take either an action or a bonus action on its turn, not both, and can't take reactions."
+				"A 10-foot radius of disgusting green gas extends out from the <$short_name$>. The gas spreads around corners, and its area is lightly obscured. It lasts for 1 minute or until a strong wind disperses it. Any creature that starts its turn in that area must succeed on a DC <$dc__con$> saving throw or be {@condition poisoned} until the start of its next turn. While {@condition poisoned} in this way, the target can take either an action or a bonus action on its turn, not both, and can't take reactions."
 			]
 		},
 		{
@@ -1624,7 +1624,7 @@
 		{
 			"name": "Fling (Kraken)",
 			"entries": [
-				"One Large or smaller object held or creature {@condition grappled} by the <$short_name$> is thrown up to 60 feet in a random direction and knocked {@condition prone}. If a thrown target strikes a solid surface, the target takes 3 ({@damage 1d6}) bludgeoning damage for every 10 feet it was thrown. If the target is thrown at another creature, that creature must succeed on a {@dc 18} Dexterity saving throw or take the same damage and be knocked {@condition prone}."
+				"One Large or smaller object held or creature {@condition grappled} by the <$short_name$> is thrown up to 60 feet in a random direction and knocked {@condition prone}. If a thrown target strikes a solid surface, the target takes 3 ({@damage 1d6}) bludgeoning damage for every 10 feet it was thrown. If the target is thrown at another creature, that creature must succeed on a DC <$dc__dex$> saving throw or take the same damage and be knocked {@condition prone}."
 			]
 		},
 		{
@@ -1654,13 +1654,13 @@
 		{
 			"name": "Glaive (Bearded Devil)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 10 ft., one target. {@h}8 ({@damage 1d10 + 3}) slashing damage. If the target is a creature other than an undead or a construct, it must succeed on a {@dc 12} Constitution saving throw or lose 5 ({@dice 1d10}) hit points at the start of each of its turns due to an infernal wound. Each time the <$short_name$> hits the wounded target with this attack, the damage dealt by the wound increases by 5 ({@dice 1d10}). Any creature can take an action to stanch the wound with a successful {@dc 12} Wisdom (Medicine) check. The wound also closes if the target receives magical healing."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 10 ft., one target. {@h}<$damage_avg__5+str$> ({@damage 1d10<$damage_mod__str$>}) slashing damage. If the target is a creature other than an undead or a construct, it must succeed on a DC <$dc__con$> saving throw or lose 5 ({@dice 1d10}) hit points at the start of each of its turns due to an infernal wound. Each time the <$short_name$> hits the wounded target with this attack, the damage dealt by the wound increases by 5 ({@dice 1d10}). Any creature can take an action to stanch the wound with a successful DC <$dc_wis$> (Medicine) check. The wound also closes if the target receives magical healing."
 			]
 		},
 		{
 			"name": "Harpoon (Merrow)",
 			"entries": [
-				"{@atk mw,rw} {@hit <$to_hit__str$>} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}11 ({@damage 2d6 + 4}) piercing damage. If the target is a Huge or smaller creature, it must succeed on a Strength contest against the <$short_name$> or be pulled up to 20 feet toward the <$short_name$>."
+				"{@atk mw,rw} {@hit <$to_hit__str$>} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}<$damage_avg__7+str$> ({@damage 2d6<$damage_mod__str$>}) piercing damage. If the target is a Huge or smaller creature, it must succeed on a Strength contest against the <$short_name$> or be pulled up to 20 feet toward the <$short_name$>."
 			]
 		},
 		{
@@ -1690,14 +1690,14 @@
 		{
 			"name": "Hurl Flame (Barbed Devil)",
 			"entries": [
-				"{@atk rs} {@hit <$to_hit__str$>} to hit, range 150 ft., one target. {@h}10 ({@damage 3d6}) fire damage. If the target is a flammable object that isn't being worn or carried, it also catches fire."
+				"{@atk rs} {@hit <$to_hit__dex$>} to hit, range 150 ft., one target. {@h}10 ({@damage 3d6}) fire damage. If the target is a flammable object that isn't being worn or carried, it also catches fire."
 			]
 		},
 		{
 			"name": "Illusory Appearance (Sea Hag)",
 			"entries": [
 				"The <$short_name$> covers itself and anything she is wearing or carrying with a magical illusion that makes it look like an ugly creature of it general size and humanoid shape. The effect ends if the <$short_name$> takes a bonus action to end it or if it dies.",
-				"The changes wrought by this effect fail to hold up to physical inspection. For example, the <$short_name$> could appear to have no claws, but someone touching it hand might feel the claws. Otherwise, a creature must take an action to visually inspect the illusion and succeed on a {@dc 16} Intelligence (Investigation) check to discern that the <$short_name$> is disguised."
+				"The changes wrought by this effect fail to hold up to physical inspection. For example, the <$short_name$> could appear to have no claws, but someone touching it hand might feel the claws. Otherwise, a creature must take an action to visually inspect the illusion and succeed on a DC <$dc__int$> (Investigation) check to discern that the <$short_name$> is disguised."
 			]
 		},
 		{
@@ -1733,14 +1733,14 @@
 		{
 			"name": "Life Drain (Wight)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}5 ({@damage 1d6 + 2}) necrotic damage. The target must succeed on a {@dc 13} Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.",
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}<$damage_avg__3+str$> ({@damage 1d6<$damage_mod__str$>}) necrotic damage. The target must succeed on a DC <$dc__con$> Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.",
 				"A humanoid slain by this attack rises 24 hours later as a {@creature zombie} under the <$short_name$>'s control, unless the humanoid is restored to life or its body is destroyed. The <$short_name$> can have no more than twelve zombies under its control at one time."
 			]
 		},
 		{
 			"name": "Life Drain (Wraith)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}21 ({@damage 4d8 + 3}) necrotic damage. The target must succeed on a {@dc 14} Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}<$damage_avg__16+str$> ({@damage 4d8<$damage_mod__str$>}) necrotic damage. The target must succeed on a DC <$dc__con$> Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0."
 			]
 		},
 		{
@@ -1776,7 +1776,7 @@
 		{
 			"name": "Paralyzing Touch (Lich)",
 			"entries": [
-				"{@atk ms} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}10 ({@damage 3d6}) cold damage. The target must succeed on a {@dc 18} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+				"{@atk ms} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}10 ({@damage 3d6}) cold damage. The target must succeed on a DC <$dc__con$> saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 			]
 		},
 		{
@@ -1797,7 +1797,7 @@
 		{
 			"name": "Pseudopod (Gray Ooze)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) bludgeoning damage plus 18 ({@damage 4d8}) acid damage. In addition, nonmagical armor worn by the target is partly dissolved and takes a permanent and cumulative \u22121 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one target. {@h}<$damage_avg__3+str$> ({@damage 1d6<$damage_mod__str$>}) bludgeoning damage plus 18 ({@damage 4d8}) acid damage. In addition, nonmagical armor worn by the target is partly dissolved and takes a permanent and cumulative \u22121 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10."
 			]
 		},
 		{
@@ -1809,7 +1809,7 @@
 		{
 			"name": "Reaping Scythe",
 			"entries": [
-				"The <$short_name$> sweeps its spectral scythe through a creature within 5 feet of it, dealing 7 ({@damage 1d8 + 3}) slashing damage plus 4 ({@damage 1d8}) necrotic damage."
+				"The <$short_name$> sweeps its spectral scythe through a creature within 5 feet of it, dealing <$damage_avg__4+str$> ({@damage 1d8<$damage_mod__str$>}) slashing damage plus 4 ({@damage 1d8}) necrotic damage."
 			]
 		},
 		{
@@ -1821,7 +1821,7 @@
 		{
 			"name": "Rotting Fist (Mummy Lord)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one target. {@h}14 ({@damage 3d6 + 4}) bludgeoning damage plus 21 ({@damage 6d6}) necrotic damage. If the target is a creature, it must succeed on a {@dc 16} Constitution saving throw or be cursed with mummy rot. The cursed target can't regain hit points, and its hit point maximum decreases by 10 ({@dice 3d6}) for every 24 hours that elapse. If the curse reduces the target's hit point maximum to 0, the target dies, and its body turns to dust. The curse lasts until removed by the {@spell remove curse} spell or other magic."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one target. {@h}<$damage_avg__12+str$> ({@damage 3d6<$damage_mod__str$>}) bludgeoning damage plus 21 ({@damage 6d6}) necrotic damage. If the target is a creature, it must succeed on a DC <$dc__con$> saving throw or be cursed with mummy rot. The cursed target can't regain hit points, and its hit point maximum decreases by 10 ({@dice 3d6}) for every 24 hours that elapse. If the curse reduces the target's hit point maximum to 0, the target dies, and its body turns to dust. The curse lasts until removed by the {@spell remove curse} spell or other magic."
 			]
 		},
 		{
@@ -1833,13 +1833,13 @@
 		{
 			"name": "Slam (Clay Golem)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one target. {@h}16 ({@damage 2d10 + 5}) bludgeoning damage. If the target is a creature, it must succeed on a {@dc 15} Constitution saving throw or have its hit point maximum reduced by an amount equal to the damage taken. The target dies if this attack reduces its hit point maximum to 0. The reduction lasts until removed by the  {@spell greater restoration} spell or other magic."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one target. {@h}<$damage_avg__10+str$> ({@damage 2d10<$damage_mod__str$>}) bludgeoning damage. If the target is a creature, it must succeed on a DC <$dc__con$> saving throw or have its hit point maximum reduced by an amount equal to the damage taken. The target dies if this attack reduces its hit point maximum to 0. The reduction lasts until removed by the  {@spell greater restoration} spell or other magic."
 			]
 		},
 		{
 			"name": "Slaying Longbow (Solar)",
 			"entries": [
-				"{@atk rw} {@hit <$to_hit__str$>} to hit, range 150/600 ft., one target. {@h}15 ({@damage 2d8 + 6}) piercing damage plus 27 ({@damage 6d8}) radiant damage. If the target is a creature that has 100 hit points or fewer, it must succeed on a {@dc 15} Constitution saving throw or die."
+				"{@atk rw} {@hit <$to_hit__dex$>} to hit, range 150/600 ft., one target. {@h}<$damage_avg__9+dex$> ({@damage 2d8<$damage_mod__dex$>}) piercing damage plus 27 ({@damage 6d8}) radiant damage. If the target is a creature that has 100 hit points or fewer, it must succeed on a DC <$dc__con$> saving throw or die."
 			]
 		},
 		{
@@ -1851,7 +1851,7 @@
 		{
 			"name": "Smother (Smothering Rug)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one Medium or smaller creature. {@h}The creature is {@condition grappled} (escape {@dc 13}). Until this grapple ends, the target is {@condition restrained}, {@condition blinded}, and at risk of suffocating, and the <$short_name$> can't smother another target. In addition, at the start of each of the target's turns, the target takes 10 ({@damage 2d6 + 3}) bludgeoning damage."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one Medium or smaller creature. {@h}The creature is {@condition grappled} DC <$dc__str$>). Until this grapple ends, the target is {@condition restrained}, {@condition blinded}, and at risk of suffocating, and the <$short_name$> can't smother another target. In addition, at the start of each of the target's turns, the target takes <$damage_avg__6+str$> ({@damage  2d6<$damage_mod__str$>}) bludgeoning damage."
 			]
 		},
 		{
@@ -1869,33 +1869,33 @@
 		{
 			"name": "Sting (Bone Devil)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 10 ft., one target. {@h}13 ({@damage 2d8 + 4}) piercing damage plus 17 ({@damage 5d6}) poison damage, and the target must succeed on a {@dc 14} Constitution saving throw or become {@condition poisoned} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 10 ft., one target. {@h}<$damage_avg__9+str$> ({@damage 2d8<$damage_mod__str$>}) piercing damage plus 17 ({@damage 5d6}) poison damage, and the target must succeed on a DC <$dc__con$> saving throw or become {@condition poisoned} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 			]
 		},
 		{
 			"name": "Strength Drain (Shadow)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}9 ({@damage 2d6 + 2}) necrotic damage, and the target's Strength score is reduced by {@dice 1d4}. The target dies if this reduces its Strength to 0. Otherwise, the reduction lasts until the target finishes a short or long rest.",
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one creature. {@h}<$damage_avg__7+str$> ({@damage 2d6<$damage_mod__str$>}) necrotic damage, and the target's Strength score is reduced by {@dice 1d4}. The target dies if this reduces its Strength to 0. Otherwise, the reduction lasts until the target finishes a short or long rest.",
 				"If a non-evil humanoid dies from this attack, a new shadow rises from the corpse {@dice 1d4} hours later."
 			]
 		},
 		{
 			"name": "Stunning Screech (Vrock)",
 			"entries": [
-				"The <$short_name$> emits a horrific screech. Each creature within 20 feet of it that can hear it and that isn't a demon must succeed on a {@dc 14} Constitution saving throw or be {@condition stunned} until the end of the <$short_name$>'s next turn."
+				"The <$short_name$> emits a horrific screech. Each creature within 20 feet of it that can hear it and that isn't a demon must succeed on a DC <$dc__con$> Constitution Constitution saving throw or be {@condition stunned} until the end of the <$short_name$>'s next turn."
 			]
 		},
 		{
 			"name": "Swallow (Behir)",
 			"entries": [
 				"The <$short_name$> makes one bite attack against a Medium or smaller target it is grappling. If the attack hits, the target is also swallowed, and the grapple ends. While swallowed, the target is {@condition blinded} and {@condition restrained}, it has total cover against attacks and other effects outside the <$short_name$>, and it takes 21 ({@damage 6d6}) acid damage at the start of each of the <$short_name$>'s turns. A <$short_name$> can have only one creature swallowed at a time.",
-				"If the <$short_name$> takes 30 damage or more on a single turn from the swallowed creature, the <$short_name$> must succeed on a {@dc 14} Constitution saving throw at the end of that turn or regurgitate the creature, which falls {@condition prone} in a space within 10 feet of the <$short_name$>. If the <$short_name$> dies, a swallowed creature is no longer {@condition restrained} by it and can escape from the corpse by using 15 feet of movement, exiting {@condition prone}."
+				"If the <$short_name$> takes 30 damage or more on a single turn from the swallowed creature, the <$short_name$> must succeed on a DC <$dc__con$> Constitution saving throw at the end of that turn or regurgitate the creature, which falls {@condition prone} in a space within 10 feet of the <$short_name$>. If the <$short_name$> dies, a swallowed creature is no longer {@condition restrained} by it and can escape from the corpse by using 15 feet of movement, exiting {@condition prone}."
 			]
 		},
 		{
 			"name": "Tail (Marilith)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 10 ft., one creature. {@h}15 ({@damage 2d10 + 4}) bludgeoning damage. If the target is Medium or smaller, it is {@condition grappled} (escape {@dc 19}). Until this grapple ends, the target is {@condition restrained}, the <$short_name$> can automatically hit the target with its tail, and the <$short_name$> can't make tail attacks against other targets."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 10 ft., one creature. {@h}<$damage_avg__11+str$> ({@damage 2d10<$damage_mod__str$>}) bludgeoning damage. If the target is Medium or smaller, it is {@condition grappled} (escape DC <$dc_str$>). Until this grapple ends, the target is {@condition restrained}, the <$short_name$> can automatically hit the target with its tail, and the <$short_name$> can't make tail attacks against other targets."
 			]
 		},
 		{
@@ -1919,50 +1919,50 @@
 		{
 			"name": "Tentacle (Aboleth)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 10 ft., one target. {@h}12 ({@damage 2d6 + 5}) bludgeoning damage. If the target is a creature, it must succeed on a {@dc 14} Constitution saving throw or become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature's skin becomes translucent and slimy, the creature can't regain hit points unless it is underwater, and the disease can be removed only by {@spell heal} or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 ({@damage 1d12}) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 10 ft., one target. {@h}<$damage_avg__7+str$> ({@damage 2d6<$damage_mod__str$>}) bludgeoning damage. If the target is a creature, it must succeed on a DC <$dc__con$> Constitution saving throw or become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature's skin becomes translucent and slimy, the creature can't regain hit points unless it is underwater, and the disease can be removed only by {@spell heal} or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 ({@damage 1d12}) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed."
 			]
 		},
 		{
 			"name": "Tentacle (Kraken)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 30 ft., one target. {@h}20 ({@damage 3d6 + 10}) bludgeoning damage, and the target is {@condition grappled} (escape {@dc 18}). Until this grapple ends, the target is {@condition restrained}. The <$short_name$> has ten tentacles, each of which can grapple one target."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 30 ft., one target. {@h}<$damage_avg__9+str$> ({@damage 3d6<$damage_mod__str$>0}) bludgeoning damage, and the target is {@condition grappled} (escape DC <$dc__str$>). Until this grapple ends, the target is {@condition restrained}. The <$short_name$> has ten tentacles, each of which can grapple one target."
 			]
 		},
 		{
 			"name": "Tentacles (Chuul)",
 			"entries": [
-				"One creature {@condition grappled} by the <$short_name$> must succeed on a {@dc 13} Constitution saving throw or be {@condition poisoned} for 1 minute. Until this poison ends, the target is {@condition paralyzed}. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+				"One creature {@condition grappled} by the <$short_name$> must succeed on a DC <$dc__con$> Constitution saving throw or be {@condition poisoned} for 1 minute. Until this poison ends, the target is {@condition paralyzed}. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 			]
 		},
 		{
 			"name": "Touch (Magmin)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one target. {@h}7 ({@damage 2d6}) fire damage. If the target is a creature or a flammable object, it ignites. Until a creature takes an action to douse the fire, the target takes 3 ({@damage 1d6}) fire damage at the end of each of its turns."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one target. {@h}<$damage_avg__7+str$> ({@damage 2d6}) fire damage. If the target is a creature or a flammable object, it ignites. Until a creature takes an action to douse the fire, the target takes 3 ({@damage 1d6}) fire damage at the end of each of its turns."
 			]
 		},
 		{
 			"name": "Web (Ettercap)",
 			"entries": [
-				"{@atk rw} {@hit <$to_hit__str$>} to hit, range 30/60 ft., one Large or smaller creature. {@h}The creature is {@condition restrained} by webbing. As an action, the {@condition restrained} creature can make a DC <$dc__str$> Strength check, escaping from the webbing on a success. The effect ends if the webbing is destroyed. The webbing has AC 10, 5 hit points, is vulnerable to fire damage and immune to bludgeoning, poison and psychic damage."
+				"{@atk rw} {@hit <$to_hit__dex$>} to hit, range 30/60 ft., one Large or smaller creature. {@h}The creature is {@condition restrained} by webbing. As an action, the {@condition restrained} creature can make a DC <$dc__str$> Strength check, escaping from the webbing on a success. The effect ends if the webbing is destroyed. The webbing has AC 10, 5 hit points, is vulnerable to fire damage and immune to bludgeoning, poison and psychic damage."
 			]
 		},
 		{
 			"name": "Web Garrote (Ettercap)",
 			"entries": [
-				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one Medium or Small creature against which the <$short_name$> has advantage on the attack roll. {@h}4 ({@damage 1d4 + 2}) bludgeoning damage, and the target is {@condition grappled} (escape DC <$dc__str$>). Until this grapple ends, the target can't breathe, and the <$short_name$> has advantage on attack rolls against it."
+				"{@atk mw} {@hit <$to_hit__str$>} to hit, reach 5 ft., one Medium or Small creature against which the <$short_name$> has advantage on the attack roll. {@h}4 ({@damage 1d4<$damage_mod__str$>}) bludgeoning damage, and the target is {@condition grappled} (escape DC <$dc__str$>). Until this grapple ends, the target can't breathe, and the <$short_name$> has advantage on attack rolls against it."
 			]
 		},
 		{
 			"name": "Whelm (Water Elemental)",
 			"entries": [
-				"Each creature in the <$short_name$>'s space must make a {@dc 15} Strength saving throw. On a failure, a target takes 13 ({@damage 2d8 + 4}) bludgeoning damage. If it is Large or smaller, it is also {@condition grappled} (escape DC <$dc__str$>). Until this grapple ends, the target is {@condition restrained} and unable to breathe unless it can breathe water. If the saving throw is successful, the target is pushed out of the <$short_name$>'s space.",
-				"The <$short_name$> can grapple one Large creature or up to two Medium or smaller creatures at one time. At the start of each of the <$short_name$>'s turns, each target {@condition grappled} by it takes 13 ({@damage 2d8 + 4}) bludgeoning damage. A creature within 5 feet of the <$short_name$> can pull a creature or object out of it by taking an action to make a DC <$dc__str$> Strength check and succeeding."
+				"Each creature in the <$short_name$>'s space must make a DC <$dc__str$> Strength saving throw. On a failure, a target takes 13 ({@damage 2d8<$damage_mod__str$>}) bludgeoning damage. If it is Large or smaller, it is also {@condition grappled} (escape DC <$dc__str$>). Until this grapple ends, the target is {@condition restrained} and unable to breathe unless it can breathe water. If the saving throw is successful, the target is pushed out of the <$short_name$>'s space.",
+				"The <$short_name$> can grapple one Large creature or up to two Medium or smaller creatures at one time. At the start of each of the <$short_name$>'s turns, each target {@condition grappled} by it takes 13 ({@damage 2d8<$damage_mod__str$>}) bludgeoning damage. A creature within 5 feet of the <$short_name$> can pull a creature or object out of it by taking an action to make a DC <$dc__str$> Strength check and succeeding."
 			]
 		},
 		{
 			"name": "Whirlwind (Air Elemental)",
 			"entries": [
-				"Each creature in the <$short_name$>'s space must make a {@dc 13} Strength saving throw. On a failure, a target takes 15 ({@damage 3d8 + 2}) bludgeoning damage and is flung up 20 feet away from the <$short_name$> in a random direction and knocked {@condition prone}. If a thrown target strikes an object, such as a wall or floor, the target takes 3 ({@damage 1d6}) bludgeoning damage for every 10 feet it was thrown. If the target is thrown at another creature, that creature must succeed on a DC <$dc__dex$> Dexterity saving throw or take the same damage and be knocked {@condition prone}.",
+				"Each creature in the <$short_name$>'s space must make a DC <$dc__str$> Strength saving throw. On a failure, a target takes 15 ({@damage 3d8<$damage_mod__str$>}) bludgeoning damage and is flung up 20 feet away from the <$short_name$> in a random direction and knocked {@condition prone}. If a thrown target strikes an object, such as a wall or floor, the target takes 3 ({@damage 1d6}) bludgeoning damage for every 10 feet it was thrown. If the target is thrown at another creature, that creature must succeed on a DC <$dc__dex$> Dexterity saving throw or take the same damage and be knocked {@condition prone}.",
 				"If the saving throw is successful, the target takes half the bludgeoning damage and isn't flung away or knocked {@condition prone}."
 			]
 		}
