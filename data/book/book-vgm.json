@@ -1055,6 +1055,14 @@
 										"path": "book/VGM/Beholder-Lair-DM.jpg"
 									},
 									"title": "Beholder Lair (DM)",
+									"grid": {
+									  "type": "square",
+									  "size": 50,
+									  "offsetX": 5,
+									  "offsetY": -15,
+									  "scale": 2,
+									  "distance": 10
+									},
 									"width": 800,
 									"height": 1100,
 									"imageType": "map"
@@ -1068,6 +1076,10 @@
 									"title": "Beholder Lair (Players)",
 									"width": 3200,
 									"height": 4500,
+									"grid": {
+									  "type": "square",
+									  "distance": 10
+									},
 									"imageType": "mapPlayer"
 								},
 								"Common rooms found in a beholder's lair are described in the sections that follow.",
@@ -4038,6 +4050,13 @@
 									"title": "Goblin War Camp (DM)",
 									"width": 1164,
 									"height": 800,
+									"grid": {
+									  "type": "square",
+									  "size": 56,
+									  "offsetX": 19,
+									  "offsetY": 7,
+									  "scale": 4
+									},
 									"imageType": "map"
 								},
 								{
@@ -4049,6 +4068,9 @@
 									"title": "Goblin War Camp (Players)",
 									"width": 5900,
 									"height": 5500,
+									"grid": {
+									  "type": "square"
+									},
 									"imageType": "mapPlayer"
 								},
 								"Inside the surrounding bulwark, the goblinoids all have their separate quarters, organized according to their wonts. Typical of any camp are the wide paths that crisscross it, running from each gate through the center of the camp and out the other side. This configuration enables all the goblinoids to swiftly rally and exit the camp en masse to meet an approaching threat.",
@@ -4702,6 +4724,14 @@
 									"title": "Hag Lairs (DM)",
 									"width": 1091,
 									"height": 750,
+									"grid": {
+									  "type": "square",
+									  "size": 50,
+									  "offsetX": 19,
+									  "offsetY": 15,
+									  "scale": 1.87,
+									  "distance": 10
+									},
 									"imageType": "map"
 								},
 								{
@@ -4713,6 +4743,10 @@
 									"title": "Hag Lairs (Players)",
 									"width": 4200,
 									"height": 2900,
+									"grid": {
+									  "type": "square",
+									  "distance": 10
+									},
 									"imageType": "mapPlayer"
 								},
 								"Whether naturally or by manufactured means, the lair is well defended from intrusion. It might be reachable only by a steep mountain path, or it might be surrounded by a fence the hag builds out of posts capped with magically warded skulls. Often, a lair reflects the outlook of its primary inhabitant-a murderous hag's home might be crafted to look like a coffin or a mausoleum, and that of a gluttonous one might look like a tavern or a gingerbread house. Because such places are convenient for them, sea hags often establish their lairs inside the hulls of wrecked or abandoned ships.",
@@ -5491,6 +5525,13 @@
 									"title": "Kobold Lair (DM)",
 									"width": 545,
 									"height": 750,
+									"grid": {
+									  "type": "square",
+									  "size": 50,
+									  "offsetX": 19,
+									  "offsetY": 6,
+									  "scale": 4.15
+									},
 									"imageType": "map"
 								},
 								{
@@ -5502,6 +5543,13 @@
 									"title": "Kobold Lair (Players)",
 									"width": 1600,
 									"height": 2200,
+									"grid": {
+									  "type": "square",
+									  "size": 72,
+									  "offsetX": -8,
+									  "offsetY": 25,
+									  "scale": 2
+									},
 									"imageType": "mapPlayer"
 								},
 								"Creatures larger than a kobold have to squat or crawl in order to fit through the tunnels of a kobold warren, which by itself is enough to deter most hostile humanoids (such as orcs or hobgoblins) from trying to invade the kobolds' territory. Adventurers trying to eradicate a kobold infestation often find themselves stuck in low passages too narrow to turn around in, forcing them to move in single file and putting the burden of combat on the first and last people in line.",
@@ -6185,6 +6233,11 @@
 									"title": "Mind Flayer Colony (DM)",
 									"width": 545,
 									"height": 750,
+									"grid": {
+									  "type": "none",
+									  "size": 138,
+									  "distance": 50
+									},
 									"imageType": "map"
 								},
 								"No two lairs are the same, as the resident elder brain drives the form and function of each one. The lair shown in the accompanying map is typical and includes many elements found in every colony's stronghold.",
@@ -7067,6 +7120,13 @@
 									"title": "Orc Stronghold (DM)",
 									"width": 800,
 									"height": 1100,
+									"grid": {
+									  "type": "square",
+									  "size": 50,
+									  "offsetX": 10,
+									  "offsetY": 3,
+									  "scale": 3.5
+									},
 									"imageType": "map"
 								},
 								{
@@ -7078,6 +7138,10 @@
 									"title": "Orc Stronghold (Players)",
 									"width": 5500,
 									"height": 7500,
+									"grid": {
+									  "type": "square",
+									  "distance": 10
+									},
 									"imageType": "mapPlayer"
 								},
 								"Every encampment is divided along lines of worship. Those who revere Gruumsh, Ilneval, Bahgtru, and Luthic are given the best parts of the lair, while the followers of Yurtrus and Shargaas are relegated to the deep, dark recesses of the site, away from the rest of the tribe.",
@@ -8320,6 +8384,14 @@
 									"title": "Yuan-Ti Temple (DM)",
 									"width": 1091,
 									"height": 1500,
+									"grid": {
+									  "type": "square",
+									  "size": 50,
+									  "offsetX": 24,
+									  "offsetY": 38,
+									  "scale": 2.32,
+									  "distance": 10
+									},
 									"imageType": "map"
 								},
 								{
@@ -8331,6 +8403,11 @@
 									"title": "Yuan-Ti Temple\u2014Level 1 (Players)",
 									"width": 1350,
 									"height": 1200,
+									"grid": {
+									  "type": "square",
+									  "size": 50,
+									  "distance": 10
+									},
 									"imageType": "mapPlayer"
 								},
 								{
@@ -8342,6 +8419,11 @@
 									"title": "Yuan-Ti Temple\u2014Level 2 (Players)",
 									"width": 1100,
 									"height": 1000,
+									"grid": {
+									  "type": "square",
+									  "size": 50,
+									  "distance": 10
+									},
 									"imageType": "mapPlayer"
 								},
 								{
@@ -8353,6 +8435,11 @@
 									"title": "Yuan-Ti Temple\u2014Level 3 (Players)",
 									"width": 900,
 									"height": 850,
+									"grid": {
+									  "type": "square",
+									  "size": 50,
+									  "distance": 10
+									},
 									"imageType": "mapPlayer"
 								},
 								{
@@ -8364,6 +8451,11 @@
 									"title": "Yuan-Ti Temple\u2014Level 4 (Players)",
 									"width": 750,
 									"height": 700,
+									"grid": {
+									  "type": "square",
+									  "size": 50,
+									  "distance": 10
+									},
 									"imageType": "mapPlayer"
 								},
 								{
@@ -8375,6 +8467,11 @@
 									"title": "Yuan-Ti Temple\u2014Level 5 (Players)",
 									"width": 856,
 									"height": 812,
+									"grid": {
+									  "type": "square",
+									  "size": 50,
+									  "distance": 10
+									},
 									"imageType": "mapPlayer"
 								},
 								{

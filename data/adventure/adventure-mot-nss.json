@@ -431,6 +431,12 @@
 											"width": 3825,
 											"height": 2250,
 											"imageType": "map",
+											"grid": {
+											  "type": "square",
+											  "size": 112,
+											  "offsetX": 6,
+											  "offsetY": 5
+											},
 											"id": "000",
 											"mapRegions": [
 												{
@@ -2121,6 +2127,12 @@
 											"width": 3825,
 											"height": 2250,
 											"imageType": "mapPlayer",
+											"grid": {
+											  "type": "square",
+											  "size": 112,
+											  "offsetX": 6,
+											  "offsetY": 5
+											},
 											"mapParent": {
 												"id": "000"
 											}
