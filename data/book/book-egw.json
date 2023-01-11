@@ -171,6 +171,14 @@
 							"title": "Continent of Wildemount",
 							"width": 9300,
 							"height": 6600,
+							"grid": {
+								"type": "square",
+								"size": 600,
+								"offsetX": 142,
+								"offsetY": 13,
+								"distance": 200,
+								"units": "mi"
+							},
 							"imageType": "map"
 						}
 					]
@@ -2700,6 +2708,14 @@
 							"title": "Map 3.1: Menagerie Coast",
 							"width": 2550,
 							"height": 1650,
+							"grid": {
+								"type": "square",
+								"size": 360,
+								"offsetX": 91,
+								"offsetY": 36,
+								"distance": 200,
+								"units": "mi"
+							},
 							"imageType": "map"
 						},
 						{
@@ -4106,6 +4122,11 @@
 															"title": "Map 3.2: Port Damali",
 															"width": 2550,
 															"height": 3300,
+															"grid": {
+																"type": "none",
+																"distance": 250,
+																"units": "mi"
+															},
 															"imageType": "map"
 														}
 													]
@@ -4544,6 +4565,12 @@
 							"title": "Map 3.3: Marrow Valley",
 							"width": 2550,
 							"height": 1650,
+							"grid": {
+								"type": "none",
+							    "size": 600,
+								"distance": 200,
+								"units": "mi"
+							},
 							"imageType": "map"
 						},
 						{
@@ -6420,6 +6447,12 @@
 							"title": "Map 3.4: Zemni Fields",
 							"width": 2550,
 							"height": 1650,
+							"grid": {
+								"type": "none",
+								"size": 540,
+								"distance": 200,
+								"units": "mi"
+							},
 							"imageType": "map"
 						},
 						{
@@ -7400,6 +7433,11 @@
 															"title": "Map 3.5: Rexxentrum",
 															"width": 2550,
 															"height": 3300,
+															"grid": {
+																"type": "none",
+																"distance": 666,
+																"units": "mi"
+															},
 															"imageType": "map"
 														}
 													]
@@ -7980,6 +8018,12 @@
 							"title": "Map 3.6: Greying Wildlands",
 							"width": 2550,
 							"height": 1650,
+							"grid": {
+								"type": "none",
+								"size": 505,
+								"distance": 200,
+								"units": "mi"
+							},
 							"imageType": "map"
 						},
 						{
@@ -8837,6 +8881,12 @@
 							"title": "Map 3.7: Eiselcross",
 							"width": 2550,
 							"height": 1560,
+							"grid": {
+							  "type": "none",
+							  "size": 609,
+							  "distance": 200,
+							  "units": "mi"
+							},
 							"imageType": "map"
 						},
 						{
@@ -10052,6 +10102,12 @@
 							"title": "Map 3.8: Wastes of Xorhas",
 							"width": 2550,
 							"height": 2956,
+							"grid": {
+							  "type": "none",
+							  "size": 602,
+							  "distance": 200,
+							  "units": "mi"
+							},
 							"imageType": "map"
 						},
 						{
@@ -11033,6 +11089,12 @@
 															"title": "Map 3.9: Rosohna",
 															"width": 2550,
 															"height": 3300,
+															"grid": {
+															  "type": "none",
+															  "size": 300,
+															  "distance": 1000,
+															  "units": "mi"
+															},
 															"imageType": "map"
 														}
 													]
@@ -11633,6 +11695,12 @@
 							"title": "Map 3.10: Blightshore",
 							"width": 2550,
 							"height": 1650,
+							"grid": {
+							  "type": "none",
+							  "size": 600,
+							  "distance": 200,
+							  "units": "mi"
+							},
 							"imageType": "map"
 						},
 						{
