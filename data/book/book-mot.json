@@ -904,6 +904,12 @@
 									"width": 3631,
 									"height": 5000,
 									"imageType": "map",
+									"grid": {
+									  "type": "none",
+									  "size": 104,
+									  "distance": 10,
+									  "units": "mi"
+									},
 									"id": "018"
 								},
 								{
@@ -916,6 +922,12 @@
 									"width": 3631,
 									"height": 5000,
 									"imageType": "mapPlayer",
+									"grid": {
+									  "type": "none",
+									  "size": 104,
+									  "distance": 10,
+									  "units": "mi"
+									},
 									"mapParent": {
 										"id": "018"
 									}
@@ -4227,6 +4239,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "map",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"id": "019"
 												},
 												{
@@ -4239,6 +4255,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "mapPlayer",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"mapParent": {
 														"id": "019"
 													}
@@ -4650,6 +4670,12 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "map",
+													"grid": {
+													  "type": "square",
+													  "size": 75,
+													  "offsetX": -1,
+													  "offsetY": -1
+													},
 													"id": "01a"
 												},
 												{
@@ -4662,6 +4688,12 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "mapPlayer",
+													"grid": {
+													  "type": "square",
+													  "size": 75,
+													  "offsetX": -1,
+													  "offsetY": -1
+													},
 													"mapParent": {
 														"id": "01a"
 													}
@@ -5071,6 +5103,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "map",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"id": "01b"
 												},
 												{
@@ -5083,6 +5119,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "mapPlayer",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"mapParent": {
 														"id": "01b"
 													}
@@ -5489,6 +5529,10 @@
 													"width": 4200,
 													"height": 5880,
 													"imageType": "map",
+													"grid": {
+													  "type": "square",
+													  "size": 70
+													},
 													"id": "01c"
 												},
 												{
@@ -5501,6 +5545,10 @@
 													"width": 4200,
 													"height": 5880,
 													"imageType": "mapPlayer",
+													"grid": {
+													  "type": "square",
+													  "size": 70
+													},
 													"mapParent": {
 														"id": "01c"
 													}
@@ -5897,10 +5945,15 @@
 														"type": "internal",
 														"path": "book/MOT/096-map-4.5-arena.jpg"
 													},
-													"title": "Map 4.5: arena",
+													"title": "Map 4.5: Arena",
 													"width": 4200,
 													"height": 5700,
 													"imageType": "map",
+													"grid": {
+													  "type": "square",
+													  "size": 75,
+													  "distance": 10
+													},
 													"id": "01d"
 												},
 												{
@@ -5913,6 +5966,11 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "mapPlayer",
+													"grid": {
+													  "type": "square",
+													  "size": 75,
+													  "distance": 10
+													},
 													"mapParent": {
 														"id": "01d"
 													}
@@ -6333,6 +6391,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "map",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"id": "01e"
 												},
 												{
@@ -6345,6 +6407,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "mapPlayer",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"mapParent": {
 														"id": "01e"
 													}
@@ -6759,6 +6825,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "map",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"id": "01f"
 												},
 												{
@@ -6771,6 +6841,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "mapPlayer",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"mapParent": {
 														"id": "01f"
 													}
@@ -7242,6 +7316,9 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "map",
+													"grid": {
+													  "type": "square"
+													},
 													"id": "020"
 												},
 												{
@@ -7254,6 +7331,9 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "mapPlayer",
+													"grid": {
+													  "type": "square"
+													},
 													"mapParent": {
 														"id": "020"
 													}
@@ -7674,6 +7754,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "map",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"id": "021"
 												},
 												{
@@ -7686,6 +7770,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "mapPlayer",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"mapParent": {
 														"id": "021"
 													}
@@ -8099,6 +8187,11 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "map",
+													"grid": {
+													  "type": "square",
+													  "size": 75,
+													  "distance": 10
+													},
 													"id": "022"
 												},
 												{
@@ -8111,6 +8204,11 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "mapPlayer",
+													"grid": {
+													  "type": "square",
+													  "size": 75,
+													  "distance": 10
+													},
 													"mapParent": {
 														"id": "022"
 													}
@@ -8541,6 +8639,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "map",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"id": "023"
 												},
 												{
@@ -8553,6 +8655,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "mapPlayer",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"mapParent": {
 														"id": "023"
 													}
@@ -8962,6 +9068,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "map",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"id": "024"
 												},
 												{
@@ -8974,6 +9084,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "mapPlayer",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"mapParent": {
 														"id": "024"
 													}
@@ -9380,6 +9494,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "map",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"id": "025"
 												},
 												{
@@ -9392,6 +9510,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "mapPlayer",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"mapParent": {
 														"id": "025"
 													}
@@ -9811,6 +9933,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "map",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"id": "026"
 												},
 												{
@@ -9823,6 +9949,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "mapPlayer",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"mapParent": {
 														"id": "026"
 													}
@@ -10241,6 +10371,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "map",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"id": "027"
 												},
 												{
@@ -10253,6 +10387,10 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "mapPlayer",
+													"grid": {
+													  "type": "square",
+													  "size": 75
+													},
 													"mapParent": {
 														"id": "027"
 													}

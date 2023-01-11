@@ -4982,6 +4982,10 @@
 												"path": "book/FTD/040-map-5.1-amethyst-dragon-lair.webp"
 											},
 											"imageType": "map",
+											"grid": {
+											  "type": "square",
+											  "distance": 10
+											},
 											"title": "Map 5.1: amethyst dragon lair",
 											"width": 4800,
 											"height": 6000,
@@ -4995,6 +4999,10 @@
 											},
 											"imageType": "mapPlayer",
 											"title": "Player Version",
+											"grid": {
+											  "type": "square",
+											  "distance": 10
+											},
 											"width": 4800,
 											"height": 6000,
 											"mapParent": {
@@ -5475,6 +5483,11 @@
 												"path": "book/FTD/042-map-5.2-black-dragon-lair.webp"
 											},
 											"imageType": "map",
+											"grid": {
+											  "type": "square",
+											  "offsetY": -17,
+											  "distance": 10
+											},
 											"title": "Map 5.2: black dragon lair",
 											"width": 4800,
 											"height": 6000,
@@ -5487,6 +5500,11 @@
 												"path": "book/FTD/043-map-5.2-black-dragon-lair-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+											  "type": "square",
+											  "offsetY": -15,
+											  "distance": 10
+											},
 											"title": "Player Version",
 											"width": 4800,
 											"height": 6000,
@@ -6066,6 +6084,10 @@
 												"path": "book/FTD/046-map-5.3-blue-dragon-lair.webp"
 											},
 											"imageType": "map",
+											"grid": {
+											  "type": "square",
+											  "distance": 10
+											},
 											"title": "Map 5.3: blue dragon lair",
 											"width": 4800,
 											"height": 6000,
@@ -6078,6 +6100,10 @@
 												"path": "book/FTD/047-map-5.3-blue-dragon-lair-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+											  "type": "square",
+											  "distance": 10
+											},
 											"title": "Player Version",
 											"width": 4800,
 											"height": 6000,
@@ -6627,6 +6653,10 @@
 												"path": "book/FTD/048-map-5.4-brass-dragon-lair.webp"
 											},
 											"imageType": "map",
+											"grid": {
+											  "type": "square",
+											  "distance": 25
+											},
 											"title": "Map 5.4: brass dragon lair",
 											"width": 4800,
 											"height": 6000,
@@ -6639,6 +6669,10 @@
 												"path": "book/FTD/049-map-5.4-brass-dragon-lair-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+											  "type": "square",
+											  "distance": 25
+											},
 											"title": "Player Version",
 											"width": 4800,
 											"height": 6000,
@@ -7240,6 +7274,13 @@
 														"path": "book/FTD/050-map-5.5-bronze-dragon-lair.webp"
 													},
 													"imageType": "map",
+													"grid": {
+													  "type": "square",
+													  "size": 143,
+													  "offsetX": -30,
+													  "offsetY": -1,
+													  "distance": 10
+													},
 													"title": "Map 5.5: bronze dragon lair",
 													"width": 4800,
 													"height": 6000,
@@ -7252,6 +7293,13 @@
 														"path": "book/FTD/051-map-5.5-bronze-dragon-lair-player.webp"
 													},
 													"imageType": "mapPlayer",
+													"grid": {
+													  "type": "square",
+													  "size": 143,
+													  "offsetX": -30,
+													  "offsetY": -3,
+													  "distance": 10
+													},
 													"title": "Player Version",
 													"width": 4800,
 													"height": 6000,
@@ -7783,6 +7831,11 @@
 												"path": "book/FTD/052-map-5.6-copper-dragon-lair.webp"
 											},
 											"imageType": "map",
+											"grid": {
+											  "type": "square",
+											  "size": 99,
+											  "distance": 10
+											},
 											"title": "Map 5.6: copper dragon lair",
 											"width": 4800,
 											"height": 6000,
@@ -7795,6 +7848,11 @@
 												"path": "book/FTD/053-map-5.6-copper-dragon-lair-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+											  "type": "square",
+											  "size": 99,
+											  "distance": 10
+											},
 											"title": "Player Version",
 											"width": 4800,
 											"height": 6000,
@@ -8296,6 +8354,10 @@
 												"path": "book/FTD/054-map-5.7-crystal-dragon-lair.webp"
 											},
 											"imageType": "map",
+											"grid": {
+											  "type": "square",
+											  "size": 99
+											},
 											"title": "Map 5.7: crystal dragon lair",
 											"width": 4800,
 											"height": 6000,
@@ -8308,6 +8370,10 @@
 												"path": "book/FTD/055-map-5.7-crystal-dragon-lair-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+											  "type": "square",
+											  "size": 99
+											},
 											"title": "Player Version",
 											"width": 4800,
 											"height": 6000,
@@ -9817,6 +9883,10 @@
 												"path": "book/FTD/065-map-5.8-emerald-dragon-lair.webp"
 											},
 											"imageType": "map",
+											"grid": {
+											  "type": "square",
+											  "distance": 10
+											},
 											"title": "Map 5.8: emerald dragon lair",
 											"width": 4800,
 											"height": 6000,
@@ -9829,6 +9899,10 @@
 												"path": "book/FTD/066-map-5.8-emerald-dragon-lair-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+											  "type": "square",
+											  "distance": 10
+											},
 											"title": "Player Version",
 											"width": 4800,
 											"height": 6000,
@@ -10746,6 +10820,9 @@
 												"path": "book/FTD/069-map-5.9-gold-dragon-lair.webp"
 											},
 											"imageType": "map",
+											"grid": {
+											  "type": "square"
+											},
 											"title": "Map 5.9: gold dragon lair",
 											"width": 4800,
 											"height": 6000,
@@ -10758,6 +10835,9 @@
 												"path": "book/FTD/070-map-5.9-gold-dragon-lair-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+											  "type": "square"
+											},
 											"title": "Player Version",
 											"width": 4800,
 											"height": 6000,
@@ -11337,6 +11417,11 @@
 												"path": "book/FTD/071-map-5.10-green-dragon-lair.webp"
 											},
 											"imageType": "map",
+											"grid": {
+											  "type": "square",
+											  "size": 150,
+											  "distance": 10
+											},
 											"title": "Map 5.10: green dragon lair",
 											"width": 4800,
 											"height": 6000,
@@ -11349,6 +11434,11 @@
 												"path": "book/FTD/072-map-5.10-green-dragon-lair-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+											  "type": "square",
+											  "size": 150,
+											  "distance": 10
+											},
 											"title": "Player Version",
 											"width": 4800,
 											"height": 6000,
@@ -12307,6 +12397,11 @@
 												"path": "book/FTD/075-map-5.11-red-dragon-lair.webp"
 											},
 											"imageType": "map",
+											"grid": {
+											  "type": "square",
+											  "offsetX": 38,
+											  "distance": 10
+											},
 											"title": "Map 5.11: red dragon lair",
 											"width": 4800,
 											"height": 6000,
@@ -12319,6 +12414,11 @@
 												"path": "book/FTD/076-map-5.11-red-dragon-lair-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+											  "type": "square",
+											  "offsetX": 38,
+											  "distance": 10
+											},
 											"title": "Player Version",
 											"width": 4800,
 											"height": 6000,
@@ -12840,6 +12940,11 @@
 												"path": "book/FTD/077-map-5.12-sapphire-dragon-lair.webp"
 											},
 											"imageType": "map",
+											"grid": {
+											  "type": "square",
+											  "size": 75,
+											  "distance": 10
+											},
 											"title": "Map 5.12: sapphire dragon lair",
 											"width": 4800,
 											"height": 6000,
@@ -12852,6 +12957,11 @@
 												"path": "book/FTD/078-map-5.12-sapphire-dragon-lair-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+											  "type": "square",
+											  "size": 75,
+											  "distance": 10
+											},
 											"title": "Player Version",
 											"width": 4800,
 											"height": 6000,
@@ -13794,6 +13904,10 @@
 												"path": "book/FTD/079-map-5.13-silver-dragon-lair.webp"
 											},
 											"imageType": "map",
+											"grid": {
+											  "type": "square",
+											  "size": 150
+											},
 											"title": "Map 5.13: silver dragon lair",
 											"width": 4800,
 											"height": 6000,
@@ -13806,6 +13920,10 @@
 												"path": "book/FTD/080-map-5.13-silver-dragon-lair-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+											  "type": "square",
+											  "size": 150
+											},
 											"title": "Player Version",
 											"width": 4800,
 											"height": 6000,
@@ -14299,6 +14417,11 @@
 												"path": "book/FTD/081-map-5.14-topaz-dragon-lair.webp"
 											},
 											"imageType": "map",
+											"grid": {
+											  "type": "square",
+											  "size": 99,
+											  "distance": 10
+											},
 											"title": "Map 5.14: topaz dragon lair",
 											"width": 4800,
 											"height": 6000,
@@ -14311,6 +14434,11 @@
 												"path": "book/FTD/082-map-5.14-topaz-dragon-lair-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+											  "type": "square",
+											  "size": 99,
+											  "distance": 10
+											},
 											"title": "Player Version",
 											"width": 4800,
 											"height": 6000,
@@ -14806,6 +14934,10 @@
 												"path": "book/FTD/083-map-5.15-white-dragon-lair.webp"
 											},
 											"imageType": "map",
+											"grid": {
+											  "type": "square",
+											  "distance": 10
+											},
 											"title": "Map 5.15: white dragon lair",
 											"width": 4800,
 											"height": 6000,
@@ -14818,6 +14950,10 @@
 												"path": "book/FTD/084-map-5.15-white-dragon-lair-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+											  "type": "square",
+											  "distance": 10
+											},
 											"title": "Player Version",
 											"width": 4800,
 											"height": 6000,
