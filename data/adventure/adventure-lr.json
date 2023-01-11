@@ -186,6 +186,13 @@
 									"width": 1301,
 									"height": 1734,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 69,
+										"offsetX": 10,
+										"offsetY": 11,
+										"scale": 3
+									},
 									"id": "05d",
 									"mapRegions": [
 										{
@@ -3477,6 +3484,13 @@
 									"width": 1301,
 									"height": 1734,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 69,
+										"offsetX": 10,
+										"offsetY": 11,
+										"scale": 3
+									},
 									"mapParent": {
 										"id": "05d"
 									}

@@ -281,6 +281,13 @@
 								}
 							],
 							"imageType": "map",
+							"grid": {
+								"type": "hexColsOdd",
+								"size": 189,
+								"offsetX": -37,
+								"offsetY": 59,
+								"units": "mi"
+							},
 							"id": "08a",
 							"hrefThumbnail": {
 								"type": "internal",
@@ -297,6 +304,13 @@
 							"width": 2080,
 							"height": 2850,
 							"imageType": "mapPlayer",
+							"grid": {
+								"type": "hexColsOdd",
+								"size": 199,
+								"offsetX": -45,
+								"offsetY": 64,
+								"units": "mi"
+							},
 							"mapParent": {
 								"id": "08a",
 								"scaleX": 0.956,
@@ -1140,6 +1154,13 @@
 								}
 							],
 							"imageType": "map",
+							"grid": {
+								"type": "hexColsOdd",
+								"size": 189,
+								"offsetX": -37,
+								"offsetY": 59,
+								"units": "mi"
+							},
 							"id": "08b",
 							"hrefThumbnail": {
 								"type": "internal",
@@ -1156,6 +1177,13 @@
 							"width": 1459,
 							"height": 978,
 							"imageType": "mapPlayer",
+							"grid": {
+								"type": "square",
+								"size": 60,
+								"offsetX": -36,
+								"offsetY": -46,
+								"scale": 3
+							},
 							"mapParent": {
 								"id": "08b",
 								"offsetY": 20,
@@ -2122,6 +2150,13 @@
 								}
 							],
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 52,
+								"offsetX": -3,
+								"offsetY": -13,
+								"distance": 10
+							},
 							"id": "08c",
 							"hrefThumbnail": {
 								"type": "internal",
@@ -2138,6 +2173,12 @@
 							"width": 2149,
 							"height": 2909,
 							"imageType": "mapPlayer",
+							"grid": {
+								"type": "square",
+								"size": 56,
+								"offsetY": -15,
+								"distance": 10
+							},
 							"mapParent": {
 								"id": "08c",
 								"scaleX": 0.926,

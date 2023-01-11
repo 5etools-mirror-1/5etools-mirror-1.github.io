@@ -131,10 +131,16 @@
 														"type": "internal",
 														"path": "adventure/RMBRE/003-ram_map.jpg"
 													},
-													"title": "Map 1.1: the Lost Dungeon of Rickedness",
+													"title": "Map 1.1: The Lost Dungeon of Rickedness",
 													"width": 5100,
 													"height": 2202,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 61,
+														"offsetX": -3,
+														"offsetY": -30
+													},
 													"id": "10b",
 													"mapRegions": [
 														{
@@ -1384,6 +1390,12 @@
 													"width": 4709,
 													"height": 1845,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 61,
+														"offsetX": -8,
+														"offsetY": -4
+													},
 													"mapParent": {
 														"id": "10b",
 														"offsetX": 187,
