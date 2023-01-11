@@ -6512,6 +6512,12 @@
 							"title": "Map 2.1: the Continent of Khorvaire",
 							"width": 5033,
 							"height": 3548,
+							"grid": {
+							  "type": "none",
+							  "size": 1350,
+							  "distance": 1000,
+							  "units": "mi"
+							},
 							"imageType": "map"
 						}
 					]
@@ -8285,6 +8291,12 @@
 							"title": "Map 2.2: Islands of Aerenal",
 							"width": 850,
 							"height": 568,
+							"grid": {
+							  "type": "none",
+							  "size": 164,
+							  "distance": 300,
+							  "units": "mi"
+							},
 							"imageType": "map",
 							"id": "02e"
 						},
@@ -8298,6 +8310,12 @@
 							"width": 2550,
 							"height": 1704,
 							"imageType": "mapPlayer",
+							"grid": {
+							  "type": "none",
+							  "size": 492,
+							  "distance": 300,
+							  "units": "mi"
+							},
 							"mapParent": {
 								"id": "02e",
 								"autoScale": true
@@ -8896,6 +8914,12 @@
 									"title": "Map 2.3: Continent of Xen'drik",
 									"width": 850,
 									"height": 568,
+									"grid": {
+									  "type": "none",
+									  "size": 150,
+									  "distance": 1000,
+									  "units": "mi"
+									},
 									"imageType": "map",
 									"id": "02f"
 								},
@@ -8908,6 +8932,12 @@
 									"title": "(Player Version)",
 									"width": 2550,
 									"height": 1710,
+									"grid": {
+									  "type": "none",
+									  "size": 445,
+									  "distance": 1000,
+									  "units": "mi"
+									},
 									"imageType": "mapPlayer",
 									"mapParent": {
 										"id": "02f",
@@ -13356,6 +13386,12 @@
 													"title": "Map 4.1: Arcane Workshop",
 													"width": 2498,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 115,
+													  "offsetX": 57,
+													  "offsetY": 37
+													},
 													"imageType": "map",
 													"id": "030"
 												},
@@ -13368,6 +13404,12 @@
 													"title": "(Player Version)",
 													"width": 2500,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 114,
+													  "offsetX": 47,
+													  "offsetY": 58
+													},
 													"imageType": "mapPlayer",
 													"mapParent": {
 														"id": "030",
@@ -13664,6 +13706,9 @@
 													"width": 4200,
 													"height": 5700,
 													"imageType": "map",
+													"grid": {
+													  "type": "square"
+													},
 													"id": "031"
 												},
 												{
@@ -13676,6 +13721,12 @@
 													"width": 2947,
 													"height": 4000,
 													"imageType": "mapPlayer",
+													"grid": {
+													  "type": "square",
+													  "size": 70,
+													  "offsetX": 2,
+													  "offsetY": 4
+													},
 													"mapParent": {
 														"id": "031",
 														"autoScale": true
@@ -14106,6 +14157,11 @@
 													"title": "Map 4.3: Ruined Dhakaani Fort",
 													"width": 2945,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 62,
+													  "offsetX": 12
+													},
 													"imageType": "map",
 													"id": "032"
 												},
@@ -14118,6 +14174,11 @@
 													"title": "(Player Version)",
 													"width": 2945,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 63,
+													  "offsetY": 32
+													},
 													"imageType": "mapPlayer",
 													"mapParent": {
 														"id": "032"
@@ -14307,6 +14368,12 @@
 													"title": "Map 4.4: Gatekeeper Seal",
 													"width": 2947,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 70,
+													  "offsetX": 3,
+													  "offsetY": 7
+													},
 													"imageType": "map",
 													"id": "033"
 												},
@@ -14319,6 +14386,12 @@
 													"title": "(Player Version)",
 													"width": 2947,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 70,
+													  "offsetX": 3,
+													  "offsetY": 7
+													},
 													"imageType": "mapPlayer",
 													"mapParent": {
 														"id": "033"
@@ -15036,6 +15109,12 @@
 													"title": "Map 4.5: Fortified Outpost",
 													"width": 2947,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 52,
+													  "offsetX": 12,
+													  "offsetY": 29
+													},
 													"imageType": "map",
 													"id": "034"
 												},
@@ -15048,6 +15127,11 @@
 													"title": "(Player Version)",
 													"width": 2607,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 52,
+													  "offsetY": 39
+													},
 													"imageType": "mapPlayer",
 													"mapParent": {
 														"id": "034",
@@ -15174,6 +15258,12 @@
 													"title": "Map 4.6: Warforged Ossuary",
 													"width": 3063,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 73,
+													  "offsetX": -2,
+													  "offsetY": -7
+													},
 													"imageType": "map",
 													"id": "035"
 												},
@@ -15186,6 +15276,12 @@
 													"title": "(Player Version)",
 													"width": 3055,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 73,
+													  "offsetX": 27,
+													  "offsetY": 37
+													},
 													"imageType": "mapPlayer",
 													"mapParent": {
 														"id": "035",
@@ -15408,6 +15504,12 @@
 													"title": "Map 4.7: Demon Ruin",
 													"width": 2947,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 56,
+													  "offsetX": 2,
+													  "offsetY": 3
+													},
 													"imageType": "map",
 													"id": "036"
 												},
@@ -15420,6 +15522,12 @@
 													"title": "(Player Version)",
 													"width": 2947,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 56,
+													  "offsetX": 2,
+													  "offsetY": 3
+													},
 													"imageType": "mapPlayer",
 													"mapParent": {
 														"id": "036"
@@ -16200,6 +16308,12 @@
 															"title": "Map 4.8: Fallen Warforged Colossus",
 															"width": 2947,
 															"height": 4000,
+															"grid": {
+															  "type": "square",
+															  "size": 66,
+															  "offsetX": 1,
+															  "offsetY": 1
+															},
 															"imageType": "map",
 															"id": "037"
 														},
@@ -16212,6 +16326,12 @@
 															"title": "(Player Version)",
 															"width": 2947,
 															"height": 4000,
+															"grid": {
+															  "type": "square",
+															  "size": 66,
+															  "offsetX": 1,
+															  "offsetY": 1
+															},
 															"imageType": "mapPlayer",
 															"mapParent": {
 																"id": "037"
@@ -16272,6 +16392,12 @@
 													"title": "Map 4.9: Library Vault",
 													"width": 2960,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 97,
+													  "offsetX": 50,
+													  "offsetY": 74
+													},
 													"imageType": "map",
 													"id": "038"
 												},
@@ -16284,6 +16410,12 @@
 													"title": "(Player Version)",
 													"width": 3017,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 98,
+													  "offsetX": 66,
+													  "offsetY": 55
+													},
 													"imageType": "mapPlayer",
 													"mapParent": {
 														"id": "038",
@@ -16478,6 +16610,9 @@
 									"title": "Planes of Existence",
 									"width": 850,
 									"height": 850,
+									"grid": {
+									  "type": "none"
+									},
 									"imageType": "map",
 									"id": "053"
 								},
@@ -16490,6 +16625,9 @@
 									"title": "(Player Version)",
 									"width": 1788,
 									"height": 1788,
+									"grid": {
+									  "type": "none"
+									},
 									"imageType": "mapPlayer",
 									"mapParent": {
 										"id": "053",
@@ -17218,6 +17356,13 @@
 															"title": "Map 4.10: Lightning Rail Train Carriages",
 															"width": 2947,
 															"height": 4000,
+															"grid": {
+															  "type": "square",
+															  "size": 66,
+															  "offsetX": 40,
+															  "offsetY": 19,
+															  "distance": 2.5
+															},
 															"imageType": "map",
 															"id": "054"
 														},
@@ -17230,6 +17375,13 @@
 															"title": "(Player Version)",
 															"width": 2947,
 															"height": 4000,
+															"grid": {
+															  "type": "square",
+															  "size": 65,
+															  "offsetX": 1,
+															  "offsetY": 7,
+															  "distance": 2.5
+															},
 															"imageType": "mapPlayer",
 															"mapParent": {
 																"id": "054"
@@ -18118,6 +18270,12 @@
 													"title": "Map 4.11: Sharn Heights",
 													"width": 2947,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 70,
+													  "offsetX": 3,
+													  "offsetY": 3
+													},
 													"imageType": "map",
 													"id": "055"
 												},
@@ -18130,6 +18288,12 @@
 													"title": "(Player Version)",
 													"width": 2947,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 70,
+													  "offsetX": 3,
+													  "offsetY": 3
+													},
 													"imageType": "mapPlayer",
 													"mapParent": {
 														"id": "055"
@@ -18374,6 +18538,11 @@
 													"title": "Map 4.12: Nightclub",
 													"width": 2947,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 70,
+													  "offsetY": -15
+													},
 													"imageType": "map",
 													"id": "056"
 												},
@@ -18386,6 +18555,12 @@
 													"title": "(Player Version)",
 													"width": 2947,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 70,
+													  "offsetX": -2,
+													  "offsetY": -14
+													},
 													"imageType": "mapPlayer",
 													"mapParent": {
 														"id": "056"
@@ -18651,6 +18826,12 @@
 													"title": "Map 4.13: Cog Hub",
 													"width": 2947,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 70,
+													  "offsetX": 4,
+													  "offsetY": 4
+													},
 													"imageType": "map",
 													"id": "057"
 												},
@@ -18663,6 +18844,12 @@
 													"title": "(Player Version)",
 													"width": 2947,
 													"height": 4000,
+													"grid": {
+													  "type": "square",
+													  "size": 70,
+													  "offsetX": 4,
+													  "offsetY": 4
+													},
 													"imageType": "mapPlayer",
 													"mapParent": {
 														"id": "057"

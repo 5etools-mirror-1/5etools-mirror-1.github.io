@@ -339,6 +339,12 @@
 							]
 						}
 					],
+					"grid": {
+					  "type": "square",
+					  "size": 52,
+					  "offsetX": 26,
+					  "offsetY": 52
+					},
 					"hrefThumbnail": {
 						"type": "internal",
 						"path": "adventure/AitFR-THP/thumbnail/14_1476395028.webp"
@@ -646,6 +652,13 @@
 							"title": "Map 2",
 							"width": 2200,
 							"height": 3000,
+							"grid": {
+							  "type": "hexColsEven",
+							  "size": 260,
+							  "offsetX": -50,
+							  "offsetY": 28,
+							  "distance": 586
+							},
 							"imageType": "map"
 						},
 						{
@@ -829,6 +842,12 @@
 							"width": 1894,
 							"height": 1713,
 							"imageType": "map",
+							"grid": {
+							  "type": "square",
+							  "size": 52,
+							  "offsetX": 38,
+							  "offsetY": 29
+							},
 							"mapRegions": [
 								{
 									"area": "052",

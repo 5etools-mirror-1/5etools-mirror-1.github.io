@@ -413,7 +413,10 @@
 										"path": "book/SCC/005-map-1.1-central-campus.webp"
 									},
 									"imageType": "map",
-									"title": "Map 1.1: central campus",
+									"grid": {
+									  "type": "none"
+									},
+									"title": "Map 1.1: Central Campus",
 									"width": 3000,
 									"height": 2026
 								},
@@ -671,7 +674,10 @@
 										"path": "book/SCC/008-map-1.2-lorehold-campus.webp"
 									},
 									"imageType": "map",
-									"title": "Map 1.2: lorehold campus",
+									"grid": {
+									  "type": "none"
+									},
+									"title": "Map 1.2: Lorehold Campus",
 									"width": 3000,
 									"height": 2026
 								},
@@ -919,6 +925,9 @@
 										"path": "book/SCC/011-map-1.3.webp"
 									},
 									"imageType": "map",
+									"grid": {
+									  "type": "none"
+									},
 									"title": "Map 1.3: Prismari Campus",
 									"width": 3000,
 									"height": 2025
@@ -1136,7 +1145,10 @@
 										"path": "book/SCC/014-map-1.4-quandrix-campus.webp"
 									},
 									"imageType": "map",
-									"title": "Map 1.4: quandrix campus",
+									"grid": {
+									  "type": "none"
+									},
+									"title": "Map 1.4: Quandrix Campus",
 									"width": 3000,
 									"height": 2026
 								},
@@ -1371,7 +1383,10 @@
 										"path": "book/SCC/017-map-1.5-silverquill-campus.webp"
 									},
 									"imageType": "map",
-									"title": "Map 1.5: silverquill campus",
+									"grid": {
+									  "type": "none"
+									},
+									"title": "Map 1.5: Silverquill Campus",
 									"width": 3000,
 									"height": 2026
 								},
@@ -1607,7 +1622,10 @@
 										"path": "book/SCC/020-map-1.6-witherbloom-campus.webp"
 									},
 									"imageType": "map",
-									"title": "Map 1.6: witherbloom campus",
+									"grid": {
+									  "type": "none"
+									},
+									"title": "Map 1.6: Witherbloom Campus",
 									"width": 3000,
 									"height": 2026
 								},
@@ -4713,6 +4731,9 @@
 					},
 					"width": 3500,
 					"height": 5000,
+					"grid": {
+					  "type": "none"
+					},
 					"imageType": "map"
 				}
 			]
