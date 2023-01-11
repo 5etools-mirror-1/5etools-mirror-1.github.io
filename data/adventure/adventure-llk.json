@@ -581,6 +581,12 @@
 							},
 							"width": 4926,
 							"height": 6426,
+							"title": "Monastery of the Distressed Body",
+							"imageType": "map",
+							"grid": {
+								"type": "none",
+								"distance": 50
+							},
 							"mapRegions": [
 								{
 									"area": "06d",
@@ -1237,7 +1243,6 @@
 									]
 								}
 							],
-							"imageType": "map",
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/LLK/thumbnail/006-318365_extra_life_monastery.webp"
@@ -1254,6 +1259,10 @@
 							"width": 5000,
 							"height": 6471,
 							"imageType": "mapPlayer",
+							"grid": {
+								"type": "none",
+								"distance": 50
+							},
 							"mapParent": {
 								"id": "0d7",
 								"autoScale": true
@@ -2112,8 +2121,14 @@
 								"type": "internal",
 								"path": "adventure/LLK/011-318365_extra_life_ooze.png"
 							},
+							"title": "Daoine Gloine",
 							"width": 4926,
 							"height": 6426,
+							"imageType": "map",
+							"grid": {
+								"type": "none",
+								"distance": 50
+							},
 							"mapRegions": [
 								{
 									"area": "097",
@@ -2758,7 +2773,6 @@
 									]
 								}
 							],
-							"imageType": "map",
 							"hrefThumbnail": {
 								"type": "internal",
 								"path": "adventure/LLK/thumbnail/011-318365_extra_life_ooze.webp"
@@ -2775,6 +2789,10 @@
 							"width": 5000,
 							"height": 6471,
 							"imageType": "mapPlayer",
+							"grid": {
+								"type": "none",
+								"distance": 50
+							},
 							"mapParent": {
 								"id": "0d8",
 								"autoScale": true

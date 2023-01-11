@@ -865,7 +865,13 @@
 										"path": "book/VRGR/116-map-4.1-the-house-of-lament.jpg"
 									},
 									"imageType": "map",
-									"title": "Map 4.1: the house of lament",
+									"grid": {
+										"type": "square",
+										"size": 150,
+										"offsetX": -57,
+										"distance": 10
+									},
+									"title": "Map 4.1: The House of Lament",
 									"width": 4000,
 									"height": 5700,
 									"id": "000",
@@ -3169,6 +3175,12 @@
 										"path": "book/VRGR/117-map-4.1-the-house-of-lament-player.jpg"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 150,
+										"offsetX": -60,
+										"distance": 10
+									},
 									"title": "Player Version",
 									"width": 4000,
 									"height": 5700,

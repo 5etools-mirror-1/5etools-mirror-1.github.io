@@ -80,6 +80,14 @@
 									"width": 2550,
 									"height": 1650,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 98,
+										"offsetX": -5,
+										"offsetY": 26,
+										"scale": 2,
+										"distance": 100
+									},
 									"mapRegions": [
 										{
 											"area": "7d2",
@@ -634,6 +642,12 @@
 									"width": 2550,
 									"height": 1650,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 99,
+										"scale": 2,
+										"distance": 100
+									},
 									"mapParent": {
 										"id": "000"
 									}
@@ -676,6 +690,12 @@
 											"title": "Map 5.5: Ironlot Streets",
 											"width": 2550,
 											"height": 1650,
+											"grid": {
+												"type": "square",
+												"size": 72,
+												"offsetX": 1,
+												"offsetY": -9
+											},
 											"imageType": "map"
 										},
 										{
@@ -687,6 +707,12 @@
 											"title": "Map 5.5: Ironlot Streets (Player Version)",
 											"width": 2550,
 											"height": 1650,
+											"grid": {
+												"type": "square",
+												"size": 72,
+												"offsetX": 1,
+												"offsetY": -9
+											},
 											"imageType": "mapPlayer"
 										}
 									]
@@ -945,6 +971,12 @@
 											"title": "Map 5.6: Nima Cinnarid's House",
 											"width": 1200,
 											"height": 1500,
+											"grid": {
+												"type": "square",
+												"size": 206,
+												"offsetX": -115,
+												"offsetY": -72
+											},
 											"imageType": "map"
 										},
 										{
@@ -956,6 +988,12 @@
 											"title": "Map 5.6: Nima Cinnarid's House (Player Version)",
 											"width": 2400,
 											"height": 3000,
+											"grid": {
+												"type": "square",
+												"size": 414,
+												"offsetX": -230,
+												"offsetY": -147
+											},
 											"imageType": "mapPlayer"
 										}
 									]
@@ -1229,6 +1267,12 @@
 											"title": "Map 5.7: Silver Falls Cavern",
 											"width": 2550,
 											"height": 1650,
+											"grid": {
+												"type": "square",
+												"size": 111,
+												"offsetX": 78,
+												"offsetY": 47
+											},
 											"imageType": "map"
 										},
 										{
@@ -1240,6 +1284,12 @@
 											"title": "Map 5.7: Silver Falls Cavern (Player Version)",
 											"width": 2550,
 											"height": 1650,
+											"grid": {
+												"type": "square",
+												"size": 111,
+												"offsetX": 78,
+												"offsetY": 47
+											},
 											"imageType": "mapPlayer"
 										}
 									]
@@ -1371,6 +1421,13 @@
 									"width": 2550,
 									"height": 1638,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 75,
+										"offsetX": -19,
+										"offsetY": -5,
+										"scale": 2
+									},
 									"mapRegions": [
 										{
 											"area": "836",
@@ -5629,6 +5686,13 @@
 									"width": 2550,
 									"height": 1650,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 75,
+										"offsetX": -17,
+										"offsetY": 12,
+										"scale": 2
+									},
 									"mapParent": {
 										"id": "001",
 										"autoScale": true
