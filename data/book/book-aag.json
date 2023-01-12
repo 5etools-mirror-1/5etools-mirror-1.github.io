@@ -1484,7 +1484,8 @@
 							"grid": {
 								"type": "none"
 							},
-							"imageType": "map"
+							"imageType": "map",
+							"id": "00b"
 						},
 						{
 							"type": "image",
@@ -1498,7 +1499,10 @@
 							"grid": {
 								"type": "none"
 							},
-							"imageType": "mapPlayer"
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "00b"
+							}
 						}
 					]
 				},
@@ -1517,7 +1521,8 @@
 							"grid": {
 								"type": "none"
 							},
-							"imageType": "map"
+							"imageType": "map",
+							"id": "013"
 						},
 						{
 							"type": "image",
@@ -1531,7 +1536,10 @@
 							"grid": {
 								"type": "none"
 							},
-							"imageType": "mapPlayer"
+							"imageType": "mapPlayer",
+							"mapParent": {
+								"id": "013"
+							}
 						}
 					]
 				}
