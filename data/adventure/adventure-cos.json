@@ -3740,6 +3740,14 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "hexColsOdd",
+										"size": 69,
+										"offsetX": 9,
+										"offsetY": -4,
+										"distance": 0.25,
+										"units": "mi"
+									},
 									"id": "6c7",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -3756,6 +3764,14 @@
 									"width": 5025,
 									"height": 3225,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "hexColsOdd",
+										"size": 69,
+										"offsetX": 9,
+										"offsetY": -4,
+										"distance": 0.25,
+										"units": "mi"
+									},
 									"mapParent": {
 										"id": "6c7",
 										"autoScale": true
@@ -3992,6 +4008,13 @@
 											"width": 1000,
 											"height": 615,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 50,
+												"offsetX": 5,
+												"offsetY": -19,
+												"scale": 1.5
+											},
 											"id": "0bc"
 										},
 										{
@@ -4004,7 +4027,13 @@
 											"width": 1950,
 											"height": 1200,
 											"imageType": "mapPlayer",
-											"mapName": "Map 2.2: Tser Pool Encampment (Player Version)",
+											"grid": {
+												"type": "square",
+												"size": 97,
+												"offsetX": 13,
+												"offsetY": 63,
+												"scale": 1.5
+											},
 											"mapParent": {
 												"id": "0bc",
 												"autoScale": true
@@ -4713,6 +4742,13 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 120,
+										"offsetX": -38,
+										"offsetY": -6,
+										"distance": 40
+									},
 									"id": "0bd",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -4729,6 +4765,13 @@
 									"width": 1950,
 									"height": 2475,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 120,
+										"offsetX": -38,
+										"offsetY": -6,
+										"distance": 40
+									},
 									"mapParent": {
 										"id": "0bd"
 									}
@@ -5080,6 +5123,11 @@
 												}
 											],
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 72,
+												"offsetX": -15
+											},
 											"id": "11c",
 											"hrefThumbnail": {
 												"type": "internal",
@@ -5096,6 +5144,11 @@
 											"width": 2400,
 											"height": 1650,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 72,
+												"offsetX": -20
+											},
 											"mapParent": {
 												"id": "11c"
 											}
@@ -6296,6 +6349,11 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 125,
+										"distance": 50
+									},
 									"id": "132",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -6308,8 +6366,13 @@
 										"type": "internal",
 										"path": "adventure/CoS/024-005-player.jpg"
 									},
-									"title": "Map 2: Walls of Ravenloft (Player Version)",
+									"title": "Player Version",
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 172,
+										"distance": 50
+									},
 									"width": 2750,
 									"height": 3797,
 									"mapParent": {
@@ -7367,6 +7430,11 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 130,
+										"distance": 20
+									},
 									"id": "16f",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -7379,8 +7447,13 @@
 										"type": "internal",
 										"path": "adventure/CoS/025-006-player.jpg"
 									},
-									"title": "Map 3: Main Floor (Player Version)",
+									"title": "Player Version",
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 168,
+										"distance": 20
+									},
 									"width": 3715,
 									"height": 1836,
 									"mapParent": {
@@ -8465,6 +8538,11 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 68,
+										"distance": 10
+									},
 									"id": "172",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -8477,8 +8555,13 @@
 										"type": "internal",
 										"path": "adventure/CoS/028-007-player.jpg"
 									},
-									"title": "Map 4: Court of the Count (Player Version)",
+									"title": "Player Version",
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 68,
+										"distance": 10
+									},
 									"width": 2380,
 									"height": 1330,
 									"mapParent": {
@@ -9595,6 +9678,11 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 135,
+										"distance": 20
+									},
 									"id": "182",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -9607,8 +9695,13 @@
 										"type": "internal",
 										"path": "adventure/CoS/030-008-player.png"
 									},
-									"title": "Map 5: Rooms of Weeping (Player Version)",
+									"title": "Player Version",
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 173,
+										"distance": 20
+									},
 									"width": 2660,
 									"height": 1680,
 									"mapParent": {
@@ -10419,6 +10512,11 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 132,
+										"distance": 20
+									},
 									"id": "191",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -10431,8 +10529,13 @@
 										"type": "internal",
 										"path": "adventure/CoS/033-009-player.png"
 									},
-									"title": "Map 6: Spires of Ravenloft (Player Version)",
+									"title": "Player Version",
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 177,
+										"distance": 20
+									},
 									"width": 2520,
 									"height": 1540,
 									"mapParent": {
@@ -11398,6 +11501,11 @@
 												}
 											],
 											"imageType": "map",
+											"grid": {
+												"type": "none",
+												"size": 72,
+												"distance": 10
+											},
 											"id": "441",
 											"hrefThumbnail": {
 												"type": "internal",
@@ -11410,8 +11518,13 @@
 												"type": "internal",
 												"path": "adventure/CoS/036-010-player.jpg"
 											},
-											"title": "Maps 7-10: Spires and Tower of Ravenloft (Player Version)",
+											"title": "Player Version",
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 72,
+												"distance": 10
+											},
 											"width": 1190,
 											"height": 3290,
 											"mapParent": {
@@ -13903,6 +14016,11 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 72,
+										"distance": 10
+									},
 									"id": "459",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -13915,8 +14033,13 @@
 										"type": "internal",
 										"path": "adventure/CoS/038-011-player.jpg"
 									},
-									"title": "Map 11: Larders of Ill Omen & Map 12: Dungeon and Catacombs (Player Version)",
+									"title": "Player Version",
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 72,
+										"distance": 10
+									},
 									"width": 2450,
 									"height": 3010,
 									"mapParent": {
@@ -14123,6 +14246,11 @@
 												}
 											],
 											"imageType": "map",
+											"grid": {
+												"type": "none",
+												"size": 157,
+												"distance": 10
+											},
 											"id": "46e",
 											"hrefThumbnail": {
 												"type": "internal",
@@ -14139,6 +14267,11 @@
 											"width": 1200,
 											"height": 3300,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 158,
+												"distance": 10
+											},
 											"mapParent": {
 												"id": "46e"
 											}
@@ -14572,6 +14705,12 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 68,
+										"offsetX": 14,
+										"offsetY": 12
+									},
 									"id": "483",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -16514,6 +16653,11 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 60,
+										"distance": 250
+									},
 									"id": "49f",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -16530,6 +16674,11 @@
 									"width": 1950,
 									"height": 1200,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 60,
+										"distance": 250
+									},
 									"mapParent": {
 										"id": "49f"
 									}
@@ -17173,6 +17322,12 @@
 												}
 											],
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 74,
+												"offsetX": -18,
+												"offsetY": -15
+											},
 											"id": "4ce",
 											"hrefThumbnail": {
 												"type": "internal",
@@ -17189,6 +17344,12 @@
 											"width": 2400,
 											"height": 3300,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 74,
+												"offsetX": -18,
+												"offsetY": -15
+											},
 											"mapParent": {
 												"id": "4ce"
 											}
@@ -18150,6 +18311,12 @@
 												}
 											],
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 63,
+												"offsetX": -34,
+												"offsetY": 9
+											},
 											"id": "4eb",
 											"hrefThumbnail": {
 												"type": "internal",
@@ -18166,6 +18333,12 @@
 											"width": 2400,
 											"height": 3300,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 63,
+												"offsetX": -34,
+												"offsetY": 9
+											},
 											"mapParent": {
 												"id": "4eb"
 											}
@@ -19308,6 +19481,12 @@
 												}
 											],
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 76,
+												"offsetX": -12,
+												"offsetY": -19
+											},
 											"id": "514",
 											"hrefThumbnail": {
 												"type": "internal",
@@ -19324,6 +19503,12 @@
 											"width": 2400,
 											"height": 3300,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 76,
+												"offsetX": -15,
+												"offsetY": -19
+											},
 											"mapParent": {
 												"id": "514"
 											}
@@ -20039,6 +20224,13 @@
 												}
 											],
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 75,
+												"offsetX": -48,
+												"offsetY": -24,
+												"scale": 2
+											},
 											"id": "5b4",
 											"hrefThumbnail": {
 												"type": "internal",
@@ -20055,6 +20247,13 @@
 											"width": 2400,
 											"height": 1650,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 179,
+												"offsetX": -101,
+												"offsetY": -48,
+												"scale": 2
+											},
 											"mapParent": {
 												"id": "5b4",
 												"autoScale": true
@@ -20835,6 +21034,13 @@
 												}
 											],
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 69,
+												"offsetX": -11,
+												"offsetY": -7,
+												"distance": 10
+											},
 											"id": "5ba",
 											"hrefThumbnail": {
 												"type": "internal",
@@ -20851,6 +21057,13 @@
 											"width": 2400,
 											"height": 3300,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 69,
+												"offsetX": -11,
+												"offsetY": -7,
+												"distance": 10
+											},
 											"mapParent": {
 												"id": "5ba"
 											}
@@ -21552,6 +21765,12 @@
 												}
 											],
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 85,
+												"offsetX": -43,
+												"offsetY": -25
+											},
 											"id": "5cf",
 											"hrefThumbnail": {
 												"type": "internal",
@@ -21568,6 +21787,12 @@
 											"width": 2400,
 											"height": 1650,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 85,
+												"offsetX": -43,
+												"offsetY": -25
+											},
 											"mapParent": {
 												"id": "5cf"
 											}
@@ -22595,6 +22820,13 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 144,
+										"offsetX": -44,
+										"offsetY": -16,
+										"distance": 10
+									},
 									"id": "5eb",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -22611,6 +22843,13 @@
 									"width": 4800,
 									"height": 6600,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 144,
+										"offsetX": -44,
+										"offsetY": -16,
+										"distance": 10
+									},
 									"mapParent": {
 										"id": "5eb"
 									}
@@ -23164,7 +23403,7 @@
 												"type": "internal",
 												"path": "adventure/CoS/079-021.jpg"
 											},
-											"title": "Map 7.2: Argynvostholt (Area Q)",
+											"title": "Map 7.2: Argynvostholt (Area Q) - Rooftop and Beacon",
 											"width": 2400,
 											"height": 3300,
 											"mapRegions": [
@@ -23985,6 +24224,13 @@
 												}
 											],
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 72,
+												"offsetX": 47,
+												"offsetY": 63,
+												"distance": 10
+											},
 											"id": "602",
 											"hrefThumbnail": {
 												"type": "internal",
@@ -24001,6 +24247,13 @@
 											"width": 2400,
 											"height": 3300,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 72,
+												"offsetX": 47,
+												"offsetY": 63,
+												"distance": 10
+											},
 											"mapParent": {
 												"id": "602"
 											}
@@ -24849,6 +25102,13 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 61,
+										"offsetX": -37,
+										"offsetY": -15,
+										"distance": 50
+									},
 									"id": "619",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -24865,6 +25125,13 @@
 									"width": 1950,
 									"height": 2475,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 61,
+										"offsetX": -37,
+										"offsetY": -15,
+										"distance": 50
+									},
 									"mapParent": {
 										"id": "619"
 									}
@@ -25758,6 +26025,13 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 69,
+										"offsetX": -3,
+										"offsetY": -3,
+										"distance": 10
+									},
 									"id": "631",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -25774,6 +26048,13 @@
 									"width": 2400,
 									"height": 3300,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 69,
+										"offsetX": -3,
+										"offsetY": -3,
+										"distance": 10
+									},
 									"mapParent": {
 										"id": "631"
 									}
@@ -26187,6 +26468,13 @@
 												}
 											],
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 69,
+												"offsetX": -10,
+												"offsetY": -5,
+												"distance": 10
+											},
 											"id": "6bb",
 											"hrefThumbnail": {
 												"type": "internal",
@@ -26203,6 +26491,13 @@
 											"width": 2400,
 											"height": 1650,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 10069,
+												"offsetX": -10,
+												"offsetY": -5,
+												"distance": 10
+											},
 											"mapParent": {
 												"id": "6bb"
 											}
@@ -27211,6 +27506,13 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 68,
+										"offsetX": 47,
+										"offsetY": 46,
+										"distance": 10
+									},
 									"id": "6bc",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -27227,6 +27529,13 @@
 									"width": 2400,
 									"height": 3300,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 68,
+										"offsetX": 47,
+										"offsetY": 46,
+										"distance": 10
+									},
 									"mapParent": {
 										"id": "6bc"
 									}
@@ -27747,6 +28056,13 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 82,
+										"offsetX": -32,
+										"scale": 2,
+										"distance": 100
+									},
 									"id": "6bd",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -27763,6 +28079,13 @@
 									"width": 1575,
 									"height": 1575,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 82,
+										"offsetX": -32,
+										"scale": 2,
+										"distance": 100
+									},
 									"mapParent": {
 										"id": "6bd"
 									}
@@ -27906,6 +28229,12 @@
 												}
 											],
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 80,
+												"offsetX": -21,
+												"offsetY": -37
+											},
 											"id": "6be",
 											"hrefThumbnail": {
 												"type": "internal",
@@ -27922,6 +28251,12 @@
 											"width": 1125,
 											"height": 1125,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 90,
+												"offsetX": -23,
+												"offsetY": -42
+											},
 											"mapParent": {
 												"id": "6be",
 												"autoScale": true
@@ -28585,6 +28920,12 @@
 												}
 											],
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 72,
+												"offsetX": -13,
+												"offsetY": -15
+											},
 											"id": "6bf",
 											"hrefThumbnail": {
 												"type": "internal",
@@ -28601,6 +28942,12 @@
 											"width": 1200,
 											"height": 3300,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 72,
+												"offsetX": -13,
+												"offsetY": -15
+											},
 											"mapParent": {
 												"id": "6bf"
 											}
@@ -29617,6 +29964,12 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 72,
+										"offsetX": -22,
+										"offsetY": 25
+									},
 									"id": "6c0",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -29633,6 +29986,12 @@
 									"width": 2400,
 									"height": 3300,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 72,
+										"offsetX": -22,
+										"offsetY": 25
+									},
 									"mapParent": {
 										"id": "6c0"
 									}
@@ -31116,6 +31475,13 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 76,
+										"offsetX": -14,
+										"offsetY": -18,
+										"distance": 10
+									},
 									"id": "6c1",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -31132,6 +31498,13 @@
 									"width": 2400,
 									"height": 3300,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 76,
+										"offsetX": -14,
+										"offsetY": -18,
+										"distance": 10
+									},
 									"mapParent": {
 										"id": "6c1"
 									}
@@ -32968,6 +33341,13 @@
 												}
 											],
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 76,
+												"offsetX": 21,
+												"offsetY": -19,
+												"distance": 10
+											},
 											"id": "6c2",
 											"hrefThumbnail": {
 												"type": "internal",
@@ -32984,6 +33364,13 @@
 											"width": 2400,
 											"height": 3300,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 76,
+												"offsetX": 21,
+												"offsetY": -19,
+												"distance": 10
+											},
 											"mapParent": {
 												"id": "6c2"
 											}
@@ -34047,6 +34434,13 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 54,
+										"offsetX": -26,
+										"offsetY": -8,
+										"distance": 50
+									},
 									"id": "6c3",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -34063,6 +34457,13 @@
 									"width": 1950,
 									"height": 2475,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 54,
+										"offsetX": -26,
+										"offsetY": -8,
+										"distance": 50
+									},
 									"mapParent": {
 										"id": "6c3"
 									}
@@ -35174,6 +35575,13 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 74,
+										"offsetX": 14,
+										"offsetY": 36,
+										"distance": 10
+									},
 									"id": "6c4",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -35190,6 +35598,13 @@
 									"width": 2400,
 									"height": 3300,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 74,
+										"offsetX": 14,
+										"offsetY": 36,
+										"distance": 10
+									},
 									"mapParent": {
 										"id": "6c4"
 									}
@@ -37193,6 +37608,12 @@
 										}
 									],
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 165,
+										"offsetX": 80,
+										"offsetY": 54
+									},
 									"id": "6c6",
 									"hrefThumbnail": {
 										"type": "internal",
@@ -37209,6 +37630,12 @@
 									"width": 5455,
 									"height": 7500,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 165,
+										"offsetX": 80,
+										"offsetY": 54
+									},
 									"mapParent": {
 										"id": "6c6"
 									}
