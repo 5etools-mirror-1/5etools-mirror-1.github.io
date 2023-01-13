@@ -436,6 +436,13 @@
 												"path": "book/SCC/071-map-4.1-wiltroot-hall-and-outer-grounds.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 82,
+												"offsetX": 15,
+												"offsetY": -25,
+												"scale": 2
+											},
 											"title": "Map 4.1: Wiltroot Hall and Outer Grounds",
 											"width": 3684,
 											"height": 5000,
@@ -986,10 +993,17 @@
 												"type": "internal",
 												"path": "book/SCC/map-4.1-wiltroot-hall-and-outer-grounds-player.webp"
 											},
-											"title": "Map 4.1: Wiltroot Hall/Outer Grounds (Player Version)",
+											"title": "(Player Version)",
 											"width": 3684,
 											"height": 5000,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 82,
+												"offsetX": 15,
+												"offsetY": -25,
+												"scale": 2
+											},
 											"mapParent": {
 												"id": "000"
 											}
@@ -1635,6 +1649,12 @@
 														"path": "book/SCC/076-map-4.2-aerojaunt-field.webp"
 													},
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 87,
+														"offsetX": 18,
+														"offsetY": 21
+													},
 													"title": "Map 4.2: Aerojaunt Field",
 													"width": 3000,
 													"height": 4071,
@@ -2111,10 +2131,16 @@
 														"type": "internal",
 														"path": "book/SCC/map-4.2-aerojaunt-field-player.webp"
 													},
-													"title": "Map 4.2: Aerojaunt Field (Player Version)",
+													"title": "(Player Version)",
 													"width": 3000,
 													"height": 4071,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 87,
+														"offsetX": 18,
+														"offsetY": 21
+													},
 													"mapParent": {
 														"id": "001"
 													}
@@ -2561,7 +2587,13 @@
 												"path": "book/SCC/080-map-4.3-scriptoria-collections.webp"
 											},
 											"imageType": "map",
-											"title": "Map 4.3: scriptoria collections",
+											"grid": {
+												"type": "square",
+												"size": 191,
+												"offsetX": -37,
+												"offsetY": -67
+											},
+											"title": "Map 4.3: Scriptoria Collections",
 											"width": 3000,
 											"height": 2226
 										},
@@ -2882,7 +2914,13 @@
 														"path": "book/SCC/082-map-4.4-strixhaven-stadium.webp"
 													},
 													"imageType": "map",
-													"title": "Map 4.4: strixhaven stadium",
+													"grid": {
+														"type": "square",
+														"size": 92,
+														"offsetX": 11,
+														"offsetY": 72
+													},
+													"title": "Map 4.4: Strixhaven Stadium",
 													"width": 3000,
 													"height": 4071,
 													"mapRegions": [
@@ -3133,10 +3171,16 @@
 														"type": "internal",
 														"path": "book/SCC/map-4.4-strixhaven-stadium-player.webp"
 													},
-													"title": "Map 4.4: Strixhaven Stadium (Player Version)",
+													"title": "(Player Version)",
 													"width": 3000,
 													"height": 4071,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 92,
+														"offsetX": 8,
+														"offsetY": -22
+													},
 													"mapParent": {
 														"id": "002"
 													}

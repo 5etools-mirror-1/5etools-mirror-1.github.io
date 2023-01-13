@@ -569,6 +569,12 @@
 												"path": "book/SCC/103-map-6.1-the-detention-bog.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 70,
+												"offsetX": -10,
+												"offsetY": 1
+											},
 											"title": "Map 6.1: The Detention Bog",
 											"width": 2211,
 											"height": 3000,
@@ -716,6 +722,12 @@
 											"width": 2211,
 											"height": 3000,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 70,
+												"offsetX": -10,
+												"offsetY": 1
+											},
 											"mapParent": {
 												"id": "000"
 											}
@@ -1024,6 +1036,12 @@
 														"path": "book/SCC/106-map-6.2-fortress-badlands.webp"
 													},
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 93,
+														"offsetX": -7,
+														"offsetY": 2
+													},
 													"title": "Map 6.2: Fortress Badlands",
 													"width": 3000,
 													"height": 4071,
@@ -2746,6 +2764,12 @@
 													"width": 3000,
 													"height": 4071,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 93,
+														"offsetX": -7,
+														"offsetY": 2
+													},
 													"mapParent": {
 														"id": "001"
 													}
@@ -3081,6 +3105,12 @@
 														"path": "book/SCC/108-map-6.3-underground-cave.webp"
 													},
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 146,
+														"offsetX": -68,
+														"offsetY": -28
+													},
 													"title": "Map 6.3: Underground Cave",
 													"width": 2211,
 													"height": 3000,
@@ -3862,10 +3892,16 @@
 														"type": "internal",
 														"path": "book/SCC/map-6.3-underground-cave-player.webp"
 													},
-													"title": "Map 6.3: Underground Cave (Player Version)",
+													"title": "(Player Version)",
 													"width": 2211,
 													"height": 3000,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 146,
+														"offsetX": -68,
+														"offsetY": -28
+													},
 													"mapParent": {
 														"id": "002"
 													}
@@ -4185,6 +4221,12 @@
 														"path": "book/SCC/110-map-6.4-ruins-of-caerdoon.webp"
 													},
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 94,
+														"offsetX": 1,
+														"offsetY": 20
+													},
 													"title": "Map 6.4: Ruins of Caerdoon",
 													"width": 3000,
 													"height": 4071,
@@ -4941,10 +4983,16 @@
 														"type": "internal",
 														"path": "book/SCC/map-6.4-ruins-of-caerdoon-player.webp"
 													},
-													"title": "Map 6.4: Ruins of Caerdoon (Player Version)",
+													"title": "(Player Version)",
 													"width": 3000,
 													"height": 4071,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 94,
+														"offsetX": 1,
+														"offsetY": 20
+													},
 													"mapParent": {
 														"id": "003"
 													}
@@ -5307,6 +5355,12 @@
 												"path": "book/SCC/114-map-6.5-fortress-of-caerdoon-basement.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 102,
+												"offsetX": 16,
+												"offsetY": -11
+											},
 											"title": "Map 6.5: Fortress of Caerdoon Basement",
 											"width": 3000,
 											"height": 2072,
@@ -5449,6 +5503,12 @@
 											"width": 3000,
 											"height": 2072,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 102,
+												"offsetX": 16,
+												"offsetY": -11
+											},
 											"mapParent": {
 												"id": "004"
 											}

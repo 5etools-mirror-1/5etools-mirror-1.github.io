@@ -313,6 +313,12 @@
 												"path": "book/SCC/052-map-3.1-the-biblioplex.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 54,
+												"offsetX": -14,
+												"offsetY": -14
+											},
 											"title": "Map 3.1: The Biblioplex",
 											"width": 4100,
 											"height": 5580,
@@ -1346,10 +1352,16 @@
 												"type": "internal",
 												"path": "book/SCC/map-3.1-the-biblioplex-player.webp"
 											},
-											"title": "Map 3.1: The Biblioplex (Player Version)",
+											"title": "(Player Version)",
 											"width": 4100,
 											"height": 5580,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 54,
+												"offsetX": -14,
+												"offsetY": -14
+											},
 											"mapParent": {
 												"id": "000"
 											}
@@ -1878,6 +1890,12 @@
 												"path": "book/SCC/056-map-3.2-firejolt-cafe.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 93,
+												"offsetX": 13,
+												"offsetY": -32
+											},
 											"title": "Map 3.2: Firejolt Cafe",
 											"width": 3000,
 											"height": 2072,
@@ -2231,10 +2249,16 @@
 												"type": "internal",
 												"path": "book/SCC/map-3.2-firejolt-cafe-player.webp"
 											},
-											"title": "Map 3.2: Firejolt Cafe (Player Version)",
+											"title": "(Player Version)",
 											"width": 3000,
 											"height": 2072,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 93,
+												"offsetX": 13,
+												"offsetY": -32
+											},
 											"mapParent": {
 												"id": "001"
 											}
@@ -2563,6 +2587,12 @@
 														"path": "book/SCC/058-map-3.3-bows-end-tavern.webp"
 													},
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 102,
+														"offsetX": 23,
+														"offsetY": -24
+													},
 													"title": "Map 3.3: Bows End Tavern",
 													"width": 3000,
 													"height": 2182,
@@ -2939,10 +2969,16 @@
 														"type": "internal",
 														"path": "book/SCC/map-3.3-bows-end-tavern-player.webp"
 													},
-													"title": "Map 3.3: Bows End Tavern (Player Version)",
+													"title": "(Player Version)",
 													"width": 3000,
 													"height": 2182,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 102,
+														"offsetX": 23,
+														"offsetY": -24
+													},
 													"mapParent": {
 														"id": "002"
 													}
@@ -3446,7 +3482,13 @@
 														"path": "book/SCC/061-map-3.4-captain-dapplewings-manor.webp"
 													},
 													"imageType": "map",
-													"title": "Map 3.4: captain dapplewing's manor",
+													"grid": {
+														"type": "square",
+														"size": 70,
+														"offsetX": -13,
+														"offsetY": 29
+													},
+													"title": "Map 3.4: Captain Dapplewing's Manor",
 													"width": 2211,
 													"height": 3000,
 													"mapRegions": [
@@ -4289,10 +4331,16 @@
 														"type": "internal",
 														"path": "book/SCC/map-3.4-captain-dapplewings-manor-player.webp"
 													},
-													"title": "Map 3.4: Captain Dapplewing's Manor (Player Version)",
+													"title": "(Player Version)",
 													"width": 2211,
 													"height": 3000,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 70,
+														"offsetX": -13,
+														"offsetY": 29
+													},
 													"mapParent": {
 														"id": "003"
 													}
@@ -4896,6 +4944,11 @@
 														"path": "book/SCC/064-map-3.5-the-rose-stage.webp"
 													},
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 94,
+														"offsetY": 7
+													},
 													"title": "Map 3.5: The Rose Stage",
 													"width": 3000,
 													"height": 2072,
@@ -5259,10 +5312,15 @@
 														"type": "internal",
 														"path": "book/SCC/map-3.5-the-rose-stage-player.webp"
 													},
-													"title": "Map 3.5: The Rose Stage (Player Version)",
+													"title": "(Player Version)",
 													"width": 3000,
 													"height": 2072,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 94,
+														"offsetY": 7
+													},
 													"mapParent": {
 														"id": "004"
 													}
@@ -5693,6 +5751,11 @@
 														"path": "book/SCC/066-map-3.6-sedgemoor.webp"
 													},
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"offsetX": 7,
+														"offsetY": -7
+													},
 													"title": "Map 3.6: Sedgemoor",
 													"width": 3000,
 													"height": 4071,
@@ -5873,10 +5936,15 @@
 														"type": "internal",
 														"path": "book/SCC/map-3.6-sedgemoor-player.webp"
 													},
-													"title": "Map 3.6: Sedgemoor (Player Version)",
+													"title": "(Player Version)",
 													"width": 3000,
 													"height": 4071,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"offsetX": 7,
+														"offsetY": -7
+													},
 													"mapParent": {
 														"id": "005"
 													}

@@ -588,7 +588,12 @@
 												"path": "book/SCC/088-map-5.1-furygale-repository.webp"
 											},
 											"imageType": "map",
-											"title": "Map 5.1: furygale repository",
+											"grid": {
+												"type": "square",
+												"offsetX": -2,
+												"offsetY": -7
+											},
+											"title": "Map 5.1: Furygale Repository",
 											"width": 3000,
 											"height": 4071
 										},
@@ -1522,6 +1527,13 @@
 														"path": "book/SCC/094-map-5.2-kollema-hall.webp"
 													},
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 93,
+														"offsetX": 16,
+														"offsetY": 22,
+														"distance": 10
+													},
 													"title": "Map 5.2: Kollema Hall",
 													"width": 3000,
 													"height": 4314,
@@ -2099,10 +2111,17 @@
 														"type": "internal",
 														"path": "book/SCC/map-5.2-kollema-hall-player.webp"
 													},
-													"title": "Map 5.2: Kollema Hall (Player Version)",
+													"title": "(Player Version)",
 													"width": 3000,
 													"height": 4314,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 93,
+														"offsetX": 16,
+														"offsetY": 22,
+														"distance": 10
+													},
 													"mapParent": {
 														"id": "000"
 													}
@@ -2801,6 +2820,12 @@
 														"path": "book/SCC/096-map-5.3-lorehold-deans-wing.webp"
 													},
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 137,
+														"offsetX": -77,
+														"offsetY": -43
+													},
 													"title": "Map 5.3: Lorehold Deans' Wing",
 													"width": 4343,
 													"height": 3000,
@@ -3277,10 +3302,16 @@
 														"type": "internal",
 														"path": "book/SCC/map-5.3-lorehold-deans-wing-player.webp"
 													},
-													"title": "Map 5.3: Lorehold Deans' Wing (Player Version)",
+													"title": "(Player Version)",
 													"width": 4343,
 													"height": 3000,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 137,
+														"offsetX": -77,
+														"offsetY": -43
+													},
 													"mapParent": {
 														"id": "001"
 													}
@@ -3528,6 +3559,12 @@
 														"path": "book/SCC/098-map-5.4-deans-repository.webp"
 													},
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 142,
+														"offsetX": -83,
+														"offsetY": -109
+													},
 													"title": "Map 5.4: Deans' Repository",
 													"width": 2211,
 													"height": 3000,
@@ -3566,10 +3603,16 @@
 														"type": "internal",
 														"path": "book/SCC/map-5.4-deans-repository-player.webp"
 													},
-													"title": "Map 5.4: Deans' Repository (Player Version)",
+													"title": "(Player Version)",
 													"width": 2211,
 													"height": 3000,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 142,
+														"offsetX": -83,
+														"offsetY": -109
+													},
 													"mapParent": {
 														"id": "002"
 													}
