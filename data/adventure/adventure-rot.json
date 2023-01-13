@@ -1870,6 +1870,12 @@
 													"width": 3960,
 													"height": 5700,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 85,
+														"offsetY": 17,
+														"distance": 15
+													},
 													"id": "114",
 													"mapRegions": [
 														{
@@ -3197,6 +3203,12 @@
 													"width": 3960,
 													"height": 5700,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 85,
+														"offsetY": 17,
+														"distance": 15
+													},
 													"mapParent": {
 														"id": "114"
 													}
@@ -3958,10 +3970,17 @@
 																"type": "internal",
 																"path": "adventure/RoT/012-map-11-1-tomb-of-diderius.jpg"
 															},
-															"title": "Map 11.1: Tomb of {@creature Diderius|RoT}",
+															"title": "Map 11.1: Tomb of Diderius",
 															"width": 4050,
 															"height": 3000,
 															"imageType": "map",
+															"grid": {
+																"type": "square",
+																"size": 95,
+																"offsetX": 7,
+																"offsetY": -71,
+																"distance": 10
+															},
 															"id": "24a",
 															"mapRegions": [
 																{
@@ -4650,6 +4669,13 @@
 															"width": 4050,
 															"height": 3000,
 															"imageType": "mapPlayer",
+															"grid": {
+																"type": "square",
+																"size": 94,
+																"offsetX": 21,
+																"offsetY": 36,
+																"distance": 10
+															},
 															"mapParent": {
 																"id": "24a"
 															}
@@ -5487,10 +5513,17 @@
 																"type": "internal",
 																"path": "adventure/RoT/016-map-12-1-neronvains-stronghold.jpg"
 															},
-															"title": "Map 12.1: {@creature Neronvain|RoT}'s Stronghold",
+															"title": "Map 12.1: Neronvain's Stronghold",
 															"width": 6000,
 															"height": 4444,
 															"imageType": "map",
+															"grid": {
+																"type": "square",
+																"size": 192,
+																"offsetX": 87,
+																"offsetY": -7,
+																"distance": 15
+															},
 															"id": "24b",
 															"mapRegions": [
 																{
@@ -6367,6 +6400,12 @@
 															"width": 6000,
 															"height": 4444,
 															"imageType": "mapPlayer",
+															"grid": {
+																"type": "square",
+																"size": 191,
+																"offsetX": -86,
+																"distance": 15
+															},
 															"mapParent": {
 																"id": "24b"
 															}
@@ -7446,6 +7485,13 @@
 											"width": 1980,
 											"height": 2850,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 57,
+												"offsetX": -32,
+												"offsetY": -21,
+												"distance": 10
+											},
 											"id": "24c",
 											"mapRegions": [
 												{
@@ -8247,6 +8293,13 @@
 											"width": 3300,
 											"height": 4750,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 96,
+												"offsetX": 21,
+												"offsetY": 30,
+												"distance": 10
+											},
 											"mapParent": {
 												"id": "24c",
 												"autoScale": true
@@ -9312,10 +9365,16 @@
 												"type": "internal",
 												"path": "adventure/RoT/028-map-17-1-well-of-dragons.jpg"
 											},
-											"title": "Map 17.1: the Well of Dragons",
+											"title": "Map 17.1: The Well of Dragons",
 											"width": 1980,
 											"height": 2850,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 62,
+												"scale": 2,
+												"distance": 20
+											},
 											"id": "24d",
 											"mapRegions": [
 												{
@@ -10950,6 +11009,14 @@
 											"width": 3300,
 											"height": 4750,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 103,
+												"offsetX": 12,
+												"offsetY": 16,
+												"scale": 2,
+												"distance": 20
+											},
 											"mapParent": {
 												"id": "24d",
 												"autoScale": true
@@ -11219,10 +11286,18 @@
 										"type": "internal",
 										"path": "adventure/RoT/031-map-17-2-tiamats-temple.jpg"
 									},
-									"title": "Map 17.2: {@creature Tiamat|RoT}'s Temple",
+									"title": "Map 17.2: Tiamat's Temple",
 									"width": 1980,
 									"height": 2850,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 55,
+										"offsetX": -23,
+										"offsetY": -3,
+										"scale": 2,
+										"distance": 10
+									},
 									"id": "24e",
 									"mapRegions": [
 										{
@@ -11262,6 +11337,14 @@
 									"width": 3300,
 									"height": 4750,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 92,
+										"offsetX": -44,
+										"offsetY": -13,
+										"scale": 2,
+										"distance": 10
+									},
 									"mapParent": {
 										"id": "24e",
 										"autoScale": true
