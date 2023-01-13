@@ -211,7 +211,12 @@
 					"title": "Poster Map",
 					"width": 5000,
 					"height": 3539,
-					"imageType": "map"
+					"imageType": "map",
+					"grid": {
+						"type": "none",
+						"size": 85,
+						"distance": 25
+					}
 				}
 			]
 		},
@@ -572,6 +577,9 @@
 										"path": "adventure/CM/004-map-1.01-Candlekeep.png"
 									},
 									"imageType": "map",
+									"grid": {
+										"type": "none"
+									},
 									"title": "Map 1.1: Candlekeep",
 									"width": 1710,
 									"height": 2316,
@@ -584,6 +592,9 @@
 										"path": "adventure/CM/005-map-1.01-Candlekeep-player.jpg"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none"
+									},
 									"title": "Player Version",
 									"width": 2400,
 									"height": 3256,
@@ -990,7 +1001,13 @@
 												"path": "adventure/CM/010-map-2.01-fistandias-mansion.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 2.1: fistandia's mansion",
+											"title": "Map 2.1: Fistandia's Mansion",
+											"grid": {
+												"type": "square",
+												"size": 96,
+												"offsetX": -30,
+												"offsetY": -55
+											},
 											"width": 3000,
 											"height": 2135,
 											"id": "47b",
@@ -1507,6 +1524,12 @@
 												"path": "adventure/CM/011-map-2.01-fistandias-mansion-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 96,
+												"offsetX": -30,
+												"offsetY": -55
+											},
 											"title": "Player Version",
 											"width": 3000,
 											"height": 2135,
@@ -2531,7 +2554,13 @@
 										"path": "adventure/CM/018-map-3.01-amberdune-hideout.jpg"
 									},
 									"imageType": "map",
-									"title": "Map 3.1: amberdune hideout",
+									"grid": {
+										"type": "square",
+										"size": 170,
+										"offsetX": -49,
+										"offsetY": -29
+									},
+									"title": "Map 3.1: Amberdune Hideout",
 									"width": 2163,
 									"height": 3000,
 									"id": "47c",
@@ -2779,6 +2808,12 @@
 										"path": "adventure/CM/019-map-3.01-amberdune-hideout-player.jpg"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 170,
+										"offsetX": -49,
+										"offsetY": -29
+									},
 									"title": "Player Version",
 									"width": 2163,
 									"height": 3000,
@@ -3504,7 +3539,13 @@
 												"path": "adventure/CM/024-map-4.01-chalet-brantifax.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 4.01: chalet brantifax",
+											"grid": {
+												"type": "square",
+												"size": 67,
+												"offsetX": 30,
+												"offsetY": 30
+											},
+											"title": "Map 4.01: Chalet Brantifax",
 											"width": 3000,
 											"height": 2042,
 											"id": "47d",
@@ -4652,6 +4693,12 @@
 												"path": "adventure/CM/025-map-4.01-chalet-brantifax-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 67,
+												"offsetX": 30,
+												"offsetY": 30
+											},
 											"title": "Player Version",
 											"width": 3000,
 											"height": 2042,
@@ -5172,7 +5219,13 @@
 																"path": "adventure/CM/027-map-4.02-harrn-mausoleum.jpg"
 															},
 															"imageType": "map",
-															"title": "Map 4.02: harrn mausoleum",
+															"grid": {
+																"type": "square",
+																"size": 171,
+																"offsetX": -6,
+																"offsetY": 44
+															},
+															"title": "Map 4.02: Harrn Mausoleum",
 															"width": 2207,
 															"height": 3000,
 															"id": "563"
@@ -5184,6 +5237,12 @@
 																"path": "adventure/CM/028-map-4.02-harrn-mausoleum-player.jpg"
 															},
 															"imageType": "mapPlayer",
+															"grid": {
+																"type": "square",
+																"size": 171,
+																"offsetX": -6,
+																"offsetY": 44
+															},
 															"title": "Player Version",
 															"width": 2207,
 															"height": 3000,
@@ -5583,7 +5642,14 @@
 												"path": "adventure/CM/033-map-5.01-vermeillon.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 5.1: vermeillon",
+											"grid": {
+												"type": "square",
+												"size": 58,
+												"offsetX": 2,
+												"offsetY": -2,
+												"distance": 10
+											},
+											"title": "Map 5.1: Vermeillon",
 											"width": 3000,
 											"height": 2062,
 											"id": "564",
@@ -5831,6 +5897,13 @@
 												"path": "adventure/CM/034-map-5.01-vermeillon-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 58,
+												"offsetX": 2,
+												"offsetY": -2,
+												"distance": 10
+											},
 											"title": "Player Version",
 											"width": 3000,
 											"height": 2062,
@@ -6008,7 +6081,13 @@
 												"path": "adventure/CM/036-map-5.02-mayor-duvezins-house.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 5.2: mayor duvezin's house",
+											"grid": {
+												"type": "square",
+												"size": 122,
+												"offsetX": 36,
+												"offsetY": 54
+											},
+											"title": "Map 5.2: Mayor Duvezin's House",
 											"width": 2168,
 											"height": 3000,
 											"id": "565",
@@ -6449,6 +6528,12 @@
 												"path": "adventure/CM/037-map-5.02-mayor-duvezins-house-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 120,
+												"offsetX": 52,
+												"offsetY": 40
+											},
 											"title": "Player Version",
 											"width": 2168,
 											"height": 3000,
@@ -6677,7 +6762,13 @@
 												"path": "adventure/CM/038-map-5.03-platinum-mine.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 5.3: platinum mine",
+											"grid": {
+												"type": "square",
+												"size": 58,
+												"offsetX": 2,
+												"offsetY": 29
+											},
+											"title": "Map 5.3: Platinum Mine",
 											"width": 3000,
 											"height": 2132,
 											"id": "566",
@@ -8028,6 +8119,12 @@
 												"path": "adventure/CM/039-map-5.03-platinum-mine-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 58,
+												"offsetX": 3,
+												"offsetY": -28
+											},
 											"title": "Player Version",
 											"width": 3000,
 											"height": 2132,
@@ -9166,7 +9263,13 @@
 										"path": "adventure/CM/047-map-6.01-firefly-cellar.jpg"
 									},
 									"imageType": "map",
-									"title": "Map 6.1: firefly cellar",
+									"grid": {
+										"type": "square",
+										"size": 51,
+										"offsetX": -20,
+										"offsetY": -13
+									},
+									"title": "Map 6.1: Firefly Cellar",
 									"width": 2199,
 									"height": 3000,
 									"id": "567",
@@ -10090,6 +10193,12 @@
 										"path": "adventure/CM/048-map-6.01-firefly-cellar-player.jpg"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 51,
+										"offsetX": -20,
+										"offsetY": -13
+									},
 									"title": "Player Version",
 									"width": 2199,
 									"height": 3000,
@@ -10937,7 +11046,13 @@
 												"path": "adventure/CM/052-map-7.01-temple-of-the-restful-lily.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 7.1: temple of the restful lily",
+											"grid": {
+												"type": "square",
+												"size": 64,
+												"offsetX": 7,
+												"offsetY": 31
+											},
+											"title": "Map 7.1: Temple of the Restful Lily",
 											"width": 2185,
 											"height": 3000,
 											"id": "568",
@@ -11529,6 +11644,12 @@
 												"path": "adventure/CM/053-map-7.01-temple-of-the-restful-lily-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 64,
+												"offsetX": 7,
+												"offsetY": 31
+											},
 											"title": "Player Version",
 											"width": 2185,
 											"height": 3000,
@@ -11917,7 +12038,13 @@
 																"path": "adventure/CM/055-map-7.02-temple-of-the-restful-lily.jpg"
 															},
 															"imageType": "map",
-															"title": "Map 7.2: temple of the restful lily",
+															"grid": {
+																"type": "square",
+																"size": 70,
+																"offsetX": 6,
+																"offsetY": 14
+															},
+															"title": "Map 7.2: Temple of the Restful Lily\u2014Tower Floors",
 															"width": 2063,
 															"height": 1425,
 															"id": "569",
@@ -12363,6 +12490,12 @@
 																"path": "adventure/CM/056-map-7.02-temple-of-the-restful-lily-player.jpg"
 															},
 															"imageType": "mapPlayer",
+															"grid": {
+																"type": "square",
+																"size": 70,
+																"offsetX": 6,
+																"offsetY": 14
+															},
 															"title": "Player Version",
 															"width": 2063,
 															"height": 1425,
@@ -12851,7 +12984,13 @@
 												"path": "adventure/CM/061-map-8.01-grippli-village.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 8.1: grippli village",
+											"grid": {
+												"type": "square",
+												"size": 91,
+												"offsetX": 37,
+												"distance": 100
+											},
+											"title": "Map 8.1: Grippli Village",
 											"width": 3000,
 											"height": 2134,
 											"id": "56a"
@@ -12863,6 +13002,12 @@
 												"path": "adventure/CM/062-map-8.01-grippli-village-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 91,
+												"offsetX": 37,
+												"distance": 100
+											},
 											"title": "Player Version",
 											"width": 3000,
 											"height": 2134,
@@ -12947,7 +13092,13 @@
 												"path": "adventure/CM/063-map-8.02-temple.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 8.02: temple",
+											"grid": {
+												"type": "square",
+												"size": 95,
+												"offsetX": -41,
+												"offsetY": -28
+											},
+											"title": "Map 8.2: Temple",
 											"width": 2206,
 											"height": 3000,
 											"id": "56b",
@@ -13007,6 +13158,12 @@
 												"path": "adventure/CM/064-map-8.02-temple-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 95,
+												"offsetX": -41,
+												"offsetY": -28
+											},
 											"title": "Player Version",
 											"width": 2206,
 											"height": 3000,
@@ -13603,7 +13760,10 @@
 												"path": "adventure/CM/071-map-9.01-greenfast.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 9.1: greenfast",
+											"title": "Map 9.1: Greenfast",
+											"grid": {
+												"type": "none"
+											},
 											"width": 3000,
 											"height": 2134,
 											"id": "56c",
@@ -13814,6 +13974,9 @@
 												"path": "adventure/CM/072-map-9.01-greenfast-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none"
+											},
 											"title": "Player Version",
 											"width": 3000,
 											"height": 2134,
@@ -13959,7 +14122,13 @@
 												"path": "adventure/CM/073-map-9.02-temple-of-the-burnt-tongue-cult.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 9.2: temple of the burnt tongue cult",
+											"grid": {
+												"type": "square",
+												"size": 71,
+												"offsetX": 29,
+												"offsetY": -13
+											},
+											"title": "Map 9.2: Temple of the Burnt Tongue Cult",
 											"width": 2199,
 											"height": 3000,
 											"id": "56d",
@@ -14644,6 +14813,12 @@
 												"path": "adventure/CM/074-map-9.02-temple-of-the-burnt-tongue-cult-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 71,
+												"offsetX": 29,
+												"offsetY": -13
+											},
 											"title": "Player Version",
 											"width": 2199,
 											"height": 3000,
@@ -15432,7 +15607,12 @@
 												"path": "adventure/CM/079-map-10.01-hags-hovel.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 10.1: hags hovel",
+											"grid": {
+												"type": "square",
+												"size": 102,
+												"offsetY": 25
+											},
+											"title": "Map 10.1: Hags Hovel",
 											"width": 3000,
 											"height": 2133,
 											"id": "56e",
@@ -15513,6 +15693,11 @@
 												"path": "adventure/CM/080-map-10.01-hags-hovel-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 102,
+												"offsetY": 25
+											},
 											"title": "Player Version",
 											"width": 3000,
 											"height": 2133,
@@ -15628,7 +15813,13 @@
 												"path": "adventure/CM/081-map-10.02-pool-of-eternal-spring.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 10.2: pool of eternal spring",
+											"grid": {
+												"type": "square",
+												"size": 66,
+												"offsetX": -11,
+												"offsetY": -26
+											},
+											"title": "Map 10.2: Pool of Eternal Spring",
 											"width": 3000,
 											"height": 2044,
 											"id": "56f"
@@ -15640,6 +15831,12 @@
 												"path": "adventure/CM/082-map-10.02-pool-of-eternal-spring-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 66,
+												"offsetX": -11,
+												"offsetY": -26
+											},
 											"title": "Player Version",
 											"width": 3000,
 											"height": 2044,
@@ -16083,7 +16280,13 @@
 												"path": "adventure/CM/086-map-11.01-the-barn-door.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 11.1: the barn door",
+											"grid": {
+												"type": "square",
+												"size": 84,
+												"offsetX": -30,
+												"offsetY": -39
+											},
+											"title": "Map 11.1: The Barn Door",
 											"width": 3000,
 											"height": 2068,
 											"id": "570",
@@ -16665,6 +16868,12 @@
 												"path": "adventure/CM/087-map-11.01-the-barn-door-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 84,
+												"offsetX": -30,
+												"offsetY": -39
+											},
 											"title": "Player Version",
 											"width": 3000,
 											"height": 2068,
@@ -16944,7 +17153,13 @@
 												"path": "adventure/CM/088-map-11.01-under-the-barn-door.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 11.1: under the barn door",
+											"grid": {
+												"type": "square",
+												"size": 55,
+												"offsetX": 15,
+												"offsetY": 20
+											},
+											"title": "Map 11.1: Under The Barn Door",
 											"width": 2053,
 											"height": 1415,
 											"id": "571",
@@ -17469,6 +17684,12 @@
 												"path": "adventure/CM/089-map-11.01-under-the-barn-door-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 55,
+												"offsetX": 15,
+												"offsetY": 20
+											},
 											"title": "Player Version",
 											"width": 2053,
 											"height": 1415,
@@ -18077,7 +18298,13 @@
 												"path": "adventure/CM/095-map-12.01-zikrans-laboratory.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 12.1: {@creature zikran|CM}'s laboratory",
+											"grid": {
+												"type": "square",
+												"size": 98,
+												"offsetX": -14,
+												"offsetY": -30
+											},
+											"title": "Map 12.1: Zikran's Laboratory",
 											"width": 3000,
 											"height": 2069,
 											"id": "572",
@@ -19328,6 +19555,12 @@
 												"path": "adventure/CM/096-map-12.01-zikrans-laboratory-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 98,
+												"offsetX": -14,
+												"offsetY": -30
+											},
 											"title": "Player Version",
 											"width": 3000,
 											"height": 2069,
@@ -19609,7 +19842,14 @@
 												"path": "adventure/CM/098-map-12.02-cloud-giants-keep.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 12.2: cloud giants keep",
+											"grid": {
+												"type": "square",
+												"size": 57,
+												"offsetX": 3,
+												"offsetY": 18,
+												"distance": 10
+											},
+											"title": "Map 12.2: Cloud Giants' Keep",
 											"width": 2214,
 											"height": 3000,
 											"id": "573",
@@ -20078,6 +20318,13 @@
 												"path": "adventure/CM/099-map-12.02-cloud-giants-keep-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 57,
+												"offsetX": 3,
+												"offsetY": 18,
+												"distance": 10
+											},
 											"title": "Player Version",
 											"width": 2214,
 											"height": 3000,
@@ -20580,7 +20827,14 @@
 												"path": "adventure/CM/105-map-13.01-wisteria-vale.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 13.1: wisteria vale",
+											"grid": {
+												"type": "square",
+												"size": 88,
+												"offsetX": -10,
+												"offsetY": -27,
+												"distance": 40
+											},
+											"title": "Map 13.1: Wisteria Vale",
 											"width": 3000,
 											"height": 2044,
 											"id": "574",
@@ -20921,6 +21175,13 @@
 												"path": "adventure/CM/106-map-13.01-wisteria-vale-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 88,
+												"offsetX": -10,
+												"offsetY": -27,
+												"distance": 40
+											},
 											"title": "Player Version",
 											"width": 3000,
 											"height": 2044,
@@ -21104,7 +21365,13 @@
 												"path": "adventure/CM/107-map-13.02-the-manor.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 13.2: the manor",
+											"grid": {
+												"type": "square",
+												"size": 81,
+												"offsetX": 2,
+												"offsetY": 2
+											},
+											"title": "Map 13.2: The Manor",
 											"width": 3000,
 											"height": 2044,
 											"id": "575",
@@ -21356,6 +21623,12 @@
 												"path": "adventure/CM/108-map-13.02-the-manor-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 81,
+												"offsetX": 2,
+												"offsetY": 2
+											},
 											"title": "Player Version",
 											"width": 3000,
 											"height": 2044,
@@ -22247,7 +22520,14 @@
 																"path": "adventure/CM/112-map-14.01-temple-of-the-immortal-lotus.jpg"
 															},
 															"imageType": "map",
-															"title": "Map 14.1: temple of the immortal lotus",
+															"grid": {
+																"type": "square",
+																"size": 85,
+																"offsetX": 4,
+																"offsetY": -23,
+																"scale": 2
+															},
+															"title": "Map 14.1: Temple of the Immortal Lotus",
 															"width": 3000,
 															"height": 2075,
 															"id": "576",
@@ -22554,6 +22834,13 @@
 																"path": "adventure/CM/113-map-14.01-temple-of-the-immortal-lotus-player.jpg"
 															},
 															"imageType": "mapPlayer",
+															"grid": {
+																"type": "square",
+																"size": 85,
+																"offsetX": 4,
+																"offsetY": -23,
+																"scale": 2
+															},
 															"title": "Player Version",
 															"width": 3000,
 															"height": 2075,
@@ -23311,7 +23598,15 @@
 												"path": "adventure/CM/121-map-15.01-tomb-of-valin-sarnaster.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 15.1: tomb of {@creature valin sarnaster|CM}",
+											"grid": {
+												"type": "square",
+												"size": 78,
+												"offsetX": -21,
+												"offsetY": 3,
+												"scale": 2,
+												"distance": 10
+											},
+											"title": "Map 15.1: Tomb of Valin Sarnaster",
 											"width": 2094,
 											"height": 2840,
 											"id": "577",
@@ -23794,6 +24089,14 @@
 												"path": "adventure/CM/122-map-15.01-tomb-of-valin-sarnaster-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 78,
+												"offsetX": -21,
+												"offsetY": 3,
+												"scale": 2,
+												"distance": 10
+											},
 											"title": "Player Version",
 											"width": 2094,
 											"height": 2840,
@@ -25003,7 +25306,13 @@
 												"path": "adventure/CM/129-map-16.01-haven-of-the-red-quill.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 16.1: haven of the red quill",
+											"grid": {
+												"type": "square",
+												"size": 62,
+												"offsetX": -17,
+												"offsetY": -24
+											},
+											"title": "Map 16.1: Haven of the Red Quill",
 											"width": 3000,
 											"height": 2071,
 											"id": "578",
@@ -25689,6 +25998,12 @@
 												"path": "adventure/CM/130-map-16.01-haven-of-the-red-quill-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 62,
+												"offsetX": -17,
+												"offsetY": -24
+											},
 											"title": "Player Version",
 											"width": 3000,
 											"height": 2071,
@@ -26516,7 +26831,13 @@
 										"path": "adventure/CM/135-map-17.01-haruun.jpg"
 									},
 									"imageType": "map",
-									"title": "Map 17.1: haruun",
+									"grid": {
+										"type": "square",
+										"size": 79,
+										"offsetX": 11,
+										"offsetY": 26
+									},
+									"title": "Map 17.1: Haruun",
 									"width": 2206,
 									"height": 3000,
 									"id": "579",
@@ -27121,6 +27442,12 @@
 										"path": "adventure/CM/136-map-17.01-haruun-player.jpg"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 79,
+										"offsetX": 11,
+										"offsetY": 26
+									},
 									"title": "Player Version",
 									"width": 2206,
 									"height": 3000,
@@ -27451,7 +27778,12 @@
 												"path": "adventure/CM/137-map-17.02-necropolis-mastaba.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 17.2: necropolis and mastaba",
+											"grid": {
+												"type": "none",
+												"size": 140,
+												"distance": 250
+											},
+											"title": "Map 17.2: Necropolis and Mastaba",
 											"width": 2186,
 											"height": 3000,
 											"id": "57a",
@@ -27831,6 +28163,13 @@
 												"path": "adventure/CM/138-map-17.02-necropolis-mastaba-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 61,
+												"offsetX": -13,
+												"offsetY": -7,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 2186,
 											"height": 3000,
@@ -28371,7 +28710,14 @@
 												"path": "adventure/CM/143-map-18.01-lykortha-expanse.jpg"
 											},
 											"imageType": "map",
-											"title": "Map 18.1: lykortha expanse",
+											"grid": {
+												"type": "square",
+												"size": 55,
+												"offsetX": 2,
+												"offsetY": 26,
+												"distance": 10
+											},
+											"title": "Map 18.1: Lykortha Expanse",
 											"width": 3000,
 											"height": 2073,
 											"id": "57b",
@@ -30160,6 +30506,13 @@
 												"path": "adventure/CM/144-map-18.01-lykortha-expanse-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 55,
+												"offsetX": 2,
+												"offsetY": 26,
+												"distance": 10
+											},
 											"title": "Player Version",
 											"width": 3000,
 											"height": 2073,
