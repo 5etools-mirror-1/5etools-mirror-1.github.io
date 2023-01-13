@@ -367,6 +367,9 @@
 									"width": 2133,
 									"height": 1371,
 									"imageType": "map",
+									"grid": {
+										"type": "none"
+									},
 									"id": "1a8"
 								},
 								{
@@ -379,6 +382,9 @@
 									"width": 2550,
 									"height": 1650,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none"
+									},
 									"mapParent": {
 										"id": "1a8",
 										"autoScale": true
@@ -506,6 +512,12 @@
 											"width": 7891,
 											"height": 4000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 217,
+												"offsetX": -155,
+												"offsetY": -159
+											},
 											"id": "329",
 											"mapRegions": [
 												{
@@ -837,6 +849,12 @@
 											"width": 6105,
 											"height": 4000,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 166,
+												"offsetX": 75,
+												"offsetY": -4
+											},
 											"mapParent": {
 												"id": "329",
 												"autoScale": true
@@ -1212,6 +1230,12 @@
 													"width": 6105,
 													"height": 4000,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 93,
+														"offsetX": -14,
+														"offsetY": -6
+													},
 													"id": "32a",
 													"mapRegions": [
 														{
@@ -2463,6 +2487,12 @@
 													"width": 6105,
 													"height": 4000,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 93,
+														"offsetX": -13,
+														"offsetY": -11
+													},
 													"mapParent": {
 														"id": "32a"
 													}
@@ -3136,6 +3166,12 @@
 											"width": 6333,
 											"height": 4000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 177,
+												"offsetX": -65,
+												"offsetY": 27
+											},
 											"id": "32b",
 											"mapRegions": [
 												{
@@ -3606,6 +3642,12 @@
 											"width": 5964,
 											"height": 4000,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 164,
+												"offsetX": -5,
+												"offsetY": -60
+											},
 											"mapParent": {
 												"id": "32b",
 												"autoScale": true
@@ -3855,6 +3897,12 @@
 											"width": 7370,
 											"height": 4000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 140,
+												"offsetX": 53,
+												"offsetY": 28
+											},
 											"id": "32c",
 											"mapRegions": [
 												{
@@ -4513,6 +4561,11 @@
 											"width": 5649,
 											"height": 4000,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 99,
+												"offsetY": 61
+											},
 											"mapParent": {
 												"id": "32c",
 												"autoScale": true
@@ -4915,6 +4968,12 @@
 									"width": 6105,
 									"height": 4000,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 93,
+										"offsetX": -16,
+										"offsetY": -10
+									},
 									"id": "32d",
 									"mapRegions": [
 										{
@@ -5369,6 +5428,12 @@
 									"width": 6105,
 									"height": 4000,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 93,
+										"offsetX": -16,
+										"offsetY": -10
+									},
 									"mapParent": {
 										"id": "32d"
 									}
@@ -6584,6 +6649,9 @@
 															"width": 4250,
 															"height": 3020,
 															"imageType": "map",
+															"grid": {
+																"type": "none"
+															},
 															"id": "3c7"
 														},
 														{
@@ -6596,6 +6664,9 @@
 															"width": 4250,
 															"height": 3020,
 															"imageType": "mapPlayer",
+															"grid": {
+																"type": "none"
+															},
 															"mapParent": {
 																"id": "3c7"
 															}
@@ -6935,6 +7006,13 @@
 															"width": 6105,
 															"height": 4000,
 															"imageType": "map",
+															"grid": {
+																"type": "square",
+																"size": 128,
+																"offsetX": -13,
+																"offsetY": -10,
+																"distance": 10
+															},
 															"id": "3c8",
 															"mapRegions": [
 																{
@@ -7545,6 +7623,13 @@
 															"width": 6105,
 															"height": 4000,
 															"imageType": "mapPlayer",
+															"grid": {
+																"type": "square",
+																"size": 128,
+																"offsetX": -11,
+																"offsetY": -5,
+																"distance": 10
+															},
 															"mapParent": {
 																"id": "3c8"
 															}
@@ -7620,6 +7705,13 @@
 													"width": 3700,
 													"height": 5600,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 190,
+														"offsetX": -37,
+														"offsetY": -54,
+														"distance": 10
+													},
 													"id": "3c9",
 													"mapRegions": [
 														{
@@ -8030,6 +8122,13 @@
 													"width": 2631,
 													"height": 4000,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 137,
+														"offsetX": -47,
+														"offsetY": -61,
+														"distance": 10
+													},
 													"mapParent": {
 														"id": "3c9",
 														"autoScale": true
@@ -8124,6 +8223,13 @@
 															"width": 6154,
 															"height": 4000,
 															"imageType": "map",
+															"grid": {
+																"type": "square",
+																"size": 140,
+																"offsetX": -79,
+																"offsetY": 33,
+																"distance": 10
+															},
 															"id": "3ca",
 															"mapRegions": [
 																{
@@ -9041,6 +9147,13 @@
 															"width": 6090,
 															"height": 4000,
 															"imageType": "mapPlayer",
+															"grid": {
+																"type": "square",
+																"size": 131,
+																"offsetX": -13,
+																"offsetY": -7,
+																"distance": 10
+															},
 															"mapParent": {
 																"id": "3ca",
 																"autoScale": true
@@ -9345,6 +9458,12 @@
 													"width": 4000,
 													"height": 5236,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 132,
+														"offsetX": -8,
+														"offsetY": -38
+													},
 													"id": "3cb",
 													"mapRegions": [
 														{
@@ -9673,6 +9792,12 @@
 													"width": 4000,
 													"height": 5429,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 131,
+														"offsetX": 1,
+														"offsetY": 3
+													},
 													"mapParent": {
 														"id": "3cb",
 														"autoScale": true
@@ -9859,6 +9984,12 @@
 													"width": 4000,
 													"height": 5429,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 116,
+														"offsetX": -46,
+														"offsetY": -44
+													},
 													"id": "3cc",
 													"mapRegions": [
 														{
@@ -10003,6 +10134,12 @@
 													"width": 4000,
 													"height": 5429,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 116,
+														"offsetX": -47,
+														"offsetY": -48
+													},
 													"mapParent": {
 														"id": "3cc"
 													}
@@ -10612,6 +10749,9 @@
 													"width": 2550,
 													"height": 1812,
 													"imageType": "map",
+													"grid": {
+														"type": "none"
+													},
 													"id": "3cd"
 												},
 												{
@@ -10624,6 +10764,9 @@
 													"width": 2550,
 													"height": 1812,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "none"
+													},
 													"mapParent": {
 														"id": "3cd"
 													}
@@ -11445,6 +11588,12 @@
 											"width": 6105,
 											"height": 4000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 128,
+												"offsetX": -9,
+												"offsetY": -10
+											},
 											"id": "3ce",
 											"mapRegions": [
 												{
@@ -11947,6 +12096,12 @@
 											"width": 6105,
 											"height": 4000,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 128,
+												"offsetX": -7,
+												"offsetY": -8
+											},
 											"mapParent": {
 												"id": "3ce"
 											}
@@ -12402,6 +12557,12 @@
 									"width": 5754,
 									"height": 4000,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 136,
+										"offsetX": 57,
+										"offsetY": -54
+									},
 									"id": "3cf",
 									"mapRegions": [
 										{
@@ -12780,6 +12941,12 @@
 									"width": 5649,
 									"height": 4000,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 128,
+										"offsetX": -16,
+										"offsetY": 14
+									},
 									"mapParent": {
 										"id": "3cf",
 										"autoScale": true
@@ -13162,6 +13329,11 @@
 											"width": 6105,
 											"height": 4000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 140,
+												"offsetX": 6
+											},
 											"id": "3d0",
 											"mapRegions": [
 												{
@@ -13515,6 +13687,11 @@
 											"width": 6105,
 											"height": 4000,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 140,
+												"offsetX": 6
+											},
 											"mapParent": {
 												"id": "3d0"
 											}
@@ -13919,6 +14096,12 @@
 											"width": 6105,
 											"height": 4000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 128,
+												"offsetX": -8,
+												"offsetY": -9
+											},
 											"id": "3d1",
 											"mapRegions": [
 												{
@@ -14087,6 +14270,12 @@
 											"width": 5821,
 											"height": 4000,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 130,
+												"offsetX": 27,
+												"offsetY": -51
+											},
 											"mapParent": {
 												"id": "3d1",
 												"autoScale": true
@@ -14405,6 +14594,12 @@
 											"width": 8700,
 											"height": 4500,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 220,
+												"offsetX": -6,
+												"offsetY": 12
+											},
 											"id": "3d2",
 											"mapRegions": [
 												{
@@ -14771,6 +14966,12 @@
 											"width": 6614,
 											"height": 4000,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 174,
+												"offsetX": 62,
+												"offsetY": 18
+											},
 											"mapParent": {
 												"id": "3d2",
 												"autoScale": true
@@ -15138,6 +15339,12 @@
 											"width": 6105,
 											"height": 4000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 155,
+												"offsetX": -16,
+												"offsetY": -18
+											},
 											"id": "3d3",
 											"mapRegions": [
 												{
@@ -15279,6 +15486,12 @@
 											"width": 6105,
 											"height": 4000,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 155,
+												"offsetX": -14,
+												"offsetY": -13
+											},
 											"mapParent": {
 												"id": "3d3"
 											}
@@ -16107,6 +16320,13 @@
 													"width": 5606,
 													"height": 4000,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 128,
+														"offsetX": 50,
+														"offsetY": -4,
+														"distance": 10
+													},
 													"id": "3d4",
 													"mapRegions": [
 														{
@@ -17709,6 +17929,13 @@
 													"width": 5607,
 													"height": 4000,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 128,
+														"offsetX": 56,
+														"offsetY": -8,
+														"distance": 10
+													},
 													"mapParent": {
 														"id": "3d4",
 														"autoScale": true
@@ -18031,6 +18258,13 @@
 											"width": 6105,
 											"height": 4000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 123,
+												"offsetX": -8,
+												"offsetY": -8,
+												"distance": 10
+											},
 											"id": "3d5",
 											"mapRegions": [
 												{
@@ -18112,6 +18346,13 @@
 											"width": 6105,
 											"height": 4000,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 123,
+												"offsetX": -7,
+												"offsetY": -5,
+												"distance": 10
+											},
 											"mapParent": {
 												"id": "3d5"
 											}
@@ -19101,7 +19342,13 @@
 							"title": "Map: Sword Coast",
 							"width": 2092,
 							"height": 1321,
-							"imageType": "map"
+							"imageType": "map",
+							"grid": {
+								"type": "none",
+								"size": 285,
+								"distance": 100,
+								"units": "mi"
+							}
 						},
 						{
 							"type": "entries",
@@ -19778,6 +20025,11 @@
 											"width": 5025,
 											"height": 3338,
 											"imageType": "map",
+											"grid": {
+												"type": "none",
+												"size": 88,
+												"distance": 250
+											},
 											"id": "3d6"
 										},
 										{
@@ -19790,6 +20042,11 @@
 											"width": 5250,
 											"height": 3488,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 92,
+												"distance": 250
+											},
 											"mapParent": {
 												"id": "3d6",
 												"autoScale": true
