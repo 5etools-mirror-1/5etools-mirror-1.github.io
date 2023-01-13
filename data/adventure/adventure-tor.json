@@ -282,6 +282,13 @@
 													"width": 2550,
 													"height": 1650,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 75,
+														"offsetX": -10,
+														"offsetY": -41,
+														"distance": 10
+													},
 													"mapRegions": [
 														{
 															"area": "76f",
@@ -506,10 +513,17 @@
 														"type": "internal",
 														"path": "book/EGW/107-5.1-palma-flora-player.png"
 													},
-													"title": "Map 5.1: Palma Flora (Player Version)",
+													"title": "(Player Version)",
 													"width": 2550,
 													"height": 1650,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 75,
+														"offsetX": -10,
+														"offsetY": -41,
+														"distance": 10
+													},
 													"mapParent": {
 														"id": "000"
 													}
@@ -624,7 +638,13 @@
 									"title": "Map 5.2: Wavechaser",
 									"width": 2550,
 									"height": 1650,
-									"imageType": "map"
+									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 87,
+										"offsetX": -6,
+										"offsetY": 9
+									}
 								},
 								"Map 5.2 represents {@i Wavechaser} and can be used to represent other ships as well.",
 								"{@i Wavechaser} is a type of vessel known as a caravel, which is equipped for navigating coastal waters. The ship can carry twenty passengers comfortably. Though it's a sturdy vessel, it's not built for the open ocean. The Revelry-controlled island of Darktow is the farthest this ship could feasibly travel.",
@@ -1096,6 +1116,13 @@
 									"width": 2550,
 									"height": 1650,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 73,
+										"offsetX": -7,
+										"offsetY": -17,
+										"distance": 10
+									},
 									"mapRegions": [
 										{
 											"area": "75f",
@@ -1320,10 +1347,17 @@
 										"type": "internal",
 										"path": "book/EGW/109-5.3-ruined-palma-flora-player.png"
 									},
-									"title": "Map 5.3: Ruined Palma Flora (Player Version)",
+									"title": "(Player Version)",
 									"width": 2550,
 									"height": 1650,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 73,
+										"offsetX": -7,
+										"offsetY": -17,
+										"distance": 10
+									},
 									"mapParent": {
 										"id": "001"
 									}
