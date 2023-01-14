@@ -117,7 +117,8 @@
 					"entries": [
 						"You can hold your breath for a number ofminutes equal to 1 + your Constitution modifier (minimum of 30 seconds).",
 						"Ifyou run out of breath or you're choking, you can survive for a number ofrounds equal to your Constitution modifier (minimum of 1 round). At the start ofyour next turn, you drop to 0 hit points and are dying, and you can't regain hit points or be stabilized until you can breathe again."
-					]
+					],
+					"id": "001"
 				},
 				{
 					"type": "entries",
@@ -132,18 +133,22 @@
 									"name": "Impeded Melee",
 									"entries": [
 										"When making a melee attack with a weapon, a creature that doesn't have a flying or swimming speed (either naturally or provided by magic) has disadvantage on the attack roll unless the weapon deals piercing damage."
-									]
+									],
+									"id": "004"
 								},
 								{
 									"type": "entries",
 									"name": "Movement",
 									"entries": [
 										"A creature can use an action to push off something heavier than itselfand move up to its walking, flying, or swimming speed in a straight line. The creature continues along this course, moving in a straight line at its speed on each ofits turns until something stops it or changes its trajectory."
-									]
+									],
+									"id": "005"
 								}
-							]
+							],
+							"id": "003"
 						}
-					]
+					],
+					"id": "002"
 				},
 				{
 					"type": "gallery",
@@ -616,7 +621,8 @@
 										]
 									]
 								}
-							]
+							],
+							"id": "006"
 						},
 						{
 							"type": "entries",
@@ -649,7 +655,8 @@
 									]
 								},
 								"If the ship runs into something that doesn't have hit points (such as a planet or a moon), apply the damage only to the ship. The ship stops after crashing into a Gargantuan or immovable creature or object; otherwise, the ship can continue moving ifit has any movement left, and whatever it struck moves to the nearest unoccupied space that isn't in the ship's path."
-							]
+							],
+							"id": "007"
 						}
 					]
 				},
@@ -720,7 +727,8 @@
 								]
 							]
 						}
-					]
+					],
+					"id": "008"
 				},
 				{
 					"type": "entries",
@@ -781,7 +789,8 @@
 								]
 							]
 						}
-					]
+					],
+					"id": "00b"
 				},
 				{
 					"type": "entries",
@@ -913,9 +922,11 @@
 								]
 							]
 						}
-					]
+					],
+					"id": "00c"
 				}
-			]
+			],
+			"id": "000"
 		}
 	]
 }
