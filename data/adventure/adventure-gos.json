@@ -17620,7 +17620,7 @@
 									"height": 5700,
 									"imageType": "map",
 									"title": "Map 5.3: Abbey Ruins",
-									"id": "fff",
+									"id": "5C9",
 									"mapRegions": [
 										{
 											"area": "2bd",
@@ -18390,7 +18390,7 @@
 									"height": 5700,
 									"imageType": "mapPlayer",
 									"mapParent": {
-										"id": "fff",
+										"id": "5C9",
 										"offsetY": -200
 									}
 								}
@@ -31236,8 +31236,11 @@
 												"type": "internal",
 												"path": "adventure/GoS/099-09-dm.png"
 											},
+											"title": "Map A.5: Cove Reef",
 											"width": 4200,
-											"height": 5700
+											"height": 5700,
+											"id": "5CA",
+											"imageType": "map"
 										},
 										{
 											"type": "image",
@@ -31245,9 +31248,13 @@
 												"type": "internal",
 												"path": "adventure/GoS/100-09-pc.png"
 											},
-											"title": "(Player Version)",
+											"title": "Player Version",
 											"width": 4200,
-											"height": 5700
+											"height": 5700,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "5CA"
+											}
 										}
 									]
 								},
@@ -31665,8 +31672,11 @@
 												"type": "internal",
 												"path": "adventure/GoS/102-11-dm.png"
 											},
+											"title": "Map A.6: Wreck of the Marshal",
 											"width": 4200,
-											"height": 5700
+											"height": 5700,
+											"id": "5CB",
+											"imageType": "map"
 										},
 										{
 											"type": "image",
@@ -31674,9 +31684,13 @@
 												"type": "internal",
 												"path": "adventure/GoS/103-11-pc.png"
 											},
-											"title": "(Player Version)",
+											"title": "Player Version",
 											"width": 4200,
-											"height": 5700
+											"height": 5700,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "5CB"
+											}
 										}
 									]
 								},
@@ -32144,8 +32158,11 @@
 												"type": "internal",
 												"path": "adventure/GoS/105-08-dm.png"
 											},
+											"title": "Map A.7: Warthalkeel Ruins",
 											"width": 4200,
-											"height": 5700
+											"height": 5700,
+											"id": "5CC",
+											"imageType": "map"
 										},
 										{
 											"type": "image",
@@ -32153,9 +32170,13 @@
 												"type": "internal",
 												"path": "adventure/GoS/106-08-pc.png"
 											},
-											"title": "(Player Version)",
+											"title": "Player Version",
 											"width": 4200,
-											"height": 5700
+											"height": 5700,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "5CC"
+											}
 										}
 									]
 								},
