@@ -31241,6 +31241,12 @@
 											"height": 5700,
 											"id": "5CA",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 120,
+												"offsetY": -20,
+												"distance": 10
+											},
 											"mapRegions": [
 												{
 													"area": "552",
@@ -31425,6 +31431,12 @@
 											"width": 4200,
 											"height": 5700,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 120,
+												"offsetY": -20,
+												"distance": 10
+											},
 											"mapParent": {
 												"id": "5CA"
 											}
@@ -31850,6 +31862,10 @@
 											"height": 5700,
 											"id": "5CB",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 140
+											},
 											"mapRegions": [
 												{
 													"area": "575",
@@ -32180,6 +32196,10 @@
 											"width": 4200,
 											"height": 5700,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 140
+											},
 											"mapParent": {
 												"id": "5CB"
 											}
@@ -32655,6 +32675,12 @@
 											"height": 5700,
 											"id": "5CC",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 120,
+												"offsetY": -17,
+												"distance": 10
+											},
 											"mapRegions": [
 												{
 													"area": "59e",
@@ -33567,6 +33593,12 @@
 											"width": 4200,
 											"height": 5700,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 120,
+												"offsetY": -17,
+												"distance": 10
+											},
 											"mapParent": {
 												"id": "5CC"
 											}
