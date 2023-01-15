@@ -101,7 +101,13 @@
 									"title": "Forecastle Map",
 									"width": 1700,
 									"height": 1370,
-									"imageType": "map"
+									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 76,
+										"offsetX": -28,
+										"offsetY": -35
+									}
 								}
 							]
 						},
@@ -1029,6 +1035,10 @@
 												"path": "adventure/SjA/010-map-1.01-spelljammer-academy.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "none",
+												"distance": 100
+											},
 											"title": "Spelljammer Academy",
 											"width": 2550,
 											"height": 3300,
@@ -1041,6 +1051,10 @@
 												"path": "adventure/SjA/011-map-1.01-spelljammer-academy-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"distance": 100
+											},
 											"title": "Player Version",
 											"width": 2550,
 											"height": 3300,
@@ -1929,6 +1943,12 @@
 												"path": "adventure/SjA/022-map-2.01-squid.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 161,
+												"offsetX": -43,
+												"offsetY": -13
+											},
 											"title": "Squid Ship Map",
 											"width": 5100,
 											"height": 6600,
@@ -1941,6 +1961,12 @@
 												"path": "adventure/SjA/023-map-2.01-squid-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 161,
+												"offsetX": -43,
+												"offsetY": -13
+											},
 											"title": "Player Version",
 											"width": 5100,
 											"height": 6600,
@@ -2655,7 +2681,14 @@
 									"title": "Realmspace Map",
 									"width": 1700,
 									"height": 1100,
-									"imageType": "map"
+									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 154,
+										"offsetX": -15,
+										"distance": 200000000,
+										"units": "mi"
+									}
 								},
 								{
 									"type": "entries",
@@ -2984,7 +3017,12 @@
 									"title": "Spindle Cavern Map",
 									"width": 1702,
 									"height": 1878,
-									"imageType": "map"
+									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 60,
+										"offsetX": -23
+									}
 								},
 								{
 									"type": "entries",
@@ -3257,6 +3295,12 @@
 														"path": "adventure/SjA/043-map-3.02-hammerhead.webp"
 													},
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 120,
+														"offsetX": -51,
+														"offsetY": 22
+													},
 													"title": "Hammerhead Ship Map",
 													"width": 5100,
 													"height": 6600,
@@ -3269,6 +3313,12 @@
 														"path": "adventure/SjA/044-map-3.02-hammerhead-player.webp"
 													},
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 120,
+														"offsetX": -51,
+														"offsetY": 22
+													},
 													"title": "Player Version",
 													"width": 5100,
 													"height": 6600,
@@ -3552,7 +3602,11 @@
 										"path": "adventure/SjA/047-map-1.01-spelljammer-academy.webp"
 									},
 									"imageType": "map",
-									"title": "Spelljammer Academy",
+									"grid": {
+										"type": "none",
+										"distance": 100
+									},
+									"title": "Spelljammer Academy Handout",
 									"width": 2550,
 									"height": 3300
 								}
