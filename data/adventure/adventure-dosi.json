@@ -115,6 +115,14 @@
 												"path": "adventure/DoSI/000-map-0.01-stormwreck-isle.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "hexColsEven",
+												"size": 76,
+												"offsetX": 18,
+												"offsetY": -36,
+												"distance": 0.5,
+												"units": "mi"
+											},
 											"title": "Map 1: Stormwreck Isle",
 											"width": 1700,
 											"height": 1214,
@@ -127,6 +135,14 @@
 												"path": "adventure/DoSI/001-map-0.01-stormwreck-isle-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "hexColsEven",
+												"size": 76,
+												"offsetX": 18,
+												"offsetY": -36,
+												"distance": 0.5,
+												"units": "mi"
+											},
 											"title": "Player Version",
 											"width": 1700,
 											"height": 1214,
@@ -442,6 +458,13 @@
 												"path": "adventure/DoSI/004-map-1.01-dragons-rest.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 61,
+												"offsetX": 15,
+												"offsetY": 24,
+												"scale": 2
+											},
 											"title": "Map 2: Dragons Rest",
 											"width": 1700,
 											"height": 1214,
@@ -1437,6 +1460,13 @@
 												"path": "adventure/DoSI/005-map-1.01-dragons-rest-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 61,
+												"offsetX": 15,
+												"offsetY": 24,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 1700,
 											"height": 1214,
@@ -1993,6 +2023,13 @@
 												"path": "adventure/DoSI/008-map-2.01-seagrow-caves.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 53,
+												"offsetX": 30,
+												"offsetY": 37,
+												"scale": 2
+											},
 											"title": "Map 3: Seagrow Caves",
 											"width": 1700,
 											"height": 1214,
@@ -4357,6 +4394,13 @@
 												"path": "adventure/DoSI/009-map-2.01-seagrow-caves-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 53,
+												"offsetX": 30,
+												"offsetY": 37,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 1700,
 											"height": 1214,
@@ -4692,6 +4736,13 @@
 												"path": "adventure/DoSI/012-map-3.01-wreck-of-compass-rose.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 61,
+												"offsetX": 32,
+												"offsetY": 34,
+												"scale": 2
+											},
 											"title": "Map 4: The Wreck of Compass Rose",
 											"width": 1700,
 											"height": 1214,
@@ -5271,6 +5322,13 @@
 												"path": "adventure/DoSI/013-map-3.01-wreck-of-compass-rose-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 61,
+												"offsetX": 32,
+												"offsetY": 34,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 1700,
 											"height": 1214,
@@ -5822,7 +5880,14 @@
 												"path": "adventure/DoSI/016-map-4.01-clifftop-observatory.webp"
 											},
 											"imageType": "map",
-											"title": "Map 5: clifftop observatory",
+											"grid": {
+												"type": "square",
+												"size": 77,
+												"offsetX": 9,
+												"offsetY": 9,
+												"scale": 2
+											},
+											"title": "Map 5: Clifftop Observatory",
 											"width": 1700,
 											"height": 1214,
 											"id": "0d1",
@@ -6362,6 +6427,13 @@
 												"path": "adventure/DoSI/017-map-4.01-clifftop-observatory-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 77,
+												"offsetX": 9,
+												"offsetY": 9,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 1700,
 											"height": 1214,
