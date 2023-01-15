@@ -757,6 +757,11 @@
 											"height": 3338,
 											"title": "Map 1.1: Village of Saltmarsh",
 											"imageType": "map",
+											"grid": {
+												"type": "none",
+												"size": 147,
+												"distance": 250
+											},
 											"id": "54e",
 											"mapRegions": [
 												{
@@ -2756,6 +2761,11 @@
 											"width": 2550,
 											"height": 3338,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 147,
+												"distance": 250
+											},
 											"mapParent": {
 												"id": "54e"
 											}
@@ -3393,6 +3403,14 @@
 									"height": 5700,
 									"title": "Map 1.2: The Saltmarsh Environs",
 									"imageType": "map",
+									"grid": {
+										"type": "hexRowsOdd",
+										"size": 350,
+										"offsetX": 59,
+										"offsetY": -89,
+										"distance": 7500,
+										"units": "yd"
+									},
 									"id": "54f",
 									"mapRegions": [
 										{
@@ -3733,6 +3751,14 @@
 									"width": 4200,
 									"height": 5700,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "hexRowsOdd",
+										"size": 350,
+										"offsetX": 59,
+										"offsetY": -89,
+										"distance": 7500,
+										"units": "yd"
+									},
 									"mapParent": {
 										"id": "54f"
 									}
@@ -5515,6 +5541,12 @@
 											"height": 5700,
 											"title": "Map 2.1: Haunted House",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 140,
+												"offsetX": -2,
+												"offsetY": 26
+											},
 											"id": "550",
 											"mapRegions": [
 												{
@@ -6012,6 +6044,12 @@
 											"width": 4200,
 											"height": 5700,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 140,
+												"offsetX": -2,
+												"offsetY": 26
+											},
 											"mapParent": {
 												"id": "550"
 											}
@@ -6510,6 +6548,12 @@
 											"height": 5700,
 											"title": "Map 2.2: Haunted House Cellar and Caverns",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 150,
+												"offsetX": -29,
+												"offsetY": 41
+											},
 											"id": "551",
 											"mapRegions": [
 												{
@@ -7459,6 +7503,12 @@
 											"width": 4200,
 											"height": 5700,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 150,
+												"offsetX": -29,
+												"offsetY": -12
+											},
 											"mapParent": {
 												"id": "551"
 											}
@@ -8125,6 +8175,12 @@
 											"height": 5700,
 											"title": "Map 2.3: Sea Ghost",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 168,
+												"offsetX": 32,
+												"offsetY": 6
+											},
 											"id": "552",
 											"mapRegions": [
 												{
@@ -10031,6 +10087,12 @@
 											"width": 4200,
 											"height": 5700,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 167,
+												"offsetX": 55,
+												"offsetY": 26
+											},
 											"mapParent": {
 												"id": "552"
 											}
@@ -11470,6 +11532,13 @@
 											"height": 5399,
 											"title": "Map 3.1: Lizardfolk Lair",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 116,
+												"offsetX": 38,
+												"offsetY": -58,
+												"distance": 10
+											},
 											"id": "553",
 											"mapRegions": [
 												{
@@ -13961,6 +14030,13 @@
 											"width": 8192,
 											"height": 5399,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 116,
+												"offsetX": 38,
+												"offsetY": -58,
+												"distance": 10
+											},
 											"mapParent": {
 												"id": "553"
 											}
@@ -15810,6 +15886,13 @@
 									"height": 1425,
 									"title": "Map 4.1: Emperor of the Waves",
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 91,
+										"offsetX": 17,
+										"offsetY": 28,
+										"scale": 2
+									},
 									"id": "554",
 									"mapRegions": [
 										{
@@ -16453,6 +16536,13 @@
 									"width": 2063,
 									"height": 1425,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 91,
+										"offsetX": 17,
+										"offsetY": 28,
+										"scale": 2
+									},
 									"mapParent": {
 										"id": "554"
 									}
@@ -17259,6 +17349,13 @@
 									"height": 2850,
 									"title": "Map 5.1: Abbey Isle",
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 109,
+										"offsetX": 23,
+										"offsetY": 42,
+										"distance": 500
+									},
 									"id": "555"
 								},
 								{
@@ -17271,6 +17368,13 @@
 									"width": 2100,
 									"height": 2850,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 109,
+										"offsetX": 23,
+										"offsetY": 42,
+										"distance": 500
+									},
 									"mapParent": {
 										"id": "555"
 									}
@@ -17310,6 +17414,13 @@
 											"height": 2850,
 											"title": "Map 5.2: Skull Dunes",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 164,
+												"offsetX": 79,
+												"offsetY": -23,
+												"distance": 150
+											},
 											"id": "556"
 										},
 										{
@@ -17322,6 +17433,13 @@
 											"width": 4126,
 											"height": 2850,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 164,
+												"offsetX": 79,
+												"offsetY": -23,
+												"distance": 150
+											},
 											"mapParent": {
 												"id": "556"
 											}
@@ -17619,6 +17737,13 @@
 									"width": 4200,
 									"height": 5700,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 219,
+										"offsetX": -8,
+										"offsetY": -9,
+										"distance": 10
+									},
 									"title": "Map 5.3: Abbey Ruins",
 									"id": "fff",
 									"mapRegions": [
@@ -18389,6 +18514,13 @@
 									"width": 4200,
 									"height": 5700,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 219,
+										"offsetX": -8,
+										"offsetY": -28,
+										"distance": 10
+									},
 									"mapParent": {
 										"id": "fff",
 										"offsetY": -200
@@ -19456,6 +19588,13 @@
 											"height": 5700,
 											"title": "Map 6.1: Sahuagin Lair Level 1",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 113,
+												"offsetX": 42,
+												"offsetY": -8,
+												"distance": 10
+											},
 											"id": "557",
 											"mapRegions": [
 												{
@@ -20293,6 +20432,13 @@
 											"width": 4200,
 											"height": 5700,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 113,
+												"offsetX": 45,
+												"offsetY": -33,
+												"distance": 10
+											},
 											"mapParent": {
 												"id": "557"
 											}
@@ -20879,6 +21025,13 @@
 											"height": 5672,
 											"title": "Map 6.2: Sahuagin Lair Level 2",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 114,
+												"offsetX": 43,
+												"offsetY": -10,
+												"distance": 10
+											},
 											"id": "558",
 											"mapRegions": [
 												{
@@ -21785,6 +21938,13 @@
 											"width": 4186,
 											"height": 5672,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 114,
+												"offsetX": 46,
+												"offsetY": 27,
+												"distance": 10
+											},
 											"mapParent": {
 												"id": "558"
 											}
@@ -22723,6 +22883,13 @@
 											"height": 5700,
 											"title": "Map 6.3: Sahuagin Lair Level 3",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 91,
+												"offsetX": 14,
+												"offsetY": 52,
+												"distance": 10
+											},
 											"id": "559",
 											"mapRegions": [
 												{
@@ -23436,6 +23603,13 @@
 											"width": 4200,
 											"height": 5700,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 91,
+												"offsetX": 14,
+												"offsetY": 27,
+												"distance": 10
+											},
 											"mapParent": {
 												"id": "559"
 											}
@@ -24604,6 +24778,11 @@
 											"height": 1425,
 											"title": "Map 7.1: Firewatch Island",
 											"imageType": "map",
+											"grid": {
+												"type": "none",
+												"size": 82,
+												"distance": 30
+											},
 											"id": "55a"
 										},
 										{
@@ -24616,6 +24795,11 @@
 											"width": 2063,
 											"height": 1425,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 82,
+												"distance": 30
+											},
 											"mapParent": {
 												"id": "55a"
 											}
@@ -24692,6 +24876,13 @@
 											"height": 2850,
 											"title": "Map 7.2: Hermitage First Floor",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 65,
+												"offsetX": -34,
+												"offsetY": -26,
+												"distance": 10
+											},
 											"id": "55b",
 											"mapRegions": [
 												{
@@ -25837,6 +26028,13 @@
 											"width": 2100,
 											"height": 2850,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 65,
+												"offsetX": -34,
+												"offsetY": -26,
+												"distance": 10
+											},
 											"mapParent": {
 												"id": "55b"
 											}
@@ -26379,6 +26577,13 @@
 											"height": 1500,
 											"title": "Map 7.3: Hermitage Second Floor",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 68,
+												"offsetX": 16,
+												"offsetY": 21,
+												"distance": 10
+											},
 											"id": "55c",
 											"mapRegions": [
 												{
@@ -26858,6 +27063,13 @@
 											"width": 2138,
 											"height": 1500,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 68,
+												"offsetX": 16,
+												"offsetY": 21,
+												"distance": 10
+											},
 											"mapParent": {
 												"id": "55c"
 											}
@@ -27014,6 +27226,12 @@
 											"height": 1500,
 											"title": "Map 7.4: Hermitage Upper Floors and Cellar",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 68,
+												"offsetY": 14,
+												"distance": 10
+											},
 											"id": "55d",
 											"mapRegions": [
 												{
@@ -27300,6 +27518,12 @@
 											"width": 2138,
 											"height": 1500,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 68,
+												"offsetY": 13,
+												"distance": 10
+											},
 											"mapParent": {
 												"id": "55d"
 											}
@@ -27807,6 +28031,12 @@
 											"height": 1500,
 											"title": "Map 7.5: The Pit of Hatred",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 72,
+												"offsetX": 51,
+												"offsetY": 46
+											},
 											"id": "55e"
 										},
 										{
@@ -27819,6 +28049,12 @@
 											"width": 2138,
 											"height": 1500,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 72,
+												"offsetX": 51,
+												"offsetY": 46
+											},
 											"mapParent": {
 												"id": "55e"
 											}
@@ -28278,6 +28514,11 @@
 											"height": 1500,
 											"title": "Map 8.1: The Styes",
 											"imageType": "map",
+											"grid": {
+												"type": "none",
+												"size": 75,
+												"distance": 150
+											},
 											"id": "55f",
 											"mapRegions": [
 												{
@@ -28723,6 +28964,11 @@
 											"width": 2138,
 											"height": 1500,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 75,
+												"distance": 150
+											},
 											"mapParent": {
 												"id": "55f"
 											}
@@ -29092,6 +29338,13 @@
 											"height": 1500,
 											"title": "Map 8.2: Mr Dory's Warehouse",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 83,
+												"offsetX": -34,
+												"offsetY": -57,
+												"scale": 2
+											},
 											"id": "560",
 											"mapRegions": [
 												{
@@ -29459,6 +29712,13 @@
 											"width": 2138,
 											"height": 1500,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 83,
+												"offsetX": -34,
+												"offsetY": -57,
+												"scale": 2
+											},
 											"mapParent": {
 												"id": "560"
 											}
@@ -29804,6 +30064,12 @@
 											"height": 1500,
 											"title": "Map 8.3: Temple of Tharizdun",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 54,
+												"offsetX": -13,
+												"offsetY": -17
+											},
 											"id": "561",
 											"mapRegions": [
 												{
@@ -30472,6 +30738,12 @@
 											"width": 2138,
 											"height": 1500,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 54,
+												"offsetX": -13,
+												"offsetY": -17
+											},
 											"mapParent": {
 												"id": "561"
 											}
@@ -30685,6 +30957,12 @@
 											"height": 1500,
 											"title": "Map 8.4: Landgrave's Folly",
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 59,
+												"offsetX": 18,
+												"offsetY": 12
+											},
 											"id": "562",
 											"mapRegions": [
 												{
@@ -31038,6 +31316,12 @@
 											"width": 2138,
 											"height": 1500,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 59,
+												"offsetX": 18,
+												"offsetY": 12
+											},
 											"mapParent": {
 												"id": "562"
 											}
