@@ -638,7 +638,7 @@
 										"type": "internal",
 										"path": "book/EGW/111-5.4-lower-hupperdook-player.jpg"
 									},
-									"title": "Map 5.4: Lower Hupperdook (Player Version)",
+									"title": "Player Version",
 									"width": 2550,
 									"height": 1650,
 									"imageType": "mapPlayer",
@@ -696,7 +696,8 @@
 												"offsetX": 1,
 												"offsetY": -9
 											},
-											"imageType": "map"
+											"imageType": "map",
+											"id": "7BC"
 										},
 										{
 											"type": "image",
@@ -704,7 +705,7 @@
 												"type": "internal",
 												"path": "book/EGW/112-5.5-ironlot-streets-player.png"
 											},
-											"title": "Map 5.5: Ironlot Streets (Player Version)",
+											"title": "Player Version",
 											"width": 2550,
 											"height": 1650,
 											"grid": {
@@ -713,7 +714,10 @@
 												"offsetX": 1,
 												"offsetY": -9
 											},
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "7BC"
+											}
 										}
 									]
 								},
@@ -977,7 +981,8 @@
 												"offsetX": -115,
 												"offsetY": -72
 											},
-											"imageType": "map"
+											"imageType": "map",
+											"id": "7BB"
 										},
 										{
 											"type": "image",
@@ -985,7 +990,7 @@
 												"type": "internal",
 												"path": "book/EGW/114-5.6-nima-cinnarids-house-player.jpg"
 											},
-											"title": "Map 5.6: Nima Cinnarid's House (Player Version)",
+											"title": "Player Version",
 											"width": 2400,
 											"height": 3000,
 											"grid": {
@@ -994,7 +999,11 @@
 												"offsetX": -230,
 												"offsetY": -147
 											},
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "7BB",
+												"autoScale": true
+											}
 										}
 									]
 								},
@@ -1273,7 +1282,8 @@
 												"offsetX": 78,
 												"offsetY": 47
 											},
-											"imageType": "map"
+											"imageType": "map",
+											"id": "7BA"
 										},
 										{
 											"type": "image",
@@ -1281,7 +1291,7 @@
 												"type": "internal",
 												"path": "book/EGW/116-5.7-silver-falls-cavern-player.png"
 											},
-											"title": "Map 5.7: Silver Falls Cavern (Player Version)",
+											"title": "Player Version",
 											"width": 2550,
 											"height": 1650,
 											"grid": {
@@ -1290,7 +1300,10 @@
 												"offsetX": 78,
 												"offsetY": 47
 											},
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "7BA"
+											}
 										}
 									]
 								},
@@ -5682,7 +5695,7 @@
 										"type": "internal",
 										"path": "book/EGW/117-5.8-stahlmasts-lair-player.jpg"
 									},
-									"title": "Map 5.8: Stahlmast's Lair (Player Version)",
+									"title": "Player Version",
 									"width": 2550,
 									"height": 1650,
 									"imageType": "mapPlayer",

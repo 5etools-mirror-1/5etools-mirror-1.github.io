@@ -2888,6 +2888,12 @@
 												"path": "adventure/DSotDQ/037-map-3.01-vogler.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "none",
+												"size": 50,
+												"scale": 1.06,
+												"distance": 30
+											},
 											"title": "Map 3.1: Vogler",
 											"width": 1700,
 											"height": 1225,
@@ -3406,6 +3412,12 @@
 												"path": "adventure/DSotDQ/038-map-3.01-vogler-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 50,
+												"scale": 1.06,
+												"distance": 30
+											},
 											"title": "Player Version",
 											"width": 1700,
 											"height": 1225,
@@ -4323,7 +4335,13 @@
 														"path": "adventure/DSotDQ/045-map-3.02-battle-of-high-hill.webp"
 													},
 													"imageType": "map",
-													"title": "Map 3.2: battle of high hill",
+													"grid": {
+														"type": "square",
+														"size": 77,
+														"offsetX": -21,
+														"offsetY": -11
+													},
+													"title": "Map 3.2: Battle of High Hill",
 													"width": 1700,
 													"height": 2286,
 													"id": "020",
@@ -4362,6 +4380,12 @@
 														"path": "adventure/DSotDQ/046-map-3.02-battle-of-high-hill-player.webp"
 													},
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 77,
+														"offsetX": -21,
+														"offsetY": -11
+													},
 													"title": "Player Version",
 													"width": 1700,
 													"height": 2286,
@@ -5162,7 +5186,13 @@
 														"path": "adventure/DSotDQ/049-map-3.03-escape-from-vogler.webp"
 													},
 													"imageType": "map",
-													"title": "Map 3.3: escape from vogler",
+													"grid": {
+														"type": "square",
+														"size": 77,
+														"offsetX": 7,
+														"offsetY": 5
+													},
+													"title": "Map 3.3: Escape From Vogler",
 													"width": 1700,
 													"height": 2286,
 													"id": "021",
@@ -5201,6 +5231,12 @@
 														"path": "adventure/DSotDQ/050-map-3.03-escape-from-vogler-player.webp"
 													},
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 77,
+														"offsetX": 7,
+														"offsetY": 5
+													},
 													"title": "Player Version",
 													"width": 1700,
 													"height": 2286,
@@ -5521,7 +5557,13 @@
 												"path": "adventure/DSotDQ/054-map-4.01-kalaman.webp"
 											},
 											"imageType": "map",
-											"title": "Map 4.1: kalaman",
+											"grid": {
+												"type": "none",
+												"size": 85,
+												"scale": 2,
+												"distance": 100
+											},
+											"title": "Map 4.1: Kalaman",
 											"width": 1700,
 											"height": 1209,
 											"id": "022",
@@ -6004,6 +6046,12 @@
 												"path": "adventure/DSotDQ/055-map-4.01-kalaman-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 85,
+												"scale": 2,
+												"distance": 100
+											},
 											"title": "Player Version",
 											"width": 1700,
 											"height": 1209,
@@ -10563,7 +10611,7 @@
 					"page": 107,
 					"id": "23a",
 					"entries": [
-						"The rest of this chapter takes place in the Northern Wastes, a region where the Cataclysm's destruction is still evident centuries later. This section contains general information about the region and the challenges the characters face as they traverse it. {@adventure Map 5.1|DSotDQ|5|Map 5.1: kalaman and northern wastes} depicts this region, sites that might be discovered by explorers, and various named environmental features. A version of this map appropriate to share with players appears in {@adventure appendix E|DSotDQ|12|Map: Kalaman Northern Wastes (Player Version) View Unlabeled Version}.",
+						"The rest of this chapter takes place in the Northern Wastes, a region where the Cataclysm's destruction is still evident centuries later. This section contains general information about the region and the challenges the characters face as they traverse it. {@adventure Map 5.1|DSotDQ|5|Map 5.1: kalaman and northern wastes} depicts this region, sites that might be discovered by explorers, and various named environmental features. A version of this map appropriate to share with players appears in {@adventure appendix E|DSotDQ|12|Appendix E: Maps}.",
 						{
 							"type": "entries",
 							"name": "Movement in the Wastes",
@@ -11492,7 +11540,7 @@
 												"{@area Wakenreth|2a7|x} (location E)"
 											]
 										},
-										"Mark these sites' hexes on the players' map of the region in {@adventure appendix E|DSotDQ|12|Map: Kalaman Northern Wastes (Player Version) View Unlabeled Version} after {@creature Dalamar|DSotDQ} notes their locations.",
+										"Mark these sites' hexes on the players' map of the region in {@adventure appendix E|DSotDQ|12|Appendix E: Maps} after {@creature Dalamar|DSotDQ} notes their locations.",
 										"If the characters agree to work with {@creature Dalamar|DSotDQ}, he's pleased. They can explore the locations in any order they wish. {@creature Dalamar|DSotDQ} plans to convince Zhelsuel to let him meet the characters at Wakenreth. Once they've relayed their findings to him, he hopes he'll be able to determine the location of the City of Lost Names (see the end of the \"{@area E: Wakenreth|2a7|x}\" section for details). With this, {@creature Dalamar|DSotDQ} sends the characters on their way, wishing them fruitful investigations."
 									]
 								}
@@ -12154,7 +12202,7 @@
 									"id": "282",
 									"entries": [
 										"{@creature Dalamar|DSotDQ} needs to know only that the Blue Phoenix Shrine is a holy place sacred to the god Habbakuk.",
-										"As the group leaves the shrine, if the characters haven't already rescued the sea elves at Camp Carrionclay, a {@creature sea elf scout|DSotDQ} approaches {@creature Ishvern|DSotDQ} to tell him they've found where their captured companions were taken. The sea elves have been imprisoned at a Dragon Army camp in the middle of a murky lake (see the \"{@area I: Camp Carrionclay|2f1|x}\" section). These sea elf scouts provide directions to area I on {@adventure map 5.1|DSotDQ|5|Map 5.1: kalaman and northern wastes}. Mark this hex on the players' map of the region in {@adventure appendix E|DSotDQ|12|Map: Kalaman Northern Wastes (Player Version) View Unlabeled Version}.",
+										"As the group leaves the shrine, if the characters haven't already rescued the sea elves at Camp Carrionclay, a {@creature sea elf scout|DSotDQ} approaches {@creature Ishvern|DSotDQ} to tell him they've found where their captured companions were taken. The sea elves have been imprisoned at a Dragon Army camp in the middle of a murky lake (see the \"{@area I: Camp Carrionclay|2f1|x}\" section). These sea elf scouts provide directions to area I on {@adventure map 5.1|DSotDQ|5|Map 5.1: kalaman and northern wastes}. Mark this hex on the players' map of the region in {@adventure appendix E|DSotDQ|12|Appendix E: Maps}.",
 										"{@creature Ishvern|DSotDQ} asks the characters to find and free these captives. In return, he offers them what remaining treasure he has: a few blue pearls worth 750 gp."
 									]
 								}
@@ -26656,23 +26704,43 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/DSotDQ/178-map-12.01-kalaman-northern-wastes-player.webp"
+								"path": "adventure/DSotDQ/179-map-12.01-kalaman-northern-wastes.webp"
 							},
 							"imageType": "map",
-							"title": "Unlabeled Version",
+							"grid": {
+								"type": "hexColsOdd",
+								"size": 70,
+								"offsetX": -33,
+								"offsetY": 1,
+								"distance": 6,
+								"units": "mi"
+							},
+							"title": "Map: Kalaman Northern Wastes",
 							"width": 1700,
-							"height": 2429
+							"height": 2429,
+							"id": "059"
 						},
 						{
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/DSotDQ/179-map-12.01-kalaman-northern-wastes.webp"
+								"path": "adventure/DSotDQ/178-map-12.01-kalaman-northern-wastes-player.webp"
 							},
 							"imageType": "mapPlayer",
-							"title": "Map: Kalaman Northern Wastes (Player Version)",
+							"grid": {
+								"type": "hexColsOdd",
+								"size": 70,
+								"offsetX": -33,
+								"offsetY": 1,
+								"distance": 6,
+								"units": "mi"
+							},
+							"title": "Player Version",
 							"width": 1700,
-							"height": 2429
+							"height": 2429,
+							"mapParent": {
+								"id": "059"
+							}
 						}
 					]
 				},
@@ -26686,9 +26754,17 @@
 								"path": "adventure/DSotDQ/180-map-12.02-ansalon-continent.webp"
 							},
 							"imageType": "map",
-							"title": "Map: The Continent of Ansalon",
+							"grid": {
+								"type": "none",
+								"size": 52,
+								"scale": 3,
+								"distance": 25,
+								"units": "mi"
+							},
+							"title": "Map: The Continent of Ansalon on the World of Krynn",
 							"width": 1700,
-							"height": 1199
+							"height": 1199,
+							"id": "05A"
 						},
 						{
 							"type": "image",
@@ -26696,10 +26772,20 @@
 								"type": "internal",
 								"path": "adventure/DSotDQ/181-map-12.02-ansalon-continent-player.webp"
 							},
-							"imageType": "map",
-							"title": "Unlabeled Version",
+							"imageType": "mapPlayer",
+							"grid": {
+								"type": "none",
+								"size": 52,
+								"scale": 3,
+								"distance": 25,
+								"units": "mi"
+							},
+							"title": "Player Version",
 							"width": 1700,
-							"height": 1199
+							"height": 1199,
+							"mapParent": {
+								"id": "05A"
+							}
 						}
 					]
 				}
