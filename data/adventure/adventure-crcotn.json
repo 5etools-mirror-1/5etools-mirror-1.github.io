@@ -1208,6 +1208,11 @@
 												"path": "adventure/CRCotN/009-map-1.1-Jigow.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "none",
+												"size": 77,
+												"distance": 50
+											},
 											"title": "Jigow",
 											"width": 2250,
 											"height": 1500,
@@ -1688,6 +1693,11 @@
 												"path": "adventure/CRCotN/010-map-1.1-Jigow-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 77,
+												"distance": 50
+											},
 											"title": "Player Version",
 											"width": 2250,
 											"height": 1500,
@@ -2416,6 +2426,12 @@
 												"path": "adventure/CRCotN/014-map-1.2-Emerald-Grotto.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 118,
+												"offsetX": -32,
+												"offsetY": -15
+											},
 											"title": "Emerald Grotto",
 											"width": 4500,
 											"height": 3000,
@@ -3718,6 +3734,12 @@
 												"path": "adventure/CRCotN/015-map-1.2-Emerald-Grotto-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 118,
+												"offsetX": -32,
+												"offsetY": -15
+											},
 											"title": "Player Version",
 											"width": 4500,
 											"height": 3000,
@@ -4390,6 +4412,13 @@
 										"path": "adventure/CRCotN/019-map-2.1-The-Emerald-Gulch.webp"
 									},
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 150,
+										"offsetX": 23,
+										"offsetY": 79,
+										"distance": 50
+									},
 									"title": "The Emerald Gulch",
 									"width": 2550,
 									"height": 3062,
@@ -4402,6 +4431,13 @@
 										"path": "adventure/CRCotN/020-map-2.1-The-Emerald-Gulch-player.webp"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 150,
+										"offsetX": 23,
+										"offsetY": 79,
+										"distance": 50
+									},
 									"title": "Player Version",
 									"width": 2550,
 									"height": 3062,
@@ -4731,6 +4767,10 @@
 												"path": "adventure/CRCotN/023-map-2.2-Emerald-Loop-Caravan-Stop.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 75
+											},
 											"title": "Emerald Loop Caravan Stop",
 											"width": 2250,
 											"height": 1500,
@@ -5107,6 +5147,10 @@
 												"path": "adventure/CRCotN/024-map-2.2-Emerald-Loop-Caravan-Stop-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 75
+											},
 											"title": "Player Version",
 											"width": 2250,
 											"height": 1500,
@@ -5614,6 +5658,12 @@
 												"path": "adventure/CRCotN/029-map-3.1-Bazzoxan.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "none",
+												"size": 76,
+												"distance": 25
+											},
+											"title": "Bazzoxan",
 											"width": 2250,
 											"height": 1500,
 											"mapRegions": [
@@ -5853,7 +5903,7 @@
 												"type": "internal",
 												"path": "adventure/CRCotN/thumbnail/029-map-3.1-Bazzoxan.webp"
 											},
-											"id": "047"
+											"id": "40B"
 										},
 										{
 											"type": "image",
@@ -5862,11 +5912,16 @@
 												"path": "adventure/CRCotN/030-map-3.1-Bazzoxan-player.webp"
 											},
 											"imageType": "mapPlayer",
-											"title": "BazzoxanView Player Version",
+											"grid": {
+												"type": "none",
+												"size": 76,
+												"distance": 25
+											},
+											"title": "Player Version",
 											"width": 2250,
 											"height": 1500,
 											"mapParent": {
-												"id": "047"
+												"id": "40B"
 											}
 										}
 									]
@@ -6562,6 +6617,13 @@
 												"path": "adventure/CRCotN/033-map-3.2-Betrayers-Rise.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 120,
+												"offsetX": 33,
+												"offsetY": -18,
+												"distance": 10
+											},
 											"title": "Betrayers' Rise",
 											"width": 4500,
 											"height": 6000,
@@ -7171,6 +7233,13 @@
 												"path": "adventure/CRCotN/034-map-3.2-Betrayers-Rise-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 120,
+												"offsetX": 33,
+												"offsetY": -18,
+												"distance": 10
+											},
 											"title": "Player Version",
 											"width": 4500,
 											"height": 6000,
@@ -8351,7 +8420,12 @@
 												"path": "adventure/CRCotN/040-map-4.1-Ank_Harel.webp"
 											},
 											"imageType": "map",
-											"title": "The Jewel of Hope Ank'Harel",
+											"grid": {
+												"type": "none",
+												"size": 68,
+												"distance": 300
+											},
+											"title": "The Jewel of Hope, Ank'Harel",
 											"width": 4084,
 											"height": 2869,
 											"id": "3f8"
@@ -8363,6 +8437,11 @@
 												"path": "adventure/CRCotN/041-map-4.1-Ank_Harel-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 68,
+												"distance": 300
+											},
 											"title": "Player Version",
 											"width": 4084,
 											"height": 2869,
@@ -9138,6 +9217,10 @@
 												"path": "adventure/CRCotN/048-map-4.2-Streets-of-the-Sigil-District.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 75
+											},
 											"title": "Streets of the Sigil District",
 											"width": 2250,
 											"height": 1500,
@@ -9177,6 +9260,10 @@
 												"path": "adventure/CRCotN/049-map-4.2-Streets-of-the-Sigil-District-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 75
+											},
 											"title": "Player Version",
 											"width": 2250,
 											"height": 1500,
@@ -9315,6 +9402,10 @@
 												"path": "adventure/CRCotN/051-map-4.3-Streets-of-the-Suncut-Bazaar.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 75
+											},
 											"title": "Streets of the Suncut Bazaar",
 											"width": 2250,
 											"height": 1500,
@@ -9354,6 +9445,10 @@
 												"path": "adventure/CRCotN/052-map-4.3-Streets-of-the-Suncut-Bazaar-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 75
+											},
 											"title": "Player Version",
 											"width": 2250,
 											"height": 1500,
@@ -10913,6 +11008,10 @@
 														"path": "adventure/CRCotN/058-map-4.4-River-District-Canal.webp"
 													},
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 75
+													},
 													"title": "River District Canal",
 													"width": 2250,
 													"height": 1500,
@@ -11065,6 +11164,10 @@
 														"path": "adventure/CRCotN/059-map-4.4-River-District-Canal-player.webp"
 													},
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 75
+													},
 													"title": "Player Version",
 													"width": 2250,
 													"height": 1500,
@@ -11793,6 +11896,13 @@
 												"path": "adventure/CRCotN/062-map-5.1-Cael-Morrow.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 140,
+												"offsetX": -42,
+												"offsetY": -79,
+												"distance": 10
+											},
 											"title": "Cael Morrow",
 											"width": 4500,
 											"height": 6000,
@@ -13077,6 +13187,13 @@
 												"path": "adventure/CRCotN/063-map-5.1-Cael-Morrow-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 140,
+												"offsetX": -42,
+												"offsetY": -79,
+												"distance": 10
+											},
 											"title": "Player Version",
 											"width": 4500,
 											"height": 6000,
@@ -13938,6 +14055,13 @@
 										"path": "adventure/CRCotN/071-map-6.1-The-Netherdeep.webp"
 									},
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 108,
+										"offsetX": 29,
+										"offsetY": -19,
+										"distance": 10
+									},
 									"title": "The Netherdeep",
 									"width": 4500,
 									"height": 6000,
@@ -17577,6 +17701,13 @@
 										"path": "adventure/CRCotN/072-map-6.1-The-Netherdeep-player.webp"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 108,
+										"offsetX": 29,
+										"offsetY": -19,
+										"distance": 10
+									},
 									"title": "Player Version",
 									"width": 4500,
 									"height": 6000,
@@ -20262,6 +20393,12 @@
 												"path": "adventure/CRCotN/085-map-7.1-Heart-of-Despair.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 59,
+												"offsetX": 11,
+												"offsetY": -24
+											},
 											"title": "Heart of Despair",
 											"width": 4500,
 											"height": 3000,
@@ -20480,6 +20617,12 @@
 												"path": "adventure/CRCotN/086-map-7.1-Heart-of-Despair-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 59,
+												"offsetX": 11,
+												"offsetY": -24
+											},
 											"title": "Player Version",
 											"width": 4500,
 											"height": 3000,
@@ -21801,6 +21944,11 @@
 								"path": "adventure/CRCotN/128-map-13.1-Poster.webp"
 							},
 							"imageType": "map",
+							"grid": {
+								"type": "none",
+								"size": 67,
+								"distance": 300
+							},
 							"width": 3993,
 							"height": 2805,
 							"title": "Poster Map",
@@ -21813,6 +21961,11 @@
 								"path": "adventure/CRCotN/129-map-13.1-Poster-player.webp"
 							},
 							"imageType": "mapPlayer",
+							"grid": {
+								"type": "none",
+								"size": 67,
+								"distance": 300
+							},
 							"title": "Player Version",
 							"width": 3993,
 							"height": 2805,
@@ -21829,6 +21982,9 @@
 						"path": "adventure/CRCotN/130-13-001.poster-map-back.webp"
 					},
 					"imageType": "map",
+					"grid": {
+						"type": "none"
+					},
 					"title": "A map of the great city of Ank'Harel, the caverns of the last city of Cael Morrow, and the mysterious realm beneath\u2014as explored by the Allegiance of Allsight. 836 PD",
 					"width": 1189,
 					"height": 1700,
