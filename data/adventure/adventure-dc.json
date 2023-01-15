@@ -108,6 +108,13 @@
 											"width": 2105,
 											"height": 2933,
 											"imageType": "map",
+											"grid": {
+												"type": "hexColsOdd",
+												"size": 95,
+												"offsetX": -34,
+												"offsetY": -80,
+												"units": "mi"
+											},
 											"id": "12f"
 										},
 										{
@@ -120,6 +127,13 @@
 											"width": 2153,
 											"height": 3000,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "hexColsOdd",
+												"size": 97,
+												"offsetX": -31,
+												"offsetY": -80,
+												"units": "mi"
+											},
 											"mapParent": {
 												"id": "12f",
 												"autoScale": true
@@ -308,6 +322,9 @@
 							"width": 3600,
 							"height": 2280,
 							"imageType": "map",
+							"grid": {
+								"type": "none"
+							},
 							"id": "130",
 							"mapRegions": [
 								{
@@ -620,6 +637,9 @@
 							"width": 3600,
 							"height": 2280,
 							"imageType": "mapPlayer",
+							"grid": {
+								"type": "none"
+							},
 							"mapParent": {
 								"id": "130"
 							}
@@ -1089,6 +1109,12 @@
 											"width": 2835,
 											"height": 3600,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 136,
+												"offsetX": -78,
+												"offsetY": 37
+											},
 											"id": "131"
 										},
 										{
@@ -1101,6 +1127,12 @@
 											"width": 2835,
 											"height": 3600,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 136,
+												"offsetX": -78,
+												"offsetY": 37
+											},
 											"mapParent": {
 												"id": "131"
 											}
@@ -1313,10 +1345,17 @@
 										"type": "internal",
 										"path": "adventure/DC/007-nokov-map-ebondeaths-mausoleum_dm.jpg"
 									},
-									"title": "Map 4: {@creature Ebondeath|DC}'s Mausoleum",
+									"title": "Map 4: Ebondeath's Mausoleum",
 									"width": 3600,
 									"height": 2279,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 86,
+										"offsetX": 35,
+										"offsetY": 23,
+										"distance": 10
+									},
 									"id": "132",
 									"mapRegions": [
 										{
@@ -2687,6 +2726,13 @@
 									"width": 3600,
 									"height": 2279,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 86,
+										"offsetX": 35,
+										"offsetY": 23,
+										"distance": 10
+									},
 									"mapParent": {
 										"id": "132"
 									}
@@ -3025,6 +3071,12 @@
 											"width": 3600,
 											"height": 2279,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 86,
+												"offsetX": 35,
+												"offsetY": 23
+											},
 											"id": "133",
 											"mapRegions": [
 												{
@@ -4336,6 +4388,12 @@
 											"width": 3600,
 											"height": 2279,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 86,
+												"offsetX": 35,
+												"offsetY": 23
+											},
 											"mapParent": {
 												"id": "133"
 											}
@@ -5541,6 +5599,12 @@
 											"width": 3600,
 											"height": 2280,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 86,
+												"offsetX": 37,
+												"offsetY": 24
+											},
 											"id": "134",
 											"mapRegions": [
 												{
@@ -6673,6 +6737,12 @@
 											"width": 3600,
 											"height": 2280,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 86,
+												"offsetX": 37,
+												"offsetY": 24
+											},
 											"mapParent": {
 												"id": "134"
 											}
@@ -6985,6 +7055,12 @@
 											"width": 3600,
 											"height": 2280,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 86,
+												"offsetX": 35,
+												"offsetY": 25
+											},
 											"id": "135",
 											"mapRegions": [
 												{
@@ -7585,6 +7661,12 @@
 											"width": 3600,
 											"height": 2280,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 86,
+												"offsetX": 35,
+												"offsetY": 25
+											},
 											"mapParent": {
 												"id": "135"
 											}
