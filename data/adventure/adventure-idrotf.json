@@ -2006,10 +2006,15 @@
 										"type": "internal",
 										"path": "adventure/IDRotF/013-map-1.1-bremen.jpg"
 									},
-									"title": "Map 1.1: bremen",
+									"title": "Map 1.1: Bremen",
 									"width": 2208,
 									"height": 3000,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 123,
+										"distance": 100
+									},
 									"id": "388",
 									"mapRegions": [
 										{
@@ -2091,6 +2096,11 @@
 									"width": 2208,
 									"height": 3000,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 123,
+										"distance": 100
+									},
 									"mapParent": {
 										"id": "388"
 									}
@@ -2591,10 +2601,15 @@
 										"type": "internal",
 										"path": "adventure/IDRotF/018-map-1.2-bryn-shander.jpg"
 									},
-									"title": "Map 1.2: bryn shander",
+									"title": "Map 1.2: Bryn Shander",
 									"width": 3000,
 									"height": 2143,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 66,
+										"distance": 100
+									},
 									"id": "67c",
 									"mapRegions": [
 										{
@@ -2697,6 +2712,11 @@
 									"width": 3000,
 									"height": 2143,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 66,
+										"distance": 100
+									},
 									"mapParent": {
 										"id": "67c"
 									}
@@ -3116,10 +3136,15 @@
 										"type": "internal",
 										"path": "adventure/IDRotF/024-map-1.3-caer-dineval.jpg"
 									},
-									"title": "Map 1.3: caer-dineval",
+									"title": "Map 1.3: Caer-Dineval",
 									"width": 2202,
 									"height": 3000,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 108,
+										"distance": 100
+									},
 									"id": "67d",
 									"mapRegions": [
 										{
@@ -3222,6 +3247,11 @@
 									"width": 2201,
 									"height": 3000,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 108,
+										"distance": 100
+									},
 									"mapParent": {
 										"id": "67d",
 										"autoScale": true
@@ -3439,6 +3469,13 @@
 											"width": 4000,
 											"height": 2765,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 88,
+												"offsetX": -22,
+												"offsetY": 4,
+												"scale": 1.05
+											},
 											"id": "6fd",
 											"mapRegions": [
 												{
@@ -5956,10 +5993,15 @@
 										"type": "internal",
 										"path": "adventure/IDRotF/032-map-1.5-caer-konig.jpg"
 									},
-									"title": "Map 1.5: caer-konig",
+									"title": "Map 1.5: Caer-Konig",
 									"width": 2206,
 									"height": 3000,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 105,
+										"distance": 100
+									},
 									"id": "6ff",
 									"mapRegions": [
 										{
@@ -6062,6 +6104,11 @@
 									"width": 2206,
 									"height": 3000,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 105,
+										"distance": 100
+									},
 									"mapParent": {
 										"id": "6ff"
 									}
@@ -6266,10 +6313,17 @@
 												"type": "internal",
 												"path": "adventure/IDRotF/035-map-1.6-duergar-outpost.jpg"
 											},
-											"title": "Map 1.6: duergar outpost",
+											"title": "Map 1.6: Duergar Outpost",
 											"width": 4000,
 											"height": 2765,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 104,
+												"offsetX": -38,
+												"offsetY": 28,
+												"distance": 10
+											},
 											"id": "700",
 											"mapRegions": [
 												{
@@ -6683,7 +6737,8 @@
 												"type": "square",
 												"size": 104,
 												"offsetX": -38,
-												"offsetY": 28
+												"offsetY": 28,
+												"distance": 10
 											}
 										}
 									]
@@ -7092,6 +7147,11 @@
 									"width": 2202,
 									"height": 3000,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 124,
+										"distance": 100
+									},
 									"id": "701",
 									"mapRegions": [
 										{
@@ -7152,6 +7212,11 @@
 									"width": 2202,
 									"height": 3000,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 124,
+										"distance": 100
+									},
 									"mapParent": {
 										"id": "701"
 									}
@@ -7286,6 +7351,13 @@
 											"width": 4000,
 											"height": 2765,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 104,
+												"offsetX": -37,
+												"offsetY": -40,
+												"distance": 10
+											},
 											"id": "702",
 											"mapRegions": [
 												{
@@ -7963,7 +8035,8 @@
 												"type": "square",
 												"size": 104,
 												"offsetX": -38,
-												"offsetY": -40
+												"offsetY": -40,
+												"distance": 10
 											}
 										}
 									]
@@ -8325,10 +8398,15 @@
 										"type": "internal",
 										"path": "adventure/IDRotF/046-map-1.9-easthaven.jpg"
 									},
-									"title": "Map 1.9: easthaven",
+									"title": "Map 1.9: Easthaven",
 									"width": 3000,
 									"height": 2139,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 66,
+										"distance": 100
+									},
 									"id": "703",
 									"mapRegions": [
 										{
@@ -8431,6 +8509,11 @@
 									"width": 3000,
 									"height": 2139,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 66,
+										"distance": 100
+									},
 									"mapParent": {
 										"id": "703"
 									}
@@ -8729,6 +8812,13 @@
 											"width": 4000,
 											"height": 2765,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 104,
+												"offsetX": -38,
+												"offsetY": 30,
+												"distance": 10
+											},
 											"id": "704",
 											"mapRegions": [
 												{
@@ -11704,7 +11794,8 @@
 												"type": "square",
 												"size": 104,
 												"offsetX": -38,
-												"offsetY": -30
+												"offsetY": 30,
+												"distance": 10
 											}
 										}
 									]
@@ -11986,10 +12077,17 @@
 												"type": "internal",
 												"path": "adventure/IDRotF/055-map-1.11-easthaven-town-hall.jpg"
 											},
-											"title": "Map 1.11: easthaven town hall",
+											"title": "Map 1.11: Easthaven Town Hall",
 											"width": 4000,
 											"height": 2765,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 86,
+												"offsetX": -5,
+												"offsetY": -31,
+												"scale": 1.03
+											},
 											"id": "705",
 											"mapRegions": [
 												{
@@ -12876,10 +12974,15 @@
 										"type": "internal",
 										"path": "adventure/IDRotF/059-map-1.12-good-mead.jpg"
 									},
-									"title": "Map 1.12: good mead",
+									"title": "Map 1.12: Good Mead",
 									"width": 2196,
 									"height": 3000,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 136,
+										"distance": 100
+									},
 									"id": "706",
 									"mapRegions": [
 										{
@@ -12961,6 +13064,11 @@
 									"width": 2196,
 									"height": 3000,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 136,
+										"distance": 100
+									},
 									"mapParent": {
 										"id": "706"
 									}
@@ -13089,10 +13197,16 @@
 												"type": "internal",
 												"path": "adventure/IDRotF/062-map-1.13-verbeeg-lair.jpg"
 											},
-											"title": "Map 1.13: verbeeg lair",
+											"title": "Map 1.13: Verbeeg Lair",
 											"width": 4000,
 											"height": 2765,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 104,
+												"offsetX": -4,
+												"offsetY": 29
+											},
 											"id": "707",
 											"mapRegions": [
 												{
@@ -15388,7 +15502,7 @@
 												"type": "square",
 												"size": 104,
 												"offsetX": -4,
-												"offsetY": 30
+												"offsetY": 29
 											}
 										}
 									]
@@ -15856,10 +15970,15 @@
 										"type": "internal",
 										"path": "adventure/IDRotF/066-map-1.14-lonelywood.jpg"
 									},
-									"title": "Map 1.14: lonelywood",
+									"title": "Map 1.14: Lonelywood",
 									"width": 2199,
 									"height": 3000,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 124,
+										"distance": 100
+									},
 									"id": "708",
 									"mapRegions": [
 										{
@@ -15941,6 +16060,11 @@
 									"width": 2199,
 									"height": 3000,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 124,
+										"distance": 100
+									},
 									"mapParent": {
 										"id": "708"
 									}
@@ -16150,6 +16274,12 @@
 											"width": 4000,
 											"height": 2765,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 104,
+												"offsetX": 11,
+												"offsetY": 29
+											},
 											"id": "709",
 											"mapRegions": [
 												{
@@ -17228,7 +17358,7 @@
 												"type": "square",
 												"size": 104,
 												"offsetX": 11,
-												"offsetY": 30
+												"offsetY": 29
 											}
 										}
 									]
@@ -17664,10 +17794,15 @@
 										"type": "internal",
 										"path": "adventure/IDRotF/075-map-1.16-targos.jpg"
 									},
-									"title": "Map 1.16: targos",
+									"title": "Map 1.16: Targos",
 									"width": 2196,
 									"height": 3000,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 78,
+										"distance": 100
+									},
 									"id": "70a",
 									"mapRegions": [
 										{
@@ -17770,6 +17905,11 @@
 									"width": 2196,
 									"height": 3000,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 78,
+										"distance": 100
+									},
 									"mapParent": {
 										"id": "70a"
 									}
@@ -17899,10 +18039,16 @@
 												"type": "internal",
 												"path": "adventure/IDRotF/077-map-1.17-kelvins-cairn.jpg"
 											},
-											"title": "Map 1.17: kelvin's cairn",
+											"title": "Map 1.17: Kelvin's Cairn",
 											"width": 4000,
 											"height": 2765,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 104,
+												"offsetX": 16,
+												"offsetY": -25
+											},
 											"id": "70b",
 											"mapRegions": [
 												{
@@ -18755,7 +18901,7 @@
 												"type": "square",
 												"size": 104,
 												"offsetX": 16,
-												"offsetY": -26
+												"offsetY": -25
 											}
 										}
 									]
@@ -19158,10 +19304,15 @@
 										"type": "internal",
 										"path": "adventure/IDRotF/082-map-1.18-termalaine.jpg"
 									},
-									"title": "Map 1.18: termalaine",
+									"title": "Map 1.18: Termalaine",
 									"width": 2196,
 									"height": 3000,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 77,
+										"distance": 100
+									},
 									"id": "70c",
 									"mapRegions": [
 										{
@@ -19243,6 +19394,11 @@
 									"width": 2196,
 									"height": 3000,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 77,
+										"distance": 100
+									},
 									"mapParent": {
 										"id": "70c"
 									}
@@ -19407,10 +19563,16 @@
 												"type": "internal",
 												"path": "adventure/IDRotF/085-map-1.19-gem-mine.jpg"
 											},
-											"title": "Map 1.19: gem mine",
+											"title": "Map 1.19: Gem Mine",
 											"width": 4000,
 											"height": 2765,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 104,
+												"offsetX": -38,
+												"offsetY": 30
+											},
 											"id": "70d",
 											"mapRegions": [
 												{
@@ -23813,10 +23975,17 @@
 										"type": "internal",
 										"path": "adventure/IDRotF/095-map-2.1-icewind-dale.png"
 									},
-									"title": "Map 2.1: icewind dale",
+									"title": "Map 2.1: Icewind Dale",
 									"width": 2550,
 									"height": 1704,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 50,
+										"scale": 1.88,
+										"distance": 1,
+										"units": "mi"
+									},
 									"id": "70e",
 									"mapRegions": [
 										{
@@ -24150,6 +24319,12 @@
 									"width": 6000,
 									"height": 4215,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 63,
+										"distance": 1,
+										"units": "mi"
+									},
 									"mapParent": {
 										"id": "70e",
 										"autoScale": true
@@ -24177,10 +24352,16 @@
 												"type": "internal",
 												"path": "adventure/IDRotF/097-map-2.2-angajuks-bell.jpg"
 											},
-											"title": "Map 2.2: angajuk's bell",
+											"title": "Map 2.2: Angajuk's Bell",
 											"width": 2210,
 											"height": 3000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 116,
+												"offsetX": -57,
+												"offsetY": -61
+											},
 											"id": "70f",
 											"mapRegions": [
 												{
@@ -24465,8 +24646,8 @@
 											"grid": {
 												"type": "square",
 												"size": 116,
-												"offsetX": -58,
-												"offsetY": -54
+												"offsetX": -57,
+												"offsetY": -61
 											}
 										}
 									]
@@ -24682,10 +24863,16 @@
 														"type": "internal",
 														"path": "adventure/IDRotF/100-map-2.3-black-cabin.jpg"
 													},
-													"title": "Map 2.3: black cabin",
+													"title": "Map 2.3: Black Cabin",
 													"width": 2210,
 													"height": 3000,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 116,
+														"offsetX": -53,
+														"offsetY": -40
+													},
 													"id": "710",
 													"mapRegions": [
 														{
@@ -24902,7 +25089,7 @@
 													"grid": {
 														"type": "square",
 														"size": 116,
-														"offsetX": -55,
+														"offsetX": -53,
 														"offsetY": -40
 													}
 												}
@@ -25252,10 +25439,16 @@
 														"type": "internal",
 														"path": "adventure/IDRotF/105-map-2.4-cackling-chasm.jpg"
 													},
-													"title": "Map 2.4: cackling chasm",
+													"title": "Map 2.4: Cackling Chasm",
 													"width": 2210,
 													"height": 3000,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 116,
+														"offsetX": -54,
+														"offsetY": -32
+													},
 													"id": "711",
 													"mapRegions": [
 														{
@@ -26708,8 +26901,8 @@
 													"grid": {
 														"type": "square",
 														"size": 116,
-														"offsetX": -55,
-														"offsetY": -33
+														"offsetX": -54,
+														"offsetY": -32
 													}
 												}
 											]
@@ -26971,6 +27164,12 @@
 													"width": 2210,
 													"height": 3000,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 116,
+														"offsetX": -39,
+														"offsetY": -41
+													},
 													"id": "712",
 													"mapRegions": [
 														{
@@ -28888,7 +29087,7 @@
 														"type": "square",
 														"size": 116,
 														"offsetX": -39,
-														"offsetY": -42
+														"offsetY": -41
 													}
 												}
 											]
@@ -29117,10 +29316,16 @@
 																"type": "internal",
 																"path": "adventure/IDRotF/110-map-2.6-dark-duchess.jpg"
 															},
-															"title": "Map 2.6: dark duchess",
+															"title": "Map 2.6: Dark Duchess",
 															"width": 4000,
 															"height": 2765,
 															"imageType": "map",
+															"grid": {
+																"type": "square",
+																"size": 104,
+																"offsetX": -17,
+																"offsetY": 29
+															},
 															"id": "713",
 															"mapRegions": [
 																{
@@ -29919,7 +30124,10 @@
 																"id": "713"
 															},
 															"grid": {
-																"type": "none"
+																"type": "square",
+																"size": 104,
+																"offsetX": -17,
+																"offsetY": 29
 															}
 														}
 													]
@@ -30438,10 +30646,16 @@
 																"type": "internal",
 																"path": "adventure/IDRotF/114-map-2.7-id-ascendant.jpg"
 															},
-															"title": "Map 2.7: id ascendant",
+															"title": "Map 2.7: Id Ascendant",
 															"width": 4000,
 															"height": 2765,
 															"imageType": "map",
+															"grid": {
+																"type": "square",
+																"size": 104,
+																"offsetX": -37,
+																"offsetY": 29
+															},
 															"id": "714",
 															"mapRegions": [
 																{
@@ -31447,8 +31661,8 @@
 															"grid": {
 																"type": "square",
 																"size": 104,
-																"offsetX": -38,
-																"offsetY": 30
+																"offsetX": -37,
+																"offsetY": 29
 															}
 														}
 													]
@@ -31798,10 +32012,17 @@
 												"type": "internal",
 												"path": "adventure/IDRotF/117-map-2.8-jarlmoot.jpg"
 											},
-											"title": "Map 2.8: jarlmoot",
+											"title": "Map 2.8: Jarlmoot",
 											"width": 2210,
 											"height": 3000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 116,
+												"offsetX": -56,
+												"offsetY": -65,
+												"distance": 10
+											},
 											"id": "715",
 											"mapRegions": [
 												{
@@ -32023,8 +32244,9 @@
 											"grid": {
 												"type": "square",
 												"size": 116,
-												"offsetX": -58,
-												"offsetY": 50
+												"offsetX": -56,
+												"offsetY": -65,
+												"distance": 10
 											}
 										}
 									]
@@ -32408,10 +32630,17 @@
 																"type": "internal",
 																"path": "adventure/IDRotF/128-map-2.9-karkolohk.jpg"
 															},
-															"title": "Map 2.9: karkolohk",
+															"title": "Map 2.9: Karkolohk",
 															"width": 4000,
 															"height": 2765,
 															"imageType": "map",
+															"grid": {
+																"type": "square",
+																"size": 104,
+																"offsetX": -45,
+																"offsetY": -53,
+																"distance": 10
+															},
 															"id": "716",
 															"mapRegions": [
 																{
@@ -33259,8 +33488,9 @@
 															"grid": {
 																"type": "square",
 																"size": 104,
-																"offsetX": -44,
-																"offsetY": 53
+																"offsetX": -45,
+																"offsetY": -53,
+																"distance": 10
 															}
 														}
 													]
@@ -33624,6 +33854,12 @@
 																	"width": 4000,
 																	"height": 2765,
 																	"imageType": "map",
+																	"grid": {
+																		"type": "square",
+																		"size": 104,
+																		"offsetX": -5,
+																		"offsetY": 30
+																	},
 																	"id": "717",
 																	"mapRegions": [
 																		{
@@ -35318,10 +35554,17 @@
 																		"type": "internal",
 																		"path": "adventure/IDRotF/135-map-2.11-reghed-camp.jpg"
 																	},
-																	"title": "Map 2.11: reghed tribe camp",
+																	"title": "Map 2.11: Reghed Tribe Camp",
 																	"width": 2210,
 																	"height": 3000,
 																	"imageType": "map",
+																	"grid": {
+																		"type": "square",
+																		"size": 116,
+																		"offsetX": -62,
+																		"offsetY": 12,
+																		"distance": 10
+																	},
 																	"id": "718"
 																},
 																{
@@ -35340,8 +35583,9 @@
 																	"grid": {
 																		"type": "square",
 																		"size": 116,
-																		"offsetX": 55,
-																		"offsetY": 12
+																		"offsetX": -62,
+																		"offsetY": 12,
+																		"distance": 10
 																	}
 																}
 															]
@@ -35545,10 +35789,18 @@
 														"type": "internal",
 														"path": "adventure/IDRotF/138-map-2.12-revels-end.jpg"
 													},
-													"title": "Map 2.12: revel's end",
+													"title": "Map 2.12: Revel's End",
 													"width": 3684,
 													"height": 5000,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 92,
+														"offsetX": -46,
+														"offsetY": -56,
+														"scale": 1.05,
+														"distance": 10
+													},
 													"id": "719",
 													"mapRegions": [
 														{
@@ -36505,8 +36757,9 @@
 														"type": "square",
 														"size": 92,
 														"offsetX": -46,
-														"offsetY": -35,
-														"scale": 1.05
+														"offsetY": -56,
+														"scale": 1.05,
+														"distance": 10
 													}
 												}
 											]
@@ -37008,10 +37261,17 @@
 														"type": "internal",
 														"path": "adventure/IDRotF/141-map-2.13-skytower-shelter.jpg"
 													},
-													"title": "Map 2.13: skytower shelter",
+													"title": "Map 2.13: Skytower Shelter",
 													"width": 2210,
 													"height": 3000,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 116,
+														"offsetX": -71,
+														"offsetY": -68,
+														"distance": 10
+													},
 													"id": "71a",
 													"mapRegions": [
 														{
@@ -38370,8 +38630,9 @@
 													"grid": {
 														"type": "square",
 														"size": 116,
-														"offsetX": 43,
-														"offsetY": 44
+														"offsetX": -71,
+														"offsetY": -68,
+														"distance": 10
 													}
 												}
 											]
@@ -38749,10 +39010,17 @@
 														"type": "internal",
 														"path": "adventure/IDRotF/144-map-2.14-wyrmdoom-crag.jpg"
 													},
-													"title": "Map 2.14: wyrmdoom crag",
+													"title": "Map 2.14: Wyrmdoom Crag",
 													"width": 2210,
 													"height": 3000,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 116,
+														"offsetX": 58,
+														"offsetY": 30,
+														"distance": 10
+													},
 													"id": "71b",
 													"mapRegions": [
 														{
@@ -39936,8 +40204,9 @@
 													"grid": {
 														"type": "square",
 														"size": 116,
-														"offsetX": -58,
-														"offsetY": 28
+														"offsetX": 58,
+														"offsetY": 30,
+														"distance": 10
 													}
 												}
 											]
@@ -40432,6 +40701,13 @@
 											"width": 3684,
 											"height": 5000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 88,
+												"offsetX": -40,
+												"offsetY": -47,
+												"distance": 10
+											},
 											"id": "71c",
 											"mapRegions": [
 												{
@@ -41089,7 +41365,11 @@
 												"id": "71c"
 											},
 											"grid": {
-												"type": "none"
+												"type": "square",
+												"size": 88,
+												"offsetX": -40,
+												"offsetY": -47,
+												"distance": 10
 											}
 										}
 									]
@@ -42385,10 +42665,16 @@
 										"type": "internal",
 										"path": "adventure/IDRotF/155-map-4.1-dragons-flight-path.png"
 									},
-									"title": "Map 4.1: dragons flight path",
+									"title": "Map 4.1: Dragons Flight Path",
 									"width": 1700,
 									"height": 1102,
-									"imageType": "map"
+									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 236,
+										"distance": 8.48,
+										"units": "mi"
+									}
 								},
 								{
 									"type": "entries",
@@ -43244,10 +43530,17 @@
 												"type": "internal",
 												"path": "adventure/IDRotF/160-map-5.1-island-of-solstice.jpg"
 											},
-											"title": "Map 5.1: island of solstice",
+											"title": "Map 5.1: Island of Solstice",
 											"width": 3684,
 											"height": 5000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 88,
+												"offsetX": -11,
+												"offsetY": 16,
+												"distance": 200
+											},
 											"id": "71d",
 											"mapRegions": [
 												{
@@ -43626,10 +43919,10 @@
 											},
 											"grid": {
 												"type": "square",
-												"size": 93,
-												"offsetX": -6,
-												"offsetY": 25,
-												"scale": 1.05
+												"size": 88,
+												"offsetX": -11,
+												"offsetY": 16,
+												"distance": 200
 											}
 										}
 									]
@@ -43942,7 +44235,7 @@
 																"type": "internal",
 																"path": "adventure/IDRotF/164-map-5.2-grimskalle.jpg"
 															},
-															"title": "Map 5.2: grimskalle",
+															"title": "Map 5.2: Grimskalle",
 															"width": 3684,
 															"height": 5000,
 															"imageType": "map",
@@ -46527,7 +46820,7 @@
 																"type": "square",
 																"size": 88,
 																"offsetX": 30,
-																"offsetY": 82,
+																"offsetY": -6,
 																"distance": 10
 															},
 															"hrefThumbnail": {
@@ -46550,10 +46843,9 @@
 															},
 															"grid": {
 																"type": "square",
-																"size": 92,
-																"offsetX": 42,
-																"offsetY": 3,
-																"scale": 1.05,
+																"size": 88,
+																"offsetX": 30,
+																"offsetY": -6,
 																"distance": 10
 															}
 														}
@@ -47760,10 +48052,17 @@
 												"type": "internal",
 												"path": "adventure/IDRotF/171-map-6.1-caves-of-hunger.jpg"
 											},
-											"title": "Map 6.1: caves of hunger",
+											"title": "Map 6.1: Caves of Hunger",
 											"width": 4421,
 											"height": 6000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 158,
+												"offsetX": 28,
+												"offsetY": 55,
+												"scale": 3
+											},
 											"id": "71f",
 											"mapRegions": [
 												{
@@ -52283,7 +52582,11 @@
 												"id": "71f"
 											},
 											"grid": {
-												"type": "none"
+												"type": "square",
+												"size": 158,
+												"offsetX": 28,
+												"offsetY": 55,
+												"scale": 3
 											}
 										}
 									]
@@ -53501,6 +53804,11 @@
 									"width": 5000,
 									"height": 3100,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 286,
+										"distance": 100
+									},
 									"id": "720",
 									"mapRegions": [
 										{
@@ -54128,6 +54436,11 @@
 									"width": 5000,
 									"height": 3100,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 286,
+										"distance": 100
+									},
 									"mapParent": {
 										"id": "720"
 									}
@@ -55300,10 +55613,16 @@
 																"type": "internal",
 																"path": "adventure/IDRotF/184-map-7.3-spire-of-iriolarthas.jpg"
 															},
-															"title": "Map 7.3: spire of iriolarthas",
+															"title": "Map 7.3: Spire of Iriolarthas",
 															"width": 4000,
 															"height": 2765,
 															"imageType": "map",
+															"grid": {
+																"type": "square",
+																"size": 52,
+																"offsetX": 6,
+																"offsetY": -24
+															},
 															"id": "721",
 															"mapRegions": [
 																{
@@ -58263,7 +58582,13 @@
 					"title": "Poster Map: Icewind Dale",
 					"width": 6000,
 					"height": 4215,
-					"imageType": "map"
+					"imageType": "map",
+					"grid": {
+						"type": "none",
+						"size": 63,
+						"distance": 1,
+						"units": "mi"
+					}
 				},
 				{
 					"type": "image",
@@ -58271,10 +58596,15 @@
 						"type": "internal",
 						"path": "adventure/IDRotF/264-ten-towns.jpg"
 					},
-					"title": "Poster Map: Icewind Dale (Ten Towns)",
+					"title": "Poster Map: Ten Towns",
 					"width": 6000,
 					"height": 4215,
-					"imageType": "map"
+					"imageType": "map",
+					"grid": {
+						"type": "none",
+						"size": 122,
+						"distance": 250
+					}
 				}
 			],
 			"id": "01f"
