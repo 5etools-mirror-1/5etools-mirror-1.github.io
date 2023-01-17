@@ -597,6 +597,10 @@
 									"width": 2084,
 									"height": 3000,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 56
+									},
 									"mapRegions": [
 										{
 											"area": "043",
@@ -1462,7 +1466,11 @@
 									},
 									"width": 3300,
 									"height": 4750,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 89
+									}
 								}
 							]
 						},
@@ -2070,7 +2078,14 @@
 											"width": 2404,
 											"height": 3000,
 											"imageType": "map",
-											"mapRegions": [],
+											"grid": {
+												"type": "hexColsOdd",
+												"size": 85,
+												"offsetX": -20,
+												"offsetY": -22,
+												"distance": 24,
+												"units": "mi"
+											},
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/OotA/thumbnail/008-02-05.webp"
@@ -3976,6 +3991,13 @@
 									"width": 4050,
 									"height": 3300,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 130,
+										"offsetX": 39,
+										"offsetY": 59,
+										"distance": 10
+									},
 									"mapRegions": [
 										{
 											"area": "0c4",
@@ -4528,6 +4550,13 @@
 										"path": "adventure/OotA/015-hook-horror-map-player-version.webp"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 108,
+										"offsetX": 38,
+										"offsetY": 53,
+										"distance": 10
+									},
 									"title": "Player Version",
 									"mapParent": {
 										"id": "ffe",
@@ -4719,6 +4748,12 @@
 									"width": 4050,
 									"height": 3300,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 129,
+										"offsetX": 32,
+										"offsetY": 56
+									},
 									"mapRegions": [
 										{
 											"area": "0cf",
@@ -5331,7 +5366,13 @@
 									},
 									"width": 3375,
 									"height": 2750,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 108,
+										"offsetX": 19,
+										"offsetY": 41
+									}
 								}
 							]
 						},
@@ -5521,6 +5562,13 @@
 									"width": 4050,
 									"height": 3300,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 223,
+										"offsetX": 11,
+										"offsetY": 140,
+										"distance": 10
+									},
 									"mapRegions": [
 										{
 											"area": "0e0",
@@ -5646,7 +5694,14 @@
 									},
 									"width": 3375,
 									"height": 2750,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 186,
+										"offsetX": 9,
+										"offsetY": 116,
+										"distance": 10
+									}
 								}
 							]
 						},
@@ -6575,6 +6630,13 @@
 											"width": 4050,
 											"height": 3300,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 71,
+												"offsetX": -29,
+												"offsetY": -29,
+												"distance": 10
+											},
 											"mapRegions": [
 												{
 													"area": "123",
@@ -6746,7 +6808,14 @@
 											},
 											"width": 3375,
 											"height": 2750,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 59,
+												"offsetX": 35,
+												"offsetY": -19,
+												"distance": 10
+											}
 										}
 									]
 								}
@@ -7839,6 +7908,11 @@
 											"width": 4050,
 											"height": 3300,
 											"imageType": "map",
+											"grid": {
+												"type": "none",
+												"size": 889,
+												"distance": 1600
+											},
 											"mapRegions": [
 												{
 													"area": "209",
@@ -8161,7 +8235,12 @@
 											},
 											"width": 3375,
 											"height": 2750,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 740,
+												"distance": 1600
+											}
 										}
 									]
 								}
@@ -9037,10 +9116,17 @@
 														"type": "internal",
 														"path": "adventure/OotA/035-04-03.webp"
 													},
-													"title": "Map 4.2: Gracklstugh - The Whorlstone Tunnels",
+													"title": "Map 4.2: Gracklstugh\u2014The Whorlstone Tunnels",
 													"width": 3300,
 													"height": 4750,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 65,
+														"offsetX": 47,
+														"offsetY": 31,
+														"scale": 2
+													},
 													"mapRegions": [
 														{
 															"area": "1fc",
@@ -11730,7 +11816,14 @@
 													},
 													"width": 3300,
 													"height": 4750,
-													"imageType": "mapPlayer"
+													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 65,
+														"offsetX": -24,
+														"offsetY": 21,
+														"scale": 2
+													}
 												}
 											]
 										}
@@ -12014,10 +12107,17 @@
 										"type": "internal",
 										"path": "adventure/OotA/039-ooa04-11.webp"
 									},
-									"title": "Map 4.3: Lair of the {@creature Spider King|OotA}",
+									"title": "Map 4.3: Lair of the Spider King",
 									"width": 944,
 									"height": 1000,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 68,
+										"offsetX": 34,
+										"offsetY": -21,
+										"scale": 3
+									},
 									"mapRegions": [
 										{
 											"area": "1d8",
@@ -12092,6 +12192,13 @@
 									"width": 1000,
 									"height": 875,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 50,
+										"offsetX": -12,
+										"offsetY": -32,
+										"scale": 3
+									},
 									"mapRegions": [
 										{
 											"area": "1db",
@@ -12340,6 +12447,13 @@
 									"width": 1000,
 									"height": 724,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 64,
+										"offsetX": 4,
+										"offsetY": -6,
+										"scale": 3
+									},
 									"mapRegions": [
 										{
 											"area": "1ec",
@@ -12453,6 +12567,13 @@
 									"width": 1000,
 									"height": 618,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 57,
+										"offsetX": 21,
+										"offsetY": 19,
+										"scale": 4
+									},
 									"mapRegions": [
 										{
 											"area": "1f4",
@@ -12614,6 +12735,13 @@
 									"width": 1000,
 									"height": 945,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 65,
+										"offsetX": -18,
+										"offsetY": 22,
+										"scale": 3
+									},
 									"mapRegions": [
 										{
 											"area": "200",
@@ -13276,6 +13404,13 @@
 							"width": 4050,
 							"height": 3300,
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 112,
+								"offsetX": -49,
+								"offsetY": -50,
+								"distance": 10
+							},
 							"mapRegions": [
 								{
 									"area": "231",
@@ -14129,7 +14264,14 @@
 							},
 							"width": 3375,
 							"height": 2750,
-							"imageType": "mapPlayer"
+							"imageType": "mapPlayer",
+							"grid": {
+								"type": "square",
+								"size": 94,
+								"offsetX": 41,
+								"offsetY": 41,
+								"distance": 10
+							}
 						}
 					]
 				},
@@ -15313,6 +15455,11 @@
 													"width": 4050,
 													"height": 3300,
 													"imageType": "map",
+													"grid": {
+														"type": "none",
+														"size": 198,
+														"distance": 100
+													},
 													"mapRegions": [
 														{
 															"area": "291",
@@ -21623,7 +21770,12 @@
 													},
 													"width": 3375,
 													"height": 2750,
-													"imageType": "mapPlayer"
+													"imageType": "mapPlayer",
+													"grid": {
+														"type": "none",
+														"size": 165,
+														"distance": 100
+													}
 												}
 											]
 										}
@@ -21688,6 +21840,11 @@
 									"width": 867,
 									"height": 1000,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 60,
+										"distance": 100
+									},
 									"mapRegions": [
 										{
 											"area": "290",
@@ -22110,6 +22267,12 @@
 							"width": 939,
 							"height": 900,
 							"imageType": "map",
+							"grid": {
+								"type": "none",
+								"size": 50,
+								"scale": 1.09,
+								"distance": 77
+							},
 							"mapRegions": [
 								{
 									"area": "2ba",
@@ -22580,6 +22743,11 @@
 							"width": 1000,
 							"height": 849,
 							"imageType": "map",
+							"grid": {
+								"type": "none",
+								"size": 83,
+								"distance": 90
+							},
 							"mapRegions": [
 								{
 									"area": "2ac",
@@ -23145,6 +23313,11 @@
 									"width": 1000,
 									"height": 587,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 82,
+										"distance": 102
+									},
 									"mapRegions": [
 										{
 											"area": "2e7",
@@ -23367,6 +23540,11 @@
 									"width": 1000,
 									"height": 947,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 127,
+										"distance": 145
+									},
 									"mapRegions": [
 										{
 											"area": "2ea",
@@ -25169,6 +25347,13 @@
 											"width": 4050,
 											"height": 3300,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 91,
+												"offsetX": 59,
+												"offsetY": 70,
+												"distance": 20
+											},
 											"mapRegions": [
 												{
 													"area": "365",
@@ -27849,7 +28034,14 @@
 											},
 											"width": 3375,
 											"height": 2750,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 76,
+												"offsetX": -30,
+												"offsetY": -21,
+												"distance": 20
+											}
 										}
 									]
 								}
@@ -30804,6 +30996,13 @@
 									"width": 4050,
 									"height": 3300,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 87,
+										"offsetX": -60,
+										"offsetY": -44,
+										"distance": 10
+									},
 									"mapRegions": [
 										{
 											"area": "45a",
@@ -33463,7 +33662,14 @@
 									},
 									"width": 3375,
 									"height": 2750,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 73,
+										"offsetX": 12,
+										"offsetY": 26,
+										"distance": 10
+									}
 								}
 							]
 						},
@@ -33800,6 +34006,13 @@
 									"width": 4050,
 									"height": 3300,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 89,
+										"offsetX": -33,
+										"offsetY": 35,
+										"distance": 10
+									},
 									"mapRegions": [
 										{
 											"area": "463",
@@ -37321,7 +37534,14 @@
 									},
 									"width": 3375,
 									"height": 2750,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 74,
+										"offsetX": 50,
+										"offsetY": 32,
+										"distance": 10
+									}
 								}
 							]
 						},
@@ -39011,6 +39231,9 @@
 					"width": 2550,
 					"height": 1839,
 					"imageType": "map",
+					"grid": {
+						"type": "none"
+					},
 					"mapRegions": [
 						{
 							"area": "4e4",
