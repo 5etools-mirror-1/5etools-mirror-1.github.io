@@ -257,8 +257,10 @@
 									"grid": {
 										"type": "hexColsOdd",
 										"size": 264,
-										"offsetX": 60
-									}
+										"offsetX": 60,
+										"units": "mi"
+									},
+									"id": "1b0"
 								},
 								{
 									"type": "image",
@@ -266,7 +268,7 @@
 										"type": "internal",
 										"path": "adventure/LMoP/The Sword Coast (Player).jpg"
 									},
-									"title": "The Sword Coast (Player)",
+									"title": "Player Version",
 									"width": 2648,
 									"height": 3625,
 									"imageType": "mapPlayer",
@@ -274,7 +276,12 @@
 										"type": "hexColsOdd",
 										"size": 143,
 										"offsetX": 16,
-										"offsetY": -15
+										"offsetY": -15,
+										"units": "mi"
+									},
+									"mapParent": {
+										"id": "1b0",
+										"autoScale": true
 									}
 								}
 							]
@@ -391,6 +398,12 @@
 									"width": 4937,
 									"height": 3439,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 165,
+										"offsetX": -7,
+										"offsetY": -13
+									},
 									"mapRegions": [
 										{
 											"area": "01b",
@@ -841,7 +854,7 @@
 										"type": "internal",
 										"path": "adventure/LMoP/thumbnail/Cragmaw Hideout.webp"
 									},
-									"id": "19d"
+									"id": "1AB"
 								},
 								{
 									"type": "image",
@@ -849,12 +862,18 @@
 										"type": "internal",
 										"path": "adventure/LMoP/Cragmaw Hideout (Player).jpg"
 									},
-									"title": "Cragmaw Hideout (Player)",
+									"title": "Player Version",
 									"width": 4500,
 									"height": 3136,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 150,
+										"offsetX": -4,
+										"offsetY": -7
+									},
 									"mapParent": {
-										"id": "19d",
+										"id": "1AB",
 										"autoScale": true
 									}
 								}
@@ -1519,7 +1538,309 @@
 							"title": "Phandalin",
 							"width": 4950,
 							"height": 3450,
-							"imageType": "map"
+							"mapRegions": [
+								{
+									"area": "04a",
+									"points": [
+										[
+											2227,
+											1210
+										],
+										[
+											2397,
+											1312
+										],
+										[
+											2301,
+											1472
+										],
+										[
+											2187,
+											1469
+										],
+										[
+											2093,
+											1405
+										]
+									]
+								},
+								{
+									"area": "053",
+									"points": [
+										[
+											2421,
+											1051
+										],
+										[
+											2509,
+											918
+										],
+										[
+											2606,
+											830
+										],
+										[
+											2717,
+											875
+										],
+										[
+											2579,
+											1147
+										]
+									]
+								},
+								{
+									"area": "056",
+									"points": [
+										[
+											1310,
+											661
+										],
+										[
+											1323,
+											741
+										],
+										[
+											1293,
+											870
+										],
+										[
+											1414,
+											1043
+										],
+										[
+											1242,
+											1227
+										],
+										[
+											1021,
+											1301
+										],
+										[
+											811,
+											1061
+										],
+										[
+											958,
+											696
+										]
+									]
+								},
+								{
+									"area": "059",
+									"points": [
+										[
+											1544,
+											1768
+										],
+										[
+											1717,
+											1632
+										],
+										[
+											1877,
+											1744
+										],
+										[
+											1768,
+											1936
+										],
+										[
+											1590,
+											1938
+										]
+									]
+								},
+								{
+									"area": "05c",
+									"points": [
+										[
+											1525,
+											2218
+										],
+										[
+											1691,
+											2189
+										],
+										[
+											1744,
+											2347
+										],
+										[
+											1499,
+											2398
+										]
+									]
+								},
+								{
+									"area": "05f",
+									"points": [
+										[
+											2942,
+											2093
+										],
+										[
+											3002,
+											1976
+										],
+										[
+											3058,
+											1966
+										],
+										[
+											3413,
+											2021
+										],
+										[
+											3624,
+											2238
+										],
+										[
+											3632,
+											2400
+										],
+										[
+											3472,
+											2522
+										],
+										[
+											3184,
+											2581
+										],
+										[
+											2982,
+											2558
+										],
+										[
+											2957,
+											2493
+										],
+										[
+											2982,
+											2270
+										]
+									]
+								},
+								{
+									"area": "062",
+									"points": [
+										[
+											1840,
+											1429
+										],
+										[
+											1861,
+											1294
+										],
+										[
+											1968,
+											1290
+										],
+										[
+											1987,
+											1429
+										]
+									]
+								},
+								{
+									"area": "065",
+									"points": [
+										[
+											2957,
+											1499
+										],
+										[
+											2955,
+											1346
+										],
+										[
+											3082,
+											1342
+										],
+										[
+											3086,
+											1266
+										],
+										[
+											3165,
+											1261
+										],
+										[
+											3174,
+											1366
+										],
+										[
+											3134,
+											1494
+										]
+									]
+								},
+								{
+									"area": "066",
+									"points": [
+										[
+											2037,
+											1650
+										],
+										[
+											2285,
+											1707
+										],
+										[
+											2262,
+											1842
+										],
+										[
+											2205,
+											1854
+										],
+										[
+											1995,
+											1816
+										]
+									]
+								},
+								{
+									"area": "06c",
+									"points": [
+										[
+											4027,
+											1293
+										],
+										[
+											4538,
+											1123
+										],
+										[
+											4669,
+											1226
+										],
+										[
+											4664,
+											1333
+										],
+										[
+											4518,
+											1451
+										],
+										[
+											4171,
+											1464
+										],
+										[
+											4050,
+											1400
+										]
+									]
+								}
+							],
+							"imageType": "map",
+							"grid": {
+								"type": "none",
+								"size": 87,
+								"distance": 20
+							},
+							"id": "1b1"
 						},
 						{
 							"type": "image",
@@ -1527,10 +1848,19 @@
 								"type": "internal",
 								"path": "adventure/LMoP/Phandalin (Player).jpg"
 							},
-							"title": "Phandalin (Player)",
+							"title": "Player Version",
 							"width": 4000,
 							"height": 2788,
-							"imageType": "mapPlayer"
+							"imageType": "mapPlayer",
+							"grid": {
+								"type": "none",
+								"size": 69,
+								"distance": 20
+							},
+							"mapParent": {
+								"id": "1b1",
+								"autoScale": true
+							}
 						},
 						"The following sections detail specific locations in town."
 					]
@@ -1965,6 +2295,12 @@
 							"width": 4950,
 							"height": 3450,
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 165,
+								"offsetX": 3,
+								"offsetY": -7
+							},
 							"mapRegions": [
 								{
 									"area": "07b",
@@ -2323,7 +2659,7 @@
 								"type": "internal",
 								"path": "adventure/LMoP/thumbnail/Redbrand Hideout.webp"
 							},
-							"id": "19e"
+							"id": "1AC"
 						},
 						{
 							"type": "image",
@@ -2331,12 +2667,18 @@
 								"type": "internal",
 								"path": "adventure/LMoP/Redbrand Hideout (Player).jpg"
 							},
-							"title": "Redbrand Hideout (Player)",
+							"title": "Player Version",
 							"width": 4500,
 							"height": 3136,
 							"imageType": "mapPlayer",
+							"grid": {
+								"type": "square",
+								"size": 150,
+								"offsetX": 2,
+								"offsetY": -7
+							},
 							"mapParent": {
-								"id": "19e",
+								"id": "1AC",
 								"autoScale": true
 							}
 						},
@@ -3023,7 +3365,14 @@
 											"title": "The Sword Coast",
 											"width": 4950,
 											"height": 6750,
-											"imageType": "map"
+											"imageType": "map",
+											"grid": {
+												"type": "hexColsOdd",
+												"size": 264,
+												"offsetX": 60,
+												"units": "mi"
+											},
+											"id": "1b2"
 										},
 										{
 											"type": "image",
@@ -3031,10 +3380,21 @@
 												"type": "internal",
 												"path": "adventure/LMoP/The Sword Coast (Player).jpg"
 											},
-											"title": "The Sword Coast (Player)",
+											"title": "Player Version",
 											"width": 2648,
 											"height": 3625,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "hexColsOdd",
+												"size": 143,
+												"offsetX": 16,
+												"offsetY": -15,
+												"units": "mi"
+											},
+											"mapParent": {
+												"id": "1b2",
+												"autoScale": true
+											}
 										}
 									]
 								}
@@ -3355,6 +3715,13 @@
 							"width": 4950,
 							"height": 3450,
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 164,
+								"offsetX": 11,
+								"offsetY": 2,
+								"distance": 10
+							},
 							"mapRegions": [
 								{
 									"area": "0d3",
@@ -3730,7 +4097,7 @@
 								"type": "internal",
 								"path": "adventure/LMoP/thumbnail/Ruins of Thundertree.webp"
 							},
-							"id": "19f"
+							"id": "1AD"
 						},
 						{
 							"type": "image",
@@ -3738,12 +4105,19 @@
 								"type": "internal",
 								"path": "adventure/LMoP/Ruins of Thundertree (Player).jpg"
 							},
-							"title": "Ruins of Thundertree (Player)",
+							"title": "Player Version",
 							"width": 4500,
 							"height": 3136,
 							"imageType": "mapPlayer",
+							"grid": {
+								"type": "square",
+								"size": 150,
+								"offsetX": -4,
+								"offsetY": -6,
+								"distance": 10
+							},
 							"mapParent": {
-								"id": "19f",
+								"id": "1AD",
 								"autoScale": true
 							}
 						},
@@ -4305,6 +4679,12 @@
 							"width": 4950,
 							"height": 3450,
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 158,
+								"offsetX": -53,
+								"offsetY": -90
+							},
 							"mapRegions": [
 								{
 									"area": "112",
@@ -4878,7 +5258,7 @@
 								"type": "internal",
 								"path": "adventure/LMoP/thumbnail/Cragmaw Castle.webp"
 							},
-							"id": "1a0"
+							"id": "1AE"
 						},
 						{
 							"type": "image",
@@ -4886,12 +5266,18 @@
 								"type": "internal",
 								"path": "adventure/LMoP/Cragmaw Castle (Player).jpg"
 							},
-							"title": "Cragmaw Castle (Player)",
+							"title": "Player Version",
 							"width": 4500,
 							"height": 3136,
 							"imageType": "mapPlayer",
+							"grid": {
+								"type": "square",
+								"size": 144,
+								"offsetX": -54,
+								"offsetY": 57
+							},
 							"mapParent": {
-								"id": "1a0",
+								"id": "1AE",
 								"autoScale": true
 							}
 						},
@@ -5559,6 +5945,13 @@
 							"width": 4950,
 							"height": 6750,
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 133,
+								"offsetX": 22,
+								"offsetY": 21,
+								"distance": 10
+							},
 							"mapRegions": [
 								{
 									"area": "158",
@@ -6585,7 +6978,7 @@
 								"type": "internal",
 								"path": "adventure/LMoP/thumbnail/Wave Echo Cave.webp"
 							},
-							"id": "1a1"
+							"id": "1AF"
 						},
 						{
 							"type": "image",
@@ -6593,12 +6986,19 @@
 								"type": "internal",
 								"path": "adventure/LMoP/Wave Echo Cave (Player).jpg"
 							},
-							"title": "Wave Echo Cave (Player)",
+							"title": "Player Version",
 							"width": 4500,
 							"height": 6136,
 							"imageType": "mapPlayer",
+							"grid": {
+								"type": "square",
+								"size": 121,
+								"offsetX": 14,
+								"offsetY": 12,
+								"distance": 10
+							},
 							"mapParent": {
-								"id": "1a1",
+								"id": "1AF",
 								"autoScale": true
 							}
 						}
