@@ -253,7 +253,12 @@
 										"path": "adventure/JttRC/000-map-1.1-radiant-citadel.webp"
 									},
 									"imageType": "map",
-									"title": "Map 1.1: radiant citadel",
+									"grid": {
+										"type": "none",
+										"size": 80,
+										"distance": 250
+									},
+									"title": "Map 1.1: Radiant Citadel",
 									"width": 2100,
 									"height": 2850,
 									"id": "538",
@@ -458,6 +463,11 @@
 										"path": "adventure/JttRC/001-map-1.1-radiant-citadel-player.webp"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 80,
+										"distance": 250
+									},
 									"title": "Player Version",
 									"width": 2100,
 									"height": 2850,
@@ -1650,7 +1660,12 @@
 										"path": "adventure/JttRC/011-map-2.1-dyn-singh-night-market.webp"
 									},
 									"imageType": "map",
-									"title": "Map 2.1: dyn singh night market",
+									"grid": {
+										"type": "none",
+										"size": 104,
+										"distance": 50
+									},
+									"title": "Map 2.1: Dyn Singh Night Market",
 									"width": 2056,
 									"height": 1419,
 									"id": "539",
@@ -1689,6 +1704,11 @@
 										"path": "adventure/JttRC/012-map-2.1-dyn-singh-night-market-player.webp"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 104,
+										"distance": 50
+									},
 									"title": "Player Version",
 									"width": 2056,
 									"height": 1419,
@@ -1844,7 +1864,14 @@
 														"path": "adventure/JttRC/015-map-2.2-market-challenges.webp"
 													},
 													"imageType": "map",
-													"title": "Map 2.2: market challenges",
+													"grid": {
+														"type": "square",
+														"size": 98,
+														"offsetX": 18,
+														"offsetY": -39,
+														"scale": 2
+													},
+													"title": "Map 2.2: Market Challenges",
 													"width": 2056,
 													"height": 1419,
 													"id": "53a",
@@ -1904,6 +1931,13 @@
 														"path": "adventure/JttRC/016-map-2.2-market-challenges-player.webp"
 													},
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 98,
+														"offsetX": 18,
+														"offsetY": -39,
+														"scale": 2
+													},
 													"title": "Player Version",
 													"width": 2056,
 													"height": 1419,
@@ -2363,7 +2397,13 @@
 												"path": "adventure/JttRC/018-map-2.3-siabsungkoh.webp"
 											},
 											"imageType": "map",
-											"title": "Map 2.3: siabsungkoh",
+											"grid": {
+												"type": "none",
+												"size": 234,
+												"distance": 1,
+												"units": "mi"
+											},
+											"title": "Map 2.3: Siabsungkoh",
 											"width": 2056,
 											"height": 1419,
 											"id": "53b",
@@ -2465,6 +2505,12 @@
 												"path": "adventure/JttRC/019-map-2.3-siabsungkoh-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 234,
+												"distance": 1,
+												"units": "mi"
+											},
 											"title": "Player Version",
 											"width": 2056,
 											"height": 1419,
@@ -3292,7 +3338,14 @@
 												"path": "adventure/JttRC/025-map-3.1-kianas-farmhouse.webp"
 											},
 											"imageType": "map",
-											"title": "Map 3.1: kianas farmhouse",
+											"grid": {
+												"type": "square",
+												"size": 96,
+												"offsetX": -10,
+												"offsetY": -20,
+												"scale": 2
+											},
+											"title": "Map 3.1: Kianas Farmhouse",
 											"width": 1043,
 											"height": 1419,
 											"id": "53c",
@@ -3819,6 +3872,13 @@
 												"path": "adventure/JttRC/026-map-3.1-kianas-farmhouse-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 96,
+												"offsetX": -10,
+												"offsetY": -20,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 1043,
 											"height": 1419,
@@ -4893,7 +4953,14 @@
 												"path": "adventure/JttRC/032-map-4.1-hollow-mine.webp"
 											},
 											"imageType": "map",
-											"title": "Map 4.1: hollow mine",
+											"grid": {
+												"type": "square",
+												"size": 86,
+												"offsetX": 26,
+												"offsetY": 19,
+												"scale": 2
+											},
+											"title": "Map 4.1: Hollow Mine",
 											"width": 2100,
 											"height": 2850,
 											"id": "53d",
@@ -6697,6 +6764,13 @@
 												"path": "adventure/JttRC/033-map-4.1-hollow-mine-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 86,
+												"offsetX": 26,
+												"offsetY": 19,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 2100,
 											"height": 2850,
@@ -7182,7 +7256,13 @@
 												"path": "adventure/JttRC/036-map-4.2-abandoned-metalworks.webp"
 											},
 											"imageType": "map",
-											"title": "Map 4.2: abandoned metalworks",
+											"grid": {
+												"type": "square",
+												"size": 51,
+												"offsetX": 15,
+												"offsetY": -9
+											},
+											"title": "Map 4.2: Abandoned Metalworks",
 											"width": 1043,
 											"height": 1419,
 											"id": "53e",
@@ -7263,6 +7343,12 @@
 												"path": "adventure/JttRC/037-map-4.2-abandoned-metalworks-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 51,
+												"offsetX": 15,
+												"offsetY": -9
+											},
 											"title": "Player Version",
 											"width": 1043,
 											"height": 1419,
@@ -7399,7 +7485,13 @@
 												"path": "adventure/JttRC/038-map-4.3-san-citlan-and-borderlands.webp"
 											},
 											"imageType": "map",
-											"title": "Map 4.3: san citlán and borderlands",
+											"grid": {
+												"type": "none",
+												"size": 52,
+												"distance": 1,
+												"units": "mi"
+											},
+											"title": "Map 4.3: San Citlán and Borderlands",
 											"width": 1043,
 											"height": 1419,
 											"id": "53f",
@@ -7438,6 +7530,12 @@
 												"path": "adventure/JttRC/039-map-4.3-san-citlan-and-borderlands-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 52,
+												"distance": 1,
+												"units": "mi"
+											},
 											"title": "Player Version",
 											"width": 1043,
 											"height": 1419,
@@ -8277,7 +8375,13 @@
 														"path": "adventure/JttRC/046-map-5.1-parade-route.webp"
 													},
 													"imageType": "map",
-													"title": "Map 5.1: parade route",
+													"grid": {
+														"type": "square",
+														"size": 60,
+														"offsetX": 15,
+														"offsetY": -26
+													},
+													"title": "Map 5.1: Parade Route",
 													"width": 1043,
 													"height": 1419,
 													"id": "540"
@@ -8289,6 +8393,12 @@
 														"path": "adventure/JttRC/047-map-5.1-parade-route-player.webp"
 													},
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 60,
+														"offsetX": 15,
+														"offsetY": -26
+													},
 													"title": "Player Version",
 													"width": 1043,
 													"height": 1419,
@@ -8409,7 +8519,12 @@
 												"path": "adventure/JttRC/048-map-5.2-zinda.webp"
 											},
 											"imageType": "map",
-											"title": "Map 5.2: zinda",
+											"grid": {
+												"type": "none",
+												"size": 136,
+												"distance": 100
+											},
+											"title": "Map 5.2: Zinda",
 											"width": 2056,
 											"height": 1419,
 											"id": "541",
@@ -8448,6 +8563,11 @@
 												"path": "adventure/JttRC/049-map-5.2-zinda-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 136,
+												"distance": 100
+											},
 											"title": "Player Version",
 											"width": 2056,
 											"height": 1419,
@@ -9072,6 +9192,11 @@
 										"path": "adventure/JttRC/053-map-6.1-yeonido-player.webp"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 93,
+										"distance": 500
+									},
 									"title": "Player Version",
 									"width": 2063,
 									"height": 1425,
@@ -9415,7 +9540,13 @@
 										"path": "adventure/JttRC/056-map-6.2-park-of-the-elders.webp"
 									},
 									"imageType": "map",
-									"title": "Map 6.2: park of the elders",
+									"grid": {
+										"type": "square",
+										"size": 51,
+										"offsetX": -9,
+										"offsetY": -2
+									},
+									"title": "Map 6.2: Park of the Elders",
 									"width": 1050,
 									"height": 1425,
 									"id": "543"
@@ -9427,6 +9558,12 @@
 										"path": "adventure/JttRC/057-map-6.2-park-of-the-elders-player.webp"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 51,
+										"offsetX": -9,
+										"offsetY": -2
+									},
 									"title": "Player Version",
 									"width": 1050,
 									"height": 1425,
@@ -10385,6 +10522,13 @@
 												"path": "adventure/JttRC/062-map-7.1-the-goldwarren.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 71,
+												"offsetX": -37,
+												"offsetY": -39,
+												"scale": 2
+											},
 											"title": "Map 7.1: The Goldwarren",
 											"width": 2063,
 											"height": 1425,
@@ -12863,6 +13007,13 @@
 												"path": "adventure/JttRC/063-map-7.1-the-goldwarren-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 71,
+												"offsetX": -37,
+												"offsetY": -39,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 2063,
 											"height": 1425,
@@ -13138,7 +13289,12 @@
 												"path": "adventure/JttRC/065-map-7.2-sensa-empire.webp"
 											},
 											"imageType": "map",
-											"title": "Map 7.2: sensa empire",
+											"grid": {
+												"type": "none",
+												"size": 93,
+												"units": "mi"
+											},
+											"title": "Map 7.2: Sensa Empire",
 											"width": 1050,
 											"height": 1425,
 											"id": "545",
@@ -13177,6 +13333,11 @@
 												"path": "adventure/JttRC/066-map-7.2-sensa-empire-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 93,
+												"units": "mi"
+											},
 											"title": "Player Version",
 											"width": 1050,
 											"height": 1425,
@@ -14030,7 +14191,14 @@
 												"path": "adventure/JttRC/074-map-8.1-gate-of-illumination.webp"
 											},
 											"imageType": "map",
-											"title": "Map 8.1: gate of illumination",
+											"grid": {
+												"type": "square",
+												"size": 89,
+												"offsetX": 21,
+												"offsetY": 29,
+												"scale": 2
+											},
+											"title": "Map 8.1: Gate of Illumination",
 											"width": 1050,
 											"height": 1425,
 											"id": "546",
@@ -14479,6 +14647,13 @@
 												"path": "adventure/JttRC/075-map-8.1-gate-of-illumination-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 89,
+												"offsetX": 21,
+												"offsetY": 29,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 1050,
 											"height": 1425,
@@ -14787,7 +14962,13 @@
 												"path": "adventure/JttRC/076-map-8.2-tletepec.webp"
 											},
 											"imageType": "map",
-											"title": "Map 8.2: tletepec",
+											"grid": {
+												"type": "none",
+												"size": 80,
+												"distance": 2.5,
+												"units": "mi"
+											},
+											"title": "Map 8.2: Tletepec",
 											"width": 2063,
 											"height": 1425,
 											"id": "547",
@@ -14826,6 +15007,12 @@
 												"path": "adventure/JttRC/077-map-8.2-tletepec-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 80,
+												"distance": 2.5,
+												"units": "mi"
+											},
 											"title": "Player Version",
 											"width": 2063,
 											"height": 1425,
@@ -15683,7 +15870,14 @@
 												"path": "adventure/JttRC/084-map-9.1-forest-heart.webp"
 											},
 											"imageType": "map",
-											"title": "Map 9.1: forest heart",
+											"grid": {
+												"type": "square",
+												"size": 84,
+												"offsetX": -34,
+												"offsetY": -37,
+												"scale": 2
+											},
+											"title": "Map 9.1: Forest Heart",
 											"width": 1043,
 											"height": 1419,
 											"id": "548",
@@ -15722,6 +15916,13 @@
 												"path": "adventure/JttRC/085-map-9.1-forest-heart-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 84,
+												"offsetX": -34,
+												"offsetY": -37,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 1043,
 											"height": 1419,
@@ -15938,7 +16139,12 @@
 												"path": "adventure/JttRC/086-map-9.2-shankhabhumi.webp"
 											},
 											"imageType": "map",
-											"title": "Map 9.2: shankhabhumi",
+											"grid": {
+												"type": "none",
+												"size": 127,
+												"units": "mi"
+											},
+											"title": "Map 9.2: Shankhabhumi",
 											"width": 2056,
 											"height": 1419,
 											"id": "549",
@@ -15977,6 +16183,11 @@
 												"path": "adventure/JttRC/087-map-9.2-shankhabhumi-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 127,
+												"units": "mi"
+											},
 											"title": "Player Version",
 											"width": 2056,
 											"height": 1419,
@@ -16795,7 +17006,13 @@
 										"path": "adventure/JttRC/093-map-10.1-lambakluha.webp"
 									},
 									"imageType": "map",
-									"title": "Map 10.1: lambakluha",
+									"grid": {
+										"type": "none",
+										"size": 125,
+										"distance": 3,
+										"units": "mi"
+									},
+									"title": "Map 10.1: Lambakluha",
 									"width": 1043,
 									"height": 1419,
 									"id": "54a",
@@ -16834,6 +17051,12 @@
 										"path": "adventure/JttRC/094-map-10.1-lambakluha-player.webp"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 125,
+										"distance": 3,
+										"units": "mi"
+									},
 									"title": "Player Version",
 									"width": 1043,
 									"height": 1419,
@@ -17030,7 +17253,13 @@
 														"path": "adventure/JttRC/096-map-10.2-roots-of-bathalang-puno.webp"
 													},
 													"imageType": "map",
-													"title": "Map 10.2: roots of bathalang puno",
+													"grid": {
+														"type": "square",
+														"size": 54,
+														"offsetX": 5,
+														"offsetY": -3
+													},
+													"title": "Map 10.2: Roots of Bathalang Puno",
 													"width": 1050,
 													"height": 1425,
 													"id": "54b",
@@ -17069,6 +17298,12 @@
 														"path": "adventure/JttRC/097-map-10.2-roots-of-bathalang-puno-player.webp"
 													},
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 54,
+														"offsetX": 5,
+														"offsetY": -3
+													},
 													"title": "Player Version",
 													"width": 1050,
 													"height": 1425,
@@ -17738,7 +17973,15 @@
 												"path": "adventure/JttRC/100-map-11.1-three-sun-square.webp"
 											},
 											"imageType": "map",
-											"title": "Map 11.1: three sun square",
+											"grid": {
+												"type": "square",
+												"size": 108,
+												"offsetX": 67,
+												"offsetY": 60,
+												"scale": 2,
+												"distance": 10
+											},
+											"title": "Map 11.1: Three Sun Square",
 											"width": 1043,
 											"height": 1419,
 											"id": "54c",
@@ -17777,6 +18020,14 @@
 												"path": "adventure/JttRC/101-map-11.1-three-sun-square-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 108,
+												"offsetX": 67,
+												"offsetY": 60,
+												"scale": 2,
+												"distance": 10
+											},
 											"title": "Player Version",
 											"width": 1043,
 											"height": 1419,
@@ -18261,7 +18512,14 @@
 												"path": "adventure/JttRC/104-map-11.2-ashen-heir-hideout.webp"
 											},
 											"imageType": "map",
-											"title": "Map 11.2: ashen heir hideout",
+											"grid": {
+												"type": "square",
+												"size": 66,
+												"offsetX": 28,
+												"offsetY": 17,
+												"scale": 2
+											},
+											"title": "Map 11.2: Ashen Heir Hideout",
 											"width": 1043,
 											"height": 1419,
 											"id": "54d",
@@ -18621,6 +18879,13 @@
 												"path": "adventure/JttRC/105-map-11.2-ashen-heir-hideout-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 66,
+												"offsetX": 28,
+												"offsetY": 17,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 1043,
 											"height": 1419,
@@ -18906,7 +19171,14 @@
 												"path": "adventure/JttRC/107-map-11.3-pedestal-of-judgment.webp"
 											},
 											"imageType": "map",
-											"title": "Map 11.3: pedestal of judgment",
+											"grid": {
+												"type": "square",
+												"size": 97,
+												"offsetX": -29,
+												"offsetY": 3,
+												"scale": 2
+											},
+											"title": "Map 11.3: Pedestal of Judgment",
 											"width": 1043,
 											"height": 1419,
 											"id": "54e",
@@ -18945,6 +19217,13 @@
 												"path": "adventure/JttRC/108-map-11.3-pedestal-of-judgment-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 97,
+												"offsetX": -29,
+												"offsetY": 3,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 1043,
 											"height": 1419,
@@ -19636,7 +19915,12 @@
 										"path": "adventure/JttRC/113-map-12.1-central-djaynai.webp"
 									},
 									"imageType": "map",
-									"title": "Map 12.1: central djaynai",
+									"grid": {
+										"type": "none",
+										"size": 72,
+										"distance": 100
+									},
+									"title": "Map 12.1: Central Djaynai",
 									"width": 2063,
 									"height": 1425,
 									"id": "54f",
@@ -19675,6 +19959,11 @@
 										"path": "adventure/JttRC/114-map-12.1-central-djaynai-player.webp"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 72,
+										"distance": 100
+									},
 									"title": "Player Version",
 									"width": 2063,
 									"height": 1425,
@@ -20389,7 +20678,14 @@
 												"path": "adventure/JttRC/120-map-12.2-trench-of-love-lost.webp"
 											},
 											"imageType": "map",
-											"title": "Map 12.2: trench of love lost",
+											"grid": {
+												"type": "square",
+												"size": 105,
+												"offsetX": -5,
+												"offsetY": 7,
+												"scale": 2
+											},
+											"title": "Map 12.2: Trench of Love Lost",
 											"width": 1050,
 											"height": 1425,
 											"id": "550",
@@ -21109,6 +21405,13 @@
 												"path": "adventure/JttRC/121-map-12.2-trench-of-love-lost-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 105,
+												"offsetX": -5,
+												"offsetY": 7,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 1050,
 											"height": 1425,
@@ -21972,7 +22275,14 @@
 												"path": "adventure/JttRC/126-map-13.1-yun-dynasty-ruins.webp"
 											},
 											"imageType": "map",
-											"title": "Map 13.1: yun dynasty ruins",
+											"grid": {
+												"type": "square",
+												"size": 92,
+												"offsetX": 15,
+												"offsetY": 9,
+												"scale": 2
+											},
+											"title": "Map 13.1: Yun Dynasty Ruins",
 											"width": 2056,
 											"height": 1419,
 											"id": "551",
@@ -23165,6 +23475,13 @@
 												"path": "adventure/JttRC/127-map-13.1-yun-dynasty-ruins-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 92,
+												"offsetX": 15,
+												"offsetY": 9,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 2056,
 											"height": 1419,
@@ -23483,7 +23800,14 @@
 												"path": "adventure/JttRC/128-map-13.2-secret-grotto.webp"
 											},
 											"imageType": "map",
-											"title": "Map 13.2: secret grotto",
+											"grid": {
+												"type": "square",
+												"size": 56,
+												"offsetX": -17,
+												"offsetY": -34,
+												"scale": 2
+											},
+											"title": "Map 13.2: Secret Grotto",
 											"width": 2056,
 											"height": 1419,
 											"id": "552",
@@ -24123,6 +24447,13 @@
 												"path": "adventure/JttRC/129-map-13.2-secret-grotto-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 56,
+												"offsetX": -17,
+												"offsetY": -34,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 2056,
 											"height": 1419,
@@ -24496,7 +24827,12 @@
 												"path": "adventure/JttRC/132-map-13.3-yongjing.webp"
 											},
 											"imageType": "map",
-											"title": "Map 13.3: yongjing",
+											"grid": {
+												"type": "none",
+												"size": 123,
+												"distance": 300
+											},
+											"title": "Map 13.3: Yongjing",
 											"width": 2056,
 											"height": 1419,
 											"id": "553",
@@ -24535,6 +24871,11 @@
 												"path": "adventure/JttRC/133-map-13.3-yongjing-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 123,
+												"distance": 300
+											},
 											"title": "Player Version",
 											"width": 2056,
 											"height": 1419,
@@ -25250,7 +25591,14 @@
 												"path": "adventure/JttRC/137-map-14.1-ghost-orchid-tepui.webp"
 											},
 											"imageType": "map",
-											"title": "Map 14.1: ghost orchid tepui",
+											"grid": {
+												"type": "square",
+												"size": 96,
+												"offsetX": -10,
+												"offsetY": -2,
+												"scale": 2
+											},
+											"title": "Map 14.1: Ghost Orchid Tepui",
 											"width": 1043,
 											"height": 1419,
 											"id": "554",
@@ -25750,6 +26098,13 @@
 												"path": "adventure/JttRC/138-map-14.1-ghost-orchid-tepui-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 96,
+												"offsetX": -10,
+												"offsetY": -2,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 1043,
 											"height": 1419,
@@ -25929,7 +26284,14 @@
 												"path": "adventure/JttRC/139-map-14.2-crystal-caves.webp"
 											},
 											"imageType": "map",
-											"title": "Map 14.2: crystal caves",
+											"grid": {
+												"type": "square",
+												"size": 74,
+												"offsetX": -1,
+												"offsetY": -8,
+												"scale": 2
+											},
+											"title": "Map 14.2: Crystal Caves",
 											"width": 2056,
 											"height": 1419,
 											"id": "555",
@@ -28536,6 +28898,13 @@
 												"path": "adventure/JttRC/140-map-14.2-crystal-caves-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 74,
+												"offsetX": -1,
+												"offsetY": -8,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 2056,
 											"height": 1419,
@@ -29015,7 +29384,14 @@
 												"path": "adventure/JttRC/143-map-14.3-the-drought-elder.webp"
 											},
 											"imageType": "map",
-											"title": "Map 14.3: the drought elder",
+											"grid": {
+												"type": "square",
+												"size": 72,
+												"offsetX": -18,
+												"offsetY": -15,
+												"scale": 2
+											},
+											"title": "Map 14.3: The Drought Elder",
 											"width": 2063,
 											"height": 1425,
 											"id": "556",
@@ -29499,6 +29875,13 @@
 												"path": "adventure/JttRC/144-map-14.3-the-drought-elder-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 72,
+												"offsetX": -18,
+												"offsetY": -15,
+												"scale": 2
+											},
 											"title": "Player Version",
 											"width": 2063,
 											"height": 1425,
@@ -29740,7 +30123,12 @@
 												"path": "adventure/JttRC/145-map-14.4-atagua.webp"
 											},
 											"imageType": "map",
-											"title": "Map 14.4: atagua",
+											"grid": {
+												"type": "none",
+												"size": 129,
+												"units": "mi"
+											},
+											"title": "Map 14.4: Atagua",
 											"width": 2056,
 											"height": 1419,
 											"id": "557",
@@ -29779,6 +30167,11 @@
 												"path": "adventure/JttRC/146-map-14.4-atagua-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 129,
+												"units": "mi"
+											},
 											"title": "Player Version",
 											"width": 2056,
 											"height": 1419,
