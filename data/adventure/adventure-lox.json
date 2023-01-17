@@ -503,7 +503,13 @@
 														"path": "adventure/LoX/008-map-2.11-space-galleon.webp"
 													},
 													"imageType": "map",
-													"title": "Space Galleon Deck Plans",
+													"grid": {
+														"type": "square",
+														"size": 53,
+														"offsetX": 16,
+														"offsetY": -15
+													},
+													"title": "Moondancer Deck Plans",
 													"width": 1700,
 													"height": 2200,
 													"mapRegions": [
@@ -527,6 +533,110 @@
 																	37
 																]
 															]
+														},
+														{
+															"area": "179",
+															"points": [
+																[
+																	966,
+																	1208
+																],
+																[
+																	1121,
+																	1208
+																],
+																[
+																	1121,
+																	1330
+																],
+																[
+																	966,
+																	1361
+																]
+															]
+														},
+														{
+															"area": "17A",
+															"points": [
+																[
+																	230,
+																	1177
+																],
+																[
+																	334,
+																	1177
+																],
+																[
+																	334,
+																	1051
+																],
+																[
+																	230,
+																	1060
+																]
+															]
+														},
+														{
+															"area": "17B",
+															"points": [
+																[
+																	597,
+																	1539
+																],
+																[
+																	597,
+																	1823
+																],
+																[
+																	861,
+																	1818
+																],
+																[
+																	1018,
+																	1793
+																],
+																[
+																	1018,
+																	1563
+																],
+																[
+																	902,
+																	1544
+																]
+															]
+														},
+														{
+															"area": "17C",
+															"points": [
+																[
+																	442,
+																	1945
+																],
+																[
+																	442,
+																	2149
+																],
+																[
+																	932,
+																	2149
+																],
+																[
+																	1035,
+																	2124
+																],
+																[
+																	1074,
+																	2048
+																],
+																[
+																	1034,
+																	1967
+																],
+																[
+																	922,
+																	1945
+																]
+															]
 														}
 													],
 													"hrefThumbnail": {
@@ -541,8 +651,14 @@
 														"type": "internal",
 														"path": "adventure/LoX/009-map-2.11-space-galleon-player.webp"
 													},
-													"imageType": "map",
-													"title": "Unlabeled Version",
+													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 53,
+														"offsetX": 16,
+														"offsetY": -15
+													},
+													"title": "Player Version",
 													"width": 1700,
 													"height": 2200,
 													"mapParent": {
@@ -553,30 +669,42 @@
 										},
 										"Use the {@vehicle space galleon|AAG} deck plans in the {@book Astral Adventurer's Guide|AAG} to represent the {@i Moondancer}. Noteworthy features are described below:",
 										{
-											"type": "list",
-											"style": "list-hang-notitle",
-											"items": [
+											"type": "entries",
+											"entries": [
 												{
-													"type": "item",
+													"type": "entries",
 													"name": "Area 3:",
-													"entry": "Captain's Quarters. Among Captain Sartell's possessions is a locked treasure chest, which she keeps in her cabin. Captain Sartell carries the only key to the chest. As an action, a character can pick the lock by making a successful DC 15 Dexterity check using thieves' tools, or break open the chest with a successful DC 15 Strength ({@skill Athletics}) check. The chest contains three bottles of fine wine (10 gp each), six gold bracelets (25 gp each), nine pearls (100 gp each) in a velvet pouch, and a {@item spell scroll} of {@spell air bubble|AAG} (see the {@book Astral Adventurer's Guide|AAG})."
+													"entries": [
+														"Captain's Quarters. Among Captain Sartell's possessions is a locked treasure chest, which she keeps in her cabin. Captain Sartell carries the only key to the chest. As an action, a character can pick the lock by making a successful DC 15 Dexterity check using thieves' tools, or break open the chest with a successful DC 15 Strength ({@skill Athletics}) check. The chest contains three bottles of fine wine (10 gp each), six gold bracelets (25 gp each), nine pearls (100 gp each) in a velvet pouch, and a {@item spell scroll} of {@spell air bubble|AAG} (see the {@book Astral Adventurer's Guide|AAG})."
+													],
+													"id": "179"
 												},
 												{
-													"type": "item",
+													"type": "entries",
 													"name": "Area 5:",
-													"entry": "Spelljamming Helm. The ship's {@item spelljamming helm|AAG} looks like a floating, ornate silver chair with a purple seat cushion and no legs. Glowing blue crystals underneath the seat project a magic circle onto the floor, stabilizing the chair. {@creature Flapjack|LoX|Flapjack the flumph} sits in the chair while piloting the ship."
+													"entries": [
+														"Spelljamming Helm. The ship's {@item spelljamming helm|AAG} looks like a floating, ornate silver chair with a purple seat cushion and no legs. Glowing blue crystals underneath the seat project a magic circle onto the floor, stabilizing the chair. {@creature Flapjack|LoX|Flapjack the flumph} sits in the chair while piloting the ship."
+													],
+													"id": "17A"
 												},
 												{
-													"type": "item",
+													"type": "entries",
 													"name": "Area 12:",
-													"entry": "Upper Cargo Hold. The upper cargo hold contains a dozen healthy {@item mule|PHB|mules} (which Sartell plans to sell as beasts of burden); sacks of food for the animals; and material placed here by Traevus and his gang (see chapter 1), which consists of twenty 40-pound crates of assorted martial weapons (2,000 gp total value) and five hundred bottles of brandy (3 gp each)."
+													"entries": [
+														"Upper Cargo Hold. The upper cargo hold contains a dozen healthy {@item mule|PHB|mules} (which Sartell plans to sell as beasts of burden); sacks of food for the animals; and material placed here by Traevus and his gang (see chapter 1), which consists of twenty 40-pound crates of assorted martial weapons (2,000 gp total value) and five hundred bottles of brandy (3 gp each)."
+													],
+													"id": "17B"
 												},
 												{
-													"type": "item",
+													"type": "entries",
 													"name": "Area 13:",
-													"entry": "Lower Cargo Hold. The lower cargo hold contains crates of foodstuffs and casks of fresh water, enough to last ten Medium creatures for thirty days."
+													"entries": [
+														"Lower Cargo Hold. The lower cargo hold contains crates of foodstuffs and casks of fresh water, enough to last ten Medium creatures for thirty days."
+													],
+													"id": "17C"
 												}
-											]
+											],
+											"id": "17D"
 										}
 									]
 								}
@@ -789,6 +917,13 @@
 														"path": "adventure/LoX/012-map-2.07-nautiloid.webp"
 													},
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 93,
+														"offsetX": -14,
+														"offsetY": -46,
+														"scale": 2
+													},
 													"title": "Nautiloid Deck Plans",
 													"width": 1700,
 													"height": 2200,
@@ -1403,8 +1538,14 @@
 														"type": "internal",
 														"path": "adventure/LoX/013-map-2.07-nautiloid-player.webp"
 													},
-													"imageType": "map",
-													"title": "Unlabeled Version",
+													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 92,
+														"offsetY": -19,
+														"scale": 2
+													},
+													"title": "Player Version",
 													"width": 1700,
 													"height": 2200,
 													"mapParent": {
@@ -1791,6 +1932,12 @@
 												"path": "adventure/LoX/017-map-2.06-living.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 66,
+												"offsetX": 33,
+												"offsetY": 33
+											},
 											"title": "Living Ship Deck Plans",
 											"width": 1700,
 											"height": 2200,
@@ -1829,8 +1976,14 @@
 												"type": "internal",
 												"path": "adventure/LoX/018-map-2.06-living-player.webp"
 											},
-											"imageType": "map",
-											"title": "Unlabeled Version",
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 66,
+												"offsetX": 33,
+												"offsetY": 33
+											},
+											"title": "Player Version",
 											"width": 1700,
 											"height": 2200,
 											"mapParent": {
@@ -2045,10 +2198,15 @@
 												"path": "adventure/LoX/021-map-10.01-topalahs-tower.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 80,
+												"scale": 3
+											},
 											"title": "Topalah's Tower",
 											"width": 1700,
 											"height": 1100,
-											"id": "16f",
+											"id": "175",
 											"mapRegions": [
 												{
 													"area": "072",
@@ -2070,6 +2228,69 @@
 															30
 														]
 													]
+												},
+												{
+													"area": "078",
+													"points": [
+														[
+															1395,
+															248
+														],
+														[
+															1395,
+															297
+														],
+														[
+															1580,
+															297
+														],
+														[
+															1580,
+															248
+														]
+													]
+												},
+												{
+													"area": "07a",
+													"points": [
+														[
+															1013,
+															703
+														],
+														[
+															1013,
+															758
+														],
+														[
+															1222,
+															758
+														],
+														[
+															1222,
+															703
+														]
+													]
+												},
+												{
+													"area": "07d",
+													"points": [
+														[
+															1394,
+															704
+														],
+														[
+															1394,
+															757
+														],
+														[
+															1590,
+															757
+														],
+														[
+															1590,
+															704
+														]
+													]
 												}
 											],
 											"hrefThumbnail": {
@@ -2084,11 +2305,16 @@
 												"path": "adventure/LoX/022-map-10.01-topalahs-tower-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 80,
+												"scale": 3
+											},
 											"title": "Player Version",
 											"width": 1700,
 											"height": 1100,
 											"mapParent": {
-												"id": "16f"
+												"id": "175"
 											}
 										}
 									]
@@ -2662,7 +2888,13 @@
 														"path": "adventure/LoX/027-map-2.11-space-galleon.webp"
 													},
 													"imageType": "map",
-													"title": "Space Galleon Deck Plans",
+													"grid": {
+														"type": "square",
+														"size": 53,
+														"offsetX": 16,
+														"offsetY": -15
+													},
+													"title": "Last Breath Deck Plans",
 													"width": 1700,
 													"height": 2200,
 													"mapRegions": [
@@ -2813,6 +3045,56 @@
 																	2032
 																]
 															]
+														},
+														{
+															"area": "0a3",
+															"points": [
+																[
+																	967,
+																	631
+																],
+																[
+																	967,
+																	941
+																],
+																[
+																	1122,
+																	918
+																],
+																[
+																	1122,
+																	658
+																]
+															]
+														},
+														{
+															"area": "0a4",
+															"points": [
+																[
+																	385,
+																	633
+																],
+																[
+																	385,
+																	943
+																],
+																[
+																	175,
+																	936
+																],
+																[
+																	26,
+																	893
+																],
+																[
+																	26,
+																	682
+																],
+																[
+																	156,
+																	641
+																]
+															]
 														}
 													],
 													"hrefThumbnail": {
@@ -2827,8 +3109,14 @@
 														"type": "internal",
 														"path": "adventure/LoX/028-map-2.11-space-galleon-player.webp"
 													},
-													"imageType": "map",
-													"title": "Unlabeled Version",
+													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 53,
+														"offsetX": 16,
+														"offsetY": -15
+													},
+													"title": "Player Version",
 													"width": 1700,
 													"height": 2200,
 													"mapParent": {
@@ -3259,6 +3547,13 @@
 														"path": "adventure/LoX/031-map-11.02-doomspace-system.webp"
 													},
 													"imageType": "map",
+													"grid": {
+														"type": "none",
+														"size": 130,
+														"distance": 100000000,
+														"units": "mi"
+													},
+													"title": "Doomspace",
 													"width": 2550,
 													"height": 1650,
 													"mapRegions": [
@@ -3513,7 +3808,13 @@
 														"path": "adventure/LoX/032-map-11.02-doomspace-system-player.webp"
 													},
 													"imageType": "mapPlayer",
-													"title": "DoomspaceView Player Version",
+													"grid": {
+														"type": "none",
+														"size": 130,
+														"distance": 100000000,
+														"units": "mi"
+													},
+													"title": "Player Version",
 													"width": 2550,
 													"height": 1650,
 													"mapParent": {
@@ -3852,10 +4153,16 @@
 														"path": "adventure/LoX/035-map-11.001-vocaths-base.webp"
 													},
 													"imageType": "map",
-													"title": "{@creature Vocath|LoX}'s Base",
+													"grid": {
+														"type": "square",
+														"size": 85,
+														"scale": 2,
+														"distance": 20
+													},
+													"title": "Vocath's Base",
 													"width": 1700,
 													"height": 1105,
-													"id": "170",
+													"id": "176",
 													"mapRegions": [
 														{
 															"area": "0e4",
@@ -4225,11 +4532,17 @@
 														"path": "adventure/LoX/036-map-11.01-vocaths-base-player.webp"
 													},
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 85,
+														"scale": 2,
+														"distance": 20
+													},
 													"title": "Player Version",
 													"width": 1700,
 													"height": 1105,
 													"mapParent": {
-														"id": "170"
+														"id": "176"
 													}
 												}
 											]
@@ -5087,6 +5400,13 @@
 														"path": "adventure/LoX/040-map-12.01-xaryxis-space.webp"
 													},
 													"imageType": "map",
+													"grid": {
+														"type": "none",
+														"size": 124,
+														"distance": 100000000,
+														"units": "mi"
+													},
+													"title": "Xaryxispace",
 													"width": 1200,
 													"height": 1500,
 													"mapRegions": [
@@ -5209,7 +5529,13 @@
 														"path": "adventure/LoX/041-map-12.01-xaryxis-space-player.webp"
 													},
 													"imageType": "mapPlayer",
-													"title": "XaryxispaceView Player Version",
+													"grid": {
+														"type": "none",
+														"size": 124,
+														"distance": 100000000,
+														"units": "mi"
+													},
+													"title": "Player Version",
 													"width": 1200,
 													"height": 1500,
 													"mapParent": {
@@ -5273,10 +5599,16 @@
 												"path": "adventure/LoX/042-map-12.02-imperial-citadel.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "none",
+												"size": 73,
+												"scale": 2,
+												"distance": 100
+											},
 											"title": "Imperial Citadel",
 											"width": 1700,
 											"height": 2200,
-											"id": "171",
+											"id": "177",
 											"mapRegions": [
 												{
 													"area": "137",
@@ -5886,11 +6218,17 @@
 												"path": "adventure/LoX/043-map-12.02-imperial-citadel-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 73,
+												"scale": 2,
+												"distance": 100
+											},
 											"title": "Player Version",
 											"width": 1700,
 											"height": 2200,
 											"mapParent": {
-												"id": "171"
+												"id": "177"
 											}
 										}
 									]
@@ -6085,10 +6423,18 @@
 												"path": "adventure/LoX/044-map-12.03-cathedral-of-light.webp"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 62,
+												"offsetX": 24,
+												"offsetY": -24,
+												"scale": 3,
+												"distance": 10
+											},
 											"title": "Temple of Light",
 											"width": 1700,
 											"height": 2200,
-											"id": "172",
+											"id": "178",
 											"mapRegions": [
 												{
 													"area": "14d",
@@ -6110,6 +6456,27 @@
 															3
 														]
 													]
+												},
+												{
+													"area": "151",
+													"points": [
+														[
+															978,
+															1479
+														],
+														[
+															978,
+															1562
+														],
+														[
+															1064,
+															1562
+														],
+														[
+															1064,
+															1479
+														]
+													]
 												}
 											],
 											"hrefThumbnail": {
@@ -6124,11 +6491,19 @@
 												"path": "adventure/LoX/045-map-12.03-cathedral-of-light-player.webp"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 62,
+												"offsetX": 24,
+												"offsetY": -24,
+												"scale": 3,
+												"distance": 10
+											},
 											"title": "Player Version",
 											"width": 1700,
 											"height": 2200,
 											"mapParent": {
-												"id": "172"
+												"id": "178"
 											}
 										}
 									]
