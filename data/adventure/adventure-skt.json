@@ -741,6 +741,14 @@
 									"width": 2400,
 									"height": 3300,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 77,
+										"offsetX": 4,
+										"offsetY": -24,
+										"scale": 2,
+										"distance": 10
+									},
 									"mapRegions": [
 										{
 											"area": "04a",
@@ -2501,7 +2509,15 @@
 									},
 									"width": 2400,
 									"height": 3300,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 77,
+										"offsetX": 4,
+										"offsetY": -24,
+										"scale": 2,
+										"distance": 10
+									}
 								}
 							]
 						},
@@ -3310,6 +3326,11 @@
 									"width": 2100,
 									"height": 1575,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 52,
+										"offsetX": 12
+									},
 									"mapRegions": [
 										{
 											"area": "08f",
@@ -6784,7 +6805,14 @@
 									},
 									"width": 2030,
 									"height": 1502,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 105,
+										"offsetX": 31,
+										"offsetY": 29,
+										"scale": 2
+									}
 								}
 							]
 						},
@@ -7117,10 +7145,17 @@
 								"type": "internal",
 								"path": "adventure/SKT/013-towerofzephyros.webp"
 							},
-							"title": "Map 1.3: Tower of {@creature Zephyros|SKT}",
+							"title": "Map 1.3: Tower of Zephyros",
 							"width": 1200,
 							"height": 3300,
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 55,
+								"offsetX": -10,
+								"offsetY": 23,
+								"distance": 10
+							},
 							"mapRegions": [
 								{
 									"area": "09f",
@@ -7711,6 +7746,11 @@
 									"width": 2711,
 									"height": 1476,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 52,
+										"distance": 100
+									},
 									"mapRegions": [
 										{
 											"area": "0af",
@@ -8066,7 +8106,12 @@
 									},
 									"width": 2711,
 									"height": 1476,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 52,
+										"distance": 100
+									}
 								}
 							]
 						},
@@ -8478,6 +8523,12 @@
 									"width": 2217,
 									"height": 3000,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 66,
+										"distance": 0.25,
+										"units": "mi"
+									},
 									"mapRegions": [
 										{
 											"area": "0d6",
@@ -10837,7 +10888,13 @@
 									},
 									"width": 2385,
 									"height": 3289,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 71,
+										"distance": 0.25,
+										"units": "mi"
+									}
 								}
 							]
 						},
@@ -11375,6 +11432,11 @@
 									"width": 2256,
 									"height": 3000,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 167,
+										"distance": 100
+									},
 									"mapRegions": [
 										{
 											"area": "107",
@@ -13426,7 +13488,12 @@
 									},
 									"width": 2471,
 									"height": 3286,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 183,
+										"distance": 100
+									}
 								}
 							]
 						},
@@ -14874,6 +14941,12 @@
 							"width": 3000,
 							"height": 1905,
 							"imageType": "map",
+							"grid": {
+								"type": "none",
+								"size": 249,
+								"distance": 100,
+								"units": "mi"
+							},
 							"mapRegions": [
 								{
 									"area": "259",
@@ -18285,6 +18358,13 @@
 												"path": "adventure/SKT/028-skt03-beorunnaswell.webp"
 											},
 											"title": "Map 3.2: Beorunna's Well",
+											"grid": {
+												"type": "square",
+												"size": 95,
+												"offsetX": 22,
+												"offsetY": 6,
+												"distance": 50
+											},
 											"width": 3000,
 											"height": 2063,
 											"imageType": "map",
@@ -18329,7 +18409,14 @@
 											},
 											"width": 3200,
 											"height": 2200,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 101,
+												"offsetX": 28,
+												"offsetY": 9,
+												"distance": 50
+											}
 										}
 									]
 								},
@@ -18667,6 +18754,11 @@
 											"width": 2400,
 											"height": 1650,
 											"imageType": "map",
+											"grid": {
+												"type": "none",
+												"size": 74,
+												"distance": 100
+											},
 											"mapRegions": [
 												{
 													"area": "1a1",
@@ -18707,7 +18799,12 @@
 											},
 											"width": 2400,
 											"height": 1650,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "none",
+												"size": 74,
+												"distance": 100
+											}
 										}
 									]
 								},
@@ -18832,6 +18929,14 @@
 											"width": 727,
 											"height": 1000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 93,
+												"offsetX": 40,
+												"offsetY": -24,
+												"scale": 2,
+												"distance": 50
+											},
 											"mapRegions": [
 												{
 													"area": "1ac",
@@ -18873,7 +18978,14 @@
 											},
 											"width": 1600,
 											"height": 2200,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 102,
+												"offsetX": 44,
+												"offsetY": -25,
+												"distance": 50
+											}
 										}
 									]
 								},
@@ -19068,6 +19180,13 @@
 											"width": 3000,
 											"height": 2063,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 85,
+												"offsetX": 11,
+												"offsetY": -8,
+												"distance": 50
+											},
 											"mapRegions": [
 												{
 													"area": "1bd",
@@ -19109,7 +19228,13 @@
 											},
 											"width": 3200,
 											"height": 2200,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 90,
+												"offsetX": 17,
+												"distance": 50
+											}
 										}
 									]
 								},
@@ -19239,6 +19364,13 @@
 											"width": 3000,
 											"height": 2063,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 116,
+												"offsetX": 68,
+												"offsetY": 28,
+												"distance": 50
+											},
 											"mapRegions": [
 												{
 													"area": "1c6",
@@ -19280,7 +19412,14 @@
 											},
 											"width": 3200,
 											"height": 2200,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 124,
+												"offsetX": -51,
+												"offsetY": 25,
+												"distance": 50
+											}
 										}
 									]
 								},
@@ -20094,6 +20233,13 @@
 											"width": 1600,
 											"height": 2200,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 108,
+												"offsetX": 63,
+												"offsetY": 58,
+												"distance": 50
+											},
 											"mapRegions": [
 												{
 													"area": "211",
@@ -20134,7 +20280,14 @@
 											},
 											"width": 1600,
 											"height": 2200,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 109,
+												"offsetX": 61,
+												"offsetY": 47,
+												"distance": 50
+											}
 										}
 									]
 								},
@@ -20354,6 +20507,12 @@
 											"width": 1600,
 											"height": 2200,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"offsetX": 39,
+												"offsetY": 25,
+												"distance": 50
+											},
 											"mapRegions": [
 												{
 													"area": "224",
@@ -20394,7 +20553,14 @@
 											},
 											"width": 1600,
 											"height": 2200,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 99,
+												"offsetX": 43,
+												"offsetY": 29,
+												"distance": 50
+											}
 										}
 									]
 								},
@@ -20575,6 +20741,13 @@
 											"width": 1600,
 											"height": 2200,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 96,
+												"offsetX": 59,
+												"offsetY": -25,
+												"distance": 50
+											},
 											"mapRegions": [
 												{
 													"area": "234",
@@ -20615,7 +20788,14 @@
 											},
 											"width": 1600,
 											"height": 2200,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 96,
+												"offsetX": -36,
+												"offsetY": -24,
+												"distance": 50
+											}
 										}
 									]
 								},
@@ -20706,6 +20886,11 @@
 									"width": 942,
 									"height": 1735,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 314,
+										"distance": 100
+									},
 									"mapRegions": [
 										{
 											"area": "1cd",
@@ -20849,6 +21034,14 @@
 											"width": 727,
 											"height": 1000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 87,
+												"offsetX": 11,
+												"offsetY": 31,
+												"scale": 2,
+												"distance": 50
+											},
 											"mapRegions": [
 												{
 													"area": "244",
@@ -20890,7 +21083,14 @@
 											},
 											"width": 1600,
 											"height": 2200,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 96,
+												"offsetX": 9,
+												"offsetY": 32,
+												"distance": 50
+											}
 										}
 									]
 								},
@@ -21033,6 +21233,13 @@
 											"width": 1600,
 											"height": 2200,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 105,
+												"offsetX": 57,
+												"offsetY": -1,
+												"distance": 50
+											},
 											"mapRegions": [
 												{
 													"area": "251",
@@ -21073,7 +21280,14 @@
 											},
 											"width": 1600,
 											"height": 2200,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 105,
+												"offsetX": 57,
+												"offsetY": -3,
+												"distance": 50
+											}
 										}
 									]
 								},
@@ -21233,6 +21447,12 @@
 									"width": 992,
 									"height": 1318,
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 281,
+										"distance": 100,
+										"units": "mi"
+									},
 									"mapRegions": [
 										{
 											"area": "260",
@@ -21601,6 +21821,13 @@
 									"width": 1000,
 									"height": 688,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 65,
+										"offsetX": 14,
+										"offsetY": 4,
+										"distance": 10
+									},
 									"mapRegions": [
 										{
 											"area": "27a",
@@ -21679,11 +21906,7 @@
 									},
 									"title": "Figure 3.1: Harper Teleportation Network",
 									"width": 727,
-									"height": 1000,
-									"mapParent": {
-										"id": "230",
-										"autoScale": true
-									}
+									"height": 1000
 								},
 								"Krowen isn't very adventurous himself, but he's fond of adventurers and uses them to do his dirty work. If the characters explain that they're trying to thwart the giants, Krowen grants the party free access to a secret network of {@spell teleportation circle}s that he and his fellow Harper wizards use for travel. He also gives the characters a sheet of parchment that shows all six circles and their sigil addresses (show the players figure 3.1). The circles are located in Everlund, Loudwater, Mirabar, Neverwinter, Waterdeep, and Yartar. The specific locations of these circles are briefly described below, and a Harper spellcaster stands ready at each site to cast the {@spell teleportation circle} spell should the party require it. Each spellcaster has the statistics of a {@creature mage}, with the following changes:",
 								{
@@ -21865,6 +22088,14 @@
 									"width": 2400,
 									"height": 3300,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 88,
+										"offsetX": -31,
+										"offsetY": -11,
+										"scale": 2,
+										"distance": 20
+									},
 									"mapRegions": [
 										{
 											"area": "2b1",
@@ -23523,7 +23754,15 @@
 									},
 									"width": 2400,
 									"height": 3300,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 88,
+										"offsetX": -31,
+										"offsetY": -10,
+										"scale": 2,
+										"distance": 20
+									}
 								}
 							]
 						},
@@ -24314,10 +24553,13 @@
 										"type": "internal",
 										"path": "adventure/SKT/060-skt04-harshnagsmap.webp"
 									},
-									"title": "Map 4.2: {@creature Harshnag|SKT}'s Map",
+									"title": "Map 4.2: Harshnag's Map",
 									"width": 2612,
 									"height": 1761,
 									"imageType": "map",
+									"grid": {
+										"type": "none"
+									},
 									"mapRegions": [
 										{
 											"area": "2c1",
@@ -24452,6 +24694,13 @@
 									"width": 1000,
 									"height": 688,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 88,
+										"offsetX": 48,
+										"offsetY": 23,
+										"scale": 2
+									},
 									"mapRegions": [
 										{
 											"area": "2ce",
@@ -24493,7 +24742,13 @@
 									},
 									"width": 2400,
 									"height": 1650,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 105,
+										"offsetX": 56,
+										"offsetY": 42
+									}
 								}
 							]
 						},
@@ -25291,6 +25546,12 @@
 											"width": 2182,
 											"height": 3000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 67,
+												"scale": 3,
+												"distance": 10
+											},
 											"mapRegions": [
 												{
 													"area": "306",
@@ -26686,7 +26947,15 @@
 											},
 											"width": 2400,
 											"height": 3300,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 74,
+												"offsetX": -9,
+												"offsetY": -33,
+												"scale": 3,
+												"distance": 10
+											}
 										}
 									]
 								}
@@ -27383,6 +27652,13 @@
 											"width": 2400,
 											"height": 3300,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 85,
+												"offsetX": 40,
+												"scale": 3,
+												"distance": 10
+											},
 											"mapRegions": [
 												{
 													"area": "32c",
@@ -31360,7 +31636,15 @@
 											},
 											"width": 2400,
 											"height": 3300,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 57,
+												"offsetX": 15,
+												"offsetY": 22,
+												"scale": 2,
+												"distance": 10
+											}
 										}
 									]
 								}
@@ -32128,6 +32412,14 @@
 													"width": 2182,
 													"height": 3000,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 79,
+														"offsetX": 61,
+														"offsetY": -29,
+														"scale": 3,
+														"distance": 20
+													},
 													"mapRegions": [
 														{
 															"area": "369",
@@ -32938,7 +33230,15 @@
 													},
 													"width": 2400,
 													"height": 3300,
-													"imageType": "mapPlayer"
+													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 87,
+														"offsetX": -24,
+														"offsetY": -35,
+														"scale": 3,
+														"distance": 20
+													}
 												},
 												{
 													"type": "image",
@@ -32951,6 +33251,14 @@
 													"width": 2157,
 													"height": 3000,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 71,
+														"offsetX": 32,
+														"offsetY": 10,
+														"scale": 3,
+														"distance": 10
+													},
 													"mapRegions": [
 														{
 															"area": "374",
@@ -34066,7 +34374,15 @@
 													},
 													"width": 2400,
 													"height": 3338,
-													"imageType": "mapPlayer"
+													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 79,
+														"offsetX": -39,
+														"offsetY": 10,
+														"scale": 3,
+														"distance": 10
+													}
 												}
 											]
 										}
@@ -34590,7 +34906,14 @@
 									"title": "Map 7.3: Krigvind",
 									"width": 1000,
 									"height": 585,
-									"imageType": "map"
+									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 51,
+										"offsetX": -2,
+										"offsetY": -13,
+										"scale": 6
+									}
 								},
 								{
 									"type": "image",
@@ -34605,7 +34928,14 @@
 									},
 									"width": 2400,
 									"height": 1458,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 61,
+										"offsetX": 14,
+										"offsetY": 15,
+										"scale": 3
+									}
 								}
 							]
 						},
@@ -35117,6 +35447,14 @@
 											"width": 2183,
 											"height": 3000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 81,
+												"offsetX": 50,
+												"offsetY": 21,
+												"scale": 3,
+												"distance": 10
+											},
 											"mapRegions": [
 												{
 													"area": "3d6",
@@ -36719,7 +37057,15 @@
 											},
 											"width": 2401,
 											"height": 3300,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 88,
+												"offsetX": 11,
+												"offsetY": 41,
+												"scale": 3,
+												"distance": 10
+											}
 										}
 									]
 								},
@@ -37459,6 +37805,14 @@
 													"width": 2432,
 													"height": 1716,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 73,
+														"offsetX": 71,
+														"offsetY": 57,
+														"scale": 3,
+														"distance": 10
+													},
 													"mapRegions": [
 														{
 															"area": "410",
@@ -38129,7 +38483,14 @@
 													},
 													"width": 2432,
 													"height": 1716,
-													"imageType": "mapPlayer"
+													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 73,
+														"offsetY": 9,
+														"scale": 3,
+														"distance": 10
+													}
 												}
 											]
 										}
@@ -38875,6 +39236,13 @@
 											"width": 2182,
 											"height": 3000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 75,
+												"offsetX": -13,
+												"scale": 3,
+												"distance": 10
+											},
 											"mapRegions": [
 												{
 													"area": "437",
@@ -39400,7 +39768,15 @@
 											},
 											"width": 2400,
 											"height": 3300,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 82,
+												"offsetX": 80,
+												"offsetY": 44,
+												"scale": 3,
+												"distance": 10
+											}
 										},
 										{
 											"type": "image",
@@ -39409,10 +39785,18 @@
 												"type": "internal",
 												"path": "adventure/SKT/089-skt09-lyn2.webp"
 											},
-											"title": "Map 9.2: Lyn Armaal, Levels 2-6",
+											"title": "Map 9.2: Lyn Armaal, Levels 2\u20136",
 											"width": 2182,
 											"height": 3000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 75,
+												"offsetX": 49,
+												"offsetY": 27,
+												"scale": 3,
+												"distance": 10
+											},
 											"mapRegions": [
 												{
 													"area": "45b",
@@ -41104,7 +41488,15 @@
 											},
 											"width": 2400,
 											"height": 3300,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 82,
+												"offsetX": -14,
+												"offsetY": -18,
+												"scale": 3,
+												"distance": 10
+											}
 										}
 									]
 								}
@@ -42061,6 +42453,14 @@
 											"width": 2182,
 											"height": 3000,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 79,
+												"offsetX": 20,
+												"offsetY": 20,
+												"scale": 3,
+												"distance": 10
+											},
 											"mapRegions": [
 												{
 													"area": "49a",
@@ -45267,7 +45667,15 @@
 											},
 											"width": 2400,
 											"height": 3300,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 87,
+												"offsetX": 12,
+												"offsetY": 21,
+												"scale": 3,
+												"distance": 10
+											}
 										}
 									]
 								}
@@ -45992,6 +46400,14 @@
 													"width": 2400,
 													"height": 1650,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 59,
+														"offsetX": -9,
+														"offsetY": 3,
+														"scale": 2,
+														"distance": 10
+													},
 													"mapRegions": [
 														{
 															"area": "4ca",
@@ -46697,7 +47113,14 @@
 													},
 													"width": 2400,
 													"height": 1650,
-													"imageType": "mapPlayer"
+													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 59,
+														"offsetX": -8,
+														"scale": 2,
+														"distance": 10
+													}
 												}
 											]
 										}
@@ -47011,6 +47434,14 @@
 									"width": 1000,
 									"height": 688,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 78,
+										"offsetX": 31,
+										"offsetY": 61,
+										"scale": 2,
+										"distance": 10
+									},
 									"mapRegions": [
 										{
 											"area": "4dc",
@@ -47472,7 +47903,14 @@
 									},
 									"width": 2400,
 									"height": 1650,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 92,
+										"offsetX": 52,
+										"offsetY": 26,
+										"distance": 10
+									}
 								}
 							]
 						},
@@ -47819,6 +48257,13 @@
 									"width": 1000,
 									"height": 688,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 62,
+										"offsetX": -6,
+										"offsetY": 25,
+										"scale": 3
+									},
 									"mapRegions": [
 										{
 											"area": "4f8",
@@ -48076,7 +48521,14 @@
 									},
 									"width": 2400,
 									"height": 1650,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 102,
+										"offsetX": -43,
+										"offsetY": 36,
+										"scale": 2
+									}
 								}
 							]
 						},
@@ -48445,10 +48897,18 @@
 										"type": "internal",
 										"path": "adventure/SKT/108-skt12-lair.webp"
 									},
-									"title": "Map 12.1: {@creature Iymrith|SKT}'s Lair",
+									"title": "Map 12.1: Iymrith's Lair",
 									"width": 2182,
 									"height": 3000,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 53,
+										"offsetX": 7,
+										"offsetY": -4,
+										"scale": 2,
+										"distance": 10
+									},
 									"mapRegions": [
 										{
 											"area": "510",
@@ -48835,7 +49295,14 @@
 									},
 									"width": 2400,
 									"height": 3300,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 59,
+										"offsetX": -22,
+										"scale": 2,
+										"distance": 10
+									}
 								}
 							]
 						},
