@@ -114,6 +114,13 @@
 											"width": 2105,
 											"height": 2933,
 											"imageType": "map",
+											"grid": {
+												"type": "hexColsOdd",
+												"size": 96,
+												"offsetX": -48,
+												"offsetY": 2,
+												"units": "mi"
+											},
 											"id": "0fc"
 										},
 										{
@@ -126,6 +133,13 @@
 											"width": 2153,
 											"height": 3000,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "hexColsOdd",
+												"size": 97,
+												"offsetX": -32,
+												"offsetY": 18,
+												"units": "mi"
+											},
 											"mapParent": {
 												"id": "0fc",
 												"autoScale": true
@@ -588,6 +602,12 @@
 									"width": 3600,
 									"height": 2280,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 86,
+										"offsetX": 36,
+										"offsetY": 24
+									},
 									"id": "0fd"
 								},
 								{
@@ -600,6 +620,12 @@
 									"width": 3600,
 									"height": 2280,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 86,
+										"offsetX": 34,
+										"offsetY": 22
+									},
 									"mapParent": {
 										"id": "0fd"
 									}
@@ -733,6 +759,9 @@
 									"width": 3600,
 									"height": 2280,
 									"imageType": "map",
+									"grid": {
+										"type": "none"
+									},
 									"id": "0fe"
 								},
 								{
@@ -745,6 +774,9 @@
 									"width": 3600,
 									"height": 2280,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none"
+									},
 									"mapParent": {
 										"id": "0fe"
 									}
@@ -1147,6 +1179,12 @@
 									"width": 2835,
 									"height": 3600,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 136,
+										"offsetX": 56,
+										"offsetY": 36
+									},
 									"id": "0ff"
 								},
 								{
@@ -1159,6 +1197,12 @@
 									"width": 2835,
 									"height": 3600,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 136,
+										"offsetX": 56,
+										"offsetY": 36
+									},
 									"mapParent": {
 										"id": "0ff"
 									}
@@ -1380,6 +1424,12 @@
 											"width": 3600,
 											"height": 2280,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 86,
+												"offsetX": 36,
+												"offsetY": 25
+											},
 											"id": "100"
 										},
 										{
@@ -1392,6 +1442,12 @@
 											"width": 3600,
 											"height": 2280,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 86,
+												"offsetX": 36,
+												"offsetY": 25
+											},
 											"mapParent": {
 												"id": "100"
 											}
@@ -1611,10 +1667,16 @@
 										"type": "internal",
 										"path": "adventure/SLW/011-kmdtd-map-house-of-thalivar_dm.jpg"
 									},
-									"title": "Map 6: Ruined Tower (Leilon)",
+									"title": "Map 6: House of Thalivar",
 									"width": 3600,
 									"height": 2280,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 86,
+										"offsetX": 34,
+										"offsetY": 22
+									},
 									"id": "101",
 									"mapRegions": [
 										{
@@ -2374,6 +2436,12 @@
 									"width": 3600,
 									"height": 2280,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 86,
+										"offsetX": 34,
+										"offsetY": 22
+									},
 									"mapParent": {
 										"id": "101"
 									}
@@ -2792,6 +2860,12 @@
 											"width": 3600,
 											"height": 2280,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 86,
+												"offsetX": 36,
+												"offsetY": 24
+											},
 											"id": "102"
 										},
 										{
@@ -2804,6 +2878,12 @@
 											"width": 3600,
 											"height": 2280,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 86,
+												"offsetX": 36,
+												"offsetY": 24
+											},
 											"mapParent": {
 												"id": "102"
 											}
@@ -3113,6 +3193,12 @@
 									"width": 3600,
 									"height": 2280,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 86,
+										"offsetX": 36,
+										"offsetY": 25
+									},
 									"id": "103",
 									"mapRegions": [
 										{
@@ -5662,6 +5748,12 @@
 									"width": 3600,
 									"height": 2280,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 86,
+										"offsetX": 36,
+										"offsetY": 25
+									},
 									"mapParent": {
 										"id": "103"
 									}
