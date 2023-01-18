@@ -751,6 +751,13 @@
 											"width": 3000,
 											"height": 1974,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 64,
+												"offsetX": 7,
+												"offsetY": 2,
+												"scale": 4
+											},
 											"id": "171",
 											"mapRegions": [
 												{
@@ -2770,6 +2777,11 @@
 											},
 											"title": "Player Version",
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 66,
+												"offsetX": 32
+											},
 											"mapParent": {
 												"id": "171",
 												"autoScale": true

@@ -732,6 +732,11 @@
 													"width": 1694,
 													"height": 2220,
 													"imageType": "map",
+													"grid": {
+														"type": "none",
+														"distance": 50,
+														"units": "yd"
+													},
 													"id": "164",
 													"mapRegions": [
 														{
@@ -852,6 +857,11 @@
 														"path": "adventure/TftYP-TFoF/002-map-2-1-the-stone-tooth.webp"
 													},
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "none",
+														"distance": 50,
+														"units": "yd"
+													},
 													"title": "Player Version",
 													"mapParent": {
 														"id": "164",
@@ -1045,6 +1055,13 @@
 									"width": 3000,
 									"height": 1366,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 74,
+										"offsetX": -35,
+										"offsetY": -12,
+										"scale": 2
+									},
 									"id": "165",
 									"mapRegions": [
 										{
@@ -2534,6 +2551,13 @@
 										"path": "adventure/TftYP-TFoF/004-the-mountaind-door-map-pc.webp"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 74,
+										"offsetX": -34,
+										"offsetY": -12,
+										"scale": 2
+									},
 									"title": "Player Version",
 									"mapParent": {
 										"id": "165",
@@ -3383,6 +3407,13 @@
 									"width": 3000,
 									"height": 2747,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 83,
+										"offsetX": -10,
+										"offsetY": 6,
+										"scale": 2
+									},
 									"id": "166",
 									"mapRegions": [
 										{
@@ -7837,6 +7868,13 @@
 									},
 									"title": "Player Version",
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 93,
+										"offsetX": 3,
+										"offsetY": 23,
+										"scale": 2
+									},
 									"mapParent": {
 										"id": "166",
 										"autoScale": true
@@ -8460,6 +8498,13 @@
 									"width": 3000,
 									"height": 1428,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 97,
+										"offsetX": -51,
+										"offsetY": 29,
+										"scale": 2
+									},
 									"id": "167",
 									"mapRegions": [
 										{
@@ -9843,6 +9888,12 @@
 									},
 									"title": "Player Version",
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 55,
+										"offsetX": -26,
+										"offsetY": 15
+									},
 									"mapParent": {
 										"id": "167",
 										"autoScale": true
@@ -10116,6 +10167,13 @@
 									"width": 3000,
 									"height": 1704,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 80,
+										"offsetX": 32,
+										"offsetY": -4,
+										"scale": 2
+									},
 									"id": "168",
 									"mapRegions": [
 										{
@@ -11196,6 +11254,13 @@
 									},
 									"title": "Player Version",
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 89,
+										"offsetX": -7,
+										"offsetY": 11,
+										"scale": 2
+									},
 									"mapParent": {
 										"id": "168",
 										"autoScale": true
@@ -11947,6 +12012,13 @@
 									"width": 3000,
 									"height": 1112,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 81,
+										"offsetX": -21,
+										"offsetY": -20,
+										"scale": 2
+									},
 									"id": "169",
 									"mapRegions": [
 										{
@@ -13232,6 +13304,13 @@
 									},
 									"title": "Player Version",
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 91,
+										"offsetX": -25,
+										"offsetY": -23,
+										"scale": 2
+									},
 									"mapParent": {
 										"id": "169",
 										"autoScale": true

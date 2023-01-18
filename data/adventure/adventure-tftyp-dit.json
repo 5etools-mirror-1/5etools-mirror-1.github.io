@@ -639,6 +639,13 @@
 											"width": 2310,
 											"height": 3300,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 54,
+												"offsetX": 31,
+												"offsetY": 8,
+												"scale": 4
+											},
 											"mapRegions": [
 												{
 													"area": "0a1",
@@ -15780,7 +15787,12 @@
 							"title": "Map 5.2: Player Map",
 							"width": 2334,
 							"height": 3000,
-							"imageType": "mapPlayer"
+							"imageType": "mapPlayer",
+							"grid": {
+								"type": "none",
+								"size": 250,
+								"distance": 100
+							}
 						}
 					],
 					"id": "095"
@@ -15802,6 +15814,13 @@
 							"width": 1623,
 							"height": 1623,
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 73,
+								"offsetX": 2,
+								"offsetY": 50,
+								"scale": 4
+							},
 							"mapRegions": [
 								{
 									"area": "0a1",
@@ -17136,6 +17155,13 @@
 							"width": 1651,
 							"height": 1651,
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 74,
+								"offsetX": 44,
+								"offsetY": 13,
+								"scale": 4
+							},
 							"mapRegions": [
 								{
 									"area": "0f7",
@@ -18142,6 +18168,13 @@
 							"width": 1200,
 							"height": 1988,
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 73,
+								"offsetX": -19,
+								"offsetY": -11,
+								"scale": 4
+							},
 							"mapRegions": [
 								{
 									"area": "13a",
@@ -20120,6 +20153,13 @@
 							"width": 1064,
 							"height": 1773,
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 74,
+								"offsetX": -4,
+								"offsetY": 22,
+								"scale": 4
+							},
 							"mapRegions": [
 								{
 									"area": "1ad",
@@ -22850,6 +22890,13 @@
 							"width": 1748,
 							"height": 1680,
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 74,
+								"offsetX": -30,
+								"offsetY": -3,
+								"scale": 4
+							},
 							"mapRegions": [
 								{
 									"area": "1ea",
@@ -27711,6 +27758,13 @@
 							"width": 1680,
 							"height": 1680,
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 73,
+								"offsetX": -7,
+								"offsetY": 29,
+								"scale": 4
+							},
 							"mapRegions": [
 								{
 									"area": "232",
@@ -31361,6 +31415,13 @@
 							"width": 1200,
 							"height": 2400,
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 74,
+								"offsetX": -14,
+								"offsetY": -25,
+								"scale": 4
+							},
 							"mapRegions": [
 								{
 									"area": "289",
@@ -33838,6 +33899,13 @@
 							"width": 1680,
 							"height": 1680,
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 74,
+								"offsetX": 5,
+								"offsetY": -29,
+								"scale": 4
+							},
 							"mapRegions": [
 								{
 									"area": "2f6",
@@ -35376,6 +35444,13 @@
 							"width": 1680,
 							"height": 2190,
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 74,
+								"offsetX": -12,
+								"offsetY": 10,
+								"scale": 4
+							},
 							"mapRegions": [
 								{
 									"area": "375",
@@ -37003,10 +37078,16 @@
 												"type": "internal",
 												"path": "adventure/TftYP-DiT/020-dit12.jpg"
 											},
-											"title": "Map 5.12: The Phylactery Vault - Floor 1 & Floor 2",
+											"title": "Map 5.12: The Phylactery Vault\u2014Floor 1 & Floor 2",
 											"width": 2334,
 											"height": 3000,
-											"imageType": "map"
+											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 61,
+												"offsetX": -25,
+												"offsetY": 5
+											}
 										},
 										{
 											"type": "image",
@@ -37014,10 +37095,16 @@
 												"type": "internal",
 												"path": "adventure/TftYP-DiT/021-dit13.jpg"
 											},
-											"title": "Map 5.13: The Phylactery Vault - Floor 3 & Floor 4",
+											"title": "Map 5.13: The Phylactery Vault\u2014Floor 3 & Floor 4",
 											"width": 2334,
 											"height": 3000,
-											"imageType": "map"
+											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 61,
+												"offsetX": -23,
+												"offsetY": 5
+											}
 										}
 									]
 								},
