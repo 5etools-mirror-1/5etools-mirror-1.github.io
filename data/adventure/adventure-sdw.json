@@ -115,6 +115,13 @@
 											"width": 2105,
 											"height": 2933,
 											"imageType": "map",
+											"grid": {
+												"type": "hexColsOdd",
+												"size": 95,
+												"offsetX": -35,
+												"offsetY": 16,
+												"units": "mi"
+											},
 											"id": "0f8"
 										},
 										{
@@ -127,6 +134,13 @@
 											"width": 2153,
 											"height": 3000,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "hexColsOdd",
+												"size": 98,
+												"offsetX": -42,
+												"offsetY": 7,
+												"units": "mi"
+											},
 											"mapParent": {
 												"id": "0f8",
 												"autoScale": true
@@ -304,6 +318,9 @@
 									"width": 3600,
 									"height": 2280,
 									"imageType": "map",
+									"grid": {
+										"type": "none"
+									},
 									"id": "0f9",
 									"mapRegions": [
 										{
@@ -532,6 +549,9 @@
 									"width": 3600,
 									"height": 2280,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none"
+									},
 									"mapParent": {
 										"id": "0f9"
 									}
@@ -975,6 +995,12 @@
 													"width": 3600,
 													"height": 2280,
 													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 86,
+														"offsetX": 37,
+														"offsetY": 30
+													},
 													"id": "0fa",
 													"mapRegions": [
 														{
@@ -1777,6 +1803,12 @@
 													"width": 3600,
 													"height": 2280,
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square",
+														"size": 86,
+														"offsetX": 37,
+														"offsetY": 30
+													},
 													"mapParent": {
 														"id": "0fa"
 													}
@@ -2119,6 +2151,13 @@
 											"width": 3600,
 											"height": 2280,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 86,
+												"offsetX": 37,
+												"offsetY": 25,
+												"distance": 10
+											},
 											"id": "0fb",
 											"mapRegions": [
 												{
@@ -7691,6 +7730,13 @@
 											"width": 3600,
 											"height": 2280,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 86,
+												"offsetX": 37,
+												"offsetY": 25,
+												"distance": 10
+											},
 											"mapParent": {
 												"id": "0fb"
 											}
@@ -8286,10 +8332,16 @@
 												"type": "internal",
 												"path": "adventure/SDW/010-bivmm-map-deathknight-dreadnaught_dm.jpg"
 											},
-											"title": "Map 5: Deathknight-Dreadnaught",
+											"title": "Map 5: Death Knight-Dreadnaught",
 											"width": 3600,
 											"height": 2280,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 86,
+												"offsetX": 36,
+												"offsetY": 25
+											},
 											"id": "0fc",
 											"mapRegions": [
 												{
@@ -9722,6 +9774,12 @@
 											"width": 3600,
 											"height": 2280,
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"size": 86,
+												"offsetX": 36,
+												"offsetY": 25
+											},
 											"mapParent": {
 												"id": "0fc"
 											}
@@ -10117,6 +10175,12 @@
 									"width": 3600,
 									"height": 2280,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 86,
+										"offsetX": 36,
+										"offsetY": 24
+									},
 									"id": "0fd",
 									"mapRegions": [
 										{
@@ -10577,6 +10641,12 @@
 									"width": 3600,
 									"height": 2280,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 86,
+										"offsetX": 36,
+										"offsetY": 24
+									},
 									"mapParent": {
 										"id": "0fd"
 									}
@@ -10800,6 +10870,13 @@
 									"width": 3600,
 									"height": 2280,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 86,
+										"offsetX": 37,
+										"offsetY": 25,
+										"distance": 10
+									},
 									"id": "0fe",
 									"mapRegions": [
 										{
@@ -11927,6 +12004,13 @@
 									"width": 3600,
 									"height": 2280,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 86,
+										"offsetX": 37,
+										"offsetY": 25,
+										"distance": 10
+									},
 									"mapParent": {
 										"id": "0fe"
 									}
