@@ -1372,6 +1372,9 @@
 								"path": "adventure/WBtW/015-map-1.1.jpg"
 							},
 							"imageType": "map",
+							"grid": {
+								"type": "none"
+							},
 							"title": "Welcome to the Witchlight Carnival",
 							"width": 7000,
 							"height": 4934
@@ -3517,6 +3520,12 @@
 								"path": "adventure/WBtW/036-map-2.1.jpg"
 							},
 							"imageType": "map",
+							"grid": {
+								"type": "none",
+								"size": 90,
+								"distance": 0.5,
+								"units": "mi"
+							},
 							"title": "The Domain of Prismeer",
 							"width": 7000,
 							"height": 4962
@@ -3778,6 +3787,12 @@
 										"path": "adventure/WBtW/037-map-2.2-hither.jpg"
 									},
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 175,
+										"distance": 1,
+										"units": "mi"
+									},
 									"title": "Hither",
 									"width": 4200,
 									"height": 5700,
@@ -3790,6 +3805,12 @@
 										"path": "adventure/WBtW/038-map-2.2-hither-player.jpg"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 175,
+										"distance": 1,
+										"units": "mi"
+									},
 									"title": "Player Version",
 									"width": 4200,
 									"height": 5700,
@@ -4797,6 +4818,10 @@
 												"path": "adventure/WBtW/044-map-2.3-downfall.jpg"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"distance": 10
+											},
 											"title": "Downfall",
 											"width": 4200,
 											"height": 5700,
@@ -6067,6 +6092,10 @@
 												"path": "adventure/WBtW/045-map-2.3-downfall-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"distance": 10
+											},
 											"title": "Player Version",
 											"width": 4200,
 											"height": 5700,
@@ -6979,6 +7008,9 @@
 														"path": "adventure/WBtW/049-map-2.4-bavlornas-cottage.jpg"
 													},
 													"imageType": "map",
+													"grid": {
+														"type": "square"
+													},
 													"title": "Bavlornas Cottage",
 													"width": 4200,
 													"height": 5700,
@@ -7633,6 +7665,9 @@
 														"path": "adventure/WBtW/050-map-2.4-bavlornas-cottage-player.jpg"
 													},
 													"imageType": "mapPlayer",
+													"grid": {
+														"type": "square"
+													},
 													"title": "Player Version",
 													"width": 4200,
 													"height": 5700,
@@ -8405,6 +8440,12 @@
 										"path": "adventure/WBtW/054-map-3.1-thither.jpg"
 									},
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 159,
+										"distance": 1,
+										"units": "mi"
+									},
 									"title": "Thither",
 									"width": 4200,
 									"height": 5700,
@@ -8417,6 +8458,12 @@
 										"path": "adventure/WBtW/055-map-3.1-thither-player.jpg"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 159,
+										"distance": 1,
+										"units": "mi"
+									},
 									"title": "Player Version",
 									"width": 4200,
 									"height": 5700,
@@ -9523,6 +9570,10 @@
 												"path": "adventure/WBtW/062-map-3.2-loomlurch.jpg"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"distance": 10
+											},
 											"title": "Loomlurch",
 											"width": 4200,
 											"height": 5700,
@@ -11469,6 +11520,10 @@
 												"path": "adventure/WBtW/063-map-3.2-loomlurch-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"distance": 10
+											},
 											"title": "Player Version",
 											"width": 4200,
 											"height": 5700,
@@ -12698,6 +12753,12 @@
 										"path": "adventure/WBtW/072-map-4.1-yon.jpg"
 									},
 									"imageType": "map",
+									"grid": {
+										"type": "none",
+										"size": 158,
+										"distance": 1,
+										"units": "mi"
+									},
 									"title": "Yon",
 									"width": 4200,
 									"height": 5700,
@@ -12710,6 +12771,12 @@
 										"path": "adventure/WBtW/073-map-4.1-yon-player.jpg"
 									},
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "none",
+										"size": 158,
+										"distance": 1,
+										"units": "mi"
+									},
 									"title": "Player Version",
 									"width": 4200,
 									"height": 5700,
@@ -13861,6 +13928,10 @@
 												"path": "adventure/WBtW/081-map-4.2-motherhorn.jpg"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"distance": 10
+											},
 											"title": "Motherhorn",
 											"width": 4200,
 											"height": 5700,
@@ -16167,6 +16238,10 @@
 												"path": "adventure/WBtW/082-map-4.2-motherhorn-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"distance": 10
+											},
 											"title": "Player Version",
 											"width": 4200,
 											"height": 5700,
@@ -17769,7 +17844,11 @@
 												"path": "adventure/WBtW/091-map-5.1-palace-lower.jpg"
 											},
 											"imageType": "map",
-											"title": "Palace of Heart's Desire, lower",
+											"grid": {
+												"type": "square",
+												"distance": 10
+											},
+											"title": "Palace of Heart's Desire, Lower",
 											"width": 4200,
 											"height": 5700,
 											"id": "023",
@@ -20162,6 +20241,10 @@
 												"path": "adventure/WBtW/092-map-5.1-palace-lower-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"distance": 10
+											},
 											"title": "Player Version",
 											"width": 4200,
 											"height": 5700,
@@ -21458,6 +21541,10 @@
 												"path": "adventure/WBtW/100-map-5.2-palace-upper.jpg"
 											},
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"distance": 10
+											},
 											"title": "Palace of Heart's Desire, Upper",
 											"width": 4200,
 											"height": 5700,
@@ -23290,6 +23377,10 @@
 												"path": "adventure/WBtW/101-map-5.2-palace-upper-player.jpg"
 											},
 											"imageType": "mapPlayer",
+											"grid": {
+												"type": "square",
+												"distance": 10
+											},
 											"title": "Player Version",
 											"width": 4200,
 											"height": 5700,
