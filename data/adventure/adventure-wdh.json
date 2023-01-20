@@ -458,10 +458,11 @@
 										"type": "internal",
 										"path": "adventure/WDH/Waterdeep-DM.jpg"
 									},
-									"title": "DMs' Map\u2014Waterdeep",
+									"title": "Waterdeep",
 									"width": 1429,
 									"height": 2000,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "4fa"
 								},
 								{
 									"type": "image",
@@ -469,10 +470,11 @@
 										"type": "internal",
 										"path": "adventure/WDH/Waterdeep-NW-DM.jpg"
 									},
-									"title": "DMs' Map\u2014Waterdeep NW",
+									"title": "Waterdeep NW",
 									"width": 2000,
 									"height": 2400,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "4fb"
 								},
 								{
 									"type": "image",
@@ -480,10 +482,11 @@
 										"type": "internal",
 										"path": "adventure/WDH/Waterdeep-SW-DM.jpg"
 									},
-									"title": "DMs' Map\u2014Waterdeep SW",
+									"title": "Waterdeep SW",
 									"width": 2000,
 									"height": 2400,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "4fc"
 								},
 								{
 									"type": "image",
@@ -491,10 +494,11 @@
 										"type": "internal",
 										"path": "adventure/WDH/Waterdeep-W-DM.jpg"
 									},
-									"title": "DMs' Map\u2014Waterdeep W",
+									"title": "Waterdeep W",
 									"width": 2000,
 									"height": 2400,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "4fd"
 								},
 								{
 									"type": "image",
@@ -502,10 +506,11 @@
 										"type": "internal",
 										"path": "adventure/WDH/Waterdeep-E-DM.jpg"
 									},
-									"title": "DMs' Map\u2014Waterdeep E",
+									"title": "Waterdeep E",
 									"width": 2000,
 									"height": 2400,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "4fe"
 								},
 								{
 									"type": "image",
@@ -513,10 +518,11 @@
 										"type": "internal",
 										"path": "adventure/WDH/Waterdeep-NE-DM.jpg"
 									},
-									"title": "DMs' Map\u2014Waterdeep NE",
+									"title": "Waterdeep NE",
 									"width": 2000,
 									"height": 2400,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "4ff"
 								},
 								{
 									"type": "image",
@@ -524,10 +530,11 @@
 										"type": "internal",
 										"path": "adventure/WDH/Waterdeep-SE-DM.jpg"
 									},
-									"title": "DMs' Map\u2014Waterdeep SE",
+									"title": "Waterdeep SE",
 									"width": 2000,
 									"height": 2400,
-									"imageType": "map"
+									"imageType": "map",
+									"id": "500"
 								}
 							]
 						}
@@ -547,10 +554,13 @@
 										"type": "internal",
 										"path": "adventure/WDH/Waterdeep-Players.jpg"
 									},
-									"title": "Players' Map\u2014Waterdeep",
+									"title": "Player Version",
 									"width": 1429,
 									"height": 2000,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "4fa"
+									}
 								},
 								{
 									"type": "image",
@@ -558,10 +568,13 @@
 										"type": "internal",
 										"path": "adventure/WDH/Waterdeep-NW-Players.jpg"
 									},
-									"title": "Players' Map\u2014Waterdeep NW",
+									"title": "Player Version",
 									"width": 2000,
 									"height": 2400,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "4fb"
+									}
 								},
 								{
 									"type": "image",
@@ -569,10 +582,13 @@
 										"type": "internal",
 										"path": "adventure/WDH/Waterdeep-SW-Players.jpg"
 									},
-									"title": "Players' Map\u2014Waterdeep SW",
+									"title": "Player Version",
 									"width": 2000,
 									"height": 2400,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "4fc"
+									}
 								},
 								{
 									"type": "image",
@@ -580,10 +596,13 @@
 										"type": "internal",
 										"path": "adventure/WDH/Waterdeep-W-Players.jpg"
 									},
-									"title": "Players' Map\u2014Waterdeep W",
+									"title": "Player Version",
 									"width": 2000,
 									"height": 2400,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "4fd"
+									}
 								},
 								{
 									"type": "image",
@@ -591,10 +610,13 @@
 										"type": "internal",
 										"path": "adventure/WDH/Waterdeep-E-Players.jpg"
 									},
-									"title": "Players' Map\u2014Waterdeep E",
+									"title": "Player Version",
 									"width": 2000,
 									"height": 2400,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "4fe"
+									}
 								},
 								{
 									"type": "image",
@@ -602,10 +624,13 @@
 										"type": "internal",
 										"path": "adventure/WDH/Waterdeep-NE-Players.jpg"
 									},
-									"title": "Players' Map\u2014Waterdeep NE",
+									"title": "Player Version",
 									"width": 2000,
 									"height": 2400,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "4ff"
+									}
 								},
 								{
 									"type": "image",
@@ -613,10 +638,13 @@
 										"type": "internal",
 										"path": "adventure/WDH/Waterdeep-SE-Players.jpg"
 									},
-									"title": "Players' Map\u2014Waterdeep SE",
+									"title": "Player Version",
 									"width": 2000,
 									"height": 2400,
-									"imageType": "mapPlayer"
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "500"
+									}
 								}
 							]
 						}
@@ -681,10 +709,11 @@
 												"type": "internal",
 												"path": "adventure/WDH/Waterdeep-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Waterdeep",
+											"title": "Waterdeep",
 											"width": 1429,
 											"height": 2000,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "501"
 										},
 										{
 											"type": "image",
@@ -692,10 +721,11 @@
 												"type": "internal",
 												"path": "adventure/WDH/Waterdeep-NW-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Waterdeep NW",
+											"title": "Waterdeep NW",
 											"width": 2000,
 											"height": 2400,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "502"
 										},
 										{
 											"type": "image",
@@ -703,10 +733,11 @@
 												"type": "internal",
 												"path": "adventure/WDH/Waterdeep-SW-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Waterdeep SW",
+											"title": "Waterdeep SW",
 											"width": 2000,
 											"height": 2400,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "503"
 										},
 										{
 											"type": "image",
@@ -714,10 +745,11 @@
 												"type": "internal",
 												"path": "adventure/WDH/Waterdeep-W-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Waterdeep W",
+											"title": "Waterdeep W",
 											"width": 2000,
 											"height": 2400,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "504"
 										},
 										{
 											"type": "image",
@@ -725,10 +757,11 @@
 												"type": "internal",
 												"path": "adventure/WDH/Waterdeep-E-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Waterdeep E",
+											"title": "Waterdeep E",
 											"width": 2000,
 											"height": 2400,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "505"
 										},
 										{
 											"type": "image",
@@ -736,10 +769,11 @@
 												"type": "internal",
 												"path": "adventure/WDH/Waterdeep-NE-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Waterdeep NE",
+											"title": "Waterdeep NE",
 											"width": 2000,
 											"height": 2400,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "506"
 										},
 										{
 											"type": "image",
@@ -747,10 +781,11 @@
 												"type": "internal",
 												"path": "adventure/WDH/Waterdeep-SE-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Waterdeep SE",
+											"title": "Waterdeep SE",
 											"width": 2000,
 											"height": 2400,
-											"imageType": "map"
+											"imageType": "map",
+											"id": "507"
 										}
 									]
 								}
@@ -770,10 +805,13 @@
 												"type": "internal",
 												"path": "adventure/WDH/Waterdeep-Players.jpg"
 											},
-											"title": "Players' Map\u2014Waterdeep",
+											"title": "Player Version",
 											"width": 1429,
 											"height": 2000,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "501"
+											}
 										},
 										{
 											"type": "image",
@@ -781,10 +819,13 @@
 												"type": "internal",
 												"path": "adventure/WDH/Waterdeep-NW-Players.jpg"
 											},
-											"title": "Players' Map\u2014Waterdeep NW",
+											"title": "Player Version",
 											"width": 2000,
 											"height": 2400,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "502"
+											}
 										},
 										{
 											"type": "image",
@@ -792,10 +833,13 @@
 												"type": "internal",
 												"path": "adventure/WDH/Waterdeep-SW-Players.jpg"
 											},
-											"title": "Players' Map\u2014Waterdeep SW",
+											"title": "Player Version",
 											"width": 2000,
 											"height": 2400,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "503"
+											}
 										},
 										{
 											"type": "image",
@@ -803,10 +847,13 @@
 												"type": "internal",
 												"path": "adventure/WDH/Waterdeep-W-Players.jpg"
 											},
-											"title": "Players' Map\u2014Waterdeep W",
+											"title": "Player Version",
 											"width": 2000,
 											"height": 2400,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "504"
+											}
 										},
 										{
 											"type": "image",
@@ -814,10 +861,13 @@
 												"type": "internal",
 												"path": "adventure/WDH/Waterdeep-E-Players.jpg"
 											},
-											"title": "Players' Map\u2014Waterdeep E",
+											"title": "Player Version",
 											"width": 2000,
 											"height": 2400,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "505"
+											}
 										},
 										{
 											"type": "image",
@@ -825,10 +875,13 @@
 												"type": "internal",
 												"path": "adventure/WDH/Waterdeep-NE-Players.jpg"
 											},
-											"title": "Players' Map\u2014Waterdeep NE",
+											"title": "Player Version",
 											"width": 2000,
 											"height": 2400,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "506"
+											}
 										},
 										{
 											"type": "image",
@@ -836,10 +889,13 @@
 												"type": "internal",
 												"path": "adventure/WDH/Waterdeep-SE-Players.jpg"
 											},
-											"title": "Players' Map\u2014Waterdeep SE",
+											"title": "Player Version",
 											"width": 2000,
 											"height": 2400,
-											"imageType": "mapPlayer"
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "507"
+											}
 										}
 									]
 								}
@@ -2073,7 +2129,7 @@
 										"type": "internal",
 										"path": "adventure/WDH/Zhent-Warehouse-DM.jpg"
 									},
-									"title": "DMs' Map\u2014Zhent Warehouse",
+									"title": "Zhent Warehouse",
 									"width": 1000,
 									"height": 691,
 									"mapRegions": [
@@ -2252,13 +2308,9 @@
 										"type": "internal",
 										"path": "adventure/WDH/Zhent-Warehouse-Lower-Players.jpg"
 									},
-									"title": "Players' Map\u2014Zhent Warehouse Lower",
+									"title": "Zhent Warehouse, Lower (Player Version)",
 									"width": 950,
-									"height": 1250,
-									"mapParent": {
-										"id": "4e8",
-										"autoScale": true
-									}
+									"height": 1250
 								}
 							]
 						},
@@ -2369,7 +2421,7 @@
 										"type": "internal",
 										"path": "adventure/WDH/Zhent-Warehouse-Upper-Players.jpg"
 									},
-									"title": "Players' Map\u2014Zhent Warehouse Upper",
+									"title": "Zhent Warehouse, Upper (Player Version)",
 									"width": 800,
 									"height": 1200
 								},
@@ -2497,10 +2549,10 @@
 										"type": "internal",
 										"path": "adventure/WDH/Xanathar-Guild-Hideout-DM.jpg"
 									},
-									"title": "DMs' Map\u2014{@creature Xanathar|WDH} Guild Hideout",
+									"title": "Xanathar Guild Hideout",
 									"width": 1158,
 									"height": 800,
-									"id": "fff",
+									"id": "4F9",
 									"mapRegions": [
 										{
 											"area": "078",
@@ -2906,11 +2958,11 @@
 										"type": "internal",
 										"path": "adventure/WDH/Xanathar-Guild-Hideout-Players.jpg"
 									},
-									"title": "Players' Map\u2014{@creature Xanathar|WDH} Guild Hideout",
+									"title": "Player Version",
 									"width": 1650,
 									"height": 1150,
 									"mapParent": {
-										"id": "fff",
+										"id": "4f9",
 										"offsetX": -16,
 										"offsetY": -27,
 										"scaleX": 0.7334,
@@ -3234,7 +3286,7 @@
 										"type": "internal",
 										"path": "adventure/WDH/Trollskull-Alley-DM.jpg"
 									},
-									"title": "DMs' Map\u2014Trollskull Alley",
+									"title": "Trollskull Alley",
 									"width": 1000,
 									"height": 691,
 									"mapRegions": [
@@ -3503,7 +3555,7 @@
 										"type": "internal",
 										"path": "adventure/WDH/Trollskull-Alley-Players.jpg"
 									},
-									"title": "Players' Map\u2014Trollskull Alley",
+									"title": "Player Version",
 									"width": 1000,
 									"height": 691,
 									"mapParent": {
@@ -3529,9 +3581,10 @@
 												"type": "internal",
 												"path": "adventure/WDH/Trollskull-Manor-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Trollskull Manor",
+											"title": "Trollskull Manor",
 											"width": 589,
-											"height": 800
+											"height": 800,
+											"id": "508"
 										},
 										{
 											"type": "image",
@@ -3540,9 +3593,13 @@
 												"type": "internal",
 												"path": "adventure/WDH/Trollskull-Manor-Players.jpg"
 											},
-											"title": "Players' Map\u2014Trollskull Manor",
+											"title": "Player Version",
 											"width": 737,
-											"height": 1000
+											"height": 1000,
+											"mapParent": {
+												"id": "508",
+												"autoScale": true
+											}
 										}
 									]
 								},
@@ -3864,7 +3921,7 @@
 											"images": [
 												{
 													"type": "image",
-													"imageType": "map",
+													"imageType": "mapPlayer",
 													"href": {
 														"type": "internal",
 														"path": "adventure/WDH/Basement.jpg"
@@ -3875,7 +3932,7 @@
 												},
 												{
 													"type": "image",
-													"imageType": "map",
+													"imageType": "mapPlayer",
 													"href": {
 														"type": "internal",
 														"path": "adventure/WDH/Taproom.jpg"
@@ -5104,7 +5161,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Gralhund-Villa-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Gralhund Villa",
+											"title": "Gralhund Villa",
 											"width": 800,
 											"height": 1086,
 											"mapRegions": [
@@ -5828,13 +5885,9 @@
 												"type": "internal",
 												"path": "adventure/WDH/Gralhund-Villa-Players.jpg"
 											},
-											"title": "Players' Map\u2014Gralhund Villa",
+											"title": "Gralhund Villa, Ground Floor (Player Version)",
 											"width": 2000,
-											"height": 1800,
-											"mapParent": {
-												"id": "4ea",
-												"autoScale": true
-											}
+											"height": 1800
 										},
 										{
 											"type": "image",
@@ -5843,7 +5896,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Gralhund-Villa-Upper-Players.jpg"
 											},
-											"title": "Players' Map\u2014Gralhund Villa Upper",
+											"title": "Gralhund Villa, Upper Floor (Player Version)",
 											"width": 1050,
 											"height": 1250
 										}
@@ -6765,9 +6818,10 @@
 										"type": "internal",
 										"path": "adventure/WDH/Alley-DM.jpg"
 									},
-									"title": "DMs' Map\u2014Alley",
+									"title": "Alley",
 									"width": 1000,
-									"height": 691
+									"height": 691,
+									"id": "509"
 								},
 								{
 									"type": "image",
@@ -6776,9 +6830,13 @@
 										"type": "internal",
 										"path": "adventure/WDH/Alley-Players.jpg"
 									},
-									"title": "Players' Map\u2014Alley",
+									"title": "Player Version",
 									"width": 1800,
-									"height": 1250
+									"height": 1250,
+									"mapParent": {
+										"id": "509",
+										"autoScale": true
+									}
 								}
 							]
 						},
@@ -7138,7 +7196,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Mistshore-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Mistshore",
+											"title": "Mistshore",
 											"width": 1000,
 											"height": 691,
 											"mapRegions": [
@@ -7327,7 +7385,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Mistshore-Players.jpg"
 											},
-											"title": "Players' Map\u2014Mistshore",
+											"title": "Player Version",
 											"width": 1350,
 											"height": 950,
 											"mapParent": {
@@ -7666,7 +7724,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Mausoleum-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Mausoleum",
+											"title": "Mausoleum",
 											"width": 800,
 											"height": 553,
 											"mapRegions": [
@@ -8102,13 +8160,9 @@
 												"type": "internal",
 												"path": "adventure/WDH/Mausoleum-Players.jpg"
 											},
-											"title": "Players' Map\u2014Mausoleum",
+											"title": "Mausoleum, Ground (Player Version)",
 											"width": 1050,
-											"height": 1250,
-											"mapParent": {
-												"id": "4ec",
-												"autoScale": true
-											}
+											"height": 1250
 										},
 										{
 											"type": "image",
@@ -8117,7 +8171,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Crypt-Players.jpg"
 											},
-											"title": "Players' Map\u2014Crypt",
+											"title": "Mausoleum, Catacombs (Player Version)",
 											"width": 800,
 											"height": 950
 										}
@@ -8460,7 +8514,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Theater-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Theater",
+											"title": "Theater",
 											"width": 1000,
 											"height": 691,
 											"mapRegions": [
@@ -8788,7 +8842,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Theater-Players.jpg"
 											},
-											"title": "Players' Map\u2014Theater",
+											"title": "Player Version",
 											"width": 1650,
 											"height": 1200,
 											"mapParent": {
@@ -9060,7 +9114,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Tower-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Tower",
+											"title": "Tower",
 											"width": 1000,
 											"height": 691
 										},
@@ -9071,7 +9125,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Tower-First-Players.jpg"
 											},
-											"title": "Players' Map\u2014Tower First",
+											"title": "Tower, First Floor (Player Version)",
 											"width": 550,
 											"height": 850
 										},
@@ -9082,7 +9136,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Tower-Second-Players.jpg"
 											},
-											"title": "Players' Map\u2014Tower Second",
+											"title": "Tower, Second Floor (Player Version)",
 											"width": 550,
 											"height": 750
 										},
@@ -9093,7 +9147,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Cellar-Players.jpg"
 											},
-											"title": "Players' Map\u2014Cellar",
+											"title": "Tower, Cellar (Player Version)",
 											"width": 550,
 											"height": 800
 										},
@@ -9104,7 +9158,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Tower-View.jpg"
 											},
-											"title": "Tower View",
+											"title": "Tower, View",
 											"width": 556,
 											"height": 800
 										}
@@ -9467,7 +9521,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Courthouse-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Courthouse",
+											"title": "Courthouse",
 											"width": 1000,
 											"height": 691,
 											"mapRegions": [
@@ -10007,13 +10061,9 @@
 												"type": "internal",
 												"path": "adventure/WDH/Courthouse-Main-Players.jpg"
 											},
-											"title": "Players' Map\u2014Courthouse Main",
+											"title": "Courthouse, Main Level (Player Version)",
 											"width": 950,
-											"height": 1200,
-											"mapParent": {
-												"id": "4ee",
-												"autoScale": true
-											}
+											"height": 1200
 										},
 										{
 											"type": "image",
@@ -10022,7 +10072,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Courthouse-Lower-Players.jpg"
 											},
-											"title": "Players' Map\u2014Courthouse Lower",
+											"title": "Courthouse, Lower Level (Player Version)",
 											"width": 800,
 											"height": 1100
 										}
@@ -10367,7 +10417,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Cellar-Complex-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Cellar Complex",
+											"title": "Cellar Complex",
 											"width": 1000,
 											"height": 691,
 											"mapRegions": [
@@ -11250,7 +11300,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Cellar-Complex-Players.jpg"
 											},
-											"title": "Players' Map\u2014Cellar Complex",
+											"title": "Player Version",
 											"width": 1700,
 											"height": 1250,
 											"mapParent": {
@@ -11714,7 +11764,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Windmill-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Windmill",
+											"title": "Windmill",
 											"width": 1000,
 											"height": 691,
 											"mapRegions": [
@@ -12715,13 +12765,9 @@
 												"type": "internal",
 												"path": "adventure/WDH/Windmill-First-Players.jpg"
 											},
-											"title": "Players' Map\u2014Windmill First",
+											"title": "Windmill, Ground Floor (Player Version)",
 											"width": 1050,
-											"height": 1250,
-											"mapParent": {
-												"id": "4f0",
-												"autoScale": true
-											}
+											"height": 1250
 										},
 										{
 											"type": "image",
@@ -12730,7 +12776,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Windmill-Second-Players.jpg"
 											},
-											"title": "Players' Map\u2014Windmill Second",
+											"title": "Windmill, Upper Floor (Player Version)",
 											"width": 650,
 											"height": 650
 										}
@@ -13403,7 +13449,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Vault-of-Dragons-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Vault of Dragons",
+											"title": "Vault of Dragons",
 											"width": 1000,
 											"height": 691,
 											"mapRegions": [
@@ -14142,13 +14188,9 @@
 												"type": "internal",
 												"path": "adventure/WDH/Vault-Main-Players.jpg"
 											},
-											"title": "Players' Map\u2014Vault Main",
+											"title": "Vault of Dragons, Main Level (Player Version)",
 											"width": 950,
-											"height": 1000,
-											"mapParent": {
-												"id": "4f1",
-												"autoScale": true
-											}
+											"height": 1000
 										},
 										{
 											"type": "image",
@@ -14157,7 +14199,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Vault-Lower-Players.jpg"
 											},
-											"title": "Players' Map\u2014Vault Lower",
+											"title": "Vault of Dragons, Lower Level (Player Version)",
 											"width": 900,
 											"height": 750
 										},
@@ -14168,7 +14210,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Vault-Upper-Players.jpg"
 											},
-											"title": "Players' Map\u2014Vault Upper",
+											"title": "Vault of Dragons, Upper Level (Player Version)",
 											"width": 1150,
 											"height": 750
 										}
@@ -14872,7 +14914,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Xanathar-Lair-DM.jpg"
 											},
-											"title": "DMs' Map\u2014{@creature Xanathar|WDH} Lair",
+											"title": "Xanathar Lair",
 											"width": 737,
 											"height": 1000,
 											"mapRegions": [
@@ -16699,13 +16741,9 @@
 												"type": "internal",
 												"path": "adventure/WDH/Xanathar-L1-Players.jpg"
 											},
-											"title": "Players' Map\u2014{@creature Xanathar|WDH} L1",
+											"title": "Xanathar Lair, Level 1 (Player Version)",
 											"width": 2050,
-											"height": 1950,
-											"mapParent": {
-												"id": "4f2",
-												"autoScale": true
-											}
+											"height": 1950
 										},
 										{
 											"type": "image",
@@ -16714,7 +16752,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Xanathar-L2-Players.jpg"
 											},
-											"title": "Players' Map\u2014{@creature Xanathar|WDH} L2",
+											"title": "Xanathar Lair, Level 2 (Player Version)",
 											"width": 2050,
 											"height": 900
 										}
@@ -18303,7 +18341,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Cassalanter-Villa-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Cassalanter Villa",
+											"title": "Cassalanter Villa",
 											"width": 1000,
 											"height": 1200,
 											"mapRegions": [
@@ -19555,13 +19593,9 @@
 												"type": "internal",
 												"path": "adventure/WDH/Villa-Main-Players.jpg"
 											},
-											"title": "Players' Map\u2014Villa Main",
+											"title": "Cassalanter Villa, Main Area (Player Version)",
 											"width": 2000,
-											"height": 2450,
-											"mapParent": {
-												"id": "4f3",
-												"autoScale": true
-											}
+											"height": 2450
 										}
 									]
 								},
@@ -19582,7 +19616,7 @@
 														"type": "internal",
 														"path": "adventure/WDH/Guest-Second-Players.jpg"
 													},
-													"title": "Players' Map\u2014Guest Second",
+													"title": "Cassalanter Villa, Guest Second Floor (Player Version)",
 													"width": 850,
 													"height": 1000
 												},
@@ -19593,7 +19627,7 @@
 														"type": "internal",
 														"path": "adventure/WDH/Guest-Third-Players.jpg"
 													},
-													"title": "Players' Map\u2014Guest Third",
+													"title": "Cassalanter Villa, Guest Third Floor (Player Version)",
 													"width": 750,
 													"height": 650
 												}
@@ -19997,7 +20031,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Villa-Two-Players.jpg"
 											},
-											"title": "Players' Map\u2014Villa Two",
+											"title": "Cassalanter Villa, Second Floor (Player Version)",
 											"width": 1100,
 											"height": 1050
 										},
@@ -20134,7 +20168,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Villa-Three-Players.jpg"
 											},
-											"title": "Players' Map\u2014Villa Three",
+											"title": "Cassalanter Villa, Third Floor (Player Version)",
 											"width": 1050,
 											"height": 1050
 										},
@@ -20299,7 +20333,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Villa-Garret-Players.jpg"
 											},
-											"title": "Players' Map\u2014Villa Garret",
+											"title": "Cassalanter Villa, Garret (Player Version)",
 											"width": 1050,
 											"height": 650
 										},
@@ -20390,7 +20424,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Villa-Cellar-Players.jpg"
 											},
-											"title": "Players' Map\u2014Villa Cellar",
+											"title": "Cassalanter Villa, Cellar (Player Version)",
 											"width": 850,
 											"height": 950
 										}
@@ -20507,7 +20541,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Temple-of-Asmodeus-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Temple of Asmodeus",
+											"title": "Temple of Asmodeus",
 											"width": 1000,
 											"height": 691,
 											"mapRegions": [
@@ -22287,26 +22321,22 @@
 											"imageType": "mapPlayer",
 											"href": {
 												"type": "internal",
-												"path": "adventure/WDH/Temple-of-Asmodeus-Upper-Players.jpg"
+												"path": "adventure/WDH/Temple-of-Asmodeus-Players.jpg"
 											},
-											"title": "Players' Map\u2014Temple of Asmodeus Upper",
-											"width": 1550,
-											"height": 850,
-											"mapParent": {
-												"id": "4f4",
-												"autoScale": true
-											}
+											"title": "Temple of Asmodeus, Lower Level (Player Version)",
+											"width": 2350,
+											"height": 1000
 										},
 										{
 											"type": "image",
 											"imageType": "mapPlayer",
 											"href": {
 												"type": "internal",
-												"path": "adventure/WDH/Temple-of-Asmodeus-Players.jpg"
+												"path": "adventure/WDH/Temple-of-Asmodeus-Upper-Players.jpg"
 											},
-											"title": "Players' Map\u2014Temple of Asmodeus",
-											"width": 2350,
-											"height": 1000
+											"title": "Temple of Asmodeus, Upper Level (Player Version)",
+											"width": 1550,
+											"height": 850
 										}
 									]
 								},
@@ -22854,7 +22884,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Ships-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Ships",
+											"title": "Ships",
 											"width": 737,
 											"height": 1000,
 											"mapRegions": [
@@ -24459,13 +24489,9 @@
 												"type": "internal",
 												"path": "adventure/WDH/Main-Deck-Players.jpg"
 											},
-											"title": "Players' Map\u2014Main Deck",
+											"title": "Ships, Main Deck (Player Version)",
 											"width": 600,
-											"height": 1500,
-											"mapParent": {
-												"id": "4f5",
-												"autoScale": true
-											}
+											"height": 1500
 										}
 									]
 								},
@@ -24594,7 +24620,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Fore-and-Aft-Players.jpg"
 											},
-											"title": "Players' Map\u2014Fore and Aft",
+											"title": "Ships, Fore and Aft (Player Version)",
 											"width": 550,
 											"height": 1500
 										},
@@ -24702,7 +24728,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Aft-Castle-Players.jpg"
 											},
-											"title": "Players' Map\u2014Aft Castle",
+											"title": "Ships, Aft Castle (Player Version)",
 											"width": 500,
 											"height": 400
 										},
@@ -24737,7 +24763,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Orlop-Deck-Players.jpg"
 											},
-											"title": "Players' Map\u2014Orlop Deck",
+											"title": "Ships, Orlop Deck (Player Version)",
 											"width": 600,
 											"height": 1500
 										},
@@ -24867,7 +24893,7 @@
 														"type": "internal",
 														"path": "adventure/WDH/Upper-Hold-Players.jpg"
 													},
-													"title": "Players' Map\u2014Upper Hold",
+													"title": "Ships, Upper Hold (Player Version)",
 													"width": 550,
 													"height": 1250
 												}
@@ -24950,10 +24976,10 @@
 												"type": "internal",
 												"path": "adventure/WDH/Upper-Hold-Heartbreaker.jpg"
 											},
-											"title": "Heartbreakers' Map\u2014Upper Hold",
+											"title": "Ships, Heartbreakers' Upper Hold (Player Version)",
 											"width": 500,
 											"height": 1250,
-											"imageType": "map"
+											"imageType": "mapPlayer"
 										},
 										"Beastly odors fill the hold of the {@i Heartbreaker}, becoming stronger as the characters get closer to the creature pens ({@area J20|387}). The hold is mostly empty on parade days. On other days, it contains disassembled wagons (axles, wheels, and cages) that are used to pull exotic creatures through crowded streets. Tools needed to assemble and repair the wagons hang from hooks on the walls.",
 										{
@@ -25055,7 +25081,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Lower-Hold-Players.jpg"
 											},
-											"title": "Players' Map\u2014Lower Hold",
+											"title": "Ships, Lower Hold (Player Version)",
 											"width": 500,
 											"height": 1150
 										},
@@ -25174,7 +25200,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Lower-Hold-Eyecatcher.jpg"
 											},
-											"title": "Eyecatchers' Map\u2014Lower Hold",
+											"title": "Ships, Eyecatchers' Lower Hold (Player Version)",
 											"width": 500,
 											"height": 1200
 										},
@@ -25444,7 +25470,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Scarlet-Marpenoth-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Scarlet Marpenoth",
+											"title": "Scarlet Marpenoth",
 											"width": 1000,
 											"height": 691,
 											"mapRegions": [
@@ -26036,27 +26062,23 @@
 										},
 										{
 											"type": "image",
-											"imageType": "map",
+											"imageType": "mapPlayer",
 											"href": {
 												"type": "internal",
 												"path": "adventure/WDH/Scarlet-Marpenoth-Upper-Deck.jpg"
 											},
-											"title": "Scarlet Marpenoth Upper Deck",
+											"title": "Scarlet Marpenoth, Upper Deck (Player Version)",
 											"width": 800,
-											"height": 950,
-											"mapParent": {
-												"id": "4f6",
-												"autoScale": true
-											}
+											"height": 950
 										},
 										{
 											"type": "image",
-											"imageType": "map",
+											"imageType": "mapPlayer",
 											"href": {
 												"type": "internal",
 												"path": "adventure/WDH/Scarlet-Marpenoth-Lower-Deck.jpg"
 											},
-											"title": "Scarlet Marpenoth Lower Deck",
+											"title": "Scarlet Marpenoth, Lower Deck (Player Version)",
 											"width": 500,
 											"height": 950
 										}
@@ -26255,7 +26277,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Scarlet-Marpenoth-Lower-Deck.jpg"
 											},
-											"title": "Scarlet Marpenoth Lower Deck",
+											"title": "Scarlet Marpenoth, Lower Deck (Player Version)",
 											"width": 500,
 											"height": 950
 										},
@@ -26659,7 +26681,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Kolat-Towers-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Kolat Towers",
+											"title": "Kolat Towers",
 											"width": 737,
 											"height": 1000,
 											"mapRegions": [
@@ -27874,18 +27896,14 @@
 										},
 										{
 											"type": "image",
-											"imageType": "map",
+											"imageType": "mapPlayer",
 											"href": {
 												"type": "internal",
 												"path": "adventure/WDH/Kolat-Towers-L1.jpg"
 											},
-											"title": "Kolat Towers L1",
+											"title": "Kolat Towers, Level 1 (Player Version)",
 											"width": 2050,
-											"height": 2150,
-											"mapParent": {
-												"id": "4f7",
-												"autoScale": true
-											}
+											"height": 2150
 										}
 									]
 								},
@@ -28046,12 +28064,12 @@
 									"entries": [
 										{
 											"type": "image",
-											"imageType": "map",
+											"imageType": "mapPlayer",
 											"href": {
 												"type": "internal",
 												"path": "adventure/WDH/Kolat-Towers-L2.jpg"
 											},
-											"title": "Kolat Towers L2",
+											"title": "Kolat Towers, Level 2 (Player Version)",
 											"width": 1450,
 											"height": 1300
 										},
@@ -28214,12 +28232,12 @@
 									"entries": [
 										{
 											"type": "image",
-											"imageType": "map",
+											"imageType": "mapPlayer",
 											"href": {
 												"type": "internal",
 												"path": "adventure/WDH/Kolat-Towers-L3.jpg"
 											},
-											"title": "Kolat Towers L3",
+											"title": "Kolat Towers, Level 3 (Player Version)",
 											"width": 1200,
 											"height": 700
 										},
@@ -28331,12 +28349,12 @@
 									"entries": [
 										{
 											"type": "image",
-											"imageType": "map",
+											"imageType": "mapPlayer",
 											"href": {
 												"type": "internal",
 												"path": "adventure/WDH/Kolat-Towers-L4.jpg"
 											},
-											"title": "Kolat Towers L4",
+											"title": "Kolat Towers, Level 4 (Player Version)",
 											"width": 650,
 											"height": 600
 										},
@@ -28360,12 +28378,12 @@
 									"entries": [
 										{
 											"type": "image",
-											"imageType": "map",
+											"imageType": "mapPlayer",
 											"href": {
 												"type": "internal",
 												"path": "adventure/WDH/Kolat-Towers-L5.jpg"
 											},
-											"title": "Kolat Towers L5",
+											"title": "Kolat Towers, Level 5 (Player Version)",
 											"width": 600,
 											"height": 600
 										},
@@ -28408,12 +28426,12 @@
 									"entries": [
 										{
 											"type": "image",
-											"imageType": "map",
+											"imageType": "mapPlayer",
 											"href": {
 												"type": "internal",
 												"path": "adventure/WDH/Kolat-Towers-L6.jpg"
 											},
-											"title": "Kolat Towers L6",
+											"title": "Kolat Towers, Level 6 (Player Version)",
 											"width": 650,
 											"height": 600
 										},
@@ -28519,12 +28537,12 @@
 									"entries": [
 										{
 											"type": "image",
-											"imageType": "map",
+											"imageType": "mapPlayer",
 											"href": {
 												"type": "internal",
 												"path": "adventure/WDH/Kolat-Towers-Outer.jpg"
 											},
-											"title": "Kolat Towers Outer",
+											"title": "Kolat Towers, Level Outer (Player Version)",
 											"width": 1150,
 											"height": 550
 										},
@@ -28672,7 +28690,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Sanctum-DM.jpg"
 											},
-											"title": "DMs' Map\u2014Sanctum",
+											"title": "Sanctum",
 											"width": 1000,
 											"height": 691,
 											"mapRegions": [
@@ -29695,7 +29713,7 @@
 												"type": "internal",
 												"path": "adventure/WDH/Sanctum-Players.jpg"
 											},
-											"title": "Players' Map\u2014Sanctum",
+											"title": "Player Version",
 											"width": 1800,
 											"height": 1200,
 											"mapParent": {
@@ -32704,9 +32722,10 @@
 								"type": "internal",
 								"path": "adventure/WDH/poster-map-dm.jpg"
 							},
-							"title": "Poster Map\u2014DM",
+							"title": "Poster Map",
 							"width": 6429,
-							"height": 9000
+							"height": 9000,
+							"id": "50a"
 						},
 						{
 							"type": "image",
@@ -32715,9 +32734,12 @@
 								"type": "internal",
 								"path": "adventure/WDH/poster-map-player.jpg"
 							},
-							"title": "Poster Map\u2014Player",
+							"title": "Player Version",
 							"width": 6429,
-							"height": 9000
+							"height": 9000,
+							"mapParent": {
+								"id": "50a"
+							}
 						}
 					]
 				}
