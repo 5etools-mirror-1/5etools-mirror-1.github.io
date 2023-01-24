@@ -501,7 +501,7 @@ class RendererMarkdown {
 	_renderImage (entry, textStack, meta, options) {
 		this._renderPrefix(entry, textStack, meta, options);
 		const href = this._renderImage_getUrl(entry);
-		textStack[0] += `[${href}]${entry.title ? `(${entry.title})` : ""}`;
+		textStack[0] += `![${entry.title || ''}](${href})`;
 		this._renderSuffix(entry, textStack, meta, options);
 	}
 
