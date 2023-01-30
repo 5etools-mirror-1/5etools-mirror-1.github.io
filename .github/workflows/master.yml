@@ -1,67 +1,19 @@
-name: Build and Upload Release
+name: Build and Deploy
 
 on:
-   push:
-      tags:
-         - 'v**'
-
-   # Allow running manually from the actions tab
-   workflow_dispatch:
+    push:
+        branches:
+            - 'frank'
 
 env:
    # See: https://docs.github.com/en/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions#upgrading-a-workflow-that-accesses-ghcrio
    IMAGE_NAME: 5etools
 
-   # Used to force a clean (i.e., non-incremental) Docker build
-#   DO_CLEAN_BUILD: 1
-
-concurrency:
-   group: "release"
-   cancel-in-progress: true
-
 jobs:
-   create-release:
+   build-and-deploy:
       runs-on: ubuntu-latest
       steps:
          -  uses: actions/checkout@master
-
-         -  name: Generate Release Notes
-            run: bash ./.github/generate-release-notes.sh ${{ github.ref_name }} | tee RELEASE_NOTES.md
-
-         -  name: Archive Release
-            run: |
-               zip -r 5etools-${{ github.ref_name }}.zip . -x '*.git*' '*node_modules*' '*.github*' '*img*'
-
-         -  name: Archive Images
-            run: |
-               zip -r -s 500m img-${{ github.ref_name }}.zip img/
-
-         -  name: Upload Release
-            # Add the files one-by-one in an effort to avoid timeouts
-            run: |
-               hub release create -a 5etools-${{ github.ref_name }}.zip -F RELEASE_NOTES.md ${{ github.ref_name }}
-               for f in $(find . -name 'img-${{ github.ref_name }}.*' -print); do hub release edit ${{ github.ref_name }} -m '' -a $f; done
-            env:
-               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-   create-image:
-      runs-on: ubuntu-latest
-      steps:
-         -  uses: actions/checkout@master
-
-         # See: https://stackoverflow.com/a/58178121
-         -  name: Set Env
-            run: |
-               IMAGE_VERSION=${{ github.ref_name }}
-               # Strip "v" prefix from tag name
-               [[ "${{ github.ref }}" == "refs/tags/"* ]] && IMAGE_VERSION=$(echo $IMAGE_VERSION | sed -e 's/^v//')
-               echo "IMAGE_VERSION=$IMAGE_VERSION" >> $GITHUB_ENV
-
-               echo "IMAGE_ID=$(echo ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME | tr '[A-Z]' '[a-z]')" >> $GITHUB_ENV
-
-         -  name: Set Deployed Flag
-            run: |
-               bash ./.github/set-deployed-flag.sh ${{ github.ref_name }}
 
          # Remove entries from the `.gitignore` so the gh-pages action can correctly add+commit them to the pages branch
          -  name: Build Service Worker
@@ -72,68 +24,9 @@ jobs:
                npm run build:sw:prod
                sed -i 's/sw.js//g' .gitignore
                sed -i 's/sw-injector.js//g' .gitignore
-
-         -  name: Build SEO Pages
-            env:
-               VET_SEO_IS_DEV_MODE: true
-               VET_BASE_SITE_URL: https://5etools-mirror-1.github.io/
-               VET_SEO_IS_SKIP_UA_ETC: true
-            run: |
-               npm run build:seo -- ${{ github.ref_name }}
-
-         # region See: https://docs.github.com/en/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions#upgrading-a-workflow-that-accesses-ghcrio
-         -  name: Build Image
-            run: |
-               if [[ "${{ github.ref }}" == "refs/tags/"* ]]
-               then
-                  VERSION_ARRAY=( ${IMAGE_VERSION//./ } )
-                  MAJOR=${VERSION_ARRAY[0]}
-                  MINOR=${VERSION_ARRAY[1]}
-                  POINT=${VERSION_ARRAY[2]}
-
-                  # Create a clean docker image every 4 minor version.
-                  if [[ $(echo "$MINOR % 4" | bc) == 0 && $POINT == 0 ]]
-                  then
-                     DO_CLEAN_BUILD=1
-                  fi
-               fi
-
-               if [[ $DO_CLEAN_BUILD == 1 ]]
-               then
-                  # Build a clean image
-                  echo "Version is ${{ github.ref_name }}, doing a clean docker build"
-                  docker build -t $IMAGE_NAME .
-               else
-                  # Build an incremental image...
-                  echo "Version is ${{ github.ref_name }}, doing an incremental docker build"
-
-                  # Pull the old image
-                  docker pull $IMAGE_ID:latest
-
-                  # Save the current CMD from the image
-                  SAVE_CMD=$(docker inspect --format='{{json .Config.Cmd}}' $IMAGE_ID:latest)
-
-                  # Convert .dockerignore to .rsync-filter
-                  bash ./.github/create-rsync-filter.sh
-
-                  # Run up the previous container, and rsync the current new of files into it
-                  CONTAINER_ID=$(docker run -d -v "$(pwd)":/tmp/5et-new $IMAGE_ID:latest  rsync -rlcvF --delete-excluded /tmp/5et-new/ /var/www/localhost/htdocs/)
-                  docker logs -f $CONTAINER_ID
-
-                  # Commit the changes
-                  docker commit -c "CMD $SAVE_CMD" $CONTAINER_ID $IMAGE_NAME
-               fi
-
-         -  name: Log In to Registry
-            run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-
-         -  name: Push Image
-            run: |
-               echo IMAGE_ID=$IMAGE_ID
-               echo IMAGE_VERSION=$IMAGE_VERSION
-               docker tag $IMAGE_NAME $IMAGE_ID:$IMAGE_VERSION
-               # Always tag latest when pushing a tag, as we don't expect to ever merge old tags
-               [[ "${{ github.ref }}" == "refs/tags/"* ]] && docker tag $IMAGE_NAME $IMAGE_ID:latest
-               docker push $IMAGE_ID:$IMAGE_VERSION
-               docker push $IMAGE_ID:latest
-         # endregion
+         # See: https://github.com/JamesIves/github-pages-deploy-action
+         -  name: Deploy
+            uses: JamesIves/github-pages-deploy-action@releases/v4
+            with:
+               folder: .
+               branch: gh-web
