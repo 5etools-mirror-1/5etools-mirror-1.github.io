@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
     push:
         branches:
-            - 'frank'
+            - 'frank-2023'
 
 env:
    # See: https://docs.github.com/en/packages/managing-github-packages-using-github-actions-workflows/publishing-and-installing-a-package-with-github-actions#upgrading-a-workflow-that-accesses-ghcrio
