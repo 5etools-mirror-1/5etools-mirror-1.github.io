@@ -6,6 +6,76 @@
 	},
 	"deck": [
 		{
+			"name": "Condition Cards",
+			"source": "ScreenDungeonKit",
+			"cards": [
+				{
+					"uid": "Deafened|Condition Cards|ScreenDungeonKit",
+					"replacement": true
+				},
+				{
+					"uid": "Charmed|Condition Cards|ScreenDungeonKit",
+					"replacement": true
+				},
+				{
+					"uid": "Blinded|Condition Cards|ScreenDungeonKit",
+					"replacement": true
+				},
+				{
+					"uid": "Incapacitated|Condition Cards|ScreenDungeonKit",
+					"replacement": true
+				},
+				{
+					"uid": "Grappled|Condition Cards|ScreenDungeonKit",
+					"replacement": true
+				},
+				{
+					"uid": "Frightened|Condition Cards|ScreenDungeonKit",
+					"replacement": true
+				},
+				{
+					"uid": "Petrified|Condition Cards|ScreenDungeonKit",
+					"replacement": true
+				},
+				{
+					"uid": "Paralyzed|Condition Cards|ScreenDungeonKit",
+					"replacement": true
+				},
+				{
+					"uid": "Invisible|Condition Cards|ScreenDungeonKit",
+					"replacement": true
+				},
+				{
+					"uid": "Restrained|Condition Cards|ScreenDungeonKit",
+					"replacement": true
+				},
+				{
+					"uid": "Prone|Condition Cards|ScreenDungeonKit",
+					"replacement": true
+				},
+				{
+					"uid": "Poisoned|Condition Cards|ScreenDungeonKit",
+					"replacement": true
+				},
+				{
+					"uid": "Exhaustion|Condition Cards|ScreenDungeonKit",
+					"replacement": true
+				},
+				{
+					"uid": "Unconscious|Condition Cards|ScreenDungeonKit",
+					"replacement": true
+				},
+				{
+					"uid": "Stunned|Condition Cards|ScreenDungeonKit",
+					"replacement": true
+				}
+			],
+			"entries": [
+				"{@note These double-sided cards can be used to track conditions by your players; either physically with the {@book printed copies|ScreenDungeonKit|1}, or in a VTT.}"
+			],
+			"hasCardArt": true
+		},
+		{
 			"name": "Deck of Illusions",
 			"source": "DMG",
 			"page": 161,
@@ -1309,6 +1379,109 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Geomorph Cards",
+			"source": "ScreenDungeonKit",
+			"cards": [
+				"One|Geomorph Cards|ScreenDungeonKit",
+				"Two|Geomorph Cards|ScreenDungeonKit",
+				"Three|Geomorph Cards|ScreenDungeonKit",
+				"Four|Geomorph Cards|ScreenDungeonKit",
+				"Five|Geomorph Cards|ScreenDungeonKit",
+				"Six|Geomorph Cards|ScreenDungeonKit",
+				"Seven|Geomorph Cards|ScreenDungeonKit",
+				"Eight|Geomorph Cards|ScreenDungeonKit",
+				"Nine|Geomorph Cards|ScreenDungeonKit",
+				"Ten|Geomorph Cards|ScreenDungeonKit",
+				"Eleven|Geomorph Cards|ScreenDungeonKit",
+				"Twelve|Geomorph Cards|ScreenDungeonKit",
+				"Thirteen|Geomorph Cards|ScreenDungeonKit",
+				"Fourteen|Geomorph Cards|ScreenDungeonKit",
+				"Fifteen|Geomorph Cards|ScreenDungeonKit",
+				"Sixteen|Geomorph Cards|ScreenDungeonKit",
+				"Seventeen|Geomorph Cards|ScreenDungeonKit",
+				"Eighteen|Geomorph Cards|ScreenDungeonKit",
+				"Nineteen|Geomorph Cards|ScreenDungeonKit",
+				"Twenty|Geomorph Cards|ScreenDungeonKit",
+				"Twenty-One|Geomorph Cards|ScreenDungeonKit",
+				"Twenty-Two|Geomorph Cards|ScreenDungeonKit",
+				"Twenty-Three|Geomorph Cards|ScreenDungeonKit",
+				"Twenty-Four|Geomorph Cards|ScreenDungeonKit",
+				"Twenty-Five|Geomorph Cards|ScreenDungeonKit",
+				"Twenty-Six|Geomorph Cards|ScreenDungeonKit",
+				"Twenty-Seven|Geomorph Cards|ScreenDungeonKit",
+				"Twenty-Eight|Geomorph Cards|ScreenDungeonKit",
+				"Twenty-Nine|Geomorph Cards|ScreenDungeonKit",
+				"Thirty|Geomorph Cards|ScreenDungeonKit",
+				"Thirty-One|Geomorph Cards|ScreenDungeonKit",
+				"Thirty-Two|Geomorph Cards|ScreenDungeonKit",
+				"Thirty-Three|Geomorph Cards|ScreenDungeonKit",
+				"Thirty-Four|Geomorph Cards|ScreenDungeonKit",
+				"Thirty-Five|Geomorph Cards|ScreenDungeonKit",
+				"Thirty-Six|Geomorph Cards|ScreenDungeonKit"
+			],
+			"back": {
+				"type": "image",
+				"width": 411,
+				"height": 561,
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/Back.webp"
+				}
+			},
+			"entries": [
+				"{@note These cards can be used to plan a dungeon during game preparation or come up with a map in the middle of play; either physically with the {@book printed copies|ScreenDungeonKit|1}, or in a VTT.}"
+			],
+			"hasCardArt": true
+		},
+		{
+			"name": "Hazard Cards",
+			"source": "ScreenDungeonKit",
+			"cards": [
+				{
+					"uid": "Brown Mold|Hazard Cards|ScreenDungeonKit",
+					"replacement": true
+				},
+				{
+					"uid": "Green Slime|Hazard Cards|ScreenDungeonKit",
+					"replacement": true
+				},
+				{
+					"uid": "Yellow Mold|Hazard Cards|ScreenDungeonKit",
+					"replacement": true
+				}
+			],
+			"entries": [
+				"{@note These double-sided cards can be used to track hazards your players have encountered; either physically with the {@book printed copies|ScreenDungeonKit|1}, or in a VTT.}"
+			],
+			"hasCardArt": true
+		},
+		{
+			"name": "Initiative Cards",
+			"source": "ScreenDungeonKit",
+			"cards": [
+				"One|Initiative Cards|ScreenDungeonKit",
+				"Two|Initiative Cards|ScreenDungeonKit",
+				"Three|Initiative Cards|ScreenDungeonKit",
+				"Four|Initiative Cards|ScreenDungeonKit",
+				"Five|Initiative Cards|ScreenDungeonKit",
+				"Six|Initiative Cards|ScreenDungeonKit",
+				"Seven|Initiative Cards|ScreenDungeonKit",
+				"Eight|Initiative Cards|ScreenDungeonKit",
+				"Nine|Initiative Cards|ScreenDungeonKit"
+			],
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Initiative/Back.webp"
+				}
+			},
+			"entries": [
+				"{@note These cards can be used to track initiative order; either physically with the {@book printed copies|ScreenDungeonKit|1}, or in a VTT.}"
+			],
+			"hasCardArt": true
 		}
 	],
 	"card": [
@@ -1430,6 +1603,62 @@
 			}
 		},
 		{
+			"name": "Blinded",
+			"source": "ScreenDungeonKit",
+			"set": "Condition Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/3-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/3-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Blinded"
+				}
+			]
+		},
+		{
+			"name": "Brown Mold",
+			"source": "ScreenDungeonKit",
+			"set": "Hazard Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Hazards/16-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Hazards/16-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "hazard",
+					"style": "inset",
+					"source": "DMG",
+					"name": "Brown Mold"
+				}
+			]
+		},
+		{
 			"name": "Bugbear",
 			"source": "DMG",
 			"set": "Deck of Illusions",
@@ -1444,6 +1673,34 @@
 					"path": "decks/generic/unknown.webp"
 				}
 			}
+		},
+		{
+			"name": "Charmed",
+			"source": "ScreenDungeonKit",
+			"set": "Condition Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/2-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/2-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Charmed"
+				}
+			]
 		},
 		{
 			"name": "Cloud Giant",
@@ -1499,6 +1756,34 @@
 			]
 		},
 		{
+			"name": "Deafened",
+			"source": "ScreenDungeonKit",
+			"set": "Condition Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/1-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/1-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Deafened"
+				}
+			]
+		},
+		{
 			"name": "Donjon",
 			"source": "DMG",
 			"set": "Deck of Many Things",
@@ -1548,6 +1833,57 @@
 				"href": {
 					"type": "internal",
 					"path": "decks/generic/unknown.webp"
+				}
+			}
+		},
+		{
+			"name": "Eight",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/008.webp"
+				}
+			}
+		},
+		{
+			"name": "Eight",
+			"source": "ScreenDungeonKit",
+			"set": "Initiative Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Initiative/8.webp"
+				}
+			},
+			"entries": [
+				"You will go eighth in the initiative order."
+			]
+		},
+		{
+			"name": "Eighteen",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/018.webp"
+				}
+			}
+		},
+		{
+			"name": "Eleven",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/011.webp"
 				}
 			}
 		},
@@ -1621,6 +1957,46 @@
 			]
 		},
 		{
+			"name": "Exhaustion",
+			"source": "ScreenDungeonKit",
+			"set": "Condition Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/13-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/13-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Exhaustion"
+				}
+			]
+		},
+		{
+			"name": "Fifteen",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/015.webp"
+				}
+			}
+		},
+		{
 			"name": "Fire Giant",
 			"source": "DMG",
 			"set": "Deck of Illusions",
@@ -1635,6 +2011,33 @@
 					"path": "decks/generic/unknown.webp"
 				}
 			}
+		},
+		{
+			"name": "Five",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/005.webp"
+				}
+			}
+		},
+		{
+			"name": "Five",
+			"source": "ScreenDungeonKit",
+			"set": "Initiative Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Initiative/5.webp"
+				}
+			},
+			"entries": [
+				"You will go fifth in the initiative order."
+			]
 		},
 		{
 			"name": "Flames",
@@ -1708,6 +2111,73 @@
 			},
 			"entries": [
 				"For the duration of the adventure, you lose proficiency with one skill or gain disadvantage on all checks made with one skill (with the skill and the penalty determined by the DM). Discard this card and draw from the deck again, counting both draws as one of your declared draws."
+			]
+		},
+		{
+			"name": "Four",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/004.webp"
+				}
+			}
+		},
+		{
+			"name": "Four",
+			"source": "ScreenDungeonKit",
+			"set": "Initiative Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Initiative/4.webp"
+				}
+			},
+			"entries": [
+				"You will go fourth in the initiative order."
+			]
+		},
+		{
+			"name": "Fourteen",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/014.webp"
+				}
+			}
+		},
+		{
+			"name": "Frightened",
+			"source": "ScreenDungeonKit",
+			"set": "Condition Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/6-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/6-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Frightened"
+				}
 			]
 		},
 		{
@@ -1796,6 +2266,62 @@
 			}
 		},
 		{
+			"name": "Grappled",
+			"source": "ScreenDungeonKit",
+			"set": "Condition Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/5-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/5-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Grappled"
+				}
+			]
+		},
+		{
+			"name": "Green Slime",
+			"source": "ScreenDungeonKit",
+			"set": "Hazard Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Hazards/17-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Hazards/17-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "hazard",
+					"style": "inset",
+					"source": "DMG",
+					"name": "Green Slime"
+				}
+			]
+		},
+		{
 			"name": "Hill Giant",
 			"source": "DMG",
 			"set": "Deck of Illusions",
@@ -1862,6 +2388,62 @@
 			},
 			"entries": [
 				"Reduce your Intelligence by {@dice 1d4 + 1} (to a minimum score of 1) for the duration of the adventure. You can draw one additional card beyond your declared draws."
+			]
+		},
+		{
+			"name": "Incapacitated",
+			"source": "ScreenDungeonKit",
+			"set": "Condition Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/4-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/4-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Incapacitated"
+				}
+			]
+		},
+		{
+			"name": "Invisible",
+			"source": "ScreenDungeonKit",
+			"set": "Condition Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/9-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/9-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Invisible"
+				}
 			]
 		},
 		{
@@ -2109,6 +2691,45 @@
 			}
 		},
 		{
+			"name": "Nine",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/009.webp"
+				}
+			}
+		},
+		{
+			"name": "Nine",
+			"source": "ScreenDungeonKit",
+			"set": "Initiative Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Initiative/9.webp"
+				}
+			},
+			"entries": [
+				"You will go ninth in the initiative order."
+			]
+		},
+		{
+			"name": "Nineteen",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/019.webp"
+				}
+			}
+		},
+		{
 			"name": "Ogre",
 			"source": "DMG",
 			"set": "Deck of Illusions",
@@ -2141,6 +2762,33 @@
 			}
 		},
 		{
+			"name": "One",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/001.webp"
+				}
+			}
+		},
+		{
+			"name": "One",
+			"source": "ScreenDungeonKit",
+			"set": "Initiative Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Initiative/1.webp"
+				}
+			},
+			"entries": [
+				"You will go first in the initiative order."
+			]
+		},
+		{
 			"name": "Orc",
 			"source": "DMG",
 			"set": "Deck of Illusions",
@@ -2155,6 +2803,90 @@
 					"path": "decks/generic/unknown.webp"
 				}
 			}
+		},
+		{
+			"name": "Paralyzed",
+			"source": "ScreenDungeonKit",
+			"set": "Condition Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/8-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/8-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Paralyzed"
+				}
+			]
+		},
+		{
+			"name": "Petrified",
+			"source": "ScreenDungeonKit",
+			"set": "Condition Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/7-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/7-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Petrified"
+				}
+			]
+		},
+		{
+			"name": "Poisoned",
+			"source": "ScreenDungeonKit",
+			"set": "Condition Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/12-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/12-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Poisoned"
+				}
+			]
 		},
 		{
 			"name": "Priest and Two Acolytes",
@@ -2173,6 +2905,34 @@
 			}
 		},
 		{
+			"name": "Prone",
+			"source": "ScreenDungeonKit",
+			"set": "Condition Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/11-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/11-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Prone"
+				}
+			]
+		},
+		{
 			"name": "Red Dragon",
 			"source": "DMG",
 			"set": "Deck of Illusions",
@@ -2187,6 +2947,34 @@
 					"path": "decks/generic/unknown.webp"
 				}
 			}
+		},
+		{
+			"name": "Restrained",
+			"source": "ScreenDungeonKit",
+			"set": "Condition Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/10-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/10-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Restrained"
+				}
+			]
 		},
 		{
 			"name": "Rogue",
@@ -2263,6 +3051,84 @@
 			]
 		},
 		{
+			"name": "Seven",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/007.webp"
+				}
+			}
+		},
+		{
+			"name": "Seven",
+			"source": "ScreenDungeonKit",
+			"set": "Initiative Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Initiative/7.webp"
+				}
+			},
+			"entries": [
+				"You will go seventh in the initiative order."
+			]
+		},
+		{
+			"name": "Seventeen",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/017.webp"
+				}
+			}
+		},
+		{
+			"name": "Six",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/006.webp"
+				}
+			}
+		},
+		{
+			"name": "Six",
+			"source": "ScreenDungeonKit",
+			"set": "Initiative Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Initiative/6.webp"
+				}
+			},
+			"entries": [
+				"You will go sixth in the initiative order."
+			]
+		},
+		{
+			"name": "Sixteen",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/016.webp"
+				}
+			}
+		},
+		{
 			"name": "Skull",
 			"source": "DMG",
 			"set": "Deck of Many Things",
@@ -2334,6 +3200,34 @@
 			},
 			"entries": [
 				"Increase one of your ability scores by 1 for the duration of the adventure. The score can exceed 20 but can't exceed 24."
+			]
+		},
+		{
+			"name": "Stunned",
+			"source": "ScreenDungeonKit",
+			"set": "Condition Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/15-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/15-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Stunned"
+				}
 			]
 		},
 		{
@@ -2427,6 +3321,18 @@
 			]
 		},
 		{
+			"name": "Ten",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/010.webp"
+				}
+			}
+		},
+		{
 			"name": "The Fates",
 			"source": "DMG",
 			"set": "Deck of Many Things",
@@ -2501,6 +3407,129 @@
 			]
 		},
 		{
+			"name": "Thirteen",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/013.webp"
+				}
+			}
+		},
+		{
+			"name": "Thirty",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/030.webp"
+				}
+			}
+		},
+		{
+			"name": "Thirty-Five",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/035.webp"
+				}
+			}
+		},
+		{
+			"name": "Thirty-Four",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/034.webp"
+				}
+			}
+		},
+		{
+			"name": "Thirty-One",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/031.webp"
+				}
+			}
+		},
+		{
+			"name": "Thirty-Six",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/036.webp"
+				}
+			}
+		},
+		{
+			"name": "Thirty-Three",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/033.webp"
+				}
+			}
+		},
+		{
+			"name": "Thirty-Two",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/032.webp"
+				}
+			}
+		},
+		{
+			"name": "Three",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/003.webp"
+				}
+			}
+		},
+		{
+			"name": "Three",
+			"source": "ScreenDungeonKit",
+			"set": "Initiative Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Initiative/3.webp"
+				}
+			},
+			"entries": [
+				"You will go third in the initiative order."
+			]
+		},
+		{
 			"name": "Throne",
 			"source": "DMG",
 			"set": "Deck of Many Things",
@@ -2554,6 +3583,193 @@
 			}
 		},
 		{
+			"name": "Twelve",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/012.webp"
+				}
+			}
+		},
+		{
+			"name": "Twenty",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/020.webp"
+				}
+			}
+		},
+		{
+			"name": "Twenty-Eight",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/028.webp"
+				}
+			}
+		},
+		{
+			"name": "Twenty-Five",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/025.webp"
+				}
+			}
+		},
+		{
+			"name": "Twenty-Four",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/024.webp"
+				}
+			}
+		},
+		{
+			"name": "Twenty-Nine",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/029.webp"
+				}
+			}
+		},
+		{
+			"name": "Twenty-One",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/021.webp"
+				}
+			}
+		},
+		{
+			"name": "Twenty-Seven",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/027.webp"
+				}
+			}
+		},
+		{
+			"name": "Twenty-Six",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/026.webp"
+				}
+			}
+		},
+		{
+			"name": "Twenty-Three",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/023.webp"
+				}
+			}
+		},
+		{
+			"name": "Twenty-Two",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/022.webp"
+				}
+			}
+		},
+		{
+			"name": "Two",
+			"source": "ScreenDungeonKit",
+			"set": "Geomorph Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "book/ScreenDungeonKit/Cards-Geomorph/002.webp"
+				}
+			}
+		},
+		{
+			"name": "Two",
+			"source": "ScreenDungeonKit",
+			"set": "Initiative Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Initiative/2.webp"
+				}
+			},
+			"entries": [
+				"You will go second in the initiative order."
+			]
+		},
+		{
+			"name": "Unconscious",
+			"source": "ScreenDungeonKit",
+			"set": "Condition Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/14-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Conditions/14-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Unconscious"
+				}
+			]
+		},
+		{
 			"name": "Veteran",
 			"source": "DMG",
 			"set": "Deck of Illusions",
@@ -2604,6 +3820,34 @@
 			},
 			"entries": [
 				"At any one time you choose within the duration of the adventure, you can ask a question in meditation and mentally receive a truthful answer to that question. Besides information, the answer helps you solve a puzzling problem or other dilemma. In other words, the knowledge comes with wisdom on how to apply it."
+			]
+		},
+		{
+			"name": "Yellow Mold",
+			"source": "ScreenDungeonKit",
+			"set": "Hazard Cards",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Hazards/18-1.webp"
+				}
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ScreenDungeonKit/Hazards/18-2.webp"
+				}
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "hazard",
+					"style": "inset",
+					"source": "DMG",
+					"name": "Yellow Mold"
+				}
 			]
 		},
 		{
