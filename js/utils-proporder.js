@@ -1419,6 +1419,9 @@ PropOrder._CARD = [
 	"srd",
 	"basicRules",
 
+	"suit",
+	"value",
+
 	"face",
 	"back",
 
