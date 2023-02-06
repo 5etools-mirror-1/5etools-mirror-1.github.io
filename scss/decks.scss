@@ -242,6 +242,7 @@
 			border: $spacer solid $rgb-name-red;
 			border-radius: $spacer;
 			box-shadow: 0 0 30px 10px transparentize($rgb-name-red, 0.7);
+			background-color: $rgb-name-red;
 
 			scale: 0;
 
@@ -362,6 +363,7 @@
 			border-color: $rgb-name-red--night;
 			box-shadow: 0 0 30px 10px transparentize($rgb-name-red--night, 0.7);
 			color: rgba(255, 255, 255, 0.53);
+			background-color: $rgb-name-red--night;
 		}
 
 		&wrp-desc {
