@@ -1230,6 +1230,79 @@
 					]
 				}
 			],
+			"variant": [
+				{
+					"type": "variant",
+					"name": "Ayik beyond 1st Level",
+					"entries": [
+						{
+							"type": "table",
+							"colLabels": [
+								"Level",
+								"Hit Points",
+								"New Features"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-2",
+								"col-8"
+							],
+							"rows": [
+								[
+									"2nd",
+									"16 ({@dice 3d8 + 3})",
+									"Second Wind. Ayik can use a bonus action on his turn to regain hit points equal to {@dice 1d10} + his level. Once he uses this feature, he can't use it again until he finishes a short or long rest."
+								],
+								[
+									"3rd",
+									"22 ({@dice 4d8 + 4})",
+									"Improved Critical. Ayik's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+								],
+								[
+									"4th",
+									"27 ({@dice 5d8 + 5})",
+									"Ability Score Improvement. Ayik's Dexterity score increases by 2, raising the modifier by 1, so increase the following numbers by 1: his Armor Class, his Dexterity saving throw bonus, his {@skill Acrobatics} and {@skill Stealth} bonuses, and the bonuses to hit and damage of his weapon attacks."
+								],
+								[
+									"5th",
+									"33 ({@dice 6d8 + 6})",
+									"Proficiency Bonus. Ayik's proficiency bonus increases by 1, so increase the following numbers by 1: the bonuses in the Saving Throws and Skills entries (by 2 for {@skill Perception}), and the bonuses to hit of his weapon attacks. His passive Perception score increases by 2."
+								],
+								[
+									"6th",
+									"38 ({@dice 7d8 + 7})",
+									"Extra Attack. Ayik can attack twice, instead of once, whenever he takes the {@action attack||Attack} action on his turn."
+								],
+								[
+									"7th",
+									"44 ({@dice 8d8 + 8})",
+									"Battle Readiness. Ayik has advantage on initiative rolls."
+								],
+								[
+									"8th",
+									"49 ({@dice 9d8 + 9})",
+									"Ability Score Improvement. Ayik's Dexterity score increases by 2, raising the modifier by 1, so increase the following numbers by 1: his Armor Class, his Dexterity saving throw bonus, his {@skill Acrobatics} and {@skill Stealth} bonuses, and the bonuses to hit and damage of his weapon attacks."
+								],
+								[
+									"9th",
+									"55 ({@dice 10d8 + 10})",
+									"Proficiency Bonus. Ayik's proficiency bonus increases by 1, so increase the following numbers by 1: the bonuses in the Saving Throws and Skills entries (by 2 for {@skill Perception}), and the bonuses to hit of his weapon attacks. His passive Perception score increases by 2."
+								],
+								[
+									"10th",
+									"60 ({@dice 11d8 + 11})",
+									"Improved Defense. Ayik's Armor Class increases by 1."
+								],
+								[
+									"11th",
+									"66 ({@dice 12d8 + 12})",
+									"Indomitable. Ayik can reroll a saving throw that he fails, but he must use the new roll. Once he uses this feature, he can't use it again until he finishes a long rest."
+								]
+							]
+						}
+					]
+				}
+			],
 			"languageTags": [
 				"C"
 			],
@@ -1243,7 +1316,655 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Ayik Ur (2nd Level)",
+					"source": "DSotDQ",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Second Wind",
+								"entries": [
+									"Ayik can use a bonus action on his turn to regain hit points equal to {@dice 1d10} + his level. Once he uses this feature, he can't use it again until he finishes a short or long rest."
+								]
+							}
+						}
+					},
+					"level": 2,
+					"hp": {
+						"average": 16,
+						"formula": "3d8 + 3"
+					},
+					"variant": null
+				},
+				{
+					"name": "Ayik Ur (3rd Level)",
+					"source": "DSotDQ",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Ayik can use a bonus action on his turn to regain hit points equal to {@dice 1d10} + his level. Once he uses this feature, he can't use it again until he finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Ayik's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								}
+							]
+						}
+					},
+					"level": 3,
+					"hp": {
+						"average": 22,
+						"formula": "4d8 + 4"
+					},
+					"variant": null
+				},
+				{
+					"name": "Ayik Ur (4th Level)",
+					"source": "DSotDQ",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Ayik can use a bonus action on his turn to regain hit points equal to {@dice 1d10} + his level. Once he uses this feature, he can't use it again until he finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Ayik's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								}
+							]
+						}
+					},
+					"level": 4,
+					"ac": [
+						{
+							"ac": 16,
+							"from": [
+								"{@item studded leather armor|PHB|studded leather}"
+							]
+						}
+					],
+					"hp": {
+						"average": 27,
+						"formula": "5d8 + 5"
+					},
+					"dex": 18,
+					"save": {
+						"dex": "+6"
+					},
+					"skill": {
+						"athletics": "+2",
+						"nature": "+2",
+						"perception": "+5",
+						"stealth": "+6",
+						"survival": "+3"
+					},
+					"action": [
+						{
+							"name": "Shortsword",
+							"entries": [
+								"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d6 + 4}) piercing damage."
+							]
+						},
+						{
+							"name": "Longbow",
+							"entries": [
+								"{@atk rw} {@hit 8} to hit, range 150/600 ft., one target. {@h}8 ({@damage 1d8 + 4}) piercing damage."
+							]
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Ayik Ur (5th Level)",
+					"source": "DSotDQ",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Ayik can use a bonus action on his turn to regain hit points equal to {@dice 1d10} + his level. Once he uses this feature, he can't use it again until he finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Ayik's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								}
+							]
+						}
+					},
+					"level": 5,
+					"ac": [
+						{
+							"ac": 16,
+							"from": [
+								"{@item studded leather armor|PHB|studded leather}"
+							]
+						}
+					],
+					"hp": {
+						"average": 33,
+						"formula": "6d8 + 6"
+					},
+					"dex": 18,
+					"save": {
+						"dex": "+7"
+					},
+					"skill": {
+						"athletics": "+3",
+						"nature": "+3",
+						"perception": "+7",
+						"stealth": "+7",
+						"survival": "+4"
+					},
+					"passive": 17,
+					"pbNote": "+3",
+					"action": [
+						{
+							"name": "Shortsword",
+							"entries": [
+								"{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d6 + 4}) piercing damage."
+							]
+						},
+						{
+							"name": "Longbow",
+							"entries": [
+								"{@atk rw} {@hit 9} to hit, range 150/600 ft., one target. {@h}8 ({@damage 1d8 + 4}) piercing damage."
+							]
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Ayik Ur (6th Level)",
+					"source": "DSotDQ",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Ayik can use a bonus action on his turn to regain hit points equal to {@dice 1d10} + his level. Once he uses this feature, he can't use it again until he finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Ayik's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								},
+								{
+									"name": "Extra Attack",
+									"entries": [
+										"Ayik can attack twice, instead of once, whenever he takes the {@action attack||Attack} action on his turn."
+									]
+								}
+							]
+						}
+					},
+					"level": 6,
+					"ac": [
+						{
+							"ac": 16,
+							"from": [
+								"{@item studded leather armor|PHB|studded leather}"
+							]
+						}
+					],
+					"hp": {
+						"average": 38,
+						"formula": "7d8 + 7"
+					},
+					"dex": 18,
+					"save": {
+						"dex": "+7"
+					},
+					"skill": {
+						"athletics": "+3",
+						"nature": "+3",
+						"perception": "+7",
+						"stealth": "+7",
+						"survival": "+4"
+					},
+					"passive": 17,
+					"pbNote": "+3",
+					"action": [
+						{
+							"name": "Shortsword",
+							"entries": [
+								"{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d6 + 4}) piercing damage."
+							]
+						},
+						{
+							"name": "Longbow",
+							"entries": [
+								"{@atk rw} {@hit 9} to hit, range 150/600 ft., one target. {@h}8 ({@damage 1d8 + 4}) piercing damage."
+							]
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Ayik Ur (7th Level)",
+					"source": "DSotDQ",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Ayik can use a bonus action on his turn to regain hit points equal to {@dice 1d10} + his level. Once he uses this feature, he can't use it again until he finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Ayik's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								},
+								{
+									"name": "Extra Attack",
+									"entries": [
+										"Ayik can attack twice, instead of once, whenever he takes the {@action attack||Attack} action on his turn."
+									]
+								},
+								{
+									"name": "Battle Readiness",
+									"entries": [
+										"Ayik has advantage on initiative rolls."
+									]
+								}
+							]
+						}
+					},
+					"level": 7,
+					"ac": [
+						{
+							"ac": 16,
+							"from": [
+								"{@item studded leather armor|PHB|studded leather}"
+							]
+						}
+					],
+					"hp": {
+						"average": 44,
+						"formula": "8d8 + 8"
+					},
+					"dex": 18,
+					"save": {
+						"dex": "+7"
+					},
+					"skill": {
+						"athletics": "+3",
+						"nature": "+3",
+						"perception": "+7",
+						"stealth": "+7",
+						"survival": "+4"
+					},
+					"passive": 17,
+					"pbNote": "+3",
+					"action": [
+						{
+							"name": "Shortsword",
+							"entries": [
+								"{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d6 + 4}) piercing damage."
+							]
+						},
+						{
+							"name": "Longbow",
+							"entries": [
+								"{@atk rw} {@hit 9} to hit, range 150/600 ft., one target. {@h}8 ({@damage 1d8 + 4}) piercing damage."
+							]
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Ayik Ur (8th Level)",
+					"source": "DSotDQ",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Ayik can use a bonus action on his turn to regain hit points equal to {@dice 1d10} + his level. Once he uses this feature, he can't use it again until he finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Ayik's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								},
+								{
+									"name": "Extra Attack",
+									"entries": [
+										"Ayik can attack twice, instead of once, whenever he takes the {@action attack||Attack} action on his turn."
+									]
+								},
+								{
+									"name": "Battle Readiness",
+									"entries": [
+										"Ayik has advantage on initiative rolls."
+									]
+								}
+							]
+						}
+					},
+					"level": 8,
+					"ac": [
+						{
+							"ac": 17,
+							"from": [
+								"{@item studded leather armor|PHB|studded leather}"
+							]
+						}
+					],
+					"hp": {
+						"average": 49,
+						"formula": "9d8 + 9"
+					},
+					"dex": 20,
+					"save": {
+						"dex": "+8"
+					},
+					"skill": {
+						"athletics": "+3",
+						"nature": "+3",
+						"perception": "+7",
+						"stealth": "+8",
+						"survival": "+4"
+					},
+					"passive": 17,
+					"pbNote": "+3",
+					"action": [
+						{
+							"name": "Shortsword",
+							"entries": [
+								"{@atk mw} {@hit 10} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d6 + 5}) piercing damage."
+							]
+						},
+						{
+							"name": "Longbow",
+							"entries": [
+								"{@atk rw} {@hit 10} to hit, range 150/600 ft., one target. {@h}9 ({@damage 1d8 + 5}) piercing damage."
+							]
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Ayik Ur (9th Level)",
+					"source": "DSotDQ",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Ayik can use a bonus action on his turn to regain hit points equal to {@dice 1d10} + his level. Once he uses this feature, he can't use it again until he finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Ayik's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								},
+								{
+									"name": "Extra Attack",
+									"entries": [
+										"Ayik can attack twice, instead of once, whenever he takes the {@action attack||Attack} action on his turn."
+									]
+								},
+								{
+									"name": "Battle Readiness",
+									"entries": [
+										"Ayik has advantage on initiative rolls."
+									]
+								}
+							]
+						}
+					},
+					"level": 9,
+					"ac": [
+						{
+							"ac": 17,
+							"from": [
+								"{@item studded leather armor|PHB|studded leather}"
+							]
+						}
+					],
+					"hp": {
+						"average": 55,
+						"formula": "10d8 + 10"
+					},
+					"dex": 20,
+					"save": {
+						"dex": "+9"
+					},
+					"skill": {
+						"athletics": "+4",
+						"nature": "+4",
+						"perception": "+9",
+						"stealth": "+9",
+						"survival": "+5"
+					},
+					"passive": 19,
+					"pbNote": "+4",
+					"action": [
+						{
+							"name": "Shortsword",
+							"entries": [
+								"{@atk mw} {@hit 11} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d6 + 5}) piercing damage."
+							]
+						},
+						{
+							"name": "Longbow",
+							"entries": [
+								"{@atk rw} {@hit 11} to hit, range 150/600 ft., one target. {@h}9 ({@damage 1d8 + 5}) piercing damage."
+							]
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Ayik Ur (10th Level)",
+					"source": "DSotDQ",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Ayik can use a bonus action on his turn to regain hit points equal to {@dice 1d10} + his level. Once he uses this feature, he can't use it again until he finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Ayik's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								},
+								{
+									"name": "Extra Attack",
+									"entries": [
+										"Ayik can attack twice, instead of once, whenever he takes the {@action attack||Attack} action on his turn."
+									]
+								},
+								{
+									"name": "Battle Readiness",
+									"entries": [
+										"Ayik has advantage on initiative rolls."
+									]
+								},
+								{
+									"name": "Improved Defence",
+									"entries": [
+										"Ayik's Armor Class increases by 1."
+									]
+								}
+							]
+						}
+					},
+					"level": 10,
+					"ac": [
+						{
+							"ac": 18,
+							"from": [
+								"{@item studded leather armor|PHB|studded leather}",
+								"improved defence"
+							]
+						}
+					],
+					"hp": {
+						"average": 60,
+						"formula": "11d8 + 11"
+					},
+					"dex": 20,
+					"save": {
+						"dex": "+9"
+					},
+					"skill": {
+						"athletics": "+4",
+						"nature": "+4",
+						"perception": "+9",
+						"stealth": "+9",
+						"survival": "+5"
+					},
+					"passive": 19,
+					"pbNote": "+4",
+					"action": [
+						{
+							"name": "Shortsword",
+							"entries": [
+								"{@atk mw} {@hit 11} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d6 + 5}) piercing damage."
+							]
+						},
+						{
+							"name": "Longbow",
+							"entries": [
+								"{@atk rw} {@hit 11} to hit, range 150/600 ft., one target. {@h}9 ({@damage 1d8 + 5}) piercing damage."
+							]
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Ayik Ur (11th Level)",
+					"source": "DSotDQ",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Ayik can use a bonus action on his turn to regain hit points equal to {@dice 1d10} + his level. Once he uses this feature, he can't use it again until he finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Ayik's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								},
+								{
+									"name": "Extra Attack",
+									"entries": [
+										"Ayik can attack twice, instead of once, whenever he takes the {@action attack||Attack} action on his turn."
+									]
+								},
+								{
+									"name": "Battle Readiness",
+									"entries": [
+										"Ayik has advantage on initiative rolls."
+									]
+								},
+								{
+									"name": "Improved Defence",
+									"entries": [
+										"Ayik's Armor Class increases by 1."
+									]
+								},
+								{
+									"name": "Indomitable",
+									"entries": [
+										"Ayik can reroll a saving throw that he fails, but he must use the new roll. Once he uses this feature, he can't use it again until he finishes a long rest."
+									]
+								}
+							]
+						}
+					},
+					"level": 11,
+					"ac": [
+						{
+							"ac": 18,
+							"from": [
+								"{@item studded leather armor|PHB|studded leather}",
+								"improved defence"
+							]
+						}
+					],
+					"hp": {
+						"average": 66,
+						"formula": "12d8 + 12"
+					},
+					"dex": 20,
+					"save": {
+						"dex": "+9"
+					},
+					"skill": {
+						"athletics": "+4",
+						"nature": "+4",
+						"perception": "+9",
+						"stealth": "+9",
+						"survival": "+5"
+					},
+					"passive": 19,
+					"pbNote": "+4",
+					"action": [
+						{
+							"name": "Shortsword",
+							"entries": [
+								"{@atk mw} {@hit 11} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d6 + 5}) piercing damage."
+							]
+						},
+						{
+							"name": "Longbow",
+							"entries": [
+								"{@atk rw} {@hit 11} to hit, range 150/600 ft., one target. {@h}9 ({@damage 1d8 + 5}) piercing damage."
+							]
+						}
+					],
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Baaz Draconian",
