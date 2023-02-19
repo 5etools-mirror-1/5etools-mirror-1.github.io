@@ -7645,7 +7645,7 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Tem's spellcasting ability is Wisdom (spell save {@dc 12}, +4 to spell attacks). She has the following druid spells prepared:"
+						"Tem's spellcasting ability is Wisdom (spell save {@dc 12}, {@hit 4} to spell attacks). She has the following druid spells prepared:"
 					],
 					"will": [
 						"{@spell druidcraft}",
@@ -7711,7 +7711,750 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"variant": [
+				{
+					"type": "variant",
+					"name": "Tem beyond 1st Level",
+					"entries": [
+						{
+							"type": "table",
+							"colLabels": [
+								"Level",
+								"Hit Points",
+								"New Features"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-2",
+								"col-8"
+							],
+							"rows": [
+								[
+									"2nd",
+									"16 ({@dice 3d6 + 6})",
+									"Spellcasting. Tem learns another 1st-level spell: {@spell faerie fire}."
+								],
+								[
+									"3rd",
+									"22 ({@dice 4d6 + 8})",
+									"Spellcasting. Tem gains one 1st-level spell slot. She also learns another 1st-level spell: {@spell goodberry}."
+								],
+								[
+									"4th",
+									"27 ({@dice 5d6 + 10})",
+									"Ability Score Improvement. Tem's Wisdom score increases by 2, raising the modifier by 1, so increase the following numbers by 1: her spell save DC and the bonus to hit of spell attacks; her Wisdom saving throw bonus; her {@skill Insight}, {@skill Medicine}, and {@skill Perception} bonuses; her passive Perception score; and the DC of her Taunt action. Spellcasting. Tem learns another cantrip: {@spell mending}."
+								],
+								[
+									"5th",
+									"33 ({@dice 6d6 + 12})",
+									"Proficiency Bonus. Tem's proficiency bonus increases by 1, so increase the following numbers by 1: her spell save DC and the bonus to hit of her spell attacks, the bonuses in the Saving Throws and Skills entries, and the bonuses to hit of her weapon attacks, and the DC of her Taunt action."
+								],
+								[
+									"6th",
+									"38 ({@dice 7d6 + 14})",
+									"Potent Cantrips. Tem adds her Wisdom modifier to the damage she deals with any cantrip."
+								],
+								[
+									"7th",
+									"44 ({@dice 8d6 + 16})",
+									"Spellcasting. Tem gains one 2nd-level spell slot. She also learns another 2nd-level spell: {@spell enhance ability}."
+								],
+								[
+									"8th",
+									"49 ({@dice 9d6 + 18})",
+									"Ability Score Improvement. Tem's Wisdom score increases by 2, raising the modifier by 1, so increase the following numbers by 1: her spell save DC and the bonus to hit of spell attacks; her Wisdom saving throw bonus; her {@skill Insight}, {@skill Medicine}, and {@skill Perception} bonuses; her passive Perception score; and the DC of her Taunt action."
+								],
+								[
+									"9th",
+									"55 ({@dice 10d6 + 20})",
+									"Proficiency Bonus. Tem's proficiency bonus increases by 1, so increase the following numbers by 1: her spell save DC and the bonus to hit of her spell attacks, the bonuses in the Saving Throws and Skills entries, the bonuses to hit of her weapon attacks, and the DC of her Taunt action."
+								],
+								[
+									"10th",
+									"60 ({@dice 11d6 + 22})",
+									"Spellcasting. Tem learns another cantrip: {@spell resistance}."
+								],
+								[
+									"11th",
+									"66 ({@dice 12d6 + 24})",
+									"Spellcasting. Tem gains one 3rd-level spell slot. She also learns another 3rd-level spell: {@spell dispel magic}."
+								]
+							]
+						}
+					]
+				}
+			],
+			"_versions": [
+				{
+					"name": "Tem Temble (2nd Level)",
+					"source": "DSotDQ",
+					"level": 2,
+					"hp": {
+						"average": 16,
+						"formula": "3d6 + 6"
+					},
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Tem's spellcasting ability is Wisdom (spell save {@dc 12}, {@hit 4} to spell attacks). She has the following druid spells prepared:"
+							],
+							"will": [
+								"{@spell druidcraft}",
+								"{@spell poison spray}"
+							],
+							"spells": {
+								"1": {
+									"slots": 2,
+									"spells": [
+										"{@spell healing word}",
+										"{@spell faerie fire}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Tem Temble (3rd Level)",
+					"source": "DSotDQ",
+					"level": 3,
+					"hp": {
+						"average": 22,
+						"formula": "4d6 + 8"
+					},
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Tem's spellcasting ability is Wisdom (spell save {@dc 12}, {@hit 4} to spell attacks). She has the following druid spells prepared:"
+							],
+							"will": [
+								"{@spell druidcraft}",
+								"{@spell poison spray}"
+							],
+							"spells": {
+								"1": {
+									"slots": 3,
+									"spells": [
+										"{@spell healing word}",
+										"{@spell faerie fire}",
+										"{@spell goodberry}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Tem Temble (4th Level)",
+					"source": "DSotDQ",
+					"level": 4,
+					"hp": {
+						"average": 27,
+						"formula": "5d6 + 10"
+					},
+					"wis": 16,
+					"save": {
+						"wis": "+5"
+					},
+					"skill": {
+						"insight": "+5",
+						"medicine": "+5",
+						"perception": "+5",
+						"sleight of hand": "+4",
+						"stealth": "+4"
+					},
+					"passive": 15,
+					"action": [
+						{
+							"name": "Hoopak",
+							"entries": [
+								"{@atk mw,rw} {@hit 4} to hit, reach 5 ft. or range 40/160 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage, or 4 ({@damage 1d4 + 2}) bludgeoning damage if Tem used the hoopak's sling to make a ranged attack."
+							]
+						},
+						{
+							"name": "Taunt",
+							"entries": [
+								"Tem launches an infuriating barrage of insults at a creature she can see within 60 feet of her. If the target can hear Tem, it must succeed on a {@dc 13} Wisdom saving throw or have disadvantage on attack rolls until the end of its next turn."
+							]
+						}
+					],
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Tem's spellcasting ability is Wisdom (spell save {@dc 13}, {@hit 5} to spell attacks). She has the following druid spells prepared:"
+							],
+							"will": [
+								"{@spell druidcraft}",
+								"{@spell poison spray}",
+								"{@spell mending}"
+							],
+							"spells": {
+								"1": {
+									"slots": 3,
+									"spells": [
+										"{@spell healing word}",
+										"{@spell faerie fire}",
+										"{@spell goodberry}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Tem Temble (5th Level)",
+					"source": "DSotDQ",
+					"level": 5,
+					"hp": {
+						"average": 33,
+						"formula": "6d6 + 12"
+					},
+					"wis": 16,
+					"save": {
+						"wis": "+6"
+					},
+					"skill": {
+						"insight": "+6",
+						"medicine": "+6",
+						"perception": "+6",
+						"sleight of hand": "+5",
+						"stealth": "+5"
+					},
+					"passive": 15,
+					"pbNote": "+3",
+					"action": [
+						{
+							"name": "Hoopak",
+							"entries": [
+								"{@atk mw,rw} {@hit 5} to hit, reach 5 ft. or range 40/160 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage, or 4 ({@damage 1d4 + 2}) bludgeoning damage if Tem used the hoopak's sling to make a ranged attack."
+							]
+						},
+						{
+							"name": "Taunt",
+							"entries": [
+								"Tem launches an infuriating barrage of insults at a creature she can see within 60 feet of her. If the target can hear Tem, it must succeed on a {@dc 14} Wisdom saving throw or have disadvantage on attack rolls until the end of its next turn."
+							]
+						}
+					],
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Tem's spellcasting ability is Wisdom (spell save {@dc 14}, {@hit 6} to spell attacks). She has the following druid spells prepared:"
+							],
+							"will": [
+								"{@spell druidcraft}",
+								"{@spell poison spray}",
+								"{@spell mending}"
+							],
+							"spells": {
+								"1": {
+									"slots": 3,
+									"spells": [
+										"{@spell healing word}",
+										"{@spell faerie fire}",
+										"{@spell goodberry}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Tem Temble (6th Level)",
+					"source": "DSotDQ",
+					"level": 6,
+					"hp": {
+						"average": 38,
+						"formula": "7d6 + 14"
+					},
+					"wis": 16,
+					"save": {
+						"wis": "+6"
+					},
+					"skill": {
+						"insight": "+6",
+						"medicine": "+6",
+						"perception": "+6",
+						"sleight of hand": "+5",
+						"stealth": "+5"
+					},
+					"passive": 15,
+					"pbNote": "+3",
+					"action": [
+						{
+							"name": "Hoopak",
+							"entries": [
+								"{@atk mw,rw} {@hit 5} to hit, reach 5 ft. or range 40/160 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage, or 4 ({@damage 1d4 + 2}) bludgeoning damage if Tem used the hoopak's sling to make a ranged attack."
+							]
+						},
+						{
+							"name": "Taunt",
+							"entries": [
+								"Tem launches an infuriating barrage of insults at a creature she can see within 60 feet of her. If the target can hear Tem, it must succeed on a {@dc 14} Wisdom saving throw or have disadvantage on attack rolls until the end of its next turn."
+							]
+						}
+					],
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Tem's spellcasting ability is Wisdom (spell save {@dc 14}, {@hit 6} to spell attacks). She has the following druid spells prepared:"
+							],
+							"will": [
+								"{@spell druidcraft}",
+								"{@spell poison spray}",
+								"{@spell mending}"
+							],
+							"spells": {
+								"1": {
+									"slots": 3,
+									"spells": [
+										"{@spell healing word}",
+										"{@spell faerie fire}",
+										"{@spell goodberry}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Potent Cantrips",
+									"entries": [
+										"Tem adds her Wisdom modifier to the damage she deals with any cantrip."
+									]
+								}
+							]
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Tem Temble (7th Level)",
+					"source": "DSotDQ",
+					"level": 7,
+					"hp": {
+						"average": 44,
+						"formula": "8d6 + 16"
+					},
+					"wis": 16,
+					"save": {
+						"wis": "+6"
+					},
+					"skill": {
+						"insight": "+6",
+						"medicine": "+6",
+						"perception": "+6",
+						"sleight of hand": "+5",
+						"stealth": "+5"
+					},
+					"passive": 15,
+					"pbNote": "+3",
+					"action": [
+						{
+							"name": "Hoopak",
+							"entries": [
+								"{@atk mw,rw} {@hit 5} to hit, reach 5 ft. or range 40/160 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage, or 4 ({@damage 1d4 + 2}) bludgeoning damage if Tem used the hoopak's sling to make a ranged attack."
+							]
+						},
+						{
+							"name": "Taunt",
+							"entries": [
+								"Tem launches an infuriating barrage of insults at a creature she can see within 60 feet of her. If the target can hear Tem, it must succeed on a {@dc 14} Wisdom saving throw or have disadvantage on attack rolls until the end of its next turn."
+							]
+						}
+					],
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Tem's spellcasting ability is Wisdom (spell save {@dc 14}, {@hit 6} to spell attacks). She has the following druid spells prepared:"
+							],
+							"will": [
+								"{@spell druidcraft}",
+								"{@spell poison spray}",
+								"{@spell mending}"
+							],
+							"spells": {
+								"1": {
+									"slots": 3,
+									"spells": [
+										"{@spell healing word}",
+										"{@spell faerie fire}",
+										"{@spell goodberry}"
+									]
+								},
+								"2": {
+									"slots": 1,
+									"spells": [
+										"{@spell enhance ability}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Potent Cantrips",
+									"entries": [
+										"Tem adds her Wisdom modifier to the damage she deals with any cantrip."
+									]
+								}
+							]
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Tem Temble (8th Level)",
+					"source": "DSotDQ",
+					"level": 8,
+					"hp": {
+						"average": 49,
+						"formula": "9d6 + 18"
+					},
+					"wis": 18,
+					"save": {
+						"wis": "+7"
+					},
+					"skill": {
+						"insight": "+7",
+						"medicine": "+7",
+						"perception": "+7",
+						"sleight of hand": "+5",
+						"stealth": "+5"
+					},
+					"passive": 16,
+					"pbNote": "+3",
+					"action": [
+						{
+							"name": "Hoopak",
+							"entries": [
+								"{@atk mw,rw} {@hit 5} to hit, reach 5 ft. or range 40/160 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage, or 4 ({@damage 1d4 + 2}) bludgeoning damage if Tem used the hoopak's sling to make a ranged attack."
+							]
+						},
+						{
+							"name": "Taunt",
+							"entries": [
+								"Tem launches an infuriating barrage of insults at a creature she can see within 60 feet of her. If the target can hear Tem, it must succeed on a {@dc 15} Wisdom saving throw or have disadvantage on attack rolls until the end of its next turn."
+							]
+						}
+					],
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Tem's spellcasting ability is Wisdom (spell save {@dc 15}, {@hit 7} to spell attacks). She has the following druid spells prepared:"
+							],
+							"will": [
+								"{@spell druidcraft}",
+								"{@spell poison spray}",
+								"{@spell mending}"
+							],
+							"spells": {
+								"1": {
+									"slots": 3,
+									"spells": [
+										"{@spell healing word}",
+										"{@spell faerie fire}",
+										"{@spell goodberry}"
+									]
+								},
+								"2": {
+									"slots": 1,
+									"spells": [
+										"{@spell enhance ability}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Potent Cantrips",
+									"entries": [
+										"Tem adds her Wisdom modifier to the damage she deals with any cantrip."
+									]
+								}
+							]
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Tem Temble (9th Level)",
+					"source": "DSotDQ",
+					"level": 9,
+					"hp": {
+						"average": 55,
+						"formula": "10d6 + 20"
+					},
+					"wis": 18,
+					"save": {
+						"wis": "+8"
+					},
+					"skill": {
+						"insight": "+8",
+						"medicine": "+8",
+						"perception": "+8",
+						"sleight of hand": "+6",
+						"stealth": "+6"
+					},
+					"passive": 16,
+					"pbNote": "+4",
+					"action": [
+						{
+							"name": "Hoopak",
+							"entries": [
+								"{@atk mw,rw} {@hit 6} to hit, reach 5 ft. or range 40/160 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage, or 4 ({@damage 1d4 + 2}) bludgeoning damage if Tem used the hoopak's sling to make a ranged attack."
+							]
+						},
+						{
+							"name": "Taunt",
+							"entries": [
+								"Tem launches an infuriating barrage of insults at a creature she can see within 60 feet of her. If the target can hear Tem, it must succeed on a {@dc 16} Wisdom saving throw or have disadvantage on attack rolls until the end of its next turn."
+							]
+						}
+					],
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Tem's spellcasting ability is Wisdom (spell save {@dc 16}, {@hit 8} to spell attacks). She has the following druid spells prepared:"
+							],
+							"will": [
+								"{@spell druidcraft}",
+								"{@spell poison spray}",
+								"{@spell mending}"
+							],
+							"spells": {
+								"1": {
+									"slots": 3,
+									"spells": [
+										"{@spell healing word}",
+										"{@spell faerie fire}",
+										"{@spell goodberry}"
+									]
+								},
+								"2": {
+									"slots": 1,
+									"spells": [
+										"{@spell enhance ability}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Potent Cantrips",
+									"entries": [
+										"Tem adds her Wisdom modifier to the damage she deals with any cantrip."
+									]
+								}
+							]
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Tem Temble (10th Level)",
+					"source": "DSotDQ",
+					"level": 10,
+					"hp": {
+						"average": 60,
+						"formula": "11d6 + 22"
+					},
+					"wis": 18,
+					"save": {
+						"wis": "+8"
+					},
+					"skill": {
+						"insight": "+8",
+						"medicine": "+8",
+						"perception": "+8",
+						"sleight of hand": "+6",
+						"stealth": "+6"
+					},
+					"passive": 16,
+					"pbNote": "+4",
+					"action": [
+						{
+							"name": "Hoopak",
+							"entries": [
+								"{@atk mw,rw} {@hit 6} to hit, reach 5 ft. or range 40/160 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage, or 4 ({@damage 1d4 + 2}) bludgeoning damage if Tem used the hoopak's sling to make a ranged attack."
+							]
+						},
+						{
+							"name": "Taunt",
+							"entries": [
+								"Tem launches an infuriating barrage of insults at a creature she can see within 60 feet of her. If the target can hear Tem, it must succeed on a {@dc 16} Wisdom saving throw or have disadvantage on attack rolls until the end of its next turn."
+							]
+						}
+					],
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Tem's spellcasting ability is Wisdom (spell save {@dc 16}, {@hit 8} to spell attacks). She has the following druid spells prepared:"
+							],
+							"will": [
+								"{@spell druidcraft}",
+								"{@spell poison spray}",
+								"{@spell mending}",
+								"{@spell resistance}"
+							],
+							"spells": {
+								"1": {
+									"slots": 3,
+									"spells": [
+										"{@spell healing word}",
+										"{@spell faerie fire}",
+										"{@spell goodberry}"
+									]
+								},
+								"2": {
+									"slots": 1,
+									"spells": [
+										"{@spell enhance ability}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Potent Cantrips",
+									"entries": [
+										"Tem adds her Wisdom modifier to the damage she deals with any cantrip."
+									]
+								}
+							]
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Tem Temble (11th Level)",
+					"source": "DSotDQ",
+					"level": 11,
+					"hp": {
+						"average": 66,
+						"formula": "12d6 + 24"
+					},
+					"wis": 18,
+					"save": {
+						"wis": "+8"
+					},
+					"skill": {
+						"insight": "+8",
+						"medicine": "+8",
+						"perception": "+8",
+						"sleight of hand": "+6",
+						"stealth": "+6"
+					},
+					"passive": 16,
+					"pbNote": "+4",
+					"action": [
+						{
+							"name": "Hoopak",
+							"entries": [
+								"{@atk mw,rw} {@hit 6} to hit, reach 5 ft. or range 40/160 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage, or 4 ({@damage 1d4 + 2}) bludgeoning damage if Tem used the hoopak's sling to make a ranged attack."
+							]
+						},
+						{
+							"name": "Taunt",
+							"entries": [
+								"Tem launches an infuriating barrage of insults at a creature she can see within 60 feet of her. If the target can hear Tem, it must succeed on a {@dc 16} Wisdom saving throw or have disadvantage on attack rolls until the end of its next turn."
+							]
+						}
+					],
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Tem's spellcasting ability is Wisdom (spell save {@dc 16}, {@hit 8} to spell attacks). She has the following druid spells prepared:"
+							],
+							"will": [
+								"{@spell druidcraft}",
+								"{@spell poison spray}",
+								"{@spell mending}",
+								"{@spell resistance}"
+							],
+							"spells": {
+								"1": {
+									"slots": 3,
+									"spells": [
+										"{@spell healing word}",
+										"{@spell faerie fire}",
+										"{@spell goodberry}"
+									]
+								},
+								"2": {
+									"slots": 1,
+									"spells": [
+										"{@spell enhance ability}"
+									]
+								},
+								"3": {
+									"slots": 1,
+									"spells": [
+										"{@spell dispel magic}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Potent Cantrips",
+									"entries": [
+										"Tem adds her Wisdom modifier to the damage she deals with any cantrip."
+									]
+								}
+							]
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Undead Soldier",
