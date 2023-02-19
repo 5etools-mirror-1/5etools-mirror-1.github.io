@@ -3409,7 +3409,720 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"variant": [
+				{
+					"type": "variant",
+					"name": "Hrigg beyond 1st Level",
+					"entries": [
+						{
+							"type": "table",
+							"colLabels": [
+								"Level",
+								"Hit Points",
+								"New Features"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-2",
+								"col-8"
+							],
+							"rows": [
+								[
+									"2nd",
+									"16 ({@dice 3d8 + 3})",
+									"Spellcasting. Hrigg learns another 1st-level spell: {@spell bless}."
+								],
+								[
+									"3rd",
+									"22 ({@dice 4d8 + 4})",
+									"Spellcasting. Hrigg gains one 1st-level spell slot. He also learns another 1st-level spell: {@spell detect evil and good}."
+								],
+								[
+									"4th",
+									"27 ({@dice 5d8 + 5})",
+									"Ability Score Improvement. Hrigg's Wisdom score increases by 2, raising the modifier by 1, so increase the following numbers by 1: his spell save DC and the bonus to hit of his spell attacks, his Wisdom saving throw bonus, his {@skill Medicine} and {@skill Perception} bonuses, and his passive Perception score. Spellcasting. Hrigg learns another cantrip: {@spell spare the dying}."
+								],
+								[
+									"5th",
+									"33 ({@dice 6d8 + 6})",
+									"Proficiency Bonus. Hrigg's proficiency bonus increases by 1, so increase the following numbers by 1: his spell save DC and the bonus to hit of his spell attacks, the bonuses in the Saving Throws and Skills entries, and the bonuses to hit of his weapon attacks. Spellcasting. Hrigg gains one 1st-level spell slot and two 2nd-level spell slots. He also learns a 2nd-level spell: {@spell spiritual weapon}."
+								],
+								[
+									"6th",
+									"38 ({@dice 7d8 + 7})",
+									"Potent Cantrips. Hrigg adds his Wisdom modifier to the damage he deals with any cantrip."
+								],
+								[
+									"7th",
+									"44 ({@dice 8d8 + 8})",
+									"Spellcasting. Hrigg gains one 2nd-level spell slot. He also learns another 2nd-level spell: {@spell lesser restoration}."
+								],
+								[
+									"8th",
+									"49 ({@dice 9d8 + 9})",
+									"Ability Score Improvement. Hrigg's Wisdom score increases by 2, raising the modifier by 1, so increase the following numbers by 1: his spell save DC and the bonus to hit of his spell attacks, his Wisdom saving throw bonus, his {@skill Medicine} and {@skill Perception} bonuses, and his passive Perception score."
+								],
+								[
+									"9th",
+									"55 ({@dice 10d8 + 10})",
+									"Proficiency Bonus. Hrigg's proficiency bonus increases by 1, so increase the following numbers by 1: his spell save DC and the bonus to hit of his spell attacks, the bonuses in the Saving Throws and Skills entries, and the bonuses to hit of his weapon attacks. Spellcasting. Hrigg gains two 3rd-level spell slots. He also learns a 3rd-level spell: {@spell beacon of hope}."
+								],
+								[
+									"10th",
+									"60 ({@dice 11d8 + 11})",
+									"Spellcasting. Hrigg learns another cantrip: {@spell thaumaturgy}."
+								],
+								[
+									"11th",
+									"66 ({@dice 12d8 + 12})",
+									"Spellcasting. Hrigg gains one 3rd-level spell slot. He also learns another 3rd-level spell: {@spell spirit guardians}."
+								]
+							]
+						}
+					]
+				}
+			],
+			"_versions": [
+				{
+					"name": "Hrigg Roundrook (2nd Level)",
+					"source": "DSotDQ",
+					"level": 2,
+					"hp": {
+						"average": 16,
+						"formula": "3d8 + 3"
+					},
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Hrigg's spellcasting ability is Wisdom (spell save {@dc 12}, {@hit 4} to hit with spell attacks). He has the following cleric spells prepared:"
+							],
+							"will": [
+								"{@spell guidance}",
+								"{@spell sacred flame}"
+							],
+							"spells": {
+								"1": {
+									"slots": 2,
+									"spells": [
+										"{@spell cure wounds}",
+										"{@spell bless}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Hrigg Roundrook (3rd Level)",
+					"source": "DSotDQ",
+					"level": 3,
+					"hp": {
+						"average": 22,
+						"formula": "4d8 + 4"
+					},
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Hrigg's spellcasting ability is Wisdom (spell save {@dc 12}, {@hit 4} to hit with spell attacks). He has the following cleric spells prepared:"
+							],
+							"will": [
+								"{@spell guidance}",
+								"{@spell sacred flame}"
+							],
+							"spells": {
+								"1": {
+									"slots": 3,
+									"spells": [
+										"{@spell cure wounds}",
+										"{@spell bless}",
+										"{@spell detect evil and good}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Hrigg Roundrook (4th Level)",
+					"source": "DSotDQ",
+					"level": 4,
+					"hp": {
+						"average": 27,
+						"formula": "5d8 + 5"
+					},
+					"wis": 15,
+					"save": {
+						"wis": "+5"
+					},
+					"skill": {
+						"athletics": "+4",
+						"history": "+2",
+						"medicine": "+5",
+						"perception": "+5"
+					},
+					"passive": 15,
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Hrigg's spellcasting ability is Wisdom (spell save {@dc 13}, {@hit 5} to hit with spell attacks). He has the following cleric spells prepared:"
+							],
+							"will": [
+								"{@spell guidance}",
+								"{@spell sacred flame}",
+								"{@spell spare the dying}"
+							],
+							"spells": {
+								"1": {
+									"slots": 3,
+									"spells": [
+										"{@spell cure wounds}",
+										"{@spell bless}",
+										"{@spell detect evil and good}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Hrigg Roundrook (5th Level)",
+					"source": "DSotDQ",
+					"level": 5,
+					"hp": {
+						"average": 33,
+						"formula": "6d8 + 6"
+					},
+					"wis": 15,
+					"save": {
+						"wis": "+6"
+					},
+					"skill": {
+						"athletics": "+5",
+						"history": "+3",
+						"medicine": "+6",
+						"perception": "+6"
+					},
+					"passive": 15,
+					"pbNote": "+3",
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Hrigg's spellcasting ability is Wisdom (spell save {@dc 14}, {@hit 6} to hit with spell attacks). He has the following cleric spells prepared:"
+							],
+							"will": [
+								"{@spell guidance}",
+								"{@spell sacred flame}",
+								"{@spell spare the dying}"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell cure wounds}",
+										"{@spell bless}",
+										"{@spell detect evil and good}"
+									]
+								},
+								"2": {
+									"slots": 2,
+									"spells": [
+										"{@spell spiritual weapon}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"_mod": {
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Maul",
+							"items": {
+								"name": "Maul",
+								"entries": [
+									"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."			
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Hrigg Roundrook (6th Level)",
+					"source": "DSotDQ",
+					"level": 6,
+					"hp": {
+						"average": 38,
+						"formula": "7d8 + 7"
+					},
+					"wis": 15,
+					"save": {
+						"wis": "+6"
+					},
+					"skill": {
+						"athletics": "+5",
+						"history": "+3",
+						"medicine": "+6",
+						"perception": "+6"
+					},
+					"passive": 15,
+					"pbNote": "+3",
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Hrigg's spellcasting ability is Wisdom (spell save {@dc 14}, {@hit 6} to hit with spell attacks). He has the following cleric spells prepared:"
+							],
+							"will": [
+								"{@spell guidance}",
+								"{@spell sacred flame}",
+								"{@spell spare the dying}"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell cure wounds}",
+										"{@spell bless}",
+										"{@spell detect evil and good}"
+									]
+								},
+								"2": {
+									"slots": 2,
+									"spells": [
+										"{@spell spiritual weapon}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Potent Cantrips",
+								"entries": [
+									"Hrigg  adds his Wisdom modifier to the damage he deals with any cantrip."
+								]
+							}
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Maul",
+							"items": {
+								"name": "Maul",
+								"entries": [
+									"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."			
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Hrigg Roundrook (7th Level)",
+					"source": "DSotDQ",
+					"level": 7,
+					"hp": {
+						"average": 44,
+						"formula": "8d8 + 8"
+					},
+					"wis": 15,
+					"save": {
+						"wis": "+6"
+					},
+					"skill": {
+						"athletics": "+5",
+						"history": "+3",
+						"medicine": "+6",
+						"perception": "+6"
+					},
+					"passive": 15,
+					"pbNote": "+3",
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Hrigg's spellcasting ability is Wisdom (spell save {@dc 14}, {@hit 6} to hit with spell attacks). He has the following cleric spells prepared:"
+							],
+							"will": [
+								"{@spell guidance}",
+								"{@spell sacred flame}",
+								"{@spell spare the dying}"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell cure wounds}",
+										"{@spell bless}",
+										"{@spell detect evil and good}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell spiritual weapon}",
+										"{@spell lesser restoration}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Potent Cantrips",
+								"entries": [
+									"Hrigg  adds his Wisdom modifier to the damage he deals with any cantrip."
+								]
+							}
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Maul",
+							"items": {
+								"name": "Maul",
+								"entries": [
+									"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."			
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Hrigg Roundrook (8th Level)",
+					"source": "DSotDQ",
+					"level": 8,
+					"hp": {
+						"average": 49,
+						"formula": "9d8 + 9"
+					},
+					"wis": 17,
+					"save": {
+						"wis": "+7"
+					},
+					"skill": {
+						"athletics": "+5",
+						"history": "+3",
+						"medicine": "+7",
+						"perception": "+7"
+					},
+					"passive": 16,
+					"pbNote": "+3",
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Hrigg's spellcasting ability is Wisdom (spell save {@dc 15}, {@hit 7} to hit with spell attacks). He has the following cleric spells prepared:"
+							],
+							"will": [
+								"{@spell guidance}",
+								"{@spell sacred flame}",
+								"{@spell spare the dying}"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell cure wounds}",
+										"{@spell bless}",
+										"{@spell detect evil and good}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell spiritual weapon}",
+										"{@spell lesser restoration}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Potent Cantrips",
+								"entries": [
+									"Hrigg  adds his Wisdom modifier to the damage he deals with any cantrip."
+								]
+							}
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Maul",
+							"items": {
+								"name": "Maul",
+								"entries": [
+									"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."			
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Hrigg Roundrook (9th Level)",
+					"source": "DSotDQ",
+					"level": 9,
+					"hp": {
+						"average": 55,
+						"formula": "10d8 + 10"
+					},
+					"wis": 17,
+					"save": {
+						"wis": "+8"
+					},
+					"skill": {
+						"athletics": "+6",
+						"history": "+4",
+						"medicine": "+8",
+						"perception": "+8"
+					},
+					"passive": 16,
+					"pbNote": "+4",
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Hrigg's spellcasting ability is Wisdom (spell save {@dc 16}, {@hit 8} to hit with spell attacks). He has the following cleric spells prepared:"
+							],
+							"will": [
+								"{@spell guidance}",
+								"{@spell sacred flame}",
+								"{@spell spare the dying}"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell cure wounds}",
+										"{@spell bless}",
+										"{@spell detect evil and good}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell spiritual weapon}",
+										"{@spell lesser restoration}"
+									]
+								},
+								"3": {
+									"slots": 2,
+									"spells": [
+										"{@spell beacon of hope}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Potent Cantrips",
+								"entries": [
+									"Hrigg  adds his Wisdom modifier to the damage he deals with any cantrip."
+								]
+							}
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Maul",
+							"items": {
+								"name": "Maul",
+								"entries": [
+									"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."			
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Hrigg Roundrook (10th Level)",
+					"source": "DSotDQ",
+					"level": 10,
+					"hp": {
+						"average": 60,
+						"formula": "11d8 + 11"
+					},
+					"wis": 17,
+					"save": {
+						"wis": "+8"
+					},
+					"skill": {
+						"athletics": "+6",
+						"history": "+4",
+						"medicine": "+8",
+						"perception": "+8"
+					},
+					"passive": 16,
+					"pbNote": "+4",
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Hrigg's spellcasting ability is Wisdom (spell save {@dc 16}, {@hit 8} to hit with spell attacks). He has the following cleric spells prepared:"
+							],
+							"will": [
+								"{@spell guidance}",
+								"{@spell sacred flame}",
+								"{@spell spare the dying}",
+								"{@spell thaumaturgy}"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell cure wounds}",
+										"{@spell bless}",
+										"{@spell detect evil and good}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell spiritual weapon}",
+										"{@spell lesser restoration}"
+									]
+								},
+								"3": {
+									"slots": 2,
+									"spells": [
+										"{@spell beacon of hope}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Potent Cantrips",
+								"entries": [
+									"Hrigg  adds his Wisdom modifier to the damage he deals with any cantrip."
+								]
+							}
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Maul",
+							"items": {
+								"name": "Maul",
+								"entries": [
+									"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."			
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Hrigg Roundrook (11th Level)",
+					"source": "DSotDQ",
+					"level": 11,
+					"hp": {
+						"average": 66,
+						"formula": "12d8 + 12"
+					},
+					"wis": 17,
+					"save": {
+						"wis": "+8"
+					},
+					"skill": {
+						"athletics": "+6",
+						"history": "+4",
+						"medicine": "+8",
+						"perception": "+8"
+					},
+					"passive": 16,
+					"pbNote": "+4",
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Hrigg's spellcasting ability is Wisdom (spell save {@dc 16}, {@hit 8} to hit with spell attacks). He has the following cleric spells prepared:"
+							],
+							"will": [
+								"{@spell guidance}",
+								"{@spell sacred flame}",
+								"{@spell spare the dying}",
+								"{@spell thaumaturgy}"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell cure wounds}",
+										"{@spell bless}",
+										"{@spell detect evil and good}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell spiritual weapon}",
+										"{@spell lesser restoration}"
+									]
+								},
+								"3": {
+									"slots": 3,
+									"spells": [
+										"{@spell beacon of hope}",
+										"{@spell spirit guardians}"
+									]
+								}
+							},
+							"ability": "wis"
+						}
+					],
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Potent Cantrips",
+								"entries": [
+									"Hrigg  adds his Wisdom modifier to the damage he deals with any cantrip."
+								]
+							}
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Maul",
+							"items": {
+								"name": "Maul",
+								"entries": [
+									"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."			
+								]
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Hulking Shadow",
