@@ -148,6 +148,79 @@
 					]
 				}
 			],
+			"variant": [
+				{
+					"type": "variant",
+					"name": "Andir beyond 1st Level",
+					"entries": [
+						{
+							"type": "table",
+							"colLabels": [
+								"Level",
+								"Hit Points",
+								"New Features"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-2",
+								"col-8"
+							],
+							"rows": [
+								[
+									"2nd",
+									"16 ({@dice 3d8 + 3})",
+									"Spellcasting. Andir learns another 1st-level spell: {@spell longstrider}."
+								],
+								[
+									"3rd",
+									"22 ({@dice 4d8 + 4})",
+									"Spellcasting. Andir gains one 1st-level spell slot. He also learns another 1st-level spell: {@spell Tenser's floating disk}."
+								],
+								[
+									"4th",
+									"27 ({@dice 5d8 + 5})",
+									"Ability Score Improvement. Andir's Intelligence score increases by 2, raising the modifier by 1, so increase the following numbers by 1: his spell save DC, the bonus to hit of his spell attacks, and the bonuses in his Skills entry. Spellcasting. Andir learns another cantrip: {@spell mage hand}."
+								],
+								[
+									"5th",
+									"33 ({@dice 6d8 + 6})",
+									"Proficiency Bonus. Andir's proficiency bonus increases by 1, so increase the following numbers by 1: his spell save DC, the bonus to hit of his Quarterstaff and spell attacks, and the bonuses in the Saving Throws and Skills entries. Spellcasting. Andir gains one 1st-level spell slot and two 2nd-level spell slots. He also learns a 2nd-level spell: {@spell knock}."
+								],
+								[
+									"6th",
+									"38 ({@dice 7d8 + 7})",
+									"Potent Cantrips. Andir adds his Intelligence modifier to the damage he deals with any cantrip."
+								],
+								[
+									"7th",
+									"44 ({@dice 8d8 + 8})",
+									"Spellcasting. Andir gains one 2nd-level spell slot. He also learns another 2nd-level spell: {@spell invisibility}."
+								],
+								[
+									"8th",
+									"49 ({@dice 9d8 + 9})",
+									"Ability Score Improvement. Andir's Intelligence score increases by 2, raising the modifier by 1, so increase the following numbers by 1: his spell save DC, the bonus to hit of his spell attacks, and the bonuses in his Skills entry."
+								],
+								[
+									"9th",
+									"55 ({@dice 10d8 + 10})",
+									"Proficiency Bonus. Andir's proficiency bonus increases by 1, so increase the following numbers by 1: his spell save DC, the bonus to hit of his Quarterstaff and spell attacks, and the bonuses in the Saving Throws and Skills entries. Spellcasting. Andir gains two 3rd-level spell slots. He also learns a 3rd-level spell: {@spell haste}."
+								],
+								[
+									"10th",
+									"60 ({@dice 11d8 + 11})",
+									"Spellcasting. Andir learns another cantrip: {@spell minor illusion}."
+								],
+								[
+									"11th",
+									"66 ({@dice 12d8 + 12})",
+									"Spellcasting. Andir gains one 3rd-level spell slot. He also learns another 3rd-level spell: {@spell sending}."
+								]
+							]
+						}
+					]
+				}
+			],
 			"languageTags": [
 				"C",
 				"DR"
@@ -168,7 +241,636 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Andir Valmakos (10th Level)",
+					"source": "DSotDQ",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Potent Cantrips",
+								"entries": [
+									"Andir adds his Intelligence modifier to the damage he deals with any cantrip."
+								]
+							}
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Quarterstaff",
+							"items": {
+								"name": "Quarterstaff",
+								"entries": [
+									"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d6}) bludgeoning damage, or 4 ({@damage 1d8}) bludgeoning damage if used with two hands."
+								]
+							}
+						}
+					},
+					"level": 10,
+					"hp": {
+						"average": 60,
+						"formula": "11d8 + 11"
+					},
+					"int": 18,
+					"save": {
+						"wis": "+4"
+					},
+					"skill": {
+						"arcana": "+8",
+						"history": "+8",
+						"investigation": "+8",
+						"religion": "+8"
+					},
+					"pbNote": "+4",
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Andir's spellcasting ability is Intelligence (spell save {@dc 16}, {@hit 8} to hit with spell attacks). He has the following wizard spells prepared:"
+							],
+							"will": [
+								"{@spell light}",
+								"{@spell ray of frost}",
+								"{@spell mage hand}",
+								"{@spell minor illusion}"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell thunderwave}",
+										"{@spell longstrider}",
+										"{@spell Tenser's floating disk}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell knock}",
+										"{@spell invisibility}"
+									]
+								},
+								"3": {
+									"slots": 2,
+									"spells": [
+										"{@spell haste}"
+									]
+								}
+							},
+							"ability": "int"
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Andir Valmakos (11th Level)",
+					"source": "DSotDQ",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Potent Cantrips",
+								"entries": [
+									"Andir adds his Intelligence modifier to the damage he deals with any cantrip."
+								]
+							}
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Quarterstaff",
+							"items": {
+								"name": "Quarterstaff",
+								"entries": [
+									"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d6}) bludgeoning damage, or 4 ({@damage 1d8}) bludgeoning damage if used with two hands."
+								]
+							}
+						}
+					},
+					"level": 11,
+					"hp": {
+						"average": 66,
+						"formula": "12d8 + 12"
+					},
+					"int": 18,
+					"save": {
+						"wis": "+4"
+					},
+					"skill": {
+						"arcana": "+8",
+						"history": "+8",
+						"investigation": "+8",
+						"religion": "+8"
+					},
+					"pbNote": "+4",
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Andir's spellcasting ability is Intelligence (spell save {@dc 16}, {@hit 8} to hit with spell attacks). He has the following wizard spells prepared:"
+							],
+							"will": [
+								"{@spell light}",
+								"{@spell ray of frost}",
+								"{@spell mage hand}",
+								"{@spell minor illusion}"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell thunderwave}",
+										"{@spell longstrider}",
+										"{@spell Tenser's floating disk}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell knock}",
+										"{@spell invisibility}"
+									]
+								},
+								"3": {
+									"slots": 3,
+									"spells": [
+										"{@spell haste}",
+										"{@spell sending}"
+									]
+								}
+							},
+							"ability": "int"
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Andir Valmakos (2nd Level)",
+					"source": "DSotDQ",
+					"level": 2,
+					"hp": {
+						"average": 16,
+						"formula": "3d8 + 3"
+					},
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Andir's spellcasting ability is Intelligence (spell save {@dc 12}, {@hit 4} to hit with spell attacks). He has the following wizard spells prepared:"
+							],
+							"will": [
+								"{@spell light}",
+								"{@spell ray of frost}"
+							],
+							"spells": {
+								"1": {
+									"slots": 2,
+									"spells": [
+										"{@spell thunderwave}",
+										"{@spell longstrider}"
+									]
+								}
+							},
+							"ability": "int"
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Andir Valmakos (3rd Level)",
+					"source": "DSotDQ",
+					"level": 3,
+					"hp": {
+						"average": 22,
+						"formula": "4d8 + 4"
+					},
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Andir's spellcasting ability is Intelligence (spell save {@dc 12}, {@hit 4} to hit with spell attacks). He has the following wizard spells prepared:"
+							],
+							"will": [
+								"{@spell light}",
+								"{@spell ray of frost}"
+							],
+							"spells": {
+								"1": {
+									"slots": 3,
+									"spells": [
+										"{@spell thunderwave}",
+										"{@spell longstrider}",
+										"{@spell Tenser's floating disk}"
+									]
+								}
+							},
+							"ability": "int"
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Andir Valmakos (4th Level)",
+					"source": "DSotDQ",
+					"level": 4,
+					"hp": {
+						"average": 27,
+						"formula": "5d8 + 5"
+					},
+					"int": 16,
+					"skill": {
+						"arcana": "+5",
+						"history": "+5",
+						"investigation": "+5",
+						"religion": "+5"
+					},
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Andir's spellcasting ability is Intelligence (spell save {@dc 13}, {@hit 5} to hit with spell attacks). He has the following wizard spells prepared:"
+							],
+							"will": [
+								"{@spell light}",
+								"{@spell ray of frost}",
+								"{@spell mage hand}"
+							],
+							"spells": {
+								"1": {
+									"slots": 3,
+									"spells": [
+										"{@spell thunderwave}",
+										"{@spell longstrider}",
+										"{@spell Tenser's floating disk}"
+									]
+								}
+							},
+							"ability": "int"
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Andir Valmakos (5th Level)",
+					"source": "DSotDQ",
+					"_mod": {
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Quarterstaff",
+							"items": {
+								"name": "Quarterstaff",
+								"entries": [
+									"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d6}) bludgeoning damage, or 4 ({@damage 1d8}) bludgeoning damage if used with two hands."
+								]
+							}
+						}
+					},
+					"level": 5,
+					"hp": {
+						"average": 33,
+						"formula": "6d8 + 6"
+					},
+					"int": 16,
+					"save": {
+						"wis": "+3"
+					},
+					"skill": {
+						"arcana": "+6",
+						"history": "+6",
+						"investigation": "+6",
+						"religion": "+6"
+					},
+					"pbNote": "+3",
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Andir's spellcasting ability is Intelligence (spell save {@dc 14}, {@hit 6} to hit with spell attacks). He has the following wizard spells prepared:"
+							],
+							"will": [
+								"{@spell light}",
+								"{@spell ray of frost}",
+								"{@spell mage hand}"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell thunderwave}",
+										"{@spell longstrider}",
+										"{@spell Tenser's floating disk}"
+									]
+								},
+								"2": {
+									"slots": 2,
+									"spells": [
+										"{@spell knock}"
+									]
+								}
+							},
+							"ability": "int"
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Andir Valmakos (6th Level)",
+					"source": "DSotDQ",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Potent Cantrips",
+								"entries": [
+									"Andir adds his Intelligence modifier to the damage he deals with any cantrip."
+								]
+							}
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Quarterstaff",
+							"items": {
+								"name": "Quarterstaff",
+								"entries": [
+									"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d6}) bludgeoning damage, or 4 ({@damage 1d8}) bludgeoning damage if used with two hands."
+								]
+							}
+						}
+					},
+					"level": 6,
+					"hp": {
+						"average": 38,
+						"formula": "7d8 + 7"
+					},
+					"int": 16,
+					"save": {
+						"wis": "+3"
+					},
+					"skill": {
+						"arcana": "+6",
+						"history": "+6",
+						"investigation": "+6",
+						"religion": "+6"
+					},
+					"pbNote": "+3",
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Andir's spellcasting ability is Intelligence (spell save {@dc 14}, {@hit 6} to hit with spell attacks). He has the following wizard spells prepared:"
+							],
+							"will": [
+								"{@spell light}",
+								"{@spell ray of frost}",
+								"{@spell mage hand}"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell thunderwave}",
+										"{@spell longstrider}",
+										"{@spell Tenser's floating disk}"
+									]
+								},
+								"2": {
+									"slots": 2,
+									"spells": [
+										"{@spell knock}"
+									]
+								}
+							},
+							"ability": "int"
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Andir Valmakos (7th Level)",
+					"source": "DSotDQ",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Potent Cantrips",
+								"entries": [
+									"Andir adds his Intelligence modifier to the damage he deals with any cantrip."
+								]
+							}
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Quarterstaff",
+							"items": {
+								"name": "Quarterstaff",
+								"entries": [
+									"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d6}) bludgeoning damage, or 4 ({@damage 1d8}) bludgeoning damage if used with two hands."
+								]
+							}
+						}
+					},
+					"level": 7,
+					"hp": {
+						"average": 44,
+						"formula": "8d8 + 8"
+					},
+					"int": 16,
+					"save": {
+						"wis": "+3"
+					},
+					"skill": {
+						"arcana": "+6",
+						"history": "+6",
+						"investigation": "+6",
+						"religion": "+6"
+					},
+					"pbNote": "+3",
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Andir's spellcasting ability is Intelligence (spell save {@dc 14}, {@hit 6} to hit with spell attacks). He has the following wizard spells prepared:"
+							],
+							"will": [
+								"{@spell light}",
+								"{@spell ray of frost}",
+								"{@spell mage hand}"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell thunderwave}",
+										"{@spell longstrider}",
+										"{@spell Tenser's floating disk}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell knock}",
+										"{@spell invisibility}"
+									]
+								}
+							},
+							"ability": "int"
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Andir Valmakos (8th Level)",
+					"source": "DSotDQ",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Potent Cantrips",
+								"entries": [
+									"Andir adds his Intelligence modifier to the damage he deals with any cantrip."
+								]
+							}
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Quarterstaff",
+							"items": {
+								"name": "Quarterstaff",
+								"entries": [
+									"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d6}) bludgeoning damage, or 4 ({@damage 1d8}) bludgeoning damage if used with two hands."
+								]
+							}
+						}
+					},
+					"level": 8,
+					"hp": {
+						"average": 49,
+						"formula": "9d8 + 9"
+					},
+					"int": 18,
+					"save": {
+						"wis": "+3"
+					},
+					"skill": {
+						"arcana": "+7",
+						"history": "+7",
+						"investigation": "+7",
+						"religion": "+7"
+					},
+					"pbNote": "+3",
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Andir's spellcasting ability is Intelligence (spell save {@dc 15}, {@hit 7} to hit with spell attacks). He has the following wizard spells prepared:"
+							],
+							"will": [
+								"{@spell light}",
+								"{@spell ray of frost}",
+								"{@spell mage hand}"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell thunderwave}",
+										"{@spell longstrider}",
+										"{@spell Tenser's floating disk}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell knock}",
+										"{@spell invisibility}"
+									]
+								}
+							},
+							"ability": "int"
+						}
+					],
+					"variant": null
+				},
+				{
+					"name": "Andir Valmakos (9th Level)",
+					"source": "DSotDQ",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Potent Cantrips",
+								"entries": [
+									"Andir adds his Intelligence modifier to the damage he deals with any cantrip."
+								]
+							}
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Quarterstaff",
+							"items": {
+								"name": "Quarterstaff",
+								"entries": [
+									"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d6}) bludgeoning damage, or 4 ({@damage 1d8}) bludgeoning damage if used with two hands."
+								]
+							}
+						}
+					},
+					"level": 9,
+					"hp": {
+						"average": 55,
+						"formula": "10d8 + 10"
+					},
+					"int": 18,
+					"save": {
+						"wis": "+4"
+					},
+					"skill": {
+						"arcana": "+8",
+						"history": "+8",
+						"investigation": "+8",
+						"religion": "+8"
+					},
+					"pbNote": "+4",
+					"spellcasting": [
+						{
+							"name": "Spellcasting",
+							"headerEntries": [
+								"Andir's spellcasting ability is Intelligence (spell save {@dc 16}, {@hit 8} to hit with spell attacks). He has the following wizard spells prepared:"
+							],
+							"will": [
+								"{@spell light}",
+								"{@spell ray of frost}",
+								"{@spell mage hand}"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell thunderwave}",
+										"{@spell longstrider}",
+										"{@spell Tenser's floating disk}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell knock}",
+										"{@spell invisibility}"
+									]
+								},
+								"3": {
+									"slots": 2,
+									"spells": [
+										"{@spell haste}"
+									]
+								}
+							},
+							"ability": "int"
+						}
+					],
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Anhkolox",
