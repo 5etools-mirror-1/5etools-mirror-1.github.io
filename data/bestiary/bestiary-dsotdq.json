@@ -3537,7 +3537,7 @@
 				{
 					"name": "Bonus Proficiencies",
 					"entries": [
-						"Iriad is proficient with simple weapons, light armor, cartographer's tools, and woodcarver's tools."
+						"Iriad is proficient with simple weapons, light armor, {@item cartographer's tools|PHB}, and {@item woodcarver's tools|PHB}."
 					]
 				},
 				{
@@ -3559,7 +3559,7 @@
 				{
 					"name": "Helpful",
 					"entries": [
-						"Iriad takes the Help action."
+						"Iriad takes the {@action Help} action."
 					]
 				}
 			],
@@ -3584,7 +3584,720 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"variant": [
+				{
+					"type": "variant",
+					"name": "Iriad beyond 1st Level",
+					"entries": [
+						{
+							"type": "table",
+							"colLabels": [
+								"Level",
+								"Hit Points",
+								"New Features"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-2",
+								"col-8"
+							],
+							"rows": [
+								[
+									"2nd",
+									"16 ({@dice 3d8 + 3})",
+									"Cunning Action. On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+								],
+								[
+									"3rd",
+									"22 ({@dice 4d8 + 4})",
+									"Expertise. Iriad's proficiency bonus is doubled for any ability check she makes that uses either {@skill Stealth} or {@skill Survival}."
+								],
+								[
+									"4th",
+									"27 ({@dice 5d8 + 5})",
+									"Ability Score Improvement. Iriad's Dexterity score increases by 2, raising the modifier by 1, so increase the following numbers by 1: her Armor Class, her Dexterity saving throw bonus, her {@skill Stealth} bonus, and the bonuses to hit and damage of her weapon attacks."
+								],
+								[
+									"5th",
+									"33 ({@dice 6d8 + 6})",
+									"Proficiency Bonus. Iriad's proficiency bonus increases by 1, so make the following changes in her stat block: increase the bonuses in the Saving Throws and Skills entries by 1 (by 2 for {@skill Perception}, {@skill Stealth}, and {@skill Survival}); increase her passive Perception score by 2; increase the bonuses to hit of her weapon attacks by 1."
+								],
+								[
+									"6th",
+									"38 ({@dice 7d8 + 7})",
+									"Coordinated Strike. When Iriad uses her Helpful feature to aid an ally in attacking a creature, that target can be up to 30 feet away from her, and she can deal an extra {@dice 2d6} damage to it the next time she hits it with an attack roll before the end of the current turn. The extra damage is the same type of damage dealt by the attack."
+								],
+								[
+									"7th",
+									"44 ({@dice 8d8 + 8})",
+									"Evasion. When Iriad is subjected to an effect that allows her to make a Dexterity saving throw to take only half damage, she instead takes no damage if she succeeds on the saving throw, and only half damage if she fails. Iriad doesn't benefit from this feature while {@condition incapacitated}."
+								],
+								[
+									"8th",
+									"49 ({@dice 9d8 + 9})",
+									"Ability Score Improvement. Iriad's Strength and Wisdom scores both increase by 1, raising their modifiers by 1, so increase the following numbers by 1: her {@skill Athletics}, {@skill Perception}, and {@skill Survival} bonuses and her passive Perception score."
+								],
+								[
+									"9th",
+									"55 ({@dice 10d8 + 10})",
+									"Proficiency Bonus. Iriad's proficiency bonus increases by 1, so make the following changes in her stat block: increase the bonuses in the Saving Throws and Skills entries by 1 (by 2 for {@skill Perception}, {@skill Stealth}, and {@skill Survival}); increase her passive Perception score by 2; increase the bonuses to hit of her weapon attacks by 1."
+								],
+								[
+									"10th",
+									"60 ({@dice 11d8 + 11})",
+									"Ability Score Improvement. Iriad's Dexterity score increases by 2, raising the modifier by 1, so increase the following numbers by 1: her Armor Class, her Dexterity saving throw bonus, her {@skill Stealth} bonus, and the bonuses to hit and damage of her weapon attacks."
+								],
+								[
+									"11th",
+									"66 ({@dice 12d8 + 12})",
+									"Inspiring Help. When Iriad takes the {@action help||Help} action, the creature who receives the help also gains a {@dice 1d6} bonus to the {@dice d20} roll. If that roll is an attack roll, the creature can forgo adding the bonus to it, and then if the attack hits, the creature can add the bonus to the attack's damage roll against one target."
+								]
+							]
+						}
+					]
+				}
+			],
+			"_versions": [
+				{
+					"name": "Iriad (2nd Level)",
+					"source": "DSotDQ",
+					"level": 2,
+					"hp": {
+						"average": 16,
+						"formula": "3d8 + 3"
+					},
+					"_mod": {
+						"bonus": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Cunning Action",
+								"entries": [
+									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Iriad (3rd Level)",
+					"source": "DSotDQ",
+					"level": 3,
+					"hp": {
+						"average": 22,
+						"formula": "4d8 + 4"
+					},
+					"skill": {
+						"acrobatics": "+5",
+						"athletics": "+2",
+						"investigation": "+2",
+						"nature": "+2",
+						"perception": "+5",
+						"stealth": "+7",
+						"survival": "+5"
+					},
+					"_mod": {
+						"bonus": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Cunning Action",
+								"entries": [
+									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Expertise",
+								"entries": [
+									"Iriad's proficiency bonus is doubled for any ability check she makes that uses either {@skill Stealth} or {@skill Survival}."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Iriad (4th Level)",
+					"source": "DSotDQ",
+					"level": 4,
+					"hp": {
+						"average": 27,
+						"formula": "5d8 + 5"
+					},
+					"dex": 18,
+					"ac": [
+						{
+							"ac": 15,
+							"from": [
+								"{@item leather armor|PHB}"
+							]
+						}
+					],
+					"save": {
+						"dex": "+5"
+					},
+					"skill": {
+						"acrobatics": "+5",
+						"athletics": "+2",
+						"investigation": "+2",
+						"nature": "+2",
+						"perception": "+5",
+						"stealth": "+8",
+						"survival": "+5"
+					},
+					"action": [
+						{
+							"name": "Poison Dagger",
+							"entries": [
+								"{@atk mw,rw} {@hit 6} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}6 ({@damage 1d4 + 4}) piercing damage plus 3 ({@damage 1d6}) poison damage."
+							]
+						}
+					],
+					"_mod": {
+						"bonus": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Cunning Action",
+								"entries": [
+									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Expertise",
+								"entries": [
+									"Iriad's proficiency bonus is doubled for any ability check she makes that uses either {@skill Stealth} or {@skill Survival}."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Iriad (5th Level)",
+					"source": "DSotDQ",
+					"level": 5,
+					"hp": {
+						"average": 33,
+						"formula": "6d8 + 6"
+					},
+					"dex": 18,
+					"ac": [
+						{
+							"ac": 15,
+							"from": [
+								"{@item leather armor|PHB}"
+							]
+						}
+					],
+					"save": {
+						"dex": "+6"
+					},
+					"skill": {
+						"acrobatics": "+6",
+						"athletics": "+3",
+						"investigation": "+3",
+						"nature": "+3",
+						"perception": "+7",
+						"stealth": "+10",
+						"survival": "+7"
+					},
+					"passive": 15,
+					"pbNote": "+3",
+					"action": [
+						{
+							"name": "Poison Dagger",
+							"entries": [
+								"{@atk mw,rw} {@hit 7} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}6 ({@damage 1d4 + 4}) piercing damage plus 3 ({@damage 1d6}) poison damage."
+							]
+						}
+					],
+					"_mod": {
+						"bonus": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Cunning Action",
+								"entries": [
+									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Expertise",
+								"entries": [
+									"Iriad's proficiency bonus is doubled for any ability check she makes that uses either {@skill Stealth} or {@skill Survival}."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Iriad (6th Level)",
+					"source": "DSotDQ",
+					"level": 6,
+					"hp": {
+						"average": 38,
+						"formula": "7d8 + 7"
+					},
+					"dex": 18,
+					"ac": [
+						{
+							"ac": 15,
+							"from": [
+								"{@item leather armor|PHB}"
+							]
+						}
+					],
+					"save": {
+						"dex": "+6"
+					},
+					"skill": {
+						"acrobatics": "+6",
+						"athletics": "+3",
+						"investigation": "+3",
+						"nature": "+3",
+						"perception": "+7",
+						"stealth": "+10",
+						"survival": "+7"
+					},
+					"passive": 15,
+					"pbNote": "+3",
+					"action": [
+						{
+							"name": "Poison Dagger",
+							"entries": [
+								"{@atk mw,rw} {@hit 7} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}6 ({@damage 1d4 + 4}) piercing damage plus 3 ({@damage 1d6}) poison damage."
+							]
+						}
+					],
+					"_mod": {
+						"bonus": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Cunning Action",
+								"entries": [
+									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Expertise",
+									"entries": [
+										"Iriad's proficiency bonus is doubled for any ability check she makes that uses either {@skill Stealth} or {@skill Survival}."
+									]
+								},
+								{
+									"name": "Coordinated Strike",
+									"entries": [
+										"When Iriad uses her Helpful feature to aid an ally in attacking a creature, that target can be up to 30 feet away from her, and she can deal an extra {@damage 2d6} damage to it the next time she hits it with an attack roll before the end of the current turn. The extra damage is the same type of damage dealt by the attack."
+									]
+								}
+							]
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Iriad (7th Level)",
+					"source": "DSotDQ",
+					"level": 7,
+					"hp": {
+						"average": 44,
+						"formula": "8d8 + 8"
+					},
+					"dex": 18,
+					"ac": [
+						{
+							"ac": 15,
+							"from": [
+								"{@item leather armor|PHB}"
+							]
+						}
+					],
+					"save": {
+						"dex": "+6"
+					},
+					"skill": {
+						"acrobatics": "+6",
+						"athletics": "+3",
+						"investigation": "+3",
+						"nature": "+3",
+						"perception": "+7",
+						"stealth": "+10",
+						"survival": "+7"
+					},
+					"passive": 15,
+					"pbNote": "+3",
+					"action": [
+						{
+							"name": "Poison Dagger",
+							"entries": [
+								"{@atk mw,rw} {@hit 7} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}6 ({@damage 1d4 + 4}) piercing damage plus 3 ({@damage 1d6}) poison damage."
+							]
+						}
+					],
+					"_mod": {
+						"bonus": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Cunning Action",
+								"entries": [
+									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Expertise",
+									"entries": [
+										"Iriad's proficiency bonus is doubled for any ability check she makes that uses either {@skill Stealth} or {@skill Survival}."
+									]
+								},
+								{
+									"name": "Coordinated Strike",
+									"entries": [
+										"When Iriad uses her Helpful feature to aid an ally in attacking a creature, that target can be up to 30 feet away from her, and she can deal an extra {@damage 2d6} damage to it the next time she hits it with an attack roll before the end of the current turn. The extra damage is the same type of damage dealt by the attack."
+									]
+								},
+								{
+									"name": "Evasion",
+									"entries": [
+										"When Iriad is subjected to an effect that allows her to make a Dexterity saving throw to take only half damage, she instead takes no damage if she succeeds on the saving throw, and only half damage if she fails. Iriad doesn't benefit from this feature while {@condition incapacitated}."
+									]
+								}
+							]
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Iriad (8th Level)",
+					"source": "DSotDQ",
+					"level": 8,
+					"hp": {
+						"average": 49,
+						"formula": "9d8 + 9"
+					},
+					"dex": 18,
+					"str": 12,
+					"wis": 14,
+					"ac": [
+						{
+							"ac": 15,
+							"from": [
+								"{@item leather armor|PHB}"
+							]
+						}
+					],
+					"save": {
+						"dex": "+6"
+					},
+					"skill": {
+						"acrobatics": "+6",
+						"athletics": "+4",
+						"investigation": "+3",
+						"nature": "+3",
+						"perception": "+8",
+						"stealth": "+10",
+						"survival": "+8"
+					},
+					"passive": 16,
+					"pbNote": "+3",
+					"action": [
+						{
+							"name": "Poison Dagger",
+							"entries": [
+								"{@atk mw,rw} {@hit 7} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}6 ({@damage 1d4 + 4}) piercing damage plus 3 ({@damage 1d6}) poison damage."
+							]
+						}
+					],
+					"_mod": {
+						"bonus": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Cunning Action",
+								"entries": [
+									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Expertise",
+									"entries": [
+										"Iriad's proficiency bonus is doubled for any ability check she makes that uses either {@skill Stealth} or {@skill Survival}."
+									]
+								},
+								{
+									"name": "Coordinated Strike",
+									"entries": [
+										"When Iriad uses her Helpful feature to aid an ally in attacking a creature, that target can be up to 30 feet away from her, and she can deal an extra {@damage 2d6} damage to it the next time she hits it with an attack roll before the end of the current turn. The extra damage is the same type of damage dealt by the attack."
+									]
+								},
+								{
+									"name": "Evasion",
+									"entries": [
+										"When Iriad is subjected to an effect that allows her to make a Dexterity saving throw to take only half damage, she instead takes no damage if she succeeds on the saving throw, and only half damage if she fails. Iriad doesn't benefit from this feature while {@condition incapacitated}."
+									]
+								}
+							]
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Iriad (9th Level)",
+					"source": "DSotDQ",
+					"level": 9,
+					"hp": {
+						"average": 55,
+						"formula": "10d8 + 10"
+					},
+					"dex": 18,
+					"str": 12,
+					"wis": 14,
+					"ac": [
+						{
+							"ac": 15,
+							"from": [
+								"{@item leather armor|PHB}"
+							]
+						}
+					],
+					"save": {
+						"dex": "+7"
+					},
+					"skill": {
+						"acrobatics": "+7",
+						"athletics": "+5",
+						"investigation": "+4",
+						"nature": "+4",
+						"perception": "+10",
+						"stealth": "+12",
+						"survival": "+10"
+					},
+					"passive": 18,
+					"pbNote": "+4",
+					"action": [
+						{
+							"name": "Poison Dagger",
+							"entries": [
+								"{@atk mw,rw} {@hit 8} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}6 ({@damage 1d4 + 4}) piercing damage plus 3 ({@damage 1d6}) poison damage."
+							]
+						}
+					],
+					"_mod": {
+						"bonus": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Cunning Action",
+								"entries": [
+									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Expertise",
+									"entries": [
+										"Iriad's proficiency bonus is doubled for any ability check she makes that uses either {@skill Stealth} or {@skill Survival}."
+									]
+								},
+								{
+									"name": "Coordinated Strike",
+									"entries": [
+										"When Iriad uses her Helpful feature to aid an ally in attacking a creature, that target can be up to 30 feet away from her, and she can deal an extra {@damage 2d6} damage to it the next time she hits it with an attack roll before the end of the current turn. The extra damage is the same type of damage dealt by the attack."
+									]
+								},
+								{
+									"name": "Evasion",
+									"entries": [
+										"When Iriad is subjected to an effect that allows her to make a Dexterity saving throw to take only half damage, she instead takes no damage if she succeeds on the saving throw, and only half damage if she fails. Iriad doesn't benefit from this feature while {@condition incapacitated}."
+									]
+								}
+							]
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Iriad (10th Level)",
+					"source": "DSotDQ",
+					"level": 10,
+					"hp": {
+						"average": 60,
+						"formula": "11d8 + 11"
+					},
+					"dex": 20,
+					"str": 12,
+					"wis": 14,
+					"ac": [
+						{
+							"ac": 16,
+							"from": [
+								"{@item leather armor|PHB}"
+							]
+						}
+					],
+					"save": {
+						"dex": "+8"
+					},
+					"skill": {
+						"acrobatics": "+7",
+						"athletics": "+5",
+						"investigation": "+4",
+						"nature": "+4",
+						"perception": "+10",
+						"stealth": "+13",
+						"survival": "+10"
+					},
+					"passive": 18,
+					"pbNote": "+4",
+					"action": [
+						{
+							"name": "Poison Dagger",
+							"entries": [
+								"{@atk mw,rw} {@hit 9} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}7 ({@damage 1d4 + 5}) piercing damage plus 3 ({@damage 1d6}) poison damage."
+							]
+						}
+					],
+					"_mod": {
+						"bonus": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Cunning Action",
+								"entries": [
+									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Expertise",
+									"entries": [
+										"Iriad's proficiency bonus is doubled for any ability check she makes that uses either {@skill Stealth} or {@skill Survival}."
+									]
+								},
+								{
+									"name": "Coordinated Strike",
+									"entries": [
+										"When Iriad uses her Helpful feature to aid an ally in attacking a creature, that target can be up to 30 feet away from her, and she can deal an extra {@damage 2d6} damage to it the next time she hits it with an attack roll before the end of the current turn. The extra damage is the same type of damage dealt by the attack."
+									]
+								},
+								{
+									"name": "Evasion",
+									"entries": [
+										"When Iriad is subjected to an effect that allows her to make a Dexterity saving throw to take only half damage, she instead takes no damage if she succeeds on the saving throw, and only half damage if she fails. Iriad doesn't benefit from this feature while {@condition incapacitated}."
+									]
+								}
+							]
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Iriad (11th Level)",
+					"source": "DSotDQ",
+					"level": 11,
+					"hp": {
+						"average": 66,
+						"formula": "12d8 + 12"
+					},
+					"dex": 20,
+					"str": 12,
+					"wis": 14,
+					"ac": [
+						{
+							"ac": 16,
+							"from": [
+								"{@item leather armor|PHB}"
+							]
+						}
+					],
+					"save": {
+						"dex": "+8"
+					},
+					"skill": {
+						"acrobatics": "+7",
+						"athletics": "+5",
+						"investigation": "+4",
+						"nature": "+4",
+						"perception": "+10",
+						"stealth": "+13",
+						"survival": "+10"
+					},
+					"passive": 18,
+					"pbNote": "+4",
+					"action": [
+						{
+							"name": "Poison Dagger",
+							"entries": [
+								"{@atk mw,rw} {@hit 9} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}7 ({@damage 1d4 + 5}) piercing damage plus 3 ({@damage 1d6}) poison damage."
+							]
+						}
+					],
+					"_mod": {
+						"bonus": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Cunning Action",
+								"entries": [
+									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Expertise",
+									"entries": [
+										"Iriad's proficiency bonus is doubled for any ability check she makes that uses either {@skill Stealth} or {@skill Survival}."
+									]
+								},
+								{
+									"name": "Coordinated Strike",
+									"entries": [
+										"When Iriad uses her Helpful feature to aid an ally in attacking a creature, that target can be up to 30 feet away from her, and she can deal an extra {@damage 2d6} damage to it the next time she hits it with an attack roll before the end of the current turn. The extra damage is the same type of damage dealt by the attack."
+									]
+								},
+								{
+									"name": "Evasion",
+									"entries": [
+										"When Iriad is subjected to an effect that allows her to make a Dexterity saving throw to take only half damage, she instead takes no damage if she succeeds on the saving throw, and only half damage if she fails. Iriad doesn't benefit from this feature while {@condition incapacitated}."
+									]
+								},
+								{
+									"name": "Inspiring Help",
+									"entries": [
+										"When Iriad takes the {@action help||Help} action, the creature who receives the help also gains a {@dice 1d6} bonus to the {@dice d20} roll. If that roll is an attack roll, the creature can forgo adding the bonus to it, and then if the attack hits, the creature can add the bonus to the attack's damage roll against one target."
+									]
+								}
+							]
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Ishvern",

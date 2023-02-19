@@ -450,73 +450,7 @@
 			"name": "Iriad",
 			"source": "DSotDQ",
 			"entries": [
-				"{@creature Iriad|DSotDQ} is a Kagonesti elf from the lush woodlands of Southern Ergoth, where she learned to move undetected across the terrain. When Silvanesti elves began arriving at Southern Ergoth as refugees, she decided to lend her skills in the fight against the Dragon Armies before they can invade her homeland. She is a talented spy and scout who isn't afraid to bring her blades to bear if the situation demands it.",
-				{
-					"type": "table",
-					"caption": "Iriad beyond 1st Level",
-					"colLabels": [
-						"Level",
-						"Hit Points",
-						"New Features"
-					],
-					"colStyles": [
-						"col-2 text-center",
-						"col-2",
-						"col-8"
-					],
-					"rows": [
-						[
-							"2nd",
-							"16 ({@dice 3d8 + 3})",
-							"Cunning Action. On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
-						],
-						[
-							"3rd",
-							"22 ({@dice 4d8 + 4})",
-							"Expertise. Iriad's proficiency bonus is doubled for any ability check she makes that uses either {@skill Stealth} or {@skill Survival}."
-						],
-						[
-							"4th",
-							"27 ({@dice 5d8 + 5})",
-							"Ability Score Improvement. Iriad's Dexterity score increases by 2, raising the modifier by 1, so increase the following numbers by 1: her Armor Class, her Dexterity saving throw bonus, her {@skill Stealth} bonus, and the bonuses to hit and damage of her weapon attacks."
-						],
-						[
-							"5th",
-							"33 ({@dice 6d8 + 6})",
-							"Proficiency Bonus. Iriad's proficiency bonus increases by 1, so make the following changes in her stat block: increase the bonuses in the Saving Throws and Skills entries by 1 (by 2 for {@skill Perception}, {@skill Stealth}, and {@skill Survival}); increase her passive Perception score by 2; increase the bonuses to hit of her weapon attacks by 1."
-						],
-						[
-							"6th",
-							"38 ({@dice 7d8 + 7})",
-							"Coordinated Strike. When Iriad uses her Helpful feature to aid an ally in attacking a creature, that target can be up to 30 feet away from her, and she can deal an extra {@dice 2d6} damage to it the next time she hits it with an attack roll before the end of the current turn. The extra damage is the same type of damage dealt by the attack."
-						],
-						[
-							"7th",
-							"44 ({@dice 8d8 + 8})",
-							"Evasion. When Iriad is subjected to an effect that allows her to make a Dexterity saving throw to take only half damage, she instead takes no damage if she succeeds on the saving throw, and only half damage if she fails. Iriad doesn't benefit from this feature while {@condition incapacitated}."
-						],
-						[
-							"8th",
-							"49 ({@dice 9d8 + 9})",
-							"Ability Score Improvement. Iriad's Strength and Wisdom scores both increase by 1, raising their modifiers by 1, so increase the following numbers by 1: her {@skill Athletics}, {@skill Perception}, and {@skill Survival} bonuses and her passive Perception score."
-						],
-						[
-							"9th",
-							"55 ({@dice 10d8 + 10})",
-							"Proficiency Bonus. Iriad's proficiency bonus increases by 1, so make the following changes in her stat block: increase the bonuses in the Saving Throws and Skills entries by 1 (by 2 for {@skill Perception}, {@skill Stealth}, and {@skill Survival}); increase her passive Perception score by 2; increase the bonuses to hit of her weapon attacks by 1."
-						],
-						[
-							"10th",
-							"60 ({@dice 11d8 + 11})",
-							"Ability Score Improvement. Iriad's Dexterity score increases by 2, raising the modifier by 1, so increase the following numbers by 1: her Armor Class, her Dexterity saving throw bonus, her {@skill Stealth} bonus, and the bonuses to hit and damage of her weapon attacks."
-						],
-						[
-							"11th",
-							"66 ({@dice 12d8 + 12})",
-							"Inspiring Help. When Iriad takes the {@action help||Help} action, the creature who receives the help also gains a {@dice 1d6} bonus to the {@dice d20} roll. If that roll is an attack roll, the creature can forgo adding the bonus to it, and then if the attack hits, the creature can add the bonus to the attack's damage roll against one target."
-						]
-					]
-				}
+				"{@creature Iriad|DSotDQ} is a Kagonesti elf from the lush woodlands of Southern Ergoth, where she learned to move undetected across the terrain. When Silvanesti elves began arriving at Southern Ergoth as refugees, she decided to lend her skills in the fight against the Dragon Armies before they can invade her homeland. She is a talented spy and scout who isn't afraid to bring her blades to bear if the situation demands it."
 			],
 			"images": [
 				{
