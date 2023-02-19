@@ -1824,7 +1824,7 @@
 									]
 								},
 								{
-									"name": "Improved Defence",
+									"name": "Improved Defense",
 									"entries": [
 										"Ayik's Armor Class increases by 1."
 									]
@@ -1838,7 +1838,7 @@
 							"ac": 18,
 							"from": [
 								"{@item studded leather armor|PHB|studded leather}",
-								"improved defence"
+								"improved defense"
 							]
 						}
 					],
@@ -1907,7 +1907,7 @@
 									]
 								},
 								{
-									"name": "Improved Defence",
+									"name": "Improved Defense",
 									"entries": [
 										"Ayik's Armor Class increases by 1."
 									]
@@ -1927,7 +1927,7 @@
 							"ac": 18,
 							"from": [
 								"{@item studded leather armor|PHB|studded leather}",
-								"improved defence"
+								"improved defense"
 							]
 						}
 					],
@@ -3651,7 +3651,7 @@
 							"items": {
 								"name": "Maul",
 								"entries": [
-									"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."			
+									"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."
 								]
 							}
 						}
@@ -3724,7 +3724,7 @@
 							"items": {
 								"name": "Maul",
 								"entries": [
-									"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."			
+									"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."
 								]
 							}
 						}
@@ -3798,7 +3798,7 @@
 							"items": {
 								"name": "Maul",
 								"entries": [
-									"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."			
+									"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."
 								]
 							}
 						}
@@ -3872,7 +3872,7 @@
 							"items": {
 								"name": "Maul",
 								"entries": [
-									"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."			
+									"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."
 								]
 							}
 						}
@@ -3952,7 +3952,7 @@
 							"items": {
 								"name": "Maul",
 								"entries": [
-									"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."			
+									"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."
 								]
 							}
 						}
@@ -4033,7 +4033,7 @@
 							"items": {
 								"name": "Maul",
 								"entries": [
-									"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."			
+									"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."
 								]
 							}
 						}
@@ -4115,7 +4115,7 @@
 							"items": {
 								"name": "Maul",
 								"entries": [
-									"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."			
+									"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) bludgeoning damage."
 								]
 							}
 						}
@@ -6021,7 +6021,631 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"variant": [
+				{
+					"type": "variant",
+					"name": "Levna beyond 1st Level",
+					"entries": [
+						{
+							"type": "table",
+							"colLabels": [
+								"Level",
+								"Hit Points",
+								"New Features"
+							],
+							"colStyles": [
+								"col-2 text-center",
+								"col-2",
+								"col-8"
+							],
+							"rows": [
+								[
+									"2nd",
+									"19 ({@dice 3d8 + 6})",
+									"Second Wind. Levna can use a bonus action on her turn to regain hit points equal to {@dice 1d10} + her level. Once she uses this feature, she can't use it again until she finishes a short or long rest."
+								],
+								[
+									"3rd",
+									"26 ({@dice 4d8 + 8})",
+									"Improved Critical. Levna's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+								],
+								[
+									"4th",
+									"32 ({@dice 5d8 + 10})",
+									"Ability Score Improvement. Levna's Strength score increases by 2, raising the modifier by 1, so increase her {@skill Athletics} bonus by 1, and increase the bonuses to hit and damage of her weapon attacks by 1."
+								],
+								[
+									"5th",
+									"39 ({@dice 6d8 + 12})",
+									"Proficiency Bonus. Levna's proficiency bonus increases by 1, so increase the following numbers by 1: the bonuses in the Saving Throws and Skills entries, her passive Perception score, and the bonuses to hit of her weapon attacks."
+								],
+								[
+									"6th",
+									"45 ({@dice 7d8 + 14})",
+									"Extra Attack. Levna can attack twice, instead of once, whenever she takes the {@action attack||Attack} action on her turn."
+								],
+								[
+									"7th",
+									"52 ({@dice 8d8 + 16})",
+									"Battle Readiness. Levna has advantage on initiative rolls."
+								],
+								[
+									"8th",
+									"58 ({@dice 9d8 + 18})",
+									"Ability Score Improvement. Levna's Strength score increases by 2, raising the modifier by 1, so increase her {@skill Athletics} bonus by 1, and increase the bonuses to hit and damage of her weapon attacks by 1."
+								],
+								[
+									"9th",
+									"65 ({@dice 10d8 + 20})",
+									"Proficiency Bonus. Levna's proficiency bonus increases by 1, so increase the following numbers by 1: the bonuses in the Saving Throws and Skills entries, her passive Perception score, and the bonuses to hit of her weapon attacks."
+								],
+								[
+									"10th",
+									"71 ({@dice 11d8 + 22})",
+									"Improved Defense. Levna's Armor Class increases by 1."
+								],
+								[
+									"11th",
+									"78 ({@dice 12d8 + 24})",
+									"Indomitable. Levna can reroll a saving throw that she fails, but she must use the new roll. Once she uses this feature, she can't use it again until she finishes a long rest."
+								]
+							]
+						}
+					]
+				}
+			],
+			"_versions": [
+				{
+					"name": "Levna Drakehorn (2nd Level)",
+					"source": "DSotDQ",
+					"level": 2,
+					"hp": {
+						"average": 19,
+						"formula": "3d8 + 6"
+					},
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Levna can use a bonus action on her turn to regain hit points equal to {@dice 1d10} + her level. Once she uses this feature, she can't use it again until she finishes a short or long rest."
+									]
+								}
+							]
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Levna Drakehorn (3rd Level)",
+					"source": "DSotDQ",
+					"level": 3,
+					"hp": {
+						"average": 26,
+						"formula": "4d8 + 8"
+					},
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Levna can use a bonus action on her turn to regain hit points equal to {@dice 1d10} + her level. Once she uses this feature, she can't use it again until she finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Levna's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								}
+							]
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Levna Drakehorn (4th Level)",
+					"source": "DSotDQ",
+					"level": 4,
+					"hp": {
+						"average": 32,
+						"formula": "5d8 + 10"
+					},
+					"str": 17,
+					"skill": {
+						"athletics": "+5",
+						"intimidation": "+4",
+						"perception": "+2"
+					},
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Levna can use a bonus action on her turn to regain hit points equal to {@dice 1d10} + her level. Once she uses this feature, she can't use it again until she finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Levna's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								}
+							]
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Greatsword",
+							"items": {
+								"name": "Greatsword",
+								"entries": [
+									"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d6 + 3}) slashing damage."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Levna Drakehorn (5th Level)",
+					"source": "DSotDQ",
+					"level": 5,
+					"hp": {
+						"average": 39,
+						"formula": "6d8 + 12"
+					},
+					"str": 17,
+					"save": {
+						"con": "+5"
+					},
+					"skill": {
+						"athletics": "+6",
+						"intimidation": "+5",
+						"perception": "+3"
+					},
+					"passive": 13,
+					"pbNote": "+3",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Levna can use a bonus action on her turn to regain hit points equal to {@dice 1d10} + her level. Once she uses this feature, she can't use it again until she finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Levna's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								}
+							]
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Greatsword",
+							"items": {
+								"name": "Greatsword",
+								"entries": [
+									"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d6 + 3}) slashing damage."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Levna Drakehorn (6th Level)",
+					"source": "DSotDQ",
+					"level": 6,
+					"hp": {
+						"average": 45,
+						"formula": "7d8 + 14"
+					},
+					"str": 17,
+					"save": {
+						"con": "+5"
+					},
+					"skill": {
+						"athletics": "+6",
+						"intimidation": "+5",
+						"perception": "+3"
+					},
+					"passive": 13,
+					"pbNote": "+3",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Levna can use a bonus action on her turn to regain hit points equal to {@dice 1d10} + her level. Once she uses this feature, she can't use it again until she finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Levna's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								},
+								{
+									"name": "Extra Attack",
+									"entries": [
+										"Levna can attack twice, instead of once, whenever she takes the {@action Attack} action on her turn."
+									]
+								}
+							]
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Greatsword",
+							"items": {
+								"name": "Greatsword",
+								"entries": [
+									"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d6 + 3}) slashing damage."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Levna Drakehorn (7th Level)",
+					"source": "DSotDQ",
+					"level": 7,
+					"hp": {
+						"average": 52,
+						"formula": "8d8 + 16"
+					},
+					"str": 17,
+					"save": {
+						"con": "+5"
+					},
+					"skill": {
+						"athletics": "+6",
+						"intimidation": "+5",
+						"perception": "+3"
+					},
+					"passive": 13,
+					"pbNote": "+3",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Levna can use a bonus action on her turn to regain hit points equal to {@dice 1d10} + her level. Once she uses this feature, she can't use it again until she finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Levna's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								},
+								{
+									"name": "Extra Attack",
+									"entries": [
+										"Levna can attack twice, instead of once, whenever she takes the {@action Attack} action on her turn."
+									]
+								},
+								{
+									"name": "Battle Readiness",
+									"entries": [
+										"Levna has advantage on initiative rolls."
+									]
+								}
+							]
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Greatsword",
+							"items": {
+								"name": "Greatsword",
+								"entries": [
+									"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d6 + 3}) slashing damage."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Levna Drakehorn (8th Level)",
+					"source": "DSotDQ",
+					"level": 8,
+					"hp": {
+						"average": 58,
+						"formula": "9d8 + 18"
+					},
+					"str": 19,
+					"save": {
+						"con": "+5"
+					},
+					"skill": {
+						"athletics": "+7",
+						"intimidation": "+5",
+						"perception": "+3"
+					},
+					"passive": 13,
+					"pbNote": "+3",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Levna can use a bonus action on her turn to regain hit points equal to {@dice 1d10} + her level. Once she uses this feature, she can't use it again until she finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Levna's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								},
+								{
+									"name": "Extra Attack",
+									"entries": [
+										"Levna can attack twice, instead of once, whenever she takes the {@action Attack} action on her turn."
+									]
+								},
+								{
+									"name": "Battle Readiness",
+									"entries": [
+										"Levna has advantage on initiative rolls."
+									]
+								}
+							]
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Greatsword",
+							"items": {
+								"name": "Greatsword",
+								"entries": [
+									"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) slashing damage."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Levna Drakehorn (9th Level)",
+					"source": "DSotDQ",
+					"level": 9,
+					"hp": {
+						"average": 65,
+						"formula": "10d8 + 20"
+					},
+					"str": 19,
+					"save": {
+						"con": "+6"
+					},
+					"skill": {
+						"athletics": "+8",
+						"intimidation": "+6",
+						"perception": "+4"
+					},
+					"passive": 14,
+					"pbNote": "+4",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Levna can use a bonus action on her turn to regain hit points equal to {@dice 1d10} + her level. Once she uses this feature, she can't use it again until she finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Levna's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								},
+								{
+									"name": "Extra Attack",
+									"entries": [
+										"Levna can attack twice, instead of once, whenever she takes the {@action Attack} action on her turn."
+									]
+								},
+								{
+									"name": "Battle Readiness",
+									"entries": [
+										"Levna has advantage on initiative rolls."
+									]
+								}
+							]
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Greatsword",
+							"items": {
+								"name": "Greatsword",
+								"entries": [
+									"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) slashing damage."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Levna Drakehorn (10th Level)",
+					"source": "DSotDQ",
+					"level": 10,
+					"hp": {
+						"average": 71,
+						"formula": "11d8 + 22"
+					},
+					"ac": [
+						{
+							"ac": 19,
+							"from": [
+								"{@item plate armor|PHB|plate}",
+								"improved defense"
+							]
+						}
+					],
+					"str": 19,
+					"save": {
+						"con": "+6"
+					},
+					"skill": {
+						"athletics": "+8",
+						"intimidation": "+6",
+						"perception": "+4"
+					},
+					"passive": 14,
+					"pbNote": "+4",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Levna can use a bonus action on her turn to regain hit points equal to {@dice 1d10} + her level. Once she uses this feature, she can't use it again until she finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Levna's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								},
+								{
+									"name": "Extra Attack",
+									"entries": [
+										"Levna can attack twice, instead of once, whenever she takes the {@action Attack} action on her turn."
+									]
+								},
+								{
+									"name": "Battle Readiness",
+									"entries": [
+										"Levna has advantage on initiative rolls."
+									]
+								},
+								{
+									"name": "Improved Defense",
+									"entries": [
+										"Levna's Armor Class increases by 1."
+									]
+								}
+							]
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Greatsword",
+							"items": {
+								"name": "Greatsword",
+								"entries": [
+									"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) slashing damage."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Levna Drakehorn (11th Level)",
+					"source": "DSotDQ",
+					"level": 11,
+					"hp": {
+						"average": 78,
+						"formula": "12d8 + 24"
+					},
+					"ac": [
+						{
+							"ac": 19,
+							"from": [
+								"{@item plate armor|PHB|plate}",
+								"improved defense"
+							]
+						}
+					],
+					"str": 19,
+					"save": {
+						"con": "+6"
+					},
+					"skill": {
+						"athletics": "+8",
+						"intimidation": "+6",
+						"perception": "+4"
+					},
+					"passive": 14,
+					"pbNote": "+4",
+					"_mod": {
+						"trait": {
+							"mode": "appendArr",
+							"items": [
+								{
+									"name": "Second Wind",
+									"entries": [
+										"Levna can use a bonus action on her turn to regain hit points equal to {@dice 1d10} + her level. Once she uses this feature, she can't use it again until she finishes a short or long rest."
+									]
+								},
+								{
+									"name": "Improved Critical",
+									"entries": [
+										"Levna's attack rolls now score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+									]
+								},
+								{
+									"name": "Extra Attack",
+									"entries": [
+										"Levna can attack twice, instead of once, whenever she takes the {@action Attack} action on her turn."
+									]
+								},
+								{
+									"name": "Battle Readiness",
+									"entries": [
+										"Levna has advantage on initiative rolls."
+									]
+								},
+								{
+									"name": "Improved Defense",
+									"entries": [
+										"Levna's Armor Class increases by 1."
+									]
+								},
+								{
+									"name": "Indomitable",
+									"entries": [
+										"Levna can reroll a saving throw that she fails, but she must use the new roll. Once she uses this feature, she can't use it again until she finishes a long rest."
+									]
+								}
+							]
+						},
+						"action": {
+							"mode": "replaceArr",
+							"replace": "Greatsword",
+							"items": {
+								"name": "Greatsword",
+								"entries": [
+									"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) slashing damage."
+								]
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Lohezet",
