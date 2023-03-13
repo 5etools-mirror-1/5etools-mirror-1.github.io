@@ -19,6 +19,7 @@
 		"test:data": "node test/test-all.js",
 		"lint:data": "node node/prettify-data.js",
 		"test:json": "node test/test-json.js",
+		"test:brew": "node test/test-brew.js",
 		"test:tags": "node test/test-tags.js",
 		"test": "npm run test:js && npm run test:css && npm run test:data",
 		"build:css": "sass --style=compressed scss/:css/ && node node/rm.js css/includes/",
