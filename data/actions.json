@@ -33,7 +33,7 @@
 					"type": "entries",
 					"name": "Spells",
 					"entries": [
-						"Some magic items allow the user to cast a spell from the item, often by expending charges from it. The spell is cast at the lowest possible spell and caster level, doesn't expend any of the user's spell slots, and requires no components unless the item's description says otherwise. The spell uses its normal casting time, range, and duration, and the user of the item must concentrate if the spell requires concentration. Certain items make exceptions to these rules, changing the casting time, duration, or other parts of a spell.",
+						"Some magic items allow the user to cast a spell from the item, often by expending charges from it. The spell is cast at the lowest possible spell and caster level, doesn't expend any of the user's spell slots, and requires no components unless the item's description says otherwise. The spell uses its normal casting time, range, and duration, and the user of the item must concentrate if the spell requires {@status concentration}. Certain items make exceptions to these rules, changing the casting time, duration, or other parts of a spell.",
 						"Many items, such as potions, bypass the casting of the spell and confer the spell's effects. Such an item still uses the spell's duration unless the item's description says otherwise.",
 						"A magic item, such as certain staffs, may require you to use your own spellcasting ability when you cast a spell from the item. If you have more than one spellcasting ability, you choose which one to use with the item. If you don't have a spellcasting ability\u2014perhaps you're a rogue with the Use Magic Device feature\u2014your spellcasting ability modifier is +0 for the item, and your proficiency bonus does apply."
 					]
@@ -197,7 +197,7 @@
 				"Free"
 			],
 			"entries": [
-				"If a spell must be maintained with concentration, that fact appears in its Duration entry, and the spell specifies how long you can concentrate on it. You can end concentration at any time (no action required)."
+				"If a spell must be maintained with {@status concentration}, that fact appears in its Duration entry, and the spell specifies how long you can concentrate on it. You can end {@status concentration} at any time (no action required)."
 			]
 		},
 		{
@@ -448,7 +448,7 @@
 				"Sometimes you want to get the jump on a foe or wait for a particular circumstance before you act. To do so, you can take the Ready action on your turn, which lets you act using your reaction before the start of your next turn.",
 				"First, you decide what perceivable circumstance will trigger your reaction. Then, you choose the action you will take in response to that trigger, or you choose to move up to your speed in response to it. Examples include \"If the cultist steps on the trapdoor, I'll pull the lever that opens it,\" and \"If the goblin steps next to me, I move away.\"",
 				"When the trigger occurs, you can either take your reaction right after the trigger finishes or ignore the trigger. Remember that you can take only one reaction per round.",
-				"When you ready a spell, you cast it as normal but hold its energy, which you release with your reaction when the trigger occurs. To be readied, a spell must have a casting time of 1 action, and holding onto the spell's magic requires concentration (explained in {@book chapter 10|phb|10|concentration}). If your concentration is broken, the spell dissipates without taking effect. For example, if you are concentrating on the web spell and ready magic missile, your web spell ends, and if you take damage before you release magic missile with your reaction, your concentration might be broken.",
+				"When you ready a spell, you cast it as normal but hold its energy, which you release with your reaction when the trigger occurs. To be readied, a spell must have a casting time of 1 action, and holding onto the spell's magic requires {@status concentration} (explained in {@book chapter 10|phb|10|concentration}). If your {@status concentration} is broken, the spell dissipates without taking effect. For example, if you are {@status concentration||concentrating} on the web spell and ready magic missile, your web spell ends, and if you take damage before you release magic missile with your reaction, your {@status concentration} might be broken.",
 				"You have until the start of your next turn to use a readied action."
 			]
 		},

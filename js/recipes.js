@@ -126,9 +126,9 @@ class RecipesPage extends ListPage {
 
 		const scaledHash = sub.find(it => it.startsWith(RecipesPage._HASH_START_SCALED));
 		if (scaledHash) {
-			const scaleTo = Number(UrlUtil.unpackSubHash(scaledHash)[VeCt.HASH_SCALED][0]);
+			const scaleFactor = Number(UrlUtil.unpackSubHash(scaledHash)[VeCt.HASH_SCALED][0]);
 			const r = this._dataList[Hist.lastLoadedId];
-			this._renderStats_doBuildStatsTab({ent: r, scaleTo});
+			this._renderStats_doBuildStatsTab({ent: r, scaleFactor});
 		}
 	}
 }

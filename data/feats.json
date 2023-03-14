@@ -4270,7 +4270,7 @@
 							"type": "item",
 							"name": "Misty Form",
 							"entries": [
-								"You can cast the {@spell blur} spell without using a spell slot or material components. When you cast the spell in this way, the spell doesn't require you to maintain concentration on it. Once you cast the spell in this way, you can't do so again until you finish a long rest. You can also cast this spell in the normal way using spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for this feature (choose when you gain this feat)."
+								"You can cast the {@spell blur} spell without using a spell slot or material components. When you cast the spell in this way, the spell doesn't require you to maintain {@status concentration} on it. Once you cast the spell in this way, you can't do so again until you finish a long rest. You can also cast this spell in the normal way using spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for this feature (choose when you gain this feat)."
 							]
 						},
 						{
@@ -4534,6 +4534,10 @@
 					"con": 1
 				}
 			],
+			"resist": [
+				"cold",
+				"poison"
+			],
 			"entries": [
 				"Fiendish blood runs strong in you. You gain the following benefits:",
 				{
@@ -4562,6 +4566,10 @@
 				{
 					"con": 1
 				}
+			],
+			"resist": [
+				"cold",
+				"poison"
 			],
 			"entries": [
 				"Fiendish blood runs strong in you, unlocking a resilience akin to that possessed by some fiends. You gain the following benefits:",
@@ -5722,7 +5730,7 @@
 					"type": "list",
 					"items": [
 						"When a creature within 5 feet of you casts a spell, you can use your reaction to make a melee weapon attack against that creature.",
-						"When you damage a creature that is concentrating on a spell, that creature has disadvantage on the saving throw it makes to maintain its concentration.",
+						"When you damage a creature that is {@status concentration||concentrating} on a spell, that creature has disadvantage on the saving throw it makes to maintain its {@status concentration}.",
 						"You have advantage on saving throws against spells cast by creatures within 5 feet of you."
 					]
 				}
@@ -9654,7 +9662,7 @@
 				{
 					"type": "list",
 					"items": [
-						"You have advantage on Constitution saving throws that you make to maintain your concentration on a spell when you take damage.",
+						"You have advantage on Constitution saving throws that you make to maintain your {@status concentration} on a spell when you take damage.",
 						"You can perform the somatic components of spells even when you have weapons or a {@item shield|phb} in one or both hands.",
 						"When a hostile creature's movement provokes an opportunity attack from you, you can use your reaction to cast a spell at the creature, rather than making an opportunity attack. The spell must have a casting time of 1 action and must target only that creature."
 					]

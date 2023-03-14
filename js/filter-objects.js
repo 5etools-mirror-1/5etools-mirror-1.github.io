@@ -39,13 +39,10 @@ class PageFilterObjects extends PageFilter {
 globalThis.PageFilterObjects = PageFilterObjects;
 
 class ListSyntaxObjects extends ListUiUtil.ListSyntax {
-	_getSearchCacheStats (entity) {
-		if (!entity.entries && !entity.actionEntries) return "";
-		const ptrOut = {_: ""};
-		this._getSearchCache_handleEntryProp(entity, "entries", ptrOut);
-		this._getSearchCache_handleEntryProp(entity, "actionEntries", ptrOut);
-		return ptrOut._;
-	}
+	static _INDEXABLE_PROPS_ENTRIES = [
+		"entries",
+		"actionEntries",
+	];
 }
 
 globalThis.ListSyntaxObjects = ListSyntaxObjects;

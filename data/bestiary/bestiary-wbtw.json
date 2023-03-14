@@ -1963,6 +1963,7 @@
 		{
 			"name": "Gloam",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WBtW",
 			"page": 93,
 			"size": [
@@ -4168,7 +4169,7 @@
 				{
 					"name": "Twin Sight (Recharges after a Short or Long Rest)",
 					"entries": [
-						"In her mind's eye, a Selenelion twin can see what the other twin sees for up to 1 minute, provided both twins are alive and on the same plane of existence. Maintaining this effect requires concentration (as if concentrating on a spell)."
+						"In her mind's eye, a Selenelion twin can see what the other twin sees for up to 1 minute, provided both twins are alive and on the same plane of existence. Maintaining this effect requires {@status concentration} (as if {@status concentration||concentrating} on a spell)."
 					]
 				}
 			],
@@ -4274,7 +4275,7 @@
 				{
 					"name": "Superior Invisibility",
 					"entries": [
-						"As a bonus action, Sir Talavar can magically turn {@condition invisible} until his concentration ends (as if concentrating on a spell). Any equipment Sir Talavar wears or carries is {@condition invisible} with him."
+						"As a bonus action, Sir Talavar can magically turn {@condition invisible} until his {@status concentration} ends (as if {@status concentration||concentrating} on a spell). Any equipment Sir Talavar wears or carries is {@condition invisible} with him."
 					]
 				},
 				{
@@ -5010,6 +5011,7 @@
 		{
 			"name": "Thinnings",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WBtW",
 			"page": 15,
 			"_copy": {
@@ -5750,7 +5752,7 @@
 				{
 					"name": "Animate Corpse (1/Day)",
 					"entries": [
-						"Zargash targets the lifeless corpse of one Humanoid he can see within 30 feet of him and commands it to rise, transforming it into a zombie under his control. The zombie takes its turn immediately after Zargash. Animating the zombie requires Zargash's concentration (as if concentrating on a spell). The zombie reverts to an inanimate corpse after 10 minutes, when it drops to 0 hit points, or when Zargash's concentration ends."
+						"Zargash targets the lifeless corpse of one Humanoid he can see within 30 feet of him and commands it to rise, transforming it into a zombie under his control. The zombie takes its turn immediately after Zargash. Animating the zombie requires Zargash's {@status concentration} (as if {@status concentration||concentrating} on a spell). The zombie reverts to an inanimate corpse after 10 minutes, when it drops to 0 hit points, or when Zargash's {@status concentration} ends."
 					]
 				}
 			],

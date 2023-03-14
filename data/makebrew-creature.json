@@ -1513,7 +1513,7 @@
 		{
 			"name": "Create Whirlwind (Djinni)",
 			"entries": [
-				"A 5-foot-radius, 30-foot-tall cylinder of swirling air magically forms on a point <$short_name$> can see within 120 feet of it. The whirlwind lasts as long as <$short_name$> maintains concentration (as if concentrating on a spell). Any creature but <$short_name$> that enters the whirlwind must succeed on a DC <$dc__str$> saving throw or be {@condition restrained} by it. <$title_short_name$> can move the whirlwind up to 60 feet as an action, and creatures {@condition restrained} by the whirlwind move with it. The whirlwind ends if <$short_name$> loses sight of it.",
+				"A 5-foot-radius, 30-foot-tall cylinder of swirling air magically forms on a point <$short_name$> can see within 120 feet of it. The whirlwind lasts as long as <$short_name$> maintains {@status concentration} (as if {@status concentration||concentrating} on a spell). Any creature but <$short_name$> that enters the whirlwind must succeed on a DC <$dc__str$> saving throw or be {@condition restrained} by it. <$title_short_name$> can move the whirlwind up to 60 feet as an action, and creatures {@condition restrained} by the whirlwind move with it. The whirlwind ends if <$short_name$> loses sight of it.",
 				"A creature can use its action to free a creature {@condition restrained} by the whirlwind, including itself, by succeeding on a DC <$dc__str$> Strength check. If the check succeeds, the creature is no longer {@condition restrained} and moves to the nearest space outside the whirlwind."
 			]
 		},
@@ -1528,7 +1528,7 @@
 		{
 			"name": "Darkness Aura (Darkmantle)",
 			"entries": [
-				"A 15-foot radius of magical darkness extends out from <$short_name$>, moves with it, and spreads around corners. The darkness lasts as long as <$short_name$> maintains concentration, up to 10 minutes (as if concentrating on a spell). Darkvision can't penetrate this darkness, and no natural light can illuminate it. If any of the darkness overlaps with an area of light created by a spell of 2nd level or lower, the spell creating the light is dispelled."
+				"A 15-foot radius of magical darkness extends out from <$short_name$>, moves with it, and spreads around corners. The darkness lasts as long as <$short_name$> maintains {@status concentration}, up to 10 minutes (as if {@status concentration||concentrating} on a spell). Darkvision can't penetrate this darkness, and no natural light can illuminate it. If any of the darkness overlaps with an area of light created by a spell of 2nd level or lower, the spell creating the light is dispelled."
 			]
 		},
 		{
@@ -1709,19 +1709,19 @@
 		{
 			"name": "Invisibility (Duergar)",
 			"entries": [
-				"<$title_short_name$> magically turns {@condition invisible} until it attacks, casts a spell, or uses its Enlarge, or until its concentration is broken, up to 1 hour (as if concentrating on a spell). Any equipment <$short_name$> wears or carries is {@condition invisible} with it."
+				"<$title_short_name$> magically turns {@condition invisible} until it attacks, casts a spell, or uses its Enlarge, or until its {@status concentration} is broken, up to 1 hour (as if {@status concentration||concentrating} on a spell). Any equipment <$short_name$> wears or carries is {@condition invisible} with it."
 			]
 		},
 		{
 			"name": "Invisibility (Quasit)",
 			"entries": [
-				"<$title_short_name$> magically turns {@condition invisible} until it attacks or uses Scare, or until its concentration ends (as if concentrating on a spell). Any equipment <$short_name$> wears or carries is {@condition invisible} with it."
+				"<$title_short_name$> magically turns {@condition invisible} until it attacks or uses Scare, or until its {@status concentration} ends (as if {@status concentration||concentrating} on a spell). Any equipment <$short_name$> wears or carries is {@condition invisible} with it."
 			]
 		},
 		{
 			"name": "Invisibility (Sprite)",
 			"entries": [
-				"<$title_short_name$> magically turns {@condition invisible} until it attacks or casts a spell, or until its concentration ends (as if concentrating on a spell). Any equipment <$short_name$> wears or carries is {@condition invisible} with it."
+				"<$title_short_name$> magically turns {@condition invisible} until it attacks or casts a spell, or until its {@status concentration} ends (as if {@status concentration||concentrating} on a spell). Any equipment <$short_name$> wears or carries is {@condition invisible} with it."
 			]
 		},
 		{
@@ -1803,7 +1803,7 @@
 		{
 			"name": "Read Thoughts (Doppelganger)",
 			"entries": [
-				"<$title_short_name$> magically reads the surface thoughts of one creature within 60 feet of it. The effect can penetrate barriers, but 3 feet of wood or dirt, 2 feet of stone, 2 inches of metal, or a thin sheet of lead blocks it. While the target is in range, <$short_name$> can continue reading its thoughts, as long as <$short_name$>'s concentration isn't broken (as if concentrating on a spell). While reading the target's mind, <$short_name$> has advantage on Wisdom ({@skill Insight}) and Charisma ({@skill Deception}, {@skill Intimidation}, and {@skill Persuasion}) checks against the target."
+				"<$title_short_name$> magically reads the surface thoughts of one creature within 60 feet of it. The effect can penetrate barriers, but 3 feet of wood or dirt, 2 feet of stone, 2 inches of metal, or a thin sheet of lead blocks it. While the target is in range, <$short_name$> can continue reading its thoughts, as long as <$short_name$>'s {@status concentration} isn't broken (as if {@status concentration||concentrating} on a spell). While reading the target's mind, <$short_name$> has advantage on Wisdom ({@skill Insight}) and Charisma ({@skill Deception}, {@skill Intimidation}, and {@skill Persuasion}) checks against the target."
 			]
 		},
 		{

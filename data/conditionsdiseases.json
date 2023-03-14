@@ -580,18 +580,18 @@
 			"srd": true,
 			"basicRules": true,
 			"entries": [
-				"Some spells require you to maintain concentration in order to keep their magic active. If you lose concentration, such a spell ends.",
-				"If a spell must be maintained with concentration, that fact appears in its Duration entry, and the spell specifies how long you can concentrate on it. You can end concentration at any time (no action required).",
-				"Normal activity, such as moving and attacking, doesn't interfere with concentration. The following factors can break concentration:",
+				"Some spells require you to maintain {@status concentration} in order to keep their magic active. If you lose {@status concentration}, such a spell ends.",
+				"If a spell must be maintained with {@status concentration}, that fact appears in its Duration entry, and the spell specifies how long you can concentrate on it. You can end {@status concentration} at any time (no action required).",
+				"Normal activity, such as moving and attacking, doesn't interfere with {@status concentration}. The following factors can break {@status concentration}:",
 				{
 					"type": "list",
 					"items": [
-						"{@b Casting another spell that requires concentration.} You lose concentration on a spell if you cast another spell that requires concentration. You can't concentrate on two spells at once.",
-						"{@b Taking damage.} Whenever you take damage while you are concentrating on a spell, you must make a Constitution saving throw to maintain your concentration. The DC equals 10 or half the damage you take, whichever number is higher. If you take damage from multiple sources, such as an arrow and a dragon's breath, you make a separate saving throw for each source of damage.",
-						"{@b Being incapacitated or killed.} You lose concentration on a spell if you are {@condition incapacitated} or if you die."
+						"{@b Casting another spell that requires concentration.} You lose {@status concentration} on a spell if you cast another spell that requires {@status concentration}. You can't concentrate on two spells at once.",
+						"{@b Taking damage.} Whenever you take damage while you are {@status concentration||concentrating} on a spell, you must make a Constitution saving throw to maintain your {@status concentration}. The DC equals 10 or half the damage you take, whichever number is higher. If you take damage from multiple sources, such as an arrow and a dragon's breath, you make a separate saving throw for each source of damage.",
+						"{@b Being incapacitated or killed.} You lose {@status concentration} on a spell if you are {@condition incapacitated} or if you die."
 					]
 				},
-				"The DM might also decide that certain environmental phenomena, such as a wave crashing over you while you're on a storm-tossed ship, require you to succeed on a DC 10 Constitution saving throw to maintain concentration on a spell."
+				"The DM might also decide that certain environmental phenomena, such as a wave crashing over you while you're on a storm-tossed ship, require you to succeed on a DC 10 Constitution saving throw to maintain {@status concentration} on a spell."
 			]
 		}
 	]

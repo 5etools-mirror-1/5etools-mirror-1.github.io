@@ -19,6 +19,7 @@
 		{
 			"name": "Aljanor Keenblade",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 149,
 			"_copy": {
@@ -48,6 +49,7 @@
 		{
 			"name": "Amarith Coppervein",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 142,
 			"_copy": {
@@ -232,6 +234,7 @@
 		{
 			"name": "Blurg",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 29,
 			"_copy": {
@@ -331,6 +334,7 @@
 		{
 			"name": "Buppido",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 6,
 			"_copy": {
@@ -574,6 +578,7 @@
 		{
 			"name": "Deepking Horgar Steelshadow V",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 82,
 			"size": [
@@ -657,7 +662,7 @@
 				{
 					"name": "Invisibility (Recharges after a Short or Long Rest)",
 					"entries": [
-						"Horgar magically turns {@condition invisible} until he attacks, casts a spell, or uses his Enlarge, or until his concentration is broken, up to 1 hour (as if concentrating on a spell). Any equipment Horgar wears or carries is {@condition invisible} with him."
+						"Horgar magically turns {@condition invisible} until he attacks, casts a spell, or uses his Enlarge, or until his {@status concentration} is broken, up to 1 hour (as if {@status concentration||concentrating} on a spell). Any equipment Horgar wears or carries is {@condition invisible} with him."
 					]
 				},
 				{
@@ -901,6 +906,7 @@
 		{
 			"name": "Droki",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 231,
 			"size": [
@@ -1435,7 +1441,7 @@
 				{
 					"name": "Invisibility (Recharges after a Short or Long Rest)",
 					"entries": [
-						"The duergar magically turns {@condition invisible} until it attacks, casts a spell, or uses its Enlarge, or until its concentration is broken, up to 1 hour (as if concentrating on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
+						"The duergar magically turns {@condition invisible} until it attacks, casts a spell, or uses its Enlarge, or until its {@status concentration} is broken, up to 1 hour (as if {@status concentration||concentrating} on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
 					]
 				}
 			],
@@ -1606,7 +1612,7 @@
 				{
 					"name": "Invisibility (Recharges after a Short or Long Rest)",
 					"entries": [
-						"The duergar magically turns {@condition invisible} until it attacks, casts a spell, or uses its Enlarge, or until its concentration is broken, up to 1 hour (as if concentrating on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
+						"The duergar magically turns {@condition invisible} until it attacks, casts a spell, or uses its Enlarge, or until its {@status concentration} is broken, up to 1 hour (as if {@status concentration||concentrating} on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
 					]
 				}
 			],
@@ -1716,6 +1722,7 @@
 		{
 			"name": "Eldeth Feldrun",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 6,
 			"_copy": {
@@ -1925,6 +1932,7 @@
 		{
 			"name": "Gash",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 181,
 			"_copy": {
@@ -1961,6 +1969,7 @@
 		{
 			"name": "Ghazrim DuLoc",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 141,
 			"_copy": {
@@ -2091,6 +2100,7 @@
 		{
 			"name": "Glabbagool",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 35,
 			"_copy": {
@@ -2116,6 +2126,7 @@
 		{
 			"name": "Grazilaxx",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 29,
 			"_copy": {
@@ -2136,6 +2147,7 @@
 		{
 			"name": "Grisha",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 232,
 			"size": [
@@ -2419,6 +2431,7 @@
 		{
 			"name": "Ilvara Mizzrym",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 9,
 			"_copy": {
@@ -2744,6 +2757,7 @@
 		{
 			"name": "Jimjar",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 6,
 			"_copy": {
@@ -2820,6 +2834,7 @@
 		{
 			"name": "Khalessa Draga",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 149,
 			"_copy": {
@@ -2879,6 +2894,7 @@
 		{
 			"name": "Kinyel Druu'giir",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 134,
 			"_copy": {
@@ -2911,6 +2927,7 @@
 		{
 			"name": "Kurr",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 179,
 			"_copy": {
@@ -3112,6 +3129,7 @@
 		{
 			"name": "Lorthuun",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 141,
 			"_copy": {
@@ -3219,6 +3237,7 @@
 		{
 			"name": "Narrak",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 232,
 			"size": [
@@ -3373,6 +3392,7 @@
 		{
 			"name": "Ougalop",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 142,
 			"_copy": {
@@ -3393,6 +3413,7 @@
 		{
 			"name": "Peebles",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 134,
 			"_copy": {
@@ -3420,6 +3441,7 @@
 		{
 			"name": "Prince Derendil",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 6,
 			"_copy": {
@@ -3444,6 +3466,7 @@
 		{
 			"name": "Princess Ebonmire",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 111,
 			"_copy": {
@@ -3642,6 +3665,7 @@
 		{
 			"name": "Ront",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 7,
 			"_copy": {
@@ -3662,6 +3686,7 @@
 		{
 			"name": "Rumpadump",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 72,
 			"_copy": {
@@ -3682,6 +3707,7 @@
 		{
 			"name": "Rystia Zav",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 135,
 			"_copy": {
@@ -3712,6 +3738,7 @@
 		{
 			"name": "Sarith Kzekarit",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 7,
 			"_copy": {
@@ -3732,6 +3759,7 @@
 		{
 			"name": "Shedrak of the Eyes",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 176,
 			"_copy": {
@@ -3770,6 +3798,7 @@
 		{
 			"name": "Shuushar the Awakened",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 7,
 			"_copy": {
@@ -3790,6 +3819,7 @@
 		{
 			"name": "Skriss",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 29,
 			"_copy": {
@@ -3810,6 +3840,7 @@
 		{
 			"name": "Sladis Vadir",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 135,
 			"_copy": {
@@ -3845,6 +3876,7 @@
 		{
 			"name": "Sloopidoop",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 29,
 			"_copy": {
@@ -3865,6 +3897,7 @@
 		{
 			"name": "Sovereign Basidia",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 88,
 			"_copy": {
@@ -3938,6 +3971,7 @@
 		{
 			"name": "Spiderbait",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 31,
 			"_copy": {
@@ -3966,6 +4000,7 @@
 		{
 			"name": "Stool",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 7,
 			"_copy": {
@@ -4003,6 +4038,7 @@
 		{
 			"name": "The Pudding King",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 233,
 			"size": [
@@ -4220,6 +4256,7 @@
 		{
 			"name": "Themberchaud",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 53,
 			"_copy": {
@@ -4241,6 +4278,7 @@
 		{
 			"name": "Topsy",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 8,
 			"_copy": {
@@ -4400,6 +4438,7 @@
 		{
 			"name": "Turvy",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 8,
 			"_copy": {
@@ -4624,6 +4663,7 @@
 		{
 			"name": "Veldyskar",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 151,
 			"_copy": {
@@ -4813,6 +4853,7 @@
 		{
 			"name": "Vizeran DeVir",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 155,
 			"_copy": {
@@ -4850,6 +4891,7 @@
 		{
 			"name": "Xazax the Eyemonger",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 142,
 			"_copy": {
@@ -4870,6 +4912,7 @@
 		{
 			"name": "Y",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 29,
 			"_copy": {
@@ -4999,8 +5042,7 @@
 				"AOE",
 				"MW"
 			],
-			"hasToken": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Young Basilisk",
@@ -5100,6 +5142,7 @@
 		{
 			"name": "Yuk Yuk",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 31,
 			"_copy": {
@@ -5221,6 +5264,7 @@
 		{
 			"name": "Zilchyn Q'Leptin",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OotA",
 			"page": 137,
 			"_copy": {

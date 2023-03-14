@@ -200,6 +200,7 @@
 		{
 			"name": "Crashing",
 			"source": "AAG",
+			"page": 25,
 			"type": "entries",
 			"entries": [
 				"A spelljammer can run their ship into another object or a creature by moving the ship into the target's space and making a special attack roll ({@dice 1d20} + the spelljammer's proficiency bonus) against the target's Armor Class. If the attack roll hits, a crash occurs; otherwise, the target moves out of the ship's path, avoiding the crash. If the DM decides that a crash is unavoidable, no attack roll is necessary, and the crash occurs automatically.",
@@ -476,6 +477,7 @@
 		{
 			"name": "Crew",
 			"source": "AAG",
+			"page": 24,
 			"type": "entries",
 			"entries": [
 				"The standard crew complement for a spelljamming ship includes one captain to give orders, one spelljammer to pilot the ship, and one or more crew members to operate its weapons. Some ships carry extra crew (such as troops and back-up spelljammers) or passengers. A ship that has more than a standard crew complement will degrade the quality of its air supply more quickly.",
@@ -4092,7 +4094,7 @@
 							"name": "Team Building Memories",
 							"page": 46,
 							"entries": [
-								"The most potent personal changes inspired by team building can last a lifetime. Or at least an encounter. A character who earns a team building memory gains an extraordinary ability that can be used once. As a bonus action, the character gains one effect of the {@spell enhance ability} spell for 10 minutes (no concentration required).",
+								"The most potent personal changes inspired by team building can last a lifetime. Or at least an encounter. A character who earns a team building memory gains an extraordinary ability that can be used once. As a bonus action, the character gains one effect of the {@spell enhance ability} spell for 10 minutes (no {@status concentration} required).",
 								"A character can retain team building memories only from the most recent instance of this activity. If a character has unused team building memories and undertakes this activity again, those memories are lost.",
 								{
 									"type": "quote",
@@ -11340,6 +11342,7 @@
 		{
 			"name": "Ship Repairs",
 			"source": "AAG",
+			"page": 25,
 			"type": "entries",
 			"entries": [
 				"Nonmagical repairs to a damaged ship can be made while the vessel is berthed. Repairing 1 hit point of damage to a berthed ship takes 1 day and costs 20 gp for materials and labor. Damage to shipboard weapons can be repaired just as quickly (1 hit point per day), but at half the cost (10 gp per hit point).",
@@ -11627,6 +11630,7 @@
 		{
 			"name": "Ship-to-Ship Combat",
 			"source": "AAG",
+			"page": 24,
 			"type": "entries",
 			"entries": [
 				"The following rules are designed to make ship-to-ship combat simple yet exciting.",

@@ -1613,7 +1613,13 @@
 				"target.value": 1,
 				"target.type": "creature",
 				"range.value": 120,
-				"range.units": "ft"
+				"range.units": "ft",
+				"uses.per": "charges",
+				"uses.value": 2,
+				"uses.max": "@classes.druid.levels",
+				"uses.recovery": "@classes.druid.levels",
+				"formula": "1d6",
+				"actionType": "healing"
 			}
 		},
 		{
@@ -4161,7 +4167,7 @@
 					"transfer": true,
 					"changes": [
 						{
-							"key": "data.attributes.init.value",
+							"key": "data.attributes.init.total",
 							"mode": "ADD",
 							"value": "@abilities.int.mod"
 						}

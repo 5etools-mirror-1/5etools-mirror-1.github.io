@@ -1,0 +1,2481 @@
+{
+	"_meta": {
+		"dependencies": {
+			"monster": [
+				"MM"
+			]
+		},
+		"otherSources": {
+			"monster": {
+				"MM": "KftGV"
+			}
+		}
+	},
+	"monster": [
+		{
+			"name": "Animatronic Allosaurus",
+			"source": "KftGV",
+			"page": 22,
+			"_copy": {
+				"name": "Allosaurus",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "allosaurus",
+						"with": "animatronic allosaurus"
+					}
+				}
+			},
+			"type": "construct",
+			"immune": [
+				"poison",
+				"psychic"
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened",
+				"paralyzed",
+				"poisoned"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Arlo Kettletoe (Levels 1-4)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Bandit Captain",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the captain",
+						"with": "Arlo Kettletoe",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"halfling"
+				]
+			},
+			"alignment": [
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Arlo Kettletoe (Levels 5-8)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Knight",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the knight",
+						"with": "Arlo Kettletoe",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"halfling"
+				]
+			},
+			"alignment": [
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Arlo Kettletoe (Levels 9-11)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Mage",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the mage",
+						"with": "Arlo Kettletoe",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"halfling"
+				]
+			},
+			"alignment": [
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Ashen Animated Armor",
+			"source": "KftGV",
+			"page": 157,
+			"_copy": {
+				"name": "Animated Armor",
+				"source": "MM",
+				"_mod": {
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Ashen Creature",
+							"entries": [
+								"When the armor drops to 0 hit points, it is reduced to a pile of ash, and any equipment it was wearing or carrying falls to the ground."
+							]
+						}
+					}
+				}
+			},
+			"type": "elemental",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"immune": [
+				"fire",
+				"poison",
+				"psychic"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Ashen Flying Sword",
+			"source": "KftGV",
+			"page": 157,
+			"_copy": {
+				"name": "Flying Sword",
+				"source": "MM",
+				"_mod": {
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Ashen Creature",
+							"entries": [
+								"When the sword drops to 0 hit points, it is reduced to a pile of ash, and any equipment it was wearing or carrying falls to the ground."
+							]
+						}
+					}
+				}
+			},
+			"type": "elemental",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"immune": [
+				"fire",
+				"poison",
+				"psychic"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Ashen Knight",
+			"source": "KftGV",
+			"page": 158,
+			"_copy": {
+				"name": "Knight",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "knight",
+						"with": "ashen knight"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Ashen Creature",
+							"entries": [
+								"When the knight drops to 0 hit points, it is reduced to a pile of ash, and any equipment it was wearing or carrying falls to the ground."
+							]
+						}
+					}
+				}
+			},
+			"type": {
+				"type": "elemental",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"L",
+				"E"
+			],
+			"immune": [
+				"fire"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Ashen Shambling Mound",
+			"source": "KftGV",
+			"page": 158,
+			"_copy": {
+				"name": "Shambling Mound",
+				"source": "MM",
+				"_mod": {
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Ashen Creature",
+							"entries": [
+								"When the shambling mound drops to 0 hit points, it is reduced to a pile of ash, and any equipment it was wearing or carrying falls to the ground."
+							]
+						}
+					}
+				}
+			},
+			"type": "elemental",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"resist": [
+				"cold"
+			],
+			"immune": [
+				"fire",
+				"lightning"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Ashen Veteran",
+			"source": "KftGV",
+			"page": 154,
+			"_copy": {
+				"name": "Veteran",
+				"source": "MM",
+				"_mod": {
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Ashen Creature",
+							"entries": [
+								"When the veteran drops to 0 hit points, it is reduced to a pile of ash, and any equipment it was wearing or carrying falls to the ground."
+							]
+						}
+					}
+				}
+			},
+			"type": "elemental",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"immune": [
+				"fire"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Ashen Warhorse",
+			"source": "KftGV",
+			"page": 158,
+			"_copy": {
+				"name": "Warhorse",
+				"source": "MM",
+				"_mod": {
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Ashen Creature",
+							"entries": [
+								"When the horse drops to 0 hit points, it is reduced to a pile of ash, and any equipment it was wearing or carrying falls to the ground."
+							]
+						}
+					}
+				}
+			},
+			"type": "elemental",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"immune": [
+				"fire"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Charmayne Daymore",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"page": 159,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "elemental",
+				"tags": [
+					"wizard"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 123,
+				"formula": "19d8 + 38"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": {
+					"number": 30,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 8,
+			"dex": 14,
+			"con": 15,
+			"int": 20,
+			"wis": 14,
+			"cha": 16,
+			"save": {
+				"int": "+9",
+				"wis": "+6",
+				"cha": "+7"
+			},
+			"skill": {
+				"arcana": "+9",
+				"deception": "+7",
+				"perception": "+6"
+			},
+			"passive": 16,
+			"immune": [
+				"fire"
+			],
+			"languages": [
+				"Common",
+				"Draconic",
+				"Elvish",
+				"Ignan"
+			],
+			"cr": "10",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"Charmayne casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 17}):"
+					],
+					"will": [
+						"{@spell dancing lights}",
+						"{@spell mage hand}"
+					],
+					"daily": {
+						"3": [
+							"{@spell mage armor}"
+						],
+						"1e": [
+							"{@spell dispel magic}",
+							"{@spell invisibility}",
+							"{@spell polymorph}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"If Charmayne fails a saving throw, she can choose to succeed instead."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Charmayne makes three Ashen Burst attacks. She can replace one of these attacks with one use of Spellcasting."
+					]
+				},
+				{
+					"name": "Ashen Burst",
+					"entries": [
+						"{@atk ms,rs} {@hit 9} to hit, reach 5 ft. or range 60 ft., one target. {@h}17 ({@damage 5d6}) fire damage."
+					]
+				},
+				{
+					"name": "Cinder Spite {@recharge 5}",
+					"entries": [
+						"Charmayne creates a magical explosion of fire centered on a point she can see within 120 feet of herself. Each creature in a 20-foot-radius sphere centered on that point must make a {@dc 17} Dexterity saving throw, taking 35 ({@damage 10d6}) fire damage on a failed save, or half as much damage on a successful one. A Humanoid reduced to 0 hit points by this damage dies and is transformed into a Tiny charcoal figurine."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Charmayne can take up to three reactions per round but only one per turn",
+					"entries": []
+				},
+				{
+					"name": "Elemental Rebuke",
+					"entries": [
+						"In response to being hit by an attack, Charmayne utters a word in Ignan, dealing 10 ({@damage 3d6}) fire damage to the attacker. Charmayne then teleports, along with any equipment she is wearing or carrying, up to 30 feet to an unoccupied space she can see, leaving a harmless cloud of ash and embers in the space she just left."
+					]
+				},
+				{
+					"name": "Fiery Counterspell",
+					"entries": [
+						"Charmayne interrupts a creature she can see within 60 feet of herself that is casting a spell. If the spell is 4th level or lower, it fails and has no effect. If the spell is 5th level or higher, Charmayne makes an Intelligence check ({@dc 10} + the spell's level). On a success, the spell fails and has no effect. Whatever the spell's level, the caster takes 10 ({@damage 3d6}) fire damage if the spell fails."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"DR",
+				"E",
+				"IG"
+			],
+			"damageTags": [
+				"F"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"AOE"
+			],
+			"conditionInflictSpell": [
+				"invisible"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Clockwork Defender",
+			"source": "KftGV",
+			"page": 85,
+			"size": [
+				"M"
+			],
+			"type": "construct",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 42,
+				"formula": "5d8 + 20"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 15,
+			"con": 18,
+			"int": 3,
+			"wis": 14,
+			"cha": 1,
+			"skill": {
+				"perception": "+6",
+				"stealth": "+4"
+			},
+			"passive": 16,
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"paralyzed",
+				"petrified",
+				"poisoned"
+			],
+			"languages": [
+				"understands the languages of its creator but can't speak"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"name": "Unusual Nature",
+					"entries": [
+						"The defender doesn't need air, food, drink, or sleep."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Electrified Bite",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) piercing damage plus 7 ({@damage 2d6}) lightning damage. If the target is a creature, it must succeed on a {@dc 13} Strength saving throw or be {@condition grappled} (escape {@dc 13}). A creature {@condition grappled} by the defender takes the damage again at the start of each of the defender's turns. The defender can have only one creature {@condition grappled} in this way at a time, and the defender can't make Electrified Bite attacks while grappling."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Light Beam",
+					"entries": [
+						"The defender emits bright light from its eyes in a 60-foot cone, or it shuts off this light."
+					]
+				}
+			],
+			"traitTags": [
+				"Unusual Nature"
+			],
+			"languageTags": [
+				"CS"
+			],
+			"damageTags": [
+				"L",
+				"P"
+			],
+			"miscTags": [
+				"AOE",
+				"MW"
+			],
+			"conditionInflict": [
+				"grappled"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Clockwork Observer",
+			"source": "KftGV",
+			"page": 85,
+			"size": [
+				"T"
+			],
+			"type": "construct",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 7,
+				"formula": "2d4 + 2"
+			},
+			"speed": {
+				"walk": 0,
+				"fly": {
+					"number": 30,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 1,
+			"dex": 16,
+			"con": 13,
+			"int": 3,
+			"wis": 15,
+			"cha": 1,
+			"skill": {
+				"perception": "+6"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 16,
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"paralyzed",
+				"petrified",
+				"poisoned"
+			],
+			"languages": [
+				"understands the languages of its creator but can't speak"
+			],
+			"cr": "0",
+			"trait": [
+				{
+					"name": "Flyby",
+					"entries": [
+						"The observer doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+					]
+				},
+				{
+					"name": "Telepathic Bond",
+					"entries": [
+						"While the observer is within 1 mile of its creator, it can magically convey what it sees to its creator, and the two can communicate telepathically."
+					]
+				},
+				{
+					"name": "Unusual Nature",
+					"entries": [
+						"The observer doesn't need air, food, drink, or sleep."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Shriek",
+					"entries": [
+						"The observer emits a mechanical shriek until the start of its next turn or until it drops to 0 hit points. This shriek can be heard within a range of 300 feet."
+					]
+				}
+			],
+			"traitTags": [
+				"Flyby",
+				"Unusual Nature"
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"CS"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Conservatory Student",
+			"source": "KftGV",
+			"_copy": {
+				"name": "Noble",
+				"source": "MM",
+				"_mod": {
+					"action": {
+						"mode": "removeArr",
+						"names": "Rapier"
+					}
+				}
+			},
+			"ac": [
+				11
+			],
+			"skill": {
+				"performance": "+7"
+			},
+			"reaction": null,
+			"hasToken": true
+		},
+		{
+			"name": "Dr. Cassee Dannell",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Commoner",
+				"source": "MM"
+			},
+			"int": 10,
+			"hasToken": true
+		},
+		{
+			"name": "Eldritch Horror Hatchling",
+			"source": "KftGV",
+			"page": 24,
+			"_copy": {
+				"name": "Ankheg",
+				"source": "MM",
+				"_mod": {
+					"action": [
+						{
+							"mode": "replaceArr",
+							"replace": "Bite",
+							"items": {
+								"name": "Bite",
+								"entries": [
+									"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d6 + 3}) slashing damage plus 3 ({@damage 1d6}) poison damage. If the target is a Large or smaller creature, it is {@condition grappled} (escape {@dc 13}). Until this grapple ends, the eldritch horror hatchling can bite only the {@condition grappled} creature and has advantage on attack rolls to do so."
+								]
+							}
+						},
+						{
+							"mode": "replaceArr",
+							"replace": "Acid Spray {@recharge}",
+							"items": {
+								"name": "Acid Spray {@recharge}",
+								"entries": [
+									"The eldritch horror hatchling spits acid in a line that is 30 feet long and 5 feet wide, provided that it has no creature {@condition grappled}. Each creature in that line must make a {@dc 13} Dexterity saving throw, taking 10 ({@damage 3d6}) acid damage on a failed save, or half as much damage on a successful one."
+								]
+							}
+						}
+					]
+				}
+			},
+			"hasToken": true
+		},
+		{
+			"name": "Eliphas Adulare",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"page": 188,
+			"_copy": {
+				"name": "Werebear",
+				"source": "MM",
+				"_mod": {
+					"*": [
+						{
+							"mode": "replaceTxt",
+							"replace": "the werebear",
+							"with": "Eliphas",
+							"flags": "i"
+						}
+					]
+				}
+			},
+			"int": 18,
+			"spellcasting": [
+				{
+					"name": "Spellcasting (Humanoid or Hybrid Form Only)",
+					"headerEntries": [
+						"Eliphas casts one of the following spells, using Intelligence as the spellcasting ability (save {@dc 15}):"
+					],
+					"will": [
+						"{@spell light}",
+						"{@spell minor illusion}",
+						"{@spell prestidigitation}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell detect magic}",
+							"{@spell fog cloud}"
+						],
+						"1e": [
+							"{@spell phantasmal force}",
+							"{@spell shatter}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Enna Galakiir (Levels 1-4)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Bandit",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the bandit",
+						"with": "Enna Galakiir",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"elf"
+				]
+			},
+			"alignment": [
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Enna Galakiir (Levels 5-8)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Spy",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the spy",
+						"with": "Enna Galakiir",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"elf"
+				]
+			},
+			"alignment": [
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Enna Galakiir (Levels 9-11)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Assassin",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the assassin",
+						"with": "Enna Galakiir",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"elf"
+				]
+			},
+			"alignment": [
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Fragment of Krokulmar",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"page": 53,
+			"size": [
+				"T"
+			],
+			"type": "aberration",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 10,
+				"formula": "3d4 + 3"
+			},
+			"speed": {
+				"walk": 0
+			},
+			"str": 4,
+			"dex": 16,
+			"con": 12,
+			"int": 16,
+			"wis": 16,
+			"cha": 16,
+			"skill": {
+				"arcana": "+7",
+				"history": "+7",
+				"persuasion": "+7",
+				"stealth": "+7"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"immune": [
+				"psychic"
+			],
+			"languages": [
+				"Deep Speech",
+				"telepathy 60 ft."
+			],
+			"cr": "0",
+			"action": [
+				{
+					"name": "Psionic Revitalization",
+					"entries": [
+						"The fragment touches one creature that has 0 hit points in the fragment's space. The target regains 10 hit points, and each creature within 10 feet of the healed creature takes 3 ({@damage 1d6}) psychic damage."
+					]
+				},
+				{
+					"name": "Squirming Dodge",
+					"entries": [
+						"Until the start of the fragment's next turn, any attack roll made against the fragment has disadvantage, and the fragment makes saving throws with advantage."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"DS",
+				"TP"
+			],
+			"damageTags": [
+				"Y"
+			],
+			"miscTags": [
+				"AOE"
+			],
+			"hasToken": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Frody Dartwild",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Zombie",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the zombie",
+						"with": "Frody",
+						"flags": "i"
+					}
+				}
+			},
+			"alignment": [
+				"N",
+				"G"
+			],
+			"int": 10,
+			"languages": [
+				"Common"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Gregir Fendelsohn (Levels 1-4)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Bandit",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the bandit",
+						"with": "Gregir Fendelsohn",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"L",
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Gregir Fendelsohn (Levels 5-8)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Thug",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the thug",
+						"with": "Gregir Fendelsohn",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"L",
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Gregir Fendelsohn (Levels 9-11)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Veteran",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the veteran",
+						"with": "Gregir Fendelsohn",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"L",
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Headless Body",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Knight",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "knight",
+						"with": "headless body"
+					}
+				}
+			},
+			"senses": [
+				"blindsight 30 ft. (blind beyond this radius)"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Ignatius Inkblot",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Mind Flayer",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the mind flayer",
+						"with": "Ignatius Inkblot",
+						"flags": "i"
+					}
+				}
+			},
+			"alignment": [
+				"L",
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Jalynvyr Nir'Thinn",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Smoke Mephit",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the mephit",
+						"with": "Jalynvyr Nir'Thinn",
+						"flags": "i"
+					}
+				}
+			},
+			"languages": [
+				"Common",
+				"Elvish"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Jarazoun",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Efreeti",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the efreeti",
+						"with": "Jarazoun",
+						"flags": "i"
+					}
+				}
+			},
+			"hasToken": true
+		},
+		{
+			"name": "Joster Mareet",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Incubus",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the fiend",
+						"with": "Joster Mareet",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"incubus"
+				]
+			},
+			"hasToken": true
+		},
+		{
+			"name": "Juvenile Eldritch Horror",
+			"source": "KftGV",
+			"page": 24,
+			"_copy": {
+				"name": "Behir",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "behir",
+						"with": "eldritch horror"
+					}
+				}
+			},
+			"int": 18,
+			"languages": null,
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The eldritch horror casts one of the following spells, requiring no components and using Intelligence as the spellcasting ability (save {@dc 14}):"
+					],
+					"daily": {
+						"1": [
+							"{@spell project image}"
+						],
+						"2e": [
+							"{@spell blindness/deafness}",
+							"{@spell blur}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Kavoda",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Deep Gnome (Svirfneblin)",
+				"source": "MM",
+				"_trait": {
+					"name": "Deep Gnome",
+					"source": "DMG"
+				},
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the gnome",
+						"with": "Kavoda",
+						"flags": "i"
+					},
+					"trait": {
+						"mode": "prependArr",
+						"items": {
+							"name": "Special Equipment",
+							"entries": [
+								"Kavoda carries a {@item spell scroll} of {@spell magic weapon} and a {@item Potion of Hill Giant Strength||potion of giant strength (hill)}."
+							]
+						}
+					}
+				}
+			},
+			"alignment": [
+				"C",
+				"G"
+			],
+			"ac": [
+				{
+					"ac": 12,
+					"from": [
+						"{@item robes|phb}"
+					]
+				}
+			],
+			"languages": [
+				"Common",
+				"Gnomish",
+				"Terran",
+				"Undercommon"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "King Jhaeros",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"page": 158,
+			"_copy": {
+				"name": "Clay Golem",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the golem",
+						"with": "Jhaeros",
+						"flags": "i"
+					},
+					"trait": [
+						{
+							"mode": "appendArr",
+							"items": {
+								"name": "Ashen Creature",
+								"entries": [
+									"When Jhaeros drops to 0 hit points, he explodes in a harmless cloud of ashes, leaving nothing else behind."
+								]
+							}
+						},
+						{
+							"mode": "replaceArr",
+							"replace": "Acid Absorption",
+							"items": {
+								"name": "Fire Absorption",
+								"entries": [
+									"Whenever Jhaeros is subjected to fire damage, he takes no damage and instead regains a number of hit points equal to the fire damage dealt."
+								]
+							}
+						}
+					]
+				}
+			},
+			"int": 10,
+			"wis": 10,
+			"cha": 10,
+			"immune": [
+				"poison",
+				"psychic",
+				{
+					"immune": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks that aren't adamantine",
+					"cond": true
+				}
+			],
+			"languages": [
+				"understands Common",
+				"Draconic",
+				"Elvish",
+				"and Ignan but can't speak"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Markos Delphi",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"page": 53,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human",
+					"warlock"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 44,
+				"formula": "8d8 + 8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 8,
+			"dex": 15,
+			"con": 12,
+			"int": 17,
+			"wis": 13,
+			"cha": 16,
+			"save": {
+				"wis": "+3",
+				"cha": "+5"
+			},
+			"skill": {
+				"arcana": "+7",
+				"history": "+7",
+				"perception": "+3"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"immune": [
+				"psychic"
+			],
+			"languages": [
+				"Celestial",
+				"Common",
+				"Deep Speech"
+			],
+			"cr": "3",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"Markos casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 13}):"
+					],
+					"daily": {
+						"1e": [
+							"{@spell arms of Hadar}",
+							"{@spell charm person}",
+							"{@spell mage armor}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Markos makes two Ceremonial Blade attacks, two Psychic Orb attacks, or one of each."
+					]
+				},
+				{
+					"name": "Ceremonial Blade",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage plus 3 ({@damage 1d6}) poison damage. If the target is a creature, it must succeed on a {@dc 13} Constitution saving throw or become {@condition poisoned} for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+					]
+				},
+				{
+					"name": "Psychic Orb",
+					"entries": [
+						"{@atk rs} {@hit 5} to hit, range 60 ft., one creature. {@h}10 ({@damage 2d6 + 3}) psychic damage."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Swap Space",
+					"entries": [
+						"Markos targets one Medium or Small creature he can see within 30 feet of himself. The target must succeed on a {@dc 13} Constitution saving throw or it teleports, along with any equipment it is wearing or carrying, exchanging positions with Markos."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"CE",
+				"DS"
+			],
+			"damageTags": [
+				"I",
+				"P",
+				"Y"
+			],
+			"damageTagsSpell": [
+				"N"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"poisoned"
+			],
+			"conditionInflictSpell": [
+				"charmed"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Meera Raheer",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Commoner",
+				"source": "MM"
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"L",
+				"G"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Naevys Tharesso",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Knight",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the knight",
+						"with": "Naevys Tharesso",
+						"flags": "i"
+					},
+					"action": {
+						"mode": "replaceArr",
+						"replace": "Greatsword",
+						"items": {
+							"name": "Flame Tongue Longsword",
+							"entries": [
+								"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d8 + 2}) slashing damage, or 7 ({@damage 1d10 + 2}) slashing damage if used with two hands. The knight can use a bonus action to speak this magic sword's command word, causing flames to erupt from the blade. These flames shed bright light in a 40-foot radius and dim light for an additional 40 feet. While the sword is ablaze, it deals an extra 2d6 fire damage to any target it hits. The flames last until she uses a bonus action to speak the command word again or until she drops or sheathes the sword."
+							]
+						}
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"elf"
+				]
+			},
+			"alignment": [
+				"L",
+				"G"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Nixylanna Vidorant",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Assassin",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the Assassin",
+						"with": "Nixylanna Vidorant",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"elf"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Prisoner 13",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"page": 68,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"dwarf",
+					"monk"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"mountain tattoo"
+					]
+				}
+			],
+			"hp": {
+				"average": 102,
+				"formula": "12d8 + 48"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 15,
+			"dex": 17,
+			"con": 18,
+			"int": 16,
+			"wis": 14,
+			"cha": 16,
+			"save": {
+				"con": "+7",
+				"wis": "+5"
+			},
+			"skill": {
+				"athletics": "+5",
+				"deception": "+9",
+				"insight": "+5",
+				"perception": "+5",
+				"stealth": "+6"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 15,
+			"resist": [
+				"poison"
+			],
+			"immune": [
+				"psychic"
+			],
+			"conditionImmune": [
+				"charmed"
+			],
+			"languages": [
+				"Common",
+				"Dwarvish",
+				"Elvish",
+				"Thieves' cant",
+				"Undercommon"
+			],
+			"cr": "5",
+			"trait": [
+				{
+					"name": "Antimagic Susceptibility",
+					"entries": [
+						"In an area of antimagic, Prisoner 13's tattoos and reactions don't function, and she suffers the following modifications to her statistics: her AC becomes 13, she loses her immunity to psychic damage and the charmed condition, and her Tattooed Strike becomes a melee attack that deals 7 ({@damage 1d8 + 3}) bludgeoning damage on a hit."
+					]
+				},
+				{
+					"name": "Mindlink Tattoos",
+					"entries": [
+						"Prisoner 13 has telepathic links with dozens of agents operating throughout the land. The links allow Prisoner 13 to communicate telepathically with each of these agents while they are both on the same plane of existence."
+					]
+				},
+				{
+					"name": "Mountain Tattoo",
+					"entries": [
+						"Prisoner 13's AC includes her Constitution modifier."
+					]
+				},
+				{
+					"name": "Shroud Tattoo",
+					"entries": [
+						"Prisoner 13 can't be targeted by divination spells or any feature that would read her thoughts, and she can't be perceived through magical scrying sensors. She can't be contacted telepathically unless she allows such contact."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Prisoner 13 makes two Tattooed Strike attacks."
+					]
+				},
+				{
+					"name": "Tattooed Strike",
+					"entries": [
+						"{@atk mw,rw} {@hit 6} to hit, reach 5 ft. or range 60 ft., one target. {@h}12 ({@damage 2d8 + 3}) force damage."
+					]
+				},
+				{
+					"name": "Firestorm Tattoo {@recharge 5}",
+					"entries": [
+						"Prisoner 13 magically unleashes flame from the tattoo across her back, filling a 20-foot-radius sphere centered on her. Each other creature in that area must make a {@dc 15} Dexterity saving throw. On a failed save, the creature takes 13 ({@damage 3d8}) fire damage and is knocked {@condition prone}. On a successful save, it takes half as much damage and isn't knocked {@condition prone}."
+					]
+				},
+				{
+					"name": "River Tattoo",
+					"entries": [
+						"Prisoner 13 magically ends any effects causing the {@condition grappled} or {@condition restrained} conditions on herself. If she is bound with nonmagical restraints, she slips out of them."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Readiness",
+					"entries": [
+						"When a creature Prisoner 13 can see within 60 feet of herself ends its turn, Prisoner 13 makes one Tattooed Strike attack or uses River Tattoo. She can then move up to her speed without provoking opportunity attacks."
+					]
+				}
+			],
+			"traitTags": [
+				"Antimagic Susceptibility"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"D",
+				"E",
+				"TC",
+				"U"
+			],
+			"damageTags": [
+				"B",
+				"F",
+				"O"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RW"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Rilago",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Ghost",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the ghost",
+						"with": "Rilago",
+						"flags": "i"
+					}
+				}
+			},
+			"hasToken": true
+		},
+		{
+			"name": "Sabrina Kilgore (Levels 1-4)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Bandit",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the bandit",
+						"with": "Sabrina Kilgore",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Sabrina Kilgore (Levels 5-8)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Thug",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the thug",
+						"with": "Sabrina Kilgore",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Sabrina Kilgore (Levels 9-11)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Veteran",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the veteran",
+						"with": "Sabrina Kilgore",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Sythian Skalderang",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"page": 117,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"bard",
+					"tiefling"
+				]
+			},
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"Graz'zt's gift"
+					]
+				}
+			],
+			"hp": {
+				"average": 99,
+				"formula": "18d8 + 18"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 15,
+			"con": 13,
+			"int": 14,
+			"wis": 11,
+			"cha": 16,
+			"save": {
+				"dex": "+5",
+				"wis": "+3"
+			},
+			"skill": {
+				"arcana": "+5",
+				"deception": "+6",
+				"performance": "+6"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 10,
+			"resist": [
+				"fire"
+			],
+			"languages": [
+				"Abyssal",
+				"Common"
+			],
+			"cr": "7",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"Sythian casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 14}):"
+					],
+					"will": [
+						"{@spell mage hand}",
+						"{@spell prestidigitation}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell charm person}",
+							"{@spell faerie fire}",
+							"{@spell unseen servant}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Fear of Frogs and Toads",
+					"entries": [
+						"Sythian is {@condition frightened} while he is within 20 feet of a frog or a toad (of any size) that he can see."
+					]
+				},
+				{
+					"name": "Graz'zt's Gift",
+					"entries": [
+						"Sythian's AC includes his Charisma modifier."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Sythian makes two Poisoned Shortsword or Poisoned Dart attacks and uses Whispers of Azzagrat."
+					]
+				},
+				{
+					"name": "Poisoned Shortsword",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage plus 5 ({@damage 1d10}) poison damage."
+					]
+				},
+				{
+					"name": "Poisoned Dart",
+					"entries": [
+						"{@atk rw} {@hit 5} to hit, range 20/60 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage plus 5 ({@damage 1d10}) poison damage."
+					]
+				},
+				{
+					"name": "Whispers of Azzagrat",
+					"entries": [
+						"Each creature in a 15-foot cube originating from Sythian must make a {@dc 14} Wisdom saving throw. On a failed save, a creature takes 18 ({@damage 4d8}) psychic damage and is {@condition incapacitated} until the end of its next turn. On a successful save, the creature takes half as much damage and isn't {@condition incapacitated}."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Fiendish Rebuke (3/Day)",
+					"entries": [
+						"Immediately after a creature within 5 feet of Sythian hits him with an attack roll, Sythian forces that creature to make a {@dc 14} Constitution saving throw. The creature takes 14 ({@damage 4d6}) fire damage on a failed saving throw, or half as much damage on a successful one."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"AB",
+				"C"
+			],
+			"damageTags": [
+				"F",
+				"I",
+				"P",
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RW",
+				"THW"
+			],
+			"conditionInflict": [
+				"incapacitated"
+			],
+			"conditionInflictSpell": [
+				"charmed"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "The Stranger",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Archmage",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the archmage",
+						"with": "The Stranger",
+						"flags": "i"
+					}
+				}
+			},
+			"trait": [
+				{
+					"name": "Special Equipment",
+					"entries": [
+						"The Stranger wears an invisible {@item ring of mind shielding} that thwarts magical attempts to read their thoughts. The Stranger also wears {@item dimensional shackles} but is eager to be rid of them. One touch from Omid's mace-key causes the shackles to fall off, freeing the Stranger."
+					]
+				},
+				{
+					"name": "Magic Resistance",
+					"entries": [
+						"The archmage has advantage on saving throws against spells and other magical effects."
+					]
+				}
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Tiefling Acrobat",
+			"source": "KftGV",
+			"_copy": {
+				"name": "Commoner",
+				"source": "MM"
+			},
+			"skill": {
+				"acrobatics": "+4",
+				"performance": "+4"
+			},
+			"hasToken": true
+		},
+		{
+			"name": "Tixie Tockworth",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"page": 85,
+			"size": [
+				"S"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"gnome"
+				]
+			},
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor",
+						"{@item shield|PHB}"
+					]
+				}
+			],
+			"hp": {
+				"average": 75,
+				"formula": "10d6 + 40"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 13,
+			"con": 18,
+			"int": 17,
+			"wis": 9,
+			"cha": 10,
+			"save": {
+				"int": "+6",
+				"wis": "+2"
+			},
+			"skill": {
+				"arcana": "+9",
+				"perception": "+2"
+			},
+			"senses": [
+				"truesight 60 ft."
+			],
+			"passive": 12,
+			"languages": [
+				"Common",
+				"Gnomish",
+				"Terran",
+				"Undercommon"
+			],
+			"cr": "7",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"Tockworth casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 14}):"
+					],
+					"will": [
+						"{@spell nondetection} (self only)"
+					],
+					"daily": {
+						"2": [
+							"{@spell dimension door}"
+						],
+						"1e": [
+							"{@spell blindness/deafness}",
+							"{@spell blur}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Force Field",
+					"entries": [
+						"Tockworth generates a magical force field around herself. This force field has 15 hit points and regains all its hit points at the start of each of Tockworth's turns, but it ceases to function if Tockworth drops to 0 hit points. Any damage Tockworth takes is subtracted from the force field's hit points first. Each time the force field regains hit points, the following conditions end on Tockworth: {@condition grappled}, {@condition restrained}, and {@condition stunned}."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Tockworth makes three Shortsword or Lightning Discharge attacks."
+					]
+				},
+				{
+					"name": "Shortsword",
+					"entries": [
+						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) piercing damage plus 10 ({@damage 3d6}) force damage."
+					]
+				},
+				{
+					"name": "Lightning Discharge",
+					"entries": [
+						"{@atk rs} {@hit 6} to hit, range 60 ft., one creature. {@h}16 ({@damage 3d10}) lightning damage."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Scalding Steam {@recharge 5}",
+					"entries": [
+						"Tockworth emits a jet of piping-hot steam in a 15-foot cone. Each creature in that cone must make a {@dc 15} Dexterity saving throw, taking 10 ({@damage 3d6}) fire damage on a failed save, or half as much damage on a successful one."
+					]
+				}
+			],
+			"senseTags": [
+				"U"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"G",
+				"T",
+				"U"
+			],
+			"damageTags": [
+				"F",
+				"L",
+				"O",
+				"P"
+			],
+			"damageTagsSpell": [
+				"O"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"AOE",
+				"MW"
+			],
+			"conditionInflictSpell": [
+				"blinded",
+				"deafened"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Tixie's Shield Guardian",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Shield Guardian",
+				"source": "MM",
+				"_mod": {
+					"trait": {
+						"mode": "removeArr",
+						"names": "Spell Storing"
+					}
+				}
+			},
+			"hasToken": true
+		},
+		{
+			"name": "Torgja Stonecrusher (Levels 1-4)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Bandit",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the bandit",
+						"with": "Torgja Stonecrusher",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"dwarf"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Torgja Stonecrusher (Levels 5-8)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Thug",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the thug",
+						"with": "Torgja Stonecrusher",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"dwarf"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Torgja Stonecrusher (Levels 9-11)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Veteran",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the veteran",
+						"with": "Torgja Stonecrusher",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"dwarf"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Tosh Starling (Levels 1-4)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Scout",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the scout",
+						"with": "Tosh Starling",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"orc"
+				]
+			},
+			"alignment": [
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Tosh Starling (Levels 5-8)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Spy",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the spy",
+						"with": "Tosh Starling",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"orc"
+				]
+			},
+			"alignment": [
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Tosh Starling (Levels 9-11)",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Veteran",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the veteran",
+						"with": "Tosh Starling",
+						"flags": "i"
+					}
+				}
+			},
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"orc"
+				]
+			},
+			"alignment": [
+				"N"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Zala Morphus",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Nothic",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the nothic",
+						"with": "Zala Morphus",
+						"flags": "i"
+					}
+				}
+			},
+			"languages": [
+				"Common",
+				"Deep Speech",
+				"Elvish"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Zorhanna Adulare",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"_copy": {
+				"name": "Archmage",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the archmage",
+						"with": "Zorhanna Adulare",
+						"flags": "i"
+					}
+				}
+			},
+			"languages": [
+				"Auran",
+				"Common",
+				"Draconic",
+				"Elvish",
+				"Sylvan"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Zorhanna's Simulacrum",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "KftGV",
+			"page": 184,
+			"_copy": {
+				"name": "Archmage",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "archmage",
+						"with": "simulacrum"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Simulacrum",
+							"entries": [
+								"The simulacrum can't regain expended spell slots or use the properties of the shard solitaire necklace. (The shard solitaire is currently attuned to the Far Realm entity trapped inside.) If the simulacrum drops to 0 hit points, it turns to snow and melts away, and the shard solitaire necklace teleports to the safe in Zorhanna's vault tower."
+							]
+						}
+					}
+				}
+			},
+			"type": "construct",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"languages": [
+				"Common",
+				"Deep Speech (when it is angry or frustrated)",
+				"Draconic",
+				"Elvish",
+				"Gnomish",
+				"Sylvan"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		}
+	]
+}

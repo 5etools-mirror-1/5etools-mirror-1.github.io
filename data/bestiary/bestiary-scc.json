@@ -764,7 +764,7 @@
 					"name": "Pact of Pain",
 					"entries": [
 						"Using a 10-minute ritual, the daemogoth can forge a magical bond with a willing creature it touches throughout the ritual. The creature becomes bound by the pact until it dies, the daemogoth dies, or the pact is broken by any effect that can remove a curse.",
-						"The daemogoth chooses one spell from the necromancy or enchantment school that is 3rd level or lower. The bound creature can cast that spell using this pact, requiring no material components and using Intelligence as the spellcasting ability. When it casts the spell, the creature takes 7 ({@damage 2d6}) psychic damage, which can't break the creature's concentration on a spell. Once the bound creature casts the spell in this way, it can't do so again until it finishes a long rest."
+						"The daemogoth chooses one spell from the necromancy or enchantment school that is 3rd level or lower. The bound creature can cast that spell using this pact, requiring no material components and using Intelligence as the spellcasting ability. When it casts the spell, the creature takes 7 ({@damage 2d6}) psychic damage, which can't break the creature's {@status concentration} on a spell. Once the bound creature casts the spell in this way, it can't do so again until it finishes a long rest."
 					]
 				}
 			],
@@ -886,7 +886,7 @@
 					"name": "Pact of Suffering",
 					"entries": [
 						"Using a 10-minute long ritual, the titan can forge a magical bond with a willing creature it touches throughout the ritual. The creature becomes bound by the pact until it dies, the titan dies, or the pact is broken by a {@spell wish} spell.",
-						"The titan chooses one spell from the necromancy or enchantment school that is 8th level or lower. The bound creature can cast that spell using this pact, requiring no material components and using Intelligence as the spellcasting ability. When it casts the spell, the creature takes 21 ({@damage 6d6}) psychic damage, which can't break the creature's concentration on a spell. Once the bound creature casts the spell in this way, it can't do so again until it finishes a long rest."
+						"The titan chooses one spell from the necromancy or enchantment school that is 8th level or lower. The bound creature can cast that spell using this pact, requiring no material components and using Intelligence as the spellcasting ability. When it casts the spell, the creature takes 21 ({@damage 6d6}) psychic damage, which can't break the creature's {@status concentration} on a spell. Once the bound creature casts the spell in this way, it can't do so again until it finishes a long rest."
 					]
 				}
 			],

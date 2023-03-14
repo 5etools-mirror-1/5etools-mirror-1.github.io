@@ -3373,7 +3373,7 @@
 			"isClassFeatureVariant": true,
 			"entries": [
 				"{@i 1st-level ranger {@variantrule optional class features|tce|optional feature}, which replaces the Favored Enemy feature and works with the Foe Slayer feature}",
-				"When you hit a creature with an attack roll, you can call on your mystical bond with nature to mark the target as your favored enemy for 1 minute or until you lose your concentration (as if you were concentrating on a spell).",
+				"When you hit a creature with an attack roll, you can call on your mystical bond with nature to mark the target as your favored enemy for 1 minute or until you lose your {@status concentration} (as if you were {@status concentration||concentrating} on a spell).",
 				"The first time on each of your turns that you hit the favored enemy and deal damage to it, including when you mark it, you can increase that damage by {@dice 1d4}.",
 				"You can use this feature to mark a favored enemy a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
 				"This feature's extra damage increases when you reach certain levels in this class: to {@dice 1d6} at 6th level and to {@dice 1d8} at 14th level."
@@ -3389,7 +3389,7 @@
 			"isClassFeatureVariant": true,
 			"entries": [
 				"{@i 1st-level ranger feature (replaces Favored Enemy)}",
-				"You can call on your bond with nature to mark a creature as your favored enemy for a time: you know the {@spell hunter's mark} spell, and Wisdom is your spellcasting ability for it. You can use it a certain number of times without expending a spell slot and without requiring concentration\u2014a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.",
+				"You can call on your bond with nature to mark a creature as your favored enemy for a time: you know the {@spell hunter's mark} spell, and Wisdom is your spellcasting ability for it. You can use it a certain number of times without expending a spell slot and without requiring {@status concentration}\u2014a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.",
 				"When you gain the Spellcasting feature at 2nd level, hunter's mark doesn't count against the number of ranger spells you know."
 			]
 		},
@@ -4198,7 +4198,7 @@
 			"entries": [
 				"{@i 1st-level ranger {@variantrule optional class features|tce|optional feature}, which replaces the Favored Enemy feature and works with the Foe Slayer feature}",
 				"{@note Note that this feature is intended for use with the Ranger class presented in the Player's Handbook. It is presented here for convenience, and may be unsuitable for use as a Spell-less Ranger feature.}",
-				"When you hit a creature with an attack roll, you can call on your mystical bond with nature to mark the target as your favored enemy for 1 minute or until you lose your concentration (as if you were concentrating on a spell).",
+				"When you hit a creature with an attack roll, you can call on your mystical bond with nature to mark the target as your favored enemy for 1 minute or until you lose your {@status concentration} (as if you were {@status concentration||concentrating} on a spell).",
 				"The first time on each of your turns that you hit the favored enemy and deal damage to it, including when you mark it, you can increase that damage by {@dice 1d4}.",
 				"You can use this feature to mark a favored enemy a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
 				"This feature's extra damage increases when you reach certain levels in this class: to {@dice 1d6} at 6th level and to {@dice 1d8} at 14th level."
@@ -4215,7 +4215,7 @@
 			"entries": [
 				"{@i 1st-level ranger feature (replaces Favored Enemy)}",
 				"{@note Note that this feature is intended for use with the Ranger class presented in the Player's Handbook. It is presented here for convenience, and may be unsuitable for use as a Spell-less Ranger feature.}",
-				"You can call on your bond with nature to mark a creature as your favored enemy for a time: you know the {@spell hunter's mark} spell, and Wisdom is your spellcasting ability for it. You can use it a certain number of times without expending a spell slot and without requiring concentration\u2014a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.",
+				"You can call on your bond with nature to mark a creature as your favored enemy for a time: you know the {@spell hunter's mark} spell, and Wisdom is your spellcasting ability for it. You can use it a certain number of times without expending a spell slot and without requiring {@status concentration}\u2014a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.",
 				"When you gain the Spellcasting feature at 2nd level, hunter's mark doesn't count against the number of ranger spells you know."
 			]
 		},
@@ -5014,7 +5014,7 @@
 					"name": "Spirit Companion",
 					"entries": [
 						"All rangers gain a spirit companion and the ability to invoke its magical power. (Your spirit companion grants you one benefit you can call on in this playtest version of the revised ranger, with more benefits gained at higher levels.) You regain your ability to call on your spirit companion in this way when you finish a short or long rest.",
-						"Once per day as a bonus action, you can command your spirit companion to materialize as a living creature, determined by the ranger path you choose. Your spirit companion manifests as an animal for 1 minute or until your concentration is broken (as if you are concentrating on a spell). You can also dismiss it as a bonus action.",
+						"Once per day as a bonus action, you can command your spirit companion to materialize as a living creature, determined by the ranger path you choose. Your spirit companion manifests as an animal for 1 minute or until your {@status concentration} is broken (as if you are {@status concentration||concentrating} on a spell). You can also dismiss it as a bonus action.",
 						"The manifested creature gains a bonus to attack rolls and saving throws equal to your Wisdom modifier. It uses the hit points in the animal's stat block or half your hit point maximum, whichever is higher.",
 						"The manifested creature takes its turn on your initiative and acts immediately after you. You control its actions, even if you are {@condition unconscious} or otherwise unable to act."
 					]
@@ -5216,7 +5216,7 @@
 				"Beginning at 3rd level, your mastery of ranger lore allows you to establish a powerful link to beasts and to the land around you.",
 				"You have an innate ability to communicate with beasts, and they recognize you as a kindred spirit. Through sounds and gestures, you can communicate simple ideas to a beast as an action, and can read its basic mood and intent. You learn its emotional state, whether it is affected by magic of any sort, its short-term needs (such as food or safety), and actions you can take (if any) to persuade it to not attack.",
 				"You cannot use this ability against a creature that you have attacked within the past 10 minutes.",
-				"Additionally, you can attune your senses to determine if any of your favored enemies lurk nearby. By spending 1 uninterrupted minute in concentration (as if you were concentrating on a spell), you can sense whether any of your favored enemies are present within 5 miles of you. This feature reveals which of your favored enemies are present, their numbers, and the creatures' general direction and distance (in miles) from you.",
+				"Additionally, you can attune your senses to determine if any of your favored enemies lurk nearby. By spending 1 uninterrupted minute in {@status concentration} (as if you were {@status concentration||concentrating} on a spell), you can sense whether any of your favored enemies are present within 5 miles of you. This feature reveals which of your favored enemies are present, their numbers, and the creatures' general direction and distance (in miles) from you.",
 				"If there are multiple groups of your favored enemies within range, you learn this information for each group."
 			]
 		},
@@ -6315,7 +6315,7 @@
 			"entries": [
 				"{@i 11th-level Fey Wanderer feature}",
 				"The royal courts of the Feywild have blessed you with the assistance of fey beings: you know {@spell summon fey|tce}. It doesn't count against the number of ranger spells you know, and you can cast it without a material component. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.",
-				"Whenever you start casting the spell, you can modify it so that it doesn't require concentration. If you do so, the spell's duration becomes 1 minute for that casting."
+				"Whenever you start casting the spell, you can modify it so that it doesn't require {@status concentration}. If you do so, the spell's duration becomes 1 minute for that casting."
 			]
 		},
 		{
@@ -8856,7 +8856,7 @@
 			"entries": [
 				"{@i 11th-level Fey Wanderer feature}",
 				"The royal courts of the Feywild have blessed you with the assistance of fey beings: you know {@spell summon fey|tce}. It doesn't count against the number of ranger spells you know, and you can cast it without a material component. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.",
-				"Whenever you start casting the spell, you can modify it so that it doesn't require concentration. If you do so, the spell's duration becomes 1 minute for that casting."
+				"Whenever you start casting the spell, you can modify it so that it doesn't require {@status concentration}. If you do so, the spell's duration becomes 1 minute for that casting."
 			]
 		},
 		{
@@ -10627,7 +10627,7 @@
 			"entries": [
 				"{@i 11th-level Fey Wanderer feature}",
 				"The royal courts of the Feywild have blessed you with the assistance of fey beings: you know {@spell summon fey|tce}. It doesn't count against the number of ranger spells you know, and you can cast it without a material component. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.",
-				"Whenever you start casting the spell, you can modify it so that it doesn't require concentration. If you do so, the spell's duration becomes 1 minute for that casting."
+				"Whenever you start casting the spell, you can modify it so that it doesn't require {@status concentration}. If you do so, the spell's duration becomes 1 minute for that casting."
 			]
 		},
 		{

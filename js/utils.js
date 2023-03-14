@@ -2,7 +2,7 @@
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 globalThis.IS_DEPLOYED = undefined;
-globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.175.2"/* 5ETOOLS_VERSION__CLOSE */;
+globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.177.2"/* 5ETOOLS_VERSION__CLOSE */;
 globalThis.DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 globalThis.DEPLOYED_IMG_ROOT = undefined;
 // for the roll20 script to set
@@ -893,6 +893,11 @@ globalThis.JqueryUtil = {
 if (typeof window !== "undefined") window.addEventListener("load", JqueryUtil.initEnhancements);
 
 globalThis.ElementUtil = {
+	_ATTRS_NO_FALSY: new Set([
+		"checked",
+		"disabled",
+	]),
+
 	getOrModify ({
 		tag,
 		clazz,
@@ -939,8 +944,17 @@ globalThis.ElementUtil = {
 		if (href != null) ele.setAttribute("href", href);
 		if (val != null) ele.setAttribute("value", val);
 		if (type != null) ele.setAttribute("type", type);
-		if (attrs != null) { for (const k in attrs) { if (attrs[k] === undefined) continue; ele.setAttribute(k, attrs[k]); } }
+
+		if (attrs != null) {
+			for (const k in attrs) {
+				if (attrs[k] === undefined) continue;
+				if (!attrs[k] && ElementUtil._ATTRS_NO_FALSY.has(k)) continue;
+				ele.setAttribute(k, attrs[k]);
+			}
+		}
+
 		if (data != null) { for (const k in data) { if (data[k] === undefined) continue; ele.dataset[k] = data[k]; } }
+
 		if (children) for (let i = 0, len = children.length; i < len; ++i) if (children[i] != null) ele.append(children[i]);
 
 		ele.appends = ele.appends || ElementUtil._appends.bind(ele);
@@ -2674,6 +2688,7 @@ UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_DECK] = UrlUtil.PG_DECKS;
 UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_CARD] = "card";
 UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_SKILLS] = "skill";
 UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_SENSES] = "sense";
+UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_LEGENDARY_GROUP] = "legendaryGroup";
 
 UrlUtil.CAT_TO_HOVER_PAGE = {};
 UrlUtil.CAT_TO_HOVER_PAGE[Parser.CAT_ID_CLASS_FEATURE] = "classfeature";
@@ -2681,6 +2696,7 @@ UrlUtil.CAT_TO_HOVER_PAGE[Parser.CAT_ID_SUBCLASS_FEATURE] = "subclassfeature";
 UrlUtil.CAT_TO_HOVER_PAGE[Parser.CAT_ID_CARD] = "card";
 UrlUtil.CAT_TO_HOVER_PAGE[Parser.CAT_ID_SKILLS] = "skill";
 UrlUtil.CAT_TO_HOVER_PAGE[Parser.CAT_ID_SENSES] = "sense";
+UrlUtil.CAT_TO_HOVER_PAGE[Parser.CAT_ID_LEGENDARY_GROUP] = "legendaryGroup";
 
 UrlUtil.HASH_START_CREATURE_SCALED = `${VeCt.HASH_SCALED}${HASH_SUB_KV_SEP}`;
 UrlUtil.HASH_START_CREATURE_SCALED_SPELL_SUMMON = `${VeCt.HASH_SCALED_SPELL_SUMMON}${HASH_SUB_KV_SEP}`;
@@ -6316,6 +6332,16 @@ Array.prototype.meanAbsoluteDeviation || Object.defineProperty(Array.prototype, 
 	value: function () {
 		const mean = this.mean();
 		return (this.map(num => Math.abs(num - mean)) || []).mean();
+	},
+});
+
+Map.prototype.getOrSet || Object.defineProperty(Map.prototype, "getOrSet", {
+	enumerable: false,
+	writable: true,
+	value: function (k, orV) {
+		if (this.has(k)) return this.get(k);
+		this.set(k, orV);
+		return orV;
 	},
 });
 

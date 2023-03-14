@@ -1929,12 +1929,13 @@ globalThis.ScaleCreature = {
 	},
 
 	_spells: null,
-	_pInitSpellCache () {
+	async _pInitSpellCache () {
 		if (this._spells) return Promise.resolve();
 
 		this._spells = {};
-		return DataUtil.loadJSON(`${Renderer.get().baseUrl}data/spells/spells-phb.json`).then(data => {
-			this.__initSpellCache(data);
+
+		this.__initSpellCache({
+			spell: (await DataUtil.spell.loadJSON()).spell.filter(sp => sp.source === Parser.SRC_PHB),
 		});
 	},
 
@@ -2389,13 +2390,51 @@ globalThis.ScaleClassSummonedCreature = {
 		});
 	},
 
+	_scale_getConvertedPbString (state, str, {isBonus = false} = {}) {
+		let out = str
+			.replace(/\bplus\b/gi, "+")
+			.replace(/(\b|[-+])PB\b/g, `$1${state.proficiencyBonus}`)
+			// eslint-disable-next-line no-eval
+			.replace(/[-+]\s*\d+\s*[-+]\s*\d+\b/g, (...n) => eval(n[0]))
+		;
+
+		const reDice = /(\b(?:\d+)?d\d+\b)/g;
+		let ix = 0;
+		const outSimplified = out.split(reDice)
+			.map(pt => {
+				// Don't increase index for empty strings
+				if (!pt.trim()) return pt;
+
+				if (reDice.test(pt)) {
+					ix++;
+					return pt;
+				}
+
+				const simplified = Renderer.dice.parseRandomise2(pt);
+				if (simplified != null) {
+					if (ix) {
+						ix++;
+						return UiUtil.intToBonus(simplified);
+					}
+					ix++;
+					return simplified;
+				}
+
+				ix++;
+				return pt;
+			})
+			.join("")
+			.replace(/\s*[-+]\s*/g, (...m) => ` ${m[0].trim()} `);
+
+		if (!isNaN(outSimplified) && isBonus) return UiUtil.intToBonus(outSimplified);
+		return outSimplified;
+	},
+
 	_scale_savesSkills (mon, toClassLevel, state, prop) {
 		mon[prop] = Object.entries(mon[prop])
 			.mergeMap(([k, v]) => {
 				if (typeof v !== "string") return {[k]: v};
-				return {[k]: v
-					.replace(/\bplus\b/gi, "+")
-					.replace(/(\b|[-+])PB\b/g, `$1${state.proficiencyBonus}`)};
+				return {[k]: this._scale_getConvertedPbString(state, v, {isBonus: true})};
 			});
 	},
 
@@ -2405,6 +2444,8 @@ globalThis.ScaleClassSummonedCreature = {
 	},
 
 	_scale_skills (mon, toClassLevel, state) {
+		if (mon.passive != null) mon.passive = this._scale_getConvertedPbString(state, `${mon.passive}`);
+
 		if (!mon.skill) return;
 		this._scale_savesSkills(mon, toClassLevel, state, "skill");
 	},
@@ -2432,24 +2473,26 @@ globalThis.ScaleClassSummonedCreature = {
 
 		basePart = basePart
 			// "5 + five times your ranger level"
-			.replace(/(?<base>\d+)\s*\+\s*(?<perLevel>\d+|[a-z]+) times your (?<className>[^(]*) level/g, (...m) => {
+			.replace(/(?<base>\d+)\s*\+\s*(?<perLevel>\d+|[a-z]+) times your (?:(?<className>[^(]*) )?level/g, (...m) => {
 				const numTimes = isNaN(m.last().perLevel) ? Parser.textToNumber(m.last().perLevel) : Number(m.last().perLevel);
 				return `${Number(m.last().base) + (numTimes * toClassLevel)}`;
 			})
 			// "1 + <...> + your artificer level"
-			.replace(/(?<base>\d+)\s*\+\s*your (?<className>[^(]*) level/g, (...m) => {
+			.replace(/(?<base>\d+)\s*\+\s*your (?:(?<className>[^(]*) )?level/g, (...m) => {
 				return `${Number(m.last().base) + toClassLevel}`;
 			})
 			// "equal the beast's Constitution modifier + five times your ranger level"
-			.replace(/equal .*? Constitution modifier\s*\+\s*(?<perLevel>\d+|[a-z]+) times your (?<className>[^(]*) level/g, (...m) => {
+			.replace(/equal .*? Constitution modifier\s*\+\s*(?<perLevel>\d+|[a-z]+) times your (?:(?<className>[^(]*) )?level/g, (...m) => {
 				const numTimes = isNaN(m.last().perLevel) ? Parser.textToNumber(m.last().perLevel) : Number(m.last().perLevel);
 				return `${Parser.getAbilityModNumber(mon.con) + (numTimes * toClassLevel)}`;
 			})
 		;
 
+		basePart = this._scale_getConvertedPbString(state, basePart);
+
 		// "the beast has a number of Hit Dice [d8s] equal to your ranger level"
 		if (hdPart) {
-			hdPart = hdPart.replace(/(?<intro>.*) a number of hit dice \[d(?<hdSides>\d+)s?] equal to your (?<className>[^(]*) level/i, (...m) => {
+			hdPart = hdPart.replace(/(?<intro>.*) a number of hit dice \[d(?<hdSides>\d+)s?] equal to your (?:(?<className>[^(]*) )?level/i, (...m) => {
 				const hdFormula = `${toClassLevel}d${m.last().hdSides}`;
 				if (!yourAbilModPart) return hdFormula;
 
@@ -2479,13 +2522,13 @@ globalThis.ScaleClassSummonedCreature = {
 							return `${m[0]} (${UiUtil.intToBonus(state.proficiencyBonus)})`;
 						})
 						// "{@damage 1d8 + 2 + PB}"
-						.replace(/{@(?:dice|damage|hit|d20) [^}]+}/g, (...m) => {
-							return m[0]
-								.replace(/\bPB\b/g, (...n) => state.proficiencyBonus)
-								// eslint-disable-next-line no-eval
-								.replace(/[-+]\s*\d+\s*[-+]\s*\d+\b/g, (...n) => UiUtil.intToBonus(eval(n[0])))
-								.replace(/\s*[-+]\s*/g, (...m) => ` ${m[0].trim()} `)
-							;
+						.replace(/{@(?<tag>dice|damage|hit|d20|dc) (?<text>[^}]+)}/g, (...m) => {
+							const {tag, text} = m.last();
+							const [ptNumber, ...ptsRest] = text.split("|");
+
+							const ptNumberOut = this._scale_getConvertedPbString(state, ptNumber);
+
+							return `{@${tag} ${[ptNumberOut, ...ptsRest].join("|")}}`;
 						})
 					;
 

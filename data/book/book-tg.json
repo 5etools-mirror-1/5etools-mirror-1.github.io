@@ -1,0 +1,52 @@
+{
+	"data": [
+		{
+			"type": "section",
+			"name": "Thieves' Gallery",
+			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/TG/001-00-008.movie-logo.webp"
+					}
+				},
+				"A handful of characters from the film {@i Dungeons & Dragons: Honor Among Thieves} are presented here as NPCs you can include in your D&D campaigns. The stat blocks in this collection use a presentation similar to that which is found in the {@book Monster Manual|MM}. If you are unfamiliar with the stat block format, read the introduction of the Monster Manual before proceeding further. That book explains stat block terminology and gives rules for various monster traits\u2014information that isn't repeated here.",
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/TG/002-00-009.characters-splash.webp"
+					},
+					"title": "A collection of heroes and villains for the world's greatest roleplaying game"
+				},
+				{
+					"type": "entries",
+					"name": "Unusual Attacks and Magic",
+					"entries": [
+						"Some creatures have weapons that deal unusual damage types and spellcasting that functions in an atypical way. For example, {@creature Forge Fitzwilliam|TG} deals extra poison damage with his heavy crossbow. This extra damage isn't a feature of the weapon. Such an exception is a special feature of a stat block and represents how the creature uses its weapon or casts its spells; the exception has no effect on how a weapon or spell functions for a different creature."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Stat Blocks",
+					"entries": [
+						{
+							"type": "list",
+							"columns": 3,
+							"items": [
+								"{@creature Doric|TG}",
+								"{@creature Edgin Darvis|TG}",
+								"{@creature Forge Fitzwilliam|TG}",
+								"{@creature Holga Kilgore|TG}",
+								"{@creature Simon Aumar|TG}",
+								"{@creature Sofina|TG}",
+								"{@creature Xenk Yendar|TG}"
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -118,7 +118,10 @@
 					"type": {
 						"type": "humanoid",
 						"tags": [
-							"gnome"
+							{
+								"tag": "gnome",
+								"prefix": "Deep"
+							}
 						]
 					},
 					"speed": {
@@ -280,7 +283,10 @@
 					"type": {
 						"type": "humanoid",
 						"tags": [
-							"elf"
+							{
+								"tag": "elf",
+								"prefix": "Drow"
+							}
 						]
 					}
 				},
@@ -358,7 +364,10 @@
 					"type": {
 						"type": "humanoid",
 						"tags": [
-							"dwarf"
+							{
+								"tag": "dwarf",
+								"prefix": "Duergar"
+							}
 						]
 					},
 					"speed": {
@@ -404,7 +413,7 @@
 							{
 								"name": "Invisibility (Recharges after a Short or Long Rest)",
 								"entries": [
-									"<$title_short_name$> magically turns {@condition invisible} until they attack, cast a spell, or use their Enlarge, or until their concentration is broken, up to 1 hour (as if concentrating on a spell). Any equipment <$short_name$> wears or carries is invisible with them."
+									"<$title_short_name$> magically turns {@condition invisible} until they attack, cast a spell, or use their Enlarge, or until their {@status concentration} is broken, up to 1 hour (as if {@status concentration||concentrating} on a spell). Any equipment <$short_name$> wears or carries is invisible with them."
 								]
 							}
 						]
@@ -1139,7 +1148,10 @@
 					"type": {
 						"type": "humanoid",
 						"tags": [
-							"elf"
+							{
+								"tag": "elf",
+								"prefix": "High"
+							}
 						]
 					}
 				},
@@ -2342,7 +2354,10 @@
 					"type": {
 						"type": "humanoid",
 						"tags": [
-							"dwarf"
+							{
+								"tag": "dwarf",
+								"prefix": "Shield"
+							}
 						]
 					},
 					"speed": {
@@ -2542,7 +2557,10 @@
 					"type": {
 						"type": "humanoid",
 						"tags": [
-							"gnome"
+							{
+								"tag": "gnome",
+								"prefix": "Rock"
+							}
 						]
 					},
 					"speed": {
@@ -2633,7 +2651,10 @@
 					"type": {
 						"type": "humanoid",
 						"tags": [
-							"halfling"
+							{
+								"tag": "halfling",
+								"prefix": "Stout"
+							}
 						]
 					},
 					"speed": {
@@ -2870,7 +2891,10 @@
 					"type": {
 						"type": "humanoid",
 						"tags": [
-							"elf"
+							{
+								"tag": "elf",
+								"prefix": "Wood"
+							}
 						]
 					},
 					"speed": {

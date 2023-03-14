@@ -963,7 +963,7 @@ class _DataTypeLoaderCustomSpell extends _DataTypeLoaderMultiSource {
 }
 
 class _DataTypeLoaderCustomSpellFluff extends _DataTypeLoaderMultiSource {
-	static PROPS = ["spell"];
+	static PROPS = ["spellFluff"];
 	static PAGE = UrlUtil.PG_SPELLS;
 	static IS_FLUFF = true;
 

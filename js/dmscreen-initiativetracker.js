@@ -509,7 +509,7 @@ class InitiativeTracker {
 
 					res.forEach(r => {
 						const $row = $getRow(r).appendTo($results);
-						SearchWidget.bindRowHandlers({result: r, $row, $ptrRows, fnHandleClick: handleClick});
+						SearchWidget.bindRowHandlers({result: r, $row, $ptrRows, fnHandleClick: handleClick, $iptSearch});
 						$ptrRows._.push($row);
 					});
 

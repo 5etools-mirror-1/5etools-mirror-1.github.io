@@ -1508,6 +1508,7 @@ class ManageBrewUi {
 		constructor () {
 			this.$stgBrewList = null;
 			this.list = null;
+			this.listSelectClickHandler = null;
 			this.brews = [];
 			this.menuListMass = null;
 			this.rowMetas = [];
@@ -1755,7 +1756,8 @@ class ManageBrewUi {
 			<div class="ve-flex w-100 h-100 overflow-y-auto relative">${$wrpList}</div>
 		</div>`;
 
-		ListUiUtil.bindSelectAllCheckbox($cbAll, rdState.list);
+		rdState.listSelectClickHandler = new ListSelectClickHandler({list: rdState.list});
+		rdState.listSelectClickHandler.bindSelectAllCheckbox($cbAll);
 		SortUtil.initBtnSortHandlers($wrpBtnsSort, rdState.list);
 
 		rdState.brews = (await this._brewUtil.pGetBrew()).map(brew => this._pRender_getProcBrew(brew));
@@ -2052,7 +2054,7 @@ class ManageBrewUi {
 			},
 		);
 
-		eleLi.addEventListener("click", evt => ListUiUtil.handleSelectClick(rdState.list, listItem, evt, {isPassThroughEvents: true}));
+		eleLi.addEventListener("click", evt => rdState.listSelectClickHandler.handleSelectClick(listItem, evt, {isPassThroughEvents: true}));
 
 		const rowMeta = {
 			listItem,
@@ -2329,6 +2331,7 @@ class GetBrewUi {
 		constructor () {
 			this.pageFilter = null;
 			this.list = null;
+			this.listSelectClickHandler = null;
 			this.cbAll = null;
 		}
 	};
@@ -2614,7 +2617,8 @@ class GetBrewUi {
 
 		rdState.list.on("updated", () => $dispCntVisible.html(`${rdState.list.visibleItems.length}/${rdState.list.items.length}`));
 
-		ListUiUtil.bindSelectAllCheckbox($(rdState.cbAll), rdState.list);
+		rdState.listSelectClickHandler = new ListSelectClickHandler({list: rdState.list});
+		rdState.listSelectClickHandler.bindSelectAllCheckbox($(rdState.cbAll));
 		SortUtil.initBtnSortHandlers($wrpSort, rdState.list);
 
 		this._dataList.forEach((brewInfo, ix) => {
@@ -2732,7 +2736,7 @@ class GetBrewUi {
 			},
 		);
 
-		eleLi.addEventListener("click", evt => ListUiUtil.handleSelectClick(rdState.list, listItem, evt, {isPassThroughEvents: true}));
+		eleLi.addEventListener("click", evt => rdState.listSelectClickHandler.handleSelectClick(listItem, evt, {isPassThroughEvents: true}));
 
 		return {
 			listItem,
@@ -2850,7 +2854,9 @@ class ManageEditableBrewContentsUi extends BaseComponent {
 			this.tabMetaSources = null;
 
 			this.listEntities = null;
+			this.listEntitiesSelectClickHandler = null;
 			this.listSources = null;
+			this.listSourcesSelectClickHandler = null;
 
 			this.contentEntities = null;
 			this.pageFilterEntities = new ManageEditableBrewContentsUi._PageFilter();
@@ -3071,7 +3077,8 @@ class ManageEditableBrewContentsUi extends BaseComponent {
 
 		rdState.listEntities.on("updated", () => $dispCntVisible.html(`${rdState.listEntities.visibleItems.length}/${rdState.listEntities.items.length}`));
 
-		ListUiUtil.bindSelectAllCheckbox($cbAll, rdState.listEntities);
+		rdState.listEntitiesSelectClickHandler = new ListSelectClickHandler({list: rdState.listEntities});
+		rdState.listEntitiesSelectClickHandler.bindSelectAllCheckbox($cbAll);
 		SortUtil.initBtnSortHandlers($wrpBtnsSort, rdState.listEntities);
 
 		let ixParent = 0;
@@ -3146,7 +3153,7 @@ class ManageEditableBrewContentsUi extends BaseComponent {
 			},
 		);
 
-		eleLi.addEventListener("click", evt => ListUiUtil.handleSelectClick(rdState.listEntities, listItem, evt));
+		eleLi.addEventListener("click", evt => rdState.listEntitiesSelectClickHandler.handleSelectClick(listItem, evt));
 
 		return {
 			listItem,
@@ -3236,7 +3243,8 @@ class ManageEditableBrewContentsUi extends BaseComponent {
 			fnSort: SortUtil.listSort,
 		});
 
-		ListUiUtil.bindSelectAllCheckbox($cbAll, rdState.listSources);
+		rdState.listSourcesSelectClickHandler = new ListSelectClickHandler({list: rdState.listSources});
+		rdState.listSourcesSelectClickHandler.bindSelectAllCheckbox($cbAll);
 		SortUtil.initBtnSortHandlers($wrpBtnsSort, rdState.listSources);
 
 		(this._brew.body?._meta?.sources || [])
@@ -3277,7 +3285,7 @@ class ManageEditableBrewContentsUi extends BaseComponent {
 			},
 		);
 
-		eleLi.addEventListener("click", evt => ListUiUtil.handleSelectClick(rdState.listEntities, listItem, evt));
+		eleLi.addEventListener("click", evt => rdState.listSourcesSelectClickHandler.handleSelectClick(listItem, evt));
 
 		return {
 			listItem,

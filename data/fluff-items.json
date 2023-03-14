@@ -403,10 +403,18 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/DMG/Book of Vile Darkness.jpg"
+						"path": "items/DMG/Book of Vile Darkness.webp"
 					}
 				}
 			]
+		},
+		{
+			"name": "Book of Vile Darkness (Variant)",
+			"source": "KftGV",
+			"_copy": {
+				"name": "Book of Vile Darkness",
+				"source": "DMG"
+			}
 		},
 		{
 			"name": "Boots of Elvenkind",
@@ -768,6 +776,19 @@
 					"href": {
 						"type": "internal",
 						"path": "items/SKT/Conch of Teleportation.png"
+					}
+				}
+			]
+		},
+		{
+			"name": "Constantori's Portrait",
+			"source": "KftGV",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/KftGV/Constantoris Portrait.webp"
 					}
 				}
 			]
@@ -3873,6 +3894,72 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Shard of Xeluan",
+			"source": "KftGV",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/KftGV/Shard of Xeluan.webp"
+					}
+				}
+			]
+		},
+		{
+			"name": "Shard Solitaire",
+			"source": "KftGV",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/KftGV/Shard Solitaire.webp"
+					}
+				}
+			]
+		},
+		{
+			"name": "Shard Solitaire (Black Sapphire)",
+			"source": "KftGV",
+			"_copy": {
+				"name": "Shard Solitaire",
+				"source": "KftGV"
+			}
+		},
+		{
+			"name": "Shard Solitaire (Diamond)",
+			"source": "KftGV",
+			"_copy": {
+				"name": "Shard Solitaire",
+				"source": "KftGV"
+			}
+		},
+		{
+			"name": "Shard Solitaire (Jacinth)",
+			"source": "KftGV",
+			"_copy": {
+				"name": "Shard Solitaire",
+				"source": "KftGV"
+			}
+		},
+		{
+			"name": "Shard Solitaire (Rainbow Pearl)",
+			"source": "KftGV",
+			"_copy": {
+				"name": "Shard Solitaire",
+				"source": "KftGV"
+			}
+		},
+		{
+			"name": "Shard Solitaire (Ruby)",
+			"source": "KftGV",
+			"_copy": {
+				"name": "Shard Solitaire",
+				"source": "KftGV"
+			}
 		},
 		{
 			"name": "Shield Guardian Amulet",

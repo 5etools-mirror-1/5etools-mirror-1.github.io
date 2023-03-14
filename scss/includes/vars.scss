@@ -228,11 +228,11 @@ $font-line-height: 1.42857143;
 }
 
 @mixin row-glow-active {
-	box-shadow: inset 0 0 0 1000px rgba(0, 107, 196, 0.3);
+	box-shadow: inset 0 0 0 5000px rgba(0, 107, 196, 0.3);
 }
 
 @mixin row-glow-active--alt {
-	box-shadow: inset 0 0 0 1000px rgba(148, 148, 148, 0.2);
+	box-shadow: inset 0 0 0 5000px rgba(148, 148, 148, 0.2);
 }
 
 @mixin overflow-dots {

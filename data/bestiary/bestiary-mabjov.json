@@ -527,7 +527,7 @@
 				{
 					"name": "Insect Gorge (Costs 2 Actions)",
 					"entries": [
-						"Baalzebul disgorges a swarm of biting flies (otherwise same as insect plague) that deals 44 ({@damage 8d10}) piercing damage and does not require concentration."
+						"Baalzebul disgorges a swarm of biting flies (otherwise same as insect plague) that deals 44 ({@damage 8d10}) piercing damage and does not require {@status concentration}."
 					]
 				}
 			],
@@ -2084,7 +2084,7 @@
 				{
 					"name": "Invisibility (Recharges after a Short or Long Rest)",
 					"entries": [
-						"Dagryn magically turns {@condition invisible} until he attacks, casts a spell, or until its concentration is broken, up to 1 hour (as if concentrating on a spell). Any equipment Dagryn wears or carries is {@condition invisible} with it."
+						"Dagryn magically turns {@condition invisible} until he attacks, casts a spell, or until its {@status concentration} is broken, up to 1 hour (as if {@status concentration||concentrating} on a spell). Any equipment Dagryn wears or carries is {@condition invisible} with it."
 					]
 				}
 			],
@@ -2258,7 +2258,7 @@
 				{
 					"name": "Eldritch Mind",
 					"entries": [
-						"Darien has advantage on Constitution saving throws that she makes to maintain concentration on a spell."
+						"Darien has advantage on Constitution saving throws that she makes to maintain {@status concentration} on a spell."
 					]
 				}
 			],
@@ -3161,7 +3161,7 @@
 				{
 					"name": "Read Thoughts",
 					"entries": [
-						"The dread doppelganger magically reads the surface thoughts of one creature within 60 ft. of it. The effect can penetrate barriers, but 3 ft. of wood or dirt, 2 ft. of stone, 2 inches of metal, or a thin sheet of lead blocks it. While the target is in range, the dread doppelganger can continue reading its thoughts, as long as the dread doppelganger's Concentration isn't broken (as if concentrating on a spell). While reading the target's mind, the doppelganger has advantage on Wisdom (Insight) and Charisma ({@skill Deception}, {@skill Intimidation}, and {@skill Persuasion}) checks against the target."
+						"The dread doppelganger magically reads the surface thoughts of one creature within 60 ft. of it. The effect can penetrate barriers, but 3 ft. of wood or dirt, 2 ft. of stone, 2 inches of metal, or a thin sheet of lead blocks it. While the target is in range, the dread doppelganger can continue reading its thoughts, as long as the dread doppelganger's Concentration isn't broken (as if {@status concentration||concentrating} on a spell). While reading the target's mind, the doppelganger has advantage on Wisdom (Insight) and Charisma ({@skill Deception}, {@skill Intimidation}, and {@skill Persuasion}) checks against the target."
 					]
 				}
 			],
@@ -3343,7 +3343,7 @@
 				{
 					"name": "Focused Conjuration",
 					"entries": [
-						"While Edwin is concentrating on a conjuration spell, his concentration cannot be broken as a result of taking damage."
+						"While Edwin is {@status concentration||concentrating} on a conjuration spell, his {@status concentration} cannot be broken as a result of taking damage."
 					]
 				},
 				{
@@ -6237,7 +6237,7 @@
 						{
 							"type": "list",
 							"items": [
-								"Potion of heroism: Nauk gains 10 temporary hit points for 1 hour. For the same duration, Nauk is under the effect of the {@spell bless} spell (no concentration required).",
+								"Potion of heroism: Nauk gains 10 temporary hit points for 1 hour. For the same duration, Nauk is under the effect of the {@spell bless} spell (no {@status concentration} required).",
 								"Potion of resistance: Nauk gains resistance from one damage type for 1 hour. Nauk chooses from one of these damage types: cold, fire, lightning.",
 								"Potion of superior healing: Nauk regains 28 hit points."
 							]
@@ -6885,7 +6885,7 @@
 				{
 					"name": "Extended Concentration",
 					"entries": [
-						"The phaerimm can concentrate on two different spells at the same time. If concentration is broken, then both spells fade immediately."
+						"The phaerimm can concentrate on two different spells at the same time. If {@status concentration} is broken, then both spells fade immediately."
 					]
 				},
 				{
@@ -8738,7 +8738,7 @@
 				{
 					"name": "Mage Slaying",
 					"entries": [
-						"When Valygar deals damage to a creature that is concentrating on a spell, that creature has disadvantage on the saving throw it makes to maintain its concentration."
+						"When Valygar deals damage to a creature that is {@status concentration||concentrating} on a spell, that creature has disadvantage on the saving throw it makes to maintain its {@status concentration}."
 					]
 				}
 			],
@@ -9083,7 +9083,7 @@
 				{
 					"name": "Special Equipment",
 					"entries": [
-						"Viconia wears a belt of fire giant strength and a cloak of protection and wields a mace +3. Without the belt, her strength is 12 and her speed is reduced to 20 ft."
+						"Viconia wears a {@item belt of fire giant strength} and a {@item cloak of protection} and wields a {@item +3 Mace||mace +3}. Without the belt, her strength is 12 and her speed is reduced to 20 ft."
 					]
 				},
 				{
@@ -9724,7 +9724,7 @@
 				{
 					"name": "Bladesong",
 					"entries": [
-						"Xan can use a bonus action to start a bladesong. His bladesong lasts for 1 minute. While using bladesong his movement increases to 40 ft., he gains a +3 bonus to his AC and he gains a +3 bonus to all concentration checks."
+						"Xan can use a bonus action to start a bladesong. His bladesong lasts for 1 minute. While using bladesong his movement increases to 40 ft., he gains a +3 bonus to his AC and he gains a +3 bonus to all {@status concentration} checks."
 					]
 				},
 				{

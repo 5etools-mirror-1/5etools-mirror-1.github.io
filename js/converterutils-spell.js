@@ -109,6 +109,31 @@ class MiscTagsTagger {
 					}
 
 					if (/\bbonus action\b/i.test(str)) this._addTag({tags, tag: "UBA", options});
+
+					if (/\b(?:lightly|heavily) obscured\b/i.test(str)) this._addTag({tags, tag: "OBS", options});
+
+					if (/\bis difficult terrain\b/i.test(Renderer.stripTags(str)) || /spends? \d+ (?:feet|foot) of movement for every 1 foot/.test(str)) this._addTag({tags, tag: "DFT", options});
+
+					if (
+						/\battacks? deals? an extra\b[^.!?]+\bdamage\b/.test(str)
+						|| /\bdeals? an extra\b[^.!?]+\bdamage\b[^.!?]+\b(?:weapon attack|when it hits)\b/.test(str)
+						|| /weapon attacks?\b[^.!?]+\b(?:takes an extra|deal an extra)\b[^.!?]+\bdamage/.test(str)
+					) this._addTag({tags, tag: "AAD", options});
+
+					if (
+						/\b(?:any|one|a) creatures? or objects?\b/i.test(str)
+						|| /\b(?:flammable|nonmagical|metal|unsecured) objects?\b/.test(str)
+						|| /\bobjects?\b[^.!?]+\b(?:created by magic|(?:that )?you touch|that is neither held nor carried)\b/.test(str)
+						|| /\bobject\b[^.!?]+\bthat isn't being worn or carried\b/.test(str)
+						|| /\bobjects? (?:of your choice|that is familiar to you|of (?:Tiny|Small|Medium|Large|Huge|Gargantuan) size)\b/.test(str)
+						|| /\b(?:Tiny|Small|Medium|Large|Huge|Gargantuan) or smaller object\b/.test(str)
+						|| /\baffected by this spell, the object is\b/.test(str)
+						|| /\ball creatures and objects\b/i.test(str)
+						|| /\ba(?:ny|n)? (?:(?:willing|visible|affected) )?(?:creature|place) or an object\b/i.test(str)
+						|| /\bone creature, object, or magical effect\b/i.test(str)
+						|| /\ba person, place, or object\b/i.test(str)
+						|| /\b(choose|touch|manipulate|soil) (an|one) object\b/i.test(str)
+					) this._addTag({tags, tag: "OBJ", options});
 				},
 				object: (obj) => {
 					if (obj.type !== "table") return;

@@ -918,6 +918,28 @@ class EncounterBuilder extends ProxyBase {
 							],
 						],
 					},
+					...(partyMeta.cntPlayers < 3
+						? [
+							{
+								type: "quote",
+								entries: [
+									"If the party contains fewer than three characters, apply the next highest multiplier on the Encounter Multipliers table.",
+								],
+								"by": "{@book Dungeon Master's Guide, page 83|DMG|3|Party Size}",
+							},
+						]
+						: partyMeta.cntPlayers >= 6
+							? [
+								{
+									type: "quote",
+									entries: [
+										"If the party contains six or more characters, use the next lowest multiplier on the table. Use a multiplier of 0.5 for a single monster.",
+									],
+									"by": "{@book Dungeon Master's Guide, page 83|DMG|3|Party Size}",
+								},
+							]
+							: []
+					),
 				],
 			};
 
@@ -1680,7 +1702,7 @@ EncounterBuilder.Randomizer = class {
 
 	_pDoGenerateEncounter_getSolutions ({budget, lockedEncounterCreatures}) {
 		// If there are enough players that single-monster XP is halved, generate twice as many solutions, half with double XP cap
-		if (this._partyMeta.cntPlayers > 5) {
+		if (this._partyMeta.cntPlayers >= 6) {
 			return [...new Array(EncounterBuilder.Randomizer._NUM_SAMPLES * 2)]
 				.map((_, i) => {
 					return this._pDoGenerateEncounter_generateClosestEncounter({

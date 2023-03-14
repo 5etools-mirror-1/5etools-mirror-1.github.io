@@ -893,7 +893,7 @@
 					"name": "Foment Confusion",
 					"entries": [
 						"Any creature that isn't a demon that starts its turn within 30 feet of the alkilith must succeed on a {@dc 18} Wisdom saving throw, or it hears a faint buzzing in its head for a moment and has disadvantage on its next attack roll, saving throw, or ability check.",
-						"If the saving throw against Foment Confusion fails by 5 or more, the creature is instead subjected to the {@spell confusion} spell for 1 minute (no concentration required by the alkilith). While under the effect of that confusion, the creature is immune to Foment Confusion."
+						"If the saving throw against Foment Confusion fails by 5 or more, the creature is instead subjected to the {@spell confusion} spell for 1 minute (no {@status concentration} required by the alkilith). While under the effect of that confusion, the creature is immune to Foment Confusion."
 					]
 				},
 				{
@@ -3704,8 +3704,7 @@
 				{
 					"name": "Multiattack",
 					"entries": [
-						"The barghest makes one Bite attack and one",
-						"Claw attack."
+						"The barghest makes one Bite attack and one Claw attack."
 					]
 				},
 				{
@@ -4213,7 +4212,7 @@
 				{
 					"name": "Creeping Darkness {@recharge}",
 					"entries": [
-						"The abishai casts {@spell darkness} at a point within 120 feet of it, requiring no spell components or concentration. Wisdom is its spellcasting ability for this spell. While the spell persists, the abishai can move the area of darkness up to 60 feet as a bonus action."
+						"The abishai casts {@spell darkness} at a point within 120 feet of it, requiring no spell components or {@status concentration}. Wisdom is its spellcasting ability for this spell. While the spell persists, the abishai can move the area of darkness up to 60 feet as a bonus action."
 					]
 				}
 			],
@@ -11730,7 +11729,7 @@
 				{
 					"name": "Shared Invisibility (Recharges after a Short or Long Rest)",
 					"entries": [
-						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it forces a creature to make a saving throw, or its concentration is broken (as if concentrating on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it. While the {@condition invisible} duergar is mounted, the mount is {@condition invisible} as well. The invisibility ends early on the mount immediately after it attacks."
+						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it forces a creature to make a saving throw, or its {@status concentration} is broken (as if {@status concentration||concentrating} on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it. While the {@condition invisible} duergar is mounted, the mount is {@condition invisible} as well. The invisibility ends early on the mount immediately after it attacks."
 					]
 				}
 			],
@@ -11863,7 +11862,7 @@
 				{
 					"name": "Invisibility {@recharge 4}",
 					"entries": [
-						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it forces a creature to make a saving throw, or its concentration is broken (as if concentrating on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
+						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it forces a creature to make a saving throw, or its {@status concentration} is broken (as if {@status concentration||concentrating} on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
 					]
 				},
 				{
@@ -12118,7 +12117,7 @@
 				{
 					"name": "Invisibility (Recharges after a Short or Long Rest)",
 					"entries": [
-						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it forces a creature to make a saving throw, or its concentration is broken (as if concentrating on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
+						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it forces a creature to make a saving throw, or its {@status concentration} is broken (as if {@status concentration||concentrating} on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
 					]
 				}
 			],
@@ -12256,7 +12255,7 @@
 				{
 					"name": "Invisibility (Recharges after a Short or Long Rest)",
 					"entries": [
-						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it forces a creature to make a saving throw, or its concentration is broken (as if concentrating on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
+						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it forces a creature to make a saving throw, or its {@status concentration} is broken (as if {@status concentration||concentrating} on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
 					]
 				}
 			],
@@ -12402,7 +12401,7 @@
 				{
 					"name": "Invisibility {@recharge 4}",
 					"entries": [
-						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it forces a creature to make a saving throw, or its concentration is broken (as if concentrating on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
+						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it forces a creature to make a saving throw, or its {@status concentration} is broken (as if {@status concentration||concentrating} on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
 					]
 				}
 			],
@@ -12545,7 +12544,7 @@
 				{
 					"name": "Invisibility (Recharges after a Short or Long Rest)",
 					"entries": [
-						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it forces a creature to make a saving throw, or its concentration is broken (as if concentrating on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
+						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it forces a creature to make a saving throw, or its {@status concentration} is broken (as if {@status concentration||concentrating} on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
 					]
 				}
 			],
@@ -13192,7 +13191,7 @@
 				{
 					"name": "Break Concentration",
 					"entries": [
-						"The elder brain targets one creature within 120 feet of it with which it has a psychic link. The elder brain breaks the creature's concentration on a spell it has cast. The creature also takes 2 ({@damage 1d4}) psychic damage per level of the spell."
+						"The elder brain targets one creature within 120 feet of it with which it has a psychic link. The elder brain breaks the creature's {@status concentration} on a spell it has cast. The creature also takes 2 ({@damage 1d4}) psychic damage per level of the spell."
 					]
 				},
 				{
@@ -30729,7 +30728,7 @@
 				{
 					"name": "Burrowing Worm",
 					"entries": [
-						"A worm launches from the spawn of Kyuss at one Humanoid that the spawn can see within 10 feet of it. The worm latches onto the target's skin unless the target succeeds on a {@dc 11} Dexterity saving throw. The worm is a Tiny Undead with AC 6, 1 hit point, a 2 (-4) in every ability score, and a speed of 1 foot. While on the target's skin, the worm can be killed by normal means or scraped off using an action (the spawn can use Burrowing Worm to launch a scraped-off worm at a Humanoid it can see within 10 feet of the worm). Otherwise, the worm burrows under the target's skin at the end of the target's next turn, dealing 1 piercing damage to it. At the end of each of its turns thereafter, the target takes 7 ({@damage 2d6}) necrotic damage per worm infesting it (maximum of 1 Od6), and if it drops to 0 hit points, it dies and then rises 10 minutes later as a spawn of Kyuss. If a worm-infested target is targeted by an effect that cures disease or removes a curse, all the worms infesting it wither away."
+						"A worm launches from the spawn of Kyuss at one Humanoid that the spawn can see within 10 feet of it. The worm latches onto the target's skin unless the target succeeds on a {@dc 11} Dexterity saving throw. The worm is a Tiny Undead with AC 6, 1 hit point, a 2 (-4) in every ability score, and a speed of 1 foot. While on the target's skin, the worm can be killed by normal means or scraped off using an action (the spawn can use Burrowing Worm to launch a scraped-off worm at a Humanoid it can see within 10 feet of the worm). Otherwise, the worm burrows under the target's skin at the end of the target's next turn, dealing 1 piercing damage to it. At the end of each of its turns thereafter, the target takes 7 ({@damage 2d6}) necrotic damage per worm infesting it (maximum of {@damage 10d6}), and if it drops to 0 hit points, it dies and then rises 10 minutes later as a spawn of Kyuss. If a worm-infested target is targeted by an effect that cures disease or removes a curse, all the worms infesting it wither away."
 					]
 				}
 			],
@@ -38594,7 +38593,7 @@
 					"name": "Invoke Nightmare (Recharges after a Short or Long Rest)",
 					"entries": [
 						"The yuan-ti taps into the nightmares of one creature it can see within 60 feet of it and creates an illusory, immobile manifestation of the creature's deepest fears, visible only to that creature.",
-						"The target must make a {@dc 13} Intelligence saving throw. On a failed save, the target takes 22 ({@damage 4d10}) psychic damage and is {@condition frightened} of the manifestation, believing it to be real. The yuan-ti must concentrate to maintain the illusion (as if concentrating on a spell), which lasts for up to 1 minute and can't be harmed. The target can repeat the saving throw at the end of each of its turns, ending the illusion on a success or taking 11 ({@damage 2d10}) psychic damage on a failure."
+						"The target must make a {@dc 13} Intelligence saving throw. On a failed save, the target takes 22 ({@damage 4d10}) psychic damage and is {@condition frightened} of the manifestation, believing it to be real. The yuan-ti must concentrate to maintain the illusion (as if {@status concentration||concentrating} on a spell), which lasts for up to 1 minute and can't be harmed. The target can repeat the saving throw at the end of each of its turns, ending the illusion on a success or taking 11 ({@damage 2d10}) psychic damage on a failure."
 					]
 				}
 			],
@@ -38969,7 +38968,7 @@
 				{
 					"name": "Earth-Shaking Movement",
 					"entries": [
-						"After moving at least 10 feet on the ground, the zaratan sends a shock wave through the ground in a 120-foot-radius circle centered on itself. That area becomes {@quickref difficult terrain||3} for 1 minute. Each creature on the ground that is concentrating must succeed on a {@dc 25} Constitution saving throw or the creature's concentration is broken. The shock wave deals 100 thunder damage to all structures in contact with the ground in the area. If a creature is near a structure that collapses, the creature might be buried; a creature within half the distance of the structure's height must make a {@dc 25} Dexterity saving throw. On a failed save, the creature takes 17 ({@damage 5d6}) bludgeoning damage, is knocked {@condition prone}, and is trapped in the rubble. A trapped creature is {@condition restrained}, requiring a successful {@dc 20} Strength ({@skill Athletics}) check as an action to escape. Another creature within 5 feet of the buried creature can use its action to clear rubble and grant advantage on the check. If three creatures use their actions in this way, the check is an automatic success. On a successful save, the creature takes half as much damage and doesn't fall {@condition prone} or become trapped."
+						"After moving at least 10 feet on the ground, the zaratan sends a shock wave through the ground in a 120-foot-radius circle centered on itself. That area becomes {@quickref difficult terrain||3} for 1 minute. Each creature on the ground that is {@status concentration||concentrating} must succeed on a {@dc 25} Constitution saving throw or the creature's {@status concentration} is broken. The shock wave deals 100 thunder damage to all structures in contact with the ground in the area. If a creature is near a structure that collapses, the creature might be buried; a creature within half the distance of the structure's height must make a {@dc 25} Dexterity saving throw. On a failed save, the creature takes 17 ({@damage 5d6}) bludgeoning damage, is knocked {@condition prone}, and is trapped in the rubble. A trapped creature is {@condition restrained}, requiring a successful {@dc 20} Strength ({@skill Athletics}) check as an action to escape. Another creature within 5 feet of the buried creature can use its action to clear rubble and grant advantage on the check. If three creatures use their actions in this way, the check is an automatic success. On a successful save, the creature takes half as much damage and doesn't fall {@condition prone} or become trapped."
 					]
 				}
 			],

@@ -147,6 +147,7 @@
 		{
 			"name": "Ashdra",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 158,
 			"_copy": {
@@ -181,6 +182,7 @@
 		{
 			"name": "Bandagh",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 159,
 			"_copy": {
@@ -192,6 +194,7 @@
 		{
 			"name": "Belak the Outcast",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 9,
 			"size": [
@@ -366,6 +369,7 @@
 		{
 			"name": "Calcryx",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 23,
 			"size": [
@@ -593,6 +597,7 @@
 		{
 			"name": "Chief Nosnra",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 170,
 			"_copy": {
@@ -640,6 +645,7 @@
 		{
 			"name": "Curran Corvalin",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 158,
 			"_copy": {
@@ -660,6 +666,7 @@
 		{
 			"name": "Dragonpriest",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 16,
 			"_copy": {
@@ -814,6 +821,7 @@
 		{
 			"name": "Drevin",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 126,
 			"_copy": {
@@ -1007,7 +1015,7 @@
 				{
 					"name": "Invisibility (Recharges after a Short or Long Rest)",
 					"entries": [
-						"The spy magically turns {@condition invisible} until it attacks, deals damage, casts a spell, or uses its Enlarge, or until its concentration is broken, up to 1 hour (as if concentrating on a spell). Any equipment the spy wears or carries is {@condition invisible} with it."
+						"The spy magically turns {@condition invisible} until it attacks, deals damage, casts a spell, or uses its Enlarge, or until its {@status concentration} is broken, up to 1 hour (as if {@status concentration||concentrating} on a spell). Any equipment the spy wears or carries is {@condition invisible} with it."
 					]
 				}
 			],
@@ -1042,6 +1050,7 @@
 		{
 			"name": "Durnn",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 25,
 			"size": [
@@ -1132,6 +1141,7 @@
 		{
 			"name": "Eira",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 159,
 			"_copy": {
@@ -1203,6 +1213,7 @@
 		{
 			"name": "Erky Timbers",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 22,
 			"size": [
@@ -1317,6 +1328,7 @@
 		{
 			"name": "Estia",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 189,
 			"_copy": {
@@ -2104,6 +2116,7 @@
 		{
 			"name": "Gorvan Ironheart",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 151,
 			"_copy": {
@@ -2127,6 +2140,7 @@
 		{
 			"name": "Great Ulfe",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 42,
 			"_copy": {
@@ -2281,6 +2295,7 @@
 		{
 			"name": "Grenl",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 25,
 			"size": [
@@ -2404,6 +2419,7 @@
 		{
 			"name": "Grutha",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 170,
 			"_copy": {
@@ -2423,6 +2439,7 @@
 		{
 			"name": "Guthash",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 21,
 			"size": [
@@ -2476,6 +2493,7 @@
 		{
 			"name": "Hedrun Arnsfirth",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 160,
 			"_copy": {
@@ -2670,6 +2688,7 @@
 		{
 			"name": "Irisoth",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 157,
 			"_copy": {
@@ -2696,6 +2715,7 @@
 		{
 			"name": "Jarl Grugnur",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 189,
 			"_copy": {
@@ -2762,6 +2782,7 @@
 		{
 			"name": "Jot",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 15,
 			"_copy": {
@@ -2781,6 +2802,7 @@
 		{
 			"name": "Kaarghaz",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 45,
 			"size": [
@@ -2945,6 +2967,7 @@
 		{
 			"name": "Kalka-Kylla",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 238,
 			"size": [
@@ -3141,7 +3164,7 @@
 				{
 					"name": "Drowning Hypnosis",
 					"entries": [
-						"The kelpie chooses one humanoid it can see within 150 feet of it. If the target can see the kelpie, the target must succeed on a {@dc 11} Wisdom saving throw or be magically {@condition charmed} while the kelpie maintains concentration, up to 10 minutes (as if concentrating on a spell). The {@condition charmed} target is {@condition incapacitated}, and instead of holding its breath underwater, it tries to breathe normally and immediately runs out of breath, unless it can breathe water. If the {@condition charmed} target is more than 5 feet away from the kelpie, the target must move on its turn toward the kelpie by the most direct route, trying to get within 5 feet. It doesn't avoid opportunity attacks.",
+						"The kelpie chooses one humanoid it can see within 150 feet of it. If the target can see the kelpie, the target must succeed on a {@dc 11} Wisdom saving throw or be magically {@condition charmed} while the kelpie maintains {@status concentration}, up to 10 minutes (as if {@status concentration||concentrating} on a spell). The {@condition charmed} target is {@condition incapacitated}, and instead of holding its breath underwater, it tries to breathe normally and immediately runs out of breath, unless it can breathe water. If the {@condition charmed} target is more than 5 feet away from the kelpie, the target must move on its turn toward the kelpie by the most direct route, trying to get within 5 feet. It doesn't avoid opportunity attacks.",
 						"Before moving into damaging terrain, such as lava or a pit, and whenever it takes damage from a source other than the kelpie or drowning, the target can repeat the saving throw. A {@condition charmed} target can also repeat the saving throw at the end of each of its turns. If the saving throw is successful, the effect ends on it.",
 						"A target that successfully saves is immune to this kelpie's hypnosis for the next 24 hours."
 					]
@@ -3178,6 +3201,7 @@
 		{
 			"name": "Kelson Darktreader",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 132,
 			"_copy": {
@@ -3204,6 +3228,7 @@
 		{
 			"name": "Kieren",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 157,
 			"_copy": {
@@ -3221,6 +3246,7 @@
 		{
 			"name": "King Snurre",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 193,
 			"_copy": {
@@ -3351,6 +3377,7 @@
 		{
 			"name": "Lahnis",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 131,
 			"_copy": {
@@ -3403,6 +3430,7 @@
 		{
 			"name": "Lumalia",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 153,
 			"_copy": {
@@ -3569,6 +3597,7 @@
 		{
 			"name": "Mennek Ariz",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 157,
 			"_copy": {
@@ -3594,6 +3623,7 @@
 		{
 			"name": "Nahual",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 91,
 			"size": [
@@ -3676,7 +3706,7 @@
 				{
 					"name": "Read Thoughts",
 					"entries": [
-						"The doppelganger magically reads the surface thoughts of one creature within 60 feet of it. The effect can penetrate barriers, but 3 feet of wood or dirt, 2 feet of stone, 2 inches of metal, or a thin sheet of lead blocks it. While the target is in range, the doppelganger can continue reading its thoughts, as long as the doppelganger's concentration isn't broken (as if concentrating on a spell). While reading the target's mind, the doppelganger has advantage on Wisdom ({@skill Insight}) and Charisma ({@skill Deception}, {@skill Intimidation}, and {@skill Persuasion}) checks against the target."
+						"The doppelganger magically reads the surface thoughts of one creature within 60 feet of it. The effect can penetrate barriers, but 3 feet of wood or dirt, 2 feet of stone, 2 inches of metal, or a thin sheet of lead blocks it. While the target is in range, the doppelganger can continue reading its thoughts, as long as the doppelganger's {@status concentration} isn't broken (as if {@status concentration||concentrating} on a spell). While reading the target's mind, the doppelganger has advantage on Wisdom ({@skill Insight}) and Charisma ({@skill Deception}, {@skill Intimidation}, and {@skill Persuasion}) checks against the target."
 					]
 				}
 			],
@@ -3704,6 +3734,7 @@
 		{
 			"name": "Nedylene",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 209,
 			"_copy": {
@@ -3868,6 +3899,7 @@
 		{
 			"name": "Nimira",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 54,
 			"_copy": {
@@ -3925,6 +3957,7 @@
 		{
 			"name": "Obmi",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 196,
 			"_copy": {
@@ -4216,6 +4249,7 @@
 		{
 			"name": "Oussa",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 157,
 			"_copy": {
@@ -4235,6 +4269,7 @@
 		{
 			"name": "Phaia",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 132,
 			"_copy": {
@@ -4881,6 +4916,7 @@
 		{
 			"name": "Shalendra Floshin",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 119,
 			"_copy": {
@@ -4899,6 +4935,7 @@
 		{
 			"name": "Sharwyn Hucrele",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 242,
 			"size": [
@@ -5025,6 +5062,7 @@
 		{
 			"name": "Sir Braford",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 243,
 			"size": [
@@ -5122,6 +5160,7 @@
 		{
 			"name": "Siren",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 243,
 			"otherSources": [
@@ -5253,6 +5292,7 @@
 				"Lycanthropes"
 			],
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 102,
 			"size": [
@@ -5453,6 +5493,7 @@
 		{
 			"name": "Snurrevin",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 53,
 			"size": [
@@ -5572,7 +5613,7 @@
 				{
 					"name": "Invisibility (Recharges after a Short or Long Rest)",
 					"entries": [
-						"The duergar magically turns {@condition invisible} until it attacks, casts a spell, or uses its Enlarge, or until its concentration is broken, up to 1 hour (as if concentrating on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
+						"The duergar magically turns {@condition invisible} until it attacks, casts a spell, or uses its Enlarge, or until its {@status concentration} is broken, up to 1 hour (as if {@status concentration||concentrating} on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
 					]
 				}
 			],
@@ -5798,7 +5839,7 @@
 				{
 					"name": "Focused Conjuration",
 					"entries": [
-						"While Var is concentrating on a conjuration spell, his concentration can't be broken as a result of taking damage."
+						"While Var is {@status concentration||concentrating} on a conjuration spell, his {@status concentration} can't be broken as a result of taking damage."
 					]
 				},
 				{
@@ -5897,6 +5938,7 @@
 		{
 			"name": "Tecuziztecatl",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 245,
 			"size": [
@@ -6257,6 +6299,7 @@
 		{
 			"name": "The Keeper",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 173,
 			"_copy": {
@@ -6312,6 +6355,7 @@
 		{
 			"name": "Therzt",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 158,
 			"_copy": {
@@ -6421,6 +6465,7 @@
 		{
 			"name": "Tloques-Popolocas",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 68,
 			"size": [
@@ -6589,6 +6634,7 @@
 		{
 			"name": "Torlin Silvershield",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 159,
 			"_copy": {
@@ -6645,6 +6691,7 @@
 		{
 			"name": "White Maw",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 248,
 			"size": [
@@ -6754,6 +6801,7 @@
 		{
 			"name": "Xilonen",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 83,
 			"_copy": {
@@ -6922,6 +6970,7 @@
 		{
 			"name": "Yusdrayl",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "TftYP",
 			"page": 248,
 			"size": [

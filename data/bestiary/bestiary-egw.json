@@ -681,6 +681,7 @@
 		{
 			"name": "Bol'bara",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "EGW",
 			"page": 261,
 			"size": [
@@ -804,7 +805,7 @@
 				{
 					"name": "Zone of Calamity (Costs 2 Actions)",
 					"entries": [
-						"A 15-foot-radius sphere of magical confusion extends from a point Bol'bara can see within 60 feet of her and spreads around corners. Each creature that starts its turn in that area is treated as if targeted by the {@spell confusion} spell (save {@dc 12}). The sphere lasts as long as Bol'bara maintains concentration, up to 1 minute (as if concentrating on a spell)."
+						"A 15-foot-radius sphere of magical confusion extends from a point Bol'bara can see within 60 feet of her and spreads around corners. Each creature that starts its turn in that area is treated as if targeted by the {@spell confusion} spell (save {@dc 12}). The sphere lasts as long as Bol'bara maintains {@status concentration}, up to 1 minute (as if {@status concentration||concentrating} on a spell)."
 					]
 				}
 			],
@@ -1460,6 +1461,7 @@
 		{
 			"name": "Ferol Sal",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "EGW",
 			"page": 249,
 			"_copy": {
@@ -2208,6 +2210,7 @@
 		{
 			"name": "Hulil Lutan",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "EGW",
 			"page": 240,
 			"_copy": {
@@ -2356,6 +2359,7 @@
 		{
 			"name": "Ishel",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "EGW",
 			"page": 231,
 			"_copy": {
@@ -2715,6 +2719,7 @@
 		{
 			"name": "Mossback Steward",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "EGW",
 			"page": 256,
 			"_copy": {
@@ -2903,6 +2908,7 @@
 		{
 			"name": "Ogre Lord Buhfal II",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "EGW",
 			"page": 251,
 			"_copy": {
@@ -2928,6 +2934,7 @@
 		{
 			"name": "Old Croaker",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "EGW",
 			"page": 240,
 			"_copy": {
@@ -2983,6 +2990,7 @@
 		{
 			"name": "Parson Pellinost",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "EGW",
 			"page": 261,
 			"_copy": {
@@ -3047,6 +3055,7 @@
 		{
 			"name": "Raegrin Mau",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "EGW",
 			"page": 240,
 			"_copy": {
@@ -3611,6 +3620,7 @@
 		{
 			"name": "Sken Zabriss",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "EGW",
 			"page": 221,
 			"size": [
@@ -3665,7 +3675,7 @@
 				{
 					"name": "Special Equipment",
 					"entries": [
-						"Sken wears a ring of obscuring. With it, she can cast the {@spell fog cloud} spell centered on herself three times per day. The cloud lasts for 1 minute (no concentration required)."
+						"Sken wears a ring of obscuring. With it, she can cast the {@spell fog cloud} spell centered on herself three times per day. The cloud lasts for 1 minute (no {@status concentration} required)."
 					]
 				}
 			],
@@ -3701,6 +3711,7 @@
 		{
 			"name": "Skr'a S'orsk",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "EGW",
 			"page": 254,
 			"_copy": {
@@ -3887,6 +3898,7 @@
 		{
 			"name": "Three Earrings",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "EGW",
 			"page": 211,
 			"_copy": {
@@ -4137,6 +4149,7 @@
 		{
 			"name": "Yinra Emberwind",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "EGW",
 			"page": 223,
 			"size": [

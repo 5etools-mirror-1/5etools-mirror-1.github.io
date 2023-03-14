@@ -337,6 +337,9 @@
 			"savingThrow": [
 				"dexterity"
 			],
+			"miscTags": [
+				"OBJ"
+			],
 			"areaTags": [
 				"ST"
 			]
@@ -963,6 +966,7 @@
 				"dexterity"
 			],
 			"miscTags": [
+				"OBJ",
 				"SCL",
 				"SGT"
 			],
@@ -1063,6 +1067,7 @@
 			],
 			"miscTags": [
 				"LGT",
+				"OBJ",
 				"UBA"
 			],
 			"areaTags": [
@@ -1317,6 +1322,7 @@
 				"To a creature immune to this effect, the winds are a fragrant, gentle breeze, and the area of {@spell spike growth} is harmless."
 			],
 			"miscTags": [
+				"OBS",
 				"PRM",
 				"SMN"
 			],
@@ -1885,6 +1891,9 @@
 			],
 			"damageInflict": [
 				"fire"
+			],
+			"miscTags": [
+				"AAD"
 			]
 		},
 		{
@@ -2018,6 +2027,8 @@
 				"force"
 			],
 			"miscTags": [
+				"AAD",
+				"DFT",
 				"THP"
 			]
 		},
@@ -2083,6 +2094,7 @@
 			],
 			"miscTags": [
 				"FMV",
+				"OBJ",
 				"SGT"
 			],
 			"areaTags": [
@@ -2205,6 +2217,7 @@
 				"constitution"
 			],
 			"miscTags": [
+				"AAD",
 				"LGT",
 				"SGT",
 				"UBA"
@@ -2434,7 +2447,7 @@
 				"Uttering a dark incantation, you summon a devil from the Nine Hells. You choose the devil's type, which must be one of {@filter challenge rating 6 or lower|bestiary|challenge rating=[&0;&6]|tag=devil|miscellaneous=!swarm}, such as a {@creature barbed devil} or a {@creature bearded devil}. The devil appears in an unoccupied space that you can see within range. The devil disappears when it drops to 0 hit points or when the spell ends.",
 				"The devil is unfriendly toward you and your companions. Roll initiative for the devil, which has its own turns. It is under the Dungeon Master's control and acts according to its nature on each of its turns, which might result in its attacking you if it thinks it can prevail, or trying to tempt you to undertake an evil act in exchange for limited service. The DM has the creature's statistics.",
 				"On each of your turns, you can try to issue a verbal command to the devil (no action required by you). It obeys the command if the likely outcome is in accordance with its desires, especially if the result would draw you toward evil. Otherwise, you must make a Charisma ({@skill Deception}, {@skill Intimidation}, or {@skill Persuasion}) check contested by its Wisdom ({@skill Insight}) check. You make the check with advantage if you say the devil's true name. If your check fails, the devil becomes immune to your verbal commands for the duration of the spell, though it can still carry out your commands if it chooses. If your check succeeds, the devil carries out your command\u2014such as \"attack my enemies,\" \"explore the room ahead,\" or \"bear this message to the queen\"\u2014until it completes the activity, at which point it returns to you to report having done so.",
-				"If your concentration ends before the spell reaches its full duration, the devil doesn't disappear if it has become immune to your verbal commands. Instead, it acts in whatever manner it chooses for {@dice 3d6} minutes, and then it disappears.",
+				"If your {@status concentration} ends before the spell reaches its full duration, the devil doesn't disappear if it has become immune to your verbal commands. Instead, it acts in whatever manner it chooses for {@dice 3d6} minutes, and then it disappears.",
 				"If you possess an individual devil's talisman, you can summon that devil if it is of the appropriate challenge rating plus 1, and it obeys all your commands, with no Charisma checks required."
 			],
 			"entriesHigherLevel": [
@@ -2637,6 +2650,9 @@
 			],
 			"savingThrow": [
 				"constitution"
+			],
+			"miscTags": [
+				"DFT"
 			],
 			"areaTags": [
 				"N",
@@ -2960,6 +2976,7 @@
 				"strength"
 			],
 			"miscTags": [
+				"DFT",
 				"FMV",
 				"SGT"
 			],
@@ -3729,6 +3746,7 @@
 				"constitution"
 			],
 			"miscTags": [
+				"OBS",
 				"SGT"
 			],
 			"areaTags": [
@@ -3875,6 +3893,9 @@
 			],
 			"damageInflict": [
 				"necrotic"
+			],
+			"miscTags": [
+				"OBS"
 			],
 			"areaTags": [
 				"S"
@@ -4256,7 +4277,7 @@
 					"type": "entries",
 					"name": "Eyes of the Dead",
 					"entries": [
-						"You can use an action to name a place the humanoid saw in life, which creates an invisible sensor somewhere in that place if it is on the plane of existence you're currently on. The sensor remains for as long as you concentrate, up to 10 minutes (as if you were concentrating on a spell). You receive visual and auditory information from the sensor as if you were in its space using your senses."
+						"You can use an action to name a place the humanoid saw in life, which creates an invisible sensor somewhere in that place if it is on the plane of existence you're currently on. The sensor remains for as long as you concentrate, up to 10 minutes (as if you were {@status concentration||concentrating} on a spell). You receive visual and auditory information from the sensor as if you were in its space using your senses."
 					]
 				},
 				"A creature that can see the sensor (such as one using {@spell see invisibility} or {@sense truesight}) sees a translucent image of the tormented humanoid whose soul you caged."
@@ -4382,6 +4403,7 @@
 				"strength"
 			],
 			"miscTags": [
+				"DFT",
 				"UBA"
 			],
 			"areaTags": [
@@ -4430,7 +4452,7 @@
 			"entries": [
 				"You utter foul words, summoning one demon from the chaos of the Abyss. You choose the demon's type, which must be {@filter one of challenge rating 5 or lower|bestiary|challenge rating=[&0;&5]|tag=demon|miscellaneous=!swarm}, such as a {@creature shadow demon} or a {@creature barlgura}. The demon appears in an unoccupied space you can see within range, and the demon disappears when it drops to 0 hit points or when the spell ends.",
 				"Roll initiative for the demon, which has its own turns. When you summon it and on each of your turns thereafter, you can issue a verbal command to it (requiring no action on your part), telling it what it must do on its next turn. If you issue no command, it spends its turn attacking any creature within reach that has attacked it.",
-				"At the end of each of the demon's turns, it makes a Charisma saving throw. The demon has disadvantage on this saving throw if you say its true name. On a failed save, the demon continues to obey you. On a successful save, your control of the demon ends for the rest of the duration, and the demon spends its turns pursuing and attacking the nearest non-demons to the best of its ability. If you stop concentrating on the spell before it reaches its full duration, an uncontrolled demon doesn't disappear for {@dice 1d6} rounds if it still has hit points.",
+				"At the end of each of the demon's turns, it makes a Charisma saving throw. The demon has disadvantage on this saving throw if you say its true name. On a failed save, the demon continues to obey you. On a successful save, your control of the demon ends for the rest of the duration, and the demon spends its turns pursuing and attacking the nearest non-demons to the best of its ability. If you stop {@status concentration||concentrating} on the spell before it reaches its full duration, an uncontrolled demon doesn't disappear for {@dice 1d6} rounds if it still has hit points.",
 				"As part of casting the spell, you can form a circle on the ground with the blood used as a material component. The circle is large enough to encompass your space. While the spell lasts, the summoned demon can't cross the circle or harm it, and it can't target anyone within it. Using the material component in this manner consumes it when the spell ends."
 			],
 			"entriesHigherLevel": [
@@ -4581,7 +4603,7 @@
 			],
 			"entries": [
 				"You choose a point within range and cause psychic energy to explode there. Each creature in a 20-foot-radius sphere centered on that point must make an Intelligence saving throw. A creature with an Intelligence score of 2 or lower can't be affected by this spell. A target takes {@damage 8d6} psychic damage on a failed save, or half as much damage on a successful one.",
-				"After a failed save, a target has muddled thoughts for 1 minute. During that time, it rolls a {@dice d6} and subtracts the number rolled from all its attack rolls and ability checks, as well as its Constitution saving throws to maintain concentration. The target can make an Intelligence saving throw at the end of each of its turns, ending the effect on itself on a success."
+				"After a failed save, a target has muddled thoughts for 1 minute. During that time, it rolls a {@dice d6} and subtracts the number rolled from all its attack rolls and ability checks, as well as its Constitution saving throws to maintain {@status concentration}. The target can make an Intelligence saving throw at the end of each of its turns, ending the effect on itself on a success."
 			],
 			"damageInflict": [
 				"psychic"
@@ -4714,6 +4736,7 @@
 				"constitution"
 			],
 			"miscTags": [
+				"AAD",
 				"THP"
 			]
 		},
@@ -4927,6 +4950,7 @@
 				}
 			],
 			"miscTags": [
+				"OBJ",
 				"SMN",
 				"UBA"
 			],
@@ -5252,6 +5276,7 @@
 				"blinded"
 			],
 			"miscTags": [
+				"DFT",
 				"SGT"
 			],
 			"areaTags": [
@@ -5311,6 +5336,7 @@
 				"Any ranged weapon attack that enters the wall's space has disadvantage on the attack roll, and fire damage is halved if the fire effect passes through the wall to reach its target. Spells that deal cold damage that pass through the wall cause the area of the wall they pass through to freeze solid (at least a 5-foot-square section is frozen). Each 5-foot-square frozen section has AC 5 and 15 hit points. Reducing a frozen section to 0 hit points destroys it. When a section is destroyed, the wall's water doesn't fill it."
 			],
 			"miscTags": [
+				"DFT",
 				"SGT"
 			],
 			"areaTags": [
@@ -5370,6 +5396,9 @@
 			],
 			"conditionInflict": [
 				"deafened"
+			],
+			"miscTags": [
+				"DFT"
 			]
 		},
 		{
@@ -5638,6 +5667,7 @@
 				"strength"
 			],
 			"miscTags": [
+				"DFT",
 				"SGT",
 				"UBA"
 			],
@@ -5683,6 +5713,9 @@
 			],
 			"damageInflict": [
 				"force"
+			],
+			"miscTags": [
+				"AAD"
 			]
 		}
 	]

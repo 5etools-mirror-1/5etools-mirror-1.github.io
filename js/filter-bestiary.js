@@ -463,7 +463,7 @@ class PageFilterBestiary extends PageFilter {
 			values,
 			m._fSources,
 			m._fCr,
-			m._pTypes.type,
+			m._pTypes.types,
 			m._pTypes.tags,
 			m._pTypes.typeSidekick,
 			m._pTypes.tagsSidekick,
@@ -561,7 +561,7 @@ class ModalFilterBestiary extends ModalFilter {
 
 		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BESTIARY](mon);
 		const source = Parser.sourceJsonToAbv(mon.source);
-		const type = mon._pTypes.asText.uppercaseFirst();
+		const type = mon._pTypes.asText;
 		const cr = mon._pCr;
 
 		eleRow.innerHTML = `<div class="w-100 ve-flex-vh-center lst--border veapp__list-row no-select lst__wrp-cells">
@@ -605,7 +605,7 @@ class ModalFilterBestiary extends ModalFilter {
 globalThis.ModalFilterBestiary = ModalFilterBestiary;
 
 class ListSyntaxBestiary extends ListUiUtil.ListSyntax {
-	static _INDEXABLE_PROPS = [
+	static _INDEXABLE_PROPS_ENTRIES = [
 		"trait",
 		"spellcasting",
 		"action",
@@ -623,9 +623,9 @@ class ListSyntaxBestiary extends ListUiUtil.ListSyntax {
 
 	_getSearchCacheStats (entity) {
 		const legGroup = DataUtil.monster.getMetaGroup(entity);
-		if (!legGroup && this.constructor._INDEXABLE_PROPS.every(it => !entity[it])) return "";
+		if (!legGroup && this.constructor._INDEXABLE_PROPS_ENTRIES.every(it => !entity[it])) return "";
 		const ptrOut = {_: ""};
-		this.constructor._INDEXABLE_PROPS.forEach(it => this._getSearchCache_handleEntryProp(entity, it, ptrOut));
+		this.constructor._INDEXABLE_PROPS_ENTRIES.forEach(it => this._getSearchCache_handleEntryProp(entity, it, ptrOut));
 		if (legGroup) this.constructor._INDEXABLE_PROPS_LEG_GROUP.forEach(it => this._getSearchCache_handleEntryProp(legGroup, it, ptrOut));
 		return ptrOut._;
 	}

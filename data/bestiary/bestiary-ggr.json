@@ -204,7 +204,7 @@
 				{
 					"name": "Pacifying Presence",
 					"entries": [
-						"Each creature of the archon's choice that the archon can see within 120 feet of it must succeed on a {@dc 18} Wisdom saving throw, or else the target drops any weapons it is holding, ends its concentration on any spells or other effects, and becomes {@condition charmed} by the archon for 1 minute. The {@condition charmed} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the archon's Pacifying Presence for the next 24 hours."
+						"Each creature of the archon's choice that the archon can see within 120 feet of it must succeed on a {@dc 18} Wisdom saving throw, or else the target drops any weapons it is holding, ends its {@status concentration} on any spells or other effects, and becomes {@condition charmed} by the archon for 1 minute. The {@condition charmed} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the archon's Pacifying Presence for the next 24 hours."
 					]
 				}
 			],
@@ -6957,7 +6957,7 @@
 				{
 					"name": "Locus of the Firemind",
 					"entries": [
-						"Niv-Mizzet can maintain concentration on two different spells at the same time. In addition, he has advantage on saving throws to maintain concentration on spells."
+						"Niv-Mizzet can maintain {@status concentration} on two different spells at the same time. In addition, he has advantage on saving throws to maintain {@status concentration} on spells."
 					]
 				},
 				{
@@ -7797,7 +7797,7 @@
 				{
 					"name": "Touch of Pain (Costs 3 Actions)",
 					"entries": [
-						"Rakdos makes a claw attack against one creature within 10 feet of him. The target must succeed on a {@dc 25} Constitution saving throw or be {@condition poisoned} for 1 minute. While {@condition poisoned} in this way, the creature can't maintain concentration on a spell or any other effect that requires concentration. The {@condition poisoned} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"Rakdos makes a claw attack against one creature within 10 feet of him. The target must succeed on a {@dc 25} Constitution saving throw or be {@condition poisoned} for 1 minute. While {@condition poisoned} in this way, the creature can't maintain {@status concentration} on a spell or any other effect that requires {@status concentration}. The {@condition poisoned} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 					]
 				}
 			],

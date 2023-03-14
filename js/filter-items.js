@@ -448,3 +448,12 @@ class ModalFilterItems extends ModalFilter {
 }
 
 globalThis.ModalFilterItems = ModalFilterItems;
+
+class ListSyntaxItems extends ListUiUtil.ListSyntax {
+	static _INDEXABLE_PROPS_ENTRIES = [
+		"_fullEntries",
+		"entries",
+	];
+}
+
+globalThis.ListSyntaxItems = ListSyntaxItems;

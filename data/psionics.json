@@ -42,7 +42,7 @@
 					},
 					"name": "Energy Adaptation",
 					"entries": [
-						"As an action, you can touch one creature and give it resistance to acid, cold, fire, lightning, or thunder damage (your choice), which lasts until your concentration ends."
+						"As an action, you can touch one creature and give it resistance to acid, cold, fire, lightning, or thunder damage (your choice), which lasts until your {@status concentration} ends."
 					]
 				},
 				{
@@ -56,7 +56,7 @@
 					},
 					"name": "Energy Immunity",
 					"entries": [
-						"As an action, you can touch one creature and give it immunity to acid, cold, fire, lightning, or thunder damage (your choice), which lasts until your concentration ends."
+						"As an action, you can touch one creature and give it immunity to acid, cold, fire, lightning, or thunder damage (your choice), which lasts until your {@status concentration} ends."
 					]
 				}
 			]
@@ -103,7 +103,7 @@
 					},
 					"name": "View Aura",
 					"entries": [
-						"As an action, you study one creature's aura. Until your concentration ends, while you can see the target, you learn if it's under the effect of any magical or psionic effects, its current hit point total, and its basic emotional state. While this effect lasts, you have advantage on Wisdom ({@skill Insight}) and Charisma checks you make against it."
+						"As an action, you study one creature's aura. Until your {@status concentration} ends, while you can see the target, you learn if it's under the effect of any magical or psionic effects, its current hit point total, and its basic emotional state. While this effect lasts, you have advantage on Wisdom ({@skill Insight}) and Charisma checks you make against it."
 					]
 				},
 				{
@@ -117,7 +117,7 @@
 					},
 					"name": "Perceive the Unseen",
 					"entries": [
-						"As a bonus action, you gain the ability to see auras even of {@condition invisible} or hidden creatures. Until your concentration ends, you can see all creatures, including hidden and {@condition invisible} ones, regardless of lighting conditions."
+						"As a bonus action, you gain the ability to see auras even of {@condition invisible} or hidden creatures. Until your {@status concentration} ends, you can see all creatures, including hidden and {@condition invisible} ones, regardless of lighting conditions."
 					]
 				}
 			]
@@ -461,7 +461,7 @@
 					},
 					"name": "Call to Inaction",
 					"entries": [
-						"If you spend 1 minute conversing with a creature, you can attempt to seed it with overwhelming ennui. At the end of the minute, you can use an action to force the creature to make a Wisdom saving throw. The save automatically succeeds if the target is immune to being {@condition charmed}. On a failed save, it sits and is {@condition incapacitated} until your concentration ends. This effect immediately ends if the target or any ally it can see is attacked or takes damage. On a successful save, the creature is unaffected and has no inkling of your attempt to bend its will."
+						"If you spend 1 minute conversing with a creature, you can attempt to seed it with overwhelming ennui. At the end of the minute, you can use an action to force the creature to make a Wisdom saving throw. The save automatically succeeds if the target is immune to being {@condition charmed}. On a failed save, it sits and is {@condition incapacitated} until your {@status concentration} ends. This effect immediately ends if the target or any ally it can see is attacked or takes damage. On a successful save, the creature is unaffected and has no inkling of your attempt to bend its will."
 					]
 				},
 				{
@@ -485,7 +485,7 @@
 					},
 					"name": "Dolorous Mind",
 					"entries": [
-						"As an action, you choose one creature you can see within 60 feet of you. It must succeed on a Charisma saving throw, or it is {@condition incapacitated} and has a speed of 0 until your concentration ends. It can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"As an action, you choose one creature you can see within 60 feet of you. It must succeed on a Charisma saving throw, or it is {@condition incapacitated} and has a speed of 0 until your {@status concentration} ends. It can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success."
 					]
 				}
 			]
@@ -522,7 +522,7 @@
 					},
 					"name": "Wall of Repulsion",
 					"entries": [
-						"As an action, you create an invisible, insubstantial wall of energy within 60 feet of you that is up to 30 feet long, 10 feet high, and 1 foot thick. The wall lasts until your concentration ends. Any creature attempting to move through it must make a Wisdom saving throw. On a failed save, a creature can't move through the wall until the start of its next turn. On a successful save, the creature can pass through it. A creature must make this save whenever it attempts to pass through the wall, whether willingly or unwillingly."
+						"As an action, you create an invisible, insubstantial wall of energy within 60 feet of you that is up to 30 feet long, 10 feet high, and 1 foot thick. The wall lasts until your {@status concentration} ends. Any creature attempting to move through it must make a Wisdom saving throw. On a failed save, a creature can't move through the wall until the start of its next turn. On a successful save, the creature can pass through it. A creature must make this save whenever it attempts to pass through the wall, whether willingly or unwillingly."
 					]
 				},
 				{
@@ -536,7 +536,7 @@
 					},
 					"name": "Visions of Disgust",
 					"entries": [
-						"You cause a creature to regard all other beings as horrid, alien entities. As an action, choose one creature you can see within 60 feet of you. The target must make a Wisdom saving throw. On a failed save, it takes {@damage 5d6} psychic damage, and until your concentration ends, it takes {@damage 1d6} psychic damage per creature within 5 feet of it at the end of each of its turns. On a successful save, the target takes only half the initial damage and suffers none of the other effects."
+						"You cause a creature to regard all other beings as horrid, alien entities. As an action, choose one creature you can see within 60 feet of you. The target must make a Wisdom saving throw. On a failed save, it takes {@damage 5d6} psychic damage, and until your {@status concentration} ends, it takes {@damage 1d6} psychic damage per creature within 5 feet of it at the end of each of its turns. On a successful save, the target takes only half the initial damage and suffers none of the other effects."
 					]
 				},
 				{
@@ -550,7 +550,7 @@
 					},
 					"name": "World of Horror",
 					"entries": [
-						"As an action, choose up to six creatures within 60 feet of you. Each target must make a Charisma saving throw. On a failed save, a target takes {@damage 8d6} psychic damage, and it is {@condition frightened} until your concentration ends. On a successful save, a target takes half as much damage. While {@condition frightened} by this effect, a target's speed is reduced to 0, and the target can use its action, and any bonus action it might have, only to make melee attacks. The {@condition frightened} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"As an action, choose up to six creatures within 60 feet of you. Each target must make a Charisma saving throw. On a failed save, a target takes {@damage 8d6} psychic damage, and it is {@condition frightened} until your {@status concentration} ends. On a successful save, a target takes half as much damage. While {@condition frightened} by this effect, a target's speed is reduced to 0, and the target can use its action, and any bonus action it might have, only to make melee attacks. The {@condition frightened} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 					]
 				}
 			]
@@ -587,7 +587,7 @@
 					},
 					"name": "Fighting Words",
 					"entries": [
-						"If you spend 1 minute conversing with a creature, you can attempt to leave a simmering violence in its mind. At the end of the minute, you can use an action to force the creature to make a Wisdom saving throw to resist feeling violent urges against one creature you describe to it or name. The save automatically succeeds if the target is immune to being {@condition charmed}. On a failed save, the target attacks the chosen creature if it sees that creature before your concentration ends, using weapons or spells against a creature it was already hostile toward or unarmed strikes against an ally or a creature it was neutral toward. Once the fight starts, it continues to attack for 5 rounds before this effect ends. This effect immediately ends if the target or any ally it can see is attacked or takes damage from any creature other than the one it has been incited against. On a successful save, the creature is unaffected and has no inkling of your attempt to bend its will."
+						"If you spend 1 minute conversing with a creature, you can attempt to leave a simmering violence in its mind. At the end of the minute, you can use an action to force the creature to make a Wisdom saving throw to resist feeling violent urges against one creature you describe to it or name. The save automatically succeeds if the target is immune to being {@condition charmed}. On a failed save, the target attacks the chosen creature if it sees that creature before your {@status concentration} ends, using weapons or spells against a creature it was already hostile toward or unarmed strikes against an ally or a creature it was neutral toward. Once the fight starts, it continues to attack for 5 rounds before this effect ends. This effect immediately ends if the target or any ally it can see is attacked or takes damage from any creature other than the one it has been incited against. On a successful save, the creature is unaffected and has no inkling of your attempt to bend its will."
 					]
 				},
 				{
@@ -611,7 +611,7 @@
 					},
 					"name": "Punishing Fury",
 					"entries": [
-						"You cause a creature's rage to grow so hot that it attacks without heeding its own safety. As a bonus action, choose one creature you can see within 60 feet of you. The target must succeed on a Wisdom saving throw or, until your concentration ends, any creature within 5 feet of it can use a reaction to make a melee attack against it whenever the target makes a melee attack. The save automatically succeeds if the target is immune to being {@condition charmed}."
+						"You cause a creature's rage to grow so hot that it attacks without heeding its own safety. As a bonus action, choose one creature you can see within 60 feet of you. The target must succeed on a Wisdom saving throw or, until your {@status concentration} ends, any creature within 5 feet of it can use a reaction to make a melee attack against it whenever the target makes a melee attack. The save automatically succeeds if the target is immune to being {@condition charmed}."
 					]
 				}
 			]
@@ -649,7 +649,7 @@
 					},
 					"name": "Miniature Form",
 					"entries": [
-						"As a bonus action, you become Tiny until your concentration ends. While this size, you gain a +5 bonus to Dexterity ({@skill Stealth}) checks and can move through gaps up to 6 inches across without squeezing."
+						"As a bonus action, you become Tiny until your {@status concentration} ends. While this size, you gain a +5 bonus to Dexterity ({@skill Stealth}) checks and can move through gaps up to 6 inches across without squeezing."
 					]
 				},
 				{
@@ -683,7 +683,7 @@
 					},
 					"name": "Microscopic Form",
 					"entries": [
-						"As a bonus action, you become smaller than Tiny until your concentration ends. While this size, you gain a +10 bonus to Dexterity ({@skill Stealth}) checks and a +5 bonus to AC, you can move through gaps up to 1 inch across without squeezing, and you can't make weapon attacks."
+						"As a bonus action, you become smaller than Tiny until your {@status concentration} ends. While this size, you gain a +10 bonus to Dexterity ({@skill Stealth}) checks and a +5 bonus to AC, you can move through gaps up to 1 inch across without squeezing, and you can't make weapon attacks."
 					]
 				}
 			]
@@ -720,7 +720,7 @@
 					},
 					"name": "Ogre Form",
 					"entries": [
-						"As a bonus action, you gain 10 temporary hit points. In addition, until your concentration ends, your melee weapon attacks deal an extra {@damage 1d4} bludgeoning damage on a hit, and your reach increases by 5 feet. If you're smaller than Large, you also become Large for the duration."
+						"As a bonus action, you gain 10 temporary hit points. In addition, until your {@status concentration} ends, your melee weapon attacks deal an extra {@damage 1d4} bludgeoning damage on a hit, and your reach increases by 5 feet. If you're smaller than Large, you also become Large for the duration."
 					]
 				},
 				{
@@ -734,7 +734,7 @@
 					},
 					"name": "Giant Form",
 					"entries": [
-						"As a bonus action, you gain 30 temporary hit points. In addition, until your concentration ends, your melee weapon attacks deal an extra {@damage 2d6} bludgeoning damage on a hit, and your reach increases by 10 feet. If you're smaller than Huge, you also become Huge for the duration."
+						"As a bonus action, you gain 30 temporary hit points. In addition, until your {@status concentration} ends, your melee weapon attacks deal an extra {@damage 2d6} bludgeoning damage on a hit, and your reach increases by 10 feet. If you're smaller than Huge, you also become Huge for the duration."
 					]
 				}
 			]
@@ -781,7 +781,7 @@
 					},
 					"name": "Psychic Redoubt",
 					"entries": [
-						"As an action, you create a field of protective psychic energy. Choose any number of creatures within 30 feet of you. Until your concentration ends, each target has resistance to psychic damage and advantage on Intelligence, Wisdom, and Charisma saving throws."
+						"As an action, you create a field of protective psychic energy. Choose any number of creatures within 30 feet of you. Until your {@status concentration} ends, each target has resistance to psychic damage and advantage on Intelligence, Wisdom, and Charisma saving throws."
 					]
 				}
 			]
@@ -828,7 +828,7 @@
 					},
 					"name": "Iron Resistance",
 					"entries": [
-						"As an action, you gain resistance to bludgeoning, piercing, or slashing damage (your choice), which lasts until your concentration ends."
+						"As an action, you gain resistance to bludgeoning, piercing, or slashing damage (your choice), which lasts until your {@status concentration} ends."
 					]
 				}
 			]
@@ -875,7 +875,7 @@
 					},
 					"name": "Center of Attention",
 					"entries": [
-						"As an action, you exert an aura of power that grabs a creature's attention. Choose one creature you can see within 60 feet of you. It must make a Charisma saving throw. On a failed save, the creature is so thoroughly distracted by you that all other creatures are {@condition invisible} to it until your concentration ends. This effect ends if the creature can no longer see or hear you or if it takes damage."
+						"As an action, you exert an aura of power that grabs a creature's attention. Choose one creature you can see within 60 feet of you. It must make a Charisma saving throw. On a failed save, the creature is so thoroughly distracted by you that all other creatures are {@condition invisible} to it until your {@status concentration} ends. This effect ends if the creature can no longer see or hear you or if it takes damage."
 					]
 				},
 				{
@@ -889,7 +889,7 @@
 					},
 					"name": "Invoke Awe",
 					"entries": [
-						"As an action, you exert an aura that inspires awe in others. Choose up to 5 creatures you can see within 60 feet of you. Each target must succeed on an Intelligence saving throw or be {@condition charmed} by you until your concentration ends. While {@condition charmed}, the target obeys all your verbal commands to the best of its ability and without doing anything obviously self-destructive. The {@condition charmed} target will attack only creatures that it has seen attack you since it was {@condition charmed} or that it was already hostile toward. At the end of each of its turns, it can repeat the saving throw, ending the effect on itself on a success."
+						"As an action, you exert an aura that inspires awe in others. Choose up to 5 creatures you can see within 60 feet of you. Each target must succeed on an Intelligence saving throw or be {@condition charmed} by you until your {@status concentration} ends. While {@condition charmed}, the target obeys all your verbal commands to the best of its ability and without doing anything obviously self-destructive. The {@condition charmed} target will attack only creatures that it has seen attack you since it was {@condition charmed} or that it was already hostile toward. At the end of each of its turns, it can repeat the saving throw, ending the effect on itself on a success."
 					]
 				}
 			]
@@ -950,7 +950,7 @@
 					},
 					"name": "Strategic Mind",
 					"entries": [
-						"As an action, you exert an aura of trust and command that unites your allies into a cohesive unit. Until your concentration ends, any ally within 60 feet of you on their turn can, as a bonus action, take the Dash or Disengage action or roll a {@dice d4} and add the number rolled to each attack roll they make that turn."
+						"As an action, you exert an aura of trust and command that unites your allies into a cohesive unit. Until your {@status concentration} ends, any ally within 60 feet of you on their turn can, as a bonus action, take the Dash or Disengage action or roll a {@dice d4} and add the number rolled to each attack roll they make that turn."
 					]
 				},
 				{
@@ -997,7 +997,7 @@
 					},
 					"name": "Aura of Victory",
 					"entries": [
-						"As a bonus action, you project psionic energy until your concentration ends. The energy fortifies you and your allies when your enemies are felled; whenever an enemy you can see is reduced to 0 hit points, you and each of your allies within 30 feet of you gain temporary hit points equal to double the psi points spent to activate this effect."
+						"As a bonus action, you project psionic energy until your {@status concentration} ends. The energy fortifies you and your allies when your enemies are felled; whenever an enemy you can see is reduced to 0 hit points, you and each of your allies within 30 feet of you gain temporary hit points equal to double the psi points spent to activate this effect."
 					]
 				},
 				{
@@ -1038,7 +1038,7 @@
 					},
 					"name": "Incite Fear",
 					"entries": [
-						"As an action, choose one creature you can see within 60 feet of you. The target must succeed on a Wisdom saving throw or become {@condition frightened} of you until your concentration ends. Whenever the {@condition frightened} target ends its turn in a location where it can't see you, it can repeat the saving throw, ending the effect on itself on a success."
+						"As an action, choose one creature you can see within 60 feet of you. The target must succeed on a Wisdom saving throw or become {@condition frightened} of you until your {@status concentration} ends. Whenever the {@condition frightened} target ends its turn in a location where it can't see you, it can repeat the saving throw, ending the effect on itself on a success."
 					]
 				},
 				{
@@ -1052,7 +1052,7 @@
 					},
 					"name": "Unsettling Aura",
 					"entries": [
-						"As a bonus action, you cloak yourself in unsettling psychic energy. Until your concentration ends, any enemy within 60 feet of you that can see you must spend 1 extra foot of movement for every foot it moves toward you. A creature ignores this effect if immune to being {@condition frightened}."
+						"As a bonus action, you cloak yourself in unsettling psychic energy. Until your {@status concentration} ends, any enemy within 60 feet of you that can see you must spend 1 extra foot of movement for every foot it moves toward you. A creature ignores this effect if immune to being {@condition frightened}."
 					]
 				},
 				{
@@ -1066,7 +1066,7 @@
 					},
 					"name": "Incite Panic",
 					"entries": [
-						"As an action, choose up to eight creatures you can see within 90 feet of you that can see you. At the start of each of a target's turns before your concentration ends, the target must make a Wisdom saving throw. On a failed save, the target is {@condition frightened} until the start of its next turn, and you roll a die. If you roll an odd number, the {@condition frightened} target moves half its speed in random direction and takes no action on that turn, other than to scream in terror. If you roll an even number, the {@condition frightened} target makes one melee attack against a random target within its reach. If there is no such target, it moves half its speed in a random direction and takes no action on that turn. This effect end on a target if it succeeds on three saving throws against it."
+						"As an action, choose up to eight creatures you can see within 90 feet of you that can see you. At the start of each of a target's turns before your {@status concentration} ends, the target must make a Wisdom saving throw. On a failed save, the target is {@condition frightened} until the start of its next turn, and you roll a die. If you roll an odd number, the {@condition frightened} target moves half its speed in random direction and takes no action on that turn, other than to scream in terror. If you roll an even number, the {@condition frightened} target makes one melee attack against a random target within its reach. If there is no such target, it moves half its speed in a random direction and takes no action on that turn. This effect end on a target if it succeeds on three saving throws against it."
 					]
 				}
 			]
@@ -1093,7 +1093,7 @@
 					},
 					"name": "Incite Fury",
 					"entries": [
-						"As a bonus action, choose up to three allies you can see within 60 feet of you (you can choose yourself in place of one of the allies). Until your concentration ends, each target can roll a {@dice d4} when rolling damage for a melee weapon attack and add the number rolled to the damage roll."
+						"As a bonus action, choose up to three allies you can see within 60 feet of you (you can choose yourself in place of one of the allies). Until your {@status concentration} ends, each target can roll a {@dice d4} when rolling damage for a melee weapon attack and add the number rolled to the damage roll."
 					]
 				},
 				{
@@ -1117,7 +1117,7 @@
 					},
 					"name": "Aura of Bloodletting",
 					"entries": [
-						"As a bonus action, you unleash an aura of rage. Until your concentration ends, you and any creature within 60 feet of you has advantage on melee attack rolls."
+						"As a bonus action, you unleash an aura of rage. Until your {@status concentration} ends, you and any creature within 60 feet of you has advantage on melee attack rolls."
 					]
 				},
 				{
@@ -1131,7 +1131,7 @@
 					},
 					"name": "Overwhelming Fury",
 					"entries": [
-						"As an action, you flood rage into one creature you can see within 60 feet of you. The target must succeed on a Charisma saving throw, or it can use its actions only to make melee attacks until your concentration ends. It can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"As an action, you flood rage into one creature you can see within 60 feet of you. The target must succeed on a Charisma saving throw, or it can use its actions only to make melee attacks until your {@status concentration} ends. It can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 					]
 				}
 			]
@@ -1168,7 +1168,7 @@
 					},
 					"name": "Comforting Aura",
 					"entries": [
-						"As a bonus action, choose up to three allies you can see (you can choose yourself in place of one of the allies). Until your concentration ends, each target can roll a {@dice d4} when making a saving throw and add the number rolled to the total."
+						"As a bonus action, choose up to three allies you can see (you can choose yourself in place of one of the allies). Until your {@status concentration} ends, each target can roll a {@dice d4} when making a saving throw and add the number rolled to the total."
 					]
 				},
 				{
@@ -1182,7 +1182,7 @@
 					},
 					"name": "Aura of Jubilation",
 					"entries": [
-						"As a bonus action, you radiate a distracting mirth until your concentration ends. Each creature within 60 feet of you that can see you suffers disadvantage on any checks using the {@skill Perception} and {@skill Investigation} skills."
+						"As a bonus action, you radiate a distracting mirth until your {@status concentration} ends. Each creature within 60 feet of you that can see you suffers disadvantage on any checks using the {@skill Perception} and {@skill Investigation} skills."
 					]
 				},
 				{
@@ -1239,7 +1239,7 @@
 					},
 					"name": "Cloak of Air",
 					"entries": [
-						"As a bonus action, you seize control of the air around you to create a protective veil. Until your concentration ends, attack rolls against you have disadvantage, and when a creature you can see misses you with a melee attack, you can use your reaction to force the creature to repeat the attack roll against itself."
+						"As a bonus action, you seize control of the air around you to create a protective veil. Until your {@status concentration} ends, attack rolls against you have disadvantage, and when a creature you can see misses you with a melee attack, you can use your reaction to force the creature to repeat the attack roll against itself."
 					]
 				},
 				{
@@ -1253,7 +1253,7 @@
 					},
 					"name": "Wind Form",
 					"entries": [
-						"As a bonus action, you gain a flying speed of 60 feet, which lasts until your concentration ends."
+						"As a bonus action, you gain a flying speed of 60 feet, which lasts until your {@status concentration} ends."
 					]
 				},
 				{
@@ -1267,7 +1267,7 @@
 					},
 					"name": "Misty Form",
 					"entries": [
-						"As an action, your body becomes like a misty cloud until your concentration ends. In this form, you gain resistance to bludgeoning, piercing, and slashing damage, and you can't take actions other than the Dash action. You can pass through openings that are no more than 1 inch wide without squeezing."
+						"As an action, your body becomes like a misty cloud until your {@status concentration} ends. In this form, you gain resistance to bludgeoning, piercing, and slashing damage, and you can't take actions other than the Dash action. You can pass through openings that are no more than 1 inch wide without squeezing."
 					]
 				},
 				{
@@ -1281,7 +1281,7 @@
 					},
 					"name": "Animate Air",
 					"entries": [
-						"As an action, you cause an air elemental to appear in an unoccupied space you can see within 120 feet of you. The elemental lasts until your concentration ends, and it obeys your verbal commands. In combat, roll for its initiative, and choose its behavior during its turns. When this effect ends, the elemental disappears. See the Monster Manual for its stat block."
+						"As an action, you cause an air elemental to appear in an unoccupied space you can see within 120 feet of you. The elemental lasts until your {@status concentration} ends, and it obeys your verbal commands. In combat, roll for its initiative, and choose its behavior during its turns. When this effect ends, the elemental disappears. See the Monster Manual for its stat block."
 					]
 				}
 			]
@@ -1308,7 +1308,7 @@
 					},
 					"name": "Combustion",
 					"entries": [
-						"As an action, choose one creature or object you can see within 120 feet of you. The target must make a Constitution save. On a failed save, the target takes {@scaledamage 1d10|1-7|1d10|psi} fire damage per psi point spent, and it catches on fire, taking {@damage 1d6} fire damage at the end of each of its turns until your concentration ends or until it or a creature adjacent to it extinguishes the flames with an action. On a successful save, the target takes half as much damage and doesn't catch on fire."
+						"As an action, choose one creature or object you can see within 120 feet of you. The target must make a Constitution save. On a failed save, the target takes {@scaledamage 1d10|1-7|1d10|psi} fire damage per psi point spent, and it catches on fire, taking {@damage 1d6} fire damage at the end of each of its turns until your {@status concentration} ends or until it or a creature adjacent to it extinguishes the flames with an action. On a successful save, the target takes half as much damage and doesn't catch on fire."
 					]
 				},
 				{
@@ -1322,7 +1322,7 @@
 					},
 					"name": "Rolling Flame",
 					"entries": [
-						"As an action, you create fire in a 20-foot-by-20-foot cube within 5 feet of you. The fire lasts until your concentration ends. Any creature in that area when you use this ability and any creature that ends its turn there takes 5 fire damage."
+						"As an action, you create fire in a 20-foot-by-20-foot cube within 5 feet of you. The fire lasts until your {@status concentration} ends. Any creature in that area when you use this ability and any creature that ends its turn there takes 5 fire damage."
 					]
 				},
 				{
@@ -1346,7 +1346,7 @@
 					},
 					"name": "Fire Form",
 					"entries": [
-						"As a bonus action, you become wreathed in flames until your concentration ends. Any creature that end its turn within 5 feet of you takes {@damage 3d6} fire damage."
+						"As a bonus action, you become wreathed in flames until your {@status concentration} ends. Any creature that end its turn within 5 feet of you takes {@damage 3d6} fire damage."
 					]
 				},
 				{
@@ -1360,7 +1360,7 @@
 					},
 					"name": "Animate Fire",
 					"entries": [
-						"As an action, you cause a fire elemental to appear in an unoccupied space you can see within 120 feet of you. The elemental lasts until your concentration ends, and it obeys your verbal commands. In combat, roll for its initiative, and choose its behavior during its turns. When this effect ends, the elemental disappears. See the Monster Manual for its stat block."
+						"As an action, you cause a fire elemental to appear in an unoccupied space you can see within 120 feet of you. The elemental lasts until your {@status concentration} ends, and it obeys your verbal commands. In combat, roll for its initiative, and choose its behavior during its turns. When this effect ends, the elemental disappears. See the Monster Manual for its stat block."
 					]
 				}
 			]
@@ -1458,7 +1458,7 @@
 					},
 					"name": "Telekinetic Barrier",
 					"entries": [
-						"As an action, you create a transparent wall of telekinetic energy, at least one portion of which must be within 60 feet of you. The wall is 40 feet long, 10 feet high, and 1 inch thick. The wall lasts until your concentration ends. Each 10-foot section of the wall has an AC of 10 and 10 hit points."
+						"As an action, you create a transparent wall of telekinetic energy, at least one portion of which must be within 60 feet of you. The wall is 40 feet long, 10 feet high, and 1 inch thick. The wall lasts until your {@status concentration} ends. Each 10-foot section of the wall has an AC of 10 and 10 hit points."
 					]
 				},
 				{
@@ -1472,7 +1472,7 @@
 					},
 					"name": "Grasp",
 					"entries": [
-						"You attempt to grasp a creature in telekinetic energy and hold it captive. As an action, choose one creature you can see within 60 feet of you. The target must succeed on a Strength saving throw or be {@condition grappled} by you until your concentration ends or until the target leaves your reach, which is 60 feet for this grapple.",
+						"You attempt to grasp a creature in telekinetic energy and hold it captive. As an action, choose one creature you can see within 60 feet of you. The target must succeed on a Strength saving throw or be {@condition grappled} by you until your {@status concentration} ends or until the target leaves your reach, which is 60 feet for this grapple.",
 						"The {@condition grappled} target can escape by succeeding on a Strength (Athletics) or Dexterity (Acrobatics) check contested by your psionic ability plus your proficiency bonus. When a target attempts to escape in this way, you can spend psi points to boost your check, abiding by your psi limit. You gain a +1 bonus per psi point spent.",
 						"While a target is {@condition grappled} in this manner, you create one of the following effects as an action:"
 					]
@@ -1551,7 +1551,7 @@
 					},
 					"name": "Frozen Rain",
 					"entries": [
-						"As an action, choose a point you can see within 120 feet of you. The air in a 20-foot-radius sphere centered on that point becomes deathly cold and saturated with moisture. Each creature in that area must make a Constitution saving throw. On a failed save, a target takes {@damage 6d6} cold damage, and its speed is reduced to 0 until your concentration ends. On a successful save, a target takes half as much damage.",
+						"As an action, choose a point you can see within 120 feet of you. The air in a 20-foot-radius sphere centered on that point becomes deathly cold and saturated with moisture. Each creature in that area must make a Constitution saving throw. On a failed save, a target takes {@damage 6d6} cold damage, and its speed is reduced to 0 until your {@status concentration} ends. On a successful save, a target takes half as much damage.",
 						"As an action, a target that has its speed reduced can end the effect early if it succeeds on a Strength (Athletics) check with a DC equal to this effect's save DC.",
 						"You can increase this effect's damage by {@scaledamage 6d6|5-7|1d6|psi} per each additional psi point spent on it."
 					]
@@ -1567,7 +1567,7 @@
 					},
 					"name": "Ice Barrier",
 					"entries": [
-						"As an action, you create a wall of ice, at least one portion of which must be within 60 feet of you. The wall is 60 feet long, 15 feet high, and 1 foot thick. The wall lasts until your concentration ends. Each 10-foot section of the wall has AC 12 and 30 hit points. A creature that damages the wall with a melee attack takes cold damage equal to the damage the creature dealt to the wall."
+						"As an action, you create a wall of ice, at least one portion of which must be within 60 feet of you. The wall is 60 feet long, 15 feet high, and 1 foot thick. The wall lasts until your {@status concentration} ends. Each 10-foot section of the wall has AC 12 and 30 hit points. A creature that damages the wall with a melee attack takes cold damage equal to the damage the creature dealt to the wall."
 					]
 				}
 			]
@@ -1604,7 +1604,7 @@
 					},
 					"name": "Light",
 					"entries": [
-						"As an action, an object you touch radiates light in a 20-foot radius and dim light for an additional 20 feet. The light lasts until your concentration ends. Alternatively, a creature you touch radiates light in the same manner if it fails a Dexterity saving throw. While lit in this manner, it can't hide, and attack rolls against it gain advantage."
+						"As an action, an object you touch radiates light in a 20-foot radius and dim light for an additional 20 feet. The light lasts until your {@status concentration} ends. Alternatively, a creature you touch radiates light in the same manner if it fails a Dexterity saving throw. While lit in this manner, it can't hide, and attack rolls against it gain advantage."
 					]
 				},
 				{
@@ -1618,7 +1618,7 @@
 					},
 					"name": "Shadow Beasts",
 					"entries": [
-						"As an action, you cause two {@creature shadow||shadows} to appear in unoccupied spaces you can see within 60 feet of you. The {@creature shadow||shadows} last until your concentration ends, and they obey your verbal commands. In combat, roll for their initiative, and choose their behavior during their turns. When this effect ends, the {@creature shadow||shadows} disappear. See the Monster Manual for their stat block."
+						"As an action, you cause two {@creature shadow||shadows} to appear in unoccupied spaces you can see within 60 feet of you. The {@creature shadow||shadows} last until your {@status concentration} ends, and they obey your verbal commands. In combat, roll for their initiative, and choose their behavior during their turns. When this effect ends, the {@creature shadow||shadows} disappear. See the Monster Manual for their stat block."
 					]
 				},
 				{
@@ -1632,7 +1632,7 @@
 					},
 					"name": "Radiant Beam",
 					"entries": [
-						"As an action, you project a beam of light at one creature you can see within 60 feet of you. The target must make a Dexterity saving throw. On a failed save, it takes {@damage 6d6} radiant damage and is {@condition blinded} until your concentration ends. On a successful save, it takes half as much damage. A {@condition blinded} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+						"As an action, you project a beam of light at one creature you can see within 60 feet of you. The target must make a Dexterity saving throw. On a failed save, it takes {@damage 6d6} radiant damage and is {@condition blinded} until your {@status concentration} ends. On a successful save, it takes half as much damage. A {@condition blinded} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
 						"You can increase this effect's damage by {@scaledamage 6d6|5-7|1d6|psi} per each additional psi point spent on it."
 					]
 				}
@@ -1700,7 +1700,7 @@
 					},
 					"name": "Water Sphere",
 					"entries": [
-						"As an action, you cause a sphere of water to form around a creature. Choose one creature you can see within 60 feet of you. The target must make a Dexterity saving throw. On a failed save, it becomes trapped in the sphere of water until your concentration ends. While the target is trapped, its speed is halved, it suffers disadvantage on attack rolls, and it can't see anything more than 10 feet away from it. However, attack rolls against it also suffer disadvantage. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful one."
+						"As an action, you cause a sphere of water to form around a creature. Choose one creature you can see within 60 feet of you. The target must make a Dexterity saving throw. On a failed save, it becomes trapped in the sphere of water until your {@status concentration} ends. While the target is trapped, its speed is halved, it suffers disadvantage on attack rolls, and it can't see anything more than 10 feet away from it. However, attack rolls against it also suffer disadvantage. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful one."
 					]
 				},
 				{
@@ -1714,7 +1714,7 @@
 					},
 					"name": "Animate Water",
 					"entries": [
-						"As an action, you cause a water elemental to appear in an unoccupied space you can see within 120 feet of you. The elemental lasts until your concentration ends, and it obeys your verbal commands. In combat, roll for its initiative, and choose its behavior during its turns. When this effect ends, the elemental disappears. See the Monster Manual for its stat block."
+						"As an action, you cause a water elemental to appear in an unoccupied space you can see within 120 feet of you. The elemental lasts until your {@status concentration} ends, and it obeys your verbal commands. In combat, roll for its initiative, and choose its behavior during its turns. When this effect ends, the elemental disappears. See the Monster Manual for its stat block."
 					]
 				}
 			]
@@ -1741,7 +1741,7 @@
 					},
 					"name": "Cloud Steps",
 					"entries": [
-						"As an action, you conjure forth clouds to create a solid, translucent staircase that lasts until your concentration ends. The stairs form a spiral that fills a 10-foot-by-10-foot area and reaches upward 20 feet per psi point spent."
+						"As an action, you conjure forth clouds to create a solid, translucent staircase that lasts until your {@status concentration} ends. The stairs form a spiral that fills a 10-foot-by-10-foot area and reaches upward 20 feet per psi point spent."
 					]
 				},
 				{
@@ -1765,7 +1765,7 @@
 					},
 					"name": "Wall of Clouds",
 					"entries": [
-						"As an action, you create a wall of clouds, at least one portion of which must be within 60 feet of you. The wall is 60 feet long, 15 feet high, and 1 foot thick. The wall lasts until your concentration ends. Creatures can pass through it without hindrance, but the wall blocks vision."
+						"As an action, you create a wall of clouds, at least one portion of which must be within 60 feet of you. The wall is 60 feet long, 15 feet high, and 1 foot thick. The wall lasts until your {@status concentration} ends. Creatures can pass through it without hindrance, but the wall blocks vision."
 					]
 				},
 				{
@@ -1800,7 +1800,7 @@
 					},
 					"name": "Wall of Thunder",
 					"entries": [
-						"As an action, you create a wall of thunder, at least one portion of which must be within 60 feet of you. The wall is 60 feet long, 15 feet high, and 1 foot thick. The wall lasts until your concentration ends. Every foot moved through the wall costs 1 extra foot of movement. When a creature moves into the wall's space for the first time on a turn or starts its turn there, that creature must succeed on a Strength saving throw, or it takes {@damage 6d6} thunder damage, is pushed in a straight line up to 30 feet away from the wall, and is knocked {@condition prone}."
+						"As an action, you create a wall of thunder, at least one portion of which must be within 60 feet of you. The wall is 60 feet long, 15 feet high, and 1 foot thick. The wall lasts until your {@status concentration} ends. Every foot moved through the wall costs 1 extra foot of movement. When a creature moves into the wall's space for the first time on a turn or starts its turn there, that creature must succeed on a Strength saving throw, or it takes {@damage 6d6} thunder damage, is pushed in a straight line up to 30 feet away from the wall, and is knocked {@condition prone}."
 					]
 				},
 				{
@@ -1867,7 +1867,7 @@
 					},
 					"name": "Wall of Wood",
 					"entries": [
-						"As an action, you create a wall of wood at least one portion of which must be within 60 feet of you. The wall is 60 feet long, 15 feet high, and 1 foot thick. The wall lasts until your concentration ends. Each 5-foot wide section of the wall has AC 12 and 100 hit points. Breaking one section creates a 5-foot by 5-foot hole in it, but the wall otherwise remains intact."
+						"As an action, you create a wall of wood at least one portion of which must be within 60 feet of you. The wall is 60 feet long, 15 feet high, and 1 foot thick. The wall lasts until your {@status concentration} ends. Each 5-foot wide section of the wall has AC 12 and 100 hit points. Breaking one section creates a 5-foot by 5-foot hole in it, but the wall otherwise remains intact."
 					]
 				},
 				{
@@ -1881,7 +1881,7 @@
 					},
 					"name": "Armored Form",
 					"entries": [
-						"As a bonus action, you gain resistance to bludgeoning, piercing, and slashing damage, which lasts until your concentration ends."
+						"As a bonus action, you gain resistance to bludgeoning, piercing, and slashing damage, which lasts until your {@status concentration} ends."
 					]
 				},
 				{
@@ -1895,7 +1895,7 @@
 					},
 					"name": "Animate Earth",
 					"entries": [
-						"As an action, you cause an earth elemental to appear in an unoccupied space you can see within 120 feet of you. The elemental lasts until your concentration ends, and it obeys your verbal commands. In combat, roll for its initiative, and choose its behavior during its turns. When this effect ends, the elemental disappears. See the Monster Manual for its stat block."
+						"As an action, you cause an earth elemental to appear in an unoccupied space you can see within 120 feet of you. The elemental lasts until your {@status concentration} ends, and it obeys your verbal commands. In combat, roll for its initiative, and choose its behavior during its turns. When this effect ends, the elemental disappears. See the Monster Manual for its stat block."
 					]
 				}
 			]
@@ -1992,7 +1992,7 @@
 					},
 					"name": "Faithful Archer",
 					"entries": [
-						"As a bonus action, you imbue a ranged weapon with a limited sentience. Until your concentration ends, you can make an extra attack with the weapon at the start of each of your turns (no action required). If it is a thrown weapon, it returns to your grasp each time you make any attack with it."
+						"As a bonus action, you imbue a ranged weapon with a limited sentience. Until your {@status concentration} ends, you can make an extra attack with the weapon at the start of each of your turns (no action required). If it is a thrown weapon, it returns to your grasp each time you make any attack with it."
 					]
 				}
 			]
@@ -2029,7 +2029,7 @@
 					},
 					"name": "Step from Sight",
 					"entries": [
-						"As a bonus action, cloak yourself from sight. You can target one additional creature for every additional psi point you spend on this ability. The added targets must be visible to you and within 60 feet of you. Each target turns {@condition invisible} and remains so until your concentration ends or until immediately after it targets, damages, or otherwise affects any creature with an attack, a spell, or another ability."
+						"As a bonus action, cloak yourself from sight. You can target one additional creature for every additional psi point you spend on this ability. The added targets must be visible to you and within 60 feet of you. Each target turns {@condition invisible} and remains so until your {@status concentration} ends or until immediately after it targets, damages, or otherwise affects any creature with an attack, a spell, or another ability."
 					]
 				},
 				{
@@ -2043,7 +2043,7 @@
 					},
 					"name": "Enduring Invisibility",
 					"entries": [
-						"As a bonus action, you turn {@condition invisible} and remain so until your concentration ends."
+						"As a bonus action, you turn {@condition invisible} and remain so until your {@status concentration} ends."
 					]
 				}
 			]
@@ -2070,7 +2070,7 @@
 					},
 					"name": "Wandering Mind",
 					"entries": [
-						"You enter a deep contemplation. If you concentrate for this option's full duration, you then gain proficiency with up to three of the following skills (one skill for every 2 psi points spent): {@skill Animal Handling}, {@skill Arcana}, {@skill History}, {@skill Medicine}, {@skill Nature}, {@skill Performance}, {@skill Religion}, and {@skill Survival}. The benefit lasts for 1 hour, no concentration required."
+						"You enter a deep contemplation. If you concentrate for this option's full duration, you then gain proficiency with up to three of the following skills (one skill for every 2 psi points spent): {@skill Animal Handling}, {@skill Arcana}, {@skill History}, {@skill Medicine}, {@skill Nature}, {@skill Performance}, {@skill Religion}, and {@skill Survival}. The benefit lasts for 1 hour, no {@status concentration} required."
 					]
 				},
 				{
@@ -2122,7 +2122,7 @@
 					},
 					"name": "Wandering Eye",
 					"entries": [
-						"As an action, you create a psychic sensor within 60 feet of you. The sensor lasts until your concentration ends. The sensor is invisible and hovers in the air. You mentally receive visual information from it, which has normal vision and darkvision with a range of 60 feet. The sensor can look in all directions. As an action, you can move the sensor up to 30 feet in any direction. There is no limit to how far away from you the eye can move, but it can't enter another plane of existence. A solid barrier blocks the eye's movement, but the eye can pass through an opening as small as 1 inch in diameter."
+						"As an action, you create a psychic sensor within 60 feet of you. The sensor lasts until your {@status concentration} ends. The sensor is invisible and hovers in the air. You mentally receive visual information from it, which has normal vision and darkvision with a range of 60 feet. The sensor can look in all directions. As an action, you can move the sensor up to 30 feet in any direction. There is no limit to how far away from you the eye can move, but it can't enter another plane of existence. A solid barrier blocks the eye's movement, but the eye can pass through an opening as small as 1 inch in diameter."
 					]
 				},
 				{
@@ -2233,7 +2233,7 @@
 					},
 					"name": "Nomad's Gate",
 					"entries": [
-						"As an action, you create a 5-foot cube of dim, gray light within 5 feet of you. You create an identical cube at any point of your choice within 1 mile that you have viewed within the past 24 hours. Until your concentration ends, anyone entering one of the cubes immediately teleports to the other one, appearing in an unoccupied space next to it. The teleportation fails if there is no space for the creature to appear in."
+						"As an action, you create a 5-foot cube of dim, gray light within 5 feet of you. You create an identical cube at any point of your choice within 1 mile that you have viewed within the past 24 hours. Until your {@status concentration} ends, anyone entering one of the cubes immediately teleports to the other one, appearing in an unoccupied space next to it. The teleportation fails if there is no space for the creature to appear in."
 					]
 				}
 			]
@@ -2260,7 +2260,7 @@
 					},
 					"name": "Precognitive Hunch",
 					"entries": [
-						"As a bonus action, you open yourself to receive momentary insights that improve your odds of success; until your concentration ends, whenever you make an attack roll, a saving throw, or an ability check, you roll a {@dice d4} and add it to the total."
+						"As a bonus action, you open yourself to receive momentary insights that improve your odds of success; until your {@status concentration} ends, whenever you make an attack roll, a saving throw, or an ability check, you roll a {@dice d4} and add it to the total."
 					]
 				},
 				{
@@ -2284,7 +2284,7 @@
 					},
 					"name": "Danger Sense",
 					"entries": [
-						"As an action, you create a psychic model of reality in your mind and set it to show you a few seconds into the future. Until your concentration ends, you can't be {@quickref Surprise|PHB|3|0|surprised}, attack rolls against you can't gain advantage, and you gain a +10 bonus to initiative."
+						"As an action, you create a psychic model of reality in your mind and set it to show you a few seconds into the future. Until your {@status concentration} ends, you can't be {@quickref Surprise|PHB|3|0|surprised}, attack rolls against you can't gain advantage, and you gain a +10 bonus to initiative."
 					]
 				},
 				{
@@ -2394,7 +2394,7 @@
 					},
 					"name": "Augmented Weapon",
 					"entries": [
-						"As a bonus action, touch one {@filter simple or martial weapon|items|source=phb|category=basic|type=martial weapon;simple weapon}. Until your concentration ends, that weapon becomes a magic weapon with a +3 bonus to its attack and damage rolls."
+						"As a bonus action, touch one {@filter simple or martial weapon|items|source=phb|category=basic|type=martial weapon;simple weapon}. Until your {@status concentration} ends, that weapon becomes a magic weapon with a +3 bonus to its attack and damage rolls."
 					]
 				}
 			]
@@ -2484,7 +2484,7 @@
 					},
 					"name": "Distracting Haze",
 					"entries": [
-						"As an action, choose one creature you can see within 60 feet of you. That creature must make an Intelligence saving throw. On a failed save, it takes {@scaledamage 1d10|1-7|1d10|psi} psychic damage per psi point spent and can't see anything more than 10 feet from it until your concentration ends. On a successful save, it takes half as much damage."
+						"As an action, choose one creature you can see within 60 feet of you. That creature must make an Intelligence saving throw. On a failed save, it takes {@scaledamage 1d10|1-7|1d10|psi} psychic damage per psi point spent and can't see anything more than 10 feet from it until your {@status concentration} ends. On a successful save, it takes half as much damage."
 					]
 				},
 				{
@@ -2612,7 +2612,7 @@
 					},
 					"name": "Phantom Foe",
 					"entries": [
-						"As an action, choose one creature you can see within 60 feet of you. The target must make an Intelligence saving throw. On a failed save, it perceives a horrid creature adjacent to it until your concentration ends. During this time, the target can't take reactions, and it takes {@damage 1d8} psychic damage at the start of each of its turns. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. You can increase the damage by {@scaledamage 1d8|3-7|1d8|psi} for each additional psi point spent on the ability."
+						"As an action, choose one creature you can see within 60 feet of you. The target must make an Intelligence saving throw. On a failed save, it perceives a horrid creature adjacent to it until your {@status concentration} ends. During this time, the target can't take reactions, and it takes {@damage 1d8} psychic damage at the start of each of its turns. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. You can increase the damage by {@scaledamage 1d8|3-7|1d8|psi} for each additional psi point spent on the ability."
 					]
 				},
 				{
@@ -2626,7 +2626,7 @@
 					},
 					"name": "Phantom Betrayal",
 					"entries": [
-						"As an action, you plant delusional paranoia in a creature's mind. Choose one creature you can see within 60 feet of you. The target must succeed on an Intelligence saving throw, or until your concentration ends, it must target its allies with attacks and other damaging effects. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. A creature is immune to this ability if it is immune to being {@condition charmed}."
+						"As an action, you plant delusional paranoia in a creature's mind. Choose one creature you can see within 60 feet of you. The target must succeed on an Intelligence saving throw, or until your {@status concentration} ends, it must target its allies with attacks and other damaging effects. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. A creature is immune to this ability if it is immune to being {@condition charmed}."
 					]
 				},
 				{
@@ -2640,7 +2640,7 @@
 					},
 					"name": "Phantom Riches",
 					"entries": [
-						"As an action, you plant the phantom of a greatly desired object in a creature's mind. Choose one creature you can see within 60 feet of you. The target must make an Intelligence saving throw. On a failed save, you gain partial control over the target's behavior until your concentration ends; the target moves as you wish on each of its turns, as it thinks it pursues the phantom object it desires. If it hasn't taken damage since its last turn, it can use its action only to admire the object you created in its perception. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"As an action, you plant the phantom of a greatly desired object in a creature's mind. Choose one creature you can see within 60 feet of you. The target must make an Intelligence saving throw. On a failed save, you gain partial control over the target's behavior until your {@status concentration} ends; the target moves as you wish on each of its turns, as it thinks it pursues the phantom object it desires. If it hasn't taken damage since its last turn, it can use its action only to admire the object you created in its perception. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 					]
 				}
 			]
@@ -2697,7 +2697,7 @@
 					},
 					"name": "Psychic Grip",
 					"entries": [
-						"As an action, you target one creature you can see within 60 feet of you. The target must succeed on an Intelligence saving throw, or it is {@condition paralyzed} until your concentration ends. At the end of each of its turns, it can repeat the saving throw. On a success, this effect ends. On a failure, you can use your reaction to force the target to move up to half its speed, even though it's {@condition paralyzed}."
+						"As an action, you target one creature you can see within 60 feet of you. The target must succeed on an Intelligence saving throw, or it is {@condition paralyzed} until your {@status concentration} ends. At the end of each of its turns, it can repeat the saving throw. On a success, this effect ends. On a failure, you can use your reaction to force the target to move up to half its speed, even though it's {@condition paralyzed}."
 					]
 				},
 				{
@@ -2711,7 +2711,7 @@
 					},
 					"name": "Psychic Domination",
 					"entries": [
-						"As an action, you target one creature you can see within 60 feet of you. The target must succeed on an Intelligence saving throw, or you choose the creature's actions and movement on its turns until your concentration ends. At the end of each of its turns, it can repeat the saving throw, ending the effect on itself on a success. A creature is immune to this ability if it is immune to being {@condition charmed}."
+						"As an action, you target one creature you can see within 60 feet of you. The target must succeed on an Intelligence saving throw, or you choose the creature's actions and movement on its turns until your {@status concentration} ends. At the end of each of its turns, it can repeat the saving throw, ending the effect on itself on a success. A creature is immune to this ability if it is immune to being {@condition charmed}."
 					]
 				}
 			]
@@ -2738,7 +2738,7 @@
 					},
 					"name": "Tremorsense",
 					"entries": [
-						"As a bonus action, you gain tremorsense with a radius of 30 feet, which lasts until your concentration ends."
+						"As a bonus action, you gain tremorsense with a radius of 30 feet, which lasts until your {@status concentration} ends."
 					]
 				},
 				{
@@ -2762,7 +2762,7 @@
 					},
 					"name": "Piercing Sight",
 					"entries": [
-						"As a bonus action, you gain the ability to see through objects that are up to 1 foot thick within 30 feet of you. This sight lasts until your concentration ends."
+						"As a bonus action, you gain the ability to see through objects that are up to 1 foot thick within 30 feet of you. This sight lasts until your {@status concentration} ends."
 					]
 				},
 				{
@@ -2776,7 +2776,7 @@
 					},
 					"name": "Truesight",
 					"entries": [
-						"As a bonus action, you gain truesight with a radius of 30 feet, which lasts until your concentration ends."
+						"As a bonus action, you gain truesight with a radius of 30 feet, which lasts until your {@status concentration} ends."
 					]
 				}
 			]

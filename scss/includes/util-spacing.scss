@@ -408,6 +408,11 @@
 	margin-left: ($spacer * 3) !important;
 }
 
+.my-1p {
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
 .mx-2p {
 	margin-right: 2px !important;
 	margin-left: 2px !important;
@@ -648,6 +653,16 @@
 .py-1p {
 	padding-top: 1px !important;
 	padding-bottom: 1px !important;
+}
+
+.py-2p {
+	padding-top: 2px !important;
+	padding-bottom: 2px !important;
+}
+
+.px-1p {
+	padding-right: 1px !important;
+	padding-left: 1px !important;
 }
 
 .px-2p {

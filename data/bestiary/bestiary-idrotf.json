@@ -576,7 +576,7 @@
 				{
 					"name": "Blizzard Veil",
 					"entries": [
-						"Auril creates a magical blizzard in a 30-foot-radius sphere centered on herself. The area within the sphere is heavily obscured, and the sphere moves with Auril. The effect lasts until Auril drops to 0 hit points in this form, until she chooses to end the effect (no action required), or until her concentration is broken (as if concentrating on a spell)."
+						"Auril creates a magical blizzard in a 30-foot-radius sphere centered on herself. The area within the sphere is heavily obscured, and the sphere moves with Auril. The effect lasts until Auril drops to 0 hit points in this form, until she chooses to end the effect (no action required), or until her {@status concentration} is broken (as if {@status concentration||concentrating} on a spell)."
 					]
 				}
 			],
@@ -632,6 +632,7 @@
 		{
 			"name": "Avarice",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IDRotF",
 			"page": 269,
 			"size": [
@@ -1713,6 +1714,7 @@
 		{
 			"name": "Dzaan's Simulacrum",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IDRotF",
 			"page": 270,
 			"size": [
@@ -4211,6 +4213,7 @@
 		{
 			"name": "Kingsport",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IDRotF",
 			"page": 243,
 			"size": [
@@ -4958,6 +4961,7 @@
 		{
 			"name": "Nass Lantomir's Ghost",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IDRotF",
 			"page": 272,
 			"size": [
@@ -5140,6 +5144,7 @@
 		{
 			"name": "Prisoner 237",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IDRotF",
 			"page": 160,
 			"size": [
@@ -5740,6 +5745,7 @@
 		{
 			"name": "Spellix Romwod",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IDRotF",
 			"page": 144,
 			"size": [
@@ -6323,6 +6329,7 @@
 		{
 			"name": "Vellynne Harpell",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IDRotF",
 			"page": 273,
 			"size": [
@@ -6876,7 +6883,7 @@
 				{
 					"name": "Invisibility {@recharge 4}",
 					"entries": [
-						"Xardorok magically turns {@condition invisible} until he attacks, he casts a spell, he uses his Enlarge, or his concentration is broken (as if concentrating on a spell). Any equipment Xardorok wears or carries is {@condition invisible} with him."
+						"Xardorok magically turns {@condition invisible} until he attacks, he casts a spell, he uses his Enlarge, or his {@status concentration} is broken (as if {@status concentration||concentrating} on a spell). Any equipment Xardorok wears or carries is {@condition invisible} with him."
 					]
 				}
 			],

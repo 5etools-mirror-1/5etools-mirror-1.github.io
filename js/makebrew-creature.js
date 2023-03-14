@@ -612,30 +612,42 @@ class CreatureBuilder extends Builder {
 		const initial = this._state.type;
 		const initialSwarm = !!initial.swarmSize;
 
-		const setStateCreature = () => {
-			if (tagRows.length) {
-				const validTags = tagRows.map($tr => {
+		const setState = () => {
+			const types = chooseTypeRows
+				.map(rowMeta => rowMeta.$selType.val());
+
+			const isSwarm = $selMode.val() === "1";
+
+			const validTags = tagRows
+				.map($tr => {
 					const prefix = $tr.$iptPrefix.val().trim();
 					const tag = $tr.$iptTag.val().trim();
 					if (!tag) return null;
 					if (prefix) return {tag, prefix};
 					return tag;
-				}).filter(Boolean);
-				if (validTags.length) {
-					this._state.type = {
-						type: $selType.val(),
-						tags: validTags,
-					};
-				} else this._state.type = $selType.val();
-			} else this._state.type = $selType.val();
-			cb();
-		};
+				})
+				.filter(Boolean);
 
-		const setStateSwarm = () => {
-			this._state.type = {
-				type: $selType.val(),
-				swarmSize: $selSwarmSize.val(),
+			const note = $iptNote.val().trim();
+
+			if (types.length === 1 && !isSwarm && !validTags.length && !note) {
+				this._state.type = types[0];
+				cb();
+				return;
+			}
+
+			const out = {
+				type: types.length === 1
+					? types[0]
+					: {choose: types},
 			};
+
+			if (isSwarm) out.swarmSize = $selSwarmSize.val();
+			if (validTags.length) out.tags = validTags;
+			if (note) out.note = note;
+
+			this._state.type = out;
+
 			cb();
 		};
 
@@ -645,46 +657,57 @@ class CreatureBuilder extends Builder {
 		</select>`).val(initialSwarm ? "1" : "0").change(() => {
 			switch ($selMode.val()) {
 				case "0": {
-					$stageType.showVe(); $stageSwarm.hideVe();
-					setStateCreature();
+					$stageSwarm.hideVe();
+					setState();
 					break;
 				}
 				case "1": {
-					$stageType.hideVe(); $stageSwarm.showVe();
-					setStateSwarm();
+					$stageSwarm.showVe();
+					setState();
 					break;
 				}
 			}
 		}).appendTo($rowInner);
 
-		const $selType = $(`<select class="form-control input-xs">${Parser.MON_TYPES.map(tp => `<option value="${tp}">${tp.uppercaseFirst()}</option>`).join("")}</select>`)
-			.change(() => {
-				switch ($selMode.val()) {
-					case "0": setStateCreature(); break;
-					case "1": setStateSwarm(); break;
-				}
-			})
-			.appendTo($rowInner)
-			.val(initial.type || initial);
+		// region CHOOSE-FROM TYPE CONTROLS
+		const chooseTypeRows = [];
 
-		// TAG CONTROLS
+		const $btnAddChooseType = $(`<button class="btn btn-xs btn-default">Add Type</button>`)
+			.click(() => {
+				const $typeRow = this.__$getTypeInput__getChooseTypeRow(null, chooseTypeRows, setState);
+				$wrpChooseTypeRows.append($typeRow.$wrp);
+			});
+
+		const $initialChooseTypeRows = initial.type?.choose
+			? initial.type.choose.map(type => this.__$getTypeInput__getChooseTypeRow(type, chooseTypeRows, setState))
+			: [this.__$getTypeInput__getChooseTypeRow(initial.type || initial, chooseTypeRows, setState)];
+
+		const $wrpChooseTypeRows = $$`<div>${$initialChooseTypeRows.map(it => it.$wrp)}</div>`;
+		const $stageType = $$`<div class="mt-2">
+		${$wrpChooseTypeRows}
+		<div>${$btnAddChooseType}</div>
+		</div>`.appendTo($rowInner);
+		// endregion
+
+		// region TAG CONTROLS
 		const tagRows = [];
 
 		const $btnAddTag = $(`<button class="btn btn-xs btn-default">Add Tag</button>`)
 			.click(() => {
-				const $tagRow = this.__$getTypeInput__getTagRow(null, tagRows, setStateCreature);
+				const $tagRow = this.__$getTypeInput__getTagRow(null, tagRows, setState);
 				$wrpTagRows.append($tagRow.$wrp);
 			});
 
-		const $initialTagRows = initial.tags ? initial.tags.map(tag => this.__$getTypeInput__getTagRow(tag, tagRows, setStateCreature)) : null;
+		const $initialTagRows = initial.tags ? initial.tags.map(tag => this.__$getTypeInput__getTagRow(tag, tagRows, setState)) : null;
 
 		const $wrpTagRows = $$`<div>${$initialTagRows ? $initialTagRows.map(it => it.$wrp) : ""}</div>`;
-		const $stageType = $$`<div class="mt-2">
+		const $stageTags = $$`<div class="mt-2">
 		${$wrpTagRows}
 		<div>${$btnAddTag}</div>
-		</div>`.appendTo($rowInner).toggleVe(!initialSwarm);
+		</div>`.appendTo($rowInner);
+		// endregion
 
-		// SWARM CONTROLS
+		// region SWARM CONTROLS
 		const $selSwarmSize = $(`<select class="form-control input-xs mt-2">${Parser.SIZE_ABVS.map(sz => `<option value="${sz}">${Parser.sizeAbvToFull(sz)}</option>`).join("")}</select>`)
 			.change(() => {
 				this._state.type.swarmSize = $selSwarmSize.val();
@@ -694,22 +717,53 @@ class CreatureBuilder extends Builder {
 		${$selSwarmSize}
 		</div>`.appendTo($rowInner).toggleVe(initialSwarm);
 		initialSwarm && $selSwarmSize.val(initial.swarmSize);
+		// endregion
+
+		// region NOTE CONTROLS
+		const $iptNote = $(`<input class="form-control input-xs form-control--minimal mr-2" placeholder="Note">`)
+			.val(initial.note || "")
+			.change(() => {
+				setState();
+			});
+		$$`<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">Type Note</span>${$iptNote}</div>`
+			.appendTo($rowInner);
+		// endregion
 
 		return $row;
 	}
 
-	__$getTypeInput__getTagRow (tag, tagRows, setStateCreature) {
+	__$getTypeInput__getChooseTypeRow (type, chooseTypeRows, setState) {
+		const $selType = $(`<select class="form-control input-xs">${Parser.MON_TYPES.map(tp => `<option value="${tp}">${tp.uppercaseFirst()}</option>`).join("")}</select>`)
+			.change(() => {
+				setState();
+			})
+			.val(type);
+
+		const $btnRemove = $(`<button class="btn btn-xs btn-danger" title="Remove Row"><span class="glyphicon glyphicon-trash"/></button>`)
+			.click(() => {
+				chooseTypeRows.splice(chooseTypeRows.indexOf(out), 1);
+				$wrp.empty().remove();
+				setState();
+			});
+
+		const $wrp = $$`<div class="ve-flex mb-2">${$selType}${$btnRemove}</div>`;
+		const out = {$wrp, $selType};
+		chooseTypeRows.push(out);
+		return out;
+	}
+
+	__$getTypeInput__getTagRow (tag, tagRows, setState) {
 		const $iptPrefix = $(`<input class="form-control input-xs form-control--minimal mr-2" placeholder="Prefix">`)
 			.change(() => {
 				$iptTag.removeClass("form-control--error");
-				if ($iptTag.val().trim().length || !$iptPrefix.val().trim().length) setStateCreature();
+				if ($iptTag.val().trim().length || !$iptPrefix.val().trim().length) setState();
 				else $iptTag.addClass("form-control--error");
 			});
 		if (tag && tag.prefix) $iptPrefix.val(tag.prefix);
 		const $iptTag = $(`<input class="form-control input-xs form-control--minimal mr-2" placeholder="Tag (lowercase)">`)
 			.change(() => {
 				$iptTag.removeClass("form-control--error");
-				setStateCreature();
+				setState();
 			});
 		if (tag) $iptTag.val(tag.tag || tag);
 		const $btnAddGeneric = $(`<button class="btn btn-xs btn-default mr-2">Add Tag...</button>`)
@@ -721,14 +775,14 @@ class CreatureBuilder extends Builder {
 
 				if (tag != null) {
 					$iptTag.val(tag);
-					setStateCreature();
+					setState();
 				}
 			});
 		const $btnRemove = $(`<button class="btn btn-xs btn-danger" title="Remove Row"><span class="glyphicon glyphicon-trash"/></button>`)
 			.click(() => {
 				tagRows.splice(tagRows.indexOf(out), 1);
 				$wrp.empty().remove();
-				setStateCreature();
+				setState();
 			});
 		const $wrp = $$`<div class="ve-flex mb-2">${$iptPrefix}${$iptTag}${$btnAddGeneric}${$btnRemove}</div>`;
 		const out = {$wrp, $iptPrefix, $iptTag};

@@ -3073,7 +3073,7 @@
 				"amount": 5
 			},
 			"entries": [
-				"Beginning at 18th level, you can channel the dread presence of your dragon ancestor, causing those around you to become awestruck or {@condition frightened}. As an action, you can spend 5 sorcery points to draw on this power and exude an aura of awe or fear (your choice) to a distance of 60 feet. For 1 minute or until you lose your concentration (as if you were casting a concentration spell), each hostile creature that starts its turn in this aura must succeed on a Wisdom saving throw or be {@condition charmed} (if you chose awe) or {@condition frightened} (if you chose fear) until the aura ends. A creature that succeeds on this saving throw is immune to your aura for 24 hours."
+				"Beginning at 18th level, you can channel the dread presence of your dragon ancestor, causing those around you to become awestruck or {@condition frightened}. As an action, you can spend 5 sorcery points to draw on this power and exude an aura of awe or fear (your choice) to a distance of 60 feet. For 1 minute or until you lose your {@status concentration} (as if you were casting a {@status concentration} spell), each hostile creature that starts its turn in this aura must succeed on a Wisdom saving throw or be {@condition charmed} (if you chose awe) or {@condition frightened} (if you chose fear) until the aura ends. A creature that succeeds on this saving throw is immune to your aura for 24 hours."
 			]
 		},
 		{
@@ -3124,7 +3124,7 @@
 			"header": 1,
 			"entries": [
 				"Starting when you choose this origin at 1st level, your spellcasting can unleash surges of untamed magic. Immediately after you cast a sorcerer spell of 1st level or higher, the DM can have you roll a {@dice d20}. If you roll a 1, roll on the Wild Magic Surge table to create a random magical effect. A Wild Magic Surge can happen once per turn.",
-				"If a Wild Magic effect is a spell, it's too wild to be affected by Metamagic. If it normally requires concentration, it doesn't require concentration in this case; the spell lasts for its full duration.",
+				"If a Wild Magic effect is a spell, it's too wild to be affected by Metamagic. If it normally requires {@status concentration}, it doesn't require {@status concentration} in this case; the spell lasts for its full duration.",
 				{
 					"type": "table",
 					"caption": "Wild Magic Surge",

@@ -13,7 +13,7 @@
 				{
 					"type": "list",
 					"items": [
-						"The aboleth casts {@spell phantasmal force} (no components required) on any number of creatures it can see within 60 feet of it. While maintaining concentration on this effect, the aboleth can't take other lair actions. If a target succeeds on the saving throw or if the effect ends for it, the target is immune to the aboleth's phantasmal force lair action for the next 24 hours, although such a creature can choose to be affected.",
+						"The aboleth casts {@spell phantasmal force} (no components required) on any number of creatures it can see within 60 feet of it. While maintaining {@status concentration} on this effect, the aboleth can't take other lair actions. If a target succeeds on the saving throw or if the effect ends for it, the target is immune to the aboleth's phantasmal force lair action for the next 24 hours, although such a creature can choose to be affected.",
 						"Pools of water within 90 feet of the aboleth surge outward in a grasping tide. Any creature on the ground within 20 feet of such a pool must succeed on a {@dc 14} Strength saving throw or be pulled up to 20 feet into the water and knocked {@condition prone}. The aboleth can't use this lair action again until it has used a different one.",
 						"Water in the aboleth's lair magically becomes a conduit for the creature's rage. The aboleth can target any number of creatures it can see in such water within 90 feet of it. A target must succeed on a {@dc 14} Wisdom saving throw or take 7 ({@damage 2d6}) psychic damage. The aboleth can't use this lair action again until it has used a different one."
 					]
@@ -26,7 +26,7 @@
 					"items": [
 						"Underground surfaces within 1 mile of the aboleth's lair are slimy and wet and are {@quickref difficult terrain||3}.",
 						"Water sources within 1 mile of the lair are supernaturally fouled. Enemies of the aboleth that drink such water vomit it within minutes.",
-						"As an action, the aboleth can create an illusory image of itself within 1 mile of the lair. The copy can appear at any location the aboleth has seen before or in any location a creature {@condition charmed} by the aboleth can currently see. Once created, the image lasts for as long as the aboleth maintains concentration, as if concentrating on a spell. Although the image is intangible, it looks, sounds, and can move like the aboleth. The aboleth can sense, speak, and use telepathy from the image's position as if present at that position. If the image takes any damage, it disappears."
+						"As an action, the aboleth can create an illusory image of itself within 1 mile of the lair. The copy can appear at any location the aboleth has seen before or in any location a creature {@condition charmed} by the aboleth can currently see. Once created, the image lasts for as long as the aboleth maintains {@status concentration}, as if {@status concentration||concentrating} on a spell. Although the image is intangible, it looks, sounds, and can move like the aboleth. The aboleth can sense, speak, and use telepathy from the image's position as if present at that position. If the image takes any damage, it disappears."
 					]
 				},
 				"If the aboleth dies, the first two effects fade over the course of {@dice 3d10} days."
@@ -36,7 +36,7 @@
 			"name": "Aerisi Kalinoth",
 			"source": "PotA",
 			"lairActions": [
-				"If Aerisi is in the air node while {@creature Yan-C-Bin|PotA} isn't, Aerisi can take lair actions. On initiative count 20 (losing initiative ties), Aerisi uses a lair action to cast one of her spells, up to 3rd level, without using components or a spell slot. She can't cast the same spell two rounds in a row, although she can continue to concentrate on a spell she previously cast using a lair action. Aerisi can take no other lair actions while concentrating on a spell cast as a lair action.",
+				"If Aerisi is in the air node while {@creature Yan-C-Bin|PotA} isn't, Aerisi can take lair actions. On initiative count 20 (losing initiative ties), Aerisi uses a lair action to cast one of her spells, up to 3rd level, without using components or a spell slot. She can't cast the same spell two rounds in a row, although she can continue to concentrate on a spell she previously cast using a lair action. Aerisi can take no other lair actions while {@status concentration||concentrating} on a spell cast as a lair action.",
 				"If Aerisi casts {@spell invisibility} using this lair action, she also draws the power of the air node into herself. By doing so, she regains 15 ({@dice 3d8 + 2}) hit points."
 			]
 		},
@@ -985,7 +985,7 @@
 					"items": [
 						"Magic carvings of the dragon's smiling visage can be seen worked into stone terrain and objects within 6 miles of the dragon's lair.",
 						"Tiny beasts such as rodents and birds that are normally unable to speak gain the magical ability to speak and understand Draconic while within 1 mile of the dragon's lair. These creatures speak well of the dragon, but can't divulge its whereabouts.",
-						"Intelligent creatures within 1 mile of the dragon's lair are {@condition prone} to fits of giggling. Even serious matters suddenly seem amusing."
+						"Intelligent creatures within 1 mile of the dragon's lair are prone to fits of giggling. Even serious matters suddenly seem amusing."
 					]
 				},
 				"If the dragon dies, the magic carvings fade over the course of {@dice 1d10} days. The other effects end immediately.",
@@ -1781,7 +1781,7 @@
 								],
 								[
 									"81\u201300",
-									"\"My perception of reality doesn't match anyone else's. It makes me {@condition prone} to violent delusions that make no sense to anyone else.\""
+									"\"My perception of reality doesn't match anyone else's. It makes me prone to violent delusions that make no sense to anyone else.\""
 								]
 							]
 						}
@@ -1799,7 +1799,7 @@
 					"type": "list",
 					"items": [
 						"Gar may teleport anywhere within the coral mountain, bringing up to five willing creatures with him.",
-						"The coral in a 60-foot radius grows rapidly around creatures inside the coral mountain. Each creature must succeed on a {@dc 18} Strength saving throw or become {@condition restrained}. Restrained creatures can take an action on their turn to make a {@dc 18} Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check to free themselves. This effect lasts for 1 minute unless dispelled (it counts as a 6th level spell), and doesn't require Gar to maintain concentration. Gar Shatterkeel and any creatures he designates are immune to this effect.",
+						"The coral in a 60-foot radius grows rapidly around creatures inside the coral mountain. Each creature must succeed on a {@dc 18} Strength saving throw or become {@condition restrained}. Restrained creatures can take an action on their turn to make a {@dc 18} Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check to free themselves. This effect lasts for 1 minute unless dispelled (it counts as a 6th level spell), and doesn't require Gar to maintain {@status concentration}. Gar Shatterkeel and any creatures he designates are immune to this effect.",
 						"Up to five corpses that Gar can see within 60 feet rise up as {@creature drowned blade|GoS|drowned blades} and attack anyone Gar directs them to on his turn."
 					]
 				}
@@ -1809,7 +1809,7 @@
 			"name": "Gar Shatterkeel",
 			"source": "PotA",
 			"lairActions": [
-				"If Gar is in the water node while {@creature Olhydra|PotA} isn't, he can take lair actions. On initiative count 20 (losing initiative ties), Gar uses a lair action to use his Multiattack or cast one of his spells, up to 3rd level, without using components or a spell slot. He can't cast the same spell two rounds in a row, but he can continue to concentrate on a spell he previously cast using a lair action. He can take no other lair actions while concentrating on a spell cast as a lair action. His favorite use of this capability is casting {@spell inflict wounds} or {@spell call lightning}.",
+				"If Gar is in the water node while {@creature Olhydra|PotA} isn't, he can take lair actions. On initiative count 20 (losing initiative ties), Gar uses a lair action to use his Multiattack or cast one of his spells, up to 3rd level, without using components or a spell slot. He can't cast the same spell two rounds in a row, but he can continue to concentrate on a spell he previously cast using a lair action. He can take no other lair actions while {@status concentration||concentrating} on a spell cast as a lair action. His favorite use of this capability is casting {@spell inflict wounds} or {@spell call lightning}.",
 				"If Gar casts {@spell cure wounds} using this lair action, he regains the maximum number of hit points from the spell (28)."
 			]
 		},
@@ -1918,7 +1918,7 @@
 							"name": "Create Object",
 							"type": "item",
 							"entries": [
-								"The anarch casts the creation spell (as a 9th-level spell) using the unformed substance of Limbo instead of shadow material. If used in Limbo, the object remains until the anarch's concentration is broken, regardless of its composition. If the anarch moves more than 120 feet from the object, the anarch's concentration breaks."
+								"The anarch casts the creation spell (as a 9th-level spell) using the unformed substance of Limbo instead of shadow material. If used in Limbo, the object remains until the anarch's {@status concentration} is broken, regardless of its composition. If the anarch moves more than 120 feet from the object, the anarch's {@status concentration} breaks."
 							]
 						},
 						{
@@ -1972,7 +1972,7 @@
 					"type": "list",
 					"items": [
 						"The anarch casts the {@spell lightning bolt} spell (at 5th level), but the anarch can change the damage type from lightning to cold, fire, psychic, radiant, or thunder. If the spell deals damage other than fire or lightning, it doesn't ignite flammable objects.",
-						"The anarch casts the {@spell creation} spell (as a 9th-level spell) using the unformed substance of Limbo instead of shadow material. If used in Limbo, the object remains until the anarch's concentration is broken, regardless of its composition. If the anarch moves more than 120 feet from the object, its concentration breaks.",
+						"The anarch casts the {@spell creation} spell (as a 9th-level spell) using the unformed substance of Limbo instead of shadow material. If used in Limbo, the object remains until the anarch's {@status concentration} is broken, regardless of its composition. If the anarch moves more than 120 feet from the object, its {@status concentration} breaks.",
 						"The anarch can magically move an object it can see within 150 feet of it by making a Wisdom check with advantage. The DC depends on the object's size: {@dc 5} for Tiny, {@dc 10} for Small, {@dc 15} for Medium, {@dc 20} for Large, and {@dc 25} for Huge or larger."
 					]
 				}
@@ -2735,8 +2735,8 @@
 				{
 					"type": "list",
 					"items": [
-						"Kyrilla casts {@spell moonbeam} (no components required). While maintaining concentration on this effect, she can't take other lair actions.",
-						"Kyrilla casts {@spell cloud of daggers} (no components required), except the daggers are flying snakes and the spell deals piercing damage. While maintaining concentration on this effect, she can't take other lair actions.",
+						"Kyrilla casts {@spell moonbeam} (no components required). While maintaining {@status concentration} on this effect, she can't take other lair actions.",
+						"Kyrilla casts {@spell cloud of daggers} (no components required), except the daggers are flying snakes and the spell deals piercing damage. While maintaining {@status concentration} on this effect, she can't take other lair actions.",
 						"Pools of liquid within 60 feet of Kyrilla surge and froth, splashing and soaking any creature on the ground within 5 feet of such pools. Creatures that succeed on a DC 14 Dexterity saving throw avoid getting liquid in their eyes and mouths. Kyrilla can't use this lair action again until she has used a different one."
 					]
 				}
@@ -2787,7 +2787,7 @@
 			"name": "Marlos Urnrayle",
 			"source": "PotA",
 			"lairActions": [
-				"If Marlos is in the earth node while {@creature Ogrémoch|PotA} isn't, the medusa can take lair actions. On initiative count 20 (losing initiative ties), Marlos uses a lair action to cast {@spell earthquake} without using components. As long as he maintains concentration on {@spell earthquake}, initiative count 20 is the start of Marlos's turn for the purpose of the spell. He can take no other lair actions while concentrating on {@spell earthquake}.",
+				"If Marlos is in the earth node while {@creature Ogrémoch|PotA} isn't, the medusa can take lair actions. On initiative count 20 (losing initiative ties), Marlos uses a lair action to cast {@spell earthquake} without using components. As long as he maintains {@status concentration} on {@spell earthquake}, initiative count 20 is the start of Marlos's turn for the purpose of the spell. He can take no other lair actions while {@status concentration||concentrating} on {@spell earthquake}.",
 				"Marlos's second option for a lair action is to draw power from the earth node to heal. When he does so, he regains 30 ({@dice 6d8 + 3}) hit points."
 			]
 		},
@@ -2799,7 +2799,7 @@
 				{
 					"type": "list",
 					"items": [
-						"Mephistopheles casts any spell from his wizard list and if it normally requires concentration, it lasts for the full duration instead.",
+						"Mephistopheles casts any spell from his wizard list and if it normally requires {@status concentration}, it lasts for the full duration instead.",
 						"Mephistopheles covers a 5-foot area with Hellfire. Any creature that starts their turn on that area suffers 27 ({@damage 6d8}) fire damage. The Hellfire remains until Mephistopheles dismisses it or he uses this ability again."
 					]
 				}
@@ -3994,7 +3994,7 @@
 			"name": "Vanifer",
 			"source": "PotA",
 			"lairActions": [
-				"If Vanifer is in the fire node while {@creature Imix|PotA} isn't, the tiefling can take lair actions. On initiative count 20 (losing initiative ties), Vanifer uses a lair action to cast one of her spells, up to 3rd level, without using components or a spell slot. She can't cast the same spell two rounds in a row, although she can continue to concentrate on a spell she previously cast using a lair action. Vanifer can take no other lair actions while concentrating on a spell cast as a lair action. Her favorite use of this capability is casting {@spell fireball} or {@spell hypnotic pattern}.",
+				"If Vanifer is in the fire node while {@creature Imix|PotA} isn't, the tiefling can take lair actions. On initiative count 20 (losing initiative ties), Vanifer uses a lair action to cast one of her spells, up to 3rd level, without using components or a spell slot. She can't cast the same spell two rounds in a row, although she can continue to concentrate on a spell she previously cast using a lair action. Vanifer can take no other lair actions while {@status concentration||concentrating} on a spell cast as a lair action. Her favorite use of this capability is casting {@spell fireball} or {@spell hypnotic pattern}.",
 				"If Vanifer casts {@spell misty step} using this lair action, she also draws the power of the fire node into herself. By doing so, she regains 15 ({@dice 3d8 + 2}) hit points."
 			]
 		},

@@ -654,14 +654,41 @@ UiUtil.TYPE_TIMEOUT_MS = 100; // auto-search after 100ms
 UiUtil._MODAL_STACK = null;
 UiUtil._MODAL_LAST_MOUSEDOWN = null;
 
-class ListUiUtil {
+class ListSelectClickHandlerBase {
 	static _EVT_PASS_THOUGH_TAGS = new Set(["A", "BUTTON"]);
+
+	constructor () {
+		this._firstSelection = null;
+		this._lastSelection = null;
+
+		this._selectionInitialValue = null;
+	}
+
+	/**
+	 * @abstract
+	 * @return {Array}
+	 */
+	get _visibleItems () { throw new Error("Unimplemented!"); }
+
+	/**
+	 * @abstract
+	 * @return {Array}
+	 */
+	get _allItems () { throw new Error("Unimplemented!"); }
+
+	/** @abstract */
+	_getCb (item, opts) { throw new Error("Unimplemented!"); }
+
+	/** @abstract */
+	_setCheckbox (item, opts) { throw new Error("Unimplemented!"); }
+
+	/** @abstract */
+	_setHighlighted (item, opts) { throw new Error("Unimplemented!"); }
 
 	/**
 	 * (Public method for Plutonium use)
 	 * Handle doing a checkbox-based selection toggle on a list.
-	 * @param list
-	 * @param item List item. Must have a "data" property with a "cbSel" (the checkbox).
+	 * @param item List item.
 	 * @param evt Click event.
 	 * @param [opts] Options object.
 	 * @param [opts.isNoHighlightSelection] If highlighting selected rows should be skipped.
@@ -669,13 +696,13 @@ class ListUiUtil {
 	 * @param [opts.fnGetCb] Function which gets the checkbox from a list item.
 	 * @param [opts.isPassThroughEvents] If e.g. click events to links/buttons in the list item should be allowed/ignored.
 	 */
-	static handleSelectClick (list, item, evt, opts) {
+	handleSelectClick (item, evt, opts) {
 		opts = opts || {};
 
 		if (opts.isPassThroughEvents) {
 			const evtPath = evt.composedPath();
 			const subEles = evtPath.slice(0, evtPath.indexOf(evt.currentTarget));
-			if (subEles.some(ele => ListUiUtil._EVT_PASS_THOUGH_TAGS.has(ele?.tagName))) return;
+			if (subEles.some(ele => this.constructor._EVT_PASS_THOUGH_TAGS.has(ele?.tagName))) return;
 		}
 
 		evt.preventDefault();
@@ -684,56 +711,58 @@ class ListUiUtil {
 		const cb = this._getCb(item, opts);
 		if (cb.disabled) return true;
 
-		if (evt && evt.shiftKey && list.__firstListSelection) {
-			if (list.__lastListSelection === item) {
+		if (evt && evt.shiftKey && this._firstSelection) {
+			if (this._lastSelection === item) {
 				// on double-tapping the end of the selection, toggle it on/off
 
-				this.setCheckbox(item, {...opts, toVal: !cb.checked});
-			} else if (list.__firstListSelection === item && list.__lastListSelection) {
+				this._setCheckbox(item, {...opts, toVal: !cb.checked});
+			} else if (this._firstSelection === item && this._lastSelection) {
 				// If the item matches the last clicked, clear all checkboxes from our last selection
 
-				const ix1 = list.visibleItems.indexOf(list.__firstListSelection);
-				const ix2 = list.visibleItems.indexOf(list.__lastListSelection);
+				const ix1 = this._visibleItems.indexOf(this._firstSelection);
+				const ix2 = this._visibleItems.indexOf(this._lastSelection);
 
 				const [ixStart, ixEnd] = [ix1, ix2].sort(SortUtil.ascSort);
 				for (let i = ixStart; i <= ixEnd; ++i) {
-					const it = list.visibleItems[i];
-					this.setCheckbox(it, {...opts, toVal: false});
+					const it = this._visibleItems[i];
+					this._setCheckbox(it, {...opts, toVal: false});
 				}
 
-				this.setCheckbox(item, opts);
+				this._setCheckbox(item, opts);
 			} else {
-				// on a shift-click, toggle all the checkboxes to true...
+				// on a shift-click, toggle all the checkboxes to the value of the initial item...
+				this._selectionInitialValue = this._getCb(this._firstSelection, opts).checked;
 
-				const ix1 = list.visibleItems.indexOf(list.__firstListSelection);
-				const ix2 = list.visibleItems.indexOf(item);
-				const ix2Prev = list.__lastListSelection ? list.visibleItems.indexOf(list.__lastListSelection) : null;
+				const ix1 = this._visibleItems.indexOf(this._firstSelection);
+				const ix2 = this._visibleItems.indexOf(item);
+				const ix2Prev = this._lastSelection ? this._visibleItems.indexOf(this._lastSelection) : null;
 
 				const [ixStart, ixEnd] = [ix1, ix2].sort(SortUtil.ascSort);
+				const nxtOpts = {...opts, toVal: this._selectionInitialValue};
 				for (let i = ixStart; i <= ixEnd; ++i) {
-					const it = list.visibleItems[i];
-					this.setCheckbox(it, opts);
+					const it = this._visibleItems[i];
+					this._setCheckbox(it, nxtOpts);
 				}
 
-				// ...except those between the last selection and this selection, set those to false
-				if (ix2Prev != null) {
+				// ...except when selecting; for those between the last selection and this selection, those to unchecked
+				if (this._selectionInitialValue && ix2Prev != null) {
 					if (ix2Prev > ixEnd) {
-						const nxtOpts = {...opts, toVal: false};
+						const nxtOpts = {...opts, toVal: !this._selectionInitialValue};
 						for (let i = ixEnd + 1; i <= ix2Prev; ++i) {
-							const it = list.visibleItems[i];
-							this.setCheckbox(it, nxtOpts);
+							const it = this._visibleItems[i];
+							this._setCheckbox(it, nxtOpts);
 						}
 					} else if (ix2Prev < ixStart) {
-						const nxtOpts = {...opts, toVal: false};
+						const nxtOpts = {...opts, toVal: !this._selectionInitialValue};
 						for (let i = ix2Prev; i < ixStart; ++i) {
-							const it = list.visibleItems[i];
-							this.setCheckbox(it, nxtOpts);
+							const it = this._visibleItems[i];
+							this._setCheckbox(it, nxtOpts);
 						}
 					}
 				}
 			}
 
-			list.__lastListSelection = item;
+			this._lastSelection = item;
 		} else {
 			// on a normal click, or if there's been no initial selection, just toggle the checkbox
 
@@ -744,47 +773,70 @@ class ListUiUtil {
 				if (opts.fnOnSelectionChange) opts.fnOnSelectionChange(item, cbMaster.checked);
 
 				if (!opts.isNoHighlightSelection) {
-					if (cbMaster.checked) item.ele instanceof $ ? item.ele.addClass("list-multi-selected") : item.ele.classList.add("list-multi-selected");
-					else item.ele instanceof $ ? item.ele.removeClass("list-multi-selected") : item.ele.classList.remove("list-multi-selected");
+					this._setHighlighted(item, cbMaster.checked);
 				}
 			} else {
 				if (!opts.isNoHighlightSelection) {
-					item.ele instanceof $ ? item.ele.removeClass("list-multi-selected") : item.ele.classList.remove("list-multi-selected");
+					this._setHighlighted(item, false);
 				}
 			}
 
-			list.__firstListSelection = item;
-			list.__lastListSelection = null;
+			this._firstSelection = item;
+			this._lastSelection = null;
+			this._selectionInitialValue = null;
 		}
 	}
 
 	/**
 	 * Handle doing a radio-based selection toggle on a list.
-	 * @param list
-	 * @param item List item. Must have a "data" property with a "cbSel" (the radio input).
+	 * @param item List item.
 	 * @param evt Click event.
 	 */
-	static handleSelectClickRadio (list, item, evt) {
+	handleSelectClickRadio (item, evt) {
 		evt.preventDefault();
 		evt.stopPropagation();
 
-		list.items.forEach(it => {
-			if (it === item) {
+		this._allItems.forEach(itemOther => {
+			const cb = this._getCb(itemOther);
+
+			if (itemOther === item) {
 				// Setting this to true *should* cause the browser to update the rest for us, but since list items can
 				//   be filtered/hidden, the browser won't necessarily update them all. Therefore, forcibly set
 				//   `checked = false` below.
-				it.data.cbSel.checked = true;
-				it.ele.classList.add("list-multi-selected");
+				cb.checked = true;
+				this._setHighlighted(itemOther, true);
 			} else {
-				it.data.cbSel.checked = false;
-				it.ele.classList.remove("list-multi-selected");
+				cb.checked = false;
+				this._setHighlighted(itemOther, false);
 			}
 		});
 	}
+}
 
-	static _getCb (item, opts) { return opts.fnGetCb ? opts.fnGetCb(item) : item.data.cbSel; }
+globalThis.ListSelectClickHandlerBase = ListSelectClickHandlerBase;
 
-	static setCheckbox (item, {fnGetCb, fnOnSelectionChange, isNoHighlightSelection, toVal = true} = {}) {
+class ListSelectClickHandler extends ListSelectClickHandlerBase {
+	constructor ({list}) {
+		super();
+		this._list = list;
+	}
+
+	get _visibleItems () { return this._list.visibleItems; }
+
+	get _allItems () { return this._list.items; }
+
+	_getCb (item, opts = {}) { return opts.fnGetCb ? opts.fnGetCb(item) : item.data.cbSel; }
+
+	_setCheckbox (item, opts = {}) { return this.setCheckbox(item, opts); }
+
+	_setHighlighted (item, isHighlighted) {
+		if (isHighlighted) item.ele instanceof $ ? item.ele.addClass("list-multi-selected") : item.ele.classList.add("list-multi-selected");
+		else item.ele instanceof $ ? item.ele.removeClass("list-multi-selected") : item.ele.classList.remove("list-multi-selected");
+	}
+
+	/* -------------------------------------------- */
+
+	setCheckbox (item, {fnGetCb, fnOnSelectionChange, isNoHighlightSelection, toVal = true} = {}) {
 		const cbSlave = this._getCb(item, {fnGetCb, fnOnSelectionChange, isNoHighlightSelection});
 		if (cbSlave) {
 			cbSlave.checked = toVal;
@@ -793,29 +845,31 @@ class ListUiUtil {
 
 		if (isNoHighlightSelection) return;
 
-		if (toVal) item.ele instanceof $ ? item.ele.addClass("list-multi-selected") : item.ele.classList.add("list-multi-selected");
-		else item.ele instanceof $ ? item.ele.removeClass("list-multi-selected") : item.ele.classList.remove("list-multi-selected");
+		this._setHighlighted(item, toVal);
 	}
 
 	/**
 	 * (Public method for Plutonium use)
 	 */
-	static bindSelectAllCheckbox ($cbAll, list) {
+	bindSelectAllCheckbox ($cbAll) {
 		$cbAll.change(() => {
 			const isChecked = $cbAll.prop("checked");
-			this.setCheckboxes({isChecked, list});
+			this.setCheckboxes({isChecked});
 		});
 	}
 
-	static setCheckboxes ({isChecked, isIncludeHidden, list}) {
-		(isIncludeHidden ? list.items : list.visibleItems).forEach(item => {
+	setCheckboxes ({isChecked, isIncludeHidden}) {
+		(isIncludeHidden ? this._list.items : this._list.visibleItems).forEach(item => {
 			if (item.data.cbSel) item.data.cbSel.checked = isChecked;
 
-			if (isChecked) item.ele instanceof $ ? item.ele.addClass("list-multi-selected") : item.ele.classList.add("list-multi-selected");
-			else item.ele instanceof $ ? item.ele.removeClass("list-multi-selected") : item.ele.classList.remove("list-multi-selected");
+			this._setHighlighted(item, isChecked);
 		});
 	}
+}
 
+globalThis.ListSelectClickHandler = ListSelectClickHandler;
+
+class ListUiUtil {
 	static bindPreviewButton (page, allData, item, btnShowHidePreview, {$fnGetPreviewStats} = {}) {
 		btnShowHidePreview.addEventListener("click", evt => {
 			const entity = allData[item.ix];
@@ -964,10 +1018,14 @@ class ListUiUtil {
 			return this._getSearchCache_entries(entity);
 		}
 
+		static _INDEXABLE_PROPS_ENTRIES = [
+			"entries",
+		];
+
 		_getSearchCache_entries (entity) {
-			if (!entity.entries) return "";
+			if (this.constructor._INDEXABLE_PROPS_ENTRIES.every(it => !entity[it])) return "";
 			const ptrOut = {_: ""};
-			this._getSearchCache_handleEntryProp(entity, "entries", ptrOut);
+			this.constructor._INDEXABLE_PROPS_ENTRIES.forEach(it => this._getSearchCache_handleEntryProp(entity, it, ptrOut));
 			return ptrOut._;
 		}
 
@@ -1474,7 +1532,6 @@ SearchUiUtil.NO_HOVER_CATEGORIES = new Set([
 	Parser.CAT_ID_BOOK,
 	Parser.CAT_ID_QUICKREF,
 	Parser.CAT_ID_PAGE,
-	Parser.CAT_ID_LEGENDARY_GROUP,
 ]);
 
 // based on DM screen's AddMenuSearchTab
@@ -1562,7 +1619,7 @@ class SearchWidget {
 		});
 	}
 
-	static bindRowHandlers ({result, $row, $ptrRows, fnHandleClick}) {
+	static bindRowHandlers ({result, $row, $ptrRows, fnHandleClick, $iptSearch}) {
 		return $row
 			.keydown(evt => {
 				switch (evt.which) {
@@ -1574,7 +1631,7 @@ class SearchWidget {
 						const ixRow = $ptrRows._.indexOf($row);
 						const $prev = $ptrRows._[ixRow - 1];
 						if ($prev) $prev.focus();
-						else $ptrRows.focus();
+						else $iptSearch.focus();
 						break;
 					}
 					case 40: { // down
@@ -1747,7 +1804,7 @@ class SearchWidget {
 
 			res.forEach(r => {
 				const $row = this.__$getRow(r).appendTo(this._$wrpResults);
-				SearchWidget.bindRowHandlers({result: r, $row, $ptrRows: this._$ptrRows, fnHandleClick: handleClick});
+				SearchWidget.bindRowHandlers({result: r, $row, $ptrRows: this._$ptrRows, fnHandleClick: handleClick, $iptSearch: this._$iptSearch});
 				this._$ptrRows._.push($row);
 			});
 

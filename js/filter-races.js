@@ -113,6 +113,7 @@ class PageFilterRaces extends PageFilter {
 			header: "Miscellaneous",
 			items: ["Base Race", "Key Race", "Lineage", "Modified Copy", "Reprinted", "SRD", "Basic Rules", "Has Images", "Has Info"],
 			isMiscFilter: true,
+			// N.b. "Reprinted" is not red by default, as we assume tastes vary w.r.t. ability score style
 		});
 	}
 

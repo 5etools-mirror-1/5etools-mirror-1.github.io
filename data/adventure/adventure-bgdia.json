@@ -22930,66 +22930,16 @@
 					"entries": [
 						"Charms are supernatural gifts described in {@book chapter 7|DMG|7|Charms} of the {@book Dungeon Master's Guide|DMG}. Archdevils and their appointed vassals can bestow such gifts on mortals, usually to entice them into signing an infernal contract. This section describes several new charms that archdevils and their vassals can bestow.",
 						{
-							"type": "entries",
-							"name": "Charm of Agelessness",
-							"page": 215,
-							"id": "415",
-							"entries": [
-								"While you have this charm, you don't age naturally, and your skin gains the waxy complexion of a doll. Magical aging still affects you, however. This charm vanishes from you when you die."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Charm of Diabolical Inspiration",
-							"page": 215,
-							"id": "416",
-							"entries": [
-								"You grow a short, vestigial tail when you receive this charm unless you have a tail already. When you make an ability check, an attack roll, or a saving throw, you can use this charm to gain advantage on the roll. Once used nine times, the charm vanishes from you, as does your vestigial tail."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Charm of Greater Conscription",
-							"page": 215,
-							"id": "417",
-							"entries": [
-								"While you have this charm, you attract flies. As an action, you activate this charm to summon a {@creature horned devil}. This devil appears in an unoccupied space within 30 feet of you, obeys your commands begrudgingly, and serves you under protest for 9 days or until it dies, whereupon it disappears. When the devil disappears, this charm vanishes from you."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Charm of Hellish Rebuke",
-							"page": 215,
-							"id": "418",
-							"entries": [
-								"A fiery halo appears above your head when you receive this charm. This charm allows you to cast the {@spell hellish rebuke} spell (9th-level version) as a reaction. Once used nine times, the charm vanishes from you, as does the fiery halo."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Charm of Lesser Conscription",
-							"page": 215,
-							"id": "419",
-							"entries": [
-								"While you have this charm, you attract flies. As an action, you activate this charm to summon a {@creature barbed devil}, two {@creature Bearded Devil||bearded devils}, or three {@creature Spined Devil||spined devils}. All devils appear at once in unoccupied spaces within 30 feet of you. Each devil obeys your commands and serves you eagerly for 9 days or until it dies, whereupon the devil disappears. Once all devils summoned by this charm disappear, the charm vanishes from you."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Charm of Many Tongues",
-							"page": 215,
-							"id": "41a",
-							"entries": [
-								"You can speak and understand all languages, you gain proficiency in the {@skill Deception} and {@skill Persuasion} skills, and you can add double your normal proficiency bonus when using those skills. This charm vanishes from you when you die."
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Charm of the Adamant",
-							"page": 215,
-							"id": "41b",
-							"entries": [
-								"This charm has 9 charges. You can use an action to expend 1 charge from the charm to gain 30 temporary hit points. For the next hour, your eyes become voids of utter darkness, and you can't be {@condition charmed} or {@condition frightened}. Once all its charges have been expended, the charm vanishes from you."
+							"type": "list",
+							"columns": 3,
+							"items": [
+								"{@reward Charm of Agelessness|BGDIA}",
+								"{@reward Charm of Diabolical Inspiration|BGDIA}",
+								"{@reward Charm of Greater Conscription|BGDIA}",
+								"{@reward Charm of Hellish Rebuke|BGDIA}",
+								"{@reward Charm of Lesser Conscription|BGDIA}",
+								"{@reward Charm of Many Tongues|BGDIA}",
+								"{@reward Charm of the Adamant|BGDIA}"
 							]
 						}
 					]

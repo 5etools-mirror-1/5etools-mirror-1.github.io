@@ -1484,6 +1484,140 @@
 				"{@note These cards can be used to track initiative order; either physically with the {@book printed copies|ScreenDungeonKit|1}, or in a VTT.}"
 			],
 			"hasCardArt": true
+		},
+		{
+			"name": "Tarokka Deck",
+			"source": "CoS",
+			"page": 243,
+			"cards": [
+				"Artifact|Tarokka Deck|CoS",
+				"Beast|Tarokka Deck|CoS",
+				"Broken One|Tarokka Deck|CoS",
+				"Darklord|Tarokka Deck|CoS",
+				"Donjon|Tarokka Deck|CoS",
+				"Ghost|Tarokka Deck|CoS",
+				"Executioner|Tarokka Deck|CoS",
+				"Horseman|Tarokka Deck|CoS",
+				"Innocent|Tarokka Deck|CoS",
+				"Marionette|Tarokka Deck|CoS",
+				"Mists|Tarokka Deck|CoS",
+				"Raven|Tarokka Deck|CoS",
+				"Seer|Tarokka Deck|CoS",
+				"Tempter|Tarokka Deck|CoS",
+				"Warrior|Tarokka Deck|CoS",
+				"Avenger|Tarokka Deck|CoS",
+				"Paladin|Tarokka Deck|CoS",
+				"Soldier|Tarokka Deck|CoS",
+				"Mercenary|Tarokka Deck|CoS",
+				"Myrmidon|Tarokka Deck|CoS",
+				"Berserker|Tarokka Deck|CoS",
+				"Hooded One|Tarokka Deck|CoS",
+				"Dictator|Tarokka Deck|CoS",
+				"Torturer|Tarokka Deck|CoS",
+				"Wizard|Tarokka Deck|CoS",
+				"Transmuter|Tarokka Deck|CoS",
+				"Diviner|Tarokka Deck|CoS",
+				"Enchanter|Tarokka Deck|CoS",
+				"Abjurer|Tarokka Deck|CoS",
+				"Elementalist|Tarokka Deck|CoS",
+				"Evoker|Tarokka Deck|CoS",
+				"Illusionist|Tarokka Deck|CoS",
+				"Necromancer|Tarokka Deck|CoS",
+				"Conjurer|Tarokka Deck|CoS",
+				"Rogue|Tarokka Deck|CoS",
+				"Swashbuckler|Tarokka Deck|CoS",
+				"Philanthropist|Tarokka Deck|CoS",
+				"Trader|Tarokka Deck|CoS",
+				"Merchant|Tarokka Deck|CoS",
+				"Guild Member|Tarokka Deck|CoS",
+				"Beggar|Tarokka Deck|CoS",
+				"Thief|Tarokka Deck|CoS",
+				"Tax Collector|Tarokka Deck|CoS",
+				"Miser|Tarokka Deck|CoS",
+				"Priest|Tarokka Deck|CoS",
+				"Monk|Tarokka Deck|CoS",
+				"Missionary|Tarokka Deck|CoS",
+				"Healer|Tarokka Deck|CoS",
+				"Shepherd|Tarokka Deck|CoS",
+				"Druid|Tarokka Deck|CoS",
+				"Anarchist|Tarokka Deck|CoS",
+				"Charlatan|Tarokka Deck|CoS",
+				"Bishop|Tarokka Deck|CoS",
+				"Traitor|Tarokka Deck|CoS"
+			],
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/999-dnd_tarroka_back.png"
+				},
+				"width": 366,
+				"height": 512
+			},
+			"entries": [
+				"The Vistani have long been masters of fortune-telling. In the hands of a Vistani seer, a deck of tarokka cards can tell tales of the future and provide answers to many a dark and mysterious question.",
+				"Although the workmanship and artistic quality of the cards can vary from deck to deck, the ability of the cards to call forth information about the future is far more valuable than the monetary worth of a deck.",
+				"Anyone can craft a deck of tarokka cards, but only someone of Vistani blood can imbue the cards with the gift of prophecy. Once they are crafted and empowered, they must be stored in accordance with ancient tradition, or they lose their efficacy. When not in use, tarokka cards must be wrapped in silk and stored in a wooden box.",
+				{
+					"type": "section",
+					"name": "Composition",
+					"page": 243,
+					"entries": [
+						"A tarokka deck has fifty-four cards, each of which has its own name. Forty of them comprise the common deck, which is divided into four suits: swords, coins, stars, and glyphs.",
+						"Each suit contains cards numbered one through nine, plus a tenth card that is called the master of that suit. A card can be referred to by its suit designation or by its name. For instance, the three of glyphs is also known as the {@card healer|Tarokka Deck|CoS}, and the {@card wizard|Tarokka Deck|CoS} card is also known as the master of stars.",
+						"The remaining fourteen cards make up the high deck, which symbolizes the natural forces of the multiverse. These cards are represented by a crown symbol and are the most powerful cards in the deck.",
+						{
+							"type": "entries",
+							"name": "High Deck",
+							"page": 243,
+							"entries": [
+								"The cards that compose the high deck aren't considered to be one suit, although they are often denoted with a crown icon to mark their importance. Rather, each card is an important power in its own right. If one of these cards comes out in a casting and seems to contradict the prediction of an earlier card, the Vistani always assume that this card takes precedence."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Common Deck",
+							"page": 243,
+							"entries": [
+								"The four suits and their respective cards are described in more detail below.",
+								{
+									"type": "entries",
+									"name": "Swords",
+									"page": 243,
+									"entries": [
+										"This suit symbolizes aggression and violence. It is the suit of warriors, be they paladins, soldiers, mercenaries, or gladiators. It also symbolizes the power of governments and leaders, whether noble or corrupt."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Stars",
+									"page": 243,
+									"entries": [
+										"This suit symbolizes the desire for personal power and control over things beyond the ken of mortals. It is the suit of arcane mages, sages, and intellectuals. It also represents the triumph of magic, science, and reason over religion, mysticism, and superstition."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Coins",
+									"page": 243,
+									"entries": [
+										"This suit symbolizes avarice and the desire for personal and material gain. It is also symbolic of gluttony, lust, and obsession. On the side of good, this suit can suggest the accumulation of wealth for the benefit of a charity or a just cause. On the side of evil, it embodies the worst aspects of greed. It speaks to the power of gold, and how that power can build or destroy nations."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Glyphs",
+									"page": 243,
+									"entries": [
+										"This suit symbolizes faith, spirituality, and inner strength. It is the suit of priests and those who devote themselves to the service of a deity, a higher power, or a heightened philosophy. On the side of good, it represents willpower and dedication. On the side of evil, the suit signifies weakness of character, self-doubt, and betrayal of one's ideals or beliefs. It symbolizes health and healing, as well as illness and disease."
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"hasCardArt": true
 		}
 	],
 	"card": [
@@ -4028,6 +4162,1062 @@
 			},
 			"entries": [
 				"You will go second in the initiative order."
+			]
+		},
+		{
+			"name": "Abjurer",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Stars",
+			"value": 4,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/184-dnd_tarokka_abjurer.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Those guided by logic and reasoning; warns of an overlooked clue or piece of information"
+			]
+		},
+		{
+			"name": "Anarchist",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Glyphs",
+			"value": 6,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/206-dnd_tarokka_anarchist.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"A fundamental change brought on by one whose beliefs are being put to the test"
+			]
+		},
+		{
+			"name": "Artifact",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/156-dnd_tarokka_artifact.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"The importance of some physical object that must be obtained, protected, or destroyed at all costs"
+			]
+		},
+		{
+			"name": "Avenger",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Swords",
+			"value": 1,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/171-dnd_tarokka_avenger.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Justice and revenge for great wrongs; those on a quest to rid the world of great evil"
+			]
+		},
+		{
+			"name": "Beast",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/157-dnd_tarokka_beast.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Great rage or passion; something bestial or malevolent hiding in plain sight or lurking just below the surface"
+			]
+		},
+		{
+			"name": "Beggar",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Coins",
+			"value": 6,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/196-dnd_tarokka_beggar.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Sudden change in economic status or fortune"
+			]
+		},
+		{
+			"name": "Berserker",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Swords",
+			"value": 6,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/176-dnd_tarokka_berserker.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"The brutal and barbaric side of warfare; bloodlust; those with a bestial nature"
+			]
+		},
+		{
+			"name": "Bishop",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Glyphs",
+			"value": 8,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/208-dnd_tarokka_bishop.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Strict adherence to a code or a belief; those who plot, plan, and scheme"
+			]
+		},
+		{
+			"name": "Broken One",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/158-dnd_tarokka_brokenone.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Defeat, failure, and despair; the loss of something or someone important, without which one feels incomplete"
+			]
+		},
+		{
+			"name": "Charlatan",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Glyphs",
+			"value": 7,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/207-dnd_tarokka_charlatan.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Liars; those who profess to believe one thing but actually believe another"
+			]
+		},
+		{
+			"name": "Conjurer",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Stars",
+			"value": 9,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/189-dnd_tarokka_conjurer.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"The coming of an unexpected supernatural threat; those who think of themselves as gods"
+			]
+		},
+		{
+			"name": "Darklord",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/159-dnd_tarokka_darklord.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"A single, powerful individual of an evil nature, one whose goals have enormous and far-reaching consequences"
+			]
+		},
+		{
+			"name": "Dictator",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Swords",
+			"value": 8,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/178-dnd_tarokka_dictator.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"All that is wrong with government and leadership; those who rule through fear and violence"
+			]
+		},
+		{
+			"name": "Diviner",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Stars",
+			"value": 2,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/182-dnd_tarokka_diviner.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"The pursuit of knowledge tempered by wisdom; truth and honesty; sages and prophecy"
+			]
+		},
+		{
+			"name": "Donjon",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/160-dnd_tarokka_donjon.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Isolation and imprisonment; being so conservative in thinking as to be a prisoner of one's own beliefs"
+			]
+		},
+		{
+			"name": "Druid",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Glyphs",
+			"value": 5,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/205-dnd_tarokka_druid.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"The ambivalence and cruelty of nature and those who feel drawn to it; inner turmoil"
+			]
+		},
+		{
+			"name": "Elementalist",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Stars",
+			"value": 5,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/185-dnd_tarokka_elementalist.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"The triumph of nature over civilization; natural disasters and bountiful harvests"
+			]
+		},
+		{
+			"name": "Enchanter",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Stars",
+			"value": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/183-dnd_tarokka_enchanter.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Inner turmoil that comes from confusion, fear of failure, or false information"
+			]
+		},
+		{
+			"name": "Evoker",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Stars",
+			"value": 6,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/186-dnd_tarokka_evoker.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Magical or supernatural power that can't be controlled; magic for destructive ends"
+			]
+		},
+		{
+			"name": "Executioner",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/162-dnd_tarokka_executioner.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"The imminent death of one rightly or wrongly convicted of a crime; false accusations and unjust prosecution"
+			]
+		},
+		{
+			"name": "Ghost",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/161-dnd_tarokka_ghost.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"The looming past; the return of an old enemy or the discovery of a secret buried long ago"
+			]
+		},
+		{
+			"name": "Guild Member",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Coins",
+			"value": 5,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/195-dnd_tarokka_guildmember.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Like-minded individuals joined together in a common goal; pride in one's work"
+			]
+		},
+		{
+			"name": "Healer",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Glyphs",
+			"value": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/203-dnd_tarokka_healer.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Healing; a contagious illness, disease, or curse; those who practice the healing arts"
+			]
+		},
+		{
+			"name": "Hooded One",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Swords",
+			"value": 7,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/177-dnd_tarokka_hoodedone.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Bigotry, intolerance, and xenophobia; a mysterious presence or newcomer"
+			]
+		},
+		{
+			"name": "Horseman",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/163-dnd_tarokka_horseman.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Death; disaster in the form of the loss of wealth or property, a horrible defeat, or the end of a bloodline"
+			]
+		},
+		{
+			"name": "Illusionist",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Stars",
+			"value": 7,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/187-dnd_tarokka_illusionist.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Lies and deceit; grand conspiracies; secret societies; the presence of a dupe or a saboteur"
+			]
+		},
+		{
+			"name": "Innocent",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/164-dnd_tarokka_innocent.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"A being of great importance whose life is in danger (who might be helpless or simply unaware of the peril)"
+			]
+		},
+		{
+			"name": "Marionette",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/165-dnd_tarokka_marionette.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"The presence of a spy or a minion of some greater power; an encounter with a puppet or an underling"
+			]
+		},
+		{
+			"name": "Mercenary",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Swords",
+			"value": 4,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/174-dnd_tarokka_mercenary.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Inner strength and fortitude; those who fight for power or wealth"
+			]
+		},
+		{
+			"name": "Merchant",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Coins",
+			"value": 4,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/194-dnd_tarokka_merchant.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"A rare commodity or business opportunity; deceitful or dangerous business transactions"
+			]
+		},
+		{
+			"name": "Miser",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Coins",
+			"value": 9,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/199-dnd_tarokka_miser.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Hoarded wealth; those who are irreversibly unhappy or who think money is meaningless"
+			]
+		},
+		{
+			"name": "Missionary",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Glyphs",
+			"value": 2,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/202-dnd_tarokka_missionary.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Those who spread wisdom and faith to others; warnings of the spread of fear and ignorance"
+			]
+		},
+		{
+			"name": "Mists",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/166-dnd_tarokka_mists.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Something unexpected or mysterious that can't be avoided; a great quest or journey that will try one's spirit"
+			]
+		},
+		{
+			"name": "Monk",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Glyphs",
+			"value": 1,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/201-dnd_tarokka_monk.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Serenity; inner strength and self-reliance; supreme confidence bereft of arrogance"
+			]
+		},
+		{
+			"name": "Myrmidon",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Swords",
+			"value": 5,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/175-dnd_tarokka_myrmidon.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Great heroes; a sudden reversal of fate; the triumph of the underdog over a mighty enemy"
+			]
+		},
+		{
+			"name": "Necromancer",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Stars",
+			"value": 8,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/188-dnd_tarokka_necromancer.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Unnatural events and unhealthy obsessions; those who follow a destructive path"
+			]
+		},
+		{
+			"name": "Paladin",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Swords",
+			"value": 2,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/172-dnd_tarokka_paladin.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Just and noble warriors; those who live by a code of honor and integrity"
+			]
+		},
+		{
+			"name": "Philanthropist",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Coins",
+			"value": 2,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/192-dnd_tarokka_philanth.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Charity and giving on a grand scale; those who use wealth to fight evil and sickness"
+			]
+		},
+		{
+			"name": "Priest",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Glyphs",
+			"value": 10,
+			"valueName": "master",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/200-dnd_tarokka_priest.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Enlightenment; those who follow a deity, a system of values, or a higher purpose"
+			]
+		},
+		{
+			"name": "Raven",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/167-dnd_tarokka_raven.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"A hidden source of information; a fortunate turn of events; a secret potential for good"
+			]
+		},
+		{
+			"name": "Rogue",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Coins",
+			"value": 10,
+			"valueName": "master",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/190-dnd_tarokka_rogue.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Anyone for whom money is important; those who believe money is the key to their success"
+			]
+		},
+		{
+			"name": "Seer",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/168-dnd_tarokka_seer.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Inspiration and keen intellect; a future event, the outcome of which will hinge on a clever mind"
+			]
+		},
+		{
+			"name": "Shepherd",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Glyphs",
+			"value": 4,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/204-dnd_tarokka_shepherd.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Those who protect others; one who bears a burden far too great to be shouldered alone"
+			]
+		},
+		{
+			"name": "Soldier",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Swords",
+			"value": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/173-dnd_tarokka_soldier.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"War and sacrifice; the stamina to endure great hardship"
+			]
+		},
+		{
+			"name": "Swashbuckler",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Coins",
+			"value": 1,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/191-dnd_tarokka_swashbuckler.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Those who like money yet give it up freely; likable rogues and rapscallions"
+			]
+		},
+		{
+			"name": "Tax Collector",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Coins",
+			"value": 8,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/198-dnd_tarokka_taxcollector.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Corruption; honesty in an otherwise corrupt government or organization"
+			]
+		},
+		{
+			"name": "Tempter",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/169-dnd_tarokka_tempter.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"One who has been compromised or led astray by temptation or foolishness; one who tempts others for evil ends"
+			]
+		},
+		{
+			"name": "Thief",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Coins",
+			"value": 7,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/197-dnd_tarokka_thief.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Those who steal or burgle; a loss of property, beauty, innocence, friendship, or reputation"
+			]
+		},
+		{
+			"name": "Torturer",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Swords",
+			"value": 9,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/179-dnd_tarokka_torturer.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"The coming of suffering or merciless cruelty; one who is irredeemably evil or sadistic"
+			]
+		},
+		{
+			"name": "Trader",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Coins",
+			"value": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/193-dnd_tarokka_trader.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Commerce; smuggling and black markets; fair and equitable trades"
+			]
+		},
+		{
+			"name": "Traitor",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Glyphs",
+			"value": 9,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/209-dnd_tarokka_traitor.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Betrayal by someone close and trusted; a weakening or loss of faith"
+			]
+		},
+		{
+			"name": "Transmuter",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Stars",
+			"value": 1,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/181-dnd_tarokka_transmuter.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"A new discovery; the coming of unexpected things; unforeseen consequences and chaos"
+			]
+		},
+		{
+			"name": "Warrior",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Swords",
+			"value": 10,
+			"valueName": "master",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/170-dnd_tarokka_warrior.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Strength and force personified; violence; those who use force to accomplish their goals"
+			]
+		},
+		{
+			"name": "Wizard",
+			"source": "CoS",
+			"set": "Tarokka Deck",
+			"page": 243,
+			"suit": "Stars",
+			"value": 10,
+			"valueName": "master",
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CoS/Tarokka Deck/180-dnd_tarokka_wizard.png"
+				},
+				"width": 714,
+				"height": 1000
+			},
+			"entries": [
+				"Mystery and riddles; the unknown; those who crave magical power and great knowledge"
 			]
 		}
 	]

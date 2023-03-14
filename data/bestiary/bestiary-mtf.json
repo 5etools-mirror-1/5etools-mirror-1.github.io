@@ -626,7 +626,7 @@
 					"name": "Foment Madness",
 					"entries": [
 						"Any creature that isn't a demon that starts its turn within 30 feet of the alkilith must succeed on a {@dc 18} Wisdom saving throw, or it hears a faint buzzing in its head for a moment and has disadvantage on its next attack roll, saving throw, or ability check.",
-						"If the saving throw against Foment Madness fails by 5 or more, the creature is instead subjected to the {@spell confusion} spell for 1 minute (no concentration required by the alkilith). While under the effect of that confusion, the creature is immune to Foment Madness."
+						"If the saving throw against Foment Madness fails by 5 or more, the creature is instead subjected to the {@spell confusion} spell for 1 minute (no {@status concentration} required by the alkilith). While under the effect of that confusion, the creature is immune to Foment Madness."
 					]
 				},
 				{
@@ -7143,7 +7143,7 @@
 				{
 					"name": "Shared Invisibility (Recharges after a Short or Long Rest)",
 					"entries": [
-						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it casts a spell, or its concentration is broken (as if concentrating on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it. While the {@condition invisible} duergar is mounted on a female steeder, the steeder is {@condition invisible} as well. The invisibility ends early on the steeder immediately after it attacks."
+						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it casts a spell, or its {@status concentration} is broken (as if {@status concentration||concentrating} on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it. While the {@condition invisible} duergar is mounted on a female steeder, the steeder is {@condition invisible} as well. The invisibility ends early on the steeder immediately after it attacks."
 					]
 				}
 			],
@@ -7283,7 +7283,7 @@
 				{
 					"name": "Invisibility {@recharge 4}",
 					"entries": [
-						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it casts a spell, it uses its Reduce, or its concentration is broken (as if concentrating on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
+						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it casts a spell, it uses its Reduce, or its {@status concentration} is broken (as if {@status concentration||concentrating} on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
 					]
 				},
 				{
@@ -7563,7 +7563,7 @@
 				{
 					"name": "Invisibility (Recharges after a Short or Long Rest)",
 					"entries": [
-						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it casts a spell, it uses its Enlarge, or its concentration is broken (as if concentrating on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
+						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it casts a spell, it uses its Enlarge, or its {@status concentration} is broken (as if {@status concentration||concentrating} on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
 					]
 				}
 			],
@@ -7703,7 +7703,7 @@
 				{
 					"name": "Invisibility (Recharges after a Short or Long Rest)",
 					"entries": [
-						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it casts a spell, it uses its Enlarge, or its concentration is broken (as if concentrating on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
+						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it casts a spell, it uses its Enlarge, or its {@status concentration} is broken (as if {@status concentration||concentrating} on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
 					]
 				}
 			],
@@ -7842,7 +7842,7 @@
 				{
 					"name": "Invisibility {@recharge 4}",
 					"entries": [
-						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it casts a spell, it uses its Enlarge, or its concentration is broken (as if concentrating on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
+						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it casts a spell, it uses its Enlarge, or its {@status concentration} is broken (as if {@status concentration||concentrating} on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
 					]
 				}
 			],
@@ -7986,7 +7986,7 @@
 				{
 					"name": "Invisibility (Recharges after a Short or Long Rest)",
 					"entries": [
-						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it casts a spell, it uses its Enlarge, or its concentration is broken (as if concentrating on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
+						"The duergar magically turns {@condition invisible} for up to 1 hour or until it attacks, it casts a spell, it uses its Enlarge, or its {@status concentration} is broken (as if {@status concentration||concentrating} on a spell). Any equipment the duergar wears or carries is {@condition invisible} with it."
 					]
 				}
 			],
@@ -9271,7 +9271,7 @@
 				{
 					"name": "Phantasmal Killer (Costs 2 Actions)",
 					"entries": [
-						"Fraz-Urb'luu casts {@spell phantasmal killer}, no concentration required."
+						"Fraz-Urb'luu casts {@spell phantasmal killer}, no {@status concentration} required."
 					]
 				}
 			],
@@ -22675,7 +22675,7 @@
 				{
 					"name": "Earth-Shaking Movement",
 					"entries": [
-						"As a bonus action after moving at least 10 feet on the ground, the zaratan can send a shock wave through the ground in a 120-foot-radius circle centered on itself. That area becomes {@quickref difficult terrain||3} for 1 minute. Each creature on the ground that is concentrating must succeed on a {@dc 25} Constitution saving throw or the creature's concentration is broken.",
+						"As a bonus action after moving at least 10 feet on the ground, the zaratan can send a shock wave through the ground in a 120-foot-radius circle centered on itself. That area becomes {@quickref difficult terrain||3} for 1 minute. Each creature on the ground that is {@status concentration||concentrating} must succeed on a {@dc 25} Constitution saving throw or the creature's {@status concentration} is broken.",
 						"The shock wave deals 100 thunder damage to all structures in contact with the ground in the area. If a creature is near a structure that collapses, the creature might be buried; a creature within half the distance of the structure's height must make a {@dc 25} Dexterity saving throw. On a failed save, the creature takes 17 ({@damage 5d6}) bludgeoning damage, is knocked {@condition prone}, and is trapped in the rubble. A trapped creature is {@condition restrained}, requiring a successful {@dc 20} Strength (Athletics) check as an action to escape. Another creature within 5 feet of the buried creature can use its action to clear rubble and grant advantage on the check. If three creatures use their actions in this way, the check is an automatic success. On a successful save, the creature takes half as much damage and doesn't fall {@condition prone} or become trapped."
 					]
 				},

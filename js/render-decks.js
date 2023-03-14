@@ -24,7 +24,7 @@ class RenderDecks {
 		const ptText = Renderer.get()
 			.setFirstSection(true)
 			.setPartPageExpandCollapseDisabled(true)
-			.render({name: card.name, entries: card.entries}, 1);
+			.render({name: card.name, entries: Renderer.card.getFullEntries(card)}, 1);
 		Renderer.get().setPartPageExpandCollapseDisabled(false);
 		return ptText;
 	}
@@ -84,7 +84,7 @@ class RenderDecks {
 
 				return $$`<div class="ve-flex-v-center decks__wrp-row">
 					${$wrpFace}
-					<div class="ml-2 decks__wrp-card-text">${ptText}</div>
+					<div class="ml-2 decks__wrp-card-text w-100">${ptText}</div>
 				</div>`;
 			});
 
@@ -133,7 +133,7 @@ class RenderDecks {
 		if (imgBack) {
 			e_({
 				ele: imgBack,
-				clazz: "decks-draw__img-card-back absolute w-100 h-100",
+				clazz: "decks-draw__img-card-back absolute",
 			});
 		}
 
@@ -221,11 +221,33 @@ class RenderDecks {
 				})
 			: null;
 
-		const $wrpRhs = $$`<div class="decks-draw__wrp-rhs ve-flex-col">
+		const $wrpRhs = $$`<div class="decks-draw__wrp-rhs ve-flex-col mobile__ml-0">
 			${$wrpInfo}
 			<div class="ve-flex-vh-center mobile__mt-5">${$btnFlip}</div>
 		</div>`
 			.click(evt => evt.stopPropagation());
+
+		const onDeviceorientation = evt => {
+			// region Emulate mouse position by projecting orientation angle from a point `depth` behind the screen
+			const bcr = wrpCard.getBoundingClientRect();
+
+			const cCenterX = bcr.left + bcr.width / 2;
+			const cCenterY = bcr.top + bcr.height / 2;
+
+			const depth = (window.innerWidth + window.innerHeight) / 2;
+
+			const gammaRot = Math.max(Math.min(Math.abs(evt.gamma - 90), 135), 45);
+			const betaRot = Math.max(Math.min(Math.abs(evt.beta - 90), 135), 45);
+
+			const fromCenterX = depth / Math.tan(-gammaRot * Math.PI / 180);
+			const fromCenterY = depth / Math.tan(-betaRot * Math.PI / 180);
+
+			const mouseX = cCenterX + fromCenterX;
+			const mouseY = cCenterY + fromCenterY;
+			// endregion
+
+			this._pRenderStgCard_onMouseMove_mutElements({mouseX, mouseY, wrpCard, dispGlint});
+		};
 
 		const $wrpDrawn = $$`<div class="decks-draw__stg ve-flex-vh-center">
 			<div class="ve-flex-v-center mobile__ve-flex-col">
@@ -236,6 +258,7 @@ class RenderDecks {
 			.click(evt => {
 				evt.stopPropagation();
 				$wrpDrawn.remove();
+				window.removeEventListener("deviceorientation", onDeviceorientation);
 			})
 			.mousemove(evt => {
 				const mouseX = EventUtil.getClientX(evt);
@@ -245,6 +268,8 @@ class RenderDecks {
 					this._pRenderStgCard_onMouseMove_mutElements({mouseX, mouseY, wrpCard, dispGlint});
 				});
 			});
+
+		window.addEventListener("deviceorientation", onDeviceorientation);
 
 		const {x: mouseX, y: mouseY} = EventUtil.getMousePos();
 		this._pRenderStgCard_onMouseMove_mutElements({mouseX, mouseY, wrpCard, dispGlint});

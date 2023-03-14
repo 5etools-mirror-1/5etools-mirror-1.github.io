@@ -1,7 +1,7 @@
 {
 	"name": "5etools",
 	"author": "TheGiddyLimit",
-	"version": "1.175.2",
+	"version": "1.177.2",
 	"license": "MIT",
 	"description": "A site dedicated to making playing games with your friends as easy as possible.",
 	"type": "module",
@@ -13,9 +13,11 @@
 		"minify:js": "terser --keep-classnames --keep-fnames",
 		"minify:json": "node node/minify-json.js",
 		"test:js": "eslint . --ext .js,.cjs,.mjs",
-		"lint:js": "eslint . --ext .js,.cjs,.mjs --fix",
+		"lint:js": "npm run test:js -- --fix",
 		"test:css": "stylelint scss/*.scss scss/includes/*.scss",
+		"lint:css": "npm run test:css -- --fix",
 		"test:data": "node test/test-all.js",
+		"lint:data": "node node/prettify-data.js",
 		"test:json": "node test/test-json.js",
 		"test:tags": "node test/test-tags.js",
 		"test": "npm run test:js && npm run test:css && npm run test:data",
@@ -30,6 +32,7 @@
 		"preversion": "npm test",
 		"version": "node node/version-bump.js",
 		"serve:dev": "http-server -c-1 --cors --port 5000",
+		"serve:dev:tls": "http-server -c-1 --cors --port 5001 --tls --cert certs/cert.pem --key certs/key.pem",
 		"spellcheck:check-data": "echo \"This can take a few minutes.\" && npx cspell --no-progress --show-context --show-suggestions \"data/**/*.json\"",
 		"spellcheck:check-data-quick": "git diff --name-only | grep -P \"^data/[^.]+.json\" | npx cspell --no-progress --show-context --show-suggestions --file-list stdin",
 		"spellcheck:trust-data": "echo \"This can take a few minutes.\" && echo \"# new words on $(date)\" >> spellcheck/dnd-words.txt && npx cspell --words-only --unique \"./data/**/*.json\" | sort --ignore-case >> spellcheck/dnd-words.txt"
@@ -39,7 +42,7 @@
 		"url": "git+https://github.com/5etools-mirror-1/5etools-mirror-1.github.io.git"
 	},
 	"devDependencies": {
-		"5etools-utils": "^0.5.13",
+		"5etools-utils": "^0.6.4",
 		"ajv": "^8.11.2",
 		"ajv-formats": "^2.1.1",
 		"esbuild": "^0.14.38",

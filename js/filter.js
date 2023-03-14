@@ -185,8 +185,9 @@ class ModalFilter {
 			$wrpList,
 			fnSort: this._fnSort,
 		});
+		const listSelectClickHandler = new ListSelectClickHandler({list: this._list});
 
-		if (!opts.isBuildUi && !this._isRadio) ListUiUtil.bindSelectAllCheckbox($cbSelAll, this._list);
+		if (!opts.isBuildUi && !this._isRadio) listSelectClickHandler.bindSelectAllCheckbox($cbSelAll);
 		ListUiUtil.bindPreviewAllButton($btnTogglePreviewAll, this._list);
 		SortUtil.initBtnSortHandlers($wrpFormHeaders, this._list);
 		this._list.on("updated", () => $dispNumVisible.html(`${this._list.visibleItems.length}/${this._list.items.length}`));
@@ -207,8 +208,8 @@ class ModalFilter {
 			const filterListItem = this._getListItem(this._pageFilter, it, i);
 			this._list.addItem(filterListItem);
 			if (!opts.isBuildUi) {
-				if (this._isRadio) filterListItem.ele.addEventListener("click", evt => ListUiUtil.handleSelectClickRadio(this._list, filterListItem, evt));
-				else filterListItem.ele.addEventListener("click", evt => ListUiUtil.handleSelectClick(this._list, filterListItem, evt));
+				if (this._isRadio) filterListItem.ele.addEventListener("click", evt => listSelectClickHandler.handleSelectClickRadio(filterListItem, evt));
+				else filterListItem.ele.addEventListener("click", evt => listSelectClickHandler.handleSelectClick(filterListItem, evt));
 			}
 		});
 

@@ -1412,12 +1412,17 @@ PropOrder._DECK__COPY_MOD = [
 ];
 PropOrder._CARD = [
 	"name",
+	"alias",
 
 	"source",
 	"set",
 	"page",
 	"srd",
 	"basicRules",
+
+	"suit",
+	"value",
+	"valueName",
 
 	"face",
 	"back",

@@ -53,14 +53,11 @@ class PageFilterPsionics extends PageFilter {
 globalThis.PageFilterPsionics = PageFilterPsionics;
 
 class ListSyntaxPsionics extends ListUiUtil.ListSyntax {
-	_getSearchCacheStats (entity) {
-		if (!entity.entries && !entity.modes && !entity.focus) return "";
-		const ptrOut = {_: ""};
-		this._getSearchCache_handleEntryProp(entity, "entries", ptrOut);
-		this._getSearchCache_handleEntryProp(entity, "modes", ptrOut);
-		this._getSearchCache_handleEntryProp(entity, "focus", ptrOut);
-		return ptrOut._;
-	}
+	static _INDEXABLE_PROPS_ENTRIES = [
+		"entries",
+		"modes",
+		"focus",
+	];
 }
 
 globalThis.ListSyntaxPsionics = ListSyntaxPsionics;

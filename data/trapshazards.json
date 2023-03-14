@@ -788,7 +788,7 @@
 				"The blizzards that ravage Icewind Dale and harry travelers on the mountain pass are reflections of Auril's self-imposed isolation. A blizzard in Icewind Dale typically lasts {@dice 2d4} hours, and whenever the characters are caught in one, the following rules apply until it ends.",
 				"A blizzard's howling wind limits hearing to a range of 100 feet and imposes disadvantage on ranged weapon attack rolls. It also imposes disadvantage on Wisdom ({@skill Perception}) checks that rely on hearing. The wind extinguishes open flames, disperses fog, erases tracks in the snow, and makes flying by nonmagical means nearly impossible. A creature falls at the end of its turn if it is flying by nonmagical means and can't hover.",
 				"Visibility in a blizzard is reduced to 30 feet. Creatures without goggles or other eye protection have disadvantage on Wisdom ({@skill Perception}) checks that rely on sight due to blowing snow.",
-				"Any creature that is concentrating on a spell in a blizzard must succeed on a DC 10 Constitution saving throw at the end of its turn or lose its concentration on the spell unless the creature is sheltered against the elements (for example, in an igloo).",
+				"Any creature that is {@status concentration||concentrating} on a spell in a blizzard must succeed on a DC 10 Constitution saving throw at the end of its turn or lose its {@status concentration} on the spell unless the creature is sheltered against the elements (for example, in an igloo).",
 				{
 					"type": "entries",
 					"name": "Veering Off Course",

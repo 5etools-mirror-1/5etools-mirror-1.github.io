@@ -137,6 +137,7 @@
 		{
 			"name": "Amrik Vanthampur",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 30,
 			"size": [
@@ -237,6 +238,7 @@
 		{
 			"name": "Archduke Zariel of Avernus",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 243,
 			"_copy": {
@@ -314,6 +316,7 @@
 		{
 			"name": "Arkhan the Cruel",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 111,
 			"size": [
@@ -483,6 +486,7 @@
 		{
 			"name": "Bel",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 115,
 			"size": [
@@ -703,6 +707,7 @@
 		{
 			"name": "Bitter Breath",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 90,
 			"_copy": {
@@ -1014,6 +1019,7 @@
 		{
 			"name": "Chukka",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 83,
 			"_copy": {
@@ -1044,6 +1050,7 @@
 		{
 			"name": "Clonk",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 83,
 			"_copy": {
@@ -1077,6 +1084,7 @@
 		{
 			"name": "Crokek'toeck",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 231,
 			"size": [
@@ -1352,6 +1360,7 @@
 		{
 			"name": "Duke Thalamra Vanthampur",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 38,
 			"size": [
@@ -1468,6 +1477,7 @@
 		{
 			"name": "Elliach",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 130,
 			"_copy": {
@@ -1511,6 +1521,7 @@
 		{
 			"name": "Feonor",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 130,
 			"_copy": {
@@ -1802,6 +1813,7 @@
 		{
 			"name": "Gideon Lightward",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 65,
 			"size": [
@@ -1922,6 +1934,7 @@
 		{
 			"name": "Harkina Hunt",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 53,
 			"_copy": {
@@ -2170,7 +2183,7 @@
 				{
 					"name": "Aura of Invulnerability",
 					"entries": [
-						"An {@condition invisible} aura forms a 10-foot-radius sphere around the hollyphant for as long as it lives. Any spell of 5th level or lower cast from outside the barrier can't affect creatures or objects within it, even if the spell is cast using a higher level spell slot. Such a spell can target creatures and objects within the barrier, but the spell has no effect on them. Similarly, the area within the barrier is excluded from the areas affected by such spells. The hollyphant can use an action to suppress this trait until its concentration ends (as if concentrating on a spell)."
+						"An {@condition invisible} aura forms a 10-foot-radius sphere around the hollyphant for as long as it lives. Any spell of 5th level or lower cast from outside the barrier can't affect creatures or objects within it, even if the spell is cast using a higher level spell slot. Such a spell can target creatures and objects within the barrier, but the spell has no effect on them. Similarly, the area within the barrier is excluded from the areas affected by such spells. The hollyphant can use an action to suppress this trait until its {@status concentration} ends (as if {@status concentration||concentrating} on a spell)."
 					]
 				},
 				{
@@ -2529,6 +2542,7 @@
 		{
 			"name": "Krull",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 110,
 			"size": [
@@ -2739,6 +2753,7 @@
 		{
 			"name": "Lulu",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 5,
 			"_copy": {
@@ -2758,6 +2773,7 @@
 		{
 			"name": "Mad Maggie",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 74,
 			"_copy": {
@@ -2777,6 +2793,7 @@
 		{
 			"name": "Mahadi the Rakshasa",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 127,
 			"size": [
@@ -3117,6 +3134,7 @@
 		{
 			"name": "Mortlock Vanthampur",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 26,
 			"size": [
@@ -3403,6 +3421,7 @@
 		{
 			"name": "Nine-Fingers Keene",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 170,
 			"size": [
@@ -3532,6 +3551,7 @@
 		{
 			"name": "Princeps Kovik",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 91,
 			"_copy": {
@@ -3551,6 +3571,7 @@
 		{
 			"name": "Raggadragga",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 87,
 			"_copy": {
@@ -3695,6 +3716,7 @@
 		{
 			"name": "Rilsa Rael",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 199,
 			"size": [
@@ -3956,6 +3978,7 @@
 		{
 			"name": "Smiler the Defiler",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 133,
 			"size": [
@@ -4105,6 +4128,7 @@
 		{
 			"name": "Sylvira Savikas",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 46,
 			"_copy": {
@@ -4160,6 +4184,7 @@
 		{
 			"name": "Thavius Kreeg",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 42,
 			"size": [
@@ -4236,6 +4261,7 @@
 		{
 			"name": "Thurstwell Vanthampur",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 34,
 			"size": [
@@ -4346,6 +4372,7 @@
 		{
 			"name": "Torogar Steelfist",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 112,
 			"size": [
@@ -4463,6 +4490,7 @@
 		{
 			"name": "Traxigor",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 50,
 			"_copy": {
@@ -4529,6 +4557,7 @@
 		{
 			"name": "Ulder Ravengard",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 70,
 			"size": [

@@ -2355,5 +2355,32 @@
 		"ver": "1.175.2",
 		"date": "2023-02-05",
 		"txt": "- Added Dungeon Master's Screen: Dungeon Kit decks to Decks page (thanks @ Lyra)\n- Fixed card backs being mirrored in Decks page\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.176.0",
+		"date": "2023-02-12",
+		"title": "Bits and Pieces",
+		"txt": "- Added page numbers to all remaining adventures/books (CRCotN, DoSI, JttRC, LoX; AAG, BAM), and to all entities from the same sources\n- Added \"Add to Blocklist\" context menu option to entries in list pages\n- Added \"Obscures Vision\", \"Difficult Terrain\", \"Additional Attack Damage\", and \"Affects Objects\" filters to the Spells page Miscellaneous filter\n- Added the CoS Tarokka deck to the Decks page (thanks @ Lyra)\n- (Mobile) Drawn cards on the Decks page can now be angled by tilting your device\n- Fixed Recipes page \"Serves\" dropdown having no effect\n- Fixed CR Scaler crashing when attempting to scale spellcasters\n- Fixed broken subclass source links on the Spells page\n- (Brew) Added rudimentary support for `\"resource\"` array on creatures, which allows HP-like resources to be listed\n- (Brew) Improved text converter handling of comma-separated text split across multiple lines\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.176.1",
+		"date": "2023-02-13",
+		"txt": "- (Brew) Improved Class Creature Scaler handling of proficiency bonus (\"PB\") terms\n  - Added PB substitution to passive Perception\n  - Terms are now simplified after substituting PB (e.g. \"+3 +3\" -> \"+6\")\n  - Fixed \"+PB\" not being substituted in dice/damage/etc. tags\n  - @dc tags may now have PB substituted\n  - HP now scales without the need to specify a class name (i.e. \"your level\" works as well as \"your Ranger level\")\n- (Brew) Improved Creature Text Converter handling of certain cases\n  - Added support for \"Saves\" as an alternative to \"Saving Throws\"\n  - Improve handling of alternate CR/XP formats\n  - Improved handling of \"PB\" in skills/saves/AC/DCs\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.177.0",
+		"date": "2023-02-21",
+		"title": "Topical",
+		"txt": "- Added Keys from the Golden Vault\n- (Brew) Fixed class creature scaler failing to scale non-PB-dependent passive perceptions\n- (Brew) Fixed class creature scaler erroneously evaluating some dice\n- (Brew) Fixed adding brew to non-editable sources in the Text Converter\n- (Brew) Fixed Race Text Converter parsing of creature type\n- (Brew) Fixed Text Converter mis-tagging \"vision and light\" headers\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.177.1",
+		"date": "2023-03-02",
+		"txt": "- Added initial Keys from the Golden Vault tokens _[more/better to come Soon:tm:]_\n- Added Dynamic Map Viewer support to Keys from the Golden Vault maps\n- Added Keys from the Golden Vault adventure NPCs/other creatures\n- Fixed Items page failing to search-index all text when using `stats:...` or `text:...`\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.177.2",
+		"date": "2023-03-12",
+		"txt": "- Added Thieves' Gallery content\n- Added more Keys from the Golden Vault tokens\n- Added \"Legendary Groups\" to Omnisearch\n- Added \"Duplicate\" button to pinned lists\n- Added Dynamic Map Viewer support/grid values to a handful of maps that were lacking it (thanks @ Lyra)\n- Fixed crash when up-arrowing in some lists\n- (Brew) Added support for `@legroup` tag; `\"statblock\"` entry support for legendary groups\n- (Brew) Added support for array of `\"choose\"` creature `\"type\"`s\n- (Brew) Added support for scaling `PB` values in `\"special\"` creature HP\n- (Brew) Extended Text Converter condition tagging to also tag the \"concentration\" `@status`\n- (Brew) Fixed some Text Converter tagging requiring exact casing\n- (Fixed typos/added tags)"
 	}
 ]

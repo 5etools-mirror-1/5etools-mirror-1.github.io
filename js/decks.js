@@ -22,6 +22,7 @@ class DecksSublistManager extends SublistManager {
 			ent.name,
 			{
 				hash,
+				alias: PageFilterDecks.getListAliases(ent),
 			},
 			{
 				entity: ent,

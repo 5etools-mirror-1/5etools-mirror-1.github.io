@@ -1,0 +1,1022 @@
+{
+	"monster": [
+		{
+			"name": "Doric",
+			"isNamedCreature": true,
+			"source": "TG",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"druid"
+				]
+			},
+			"alignment": [
+				"N",
+				"G"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"{@item leather armor|PHB}"
+					]
+				}
+			],
+			"hp": {
+				"average": 104,
+				"formula": "16d8 + 32"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 12,
+			"dex": 16,
+			"con": 14,
+			"int": 16,
+			"wis": 19,
+			"cha": 10,
+			"save": {
+				"int": "+6",
+				"wis": "+7"
+			},
+			"skill": {
+				"insight": "+7",
+				"nature": "+6",
+				"perception": "+7",
+				"survival": "+7"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 17,
+			"resist": [
+				"fire"
+			],
+			"languages": [
+				"Common",
+				"Druidic",
+				"Elvish",
+				"Infernal",
+				"Sylvan"
+			],
+			"cr": "5",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"Doric casts one of the following spells, using Wisdom as the spellcasting ability (spell save {@dc 15}):"
+					],
+					"will": [
+						"{@spell animal messenger}",
+						"{@spell beast sense}",
+						"{@spell speak with animals}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell cure wounds}",
+							"{@spell entangle}",
+							"{@spell faerie fire}",
+							"{@spell thunderwave}"
+						]
+					},
+					"ability": "wis",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Doric makes two Shaped Claw or Sling attacks. She can replace one attack with a use of Spellcasting."
+					]
+				},
+				{
+					"name": "Shaped Claw",
+					"entries": [
+						"{@atk ms} {@hit 7} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d8 + 4}) slashing damage."
+					]
+				},
+				{
+					"name": "Sling",
+					"entries": [
+						"{@atk rw} {@hit 6} to hit, range 30/120 ft., one target. {@h}8 ({@damage 2d4 + 3}) bludgeoning damage."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Change Shape (5/Day)",
+					"entries": [
+						"Doric magically transforms into a Beast with a challenge rating of 3 or less or into an owlbear (see the Monster Manual).",
+						"Doric can remain in that form for up to 2 hours. She can choose whether her equipment falls to the ground, melds with her new form, or is worn by the new form. Doric reverts to her true form if she is {@condition incapacitated} or dies. She can revert to her true form using a bonus action.",
+						"While Doric is transformed, her stat block is replaced by the stat block of that form, except she keeps her current hit points, her hit point maximum, this bonus action, her alignment, and her Intelligence, Wisdom, and Charisma scores."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Fiery Rebuke (3/Day)",
+					"entries": [
+						"When Doric is damaged by a creature that she can see within 60 feet of herself, she magically engulfs the creature in flames. The creature must make a {@dc 15} Dexterity saving throw, taking 16 ({@damage 3d10}) fire damage on failed save, or half as much damage on a successful one."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Shapechanger"
+			],
+			"languageTags": [
+				"C",
+				"DU",
+				"E",
+				"I",
+				"S"
+			],
+			"damageTags": [
+				"B",
+				"F",
+				"S"
+			],
+			"damageTagsSpell": [
+				"T"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"RNG",
+				"RW"
+			],
+			"conditionInflictSpell": [
+				"restrained"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Edgin Darvis",
+			"isNamedCreature": true,
+			"source": "TG",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"bard"
+				]
+			},
+			"alignment": [
+				"C",
+				"G"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"{@item leather armor|PHB}"
+					]
+				}
+			],
+			"hp": {
+				"average": 110,
+				"formula": "17d8 + 34"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 14,
+			"dex": 16,
+			"con": 14,
+			"int": 14,
+			"wis": 16,
+			"cha": 18,
+			"save": {
+				"dex": "+6",
+				"cha": "+7"
+			},
+			"skill": {
+				"deception": "+7",
+				"performance": "+10",
+				"persuasion": "+10",
+				"sleight of hand": "+6"
+			},
+			"passive": 13,
+			"languages": [
+				"Common"
+			],
+			"cr": "5",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"Edgin casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 15}):"
+					],
+					"will": [
+						"{@spell friends}",
+						"{@spell message}"
+					],
+					"daily": {
+						"1": [
+							"{@spell suggestion}"
+						],
+						"3e": [
+							"{@spell charm person}",
+							"{@spell disguise self}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Edgin makes two Reinforced Lute or Shortsword attacks."
+					]
+				},
+				{
+					"name": "Reinforced Lute",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d8 + 2}) bludgeoning damage plus 11 ({@damage 2d10}) thunder damage."
+					]
+				},
+				{
+					"name": "Shortsword",
+					"entries": [
+						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) piercing damage plus 11 ({@damage 2d10}) thunder damage."
+					]
+				},
+				{
+					"name": "Disorienting Words",
+					"entries": [
+						"Edgin magically taunts up to three creatures he can see within 60 feet of himself. Each creature must succeed on a {@dc 15} Wisdom saving throw or take 10 ({@damage 3d6}) psychic damage and have disadvantage on the next attack roll it makes before the start of Edgin's next turn."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Inspiring Words (3/Day)",
+					"entries": [
+						"When a creature Edgin can see within 60 feet of himself fails an ability check, an attack roll, or a saving throw, Edgin grants the creature magical encouragement. The creature can roll a {@dice d8} and add the number rolled to the total, potentially turning the failure into a success."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"B",
+				"P",
+				"T",
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflictSpell": [
+				"charmed"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Forge Fitzwilliam",
+			"isNamedCreature": true,
+			"source": "TG",
+			"size": [
+				"M"
+			],
+			"type": "humanoid",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"disarming charm"
+					]
+				}
+			],
+			"hp": {
+				"average": 110,
+				"formula": "20d8 + 20"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 13,
+			"int": 15,
+			"wis": 17,
+			"cha": 20,
+			"save": {
+				"dex": "+5",
+				"int": "+5"
+			},
+			"skill": {
+				"acrobatics": "+5",
+				"deception": "+11",
+				"investigation": "+8",
+				"persuasion": "+11",
+				"sleight of hand": "+5",
+				"stealth": "+8"
+			},
+			"passive": 13,
+			"languages": [
+				"Common",
+				"Thieves' cant"
+			],
+			"cr": "8",
+			"trait": [
+				{
+					"name": "Disarming Charm",
+					"entries": [
+						"While Forge isn't wearing armor, his AC includes his Charisma modifier."
+					]
+				},
+				{
+					"name": "Double-Cross",
+					"entries": [
+						"If Forge hits a creature friendly to him with an attack roll, the attack is automatically a critical hit."
+					]
+				},
+				{
+					"name": "Evasion",
+					"entries": [
+						"If Forge is subjected to an effect that allows him to make a Dexterity saving throw to take only half damage, he takes no damage if he succeeds on the saving throw, and only half damage if he fails, provided he isn't {@condition incapacitated}."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Forge makes two Dagger attacks, two Heavy Crossbow attacks, or one of each."
+					]
+				},
+				{
+					"name": "Dagger",
+					"entries": [
+						"{@atk mw,rw} {@hit 5} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage plus 24 ({@damage 7d6}) poison damage, and the target is {@condition poisoned} until the end of its next turn."
+					]
+				},
+				{
+					"name": "Heavy Crossbow",
+					"entries": [
+						"{@atk rw} {@hit 5} to hit, range 100/400 ft., one target. {@h}7 ({@damage 1d10 + 2}) piercing damage plus 24 ({@damage 7d6}) poison damage. Hit or Miss: If the target is a creature, it has disadvantage on the next attack roll it makes before the start of Forge's next turn."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Cunning",
+					"entries": [
+						"Forge takes the Dash, Disengage, or Hide action, or he gives himself advantage on the next attack roll he makes before the end of this turn."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Uncanny Dodge",
+					"entries": [
+						"Forge halves the damage he takes from an attack that hits him. He must be able to see the attacker."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"TC"
+			],
+			"damageTags": [
+				"I",
+				"P"
+			],
+			"miscTags": [
+				"MW",
+				"RNG",
+				"RW",
+				"THW"
+			],
+			"conditionInflict": [
+				"poisoned"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Holga Kilgore",
+			"isNamedCreature": true,
+			"source": "TG",
+			"size": [
+				"M"
+			],
+			"type": "humanoid",
+			"alignment": [
+				"C",
+				"G"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"Unarmored Defense"
+					]
+				}
+			],
+			"hp": {
+				"average": 120,
+				"formula": "16d8 + 48"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 19,
+			"dex": 14,
+			"con": 16,
+			"int": 11,
+			"wis": 16,
+			"cha": 13,
+			"save": {
+				"str": "+7",
+				"con": "+6"
+			},
+			"skill": {
+				"athletics": "+7",
+				"intimidation": "+4",
+				"nature": "+3",
+				"survival": "+6"
+			},
+			"passive": 13,
+			"resist": [
+				{
+					"resist": [
+						"lightning"
+					],
+					"note": "(granted by darksteel greataxe)"
+				}
+			],
+			"languages": [
+				"Common",
+				"Halfling"
+			],
+			"cr": "5",
+			"trait": [
+				{
+					"name": "Reckless",
+					"entries": [
+						"At the start of her turn, Holga can gain advantage on melee weapon attack rolls during that turn, but attack rolls against her have advantage until the start of her next turn."
+					]
+				},
+				{
+					"name": "Special Equipment",
+					"entries": [
+						"Holga carries a darksteel greataxe, a magic weapon that grants her resistance to lightning damage while she carries it (included above)."
+					]
+				},
+				{
+					"name": "Unarmored Defense",
+					"entries": [
+						"While Holga isn't wearing armor, her AC includes her Constitution modifier."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Holga makes three Darksteel Greataxe or Improvised Weapon attacks, in any combination."
+					]
+				},
+				{
+					"name": "Darksteel Greataxe",
+					"entries": [
+						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}10 ({@damage 1d12 + 4}) slashing damage."
+					]
+				},
+				{
+					"name": "Improvised Weapon",
+					"entries": [
+						"{@atk mw,rw} {@hit 7} to hit, reach 5 ft., or range 20/60 ft., one target. {@h}7 ({@damage 1d6 + 4}) bludgeoning damage."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Wrestle",
+					"entries": [
+						"Holga shoves a creature within 5 feet of herself. That creature must succeed on a {@dc 15} Strength saving throw or be moved 5 feet into an unoccupied space of Holga's choice."
+					]
+				}
+			],
+			"traitTags": [
+				"Reckless"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"H"
+			],
+			"damageTags": [
+				"B",
+				"S"
+			],
+			"miscTags": [
+				"MW",
+				"RW"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Simon Aumar",
+			"isNamedCreature": true,
+			"source": "TG",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"sorcerer"
+				]
+			},
+			"alignment": [
+				"C",
+				"G"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 99,
+				"formula": "18d8 + 18"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 8,
+			"dex": 14,
+			"con": 13,
+			"int": 16,
+			"wis": 12,
+			"cha": 17,
+			"save": {
+				"con": "+4",
+				"cha": "+6"
+			},
+			"skill": {
+				"arcana": "+6",
+				"deception": "+6",
+				"history": "+6",
+				"religion": "+6",
+				"survival": "+4"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 11,
+			"languages": [
+				"Common",
+				"Draconic",
+				"Elvish"
+			],
+			"cr": "5",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"Roll a {@dice d6}. On a roll of 1, Simon must roll on the Wild Magic Surge table in the Player's Handbook. On a roll of 2 or higher, Simon casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 14}):"
+					],
+					"will": [
+						"{@spell mage hand}",
+						"{@spell minor illusion}",
+						"{@spell prestidigitation}",
+						"{@spell speak with dead} (Simon must be holding his deathly token to cast this spell)"
+					],
+					"daily": {
+						"2e": [
+							"{@spell fog cloud}",
+							"{@spell mage armor}",
+							"{@spell magic missile}",
+							"{@spell spider climb}"
+						],
+						"1e": [
+							"{@spell Bigby's hand}",
+							"{@spell major image}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Fey Ancestry",
+					"entries": [
+						"Simon has advantage on saving throws he makes to avoid or end the {@condition charmed} condition on himself, and magic can't put him to sleep."
+					]
+				},
+				{
+					"name": "Special Equipment",
+					"entries": [
+						"Simon carries a bag of holding, two pairs of sending stones, and a deathly token (see Spellcasting)."
+					]
+				},
+				{
+					"name": "Wild Magic",
+					"entries": [
+						"When Simon takes 20 or more damage from a single source or takes damage from a critical hit, he must roll on the Wild Magic Surge table in the Player's Handbook."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Simon makes three Quarterstaff or Chaos Bolt attacks. He can replace one attack with one use of Spellcasting."
+					]
+				},
+				{
+					"name": "Quarterstaff",
+					"entries": [
+						"{@atk mw} {@hit 2} to hit, reach 5 ft., one target. {@h}2 ({@damage 1d6 - 1}) bludgeoning damage, or 3 ({@damage 1d8 - 1}) bludgeoning damage if used with two hands, plus 11 ({@damage 2d10}) force damage."
+					]
+				},
+				{
+					"name": "Chaos Bolt",
+					"entries": [
+						"{@atk rs} {@hit 6} to hit, range 60 ft., one target. {@h}14 ({@damage 2d10 + 3}) damage of a random type determined by rolling a {@dice d8}: 1, acid; 2, cold; 3, fire; 4, force; 5, lightning; 6, poison; 7, psychic; 8, thunder."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Sheltering Shield (3/Day)",
+					"entries": [
+						"When Simon or another creature he can see within 10 feet of himself would take damage, he conjures a shimmering, 10-foot-radius sphere of magical force centered on himself. Creatures inside the sphere have resistance to the damage that triggered this reaction."
+					]
+				}
+			],
+			"traitTags": [
+				"Fey Ancestry"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"DR",
+				"E"
+			],
+			"damageTags": [
+				"B",
+				"O"
+			],
+			"damageTagsSpell": [
+				"B",
+				"O"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"AOE",
+				"MW"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Sofina",
+			"isNamedCreature": true,
+			"source": "TG",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"wizard"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				14
+			],
+			"hp": {
+				"average": 161,
+				"formula": "19d8 + 76"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 12,
+			"dex": 14,
+			"con": 18,
+			"int": 20,
+			"wis": 14,
+			"cha": 8,
+			"save": {
+				"int": "+10",
+				"wis": "+7"
+			},
+			"skill": {
+				"arcana": "+10",
+				"history": "+10",
+				"insight": "+7"
+			},
+			"passive": 12,
+			"resist": [
+				"necrotic"
+			],
+			"languages": [
+				"Abyssal",
+				"Common",
+				"Draconic",
+				"Infernal",
+				"Thayan"
+			],
+			"cr": "15",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"Sofina casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 18}):"
+					],
+					"will": [
+						"{@spell mage hand}",
+						"{@spell message}",
+						"{@spell prestidigitation}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell bestow curse}",
+							"{@spell Bigby's hand}",
+							"{@spell dimension door}",
+							"{@spell mage armor}",
+							"{@spell Otiluke's resilient sphere}",
+							"{@spell thunderwave}"
+						],
+						"1e": [
+							"{@spell Evard's black tentacles}",
+							"{@spell finger of death}",
+							"{@spell time stop}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Special Equipment",
+					"entries": [
+						"Sofina wears a magic robe that grants her a +2 bonus to AC and a +1 bonus to saving throws (included above)."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Sofina makes three Necrotic Strike attacks."
+					]
+				},
+				{
+					"name": "Necrotic Strike",
+					"entries": [
+						"{@atk ms,rs} {@hit 10} to hit, reach 5 ft. or range 120 ft., one target. {@h}32 ({@damage 5d10 + 5}) necrotic damage."
+					]
+				},
+				{
+					"name": "Swarm of Meteors (1/Day)",
+					"entries": [
+						"Sofina magically calls down a meteor swarm that detonates in four 40-foot-radius spheres, each one centered on a point she can see within 1 mile of herself. These spheres can overlap. Each creature in one or more of these spheres must make a {@dc 18} Dexterity saving throw, taking 35 ({@damage 10d6}) fire damage and 35 ({@damage 10d6}) bludgeoning damage on a failed saving throw, or half as much damage on a successful one. A creature in multiple spheres takes this damage only once."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Summon Wraith (1/Day)",
+					"entries": [
+						"Sofina magically summons the spirit of a Thayan assassin, which appears as a wraith (see the Monster Manual). The summoned wraith appears in an unoccupied space within 60 feet of Sofina, whom it obeys. The summoned wraith takes its turn immediately after Sofina. It lasts for 1 hour, until it or Sofina dies, or until Sofina dismisses it as a bonus action."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"AB",
+				"C",
+				"DR",
+				"I",
+				"OTH"
+			],
+			"damageTags": [
+				"B",
+				"F",
+				"N"
+			],
+			"damageTagsSpell": [
+				"B",
+				"N",
+				"O",
+				"T"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"AOE"
+			],
+			"conditionInflictSpell": [
+				"restrained"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Xenk Yendar",
+			"isNamedCreature": true,
+			"source": "TG",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"paladin"
+				]
+			},
+			"alignment": [
+				"L",
+				"G"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"{@item half plate armor|PHB|half plate}"
+					]
+				}
+			],
+			"hp": {
+				"average": 157,
+				"formula": "21d8 + 63"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 19,
+			"dex": 11,
+			"con": 16,
+			"int": 14,
+			"wis": 16,
+			"cha": 17,
+			"save": {
+				"str": "+8",
+				"cha": "+7"
+			},
+			"skill": {
+				"athletics": "+8",
+				"history": "+6",
+				"insight": "+7",
+				"survival": "+7"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"conditionImmune": [
+				"charmed",
+				"frightened",
+				"poisoned"
+			],
+			"languages": [
+				"Common",
+				"Thayan",
+				"Undercommon"
+			],
+			"cr": "10",
+			"trait": [
+				{
+					"name": "Aura of Protection",
+					"entries": [
+						"Xenk and his allies within 10 feet of him have advantage on saving throws."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Xenk makes three Daggersword attacks and uses Daggersword Flourish. He can replace Daggersword Flourish with Cleansing Touch if it's available."
+					]
+				},
+				{
+					"name": "Daggersword",
+					"entries": [
+						"Choose the attack that corresponds to the daggersword's current form (see Daggersword Shift below):"
+					]
+				},
+				{
+					"name": "Longsword",
+					"entries": [
+						"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d8 + 4}) slashing damage, or 9 ({@damage 1d10 + 4}) slashing damage if used with two hands, plus 6 ({@damage 1d12}) radiant damage."
+					]
+				},
+				{
+					"name": "Shortsword and Dagger",
+					"entries": [
+						"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d6 + 4}) piercing damage plus 6 ({@damage 1d12}) radiant damage."
+					]
+				},
+				{
+					"name": "Daggersword Flourish",
+					"entries": [
+						"Choose the option that corresponds to the daggersword's current form (see Daggersword Shift below):"
+					]
+				},
+				{
+					"name": "Longsword",
+					"entries": [
+						"Xenk magically detaches the longsword's blade from its hilt, launching the blade at a creature he can see within 30 feet of himself. The target must make a {@dc 16} Dexterity saving throw. On a failed save, the target is impaled by the blade, taking 14 ({@damage 3d6 + 4}) piercing damage, and is knocked {@condition prone}. At the end of the current turn, the blade magically reattaches to its hilt."
+					]
+				},
+				{
+					"name": "Shortsword and Dagger",
+					"entries": [
+						"Xenk lashes out with both weapons. Each creature of his choice within 10 feet of him must make a {@dc 16} Dexterity throw. On a failed save, the creature takes 7 ({@damage 2d6}) piercing damage and has disadvantage on attack rolls until the start of Xenk's next turn. On a successful save, the creature takes half as much damage and suffers no other effect."
+					]
+				},
+				{
+					"name": "Cleansing Touch (1/Day)",
+					"entries": [
+						"Xenk touches a creature within 5 feet of himself. The target magically regains 27 ({@dice 6d8}) hit points and gains the benefit of a {@spell lesser restoration} spell."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Daggersword Shift",
+					"entries": [
+						"Xenk changes the form of his daggersword, choosing one of the following forms: a longsword, or a shortsword in one hand and a dagger in the other."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"OTH",
+				"U"
+			],
+			"damageTags": [
+				"P",
+				"R",
+				"S"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		}
+	]
+}

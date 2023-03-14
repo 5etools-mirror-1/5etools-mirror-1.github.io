@@ -29,7 +29,7 @@ class BaseParser {
 			: line;
 	}
 
-	static _getCleanInput (ipt, options) {
+	static _getCleanInput (ipt, options = null) {
 		let iptClean = ipt
 			.replace(/\n\r/g, "\n")
 			.replace(/\r\n/g, "\n")
@@ -51,12 +51,19 @@ class BaseParser {
 		iptClean = this._getCleanInput_parens(iptClean, "[", "]");
 		iptClean = this._getCleanInput_parens(iptClean, "{", "}");
 
-		// Apply `PAGE=...`
+		// Connect lines ending in, or starting in, a comma
 		iptClean = iptClean
-			.replace(/(?:\n|^)PAGE=(?<page>\d+)(?:\n|$)/gi, (...m) => {
-				options.page = Number(m.last().page);
-				return "";
-			});
+			.replace(/, *\n+ */g, ", ")
+			.replace(/ *\n+, */g, ", ");
+
+		if (options) {
+			// Apply `PAGE=...`
+			iptClean = iptClean
+				.replace(/(?:\n|^)PAGE=(?<page>\d+)(?:\n|$)/gi, (...m) => {
+					options.page = Number(m.last().page);
+					return "";
+				});
+		}
 
 		return iptClean;
 	}
@@ -281,18 +288,23 @@ class TagCondition {
 		return walker.walk(entry, walkerHandlers);
 	}
 
+	static _getModifiedString (str) {
+		return str
+			.replace(TagCondition._CONDITION_MATCHER, (...m) => `{@condition ${m[1]}}`)
+			.replace(TagCondition._STATUS_MATCHER, (...m) => `{@status ${m[1]}}`)
+			.replace(TagCondition._STATUS_MATCHER_ALT, (...m) => `{@status ${TagCondition._STATUS_MATCHER_ALT_REPLACEMENTS[m[1].toLowerCase()]}${m[1]}}`)
+		;
+	}
+
 	static _walkerStringHandler (ptrStack, depth, conditionCount, str, {inflictedSet, inflictedAllowlist} = {}) {
 		TaggerUtils.walkerStringHandler(
-			"@condition",
+			["@condition", "@status"],
 			ptrStack,
 			depth,
 			conditionCount,
 			str,
 			{
-				fnTag: sMod => {
-					TagCondition._CONDITION_MATCHERS.forEach(r => sMod = sMod.replace(r, (...mt) => `{@condition ${mt[1]}}`));
-					return sMod;
-				},
+				fnTag: this._getModifiedString.bind(this),
 			},
 		);
 
@@ -387,19 +399,20 @@ class TagCondition {
 	// region Run basic tagging
 	static tryRunBasic (it) {
 		const walker = MiscUtil.getWalker({keyBlocklist: TagCondition._KEY_BLOCKLIST});
+
 		return walker.walk(
 			it,
 			{
 				string: (str) => {
 					const ptrStack = {_: ""};
 					TaggerUtils.walkerStringHandler(
-						["@condition"],
+						["@condition", "@status"],
 						ptrStack,
 						0,
 						0,
 						str,
 						{
-							fnTag: strMod => strMod.replace(TagCondition._CONDITION_MATCHER_WORD, (...m) => `{@condition ${m[1]}}`),
+							fnTag: this._getModifiedString.bind(this),
 						},
 					);
 					return ptrStack._
@@ -432,8 +445,12 @@ TagCondition._CONDITIONS = [
 	"stunned",
 	"unconscious",
 ];
-TagCondition._CONDITION_MATCHERS = TagCondition._CONDITIONS.map(it => new RegExp(`\\b(${it})\\b`, "g"));
-TagCondition._CONDITION_MATCHER_WORD = new RegExp(`\\b(${TagCondition._CONDITIONS.join("|")})\\b`, "g");
+TagCondition._CONDITION_MATCHER = new RegExp(`\\b(${TagCondition._CONDITIONS.join("|")})\\b`, "g");
+TagCondition._STATUS_MATCHER = new RegExp(`\\b(concentration)\\b`, "g");
+TagCondition._STATUS_MATCHER_ALT = new RegExp(`\\b(concentrating)\\b`, "g");
+TagCondition._STATUS_MATCHER_ALT_REPLACEMENTS = {
+	"concentrating": "concentration||",
+};
 // Each should have one group which matches the condition name.
 //   A comma/and part is appended to the end to handle chains of conditions.
 TagCondition.__TGT = `(?:target|wielder)`;
@@ -714,7 +731,7 @@ class SenseTag {
 	}
 
 	static _fnTag (strMod) {
-		return strMod.replace(/(tremorsense|blindsight|truesight|darkvision)/g, (...m) => `{@sense ${m[0]}${m[0].toLowerCase() === "tremorsense" ? "|MM" : ""}}`);
+		return strMod.replace(/(tremorsense|blindsight|truesight|darkvision)/ig, (...m) => `{@sense ${m[0]}${m[0].toLowerCase() === "tremorsense" ? "|MM" : ""}}`);
 	}
 }
 

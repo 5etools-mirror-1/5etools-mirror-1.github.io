@@ -58,15 +58,12 @@ class PageFilterTrapsHazards extends PageFilter {
 globalThis.PageFilterTrapsHazards = PageFilterTrapsHazards;
 
 class ListSyntaxTrapsHazards extends ListUiUtil.ListSyntax {
-	_getSearchCacheStats (entity) {
-		if (!entity.effect && !entity.trigger && !entity.countermeasures && !entity.entries) return "";
-		const ptrOut = {_: ""};
-		this._getSearchCache_handleEntryProp(entity, "effect", ptrOut);
-		this._getSearchCache_handleEntryProp(entity, "trigger", ptrOut);
-		this._getSearchCache_handleEntryProp(entity, "countermeasures", ptrOut);
-		this._getSearchCache_handleEntryProp(entity, "entries", ptrOut);
-		return ptrOut._;
-	}
+	static _INDEXABLE_PROPS_ENTRIES = [
+		"effect",
+		"trigger",
+		"countermeasures",
+		"entries",
+	];
 }
 
 globalThis.ListSyntaxTrapsHazards = ListSyntaxTrapsHazards;
