@@ -33,6 +33,7 @@ class PageFilterEquipment extends PageFilter {
 		this._weightFilter = new RangeFilter({header: "Weight", min: 0, max: 100, isAllowGreater: true, suffix: " lb."});
 		this._focusFilter = new Filter({header: "Spellcasting Focus", items: [...Parser.ITEM_SPELLCASTING_FOCUS_CLASSES]});
 		this._damageTypeFilter = new Filter({header: "Weapon Damage Type", displayFn: it => Parser.dmgTypeToFull(it).uppercaseFirst(), itemSortFn: (a, b) => SortUtil.ascSortLower(Parser.dmgTypeToFull(a), Parser.dmgTypeToFull(b))});
+		this._damageDiceFilter = new Filter({header: "Weapon Damage Dice", items: ["1", "1d4", "1d6", "1d8", "1d10", "1d12", "2d6"],});
 		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Item Group", "Bundle", "SRD", "Basic Rules", "Has Images", "Has Info"], isMiscFilter: true});
 		this._poisonTypeFilter = new Filter({header: "Poison Type", items: ["ingested", "injury", "inhaled", "contact"], displayFn: StrUtil.toTitleCase});
 	}
@@ -85,6 +86,7 @@ class PageFilterEquipment extends PageFilter {
 		this._typeFilter.addItem(item._typeListText);
 		this._propertyFilter.addItem(item._fProperties);
 		this._damageTypeFilter.addItem(item.dmgType);
+		this._damageDiceFilter.addItem(item.dmg1);
 		this._poisonTypeFilter.addItem(item.poisonTypes);
 		this._miscFilter.addItem(item._fMisc);
 	}
@@ -99,6 +101,7 @@ class PageFilterEquipment extends PageFilter {
 			this._weightFilter,
 			this._focusFilter,
 			this._damageTypeFilter,
+			this._damageDiceFilter,
 			this._miscFilter,
 			this._poisonTypeFilter,
 		];
@@ -115,6 +118,7 @@ class PageFilterEquipment extends PageFilter {
 			it.weight,
 			it._fFocus,
 			it.dmgType,
+			it.dmg1,
 			it._fMisc,
 			it.poisonTypes,
 		);
@@ -319,6 +323,7 @@ class PageFilterItems extends PageFilterEquipment {
 			this._weightFilter,
 			this._focusFilter,
 			this._damageTypeFilter,
+			this._damageDiceFilter,
 			this._bonusFilter,
 			this._miscFilter,
 			this._rechargeTypeFilter,
@@ -345,6 +350,7 @@ class PageFilterItems extends PageFilterEquipment {
 			it.weight,
 			it._fFocus,
 			it.dmgType,
+			it.dmg1,
 			it._fBonus,
 			it._fMisc,
 			it.recharge,
