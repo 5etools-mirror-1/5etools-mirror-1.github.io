@@ -49,7 +49,7 @@ jobs:
          -  name: Build SEO Pages
             env:
                VET_SEO_IS_DEV_MODE: true
-               VET_BASE_SITE_URL: https://5etools-mirror-1.github.io/
+               VET_BASE_SITE_URL: https://ulmeck.github.io/
                VET_SEO_IS_SKIP_UA_ETC: true
             run: |
                npm run build:seo -- ${{ github.ref_name }}
