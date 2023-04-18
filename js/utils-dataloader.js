@@ -960,7 +960,7 @@ class _DataTypeLoaderCustomMonsterFluff extends _DataTypeLoaderMultiSource {
 }
 
 class _DataTypeLoaderCustomSpell extends _DataTypeLoaderMultiSource {
-	static PROPS = ["spell"];
+	static PROPS = [...UrlUtil.PAGE_TO_PROPS[UrlUtil.PG_SPELLS]];
 	static PAGE = UrlUtil.PG_SPELLS;
 
 	_prop = "spell";
@@ -1199,7 +1199,7 @@ class _DataTypeLoaderCustomClassSubclassFeature extends _DataTypeLoader {
 }
 
 class _DataTypeLoaderCustomItem extends _DataTypeLoader {
-	static PROPS = ["item", "itemGroup", "itemType", "itemEntry", "itemProperty", "itemTypeAdditionalEntries", "baseitem", "magicvariant"];
+	static PROPS = [...UrlUtil.PAGE_TO_PROPS[UrlUtil.PG_ITEMS]];
 	static PAGE = UrlUtil.PG_ITEMS;
 
 	/**

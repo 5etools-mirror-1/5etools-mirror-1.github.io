@@ -3286,6 +3286,11 @@ class SourceUiUtil {
 				$iptJson.removeClass("form-control--error");
 			});
 		if (options.source) $iptJson.val(options.source.json);
+		let hasColor = false;
+		const $iptColor = $(`<input type="color" class="w-100 b-0">`)
+			.keydown(evt => { if (evt.key === "Escape") $iptColor.blur(); })
+			.change(() => hasColor = true);
+		if (options.source?.color != null) (hasColor = true) && $iptColor.val(options.source.color);
 		const $iptUrl = $(`<input class="form-control ui-source__ipt-named">`)
 			.keydown(evt => { if (evt.key === "Escape") $iptUrl.blur(); });
 		if (options.source) $iptUrl.val(options.source.url);
@@ -3317,6 +3322,7 @@ class SourceUiUtil {
 					abbreviation: $iptAbv.val().trim(),
 					full: $iptName.val().trim(),
 					url: $iptUrl.val().trim(),
+					color: $iptColor.val().trim(),
 					authors: $iptAuthors.val().trim().split(",").map(it => it.trim()).filter(Boolean),
 					convertedBy: $iptConverters.val().trim().split(",").map(it => it.trim()).filter(Boolean),
 				};
@@ -3350,6 +3356,10 @@ class SourceUiUtil {
 			<div class="ui-source__row mb-2"><div class="col-12 ve-flex-v-center">
 				<span class="mr-2 ui-source__name help" title="This will be used to identify your homebrew universally, so should be unique to you and you alone">JSON Identifier</span>
 				${$iptJson}
+			</div></div>
+			<div class="ui-source__row mb-2"><div class="col-12 ve-flex-v-center">
+				<span class="mr-2 ui-source__name help" title="A color which should be used when displaying the source abbreviation">Color</span>
+				${$iptColor}
 			</div></div>
 			<div class="ui-source__row mb-2"><div class="col-12 ve-flex-v-center">
 				<span class="mr-2 ui-source__name help" title="A link to the original homebrew, e.g. a GM Binder page">Source URL</span>

@@ -2985,8 +2985,14 @@ class SourceFilter extends Filter {
 	}
 
 	_doRenderPills_doRenderWrpGroup_getHrDivider (group) {
-		if (group !== 1) return super._doRenderPills_doRenderWrpGroup_getHrDivider(group);
+		switch (group) {
+			case 1: return this._doRenderPills_doRenderWrpGroup_getHrDivider_groupOne(group);
+			case 2: return this._doRenderPills_doRenderWrpGroup_getHrDivider_groupTwo(group);
+			default: return super._doRenderPills_doRenderWrpGroup_getHrDivider(group);
+		}
+	}
 
+	_doRenderPills_doRenderWrpGroup_getHrDivider_groupOne (group) {
 		let dates = [];
 		const comp = BaseComponent.fromObject({
 			min: 0,
@@ -3122,6 +3128,42 @@ class SourceFilter extends Filter {
 					],
 				}),
 				wrpWrpSlider,
+			],
+		});
+	}
+
+	_doRenderPills_doRenderWrpGroup_getHrDivider_groupTwo (group) {
+		const btnClear = e_({
+			tag: "button",
+			clazz: `btn btn-xxs btn-default px-1`,
+			html: "Clear",
+			click: () => {
+				const nxtState = {};
+				Object.keys(this._state)
+					.filter(k => BrewUtil2.hasSourceJson(k))
+					.forEach(k => nxtState[k] = 0);
+				this._proxyAssign("state", "_state", "__state", nxtState);
+			},
+		});
+
+		return e_({
+			tag: "div",
+			clazz: `ve-flex-col w-100`,
+			children: [
+				super._doRenderPills_doRenderWrpGroup_getHrDivider(),
+				e_({
+					tag: "div",
+					clazz: `mb-1 ve-flex-h-right`,
+					children: [
+						e_({
+							tag: "div",
+							clazz: `ve-flex-v-center btn-group`,
+							children: [
+								btnClear,
+							],
+						}),
+					],
+				}),
 			],
 		});
 	}

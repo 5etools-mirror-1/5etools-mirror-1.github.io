@@ -70,7 +70,7 @@
 	$rgb-source-PSX: #bb2722;
 	$rgb-source-PSZ: #6f8a2d;
 	$rgb-source-KftGV: #876e38;
-	$rgb-source-TG: #a24545;
+	$rgb-source-hat: #a24545;
 
 	// region Categories
 
@@ -539,10 +539,11 @@
 		text-decoration-color: $rgb-source-KftGV !important;
 	}
 
-	&TG {
-		color: $rgb-source-TG !important;
-		border-color: $rgb-source-TG !important;
-		text-decoration-color: $rgb-source-TG !important;
+	&HAT-TG,
+	&HAT-LMI {
+		color: $rgb-source-hat !important;
+		border-color: $rgb-source-hat !important;
+		text-decoration-color: $rgb-source-hat !important;
 	}
 	// endregion
 }

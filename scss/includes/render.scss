@@ -237,6 +237,10 @@ $rgb-inset-border: #656565;
 			list-style: lower-roman;
 		}
 
+		&list-upper-roman {
+			list-style: upper-roman;
+		}
+
 		&list-no-bullets {
 			list-style: none;
 			padding: 0 10px;

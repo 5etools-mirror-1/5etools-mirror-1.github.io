@@ -467,7 +467,7 @@ globalThis.Renderer = function () {
 			? `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${entry.width}" height="${entry.height}"><rect width="100%" height="100%" fill="#ccc3"></rect></svg>`)}`
 			: null;
 		textStack[0] += `<div class="${this._renderImage_getWrapperClasses(entry, meta)}" ${entry.title && this._isHeaderIndexIncludeImageTitles ? `data-title-index="${this._headerIndex++}"` : ""}>
-			<a href="${href}" target="_blank" rel="noopener noreferrer" ${entry.title ? `title="${Renderer.stripTags(entry.title)}"` : ""}>
+			<a href="${href}" target="_blank" rel="noopener noreferrer" ${entry.title ? `title="${Renderer.stripTags(entry.title).qq()}"` : ""}>
 				<img class="${this._renderImage_getImageClasses(entry, meta)}" src="${svg || href}" ${entry.altText || entry.title ? `alt="${Renderer.stripTags((entry.altText || entry.title)).qq()}"` : ""} ${svg ? `data-src="${href}"` : `loading="lazy"`} ${this._renderImage_getStylePart(entry)}>
 			</a>
 		</div>`;
@@ -836,8 +836,9 @@ globalThis.Renderer = function () {
 	this._renderList = function (entry, textStack, meta, options) {
 		if (entry.items) {
 			if (entry.name) textStack[0] += `<div class="rd__list-name">${entry.name}</div>`;
+			const tag = entry.start ? "ol" : "ul";
 			const cssClasses = this._renderList_getListCssClasses(entry, textStack, meta, options);
-			textStack[0] += `<ul ${cssClasses ? `class="${cssClasses}"` : ""}>`;
+			textStack[0] += `<${tag} ${cssClasses ? `class="${cssClasses}"` : ""} ${entry.start ? `start="${entry.start}"` : ""}>`;
 			const isListHang = entry.style && entry.style.split(" ").includes("list-hang");
 			const len = entry.items.length;
 			for (let i = 0; i < len; ++i) {
@@ -853,7 +854,7 @@ globalThis.Renderer = function () {
 				if (isListHang && typeof item === "string") textStack[0] += "</div>";
 				if (item.type !== "list") textStack[0] += "</li>";
 			}
-			textStack[0] += "</ul>";
+			textStack[0] += `</${tag}>`;
 		}
 	};
 
@@ -9760,7 +9761,7 @@ Renderer.hover = {
 
 		if (!meta.windowMeta) return;
 
-		meta.windowMeta.setPosition(Renderer.hover.getWindowPositionFromEvent(evt, {isPreventFlicker: evt.shiftKey || meta.isPermanent}));
+		meta.windowMeta.setPosition(Renderer.hover.getWindowPositionFromEvent(evt, {isPreventFlicker: !evt.shiftKey && !meta.isPermanent}));
 
 		if (evt.shiftKey && !meta.isPermanent) {
 			meta.isPermanent = true;
@@ -9812,6 +9813,15 @@ Renderer.hover = {
 
 	// (Baked into render strings)
 	handlePredefinedMouseMove (evt, ele) { return Renderer.hover.handleLinkMouseMove(evt, ele); },
+
+	_WINDOW_POSITION_PROPS_FROM_EVENT: [
+		"isFromBottom",
+		"isFromRight",
+		"clientX",
+		"window",
+		"isPreventFlicker",
+		"bcr",
+	],
 
 	getWindowPositionFromEvent (evt, {isPreventFlicker = false} = {}) {
 		const ele = evt.target;
@@ -9933,119 +9943,46 @@ Renderer.hover = {
 		if (opts.height != null) $wrpContent.css("height", opts.height);
 		const $hovTitle = $(`<span class="window-title min-w-0 overflow-ellipsis" title="${`${opts.title || ""}`.qq()}">${opts.title || ""}</span>`);
 
-		const out = {};
+		const hoverWindow = {};
 		const hoverId = Renderer.hover._getNextId();
-		Renderer.hover._WINDOW_METAS[hoverId] = out;
+		Renderer.hover._WINDOW_METAS[hoverId] = hoverWindow;
 		const mouseUpId = `mouseup.${hoverId} touchend.${hoverId}`;
 		const mouseMoveId = `mousemove.${hoverId} touchmove.${hoverId}`;
 		const resizeId = `resize.${hoverId}`;
-
-		const doClose = () => {
-			$hov.remove();
-			$(position.window.document).off(mouseUpId);
-			$(position.window.document).off(mouseMoveId);
-			$(position.window).off(resizeId);
-
-			delete Renderer.hover._WINDOW_METAS[hoverId];
-
-			if (opts.cbClose) opts.cbClose(out);
-		};
-
-		let drag = {};
-		function handleDragMousedown (evt, type) {
-			if (evt.which === 0 || evt.which === 1) evt.preventDefault();
-			out.zIndex = Renderer.hover._getNextZIndex(hoverId);
-			$hov.css({
-				"z-index": out.zIndex,
-				"animation": "initial",
-			});
-			drag.type = type;
-			drag.startX = EventUtil.getClientX(evt);
-			drag.startY = EventUtil.getClientY(evt);
-			drag.baseTop = parseFloat($hov.css("top"));
-			drag.baseLeft = parseFloat($hov.css("left"));
-			drag.baseHeight = $wrpContent.height();
-			drag.baseWidth = parseFloat($hov.css("width"));
-			if (type < 9) {
-				$wrpContent.css({
-					"height": drag.baseHeight,
-					"max-height": "initial",
-				});
-				$hov.css("max-width", "initial");
-			}
-		}
+		const drag = {};
 
 		const $brdrTopRightResize = $(`<div class="hoverborder__resize-ne"></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 1));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 1}));
 
 		const $brdrRightResize = $(`<div class="hoverborder__resize-e"></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 2));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 2}));
 
 		const $brdrBottomRightResize = $(`<div class="hoverborder__resize-se"></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 3));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 3}));
 
 		const $brdrBtm = $(`<div class="hoverborder hoverborder--btm ${opts.isBookContent ? "hoverborder-book" : ""}"><div class="hoverborder__resize-s"></div></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 4));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 4}));
 
 		const $brdrBtmLeftResize = $(`<div class="hoverborder__resize-sw"></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 5));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 5}));
 
 		const $brdrLeftResize = $(`<div class="hoverborder__resize-w"></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 6));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 6}));
 
 		const $brdrTopLeftResize = $(`<div class="hoverborder__resize-nw"></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 7));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 7}));
 
 		const $brdrTopResize = $(`<div class="hoverborder__resize-n"></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 8));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 8}));
 
 		const $brdrTop = $(`<div class="hoverborder hoverborder--top ${opts.isBookContent ? "hoverborder-book" : ""}" ${opts.isPermanent ? `data-perm="true"` : ""}></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 9))
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 9}))
 			.on("contextmenu", (evt) => {
 				Renderer.hover._contextMenuLastClicked = {
 					hoverId,
 				};
 				ContextUtil.pOpenMenu(evt, Renderer.hover._contextMenu);
 			});
-
-		function isOverHoverTarget (evt, target) {
-			return EventUtil.getClientX(evt) >= target.left
-				&& EventUtil.getClientX(evt) <= target.left + target.width
-				&& EventUtil.getClientY(evt) >= target.top
-				&& EventUtil.getClientY(evt) <= target.top + target.height;
-		}
-
-		function handleNorthDrag (evt) {
-			const diffY = Math.max(drag.startY - EventUtil.getClientY(evt), 80 - drag.baseHeight); // prevent <80 height, as this will cause the box to move downwards
-			$wrpContent.css("height", drag.baseHeight + diffY);
-			$hov.css("top", drag.baseTop - diffY);
-			drag.startY = EventUtil.getClientY(evt);
-			drag.baseHeight = $wrpContent.height();
-			drag.baseTop = parseFloat($hov.css("top"));
-		}
-
-		function handleEastDrag (evt) {
-			const diffX = drag.startX - EventUtil.getClientX(evt);
-			$hov.css("width", drag.baseWidth - diffX);
-			drag.startX = EventUtil.getClientX(evt);
-			drag.baseWidth = parseFloat($hov.css("width"));
-		}
-
-		function handleSouthDrag (evt) {
-			const diffY = drag.startY - EventUtil.getClientY(evt);
-			$wrpContent.css("height", drag.baseHeight - diffY);
-			drag.startY = EventUtil.getClientY(evt);
-			drag.baseHeight = $wrpContent.height();
-		}
-
-		function handleWestDrag (evt) {
-			const diffX = Math.max(drag.startX - EventUtil.getClientX(evt), 150 - drag.baseWidth);
-			$hov.css("width", drag.baseWidth + diffX)
-				.css("left", drag.baseLeft - diffX);
-			drag.startX = EventUtil.getClientX(evt);
-			drag.baseWidth = parseFloat($hov.css("width"));
-			drag.baseLeft = parseFloat($hov.css("left"));
-		}
 
 		$(position.window.document)
 			.on(mouseUpId, (evt) => {
@@ -10054,7 +9991,7 @@ Renderer.hover = {
 						$wrpContent.css("max-height", "");
 						$hov.css("max-width", "");
 					}
-					adjustPosition();
+					Renderer.hover._getShowWindow_adjustPosition({$hov, $wrpContent, position});
 
 					if (drag.type === 9) {
 						// handle mobile button touches
@@ -10072,9 +10009,9 @@ Renderer.hover = {
 							this._dmScreen.setHoveringPanel(panel);
 							const target = panel.getAddButtonPos();
 
-							if (isOverHoverTarget(evt, target)) {
+							if (Renderer.hover._getShowWindow_isOverHoverTarget({evt, target})) {
 								panel.doPopulate_Stats(opts.compactReferenceData.page, opts.compactReferenceData.source, opts.compactReferenceData.hash);
-								doClose();
+								Renderer.hover._getShowWindow_doClose({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow});
 							}
 							this._dmScreen.resetHoveringButton();
 						}
@@ -10083,15 +10020,16 @@ Renderer.hover = {
 				}
 			})
 			.on(mouseMoveId, (evt) => {
+				const args = {$wrpContent, $hov, drag, evt};
 				switch (drag.type) {
-					case 1: handleNorthDrag(evt); handleEastDrag(evt); break;
-					case 2: handleEastDrag(evt); break;
-					case 3: handleSouthDrag(evt); handleEastDrag(evt); break;
-					case 4: handleSouthDrag(evt); break;
-					case 5: handleSouthDrag(evt); handleWestDrag(evt); break;
-					case 6: handleWestDrag(evt); break;
-					case 7: handleNorthDrag(evt); handleWestDrag(evt); break;
-					case 8: handleNorthDrag(evt); break;
+					case 1: Renderer.hover._getShowWindow_handleNorthDrag(args); Renderer.hover._getShowWindow_handleEastDrag(args); break;
+					case 2: Renderer.hover._getShowWindow_handleEastDrag(args); break;
+					case 3: Renderer.hover._getShowWindow_handleSouthDrag(args); Renderer.hover._getShowWindow_handleEastDrag(args); break;
+					case 4: Renderer.hover._getShowWindow_handleSouthDrag(args); break;
+					case 5: Renderer.hover._getShowWindow_handleSouthDrag(args); Renderer.hover._getShowWindow_handleWestDrag(args); break;
+					case 6: Renderer.hover._getShowWindow_handleWestDrag(args); break;
+					case 7: Renderer.hover._getShowWindow_handleNorthDrag(args); Renderer.hover._getShowWindow_handleWestDrag(args); break;
+					case 8: Renderer.hover._getShowWindow_handleNorthDrag(args); break;
 					case 9: {
 						const diffX = drag.startX - EventUtil.getClientX(evt);
 						const diffY = drag.startY - EventUtil.getClientY(evt);
@@ -10109,30 +10047,17 @@ Renderer.hover = {
 							this._dmScreen.setHoveringPanel(panel);
 							const target = panel.getAddButtonPos();
 
-							if (isOverHoverTarget(evt, target)) this._dmScreen.setHoveringButton(panel);
+							if (Renderer.hover._getShowWindow_isOverHoverTarget({evt, target})) this._dmScreen.setHoveringButton(panel);
 							else this._dmScreen.resetHoveringButton();
 						}
 						break;
 					}
 				}
 			});
-		$(position.window).on(resizeId, () => adjustPosition(true));
-
-		const doToggleMinimizedMaximized = () => {
-			const curState = $brdrTop.attr("data-display-title");
-			const isNextMinified = curState === "false";
-			$brdrTop.attr("data-display-title", isNextMinified);
-			$brdrTop.attr("data-perm", true);
-			$hov.toggleClass("hwin--minified", isNextMinified);
-		};
-
-		const doMaximize = () => {
-			$brdrTop.attr("data-display-title", false);
-			$hov.toggleClass("hwin--minified", false);
-		};
+		$(position.window).on(resizeId, () => Renderer.hover._getShowWindow_adjustPosition({$hov, $wrpContent, position}));
 
 		$brdrTop.attr("data-display-title", false);
-		$brdrTop.on("dblclick", () => doToggleMinimizedMaximized());
+		$brdrTop.on("dblclick", () => Renderer.hover._getShowWindow_doToggleMinimizedMaximized({$brdrTop, $hov}));
 		$brdrTop.append($hovTitle);
 		const $brdTopRhs = $(`<div class="ve-flex ml-auto no-shrink"></div>`).appendTo($brdrTop);
 
@@ -10141,92 +10066,11 @@ Renderer.hover = {
 				.appendTo($brdTopRhs);
 		}
 
-		const pDoPopout = async () => {
-			const dimensions = opts.fnGetPopoutSize ? opts.fnGetPopoutSize() : {width: 600, height: $content.height()};
-			const win = window.open(
-				"",
-				opts.title || "",
-				`width=${dimensions.width},height=${dimensions.height}location=0,menubar=0,status=0,titlebar=0,toolbar=0`,
-			);
-
-			// If this is a new window, bootstrap general page elements/variables.
-			// Otherwise, we can skip straight to using the window.
-			if (!win._IS_POPOUT) {
-				win._IS_POPOUT = true;
-				win.document.write(`
-					<!DOCTYPE html>
-					<html lang="en" class="ve-popwindow ${typeof styleSwitcher !== "undefined" ? styleSwitcher.getDayNightClassNames() : ""}"><head>
-						<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-						<title>${opts.title}</title>
-						${$(`link[rel="stylesheet"][href]`).map((i, e) => e.outerHTML).get().join("\n")}
-						<!-- Favicons -->
-						<link rel="icon" type="image/svg+xml" href="favicon.svg">
-						<link rel="icon" type="image/png" sizes="256x256" href="favicon-256x256.png">
-						<link rel="icon" type="image/png" sizes="144x144" href="favicon-144x144.png">
-						<link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
-						<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
-						<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
-						<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-						<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
-						<!-- Chrome Web App Icons -->
-						<link rel="manifest" href="manifest.webmanifest">
-						<meta name="application-name" content="5etools">
-						<meta name="theme-color" content="#006bc4">
-
-						<!-- Windows Start Menu tiles -->
-						<meta name="msapplication-config" content="browserconfig.xml"/>
-						<meta name="msapplication-TileColor" content="#006bc4">
-
-						<!-- Apple Touch Icons -->
-						<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
-						<link rel="apple-touch-icon" sizes="360x360" href="apple-touch-icon-360x360.png">
-						<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png">
-						<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
-						<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
-						<meta name="apple-mobile-web-app-title" content="5etools">
-
-						<!-- macOS Safari Pinned Tab and Touch Bar -->
-						<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
-
-						<style>
-							html, body { width: 100%; height: 100%; }
-							body { overflow-y: scroll; }
-							.hwin--popout { max-width: 100%; max-height: 100%; box-shadow: initial; width: 100%; overflow-y: auto; }
-						</style>
-					</head><body class="rd__body-popout">
-					<div class="hwin hoverbox--popout hwin--popout"></div>
-					<script type="text/javascript" src="js/parser.js"></script>
-					<script type="text/javascript" src="js/utils.js"></script>
-					<script type="text/javascript" src="lib/jquery.js"></script>
-					</body></html>
-				`);
-
-				win.Renderer = Renderer;
-
-				let ticks = 50;
-				while (!win.document.body && ticks-- > 0) await MiscUtil.pDelay(5);
-
-				win.$wrpHoverContent = $(win.document).find(`.hoverbox--popout`);
-			}
-
-			let $cpyContent;
-			if (opts.$pFnGetPopoutContent) {
-				$cpyContent = await opts.$pFnGetPopoutContent();
-			} else {
-				$cpyContent = $content.clone(true, true);
-			}
-
-			$cpyContent.appendTo(win.$wrpHoverContent.empty());
-
-			doClose();
-		};
-
 		if (!position.window._IS_POPOUT && !opts.isPopout) {
 			const $btnPopout = $(`<span class="hwin__top-border-icon glyphicon glyphicon-new-window hvr__popout" title="Open as Popup Window"></span>`)
 				.on("click", evt => {
 					evt.stopPropagation();
-					return pDoPopout(evt);
+					return Renderer.hover._getShowWindow_pDoPopout({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow, $content}, {evt});
 				})
 				.appendTo($brdTopRhs);
 		}
@@ -10256,10 +10100,16 @@ Renderer.hover = {
 			$brdTopRhs.append(btnPopout);
 		}
 
-		const $btnClose = $(`<span class="hwin__top-border-icon glyphicon glyphicon-remove" title="Close"></span>`)
+		const $btnClose = $(`<span class="hwin__top-border-icon glyphicon glyphicon-remove" title="Close (CTRL to Close All)"></span>`)
 			.on("click", (evt) => {
 				evt.stopPropagation();
-				doClose();
+
+				if (evt.ctrlKey || evt.metaKey) {
+					Renderer.hover._doCloseAllWindows();
+					return;
+				}
+
+				Renderer.hover._getShowWindow_doClose({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow});
 			}).appendTo($brdTopRhs);
 
 		$wrpContent.append($content);
@@ -10273,128 +10123,305 @@ Renderer.hover = {
 
 		$body.append($hov);
 
-		const setPosition = (pos) => {
-			switch (pos.mode) {
-				case "autoFromElement": {
-					const bcr = $hov[0].getBoundingClientRect();
+		Renderer.hover._getShowWindow_setPosition({$hov, $wrpContent, position}, position);
 
-					if (pos.isFromBottom) $hov.css("top", pos.bcr.top - (bcr.height + 10));
-					else $hov.css("top", pos.bcr.top + pos.bcr.height + 10);
+		hoverWindow.$windowTitle = $hovTitle;
+		hoverWindow.zIndex = initialZIndex;
+		hoverWindow.setZIndex = Renderer.hover._getNextZIndex.bind(this, {$hov, hoverWindow});
 
-					if (pos.isFromRight) $hov.css("left", (pos.clientX || pos.bcr.left) - (bcr.width + 10));
-					else $hov.css("left", (pos.clientX || (pos.bcr.left + pos.bcr.width)) + 10);
-					break;
-				}
-				case "exact": {
-					$hov.css({
-						"left": pos.x,
-						"top": pos.y,
-					});
-					break;
-				}
-				case "exactVisibleBottom": {
-					$hov.css({
-						"left": pos.x,
-						"top": pos.y,
-						"animation": "initial", // Briefly remove the animation so we can calculate the height
-					});
-
-					let yPos = pos.y;
-
-					const {bottom: posBottom, height: winHeight} = $hov[0].getBoundingClientRect();
-					const height = position.window.innerHeight;
-					if (posBottom > height) {
-						yPos = position.window.innerHeight - winHeight;
-						$hov.css({
-							"top": yPos,
-							"animation": "",
-						});
-					}
-
-					break;
-				}
-				default: throw new Error(`Positiong mode unimplemented: "${pos.mode}"`);
-			}
-
-			adjustPosition(true);
-		};
-
-		setPosition(position);
-
-		function adjustPosition () {
-			const eleHov = $hov[0];
-			const wrpContent = $wrpContent[0];
-
-			const bcr = eleHov.getBoundingClientRect().toJSON();
-			const screenHeight = position.window.innerHeight;
-			const screenWidth = position.window.innerWidth;
-
-			// readjust position...
-			// ...if vertically clipping off screen
-			if (bcr.top < 0) {
-				bcr.top = 0;
-				bcr.bottom = bcr.top + bcr.height;
-				eleHov.style.top = `${bcr.top}px`;
-			} else if (bcr.top >= screenHeight - Renderer.hover._BAR_HEIGHT) {
-				bcr.top = screenHeight - Renderer.hover._BAR_HEIGHT;
-				bcr.bottom = bcr.top + bcr.height;
-				eleHov.style.top = `${bcr.top}px`;
-			}
-
-			// ...if horizontally clipping off screen
-			if (bcr.left < 0) {
-				bcr.left = 0;
-				bcr.right = bcr.left + bcr.width;
-				eleHov.style.left = `${bcr.left}px`;
-			} else if (bcr.left + bcr.width + Renderer.hover._BODY_SCROLLER_WIDTH_PX > screenWidth) {
-				bcr.left = Math.max(screenWidth - bcr.width - Renderer.hover._BODY_SCROLLER_WIDTH_PX, 0);
-				bcr.right = bcr.left + bcr.width;
-				eleHov.style.left = `${bcr.left}px`;
-			}
-
-			// Prevent window "flickering" when hovering a link
-			if (
-				position.isPreventFlicker
-				&& Renderer.hover._isIntersectRect(bcr, position.bcr)
-			) {
-				if (position.isFromBottom) {
-					bcr.height = position.bcr.top - 5;
-					wrpContent.style.height = `${bcr.height}px`;
-				} else {
-					bcr.height = screenHeight - position.bcr.bottom - 5;
-					wrpContent.style.height = `${bcr.height}px`;
-				}
-			}
-		}
-
-		const setIsPermanent = (isPermanent) => {
-			opts.isPermanent = isPermanent;
-			$brdrTop.attr("data-perm", isPermanent);
-		};
-
-		const setZIndex = (zIndex) => {
-			$hov.css("z-index", zIndex);
-			out.zIndex = zIndex;
-		};
-
-		const doZIndexToFront = () => {
-			const nxtZIndex = Renderer.hover._getNextZIndex(hoverId);
-			setZIndex(nxtZIndex);
-		};
-
-		out.$windowTitle = $hovTitle;
-		out.zIndex = initialZIndex;
-		out.setZIndex = setZIndex;
-
-		out.setPosition = setPosition;
-		out.setIsPermanent = setIsPermanent;
-		out.doClose = doClose;
-		out.doMaximize = doMaximize;
-		out.doZIndexToFront = doZIndexToFront;
+		hoverWindow.setPosition = Renderer.hover._getShowWindow_setPosition.bind(this, {$hov, $wrpContent, position});
+		hoverWindow.setIsPermanent = Renderer.hover._getShowWindow_setIsPermanent.bind(this, {opts, $brdrTop});
+		hoverWindow.doClose = Renderer.hover._getShowWindow_doClose.bind(this, {$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow});
+		hoverWindow.doMaximize = Renderer.hover._getShowWindow_doMaximize.bind(this, {$brdrTop, $hov});
+		hoverWindow.doZIndexToFront = Renderer.hover._getShowWindow_doZIndexToFront.bind(this, {$hov, hoverWindow, hoverId});
 
 		if (opts.isPopout) pDoPopout().then(null);
 
-		return out;
+		return hoverWindow;
+	},
+
+	_getShowWindow_doClose ({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow}) {
+		$hov.remove();
+		$(position.window.document).off(mouseUpId);
+		$(position.window.document).off(mouseMoveId);
+		$(position.window).off(resizeId);
+
+		delete Renderer.hover._WINDOW_METAS[hoverId];
+
+		if (opts.cbClose) opts.cbClose(hoverWindow);
+	},
+
+	_getShowWindow_handleDragMousedown ({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type}) {
+		if (evt.which === 0 || evt.which === 1) evt.preventDefault();
+		hoverWindow.zIndex = Renderer.hover._getNextZIndex(hoverId);
+		$hov.css({
+			"z-index": hoverWindow.zIndex,
+			"animation": "initial",
+		});
+		drag.type = type;
+		drag.startX = EventUtil.getClientX(evt);
+		drag.startY = EventUtil.getClientY(evt);
+		drag.baseTop = parseFloat($hov.css("top"));
+		drag.baseLeft = parseFloat($hov.css("left"));
+		drag.baseHeight = $wrpContent.height();
+		drag.baseWidth = parseFloat($hov.css("width"));
+		if (type < 9) {
+			$wrpContent.css({
+				"height": drag.baseHeight,
+				"max-height": "initial",
+			});
+			$hov.css("max-width", "initial");
+		}
+	},
+
+	_getShowWindow_isOverHoverTarget ({evt, target}) {
+		return EventUtil.getClientX(evt) >= target.left
+			&& EventUtil.getClientX(evt) <= target.left + target.width
+			&& EventUtil.getClientY(evt) >= target.top
+			&& EventUtil.getClientY(evt) <= target.top + target.height;
+	},
+
+	_getShowWindow_handleNorthDrag ({$wrpContent, $hov, drag, evt}) {
+		const diffY = Math.max(drag.startY - EventUtil.getClientY(evt), 80 - drag.baseHeight); // prevent <80 height, as this will cause the box to move downwards
+		$wrpContent.css("height", drag.baseHeight + diffY);
+		$hov.css("top", drag.baseTop - diffY);
+		drag.startY = EventUtil.getClientY(evt);
+		drag.baseHeight = $wrpContent.height();
+		drag.baseTop = parseFloat($hov.css("top"));
+	},
+
+	_getShowWindow_handleEastDrag ({$wrpContent, $hov, drag, evt}) {
+		const diffX = drag.startX - EventUtil.getClientX(evt);
+		$hov.css("width", drag.baseWidth - diffX);
+		drag.startX = EventUtil.getClientX(evt);
+		drag.baseWidth = parseFloat($hov.css("width"));
+	},
+
+	_getShowWindow_handleSouthDrag ({$wrpContent, $hov, drag, evt}) {
+		const diffY = drag.startY - EventUtil.getClientY(evt);
+		$wrpContent.css("height", drag.baseHeight - diffY);
+		drag.startY = EventUtil.getClientY(evt);
+		drag.baseHeight = $wrpContent.height();
+	},
+
+	_getShowWindow_handleWestDrag ({$wrpContent, $hov, drag, evt}) {
+		const diffX = Math.max(drag.startX - EventUtil.getClientX(evt), 150 - drag.baseWidth);
+		$hov.css("width", drag.baseWidth + diffX)
+			.css("left", drag.baseLeft - diffX);
+		drag.startX = EventUtil.getClientX(evt);
+		drag.baseWidth = parseFloat($hov.css("width"));
+		drag.baseLeft = parseFloat($hov.css("left"));
+	},
+
+	_getShowWindow_doToggleMinimizedMaximized ({$brdrTop, $hov}) {
+		const curState = $brdrTop.attr("data-display-title");
+		const isNextMinified = curState === "false";
+		$brdrTop.attr("data-display-title", isNextMinified);
+		$brdrTop.attr("data-perm", true);
+		$hov.toggleClass("hwin--minified", isNextMinified);
+	},
+
+	_getShowWindow_doMaximize ({$brdrTop, $hov}) {
+		$brdrTop.attr("data-display-title", false);
+		$hov.toggleClass("hwin--minified", false);
+	},
+
+	async _getShowWindow_pDoPopout ({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow, $content}, {evt}) {
+		const dimensions = opts.fnGetPopoutSize ? opts.fnGetPopoutSize() : {width: 600, height: $content.height()};
+		const win = window.open(
+			"",
+			opts.title || "",
+			`width=${dimensions.width},height=${dimensions.height}location=0,menubar=0,status=0,titlebar=0,toolbar=0`,
+		);
+
+		// If this is a new window, bootstrap general page elements/variables.
+		// Otherwise, we can skip straight to using the window.
+		if (!win._IS_POPOUT) {
+			win._IS_POPOUT = true;
+			win.document.write(`
+				<!DOCTYPE html>
+				<html lang="en" class="ve-popwindow ${typeof styleSwitcher !== "undefined" ? styleSwitcher.getDayNightClassNames() : ""}"><head>
+					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+					<title>${opts.title}</title>
+					${$(`link[rel="stylesheet"][href]`).map((i, e) => e.outerHTML).get().join("\n")}
+					<!-- Favicons -->
+					<link rel="icon" type="image/svg+xml" href="favicon.svg">
+					<link rel="icon" type="image/png" sizes="256x256" href="favicon-256x256.png">
+					<link rel="icon" type="image/png" sizes="144x144" href="favicon-144x144.png">
+					<link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
+					<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+					<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+					<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+					<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+					<!-- Chrome Web App Icons -->
+					<link rel="manifest" href="manifest.webmanifest">
+					<meta name="application-name" content="5etools">
+					<meta name="theme-color" content="#006bc4">
+
+					<!-- Windows Start Menu tiles -->
+					<meta name="msapplication-config" content="browserconfig.xml"/>
+					<meta name="msapplication-TileColor" content="#006bc4">
+
+					<!-- Apple Touch Icons -->
+					<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+					<link rel="apple-touch-icon" sizes="360x360" href="apple-touch-icon-360x360.png">
+					<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png">
+					<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+					<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+					<meta name="apple-mobile-web-app-title" content="5etools">
+
+					<!-- macOS Safari Pinned Tab and Touch Bar -->
+					<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
+
+					<style>
+						html, body { width: 100%; height: 100%; }
+						body { overflow-y: scroll; }
+						.hwin--popout { max-width: 100%; max-height: 100%; box-shadow: initial; width: 100%; overflow-y: auto; }
+					</style>
+				</head><body class="rd__body-popout">
+				<div class="hwin hoverbox--popout hwin--popout"></div>
+				<script type="text/javascript" src="js/parser.js"></script>
+				<script type="text/javascript" src="js/utils.js"></script>
+				<script type="text/javascript" src="lib/jquery.js"></script>
+				</body></html>
+			`);
+
+			win.Renderer = Renderer;
+
+			let ticks = 50;
+			while (!win.document.body && ticks-- > 0) await MiscUtil.pDelay(5);
+
+			win.$wrpHoverContent = $(win.document).find(`.hoverbox--popout`);
+		}
+
+		let $cpyContent;
+		if (opts.$pFnGetPopoutContent) {
+			$cpyContent = await opts.$pFnGetPopoutContent();
+		} else {
+			$cpyContent = $content.clone(true, true);
+		}
+
+		$cpyContent.appendTo(win.$wrpHoverContent.empty());
+
+		Renderer.hover._getShowWindow_doClose({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow});
+	},
+
+	_getShowWindow_setPosition ({$hov, $wrpContent, position}, positionNxt) {
+		switch (positionNxt.mode) {
+			case "autoFromElement": {
+				const bcr = $hov[0].getBoundingClientRect();
+
+				if (positionNxt.isFromBottom) $hov.css("top", positionNxt.bcr.top - (bcr.height + 10));
+				else $hov.css("top", positionNxt.bcr.top + positionNxt.bcr.height + 10);
+
+				if (positionNxt.isFromRight) $hov.css("left", (positionNxt.clientX || positionNxt.bcr.left) - (bcr.width + 10));
+				else $hov.css("left", (positionNxt.clientX || (positionNxt.bcr.left + positionNxt.bcr.width)) + 10);
+
+				// region Sync position info when updating
+				if (position !== positionNxt) {
+					Renderer.hover._WINDOW_POSITION_PROPS_FROM_EVENT
+						.forEach(prop => {
+							position[prop] = positionNxt[prop];
+						});
+				}
+				// endregion
+
+				break;
+			}
+			case "exact": {
+				$hov.css({
+					"left": positionNxt.x,
+					"top": positionNxt.y,
+				});
+				break;
+			}
+			case "exactVisibleBottom": {
+				$hov.css({
+					"left": positionNxt.x,
+					"top": positionNxt.y,
+					"animation": "initial", // Briefly remove the animation so we can calculate the height
+				});
+
+				let yPos = positionNxt.y;
+
+				const {bottom: posBottom, height: winHeight} = $hov[0].getBoundingClientRect();
+				const height = position.window.innerHeight;
+				if (posBottom > height) {
+					yPos = position.window.innerHeight - winHeight;
+					$hov.css({
+						"top": yPos,
+						"animation": "",
+					});
+				}
+
+				break;
+			}
+			default: throw new Error(`Positiong mode unimplemented: "${positionNxt.mode}"`);
+		}
+
+		Renderer.hover._getShowWindow_adjustPosition({$hov, $wrpContent, position});
+	},
+
+	_getShowWindow_adjustPosition ({$hov, $wrpContent, position}) {
+		const eleHov = $hov[0];
+		const wrpContent = $wrpContent[0];
+
+		const bcr = eleHov.getBoundingClientRect().toJSON();
+		const screenHeight = position.window.innerHeight;
+		const screenWidth = position.window.innerWidth;
+
+		// readjust position...
+		// ...if vertically clipping off screen
+		if (bcr.top < 0) {
+			bcr.top = 0;
+			bcr.bottom = bcr.top + bcr.height;
+			eleHov.style.top = `${bcr.top}px`;
+		} else if (bcr.top >= screenHeight - Renderer.hover._BAR_HEIGHT) {
+			bcr.top = screenHeight - Renderer.hover._BAR_HEIGHT;
+			bcr.bottom = bcr.top + bcr.height;
+			eleHov.style.top = `${bcr.top}px`;
+		}
+
+		// ...if horizontally clipping off screen
+		if (bcr.left < 0) {
+			bcr.left = 0;
+			bcr.right = bcr.left + bcr.width;
+			eleHov.style.left = `${bcr.left}px`;
+		} else if (bcr.left + bcr.width + Renderer.hover._BODY_SCROLLER_WIDTH_PX > screenWidth) {
+			bcr.left = Math.max(screenWidth - bcr.width - Renderer.hover._BODY_SCROLLER_WIDTH_PX, 0);
+			bcr.right = bcr.left + bcr.width;
+			eleHov.style.left = `${bcr.left}px`;
+		}
+
+		// Prevent window "flickering" when hovering a link
+		if (
+			position.isPreventFlicker
+			&& Renderer.hover._isIntersectRect(bcr, position.bcr)
+		) {
+			if (position.isFromBottom) {
+				bcr.height = position.bcr.top - 5;
+				wrpContent.style.height = `${bcr.height}px`;
+			} else {
+				bcr.height = screenHeight - position.bcr.bottom - 5;
+				wrpContent.style.height = `${bcr.height}px`;
+			}
+		}
+	},
+
+	_getShowWindow_setIsPermanent ({opts, $brdrTop}, isPermanent) {
+		opts.isPermanent = isPermanent;
+		$brdrTop.attr("data-perm", isPermanent);
+	},
+
+	_getShowWindow_setZIndex ({$hov, hoverWindow}, zIndex) {
+		$hov.css("z-index", zIndex);
+		hoverWindow.zIndex = zIndex;
+	},
+
+	_getShowWindow_doZIndexToFront ({$hov, hoverWindow, hoverId}) {
+		const nxtZIndex = Renderer.hover._getNextZIndex(hoverId);
+		Renderer.hover._getNextZIndex({$hov, hoverWindow}, nxtZIndex);
 	},
 
 	/**

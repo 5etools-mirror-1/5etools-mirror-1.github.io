@@ -19537,23 +19537,23 @@
 									"rows": [
 										[
 											"Cone",
-											"Size ÷ 10 (round up)"
+											"{@dice ceil(#$prompt_number:title=Enter a Size$# / 10)|Size ÷ 10} (round up)"
 										],
 										[
 											"Cube or square",
-											"Size ÷ 5 (round up)"
+											"{@dice ceil(#$prompt_number:title=Enter a Size$# / 5)|Size ÷ 5} (round up)"
 										],
 										[
 											"Cylinder",
-											"Radius ÷ 5 (round up)"
+											"{@dice ceil(#$prompt_number:title=Enter a Radius$# / 5)|Radius ÷ 5} (round up)"
 										],
 										[
 											"Line",
-											"Length ÷ 30 (round up)"
+											"{@dice ceil(#$prompt_number:title=Enter a Length$# / 30)|Length ÷ 30} (round up)"
 										],
 										[
 											"Sphere or circle",
-											"Radius ÷ 5 (round up)"
+											"{@dice ceil(#$prompt_number:title=Enter a Radius$# / 5)|Radius ÷ 5} (round up)"
 										]
 									]
 								},
@@ -28834,7 +28834,16 @@
 								"path": "book/DMG/app-c-1.jpg"
 							},
 							"width": 1125,
-							"height": 2475
+							"height": 2475,
+							"imageType": "map",
+							"title": "Map 1",
+							"grid": {
+								"type": "square",
+								"size": 97,
+								"offsetX": -19,
+								"offsetY": 3,
+								"scale": 3
+							}
 						},
 						{
 							"type": "image",
@@ -28843,7 +28852,16 @@
 								"path": "book/DMG/app-c-2.jpg"
 							},
 							"width": 1013,
-							"height": 2862
+							"height": 2862,
+							"imageType": "map",
+							"title": "Map 2",
+							"grid": {
+								"type": "square",
+								"size": 146,
+								"offsetX": -50,
+								"offsetY": 50,
+								"scale": 2
+							}
 						},
 						{
 							"type": "image",
@@ -28852,7 +28870,17 @@
 								"path": "book/DMG/app-c-3.jpg"
 							},
 							"width": 2179,
-							"height": 2942
+							"height": 2942,
+							"imageType": "map",
+							"title": "Map 3",
+							"grid": {
+								"type": "square",
+								"size": 117,
+								"offsetX": 14,
+								"offsetY": -6,
+								"scale": 2,
+								"distance": 10
+							}
 						},
 						{
 							"type": "image",
@@ -28861,7 +28889,14 @@
 								"path": "book/DMG/app-c-4.jpg"
 							},
 							"width": 2182,
-							"height": 3105
+							"height": 3105,
+							"imageType": "map",
+							"title": "Map 4",
+							"grid": {
+								"type": "square",
+								"size": 84,
+								"scale": 3
+							}
 						},
 						{
 							"type": "image",
@@ -28870,7 +28905,14 @@
 								"path": "book/DMG/app-c-5.jpg"
 							},
 							"width": 3900,
-							"height": 3151
+							"height": 3151,
+							"imageType": "map",
+							"title": "Map 5",
+							"grid": {
+								"type": "none",
+								"size": 146,
+								"distance": 100
+							}
 						},
 						{
 							"type": "image",
@@ -28879,7 +28921,14 @@
 								"path": "book/DMG/app-c-6.jpg"
 							},
 							"width": 3375,
-							"height": 2625
+							"height": 2625,
+							"imageType": "map",
+							"title": "Map 6",
+							"grid": {
+								"type": "none",
+								"size": 53,
+								"distance": 100
+							}
 						},
 						{
 							"type": "image",
@@ -28888,7 +28937,14 @@
 								"path": "book/DMG/app-c-7.jpg"
 							},
 							"width": 2100,
-							"height": 1575
+							"height": 1575,
+							"imageType": "map",
+							"title": "Map 7",
+							"grid": {
+								"type": "square",
+								"size": 105,
+								"scale": 2
+							}
 						},
 						{
 							"type": "image",
@@ -28897,7 +28953,15 @@
 								"path": "book/DMG/app-c-8.jpg"
 							},
 							"width": 2288,
-							"height": 1613
+							"height": 1613,
+							"imageType": "map",
+							"title": "Map 8",
+							"grid": {
+								"type": "square",
+								"size": 75,
+								"offsetX": 21,
+								"offsetY": 36
+							}
 						},
 						{
 							"type": "image",
@@ -28906,7 +28970,16 @@
 								"path": "book/DMG/app-c-9.jpg"
 							},
 							"width": 2040,
-							"height": 2965
+							"height": 2965,
+							"imageType": "map",
+							"title": "Map 9",
+							"grid": {
+								"type": "square",
+								"size": 102,
+								"offsetX": 50,
+								"offsetY": 20,
+								"scale": 3
+							}
 						}
 					]
 				}

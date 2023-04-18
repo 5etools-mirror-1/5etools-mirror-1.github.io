@@ -387,7 +387,10 @@ class ItemParser extends BaseParser {
 		delete cpyStatsQuarterstaff.page;
 		delete cpyStatsQuarterstaff.rarity;
 		delete cpyStatsQuarterstaff.value;
-		delete cpyStatsQuarterstaff.weapon; // tag found only on basic items
+		// region tags found only on basic items
+		delete cpyStatsQuarterstaff.weapon;
+		delete cpyStatsQuarterstaff.dagger;
+		// endregion
 
 		Object.entries(cpyStatsQuarterstaff)
 			.filter(([k]) => !k.startsWith("_"))

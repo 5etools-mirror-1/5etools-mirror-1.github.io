@@ -16004,6 +16004,45 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "Helm of Disjunction",
+			"source": "HAT-LMI",
+			"rarity": "legendary",
+			"reqAttune": "by a sorcerer",
+			"reqAttuneTags": [
+				{
+					"class": "sorcerer"
+				}
+			],
+			"wondrous": true,
+			"entries": [
+				"The wizard Mordenkainen crafted this sleek, golden helmet. If he created other helms of disjunction, they have yet to be found.",
+				"As an action while wearing this helm, you can use it to emit an antimagic pulse in a 300-foot-radius sphere centered on yourself. The pulse has the following effects:",
+				{
+					"type": "entries",
+					"name": "Magic Item Disjunction",
+					"entries": [
+						"Potions and scrolls in the area are destroyed. All other magic items in the area have their magical properties suppressed for 1 minute. Artifacts are unaffected by this property, as are magic items on your person."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spell Disjunction",
+					"entries": [
+						"Any ongoing spell ends if the creature, object, or area affected by it is even partly in the pulse's area."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Wave of Force",
+					"entries": [
+						"The antimagic pulse is strong enough to knock down creatures close to you. Each creature within 30 feet of you must succeed on a DC 15 Strength saving throw or have the {@condition prone} condition.",
+						"Once you use the helm's property, it can't be used again until {@dice 1d4} days have passed."
+					]
+				}
+			],
+			"hasFluffImages": true
+		},
+		{
 			"name": "Helm of Telepathy",
 			"source": "DMG",
 			"page": 174,
@@ -16523,6 +16562,32 @@
 			"bonusAc": "+3"
 		},
 		{
+			"name": "Hither-Thither Staff",
+			"source": "HAT-LMI",
+			"srd": true,
+			"basicRules": true,
+			"type": "M",
+			"rarity": "legendary",
+			"weight": 4,
+			"weaponCategory": "simple",
+			"property": [
+				"V"
+			],
+			"dmg1": "1d6",
+			"dmgType": "B",
+			"dmg2": "1d8",
+			"recharge": "dawn",
+			"rechargeAmount": "{@dice 1d4}",
+			"charges": 4,
+			"staff": true,
+			"entries": [
+				"This walking stick has a brilliant gemstone fitted at the top. This staff has 4 charges and regains {@dice 1d4} expended charges daily at dawn.",
+				"As an action, you can expend 1 charge from the staff to create two linked teleportation portals, each one appearing on a flat surface of your choice that you can see within 1,500 feet of yourself. Alternatively, you can expend 1 charge as an action to relocate one or both portals, subject to the same limitation. The surface on which a portal appears must be big enough to accommodate it. Each portal is a two-dimensional, glowing oval ring, and together they create an open doorway up to 6 feet high and 4 feet wide. Any creature or object entering one portal exits from the other as if the two portals were a single opening that connects their locations.",
+				"A portal can appear on a moving surface, but the effect ends when the two portals move more than 1 mile apart. As a bonus action while holding the staff, you can close both portals (ending the effect) or suppress one portal, causing it to disappear until you relocate it (see above), during which time the remaining portal can't be used. The portals otherwise last for 24 hours."
+			],
+			"hasFluffImages": true
+		},
+		{
 			"name": "Holy Symbol of Ravenkind",
 			"source": "CoS",
 			"page": 222,
@@ -16662,6 +16727,24 @@
 			"rarity": "none",
 			"weight": 2,
 			"value": 300
+		},
+		{
+			"name": "Horn of Beckoning Death",
+			"source": "HAT-LMI",
+			"rarity": "legendary",
+			"reqAttune": "by a sorcerer",
+			"reqAttuneTags": [
+				{
+					"class": "sorcerer"
+				}
+			],
+			"wondrous": true,
+			"entries": [
+				"Resembling a small dragon's horn, this arcane device glows with a hellish internal light when held. As an action while holding this horn, you can invoke a necromantic effect called the Beckoning Death.",
+				"The Beckoning Death arrives at the start of your next turn and manifests as a crimson cloud of smoke that fills a 30-foot-radius sphere centered on the horn. The sphere doesn't move with the horn. At the start of each of your turns, the sphere's radius increases by 30 feet. The cloud disappears after 10 minutes or when your {@status concentration} on the effect ends. Any creature (including you) that has 9 or fewer hit points when it ends its turn in the cloud is slain by the Beckoning Death. A Humanoid killed in this way instantly transforms into a {@creature zombie} (see the Monster Manual). The zombie obeys the commands of the horn's creator, the lich Szass Tam.",
+				"Once you use the horn's property, it can't be used again for 1 year."
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Horn of Blasting",
@@ -20822,7 +20905,7 @@
 			"wondrous": true,
 			"entries": [
 				"Not all lingering spirits are tragic souls, lost on their way to the hereafter. Some languish as prisoners, souls so wicked mortals dare not free them upon an unsuspecting afterlife.",
-				"Created by a figure of Vistani legend, Luba's Tarokka of Souls shaped the destiny of countless heroes. The prophecies of this deck of cards also revealed great evils and guided its creator into the path of nefarious forces. Untold times the deck's creator, Mother Luba, narrowly escaped doom, spared only by her keen insights. But even for her, not all wickedness could be escaped. In the most dire cases, Mother Luba managed to ensnare beings of pure evil amid the strands of fate, imprisoning them within her tarroka deck. There these foul spirits dwell still, trapped within a nether-realm hidden amid shuffling cards, waiting for fate to turn foul\u2014as it inevitably will.",
+				"Created by a figure of Vistani legend, Luba's Tarokka of Souls shaped the destiny of countless heroes. The prophecies of this deck of cards also revealed great evils and guided its creator into the path of nefarious forces. Untold times the deck's creator, Mother Luba, narrowly escaped doom, spared only by her keen insights. But even for her, not all wickedness could be escaped. In the most dire cases, Mother Luba managed to ensnare beings of pure evil amid the strands of fate, imprisoning them within her {@deck tarokka deck|CoS}. There these foul spirits dwell still, trapped within a nether-realm hidden amid shuffling cards, waiting for fate to turn foul\u2014as it inevitably will.",
 				"Like all {@deck Tarokka Deck|CoS|tarokka decks}, the {@i Tarokka of Souls} is a lavishly illustrated collection of fifty-four cards, comprising the fourteen cards of the high deck and forty other cards divided into four suits: coins, glyphs, stars, and swords.",
 				{
 					"type": "entries",
@@ -20979,7 +21062,7 @@
 					"type": "entries",
 					"name": "Shuffling Fate",
 					"entries": [
-						"If you go 7 days without using the Twist of Fate property, your attunement to Luba's Tarroka of Souls ends, and you can't attune to it again until after another creature uses Twist of Fate on you."
+						"If you go 7 days without using the Twist of Fate property, your attunement to Luba's Tarokka of Souls ends, and you can't attune to it again until after another creature uses Twist of Fate on you."
 					]
 				},
 				{
@@ -27478,6 +27561,32 @@
 				"Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to fire damage.",
 				"Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest red dragon within 30 miles of you. This special action can't be used again until the next dawn."
 			]
+		},
+		{
+			"name": "Red Wizard Blade",
+			"source": "HAT-LMI",
+			"baseItem": "dagger|PHB",
+			"type": "M",
+			"rarity": "legendary",
+			"weight": 1,
+			"weaponCategory": "simple",
+			"property": [
+				"F",
+				"L",
+				"T"
+			],
+			"range": "20/60",
+			"dmg1": "1d4",
+			"dmgType": "P",
+			"weapon": true,
+			"entries": [
+				"Forged by Red Wizards using a secret process known only to them, this grim steel dagger draws its power from the Negative Plane. When you hit a creature with a melee attack using this magic dagger, the target takes an extra {@damage 3d12} necrotic damage.",
+				"A creature reduced to 0 hit points by this weapon dies and can't be raised from the dead except by a deity or by a creature using a tablet of reawakening to cast the {@spell true resurrection} spell."
+			],
+			"attachedSpells": [
+				"true resurrection"
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Reincarnation Dust",
@@ -35199,6 +35308,19 @@
 						"If Zariel is killed for good (that is, if she dies in the Nine Hells), the sword becomes no harder to destroy than a normal longsword."
 					]
 				}
+			],
+			"hasFluffImages": true
+		},
+		{
+			"name": "Tablet of Reawakening",
+			"source": "HAT-LMI",
+			"rarity": "legendary",
+			"wondrous": true,
+			"entries": [
+				"Witches of Rashemen created this Tiny stone tablet to counter the necromancy of the Red Wizards. As an action, you can cast {@spell true resurrection} from the tablet. Once used in this way, the tablet turns to dust and is destroyed."
+			],
+			"attachedSpells": [
+				"true resurrection"
 			],
 			"hasFluffImages": true
 		},

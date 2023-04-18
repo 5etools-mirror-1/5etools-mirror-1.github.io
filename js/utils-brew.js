@@ -924,7 +924,7 @@ class _BrewUtil2Base {
 	// endregion
 
 	// region Rendering/etc.
-	_PAGE_TO_PROPS__SPELLS = ["spell", "spellFluff"];
+	_PAGE_TO_PROPS__SPELLS = [...UrlUtil.PAGE_TO_PROPS[UrlUtil.PG_SPELLS], "spellFluff"];
 	_PAGE_TO_PROPS__BESTIARY = ["monster", "legendaryGroup", "monsterFluff"];
 
 	_PAGE_TO_PROPS = {
@@ -938,7 +938,7 @@ class _BrewUtil2Base {
 		[UrlUtil.PG_OBJECTS]: ["object"],
 		[UrlUtil.PG_TRAPS_HAZARDS]: ["trap", "hazard"],
 		[UrlUtil.PG_DEITIES]: ["deity"],
-		[UrlUtil.PG_ITEMS]: ["item", "baseitem", "magicvariant", "itemProperty", "itemType", "itemFluff", "itemGroup", "itemEntry", "itemTypeAdditionalEntries"],
+		[UrlUtil.PG_ITEMS]: [...UrlUtil.PAGE_TO_PROPS[UrlUtil.PG_ITEMS], "itemFluff"],
 		[UrlUtil.PG_REWARDS]: ["reward"],
 		[UrlUtil.PG_PSIONICS]: ["psionic"],
 		[UrlUtil.PG_VARIANTRULES]: ["variantrule"],

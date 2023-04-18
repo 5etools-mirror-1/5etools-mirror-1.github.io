@@ -279,7 +279,24 @@
 						}
 					]
 				}
-			]
+			],
+			"ignoreSrdEffects": true
+		},
+		{
+			"name": "Unarmored Defense",
+			"source": "PHB",
+			"className": "Monk",
+			"classSource": "PHB",
+			"level": 1,
+			"ignoreSrdEffects": true
+		},
+		{
+			"name": "Unarmored Defense",
+			"source": "PHB",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"level": 1,
+			"ignoreSrdEffects": true
 		},
 		{
 			"name": "Metamagic",
@@ -941,6 +958,18 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Channel Divinity: Harness Divine Power",
+			"source": "TCE",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"level": 2,
+			"system": {
+				"uses.per": "day",
+				"uses.value": 1,
+				"uses.max": "1 + min(floor(@classes.cleric.levels / 6), 1) + min(floor(@classes.cleric.levels / 18), 1)"
+			}
 		}
 	],
 	"subclassFeature": [

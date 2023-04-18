@@ -2,7 +2,7 @@
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 globalThis.IS_DEPLOYED = undefined;
-globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.178.0"/* 5ETOOLS_VERSION__CLOSE */;
+globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.179.0"/* 5ETOOLS_VERSION__CLOSE */;
 globalThis.DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 globalThis.DEPLOYED_IMG_ROOT = undefined;
 // for the roll20 script to set
@@ -2741,6 +2741,10 @@ UrlUtil.SUBLIST_PAGES = {
 	[UrlUtil.PG_RECIPES]: true,
 	[UrlUtil.PG_DECKS]: true,
 };
+
+UrlUtil.PAGE_TO_PROPS = {};
+UrlUtil.PAGE_TO_PROPS[UrlUtil.PG_SPELLS] = ["spell"];
+UrlUtil.PAGE_TO_PROPS[UrlUtil.PG_ITEMS] = ["item", "itemGroup", "itemType", "itemEntry", "itemProperty", "itemTypeAdditionalEntries", "baseitem", "magicvariant"];
 
 if (!IS_DEPLOYED && !IS_VTT && typeof window !== "undefined") {
 	// for local testing, hotkey to get a link to the current page on the main site
@@ -6251,6 +6255,17 @@ Array.prototype.pSerialAwaitSome || Object.defineProperty(Array.prototype, "pSer
 	value: async function (fnSome) {
 		for (let i = 0, len = this.length; i < len; ++i) if (await fnSome(this[i], i, this)) return true;
 		return false;
+	},
+});
+
+Array.prototype.pSerialAwaitFirst || Object.defineProperty(Array.prototype, "pSerialAwaitFirst", {
+	enumerable: false,
+	writable: true,
+	value: async function (fnMapFind) {
+		for (let i = 0, len = this.length; i < len; ++i) {
+			const result = await fnMapFind(this[i], i, this);
+			if (result) return result;
+		}
 	},
 });
 

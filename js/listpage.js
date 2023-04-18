@@ -93,7 +93,7 @@ class SublistManager {
 
 		if (this._$wrpContainer.hasClass(`sublist--resizable`)) this._pBindSublistResizeHandlers();
 
-		this._$wrpSummaryControls = this._saveManager.$getRenderedSummary({
+		const {$wrp: $wrpSummaryControls, cbOnListUpdated} = this._saveManager.$getRenderedSummary({
 			cbOnNew: (evt) => this.pHandleClick_new(evt),
 			cbOnDuplicate: (evt) => this.pHandleClick_duplicate(evt),
 			cbOnSave: (evt) => this.pHandleClick_save(evt),
@@ -101,6 +101,12 @@ class SublistManager {
 			cbOnReset: (evt, exportedSublist) => this.pDoLoadExportedSublist(exportedSublist),
 			cbOnUpload: (evt) => this.pHandleClick_upload({isAdditive: evt.shiftKey}),
 		});
+
+		this._$wrpSummaryControls = $wrpSummaryControls;
+
+		const hkOnListUpdated = () => cbOnListUpdated({cntVisibleItems: this._listSub.visibleItems.length});
+		this._listSub.on("updated", hkOnListUpdated);
+		hkOnListUpdated();
 
 		this._$wrpContainer.after(this._$wrpSummaryControls);
 
@@ -1616,7 +1622,7 @@ class ListPage {
 
 	_getContextActionBlocklist () {
 		return new ContextUtil.Action(
-			"Add to Blocklist",
+			"Blocklist",
 			async (evt, userData) => {
 				const {ele, selection} = userData;
 				await this._handleGenericContextMenuClick_pDoMassBlocklist(evt, ele, selection);
@@ -1737,7 +1743,7 @@ class ListPage {
 		contextOptions.push(
 			null,
 			new ContextUtil.Action(
-				"Add to Blocklist",
+				"Blocklist",
 				async () => {
 					await this._pDoMassBlocklist([this._dataList[Hist.lastLoadedId]]);
 				},

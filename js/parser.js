@@ -1425,7 +1425,7 @@ Parser.monTypeToFullObj = function (type) {
 
 	if (type.swarmSize) {
 		out.tags.push("swarm");
-		out.asText = `swarm of ${Parser.sizeAbvToFull(type.swarmSize).toLowerCase()} ${out.types.map(typ => Parser.monTypeToPlural(typ).toTitleCase()).joinConjunct(", ", " or ")}`;
+		out.asText = `swarm of ${Parser.sizeAbvToFull(type.swarmSize)} ${out.types.map(typ => Parser.monTypeToPlural(typ).toTitleCase()).joinConjunct(", ", " or ")}`;
 		out.asTextShort = out.asText;
 		out.swarmSize = type.swarmSize;
 	} else {
@@ -2569,7 +2569,8 @@ Parser.SRC_NRH_AT = "NRH-AT";
 Parser.SRC_MGELFT = "MGELFT";
 Parser.SRC_VD = "VD";
 Parser.SRC_SjA = "SjA";
-Parser.SRC_TG = "TG";
+Parser.SRC_HAT_TG = "HAT-TG";
+Parser.SRC_HAT_LMI = "HAT-LMI";
 
 Parser.SRC_AL_PREFIX = "AL";
 
@@ -2790,7 +2791,8 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_NRH_AT] = `${Parser.NRH_NAME}: Adventure T
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_MGELFT] = "Muk's Guide To Everything He Learned From Tasha";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_VD] = "Vecna Dossier";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SjA] = "Spelljammer Academy";
-Parser.SOURCE_JSON_TO_FULL[Parser.SRC_TG] = "Thieves' Gallery";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_HAT_TG] = "Honor Among Thieves: Thieves' Gallery";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_HAT_LMI] = "Honor Among Thieves: Legendary Magic Items";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_ALCoS] = `${Parser.AL_PREFIX}Curse of Strahd`;
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_ALEE] = `${Parser.AL_PREFIX}Elemental Evil`;
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_ALRoD] = `${Parser.AL_PREFIX}Rage of Demons`;
@@ -2990,7 +2992,8 @@ Parser.SOURCE_JSON_TO_ABV[Parser.SRC_NRH_AT] = "NRH-AT";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_MGELFT] = "MGELFT";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_VD] = "VD";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_SjA] = "SjA";
-Parser.SOURCE_JSON_TO_ABV[Parser.SRC_TG] = "TG";
+Parser.SOURCE_JSON_TO_ABV[Parser.SRC_HAT_TG] = "HAT-TG";
+Parser.SOURCE_JSON_TO_ABV[Parser.SRC_HAT_LMI] = "HAT-LMI";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_ALCoS] = "ALCoS";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_ALEE] = "ALEE";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_ALRoD] = "ALRoD";
@@ -3189,7 +3192,8 @@ Parser.SOURCE_JSON_TO_DATE[Parser.SRC_NRH_AT] = "2021-09-01";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_MGELFT] = "2020-12-01";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_VD] = "2022-06-09";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_SjA] = "2022-07-11"; // pt1; pt2 2022-07-18; pt3 2022-07-25; pt4 2022-08-01
-Parser.SOURCE_JSON_TO_DATE[Parser.SRC_TG] = "2023-03-06";
+Parser.SOURCE_JSON_TO_DATE[Parser.SRC_HAT_TG] = "2023-03-06";
+Parser.SOURCE_JSON_TO_DATE[Parser.SRC_HAT_LMI] = "2023-03-31";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_ALCoS] = "2016-03-15";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_ALEE] = "2015-04-07";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_ALRoD] = "2015-09-15";
@@ -3387,7 +3391,8 @@ Parser.SOURCES_NON_STANDARD_WOTC = new Set([
 	Parser.SRC_MGELFT,
 	Parser.SRC_VD,
 	Parser.SRC_SjA,
-	Parser.SRC_TG,
+	Parser.SRC_HAT_TG,
+	Parser.SRC_HAT_LMI,
 	Parser.SRC_MCV3MC,
 ]);
 // region Source categories
@@ -3423,7 +3428,8 @@ Parser.SOURCES_COMEDY = new Set([
 	Parser.SRC_HftT,
 	Parser.SRC_AWM,
 	Parser.SRC_MGELFT,
-	Parser.SRC_TG,
+	Parser.SRC_HAT_TG,
+	Parser.SRC_HAT_LMI,
 	Parser.SRC_MCV3MC,
 ]);
 
@@ -3482,7 +3488,7 @@ Parser.SOURCES_AVAILABLE_DOCS_BOOK = {};
 	Parser.SRC_MPMM,
 	Parser.SRC_AAG,
 	Parser.SRC_BAM,
-	Parser.SRC_TG,
+	Parser.SRC_HAT_TG,
 	Parser.SRC_SCREEN,
 	Parser.SRC_SCREEN_WILDERNESS_KIT,
 	Parser.SRC_SCREEN_DUNGEON_KIT,

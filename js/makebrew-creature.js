@@ -219,12 +219,16 @@ class CreatureBuilder extends Builder {
 						? `${item.type === "M" ? `reach 5 ft. or ` : ""}range ${item.range} ft.`
 						: "reach 5 ft.";
 					const dmgAvg = Number(mDice.groups.count) * ((Number(mDice.groups.face) + 1) / 2);
+					const isFinesse = !!item?.property?.includes("F");
 
 					return {
 						name: item.name,
 						entries: [
 							`{@atk ${ptAtk}} {@hit <$to_hit__${abil}$>} to hit, ${ptRange}, one target. {@h}<$damage_avg__(size_mult*${dmgAvg})+${abil}$> ({@damage <$size_mult__${mDice.groups.count}$>d${mDice.groups.face}<$damage_mod__${abil}$>}) ${Parser.dmgTypeToFull(item.dmgType)} damage.`,
 						],
+						entriesFinesse: isFinesse ? [
+							`{@atk ${ptAtk}} {@hit <$to_hit__dex$>} to hit, ${ptRange}, one target. {@h}<$damage_avg__(size_mult*${dmgAvg})+dex$> ({@damage <$size_mult__${mDice.groups.count}$>d${mDice.groups.face}<$damage_mod__dex$>}) ${Parser.dmgTypeToFull(item.dmgType)} damage.`,
+						] : null,
 					};
 				})
 				.filter(Boolean),
@@ -445,6 +449,7 @@ class CreatureBuilder extends Builder {
 		this.__$getAlignmentInput(cb).appendTo(infoTab.$wrpTab);
 		this.__$getCrInput(cb).appendTo(infoTab.$wrpTab);
 		this.__$getProfBonusInput(cb).appendTo(infoTab.$wrpTab);
+		this.__$getProfNoteInput(cb).appendTo(infoTab.$wrpTab);
 		BuilderUi.$getStateIptNumber("Level", cb, this._state, {title: "Used for Sidekicks only"}, "level").appendTo(infoTab.$wrpTab);
 
 		// SPECIES
@@ -2130,6 +2135,23 @@ class CreatureBuilder extends Builder {
 		else return this._state.cr == null ? 0 : Parser.crToPb(this._state.cr.cr || this._state.cr);
 	}
 
+	__$getProfNoteInput (cb) {
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Proficiency Note", {title: `The value to display as the "Proficiency Bonus" on the statblock. If not specified, the display value is based on the creature's CR.`});
+
+		const $iptPbNote = $(`<input class="form-control form-control--minimal input-xs mr-2">`)
+			.val(this._state.pbNote || "")
+			.change(() => {
+				const val = $iptPbNote.val().trim();
+				if (val) this._state.pbNote = val;
+				else delete this._state.pbNote;
+				cb();
+			});
+
+		$$`<div class="ve-flex-v-center">${$iptPbNote}</div>`.appendTo($rowInner);
+
+		return $row;
+	}
+
 	__$getSpellcastingInput (cb) {
 		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Spellcasting", {isMarked: true});
 
@@ -2889,7 +2911,12 @@ class CreatureBuilder extends Builder {
 										searchWidget.$wrpSearch.detach();
 										if (!isDataEntered) return resolve(null);
 										const action = MiscUtil.copyFast(this._jsonCreatureActions[actionIndex]);
-										action.entries = DataUtil.generic.variableResolver.resolve({obj: action.entries, ent: this._state});
+										const isFinesse = action.entriesFinesse && this._state.dex > this._state.str;
+										action.entries = DataUtil.generic.variableResolver.resolve({
+											obj: isFinesse ? action.entriesFinesse : action.entries,
+											ent: this._state,
+										});
+										delete action.entriesFinesse;
 										resolve(action);
 									},
 								});

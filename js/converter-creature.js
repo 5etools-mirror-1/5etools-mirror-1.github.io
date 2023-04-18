@@ -1354,45 +1354,60 @@ class CreatureParser extends BaseParser {
 
 	// SHARED PARSING FUNCTIONS ////////////////////////////////////////////////////////////////////////////////////////
 	static _setCleanSizeTypeAlignment (stats, meta, options) {
-		const mSidekick = /^(\d+)(?:st|nd|rd|th)\s*\W+\s*level\s+(.*)$/i.exec(meta.curLine.trim());
-		if (mSidekick) {
-			// sidekicks
-			stats.level = Number(mSidekick[1]);
-			stats.size = mSidekick[2].trim()[0].toUpperCase();
-			stats.type = mSidekick[2].split(" ").splice(1).join(" ");
-		} else {
-			// regular creatures
-
-			// region Size
-			const reSize = new RegExp(`(${Object.values(Parser.SIZE_ABV_TO_FULL).join("|")})`, "i");
-			const reSizeGlobal = new RegExp(reSize, "gi");
-
-			const tks = meta.curLine.split(reSizeGlobal);
-			let ixSizeLast = -1;
-			for (let ixSize = 0; ixSize < tks.length; ++ixSize) {
-				const tk = tks[ixSize];
-				if (reSize.test(tk)) {
-					ixSizeLast = ixSize;
-					(stats.size = stats.size || []).push(tk[0].toUpperCase());
-				}
-			}
-			stats.size.sort(SortUtil.ascSortSize);
-			// endregion
-
-			const tksNoSize = tks.slice(ixSizeLast + 1);
-
-			const spl = tksNoSize.join("").split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX);
-
-			const ptsOtherSizeOrType = spl[0].split(" ").map(it => it.trim()).filter(Boolean);
-
-			stats.type = ptsOtherSizeOrType.join(" ");
-
-			stats.alignment = (spl[1] || "").toLowerCase();
-			AlignmentConvert.tryConvertAlignment(stats, (ali) => options.cbWarning(`Alignment "${ali}" requires manual conversion`));
-		}
+		this._setCleanSizeTypeAlignment_sidekick(stats, meta, options)
+			|| this._setCleanSizeTypeAlignment_standard(stats, meta, options);
 
 		stats.type = this._tryParseType({stats, strType: stats.type});
 
+		this._setCleanSizeTypeAlignment_postProcess(stats, meta, options);
+	}
+
+	static _setCleanSizeTypeAlignment_sidekick (stats, meta, options) {
+		const mSidekick = /^(\d+)(?:st|nd|rd|th)\s*\W+\s*level\s+(.*)$/i.exec(meta.curLine.trim());
+		if (!mSidekick) return false;
+
+		// sidekicks
+		stats.level = Number(mSidekick[1]);
+		stats.size = mSidekick[2].trim()[0].toUpperCase();
+		stats.type = mSidekick[2].split(" ").splice(1).join(" ");
+	}
+
+	static _setCleanSizeTypeAlignment_standard (stats, meta, options) {
+		const ixSwarm = / swarm /.exec(meta.curLine)?.index;
+
+		// regular creatures
+
+		// region Size
+		const reSize = new RegExp(`(${Object.values(Parser.SIZE_ABV_TO_FULL).join("|")})`, "i");
+		const reSizeGlobal = new RegExp(reSize, "gi");
+
+		const tks = meta.curLine.split(reSizeGlobal);
+		let ixSizeLast = -1;
+		for (let ixSize = 0; ixSize < tks.length; ++ixSize) {
+			if (ixSwarm != null && tks.slice(0, ixSizeLast + 1).join("").length >= ixSwarm) break;
+
+			const tk = tks[ixSize];
+			if (reSize.test(tk)) {
+				ixSizeLast = ixSize;
+				(stats.size = stats.size || []).push(tk[0].toUpperCase());
+			}
+		}
+		stats.size.sort(SortUtil.ascSortSize);
+		// endregion
+
+		const tksNoSize = tks.slice(ixSizeLast + 1);
+
+		const spl = tksNoSize.join("").split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX);
+
+		const ptsOtherSizeOrType = spl[0].split(" ").map(it => it.trim()).filter(Boolean);
+
+		stats.type = ptsOtherSizeOrType.join(" ");
+
+		stats.alignment = (spl[1] || "").toLowerCase();
+		AlignmentConvert.tryConvertAlignment(stats, (ali) => options.cbWarning(`Alignment "${ali}" requires manual conversion`));
+	}
+
+	static _setCleanSizeTypeAlignment_postProcess (stats, meta, options) {
 		const validTypes = new Set(Parser.MON_TYPES);
 		if (!stats.type.type?.choose && (!validTypes.has(stats.type.type || stats.type))) {
 			// check if the last word is a creature type

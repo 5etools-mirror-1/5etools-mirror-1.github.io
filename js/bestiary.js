@@ -16,7 +16,7 @@ class _BestiaryUtil {
 	}
 
 	static getListDisplayType (mon) {
-		let type = mon._pTypes.asTextShort;
+		let type = mon._pTypes.asTextShort.uppercaseFirst();
 		if (mon._pTypes.asTextSidekick) type += `, ${mon._pTypes.asTextSidekick}`;
 		return type;
 	}

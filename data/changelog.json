@@ -2393,5 +2393,11 @@
 		"date": "2023-03-30",
 		"title": "Official 'Crafting Rules",
 		"txt": "- Added Monstrous Compendium 3: Minecraft Creatures content\n- Added regex syntax to list page search bars (e.g. `text:/.*/`)\n- Added deck/card support to Blocklist\n- Tweaked toast system to avoid overlapping notifications\n- Fixed Bestiary \"Ability Score\" filters having no effect\n- Fixed list search failing to index fluff text\n- (Brew) Added filename (where available) to \"failed to load reference(s)\" popups\n- (Brew) Fixed Items page crash when loading items with non-standard damage roll formats\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.179.0",
+		"date": "2023-04-17",
+		"title": "I Merely Borrow",
+		"txt": "- Added Honor Among Thieves Legendary Magic Items\n- Added item count to pinned lists\n- Added CTRL+click to hover window \"x\" button, which closes all hover windows\n- Added \"Clear\" button to \"homebrew\" section of Source filters\n- Fixed rare bug where hover windows could resize themselves\n- (Brew) When using the \"Add Predefined Action\" Button in the Creature Homebrew Builder, finesse weapons will now auto-calculate their to-hit and damage based on either the creature's STR or DEX (whichever is highest)\n- (Brew) Added `\"pbNote\"` input to Creature Homebrew Builder\n- (Brew) Added support for `\"start\"` on `\"list\"` entries\n- (Brew) Added source color picker to \"Add/Edit Homebrew Source\" screen\n- (Brew) Fixed Creature Text Converter handling of swarm creature types/sizes\n- (Fixed typos/added tags)"
 	}
 ]

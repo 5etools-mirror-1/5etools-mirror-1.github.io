@@ -731,7 +731,10 @@ class SaveManager extends BaseComponent {
 		this._addHookBase("saves", hkSaves);
 		this._addHookBase("activeId", hkSaves);
 
-		return $wrp;
+		return {
+			$wrp,
+			cbOnListUpdated: renderableCollectionSummary.cbOnListUpdated.bind(renderableCollectionSummary),
+		};
 	}
 
 	$getBtnDownloadSave_ ({save, title = "Download", cbOnSave = null}) {
@@ -961,6 +964,11 @@ SaveManager._RenderableCollectionSaves_Summary = class extends RenderableCollect
 		this._cbOnUpload = cbOnUpload;
 	}
 
+	cbOnListUpdated ({cntVisibleItems}) {
+		const renderedCollection = this._comp._getRenderedCollection({prop: "saves", namespace: "summary"});
+		Object.values(renderedCollection).forEach(renderedMeta => renderedMeta.$dispCount.html(`<span class="glyphicon glyphicon-pushpin mr-1"></span> ${cntVisibleItems}`));
+	}
+
 	getNewRender (save, i) {
 		const comp = BaseComponent.fromObject(save.entity, "*");
 		comp._addHookAll("state", () => {
@@ -969,6 +977,8 @@ SaveManager._RenderableCollectionSaves_Summary = class extends RenderableCollect
 		});
 
 		const $iptName = ComponentUiUtil.$getIptStr(comp, "name", {placeholder: "(Unnamed List)"});
+
+		const $dispCount = $(`<div class="absolute right-0 z-index-1 no-events ve-flex-vh-center ve-muted pr-2 ve-small" title="Number of Pinned List Items"></div>`);
 
 		const $btnNew = $(`<button class="btn btn-5et btn-xs btn-default" title="New Pinned List"><span class="glyphicon glyphicon-file"></span></button>`)
 			.click(evt => this._cbOnNew(evt));
@@ -997,9 +1007,10 @@ SaveManager._RenderableCollectionSaves_Summary = class extends RenderableCollect
 
 		const $wrpRow = $$`<div class="ve-flex-col my-2 w-100">
 			<div class="ve-flex-v-center">
-				<div class="ve-flex-v-center mr-1 w-100 min-w-0">
+				<div class="ve-flex-v-center mr-1 w-100 min-w-0 relative">
 					<div class="mr-2 ve-muted">List:</div>
 					${$iptName}
+					${$dispCount}
 				</div>
 				<div class="ve-flex-h-right ve-flex-v-center btn-group no-shrink">
 					${$btnNew}
@@ -1019,6 +1030,7 @@ SaveManager._RenderableCollectionSaves_Summary = class extends RenderableCollect
 		return {
 			comp,
 			$wrpRow,
+			$dispCount,
 			$iptName,
 			hkDisplay,
 		};
