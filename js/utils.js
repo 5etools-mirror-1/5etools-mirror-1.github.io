@@ -2,7 +2,7 @@
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 globalThis.IS_DEPLOYED = undefined;
-globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.179.0"/* 5ETOOLS_VERSION__CLOSE */;
+globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.179.1"/* 5ETOOLS_VERSION__CLOSE */;
 globalThis.DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 globalThis.DEPLOYED_IMG_ROOT = undefined;
 // for the roll20 script to set
@@ -937,6 +937,8 @@ globalThis.ElementUtil = {
 		val,
 		href,
 		type,
+		tabindex,
+		value,
 		attrs,
 		data,
 	}) {
@@ -959,6 +961,8 @@ globalThis.ElementUtil = {
 		if (href != null) ele.setAttribute("href", href);
 		if (val != null) ele.setAttribute("value", val);
 		if (type != null) ele.setAttribute("type", type);
+		if (tabindex != null) ele.setAttribute("tabindex", tabindex);
+		if (value != null) ele.setAttribute("value", value);
 
 		if (attrs != null) {
 			for (const k in attrs) {
@@ -2218,6 +2222,79 @@ globalThis.ContextUtil = {
 		this.update = function () {
 			this._$btnAction.attr("href", this.fnHref());
 		};
+	},
+
+	ActionSelect: function (
+		{
+			values,
+			fnOnChange = null,
+			fnGetDisplayValue = null,
+		},
+	) {
+		this._values = values;
+		this._fnOnChange = fnOnChange;
+		this._fnGetDisplayValue = fnGetDisplayValue;
+
+		this._sel = null;
+
+		this._ixInitial = null;
+
+		this.render = function ({menu}) {
+			this._sel = this._render_sel({menu});
+
+			if (this._ixInitial != null) {
+				this._sel.val(`${this._ixInitial}`);
+				this._ixInitial = null;
+			}
+
+			return {
+				action: this,
+				$eleRow: $$`<div class="ui-ctx__row ve-flex-v-center">${this._sel}</div>`,
+			};
+		};
+
+		this._render_sel = function ({menu}) {
+			const sel = e_({
+				tag: "select",
+				clazz: "w-100 min-w-0 mx-5 py-1",
+				tabindex: 0,
+				children: this._values
+					.map((val, i) => {
+						return e_({
+							tag: "option",
+							value: i,
+							text: this._fnGetDisplayValue ? this._fnGetDisplayValue(val) : val,
+						});
+					}),
+				click: async evt => {
+					evt.preventDefault();
+					evt.stopPropagation();
+				},
+				keydown: evt => {
+					if (evt.key !== "Enter") return;
+					sel.click();
+				},
+				change: () => {
+					menu.close();
+
+					const ix = Number(sel.val() || 0);
+					const val = this._values[ix];
+
+					if (this._fnOnChange) this._fnOnChange(val);
+					if (menu.resolveResult_) menu.resolveResult_(val);
+				},
+			});
+
+			return sel;
+		};
+
+		this.setValue = function (val) {
+			const ix = this._values.indexOf(val);
+			if (!this._sel) return this._ixInitial = ix;
+			this._sel.val(`${ix}`);
+		};
+
+		this.update = function () { /* Implement as required */ };
 	},
 };
 

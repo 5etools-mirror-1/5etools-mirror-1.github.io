@@ -2399,5 +2399,10 @@
 		"date": "2023-04-17",
 		"title": "I Merely Borrow",
 		"txt": "- Added Honor Among Thieves Legendary Magic Items\n- Added item count to pinned lists\n- Added CTRL+click to hover window \"x\" button, which closes all hover windows\n- Added \"Clear\" button to \"homebrew\" section of Source filters\n- Fixed rare bug where hover windows could resize themselves\n- (Brew) When using the \"Add Predefined Action\" Button in the Creature Homebrew Builder, finesse weapons will now auto-calculate their to-hit and damage based on either the creature's STR or DEX (whichever is highest)\n- (Brew) Added `\"pbNote\"` input to Creature Homebrew Builder\n- (Brew) Added support for `\"start\"` on `\"list\"` entries\n- (Brew) Added source color picker to \"Add/Edit Homebrew Source\" screen\n- (Brew) Fixed Creature Text Converter handling of swarm creature types/sizes\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.179.1",
+		"date": "2023-04-20",
+		"txt": "- Added \"As Names\"/\"As Abbreviations\"/\"As Names Plus Abbreviation\" customization option to Source filters\n- Searching for a source abbreviation (e.g. \"DMG\") in filters now shows sources matching that abbreviation \n- Fixed labelled slider filters failing to display matching labels in \"dropdown\" mode\n- (Fixed typos/added tags)\n"
 	}
 ]
