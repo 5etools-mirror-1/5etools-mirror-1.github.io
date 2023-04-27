@@ -2,6 +2,8 @@
 
 class AcConvert {
 	static tryPostProcessAc (mon, cbMan, cbErr) {
+		if (this._tryPostProcessAc_special(mon, cbMan, cbErr)) return;
+
 		let nuAc = [];
 
 		const parts = mon.ac.trim().split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX).map(it => it.trim()).filter(Boolean);
@@ -26,19 +28,31 @@ class AcConvert {
 			const cur = {ac: acNum};
 			const froms = [];
 
-			// Handle "in ... form" parts
+			// region Handle "in ... form" parts
 			let fromClean = fromRaw
 				// FIXME(Future) Find an example of a creature with this AC form to check accuracy of this parse
 				.replace(/ \(in .*? form\)$/i, (...m) => {
+					if (cur.condition) throw new Error(`Multiple AC conditions! "${cur.condition}" and "${m[0]}"`);
 					cur.condition = m[0].trim().toLowerCase();
 					return "";
 				})
 				.trim()
 				.replace(/ in .*? form$/i, (...m) => {
+					if (cur.condition) throw new Error(`Multiple AC conditions! "${cur.condition}" and "${m[0]}"`);
 					cur.condition = m[0].trim().toLowerCase();
 					return "";
 				})
 				.trim();
+			// endregion
+
+			// region Handle "while ..." parts
+			fromClean = fromClean
+				.replace(/^while .*$/, (...m) => {
+					if (cur.condition) throw new Error(`Multiple AC conditions! "${cur.condition}" and "${m[0]}"`);
+					cur.condition = m[0].trim().toLowerCase();
+					return "";
+				});
+			// endregion
 
 			fromClean
 				.toLowerCase()
@@ -128,6 +142,18 @@ class AcConvert {
 		mon.ac = nuAc;
 	}
 
+	static _tryPostProcessAc_special (mon, cbMan, cbErr) {
+		mon.ac = mon.ac.trim();
+
+		const mPlusSpecial = /^(\d+) (plus|\+) (?:PB|the level of the spell|your [^ ]+ modifier)(?: \([^)]+\))?$/i.exec(mon.ac);
+		if (mPlusSpecial) {
+			mon.ac = [{special: mon.ac}];
+			return true;
+		}
+
+		return false;
+	}
+
 	static _getSimpleFrom (fromLow) {
 		switch (fromLow) {
 			// region unhandled/other
@@ -162,8 +188,13 @@ class AcConvert {
 			case "blood aegis":
 			case "psychic defense":
 			case "glory": // BAM :: Reigar
+			case "mountain tattoo": // KftGV :: Prisoner 13
+			case "disarming charm": // TG :: Forge Fitzwilliam
 				return fromLow;
 				// endregion
+
+			case "graz'zt's gift": // KftGV :: Sythian Skalderang
+				return fromLow.uppercaseFirst();
 
 			// region au naturel
 			case "natural armor":
@@ -333,7 +364,7 @@ class TagDc {
 		m[prop] = m[prop]
 			.map(it => {
 				const str = JSON.stringify(it, null, "\t");
-				const out = str.replace(/DC (\d+)/g, "{@dc $1}");
+				const out = str.replace(/DC (\d+)(\s+plus PB|\s*\+\s*PB)?/g, "{@dc $1$2}");
 				return JSON.parse(out);
 			});
 	}
@@ -408,8 +439,8 @@ class TraitActionTag {
 	static _isActions (prop) { return prop === "action"; }
 
 	static tryRun (m, cbMan) {
-		m.traitTags = new Set();
-		m.actionTags = new Set();
+		m.traitTags = new Set(m.traitTags || []);
+		m.actionTags = new Set(m.actionTags || []);
 
 		this._doTag({m, cbMan, prop: "trait", outProp: "traitTags"});
 		this._doTag({m, cbMan, prop: "action", outProp: "actionTags"});
@@ -509,6 +540,8 @@ TraitActionTag.tags = { // true = map directly; string = map to this string
 		"tree stride": "Tree Stride",
 
 		"unusual nature": "Unusual Nature",
+
+		"tunneler": "Tunneler",
 	},
 	action: {
 		"multiattack": "Multiattack",

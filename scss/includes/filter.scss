@@ -507,6 +507,10 @@ $flt-ignore--hover: #e6e6e6;
 	}
 
 	&-src__ {
+		&spc-pill {
+			color: $rgb-font--muted;
+		}
+
 		&wrp-slider {
 			background: #f0f0f0;
 			border-radius: 4px;
@@ -518,6 +522,16 @@ $flt-ignore--hover: #e6e6e6;
 			@include cb-custom();
 
 			border-radius: 7px;
+		}
+	}
+
+	&__pill {
+		&[state=yes] > .fltr-src__spc-pill {
+			color: #fff9;
+		}
+
+		&[state=no] > .fltr-src__spc-pill {
+			color: #fffa;
 		}
 	}
 }

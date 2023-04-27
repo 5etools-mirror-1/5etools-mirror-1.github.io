@@ -2205,7 +2205,7 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"Starting at 14th level, you can plunge a creature into an illusory realm. As an action, choose a creature that you can see within 60 feet of you. It must make a Wisdom saving throw against your warlock spell save DC. On a failed save, it is {@condition charmed} or {@condition frightened} by you (your choice) for 1 minute or until your concentration is broken (as if you are concentrating on a spell). This effect ends early if the creature takes any damage.",
+				"Starting at 14th level, you can plunge a creature into an illusory realm. As an action, choose a creature that you can see within 60 feet of you. It must make a Wisdom saving throw against your warlock spell save DC. On a failed save, it is {@condition charmed} or {@condition frightened} by you (your choice) for 1 minute or until your {@status concentration} is broken (as if you are {@status concentration||concentrating} on a spell). This effect ends early if the creature takes any damage.",
 				"Until this illusion ends, the creature thinks it is lost in a misty realm, the appearance of which you choose. The creature can see and hear only itself, you, and the illusion.",
 				"You must finish a short or long rest before you can use this feature again."
 			]
@@ -2708,7 +2708,7 @@
 			"entries": [
 				"{@i 10th-level Fathomless feature}",
 				"You learn the spell {@spell Evard's black tentacles}. It counts as a warlock spell for you, but it doesn't count against the number of spells you know. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.",
-				"Whenever you cast this spell, your patron's magic bolsters you, granting you a number of temporary hit points equal to your warlock level. Moreover, damage can't break your concentration on this spell."
+				"Whenever you cast this spell, your patron's magic bolsters you, granting you a number of temporary hit points equal to your warlock level. Moreover, damage can't break your {@status concentration} on this spell."
 			]
 		},
 		{
@@ -3309,7 +3309,7 @@
 			"entries": [
 				"{@i 14th-level Undead feature}",
 				"Your body is now simply a vessel for your spirit. As an action, you can project your spirit from your body. The body you leave behind is {@condition unconscious} and in a state of suspended animation.",
-				"Your spirit can remain outside your body for up to 1 hour or until your concentration is broken (as if concentrating on a spell). When your projection ends, your spirit returns to your body or your body magically teleports to your spirit's space (your choice).",
+				"Your spirit can remain outside your body for up to 1 hour or until your {@status concentration} is broken (as if {@status concentration||concentrating} on a spell). When your projection ends, your spirit returns to your body or your body magically teleports to your spirit's space (your choice).",
 				"While projecting your spirit, you gain the following benefits:",
 				{
 					"type": "list",
@@ -4711,7 +4711,7 @@
 			"entries": [
 				"{@i 14th-level Undead feature}",
 				"Your spirit can become untethered from your physical form. As an action, you can project your spirit from your body. The body you leave behind is {@condition unconscious} and in a state of suspended animation.",
-				"Your spirit resembles your mortal form in almost every way, replicating your game statistics but not your possessions. Any damage or other effects that apply to your spirit or physical body affects the other. Your spirit can remain outside your body for up to 1 hour or until your concentration is broken (as if concentrating on a spell). When your projection ends, your spirit returns to your body or your body magically teleports to your spirit's space (your choice).",
+				"Your spirit resembles your mortal form in almost every way, replicating your game statistics but not your possessions. Any damage or other effects that apply to your spirit or physical body affects the other. Your spirit can remain outside your body for up to 1 hour or until your {@status concentration} is broken (as if {@status concentration||concentrating} on a spell). When your projection ends, your spirit returns to your body or your body magically teleports to your spirit's space (your choice).",
 				"While projecting your spirit, you gain the following benefits:",
 				{
 					"type": "list",

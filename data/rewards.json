@@ -514,12 +514,22 @@
 			]
 		},
 		{
+			"name": "Charm of Agelessness",
+			"source": "BGDIA",
+			"page": 215,
+			"type": "Charm",
+			"entries": [
+				"While you have this charm, you don't age naturally, and your skin gains the waxy complexion of a doll. Magical aging still affects you, however. This charm vanishes from you when you die."
+			]
+		},
+		{
 			"name": "Charm of Air Bubbles",
 			"source": "BAM",
+			"page": 17,
 			"type": "Charm",
 			"entries": [
 				"{@note This charm can be bestowed by a {@creature chwinga astronaut|BAM} using their Magical Gift action.}",
-				"This charm allows you to cast the air bubble spell (see the Astral Adventurer's Guide) as an action. Once used three times, this charm goes away."
+				"This charm allows you to cast the {@spell Air Bubble|AAG} spell (see the Astral Adventurer's Guide) as an action. Once used three times, this charm goes away."
 			]
 		},
 		{
@@ -571,12 +581,39 @@
 			]
 		},
 		{
+			"name": "Charm of Diabolical Inspiration",
+			"source": "BGDIA",
+			"page": 215,
+			"type": "Charm",
+			"entries": [
+				"You grow a short, vestigial tail when you receive this charm unless you have a tail already. When you make an ability check, an attack roll, or a saving throw, you can use this charm to gain advantage on the roll. Once used nine times, the charm vanishes from you, as does your vestigial tail."
+			]
+		},
+		{
 			"name": "Charm of Feather Falling",
 			"source": "DMG",
 			"page": 228,
 			"type": "Charm",
 			"entries": [
 				"This charm grants you the benefits of a {@item ring of feather falling}. These benefits last for 10 days, after which the charm vanishes from you."
+			]
+		},
+		{
+			"name": "Charm of Greater Conscription",
+			"source": "BGDIA",
+			"page": 215,
+			"type": "Charm",
+			"entries": [
+				"While you have this charm, you attract flies. As an action, you activate this charm to summon a {@creature horned devil}. This devil appears in an unoccupied space within 30 feet of you, obeys your commands begrudgingly, and serves you under protest for 9 days or until it dies, whereupon it disappears. When the devil disappears, this charm vanishes from you."
+			]
+		},
+		{
+			"name": "Charm of Hellish Rebuke",
+			"source": "BGDIA",
+			"page": 215,
+			"type": "Charm",
+			"entries": [
+				"A fiery halo appears above your head when you receive this charm. This charm allows you to cast the {@spell hellish rebuke} spell (9th-level version) as a reaction. Once used nine times, the charm vanishes from you, as does the fiery halo."
 			]
 		},
 		{
@@ -591,10 +628,29 @@
 		{
 			"name": "Charm of Instant Tools",
 			"source": "BAM",
+			"page": 17,
 			"type": "Charm",
 			"entries": [
 				"{@note This charm can be bestowed by a {@creature chwinga astronaut|BAM} using their Magical Gift action.}",
 				"This charm allows you to magically conjure a set of artisan's tools, navigator's tools, or thieves' tools. The conjured tools appear either in your hand or somewhere else in your space (your choice). Once used, this charm goes away, but the tools remain."
+			]
+		},
+		{
+			"name": "Charm of Lesser Conscription",
+			"source": "BGDIA",
+			"page": 215,
+			"type": "Charm",
+			"entries": [
+				"While you have this charm, you attract flies. As an action, you activate this charm to summon a {@creature barbed devil}, two {@creature Bearded Devil||bearded devils}, or three {@creature Spined Devil||spined devils}. All devils appear at once in unoccupied spaces within 30 feet of you. Each devil obeys your commands and serves you eagerly for 9 days or until it dies, whereupon the devil disappears. Once all devils summoned by this charm disappear, the charm vanishes from you."
+			]
+		},
+		{
+			"name": "Charm of Many Tongues",
+			"source": "BGDIA",
+			"page": 215,
+			"type": "Charm",
+			"entries": [
+				"You can speak and understand all languages, you gain proficiency in the {@skill Deception} and {@skill Persuasion} skills, and you can add double your normal proficiency bonus when using those skills. This charm vanishes from you when you die."
 			]
 		},
 		{
@@ -623,6 +679,15 @@
 			"entries": [
 				"{@note This charm can be bestowed by a {@creature chwinga|ToA} living in Icewind Dale or other cold regions by using their Magical Gift action.}",
 				"This charm has 5 charges. As a bonus action, you can expend 1 of the charm's charges to create a magical snowball in your hand and throw it. You must have a hand free to hold the snowball, or the charge is wasted. The snowball is a magic ranged weapon with which you are proficient. It has a normal range of 20 feet and a long range of 60 feet, it deals {@damage 1d4} cold damage on a hit, and it scores a critical hit on a roll of 19 or 20. If you score a critical hit with the snowball, the target is {@condition blinded} until the end of its next turn. The snowball vanishes immediately after you hit or miss with it, or at the end of your turn if you don't throw it. Once all its charges have been expended, this charm vanishes from you."
+			]
+		},
+		{
+			"name": "Charm of the Adamant",
+			"source": "BGDIA",
+			"page": 215,
+			"type": "Charm",
+			"entries": [
+				"This charm has 9 charges. You can use an action to expend 1 charge from the charm to gain 30 temporary hit points. For the next hour, your eyes become voids of utter darkness, and you can't be {@condition charmed} or {@condition frightened}. Once all its charges have been expended, the charm vanishes from you."
 			]
 		},
 		{

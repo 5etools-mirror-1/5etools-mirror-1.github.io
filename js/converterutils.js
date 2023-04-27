@@ -29,7 +29,7 @@ class BaseParser {
 			: line;
 	}
 
-	static _getCleanInput (ipt, options) {
+	static _getCleanInput (ipt, options = null) {
 		let iptClean = ipt
 			.replace(/\n\r/g, "\n")
 			.replace(/\r\n/g, "\n")
@@ -51,12 +51,32 @@ class BaseParser {
 		iptClean = this._getCleanInput_parens(iptClean, "[", "]");
 		iptClean = this._getCleanInput_parens(iptClean, "{", "}");
 
-		// Apply `PAGE=...`
+		// Connect lines ending in, or starting in, a comma
 		iptClean = iptClean
-			.replace(/(?:\n|^)PAGE=(?<page>\d+)(?:\n|$)/gi, (...m) => {
-				options.page = Number(m.last().page);
-				return "";
-			});
+			.replace(/, *\n+ */g, ", ")
+			.replace(/ *\n+, */g, ", ");
+
+		iptClean = iptClean
+			// Connect together e.g. `5d10\nForce damage`
+			.replace(new RegExp(`(?<start>\\d+) *\\n+(?<end>${ConverterConst.STR_RE_DAMAGE_TYPE} damage)\\b`, "gi"), (...m) => `${m.last().start} ${m.last().end}`)
+			// Connect together likely determiners/conjunctions
+			.replace(/(?<start>\b(the|a|an|this|that|these|those|its|his|her|their|have|extra|and|or) *)\n+\s*/g, (...m) => `${m.last().start} `)
+			// Connect together e.g.:
+			//  - `+5\nto hit`, `your Spell Attack Modifier\nto hit`
+			//  - `your Wisdom\nmodifier`
+			.replace(/(?<start>[a-z0-9]) *\n+ *(?<end>to hit|modifier)\b/g, (...m) => `${m.last().start} ${m.last().end}`)
+			// Connect together `<ability> (<skill>)`
+			.replace(new RegExp(`\\b(?<start>${Object.values(Parser.ATB_ABV_TO_FULL).join("|")}) *\\n+ *(?<end>\\((?:${Object.keys(Parser.SKILL_TO_ATB_ABV).join("|")})\\))`, "gi"), (...m) => `${m.last().start.trim()} ${m.last().end.trim()}`)
+		;
+
+		if (options) {
+			// Apply `PAGE=...`
+			iptClean = iptClean
+				.replace(/(?:\n|^)PAGE=(?<page>\d+)(?:\n|$)/gi, (...m) => {
+					options.page = Number(m.last().page);
+					return "";
+				});
+		}
 
 		return iptClean;
 	}
@@ -281,18 +301,23 @@ class TagCondition {
 		return walker.walk(entry, walkerHandlers);
 	}
 
+	static _getModifiedString (str) {
+		return str
+			.replace(TagCondition._CONDITION_MATCHER, (...m) => `{@condition ${m[1]}}`)
+			.replace(TagCondition._STATUS_MATCHER, (...m) => `{@status ${m[1]}}`)
+			.replace(TagCondition._STATUS_MATCHER_ALT, (...m) => `{@status ${TagCondition._STATUS_MATCHER_ALT_REPLACEMENTS[m[1].toLowerCase()]}${m[1]}}`)
+		;
+	}
+
 	static _walkerStringHandler (ptrStack, depth, conditionCount, str, {inflictedSet, inflictedAllowlist} = {}) {
 		TaggerUtils.walkerStringHandler(
-			"@condition",
+			["@condition", "@status"],
 			ptrStack,
 			depth,
 			conditionCount,
 			str,
 			{
-				fnTag: sMod => {
-					TagCondition._CONDITION_MATCHERS.forEach(r => sMod = sMod.replace(r, (...mt) => `{@condition ${mt[1]}}`));
-					return sMod;
-				},
+				fnTag: this._getModifiedString.bind(this),
 			},
 		);
 
@@ -387,19 +412,20 @@ class TagCondition {
 	// region Run basic tagging
 	static tryRunBasic (it) {
 		const walker = MiscUtil.getWalker({keyBlocklist: TagCondition._KEY_BLOCKLIST});
+
 		return walker.walk(
 			it,
 			{
 				string: (str) => {
 					const ptrStack = {_: ""};
 					TaggerUtils.walkerStringHandler(
-						["@condition"],
+						["@condition", "@status"],
 						ptrStack,
 						0,
 						0,
 						str,
 						{
-							fnTag: strMod => strMod.replace(TagCondition._CONDITION_MATCHER_WORD, (...m) => `{@condition ${m[1]}}`),
+							fnTag: this._getModifiedString.bind(this),
 						},
 					);
 					return ptrStack._
@@ -432,8 +458,12 @@ TagCondition._CONDITIONS = [
 	"stunned",
 	"unconscious",
 ];
-TagCondition._CONDITION_MATCHERS = TagCondition._CONDITIONS.map(it => new RegExp(`\\b(${it})\\b`, "g"));
-TagCondition._CONDITION_MATCHER_WORD = new RegExp(`\\b(${TagCondition._CONDITIONS.join("|")})\\b`, "g");
+TagCondition._CONDITION_MATCHER = new RegExp(`\\b(${TagCondition._CONDITIONS.join("|")})\\b`, "g");
+TagCondition._STATUS_MATCHER = new RegExp(`\\b(concentration)\\b`, "g");
+TagCondition._STATUS_MATCHER_ALT = new RegExp(`\\b(concentrating)\\b`, "g");
+TagCondition._STATUS_MATCHER_ALT_REPLACEMENTS = {
+	"concentrating": "concentration||",
+};
 // Each should have one group which matches the condition name.
 //   A comma/and part is appended to the end to handle chains of conditions.
 TagCondition.__TGT = `(?:target|wielder)`;
@@ -714,7 +744,7 @@ class SenseTag {
 	}
 
 	static _fnTag (strMod) {
-		return strMod.replace(/(tremorsense|blindsight|truesight|darkvision)/g, (...m) => `{@sense ${m[0]}${m[0].toLowerCase() === "tremorsense" ? "|MM" : ""}}`);
+		return strMod.replace(/(tremorsense|blindsight|truesight|darkvision)/ig, (...m) => `{@sense ${m[0]}${m[0].toLowerCase() === "tremorsense" ? "|MM" : ""}}`);
 	}
 }
 
@@ -885,8 +915,8 @@ class ConvertUtil {
 	 * Checks if a line of text starts with a name, e.g.
 	 * "Big Attack. Lorem ipsum..." vs "Lorem ipsum..."
 	 * @param line
-	 * @param exceptions A set of (lowercase) exceptions which should always be treated as "not a name" (e.g. "cantrips")
-	 * @param splitterPunc Regexp to use when splitting by punctuation.
+	 * @param {Set} exceptions A set of (lowercase) exceptions which should always be treated as "not a name" (e.g. "cantrips")
+	 * @param {RegExp} splitterPunc Regexp to use when splitting by punctuation.
 	 * @returns {boolean}
 	 */
 	static isNameLine (line, {exceptions = null, splitterPunc = null} = {}) {
@@ -1037,19 +1067,19 @@ class ConvertUtil {
 
 	static cleanDashes (str) { return str.replace(/[-\u2011-\u2015]/g, "-"); }
 
-	static isStatblockLineHeaderStart (start, line) {
-		const m = this._getStatblockLineHeaderRegExp(start).exec(line);
+	static isStatblockLineHeaderStart ({reStartStr, line}) {
+		const m = this._getStatblockLineHeaderRegExp({reStartStr}).exec(line);
 		return m?.index === 0;
 	}
 
-	static getStatblockLineHeaderText (start, line) {
-		const m = this._getStatblockLineHeaderRegExp(start).exec(line);
+	static getStatblockLineHeaderText ({reStartStr, line}) {
+		const m = this._getStatblockLineHeaderRegExp({reStartStr}).exec(line);
 		if (!m) return line;
 		return line.slice(m.index + m[0].length).trim();
 	}
 
-	static _getStatblockLineHeaderRegExp (start) {
-		return new RegExp(`\\s*${start.escapeRegexp()}\\s*?(?::|\\.|\\b)\\s*`, "i");
+	static _getStatblockLineHeaderRegExp ({reStartStr}) {
+		return new RegExp(`\\s*${reStartStr}\\s*?(?::|\\.|\\b)\\s*`, "i");
 	}
 }
 ConvertUtil._CONTRACTIONS = new Set(["Mr.", "Mrs.", "Ms.", "Dr."]);

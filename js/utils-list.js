@@ -424,7 +424,7 @@ class SaveManager extends BaseComponent {
 			});
 	}
 
-	async pDoNew (exportedSublist) {
+	async pDoNew (exportedSublist = null) {
 		const isWarnUnsaved = this._isWarnUnsavedChanges(exportedSublist);
 		if (
 			isWarnUnsaved
@@ -444,8 +444,8 @@ class SaveManager extends BaseComponent {
 		return true;
 	}
 
-	_doNew () {
-		const nxt = this._getNewSave();
+	_doNew (nxt = null) {
+		nxt = nxt || this._getNewSave();
 		this._state.saves = [
 			...this._state.saves,
 			nxt,
@@ -660,7 +660,25 @@ class SaveManager extends BaseComponent {
 		return save.entity;
 	}
 
-	_isWarnUnsavedChanges (exportedSublist) {
+	async pDoDuplicate (exportedSublist) {
+		const isWarnUnsaved = this._isWarnUnsavedChanges(exportedSublist);
+		if (
+			isWarnUnsaved
+			&& !await InputUiUtil.pGetUserBoolean({title: "Discard Unsaved Changes", htmlDescription: `You have unsaved changes.<br>Are you sure you want to create a new list, discarding these changes?`, textYes: "Yes", textNo: "Cancel"})
+		) return false;
+
+		// (If the list has never been saved, just let the user dupe it)
+
+		const save = this._getOrCreateActiveSave();
+
+		const duplicate = this._getSaveCopy(save);
+
+		this._doNew(duplicate);
+
+		return true;
+	}
+
+	_isWarnUnsavedChanges (exportedSublist = null) {
 		if (!exportedSublist) return false;
 
 		const save = this._getActiveSave();
@@ -672,7 +690,7 @@ class SaveManager extends BaseComponent {
 		);
 	}
 
-	_isWarnNeverSaved (exportedSublist) {
+	_isWarnNeverSaved (exportedSublist = null) {
 		if (!exportedSublist) return false;
 
 		const save = this._getActiveSave();
@@ -684,6 +702,7 @@ class SaveManager extends BaseComponent {
 	$getRenderedSummary (
 		{
 			cbOnNew,
+			cbOnDuplicate,
 			cbOnSave,
 			cbOnLoad,
 			cbOnReset,
@@ -697,6 +716,7 @@ class SaveManager extends BaseComponent {
 				comp: this,
 				$wrp,
 				cbOnNew,
+				cbOnDuplicate,
 				cbOnSave,
 				cbOnLoad,
 				cbOnReset,
@@ -711,7 +731,10 @@ class SaveManager extends BaseComponent {
 		this._addHookBase("saves", hkSaves);
 		this._addHookBase("activeId", hkSaves);
 
-		return $wrp;
+		return {
+			$wrp,
+			cbOnListUpdated: renderableCollectionSummary.cbOnListUpdated.bind(renderableCollectionSummary),
+		};
 	}
 
 	$getBtnDownloadSave_ ({save, title = "Download", cbOnSave = null}) {
@@ -755,6 +778,29 @@ class SaveManager extends BaseComponent {
 				manager_loader_isExpanded: false,
 			},
 		};
+	}
+
+	_getSaveCopy (save) {
+		save = MiscUtil.copyFast(save);
+
+		save.id = CryptUtil.uid();
+		save.entity.saveId = CryptUtil.uid();
+
+		if (save.entity.name) {
+			let isReplaced = false;
+
+			save.entity.name = save.entity.name
+				.replace(/(?<prefix> \()(?<num>\d+)(?<suffix>\)\s*)$/i, (...m) => {
+					isReplaced = true;
+					return `${m.last().prefix}${Number(m.last().num) + 1}${m.last().suffix}`;
+				});
+
+			if (!isReplaced) {
+				save.entity.name = `${save.entity.name} (1)`;
+			}
+		}
+
+		return save;
 	}
 
 	_getDefaultState () {
@@ -826,7 +872,7 @@ SaveManager._RenderableCollectionSaves_Load = class extends RenderableCollection
 
 					$wrpPreviewInner
 						.empty()
-						.fastSetHtml(lis ? `<ul class="my-0">${lis}</ul>` : Renderer.get().render(`{@note This list is empty.}`));
+						.fastSetHtml(lis ? `<ul class="my-0" onclick="event.stopPropagation()">${lis}</ul>` : Renderer.get().render(`{@note This list is empty.}`));
 				});
 		};
 		comp._addHookBase("manager_loader_isExpanded", hkIsExpanded);
@@ -901,6 +947,7 @@ SaveManager._RenderableCollectionSaves_Summary = class extends RenderableCollect
 
 			$wrp,
 			cbOnNew,
+			cbOnDuplicate,
 			cbOnSave,
 			cbOnLoad,
 			cbOnReset,
@@ -910,10 +957,16 @@ SaveManager._RenderableCollectionSaves_Summary = class extends RenderableCollect
 		super(comp, "saves", {namespace: "summary"});
 		this._$wrp = $wrp;
 		this._cbOnNew = cbOnNew;
+		this._cbOnDuplicate = cbOnDuplicate;
 		this._cbOnSave = cbOnSave;
 		this._cbOnLoad = cbOnLoad;
 		this._cbOnReset = cbOnReset;
 		this._cbOnUpload = cbOnUpload;
+	}
+
+	cbOnListUpdated ({cntVisibleItems}) {
+		const renderedCollection = this._comp._getRenderedCollection({prop: "saves", namespace: "summary"});
+		Object.values(renderedCollection).forEach(renderedMeta => renderedMeta.$dispCount.html(`<span class="glyphicon glyphicon-pushpin mr-1"></span> ${cntVisibleItems}`));
 	}
 
 	getNewRender (save, i) {
@@ -925,8 +978,13 @@ SaveManager._RenderableCollectionSaves_Summary = class extends RenderableCollect
 
 		const $iptName = ComponentUiUtil.$getIptStr(comp, "name", {placeholder: "(Unnamed List)"});
 
-		const $btnNew = $(`<button class="btn btn-5et btn-xs btn-default" title="New Pinned List"><span class="glyphicon glyphicon glyphicon-file"></span></button>`)
+		const $dispCount = $(`<div class="absolute right-0 z-index-1 no-events ve-flex-vh-center ve-muted pr-2 ve-small" title="Number of Pinned List Items"></div>`);
+
+		const $btnNew = $(`<button class="btn btn-5et btn-xs btn-default" title="New Pinned List"><span class="glyphicon glyphicon-file"></span></button>`)
 			.click(evt => this._cbOnNew(evt));
+
+		const $btnDuplicate = $(`<button class="btn btn-5et btn-xs btn-default" title="Duplicate Pinned List"><span class="glyphicon glyphicon-duplicate"></span></button>`)
+			.click(evt => this._cbOnDuplicate(evt));
 
 		const $btnSave = $(`<button class="btn btn-5et btn-xs btn-default" title="Save Pinned List"><span class="glyphicon glyphicon-floppy-disk"></span></button>`)
 			.click(evt => this._cbOnSave(evt));
@@ -949,12 +1007,14 @@ SaveManager._RenderableCollectionSaves_Summary = class extends RenderableCollect
 
 		const $wrpRow = $$`<div class="ve-flex-col my-2 w-100">
 			<div class="ve-flex-v-center">
-				<div class="ve-flex-v-center mr-1 w-100 min-w-0">
+				<div class="ve-flex-v-center mr-1 w-100 min-w-0 relative">
 					<div class="mr-2 ve-muted">List:</div>
 					${$iptName}
+					${$dispCount}
 				</div>
 				<div class="ve-flex-h-right ve-flex-v-center btn-group no-shrink">
 					${$btnNew}
+					${$btnDuplicate}
 					${$btnSave}
 					${$btnLoad}
 					${$btnDownload}
@@ -970,6 +1030,7 @@ SaveManager._RenderableCollectionSaves_Summary = class extends RenderableCollect
 		return {
 			comp,
 			$wrpRow,
+			$dispCount,
 			$iptName,
 			hkDisplay,
 		};

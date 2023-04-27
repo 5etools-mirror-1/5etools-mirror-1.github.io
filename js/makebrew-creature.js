@@ -219,12 +219,16 @@ class CreatureBuilder extends Builder {
 						? `${item.type === "M" ? `reach 5 ft. or ` : ""}range ${item.range} ft.`
 						: "reach 5 ft.";
 					const dmgAvg = Number(mDice.groups.count) * ((Number(mDice.groups.face) + 1) / 2);
+					const isFinesse = !!item?.property?.includes("F");
 
 					return {
 						name: item.name,
 						entries: [
 							`{@atk ${ptAtk}} {@hit <$to_hit__${abil}$>} to hit, ${ptRange}, one target. {@h}<$damage_avg__(size_mult*${dmgAvg})+${abil}$> ({@damage <$size_mult__${mDice.groups.count}$>d${mDice.groups.face}<$damage_mod__${abil}$>}) ${Parser.dmgTypeToFull(item.dmgType)} damage.`,
 						],
+						entriesFinesse: isFinesse ? [
+							`{@atk ${ptAtk}} {@hit <$to_hit__dex$>} to hit, ${ptRange}, one target. {@h}<$damage_avg__(size_mult*${dmgAvg})+dex$> ({@damage <$size_mult__${mDice.groups.count}$>d${mDice.groups.face}<$damage_mod__dex$>}) ${Parser.dmgTypeToFull(item.dmgType)} damage.`,
+						] : null,
 					};
 				})
 				.filter(Boolean),
@@ -297,7 +301,7 @@ class CreatureBuilder extends Builder {
 			if (state.s.save) {
 				const pb = this._getProfBonus();
 				Object.entries(state.s.save).forEach(([prop, val]) => {
-					const expected = Parser.getAbilityModNumber(state.s[prop]) + pb;
+					const expected = Parser.getAbilityModNumber(Renderer.monster.getSafeAbilityScore(this._state, prop, {isDefaultTen: true})) + pb;
 					if (Number(val) === Number(expected)) state.m.profSave[prop] = 1;
 				});
 			}
@@ -308,7 +312,7 @@ class CreatureBuilder extends Builder {
 				const pb = this._getProfBonus();
 				Object.entries(state.s.skill).forEach(([prop, val]) => {
 					const abilProp = Parser.skillToAbilityAbv(prop);
-					const abilMod = Parser.getAbilityModNumber(state.s[abilProp]);
+					const abilMod = Parser.getAbilityModNumber(Renderer.monster.getSafeAbilityScore(this._state, abilProp, {isDefaultTen: true}));
 
 					const expectedProf = abilMod + pb;
 					if (Number(val) === Number(expectedProf)) return state.m.profSkill[prop] = 1;
@@ -445,6 +449,7 @@ class CreatureBuilder extends Builder {
 		this.__$getAlignmentInput(cb).appendTo(infoTab.$wrpTab);
 		this.__$getCrInput(cb).appendTo(infoTab.$wrpTab);
 		this.__$getProfBonusInput(cb).appendTo(infoTab.$wrpTab);
+		this.__$getProfNoteInput(cb).appendTo(infoTab.$wrpTab);
 		BuilderUi.$getStateIptNumber("Level", cb, this._state, {title: "Used for Sidekicks only"}, "level").appendTo(infoTab.$wrpTab);
 
 		// SPECIES
@@ -612,30 +617,42 @@ class CreatureBuilder extends Builder {
 		const initial = this._state.type;
 		const initialSwarm = !!initial.swarmSize;
 
-		const setStateCreature = () => {
-			if (tagRows.length) {
-				const validTags = tagRows.map($tr => {
+		const setState = () => {
+			const types = chooseTypeRows
+				.map(rowMeta => rowMeta.$selType.val());
+
+			const isSwarm = $selMode.val() === "1";
+
+			const validTags = tagRows
+				.map($tr => {
 					const prefix = $tr.$iptPrefix.val().trim();
 					const tag = $tr.$iptTag.val().trim();
 					if (!tag) return null;
 					if (prefix) return {tag, prefix};
 					return tag;
-				}).filter(Boolean);
-				if (validTags.length) {
-					this._state.type = {
-						type: $selType.val(),
-						tags: validTags,
-					};
-				} else this._state.type = $selType.val();
-			} else this._state.type = $selType.val();
-			cb();
-		};
+				})
+				.filter(Boolean);
 
-		const setStateSwarm = () => {
-			this._state.type = {
-				type: $selType.val(),
-				swarmSize: $selSwarmSize.val(),
+			const note = $iptNote.val().trim();
+
+			if (types.length === 1 && !isSwarm && !validTags.length && !note) {
+				this._state.type = types[0];
+				cb();
+				return;
+			}
+
+			const out = {
+				type: types.length === 1
+					? types[0]
+					: {choose: types},
 			};
+
+			if (isSwarm) out.swarmSize = $selSwarmSize.val();
+			if (validTags.length) out.tags = validTags;
+			if (note) out.note = note;
+
+			this._state.type = out;
+
 			cb();
 		};
 
@@ -645,46 +662,57 @@ class CreatureBuilder extends Builder {
 		</select>`).val(initialSwarm ? "1" : "0").change(() => {
 			switch ($selMode.val()) {
 				case "0": {
-					$stageType.showVe(); $stageSwarm.hideVe();
-					setStateCreature();
+					$stageSwarm.hideVe();
+					setState();
 					break;
 				}
 				case "1": {
-					$stageType.hideVe(); $stageSwarm.showVe();
-					setStateSwarm();
+					$stageSwarm.showVe();
+					setState();
 					break;
 				}
 			}
 		}).appendTo($rowInner);
 
-		const $selType = $(`<select class="form-control input-xs">${Parser.MON_TYPES.map(tp => `<option value="${tp}">${tp.uppercaseFirst()}</option>`).join("")}</select>`)
-			.change(() => {
-				switch ($selMode.val()) {
-					case "0": setStateCreature(); break;
-					case "1": setStateSwarm(); break;
-				}
-			})
-			.appendTo($rowInner)
-			.val(initial.type || initial);
+		// region CHOOSE-FROM TYPE CONTROLS
+		const chooseTypeRows = [];
 
-		// TAG CONTROLS
+		const $btnAddChooseType = $(`<button class="btn btn-xs btn-default">Add Type</button>`)
+			.click(() => {
+				const $typeRow = this.__$getTypeInput__getChooseTypeRow(null, chooseTypeRows, setState);
+				$wrpChooseTypeRows.append($typeRow.$wrp);
+			});
+
+		const $initialChooseTypeRows = initial.type?.choose
+			? initial.type.choose.map(type => this.__$getTypeInput__getChooseTypeRow(type, chooseTypeRows, setState))
+			: [this.__$getTypeInput__getChooseTypeRow(initial.type || initial, chooseTypeRows, setState)];
+
+		const $wrpChooseTypeRows = $$`<div>${$initialChooseTypeRows.map(it => it.$wrp)}</div>`;
+		const $stageType = $$`<div class="mt-2">
+		${$wrpChooseTypeRows}
+		<div>${$btnAddChooseType}</div>
+		</div>`.appendTo($rowInner);
+		// endregion
+
+		// region TAG CONTROLS
 		const tagRows = [];
 
 		const $btnAddTag = $(`<button class="btn btn-xs btn-default">Add Tag</button>`)
 			.click(() => {
-				const $tagRow = this.__$getTypeInput__getTagRow(null, tagRows, setStateCreature);
+				const $tagRow = this.__$getTypeInput__getTagRow(null, tagRows, setState);
 				$wrpTagRows.append($tagRow.$wrp);
 			});
 
-		const $initialTagRows = initial.tags ? initial.tags.map(tag => this.__$getTypeInput__getTagRow(tag, tagRows, setStateCreature)) : null;
+		const $initialTagRows = initial.tags ? initial.tags.map(tag => this.__$getTypeInput__getTagRow(tag, tagRows, setState)) : null;
 
 		const $wrpTagRows = $$`<div>${$initialTagRows ? $initialTagRows.map(it => it.$wrp) : ""}</div>`;
-		const $stageType = $$`<div class="mt-2">
+		const $stageTags = $$`<div class="mt-2">
 		${$wrpTagRows}
 		<div>${$btnAddTag}</div>
-		</div>`.appendTo($rowInner).toggleVe(!initialSwarm);
+		</div>`.appendTo($rowInner);
+		// endregion
 
-		// SWARM CONTROLS
+		// region SWARM CONTROLS
 		const $selSwarmSize = $(`<select class="form-control input-xs mt-2">${Parser.SIZE_ABVS.map(sz => `<option value="${sz}">${Parser.sizeAbvToFull(sz)}</option>`).join("")}</select>`)
 			.change(() => {
 				this._state.type.swarmSize = $selSwarmSize.val();
@@ -694,22 +722,53 @@ class CreatureBuilder extends Builder {
 		${$selSwarmSize}
 		</div>`.appendTo($rowInner).toggleVe(initialSwarm);
 		initialSwarm && $selSwarmSize.val(initial.swarmSize);
+		// endregion
+
+		// region NOTE CONTROLS
+		const $iptNote = $(`<input class="form-control input-xs form-control--minimal mr-2" placeholder="Note">`)
+			.val(initial.note || "")
+			.change(() => {
+				setState();
+			});
+		$$`<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--33">Type Note</span>${$iptNote}</div>`
+			.appendTo($rowInner);
+		// endregion
 
 		return $row;
 	}
 
-	__$getTypeInput__getTagRow (tag, tagRows, setStateCreature) {
+	__$getTypeInput__getChooseTypeRow (type, chooseTypeRows, setState) {
+		const $selType = $(`<select class="form-control input-xs">${Parser.MON_TYPES.map(tp => `<option value="${tp}">${tp.uppercaseFirst()}</option>`).join("")}</select>`)
+			.change(() => {
+				setState();
+			})
+			.val(type);
+
+		const $btnRemove = $(`<button class="btn btn-xs btn-danger" title="Remove Row"><span class="glyphicon glyphicon-trash"/></button>`)
+			.click(() => {
+				chooseTypeRows.splice(chooseTypeRows.indexOf(out), 1);
+				$wrp.empty().remove();
+				setState();
+			});
+
+		const $wrp = $$`<div class="ve-flex mb-2">${$selType}${$btnRemove}</div>`;
+		const out = {$wrp, $selType};
+		chooseTypeRows.push(out);
+		return out;
+	}
+
+	__$getTypeInput__getTagRow (tag, tagRows, setState) {
 		const $iptPrefix = $(`<input class="form-control input-xs form-control--minimal mr-2" placeholder="Prefix">`)
 			.change(() => {
 				$iptTag.removeClass("form-control--error");
-				if ($iptTag.val().trim().length || !$iptPrefix.val().trim().length) setStateCreature();
+				if ($iptTag.val().trim().length || !$iptPrefix.val().trim().length) setState();
 				else $iptTag.addClass("form-control--error");
 			});
 		if (tag && tag.prefix) $iptPrefix.val(tag.prefix);
 		const $iptTag = $(`<input class="form-control input-xs form-control--minimal mr-2" placeholder="Tag (lowercase)">`)
 			.change(() => {
 				$iptTag.removeClass("form-control--error");
-				setStateCreature();
+				setState();
 			});
 		if (tag) $iptTag.val(tag.tag || tag);
 		const $btnAddGeneric = $(`<button class="btn btn-xs btn-default mr-2">Add Tag...</button>`)
@@ -721,14 +780,14 @@ class CreatureBuilder extends Builder {
 
 				if (tag != null) {
 					$iptTag.val(tag);
-					setStateCreature();
+					setState();
 				}
 			});
 		const $btnRemove = $(`<button class="btn btn-xs btn-danger" title="Remove Row"><span class="glyphicon glyphicon-trash"/></button>`)
 			.click(() => {
 				tagRows.splice(tagRows.indexOf(out), 1);
 				$wrp.empty().remove();
-				setStateCreature();
+				setState();
 			});
 		const $wrp = $$`<div class="ve-flex mb-2">${$iptPrefix}${$iptTag}${$btnAddGeneric}${$btnRemove}</div>`;
 		const out = {$wrp, $iptPrefix, $iptTag};
@@ -1198,7 +1257,7 @@ class CreatureBuilder extends Builder {
 			if (!this._meta.autoCalc.hpModifier) return;
 
 			const num = Number($selSimpleNum.val());
-			const mod = Parser.getAbilityModNumber(this._state.con);
+			const mod = Parser.getAbilityModNumber(Renderer.monster.getSafeAbilityScore(this._state, "con", {isDefaultTen: true}));
 			const total = num * mod;
 			$iptSimpleMod.val(total ?? null);
 			hpSimpleAverageHook();
@@ -1412,10 +1471,25 @@ class CreatureBuilder extends Builder {
 		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Ability Scores", {isMarked: true, isRow: true});
 
 		const $getRow = (name, prop) => {
+			const valInitial = this._state[prop] != null && typeof this._state[prop] !== "number"
+				? this._state[prop].special
+				: this._state[prop];
+
 			const $iptAbil = $(`<input class="form-control form-control--minimal input-xs text-center">`)
-				.val(this._state[prop])
+				.val(valInitial)
 				.change(() => {
-					this._state[prop] = UiUtil.strToInt($iptAbil.val());
+					const val = $iptAbil.val().trim();
+					if (!val) {
+						delete this._state[prop];
+						return cb();
+					}
+
+					if (isNaN(val)) {
+						this._state[prop] = {special: val};
+						return cb();
+					}
+
+					this._state[prop] = UiUtil.strToInt(val);
 					cb();
 				});
 
@@ -1442,7 +1516,7 @@ class CreatureBuilder extends Builder {
 				});
 
 			const _setFromAbility = () => {
-				const total = Parser.getAbilityModNumber(this._state[prop]) + this._getProfBonus();
+				const total = Parser.getAbilityModNumber(Renderer.monster.getSafeAbilityScore(this._state, prop, {isDefaultTen: true})) + this._getProfBonus();
 				(this._state.save = this._state.save || {})[prop] = total < 0 ? `${total}` : `+${total}`;
 				$iptVal.val(total);
 				cb();
@@ -1498,7 +1572,8 @@ class CreatureBuilder extends Builder {
 				});
 
 			const _setFromAbility = (isExpert) => {
-				const total = Parser.getAbilityModNumber(this._state[abilProp]) + (this._getProfBonus() * (2 - !isExpert));
+				const total = Parser.getAbilityModNumber(Renderer.monster.getSafeAbilityScore(this._state, abilProp, {isDefaultTen: true}))
+					+ (this._getProfBonus() * (2 - !isExpert));
 
 				const nextSkills = {...(this._state.skill || {})}; // regenerate the object to allow hooks to fire
 				nextSkills[prop] = total < 0 ? `${total}` : `+${total}`;
@@ -1588,7 +1663,7 @@ class CreatureBuilder extends Builder {
 			if (this._meta.autoCalc.passivePerception) {
 				const pp = Math.round((() => {
 					if (this._state.skill && this._state.skill.perception && this._state.skill.perception.trim()) return Number(this._state.skill.perception);
-					else return Parser.getAbilityModNumber(this._state.wis);
+					else return Parser.getAbilityModNumber(Renderer.monster.getSafeAbilityScore(this._state, "wis", {isDefaultTen: true}));
 				})() + 10);
 
 				$iptPerception.val(pp);
@@ -2058,6 +2133,23 @@ class CreatureBuilder extends Builder {
 	_getProfBonus () {
 		if (this._meta.profBonus != null) return this._meta.profBonus || 0;
 		else return this._state.cr == null ? 0 : Parser.crToPb(this._state.cr.cr || this._state.cr);
+	}
+
+	__$getProfNoteInput (cb) {
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Proficiency Note", {title: `The value to display as the "Proficiency Bonus" on the statblock. If not specified, the display value is based on the creature's CR.`});
+
+		const $iptPbNote = $(`<input class="form-control form-control--minimal input-xs mr-2">`)
+			.val(this._state.pbNote || "")
+			.change(() => {
+				const val = $iptPbNote.val().trim();
+				if (val) this._state.pbNote = val;
+				else delete this._state.pbNote;
+				cb();
+			});
+
+		$$`<div class="ve-flex-v-center">${$iptPbNote}</div>`.appendTo($rowInner);
+
+		return $row;
 	}
 
 	__$getSpellcastingInput (cb) {
@@ -2673,7 +2765,7 @@ class CreatureBuilder extends Builder {
 								const getFormData = () => {
 									const pb = this._getProfBonus();
 									const isDex = $cbFinesse.prop("checked") || ($cbRanged.prop("checked") && !$cbMelee.prop("checked"));
-									const abilMod = Parser.getAbilityModNumber(isDex ? this._state.dex : this._state.str);
+									const abilMod = Parser.getAbilityModNumber(Renderer.monster.getSafeAbilityScore(this._state, isDex ? "dex" : "str", {isDefaultTen: true}));
 									const [melee, ranged] = [$cbMelee.prop("checked") ? "mw" : false, $cbRanged.prop("checked") ? "rw" : false];
 
 									const ptAtk = `{@atk ${[melee ? "mw" : null, ranged ? "rw" : null].filter(Boolean).join(",")}}`;
@@ -2819,7 +2911,12 @@ class CreatureBuilder extends Builder {
 										searchWidget.$wrpSearch.detach();
 										if (!isDataEntered) return resolve(null);
 										const action = MiscUtil.copyFast(this._jsonCreatureActions[actionIndex]);
-										action.entries = DataUtil.generic.variableResolver.resolve({obj: action.entries, ent: this._state});
+										const isFinesse = action.entriesFinesse && this._state.dex > this._state.str;
+										action.entries = DataUtil.generic.variableResolver.resolve({
+											obj: isFinesse ? action.entriesFinesse : action.entries,
+											ent: this._state,
+										});
+										delete action.entriesFinesse;
 										resolve(action);
 									},
 								});

@@ -1,0 +1,537 @@
+{
+	"monster": [
+		{
+			"name": "Blaze",
+			"source": "MCV3MC",
+			"page": 3,
+			"size": [
+				"M"
+			],
+			"type": "elemental",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 75,
+				"formula": "10d8 + 30"
+			},
+			"speed": {
+				"walk": 20,
+				"fly": {
+					"number": 20,
+					"condition": "(vertical movement only; hover)"
+				},
+				"canHover": true
+			},
+			"str": 16,
+			"dex": 17,
+			"con": 16,
+			"int": 6,
+			"wis": 10,
+			"cha": 7,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 10,
+			"resist": [
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"immune": [
+				"fire"
+			],
+			"conditionImmune": [
+				"exhaustion",
+				"grappled",
+				"paralyzed",
+				"petrified",
+				"poisoned",
+				"prone",
+				"restrained"
+			],
+			"cr": "5",
+			"trait": [
+				{
+					"name": "Blaze Rod",
+					"entries": [
+						"When the blaze drops to 0 hit points, it disappears in a cloud of smoke and has a 50 percent chance of leaving behind a glowing rod worth 100 gp. The rod sheds dim light in a 5-foot radius. As an action, a creature can try to snap the rod, doing so with a successful {@dc 14} Strength check. The snapped rod releases its fiery energy in a 5-foot-radius sphere centered on itself. Each creature in that area must make a {@dc 14} Dexterity saving throw, taking 6 ({@damage 1d12}) fire damage on a failed save, or half as much damage on a successful one."
+					]
+				},
+				{
+					"name": "Heat Aura",
+					"entries": [
+						"Any creature that starts its turn within 5 feet of the blaze takes 3 ({@damage 1d6}) fire damage."
+					]
+				},
+				{
+					"name": "Illumination",
+					"entries": [
+						"The blaze sheds bright light in a 20-foot radius and dim light for an additional 20 feet."
+					]
+				},
+				{
+					"name": "Water Susceptibility",
+					"entries": [
+						"The blaze takes 1 cold damage for every 5 feet it moves in water, for every gallon of water splashed on it, or whenever it starts its turn in the rain."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The blaze makes three Fiery Doom attacks."
+					]
+				},
+				{
+					"name": "Fiery Doom",
+					"entries": [
+						"{@atk ms,rs} {@hit 6} to hit; reach 5 ft. or ranged 60 ft., one target. {@h}8 ({@damage 1d10 + 3}) fire damage, and the target catches fire if it's a creature or a flammable object. Until a creature takes an action to extinguish the fire, the burning target takes 3 ({@damage 1d6}) fire damage at the end of each of its turns."
+					]
+				}
+			],
+			"traitTags": [
+				"Illumination"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"C",
+				"F"
+			],
+			"miscTags": [
+				"AOE"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Creeper",
+			"source": "MCV3MC",
+			"page": 4,
+			"size": [
+				"M"
+			],
+			"type": "monstrosity",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 12,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 19,
+				"formula": "3d8 + 6"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 11,
+			"con": 14,
+			"int": 6,
+			"wis": 8,
+			"cha": 3,
+			"skill": {
+				"perception": "+3",
+				"stealth": "+4"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"immune": [
+				"lightning"
+			],
+			"conditionImmune": [
+				"exhaustion"
+			],
+			"cr": "1/2",
+			"trait": [
+				{
+					"name": "Bizarre Physiology",
+					"entries": [
+						"The creeper can't take actions except for {@action Dash}, {@action Disengage}, {@action Hide}, and {@action Search}. It can't take bonus actions or reactions."
+					]
+				},
+				{
+					"name": "Creeper Head",
+					"entries": [
+						"When a creeper drops to 0 hit points from a charged creeper's explosion (see the Destruction trait), it dies and its head falls off. A creeper's fallen head is hollow and can be worn as a mask with eye and mouth openings."
+					]
+				},
+				{
+					"name": "Destruction",
+					"entries": [
+						"When it ends its turn within 10 feet of a Humanoid that it can see, the creeper stops moving and emits a hiss loud enough to be heard by creatures within 30 feet of itself.",
+						"If the creeper drops to 0 hit points before the start of its next turn, the hissing stops, and the creeper dies. Otherwise, at the start of the creeper's next turn, one of following things happens:",
+						{
+							"type": "list",
+							"items": [
+								"If there are no Humanoids within 10 feet of the hissing creeper, it stops hissing. It then uses any available movement to approach the nearest Humanoid it can see.",
+								"If there are one or more Humanoids within 10 feet of the hissing creeper, the creeper explodes in a ball of energy that fills a 20-foot-radius sphere centered on itself. This energy spreads around corners. The creeper is destroyed, and every other creature in the explosion's area must make a {@dc 12} Dexterity saving throw, taking 14 ({@damage 4d6}) lightning damage on a failed save, or half as much damage on a successful one. Increase this damage by 7 ({@dice 2d6}) if the creeper is charged (see \"Electrical Charge\" below). Objects in the area that aren't being worn or carried take 14 ({@damage 4d6}) lightning damage, or 21 ({@damage 6d6}) lightning damage if the creeper is charged."
+							]
+						}
+					]
+				},
+				{
+					"name": "Electrical Charge",
+					"entries": [
+						"Whenever the creeper is subjected to lightning damage, it takes no damage and instead becomes charged for 1 minute. While charged, the creeper emits dim blue light in a 5-foot radius."
+					]
+				},
+				{
+					"name": "Fear of Felines",
+					"entries": [
+						"The creeper has the {@condition frightened} condition whenever it starts its turn within 60 feet of a feline creature it can see. The condition lasts until the start of the creeper's next turn."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"damageTags": [
+				"L"
+			],
+			"miscTags": [
+				"AOE"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Ender Dragon",
+			"source": "MCV3MC",
+			"page": 5,
+			"size": [
+				"G"
+			],
+			"type": "dragon",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 22,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 350,
+				"formula": "20d20 + 140"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": 120
+			},
+			"str": 27,
+			"dex": 14,
+			"con": 25,
+			"int": 10,
+			"wis": 15,
+			"cha": 19,
+			"save": {
+				"con": "+13",
+				"int": "+6",
+				"wis": "+8"
+			},
+			"skill": {
+				"perception": "+14",
+				"stealth": "+8"
+			},
+			"senses": [
+				"darkvision 240 ft."
+			],
+			"passive": 24,
+			"resist": [
+				"fire"
+			],
+			"immune": [
+				"necrotic"
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened"
+			],
+			"languages": [
+				"Draconic"
+			],
+			"cr": "19",
+			"trait": [
+				{
+					"name": "Dragon Egg",
+					"entries": [
+						"When the Ender Dragon drops to 0 hit points, it radiates beams of purple light and then disappears, leaving behind an inert, jet-black dragon egg worth 5,000 gp."
+					]
+				},
+				{
+					"name": "Legendary Resistance (4/Day)",
+					"entries": [
+						"If the dragon fails a saving throw, it can choose to succeed instead."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The dragon makes one Bite attack and uses Beating Wings."
+					]
+				},
+				{
+					"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 14} to hit; reach 15 ft., one target. {@h}18 ({@damage 3d6 + 8}) piercing damage plus 7 ({@damage 2d6}) necrotic damage."
+					]
+				},
+				{
+					"name": "Beating Wings",
+					"entries": [
+						"The dragon beats its great wings. Each creature within 15 feet of the dragon must succeed on a {@dc 21} Dexterity saving throw or take 10 ({@damage 1d4 + 8}) bludgeoning damage, be pushed 10 feet away from the dragon, and have the {@condition prone} condition."
+					]
+				},
+				{
+					"name": "Harmful Breath {@recharge 5}",
+					"entries": [
+						"The dragon exhales putrid gas in a 60-foot cone. Each creature in that area must make a {@dc 21} Constitution saving throw, taking 52 ({@damage 15d6}) necrotic damage on a failed save, or half as much damage on a successful one. The dragon then chooses a point it can see where the cone makes contact with the ground. That point becomes the center of a 10-foot-high, 10-foot-radius cylinder of lingering gas that disappears at the start of the dragon's next turn. Any creature that starts its turn in the cylinder takes 10 ({@damage 3d6}) necrotic damage."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"senseTags": [
+				"SD"
+			],
+			"actionTags": [
+				"Breath Weapon",
+				"Multiattack"
+			],
+			"languageTags": [
+				"DR"
+			],
+			"damageTags": [
+				"B",
+				"N",
+				"P"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Enderman",
+			"source": "MCV3MC",
+			"page": 6,
+			"size": [
+				"M"
+			],
+			"type": "aberration",
+			"alignment": [
+				"C",
+				"N"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				14
+			],
+			"hp": {
+				"average": 78,
+				"formula": "12d8 + 24"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 15,
+			"dex": 18,
+			"con": 15,
+			"int": 10,
+			"wis": 18,
+			"cha": 11,
+			"save": {
+				"str": "+5",
+				"con": "+5"
+			},
+			"skill": {
+				"perception": "+7",
+				"stealth": "+7",
+				"survival": "+7"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 17,
+			"resist": [
+				"necrotic"
+			],
+			"languages": [
+				"Endspeech"
+			],
+			"cr": "6",
+			"trait": [
+				{
+					"name": "Evasive Teleportation",
+					"entries": [
+						"Whenever it takes damage or is the target of a ranged attack, the Enderman can teleport, along with any equipment it is wearing or carrying, to an unoccupied space it can see within 20 feet of itself (no action required). If this effect is triggered by a ranged attack, the Enderman teleports just before the attack hits, causing the attack to miss it. This trait is suppressed while the Enderman has the {@condition incapacitated} condition."
+					]
+				},
+				{
+					"name": "Implosion",
+					"entries": [
+						"When the Enderman drops to 0 hit points, it dies as its body implodes. Roll a {@dice d10}. On a roll of 9 or less, the Enderman leaves no remains. On a roll of 10, the Enderman leaves behind a glowing, purple orb called an Ender pearl, worth 500 gp. A creature can throw the pearl up to 60 feet; if the pearl lands in an unoccupied space big enough to contain the creature, the creature teleports to that space, along with any equipment it is wearing or carrying, and the pearl disappears."
+					]
+				},
+				{
+					"name": "Sunlight Sensitivity",
+					"entries": [
+						"While in sunlight, the Enderman has disadvantage on attack rolls."
+					]
+				},
+				{
+					"name": "Water Susceptibility",
+					"entries": [
+						"The Enderman takes 1 cold damage for every 5 feet it moves in water, for every gallon of water splashed on it, or whenever it starts its turn in the rain."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The Enderman makes two Slam attacks."
+					]
+				},
+				{
+					"name": "Slam",
+					"entries": [
+						"{@atk mw} {@hit 7} to hit; reach 10 ft., one target. {@h}8 ({@damage 1d8 + 4}) bludgeoning damage plus 9 ({@damage 2d8}) necrotic damage."
+					]
+				}
+			],
+			"traitTags": [
+				"Sunlight Sensitivity"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"B",
+				"C",
+				"N"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Wolf of the Overworld",
+			"source": "MCV3MC",
+			"page": 7,
+			"size": [
+				"M"
+			],
+			"type": "beast",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 11,
+				"formula": "2d8 + 2"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 12,
+			"dex": 15,
+			"con": 12,
+			"int": 3,
+			"wis": 12,
+			"cha": 6,
+			"skill": {
+				"perception": "+5",
+				"stealth": "+4"
+			},
+			"passive": 15,
+			"cr": "1/4",
+			"trait": [
+				{
+					"name": "Pack Tactics",
+					"entries": [
+						"The wolf has advantage on attack rolls against a creature if at least one of the wolf's allies is within 5 feet of the creature and the ally doesn't have the {@condition incapacitated} condition."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit; reach 5 ft., one target. {@h}7 ({@damage 2d4 + 2}) piercing damage. If the target is a creature, it must succeed on a {@dc 11} Strength saving throw or have the {@condition prone} condition."
+					]
+				}
+			],
+			"traitTags": [
+				"Pack Tactics"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		}
+	]
+}

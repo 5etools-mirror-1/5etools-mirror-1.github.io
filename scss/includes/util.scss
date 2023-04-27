@@ -98,6 +98,10 @@ i > i {
 	white-space: pre;
 }
 
+.word-break-all {
+	word-break: break-all;
+}
+
 .small-caps {
 	font-variant: small-caps;
 }
@@ -122,6 +126,10 @@ i > i {
 
 .text-center {
 	text-align: center !important;
+}
+
+.text-rtl {
+	direction: rtl;
 }
 // endregion
 
@@ -148,8 +156,20 @@ i > i {
 	pointer-events: none !important;
 }
 
+.events-initial {
+	pointer-events: initial !important;
+}
+
 .no-select {
 	user-select: none !important;
+}
+
+.user-select-text {
+	user-select: text !important;
+}
+
+.user-select-all {
+	user-select: all !important;
 }
 // endregion
 
@@ -347,6 +367,10 @@ i > i {
 
 .min-w-100 {
 	min-width: 100% !important;
+}
+
+.min-w-20p {
+	min-width: 20px !important;
 }
 
 .min-w-100p {

@@ -1,4 +1,6 @@
+import "../js/parser.js";
 import "../js/utils.js";
+import "../js/utils-dataloader.js";
 import "../js/render.js";
 import "../js/render-dice.js";
 import * as ut from "./util.js";
@@ -11,7 +13,7 @@ import {setUp, loadSpells, run, teardown} from "./util-tag-jsons.js";
  * inplace
  * bestiaryFile="./data/my-file.json"
  */
-export default async function main () {
+async function main () {
 	ut.ArgParser.parse();
 	setUp();
 	await TagJsons.pInit({
@@ -21,3 +23,5 @@ export default async function main () {
 	teardown();
 	console.log("Run complete.");
 }
+
+main();

@@ -33,6 +33,7 @@ class BlocklistUtil {
 		"trapshazards.json",
 		"variantrules.json",
 		"vehicles.json",
+		"decks.json",
 	];
 
 	static async pLoadData () {

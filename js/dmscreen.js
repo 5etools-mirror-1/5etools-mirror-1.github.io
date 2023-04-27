@@ -3344,7 +3344,7 @@ class AddMenuSearchTab extends AddMenuTab {
 		switch (this.subType) {
 			case "content": return $(`
 				<div class="ui-search__row" tabindex="0">
-					<span>${r.doc.n}</span>
+					<span><span class="ve-muted">${r.doc.cf}</span> ${r.doc.n}</span>
 					<span>${r.doc.s ? `<i title="${Parser.sourceJsonToFull(r.doc.s)}">${Parser.sourceJsonToAbv(r.doc.s)}${r.doc.p ? ` p${r.doc.p}` : ""}</i>` : ""}</span>
 				</div>
 			`);
@@ -3460,7 +3460,7 @@ class AddMenuSearchTab extends AddMenuTab {
 
 				res.forEach(r => {
 					const $row = this._$getRow(r).appendTo(this.$results);
-					SearchWidget.bindRowHandlers({result: r, $row, $ptrRows: this._$ptrRows, fnHandleClick: handleClick});
+					SearchWidget.bindRowHandlers({result: r, $row, $ptrRows: this._$ptrRows, fnHandleClick: handleClick, $iptSearch: this.$srch});
 					this._$ptrRows._.push($row);
 				});
 
@@ -3709,7 +3709,7 @@ class NoteBox {
 						const str = braceStack.join("");
 						const tag = str.split(" ")[0].replace(/^@/, "");
 						const text = str.split(" ").slice(1).join(" ");
-						if (Renderer.hover.TAG_TO_PAGE[tag]) {
+						if (Renderer.tag.getPage(tag)) {
 							const r = Renderer.get().render(`{${str}}`);
 							evt.type = "mouseover";
 							evt.shiftKey = true;

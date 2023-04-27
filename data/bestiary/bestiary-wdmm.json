@@ -349,6 +349,7 @@
 		{
 			"name": "Arcturia",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 296,
 			"_copy": {
@@ -402,7 +403,7 @@
 							"spells": [
 								"{@spell detect thoughts}",
 								"{@spell enlarge/reduce}",
-								"{@spell Melf's Acid Arrow}",
+								"{@spell Melf's acid arrow}",
 								"{@spell mirror image}"
 							]
 						},
@@ -453,7 +454,7 @@
 						"9": {
 							"slots": 1,
 							"spells": [
-								"{@spell True Polymorph}"
+								"{@spell true polymorph}"
 							]
 						}
 					},
@@ -568,6 +569,7 @@
 		{
 			"name": "Berlain Shadowdusk",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 283,
 			"_copy": {
@@ -845,7 +847,8 @@
 				}
 			],
 			"traitTags": [
-				"Regeneration"
+				"Regeneration",
+				"Tunneler"
 			],
 			"senseTags": [
 				"B",
@@ -864,11 +867,13 @@
 				"RCH"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Captain N'ghathrod",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 250,
 			"_copy": {
@@ -916,6 +921,7 @@
 				}
 			},
 			"int": 1,
+			"languages": null,
 			"action": [
 				{
 					"name": "Multiattack",
@@ -958,6 +964,7 @@
 		{
 			"name": "Cassiok Shadowdusk",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 287,
 			"_copy": {
@@ -1117,6 +1124,7 @@
 		{
 			"name": "Copper Stormforge",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 30,
 			"_copy": {
@@ -1279,6 +1287,7 @@
 		{
 			"name": "Dezmyr Shadowdusk",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 287,
 			"_copy": {
@@ -1356,6 +1365,7 @@
 		{
 			"name": "Drivvin Freth",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 169,
 			"_copy": {
@@ -1416,6 +1426,7 @@
 		{
 			"name": "Emberosa",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 185,
 			"_copy": {
@@ -1450,6 +1461,7 @@
 		{
 			"name": "Ezzat",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 262,
 			"_copy": {
@@ -1581,6 +1593,7 @@
 		{
 			"name": "Fazrian",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 275,
 			"_copy": {
@@ -1617,6 +1630,7 @@
 		{
 			"name": "Fidelio",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 197,
 			"_copy": {
@@ -1815,6 +1829,7 @@
 		{
 			"name": "Gorka Tharn",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 257,
 			"_copy": {
@@ -1833,7 +1848,7 @@
 							{
 								"name": "Invisibility (Recharges after a Short or Long Rest)",
 								"entries": [
-									"The mummy lord magically turns {@condition invisible} for up to 1 hour or until it attacks, it casts a spell, it uses its Enlarge, or its concentration is broken (as if concentrating on a spell). Any equipment the mummy lord wears or carries is {@condition invisible} with it.",
+									"The mummy lord magically turns {@condition invisible} for up to 1 hour or until it attacks, it casts a spell, it uses its Enlarge, or its {@status concentration} is broken (as if {@status concentration||concentrating} on a spell). Any equipment the mummy lord wears or carries is {@condition invisible} with it.",
 									"The stalagmite in the northwest alcove is hollow and serves as Gorka Tharn's sarcophagus. The mummy lord is lodged inside the stalagmite's funnel-shaped interior. When it awakens, the mummy lord uses a {@spell stone shape} spell to create an opening large enough for it to emerge. It destroys any intruders in its lair, then returns to its sarcophagus and its slumber.",
 									"At the bottom of the stalagmite's hollow cavity, four 1-foot-tall clay urns contain Gorka Tharn's preserved internal organs, including the mummy lord's shriveled heart. Only by destroying the heart can the characters prevent the mummy lord from rejuvenating. The heart is a Tiny object with AC 5, 25 hit points, and immunity to all damage except fire."
 								]
@@ -2344,6 +2359,7 @@
 		{
 			"name": "Haungharassk",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 258,
 			"size": [
@@ -2482,7 +2498,7 @@
 				{
 					"name": "Invisibility (Recharges after a Short or Long Rest)",
 					"entries": [
-						"The ooze magically turns {@condition invisible} for up to 1 hour until it attacks, it uses its Enlarge, or its concentration is broken (as if concentrating on a spell)."
+						"The ooze magically turns {@condition invisible} for up to 1 hour until it attacks, it uses its Enlarge, or its {@status concentration} is broken (as if {@status concentration||concentrating} on a spell)."
 					]
 				}
 			],
@@ -2637,6 +2653,7 @@
 		{
 			"name": "Kavil",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 205,
 			"_copy": {
@@ -2783,6 +2800,7 @@
 		{
 			"name": "Kol'daan",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 155,
 			"_copy": {
@@ -3094,6 +3112,7 @@
 		{
 			"name": "Maddgoth's Homunculus",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 96,
 			"_copy": {
@@ -3142,6 +3161,7 @@
 		{
 			"name": "Marta Moonshadow",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 46,
 			"_copy": {
@@ -3206,6 +3226,7 @@
 		{
 			"name": "Melissara Shadowdusk",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 281,
 			"_copy": {
@@ -3293,6 +3314,7 @@
 		{
 			"name": "Mobar",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 77,
 			"_copy": {
@@ -3544,6 +3566,7 @@
 		{
 			"name": "Nerozar the Defeated",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 52,
 			"_copy": {
@@ -3610,6 +3633,7 @@
 		{
 			"name": "Nester",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 131,
 			"_copy": {
@@ -3715,6 +3739,7 @@
 		{
 			"name": "Otto",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 96,
 			"_copy": {
@@ -3853,6 +3878,7 @@
 		{
 			"name": "Portia Dzuth",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 239,
 			"_copy": {
@@ -3893,6 +3919,7 @@
 		{
 			"name": "Preeta Kreepa",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 56,
 			"_copy": {
@@ -3969,6 +3996,7 @@
 		{
 			"name": "Rabbithead",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 295,
 			"_copy": {
@@ -3985,6 +4013,8 @@
 				"U"
 			],
 			"languages": null,
+			"cr": "0",
+			"action": null,
 			"languageTags": [],
 			"hasToken": true
 		},
@@ -4311,6 +4341,7 @@
 		{
 			"name": "Shockerstomper",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 174,
 			"size": [
@@ -4427,6 +4458,7 @@
 		{
 			"name": "Shunn Shurreth",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 33,
 			"_copy": {
@@ -4460,6 +4492,7 @@
 		{
 			"name": "Sing-Along",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 148,
 			"_copy": {
@@ -4642,6 +4675,7 @@
 		{
 			"name": "Sundeth",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 304,
 			"_copy": {
@@ -4684,6 +4718,7 @@
 		{
 			"name": "Thwad Underbrew",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 204,
 			"_copy": {
@@ -4746,6 +4781,7 @@
 		{
 			"name": "Torbit",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 115,
 			"_copy": {
@@ -4783,6 +4819,7 @@
 		{
 			"name": "Trenzia",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 32,
 			"_copy": {
@@ -4871,6 +4908,7 @@
 		{
 			"name": "Trobriand",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 294,
 			"_copy": {
@@ -5082,6 +5120,7 @@
 		{
 			"name": "Valtagar Steelshadow",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 271,
 			"_copy": {
@@ -5140,6 +5179,7 @@
 		{
 			"name": "Vertrand Shadowdusk",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 282,
 			"_copy": {
@@ -5384,6 +5424,7 @@
 		{
 			"name": "Wyllow",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 70,
 			"_copy": {
@@ -5428,6 +5469,7 @@
 		{
 			"name": "Zalthar Shadowdusk",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 286,
 			"_copy": {
@@ -5710,6 +5752,7 @@
 		{
 			"name": "Zox Clammersham",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 176,
 			"_copy": {
@@ -5763,6 +5806,7 @@
 		{
 			"name": "Zress Orlezziir",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 136,
 			"_copy": {

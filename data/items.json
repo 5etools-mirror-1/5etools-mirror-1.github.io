@@ -3000,7 +3000,7 @@
 			"rarity": "uncommon",
 			"wondrous": true,
 			"entries": [
-				"This backpack contains the spirit of an {@creature air elemental} and a compact leather balloon. While you're wearing the backpack, you can deploy the balloon as an action and gain the effect of the {@spell levitate} spell for 10 minutes, targeting yourself and requiring no concentration. Alternatively, you can use a reaction to deploy the balloon when you're falling and gain the effect of the {@spell feather fall} spell for yourself.",
+				"This backpack contains the spirit of an {@creature air elemental} and a compact leather balloon. While you're wearing the backpack, you can deploy the balloon as an action and gain the effect of the {@spell levitate} spell for 10 minutes, targeting yourself and requiring no {@status concentration}. Alternatively, you can use a reaction to deploy the balloon when you're falling and gain the effect of the {@spell feather fall} spell for yourself.",
 				"When either spell ends, the balloon slowly deflates as the elemental spirit escapes and returns to the Elemental Plane of Air. As the balloon deflates, you descend gently toward the ground for up to 60 feet. If you are still in the air at the end of this distance, you fall if you have no other means of staying aloft.",
 				"After the spirit departs, the backpack's property is unusable unless the backpack is recharged for 1 hour in an elemental air node, which binds another spirit to the backpack."
 			],
@@ -3465,7 +3465,7 @@
 		{
 			"name": "Basic Fishing Equipment",
 			"source": "AAG",
-			"page": 0,
+			"page": 21,
 			"type": "G",
 			"rarity": "none",
 			"value": 10,
@@ -3929,7 +3929,7 @@
 		{
 			"name": "Biza's Breath",
 			"source": "JttRC",
-			"page": 0,
+			"page": 70,
 			"type": "G",
 			"rarity": "none",
 			"poison": true,
@@ -4071,7 +4071,7 @@
 		{
 			"name": "Black Ghost Orchid Seed",
 			"source": "JttRC",
-			"page": 0,
+			"page": 212,
 			"type": "G",
 			"rarity": "none",
 			"entries": [
@@ -4177,7 +4177,7 @@
 					"type": "entries",
 					"entries": [
 						"While you hold the weapon. you are aware of the presence of Tiny or larger creatures within 60 feet of you that aren't constructs or undead. You also can't be {@condition charmed} or {@condition frightened}.",
-						"Blackrazor can cast the {@spell haste} spell on you once per day. It decides when to cast the spell and maintains concentration on it so that you don't have to."
+						"Blackrazor can cast the {@spell haste} spell on you once per day. It decides when to cast the spell and maintains {@status concentration} on it so that you don't have to."
 					]
 				},
 				{
@@ -4987,7 +4987,7 @@
 		{
 			"name": "Bombard",
 			"source": "AAG",
-			"page": 0,
+			"page": 26,
 			"type": "SPC",
 			"rarity": "none",
 			"value": 5000000,
@@ -5061,14 +5061,14 @@
 					"name": "Random Properties",
 					"type": "entries",
 					"entries": [
-						"The Book of Exalted Deeds has the following random properties:"
-					]
-				},
-				{
-					"type": "list",
-					"items": [
-						"2 {@table Artifact Properties; Minor Beneficial Properties|dmg|minor beneficial properties}",
-						"2 {@table Artifact Properties; Major Beneficial Properties|dmg|major beneficial properties}"
+						"The Book of Exalted Deeds has the following random properties:",
+						{
+							"type": "list",
+							"items": [
+								"2 {@table Artifact Properties; Minor Beneficial Properties|dmg|minor beneficial properties}",
+								"2 {@table Artifact Properties; Major Beneficial Properties|dmg|major beneficial properties}"
+							]
+						}
 					]
 				},
 				{
@@ -5138,16 +5138,16 @@
 					"name": "Random Properties",
 					"type": "entries",
 					"entries": [
-						"The Book of Vile Darkness has the following random properties:"
-					]
-				},
-				{
-					"type": "list",
-					"items": [
-						"3 {@table Artifact Properties; Minor Beneficial Properties|dmg|minor beneficial properties}",
-						"1 {@table Artifact Properties; Major Beneficial Properties|dmg|major beneficial property}",
-						"3 {@table Artifact Properties; Minor Detrimental Properties|dmg|minor detrimental properties}",
-						"2 {@table Artifact Properties; Major Detrimental Properties|dmg|major detrimental properties}"
+						"The Book of Vile Darkness has the following random properties:",
+						{
+							"type": "list",
+							"items": [
+								"3 {@table Artifact Properties; Minor Beneficial Properties|dmg|minor beneficial properties}",
+								"1 {@table Artifact Properties; Major Beneficial Properties|dmg|major beneficial property}",
+								"3 {@table Artifact Properties; Minor Detrimental Properties|dmg|minor detrimental properties}",
+								"2 {@table Artifact Properties; Major Detrimental Properties|dmg|major detrimental properties}"
+							]
+						}
 					]
 				},
 				{
@@ -5199,6 +5199,54 @@
 			"attachedSpells": [
 				"dominate monster"
 			],
+			"hasFluffImages": true
+		},
+		{
+			"name": "Book of Vile Darkness (Variant)",
+			"source": "KftGV",
+			"page": 207,
+			"_copy": {
+				"name": "Book of Vile Darkness",
+				"source": "DMG",
+				"_mod": {
+					"entries": {
+						"mode": "replaceArr",
+						"replace": {
+							"index": 7
+						},
+						"items": [
+							"The Book of Vile Darkness has the following properties:",
+							{
+								"type": "list",
+								"style": "list-hang-notitle",
+								"items": [
+									{
+										"type": "item",
+										"name": "Circle of Death",
+										"entries": [
+											"While attuned to the book, you can cast {@spell circle of death} (save DC 20) from it as an action. After you cast the spell, roll a {@dice d6}. On a roll of 1-5, you can't use this property again until the next dawn."
+										]
+									},
+									{
+										"type": "item",
+										"name": "Condition Immunities",
+										"entries": [
+											"While attuned to the book, you can't be {@condition charmed} or {@condition frightened}."
+										]
+									},
+									{
+										"type": "item",
+										"name": "Evil Presence",
+										"entries": [
+											"The book houses an evil spirit that is hostile toward you. When you become attuned to the book, the spirit tries to leave the book and enter your body. If you fail a DC 20 Charisma saving throw, it succeeds, and you become an NPC under the DM's control until the intruding spirit is banished using magic such as the {@spell dispel evil and good} spell. The banished spirit returns to the book."
+										]
+									}
+								]
+							}
+						]
+					}
+				}
+			},
 			"hasFluffImages": true
 		},
 		{
@@ -6799,7 +6847,7 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"entries": [
-				"Whenever you roll this six\u2014sided die, you can control which number it rolls."
+				"Whenever you roll this six-sided die, you can control which number it rolls."
 			]
 		},
 		{
@@ -7699,6 +7747,58 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "Constantori's Portrait",
+			"source": "KftGV",
+			"page": 101,
+			"rarity": "very rare",
+			"reqAttune": true,
+			"wondrous": true,
+			"sentient": true,
+			"weight": 15,
+			"recharge": "dawn",
+			"rechargeAmount": 3,
+			"charges": 3,
+			"entries": [
+				"This painting by famed artist Dkesii Kwan depicts Constantori, a beautiful courtier, who was paid a staggering sum to be Dkesii's model. Whether Constantori's actual appearance matches the painting remains a subject of debate. The portrait is one of several paintings commissioned by the late Daiyani Grysthorn, a crime lord who frequently gave magical paintings as gifts to her most esteemed associates.",
+				{
+					"type": "entries",
+					"name": "Sentience",
+					"entries": [
+						"Constantori's Portrait is a sentient, lawful evil item with an Intelligence score of 14, a Wisdom score of 12, and a Charisma score of 8. It can hear within a range of 120 feet and has {@sense darkvision} within a range of 60 feet, but it can't see anything behind itself.",
+						"The painting can converse in Common, Draconic, and Elvish as if it were a living person, though Constantori's mouth doesn't move. Whenever conversation occurs within the portrait's auditory range, the painting eagerly gathers secrets, the names of secret tellers, significant events, or any political conversations."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Personality",
+					"entries": [
+						"Constantori's Portrait is demanding, condescending, and vain. It doesn't like being covered or placed out of sight, and it loudly condemns anyone who tries to remove it from its gold-leaf frame."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Wealth of Information",
+					"entries": [
+						"The painting's primary purpose is to observe and recall conversations. Over the past few decades, Constantori's Portrait has quietly observed countless conversations and now possesses an unquantifiable amount of lore\u2014everything from criminal conspiracies to secret passwords. The DM decides what the painting knows and what it doesn't.",
+						"While attuned to the painting, you can take an action to telepathically contact it over any distance, provided you and the painting are on the same plane of existence. The painting can't telepathically contact you, however. Maintaining telepathic contact with the painting requires your {@status concentration} (as if {@status concentration||concentrating} on a spell)."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Guardian Portrait",
+					"entries": [
+						"While you are attuned to the painting, you can command it to guard its location against one or more creatures you identify as the painting's enemies. The painting performs this function until you command it to stop or until your attunement to the painting ends.",
+						"The painting has 3 charges. When a creature the painting identifies as its enemy starts its turn in a space the painting can see, the painting expends 1 of its charges to cast {@spell magic missile} (3 missiles), targeting that creature. The painting regains all expended charges daily at dawn.",
+						"The painting is a Small object with AC 12, 20 hit points, and immunity to poison damage. In its gold-leaf frame, the painting weighs 15 pounds. If the painting has at least 1 hit point and is targeted by a {@spell mending} spell, it regains {@dice 2d6} hit points."
+					]
+				}
+			],
+			"attachedSpells": [
+				"magic missile"
+			],
+			"hasFluffImages": true
+		},
+		{
 			"name": "Cook's Utensils",
 			"source": "PHB",
 			"page": 154,
@@ -8478,7 +8578,7 @@
 		{
 			"name": "Damselfly Ship",
 			"source": "AAG",
-			"page": 0,
+			"page": 28,
 			"type": "SPC",
 			"rarity": "none",
 			"value": 2000000,
@@ -12408,15 +12508,15 @@
 					"name": "Random Properties",
 					"type": "entries",
 					"entries": [
-						"The Eye of Vecna and the {@item Hand of Vecna} each have the following random properties:"
-					]
-				},
-				{
-					"type": "list",
-					"items": [
-						"1 {@table Artifact Properties; Minor Beneficial Properties|dmg|minor beneficial property}",
-						"1 {@table Artifact Properties; Major Beneficial Properties|dmg|major beneficial property}",
-						"1 {@table Artifact Properties; Minor Detrimental Properties|dmg|minor detrimental property}"
+						"The Eye of Vecna and the {@item Hand of Vecna} each have the following random properties:",
+						{
+							"type": "list",
+							"items": [
+								"1 {@table Artifact Properties; Minor Beneficial Properties|dmg|minor beneficial property}",
+								"1 {@table Artifact Properties; Major Beneficial Properties|dmg|major beneficial property}",
+								"1 {@table Artifact Properties; Minor Detrimental Properties|dmg|minor detrimental property}"
+							]
+						}
 					]
 				},
 				{
@@ -12676,7 +12776,7 @@
 					"type": "entries",
 					"name": "Aberrant Ally",
 					"entries": [
-						"You can conjure an aberrant creature from the chaos of the multiverse to serve you. This functions as the {@spell conjure celestial} spell (no concentration required), except the creature you summon is an aberration of challenge rating 4 or lower. Once you use this feature of the far gear, it cannot be used again until the next dawn."
+						"You can conjure an aberrant creature from the chaos of the multiverse to serve you. This functions as the {@spell conjure celestial} spell (no {@status concentration} required), except the creature you summon is an aberration of challenge rating 4 or lower. Once you use this feature of the far gear, it cannot be used again until the next dawn."
 					]
 				},
 				{
@@ -12798,7 +12898,7 @@
 			],
 			"entries": [
 				"This warm crystal glints with the sunset colors of the Feywild sky and evokes whispers of emotional memory. As an action, you can attach the shard to a Tiny object (such as a weapon or a piece of jewelry) or detach it. It falls off if your attunement to it ends. You can use the shard as a spellcasting focus while you hold or wear it.",
-				"When you use a Metamagic option on a spell while you are holding or wearing the shard, you can roll on the {@table Wild Magic Surge|PHB} table in the {@book Player's Handbook|PHB}. If the result is a spell, it is too wild to be affected by your Metamagic, and if it normally requires concentration, it doesn't require concentration in this case; the spell lasts for its full duration.",
+				"When you use a Metamagic option on a spell while you are holding or wearing the shard, you can roll on the {@table Wild Magic Surge|PHB} table in the {@book Player's Handbook|PHB}. If the result is a spell, it is too wild to be affected by your Metamagic, and if it normally requires {@status concentration}, it doesn't require {@status concentration} in this case; the spell lasts for its full duration.",
 				"If you don't have the Wild Magic Sorcerous Origin, once this property is used to roll on the {@table Wild Magic Surge|PHB} table, it can't be used again until the next dawn."
 			],
 			"hasFluffImages": true
@@ -13736,7 +13836,7 @@
 			"entries": [
 				"The function of this ornate chair is to propel and maneuver a flying citadel on which it has been installed. The chair has AC 15, 18 hit points, and immunity to poison and psychic damage. It is destroyed if reduced to 0 hit points.",
 				"The sensation of being attuned to a flying citadel helm is akin to the pins-and-needles effect one experiences after one's arm or leg falls asleep, but not as intense.",
-				"While attuned to a flying citadel helm and sitting in it, you gain the following abilities for as long as you maintain concentration (as if concentrating on a spell):",
+				"While attuned to a flying citadel helm and sitting in it, you gain the following abilities for as long as you maintain {@status concentration} (as if {@status concentration||concentrating} on a spell):",
 				{
 					"type": "list",
 					"items": [
@@ -13745,7 +13845,7 @@
 						"At any time, you can see and hear from the highest point outside the citadel as though you were at that location."
 					]
 				},
-				"If no creature attuned to the helm is maintaining concentration, the citadel remains motionless in its space.",
+				"If no creature attuned to the helm is maintaining {@status concentration}, the citadel remains motionless in its space.",
 				{
 					"type": "entries",
 					"name": "Transfer Attunement",
@@ -13765,7 +13865,7 @@
 		{
 			"name": "Flying Fish Ship",
 			"source": "AAG",
-			"page": 0,
+			"page": 30,
 			"type": "SPC",
 			"rarity": "none",
 			"value": 2000000,
@@ -15421,7 +15521,7 @@
 		{
 			"name": "Hammerhead Ship",
 			"source": "AAG",
-			"page": 0,
+			"page": 32,
 			"otherSources": [
 				{
 					"source": "SjA"
@@ -15491,15 +15591,15 @@
 					"name": "Random Properties",
 					"type": "entries",
 					"entries": [
-						"The {@item Eye of Vecna} and the Hand of Vecna each have the following random properties:"
-					]
-				},
-				{
-					"type": "list",
-					"items": [
-						"1 {@table Artifact Properties; Minor Beneficial Properties|dmg|minor beneficial property}",
-						"1 {@table Artifact Properties; Major Beneficial Properties|dmg|major beneficial property}",
-						"1 {@table Artifact Properties; Minor Detrimental Properties|dmg|minor detrimental property}"
+						"The {@item Eye of Vecna} and the Hand of Vecna each have the following random properties:",
+						{
+							"type": "list",
+							"items": [
+								"1 {@table Artifact Properties; Minor Beneficial Properties|dmg|minor beneficial property}",
+								"1 {@table Artifact Properties; Major Beneficial Properties|dmg|major beneficial property}",
+								"1 {@table Artifact Properties; Minor Detrimental Properties|dmg|minor detrimental property}"
+							]
+						}
 					]
 				},
 				{
@@ -15904,6 +16004,45 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "Helm of Disjunction",
+			"source": "HAT-LMI",
+			"rarity": "legendary",
+			"reqAttune": "by a sorcerer",
+			"reqAttuneTags": [
+				{
+					"class": "sorcerer"
+				}
+			],
+			"wondrous": true,
+			"entries": [
+				"The wizard Mordenkainen crafted this sleek, golden helmet. If he created other helms of disjunction, they have yet to be found.",
+				"As an action while wearing this helm, you can use it to emit an antimagic pulse in a 300-foot-radius sphere centered on yourself. The pulse has the following effects:",
+				{
+					"type": "entries",
+					"name": "Magic Item Disjunction",
+					"entries": [
+						"Potions and scrolls in the area are destroyed. All other magic items in the area have their magical properties suppressed for 1 minute. Artifacts are unaffected by this property, as are magic items on your person."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spell Disjunction",
+					"entries": [
+						"Any ongoing spell ends if the creature, object, or area affected by it is even partly in the pulse's area."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Wave of Force",
+					"entries": [
+						"The antimagic pulse is strong enough to knock down creatures close to you. Each creature within 30 feet of you must succeed on a DC 15 Strength saving throw or have the {@condition prone} condition.",
+						"Once you use the helm's property, it can't be used again until {@dice 1d4} days have passed."
+					]
+				}
+			],
+			"hasFluffImages": true
+		},
+		{
 			"name": "Helm of Telepathy",
 			"source": "DMG",
 			"page": 174,
@@ -15913,7 +16052,7 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"entries": [
-				"While wearing this helm, you can use an action to cast the {@spell detect thoughts} spell (save DC 13) from it. As long as you maintain concentration on the spell, you can use a bonus action to send a telepathic message to a creature you are focused on. It can reply\u2014using a bonus action to do so\u2014while your focus on it continues.",
+				"While wearing this helm, you can use an action to cast the {@spell detect thoughts} spell (save DC 13) from it. As long as you maintain {@status concentration} on the spell, you can use a bonus action to send a telepathic message to a creature you are focused on. It can reply\u2014using a bonus action to do so\u2014while your focus on it continues.",
 				"While focusing on a creature with {@spell detect thoughts}, you can use an action to cast the {@spell suggestion} spell (save DC 13) from the helm on that creature. Once used, the suggestion property can't be used again until the next dawn."
 			],
 			"optionalfeatures": [
@@ -16423,6 +16562,32 @@
 			"bonusAc": "+3"
 		},
 		{
+			"name": "Hither-Thither Staff",
+			"source": "HAT-LMI",
+			"srd": true,
+			"basicRules": true,
+			"type": "M",
+			"rarity": "legendary",
+			"weight": 4,
+			"weaponCategory": "simple",
+			"property": [
+				"V"
+			],
+			"dmg1": "1d6",
+			"dmgType": "B",
+			"dmg2": "1d8",
+			"recharge": "dawn",
+			"rechargeAmount": "{@dice 1d4}",
+			"charges": 4,
+			"staff": true,
+			"entries": [
+				"This walking stick has a brilliant gemstone fitted at the top. This staff has 4 charges and regains {@dice 1d4} expended charges daily at dawn.",
+				"As an action, you can expend 1 charge from the staff to create two linked teleportation portals, each one appearing on a flat surface of your choice that you can see within 1,500 feet of yourself. Alternatively, you can expend 1 charge as an action to relocate one or both portals, subject to the same limitation. The surface on which a portal appears must be big enough to accommodate it. Each portal is a two-dimensional, glowing oval ring, and together they create an open doorway up to 6 feet high and 4 feet wide. Any creature or object entering one portal exits from the other as if the two portals were a single opening that connects their locations.",
+				"A portal can appear on a moving surface, but the effect ends when the two portals move more than 1 mile apart. As a bonus action while holding the staff, you can close both portals (ending the effect) or suppress one portal, causing it to disappear until you relocate it (see above), during which time the remaining portal can't be used. The portals otherwise last for 24 hours."
+			],
+			"hasFluffImages": true
+		},
+		{
 			"name": "Holy Symbol of Ravenkind",
 			"source": "CoS",
 			"page": 222,
@@ -16564,6 +16729,24 @@
 			"value": 300
 		},
 		{
+			"name": "Horn of Beckoning Death",
+			"source": "HAT-LMI",
+			"rarity": "legendary",
+			"reqAttune": "by a sorcerer",
+			"reqAttuneTags": [
+				{
+					"class": "sorcerer"
+				}
+			],
+			"wondrous": true,
+			"entries": [
+				"Resembling a small dragon's horn, this arcane device glows with a hellish internal light when held. As an action while holding this horn, you can invoke a necromantic effect called the Beckoning Death.",
+				"The Beckoning Death arrives at the start of your next turn and manifests as a crimson cloud of smoke that fills a 30-foot-radius sphere centered on the horn. The sphere doesn't move with the horn. At the start of each of your turns, the sphere's radius increases by 30 feet. The cloud disappears after 10 minutes or when your {@status concentration} on the effect ends. Any creature (including you) that has 9 or fewer hit points when it ends its turn in the cloud is slain by the Beckoning Death. A Humanoid killed in this way instantly transforms into a {@creature zombie} (see the Monster Manual). The zombie obeys the commands of the horn's creator, the lich Szass Tam.",
+				"Once you use the horn's property, it can't be used again for 1 year."
+			],
+			"hasFluffImages": true
+		},
+		{
 			"name": "Horn of Blasting",
 			"source": "DMG",
 			"page": 174,
@@ -16596,7 +16779,7 @@
 			"rechargeAmount": "{@dice 1d4}",
 			"charges": 4,
 			"entries": [
-				"This horn has 4 charges. When you use an action to blow it, one creature of your choice can hear the horns blare, provided the creature is within 600 feet of the horn and not {@condition deafened}. No other creature hears sound coming from the horn. The horn regains {@dice 1d4} expended charges daily at dawn."
+				"This horn has 4 charges. When you use an action to blow it, one creature of your choice can hear the horn's blare, provided the creature is within 600 feet of the horn and not {@condition deafened}. No other creature hears sound coming from the horn. The horn regains {@dice 1d4} expended charges daily at dawn."
 			]
 		},
 		{
@@ -17470,7 +17653,7 @@
 							"type": "quote",
 							"entries": [
 								"Eight cats perch atop eight dead attending",
-								"Eight lizards flee from eight cats scavenging",
+								"Eight lizards flee from eight rats scavenging",
 								"Eight toads climbing meet eight dead and falling",
 								"Eight snakes sneak under eight bats screaming",
 								"Eight eyes open, always dreaming",
@@ -19363,8 +19546,8 @@
 		},
 		{
 			"name": "Keg of Alchemist's Fire",
-			"source": "AAG",
-			"page": 0,
+			"source": "LoX",
+			"page": 35,
 			"type": "G",
 			"rarity": "none",
 			"entries": [
@@ -19757,7 +19940,7 @@
 		{
 			"name": "Lamprey Ship",
 			"source": "AAG",
-			"page": 0,
+			"page": 34,
 			"type": "SPC",
 			"rarity": "none",
 			"value": 2000000,
@@ -20198,7 +20381,7 @@
 		{
 			"name": "Lesser Hammock of Worlds",
 			"source": "JttRC",
-			"page": 0,
+			"page": 214,
 			"rarity": "legendary",
 			"wondrous": true,
 			"entries": [
@@ -20492,7 +20675,7 @@
 		{
 			"name": "Living Ship",
 			"source": "AAG",
-			"page": 0,
+			"page": 36,
 			"type": "SPC",
 			"rarity": "none",
 			"value": 2500000,
@@ -20722,8 +20905,8 @@
 			"wondrous": true,
 			"entries": [
 				"Not all lingering spirits are tragic souls, lost on their way to the hereafter. Some languish as prisoners, souls so wicked mortals dare not free them upon an unsuspecting afterlife.",
-				"Created by a figure of Vistani legend, Luba's Tarokka of Souls shaped the destiny of countless heroes. The prophecies of this deck of cards also revealed great evils and guided its creator into the path of nefarious forces. Untold times the deck's creator, Mother Luba, narrowly escaped doom, spared only by her keen insights. But even for her, not all wickedness could be escaped. In the most dire cases, Mother Luba managed to ensnare beings of pure evil amid the strands of fate, imprisoning them within her tarroka deck. There these foul spirits dwell still, trapped within a nether-realm hidden amid shuffling cards, waiting for fate to turn foul\u2014as it inevitably will.",
-				"Like all tarokka decks, the {@i Tarokka of Souls} is a lavishly illustrated collection of fifty-four cards, comprising the fourteen cards of the high deck and forty other cards divided into four suits: coins, glyphs, stars, and swords.",
+				"Created by a figure of Vistani legend, Luba's Tarokka of Souls shaped the destiny of countless heroes. The prophecies of this deck of cards also revealed great evils and guided its creator into the path of nefarious forces. Untold times the deck's creator, Mother Luba, narrowly escaped doom, spared only by her keen insights. But even for her, not all wickedness could be escaped. In the most dire cases, Mother Luba managed to ensnare beings of pure evil amid the strands of fate, imprisoning them within her {@deck tarokka deck|CoS}. There these foul spirits dwell still, trapped within a nether-realm hidden amid shuffling cards, waiting for fate to turn foul\u2014as it inevitably will.",
+				"Like all {@deck Tarokka Deck|CoS|tarokka decks}, the {@i Tarokka of Souls} is a lavishly illustrated collection of fifty-four cards, comprising the fourteen cards of the high deck and forty other cards divided into four suits: coins, glyphs, stars, and swords.",
 				{
 					"type": "entries",
 					"name": "Random Properties",
@@ -20749,7 +20932,7 @@
 					"type": "entries",
 					"name": "Enduring Vision",
 					"entries": [
-						"While holding the deck, you automatically succeed on Constitution saving throws made to maintain your concentration on divination spells."
+						"While holding the deck, you automatically succeed on Constitution saving throws made to maintain your {@status concentration} on divination spells."
 					]
 				},
 				{
@@ -20879,14 +21062,14 @@
 					"type": "entries",
 					"name": "Shuffling Fate",
 					"entries": [
-						"If you go 7 days without using the Twist of Fate property, your attunement to Luba's Tarroka of Souls ends, and you can't attune to it again until after another creature uses Twist of Fate on you."
+						"If you go 7 days without using the Twist of Fate property, your attunement to Luba's Tarokka of Souls ends, and you can't attune to it again until after another creature uses Twist of Fate on you."
 					]
 				},
 				{
 					"type": "entries",
 					"name": "Destroying the Deck",
 					"entries": [
-						"Luba's Tarokka of Souls can be destroyed only if all fourteen souls within are released and destroyed. This reveals a fifteenth soul, a {@creature lich}, that inhabits the Nether card, which appears only when the fourteen souls are defeated. If this ancient entity is destroyed, the Nether card vanishes and the deck becomes a normal tarokka deck, with no special properties, but it includes a new card of the DM's design.",
+						"Luba's Tarokka of Souls can be destroyed only if all fourteen souls within are released and destroyed. This reveals a fifteenth soul, a {@creature lich}, that inhabits the Nether card, which appears only when the fourteen souls are defeated. If this ancient entity is destroyed, the Nether card vanishes and the deck becomes a normal {@deck Tarokka Deck|CoS|tarokka deck}, with no special properties, but it includes a new card of the DM's design.",
 						{
 							"type": "entries",
 							"name": "Mother Luba and the Vistani",
@@ -22747,7 +22930,7 @@
 		{
 			"name": "Nautiloid",
 			"source": "AAG",
-			"page": 0,
+			"page": 38,
 			"type": "SPC",
 			"rarity": "none",
 			"value": 5000000,
@@ -23198,7 +23381,7 @@
 		{
 			"name": "Nightspider",
 			"source": "AAG",
-			"page": 0,
+			"page": 40,
 			"type": "SPC",
 			"rarity": "none",
 			"value": 5000000,
@@ -25686,7 +25869,7 @@
 			"tier": "minor",
 			"rarity": "rare",
 			"entries": [
-				"When you drink this potion, you gain the \"reduce\" effect of the {@spell enlarge/reduce} spell for {@dice 1d4} hours (no concentration required). The red in the potion's liquid continuously contracts to a tiny bead and then expands to color the clear liquid around it. Shaking the bottle fails to interrupt this process."
+				"When you drink this potion, you gain the \"reduce\" effect of the {@spell enlarge/reduce} spell for {@dice 1d4} hours (no {@status concentration} required). The red in the potion's liquid continuously contracts to a tiny bead and then expands to color the clear liquid around it. Shaking the bottle fails to interrupt this process."
 			],
 			"attachedSpells": [
 				"enlarge/reduce"
@@ -25823,7 +26006,7 @@
 			"tier": "minor",
 			"rarity": "rare",
 			"entries": [
-				"When you drink this potion, you gain the effect of the {@spell gaseous form} spell for 1 hour (no concentration required) or until you end the effect as a bonus action. This potion's container seems to hold fog that moves and pours like water."
+				"When you drink this potion, you gain the effect of the {@spell gaseous form} spell for 1 hour (no {@status concentration} required) or until you end the effect as a bonus action. This potion's container seems to hold fog that moves and pours like water."
 			],
 			"attachedSpells": [
 				"gaseous form"
@@ -25869,7 +26052,7 @@
 			"tier": "minor",
 			"rarity": "uncommon",
 			"entries": [
-				"When you drink this potion, you gain the \"enlarge\" effect of the {@spell enlarge/reduce} spell for {@dice 1d4} hours (no concentration required). The red in the potion's liquid continuously expands from a tiny bead to color the clear liquid around it and then contracts. Shaking the bottle fails to interrupt this process."
+				"When you drink this potion, you gain the \"enlarge\" effect of the {@spell enlarge/reduce} spell for {@dice 1d4} hours (no {@status concentration} required). The red in the potion's liquid continuously expands from a tiny bead to color the clear liquid around it and then contracts. Shaking the bottle fails to interrupt this process."
 			],
 			"attachedSpells": [
 				"enlarge/reduce"
@@ -25910,7 +26093,7 @@
 			"tier": "minor",
 			"rarity": "rare",
 			"entries": [
-				"For 1 hour after drinking it, you gain 10 temporary hit points that last for 1 hour. For the same duration, you are under the effect of the {@spell bless} spell (no concentration required). This blue potion bubbles and steams as if boiling."
+				"For 1 hour after drinking it, you gain 10 temporary hit points that last for 1 hour. For the same duration, you are under the effect of the {@spell bless} spell (no {@status concentration} required). This blue potion bubbles and steams as if boiling."
 			],
 			"attachedSpells": [
 				"bless"
@@ -26034,7 +26217,7 @@
 			"rarity": "rare",
 			"entries": [
 				"When you drink a potion of mind control, you can cast a dominate spell (save DC 15) on a specific creature if you do so before the end of your next turn. If you don't, the potion is wasted.",
-				"A potion of mind control produces the effect of a {@spell dominate beast} spell. If the target's initial saving throw fails, the effect lasts for 1 hour, with no concentration required on your part. The {@condition charmed} creature has disadvantage on new saving throws to break the effect during this time."
+				"A potion of mind control produces the effect of a {@spell dominate beast} spell. If the target's initial saving throw fails, the effect lasts for 1 hour, with no {@status concentration} required on your part. The {@condition charmed} creature has disadvantage on new saving throws to break the effect during this time."
 			],
 			"attachedSpells": [
 				"dominate beast"
@@ -26048,7 +26231,7 @@
 			"rarity": "rare",
 			"entries": [
 				"When you drink a potion of mind control, you can cast a dominate spell (save DC 15) on a specific creature if you do so before the end of your next turn. If you don't, the potion is wasted.",
-				"A potion of mind control produces the effect of a {@spell dominate person} spell. If the target's initial saving throw fails, the effect lasts for 1 hour, with no concentration required on your part. The {@condition charmed} creature has disadvantage on new saving throws to break the effect during this time."
+				"A potion of mind control produces the effect of a {@spell dominate person} spell. If the target's initial saving throw fails, the effect lasts for 1 hour, with no {@status concentration} required on your part. The {@condition charmed} creature has disadvantage on new saving throws to break the effect during this time."
 			],
 			"attachedSpells": [
 				"dominate person"
@@ -26062,7 +26245,7 @@
 			"rarity": "very rare",
 			"entries": [
 				"When you drink a potion of mind control, you can cast a dominate spell (save DC 15) on a specific creature if you do so before the end of your next turn. If you don't, the potion is wasted.",
-				"A potion of mind control produces the effect of a {@spell dominate monster} spell. If the target's initial saving throw fails, the effect lasts for 1 hour, with no concentration required on your part. The {@condition charmed} creature has disadvantage on new saving throws to break the effect during this time."
+				"A potion of mind control produces the effect of a {@spell dominate monster} spell. If the target's initial saving throw fails, the effect lasts for 1 hour, with no {@status concentration} required on your part. The {@condition charmed} creature has disadvantage on new saving throws to break the effect during this time."
 			],
 			"attachedSpells": [
 				"dominate monster"
@@ -26188,7 +26371,7 @@
 			"tier": "minor",
 			"rarity": "very rare",
 			"entries": [
-				"When you drink this potion, you gain the effect of the {@spell haste} spell for 1 minute (no concentration required). The potion's yellow fluid is streaked with black and swirls on its own."
+				"When you drink this potion, you gain the effect of the {@spell haste} spell for 1 minute (no {@status concentration} required). The potion's yellow fluid is streaked with black and swirls on its own."
 			],
 			"attachedSpells": [
 				"haste"
@@ -27380,6 +27563,32 @@
 			]
 		},
 		{
+			"name": "Red Wizard Blade",
+			"source": "HAT-LMI",
+			"baseItem": "dagger|PHB",
+			"type": "M",
+			"rarity": "legendary",
+			"weight": 1,
+			"weaponCategory": "simple",
+			"property": [
+				"F",
+				"L",
+				"T"
+			],
+			"range": "20/60",
+			"dmg1": "1d4",
+			"dmgType": "P",
+			"weapon": true,
+			"entries": [
+				"Forged by Red Wizards using a secret process known only to them, this grim steel dagger draws its power from the Negative Plane. When you hit a creature with a melee attack using this magic dagger, the target takes an extra {@damage 3d12} necrotic damage.",
+				"A creature reduced to 0 hit points by this weapon dies and can't be raised from the dead except by a deity or by a creature using a tablet of reawakening to cast the {@spell true resurrection} spell."
+			],
+			"attachedSpells": [
+				"true resurrection"
+			],
+			"hasFluffImages": true
+		},
+		{
 			"name": "Reincarnation Dust",
 			"source": "EGW",
 			"page": 268,
@@ -27608,7 +27817,7 @@
 			"rarity": "legendary",
 			"reqAttune": true,
 			"entries": [
-				"While wearing this ring, you can speak its command word as an action to summon a particular {@creature djinni} from the Elemental Plane of Air. The {@creature djinni} appears in an unoccupied space you choose within 120 feet of you. It remains as long as you concentrate (as if concentrating on a spell), to a maximum of 1 hour, or until it drops to 0 hit points. It then returns to its home plane.",
+				"While wearing this ring, you can speak its command word as an action to summon a particular {@creature djinni} from the Elemental Plane of Air. The {@creature djinni} appears in an unoccupied space you choose within 120 feet of you. It remains as long as you concentrate (as if {@status concentration||concentrating} on a spell), to a maximum of 1 hour, or until it drops to 0 hit points. It then returns to its home plane.",
 				"While summoned, the {@creature djinni} is friendly to you and your companions. It obeys any commands you give it, no matter what language you use. If you fail to command it, the {@creature djinni} defends itself against attackers but takes no other actions.",
 				"After the {@creature djinni} departs, it can't be summoned again for 24 hours, and the ring becomes nonmagical if the {@creature djinni} dies."
 			],
@@ -27906,7 +28115,7 @@
 			"rechargeAmount": "{@dice 1d3}",
 			"charges": 3,
 			"entries": [
-				"This band of iron resembles a skull and is cold to the touch. It has 3 charges and regains {@dice 1d3} expended charges daily at dawn. As an action while wearing the ring, you can expend 1 of its charges to cast the {@spell fog cloud} spell from it, with the following changes: the cloud is centered on you when it first appears, and the spell lasts for 1 minute (no concentration required)."
+				"This band of iron resembles a skull and is cold to the touch. It has 3 charges and regains {@dice 1d3} expended charges daily at dawn. As an action while wearing the ring, you can expend 1 of its charges to cast the {@spell fog cloud} spell from it, with the following changes: the cloud is centered on you when it first appears, and the spell lasts for 1 minute (no {@status concentration} required)."
 			],
 			"attachedSpells": [
 				"fog cloud"
@@ -28092,7 +28301,7 @@
 					"type": "entries",
 					"entries": [
 						"You can expend 2 charges as an action to create one to four 3-foot-diameter spheres of lightning. The more spheres you create, the less powerful each sphere is individually.",
-						"Each sphere appears in an unoccupied space you can see within 120 feet of you. The spheres last as long as you concentrate (as if concentrating on a spell), up to 1 minute. Each sphere sheds dim light in a 30-foot radius.",
+						"Each sphere appears in an unoccupied space you can see within 120 feet of you. The spheres last as long as you concentrate (as if {@status concentration||concentrating} on a spell), up to 1 minute. Each sphere sheds dim light in a 30-foot radius.",
 						"As a bonus action, you can move each sphere up to 30 feet, but no farther than 120 feet away from you. When a creature other than you comes within 5 feet of a sphere, the sphere discharges lightning at that creature and disappears. That creature must make a DC 15 Dexterity saving throw. On a failed save, the creature takes lightning damage based on the number of spheres you created. (4 spheres = {@dice 2d4}, 3 spheres = {@dice 2d6}, 2 spheres = {@dice 5d4}, 1 sphere = {@dice 4d12})"
 					]
 				},
@@ -28781,7 +28990,9 @@
 			"source": "DMG",
 			"page": 196,
 			"srd": true,
+			"baseItem": "mace|phb",
 			"type": "RD",
+			"typeAlt": "M",
 			"tier": "major",
 			"rarity": "legendary",
 			"reqAttune": true,
@@ -29668,7 +29879,7 @@
 		{
 			"name": "Scorpion Ship",
 			"source": "AAG",
-			"page": 0,
+			"page": 42,
 			"type": "SPC",
 			"rarity": "none",
 			"value": 2500000,
@@ -30282,6 +30493,259 @@
 			]
 		},
 		{
+			"name": "Shard of Xeluan",
+			"source": "KftGV",
+			"page": 134,
+			"rarity": "rare",
+			"reqAttune": true,
+			"wondrous": true,
+			"curse": true,
+			"bonusSpellAttack": "+1",
+			"entries": [
+				"This 1-foot-long shard of obsidian has veins of silver and gold beneath its cold surface.",
+				{
+					"type": "entries",
+					"name": "Empowered Magic",
+					"entries": [
+						"While holding the shard, you can use it as a spellcasting focus, and it gives you a +1 bonus to your spell attack rolls."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Enhanced Strength",
+					"entries": [
+						"Your Strength score increases by 4 while the shard is on your person. The shard can't raise your Strength score above 22."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Curse",
+					"entries": [
+						"Attuning to this item extends its curse to you. You remain cursed until you are targeted by a {@spell remove curse} spell or similar magic, or until the shard is reattached to Xeluan's {@condition petrified} heart.",
+						"The shard's curse causes misfortune to befall you. When you roll a 1 on an attack roll, an ability check, or a saving throw, roll on the Shard Misfortunes table to determine the misfortune. For as long as this misfortune lasts, no other shard misfortunes befall you."
+					]
+				},
+				{
+					"type": "table",
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"colLabels": [
+						"d6",
+						"Misfortune"
+					],
+					"rows": [
+						[
+							"1",
+							"You accidentally cut yourself with the shard and are {@condition poisoned} until the next dawn."
+						],
+						[
+							"2",
+							"You experience a vision of an ancient calamity\u2014a beautiful city threatened by crumbling mountains and erupting volcanoes\u2014and are {@condition stunned} until the end of your next turn."
+						],
+						[
+							"3",
+							"For a few seconds, the ground shakes under you. You and each creature within 10 feet of you must succeed on a DC 16 Dexterity saving throw or be knocked {@condition prone}."
+						],
+						[
+							"4",
+							"The shard releases three glowing darts of magical force that target one random creature within 30 feet of you. If no such target exists, you become the target. Each dart hits automatically and deals 3 ({@damage 1d4 + 1}) force damage to the target."
+						],
+						[
+							"5",
+							"Until the next dawn, Beasts with an Intelligence score of 3 or lower are hostile to you."
+						],
+						[
+							"6",
+							"Nothing seems to go your way. Until the next dawn, you have disadvantage on ability checks."
+						]
+					]
+				}
+			],
+			"hasFluffImages": true
+		},
+		{
+			"name": "Shard Solitaire (Black Sapphire)",
+			"source": "KftGV",
+			"page": 193,
+			"rarity": "legendary",
+			"reqAttune": true,
+			"wondrous": true,
+			"recharge": "dawn",
+			"rechargeAmount": "{@dice 1d6}",
+			"charges": 6,
+			"entries": [
+				"This gemstone contains an unstable extradimensional rift. Its facets are ribboned with iridescent veins that seem to move of their own accord. Five types of shard solitaire are known to exist, each one a different type of gemstone, as shown in the Shard Solitaire Types table.",
+				{
+					"type": "entries",
+					"name": "Rift Step",
+					"entries": [
+						"As a bonus action, while wearing or holding the shard solitaire, you can teleport yourself, along with anything you're wearing or carrying, to an unoccupied space you can see within 30 feet of yourself.",
+						"When you use this property, you can tap into the unstable power of the stone's extradimensional rift to increase the teleport distance by up to 30 feet, but if you teleport more than 30 feet using Rift Step, you must succeed on a DC 16 Constitution saving throw or take {@damage 3d10} force damage immediately after you teleport."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spellcasting",
+					"entries": [
+						"The stone has 6 charges and regains {@dice 1d6} expended charges daily at dawn. As an action, you can cast one of the stone's spells by expending the requisite number of charges, requiring no material components (save DC 16). The black sapphire shard solitaire can be used to cast the following spells: {@spell banishment} (3 charges; the target is banished to the stone's extradimensional space for the spell's duration), {@spell mirror image} (1 charge), {@spell blight} (3 charges), {@spell finger of death} (6 charges)."
+					]
+				}
+			],
+			"attachedSpells": [
+				"mirror image",
+				"banishment",
+				"blight",
+				"finger of death"
+			],
+			"hasFluffImages": true
+		},
+		{
+			"name": "Shard Solitaire (Diamond)",
+			"source": "KftGV",
+			"page": 193,
+			"rarity": "legendary",
+			"reqAttune": true,
+			"wondrous": true,
+			"recharge": "dawn",
+			"rechargeAmount": "{@dice 1d6}",
+			"charges": 6,
+			"entries": [
+				"This gemstone contains an unstable extradimensional rift. Its facets are ribboned with iridescent veins that seem to move of their own accord. Five types of shard solitaire are known to exist, each one a different type of gemstone, as shown in the Shard Solitaire Types table.",
+				{
+					"type": "entries",
+					"name": "Rift Step",
+					"entries": [
+						"As a bonus action, while wearing or holding the shard solitaire, you can teleport yourself, along with anything you're wearing or carrying, to an unoccupied space you can see within 30 feet of yourself.",
+						"When you use this property, you can tap into the unstable power of the stone's extradimensional rift to increase the teleport distance by up to 30 feet, but if you teleport more than 30 feet using Rift Step, you must succeed on a DC 16 Constitution saving throw or take {@damage 3d10} force damage immediately after you teleport."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spellcasting",
+					"entries": [
+						"The stone has 6 charges and regains {@dice 1d6} expended charges daily at dawn. As an action, you can cast one of the stone's spells by expending the requisite number of charges, requiring no material components (save DC 16). The diamond shard solitaire can be used to cast the following spells: {@spell banishment} (3 charges; the target is banished to the stone's extradimensional space for the spell's duration), {@spell mirror image} (1 charge), {@spell ice storm} (3 charges), {@spell simulacrum} (6 charges; the duplicate created by the spell has the same number of hit points as the creature it imitates)."
+					]
+				}
+			],
+			"attachedSpells": [
+				"mirror image",
+				"banishment",
+				"ice storm",
+				"simulacrum"
+			],
+			"hasFluffImages": true
+		},
+		{
+			"name": "Shard Solitaire (Jacinth)",
+			"source": "KftGV",
+			"page": 193,
+			"rarity": "legendary",
+			"reqAttune": true,
+			"wondrous": true,
+			"recharge": "dawn",
+			"rechargeAmount": "{@dice 1d6}",
+			"charges": 6,
+			"entries": [
+				"This gemstone contains an unstable extradimensional rift. Its facets are ribboned with iridescent veins that seem to move of their own accord. Five types of shard solitaire are known to exist, each one a different type of gemstone, as shown in the Shard Solitaire Types table.",
+				{
+					"type": "entries",
+					"name": "Rift Step",
+					"entries": [
+						"As a bonus action, while wearing or holding the shard solitaire, you can teleport yourself, along with anything you're wearing or carrying, to an unoccupied space you can see within 30 feet of yourself.",
+						"When you use this property, you can tap into the unstable power of the stone's extradimensional rift to increase the teleport distance by up to 30 feet, but if you teleport more than 30 feet using Rift Step, you must succeed on a DC 16 Constitution saving throw or take {@damage 3d10} force damage immediately after you teleport."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spellcasting",
+					"entries": [
+						"The stone has 6 charges and regains {@dice 1d6} expended charges daily at dawn. As an action, you can cast one of the stone's spells by expending the requisite number of charges, requiring no material components (save DC 16). The jacinth shard solitaire can be used to cast the following spells: {@spell banishment} (3 charges; the target is banished to the stone's extradimensional space for the spell's duration), {@spell mirror image} (1 charge), {@spell fireball} (2 charges), {@spell fire storm} (6 charges)."
+					]
+				}
+			],
+			"attachedSpells": [
+				"mirror image",
+				"banishment",
+				"fireball",
+				"fire storm"
+			],
+			"hasFluffImages": true
+		},
+		{
+			"name": "Shard Solitaire (Rainbow Pearl)",
+			"source": "KftGV",
+			"page": 193,
+			"rarity": "legendary",
+			"reqAttune": true,
+			"wondrous": true,
+			"recharge": "dawn",
+			"rechargeAmount": "{@dice 1d6}",
+			"charges": 6,
+			"entries": [
+				"This gemstone contains an unstable extradimensional rift. Its facets are ribboned with iridescent veins that seem to move of their own accord. Five types of shard solitaire are known to exist, each one a different type of gemstone, as shown in the Shard Solitaire Types table.",
+				{
+					"type": "entries",
+					"name": "Rift Step",
+					"entries": [
+						"As a bonus action, while wearing or holding the shard solitaire, you can teleport yourself, along with anything you're wearing or carrying, to an unoccupied space you can see within 30 feet of yourself.",
+						"When you use this property, you can tap into the unstable power of the stone's extradimensional rift to increase the teleport distance by up to 30 feet, but if you teleport more than 30 feet using Rift Step, you must succeed on a DC 16 Constitution saving throw or take {@damage 3d10} force damage immediately after you teleport."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spellcasting",
+					"entries": [
+						"The stone has 6 charges and regains {@dice 1d6} expended charges daily at dawn. As an action, you can cast one of the stone's spells by expending the requisite number of charges, requiring no material components (save DC 16). The rainbow pearl shard solitaire can be used to cast the following spells: {@spell banishment} (3 charges; the target is banished to the stone's extradimensional space for the spell's duration), {@spell mirror image} (1 charge), {@spell prismatic spray} (6 charges), {@spell water breathing} (2 charges)."
+					]
+				}
+			],
+			"attachedSpells": [
+				"mirror image",
+				"banishment",
+				"prismatic spray",
+				"water breathing"
+			],
+			"hasFluffImages": true
+		},
+		{
+			"name": "Shard Solitaire (Ruby)",
+			"source": "KftGV",
+			"page": 193,
+			"rarity": "legendary",
+			"reqAttune": true,
+			"wondrous": true,
+			"recharge": "dawn",
+			"rechargeAmount": "{@dice 1d6}",
+			"charges": 6,
+			"entries": [
+				"This gemstone contains an unstable extradimensional rift. Its facets are ribboned with iridescent veins that seem to move of their own accord. Five types of shard solitaire are known to exist, each one a different type of gemstone, as shown in the Shard Solitaire Types table.",
+				{
+					"type": "entries",
+					"name": "Rift Step",
+					"entries": [
+						"As a bonus action, while wearing or holding the shard solitaire, you can teleport yourself, along with anything you're wearing or carrying, to an unoccupied space you can see within 30 feet of yourself.",
+						"When you use this property, you can tap into the unstable power of the stone's extradimensional rift to increase the teleport distance by up to 30 feet, but if you teleport more than 30 feet using Rift Step, you must succeed on a DC 16 Constitution saving throw or take {@damage 3d10} force damage immediately after you teleport."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spellcasting",
+					"entries": [
+						"The stone has 6 charges and regains {@dice 1d6} expended charges daily at dawn. As an action, you can cast one of the stone's spells by expending the requisite number of charges, requiring no material components (save DC 16). The ruby shard solitaire can be used to cast the following spells: {@spell banishment} (3 charges; the target is banished to the stone's extradimensional space for the spell's duration), {@spell mirror image} (1 charge), {@spell fly} (2 charges), {@spell teleport} (6 charges)."
+					]
+				}
+			],
+			"attachedSpells": [
+				"mirror image",
+				"banishment",
+				"fly",
+				"teleport"
+			],
+			"hasFluffImages": true
+		},
+		{
 			"name": "Shatterspike",
 			"source": "TftYP",
 			"page": 229,
@@ -30456,7 +30920,7 @@
 							"items": [
 								"The shield has an Intelligence of 22, a Wisdom of 18, and a Charisma of 24, as well as hearing and {@sense truesight} out to a range of 120 feet.",
 								"The shield can speak, read, and understand Common and Infernal, and it can communicate telepathically with any creature it can sense within 120 feet of it. Its voice is a deep, hollow whisper.",
-								"The shield has 3 charges. You can use an action to expend 1 charge to cast {@spell fireball} or 2 charges to cast {@spell wall of fire} from the shield (save DC 21 for each). The {@spell wall of fire} spell lasts for 1 minute (no concentration required). The shield regains all expended charges daily at dawn.",
+								"The shield has 3 charges. You can use an action to expend 1 charge to cast {@spell fireball} or 2 charges to cast {@spell wall of fire} from the shield (save DC 21 for each). The {@spell wall of fire} spell lasts for 1 minute (no {@status concentration} required). The shield regains all expended charges daily at dawn.",
 								"Anytime during your turn, the shield can choose to radiate an aura of dread for 1 minute. (This is not a power of the shield that you control.) Any creature hostile to you that starts its turn within 20 feet of the shield must make a DC 18 Wisdom saving throw. On a failed save, the creature is {@condition frightened} until the start of its next turn. On a successful save, the creature is immune to this power of the shield for the next 24 hours. Once the shield uses this power, it can't use it again until the next dawn."
 							]
 						}
@@ -30519,7 +30983,7 @@
 					"type": "entries",
 					"name": "Bane",
 					"entries": [
-						"You can cast the {@spell bane} spell from the shield (save DC 17). The spell does not require concentration and lasts for 1 minute. Once you cast the spell from the shield, you can't do so again until you finish a short or long rest."
+						"You can cast the {@spell bane} spell from the shield (save DC 17). The spell does not require {@status concentration} and lasts for 1 minute. Once you cast the spell from the shield, you can't do so again until you finish a short or long rest."
 					]
 				},
 				{
@@ -30564,7 +31028,7 @@
 		{
 			"name": "Shrike Ship",
 			"source": "AAG",
-			"page": 0,
+			"page": 44,
 			"type": "SPC",
 			"rarity": "none",
 			"value": 2000000,
@@ -31538,7 +32002,7 @@
 		{
 			"name": "Space Galleon",
 			"source": "AAG",
-			"page": 0,
+			"page": 46,
 			"type": "SPC",
 			"rarity": "none",
 			"value": 3000000,
@@ -32095,7 +32559,7 @@
 			"entries": [
 				"The function of this ornate chair is to propel and maneuver a ship on which it has been installed through space and air. It can also propel and maneuver a ship on water or underwater, provided the ship is built for such travel. The ship in question must weigh 1 ton or more.",
 				"The sensation of being attuned to a spelljamming helm is akin to the pins-and-needles effect one experiences after one's arm or leg falls asleep, but not as painful.",
-				"While attuned to a spelljamming helm and sitting in it, you gain the following abilities for as long as you maintain concentration (as if concentrating on a spell):",
+				"While attuned to a spelljamming helm and sitting in it, you gain the following abilities for as long as you maintain {@status concentration} (as if {@status concentration||concentrating} on a spell):",
 				{
 					"type": "list",
 					"items": [
@@ -32136,7 +32600,7 @@
 			"wondrous": true,
 			"entries": [
 				"This polished Eberron dragonshard fits in the hand and stores information similar to a book. The shard can hold the equivalent of one book that's no more than 320 pages long. A shard can be created blank or already filled with information. When the shard is created, the creator can set a passphrase that must be spoken to access the information stored within.",
-				"While holding the shard, you can use an action to open your mind to the shard, seeing its content in your mind. On subsequent rounds, reading the text or scribing new text on blank \"pages\" in the shard requires concentration (as if concentrating on a spell) and takes the same amount of time it takes you to read and write normally. Thinking of a particular phrase or topic draws you to the first section in the shard that addresses it.",
+				"While holding the shard, you can use an action to open your mind to the shard, seeing its content in your mind. On subsequent rounds, reading the text or scribing new text on blank \"pages\" in the shard requires {@status concentration} (as if {@status concentration||concentrating} on a spell) and takes the same amount of time it takes you to read and write normally. Thinking of a particular phrase or topic draws you to the first section in the shard that addresses it.",
 				"A wizard can use a spellshard as a spellbook, with the usual cost in gold and time to \"scribe\" a spell into the shard."
 			]
 		},
@@ -32416,7 +32880,7 @@
 		{
 			"name": "Squid Ship",
 			"source": "AAG",
-			"page": 0,
+			"page": 48,
 			"otherSources": [
 				{
 					"source": "SjA"
@@ -33463,7 +33927,7 @@
 		{
 			"name": "Star Moth",
 			"source": "AAG",
-			"page": 0,
+			"page": 50,
 			"type": "SPC",
 			"rarity": "none",
 			"value": 4000000,
@@ -34848,6 +35312,19 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "Tablet of Reawakening",
+			"source": "HAT-LMI",
+			"rarity": "legendary",
+			"wondrous": true,
+			"entries": [
+				"Witches of Rashemen created this Tiny stone tablet to counter the necromancy of the Red Wizards. As an action, you can cast {@spell true resurrection} from the tablet. Once used in this way, the tablet turns to dust and is destroyed."
+			],
+			"attachedSpells": [
+				"true resurrection"
+			],
+			"hasFluffImages": true
+		},
+		{
 			"name": "Talarith",
 			"source": "BAM",
 			"page": 47,
@@ -35521,7 +35998,7 @@
 					"entries": [
 						"The Infernal Machine's great size makes it largely immobile. To make ongoing use of the machine (such as while adventuring), it can be connected to its attuned user by a silver wire, a supply of which can always be produced from the machine's inner workings. This silver wire shares the same general nature as the silvery cord of an {@spell astral projection} spell, connecting to the body of the user and trailing behind them. When so attached, the wire becomes {@condition invisible}, astral, and extends to virtually infinite length.",
 						"As long as the wire remains intact, the attuned user can make full use of the Infernal Machine's powers, with their effects centered around the user. If the wire is cut\u2014something that can happen only when an effect specifically states that it can cut an {@spell astral projection}'s silvery cord\u2014the user suffers a sudden burst of feedback from the machine that kills them instantly.",
-						"Any effect of the Infernal Machine that requires concentration can be concentrated on by a remote user. The Infernal Machine's effects have a spell save DC of 14 or the attuned user's spell save DC, whichever is higher."
+						"Any effect of the Infernal Machine that requires {@status concentration} can be concentrated on by a remote user. The Infernal Machine's effects have a spell save DC of 14 or the attuned user's spell save DC, whichever is higher."
 					]
 				},
 				{
@@ -38295,7 +38772,7 @@
 		{
 			"name": "Turtle Ship",
 			"source": "AAG",
-			"page": 0,
+			"page": 52,
 			"type": "SPC",
 			"rarity": "none",
 			"value": 4000000,
@@ -38352,7 +38829,7 @@
 		{
 			"name": "Tyrant Ship",
 			"source": "AAG",
-			"page": 0,
+			"page": 54,
 			"type": "SPC",
 			"rarity": "none",
 			"crew": 10,
@@ -39106,19 +39583,19 @@
 					"name": "Random Properties",
 					"type": "entries",
 					"entries": [
-						"The Wand of Orcus has the following random properties:"
+						"The Wand of Orcus has the following random properties:",
+						{
+							"type": "list",
+							"items": [
+								"2 {@table Artifact Properties; Minor Beneficial Properties|dmg|minor beneficial properties}",
+								"1 {@table Artifact Properties; Major Beneficial Properties|dmg|major beneficial property}",
+								"2 {@table Artifact Properties; Minor Detrimental Properties|dmg|minor detrimental properties}",
+								"1 {@table Artifact Properties; Major Detrimental Properties|dmg|major detrimental property}"
+							]
+						},
+						"The detrimental properties of the Wand of Orcus are suppressed while the wand is attuned to {@creature Orcus|MTF} himself."
 					]
 				},
-				{
-					"type": "list",
-					"items": [
-						"2 {@table Artifact Properties; Minor Beneficial Properties|dmg|minor beneficial properties}",
-						"1 {@table Artifact Properties; Major Beneficial Properties|dmg|major beneficial property}",
-						"2 {@table Artifact Properties; Minor Detrimental Properties|dmg|minor detrimental properties}",
-						"1 {@table Artifact Properties; Major Detrimental Properties|dmg|major detrimental property}"
-					]
-				},
-				"The detrimental properties of the Wand of Orcus are suppressed while the wand is attuned to {@creature Orcus|MTF} himself.",
 				{
 					"name": "Protection",
 					"type": "entries",
@@ -39599,7 +40076,7 @@
 		{
 			"name": "Wasp Ship",
 			"source": "AAG",
-			"page": 0,
+			"page": 56,
 			"type": "SPC",
 			"rarity": "none",
 			"value": 2000000,
@@ -40208,7 +40685,7 @@
 		{
 			"name": "White Ghost Orchid Seed",
 			"source": "JttRC",
-			"page": 0,
+			"page": 212,
 			"type": "G",
 			"rarity": "none",
 			"entries": [
@@ -40595,6 +41072,8 @@
 			"name": "Witchlight Vane",
 			"source": "WBtW",
 			"page": 27,
+			"baseItem": "mace|phb",
+			"typeAlt": "M",
 			"rarity": "legendary",
 			"reqAttune": "by a mister light or his handpicked successor",
 			"sentient": true,
@@ -42586,6 +43065,84 @@
 			"lootTables": [
 				"Magic Item Table C"
 			]
+		},
+		{
+			"name": "Shard Solitaire",
+			"source": "KftGV",
+			"page": 193,
+			"rarity": "legendary",
+			"reqAttune": true,
+			"wondrous": true,
+			"recharge": "dawn",
+			"rechargeAmount": "{@dice 1d6}",
+			"charges": 6,
+			"entries": [
+				"This gemstone contains an unstable extradimensional rift. Its facets are ribboned with iridescent veins that seem to move of their own accord. Five types of shard solitaire are known to exist, each one a different type of gemstone, as shown in the Shard Solitaire Types table.",
+				{
+					"type": "entries",
+					"name": "Rift Step",
+					"entries": [
+						"As a bonus action, while wearing or holding the shard solitaire, you can teleport yourself, along with anything you're wearing or carrying, to an unoccupied space you can see within 30 feet of yourself.",
+						"When you use this property, you can tap into the unstable power of the stone's extradimensional rift to increase the teleport distance by up to 30 feet, but if you teleport more than 30 feet using Rift Step, you must succeed on a DC 16 Constitution saving throw or take {@damage 3d10} force damage immediately after you teleport."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spellcasting",
+					"entries": [
+						"The stone has 6 charges and regains {@dice 1d6} expended charges daily at dawn. The Shard Solitaire Types table lists the spells common to all shard solitaires, as well as the spells specific to each kind of stone. As an action, you can cast one of the stone's spells by expending the requisite number of charges, requiring no material components (save DC 16).",
+						{
+							"type": "table",
+							"colStyles": [
+								"col-2 text-center",
+								"col-10"
+							],
+							"colLabels": [
+								"Shard Solitaire",
+								"Spells"
+							],
+							"rows": [
+								[
+									"All",
+									"{@spell Banishment} (3 charges; the target is banished to the stone's extradimensional space for the spell's duration), {@spell mirror image} (1 charge)"
+								],
+								[
+									"Black sapphire",
+									"{@spell Blight} (3 charges), {@spell finger of death} (6 charges)"
+								],
+								[
+									"Diamond",
+									"{@spell Ice storm} (3 charges), {@spell simulacrum} (6 charges; the duplicate created by the spell has the same number of hit points as the creature it imitates)"
+								],
+								[
+									"Jacinth",
+									"{@spell Fireball} (2 charges), {@spell fire storm} (6 charges)"
+								],
+								[
+									"Rainbow pearl",
+									"{@spell Prismatic spray} (6 charges), {@spell water breathing} (2 charges)"
+								],
+								[
+									"Ruby",
+									"{@spell Fly} (2 charges), {@spell teleport} (6 charges)"
+								]
+							]
+						}
+					]
+				}
+			],
+			"items": [
+				"Shard Solitaire (Black Sapphire)|KftGV",
+				"Shard Solitaire (Diamond)|KftGV",
+				"Shard Solitaire (Jacinth)|KftGV",
+				"Shard Solitaire (Rainbow Pearl)|KftGV",
+				"Shard Solitaire (Ruby)|KftGV"
+			],
+			"attachedSpells": [
+				"mirror image",
+				"banishment"
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Silken Spite",

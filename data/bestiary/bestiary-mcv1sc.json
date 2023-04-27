@@ -1144,7 +1144,7 @@
 				{
 					"name": "Invisibility Cloak (3/Day)",
 					"entries": [
-						"The star lancer and one creature riding it (chosen by the star lancer) magically turn {@condition invisible}. This effect lasts until the star lancer or a creature riding it attacks or casts a spell, or until the star lancer's concentration ends (as if concentrating on a spell). Any equipment worn or carried by the {@condition invisible} creatures is also {@condition invisible} for the duration of the Invisibility Cloak."
+						"The star lancer and one creature riding it (chosen by the star lancer) magically turn {@condition invisible}. This effect lasts until the star lancer or a creature riding it attacks or casts a spell, or until the star lancer's {@status concentration} ends (as if {@status concentration||concentrating} on a spell). Any equipment worn or carried by the {@condition invisible} creatures is also {@condition invisible} for the duration of the Invisibility Cloak."
 					]
 				}
 			],

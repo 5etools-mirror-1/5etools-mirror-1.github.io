@@ -268,7 +268,7 @@ class RaceParser extends BaseParser {
 
 		const types = [];
 		text = text
-			.replace(/^You are a Humanoid(?:\.|$)/, () => {
+			.replace(/^You are a Humanoid(?:\.|$)/i, () => {
 				types.push(Parser.TP_HUMANOID);
 				return "";
 			})

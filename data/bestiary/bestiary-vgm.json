@@ -6478,7 +6478,7 @@
 				{
 					"name": "Break Concentration",
 					"entries": [
-						"The elder brain targets a creature within 120 feet of it with which it has a psychic link. The elder brain breaks the creature's concentration on a spell it has cast. The creature also takes {@dice 1d4} psychic damage per level of the spell."
+						"The elder brain targets a creature within 120 feet of it with which it has a psychic link. The elder brain breaks the creature's {@status concentration} on a spell it has cast. The creature also takes {@dice 1d4} psychic damage per level of the spell."
 					]
 				},
 				{
@@ -12424,8 +12424,16 @@
 						"{@spell guidance}",
 						"{@spell mage hand}",
 						"{@spell vicious mockery}",
-						"{@spell true strike}"
+						"{@spell true strike}",
+						"{@spell detect thoughts}",
+						"{@spell levitate}"
 					],
+					"daily": {
+						"1e": [
+							"{@spell dominate monster}",
+							"{@spell plane shift} (self only)"
+						]
+					},
 					"spells": {
 						"1": {
 							"slots": 4,
@@ -20808,7 +20816,7 @@
 				{
 					"name": "Invoke Nightmare (Recharges after a Short or Long Rest)",
 					"entries": [
-						"The yuan-ti taps into the nightmares of a creature it can see within 60 feet of it and creates an illusory, immobile manifestation of the creature's deepest fears, visible only to that creature. The target must make a {@dc 13} Intelligence saving throw. On a failed save, the target takes 11 ({@damage 2d10}) psychic damage and is {@condition frightened} of the manifestation, believing it to be real. The yuan-ti must concentrate to maintain the illusion (as if concentrating on a spell), which lasts for up to 1 minute and can't be harmed. The target can repeat the saving throw at the end of each of its turns, ending the illusion on a success, or taking 11 ({@damage 2d10}) psychic damage on a failure."
+						"The yuan-ti taps into the nightmares of a creature it can see within 60 feet of it and creates an illusory, immobile manifestation of the creature's deepest fears, visible only to that creature. The target must make a {@dc 13} Intelligence saving throw. On a failed save, the target takes 11 ({@damage 2d10}) psychic damage and is {@condition frightened} of the manifestation, believing it to be real. The yuan-ti must concentrate to maintain the illusion (as if {@status concentration||concentrating} on a spell), which lasts for up to 1 minute and can't be harmed. The target can repeat the saving throw at the end of each of its turns, ending the illusion on a success, or taking 11 ({@damage 2d10}) psychic damage on a failure."
 					]
 				}
 			],

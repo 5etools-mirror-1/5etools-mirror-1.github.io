@@ -127,7 +127,7 @@
 				{
 					"name": "Storm of Crows {@recharge}",
 					"entries": [
-						"The abhorrent overlord conjures a swarm of spectral crows and harpies in a 20-foot-radius sphere centered on a point the overlord can see within 120 feet of it. The sphere remains for 1 minute or until the overlord loses concentration (as if concentrating on a spell), and its area is lightly obscured and {@quickref difficult terrain||3}.",
+						"The abhorrent overlord conjures a swarm of spectral crows and harpies in a 20-foot-radius sphere centered on a point the overlord can see within 120 feet of it. The sphere remains for 1 minute or until the overlord loses {@status concentration} (as if {@status concentration||concentrating} on a spell), and its area is lightly obscured and {@quickref difficult terrain||3}.",
 						"Any creature that moves into the area for the first time on a turn or starts its turn there must make a {@dc 15} Constitution saving throw. A creature takes 16 ({@damage 3d10}) slashing damage plus 16 ({@damage 3d10}) psychic damage on a failed save, or half as much damage on a successful one."
 					]
 				}

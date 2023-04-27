@@ -268,7 +268,16 @@ class List {
 	_doSearch_getMatchingSyntax () {
 		const [command, term] = this._searchTerm.split(/^([a-z]+):/).filter(Boolean);
 		if (!command || !term || !this._syntax?.[command]) return null;
-		return {term, syntax: this._syntax[command]};
+		return {term: this._doSearch_getSyntaxSearchTerm(term), syntax: this._syntax[command]};
+	}
+
+	_doSearch_getSyntaxSearchTerm (term) {
+		if (!term.startsWith("/") || !term.endsWith("/")) return term;
+		try {
+			return new RegExp(term.slice(1, -1));
+		} catch (ignored) {
+			return term;
+		}
 	}
 
 	_doSearch_doSearchTerm_syntax ({term, syntax: {fn, isAsync}}) {

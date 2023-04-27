@@ -559,6 +559,7 @@
 				"slashing"
 			],
 			"miscTags": [
+				"OBJ",
 				"SMN",
 				"UBA"
 			],
@@ -713,6 +714,9 @@
 					]
 				}
 			],
+			"miscTags": [
+				"OBJ"
+			],
 			"areaTags": [
 				"S"
 			]
@@ -782,6 +786,9 @@
 			],
 			"savingThrow": [
 				"wisdom"
+			],
+			"miscTags": [
+				"OBJ"
 			],
 			"areaTags": [
 				"C"
@@ -868,6 +875,7 @@
 				"Any creature or object entering the portal exits from the other portal as if the two were adjacent to each other; passing through a portal from the nonportal side has no effect. The mist that fills each portal is opaque and blocks vision through it. On your turn, you can rotate the rings as a bonus action so that the active side faces in a different direction."
 			],
 			"miscTags": [
+				"OBJ",
 				"SGT",
 				"TP",
 				"UBA"
@@ -913,6 +921,9 @@
 			"entries": [
 				"You touch a closed door, window, gate, chest, or other entryway, and it becomes locked for the duration. You and the creatures you designate when you cast this spell can open the object normally. You can also set a password that, when spoken within 5 feet of the object, suppresses this spell for 1 minute. Otherwise, it is impassable until it is broken or the spell is dispelled or suppressed. Casting {@spell knock} on the object suppresses {@spell arcane lock} for 10 minutes.",
 				"While affected by this spell, the object is more difficult to break or force open; the DC to break it or pick any locks on it increases by 10."
+			],
+			"miscTags": [
+				"OBJ"
 			]
 		},
 		{
@@ -1397,6 +1408,9 @@
 			],
 			"conditionInflict": [
 				"incapacitated"
+			],
+			"miscTags": [
+				"AAD"
 			]
 		},
 		{
@@ -1640,7 +1654,7 @@
 					"type": "entries",
 					"name": "At Higher Levels",
 					"entries": [
-						"If you cast this spell using a spell slot of 4th level or higher, the duration is concentration, up to 10 minutes. If you use a spell slot of 5th level or higher, the duration is 8 hours. If you use a spell slot of 7th level or higher, the duration is 24 hours. If you use a 9th level spell slot, the spell lasts until it is dispelled. Using a spell slot of 5th level or higher grants a duration that doesn't require concentration."
+						"If you cast this spell using a spell slot of 4th level or higher, the duration is {@status concentration}, up to 10 minutes. If you use a spell slot of 5th level or higher, the duration is 8 hours. If you use a spell slot of 7th level or higher, the duration is 24 hours. If you use a 9th level spell slot, the spell lasts until it is dispelled. Using a spell slot of 5th level or higher grants a duration that doesn't require {@status concentration}."
 					]
 				}
 			],
@@ -1742,7 +1756,9 @@
 				"strength"
 			],
 			"miscTags": [
+				"DFT",
 				"FMV",
+				"OBJ",
 				"SGT",
 				"UBA"
 			]
@@ -1791,6 +1807,9 @@
 			],
 			"savingThrow": [
 				"dexterity"
+			],
+			"miscTags": [
+				"DFT"
 			],
 			"areaTags": [
 				"W"
@@ -2001,6 +2020,9 @@
 			],
 			"savingThrow": [
 				"constitution"
+			],
+			"miscTags": [
+				"AAD"
 			]
 		},
 		{
@@ -2186,6 +2208,7 @@
 				"radiant"
 			],
 			"miscTags": [
+				"AAD",
 				"LGT"
 			]
 		},
@@ -2237,6 +2260,9 @@
 			],
 			"savingThrow": [
 				"dexterity"
+			],
+			"miscTags": [
+				"OBJ"
 			],
 			"areaTags": [
 				"N"
@@ -2405,6 +2431,7 @@
 				"dexterity"
 			],
 			"miscTags": [
+				"OBJ",
 				"SGT"
 			],
 			"areaTags": [
@@ -2863,7 +2890,7 @@
 				}
 			],
 			"entries": [
-				"You create a 20-foot-radius sphere of poisonous, yellow-green fog centered on a point you choose within range. The fog spreads around corners. It lasts for the duration or until strong wind disperses the fog, ending the spell. Its area is heavily obscured.",
+				"You create a 20-foot-radius sphere of poisonous, yellow-green fog centered on a point you choose within range. The fog spreads around corners. It lasts for the duration or until strong wind disperses the fog, ending the spell. Its area is {@quickref Vision and Light|PHB|2||heavily obscured}.",
 				"When a creature enters the spell's area for the first time on a turn or starts its turn there, that creature must make a Constitution saving throw. The creature takes {@damage 5d8} poison damage on a failed save, or half as much damage on a successful one. Creatures are affected even if they hold their breath or don't need to breathe.",
 				"The fog moves 10 feet away from you at the start of each of your turns, rolling along the surface of the ground. The vapors, being heavier than air, sink to the lowest level of the land, even pouring down openings."
 			],
@@ -2881,6 +2908,9 @@
 			],
 			"savingThrow": [
 				"constitution"
+			],
+			"miscTags": [
+				"OBS"
 			],
 			"areaTags": [
 				"S"
@@ -3636,7 +3666,7 @@
 			"entries": [
 				"You call forth an elemental servant. Choose an area of air, earth, fire, or water that fills a 10-foot cube within range. An {@filter elemental of challenge rating 5 or lower|bestiary|challenge rating=[&0;&5]|type=elemental|miscellaneous=!swarm} appropriate to the area you chose appears in an unoccupied space within 10 feet of it. For example, a {@creature fire elemental} emerges from a bonfire, and an {@creature earth elemental} rises up from the ground. The elemental disappears when it drops to 0 hit points or when the spell ends.",
 				"The elemental is friendly to you and your companions for the duration. Roll initiative for the elemental, which has its own turns. It obeys any verbal commands that you issue to it (no action required by you). If you don't issue any commands to the elemental, it defends itself from hostile creatures but otherwise takes no actions.",
-				"If your concentration is broken, the elemental doesn't disappear. Instead, you lose control of the elemental, it becomes hostile toward you and your companions, and it might attack. An uncontrolled elemental can't be dismissed by you, and it disappears 1 hour after you summoned it.",
+				"If your {@status concentration} is broken, the elemental doesn't disappear. Instead, you lose control of the elemental, it becomes hostile toward you and your companions, and it might attack. An uncontrolled elemental can't be dismissed by you, and it disappears 1 hour after you summoned it.",
 				"The DM has the elemental's statistics."
 			],
 			"entriesHigherLevel": [
@@ -3689,7 +3719,7 @@
 			"entries": [
 				"You summon a {@filter fey creature of challenge rating 6 or lower|bestiary|challenge rating=[&0;&6]|type=fey|miscellaneous=!swarm}, or a fey spirit that takes the form of a {@filter beast of challenge rating 6 or lower|bestiary|challenge rating=[&0;&6]|type=beast|miscellaneous=!swarm}. It appears in an unoccupied space that you can see within range. The fey creature disappears when it drops to 0 hit points or when the spell ends.",
 				"The fey creature is friendly to you and your companions for the duration. Roll initiative for the creature, which has its own turns. It obeys any verbal commands that you issue to it (no action required by you), as long as they don't violate its alignment. If you don't issue any commands to the fey creature, it defends itself from hostile creatures but otherwise takes no actions.",
-				"If your concentration is broken, the fey creature doesn't disappear. Instead, you lose control of the fey creature, it becomes hostile toward you and your companions, and it might attack. An uncontrolled fey creature can't be dismissed by you, and it disappears 1 hour after you summoned it.",
+				"If your {@status concentration} is broken, the fey creature doesn't disappear. Instead, you lose control of the fey creature, it becomes hostile toward you and your companions, and it might attack. An uncontrolled fey creature can't be dismissed by you, and it disappears 1 hour after you summoned it.",
 				"The DM has the fey creature's statistics."
 			],
 			"entriesHigherLevel": [
@@ -4091,6 +4121,9 @@
 			],
 			"entries": [
 				"A flame, equivalent in brightness to a torch, springs forth from an object that you touch. The effect looks like a regular flame, but it creates no heat and doesn't use oxygen. A continual flame can be covered or hidden but not smothered or quenched."
+			],
+			"miscTags": [
+				"OBJ"
 			]
 		},
 		{
@@ -4173,7 +4206,8 @@
 				"strength"
 			],
 			"miscTags": [
-				"FMV"
+				"FMV",
+				"OBJ"
 			],
 			"areaTags": [
 				"N"
@@ -4748,6 +4782,9 @@
 			"damageInflict": [
 				"radiant"
 			],
+			"miscTags": [
+				"AAD"
+			],
 			"areaTags": [
 				"S"
 			]
@@ -4899,6 +4936,9 @@
 				"If the point you choose is on an object you are holding or one that isn't being worn or carried, the darkness emanates from the object and moves with it. Completely covering the source of the darkness with an opaque object, such as a bowl or a helm, blocks the darkness.",
 				"If any of this spell's area overlaps with an area of light created by a spell of 2nd level or lower, the spell that created the light is dispelled."
 			],
+			"miscTags": [
+				"OBJ"
+			],
 			"areaTags": [
 				"S"
 			]
@@ -4982,7 +5022,8 @@
 				"If any of this spell's area overlaps with an area of darkness created by a spell of 3rd level or lower, the spell that created the darkness is dispelled."
 			],
 			"miscTags": [
-				"LGT"
+				"LGT",
+				"OBJ"
 			],
 			"areaTags": [
 				"S"
@@ -5067,7 +5108,7 @@
 				}
 			],
 			"entries": [
-				"A beam of yellow light flashes from your pointing finger, then condenses to linger at a chosen point within range as a glowing bead for the duration. When the spell ends, either because your concentration is broken or because you decide to end it, the bead blossoms with a low roar into an explosion of flame that spreads around corners. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A creature takes fire damage equal to the total accumulated damage on a failed save, or half as much damage on a successful one.",
+				"A beam of yellow light flashes from your pointing finger, then condenses to linger at a chosen point within range as a glowing bead for the duration. When the spell ends, either because your {@status concentration} is broken or because you decide to end it, the bead blossoms with a low roar into an explosion of flame that spreads around corners. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A creature takes fire damage equal to the total accumulated damage on a failed save, or half as much damage on a successful one.",
 				"The spell's base damage is {@damage 12d6}. If at the end of your turn the bead has not yet detonated, the damage increases by {@dice 1d6}.",
 				"If the glowing bead is touched before the interval has expired, the creature touching it must make a Dexterity saving throw. On a failed save, the spell ends immediately, causing the bead to erupt in flame. On a successful save, the creature can throw the bead up to 40 feet. When it strikes a creature or a solid object, the spell ends, and the bead explodes.",
 				"The fire damages objects in the area and ignites flammable objects that aren't being worn or carried."
@@ -5086,6 +5127,9 @@
 			],
 			"savingThrow": [
 				"dexterity"
+			],
+			"miscTags": [
+				"OBJ"
 			],
 			"areaTags": [
 				"S"
@@ -5128,6 +5172,7 @@
 				"Each time you cast this spell, you can create a new demiplane, or have the shadowy door connect to a demiplane you created with a previous casting of this spell. Additionally, if you know the nature and contents of a demiplane created by a casting of this spell by another creature, you can have the shadowy door connect to its demiplane instead."
 			],
 			"miscTags": [
+				"OBJ",
 				"PRM",
 				"SGT"
 			]
@@ -5500,6 +5545,7 @@
 				"dexterity"
 			],
 			"miscTags": [
+				"OBJ",
 				"SGT"
 			],
 			"areaTags": [
@@ -5616,6 +5662,9 @@
 						"When you cast this spell using a spell slot of 4th level or higher, you automatically end the effects of a spell on the target if the spell's level is equal to or less than the level of the spell slot you used."
 					]
 				}
+			],
+			"miscTags": [
+				"OBJ"
 			],
 			"areaTags": [
 				"ST"
@@ -5751,6 +5800,9 @@
 			],
 			"damageInflict": [
 				"radiant"
+			],
+			"miscTags": [
+				"AAD"
 			]
 		},
 		{
@@ -5854,7 +5906,7 @@
 					"type": "entries",
 					"name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell with a 5th-level spell slot, the duration is concentration, up to 10 minutes. When you use a 6th-level spell slot, the duration is concentration, up to 1 hour. When you use a spell slot of 7th level or higher, the duration is concentration, up to 8 hours."
+						"When you cast this spell with a 5th-level spell slot, the duration is {@status concentration}, up to 10 minutes. When you use a 6th-level spell slot, the duration is {@status concentration}, up to 1 hour. When you use a spell slot of 7th level or higher, the duration is {@status concentration}, up to 8 hours."
 					]
 				}
 			],
@@ -5920,7 +5972,7 @@
 					"type": "entries",
 					"name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell with a 9th-level spell slot, the duration is concentration, up to 8 hours."
+						"When you cast this spell with a 9th-level spell slot, the duration is {@status concentration}, up to 8 hours."
 					]
 				}
 			],
@@ -5983,7 +6035,7 @@
 					"type": "entries",
 					"name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a 6th-level spell slot, the duration is concentration, up to 10 minutes. When you use a 7th-level spell slot, the duration is concentration, up to 1 hour. When you use a spell slot of 8th level or higher, the duration is concentration, up to 8 hours."
+						"When you cast this spell using a 6th-level spell slot, the duration is {@status concentration}, up to 10 minutes. When you use a 7th-level spell slot, the duration is {@status concentration}, up to 1 hour. When you use a spell slot of 8th level or higher, the duration is {@status concentration}, up to 8 hours."
 					]
 				}
 			],
@@ -6046,6 +6098,9 @@
 				"At any time thereafter, you can use your action to speak the item's name and crush the sapphire. The item instantly appears in your hand regardless of physical or planar distances, and the spell ends.",
 				"If another creature is holding or carrying the item, crushing the sapphire doesn't transport the item to you, but instead you learn who the creature possessing the object is and roughly where that creature is located at that moment.",
 				"{@spell Dispel magic} or a similar effect successfully applied to the sapphire ends this spell's effect."
+			],
+			"miscTags": [
+				"OBJ"
 			]
 		},
 		{
@@ -6175,8 +6230,8 @@
 			],
 			"entries": [
 				"You create a seismic disturbance at a point on the ground that you can see within range. For the duration, an intense tremor rips through the ground in a 100-foot-radius circle centered on that point and shakes creatures and structures in contact with the ground in that area.",
-				"The ground in the area becomes {@quickref difficult terrain||3}. Each creature on the ground that is concentrating must make a Constitution saving throw. On a failed save, the creature's concentration is broken.",
-				"When you cast this spell and at the end of each turn you spend concentrating on it, each creature on the ground in the area must make a Dexterity saving throw. On a failed save, the creature is knocked {@condition prone}.",
+				"The ground in the area becomes {@quickref difficult terrain||3}. Each creature on the ground that is {@status concentration||concentrating} must make a Constitution saving throw. On a failed save, the creature's {@status concentration} is broken.",
+				"When you cast this spell and at the end of each turn you spend {@status concentration||concentrating} on it, each creature on the ground in the area must make a Dexterity saving throw. On a failed save, the creature is knocked {@condition prone}.",
 				"This spell can have additional effects depending on the terrain in the area, as determined by the DM.",
 				{
 					"type": "entries",
@@ -6312,6 +6367,9 @@
 				"fire",
 				"lightning",
 				"thunder"
+			],
+			"miscTags": [
+				"AAD"
 			]
 		},
 		{
@@ -6466,6 +6524,7 @@
 				"constitution"
 			],
 			"miscTags": [
+				"OBJ",
 				"SGT"
 			],
 			"areaTags": [
@@ -6681,8 +6740,8 @@
 				"force"
 			],
 			"miscTags": [
-				"SGT",
-				"PS"
+				"PS",
+				"SGT"
 			]
 		},
 		{
@@ -6891,6 +6950,7 @@
 				"Creatures or magic items can't be created or transmuted by this spell. You also can't use it to create items that ordinarily require a high degree of craftsmanship, such as jewelry, weapons, glass, or armor, unless you have proficiency with the type of artisan's tools used to craft such objects."
 			],
 			"miscTags": [
+				"OBJ",
 				"PRM",
 				"SGT"
 			]
@@ -7461,6 +7521,7 @@
 				"R"
 			],
 			"miscTags": [
+				"OBJ",
 				"SCL"
 			],
 			"areaTags": [
@@ -7557,6 +7618,9 @@
 			"savingThrow": [
 				"dexterity"
 			],
+			"miscTags": [
+				"OBJ"
+			],
 			"areaTags": [
 				"C"
 			]
@@ -7610,6 +7674,9 @@
 			],
 			"savingThrow": [
 				"dexterity"
+			],
+			"miscTags": [
+				"OBJ"
 			],
 			"areaTags": [
 				"S"
@@ -7790,6 +7857,7 @@
 			],
 			"miscTags": [
 				"LGT",
+				"OBJ",
 				"UBA"
 			],
 			"areaTags": [
@@ -7835,7 +7903,7 @@
 				"You attempt to turn one creature that you can see within range into stone. If the target's body is made of flesh, the creature must make a Constitution saving throw. On a failed save, it is {@condition restrained} as its flesh begins to harden. On a successful save, the creature isn't affected.",
 				"A creature {@condition restrained} by this spell must make another Constitution saving throw at the end of each of its turns. If it successfully saves against this spell three times, the spell ends. If it fails its saves three times, it is turned to stone and subjected to the {@condition petrified} condition for the duration. The successes and failures don't need to be consecutive; keep track of both until the target collects three of a kind.",
 				"If the creature is physically broken while {@condition petrified}, it suffers from similar deformities if it reverts to its original state.",
-				"If you maintain your concentration on this spell for the entire possible duration, the creature is turned to stone until the effect is removed."
+				"If you maintain your {@status concentration} on this spell for the entire possible duration, the creature is turned to stone until the effect is removed."
 			],
 			"conditionInflict": [
 				"petrified",
@@ -7948,6 +8016,9 @@
 						"When you cast this spell using a spell slot of 2nd level or higher, the radius of the fog increases by 20 feet for each slot level above 1st."
 					]
 				}
+			],
+			"miscTags": [
+				"OBS"
 			],
 			"areaTags": [
 				"S"
@@ -8282,9 +8353,9 @@
 				"When you cast this spell, you can speak the name of a specific creature (a pseudonym, title, or nickname doesn't work). If that creature is on a plane other than the one you are on, the portal opens in the named creature's immediate vicinity and draws the creature through it to the nearest unoccupied space on your side of the portal. You gain no special power over the creature, and it is free to act as the DM deems appropriate. It might leave, attack you, or help you."
 			],
 			"miscTags": [
+				"PS",
 				"SGT",
-				"TP",
-				"PS"
+				"TP"
 			]
 		},
 		{
@@ -8582,7 +8653,7 @@
 					"type": "entries",
 					"name": "Spell Glyph",
 					"entries": [
-						"You can store a prepared spell of 3rd level or lower in the glyph by casting it as part of creating the glyph. The spell must target a single creature or an area. The spell being stored has no immediate effect when cast in this way. When the glyph is triggered, the stored spell is cast. If the spell has a target, it targets the creature that triggered the glyph. If the spell affects an area, the area is centered on that creature. If the spell summons hostile creatures or creates harmful objects or traps, they appear as close as possible to the intruder and attack it. If the spell requires concentration, it lasts until the end of its full duration."
+						"You can store a prepared spell of 3rd level or lower in the glyph by casting it as part of creating the glyph. The spell must target a single creature or an area. The spell being stored has no immediate effect when cast in this way. When the glyph is triggered, the stored spell is cast. If the spell has a target, it targets the creature that triggered the glyph. If the spell affects an area, the area is centered on that creature. If the spell summons hostile creatures or creates harmful objects or traps, they appear as close as possible to the intruder and attack it. If the spell requires {@status concentration}, it lasts until the end of its full duration."
 					]
 				}
 			],
@@ -8932,7 +9003,7 @@
 					"type": "entries",
 					"name": "Corridors",
 					"entries": [
-						"Fog fills all the warded corridors, making them heavily obscured. In addition, at each intersection or branching passage offering a choice of direction, there is a {@chance 50|||Disoriented!|No effect} chance that a creature other than you will believe it is going in the opposite direction from the one it chooses."
+						"Fog fills all the warded corridors, making them {@quickref Vision and Light|PHB|2||heavily obscured}. In addition, at each intersection or branching passage offering a choice of direction, there is a {@chance 50|||Disoriented!|No effect} chance that a creature other than you will believe it is going in the opposite direction from the one it chooses."
 					]
 				},
 				{
@@ -8970,6 +9041,7 @@
 				"You can create a permanently guarded and warded structure by casting this spell there every day for one year."
 			],
 			"miscTags": [
+				"OBS",
 				"PRM"
 			],
 			"areaTags": [
@@ -9118,6 +9190,7 @@
 				"strength"
 			],
 			"miscTags": [
+				"DFT",
 				"FMV",
 				"UBA"
 			],
@@ -9637,6 +9710,7 @@
 				"constitution"
 			],
 			"miscTags": [
+				"OBJ",
 				"SGT",
 				"UBA"
 			],
@@ -9847,7 +9921,7 @@
 					"type": "entries",
 					"name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 3rd or 4th level, you can maintain your concentration on the spell for up to 8 hours. When you use a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 24 hours."
+						"When you cast this spell using a spell slot of 3rd or 4th level, you can maintain your {@status concentration} on the spell for up to 8 hours. When you use a spell slot of 5th level or higher, you can maintain your {@status concentration} on the spell for up to 24 hours."
 					]
 				}
 			],
@@ -10103,6 +10177,9 @@
 			"savingThrow": [
 				"dexterity"
 			],
+			"miscTags": [
+				"DFT"
+			],
 			"areaTags": [
 				"S"
 			]
@@ -10148,7 +10225,7 @@
 					"type": "entries",
 					"name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 3rd or 4th level, you can maintain your concentration on the spell for up to 8 hours. When you use a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 24 hours."
+						"When you cast this spell using a spell slot of 3rd or 4th level, you can maintain your {@status concentration} on the spell for up to 8 hours. When you use a spell slot of 5th level or higher, you can maintain your {@status concentration} on the spell for up to 24 hours."
 					]
 				}
 			],
@@ -10156,6 +10233,7 @@
 				"wisdom"
 			],
 			"miscTags": [
+				"AAD",
 				"SGT",
 				"UBA"
 			],
@@ -10306,6 +10384,9 @@
 			"entries": [
 				"You choose one object that you must touch throughout the casting of the spell. If it is a magic item or some other magic-imbued object, you learn its properties and how to use them, whether it requires attunement to use, and how many charges it has, if any. You learn whether any spells are affecting the item and what they are. If the item was created by a spell, you learn which spell created it.",
 				"If you instead touch a creature throughout the casting, you learn what spells, if any, are currently affecting it."
+			],
+			"miscTags": [
+				"OBJ"
 			],
 			"areaTags": [
 				"ST"
@@ -10495,7 +10576,7 @@
 				}
 			],
 			"entries": [
-				"A swirling cloud of smoke shot through with white-hot embers appears in a 20-foot-radius sphere centered on a point within range. The cloud spreads around corners and is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.",
+				"A swirling cloud of smoke shot through with white-hot embers appears in a 20-foot-radius sphere centered on a point within range. The cloud spreads around corners and is {@quickref Vision and Light|PHB|2||heavily obscured}. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.",
 				"When the cloud appears, each creature in it must make a Dexterity saving throw. A creature takes {@damage 10d8} fire damage on a failed save, or half as much damage on a successful one. A creature must also make this saving throw when it enters the spell's area for the first time on a turn or ends its turn there.",
 				"The cloud moves 10 feet directly away from you in a direction that you choose at the start of each of your turns."
 			],
@@ -10504,6 +10585,9 @@
 			],
 			"savingThrow": [
 				"dexterity"
+			],
+			"miscTags": [
+				"OBS"
 			],
 			"areaTags": [
 				"S"
@@ -10596,7 +10680,7 @@
 				}
 			],
 			"entries": [
-				"Swarming, biting locusts fill a 20-foot-radius sphere centered on a point you choose within range. The sphere spreads around corners. The sphere remains for the duration, and its area is lightly obscured. The sphere's area is {@quickref difficult terrain||3}.",
+				"Swarming, biting locusts fill a 20-foot-radius sphere centered on a point you choose within range. The sphere spreads around corners. The sphere remains for the duration, and its area is {@quickref Vision and Light|PHB|2||lightly obscured}. The sphere's area is {@quickref difficult terrain||3}.",
 				"When the area appears, each creature in it must make a Constitution saving throw. A creature takes {@damage 4d10} piercing damage on a failed save, or half as much damage on a successful one. A creature must also make this saving throw when it enters the spell's area for the first time on a turn or ends its turn there."
 			],
 			"entriesHigherLevel": [
@@ -10613,6 +10697,10 @@
 			],
 			"savingThrow": [
 				"constitution"
+			],
+			"miscTags": [
+				"DFT",
+				"OBS"
 			],
 			"areaTags": [
 				"S"
@@ -10749,6 +10837,7 @@
 				"When you cast the spell, a loud knock, audible from as far away as 300 feet, emanates from the target object."
 			],
 			"miscTags": [
+				"OBJ",
 				"SGT"
 			]
 		},
@@ -10788,6 +10877,9 @@
 			"entries": [
 				"Name or describe a person, place, or object. The spell brings to your mind a brief summary of the significant lore about the thing you named. The lore might consist of current tales, forgotten stories, or even secret lore that has never been widely known. If the thing you named isn't of legendary importance, you gain no information. The more information you already have about the thing, the more precise and detailed the information you receive is.",
 				"The information you learn is accurate but might be couched in figurative language. For example, if you have a mysterious magic axe on hand, the spell might yield this information: \"Woe to the evildoer whose hand touches the axe, for even the haft slices the hand of the evil ones. Only a true Child of Stone, lover and beloved of Moradin, may awaken the true powers of the axe, and only with the sacred word Rudnogg on the lips.\""
+			],
+			"miscTags": [
+				"OBJ"
 			]
 		},
 		{
@@ -10958,6 +11050,7 @@
 				"constitution"
 			],
 			"miscTags": [
+				"OBJ",
 				"SGT"
 			],
 			"areaTags": [
@@ -11005,7 +11098,8 @@
 				"dexterity"
 			],
 			"miscTags": [
-				"LGT"
+				"LGT",
+				"OBJ"
 			]
 		},
 		{
@@ -11113,6 +11207,9 @@
 			],
 			"savingThrow": [
 				"dexterity"
+			],
+			"miscTags": [
+				"OBJ"
 			],
 			"areaTags": [
 				"L"
@@ -11237,6 +11334,9 @@
 				"Describe or name an object that is familiar to you. You sense the direction to the object's location, as long as that object is within 1,000 feet of you. If the object is in motion, you know the direction of its movement.",
 				"The spell can locate a specific object known to you, as long as you have seen it up close\u2014within 30 feet\u2014at least once. Alternatively, the spell can locate the nearest object of a particular kind, such as a certain kind of apparel, jewelry, furniture, tool, or weapon.",
 				"This spell can't locate an object if any thickness of lead, even a thin sheet, blocks a direct path between you and the object."
+			],
+			"miscTags": [
+				"OBJ"
 			]
 		},
 		{
@@ -11370,6 +11470,9 @@
 				"A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration or until you dismiss it as an action. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again.",
 				"You can use your action to control the hand. You can use the hand to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour the contents out of a vial. You can move the hand up to 30 feet each time you use it.",
 				"The hand can't attack, activate magic items, or carry more than 10 pounds."
+			],
+			"miscTags": [
+				"OBJ"
 			]
 		},
 		{
@@ -11603,6 +11706,7 @@
 				"The triggering circumstance can be as general or as detailed as you like, though it must be based on visual or audible conditions that occur within 30 feet of the object. For example, you could instruct the mouth to speak when any creature moves within 30 feet of the object or when a silver bell rings within 30 feet of it."
 			],
 			"miscTags": [
+				"OBJ",
 				"SGT"
 			]
 		},
@@ -11699,7 +11803,7 @@
 					"type": "entries",
 					"name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 6th level or higher, the spell lasts until dispelled, without requiring your concentration."
+						"When you cast this spell using a spell slot of 6th level or higher, the spell lasts until dispelled, without requiring your {@status concentration}."
 					]
 				}
 			],
@@ -12129,6 +12233,9 @@
 			"entries": [
 				"This spell repairs a single break or tear in an object you touch, such as broken chain link, two halves of a broken key, a torn cloak, or a leaking wineskin. As long as the break or tear is no larger than 1 foot in any dimension, you mend it, leaving no trace of the former damage.",
 				"This spell can physically repair a magic item or construct, but the spell can't restore magic to such an object."
+			],
+			"miscTags": [
+				"OBJ"
 			]
 		},
 		{
@@ -12215,6 +12322,7 @@
 				"dexterity"
 			],
 			"miscTags": [
+				"OBJ",
 				"SGT"
 			],
 			"areaTags": [
@@ -12687,6 +12795,9 @@
 				"You conjure an extradimensional dwelling in range that lasts for the duration. You choose where its one entrance is located. The entrance shimmers faintly and is 5 feet wide and 10 feet tall. You and any creature you designate when you cast the spell can enter the extradimensional dwelling as long as the portal remains open. You can open or close the portal if you are within 30 feet of it. While closed, the portal is invisible.",
 				"Beyond the portal is a magnificent foyer with numerous chambers beyond. The atmosphere is clean, fresh, and warm.",
 				"You can create any floor plan you like, but the space can't exceed 50 cubes, each cube being 10 feet on each side. The place is furnished and decorated as you choose. It contains sufficient food to serve a nine course banquet for up to 100 people. A staff of 100 near-transparent servants attends all who enter. You decide the visual appearance of these servants and their attire. They are completely obedient to your orders. Each servant can perform any task a normal human servant could perform, but they can't attack or take any action that would directly harm another creature. Thus the servants can fetch things, clean, mend, fold clothes, light fires, serve food, pour wine, and so on. The servants can go anywhere in the mansion but can't leave it. Furnishings and other objects created by this spell dissipate into smoke if removed from the mansion. When the spell ends, any creatures or objects left inside the extradimensional space are expelled into the open spaces nearest to the entrance."
+			],
+			"miscTags": [
+				"OBJ"
 			]
 		},
 		{
@@ -12850,7 +12961,7 @@
 			],
 			"entries": [
 				"Choose an area of terrain no larger than 40 feet on a side within range. You can reshape dirt, sand, or clay in the area in any manner you choose for the duration. You can raise or lower the area's elevation, create or fill in a trench, erect or flatten a wall, or form a pillar. The extent of any such changes can't exceed half the area's largest dimension. So, if you affect a 40-foot square, you can create a pillar up to 20 feet high, raise or lower the square's elevation by up to 20 feet, dig a trench up to 20 feet deep, and so on. It takes 10 minutes for these changes to complete.",
-				"At the end of every 10 minutes you spend concentrating on the spell, you can choose a new area of terrain to affect.",
+				"At the end of every 10 minutes you spend {@status concentration||concentrating} on the spell, you can choose a new area of terrain to affect.",
 				"Because the terrain's transformation occurs slowly, creatures in the area can't usually be trapped or injured by the ground's movement.",
 				"This spell can't manipulate natural stone or stone construction. Rocks and structures shift to accommodate the new terrain. If the way you shape the terrain would make a structure unstable, it might collapse.",
 				"Similarly, this spell doesn't directly affect plant growth. The moved earth carries any plants along with it."
@@ -12898,6 +13009,9 @@
 			],
 			"entries": [
 				"For the duration, you hide a target that you touch from divination magic. The target can be a willing creature or a place or an object no larger than 10 feet in any dimension. The target can't be targeted by any divination magic or perceived through magical scrying sensors."
+			],
+			"miscTags": [
+				"OBJ"
 			],
 			"areaTags": [
 				"ST"
@@ -12955,6 +13069,7 @@
 				}
 			],
 			"miscTags": [
+				"OBJ",
 				"PRM"
 			],
 			"areaTags": [
@@ -13076,6 +13191,9 @@
 			],
 			"savingThrow": [
 				"dexterity"
+			],
+			"miscTags": [
+				"OBJ"
 			],
 			"areaTags": [
 				"ST"
@@ -13210,6 +13328,7 @@
 				"When the opening disappears, any creatures or objects still in the passage created by the spell are safely ejected to an unoccupied space nearest to the surface on which you cast the spell."
 			],
 			"miscTags": [
+				"OBJ",
 				"SGT"
 			]
 		},
@@ -13539,8 +13658,8 @@
 				"charisma"
 			],
 			"miscTags": [
-				"TP",
-				"PS"
+				"PS",
+				"TP"
 			],
 			"areaTags": [
 				"ST",
@@ -13585,6 +13704,9 @@
 				"If you cast this spell using 1 action, choose a point within range. All normal plants in a 100-foot radius centered on that point become thick and overgrown. A creature moving through the area must spend 4 feet of movement for every 1 foot it moves.",
 				"You can exclude one or more areas of any size within the spell's area from being affected.",
 				"If you cast this spell over 8 hours, you enrich the land. All plants in a half-mile radius centered on a point within range become enriched for 1 year. The plants yield twice the normal amount of food when harvested."
+			],
+			"miscTags": [
+				"DFT"
 			]
 		},
 		{
@@ -13944,6 +14066,9 @@
 					]
 				},
 				"If you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action."
+			],
+			"miscTags": [
+				"OBJ"
 			]
 		},
 		{
@@ -15063,6 +15188,9 @@
 			"entries": [
 				"At your touch, all curses affecting one creature or object end. If the object is a cursed magic item, its curse remains, but the spell breaks its owner's attunement to the object so it can be removed or discarded."
 			],
+			"miscTags": [
+				"OBJ"
+			],
 			"areaTags": [
 				"ST"
 			]
@@ -15199,6 +15327,9 @@
 			],
 			"savingThrow": [
 				"dexterity"
+			],
+			"miscTags": [
+				"OBJ"
 			],
 			"areaTags": [
 				"Y"
@@ -15592,6 +15723,9 @@
 			],
 			"savingThrow": [
 				"constitution"
+			],
+			"miscTags": [
+				"AAD"
 			]
 		},
 		{
@@ -15765,6 +15899,9 @@
 			"conditionInflict": [
 				"invisible"
 			],
+			"miscTags": [
+				"OBJ"
+			],
 			"areaTags": [
 				"ST"
 			]
@@ -15878,6 +16015,9 @@
 			],
 			"savingThrow": [
 				"constitution"
+			],
+			"miscTags": [
+				"OBJ"
 			],
 			"areaTags": [
 				"S"
@@ -16106,6 +16246,9 @@
 			"conditionInflict": [
 				"deafened"
 			],
+			"miscTags": [
+				"OBJ"
+			],
 			"areaTags": [
 				"S"
 			]
@@ -16313,9 +16456,9 @@
 				}
 			],
 			"entries": [
-				"Until the spell ends, freezing rain and sleet fall in a 20-foot-tall cylinder with a 40-foot radius centered on a point you choose within range. The area is heavily obscured, and exposed flames in the area are doused.",
+				"Until the spell ends, freezing rain and sleet fall in a 20-foot-tall cylinder with a 40-foot radius centered on a point you choose within range. The area is {@quickref Vision and Light|PHB|2||heavily obscured}, and exposed flames in the area are doused.",
 				"The ground in the area is covered with slick ice, making it {@quickref difficult terrain||3}. When a creature enters the spell's area for the first time on a turn or starts its turn there, it must make a Dexterity saving throw. On a failed save, it falls {@condition prone}.",
-				"If a creature starts its turn in the spell's area and is concentrating on a spell, the creature must make a successful Constitution saving throw against your spell save DC or lose concentration."
+				"If a creature starts its turn in the spell's area and is {@status concentration||concentrating} on a spell, the creature must make a successful Constitution saving throw against your spell save DC or lose {@status concentration}."
 			],
 			"conditionInflict": [
 				"prone"
@@ -16323,6 +16466,9 @@
 			"savingThrow": [
 				"dexterity",
 				"constitution"
+			],
+			"miscTags": [
+				"OBS"
 			],
 			"areaTags": [
 				"Y"
@@ -16819,6 +16965,9 @@
 			],
 			"savingThrow": [
 				"wisdom"
+			],
+			"miscTags": [
+				"AAD"
 			]
 		},
 		{
@@ -16857,12 +17006,15 @@
 				}
 			],
 			"entries": [
-				"You create a 20-foot-radius sphere of yellow, nauseating gas centered on a point within range. The cloud spreads around corners, and its area is heavily obscured. The cloud lingers in the air for the duration.",
+				"You create a 20-foot-radius sphere of yellow, nauseating gas centered on a point within range. The cloud spreads around corners, and its area is {@quickref Vision and Light|PHB|2||heavily obscured}. The cloud lingers in the air for the duration.",
 				"Each creature that is completely within the cloud at the start of its turn must make a Constitution saving throw against poison. On a failed save, the creature spends its action that turn retching and reeling. Creatures that don't need to breathe or are immune to poison automatically succeed on this saving throw.",
 				"A moderate wind (at least 10 miles per hour) disperses the cloud after 4 rounds. A strong wind (at least 20 miles per hour) disperses it after 1 round."
 			],
 			"savingThrow": [
 				"constitution"
+			],
+			"miscTags": [
+				"OBS"
 			],
 			"areaTags": [
 				"S"
@@ -16899,6 +17051,9 @@
 			],
 			"entries": [
 				"You touch a stone object of Medium size or smaller or a section of stone no more than 5 feet in any dimension and form it into any shape that suits your purpose. So, for example, you could shape a large rock into a weapon, idol, or coffer, or make a small passage through a wall, as long as the wall is less than 5 feet thick. You could also shape a stone door or its frame to seal the door shut. The object you create can have up to two hinges and a latch, but finer mechanical detail isn't possible."
+			],
+			"miscTags": [
+				"OBJ"
 			]
 		},
 		{
@@ -16987,7 +17142,7 @@
 			],
 			"entries": [
 				"A churning storm cloud forms, centered on a point you can see and spreading to a radius of 360 feet. Lightning flashes in the area, thunder booms, and strong winds roar. Each creature under the cloud (no more than 5,000 feet beneath the cloud) when it appears must make a Constitution saving throw. On a failed save, a creature takes {@damage 2d6} thunder damage and becomes {@condition deafened} for 5 minutes.",
-				"Each round you maintain concentration on this spell, the storm produces different effects on your turn.",
+				"Each round you maintain {@status concentration} on this spell, the storm produces different effects on your turn.",
 				{
 					"type": "entries",
 					"name": "Round 2",
@@ -17013,7 +17168,7 @@
 					"type": "entries",
 					"name": "Round 5\u201310",
 					"entries": [
-						"Gusts and freezing rain assail the area under the cloud. The area becomes {@quickref difficult terrain||3} and is heavily obscured. Each creature there takes {@damage 1d6} cold damage. Ranged weapon attacks in the area are impossible. The wind and rain count as a severe distraction for the purposes of maintaining concentration on spells. Finally, gusts of strong wind (ranging from 20 to 50 miles per hour) automatically disperse fog, mists, and similar phenomena in the area, whether mundane or magical."
+						"Gusts and freezing rain assail the area under the cloud. The area becomes {@quickref difficult terrain||3} and is {@quickref Vision and Light|PHB|2||heavily obscured}. Each creature there takes {@damage 1d6} cold damage. Ranged weapon attacks in the area are impossible. The wind and rain count as a severe distraction for the purposes of maintaining {@status concentration} on spells. Finally, gusts of strong wind (ranging from 20 to 50 miles per hour) automatically disperse fog, mists, and similar phenomena in the area, whether mundane or magical."
 					]
 				}
 			],
@@ -17032,6 +17187,8 @@
 				"dexterity"
 			],
 			"miscTags": [
+				"OBJ",
+				"OBS",
 				"SGT"
 			],
 			"areaTags": [
@@ -17358,7 +17515,8 @@
 				"intelligence"
 			],
 			"miscTags": [
-				"LGT"
+				"LGT",
+				"OBJ"
 			],
 			"areaTags": [
 				"S"
@@ -17479,6 +17637,7 @@
 			],
 			"miscTags": [
 				"FMV",
+				"OBJ",
 				"SGT"
 			],
 			"areaTags": [
@@ -17916,6 +18075,7 @@
 				"strength"
 			],
 			"miscTags": [
+				"AAD",
 				"FMV"
 			]
 		},
@@ -17969,7 +18129,8 @@
 				"constitution"
 			],
 			"miscTags": [
-				"FMV"
+				"FMV",
+				"OBJ"
 			],
 			"areaTags": [
 				"C"
@@ -18196,6 +18357,7 @@
 				"wisdom"
 			],
 			"miscTags": [
+				"OBJ",
 				"PRM",
 				"SGT",
 				"SMN"
@@ -18750,12 +18912,13 @@
 				"The wall can have any shape you desire, though it can't occupy the same space as a creature or object. The wall doesn't need to be vertical or rest on any firm foundation. It must, however, merge with and be solidly supported by existing stone. Thus, you can use this spell to bridge a chasm or create a ramp.",
 				"If you create a span greater than 20 feet in length, you must halve the size of each panel to create supports. You can crudely shape the wall to create crenellations, battlements, and so on.",
 				"The wall is an object made of stone that can be damaged and thus breached. Each panel has AC 15 and 30 hit points per inch of thickness. Reducing a panel to 0 hit points destroys it and might cause connected panels to collapse at the DM's discretion.",
-				"If you maintain your concentration on this spell for its whole duration, the wall becomes permanent and can't be dispelled. Otherwise, the wall disappears when the spell ends."
+				"If you maintain your {@status concentration} on this spell for its whole duration, the wall becomes permanent and can't be dispelled. Otherwise, the wall disappears when the spell ends."
 			],
 			"savingThrow": [
 				"dexterity"
 			],
 			"miscTags": [
+				"OBJ",
 				"PRM"
 			],
 			"areaTags": [
@@ -19328,8 +19491,8 @@
 				"You must designate a sanctuary by casting this spell within a location, such as a temple, dedicated to or strongly linked to your deity. If you attempt to cast the spell in this manner in an area that isn't dedicated to your deity, the spell has no effect."
 			],
 			"miscTags": [
-				"TP",
-				"PS"
+				"PS",
+				"TP"
 			]
 		},
 		{
@@ -19377,6 +19540,9 @@
 			],
 			"abilityCheck": [
 				"wisdom"
+			],
+			"miscTags": [
+				"AAD"
 			]
 		},
 		{

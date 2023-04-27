@@ -1,0 +1,139 @@
+{
+	"monsterFluff": [
+		{
+			"name": "Blaze",
+			"source": "MCV3MC",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"Blazes are elemental beings that congregate at Nether fortresses. They float a short distance above the ground, and each one is orbited by three sets of glowing rods. When a blaze is destroyed, it sometimes leaves one of these rods behind. Blaze rods are a source of great energy that, when carefully crushed into powder, can be used to brew potions and craft other magic items.",
+						"A blaze attacks by launching three fireballs from its fiery core. This fire ignites creatures and flammable objects. If necessary, a blaze levitates into the air to better see and more easily target its enemies."
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MCV3MC/Blaze.webp"
+					}
+				}
+			]
+		},
+		{
+			"name": "Creeper",
+			"source": "MCV3MC",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"A creeper is a green, armless creature that emerges in darkness and silently prowls the Overworld on its four short legs. Its peculiar face bears no clue of its motives, but its destructiveness makes it one of the greatest threats to both life and property in the Overworld.",
+						"A creeper quietly shuffles toward Humanoid prey. When it gets close enough, it halts and begins to hiss like a burning fuse. Unless the creeper is defeated or its target gets far enough away that the creeper defuses itself, the creeper explodes a few short moments later, leaving a crater where it once stood.",
+						"Creepers have an uncanny ability to appear when least expected, and few places are safe from their explosive nature. Yet creepers have one strange weakness: they fear cats and do all they can to avoid them.",
+						"If a creeper is struck by lightning, rather than being harmed, it becomes charged with electrical power. In this charged state, the creeper gains a bluish aura and can explode with even greater power."
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MCV3MC/Creeper.webp"
+					}
+				}
+			]
+		},
+		{
+			"name": "Ender Dragon",
+			"source": "MCV3MC",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"The mighty Ender Dragon is one of a kind\u2014a vast, flying creature with void-black scales and purple eyes. It soars above the central island of the End. No one can say whether it is a guardian or a prisoner of the End, but either way, the Ender Dragon challenges anyone who enters its domain.",
+						"The Ender Dragon buffets enemies with great wings, engulfs foes with its gaseous breath weapon, and delivers crushing bites with its powerful jaws. Its hide is strong enough to deflect all but the deadliest weapons.",
+						{
+							"type": "inset",
+							"name": "End Crystals",
+							"entries": [
+								"The Ender Dragon has a special relationship with the ten 40-foot-tall obsidian towers scattered around the central island of the End. At the top of each tower is an End crystal that sends a beam of healing energy to the Ender Dragon when it flies nearby. If slain, the Ender Dragon can be brought back to life by placing four End crystals on the portal that leads back to the Overworld.",
+								{
+									"type": "entries",
+									"name": "Crystal Healing",
+									"entries": [
+										"When the Ender Dragon ends its turn within 60 feet of an End crystal, the crystal emits a healing beam that causes the dragon to regain 20 hit points. The dragon can benefit from such healing only once per turn."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Crystal Statistics",
+									"entries": [
+										"An End crystal is a Large object that has Armor Class 11; 30 hit points; vulnerability to bludgeoning and thunder damage; resistance to piercing and slashing damage; and immunity to poison and psychic damage. When a crystal is destroyed, it explodes in a 20-foot-radius sphere of destructive energy. Any creature in that area must make a {@dc 15} Dexterity saving throw, taking 21 ({@damage 6d6}) force damage on a failed save, or half as much damage on a successful one."
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MCV3MC/Ender Dragon.webp"
+					}
+				}
+			]
+		},
+		{
+			"name": "Enderman",
+			"source": "MCV3MC",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"Endermen are tall, black, bipedal creatures with long, thin limbs and piercing, purple eyes. Violet particles flicker in and out of existence around them. Endermen are unnerving and enigmatic, acting in a manner that is all but impossible to interpret.",
+						"Endermen seem particularly drawn to the End, where they gather in large groups. They are uncommon visitors to other dimensions, although they appear more often in pairs in such peculiar places as the warped forests of the Nether. They shun sunlight and are hurt by water, including rain. When an Enderman becomes the target of a ranged weapon or takes damage, it teleports to a safer location nearby and makes a distinctive \"voop\" sound at its destination.",
+						"Endermen have no known predators. When a Humanoid looks directly at an Enderman, the Enderman becomes enraged, opens its mouth horrifyingly wide, and rushes to attack with its long arms. A defeated Enderman implodes and sometimes leaves behind an Ender pearl, which, when thrown, teleports the thrower to the place it lands."
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MCV3MC/Enderman.webp"
+					}
+				}
+			]
+		},
+		{
+			"name": "Wolf of the Overworld",
+			"source": "MCV3MC",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"Running through the forests of the Overworld on four legs, this gray-furred hunter is at home in the cold of the taiga.",
+						"Wolves hunt in packs, roaming their territories and chasing sheep, rabbits, and foxes. Wild wolves are typically indifferent to Humanoids, neither running from nor attacking them, but a pack of wolves becomes hostile toward any creature that hurts one of the pack's members. Wolves can be tamed by adventurers who feed and look after them. Tamed wolves follow their masters everywhere they go.",
+						"Wolves instinctively regard animated skeletons as enemies and attack them without hesitation. Even tamed wolves, which obediently hold themselves back from attacking their natural prey, freely charge at skeletons unless they are commanded to sit."
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MCV3MC/Wolf of the Overworld.webp"
+					}
+				}
+			]
+		}
+	]
+}

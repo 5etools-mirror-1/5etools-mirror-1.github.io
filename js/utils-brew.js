@@ -350,7 +350,11 @@ class _BrewUtil2Base {
 		await this._pGetBrewProcessed_pDoBlocklistExtension({cpyBrews});
 
 		// Avoid caching the meta merge, as we have our own cache. We might edit the brew, so we don't want a stale copy.
-		const cpyBrewsLoaded = await cpyBrews.pSerialAwaitMap(async ({head, body}) => DataUtil.pDoMetaMerge(head.url || head.docIdLocal, body, {isSkipMetaMergeCache: true}));
+		const cpyBrewsLoaded = await cpyBrews.pSerialAwaitMap(async ({head, body}) => {
+			const cpyBrew = await DataUtil.pDoMetaMerge(head.url || head.docIdLocal, body, {isSkipMetaMergeCache: true});
+			this._pGetBrewProcessed_mutDiagnostics({head, cpyBrew});
+			return cpyBrew;
+		});
 
 		this._cache_brewsProc = this._pGetBrewProcessed_getMergedOutput({cpyBrewsLoaded});
 		return this._cache_brewsProc;
@@ -361,6 +365,18 @@ class _BrewUtil2Base {
 		for (const {body} of cpyBrews) {
 			if (!body?.blocklist?.length || !(body.blocklist instanceof Array)) continue;
 			await ExcludeUtil.pExtendList(body.blocklist);
+		}
+	}
+
+	_pGetBrewProcessed_mutDiagnostics ({head, cpyBrew}) {
+		if (!head.filename) return;
+
+		for (const arr of Object.values(cpyBrew)) {
+			if (!(arr instanceof Array)) continue;
+			for (const ent of arr) {
+				if (!("__prop" in ent)) break;
+				ent.__diagnostic = {filename: head.filename};
+			}
 		}
 	}
 
@@ -480,6 +496,11 @@ class _BrewUtil2Base {
 		JqueryUtil.doToast(`Migrated ${this.DISPLAY_NAME} from version ${version} to version ${this._VERSION}!`);
 
 		return this._storage.pGet(this._STORAGE_KEY);
+	}
+
+	_getNewEditableBrewDoc () {
+		const json = {_meta: {sources: []}};
+		return this._getBrewDoc({json, isEditable: true});
 	}
 
 	/* -------------------------------------------- */
@@ -903,7 +924,7 @@ class _BrewUtil2Base {
 	// endregion
 
 	// region Rendering/etc.
-	_PAGE_TO_PROPS__SPELLS = ["spell", "spellFluff"];
+	_PAGE_TO_PROPS__SPELLS = [...UrlUtil.PAGE_TO_PROPS[UrlUtil.PG_SPELLS], "spellFluff"];
 	_PAGE_TO_PROPS__BESTIARY = ["monster", "legendaryGroup", "monsterFluff"];
 
 	_PAGE_TO_PROPS = {
@@ -917,7 +938,7 @@ class _BrewUtil2Base {
 		[UrlUtil.PG_OBJECTS]: ["object"],
 		[UrlUtil.PG_TRAPS_HAZARDS]: ["trap", "hazard"],
 		[UrlUtil.PG_DEITIES]: ["deity"],
-		[UrlUtil.PG_ITEMS]: ["item", "baseitem", "magicvariant", "itemProperty", "itemType", "itemFluff", "itemGroup", "itemEntry", "itemTypeAdditionalEntries"],
+		[UrlUtil.PG_ITEMS]: [...UrlUtil.PAGE_TO_PROPS[UrlUtil.PG_ITEMS], "itemFluff"],
 		[UrlUtil.PG_REWARDS]: ["reward"],
 		[UrlUtil.PG_PSIONICS]: ["psionic"],
 		[UrlUtil.PG_VARIANTRULES]: ["variantrule"],
@@ -1294,11 +1315,6 @@ class _BrewUtil2 extends _BrewUtil2Base {
 		return brew;
 	}
 
-	_getNewEditableBrewDoc () {
-		const json = {_meta: {sources: []}};
-		return this._getBrewDoc({json, isEditable: true});
-	}
-
 	async pSetEditableBrewDoc (brew) {
 		if (!brew?.head?.docIdLocal || !brew?.body) throw new Error(`Invalid editable brew document!`); // Sanity check
 		await this.pUpdateBrew(brew);
@@ -1508,6 +1524,7 @@ class ManageBrewUi {
 		constructor () {
 			this.$stgBrewList = null;
 			this.list = null;
+			this.listSelectClickHandler = null;
 			this.brews = [];
 			this.menuListMass = null;
 			this.rowMetas = [];
@@ -1755,7 +1772,8 @@ class ManageBrewUi {
 			<div class="ve-flex w-100 h-100 overflow-y-auto relative">${$wrpList}</div>
 		</div>`;
 
-		ListUiUtil.bindSelectAllCheckbox($cbAll, rdState.list);
+		rdState.listSelectClickHandler = new ListSelectClickHandler({list: rdState.list});
+		rdState.listSelectClickHandler.bindSelectAllCheckbox($cbAll);
 		SortUtil.initBtnSortHandlers($wrpBtnsSort, rdState.list);
 
 		rdState.brews = (await this._brewUtil.pGetBrew()).map(brew => this._pRender_getProcBrew(brew));
@@ -2052,7 +2070,7 @@ class ManageBrewUi {
 			},
 		);
 
-		eleLi.addEventListener("click", evt => ListUiUtil.handleSelectClick(rdState.list, listItem, evt, {isPassThroughEvents: true}));
+		eleLi.addEventListener("click", evt => rdState.listSelectClickHandler.handleSelectClick(listItem, evt, {isPassThroughEvents: true}));
 
 		const rowMeta = {
 			listItem,
@@ -2329,6 +2347,7 @@ class GetBrewUi {
 		constructor () {
 			this.pageFilter = null;
 			this.list = null;
+			this.listSelectClickHandler = null;
 			this.cbAll = null;
 		}
 	};
@@ -2614,7 +2633,8 @@ class GetBrewUi {
 
 		rdState.list.on("updated", () => $dispCntVisible.html(`${rdState.list.visibleItems.length}/${rdState.list.items.length}`));
 
-		ListUiUtil.bindSelectAllCheckbox($(rdState.cbAll), rdState.list);
+		rdState.listSelectClickHandler = new ListSelectClickHandler({list: rdState.list});
+		rdState.listSelectClickHandler.bindSelectAllCheckbox($(rdState.cbAll));
 		SortUtil.initBtnSortHandlers($wrpSort, rdState.list);
 
 		this._dataList.forEach((brewInfo, ix) => {
@@ -2732,7 +2752,7 @@ class GetBrewUi {
 			},
 		);
 
-		eleLi.addEventListener("click", evt => ListUiUtil.handleSelectClick(rdState.list, listItem, evt, {isPassThroughEvents: true}));
+		eleLi.addEventListener("click", evt => rdState.listSelectClickHandler.handleSelectClick(listItem, evt, {isPassThroughEvents: true}));
 
 		return {
 			listItem,
@@ -2850,7 +2870,9 @@ class ManageEditableBrewContentsUi extends BaseComponent {
 			this.tabMetaSources = null;
 
 			this.listEntities = null;
+			this.listEntitiesSelectClickHandler = null;
 			this.listSources = null;
+			this.listSourcesSelectClickHandler = null;
 
 			this.contentEntities = null;
 			this.pageFilterEntities = new ManageEditableBrewContentsUi._PageFilter();
@@ -3071,7 +3093,8 @@ class ManageEditableBrewContentsUi extends BaseComponent {
 
 		rdState.listEntities.on("updated", () => $dispCntVisible.html(`${rdState.listEntities.visibleItems.length}/${rdState.listEntities.items.length}`));
 
-		ListUiUtil.bindSelectAllCheckbox($cbAll, rdState.listEntities);
+		rdState.listEntitiesSelectClickHandler = new ListSelectClickHandler({list: rdState.listEntities});
+		rdState.listEntitiesSelectClickHandler.bindSelectAllCheckbox($cbAll);
 		SortUtil.initBtnSortHandlers($wrpBtnsSort, rdState.listEntities);
 
 		let ixParent = 0;
@@ -3146,7 +3169,7 @@ class ManageEditableBrewContentsUi extends BaseComponent {
 			},
 		);
 
-		eleLi.addEventListener("click", evt => ListUiUtil.handleSelectClick(rdState.listEntities, listItem, evt));
+		eleLi.addEventListener("click", evt => rdState.listEntitiesSelectClickHandler.handleSelectClick(listItem, evt));
 
 		return {
 			listItem,
@@ -3236,7 +3259,8 @@ class ManageEditableBrewContentsUi extends BaseComponent {
 			fnSort: SortUtil.listSort,
 		});
 
-		ListUiUtil.bindSelectAllCheckbox($cbAll, rdState.listSources);
+		rdState.listSourcesSelectClickHandler = new ListSelectClickHandler({list: rdState.listSources});
+		rdState.listSourcesSelectClickHandler.bindSelectAllCheckbox($cbAll);
 		SortUtil.initBtnSortHandlers($wrpBtnsSort, rdState.listSources);
 
 		(this._brew.body?._meta?.sources || [])
@@ -3277,7 +3301,7 @@ class ManageEditableBrewContentsUi extends BaseComponent {
 			},
 		);
 
-		eleLi.addEventListener("click", evt => ListUiUtil.handleSelectClick(rdState.listEntities, listItem, evt));
+		eleLi.addEventListener("click", evt => rdState.listSourcesSelectClickHandler.handleSelectClick(listItem, evt));
 
 		return {
 			listItem,

@@ -279,7 +279,24 @@
 						}
 					]
 				}
-			]
+			],
+			"ignoreSrdEffects": true
+		},
+		{
+			"name": "Unarmored Defense",
+			"source": "PHB",
+			"className": "Monk",
+			"classSource": "PHB",
+			"level": 1,
+			"ignoreSrdEffects": true
+		},
+		{
+			"name": "Unarmored Defense",
+			"source": "PHB",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"level": 1,
+			"ignoreSrdEffects": true
 		},
 		{
 			"name": "Metamagic",
@@ -941,6 +958,18 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Channel Divinity: Harness Divine Power",
+			"source": "TCE",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"level": 2,
+			"system": {
+				"uses.per": "day",
+				"uses.value": 1,
+				"uses.max": "1 + min(floor(@classes.cleric.levels / 6), 1) + min(floor(@classes.cleric.levels / 18), 1)"
+			}
 		}
 	],
 	"subclassFeature": [
@@ -1613,7 +1642,13 @@
 				"target.value": 1,
 				"target.type": "creature",
 				"range.value": 120,
-				"range.units": "ft"
+				"range.units": "ft",
+				"uses.per": "charges",
+				"uses.value": 2,
+				"uses.max": "@classes.druid.levels",
+				"uses.recovery": "@classes.druid.levels",
+				"formula": "1d6",
+				"actionType": "healing"
 			}
 		},
 		{
@@ -4161,7 +4196,7 @@
 					"transfer": true,
 					"changes": [
 						{
-							"key": "data.attributes.init.value",
+							"key": "data.attributes.init.total",
 							"mode": "ADD",
 							"value": "@abilities.int.mod"
 						}

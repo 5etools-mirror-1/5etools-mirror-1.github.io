@@ -80,7 +80,7 @@
 							"page": 5,
 							"id": "006",
 							"entries": [
-								"Adventurers from a foreign land find themselves in Barovia, a mysterious realm surrounded by deadly fog and ruled by {@creature Strahd von Zarovich|CoS}, a vampire and wizard. Using a deck of tarokka cards to predict their future, a fortune-teller named {@creature Madam Eva|CoS} sets them on a dark course that takes them to many corners of Barovia, culminating with a vampire hunt in Castle Ravenloft.",
+								"Adventurers from a foreign land find themselves in Barovia, a mysterious realm surrounded by deadly fog and ruled by {@creature Strahd von Zarovich|CoS}, a vampire and wizard. Using a {@deck Tarokka Deck|CoS|deck of tarokka cards} to predict their future, a fortune-teller named {@creature Madam Eva|CoS} sets them on a dark course that takes them to many corners of Barovia, culminating with a vampire hunt in Castle Ravenloft.",
 								"{@creature Madam Eva|CoS}'s people are called the Vistani. They travel in covered wagons from world to world, luring strangers into Strahd's domain.",
 								"Barovia is a land of ghosts, werewolves, and other fell creatures. The wilderness hides many secrets, including forgotten ruins and battlefields that tell the story of Strahd's life as a conqueror. Adventurers who explore the wilderness find the remnants of Strahd's ancient enemies, not all of them as dead as one might expect.",
 								"For the people of Barovia, there is no escape from this harsh land. The town of Vallaki stands ready to defend itself against the servants of Strahd, but it's far from the sanctuary it purports to be. The village of Krezk lies near the edge of Strahd's domain, its abbey now in the clutches of evil, misguided creatures.",
@@ -101,7 +101,7 @@
 								"Much of the adventure's action is driven by the clash between the adventurers' decisions and Strahd's goals, and the adventurers and the vampire are all caught in strands of fate that are represented by a special card reading detailed in {@area chapter 1|021|x}, \"Into the Mists.\" Before you run the adventure, you need to conduct that reading to determine the location of several items that are key to the story, as well as one of the locations where Strahd can be found.",
 								"{@adventure Chapter 1|CoS|2} also outlines Strahd's goals, and it suggests adventure hooks to draw the player characters into the cursed realm of Barovia. If the characters are 1st level, the character background in {@adventure appendix A|CoS|18} is available to them, and consider starting their time in Barovia with the mini-adventure \"Death House\" in {@adventure appendix B|CoS|19}.",
 								"{@adventure Chapter 2|CoS|3}, \"The Lands of Barovia,\" provides an overview of the realm and includes special rules for it and its people, including the mysterious Vistani. Chapters 3\u201315 detail areas that correspond to places on the {@adventure map of Barovia|CoS|3|Map 2.1: BaroviaView Player Version} in chapter 2.",
-								"The {@adventure epilogue|CoS|17} offers ways for you to end the adventure. {@adventure Appendix C|CoS|20} details the special items\u2014magical or otherwise\u2014introduced in the adventure, and {@adventure appendix D|CoS|21} provides stat blocks for Strahd and various NPCs and monsters that can be met in Barovia. {@adventure Appendix E|CoS|22} shows the tarokka cards that the Vistani use for their fortune telling, and {@adventure appendix F|CoS|23} contains handouts for you to show the players."
+								"The {@adventure epilogue|CoS|17} offers ways for you to end the adventure. {@adventure Appendix C|CoS|20} details the special items\u2014magical or otherwise\u2014introduced in the adventure, and {@adventure appendix D|CoS|21} provides stat blocks for Strahd and various NPCs and monsters that can be met in Barovia. {@adventure Appendix E|CoS|22} shows the {@deck Tarokka Deck|CoS|tarokka cards} that the Vistani use for their fortune telling, and {@adventure appendix F|CoS|23} contains handouts for you to show the players."
 							]
 						},
 						{
@@ -470,7 +470,7 @@
 					"page": 11,
 					"id": "01d",
 					"entries": [
-						"The events of this adventure are part of dark twists of fate that a fortuneteller can discern with the cards of a tarokka deck. Before you run this adventure, you must draw cards from a deck to determine the following elements of the adventure:",
+						"The events of this adventure are part of dark twists of fate that a fortuneteller can discern with the cards of a {@deck tarokka deck|CoS}. Before you run this adventure, you must draw cards from a deck to determine the following elements of the adventure:",
 						{
 							"type": "list",
 							"items": [
@@ -481,14 +481,14 @@
 						},
 						"This card reading can make the adventure different each time you play it.",
 						"At some point during the adventure, the characters are likely to meet {@creature Madam Eva|CoS}, the old Vistani seer (see {@adventure chapter 2|CoS|3}, {@area area G|10e|x}), who can perform the same card reading for them. Characters can also have {@creature Ezmerelda d'Avenir|CoS} perform a card reading for them, provided she has her deck of tarokka cards. Ezmerelda's cards are hidden in her wagon ({@adventure chapter 11|CoS|12}, {@area area V1|578|x}).",
-						"{@adventure Appendix E|CoS|22} shows all the cards of the tarokka deck and summarizes their symbolic meanings.",
+						"{@adventure Appendix E|CoS|22} shows all the cards of the {@deck tarokka deck|CoS} and summarizes their symbolic meanings.",
 						{
 							"type": "inset",
 							"name": "Using Regular Playing Cards",
 							"page": 11,
 							"id": "01e",
 							"entries": [
-								"If you like, you can use a regular deck of playing cards in place of the tarokka deck. To do so, separate the numbered cards from the face cards and jokers, and treat them as two separate decks: the common deck (the numbered cards) and the high deck (the face cards and jokers).",
+								"If you like, you can use a regular deck of playing cards in place of the {@deck tarokka deck|CoS}. To do so, separate the numbered cards from the face cards and jokers, and treat them as two separate decks: the common deck (the numbered cards) and the high deck (the face cards and jokers).",
 								{
 									"type": "entries",
 									"name": "Common Deck",
@@ -521,59 +521,59 @@
 									"rows": [
 										[
 											"King of hearts",
-											"Ghost"
+											"{@card Ghost|Tarokka Deck|CoS}"
 										],
 										[
 											"Queen of hearts",
-											"Innocent"
+											"{@card Innocent|Tarokka Deck|CoS}"
 										],
 										[
 											"Jack of hearts",
-											"Marionette"
+											"{@card Marionette|Tarokka Deck|CoS}"
 										],
 										[
 											"King of spades",
-											"Darklord"
+											"{@card Darklord|Tarokka Deck|CoS}"
 										],
 										[
 											"Queen of spades",
-											"Mists"
+											"{@card Mists|Tarokka Deck|CoS}"
 										],
 										[
 											"Jack of spades",
-											"Executioner"
+											"{@card Executioner|Tarokka Deck|CoS}"
 										],
 										[
 											"King of diamonds",
-											"Broken One"
+											"{@card Broken One|Tarokka Deck|CoS}"
 										],
 										[
 											"Queen of diamonds",
-											"Tempter"
+											"{@card Tempter|Tarokka Deck|CoS}"
 										],
 										[
 											"Jack of diamonds",
-											"Beast"
+											"{@card Beast|Tarokka Deck|CoS}"
 										],
 										[
 											"King of clubs",
-											"Donjon"
+											"{@card Donjon|Tarokka Deck|CoS}"
 										],
 										[
 											"Queen of clubs",
-											"Raven"
+											"{@card Raven|Tarokka Deck|CoS}"
 										],
 										[
 											"Jack of clubs",
-											"Seer"
+											"{@card Seer|Tarokka Deck|CoS}"
 										],
 										[
 											"Joker 1",
-											"Artifact"
+											"{@card Artifact|Tarokka Deck|CoS}"
 										],
 										[
 											"Joker 2",
-											"Horseman"
+											"{@card Horseman|Tarokka Deck|CoS}"
 										]
 									]
 								}
@@ -701,7 +701,7 @@
 											"type": "insetReadaloud",
 											"id": "02e",
 											"entries": [
-												"{@b 1 of Swords\u2014Avenger}",
+												"{@b One of Swords\u2014{@card Avenger|Tarokka Deck|CoS}}",
 												"The treasure lies in a dragon's house, in hands once clean and now corrupted."
 											]
 										},
@@ -710,7 +710,7 @@
 											"type": "insetReadaloud",
 											"id": "02f",
 											"entries": [
-												"{@b 2 of Swords\u2014Paladin}",
+												"{@b Two of Swords\u2014{@card Paladin|Tarokka Deck|CoS}}",
 												"I see a sleeping prince, a servant of light and the brother of darkness. The treasure lies with him."
 											]
 										},
@@ -719,7 +719,7 @@
 											"type": "insetReadaloud",
 											"id": "030",
 											"entries": [
-												"{@b 3 of Swords\u2014Soldier}",
+												"{@b Three of Swords\u2014{@card Soldier|Tarokka Deck|CoS}}",
 												"Go to the mountains. Climb the white tower guarded by golden knights."
 											]
 										},
@@ -728,7 +728,7 @@
 											"type": "insetReadaloud",
 											"id": "031",
 											"entries": [
-												"{@b 4 of Swords\u2014Mercenary}",
+												"{@b Four of Swords\u2014{@card Mercenary|Tarokka Deck|CoS}}",
 												"The thing you seek lies with the dead, under mountains of gold coins."
 											]
 										},
@@ -737,7 +737,7 @@
 											"type": "insetReadaloud",
 											"id": "032",
 											"entries": [
-												"{@b 5 of Swords\u2014Myrmidon}",
+												"{@b Five of Swords\u2014{@card Myrmidon|Tarokka Deck|CoS}}",
 												"Look for a den of wolves in the hills overlooking a mountain lake. The treasure belongs to Mother Night."
 											]
 										},
@@ -746,7 +746,7 @@
 											"type": "insetReadaloud",
 											"id": "033",
 											"entries": [
-												"{@b 6 of Swords\u2014Berserker}",
+												"{@b Six of Swords\u2014{@card Berserker|Tarokka Deck|CoS}}",
 												"Find the Mad Dog's crypt. The treasure lies within, beneath blackened bones."
 											]
 										},
@@ -755,7 +755,7 @@
 											"type": "insetReadaloud",
 											"id": "034",
 											"entries": [
-												"{@b 7 of Swords\u2014Hooded One}",
+												"{@b Seven of Swords\u2014{@card Hooded One|Tarokka Deck|CoS}}",
 												"I see a faceless god. He awaits you at the end of a long and winding road, deep in the mountains."
 											]
 										},
@@ -764,7 +764,7 @@
 											"type": "insetReadaloud",
 											"id": "035",
 											"entries": [
-												"{@b 8 of Swords\u2014Dictator}",
+												"{@b Eight of Swords\u2014{@card Dictator|Tarokka Deck|CoS}}",
 												"I see a throne fit for a king."
 											]
 										},
@@ -773,7 +773,7 @@
 											"type": "insetReadaloud",
 											"id": "036",
 											"entries": [
-												"{@b 9 of Swords\u2014Torturer}",
+												"{@b Nine of Swords\u2014{@card Torturer|Tarokka Deck|CoS}}",
 												"There is a town where all is not well. There you will find a house of corruption, and within, a dark room full of still ghosts."
 											]
 										},
@@ -782,7 +782,7 @@
 											"type": "insetReadaloud",
 											"id": "037",
 											"entries": [
-												"{@b Master of Swords}\u2014Warrior",
+												"{@b Master of Swords\u2014{@card Warrior|Tarokka Deck|CoS}}",
 												"That which you seek lies in the womb of darkness, the devil's lair: the one place to which he must return."
 											]
 										},
@@ -799,7 +799,7 @@
 											"type": "insetReadaloud",
 											"id": "039",
 											"entries": [
-												"{@b 1 of Stars\u2014Transmuter}",
+												"{@b One of Stars\u2014{@card Transmuter|Tarokka Deck|CoS}}",
 												"Go to a place of dizzying heights, where the stone itself is alive!"
 											]
 										},
@@ -808,7 +808,7 @@
 											"type": "insetReadaloud",
 											"id": "03a",
 											"entries": [
-												"{@b 2 of Stars\u2014Diviner}",
+												"{@b Two of Stars\u2014{@card Diviner|Tarokka Deck|CoS}}",
 												"Look to the one who sees all. The treasure is hidden in her camp."
 											]
 										},
@@ -817,7 +817,7 @@
 											"type": "insetReadaloud",
 											"id": "03b",
 											"entries": [
-												"{@b 3 of Stars\u2014Enchanter}",
+												"{@b Three of Stars\u2014{@card Enchanter|Tarokka Deck|CoS}}",
 												"I see a kneeling woman\u2014a rose of great beauty plucked too soon. The master of the marsh knows of whom I speak."
 											]
 										},
@@ -826,7 +826,7 @@
 											"type": "insetReadaloud",
 											"id": "03c",
 											"entries": [
-												"{@b 4 of Stars}\u2014Abjurer",
+												"{@b Four of Stars\u2014{@card Abjurer|Tarokka Deck|CoS}}",
 												"I see a fallen house guarded by a great stone dragon. Look to the highest peak."
 											]
 										},
@@ -835,7 +835,7 @@
 											"type": "insetReadaloud",
 											"id": "03d",
 											"entries": [
-												"{@b 5 of Stars\u2014Elementalist}",
+												"{@b Five of Stars\u2014{@card Elementalist|Tarokka Deck|CoS}}",
 												"The treasure is hidden in a small castle beneath a mountain, guarded by amber giants."
 											]
 										},
@@ -844,7 +844,7 @@
 											"type": "insetReadaloud",
 											"id": "03e",
 											"entries": [
-												"{@b 6 of Stars\u2014Evoker}",
+												"{@b Six of Stars\u2014{@card Evoker|Tarokka Deck|CoS}}",
 												"Search for the crypt of a wizard ordinaire. His staff is the key."
 											]
 										},
@@ -853,7 +853,7 @@
 											"type": "insetReadaloud",
 											"id": "03f",
 											"entries": [
-												"{@b 7 of Stars\u2014Illusionist}",
+												"{@b Seven of Stars\u2014{@card Illusionist|Tarokka Deck|CoS}}",
 												"A man is not what he seems. He comes here in a carnival wagon. Therein lies what you seek."
 											]
 										},
@@ -862,7 +862,7 @@
 											"type": "insetReadaloud",
 											"id": "040",
 											"entries": [
-												"{@b 8 of Stars\u2014Necromancer}",
+												"{@b Eight of Stars\u2014{@card Necromancer|Tarokka Deck|CoS}}",
 												"A woman hangs above a roaring fire. Find her, and you will find the treasure."
 											]
 										},
@@ -871,7 +871,7 @@
 											"type": "insetReadaloud",
 											"id": "041",
 											"entries": [
-												"{@b 9 of Stars\u2014Conjurer}",
+												"{@b Nine of Stars\u2014{@card Conjurer|Tarokka Deck|CoS}}",
 												"I see a dead village, drowned by a river, ruled by one who has brought great evil into the world."
 											]
 										},
@@ -880,7 +880,7 @@
 											"type": "insetReadaloud",
 											"id": "042",
 											"entries": [
-												"{@b Master of Stars\u2014Wizard} ",
+												"{@b Master of Stars\u2014{@card Wizard|Tarokka Deck|CoS}}",
 												"Look for a wizard's tower on a lake. Let the wizard's name and servant guide you to that which you seek."
 											]
 										},
@@ -897,7 +897,7 @@
 											"type": "insetReadaloud",
 											"id": "044",
 											"entries": [
-												"{@b 1 of Coins\u2014Swashbuckler}",
+												"{@b One of Coins\u2014{@card Swashbuckler|Tarokka Deck|CoS}}",
 												"I see the skeleton of a deadly warrior, lying on a bed of stone flanked by gargoyles."
 											]
 										},
@@ -906,7 +906,7 @@
 											"type": "insetReadaloud",
 											"id": "045",
 											"entries": [
-												"{@b 2 of Coins\u2014Philanthropist}",
+												"{@b Two of Coins\u2014{@card Philanthropist|Tarokka Deck|CoS}}",
 												"Look to a place where sickness and madness are bred. Where children once cried, the treasure lies still."
 											]
 										},
@@ -915,7 +915,7 @@
 											"type": "insetReadaloud",
 											"id": "046",
 											"entries": [
-												"{@b 3 of Coins\u2014Trader}",
+												"{@b Three of Coins\u2014{@card Trader|Tarokka Deck|CoS}}",
 												"Look to the wizard of wines! In wood and sand the treasure hides."
 											]
 										},
@@ -924,7 +924,7 @@
 											"type": "insetReadaloud",
 											"id": "047",
 											"entries": [
-												"{@b 4 of Coins\u2014Merchant}",
+												"{@b Four of Coins\u2014{@card Merchant|Tarokka Deck|CoS}}",
 												"Seek a cask that once contained the finest wine, of which not a drop remains."
 											]
 										},
@@ -933,7 +933,7 @@
 											"type": "insetReadaloud",
 											"id": "048",
 											"entries": [
-												"{@b 5 of Coins\u2014Guild Member}",
+												"{@b Five of Coins\u2014{@card Guild Member|Tarokka Deck|CoS}}",
 												"I see a dark room full of bottles. It is the tomb of a guild member."
 											]
 										},
@@ -942,7 +942,7 @@
 											"type": "insetReadaloud",
 											"id": "049",
 											"entries": [
-												"{@b 6 of Coins\u2014Beggar}",
+												"{@b Six of Coins\u2014{@card Beggar|Tarokka Deck|CoS}}",
 												"A wounded elf has what you seek. He will part with the treasure to see his dark dreams fulfilled."
 											]
 										},
@@ -951,7 +951,7 @@
 											"type": "insetReadaloud",
 											"id": "04a",
 											"entries": [
-												"{@b 7 of Coins\u2014Thief}",
+												"{@b Seven of Coins\u2014{@card Thief|Tarokka Deck|CoS}}",
 												"What you seek lies at the crossroads of life and death, among the buried dead."
 											]
 										},
@@ -960,7 +960,7 @@
 											"type": "insetReadaloud",
 											"id": "04b",
 											"entries": [
-												"{@b 8 of Coins\u2014Tax Collector}",
+												"{@b Eight of Coins\u2014{@card Tax Collector|Tarokka Deck|CoS}}",
 												"The Vistani have what you seek. A missing child holds the key to the treasure's release."
 											]
 										},
@@ -969,7 +969,7 @@
 											"type": "insetReadaloud",
 											"id": "04c",
 											"entries": [
-												"{@b 9 of Coins\u2014Miser}",
+												"{@b Nine of Coins\u2014{@card Miser|Tarokka Deck|CoS}}",
 												"Look for a fortress inside a fortress, in a place hidden behind fire."
 											]
 										},
@@ -978,7 +978,7 @@
 											"type": "insetReadaloud",
 											"id": "04d",
 											"entries": [
-												"{@b Master of Coins\u2014Rogue}",
+												"{@b Master of Coins\u2014{@card Rogue|Tarokka Deck|CoS}}",
 												"I see a nest of ravens. There you will find the prize."
 											]
 										},
@@ -995,7 +995,7 @@
 											"type": "insetReadaloud",
 											"id": "04f",
 											"entries": [
-												"{@b 1 of Glyphs\u2014Monk}",
+												"{@b One of Glyphs\u2014{@card Monk|Tarokka Deck|CoS}}",
 												"The treasure you seek is hidden behind the sun, in the house of a saint."
 											]
 										},
@@ -1004,7 +1004,7 @@
 											"type": "insetReadaloud",
 											"id": "050",
 											"entries": [
-												"{@b 2 of Glyphs\u2014Missionary}",
+												"{@b Two of Glyphs\u2014{@card Missionary|Tarokka Deck|CoS}}",
 												"I see a garden dusted with snow, watched over by a scarecrow with a sackcloth grin. Look not to the garden but to the guardian."
 											]
 										},
@@ -1013,7 +1013,7 @@
 											"type": "insetReadaloud",
 											"id": "051",
 											"entries": [
-												"{@b 3 of Glyphs\u2014Healer}",
+												"{@b Three of Glyphs\u2014{@card Healer|Tarokka Deck|CoS}}",
 												"Look to the west. Find a pool blessed by the light of the white sun."
 											]
 										},
@@ -1022,7 +1022,7 @@
 											"type": "insetReadaloud",
 											"id": "052",
 											"entries": [
-												"{@b 4 of Glyphs\u2014Shepherd}",
+												"{@b Four of Glyphs\u2014{@card Shepherd|Tarokka Deck|CoS}}",
 												"Find the mother\u2014she who gave birth to evil."
 											]
 										},
@@ -1031,7 +1031,7 @@
 											"type": "insetReadaloud",
 											"id": "053",
 											"entries": [
-												"{@b 5 of Glyphs\u2014Druid}",
+												"{@b Five of Glyphs\u2014{@card Druid|Tarokka Deck|CoS}}",
 												"An evil tree grows atop a hill of graves where the ancient dead sleep. The ravens can help you find it. Look for the treasure there."
 											]
 										},
@@ -1040,7 +1040,7 @@
 											"type": "insetReadaloud",
 											"id": "054",
 											"entries": [
-												"{@b 6 of Glyphs\u2014Anarchist}",
+												"{@b Six of Glyphs\u2014{@card Anarchist|Tarokka Deck|CoS}}",
 												"I see walls of bones, a chandelier of bones, and a table of bones\u2014all that remains of enemies long forgotten."
 											]
 										},
@@ -1049,7 +1049,7 @@
 											"type": "insetReadaloud",
 											"id": "055",
 											"entries": [
-												"{@b 7 of Glyphs\u2014Charlatan}",
+												"{@b Seven of Glyphs\u2014{@card Charlatan|Tarokka Deck|CoS}}",
 												"I see a lonely mill on a precipice. The treasure lies within."
 											]
 										},
@@ -1058,7 +1058,7 @@
 											"type": "insetReadaloud",
 											"id": "056",
 											"entries": [
-												"{@b 8 of Glyphs\u2014Bishop}",
+												"{@b Eight of Glyphs\u2014{@card Bishop|Tarokka Deck|CoS}}",
 												"What you seek lies in a pile of treasure, beyond a set of amber doors."
 											]
 										},
@@ -1067,7 +1067,7 @@
 											"type": "insetReadaloud",
 											"id": "057",
 											"entries": [
-												"{@b 9 of Glyphs\u2014Traitor}",
+												"{@b Nine of Glyphs\u2014{@card Traitor|Tarokka Deck|CoS}}",
 												"Look for a wealthy woman. A staunch ally of the devil, she keeps the treasure under lock and key, with the bones of an ancient enemy."
 											]
 										},
@@ -1076,7 +1076,7 @@
 											"type": "insetReadaloud",
 											"id": "058",
 											"entries": [
-												"{@b Master of Glyphs\u2014Priest}",
+												"{@b Master of Glyphs\u2014{@card Priest|Tarokka Deck|CoS}}",
 												"You will find what you seek in the castle, amid the ruins of a place of supplication."
 											]
 										},
@@ -1109,7 +1109,7 @@
 													"type": "insetReadaloud",
 													"id": "05c",
 													"entries": [
-														"{@b Artifact (Joker 1})",
+														"{@b {@card Artifact|Tarokka Deck|CoS} (Joker 1)}",
 														"Look for an entertaining man with a monkey. This man is more than he seems."
 													]
 												},
@@ -1119,7 +1119,7 @@
 													"type": "insetReadaloud",
 													"id": "05d",
 													"entries": [
-														"{@b Beast (Jack of Diamonds)}",
+														"{@b {@card Beast|Tarokka Deck|CoS} (Jack of Diamonds)}",
 														"A werewolf holds a secret hatred for your enemy. Use her hatred to your advantage."
 													]
 												},
@@ -1128,7 +1128,7 @@
 													"type": "insetReadaloud",
 													"id": "05e",
 													"entries": [
-														"{@b A. Broken One (King of Diamonds})",
+														"{@b A. {@card Broken One|Tarokka Deck|CoS} (King of Diamonds)}",
 														"Your greatest ally will be a wizard. His mind is broken, but his spells are strong."
 													]
 												},
@@ -1137,7 +1137,7 @@
 													"type": "insetReadaloud",
 													"id": "05f",
 													"entries": [
-														"{@b B. Broken One (King of Diamonds})",
+														"{@b B. {@card Broken One|Tarokka Deck|CoS} (King of Diamonds)}",
 														"I see a man of faith whose sanity hangs by a thread. He has lost someone close to him."
 													]
 												},
@@ -1146,7 +1146,7 @@
 													"type": "insetReadaloud",
 													"id": "060",
 													"entries": [
-														"{@b Darklord (King of Spades)}",
+														"{@b {@card Darklord|Tarokka Deck|CoS} (King of Spades)}",
 														"Ah, the worst of all truths: You must face the evil of this land alone!"
 													]
 												},
@@ -1155,7 +1155,7 @@
 													"type": "insetReadaloud",
 													"id": "061",
 													"entries": [
-														"{@b A. Donjon (King of Clubs})",
+														"{@b A. {@card Donjon|Tarokka Deck|CoS} (King of Clubs)}",
 														"Search for a troubled young man surrounded by wealth and madness. His home is his prison."
 													]
 												},
@@ -1164,7 +1164,7 @@
 													"type": "insetReadaloud",
 													"id": "062",
 													"entries": [
-														"{@b B. Donjon (King of Clubs})",
+														"{@b B. {@card Donjon|Tarokka Deck|CoS} (King of Clubs)}",
 														"Find a girl driven to insanity, locked in the heart of her dead father's house. Curing her madness is key to your success."
 													]
 												},
@@ -1173,7 +1173,7 @@
 													"type": "insetReadaloud",
 													"id": "063",
 													"entries": [
-														"{@b Seer (Jack of Clubs)}",
+														"{@b {@card Seer|Tarokka Deck|CoS} (Jack of Clubs)}",
 														"Look for a dusk elf living among the Vistani. He has suffered a great loss and is haunted by dark dreams. Help him, and he will help you in return."
 													]
 												},
@@ -1182,7 +1182,7 @@
 													"type": "insetReadaloud",
 													"id": "064",
 													"entries": [
-														"{@b A. Ghost (King of Hearts})",
+														"{@b A. {@card Ghost|Tarokka Deck|CoS} (King of Hearts)}",
 														"I see a fallen paladin of a fallen order of knights. He lingers like a ghost in a dead dragon's lair."
 													]
 												},
@@ -1191,7 +1191,7 @@
 													"type": "insetReadaloud",
 													"id": "065",
 													"entries": [
-														"{@b B. Ghost (King of Hearts})",
+														"{@b B. {@card Ghost|Tarokka Deck|CoS} (King of Hearts)}",
 														"Stir the spirit of the clumsy knight whose crypt lies deep within the castle."
 													]
 												},
@@ -1200,7 +1200,7 @@
 													"type": "insetReadaloud",
 													"id": "066",
 													"entries": [
-														"{@b Executioner (Jack of Spades)}",
+														"{@b {@card Executioner|Tarokka Deck|CoS} (Jack of Spades)}",
 														"Seek out the brother of the devil's bride. They call him \"the lesser,\" but he has a powerful soul."
 													]
 												},
@@ -1209,7 +1209,7 @@
 													"type": "insetReadaloud",
 													"id": "067",
 													"entries": [
-														"{@b A. Horseman (Joker 2)}",
+														"{@b A. {@card Horseman|Tarokka Deck|CoS} (Joker 2)}",
 														"I see a dead man of noble birth, guarded by his widow. Return life to the dead man's corpse, and he will be your staunch ally."
 													]
 												},
@@ -1219,7 +1219,7 @@
 													"type": "insetReadaloud",
 													"id": "068",
 													"entries": [
-														"{@b B. Horseman (Joker 2)}",
+														"{@b B. {@card Horseman|Tarokka Deck|CoS} (Joker 2)}",
 														"A man of death named {@creature Arrigal|CoS} will forsake his dark lord to serve your cause. Beware! He has a rotten soul."
 													]
 												},
@@ -1228,7 +1228,7 @@
 													"type": "insetReadaloud",
 													"id": "069",
 													"entries": [
-														"{@b A. Innocent (Queen of Hearts})",
+														"{@b A. {@card Innocent|Tarokka Deck|CoS} (Queen of Hearts)}",
 														"I see a young man with a kind heart. A mother's boy! He is strong in body but weak of mind. Seek him out in the village of Barovia."
 													]
 												},
@@ -1237,7 +1237,7 @@
 													"type": "insetReadaloud",
 													"id": "06a",
 													"entries": [
-														"{@b B. Innocent (Queen of Hearts})",
+														"{@b B. {@card Innocent|Tarokka Deck|CoS} (Queen of Hearts)}",
 														"Evil's bride is the one you seek!"
 													]
 												},
@@ -1246,7 +1246,7 @@
 													"type": "insetReadaloud",
 													"id": "06b",
 													"entries": [
-														"{@b A. Marionette (Jack of Hearts})",
+														"{@b A. {@card Marionette|Tarokka Deck|CoS} (Jack of Hearts)}",
 														"What horror is this? I see a man made by a man. Ageless and alone, it haunts the towers of the castle."
 													]
 												},
@@ -1255,7 +1255,7 @@
 													"type": "insetReadaloud",
 													"id": "06c",
 													"entries": [
-														"{@b B. Marionette (Jack of Hearts})",
+														"{@b B. {@card Marionette|Tarokka Deck|CoS} (Jack of Hearts)}",
 														"Look for a man of music, a man with two heads. He lives in a place of great hunger and sorrow."
 													]
 												},
@@ -1264,7 +1264,7 @@
 													"type": "insetReadaloud",
 													"id": "06d",
 													"entries": [
-														"{@b Mists (Queen of Spades)}",
+														"{@b {@card Mists|Tarokka Deck|CoS} (Queen of Spades)}",
 														"A Vistana wanders this land alone, searching for her mentor. She does not stay in one place for long. Seek her out at Saint Markovia's abbey, near the mists."
 													]
 												},
@@ -1273,7 +1273,7 @@
 													"type": "insetReadaloud",
 													"id": "06e",
 													"entries": [
-														"{@b Raven (Queen of Clubs)}",
+														"{@b {@card Raven|Tarokka Deck|CoS} (Queen of Clubs)}",
 														"Find the leader of the feathered ones who live among the vines. Though old, he has one more fight left in him."
 													]
 												},
@@ -1282,7 +1282,7 @@
 													"type": "insetReadaloud",
 													"id": "06f",
 													"entries": [
-														"{@b A. Tempter (Queen of Diamonds})",
+														"{@b A. {@card Tempter|Tarokka Deck|CoS} (Queen of Diamonds)}",
 														"I see a child\u2014a Vistana. You must hurry, for her fate hangs in the balance. Find her at the lake!"
 													]
 												},
@@ -1291,7 +1291,7 @@
 													"type": "insetReadaloud",
 													"id": "070",
 													"entries": [
-														"{@b B. Tempter (Queen of Diamonds})",
+														"{@b B. {@card Tempter|Tarokka Deck|CoS} (Queen of Diamonds)}",
 														"I hear a wedding bell, or perhaps a death knell. It calls thee to a mountainside abbey, wherein you will find a woman who is more than the sum of her parts."
 													]
 												},
@@ -1313,7 +1313,7 @@
 									"type": "insetReadaloud",
 									"id": "072",
 									"entries": [
-										"{@b Artifact (Joker 1})",
+										"{@b {@card Artifact|Tarokka Deck|CoS} (Joker 1)}",
 										"He lurks in the darkness where the morning light once shone\u2014a sacred place."
 									]
 								},
@@ -1322,7 +1322,7 @@
 									"type": "insetReadaloud",
 									"id": "073",
 									"entries": [
-										"{@b Beast (Jack of Diamonds)}",
+										"{@b {@card Beast|Tarokka Deck|CoS} (Jack of Diamonds)}",
 										"The beast sits on his dark throne."
 									]
 								},
@@ -1331,7 +1331,7 @@
 									"type": "insetReadaloud",
 									"id": "074",
 									"entries": [
-										"{@b Broken One (King of Diamonds})",
+										"{@b {@card Broken One|Tarokka Deck|CoS} (King of Diamonds)}",
 										"He haunts the tomb of the man he envied above all."
 									]
 								},
@@ -1340,7 +1340,7 @@
 									"type": "insetReadaloud",
 									"id": "075",
 									"entries": [
-										"{@b Darklord (King of Spades)}",
+										"{@b {@card Darklord|Tarokka Deck|CoS} (King of Spades)}",
 										"He lurks in the depths of darkness, in the one place to which he must return."
 									]
 								},
@@ -1349,7 +1349,7 @@
 									"type": "insetReadaloud",
 									"id": "076",
 									"entries": [
-										"{@b Donjon (King of Clubs)}",
+										"{@b {@card Donjon|Tarokka Deck|CoS} (King of Clubs)}",
 										"He lurks in a hall of bones, in the dark pits of his castle."
 									]
 								},
@@ -1358,7 +1358,7 @@
 									"type": "insetReadaloud",
 									"id": "077",
 									"entries": [
-										"{@b Seer (Jack of Clubs)}",
+										"{@b {@card Seer|Tarokka Deck|CoS} (Jack of Clubs)}",
 										"He waits for you in a place of wisdom, warmth, and despair. Great secrets are there."
 									]
 								},
@@ -1367,7 +1367,7 @@
 									"type": "insetReadaloud",
 									"id": "078",
 									"entries": [
-										"{@b Ghost (King of Hearts)}",
+										"{@b {@card Ghost|Tarokka Deck|CoS} (King of Hearts)}",
 										"Look to the father's tomb."
 									]
 								},
@@ -1376,7 +1376,7 @@
 									"type": "insetReadaloud",
 									"id": "079",
 									"entries": [
-										"{@b Executioner (Jack of Spades)}",
+										"{@b {@card Executioner|Tarokka Deck|CoS} (Jack of Spades)}",
 										"I see a dark figure on a balcony, looking down upon this tortured land with a twisted smile."
 									]
 								},
@@ -1385,7 +1385,7 @@
 									"type": "insetReadaloud",
 									"id": "07a",
 									"entries": [
-										"{@b Horseman (Joker 2})",
+										"{@b {@card Horseman|Tarokka Deck|CoS} (Joker 2)}",
 										"He lurks in the one place to which he must return\u2014a place of death."
 									]
 								},
@@ -1394,7 +1394,7 @@
 									"type": "insetReadaloud",
 									"id": "07b",
 									"entries": [
-										"{@b Innocent (Queen of Hearts)}",
+										"{@b {@card Innocent|Tarokka Deck|CoS} (Queen of Hearts)}",
 										"He dwells with the one whose blood sealed his doom, a brother of light snuffed out too soon."
 									]
 								},
@@ -1403,7 +1403,7 @@
 									"type": "insetReadaloud",
 									"id": "07c",
 									"entries": [
-										"{@b Marionette (Jack of Hearts)}",
+										"{@b {@card Marionette|Tarokka Deck|CoS} (Jack of Hearts)}",
 										"Look to great heights. Find the beating heart of the castle. He waits nearby."
 									]
 								},
@@ -1412,7 +1412,7 @@
 									"type": "insetReadaloud",
 									"id": "07d",
 									"entries": [
-										"{@b Mists (Queen of Spades)}",
+										"{@b {@card Mists|Tarokka Deck|CoS} (Queen of Spades)}",
 										"The cards can't see where the evil lurks. The mists obscure all!"
 									]
 								},
@@ -1421,7 +1421,7 @@
 									"type": "insetReadaloud",
 									"id": "07e",
 									"entries": [
-										"{@b Raven (Queen of Clubs)}",
+										"{@b {@card Raven|Tarokka Deck|CoS} (Queen of Clubs)}",
 										"Look to the mother's tomb."
 									]
 								},
@@ -1430,7 +1430,7 @@
 									"type": "insetReadaloud",
 									"id": "07f",
 									"entries": [
-										"{@b Tempter (Queen of Diamonds)}",
+										"{@b {@card Tempter|Tarokka Deck|CoS} (Queen of Diamonds)}",
 										"I see a secret place\u2014a vault of temptation hidden behind a woman of great beauty. The evil waits atop his tower of treasure."
 									]
 								},
@@ -28981,7 +28981,7 @@
 												"A {@item climber's kit|PHB}, a {@item disguise kit|PHB}, a {@item healer's kit|PHB}, and a {@item poisoner's kit|PHB}",
 												"A lyre with golden strings (worth 50 gp)",
 												"A sculpted wooden cage holding a chicken and a silver ewer (worth 100 gp) with five chicken eggs in it",
-												"A tiny wooden box containing a deck of tarokka cards (see {@adventure appendix E|CoS|22}) wrapped in silk",
+												"A tiny wooden box containing a {@deck Tarokka Deck|CoS|deck of tarokka cards} (see {@adventure appendix E|CoS|22}) wrapped in silk",
 												"A set of copper pots and pans (worth 50 gp)",
 												"Three sets of {@item manacles|PHB}",
 												"A {@item shovel|PHB}",
@@ -36165,14 +36165,14 @@
 						{
 							"type": "entries",
 							"name": "The Mists",
-							"page": 222,
+							"page": 212,
 							"id": "6d4",
 							"entries": [
 								"Characters who remain outside the house can see the mists close in around them, swallowing up the rest of the village. As more buildings disappear into the mists, the characters are left with little choice but to seek refuge in the house. The mists stop short of entering the house but engulf anyone outside (see chapter 2, \"{@area The Lands of Barovia|0a3|x},\" for information on the mists' effect).",
 								{
 									"type": "inset",
 									"name": "Death House's Features",
-									"page": 222,
+									"page": 212,
 									"id": "6d5",
 									"entries": [
 										"Death House is aware of its surroundings and all creatures within it. Its goal is to continue the work of the cult by luring visitors to their doom. Various important features of the house are summarized here.",
@@ -36190,7 +36190,7 @@
 				{
 					"type": "section",
 					"name": "Areas of the House",
-					"page": 222,
+					"page": 212,
 					"id": "6d6",
 					"entries": [
 						"The following areas correspond to labels on the map of the house below.",
@@ -38849,7 +38849,7 @@
 						{
 							"type": "entries",
 							"name": "Baba Lysaga",
-							"page": 2289,
+							"page": 228,
 							"id": "75d",
 							"entries": [
 								"Two women gave life to {@creature Strahd von Zarovich|CoS}. The first was Queen Ravenovia van Roeyen, Strahd's biological mother. The second was the queen's midwife, a devout follower of Mother Night named {@creature Baba Lysaga|CoS}. Although it was the former who raised Strahd and enabled him to follow in his father's footsteps, it was the latter who sensed a potential for greatness and darkness in Strahd surpassing that of any other mortal. Lysaga believed then, as she believes now, that she is Strahd's true mother.",
@@ -39085,7 +39085,7 @@
 											"page": 231,
 											"id": "776",
 											"entries": [
-												"Ezmerelda keeps a deck of tarokka cards in her wagon ({@adventure chapter 11|CoS|12}, {@area area V1|578|x}). Although the cards aren't magical, Ezmerelda can use them to perform a card reading for the characters (see {@adventure chapter 1|CoS|12}), like the one that can be performed by {@creature Madam Eva|CoS}."
+												"Ezmerelda keeps a {@deck tarokka deck|CoS|deck of tarokka cards} in her wagon ({@adventure chapter 11|CoS|12}, {@area area V1|578|x}). Although the cards aren't magical, Ezmerelda can use them to perform a card reading for the characters (see {@adventure chapter 1|CoS|12}), like the one that can be performed by {@creature Madam Eva|CoS}."
 											]
 										}
 									]
@@ -40146,17 +40146,17 @@
 			"page": 243,
 			"id": "7da",
 			"entries": [
-				"The Vistani have long been masters of fortune-telling. In the hands of a Vistani seer, a deck of tarokka cards can tell tales of the future and provide answers to many a dark and mysterious question.",
+				"The Vistani have long been masters of fortune-telling. In the hands of a Vistani seer, a {@deck Tarokka Deck|CoS|deck of tarokka cards} can tell tales of the future and provide answers to many a dark and mysterious question.",
 				"Although the workmanship and artistic quality of the cards can vary from deck to deck, the ability of the cards to call forth information about the future is far more valuable than the monetary worth of a deck.",
-				"Anyone can craft a deck of tarokka cards, but only someone of Vistani blood can imbue the cards with the gift of prophecy. Once they are crafted and empowered, they must be stored in accordance with ancient tradition, or they lose their efficacy. When not in use, tarokka cards must be wrapped in silk and stored in a wooden box.",
+				"Anyone can craft a {@deck Tarokka Deck|CoS|deck of tarokka cards}, but only someone of Vistani blood can imbue the cards with the gift of prophecy. Once they are crafted and empowered, they must be stored in accordance with ancient tradition, or they lose their efficacy. When not in use, tarokka cards must be wrapped in silk and stored in a wooden box.",
 				{
 					"type": "section",
 					"name": "Composition",
 					"page": 243,
 					"id": "7db",
 					"entries": [
-						"A tarokka deck has fifty-four cards, each of which has its own name. Forty of them comprise the common deck, which is divided into four suits: swords, coins, stars, and glyphs.",
-						"Each suit contains cards numbered one through nine, plus a tenth card that is called the master of that suit. A card can be referred to by its suit designation or by its name. For instance, the three of glyphs is also known as the healer, and the wizard card is also known as the master of stars.",
+						"A {@deck tarokka deck|CoS} has fifty-four cards, each of which has its own name. Forty of them comprise the common deck, which is divided into four suits: swords, coins, stars, and glyphs.",
+						"Each suit contains cards numbered one through nine, plus a tenth card that is called the master of that suit. A card can be referred to by its suit designation or by its name. For instance, the three of glyphs is also known as the {@card healer|Tarokka Deck|CoS}, and the {@card wizard|Tarokka Deck|CoS} card is also known as the master of stars.",
 						"The remaining fourteen cards make up the high deck, which symbolizes the natural forces of the multiverse. These cards are represented by a crown symbol and are the most powerful cards in the deck."
 					]
 				},
@@ -40180,59 +40180,59 @@
 							],
 							"rows": [
 								[
-									"Artifact",
+									"{@card Artifact|Tarokka Deck|CoS}",
 									"The importance of some physical object that must be obtained, protected, or destroyed at all costs"
 								],
 								[
-									"Beast",
+									"{@card Beast|Tarokka Deck|CoS}",
 									"Great rage or passion; something bestial or malevolent hiding in plain sight or lurking just below the surface"
 								],
 								[
-									"Broken One",
+									"{@card Broken One|Tarokka Deck|CoS}",
 									"Defeat, failure, and despair; the loss of something or someone important, without which one feels incomplete"
 								],
 								[
-									"Darklord",
+									"{@card Darklord|Tarokka Deck|CoS}",
 									"A single, powerful individual of an evil nature, one whose goals have enormous and far-reaching consequences"
 								],
 								[
-									"Donjon",
+									"{@card Donjon|Tarokka Deck|CoS}",
 									"Isolation and imprisonment; being so conservative in thinking as to be a prisoner of one's own beliefs"
 								],
 								[
-									"Ghost",
+									"{@card Ghost|Tarokka Deck|CoS}",
 									"The looming past; the return of an old enemy or the discovery of a secret buried long ago"
 								],
 								[
-									"Executioner",
+									"{@card Executioner|Tarokka Deck|CoS}",
 									"The imminent death of one rightly or wrongly convicted of a crime; false accusations and unjust prosecution"
 								],
 								[
-									"Horseman",
+									"{@card Horseman|Tarokka Deck|CoS}",
 									"Death; disaster in the form of the loss of wealth or property, a horrible defeat, or the end of a bloodline"
 								],
 								[
-									"Innocent",
+									"{@card Innocent|Tarokka Deck|CoS}",
 									"A being of great importance whose life is in danger (who might be helpless or simply unaware of the peril)"
 								],
 								[
-									"Marionette",
+									"{@card Marionette|Tarokka Deck|CoS}",
 									"The presence of a spy or a minion of some greater power; an encounter with a puppet or an underling"
 								],
 								[
-									"Mists",
+									"{@card Mists|Tarokka Deck|CoS}",
 									"Something unexpected or mysterious that can't be avoided; a great quest or journey that will try one's spirit"
 								],
 								[
-									"Raven",
+									"{@card Raven|Tarokka Deck|CoS}",
 									"A hidden source of information; a fortunate turn of events; a secret potential for good"
 								],
 								[
-									"Seer",
+									"{@card Seer|Tarokka Deck|CoS}",
 									"Inspiration and keen intellect; a future event, the outcome of which will hinge on a clever mind"
 								],
 								[
-									"Tempter",
+									"{@card Tempter|Tarokka Deck|CoS}",
 									"One who has been compromised or led astray by temptation or foolishness; one who tempts others for evil ends"
 								]
 							]
@@ -40269,52 +40269,52 @@
 									"rows": [
 										[
 											"Master of swords",
-											"Warrior",
+											"{@card Warrior|Tarokka Deck|CoS}",
 											"Strength and force personified; violence; those who use force to accomplish their goals"
 										],
 										[
 											"One of swords",
-											"Avenger",
+											"{@card Avenger|Tarokka Deck|CoS}",
 											"Justice and revenge for great wrongs; those on a quest to rid the world of great evil"
 										],
 										[
 											"Two of swords",
-											"Paladin",
+											"{@card Paladin|Tarokka Deck|CoS}",
 											"Just and noble warriors; those who live by a code of honor and integrity"
 										],
 										[
 											"Three of swords",
-											"Soldier",
+											"{@card Soldier|Tarokka Deck|CoS}",
 											"War and sacrifice; the stamina to endure great hardship"
 										],
 										[
 											"Four of swords",
-											"Mercenary",
+											"{@card Mercenary|Tarokka Deck|CoS}",
 											"Inner strength and fortitude; those who fight for power or wealth"
 										],
 										[
 											"Five of swords",
-											"Myrmidon",
+											"{@card Myrmidon|Tarokka Deck|CoS}",
 											"Great heroes; a sudden reversal of fate; the triumph of the underdog over a mighty enemy"
 										],
 										[
 											"Six of swords",
-											"Berserker",
+											"{@card Berserker|Tarokka Deck|CoS}",
 											"The brutal and barbaric side of warfare; bloodlust; those with a bestial nature"
 										],
 										[
 											"Seven of swords",
-											"Hooded One",
+											"{@card Hooded One|Tarokka Deck|CoS}",
 											"Bigotry, intolerance, and xenophobia; a mysterious presence or newcomer"
 										],
 										[
 											"Eight of swords",
-											"Dictator",
+											"{@card Dictator|Tarokka Deck|CoS}",
 											"All that is wrong with government and leadership; those who rule through fear and violence"
 										],
 										[
 											"Nine of swords",
-											"Torturer",
+											"{@card Torturer|Tarokka Deck|CoS}",
 											"The coming of suffering or merciless cruelty; one who is irredeemably evil or sadistic"
 										]
 									]
@@ -40344,52 +40344,52 @@
 									"rows": [
 										[
 											"Master of stars",
-											"Wizard",
+											"{@card Wizard|Tarokka Deck|CoS}",
 											"Mystery and riddles; the unknown; those who crave magical power and great knowledge"
 										],
 										[
 											"One of stars",
-											"Transmuter",
+											"{@card Transmuter|Tarokka Deck|CoS}",
 											"A new discovery; the coming of unexpected things; unforeseen consequences and chaos"
 										],
 										[
 											"Two of stars",
-											"Diviner",
+											"{@card Diviner|Tarokka Deck|CoS}",
 											"The pursuit of knowledge tempered by wisdom; truth and honesty; sages and prophecy"
 										],
 										[
 											"Three of stars",
-											"Enchanter",
+											"{@card Enchanter|Tarokka Deck|CoS}",
 											"Inner turmoil that comes from confusion, fear of failure, or false information"
 										],
 										[
 											"Four of stars",
-											"Abjurer",
+											"{@card Abjurer|Tarokka Deck|CoS}",
 											"Those guided by logic and reasoning; warns of an overlooked clue or piece of information"
 										],
 										[
 											"Five of stars",
-											"Elementalist",
+											"{@card Elementalist|Tarokka Deck|CoS}",
 											"The triumph of nature over civilization; natural disasters and bountiful harvests"
 										],
 										[
 											"Six of stars",
-											"Evoker",
+											"{@card Evoker|Tarokka Deck|CoS}",
 											"Magical or supernatural power that can't be controlled; magic for destructive ends"
 										],
 										[
 											"Seven of stars",
-											"Illusionist",
+											"{@card Illusionist|Tarokka Deck|CoS}",
 											"Lies and deceit; grand conspiracies; secret societies; the presence of a dupe or a saboteur"
 										],
 										[
 											"Eight of stars",
-											"Necromancer",
+											"{@card Necromancer|Tarokka Deck|CoS}",
 											"Unnatural events and unhealthy obsessions; those who follow a destructive path"
 										],
 										[
 											"Nine of stars",
-											"Conjurer",
+											"{@card Conjurer|Tarokka Deck|CoS}",
 											"The coming of an unexpected supernatural threat; those who think of themselves as gods"
 										]
 									]
@@ -40419,52 +40419,52 @@
 									"rows": [
 										[
 											"Master of coins",
-											"Rogue",
+											"{@card Rogue|Tarokka Deck|CoS}",
 											"Anyone for whom money is important; those who believe money is the key to their success"
 										],
 										[
 											"One of coins",
-											"Swashbuckler",
+											"{@card Swashbuckler|Tarokka Deck|CoS}",
 											"Those who like money yet give it up freely; likable rogues and rapscallions"
 										],
 										[
 											"Two of coins",
-											"Philanthropist",
+											"{@card Philanthropist|Tarokka Deck|CoS}",
 											"Charity and giving on a grand scale; those who use wealth to fight evil and sickness"
 										],
 										[
 											"Three of coins",
-											"Trader",
+											"{@card Trader|Tarokka Deck|CoS}",
 											"Commerce; smuggling and black markets; fair and equitable trades"
 										],
 										[
 											"Four of coins",
-											"Merchant",
+											"{@card Merchant|Tarokka Deck|CoS}",
 											"A rare commodity or business opportunity; deceitful or dangerous business transactions"
 										],
 										[
 											"Five of coins",
-											"Guild Member",
+											"{@card Guild Member|Tarokka Deck|CoS}",
 											"Like-minded individuals joined together in a common goal; pride in one's work"
 										],
 										[
 											"Six of coins",
-											"Beggar",
+											"{@card Beggar|Tarokka Deck|CoS}",
 											"Sudden change in economic status or fortune"
 										],
 										[
 											"Seven of coins",
-											"Thief",
+											"{@card Thief|Tarokka Deck|CoS}",
 											"Those who steal or burgle; a loss of property, beauty, innocence, friendship, or reputation"
 										],
 										[
 											"Eight of coins",
-											"Tax Collector",
+											"{@card Tax Collector|Tarokka Deck|CoS}",
 											"Corruption; honesty in an otherwise corrupt government or organization"
 										],
 										[
 											"Nine of coins",
-											"Miser",
+											"{@card Miser|Tarokka Deck|CoS}",
 											"Hoarded wealth; those who are irreversibly unhappy or who think money is meaningless"
 										]
 									]
@@ -40494,52 +40494,52 @@
 									"rows": [
 										[
 											"Master of glyphs",
-											"Priest",
+											"{@card Priest|Tarokka Deck|CoS}",
 											"Enlightenment; those who follow a deity, a system of values, or a higher purpose"
 										],
 										[
 											"One of glyphs",
-											"Monk",
+											"{@card Monk|Tarokka Deck|CoS}",
 											"Serenity; inner strength and self-reliance; supreme confidence bereft of arrogance"
 										],
 										[
 											"Two of glyphs",
-											"Missionary",
+											"{@card Missionary|Tarokka Deck|CoS}",
 											"Those who spread wisdom and faith to others; warnings of the spread of fear and ignorance"
 										],
 										[
 											"Three of glyphs",
-											"Healer",
+											"{@card Healer|Tarokka Deck|CoS}",
 											"Healing; a contagious illness, disease, or curse; those who practice the healing arts"
 										],
 										[
 											"Four of glyphs",
-											"Shepherd",
+											"{@card Shepherd|Tarokka Deck|CoS}",
 											"Those who protect others; one who bears a burden far too great to be shouldered alone"
 										],
 										[
 											"Five of glyphs",
-											"Druid",
+											"{@card Druid|Tarokka Deck|CoS}",
 											"The ambivalence and cruelty of nature and those who feel drawn to it; inner turmoil"
 										],
 										[
 											"Six of glyphs",
-											"Anarchist",
+											"{@card Anarchist|Tarokka Deck|CoS}",
 											"A fundamental change brought on by one whose beliefs are being put to the test"
 										],
 										[
 											"Seven of glyphs",
-											"Charlatan",
+											"{@card Charlatan|Tarokka Deck|CoS}",
 											"Liars; those who profess to believe one thing but actually believe another"
 										],
 										[
 											"Eight of glyphs",
-											"Bishop",
+											"{@card Bishop|Tarokka Deck|CoS}",
 											"Strict adherence to a code or a belief; those who plot, plan, and scheme"
 										],
 										[
 											"Nine of glyphs",
-											"Traitor",
+											"{@card Traitor|Tarokka Deck|CoS}",
 											"Betrayal by someone close and trusted; a weakening or loss of faith"
 										]
 									]
@@ -40567,7 +40567,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/156-dnd_tarokka_artifact.png"
+												"path": "decks/CoS/Tarokka Deck/156-dnd_tarokka_artifact.png"
 											},
 											"title": "Artifact",
 											"width": 714,
@@ -40577,7 +40577,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/157-dnd_tarokka_beast.png"
+												"path": "decks/CoS/Tarokka Deck/157-dnd_tarokka_beast.png"
 											},
 											"title": "Beast",
 											"width": 714,
@@ -40587,7 +40587,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/158-dnd_tarokka_brokenone.png"
+												"path": "decks/CoS/Tarokka Deck/158-dnd_tarokka_brokenone.png"
 											},
 											"title": "Broken One",
 											"width": 714,
@@ -40597,7 +40597,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/159-dnd_tarokka_darklord.png"
+												"path": "decks/CoS/Tarokka Deck/159-dnd_tarokka_darklord.png"
 											},
 											"title": "Darklord",
 											"width": 714,
@@ -40607,7 +40607,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/160-dnd_tarokka_donjon.png"
+												"path": "decks/CoS/Tarokka Deck/160-dnd_tarokka_donjon.png"
 											},
 											"title": "Donjon",
 											"width": 714,
@@ -40617,7 +40617,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/161-dnd_tarokka_ghost.png"
+												"path": "decks/CoS/Tarokka Deck/161-dnd_tarokka_ghost.png"
 											},
 											"title": "Ghost",
 											"width": 714,
@@ -40627,7 +40627,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/162-dnd_tarokka_executioner.png"
+												"path": "decks/CoS/Tarokka Deck/162-dnd_tarokka_executioner.png"
 											},
 											"title": "Executioner",
 											"width": 714,
@@ -40637,7 +40637,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/163-dnd_tarokka_horseman.png"
+												"path": "decks/CoS/Tarokka Deck/163-dnd_tarokka_horseman.png"
 											},
 											"title": "Horseman",
 											"width": 714,
@@ -40647,7 +40647,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/164-dnd_tarokka_innocent.png"
+												"path": "decks/CoS/Tarokka Deck/164-dnd_tarokka_innocent.png"
 											},
 											"title": "Innocent",
 											"width": 714,
@@ -40657,7 +40657,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/165-dnd_tarokka_marionette.png"
+												"path": "decks/CoS/Tarokka Deck/165-dnd_tarokka_marionette.png"
 											},
 											"title": "Marionette",
 											"width": 714,
@@ -40667,7 +40667,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/166-dnd_tarokka_mists.png"
+												"path": "decks/CoS/Tarokka Deck/166-dnd_tarokka_mists.png"
 											},
 											"title": "Mists",
 											"width": 714,
@@ -40677,7 +40677,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/167-dnd_tarokka_raven.png"
+												"path": "decks/CoS/Tarokka Deck/167-dnd_tarokka_raven.png"
 											},
 											"title": "Raven",
 											"width": 714,
@@ -40687,7 +40687,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/168-dnd_tarokka_seer.png"
+												"path": "decks/CoS/Tarokka Deck/168-dnd_tarokka_seer.png"
 											},
 											"title": "Seer",
 											"width": 714,
@@ -40697,7 +40697,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/169-dnd_tarokka_tempter.png"
+												"path": "decks/CoS/Tarokka Deck/169-dnd_tarokka_tempter.png"
 											},
 											"title": "Tempter",
 											"width": 714,
@@ -40720,7 +40720,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/170-dnd_tarokka_warrior.png"
+												"path": "decks/CoS/Tarokka Deck/170-dnd_tarokka_warrior.png"
 											},
 											"title": "Warrior",
 											"width": 714,
@@ -40730,7 +40730,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/171-dnd_tarokka_avenger.png"
+												"path": "decks/CoS/Tarokka Deck/171-dnd_tarokka_avenger.png"
 											},
 											"title": "Avenger",
 											"width": 714,
@@ -40740,7 +40740,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/172-dnd_tarokka_paladin.png"
+												"path": "decks/CoS/Tarokka Deck/172-dnd_tarokka_paladin.png"
 											},
 											"title": "Paladin",
 											"width": 714,
@@ -40750,7 +40750,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/173-dnd_tarokka_soldier.png"
+												"path": "decks/CoS/Tarokka Deck/173-dnd_tarokka_soldier.png"
 											},
 											"title": "Soldier",
 											"width": 714,
@@ -40760,7 +40760,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/174-dnd_tarokka_mercenary.png"
+												"path": "decks/CoS/Tarokka Deck/174-dnd_tarokka_mercenary.png"
 											},
 											"title": "Mercenary",
 											"width": 714,
@@ -40770,7 +40770,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/175-dnd_tarokka_myrmidon.png"
+												"path": "decks/CoS/Tarokka Deck/175-dnd_tarokka_myrmidon.png"
 											},
 											"title": "Myrmidon",
 											"width": 714,
@@ -40780,7 +40780,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/176-dnd_tarokka_berserker.png"
+												"path": "decks/CoS/Tarokka Deck/176-dnd_tarokka_berserker.png"
 											},
 											"title": "Berserker",
 											"width": 714,
@@ -40790,7 +40790,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/177-dnd_tarokka_hoodedone.png"
+												"path": "decks/CoS/Tarokka Deck/177-dnd_tarokka_hoodedone.png"
 											},
 											"title": "Hooded One",
 											"width": 714,
@@ -40800,7 +40800,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/178-dnd_tarokka_dictator.png"
+												"path": "decks/CoS/Tarokka Deck/178-dnd_tarokka_dictator.png"
 											},
 											"title": "Dictator",
 											"width": 714,
@@ -40810,7 +40810,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/179-dnd_tarokka_torturer.png"
+												"path": "decks/CoS/Tarokka Deck/179-dnd_tarokka_torturer.png"
 											},
 											"title": "Torturer",
 											"width": 714,
@@ -40833,7 +40833,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/180-dnd_tarokka_wizard.png"
+												"path": "decks/CoS/Tarokka Deck/180-dnd_tarokka_wizard.png"
 											},
 											"title": "Wizard",
 											"width": 714,
@@ -40843,7 +40843,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/181-dnd_tarokka_transmuter.png"
+												"path": "decks/CoS/Tarokka Deck/181-dnd_tarokka_transmuter.png"
 											},
 											"title": "Transmuter",
 											"width": 714,
@@ -40853,7 +40853,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/182-dnd_tarokka_diviner.png"
+												"path": "decks/CoS/Tarokka Deck/182-dnd_tarokka_diviner.png"
 											},
 											"title": "Diviner",
 											"width": 714,
@@ -40863,7 +40863,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/183-dnd_tarokka_enchanter.png"
+												"path": "decks/CoS/Tarokka Deck/183-dnd_tarokka_enchanter.png"
 											},
 											"title": "Enchanter",
 											"width": 714,
@@ -40873,7 +40873,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/184-dnd_tarokka_abjurer.png"
+												"path": "decks/CoS/Tarokka Deck/184-dnd_tarokka_abjurer.png"
 											},
 											"title": "Abjurer",
 											"width": 714,
@@ -40883,7 +40883,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/185-dnd_tarokka_elementalist.png"
+												"path": "decks/CoS/Tarokka Deck/185-dnd_tarokka_elementalist.png"
 											},
 											"title": "Elementalist",
 											"width": 714,
@@ -40893,7 +40893,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/186-dnd_tarokka_evoker.png"
+												"path": "decks/CoS/Tarokka Deck/186-dnd_tarokka_evoker.png"
 											},
 											"title": "Evoker",
 											"width": 714,
@@ -40903,7 +40903,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/187-dnd_tarokka_illusionist.png"
+												"path": "decks/CoS/Tarokka Deck/187-dnd_tarokka_illusionist.png"
 											},
 											"title": "Illusionist",
 											"width": 714,
@@ -40913,7 +40913,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/188-dnd_tarokka_necromancer.png"
+												"path": "decks/CoS/Tarokka Deck/188-dnd_tarokka_necromancer.png"
 											},
 											"title": "Necromancer",
 											"width": 714,
@@ -40923,7 +40923,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/189-dnd_tarokka_conjurer.png"
+												"path": "decks/CoS/Tarokka Deck/189-dnd_tarokka_conjurer.png"
 											},
 											"title": "Conjurer",
 											"width": 714,
@@ -40946,7 +40946,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/190-dnd_tarokka_rogue.png"
+												"path": "decks/CoS/Tarokka Deck/190-dnd_tarokka_rogue.png"
 											},
 											"title": "Rogue",
 											"width": 714,
@@ -40956,7 +40956,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/191-dnd_tarokka_swashbuckler.png"
+												"path": "decks/CoS/Tarokka Deck/191-dnd_tarokka_swashbuckler.png"
 											},
 											"title": "Swashbuckler",
 											"width": 714,
@@ -40966,7 +40966,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/192-dnd_tarokka_philanth.png"
+												"path": "decks/CoS/Tarokka Deck/192-dnd_tarokka_philanth.png"
 											},
 											"title": "Philanthropist",
 											"width": 714,
@@ -40976,7 +40976,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/193-dnd_tarokka_trader.png"
+												"path": "decks/CoS/Tarokka Deck/193-dnd_tarokka_trader.png"
 											},
 											"title": "Trader",
 											"width": 714,
@@ -40986,7 +40986,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/194-dnd_tarokka_merchant.png"
+												"path": "decks/CoS/Tarokka Deck/194-dnd_tarokka_merchant.png"
 											},
 											"title": "Merchant",
 											"width": 714,
@@ -40996,7 +40996,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/195-dnd_tarokka_guildmember.png"
+												"path": "decks/CoS/Tarokka Deck/195-dnd_tarokka_guildmember.png"
 											},
 											"title": "Guild Member",
 											"width": 714,
@@ -41006,7 +41006,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/196-dnd_tarokka_beggar.png"
+												"path": "decks/CoS/Tarokka Deck/196-dnd_tarokka_beggar.png"
 											},
 											"title": "Beggar",
 											"width": 714,
@@ -41016,7 +41016,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/197-dnd_tarokka_thief.png"
+												"path": "decks/CoS/Tarokka Deck/197-dnd_tarokka_thief.png"
 											},
 											"title": "Thief",
 											"width": 714,
@@ -41026,7 +41026,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/198-dnd_tarokka_taxcollector.png"
+												"path": "decks/CoS/Tarokka Deck/198-dnd_tarokka_taxcollector.png"
 											},
 											"title": "Tax Collector",
 											"width": 714,
@@ -41036,7 +41036,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/199-dnd_tarokka_miser.png"
+												"path": "decks/CoS/Tarokka Deck/199-dnd_tarokka_miser.png"
 											},
 											"title": "Miser",
 											"width": 714,
@@ -41059,7 +41059,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/200-dnd_tarokka_priest.png"
+												"path": "decks/CoS/Tarokka Deck/200-dnd_tarokka_priest.png"
 											},
 											"title": "Priest",
 											"width": 714,
@@ -41069,7 +41069,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/201-dnd_tarokka_monk.png"
+												"path": "decks/CoS/Tarokka Deck/201-dnd_tarokka_monk.png"
 											},
 											"title": "Monk",
 											"width": 714,
@@ -41079,7 +41079,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/202-dnd_tarokka_missionary.png"
+												"path": "decks/CoS/Tarokka Deck/202-dnd_tarokka_missionary.png"
 											},
 											"title": "Missionary",
 											"width": 714,
@@ -41089,7 +41089,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/203-dnd_tarokka_healer.png"
+												"path": "decks/CoS/Tarokka Deck/203-dnd_tarokka_healer.png"
 											},
 											"title": "Healer",
 											"width": 714,
@@ -41099,7 +41099,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/204-dnd_tarokka_shepherd.png"
+												"path": "decks/CoS/Tarokka Deck/204-dnd_tarokka_shepherd.png"
 											},
 											"title": "Shepherd",
 											"width": 714,
@@ -41109,7 +41109,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/205-dnd_tarokka_druid.png"
+												"path": "decks/CoS/Tarokka Deck/205-dnd_tarokka_druid.png"
 											},
 											"title": "Druid",
 											"width": 714,
@@ -41119,7 +41119,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/206-dnd_tarokka_anarchist.png"
+												"path": "decks/CoS/Tarokka Deck/206-dnd_tarokka_anarchist.png"
 											},
 											"title": "Anarchist",
 											"width": 714,
@@ -41129,7 +41129,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/207-dnd_tarokka_charlatan.png"
+												"path": "decks/CoS/Tarokka Deck/207-dnd_tarokka_charlatan.png"
 											},
 											"title": "Charlatan",
 											"width": 714,
@@ -41139,7 +41139,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/208-dnd_tarokka_bishop.png"
+												"path": "decks/CoS/Tarokka Deck/208-dnd_tarokka_bishop.png"
 											},
 											"title": "Bishop",
 											"width": 714,
@@ -41149,7 +41149,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/209-dnd_tarokka_traitor.png"
+												"path": "decks/CoS/Tarokka Deck/209-dnd_tarokka_traitor.png"
 											},
 											"title": "Traitor",
 											"width": 714,

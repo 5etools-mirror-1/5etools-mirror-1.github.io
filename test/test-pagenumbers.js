@@ -33,12 +33,20 @@ const BLOCKLIST_KEYS = new Set([
 	"dragonMundaneItems",
 ]);
 
-// Sources which only exist in digital form
 const BLOCKLIST_SOURCES = new Set([
-	"DC",
-	"SLW",
-	"SDW",
-	"VD",
+	// region Sources which only exist in digital form
+	Parser.SRC_DC,
+	Parser.SRC_SLW,
+	Parser.SRC_SDW,
+	Parser.SRC_VD,
+	// endregion
+
+	// region Sources which are screens, and therefore pageless"
+	Parser.SRC_SCREEN,
+	Parser.SRC_SCREEN_WILDERNESS_KIT,
+	Parser.SRC_SCREEN_DUNGEON_KIT,
+	Parser.SRC_SCREEN_SPELLJAMMER,
+	// endregion
 ]);
 
 const SUB_KEYS = {};

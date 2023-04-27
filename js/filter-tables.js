@@ -43,13 +43,10 @@ class PageFilterTables extends PageFilter {
 globalThis.PageFilterTables = PageFilterTables;
 
 class ListSyntaxTables extends ListUiUtil.ListSyntax {
-	_getSearchCacheStats (entity) {
-		if (!entity.rows && !entity.tables) return "";
-		const ptrOut = {_: ""};
-		this._getSearchCache_handleEntryProp(entity, "rows", ptrOut);
-		this._getSearchCache_handleEntryProp(entity, "tables", ptrOut);
-		return ptrOut._;
-	}
+	static _INDEXABLE_PROPS_ENTRIES = [
+		"rows",
+		"tables",
+	];
 }
 
 globalThis.ListSyntaxTables = ListSyntaxTables;

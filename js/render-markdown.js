@@ -810,6 +810,11 @@ RendererMarkdown.monster = class {
 		RendererMarkdown.get().isSkipStylingItemLinks = true;
 		const acPart = Parser.acToFull(mon.ac, RendererMarkdown.get());
 		RendererMarkdown.get().isSkipStylingItemLinks = false;
+		const resourcePart = mon.resource?.length
+			? mon.resource
+				.map(res => `\n>- **${res.name}** ${Renderer.monster.getRenderedResource(res, true)}`)
+				.join("")
+			: "";
 		const savePart = mon.save ? `\n>- **Saving Throws** ${Object.keys(mon.save).sort(SortUtil.ascSortAtts).map(it => RendererMarkdown.monster.getSave(it, mon.save[it])).join(", ")}` : "";
 		const skillPart = mon.skill ? `\n>- **Skills** ${RendererMarkdown.monster.getSkillsString(mon)}` : "";
 		const damVulnPart = mon.vulnerable ? `\n>- **Damage Vulnerabilities** ${Parser.getFullImmRes(mon.vulnerable)}` : "";
@@ -851,7 +856,7 @@ RendererMarkdown.monster = class {
 >*${mon.level ? `${Parser.getOrdinalForm(mon.level)}-level ` : ""}${Renderer.utils.getRenderedSize(mon.size)} ${monTypes.asText}${mon.alignment ? `, ${mon.alignmentPrefix ? RendererMarkdown.get().render(mon.alignmentPrefix) : ""}${Parser.alignmentListToFull(mon.alignment)}` : ""}*
 >___
 >- **Armor Class** ${acPart}
->- **Hit Points** ${Renderer.monster.getRenderedHp(mon.hp, true)}
+>- **Hit Points** ${Renderer.monster.getRenderedHp(mon.hp, true)}${resourcePart}
 >- **Speed** ${Parser.getSpeedString(mon)}
 >___
 >|${Parser.ABIL_ABVS.map(it => `${it.toUpperCase()}|`).join("")}

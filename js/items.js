@@ -150,12 +150,14 @@ class ItemsSublistManager extends SublistManager {
 
 class ItemsPage extends ListPage {
 	constructor () {
+		const pFnGetFluff = Renderer.item.pGetFluff.bind(Renderer.item);
+
 		super({
 			dataSource: DataUtil.item.loadJSON.bind(DataUtil.item),
 			prereleaseDataSource: DataUtil.item.loadPrerelease.bind(DataUtil.item),
 			brewDataSource: DataUtil.item.loadBrew.bind(DataUtil.item),
 
-			pFnGetFluff: Renderer.item.pGetFluff.bind(Renderer.item),
+			pFnGetFluff,
 
 			pageFilter: new PageFilterItems(),
 
@@ -185,6 +187,8 @@ class ItemsPage extends ListPage {
 
 			isMarkdownPopout: true,
 			propEntryData: "item",
+
+			listSyntax: new ListSyntaxItems({fnGetDataList: () => this._dataList, pFnGetFluff}),
 		});
 
 		this._mundaneList = null;

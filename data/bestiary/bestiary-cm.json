@@ -976,106 +976,36 @@
 			"name": "Dragon Tortoise",
 			"source": "CM",
 			"page": 205,
-			"size": [
-				"G"
-			],
-			"type": "dragon",
-			"alignment": [
-				"N"
-			],
-			"ac": [
-				{
-					"ac": 20,
-					"from": [
-						"natural armor"
-					]
+			"_copy": {
+				"name": "Dragon Turtle",
+				"source": "MM",
+				"_mod": {
+					"trait": {
+						"mode": "removeArr",
+						"names": "Amphibious"
+					},
+					"action": {
+						"mode": "replaceArr",
+						"replace": "Steam Breath {@recharge 5}",
+						"items": {
+							"name": "Sand Breath {@recharge 5}",
+							"entries": [
+								"The dragon tortoise exhales abrasive sand in a 60-foot cone. Each creature in that area must make a {@dc 18} Constitution saving throw, taking 52 ({@damage 15d6}) slashing damage on a failed save, or half as much damage on a successful one."
+							]
+						}
+					}
 				}
-			],
-			"hp": {
-				"average": 341,
-				"formula": "22d20 + 110"
 			},
 			"speed": {
 				"walk": 20
 			},
-			"str": 25,
-			"dex": 10,
-			"con": 20,
-			"int": 10,
-			"wis": 12,
-			"cha": 12,
-			"save": {
-				"dex": "+6",
-				"con": "+11",
-				"wis": "+7"
-			},
-			"senses": [
-				"darkvision 120 ft."
-			],
-			"passive": 11,
-			"resist": [
-				"fire"
-			],
 			"languages": [
 				"Draconic",
 				"Terran"
 			],
-			"cr": "17",
-			"action": [
-				{
-					"name": "Multiattack",
-					"entries": [
-						"The dragon tortoise makes three attacks: one with its bite and two with its claws. It can make one tail attack in place of its two claw attacks."
-					]
-				},
-				{
-					"name": "Bite",
-					"entries": [
-						"{@atk mw} {@hit 13} to hit, reach 15 ft., one target. {@h}26 ({@damage 3d12 + 7}) piercing damage."
-					]
-				},
-				{
-					"name": "Claw",
-					"entries": [
-						"{@atk mw} {@hit 13} to hit, reach 10 ft., one target. {@h}16 ({@damage 2d8 + 7}) slashing damage."
-					]
-				},
-				{
-					"name": "Tail",
-					"entries": [
-						"{@atk mw} {@hit 13} to hit, reach 15 ft., one target. {@h}26 ({@damage 3d12 + 7}) bludgeoning damage. If the target is a creature, it must succeed on a {@dc 20} Strength saving throw or be pushed up to 10 feet away from the dragon tortoise and knocked {@condition prone}."
-					]
-				},
-				{
-					"name": "Steam Breath {@recharge 5}",
-					"entries": [
-						"The dragon tortoise exhales abrasive sand in a 60-foot cone. Each creature in that area must make a {@dc 18} Constitution saving throw, taking 52 ({@damage 15d6}) slashing damage on a failed save, or half as much damage on a successful one."
-					]
-				}
-			],
-			"senseTags": [
-				"SD"
-			],
-			"actionTags": [
-				"Breath Weapon",
-				"Multiattack"
-			],
 			"languageTags": [
 				"DR",
 				"T"
-			],
-			"damageTags": [
-				"B",
-				"P",
-				"S"
-			],
-			"miscTags": [
-				"AOE",
-				"MW",
-				"RCH"
-			],
-			"conditionInflict": [
-				"prone"
 			],
 			"hasToken": true,
 			"hasFluff": true

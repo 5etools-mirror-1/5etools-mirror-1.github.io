@@ -40,7 +40,7 @@ class _DataLoaderInternalUtil {
 
 	static _NOTIFIED_FAILED_DEREFERENCES = new Set();
 
-	static doNotifyFailedDereferences ({missingRefSets}) {
+	static doNotifyFailedDereferences ({missingRefSets, diagnostics}) {
 		// region Avoid repeatedly throwing errors for the same missing references
 		const missingRefSetsUnseen = Object.entries(missingRefSets)
 			.mergeMap(([prop, set]) => ({
@@ -63,16 +63,21 @@ class _DataLoaderInternalUtil {
 			.map(([k, v]) => `${k}: ${[...v].sort(SortUtil.ascSortLower).join(", ")}`)
 			.join("; ");
 
+		const ptDiagnostics = DataLoader.getDiagnosticsSummary(diagnostics);
 		const msgStart = `Failed to load references for ${cntMissingRefs} entr${cntMissingRefs === 1 ? "y" : "ies"}!`;
 
 		JqueryUtil.doToast({
 			type: "danger",
-			content: `${msgStart} Reference types and values were: ${notificationRefs}`,
+			content: `${msgStart} Reference types and values were: ${[notificationRefs, ptDiagnostics].join(" ")}`,
 			isAutoHide: false,
 		});
 
-		const cnslRefs = Object.entries(missingRefSetsUnseen)
-			.map(([k, v]) => `${k}:\n\t${[...v].sort(SortUtil.ascSortLower).join("\n\t")}`)
+		const cnslRefs = [
+			...Object.entries(missingRefSetsUnseen)
+				.map(([k, v]) => `${k}:\n\t${[...v].sort(SortUtil.ascSortLower).join("\n\t")}`),
+			ptDiagnostics,
+		]
+			.filter(Boolean)
 			.join("\n");
 
 		setTimeout(() => { throw new Error(`${msgStart}\nReference types and values were:\n${cnslRefs}`); });
@@ -287,7 +292,7 @@ class _DataLoaderDereferencer {
 		});
 
 		await this._pGetDereferenced_pDoDereference({propEntries, entriesWithRefs, entriesWithoutRefs});
-		this._pGetDereferenced_doNotifyFailed({entriesWithRefs});
+		this._pGetDereferenced_doNotifyFailed({entriesWithRefs, entities});
 		this._pGetDereferenced_doPopulateOutput({page, out, entriesWithoutRefs, entriesWithRefs});
 
 		return out;
@@ -411,7 +416,7 @@ class _DataLoaderDereferencer {
 
 	/* -------------------------------------------- */
 
-	static _pGetDereferenced_doNotifyFailed ({entriesWithRefs}) {
+	static _pGetDereferenced_doNotifyFailed ({entriesWithRefs, entities}) {
 		const entriesWithRefsVals = Object.values(entriesWithRefs)
 			.map(hashToEntry => Object.values(hashToEntry))
 			.flat();
@@ -433,7 +438,12 @@ class _DataLoaderDereferencer {
 			},
 		);
 
-		_DataLoaderInternalUtil.doNotifyFailedDereferences({missingRefSets});
+		_DataLoaderInternalUtil.doNotifyFailedDereferences({
+			missingRefSets,
+			diagnostics: entities
+				.map(ent => ent.__diagnostic)
+				.filter(Boolean),
+		});
 	}
 
 	/* -------------------------------------------- */
@@ -950,7 +960,7 @@ class _DataTypeLoaderCustomMonsterFluff extends _DataTypeLoaderMultiSource {
 }
 
 class _DataTypeLoaderCustomSpell extends _DataTypeLoaderMultiSource {
-	static PROPS = ["spell"];
+	static PROPS = [...UrlUtil.PAGE_TO_PROPS[UrlUtil.PG_SPELLS]];
 	static PAGE = UrlUtil.PG_SPELLS;
 
 	_prop = "spell";
@@ -963,33 +973,54 @@ class _DataTypeLoaderCustomSpell extends _DataTypeLoaderMultiSource {
 }
 
 class _DataTypeLoaderCustomSpellFluff extends _DataTypeLoaderMultiSource {
-	static PROPS = ["spell"];
+	static PROPS = ["spellFluff"];
 	static PAGE = UrlUtil.PG_SPELLS;
 	static IS_FLUFF = true;
 
 	_prop = "spellFluff";
 }
 
-class _DataTypeLoaderCustomClassesSubclass extends _DataTypeLoader {
-	static PROPS = ["raw_class", "raw_subclass", "class", "subclass"];
-	static PAGE = UrlUtil.PG_CLASSES;
-
-	// Note that this only loads these specific props, to avoid deadlock incurred by dereferencing class/subclass features
-	static _PROPS_RAWABLE = ["class", "subclass"];
+/** @abstract */
+class _DataTypeLoaderCustomRawable extends _DataTypeLoader {
+	static _PROPS_RAWABLE;
 
 	hasPhase2Cache = true;
 
 	_getSiteIdent ({pageClean, sourceClean}) { return `${pageClean}__${this.constructor.name}`; }
 
 	async _pGetSiteData ({pageClean, sourceClean}) {
-		const json = await DataUtil.class.loadRawJSON();
+		const json = await this._pGetRawSiteData();
 		return this.constructor._getAsRawPrefixed(json, {propsRaw: this.constructor._PROPS_RAWABLE});
 	}
+
+	/** @abstract */
+	async _pGetRawSiteData () { throw new Error("Unimplemented!"); }
 
 	async _pGetStoredPrereleaseBrewData ({brewUtil, isPrerelease, isBrew}) {
 		const prereleaseBrew = await brewUtil.pGetBrewProcessed();
 		return this.constructor._getAsRawPrefixed(prereleaseBrew, {propsRaw: this.constructor._PROPS_RAWABLE});
 	}
+
+	static _pGetDereferencedData_doNotifyFailed ({ent, uids, prop}) {
+		const missingRefSets = {
+			[prop]: new Set(uids),
+		};
+
+		_DataLoaderInternalUtil.doNotifyFailedDereferences({
+			missingRefSets,
+			diagnostics: [ent.__diagnostic].filter(Boolean),
+		});
+	}
+}
+
+class _DataTypeLoaderCustomClassesSubclass extends _DataTypeLoaderCustomRawable {
+	static PROPS = ["raw_class", "raw_subclass", "class", "subclass"];
+	static PAGE = UrlUtil.PG_CLASSES;
+
+	// Note that this only loads these specific props, to avoid deadlock incurred by dereferencing class/subclass features
+	static _PROPS_RAWABLE = ["class", "subclass"];
+
+	async _pGetRawSiteData () { return DataUtil.class.loadRawJSON(); }
 
 	async _pGetPostCacheData_obj ({obj, lockToken2}) {
 		if (!obj) return null;
@@ -1113,17 +1144,9 @@ class _DataTypeLoaderCustomClassesSubclass extends _DataTypeLoader {
 				(byLevel[feature.level || 1] = byLevel[feature.level || 1] || []).push(feature);
 			});
 
-		this._pGetDereferencedData_doNotifyFailed({uids: notFoundUids, prop: propFeature});
+		this._pGetDereferencedData_doNotifyFailed({ent: clsOrSc, uids: notFoundUids, prop: propFeature});
 
 		return byLevel;
-	}
-
-	static _pGetDereferencedData_doNotifyFailed ({uids, prop}) {
-		const missingRefSets = {
-			[prop]: new Set(uids),
-		};
-
-		_DataLoaderInternalUtil.doNotifyFailedDereferences({missingRefSets});
 	}
 
 	async pGetPostCacheData ({siteData = null, prereleaseData = null, brewData = null, lockToken2}) {
@@ -1176,7 +1199,7 @@ class _DataTypeLoaderCustomClassSubclassFeature extends _DataTypeLoader {
 }
 
 class _DataTypeLoaderCustomItem extends _DataTypeLoader {
-	static PROPS = ["item", "itemGroup", "itemType", "itemEntry", "itemProperty", "itemTypeAdditionalEntries", "baseitem", "magicvariant"];
+	static PROPS = [...UrlUtil.PAGE_TO_PROPS[UrlUtil.PG_ITEMS]];
 	static PAGE = UrlUtil.PG_ITEMS;
 
 	/**
@@ -1241,25 +1264,13 @@ class _DataTypeLoaderCustomCard extends _DataTypeLoader {
 	}
 }
 
-class _DataTypeLoaderCustomDeck extends _DataTypeLoader {
+class _DataTypeLoaderCustomDeck extends _DataTypeLoaderCustomRawable {
 	static PROPS = ["raw_deck", "deck"];
 	static PAGE = UrlUtil.PG_DECKS;
 
 	static _PROPS_RAWABLE = ["deck"];
 
-	hasPhase2Cache = true;
-
-	_getSiteIdent ({pageClean, sourceClean}) { return `${pageClean}__${this.constructor.name}`; }
-
-	async _pGetSiteData ({pageClean, sourceClean}) {
-		const json = await DataUtil.deck.loadRawJSON();
-		return this.constructor._getAsRawPrefixed(json, {propsRaw: this.constructor._PROPS_RAWABLE});
-	}
-
-	async _pGetStoredPrereleaseBrewData ({brewUtil, isPrerelease, isBrew}) {
-		const prereleaseBrew = await brewUtil.pGetBrewProcessed();
-		return this.constructor._getAsRawPrefixed(prereleaseBrew, {propsRaw: this.constructor._PROPS_RAWABLE});
-	}
+	async _pGetRawSiteData () { return DataUtil.deck.loadRawJSON(); }
 
 	async _pGetPostCacheData_obj ({obj, lockToken2}) {
 		if (!obj) return null;
@@ -1308,19 +1319,12 @@ class _DataTypeLoaderCustomDeck extends _DataTypeLoader {
 
 				return [...new Array(count)].map(() => MiscUtil.copyFast(card));
 			}))
-			.flat();
+			.flat()
+			.filter(Boolean);
 
-		this._pGetDereferencedData_doNotifyFailed({uids: notFoundUids, prop: "card"});
+		this._pGetDereferencedData_doNotifyFailed({ent: deck, uids: notFoundUids, prop: "card"});
 
 		return out;
-	}
-
-	static _pGetDereferencedData_doNotifyFailed ({uids, prop}) {
-		const missingRefSets = {
-			[prop]: new Set(uids),
-		};
-
-		_DataLoaderInternalUtil.doNotifyFailedDereferences({missingRefSets});
 	}
 
 	async pGetPostCacheData ({siteData = null, prereleaseData = null, brewData = null, lockToken2}) {
@@ -2062,6 +2066,23 @@ class DataLoader {
 
 		return sourceClean.startsWith(_DataLoaderInternalUtil.getCleanSource({source: Parser.SRC_UA_PREFIX}))
 			|| sourceClean.startsWith(_DataLoaderInternalUtil.getCleanSource({source: Parser.SRC_UA_ONE_PREFIX}));
+	}
+
+	/* -------------------------------------------- */
+
+	static getDiagnosticsSummary (diagnostics) {
+		diagnostics = diagnostics.filter(Boolean);
+		if (!diagnostics.length) return "";
+
+		const filenames = diagnostics
+			.map(it => it.filename)
+			.filter(Boolean)
+			.unique()
+			.sort(SortUtil.ascSortLower);
+
+		if (!filenames.length) return "";
+
+		return `Filename${filenames.length === 1 ? " was" : "s were"}: ${filenames.map(it => `"${it}"`).join("; ")}.`;
 	}
 }
 

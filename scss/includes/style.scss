@@ -1086,17 +1086,6 @@ div#lootoutput {
 		}
 	}
 
-	&ability-names th {
-		text-align: center;
-		font-weight: bold;
-		color: inherit;
-	}
-
-	&ability-scores {
-		text-align: center;
-		width: 16%;
-	}
-
 	&wrp-size-type-align--token,
 	&wrp-avoid-token {
 		max-width: calc(100% - 11rem);
@@ -2402,6 +2391,7 @@ th.border {
 		margin-left: 5px;
 		padding-right: 2px;
 		padding-left: 2px;
+		text-indent: 0;
 	}
 
 	.homebrew-old-content {
@@ -2460,60 +2450,53 @@ th.border {
 .toast {
 	@include shadow-1();
 
-	position: fixed;
 	z-index: $z-temp-effect;
-	top: -50px;
+	right: 0;
+	bottom: 200px;
+	left: 0;
+	padding: 5px 15px;
 	min-height: 40px;
 	max-width: 850px;
 	display: flex;
 	width: 90vw;
-	right: 0;
-	left: 0;
-	margin: 0 auto;
 	justify-content: space-between;
 	align-items: center;
-	padding: 5px 15px;
 	border: 1px solid transparent;
 	border-radius: 4px;
 	opacity: 1;
-	transition: top $time-5-frames;
+	transition: bottom $time-5-frames;
 
-	&--animate:nth-of-type(1) {
-		top: 5px;
-		transition: top $time-5-frames;
-	}
-
-	&--animate:nth-of-type(2) {
-		top: 50px;
-		transition: top $time-5-frames;
-	}
-
-	&--animate:nth-of-type(3) {
-		top: 95px;
-		transition: top $time-5-frames;
-	}
-
-	&--animate:nth-of-type(4) {
-		top: 140px;
-		transition: top $time-5-frames;
+	&--animate {
+		bottom: 0;
+		margin-bottom: ($spacer * 0.5);
+		transition: bottom $time-5-frames;
 	}
 
 	&--deleted {
 		z-index: $z-temp-effect - 1;
 	}
 
+	&__container {
+		position: fixed;
+		z-index: $z-temp-effect;
+		top: 0;
+		right: 0;
+		left: 0;
+		height: 200px;
+	}
+
 	&__wrp-control {
+		margin: -5px -15px -5px 0;
 		flex: 0;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		align-self: stretch;
-		margin: -5px -15px -5px 0;
 	}
 
 	&__btn-close {
-		height: 100%;
 		margin: 0;
+		height: 100%;
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
 		border-top: 0;

@@ -1,6 +1,29 @@
 "use strict";
 
 class PageFilterEquipment extends PageFilter {
+	static _RE_FOUNDRY_ATTR = /(?:[-+*/]\s*)?@[a-z0-9.]+/gi;
+	static _RE_DAMAGE_DICE_JUNK = /[^-+*/0-9d]/gi;
+	static _RE_DAMAGE_DICE_D = /d/gi;
+
+	static _getSortableDamageTerm (t) {
+		try {
+			/* eslint-disable no-eval */
+			return eval(
+				`${t}`
+					.replace(this._RE_FOUNDRY_ATTR, "")
+					.replace(this._RE_DAMAGE_DICE_JUNK, "")
+					.replace(this._RE_DAMAGE_DICE_D, "*"),
+			);
+			/* eslint-enable no-eval */
+		} catch (ignored) {
+			return Number.MAX_SAFE_INTEGER;
+		}
+	}
+
+	static _sortDamageDice (a, b) {
+		return this._getSortableDamageTerm(a.item) - this._getSortableDamageTerm(b.item);
+	}
+
 	constructor ({filterOpts = null} = {}) {
 		super();
 
@@ -33,6 +56,7 @@ class PageFilterEquipment extends PageFilter {
 		this._weightFilter = new RangeFilter({header: "Weight", min: 0, max: 100, isAllowGreater: true, suffix: " lb."});
 		this._focusFilter = new Filter({header: "Spellcasting Focus", items: [...Parser.ITEM_SPELLCASTING_FOCUS_CLASSES]});
 		this._damageTypeFilter = new Filter({header: "Weapon Damage Type", displayFn: it => Parser.dmgTypeToFull(it).uppercaseFirst(), itemSortFn: (a, b) => SortUtil.ascSortLower(Parser.dmgTypeToFull(a), Parser.dmgTypeToFull(b))});
+		this._damageDiceFilter = new Filter({header: "Weapon Damage Dice", items: ["1", "1d4", "1d6", "1d8", "1d10", "1d12", "2d6"], itemSortFn: (a, b) => PageFilterEquipment._sortDamageDice(a, b)});
 		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Item Group", "Bundle", "SRD", "Basic Rules", "Has Images", "Has Info"], isMiscFilter: true});
 		this._poisonTypeFilter = new Filter({header: "Poison Type", items: ["ingested", "injury", "inhaled", "contact"], displayFn: StrUtil.toTitleCase});
 	}
@@ -76,6 +100,10 @@ class PageFilterEquipment extends PageFilter {
 		}
 
 		item._fValue = Math.round(item.value || 0);
+
+		item._fDamageDice = [];
+		if (item.dmg1) item._fDamageDice.push(item.dmg1);
+		if (item.dmg2) item._fDamageDice.push(item.dmg2);
 	}
 
 	addToFilters (item, isExcluded) {
@@ -85,6 +113,7 @@ class PageFilterEquipment extends PageFilter {
 		this._typeFilter.addItem(item._typeListText);
 		this._propertyFilter.addItem(item._fProperties);
 		this._damageTypeFilter.addItem(item.dmgType);
+		this._damageDiceFilter.addItem(item._fDamageDice);
 		this._poisonTypeFilter.addItem(item.poisonTypes);
 		this._miscFilter.addItem(item._fMisc);
 	}
@@ -99,6 +128,7 @@ class PageFilterEquipment extends PageFilter {
 			this._weightFilter,
 			this._focusFilter,
 			this._damageTypeFilter,
+			this._damageDiceFilter,
 			this._miscFilter,
 			this._poisonTypeFilter,
 		];
@@ -115,6 +145,7 @@ class PageFilterEquipment extends PageFilter {
 			it.weight,
 			it._fFocus,
 			it.dmgType,
+			it._fDamageDice,
 			it._fMisc,
 			it.poisonTypes,
 		);
@@ -319,6 +350,7 @@ class PageFilterItems extends PageFilterEquipment {
 			this._weightFilter,
 			this._focusFilter,
 			this._damageTypeFilter,
+			this._damageDiceFilter,
 			this._bonusFilter,
 			this._miscFilter,
 			this._rechargeTypeFilter,
@@ -345,6 +377,7 @@ class PageFilterItems extends PageFilterEquipment {
 			it.weight,
 			it._fFocus,
 			it.dmgType,
+			it._fDamageDice,
 			it._fBonus,
 			it._fMisc,
 			it.recharge,
@@ -448,3 +481,12 @@ class ModalFilterItems extends ModalFilter {
 }
 
 globalThis.ModalFilterItems = ModalFilterItems;
+
+class ListSyntaxItems extends ListUiUtil.ListSyntax {
+	static _INDEXABLE_PROPS_ENTRIES = [
+		"_fullEntries",
+		"entries",
+	];
+}
+
+globalThis.ListSyntaxItems = ListSyntaxItems;

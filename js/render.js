@@ -467,7 +467,7 @@ globalThis.Renderer = function () {
 			? `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${entry.width}" height="${entry.height}"><rect width="100%" height="100%" fill="#ccc3"></rect></svg>`)}`
 			: null;
 		textStack[0] += `<div class="${this._renderImage_getWrapperClasses(entry, meta)}" ${entry.title && this._isHeaderIndexIncludeImageTitles ? `data-title-index="${this._headerIndex++}"` : ""}>
-			<a href="${href}" target="_blank" rel="noopener noreferrer" ${entry.title ? `title="${Renderer.stripTags(entry.title)}"` : ""}>
+			<a href="${href}" target="_blank" rel="noopener noreferrer" ${entry.title ? `title="${Renderer.stripTags(entry.title).qq()}"` : ""}>
 				<img class="${this._renderImage_getImageClasses(entry, meta)}" src="${svg || href}" ${entry.altText || entry.title ? `alt="${Renderer.stripTags((entry.altText || entry.title)).qq()}"` : ""} ${svg ? `data-src="${href}"` : `loading="lazy"`} ${this._renderImage_getStylePart(entry)}>
 			</a>
 		</div>`;
@@ -836,8 +836,9 @@ globalThis.Renderer = function () {
 	this._renderList = function (entry, textStack, meta, options) {
 		if (entry.items) {
 			if (entry.name) textStack[0] += `<div class="rd__list-name">${entry.name}</div>`;
+			const tag = entry.start ? "ol" : "ul";
 			const cssClasses = this._renderList_getListCssClasses(entry, textStack, meta, options);
-			textStack[0] += `<ul ${cssClasses ? `class="${cssClasses}"` : ""}>`;
+			textStack[0] += `<${tag} ${cssClasses ? `class="${cssClasses}"` : ""} ${entry.start ? `start="${entry.start}"` : ""}>`;
 			const isListHang = entry.style && entry.style.split(" ").includes("list-hang");
 			const len = entry.items.length;
 			for (let i = 0; i < len; ++i) {
@@ -853,7 +854,7 @@ globalThis.Renderer = function () {
 				if (isListHang && typeof item === "string") textStack[0] += "</div>";
 				if (item.type !== "list") textStack[0] += "</li>";
 			}
-			textStack[0] += "</ul>";
+			textStack[0] += `</${tag}>`;
 		}
 	};
 
@@ -1269,7 +1270,7 @@ globalThis.Renderer = function () {
 	this._renderStatblock = function (entry, textStack, meta, options) {
 		this._renderPrefix(entry, textStack, meta, options);
 
-		const page = entry.prop || Renderer.hover.TAG_TO_PAGE[entry.tag];
+		const page = entry.prop || Renderer.tag.getPage(entry.tag);
 		const source = Parser.getTagSource(entry.tag, entry.source);
 		const hash = entry.hash || (UrlUtil.URL_TO_HASH_BUILDER[page] ? UrlUtil.URL_TO_HASH_BUILDER[page]({...entry, name: entry.name, source}) : null);
 
@@ -1728,7 +1729,8 @@ globalThis.Renderer = function () {
 			case "@loader": {
 				const {name, path, mode} = this._renderString_getLoaderTagMeta(text);
 
-				const brewUtil = mode === "homebrew" ? "BrewUtil2" : mode === "prerelease" ? "PrereleaseUtil" : null;
+				const brewUtilName = mode === "homebrew" ? "BrewUtil2" : mode === "prerelease" ? "PrereleaseUtil" : null;
+				const brewUtil = globalThis[brewUtilName];
 
 				if (!brewUtil) {
 					textStack[0] += `<span class="text-danger" title="Unknown loader mode &quot;${mode.qq()}&quot;!">${name}<span class="glyphicon glyphicon-alert rd__loadbrew-icon rd__loadbrew-icon"></span></span>`;
@@ -1736,7 +1738,7 @@ globalThis.Renderer = function () {
 					break;
 				}
 
-				textStack[0] += `<span onclick="${brewUtil}.pAddBrewFromLoaderTag(this)" data-rd-loader-path="${path.escapeQuotes()}" data-rd-loader-name="${name.escapeQuotes()}" class="rd__wrp-loadbrew--ready" title="Click to install ${brewUtil.DISPLAY_NAME}">${name}<span class="glyphicon glyphicon-download-alt rd__loadbrew-icon rd__loadbrew-icon"></span></span>`;
+				textStack[0] += `<span onclick="${brewUtilName}.pAddBrewFromLoaderTag(this)" data-rd-loader-path="${path.escapeQuotes()}" data-rd-loader-name="${name.escapeQuotes()}" class="rd__wrp-loadbrew--ready" title="Click to install ${brewUtil.DISPLAY_NAME}">${name}<span class="glyphicon glyphicon-download-alt rd__loadbrew-icon rd__loadbrew-icon"></span></span>`;
 				break;
 			}
 
@@ -2897,7 +2899,7 @@ Renderer.utils = {
 
 	getFluffTabContent ({entity, fluff, isImageTab = false}) {
 		Renderer.get().setFirstSection(true);
-		return fluff[isImageTab ? "images" : "entries"].map((ent, i) => {
+		return (fluff[isImageTab ? "images" : "entries"] || []).map((ent, i) => {
 			if (isImageTab) return Renderer.get().render(ent);
 
 			// If the first entry has a name, and it matches the name of the statblock, remove it to avoid having two
@@ -3577,6 +3579,12 @@ Renderer.utils = {
 			case "@recipe": out.page = UrlUtil.PG_RECIPES; break;
 			case "@deck": out.page = UrlUtil.PG_DECKS; break;
 
+			case "@legroup": {
+				out.page = "legendaryGroup";
+				out.isFauxPage = true;
+				break;
+			}
+
 			case "@creature": {
 				out.page = UrlUtil.PG_BESTIARY;
 
@@ -3633,8 +3641,7 @@ Renderer.utils = {
 						subclass: {
 							shortName: subclassShortName.trim(),
 							source: subclassSource
-								// Subclass state uses the abbreviated form of the source for URL shortness
-								? Parser.sourceJsonToAbv(subclassSource.trim())
+								? subclassSource.trim()
 								: Parser.SRC_PHB,
 						},
 					};
@@ -3888,6 +3895,7 @@ Renderer.tag = class {
 	static _TagBase = class {
 		tagName;
 		defaultSource = null;
+		page = null;
 
 		get tag () { return `@${this.tagName}`; }
 
@@ -4184,146 +4192,181 @@ Renderer.tag = class {
 	static TagAction = class extends this._TagPipedDisplayTextThird {
 		tagName = "action";
 		defaultSource = Parser.SRC_PHB;
+		page = UrlUtil.PG_ACTIONS;
 	};
 
 	static TagBackground = class extends this._TagPipedDisplayTextThird {
 		tagName = "background";
 		defaultSource = Parser.SRC_PHB;
+		page = UrlUtil.PG_BACKGROUNDS;
 	};
 
 	static TagBoon = class extends this._TagPipedDisplayTextThird {
 		tagName = "boon";
 		defaultSource = Parser.SRC_MTF;
+		page = UrlUtil.PG_CULTS_BOONS;
 	};
 
 	static TagCharoption = class extends this._TagPipedDisplayTextThird {
 		tagName = "charoption";
 		defaultSource = Parser.SRC_MOT;
+		page = UrlUtil.PG_CHAR_CREATION_OPTIONS;
 	};
 
 	static TagClass = class extends this._TagPipedDisplayTextThird {
 		tagName = "class";
 		defaultSource = Parser.SRC_PHB;
+		page = UrlUtil.PG_CLASSES;
 	};
 
 	static TagCondition = class extends this._TagPipedDisplayTextThird {
 		tagName = "condition";
 		defaultSource = Parser.SRC_PHB;
+		page = UrlUtil.PG_CONDITIONS_DISEASES;
 	};
 
 	static TagCreature = class extends this._TagPipedDisplayTextThird {
 		tagName = "creature";
 		defaultSource = Parser.SRC_MM;
+		page = UrlUtil.PG_BESTIARY;
 	};
 
 	static TagCult = class extends this._TagPipedDisplayTextThird {
 		tagName = "cult";
 		defaultSource = Parser.SRC_MTF;
+		page = UrlUtil.PG_CULTS_BOONS;
 	};
 
 	static TagDeck = class extends this._TagPipedDisplayTextThird {
 		tagName = "deck";
 		defaultSource = Parser.SRC_DMG;
+		page = UrlUtil.PG_DECKS;
 	};
 
 	static TagDisease = class extends this._TagPipedDisplayTextThird {
 		tagName = "disease";
 		defaultSource = Parser.SRC_DMG;
+		page = UrlUtil.PG_CONDITIONS_DISEASES;
 	};
 
 	static TagFeat = class extends this._TagPipedDisplayTextThird {
 		tagName = "feat";
 		defaultSource = Parser.SRC_PHB;
+		page = UrlUtil.PG_FEATS;
 	};
 
 	static TagHazard = class extends this._TagPipedDisplayTextThird {
 		tagName = "hazard";
 		defaultSource = Parser.SRC_DMG;
+		page = UrlUtil.PG_TRAPS_HAZARDS;
 	};
 
 	static TagItem = class extends this._TagPipedDisplayTextThird {
 		tagName = "item";
 		defaultSource = Parser.SRC_DMG;
+		page = UrlUtil.PG_ITEMS;
 	};
 
 	static TagLanguage = class extends this._TagPipedDisplayTextThird {
 		tagName = "language";
 		defaultSource = Parser.SRC_PHB;
+		page = UrlUtil.PG_LANGUAGES;
+	};
+
+	static TagLegroup = class extends this._TagPipedDisplayTextThird {
+		tagName = "legroup";
+		defaultSource = Parser.SRC_MM;
+		page = "legendaryGroup";
 	};
 
 	static TagObject = class extends this._TagPipedDisplayTextThird {
 		tagName = "object";
 		defaultSource = Parser.SRC_DMG;
+		page = UrlUtil.PG_OBJECTS;
 	};
 
 	static TagOptfeature = class extends this._TagPipedDisplayTextThird {
 		tagName = "optfeature";
 		defaultSource = Parser.SRC_PHB;
+		page = UrlUtil.PG_OPT_FEATURES;
 	};
 
 	static TagPsionic = class extends this._TagPipedDisplayTextThird {
 		tagName = "psionic";
 		defaultSource = Parser.SRC_UATMC;
+		page = UrlUtil.PG_PSIONICS;
 	};
 
 	static TagRace = class extends this._TagPipedDisplayTextThird {
 		tagName = "race";
 		defaultSource = Parser.SRC_PHB;
+		page = UrlUtil.PG_RACES;
 	};
 
 	static TagRecipe = class extends this._TagPipedDisplayTextThird {
 		tagName = "recipe";
 		defaultSource = Parser.SRC_HEROES_FEAST;
+		page = UrlUtil.PG_RECIPES;
 	};
 
 	static TagReward = class extends this._TagPipedDisplayTextThird {
 		tagName = "reward";
 		defaultSource = Parser.SRC_DMG;
+		page = UrlUtil.PG_REWARDS;
 	};
 
 	static TagVehicle = class extends this._TagPipedDisplayTextThird {
 		tagName = "vehicle";
 		defaultSource = Parser.SRC_GoS;
+		page = UrlUtil.PG_VEHICLES;
 	};
 
 	static TagVehupgrade = class extends this._TagPipedDisplayTextThird {
 		tagName = "vehupgrade";
 		defaultSource = Parser.SRC_GoS;
+		page = UrlUtil.PG_VEHICLES;
 	};
 
 	static TagSense = class extends this._TagPipedDisplayTextThird {
 		tagName = "sense";
 		defaultSource = Parser.SRC_PHB;
+		page = "sense";
 	};
 
 	static TagSkill = class extends this._TagPipedDisplayTextThird {
 		tagName = "skill";
 		defaultSource = Parser.SRC_PHB;
+		page = "skill";
 	};
 
 	static TagSpell = class extends this._TagPipedDisplayTextThird {
 		tagName = "spell";
 		defaultSource = Parser.SRC_PHB;
+		page = UrlUtil.PG_SPELLS;
 	};
 
 	static TagStatus = class extends this._TagPipedDisplayTextThird {
 		tagName = "status";
-		defaultSource = Parser.SRC_DMG;
+		defaultSource = Parser.SRC_PHB;
+		page = UrlUtil.PG_CONDITIONS_DISEASES;
 	};
 
 	static TagTable = class extends this._TagPipedDisplayTextThird {
 		tagName = "table";
 		defaultSource = Parser.SRC_DMG;
+		page = UrlUtil.PG_TABLES;
 	};
 
 	static TagTrap = class extends this._TagPipedDisplayTextThird {
 		tagName = "trap";
 		defaultSource = Parser.SRC_DMG;
+		page = UrlUtil.PG_TRAPS_HAZARDS;
 	};
 
 	static TagVariantrule = class extends this._TagPipedDisplayTextThird {
 		tagName = "variantrule";
 		defaultSource = Parser.SRC_DMG;
+		page = UrlUtil.PG_VARIANTRULES;
 	};
 
 	static _TagPipedDisplayTextFourth = class extends this._TagBaseAt {
@@ -4336,11 +4379,13 @@ Renderer.tag = class {
 	static TagCard = class extends this._TagPipedDisplayTextFourth {
 		tagName = "card";
 		defaultSource = Parser.SRC_DMG;
+		page = "card";
 	};
 
 	static TagDeity = class extends this._TagPipedDisplayTextFourth {
 		tagName = "deity";
 		defaultSource = Parser.SRC_PHB;
+		page = UrlUtil.PG_DEITIES;
 	};
 
 	static _TagPipedDisplayTextSixth = class extends this._TagBaseAt {
@@ -4353,6 +4398,7 @@ Renderer.tag = class {
 	static TagClassFeature = class extends this._TagPipedDisplayTextSixth {
 		tagName = "classFeature";
 		defaultSource = Parser.SRC_PHB;
+		page = UrlUtil.PG_CLASSES;
 	};
 
 	static _TagPipedDisplayTextEight = class extends this._TagBaseAt {
@@ -4365,11 +4411,13 @@ Renderer.tag = class {
 	static TagSubclassFeature = class extends this._TagPipedDisplayTextEight {
 		tagName = "subclassFeature";
 		defaultSource = Parser.SRC_PHB;
+		page = UrlUtil.PG_CLASSES;
 	};
 
 	static TagQuickref = class extends this._TagBaseAt {
 		tagName = "quickref";
 		defaultSource = Parser.SRC_PHB;
+		page = UrlUtil.PG_QUICKREF;
 
 		_getStripped (tag, text) {
 			const {name, displayText} = DataUtil.quickreference.unpackUid(text);
@@ -4488,6 +4536,7 @@ Renderer.tag = class {
 		new this.TagHazard(),
 		new this.TagItem(),
 		new this.TagLanguage(),
+		new this.TagLegroup(),
 		new this.TagObject(),
 		new this.TagOptfeature(),
 		new this.TagPsionic(),
@@ -4530,6 +4579,13 @@ Renderer.tag = class {
 	}
 
 	static _ = this._init();
+
+	/* ----------------------------------------- */
+
+	static getPage (tag) {
+		const tagInfo = this.TAG_LOOKUP[tag];
+		return tagInfo?.page;
+	}
 };
 
 Renderer.events = {
@@ -6667,7 +6723,7 @@ Renderer.monster = {
 	getTypeAlignmentPart (mon) {
 		const typeObj = Parser.monTypeToFullObj(mon.type);
 
-		return `${mon.level ? `${Parser.getOrdinalForm(mon.level)}-level ` : ""}${typeObj.asTextSidekick ? `${typeObj.asTextSidekick.toTitleCase()}; ` : ""}${Renderer.utils.getRenderedSize(mon.size)}${mon.sizeNote ? ` ${mon.sizeNote}` : ""} ${typeObj.asText.toTitleCase()}${mon.alignment ? `, ${mon.alignmentPrefix ? Renderer.get().render(mon.alignmentPrefix) : ""}${Parser.alignmentListToFull(mon.alignment).toTitleCase()}` : ""}`;
+		return `${mon.level ? `${Parser.getOrdinalForm(mon.level)}-level ` : ""}${typeObj.asTextSidekick ? `${typeObj.asTextSidekick}; ` : ""}${Renderer.utils.getRenderedSize(mon.size)}${mon.sizeNote ? ` ${mon.sizeNote}` : ""} ${typeObj.asText}${mon.alignment ? `, ${mon.alignmentPrefix ? Renderer.get().render(mon.alignmentPrefix) : ""}${Parser.alignmentListToFull(mon.alignment).toTitleCase()}` : ""}`;
 	},
 	getSavesPart (mon) { return `${Object.keys(mon.save || {}).sort(SortUtil.ascSortAtts).map(s => Renderer.monster.getSave(Renderer.get(), s, mon.save[s])).join(", ")}`; },
 	getSensesPart (mon) { return `${mon.senses ? `${Renderer.monster.getRenderedSenses(mon.senses)}, ` : ""}passive Perception ${mon.passive || "\u2014"}`; },
@@ -6760,7 +6816,7 @@ Renderer.monster = {
 			<tr><td colspan="6"><i>${Renderer.monster.getTypeAlignmentPart(mon)}</i></td></tr>
 			<tr><td colspan="6"><div class="border"></div></td></tr>
 			<tr><td colspan="6">
-				<table class="w-100 summary-noback relative table-layout-fixed">
+				<table class="w-100 summary-noback relative table-layout-fixed my-1">
 					<tr>
 						<th colspan="2">Armor Class</th>
 						<th colspan="2">Hit Points</th>
@@ -6779,30 +6835,12 @@ Renderer.monster = {
 					</tr>
 				</table>
 			</td></tr>
-			<tr><td colspan="6"><div class="border"></div></td></tr>
+			<tr><td colspan="6"><div class="border mb-1"></div></td></tr>
+			${Renderer.monster.getRenderedAbilityScores(mon)}
+			<tr><td colspan="6"><div class="border mt-1"></div></td></tr>
 			<tr><td colspan="6">
-				<table class="w-100 summary stripe-even-table">
-					<tr>
-						<th class="col-2 text-center">STR</th>
-						<th class="col-2 text-center">DEX</th>
-						<th class="col-2 text-center">CON</th>
-						<th class="col-2 text-center">INT</th>
-						<th class="col-2 text-center">WIS</th>
-						<th class="col-2 text-center">CHA</th>
-					</tr>
-					<tr>
-						<td class="text-center">${Renderer.utils.getAbilityRoller(mon, "str")}</td>
-						<td class="text-center">${Renderer.utils.getAbilityRoller(mon, "dex")}</td>
-						<td class="text-center">${Renderer.utils.getAbilityRoller(mon, "con")}</td>
-						<td class="text-center">${Renderer.utils.getAbilityRoller(mon, "int")}</td>
-						<td class="text-center">${Renderer.utils.getAbilityRoller(mon, "wis")}</td>
-						<td class="text-center">${Renderer.utils.getAbilityRoller(mon, "cha")}</td>
-					</tr>
-				</table>
-			</td></tr>
-			<tr><td colspan="6"><div class="border"></div></td></tr>
-			<tr><td colspan="6">
-				<div class="rd__compact-stat">
+				<div class="rd__compact-stat mt-2">
+					${mon.resource ? mon.resource.map(res => `<p><b>${res.name}</b> ${Renderer.monster.getRenderedResource(res)}</p>`).join("") : ""}
 					${mon.save ? `<p><b>Saving Throws</b> ${Renderer.monster.getSavesPart(mon)}</p>` : ""}
 					${mon.skill ? `<p><b>Skills</b> ${Renderer.monster.getSkillsString(renderer, mon)}</p>` : ""}
 					${mon.vulnerable ? `<p><b>Damage Vuln.</b> ${Parser.getFullImmRes(mon.vulnerable)}</p>` : ""}
@@ -6837,24 +6875,76 @@ Renderer.monster = {
 		return renderStack.join("");
 	},
 
+	_getFormulaMax (formula) {
+		return Renderer.dice.parseRandomise2(`dmax(${formula})`);
+	},
+
 	getRenderedHp: (hp, isPlainText) => {
-		function getMaxStr () {
-			const mHp = /^(\d+)d(\d+)([-+]\d+)?$/i.exec(hp.formula);
-			if (mHp) {
-				const num = Number(mHp[1]);
-				const faces = Number(mHp[2]);
-				const mod = mHp[3] ? Number(mHp[3]) : 0;
-				return `Maximum: ${(num * faces) + mod}`;
-			} else return "";
-		}
 		if (hp.special != null) return isPlainText ? Renderer.stripTags(hp.special) : Renderer.get().render(hp.special);
+
 		if (/^\d+d1$/.exec(hp.formula)) {
 			return hp.average;
-		} else {
-			const maxStr = getMaxStr(hp.formula);
-			if (isPlainText) return `${hp.average} (${hp.formula})`;
-			return `${maxStr ? `<span title="${maxStr}" class="help-subtle">` : ""}${hp.average}${maxStr ? "</span>" : ""} ${Renderer.get().render(`({@dice ${hp.formula}|${hp.formula}|Hit Points})`)}`;
 		}
+
+		if (isPlainText) return `${hp.average} (${hp.formula})`;
+
+		const maxVal = Renderer.monster._getFormulaMax(hp.formula);
+		const maxStr = maxVal ? `Maximum: ${maxVal}` : "";
+		return `${maxStr ? `<span title="${maxStr}" class="help-subtle">` : ""}${hp.average}${maxStr ? "</span>" : ""} ${Renderer.get().render(`({@dice ${hp.formula}|${hp.formula}|Hit Points})`)}`;
+	},
+
+	getRenderedResource (res, isPlainText) {
+		if (!res.formula) return `${res.value}`;
+
+		if (isPlainText) return `${res.value} (${res.formula})`;
+
+		const maxVal = Renderer.monster._getFormulaMax(res.formula);
+		const maxStr = maxVal ? `Maximum: ${maxVal}` : "";
+		return `${maxStr ? `<span title="${maxStr}" class="help-subtle">` : ""}${res.value}${maxStr ? "</span>" : ""} ${Renderer.get().render(`({@dice ${res.formula}|${res.formula}|${res.name}})`)}`;
+	},
+
+	getSafeAbilityScore (mon, abil, {isDefaultTen = false} = {}) {
+		if (!mon) return isDefaultTen ? 10 : 0;
+		if (mon[abil] == null) return isDefaultTen ? 10 : 0;
+		return typeof mon[abil] === "number" ? mon[abil] : (isDefaultTen ? 10 : 0);
+	},
+
+	getRenderedAbilityScores (mon) {
+		const byAbil = {};
+		const byValue = {};
+
+		Parser.ABIL_ABVS
+			.forEach(ab => {
+				if (mon[ab] == null || typeof mon[ab] === "number") return;
+
+				const meta = {abil: ab, value: mon[ab].special};
+				byAbil[meta.abil] = meta;
+				meta.family = (byValue[meta.value] = byValue[meta.value] || []);
+				meta.family.push(meta);
+			});
+
+		const seenAbs = new Set();
+		const ptSpecial = Parser.ABIL_ABVS
+			.map(ab => {
+				const meta = byAbil[ab];
+				if (!meta) return null;
+				if (seenAbs.has(meta.abil)) return null;
+				meta.family.forEach(meta => seenAbs.add(meta.abil));
+				return `<b>${meta.family.map(meta => meta.abil.toUpperCase()).join(", ")}</b> ${meta.value}`;
+			})
+			.filter(Boolean)
+			.map(r => `<tr><td colspan="6">${r}</td></tr>`).join("");
+
+		if (Parser.ABIL_ABVS.every(ab => mon[ab] != null && typeof mon[ab] !== "number")) return ptSpecial;
+
+		const absRemaining = Parser.ABIL_ABVS.filter(ab => !seenAbs.has(ab));
+
+		return `<tr>
+			${absRemaining.map(ab => `<th class="col-2 text-center bold">${ab.toUpperCase()}</th>`).join("")}
+		</tr>
+		<tr>
+			${absRemaining.map(ab => `<td class="text-center">${Renderer.utils.getAbilityRoller(mon, ab)}</td>`).join("")}
+		</tr>`;
 	},
 
 	getSpellcastingRenderedTraits: (renderer, mon, displayAsProp = "trait") => {
@@ -8529,7 +8619,7 @@ Renderer.table = {
 };
 
 Renderer.vehicle = {
-	CHILD_PROPS: ["movement", "weapon", "other", "action", "trait", "reaction"],
+	CHILD_PROPS: ["movement", "weapon", "other", "action", "trait", "reaction", "control", "actionStation"],
 
 	getCompactRenderedString (veh, opts) {
 		return Renderer.vehicle.getRenderedString(veh, {...opts, isCompact: true});
@@ -9321,13 +9411,23 @@ Renderer.recipe = {
 };
 
 Renderer.card = {
+	getFullEntries (ent) {
+		const entries = [...ent.entries || []];
+		if (ent.suit && (ent.valueName || ent.value)) {
+			const suitAndValue = `${((ent.valueName || "") || Parser.numberToText(ent.value)).toTitleCase()} of ${ent.suit.toTitleCase()}`;
+			if (suitAndValue.toLowerCase() !== ent.name.toLowerCase()) entries.unshift(`{@i ${suitAndValue}}`);
+		}
+		return entries;
+	},
+
 	getCompactRenderedString (ent) {
+		const fullEntries = Renderer.card.getFullEntries(ent);
 		return `
 			${Renderer.utils.getNameTr(ent)}
 			<tr class="text"><td colspan="6">
 			${Renderer.get().setFirstSection(true).render({...ent.face, maxHeight: 40, maxHeightUnits: "vh"})}
-			<hr class="hr-3">
-			${Renderer.get().setFirstSection(true).render({type: "entries", entries: ent.entries}, 1)}
+			${fullEntries?.length ? `<hr class="hr-3">
+			${Renderer.get().setFirstSection(true).render({type: "entries", entries: fullEntries}, 1)}` : ""}
 			</td></tr>
 		`;
 	},
@@ -9388,43 +9488,6 @@ Renderer.generic = {
 };
 
 Renderer.hover = {
-	TAG_TO_PAGE: {
-		"spell": UrlUtil.PG_SPELLS,
-		"item": UrlUtil.PG_ITEMS,
-		"creature": UrlUtil.PG_BESTIARY,
-		"condition": UrlUtil.PG_CONDITIONS_DISEASES,
-		"disease": UrlUtil.PG_CONDITIONS_DISEASES,
-		"status": UrlUtil.PG_CONDITIONS_DISEASES,
-		"background": UrlUtil.PG_BACKGROUNDS,
-		"race": UrlUtil.PG_RACES,
-		"optfeature": UrlUtil.PG_OPT_FEATURES,
-		"reward": UrlUtil.PG_REWARDS,
-		"feat": UrlUtil.PG_FEATS,
-		"psionic": UrlUtil.PG_PSIONICS,
-		"object": UrlUtil.PG_OBJECTS,
-		"cult": UrlUtil.PG_CULTS_BOONS,
-		"boon": UrlUtil.PG_CULTS_BOONS,
-		"trap": UrlUtil.PG_TRAPS_HAZARDS,
-		"hazard": UrlUtil.PG_TRAPS_HAZARDS,
-		"deity": UrlUtil.PG_DEITIES,
-		"variantrule": UrlUtil.PG_VARIANTRULES,
-		"charoption": UrlUtil.PG_CHAR_CREATION_OPTIONS,
-		"vehicle": UrlUtil.PG_VEHICLES,
-		"vehupgrade": UrlUtil.PG_VEHICLES,
-		"class": UrlUtil.PG_CLASSES,
-		"action": UrlUtil.PG_ACTIONS,
-		"language": UrlUtil.PG_LANGUAGES,
-		"classFeature": UrlUtil.PG_CLASSES,
-		"subclassFeature": UrlUtil.PG_CLASSES,
-		"table": UrlUtil.PG_TABLES,
-		"recipe": UrlUtil.PG_RECIPES,
-		"quickref": UrlUtil.PG_QUICKREF,
-		"deck": UrlUtil.PG_DECKS,
-		"card": "card",
-		"skill": "skill",
-		"sense": "sense",
-	},
-
 	LinkMeta: function () {
 		this.isHovered = false;
 		this.isLoading = false;
@@ -9698,7 +9761,7 @@ Renderer.hover = {
 
 		if (!meta.windowMeta) return;
 
-		meta.windowMeta.setPosition(Renderer.hover.getWindowPositionFromEvent(evt, {isPreventFlicker: evt.shiftKey || meta.isPermanent}));
+		meta.windowMeta.setPosition(Renderer.hover.getWindowPositionFromEvent(evt, {isPreventFlicker: !evt.shiftKey && !meta.isPermanent}));
 
 		if (evt.shiftKey && !meta.isPermanent) {
 			meta.isPermanent = true;
@@ -9750,6 +9813,15 @@ Renderer.hover = {
 
 	// (Baked into render strings)
 	handlePredefinedMouseMove (evt, ele) { return Renderer.hover.handleLinkMouseMove(evt, ele); },
+
+	_WINDOW_POSITION_PROPS_FROM_EVENT: [
+		"isFromBottom",
+		"isFromRight",
+		"clientX",
+		"window",
+		"isPreventFlicker",
+		"bcr",
+	],
 
 	getWindowPositionFromEvent (evt, {isPreventFlicker = false} = {}) {
 		const ele = evt.target;
@@ -9871,119 +9943,46 @@ Renderer.hover = {
 		if (opts.height != null) $wrpContent.css("height", opts.height);
 		const $hovTitle = $(`<span class="window-title min-w-0 overflow-ellipsis" title="${`${opts.title || ""}`.qq()}">${opts.title || ""}</span>`);
 
-		const out = {};
+		const hoverWindow = {};
 		const hoverId = Renderer.hover._getNextId();
-		Renderer.hover._WINDOW_METAS[hoverId] = out;
+		Renderer.hover._WINDOW_METAS[hoverId] = hoverWindow;
 		const mouseUpId = `mouseup.${hoverId} touchend.${hoverId}`;
 		const mouseMoveId = `mousemove.${hoverId} touchmove.${hoverId}`;
 		const resizeId = `resize.${hoverId}`;
-
-		const doClose = () => {
-			$hov.remove();
-			$(position.window.document).off(mouseUpId);
-			$(position.window.document).off(mouseMoveId);
-			$(position.window).off(resizeId);
-
-			delete Renderer.hover._WINDOW_METAS[hoverId];
-
-			if (opts.cbClose) opts.cbClose(out);
-		};
-
-		let drag = {};
-		function handleDragMousedown (evt, type) {
-			if (evt.which === 0 || evt.which === 1) evt.preventDefault();
-			out.zIndex = Renderer.hover._getNextZIndex(hoverId);
-			$hov.css({
-				"z-index": out.zIndex,
-				"animation": "initial",
-			});
-			drag.type = type;
-			drag.startX = EventUtil.getClientX(evt);
-			drag.startY = EventUtil.getClientY(evt);
-			drag.baseTop = parseFloat($hov.css("top"));
-			drag.baseLeft = parseFloat($hov.css("left"));
-			drag.baseHeight = $wrpContent.height();
-			drag.baseWidth = parseFloat($hov.css("width"));
-			if (type < 9) {
-				$wrpContent.css({
-					"height": drag.baseHeight,
-					"max-height": "initial",
-				});
-				$hov.css("max-width", "initial");
-			}
-		}
+		const drag = {};
 
 		const $brdrTopRightResize = $(`<div class="hoverborder__resize-ne"></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 1));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 1}));
 
 		const $brdrRightResize = $(`<div class="hoverborder__resize-e"></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 2));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 2}));
 
 		const $brdrBottomRightResize = $(`<div class="hoverborder__resize-se"></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 3));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 3}));
 
 		const $brdrBtm = $(`<div class="hoverborder hoverborder--btm ${opts.isBookContent ? "hoverborder-book" : ""}"><div class="hoverborder__resize-s"></div></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 4));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 4}));
 
 		const $brdrBtmLeftResize = $(`<div class="hoverborder__resize-sw"></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 5));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 5}));
 
 		const $brdrLeftResize = $(`<div class="hoverborder__resize-w"></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 6));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 6}));
 
 		const $brdrTopLeftResize = $(`<div class="hoverborder__resize-nw"></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 7));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 7}));
 
 		const $brdrTopResize = $(`<div class="hoverborder__resize-n"></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 8));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 8}));
 
 		const $brdrTop = $(`<div class="hoverborder hoverborder--top ${opts.isBookContent ? "hoverborder-book" : ""}" ${opts.isPermanent ? `data-perm="true"` : ""}></div>`)
-			.on("mousedown touchstart", (evt) => handleDragMousedown(evt, 9))
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 9}))
 			.on("contextmenu", (evt) => {
 				Renderer.hover._contextMenuLastClicked = {
 					hoverId,
 				};
 				ContextUtil.pOpenMenu(evt, Renderer.hover._contextMenu);
 			});
-
-		function isOverHoverTarget (evt, target) {
-			return EventUtil.getClientX(evt) >= target.left
-				&& EventUtil.getClientX(evt) <= target.left + target.width
-				&& EventUtil.getClientY(evt) >= target.top
-				&& EventUtil.getClientY(evt) <= target.top + target.height;
-		}
-
-		function handleNorthDrag (evt) {
-			const diffY = Math.max(drag.startY - EventUtil.getClientY(evt), 80 - drag.baseHeight); // prevent <80 height, as this will cause the box to move downwards
-			$wrpContent.css("height", drag.baseHeight + diffY);
-			$hov.css("top", drag.baseTop - diffY);
-			drag.startY = EventUtil.getClientY(evt);
-			drag.baseHeight = $wrpContent.height();
-			drag.baseTop = parseFloat($hov.css("top"));
-		}
-
-		function handleEastDrag (evt) {
-			const diffX = drag.startX - EventUtil.getClientX(evt);
-			$hov.css("width", drag.baseWidth - diffX);
-			drag.startX = EventUtil.getClientX(evt);
-			drag.baseWidth = parseFloat($hov.css("width"));
-		}
-
-		function handleSouthDrag (evt) {
-			const diffY = drag.startY - EventUtil.getClientY(evt);
-			$wrpContent.css("height", drag.baseHeight - diffY);
-			drag.startY = EventUtil.getClientY(evt);
-			drag.baseHeight = $wrpContent.height();
-		}
-
-		function handleWestDrag (evt) {
-			const diffX = Math.max(drag.startX - EventUtil.getClientX(evt), 150 - drag.baseWidth);
-			$hov.css("width", drag.baseWidth + diffX)
-				.css("left", drag.baseLeft - diffX);
-			drag.startX = EventUtil.getClientX(evt);
-			drag.baseWidth = parseFloat($hov.css("width"));
-			drag.baseLeft = parseFloat($hov.css("left"));
-		}
 
 		$(position.window.document)
 			.on(mouseUpId, (evt) => {
@@ -9992,7 +9991,7 @@ Renderer.hover = {
 						$wrpContent.css("max-height", "");
 						$hov.css("max-width", "");
 					}
-					adjustPosition();
+					Renderer.hover._getShowWindow_adjustPosition({$hov, $wrpContent, position});
 
 					if (drag.type === 9) {
 						// handle mobile button touches
@@ -10010,9 +10009,9 @@ Renderer.hover = {
 							this._dmScreen.setHoveringPanel(panel);
 							const target = panel.getAddButtonPos();
 
-							if (isOverHoverTarget(evt, target)) {
+							if (Renderer.hover._getShowWindow_isOverHoverTarget({evt, target})) {
 								panel.doPopulate_Stats(opts.compactReferenceData.page, opts.compactReferenceData.source, opts.compactReferenceData.hash);
-								doClose();
+								Renderer.hover._getShowWindow_doClose({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow});
 							}
 							this._dmScreen.resetHoveringButton();
 						}
@@ -10021,15 +10020,16 @@ Renderer.hover = {
 				}
 			})
 			.on(mouseMoveId, (evt) => {
+				const args = {$wrpContent, $hov, drag, evt};
 				switch (drag.type) {
-					case 1: handleNorthDrag(evt); handleEastDrag(evt); break;
-					case 2: handleEastDrag(evt); break;
-					case 3: handleSouthDrag(evt); handleEastDrag(evt); break;
-					case 4: handleSouthDrag(evt); break;
-					case 5: handleSouthDrag(evt); handleWestDrag(evt); break;
-					case 6: handleWestDrag(evt); break;
-					case 7: handleNorthDrag(evt); handleWestDrag(evt); break;
-					case 8: handleNorthDrag(evt); break;
+					case 1: Renderer.hover._getShowWindow_handleNorthDrag(args); Renderer.hover._getShowWindow_handleEastDrag(args); break;
+					case 2: Renderer.hover._getShowWindow_handleEastDrag(args); break;
+					case 3: Renderer.hover._getShowWindow_handleSouthDrag(args); Renderer.hover._getShowWindow_handleEastDrag(args); break;
+					case 4: Renderer.hover._getShowWindow_handleSouthDrag(args); break;
+					case 5: Renderer.hover._getShowWindow_handleSouthDrag(args); Renderer.hover._getShowWindow_handleWestDrag(args); break;
+					case 6: Renderer.hover._getShowWindow_handleWestDrag(args); break;
+					case 7: Renderer.hover._getShowWindow_handleNorthDrag(args); Renderer.hover._getShowWindow_handleWestDrag(args); break;
+					case 8: Renderer.hover._getShowWindow_handleNorthDrag(args); break;
 					case 9: {
 						const diffX = drag.startX - EventUtil.getClientX(evt);
 						const diffY = drag.startY - EventUtil.getClientY(evt);
@@ -10047,30 +10047,17 @@ Renderer.hover = {
 							this._dmScreen.setHoveringPanel(panel);
 							const target = panel.getAddButtonPos();
 
-							if (isOverHoverTarget(evt, target)) this._dmScreen.setHoveringButton(panel);
+							if (Renderer.hover._getShowWindow_isOverHoverTarget({evt, target})) this._dmScreen.setHoveringButton(panel);
 							else this._dmScreen.resetHoveringButton();
 						}
 						break;
 					}
 				}
 			});
-		$(position.window).on(resizeId, () => adjustPosition(true));
-
-		const doToggleMinimizedMaximized = () => {
-			const curState = $brdrTop.attr("data-display-title");
-			const isNextMinified = curState === "false";
-			$brdrTop.attr("data-display-title", isNextMinified);
-			$brdrTop.attr("data-perm", true);
-			$hov.toggleClass("hwin--minified", isNextMinified);
-		};
-
-		const doMaximize = () => {
-			$brdrTop.attr("data-display-title", false);
-			$hov.toggleClass("hwin--minified", false);
-		};
+		$(position.window).on(resizeId, () => Renderer.hover._getShowWindow_adjustPosition({$hov, $wrpContent, position}));
 
 		$brdrTop.attr("data-display-title", false);
-		$brdrTop.on("dblclick", () => doToggleMinimizedMaximized());
+		$brdrTop.on("dblclick", () => Renderer.hover._getShowWindow_doToggleMinimizedMaximized({$brdrTop, $hov}));
 		$brdrTop.append($hovTitle);
 		const $brdTopRhs = $(`<div class="ve-flex ml-auto no-shrink"></div>`).appendTo($brdrTop);
 
@@ -10079,92 +10066,11 @@ Renderer.hover = {
 				.appendTo($brdTopRhs);
 		}
 
-		const pDoPopout = async () => {
-			const dimensions = opts.fnGetPopoutSize ? opts.fnGetPopoutSize() : {width: 600, height: $content.height()};
-			const win = window.open(
-				"",
-				opts.title || "",
-				`width=${dimensions.width},height=${dimensions.height}location=0,menubar=0,status=0,titlebar=0,toolbar=0`,
-			);
-
-			// If this is a new window, bootstrap general page elements/variables.
-			// Otherwise, we can skip straight to using the window.
-			if (!win._IS_POPOUT) {
-				win._IS_POPOUT = true;
-				win.document.write(`
-					<!DOCTYPE html>
-					<html lang="en" class="ve-popwindow ${typeof styleSwitcher !== "undefined" ? styleSwitcher.getDayNightClassNames() : ""}"><head>
-						<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-						<title>${opts.title}</title>
-						${$(`link[rel="stylesheet"][href]`).map((i, e) => e.outerHTML).get().join("\n")}
-						<!-- Favicons -->
-						<link rel="icon" type="image/svg+xml" href="favicon.svg">
-						<link rel="icon" type="image/png" sizes="256x256" href="favicon-256x256.png">
-						<link rel="icon" type="image/png" sizes="144x144" href="favicon-144x144.png">
-						<link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
-						<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
-						<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
-						<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-						<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
-						<!-- Chrome Web App Icons -->
-						<link rel="manifest" href="manifest.webmanifest">
-						<meta name="application-name" content="5etools">
-						<meta name="theme-color" content="#006bc4">
-
-						<!-- Windows Start Menu tiles -->
-						<meta name="msapplication-config" content="browserconfig.xml"/>
-						<meta name="msapplication-TileColor" content="#006bc4">
-
-						<!-- Apple Touch Icons -->
-						<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
-						<link rel="apple-touch-icon" sizes="360x360" href="apple-touch-icon-360x360.png">
-						<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png">
-						<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
-						<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
-						<meta name="apple-mobile-web-app-title" content="5etools">
-
-						<!-- macOS Safari Pinned Tab and Touch Bar -->
-						<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
-
-						<style>
-							html, body { width: 100%; height: 100%; }
-							body { overflow-y: scroll; }
-							.hwin--popout { max-width: 100%; max-height: 100%; box-shadow: initial; width: 100%; overflow-y: auto; }
-						</style>
-					</head><body class="rd__body-popout">
-					<div class="hwin hoverbox--popout hwin--popout"></div>
-					<script type="text/javascript" src="js/parser.js"></script>
-					<script type="text/javascript" src="js/utils.js"></script>
-					<script type="text/javascript" src="lib/jquery.js"></script>
-					</body></html>
-				`);
-
-				win.Renderer = Renderer;
-
-				let ticks = 50;
-				while (!win.document.body && ticks-- > 0) await MiscUtil.pDelay(5);
-
-				win.$wrpHoverContent = $(win.document).find(`.hoverbox--popout`);
-			}
-
-			let $cpyContent;
-			if (opts.$pFnGetPopoutContent) {
-				$cpyContent = await opts.$pFnGetPopoutContent();
-			} else {
-				$cpyContent = $content.clone(true, true);
-			}
-
-			$cpyContent.appendTo(win.$wrpHoverContent.empty());
-
-			doClose();
-		};
-
 		if (!position.window._IS_POPOUT && !opts.isPopout) {
 			const $btnPopout = $(`<span class="hwin__top-border-icon glyphicon glyphicon-new-window hvr__popout" title="Open as Popup Window"></span>`)
 				.on("click", evt => {
 					evt.stopPropagation();
-					return pDoPopout(evt);
+					return Renderer.hover._getShowWindow_pDoPopout({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow, $content}, {evt});
 				})
 				.appendTo($brdTopRhs);
 		}
@@ -10194,10 +10100,16 @@ Renderer.hover = {
 			$brdTopRhs.append(btnPopout);
 		}
 
-		const $btnClose = $(`<span class="hwin__top-border-icon glyphicon glyphicon-remove" title="Close"></span>`)
+		const $btnClose = $(`<span class="hwin__top-border-icon glyphicon glyphicon-remove" title="Close (CTRL to Close All)"></span>`)
 			.on("click", (evt) => {
 				evt.stopPropagation();
-				doClose();
+
+				if (evt.ctrlKey || evt.metaKey) {
+					Renderer.hover._doCloseAllWindows();
+					return;
+				}
+
+				Renderer.hover._getShowWindow_doClose({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow});
 			}).appendTo($brdTopRhs);
 
 		$wrpContent.append($content);
@@ -10211,128 +10123,305 @@ Renderer.hover = {
 
 		$body.append($hov);
 
-		const setPosition = (pos) => {
-			switch (pos.mode) {
-				case "autoFromElement": {
-					const bcr = $hov[0].getBoundingClientRect();
+		Renderer.hover._getShowWindow_setPosition({$hov, $wrpContent, position}, position);
 
-					if (pos.isFromBottom) $hov.css("top", pos.bcr.top - (bcr.height + 10));
-					else $hov.css("top", pos.bcr.top + pos.bcr.height + 10);
+		hoverWindow.$windowTitle = $hovTitle;
+		hoverWindow.zIndex = initialZIndex;
+		hoverWindow.setZIndex = Renderer.hover._getNextZIndex.bind(this, {$hov, hoverWindow});
 
-					if (pos.isFromRight) $hov.css("left", (pos.clientX || pos.bcr.left) - (bcr.width + 10));
-					else $hov.css("left", (pos.clientX || (pos.bcr.left + pos.bcr.width)) + 10);
-					break;
-				}
-				case "exact": {
-					$hov.css({
-						"left": pos.x,
-						"top": pos.y,
-					});
-					break;
-				}
-				case "exactVisibleBottom": {
-					$hov.css({
-						"left": pos.x,
-						"top": pos.y,
-						"animation": "initial", // Briefly remove the animation so we can calculate the height
-					});
-
-					let yPos = pos.y;
-
-					const {bottom: posBottom, height: winHeight} = $hov[0].getBoundingClientRect();
-					const height = position.window.innerHeight;
-					if (posBottom > height) {
-						yPos = position.window.innerHeight - winHeight;
-						$hov.css({
-							"top": yPos,
-							"animation": "",
-						});
-					}
-
-					break;
-				}
-				default: throw new Error(`Positiong mode unimplemented: "${pos.mode}"`);
-			}
-
-			adjustPosition(true);
-		};
-
-		setPosition(position);
-
-		function adjustPosition () {
-			const eleHov = $hov[0];
-			const wrpContent = $wrpContent[0];
-
-			const bcr = eleHov.getBoundingClientRect().toJSON();
-			const screenHeight = position.window.innerHeight;
-			const screenWidth = position.window.innerWidth;
-
-			// readjust position...
-			// ...if vertically clipping off screen
-			if (bcr.top < 0) {
-				bcr.top = 0;
-				bcr.bottom = bcr.top + bcr.height;
-				eleHov.style.top = `${bcr.top}px`;
-			} else if (bcr.top >= screenHeight - Renderer.hover._BAR_HEIGHT) {
-				bcr.top = screenHeight - Renderer.hover._BAR_HEIGHT;
-				bcr.bottom = bcr.top + bcr.height;
-				eleHov.style.top = `${bcr.top}px`;
-			}
-
-			// ...if horizontally clipping off screen
-			if (bcr.left < 0) {
-				bcr.left = 0;
-				bcr.right = bcr.left + bcr.width;
-				eleHov.style.left = `${bcr.left}px`;
-			} else if (bcr.left + bcr.width + Renderer.hover._BODY_SCROLLER_WIDTH_PX > screenWidth) {
-				bcr.left = Math.max(screenWidth - bcr.width - Renderer.hover._BODY_SCROLLER_WIDTH_PX, 0);
-				bcr.right = bcr.left + bcr.width;
-				eleHov.style.left = `${bcr.left}px`;
-			}
-
-			// Prevent window "flickering" when hovering a link
-			if (
-				position.isPreventFlicker
-				&& Renderer.hover._isIntersectRect(bcr, position.bcr)
-			) {
-				if (position.isFromBottom) {
-					bcr.height = position.bcr.top - 5;
-					wrpContent.style.height = `${bcr.height}px`;
-				} else {
-					bcr.height = screenHeight - position.bcr.bottom - 5;
-					wrpContent.style.height = `${bcr.height}px`;
-				}
-			}
-		}
-
-		const setIsPermanent = (isPermanent) => {
-			opts.isPermanent = isPermanent;
-			$brdrTop.attr("data-perm", isPermanent);
-		};
-
-		const setZIndex = (zIndex) => {
-			$hov.css("z-index", zIndex);
-			out.zIndex = zIndex;
-		};
-
-		const doZIndexToFront = () => {
-			const nxtZIndex = Renderer.hover._getNextZIndex(hoverId);
-			setZIndex(nxtZIndex);
-		};
-
-		out.$windowTitle = $hovTitle;
-		out.zIndex = initialZIndex;
-		out.setZIndex = setZIndex;
-
-		out.setPosition = setPosition;
-		out.setIsPermanent = setIsPermanent;
-		out.doClose = doClose;
-		out.doMaximize = doMaximize;
-		out.doZIndexToFront = doZIndexToFront;
+		hoverWindow.setPosition = Renderer.hover._getShowWindow_setPosition.bind(this, {$hov, $wrpContent, position});
+		hoverWindow.setIsPermanent = Renderer.hover._getShowWindow_setIsPermanent.bind(this, {opts, $brdrTop});
+		hoverWindow.doClose = Renderer.hover._getShowWindow_doClose.bind(this, {$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow});
+		hoverWindow.doMaximize = Renderer.hover._getShowWindow_doMaximize.bind(this, {$brdrTop, $hov});
+		hoverWindow.doZIndexToFront = Renderer.hover._getShowWindow_doZIndexToFront.bind(this, {$hov, hoverWindow, hoverId});
 
 		if (opts.isPopout) pDoPopout().then(null);
 
-		return out;
+		return hoverWindow;
+	},
+
+	_getShowWindow_doClose ({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow}) {
+		$hov.remove();
+		$(position.window.document).off(mouseUpId);
+		$(position.window.document).off(mouseMoveId);
+		$(position.window).off(resizeId);
+
+		delete Renderer.hover._WINDOW_METAS[hoverId];
+
+		if (opts.cbClose) opts.cbClose(hoverWindow);
+	},
+
+	_getShowWindow_handleDragMousedown ({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type}) {
+		if (evt.which === 0 || evt.which === 1) evt.preventDefault();
+		hoverWindow.zIndex = Renderer.hover._getNextZIndex(hoverId);
+		$hov.css({
+			"z-index": hoverWindow.zIndex,
+			"animation": "initial",
+		});
+		drag.type = type;
+		drag.startX = EventUtil.getClientX(evt);
+		drag.startY = EventUtil.getClientY(evt);
+		drag.baseTop = parseFloat($hov.css("top"));
+		drag.baseLeft = parseFloat($hov.css("left"));
+		drag.baseHeight = $wrpContent.height();
+		drag.baseWidth = parseFloat($hov.css("width"));
+		if (type < 9) {
+			$wrpContent.css({
+				"height": drag.baseHeight,
+				"max-height": "initial",
+			});
+			$hov.css("max-width", "initial");
+		}
+	},
+
+	_getShowWindow_isOverHoverTarget ({evt, target}) {
+		return EventUtil.getClientX(evt) >= target.left
+			&& EventUtil.getClientX(evt) <= target.left + target.width
+			&& EventUtil.getClientY(evt) >= target.top
+			&& EventUtil.getClientY(evt) <= target.top + target.height;
+	},
+
+	_getShowWindow_handleNorthDrag ({$wrpContent, $hov, drag, evt}) {
+		const diffY = Math.max(drag.startY - EventUtil.getClientY(evt), 80 - drag.baseHeight); // prevent <80 height, as this will cause the box to move downwards
+		$wrpContent.css("height", drag.baseHeight + diffY);
+		$hov.css("top", drag.baseTop - diffY);
+		drag.startY = EventUtil.getClientY(evt);
+		drag.baseHeight = $wrpContent.height();
+		drag.baseTop = parseFloat($hov.css("top"));
+	},
+
+	_getShowWindow_handleEastDrag ({$wrpContent, $hov, drag, evt}) {
+		const diffX = drag.startX - EventUtil.getClientX(evt);
+		$hov.css("width", drag.baseWidth - diffX);
+		drag.startX = EventUtil.getClientX(evt);
+		drag.baseWidth = parseFloat($hov.css("width"));
+	},
+
+	_getShowWindow_handleSouthDrag ({$wrpContent, $hov, drag, evt}) {
+		const diffY = drag.startY - EventUtil.getClientY(evt);
+		$wrpContent.css("height", drag.baseHeight - diffY);
+		drag.startY = EventUtil.getClientY(evt);
+		drag.baseHeight = $wrpContent.height();
+	},
+
+	_getShowWindow_handleWestDrag ({$wrpContent, $hov, drag, evt}) {
+		const diffX = Math.max(drag.startX - EventUtil.getClientX(evt), 150 - drag.baseWidth);
+		$hov.css("width", drag.baseWidth + diffX)
+			.css("left", drag.baseLeft - diffX);
+		drag.startX = EventUtil.getClientX(evt);
+		drag.baseWidth = parseFloat($hov.css("width"));
+		drag.baseLeft = parseFloat($hov.css("left"));
+	},
+
+	_getShowWindow_doToggleMinimizedMaximized ({$brdrTop, $hov}) {
+		const curState = $brdrTop.attr("data-display-title");
+		const isNextMinified = curState === "false";
+		$brdrTop.attr("data-display-title", isNextMinified);
+		$brdrTop.attr("data-perm", true);
+		$hov.toggleClass("hwin--minified", isNextMinified);
+	},
+
+	_getShowWindow_doMaximize ({$brdrTop, $hov}) {
+		$brdrTop.attr("data-display-title", false);
+		$hov.toggleClass("hwin--minified", false);
+	},
+
+	async _getShowWindow_pDoPopout ({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow, $content}, {evt}) {
+		const dimensions = opts.fnGetPopoutSize ? opts.fnGetPopoutSize() : {width: 600, height: $content.height()};
+		const win = window.open(
+			"",
+			opts.title || "",
+			`width=${dimensions.width},height=${dimensions.height}location=0,menubar=0,status=0,titlebar=0,toolbar=0`,
+		);
+
+		// If this is a new window, bootstrap general page elements/variables.
+		// Otherwise, we can skip straight to using the window.
+		if (!win._IS_POPOUT) {
+			win._IS_POPOUT = true;
+			win.document.write(`
+				<!DOCTYPE html>
+				<html lang="en" class="ve-popwindow ${typeof styleSwitcher !== "undefined" ? styleSwitcher.getDayNightClassNames() : ""}"><head>
+					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+					<title>${opts.title}</title>
+					${$(`link[rel="stylesheet"][href]`).map((i, e) => e.outerHTML).get().join("\n")}
+					<!-- Favicons -->
+					<link rel="icon" type="image/svg+xml" href="favicon.svg">
+					<link rel="icon" type="image/png" sizes="256x256" href="favicon-256x256.png">
+					<link rel="icon" type="image/png" sizes="144x144" href="favicon-144x144.png">
+					<link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
+					<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+					<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+					<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+					<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+					<!-- Chrome Web App Icons -->
+					<link rel="manifest" href="manifest.webmanifest">
+					<meta name="application-name" content="5etools">
+					<meta name="theme-color" content="#006bc4">
+
+					<!-- Windows Start Menu tiles -->
+					<meta name="msapplication-config" content="browserconfig.xml"/>
+					<meta name="msapplication-TileColor" content="#006bc4">
+
+					<!-- Apple Touch Icons -->
+					<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+					<link rel="apple-touch-icon" sizes="360x360" href="apple-touch-icon-360x360.png">
+					<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png">
+					<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+					<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+					<meta name="apple-mobile-web-app-title" content="5etools">
+
+					<!-- macOS Safari Pinned Tab and Touch Bar -->
+					<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
+
+					<style>
+						html, body { width: 100%; height: 100%; }
+						body { overflow-y: scroll; }
+						.hwin--popout { max-width: 100%; max-height: 100%; box-shadow: initial; width: 100%; overflow-y: auto; }
+					</style>
+				</head><body class="rd__body-popout">
+				<div class="hwin hoverbox--popout hwin--popout"></div>
+				<script type="text/javascript" src="js/parser.js"></script>
+				<script type="text/javascript" src="js/utils.js"></script>
+				<script type="text/javascript" src="lib/jquery.js"></script>
+				</body></html>
+			`);
+
+			win.Renderer = Renderer;
+
+			let ticks = 50;
+			while (!win.document.body && ticks-- > 0) await MiscUtil.pDelay(5);
+
+			win.$wrpHoverContent = $(win.document).find(`.hoverbox--popout`);
+		}
+
+		let $cpyContent;
+		if (opts.$pFnGetPopoutContent) {
+			$cpyContent = await opts.$pFnGetPopoutContent();
+		} else {
+			$cpyContent = $content.clone(true, true);
+		}
+
+		$cpyContent.appendTo(win.$wrpHoverContent.empty());
+
+		Renderer.hover._getShowWindow_doClose({$hov, position, mouseUpId, mouseMoveId, resizeId, hoverId, opts, hoverWindow});
+	},
+
+	_getShowWindow_setPosition ({$hov, $wrpContent, position}, positionNxt) {
+		switch (positionNxt.mode) {
+			case "autoFromElement": {
+				const bcr = $hov[0].getBoundingClientRect();
+
+				if (positionNxt.isFromBottom) $hov.css("top", positionNxt.bcr.top - (bcr.height + 10));
+				else $hov.css("top", positionNxt.bcr.top + positionNxt.bcr.height + 10);
+
+				if (positionNxt.isFromRight) $hov.css("left", (positionNxt.clientX || positionNxt.bcr.left) - (bcr.width + 10));
+				else $hov.css("left", (positionNxt.clientX || (positionNxt.bcr.left + positionNxt.bcr.width)) + 10);
+
+				// region Sync position info when updating
+				if (position !== positionNxt) {
+					Renderer.hover._WINDOW_POSITION_PROPS_FROM_EVENT
+						.forEach(prop => {
+							position[prop] = positionNxt[prop];
+						});
+				}
+				// endregion
+
+				break;
+			}
+			case "exact": {
+				$hov.css({
+					"left": positionNxt.x,
+					"top": positionNxt.y,
+				});
+				break;
+			}
+			case "exactVisibleBottom": {
+				$hov.css({
+					"left": positionNxt.x,
+					"top": positionNxt.y,
+					"animation": "initial", // Briefly remove the animation so we can calculate the height
+				});
+
+				let yPos = positionNxt.y;
+
+				const {bottom: posBottom, height: winHeight} = $hov[0].getBoundingClientRect();
+				const height = position.window.innerHeight;
+				if (posBottom > height) {
+					yPos = position.window.innerHeight - winHeight;
+					$hov.css({
+						"top": yPos,
+						"animation": "",
+					});
+				}
+
+				break;
+			}
+			default: throw new Error(`Positiong mode unimplemented: "${positionNxt.mode}"`);
+		}
+
+		Renderer.hover._getShowWindow_adjustPosition({$hov, $wrpContent, position});
+	},
+
+	_getShowWindow_adjustPosition ({$hov, $wrpContent, position}) {
+		const eleHov = $hov[0];
+		const wrpContent = $wrpContent[0];
+
+		const bcr = eleHov.getBoundingClientRect().toJSON();
+		const screenHeight = position.window.innerHeight;
+		const screenWidth = position.window.innerWidth;
+
+		// readjust position...
+		// ...if vertically clipping off screen
+		if (bcr.top < 0) {
+			bcr.top = 0;
+			bcr.bottom = bcr.top + bcr.height;
+			eleHov.style.top = `${bcr.top}px`;
+		} else if (bcr.top >= screenHeight - Renderer.hover._BAR_HEIGHT) {
+			bcr.top = screenHeight - Renderer.hover._BAR_HEIGHT;
+			bcr.bottom = bcr.top + bcr.height;
+			eleHov.style.top = `${bcr.top}px`;
+		}
+
+		// ...if horizontally clipping off screen
+		if (bcr.left < 0) {
+			bcr.left = 0;
+			bcr.right = bcr.left + bcr.width;
+			eleHov.style.left = `${bcr.left}px`;
+		} else if (bcr.left + bcr.width + Renderer.hover._BODY_SCROLLER_WIDTH_PX > screenWidth) {
+			bcr.left = Math.max(screenWidth - bcr.width - Renderer.hover._BODY_SCROLLER_WIDTH_PX, 0);
+			bcr.right = bcr.left + bcr.width;
+			eleHov.style.left = `${bcr.left}px`;
+		}
+
+		// Prevent window "flickering" when hovering a link
+		if (
+			position.isPreventFlicker
+			&& Renderer.hover._isIntersectRect(bcr, position.bcr)
+		) {
+			if (position.isFromBottom) {
+				bcr.height = position.bcr.top - 5;
+				wrpContent.style.height = `${bcr.height}px`;
+			} else {
+				bcr.height = screenHeight - position.bcr.bottom - 5;
+				wrpContent.style.height = `${bcr.height}px`;
+			}
+		}
+	},
+
+	_getShowWindow_setIsPermanent ({opts, $brdrTop}, isPermanent) {
+		opts.isPermanent = isPermanent;
+		$brdrTop.attr("data-perm", isPermanent);
+	},
+
+	_getShowWindow_setZIndex ({$hov, hoverWindow}, zIndex) {
+		$hov.css("z-index", zIndex);
+		hoverWindow.zIndex = zIndex;
+	},
+
+	_getShowWindow_doZIndexToFront ({$hov, hoverWindow, hoverId}) {
+		const nxtZIndex = Renderer.hover._getNextZIndex(hoverId);
+		Renderer.hover._getNextZIndex({$hov, hoverWindow}, nxtZIndex);
 	},
 
 	/**

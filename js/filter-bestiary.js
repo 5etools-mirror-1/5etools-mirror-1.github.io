@@ -204,7 +204,7 @@ class PageFilterBestiary extends PageFilter {
 		this._traitFilter = new Filter({
 			header: "Traits",
 			items: [
-				"Aggressive", "Ambusher", "Amorphous", "Amphibious", "Antimagic Susceptibility", "Brute", "Charge", "Damage Absorption", "Death Burst", "Devil's Sight", "False Appearance", "Fey Ancestry", "Flyby", "Hold Breath", "Illumination", "Immutable Form", "Incorporeal Movement", "Keen Senses", "Legendary Resistances", "Light Sensitivity", "Magic Resistance", "Magic Weapons", "Pack Tactics", "Pounce", "Rampage", "Reckless", "Regeneration", "Rejuvenation", "Shapechanger", "Siege Monster", "Sneak Attack", "Spider Climb", "Sunlight Sensitivity", "Turn Immunity", "Turn Resistance", "Undead Fortitude", "Water Breathing", "Web Sense", "Web Walker",
+				"Aggressive", "Ambusher", "Amorphous", "Amphibious", "Antimagic Susceptibility", "Brute", "Charge", "Damage Absorption", "Death Burst", "Devil's Sight", "False Appearance", "Fey Ancestry", "Flyby", "Hold Breath", "Illumination", "Immutable Form", "Incorporeal Movement", "Keen Senses", "Legendary Resistances", "Light Sensitivity", "Magic Resistance", "Magic Weapons", "Pack Tactics", "Pounce", "Rampage", "Reckless", "Regeneration", "Rejuvenation", "Shapechanger", "Siege Monster", "Sneak Attack", "Spider Climb", "Sunlight Sensitivity", "Tunneler", "Turn Immunity", "Turn Resistance", "Undead Fortitude", "Water Breathing", "Web Sense", "Web Walker",
 			],
 		});
 		this._actionReactionFilter = new Filter({
@@ -282,6 +282,13 @@ class PageFilterBestiary extends PageFilter {
 		mon._fSkill = mon.skill ? Object.keys(mon.skill) : [];
 		mon._fSources = SourceFilter.getCompleteFilterSources(mon);
 		mon._fPassive = !isNaN(mon.passive) ? Number(mon.passive) : null;
+
+		Parser.ABIL_ABVS
+			.forEach(ab => {
+				if (mon[ab] == null) return;
+				const propF = `_f${ab.uppercaseFirst()}`;
+				mon[propF] = typeof mon[ab] !== "number" ? null : mon[ab];
+			});
 
 		mon._fMisc = [...mon.miscTags || []];
 		for (const it of (mon.trait || [])) {
@@ -384,12 +391,12 @@ class PageFilterBestiary extends PageFilter {
 
 		this._sourceFilter.addItem(mon._fSources);
 		this._crFilter.addItem(mon._fCr);
-		this._strengthFilter.addItem(mon.str);
-		this._dexterityFilter.addItem(mon.dex);
-		this._constitutionFilter.addItem(mon.con);
-		this._intelligenceFilter.addItem(mon.int);
-		this._wisdomFilter.addItem(mon.wis);
-		this._charismaFilter.addItem(mon.cha);
+		this._strengthFilter.addItem(mon._fStr);
+		this._dexterityFilter.addItem(mon._fDex);
+		this._constitutionFilter.addItem(mon._fCon);
+		this._intelligenceFilter.addItem(mon._fInt);
+		this._wisdomFilter.addItem(mon._fWis);
+		this._charismaFilter.addItem(mon._fCha);
 		this._speedFilter.addItem(mon._fSpeed);
 		mon.ac.forEach(it => this._acFilter.addItem(it.ac || it));
 		if (mon.hp.average) this._averageHpFilter.addItem(mon.hp.average);
@@ -463,7 +470,7 @@ class PageFilterBestiary extends PageFilter {
 			values,
 			m._fSources,
 			m._fCr,
-			m._pTypes.type,
+			m._pTypes.types,
 			m._pTypes.tags,
 			m._pTypes.typeSidekick,
 			m._pTypes.tagsSidekick,
@@ -503,12 +510,12 @@ class PageFilterBestiary extends PageFilter {
 			m._fAc,
 			m._fHp,
 			[
-				m.str,
-				m.dex,
-				m.con,
-				m.int,
-				m.wis,
-				m.cha,
+				m._fStr,
+				m._fDex,
+				m._fCon,
+				m._fInt,
+				m._fWis,
+				m._fCha,
 			],
 			m._fSpellsKnown,
 		);
@@ -561,7 +568,7 @@ class ModalFilterBestiary extends ModalFilter {
 
 		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BESTIARY](mon);
 		const source = Parser.sourceJsonToAbv(mon.source);
-		const type = mon._pTypes.asText.uppercaseFirst();
+		const type = mon._pTypes.asText;
 		const cr = mon._pCr;
 
 		eleRow.innerHTML = `<div class="w-100 ve-flex-vh-center lst--border veapp__list-row no-select lst__wrp-cells">
@@ -605,7 +612,7 @@ class ModalFilterBestiary extends ModalFilter {
 globalThis.ModalFilterBestiary = ModalFilterBestiary;
 
 class ListSyntaxBestiary extends ListUiUtil.ListSyntax {
-	static _INDEXABLE_PROPS = [
+	static _INDEXABLE_PROPS_ENTRIES = [
 		"trait",
 		"spellcasting",
 		"action",
@@ -623,9 +630,9 @@ class ListSyntaxBestiary extends ListUiUtil.ListSyntax {
 
 	_getSearchCacheStats (entity) {
 		const legGroup = DataUtil.monster.getMetaGroup(entity);
-		if (!legGroup && this.constructor._INDEXABLE_PROPS.every(it => !entity[it])) return "";
+		if (!legGroup && this.constructor._INDEXABLE_PROPS_ENTRIES.every(it => !entity[it])) return "";
 		const ptrOut = {_: ""};
-		this.constructor._INDEXABLE_PROPS.forEach(it => this._getSearchCache_handleEntryProp(entity, it, ptrOut));
+		this.constructor._INDEXABLE_PROPS_ENTRIES.forEach(it => this._getSearchCache_handleEntryProp(entity, it, ptrOut));
 		if (legGroup) this.constructor._INDEXABLE_PROPS_LEG_GROUP.forEach(it => this._getSearchCache_handleEntryProp(legGroup, it, ptrOut));
 		return ptrOut._;
 	}

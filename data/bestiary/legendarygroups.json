@@ -8,12 +8,13 @@
 		{
 			"name": "Aboleth",
 			"source": "MM",
+			"page": 13,
 			"lairActions": [
 				"When fighting inside its lair, an aboleth can invoke the ambient magic to take lair actions. On initiative count 20 (losing initiative ties), the aboleth takes a lair action to cause one of the following effects:",
 				{
 					"type": "list",
 					"items": [
-						"The aboleth casts {@spell phantasmal force} (no components required) on any number of creatures it can see within 60 feet of it. While maintaining concentration on this effect, the aboleth can't take other lair actions. If a target succeeds on the saving throw or if the effect ends for it, the target is immune to the aboleth's phantasmal force lair action for the next 24 hours, although such a creature can choose to be affected.",
+						"The aboleth casts {@spell phantasmal force} (no components required) on any number of creatures it can see within 60 feet of it. While maintaining {@status concentration} on this effect, the aboleth can't take other lair actions. If a target succeeds on the saving throw or if the effect ends for it, the target is immune to the aboleth's phantasmal force lair action for the next 24 hours, although such a creature can choose to be affected.",
 						"Pools of water within 90 feet of the aboleth surge outward in a grasping tide. Any creature on the ground within 20 feet of such a pool must succeed on a {@dc 14} Strength saving throw or be pulled up to 20 feet into the water and knocked {@condition prone}. The aboleth can't use this lair action again until it has used a different one.",
 						"Water in the aboleth's lair magically becomes a conduit for the creature's rage. The aboleth can target any number of creatures it can see in such water within 90 feet of it. A target must succeed on a {@dc 14} Wisdom saving throw or take 7 ({@damage 2d6}) psychic damage. The aboleth can't use this lair action again until it has used a different one."
 					]
@@ -26,7 +27,7 @@
 					"items": [
 						"Underground surfaces within 1 mile of the aboleth's lair are slimy and wet and are {@quickref difficult terrain||3}.",
 						"Water sources within 1 mile of the lair are supernaturally fouled. Enemies of the aboleth that drink such water vomit it within minutes.",
-						"As an action, the aboleth can create an illusory image of itself within 1 mile of the lair. The copy can appear at any location the aboleth has seen before or in any location a creature {@condition charmed} by the aboleth can currently see. Once created, the image lasts for as long as the aboleth maintains concentration, as if concentrating on a spell. Although the image is intangible, it looks, sounds, and can move like the aboleth. The aboleth can sense, speak, and use telepathy from the image's position as if present at that position. If the image takes any damage, it disappears."
+						"As an action, the aboleth can create an illusory image of itself within 1 mile of the lair. The copy can appear at any location the aboleth has seen before or in any location a creature {@condition charmed} by the aboleth can currently see. Once created, the image lasts for as long as the aboleth maintains {@status concentration}, as if {@status concentration||concentrating} on a spell. Although the image is intangible, it looks, sounds, and can move like the aboleth. The aboleth can sense, speak, and use telepathy from the image's position as if present at that position. If the image takes any damage, it disappears."
 					]
 				},
 				"If the aboleth dies, the first two effects fade over the course of {@dice 3d10} days."
@@ -35,14 +36,16 @@
 		{
 			"name": "Aerisi Kalinoth",
 			"source": "PotA",
+			"page": 192,
 			"lairActions": [
-				"If Aerisi is in the air node while {@creature Yan-C-Bin|PotA} isn't, Aerisi can take lair actions. On initiative count 20 (losing initiative ties), Aerisi uses a lair action to cast one of her spells, up to 3rd level, without using components or a spell slot. She can't cast the same spell two rounds in a row, although she can continue to concentrate on a spell she previously cast using a lair action. Aerisi can take no other lair actions while concentrating on a spell cast as a lair action.",
+				"If Aerisi is in the air node while {@creature Yan-C-Bin|PotA} isn't, Aerisi can take lair actions. On initiative count 20 (losing initiative ties), Aerisi uses a lair action to cast one of her spells, up to 3rd level, without using components or a spell slot. She can't cast the same spell two rounds in a row, although she can continue to concentrate on a spell she previously cast using a lair action. Aerisi can take no other lair actions while {@status concentration||concentrating} on a spell cast as a lair action.",
 				"If Aerisi casts {@spell invisibility} using this lair action, she also draws the power of the air node into herself. By doing so, she regains 15 ({@dice 3d8 + 2}) hit points."
 			]
 		},
 		{
 			"name": "Amethyst Dragon",
 			"source": "FTD",
+			"page": 160,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
 				{
@@ -101,6 +104,7 @@
 		{
 			"name": "Ancient Deep Crow",
 			"source": "AI",
+			"page": 211,
 			"regionalEffects": [
 				"The region containing an ancient deep crow's lair is transformed by the creature's presence, which creates one or more of the following effects:",
 				{
@@ -117,6 +121,7 @@
 		{
 			"name": "Ancient Dragon Turtle",
 			"source": "FTD",
+			"page": 191,
 			"lairActions": [
 				"As they are presented in the {@i Monster Manual}, dragon turtles don't have access to lair actions while in their lairs. At your discretion, you can give an adult or ancient dragon turtle access to lair actions, increasing its challenge rating by 1. On initiative count 20 (losing initiative ties), the dragon turtle can take one of the following lair actions; the dragon turtle can't take the same lair action two rounds in a row:",
 				{
@@ -170,6 +175,7 @@
 		{
 			"name": "Annis Hag",
 			"source": "VGM",
+			"page": 159,
 			"_copy": {
 				"name": "Hag",
 				"source": "VGM",
@@ -207,6 +213,7 @@
 		{
 			"name": "Arasta",
 			"source": "MOT",
+			"page": 248,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Arasta can take a lair action to cause one of the following effects. She can't use the same effect two rounds in a row.",
 				{
@@ -243,6 +250,7 @@
 		{
 			"name": "Baalzebul",
 			"source": "MaBJoV",
+			"page": 91,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Baalzebul can take one lair action to cause one of the following effects; Baalzebul can't use the same effect two rounds in a row:",
 				{
@@ -269,6 +277,7 @@
 		{
 			"name": "Balhannoth",
 			"source": "MPMM",
+			"page": 55,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), a balhannoth can take one of the following lair actions; the balhannoth can't take the same lair action two rounds in a row:",
 				{
@@ -327,6 +336,7 @@
 		{
 			"name": "Balhannoth",
 			"source": "MTF",
+			"page": 119,
 			"lairActions": [
 				"When fighting inside its lair, a balhannoth can use lair actions. On initiative count 20 (losing initiative ties), a balhannoth can take one lair action to cause one of the following effects; the balhannoth can't use the same lair action two rounds in a row:",
 				{
@@ -353,6 +363,7 @@
 		{
 			"name": "Baphomet",
 			"source": "MPMM",
+			"page": 58,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Baphomet can take one of the following lair actions; he can't take the same lair action two rounds in a row:",
 				{
@@ -418,6 +429,7 @@
 		{
 			"name": "Baphomet",
 			"source": "MTF",
+			"page": 143,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Baphomet can take a lair action to cause one of the following magical effects; he can't use the same effect two rounds in a row:",
 				{
@@ -486,6 +498,7 @@
 		{
 			"name": "Beholder",
 			"source": "MM",
+			"page": 28,
 			"lairActions": [
 				"When fighting inside its lair, a beholder can invoke the ambient magic to take lair actions. On initiative count 20 (losing initiative ties), the beholder can take one lair action to cause one of the following effects:",
 				{
@@ -513,6 +526,7 @@
 		{
 			"name": "Belashyrra",
 			"source": "ERLW",
+			"page": 286,
 			"lairActions": [
 				"While within the Citadel of Lidless Eyes, Belashyrra can invoke the ambient magic to take lair actions. On initiative count 20 (losing initiative ties), Belashyrra can take a lair action to cause one of the following effects; it can't use the same effect two rounds in a row:",
 				{
@@ -540,6 +554,7 @@
 		{
 			"name": "Bheur Hag",
 			"source": "VGM",
+			"page": 160,
 			"_copy": {
 				"name": "Hag",
 				"source": "VGM",
@@ -577,6 +592,7 @@
 		{
 			"name": "Black Dragon",
 			"source": "MM",
+			"page": 88,
 			"additionalSources": [
 				{
 					"source": "FTD"
@@ -667,6 +683,7 @@
 		{
 			"name": "Blue Dragon",
 			"source": "MM",
+			"page": 91,
 			"additionalSources": [
 				{
 					"source": "FTD"
@@ -752,6 +769,7 @@
 		{
 			"name": "Brass Dragon",
 			"source": "MM",
+			"page": 105,
 			"additionalSources": [
 				{
 					"source": "FTD"
@@ -836,6 +854,7 @@
 		{
 			"name": "Bronze Dragon",
 			"source": "MM",
+			"page": 108,
 			"additionalSources": [
 				{
 					"source": "FTD"
@@ -925,6 +944,7 @@
 		{
 			"name": "Captain N'ghathrod",
 			"source": "WDMM",
+			"page": 250,
 			"lairActions": [
 				"When fighting aboard the Scavenger, N'ghathrod can take lair actions. On initiative count 20 (losing initiative ties), N'ghathrod can take one lair action to cause one of the following effects:",
 				{
@@ -939,6 +959,7 @@
 		{
 			"name": "Copper Dragon",
 			"source": "MM",
+			"page": 112,
 			"additionalSources": [
 				{
 					"source": "FTD"
@@ -985,7 +1006,7 @@
 					"items": [
 						"Magic carvings of the dragon's smiling visage can be seen worked into stone terrain and objects within 6 miles of the dragon's lair.",
 						"Tiny beasts such as rodents and birds that are normally unable to speak gain the magical ability to speak and understand Draconic while within 1 mile of the dragon's lair. These creatures speak well of the dragon, but can't divulge its whereabouts.",
-						"Intelligent creatures within 1 mile of the dragon's lair are {@condition prone} to fits of giggling. Even serious matters suddenly seem amusing."
+						"Intelligent creatures within 1 mile of the dragon's lair are prone to fits of giggling. Even serious matters suddenly seem amusing."
 					]
 				},
 				"If the dragon dies, the magic carvings fade over the course of {@dice 1d10} days. The other effects end immediately.",
@@ -1018,6 +1039,7 @@
 		{
 			"name": "Cryonax",
 			"source": "MaBJoV",
+			"page": 97,
 			"lairActions": [
 				"When Cryonax occupies Frostfell, or any area that he has corrupted by inhabiting it for at least a week, he can command the snow and ice around him to take lair actions. On initiative count 20 (losing initiative ties), Cryonax can take a lair action to cause one of the following effects; Cryonax can't use the same effect two rounds in a row:",
 				{
@@ -1045,6 +1067,7 @@
 		{
 			"name": "Crystal Dragon",
 			"source": "FTD",
+			"page": 171,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
 				{
@@ -1108,6 +1131,7 @@
 		{
 			"name": "Death Tyrant",
 			"source": "MM",
+			"page": 29,
 			"lairActions": [
 				"When fighting inside its lair, a death tyrant can invoke the ambient magic to take lair actions. On initiative count 20 (losing initiative ties), the death tyrant can take one lair action to cause one of the following effects:",
 				{
@@ -1135,6 +1159,7 @@
 		{
 			"name": "Deep Dragon",
 			"source": "FTD",
+			"page": 174,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
 				{
@@ -1188,6 +1213,7 @@
 		{
 			"name": "Demilich",
 			"source": "MM",
+			"page": 48,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the demilich rolls a {@dice d20}. On a result of 11 or higher, the demilich takes a lair action to cause one of the following effects. It can't use the same effect two rounds in a row.",
 				{
@@ -1215,6 +1241,7 @@
 		{
 			"name": "Demogorgon",
 			"source": "MPMM",
+			"page": 90,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Demogorgon can take one of the following lair actions; he can't take the same lair action two rounds in a row:",
 				{
@@ -1273,6 +1300,7 @@
 		{
 			"name": "Demogorgon",
 			"source": "MTF",
+			"page": 144,
 			"lairActions": [
 				"On Initiative count 20 (losing initiative ties), Demogorgon can take a lair action to cause one of the following effects: Demogorgon can't use the same effect two rounds in a row:",
 				{
@@ -1340,6 +1368,7 @@
 		{
 			"name": "Drow Matron Mother",
 			"source": "MPMM",
+			"page": 104,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the drow can take one of the following lair actions when in her lair; she can't take the same lair action two rounds in a row:",
 				{
@@ -1374,6 +1403,7 @@
 		{
 			"name": "Dyrrn",
 			"source": "ERLW",
+			"page": 288,
 			"lairActions": [
 				"While within the Palace of Sinew, Dyrrn can invoke the ambient magic to take lair actions. On initiative count 20 (losing initiative ties), Dyrrn can take a lair action to cause one of the following effects; it can't use the same effect two rounds in a row:",
 				{
@@ -1446,6 +1476,7 @@
 		{
 			"name": "Elder Brain",
 			"source": "MPMM",
+			"page": 120,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), an elder brain can take one of the following lair actions; the elder brain can't take the same lair action two rounds in a row:",
 				{
@@ -1511,6 +1542,7 @@
 		{
 			"name": "Elder Brain",
 			"source": "VGM",
+			"page": 173,
 			"lairActions": [
 				"When fighting inside its lair, an elder brain can use lair actions. On initiative count 20 (losing initiative ties), an elder brain can take one lair action to cause one of the following effects; the elder brain can't use the same lair action two rounds in a row:",
 				{
@@ -1538,6 +1570,7 @@
 		{
 			"name": "Emerald Dragon",
 			"source": "FTD",
+			"page": 196,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
 				{
@@ -1596,6 +1629,7 @@
 		{
 			"name": "Faerie Dragon",
 			"source": "FTD",
+			"page": 118,
 			"lairActions": [
 				"As they are presented in the {@book Monster Manual|MM}, faerie dragons don't have access to lair actions while in their lairs. At your discretion, a {@creature Faerie Dragon (Green)||green} or {@creature Faerie Dragon (Violet)||older faerie dragon} can take one of the following lair actions on initiative count 20 (losing initiative ties):",
 				{
@@ -1644,6 +1678,7 @@
 		{
 			"name": "Fazrian",
 			"source": "WDMM",
+			"page": 275,
 			"lairActions": [
 				"Unless he is {@condition incapacitated}, Fazrian can take one of the following lair actions on initiative count 20 (losing initiative ties) while on the Terminus Level:",
 				{
@@ -1659,6 +1694,7 @@
 		{
 			"name": "Fraz-Urb'luu",
 			"source": "MPMM",
+			"page": 129,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), FrazUrb'luu can take one of the following lair actions when in his lair; he can't take the same lair action two rounds in a row:",
 				{
@@ -1724,6 +1760,7 @@
 		{
 			"name": "Fraz-Urb'luu",
 			"source": "MTF",
+			"page": 146,
 			"lairActions": [
 				"On Initiative count 20 (losing initiative ties), Fraz-Urb'luu can take a lair action to cause one of the following effects; he can't use the same effect two rounds in a row:",
 				{
@@ -1781,7 +1818,7 @@
 								],
 								[
 									"81\u201300",
-									"\"My perception of reality doesn't match anyone else's. It makes me {@condition prone} to violent delusions that make no sense to anyone else.\""
+									"\"My perception of reality doesn't match anyone else's. It makes me prone to violent delusions that make no sense to anyone else.\""
 								]
 							]
 						}
@@ -1792,6 +1829,7 @@
 		{
 			"name": "Gar Shatterkeel",
 			"source": "LR",
+			"page": 18,
 			"lairActions": [
 				"Gar can employ lair actions while he's within the coral mountain.",
 				"On initiative count 20 (losing initiative ties), Gar Shatterkeel takes a lair action to cause one of the following effects; Gar can't use the same effect two rounds in a row.",
@@ -1799,7 +1837,7 @@
 					"type": "list",
 					"items": [
 						"Gar may teleport anywhere within the coral mountain, bringing up to five willing creatures with him.",
-						"The coral in a 60-foot radius grows rapidly around creatures inside the coral mountain. Each creature must succeed on a {@dc 18} Strength saving throw or become {@condition restrained}. Restrained creatures can take an action on their turn to make a {@dc 18} Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check to free themselves. This effect lasts for 1 minute unless dispelled (it counts as a 6th level spell), and doesn't require Gar to maintain concentration. Gar Shatterkeel and any creatures he designates are immune to this effect.",
+						"The coral in a 60-foot radius grows rapidly around creatures inside the coral mountain. Each creature must succeed on a {@dc 18} Strength saving throw or become {@condition restrained}. Restrained creatures can take an action on their turn to make a {@dc 18} Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check to free themselves. This effect lasts for 1 minute unless dispelled (it counts as a 6th level spell), and doesn't require Gar to maintain {@status concentration}. Gar Shatterkeel and any creatures he designates are immune to this effect.",
 						"Up to five corpses that Gar can see within 60 feet rise up as {@creature drowned blade|GoS|drowned blades} and attack anyone Gar directs them to on his turn."
 					]
 				}
@@ -1808,14 +1846,16 @@
 		{
 			"name": "Gar Shatterkeel",
 			"source": "PotA",
+			"page": 208,
 			"lairActions": [
-				"If Gar is in the water node while {@creature Olhydra|PotA} isn't, he can take lair actions. On initiative count 20 (losing initiative ties), Gar uses a lair action to use his Multiattack or cast one of his spells, up to 3rd level, without using components or a spell slot. He can't cast the same spell two rounds in a row, but he can continue to concentrate on a spell he previously cast using a lair action. He can take no other lair actions while concentrating on a spell cast as a lair action. His favorite use of this capability is casting {@spell inflict wounds} or {@spell call lightning}.",
+				"If Gar is in the water node while {@creature Olhydra|PotA} isn't, he can take lair actions. On initiative count 20 (losing initiative ties), Gar uses a lair action to use his Multiattack or cast one of his spells, up to 3rd level, without using components or a spell slot. He can't cast the same spell two rounds in a row, but he can continue to concentrate on a spell he previously cast using a lair action. He can take no other lair actions while {@status concentration||concentrating} on a spell cast as a lair action. His favorite use of this capability is casting {@spell inflict wounds} or {@spell call lightning}.",
 				"If Gar casts {@spell cure wounds} using this lair action, he regains the maximum number of hit points from the spell (28)."
 			]
 		},
 		{
 			"name": "Geryon",
 			"source": "MPMM",
+			"page": 136,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Geryon can take one of the following lair actions; he can't take the same lair action two rounds in a row:",
 				{
@@ -1881,6 +1921,7 @@
 		{
 			"name": "Geryon",
 			"source": "MTF",
+			"page": 173,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Geryon can take a lair action to cause one of the following effects; he can't use the same effect two rounds in a row:",
 				{
@@ -1908,6 +1949,7 @@
 		{
 			"name": "Githzerai Anarch",
 			"source": "MPMM",
+			"page": 142,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the anarch can take one of the following lair actions; the anarch can't take the same lair action two rounds in a row:",
 				{
@@ -1918,7 +1960,7 @@
 							"name": "Create Object",
 							"type": "item",
 							"entries": [
-								"The anarch casts the creation spell (as a 9th-level spell) using the unformed substance of Limbo instead of shadow material. If used in Limbo, the object remains until the anarch's concentration is broken, regardless of its composition. If the anarch moves more than 120 feet from the object, the anarch's concentration breaks."
+								"The anarch casts the creation spell (as a 9th-level spell) using the unformed substance of Limbo instead of shadow material. If used in Limbo, the object remains until the anarch's {@status concentration} is broken, regardless of its composition. If the anarch moves more than 120 feet from the object, the anarch's {@status concentration} breaks."
 							]
 						},
 						{
@@ -1966,13 +2008,14 @@
 		{
 			"name": "Githzerai Anarch",
 			"source": "MTF",
+			"page": 207,
 			"lairActions": [
 				"An anarch can use lair actions. On initiative count 20 (losing initiative ties), the anarch can take a lair action to cause one of the following effects; the anarch can't use the same effect two rounds in a row:",
 				{
 					"type": "list",
 					"items": [
 						"The anarch casts the {@spell lightning bolt} spell (at 5th level), but the anarch can change the damage type from lightning to cold, fire, psychic, radiant, or thunder. If the spell deals damage other than fire or lightning, it doesn't ignite flammable objects.",
-						"The anarch casts the {@spell creation} spell (as a 9th-level spell) using the unformed substance of Limbo instead of shadow material. If used in Limbo, the object remains until the anarch's concentration is broken, regardless of its composition. If the anarch moves more than 120 feet from the object, its concentration breaks.",
+						"The anarch casts the {@spell creation} spell (as a 9th-level spell) using the unformed substance of Limbo instead of shadow material. If used in Limbo, the object remains until the anarch's {@status concentration} is broken, regardless of its composition. If the anarch moves more than 120 feet from the object, its {@status concentration} breaks.",
 						"The anarch can magically move an object it can see within 150 feet of it by making a Wisdom check with advantage. The DC depends on the object's size: {@dc 5} for Tiny, {@dc 10} for Small, {@dc 15} for Medium, {@dc 20} for Large, and {@dc 25} for Huge or larger."
 					]
 				}
@@ -1992,6 +2035,7 @@
 		{
 			"name": "Gold Dragon",
 			"source": "MM",
+			"page": 114,
 			"additionalSources": [
 				{
 					"source": "FTD"
@@ -2071,6 +2115,7 @@
 		{
 			"name": "Graz'zt",
 			"source": "MPMM",
+			"page": 148,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Graz'zt can take one of the following lair actions; he can't take the same lair action two rounds in a row:",
 				{
@@ -2129,6 +2174,7 @@
 		{
 			"name": "Graz'zt",
 			"source": "MTF",
+			"page": 149,
 			"lairActions": [
 				"On Initiative count 20 (losing initiative ties), Graz'zt can take a lair action to cause one of the following effects; he can't use the same effect two rounds in a row:",
 				{
@@ -2200,6 +2246,7 @@
 		{
 			"name": "Green Dragon",
 			"source": "MM",
+			"page": 94,
 			"additionalSources": [
 				{
 					"source": "FTD"
@@ -2286,6 +2333,7 @@
 		{
 			"name": "Green Hag",
 			"source": "MM",
+			"page": 177,
 			"_copy": {
 				"name": "Hag",
 				"source": "VGM",
@@ -2322,6 +2370,7 @@
 		{
 			"name": "Hag",
 			"source": "VGM",
+			"page": 159,
 			"lairActions": [
 				"The following lair actions are options for grandmothers and powerful aunties. Grandmothers usually have three to five lair actions, aunties usually only one (if they have any at all). Unless otherwise noted, any lair action that requires a creature to make a saving throw uses the save DC of the hag's most powerful ability.",
 				"On initiative count 20 (losing initiative ties), the hag can take a lair action to cause one of the following effects, but can't use the same effect two rounds in a row:",
@@ -2349,6 +2398,7 @@
 		{
 			"name": "Halaster Blackcloak",
 			"source": "WDMM",
+			"page": 310,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Halaster takes a lair action to cause one of the following effects:",
 				{
@@ -2375,6 +2425,7 @@
 		{
 			"name": "Hythonia",
 			"source": "MOT",
+			"page": 252,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Hythonia can take a lair action to cause one of the following effects. She can't use the same effect two rounds in a row:",
 				{
@@ -2411,6 +2462,7 @@
 		{
 			"name": "Illithilich",
 			"source": "VGM",
+			"page": 172,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the illithilich can take a lair action to cause one of the following magical effects; the illithilich can't use the same effect two rounds in a row:",
 				{
@@ -2426,6 +2478,7 @@
 		{
 			"name": "Imix",
 			"source": "PotA",
+			"page": 214,
 			"lairActions": [
 				"Imix is master of heat and flames in his vicinity. He can take lair actions on the Elemental Plane of Fire, or in any elemental fire node (such as the Weeping Colossus in chapter 5). On initiative count 20 (losing initiative ties), Imix uses his lair action to cause one of the following effects:",
 				{
@@ -2454,6 +2507,7 @@
 		{
 			"name": "Juiblex",
 			"source": "MPMM",
+			"page": 160,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Juiblex can take one of the following lair actions; it can't take the same lair action two rounds in a row:",
 				{
@@ -2521,6 +2575,7 @@
 		{
 			"name": "Juiblex",
 			"source": "MTF",
+			"page": 151,
 			"lairActions": [
 				"On Initiative count 20 (losing initiative ties), Juiblex can take a lair action to cause one of the following effects; he can't use the same effect two rounds in a row:",
 				{
@@ -2588,6 +2643,7 @@
 		{
 			"name": "Keresta Delvingstone",
 			"source": "WDMM",
+			"page": 232,
 			"regionalEffects": [
 				"Vanrakdoom is Keresta's lair, and the following regional effects are noticeable throughout it:",
 				{
@@ -2603,6 +2659,7 @@
 		{
 			"name": "Ki-rin",
 			"source": "MPMM",
+			"page": 162,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), a kirin can take one of the following lair actions, and it must finish a long rest before taking the chosen lair action again:",
 				{
@@ -2682,6 +2739,7 @@
 		{
 			"name": "Ki-rin",
 			"source": "VGM",
+			"page": 163,
 			"lairActions": [
 				"Inside its lair, a ki-rin has the power to conjure objects up to three times per day, using each of the following versions of the power once. One version permanently creates enough objects made of soft, plant-based material - including manufactured objects such as cloth, pillows, rope, blankets, and clothing - to fill a cube 20 feet on a side. The second version permanently creates enough objects made of wood, or similarly hard plant-based material, to fill a cube 10 feet on a side. The third version creates enough objects made of stone or metal to fill a cube 2 feet on a side, but any materials created in this way last for only 1 hour."
 			],
@@ -2703,6 +2761,7 @@
 		{
 			"name": "Kraken",
 			"source": "MM",
+			"page": 197,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the kraken takes a lair action to cause one of the following magical effects:",
 				{
@@ -2730,13 +2789,14 @@
 		{
 			"name": "Kyrilla, Accursed Gorgon",
 			"source": "AitFR-DN",
+			"page": 12,
 			"lairActions": [
 				"When fighting inside her lair, Kyrilla can invoke the ambient magic there to take lair actions. On initiative count 20 (losing initiative ties), she takes a lair action to cause one of the following effects:",
 				{
 					"type": "list",
 					"items": [
-						"Kyrilla casts {@spell moonbeam} (no components required). While maintaining concentration on this effect, she can't take other lair actions.",
-						"Kyrilla casts {@spell cloud of daggers} (no components required), except the daggers are flying snakes and the spell deals piercing damage. While maintaining concentration on this effect, she can't take other lair actions.",
+						"Kyrilla casts {@spell moonbeam} (no components required). While maintaining {@status concentration} on this effect, she can't take other lair actions.",
+						"Kyrilla casts {@spell cloud of daggers} (no components required), except the daggers are flying snakes and the spell deals piercing damage. While maintaining {@status concentration} on this effect, she can't take other lair actions.",
 						"Pools of liquid within 60 feet of Kyrilla surge and froth, splashing and soaking any creature on the ground within 5 feet of such pools. Creatures that succeed on a DC 14 Dexterity saving throw avoid getting liquid in their eyes and mouths. Kyrilla can't use this lair action again until she has used a different one."
 					]
 				}
@@ -2756,6 +2816,7 @@
 		{
 			"name": "Lich",
 			"source": "MM",
+			"page": 202,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the lich can take a lair action to cause one of the following magical effects; the lich can't use the same effect two rounds in a row:",
 				{
@@ -2771,6 +2832,7 @@
 		{
 			"name": "Lichen Lich",
 			"source": "CM",
+			"page": 223,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the lichen lich can take a lair action to cause one of the following effects:",
 				{
@@ -2786,20 +2848,22 @@
 		{
 			"name": "Marlos Urnrayle",
 			"source": "PotA",
+			"page": 199,
 			"lairActions": [
-				"If Marlos is in the earth node while {@creature Ogrémoch|PotA} isn't, the medusa can take lair actions. On initiative count 20 (losing initiative ties), Marlos uses a lair action to cast {@spell earthquake} without using components. As long as he maintains concentration on {@spell earthquake}, initiative count 20 is the start of Marlos's turn for the purpose of the spell. He can take no other lair actions while concentrating on {@spell earthquake}.",
+				"If Marlos is in the earth node while {@creature Ogrémoch|PotA} isn't, the medusa can take lair actions. On initiative count 20 (losing initiative ties), Marlos uses a lair action to cast {@spell earthquake} without using components. As long as he maintains {@status concentration} on {@spell earthquake}, initiative count 20 is the start of Marlos's turn for the purpose of the spell. He can take no other lair actions while {@status concentration||concentrating} on {@spell earthquake}.",
 				"Marlos's second option for a lair action is to draw power from the earth node to heal. When he does so, he regains 30 ({@dice 6d8 + 3}) hit points."
 			]
 		},
 		{
 			"name": "Mephistopheles",
 			"source": "MaBJoV",
+			"page": 99,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Mephistopheles can take one lair action to cause one of the following effects; Mephistopheles can't use the same effect two rounds in a row:",
 				{
 					"type": "list",
 					"items": [
-						"Mephistopheles casts any spell from his wizard list and if it normally requires concentration, it lasts for the full duration instead.",
+						"Mephistopheles casts any spell from his wizard list and if it normally requires {@status concentration}, it lasts for the full duration instead.",
 						"Mephistopheles covers a 5-foot area with Hellfire. Any creature that starts their turn on that area suffers 27 ({@damage 6d8}) fire damage. The Hellfire remains until Mephistopheles dismisses it or he uses this ability again."
 					]
 				}
@@ -2819,6 +2883,7 @@
 		{
 			"name": "Merrenoloth",
 			"source": "MPMM",
+			"page": 180,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties) while captaining a vessel, the merrenoloth can take one of the following lair actions; it can't take the same lair action two rounds in a row:",
 				{
@@ -2877,6 +2942,7 @@
 		{
 			"name": "Merrenoloth",
 			"source": "MTF",
+			"page": 250,
 			"lairActions": [
 				"Any ship a merrenoloth is contracted to captain becomes the creature's lair. When fighting on the ship, the merrenoloth can invoke its ability to take lair actions. On initiative count 20 (losing initiative ties), the merrenoloth can take one lair action to cause one of the following effects; it can't use the same effect two rounds in a row:",
 				{
@@ -2904,6 +2970,7 @@
 		{
 			"name": "Moonstone Dragon",
 			"source": "FTD",
+			"page": 212,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
 				{
@@ -2952,6 +3019,7 @@
 		{
 			"name": "Morkoth",
 			"source": "MPMM",
+			"page": 186,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the morkoth can take one of the following lair actions:",
 				{
@@ -3017,6 +3085,7 @@
 		{
 			"name": "Morkoth",
 			"source": "VGM",
+			"page": 177,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the morkoth takes a lair action to cause one of the effects described below:",
 				{
@@ -3044,6 +3113,7 @@
 		{
 			"name": "Mummy Lord",
 			"source": "MM",
+			"page": 229,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the mummy lord takes a lair action to cause one of the following effects; the mummy lord can't use the same effect two rounds in a row:",
 				{
@@ -3071,6 +3141,7 @@
 		{
 			"name": "Murgaxor",
 			"source": "SCC",
+			"page": 180,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Murgaxor can take one of the following lair actions; after he does so, he can't use that action again until he finishes a long rest:",
 				{
@@ -3104,6 +3175,7 @@
 		{
 			"name": "Night Hag",
 			"source": "MM",
+			"page": 178,
 			"_copy": {
 				"name": "Hag",
 				"source": "VGM",
@@ -3141,6 +3213,7 @@
 		{
 			"name": "Nintra Siotta",
 			"source": "CM",
+			"page": 197,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties) Nintra can take a lair action to cause one of the following effects; she can't use the same effect two rounds in a row:",
 				{
@@ -3155,6 +3228,7 @@
 		{
 			"name": "Ogrémoch",
 			"source": "PotA",
+			"page": 216,
 			"lairActions": [
 				"Ogrémoch can assert his dominion over the rock and stone around him to take lair actions on the Elemental Plane of Earth, or in any elemental earth node (including the Black Geode, described in chapter 5). On initiative count 20 (losing initiative ties), Ogrémoch uses his lair action to cause one of the following effects:",
 				{
@@ -3183,6 +3257,7 @@
 		{
 			"name": "Olhydra",
 			"source": "PotA",
+			"page": 218,
 			"lairActions": [
 				"Olhydra can command the waters around herself to take lair actions on the Elemental Plane of Water, or in any elemental water node (such as the Plunging Torrents, described in chapter 5). On initiative count 20 (losing initiative ties), Olhydra uses her lair action to cause one of the following effects:",
 				{
@@ -3211,6 +3286,7 @@
 		{
 			"name": "Orcus",
 			"source": "MPMM",
+			"page": 204,
 			"lairActions": [
 				"On Initiative count 20 (losing initiative ties), Orcus can take a lair action to cause one of the following effects; he can't use the same effect two rounds in a row:",
 				{
@@ -3269,6 +3345,7 @@
 		{
 			"name": "Orcus",
 			"source": "MTF",
+			"page": 153,
 			"lairActions": [
 				"On Initiative count 20 (losing initiative ties), Orcus can take a lair action to cause one of the following effects; he can't use the same effect two rounds in a row:",
 				{
@@ -3337,6 +3414,7 @@
 		{
 			"name": "Pazuzu",
 			"source": "MaBJoV",
+			"page": 103,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Pazuzu can take a lair action to cause one of the following effects; Pazuzu can't use the same effect two rounds in a row:",
 				{
@@ -3363,6 +3441,7 @@
 		{
 			"name": "Red Dragon",
 			"source": "MM",
+			"page": 98,
 			"additionalSources": [
 				{
 					"source": "FTD"
@@ -3448,6 +3527,7 @@
 		{
 			"name": "Sapphire Dragon",
 			"source": "FTD",
+			"page": 215,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
 				{
@@ -3506,6 +3586,7 @@
 		{
 			"name": "Sapphire Dragon",
 			"source": "SADS",
+			"page": 215,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon takes a lair action to cause one of the following effects; the dragon can't use the same effect two rounds in a row:",
 				{
@@ -3532,6 +3613,7 @@
 		{
 			"name": "Sea Fury",
 			"source": "EGW",
+			"page": 299,
 			"lairActions": [
 				"A sea fury lurks in the caverns where its coven once dwelled, decorating the walls with the bones of its slain kin, as well as baubles stolen from sunken wrecks.",
 				"On initiative count 20 (losing initiative ties), the sea fury can take a lair action to cause one of the following magical effects, but can't use the same effect two rounds in a row:",
@@ -3559,6 +3641,7 @@
 		{
 			"name": "Sea Hag",
 			"source": "MM",
+			"page": 179,
 			"_copy": {
 				"name": "Hag",
 				"source": "VGM",
@@ -3596,6 +3679,7 @@
 		{
 			"name": "Shadow Dragon",
 			"source": "FTD",
+			"page": 142,
 			"lairActions": [
 				{
 					"type": "entries",
@@ -3644,6 +3728,7 @@
 		{
 			"name": "Silver Dragon",
 			"source": "MM",
+			"page": 117,
 			"additionalSources": [
 				{
 					"source": "FTD"
@@ -3694,6 +3779,7 @@
 		{
 			"name": "Sphinx",
 			"source": "MM",
+			"page": 281,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the sphinx can take a lair action to cause one of the following magical effects; the sphinx can't use an effect again until it finishes a short or long rest:",
 				{
@@ -3710,6 +3796,7 @@
 		{
 			"name": "Ssendam, Lord of Madness",
 			"source": "MaBJoV",
+			"page": 105,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Ssendam can take one lair action to cause one of the following effects; Ssendam can't use the same effect two rounds in a row:",
 				{
@@ -3735,6 +3822,7 @@
 		{
 			"name": "Storm Giant Quintessent",
 			"source": "MPMM",
+			"page": 235,
 			"lairActions": [
 				"A storm giant quintessent can use lair actions in giant form and while transformed into a storm. On initiative count 20 (losing initiative ties), the giant can take one of the following lair actions; the giant can't take the same lair action two rounds in a row:",
 				{
@@ -3800,6 +3888,7 @@
 		{
 			"name": "Storm Giant Quintessent",
 			"source": "VGM",
+			"page": 151,
 			"lairActions": [
 				"A storm giant quintessent can use lair actions in giant form and while transformed into a storm. On initiative count 20 (losing initiative ties), the giant can take a lair action to cause one of the following effects; the giant can't use the same effect two rounds in a row:",
 				{
@@ -3827,6 +3916,7 @@
 		{
 			"name": "Strahd von Zarovich",
 			"source": "CoS",
+			"page": 240,
 			"lairActions": [
 				"While Strahd is in Castle Ravenloft, he can take lair actions as long as he isn't {@condition incapacitated}. ",
 				"On initiative count 20 (losing initiative ties), Strahd can take one of the following lair action options, or forgo using any of them in that round:",
@@ -3844,6 +3934,7 @@
 		{
 			"name": "Thessalkraken",
 			"source": "IMR",
+			"page": 87,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the thessalkraken takes a lair action to cause one of the following magical effects:",
 				{
@@ -3859,6 +3950,7 @@
 		{
 			"name": "Topaz Dragon",
 			"source": "FTD",
+			"page": 221,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), the dragon can take one of the following lair actions; the dragon can't take the same lair action two rounds in a row:",
 				{
@@ -3917,6 +4009,7 @@
 		{
 			"name": "Tromokratis",
 			"source": "MOT",
+			"page": 254,
 			"mythicEncounter": [
 				"Tromokratis numbers among the most powerful creatures a group of adventurers might face. If you wish to make an encounter with the kraken truly legendary, Tromokratis might use its Hearts of the Kraken mythic trait. When this happens, it calls upon a reserve of strength just as it appears to be vanquished. After its hearts are exposed, Tromokratis can choose one of its mythic actions when it uses a legendary action.",
 				"Read or paraphrase the following text when Tromokratis uses its Hearts of the Kraken trait:",
@@ -3932,6 +4025,7 @@
 		{
 			"name": "Unicorn",
 			"source": "MM",
+			"page": 294,
 			"regionalEffects": [
 				"Transformed by the creature's celestial presence, the domain of a unicorn might include any of the following magical effects:",
 				{
@@ -3949,6 +4043,7 @@
 		{
 			"name": "Valin Sarnaster",
 			"source": "CM",
+			"page": 182,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Valin takes a lair action to cause one of the following effects; Valin can't use the same effect two rounds in a row.",
 				{
@@ -3976,6 +4071,7 @@
 		{
 			"name": "Vampire",
 			"source": "MM",
+			"page": 297,
 			"regionalEffects": [
 				"The region surrounding a vampire's lair is warped by the creature's unnatural presence, creating any of the following effects:",
 				{
@@ -3993,14 +4089,16 @@
 		{
 			"name": "Vanifer",
 			"source": "PotA",
+			"page": 203,
 			"lairActions": [
-				"If Vanifer is in the fire node while {@creature Imix|PotA} isn't, the tiefling can take lair actions. On initiative count 20 (losing initiative ties), Vanifer uses a lair action to cast one of her spells, up to 3rd level, without using components or a spell slot. She can't cast the same spell two rounds in a row, although she can continue to concentrate on a spell she previously cast using a lair action. Vanifer can take no other lair actions while concentrating on a spell cast as a lair action. Her favorite use of this capability is casting {@spell fireball} or {@spell hypnotic pattern}.",
+				"If Vanifer is in the fire node while {@creature Imix|PotA} isn't, the tiefling can take lair actions. On initiative count 20 (losing initiative ties), Vanifer uses a lair action to cast one of her spells, up to 3rd level, without using components or a spell slot. She can't cast the same spell two rounds in a row, although she can continue to concentrate on a spell she previously cast using a lair action. Vanifer can take no other lair actions while {@status concentration||concentrating} on a spell cast as a lair action. Her favorite use of this capability is casting {@spell fireball} or {@spell hypnotic pattern}.",
 				"If Vanifer casts {@spell misty step} using this lair action, she also draws the power of the fire node into herself. By doing so, she regains 15 ({@dice 3d8 + 2}) hit points."
 			]
 		},
 		{
 			"name": "White Dragon",
 			"source": "MM",
+			"page": 101,
 			"additionalSources": [
 				{
 					"source": "FTD"
@@ -4082,6 +4180,7 @@
 		{
 			"name": "Yan-C-Bin",
 			"source": "PotA",
+			"page": 221,
 			"lairActions": [
 				"Yan-C-Bin dwells in a palace of air on the Elemental Plane of Air. In his palace and in air nodes on the Material Plane (including the Howling Caves, described in chapter 5), Yan-C-Bin is master. He can use the following actions in his lair. On initiative count 20 (losing initiative ties), Yan-C-Bin takes a lair action to cause one of the following effects; he can't use the same effect two rounds in a row:",
 				{
@@ -4110,6 +4209,7 @@
 		{
 			"name": "Yeenoghu",
 			"source": "MPMM",
+			"page": 270,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Yeenoghu can take one of the following lair actions; he can't take the same lair action two rounds in a row:",
 				{
@@ -4168,6 +4268,7 @@
 		{
 			"name": "Yeenoghu",
 			"source": "MTF",
+			"page": 155,
 			"lairActions": [
 				"On Initiative count 20 (losing initiative ties), Yeenoghu can take a lair action to cause one of the following effects; he can't use the same effect two rounds in a row:",
 				{
@@ -4236,6 +4337,7 @@
 		{
 			"name": "Zariel",
 			"source": "MPMM",
+			"page": 280,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Zariel can take one of the following lair actions; she can't take the same lair action two rounds in a row:",
 				{
@@ -4294,6 +4396,7 @@
 		{
 			"name": "Zariel",
 			"source": "MTF",
+			"page": 180,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties), Zariel can take a lair action to cause one of the following effects; she can't use the same effect two rounds in a row:",
 				{
@@ -4320,6 +4423,7 @@
 		{
 			"name": "Zikzokrishka",
 			"source": "CM",
+			"page": 209,
 			"lairActions": [
 				"On initiative count 20 (losing initiative ties) whenever she is in the are V3, Zikzokrishka can take a lair action to cause one of the following effects. She can't use the same effect two rounds in a row:",
 				{
@@ -4335,6 +4439,7 @@
 		{
 			"name": "Zuggtmoy",
 			"source": "MPMM",
+			"page": 281,
 			"lairActions": [
 				"On Initiative count 20 (losing initiative ties), Zuggtmoy can take a lair action to cause one of the following effects; she can't use the same effect two rounds in a row:",
 				{
@@ -4400,6 +4505,7 @@
 		{
 			"name": "Zuggtmoy",
 			"source": "MTF",
+			"page": 157,
 			"lairActions": [
 				"On Initiative count 20 (losing initiative ties), Zuggtmoy can take a lair action to cause one of the following effects; she can't use the same effect two rounds in a row:",
 				{

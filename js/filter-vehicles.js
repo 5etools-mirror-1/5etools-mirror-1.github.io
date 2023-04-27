@@ -110,7 +110,7 @@ class PageFilterVehicles extends PageFilter {
 globalThis.PageFilterVehicles = PageFilterVehicles;
 
 class ListSyntaxVehicles extends ListUiUtil.ListSyntax {
-	static _INDEXABLE_PROPS = [
+	static _INDEXABLE_PROPS_ENTRIES = [
 		"control",
 		"movement",
 		"weapon",
@@ -123,13 +123,6 @@ class ListSyntaxVehicles extends ListUiUtil.ListSyntax {
 		"trait",
 		"reaction",
 	];
-
-	_getSearchCacheStats (entity) {
-		if (this.constructor._INDEXABLE_PROPS.every(it => !entity[it])) return "";
-		const ptrOut = {_: ""};
-		this.constructor._INDEXABLE_PROPS.forEach(it => this._getSearchCache_handleEntryProp(entity, it, ptrOut));
-		return ptrOut._;
-	}
 }
 
 globalThis.ListSyntaxVehicles = ListSyntaxVehicles;

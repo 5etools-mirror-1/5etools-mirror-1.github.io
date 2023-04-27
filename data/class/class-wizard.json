@@ -1777,7 +1777,7 @@
 			"header": 1,
 			"entries": [
 				"{@i 2nd-level Graviturgy Magic feature}",
-				"As an action, you can magically alter the weight of one object or creature you can see within 30 feet of you. The object or creature must be Large or smaller. The target's weight is halved or doubled for up to 1 minute or until your concentration ends (as if you were concentrating on a spell).",
+				"As an action, you can magically alter the weight of one object or creature you can see within 30 feet of you. The object or creature must be Large or smaller. The target's weight is halved or doubled for up to 1 minute or until your {@status concentration} ends (as if you were {@status concentration||concentrating} on a spell).",
 				"While the weight of a creature is halved by this effect, the creature's speed increases by 10 feet, it can jump twice as far as normal, and it has disadvantage on Strength checks and Strength saving throws. While the weight of a creature is doubled by this effect, the creature's speed is reduced by 10 feet, and it has advantage on Strength checks and Strength saving throws.",
 				"Upon reaching 10th level in this class, you can target an object or a creature that is Huge or smaller."
 			]
@@ -1826,7 +1826,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 14th-level Graviturgy Magic feature}",
-				"As an action, you can magically emit a powerful field of gravitational energy that tugs at other creatures for up to 1 minute or until your concentration ends (as if you were concentrating on a spell). For the duration, whenever a creature hostile to you starts its turn within 30 feet of you, it must make a Strength saving throw against your spell save DC. On a failed save, it takes {@damage 2d10} force damage, and its speed is reduced to 0 until the start of its next turn. On a successful save, it takes half as much damage, and every foot it moves this turn costs 2 extra feet of movement.",
+				"As an action, you can magically emit a powerful field of gravitational energy that tugs at other creatures for up to 1 minute or until your {@status concentration} ends (as if you were {@status concentration||concentrating} on a spell). For the duration, whenever a creature hostile to you starts its turn within 30 feet of you, it must make a Strength saving throw against your spell save DC. On a failed save, it takes {@damage 2d10} force damage, and its speed is reduced to 0 until the start of its next turn. On a successful save, it takes half as much damage, and every foot it moves this turn costs 2 extra feet of movement.",
 				"Once you use this feature, you can't do so again until you finish a long rest or until you expend a spell slot of 3rd level or higher on it."
 			]
 		},
@@ -2001,7 +2001,7 @@
 			"level": 10,
 			"header": 2,
 			"entries": [
-				"Beginning at 10th level, while you are concentrating on a conjuration spell, your concentration can't be broken as a result of taking damage."
+				"Beginning at 10th level, while you are {@status concentration||concentrating} on a conjuration spell, your {@status concentration} can't be broken as a result of taking damage."
 			]
 		},
 		{
@@ -2570,7 +2570,7 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"Starting at 2nd level when you select this school, you can temporarily alter the physical properties of one nonmagical object, changing it from one substance into another. You perform a special alchemical procedure on one object composed entirely of wood, stone (but not a gemstone), iron, copper, or silver, transforming it into a different one of those materials. For each 10 minutes you spend performing the procedure, you can transform up to 1 cubic foot of material. After 1 hour, or until you lose your concentration (as if you were concentrating on a spell), the material reverts to its original substance."
+				"Starting at 2nd level when you select this school, you can temporarily alter the physical properties of one nonmagical object, changing it from one substance into another. You perform a special alchemical procedure on one object composed entirely of wood, stone (but not a gemstone), iron, copper, or silver, transforming it into a different one of those materials. For each 10 minutes you spend performing the procedure, you can transform up to 1 cubic foot of material. After 1 hour, or until you lose your {@status concentration} (as if you were {@status concentration||concentrating} on a spell), the material reverts to its original substance."
 			]
 		},
 		{
@@ -2775,7 +2775,7 @@
 						"You gain a bonus to your AC equal to your Intelligence modifier (minimum of +1).",
 						"Your walking speed increases by 10 feet.",
 						"You have advantage on Dexterity ({@skill Acrobatics}) checks.",
-						"You gain a bonus to any Constitution saving throws you make to maintain concentration on a spell. The bonus equals your Intelligence modifier (minimum of +1)."
+						"You gain a bonus to any Constitution saving throws you make to maintain {@status concentration} on a spell. The bonus equals your Intelligence modifier (minimum of +1)."
 					]
 				},
 				"You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses of it when you finish a long rest."
@@ -3089,7 +3089,7 @@
 			"entries": [
 				"{@i 10th-level Order of Scribes feature}",
 				"You are now able to conjure forth the mind of your Awakened Spellbook. As a bonus action while the book is on your person, you can cause the mind to manifest as a Tiny spectral construct, hovering in an unoccupied space of your choice within 60 feet of you. This presence is intangible and doesn't occupy its space, and it sheds dim light in a 10-foot radius. It looks like a ghostly tome, a cascade of text, or a scholar from the past (your choice). The spectral mind has a number of hit points equal to your wizard level plus your Intelligence modifier, and it uses your Armor Class and saving throw modifiers.",
-				"While manifested, the spectral mind can hear and see, and it has {@sense darkvision} with a range of 60 feet. As an action, you can hear and see using the its senses, instead of your own, until your concentration ends (as if concentrating on a spell).",
+				"While manifested, the spectral mind can hear and see, and it has {@sense darkvision} with a range of 60 feet. As an action, you can hear and see using the its senses, instead of your own, until your {@status concentration} ends (as if {@status concentration||concentrating} on a spell).",
 				"Whenever you cast a wizard spell on your turn, you can cast it as if you were in the spectral mind's space, instead of your own, using its senses. You can do so a number of times per day equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
 				"As a bonus action, you can cause the spectral mind to hover up to 30 feet to an unoccupied space that you or it can see. It can pass through creatures but not objects. The spectral mind stops manifesting if it is ever more than 300 feet away from you, if it drops to 0 hit points, if you die, or if you dismiss it as a bonus action."
 			]
@@ -3262,7 +3262,7 @@
 						}
 					]
 				},
-				"The enmity rune lasts for 1 minute or until you lose your concentration (as if you were concentrating on a spell). Once you have marked a creature in this way, you can't do so again until you finish a long rest, unless you expend a spell slot of 3rd level or higher to use this feature again."
+				"The enmity rune lasts for 1 minute or until you lose your {@status concentration} (as if you were {@status concentration||concentrating} on a spell). Once you have marked a creature in this way, you can't do so again until you finish a long rest, unless you expend a spell slot of 3rd level or higher to use this feature again."
 			]
 		},
 		{
@@ -4094,7 +4094,7 @@
 			"entries": [
 				"At 6th level, you can insert a spell within an electronic device of your choosing, so that by touching a key or flicking a switch using an action, the spell activates. All variables of the spell are set at the time of casting. The computing power of this device must be equal to or greater than a mobile phone.",
 				"A programmed spell remains placed in its device for 48 hours, and is gone once it is discharged. You can use this feature to place a programmed spell in only one device at a time, and a device can hold only one programmed spell. Only you can activate the programmed spell in the device. If the device is destroyed, the programmed spell is lost.",
-				"A concentration spell placed in a device cannot be activated while you are concentrating on another spell. Once you use this feature, you can't use it again until you finish a long rest."
+				"A {@status concentration} spell placed in a device cannot be activated while you are {@status concentration||concentrating} on another spell. Once you use this feature, you can't use it again until you finish a long rest."
 			]
 		},
 		{
@@ -4124,7 +4124,7 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"By 14th level, you have learned to imprint vestiges of your consciousness on electronic devices with significant computing power. When you cast a concentration spell, you can use a device whose computing power is equal to or greater than a tablet computer to maintain concentration of the spell on your behalf. The device must be held or worn by you to maintain this effect. If the device is destroyed, taken from you, dropped, or turned off, the concentration ends. Once you use this feature, you can't use it again until you finish a long rest."
+				"By 14th level, you have learned to imprint vestiges of your consciousness on electronic devices with significant computing power. When you cast a {@status concentration} spell, you can use a device whose computing power is equal to or greater than a tablet computer to maintain {@status concentration} of the spell on your behalf. The device must be held or worn by you to maintain this effect. If the device is destroyed, taken from you, dropped, or turned off, the {@status concentration} ends. Once you use this feature, you can't use it again until you finish a long rest."
 			]
 		},
 		{
@@ -4899,7 +4899,7 @@
 			"level": 10,
 			"header": 2,
 			"entries": [
-				"Beginning at 10th level, the magic you channel helps ward off harm. While you maintain concentration on a spell, you have a +2 bonus to AC and all saving throws."
+				"Beginning at 10th level, the magic you channel helps ward off harm. While you maintain {@status concentration} on a spell, you have a +2 bonus to AC and all saving throws."
 			]
 		},
 		{
@@ -4995,7 +4995,7 @@
 			"level": 10,
 			"header": 2,
 			"entries": [
-				"Beginning at 10th level, the magic you channel helps ward off harm. While you maintain concentration on a spell, you have a +2 bonus to AC and all saving throws."
+				"Beginning at 10th level, the magic you channel helps ward off harm. While you maintain {@status concentration} on a spell, you have a +2 bonus to AC and all saving throws."
 			]
 		},
 		{

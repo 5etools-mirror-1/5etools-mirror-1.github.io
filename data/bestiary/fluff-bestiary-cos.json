@@ -454,7 +454,7 @@
 											"name": "Tarokka Deck",
 											"type": "entries",
 											"entries": [
-												"Ezmerelda keeps a deck of tarokka cards in her wagon (chapter 11, area V1). Although the cards aren't magical, Ezmerelda can use them to perform a card reading for the characters (see chapter 1), like the one that can be performed by Madam Eva."
+												"Ezmerelda keeps a {@deck Tarokka Deck|CoS|deck of tarokka cards} in her wagon (chapter 11, area V1). Although the cards aren't magical, Ezmerelda can use them to perform a card reading for the characters (see chapter 1), like the one that can be performed by Madam Eva."
 											]
 										}
 									]
@@ -739,6 +739,19 @@
 			]
 		},
 		{
+			"name": "Mad Mary",
+			"source": "CoS",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/CoS/016-cos03-04.png"
+					}
+				}
+			]
+		},
+		{
 			"name": "Madam Eva",
 			"source": "CoS",
 			"entries": [
@@ -806,6 +819,19 @@
 							]
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "Majesto",
+			"source": "CoS",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/CoS/060-cos05-11.png"
+					}
 				}
 			]
 		},
@@ -1355,6 +1381,15 @@
 						}
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/CoS/153-636988936829621698.jpg"
+					}
+				}
 			]
 		},
 		{
@@ -1433,6 +1468,19 @@
 			]
 		},
 		{
+			"name": "Szoldar Szoldarovich",
+			"source": "CoS",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/CoS/052-cos05-05.png"
+					}
+				}
+			]
+		},
+		{
 			"name": "Thornboldt \"Thorn\" Durst",
 			"source": "CoS",
 			"images": [
@@ -1486,6 +1534,19 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/CoS/Tree Blight.png"
+					}
+				}
+			]
+		},
+		{
+			"name": "Victor Vallakovich",
+			"source": "CoS",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/CoS/005-cos02-02.png"
 					}
 				}
 			]
@@ -1639,6 +1700,19 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/CoS/Vladimir Horngaard.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Yevgeni Krushkin",
+			"source": "CoS",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/CoS/053-cos05-06.png"
 					}
 				}
 			]

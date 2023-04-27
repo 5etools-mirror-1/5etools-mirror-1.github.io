@@ -1063,9 +1063,11 @@ Renderer.dice.lang = {
 			.trim()
 			.toLowerCase()
 			// region Convert some natural language
-			.replace(/\s+plus\s+/g, " + ")
-			.replace(/\s+minus\s+/g, " - ")
-			.replace(/\s+times\s+/g, " * ")
+			.replace(/\s*?\bplus\b\s*?/g, " + ")
+			.replace(/\s*?\bminus\b\s*?/g, " - ")
+			.replace(/\s*?\btimes\b\s*?/g, " * ")
+			.replace(/\s*?\bover\b\s*?/g, " / ")
+			.replace(/\s*?\bdivided by\b\s*?/g, " / ")
 			// endregion
 			.replace(/\s+/g, "")
 			.replace(/[\u2012\u2013\u2014]/g, "-") // convert dashes

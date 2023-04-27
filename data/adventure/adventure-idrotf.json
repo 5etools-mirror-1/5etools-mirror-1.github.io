@@ -267,7 +267,7 @@
 									"page": 9,
 									"id": "017",
 									"entries": [
-										"{@i For 6th-level characters}",
+										"{@i For characters of 4th or 5th level}",
 										"A duergar tyrant is building a chardalyn dragon to destroy Ten-Towns. The characters learn of this plot and try to thwart it."
 									]
 								},
@@ -277,7 +277,7 @@
 									"page": 9,
 									"id": "018",
 									"entries": [
-										"{@i For characters of 4th level and higher}",
+										"{@i For 6th-level characters}",
 										"After {@creature Xardorok Sunblight|IDRotF} unleashes his dragon, the characters must stop it before it destroys Ten-Towns."
 									]
 								},
@@ -784,55 +784,55 @@
 									],
 									"rows": [
 										[
-											"Acolyte",
+											"{@background Acolyte}",
 											"Auril the Frostmaiden, the god of winter's fury, has cast an evil spell over Icewind Dale. You can bring hope and faith to the people of Ten-Towns or, even better, free them from winter's cold embrace in the name of your god."
 										],
 										[
-											"Charlatan",
+											"{@background Charlatan}",
 											"Your cons and deceptions nearly got the better of you. You needed to disappear for a while, and Icewind Dale was the perfect place to do so. Nothing could prepare you for the cold and the dark desolation, but at least there's money to be made."
 										],
 										[
-											"Criminal",
+											"{@background Criminal}",
 											"You are wanted for crimes in the cities of Luskan and Mirabar, but no one will think to look for you in Ten-Towns, the cold heart of Icewind Dale. Thankfully, nobody in Ten-Towns cares who you are\u2014or what you've done."
 										],
 										[
-											"Entertainer",
+											"{@background Entertainer}",
 											"You came to Icewind Dale three years ago seeking inspiration for a new song or poem, drawn by tales of the land's harsh beauty and the legendary exploits of Drizzt Do'Urden. Since then, Auril the Frostmaiden has cast an evil spell over the dale, preventing you from returning home."
 										],
 										[
-											"Folk Hero",
+											"{@background Folk Hero}",
 											"Your name is synonymous with heroism throughout Ten-Towns. Did you save a fisher who fell into the ice, scare away a yeti armed with only a fishing pole and a basket, or beat a drunk goliath at arm wrestling?"
 										],
 										[
-											"Guild Artisan",
+											"{@background Guild Artisan}",
 											"You came to Icewind Dale to start a business. Your shop was doing well until Auril the Frostmaiden cast her evil spell to banish the sun. Now, businesses throughout Ten-Towns are suffering, yours included. To avoid hardship, you might need to supplement your income."
 										],
 										[
-											"Hermit",
+											"{@background Hermit}",
 											"You've never felt at ease in civilized society, and there's no place farther from the trappings of civilization than Icewind Dale. This is a land without pretense, and the people of Ten-Towns pay you little mind. To them, you're just another silly old fool."
 										],
 										[
-											"Noble",
+											"{@background Noble}",
 											"Your wealthy grandfather or grandmother sent you to Icewind Dale to learn a hard lesson. Perhaps the cruel indifference of this frozen land will prepare you for the cruel indifference of Waterdeep's politics."
 										],
 										[
-											"Outlander",
+											"{@background Outlander}",
 											"You're a child of the icy wilderness, born and raised in one of the Reghed tribes. Imagine, after following herds of migrating {@creature reindeer|IDRotF} your whole life, getting a taste of what life in Ten-Towns has to offer."
 										],
 										[
-											"Sage",
+											"{@background Sage}",
 											"You came to Icewind Dale in search of ruins and artifacts left behind by the giants who ruled the ancient empire of Ostoria. To find even one Ostorian relic would fulfill a lifelong dream and make your rivals back home green with envy."
 										],
 										[
-											"Sailor",
+											"{@background Sailor}",
 											"You've sailed ships up and down the Sword Coast, but a shipwreck made you reevaluate your life choices. Two years ago, you headed north, bought a house and a fishing boat in Ten-Towns, and became a fisher. You were told that the summers here are beautiful, but you have yet to see one."
 										],
 										[
-											"Soldier",
+											"{@background Soldier}",
 											"You are a soldier of Ten-Towns, trained to fight orcs and other threats lurking in the Spine of the World mountains. Auril the Frostmaiden has cast an evil spell over Icewind Dale, and you struggle to see how your soldier's training can save this land from so terrible a doom. Still, you are not about to give up on the people of Ten-Towns."
 										],
 										[
-											"Urchin",
+											"{@background Urchin}",
 											"Because you grew up in Ten-Towns, your familiarity with the residents makes you useful to Harper spies and Zhentarim bounty hunters who are looking for criminals and other ne'er-do-wells hiding in your midst. Ratting out these newcomers keeps coin in your pockets."
 										]
 									]
@@ -5717,7 +5717,7 @@
 											"page": 44,
 											"id": "0eb",
 											"entries": [
-												"At the eastern end of the cistern is a 10-foot-square, 2-foot-thick, half-submerged slab of blue marble that blocks access to{@area area C23|0f5|x}. This slab is far enough away that characters won't see it with torches or {@sense darkvision} unless they move farther into the cistern. The lever that lowers and raises this gate is in {@area area C22|0f4|x}. The gate can also be opened with a {@spell knock} spell or similar magic."
+												"At the eastern end of the cistern is a 10-foot-square, 2-foot-thick, half-submerged slab of blue marble that blocks access to {@area area C23|0f5|x}. This slab is far enough away that characters won't see it with torches or {@sense darkvision} unless they move farther into the cistern. The lever that lowers and raises this gate is in {@area area C22|0f4|x}. The gate can also be opened with a {@spell knock} spell or similar magic."
 											]
 										},
 										{
@@ -17617,7 +17617,7 @@
 							"page": 85,
 							"id": "210",
 							"entries": [
-								"Once they slay the awakened white moose, the characters can return to Lonelywood with proof of the moose's demise. After every three hours the characters spend in the forest, check for a random encounter using the{@adventure Lonelywood Forest Encounters table|IDRotF|9|Lonelywood Forest Encounters}.",
+								"Once they slay the awakened white moose, the characters can return to Lonelywood with proof of the moose's demise. After every three hours the characters spend in the forest, check for a random encounter using the {@adventure Lonelywood Forest Encounters table|IDRotF|9|Lonelywood Forest Encounters}.",
 								"If Ravisin the frost druid is not dealt with, Lonelywood is doomed to experience more of the same harassment from newly awakened beasts such as {@creature Polar Bear||polar bears}, {@creature Rhinoceros||woolly rhinoceroses}, and {@creature Saber-Toothed Tiger||saber-toothed tigers}."
 							]
 						}
@@ -22749,7 +22749,7 @@
 											"id": "277",
 											"entries": [
 												"The crystal shard lodged inside the fossilized mind flayer skull is a {@item psi crystal|IDRotF} (see {@adventure appendix D|IDRotF|22|{@item Psi Crystal|IDRotF}}). The psychic trauma that the mind flayer endured when it died caused the crystal to form in its mind. A character can use a miner's pick to pry loose the psi crystal.",
-												"A character who attunes to this {@i psi crystal} gains a form of indefinite madness (see the{@table indefinite madness|| Indefinite Madness table} in the {@book Dungeon Master's Guide|DMG}). Determine the result secretly, then convey this information only to the character's player. The madness does not end until the character is no longer attuned to the {@i psi crystal}. While the madness lasts, the character can hear a repeating telepathic distress signal put out by an illithid ship that crashed in the mountains and track the signal to its source (see \"{@area Id Ascendant|346|x}\"). The only way to block the signal is by ending the character's attunement to the {@i psi crystal}."
+												"A character who attunes to this {@i psi crystal} gains a form of indefinite madness (see the {@table indefinite madness|| Indefinite Madness table} in the {@book Dungeon Master's Guide|DMG}). Determine the result secretly, then convey this information only to the character's player. The madness does not end until the character is no longer attuned to the {@i psi crystal}. While the madness lasts, the character can hear a repeating telepathic distress signal put out by an illithid ship that crashed in the mountains and track the signal to its source (see \"{@area Id Ascendant|346|x}\"). The only way to block the signal is by ending the character's attunement to the {@i psi crystal}."
 											]
 										}
 									]
@@ -40469,7 +40469,7 @@
 					"page": 171,
 					"id": "459",
 					"entries": [
-						"Characters who learn of Xardorok's plot to forge a dragon of chardalyn and unleash it upon Ten-Towns might decide to launch a preemptive strike on Xardorok's fortress. This chapter describes the fortress of Sunblight in detail, in the event the adventurers decide to attack it. But the characters are in for a surprise: by the time they arrive, Xardorok has already finished his construct and set it loose, leaving the characters with an agonizing decision: press the attack against the duergar fortress, or intercept the dragon in Ten-Towns. If they choose the latter course, skip over this chapter for now and proceed with{@adventure chapter 4|IDRotF|14}.",
+						"Characters who learn of Xardorok's plot to forge a dragon of chardalyn and unleash it upon Ten-Towns might decide to launch a preemptive strike on Xardorok's fortress. This chapter describes the fortress of Sunblight in detail, in the event the adventurers decide to attack it. But the characters are in for a surprise: by the time they arrive, Xardorok has already finished his construct and set it loose, leaving the characters with an agonizing decision: press the attack against the duergar fortress, or intercept the dragon in Ten-Towns. If they choose the latter course, skip over this chapter for now and proceed with {@adventure chapter 4|IDRotF|14}.",
 						"The characters are more likely to survive an invasion of Xardorok's fortress if they are at least 4th level. Characters of lower level can succeed if they take frequent rests or have an edge, such as plenty of healing magic or allies to back them up.",
 						{
 							"type": "entries",
@@ -40574,7 +40574,7 @@
 												"From high above comes a loud grinding noise as large sheets of ice break off the fortress walls and tumble down the mountainside. Suddenly, great doors of ice previously hidden under snow stand open more than three hundred feet above you, and from between them flies a huge dragon made of dark ice. Its eyes glow with a bright golden light as it lets out a terrible roar, hurls itself into the air, and glides away from the fortress, then turns and heads north toward Ten-Towns."
 											]
 										},
-										"The {@creature chardalyn dragon|IDRotF} (see {@adventure appendix C|IDRotF|21}) exits the fortress by climbing up a shaft that leads from the forge level to the fortress's summit. The doors at the top of the shaft remain open until the dragon returns or until someone closes them by using the levers in areas{@area X13|496|x} and {@area X15|49d|x}.",
+										"The {@creature chardalyn dragon|IDRotF} (see {@adventure appendix C|IDRotF|21}) exits the fortress by climbing up a shaft that leads from the forge level to the fortress's summit. The doors at the top of the shaft remain open until the dragon returns or until someone closes them by using the levers in areas {@area X13|496|x} and {@area X15|49d|x}.",
 										"The dragon stays at least 250 feet away from the party and does not pay any attention to the characters as it flies off on its mission to destroy Ten-Towns. Given the dragon's impressive flying speed, it's unlikely that the characters will be able to catch up to it.",
 										"The characters must now make a big decision: do they assault Xardorok's fortress as planned or follow the dragon back to Ten-Towns? If they continue their climb to the fortress, continue with the next section; if they pursue the dragon, move on to {@adventure chapter 4|IDRotF|14}."
 									]
@@ -42484,7 +42484,7 @@
 												"{@b Chest 4} holds a bundled-up gray spider-silk robe sewn with darkmantle eyes, wrapped inside which is a {@item wand of web}.",
 												"{@b Chest 5} contains a folded {@item Piwafwi (Cloak of Elvenkind)|OotA|piwafwi}\u2014a dark spider-silk cloak made by drow. This item has the properties of a {@item cloak of elvenkind} but loses its magic if it's exposed to sunlight for 1 hour without interruption.",
 												"{@b Chest 6} holds an amber headdress set with three large purple pearls (2,500 gp).",
-												"{@b Chest 7} contains a 2-foot-tall stone statuette of Demogorgon that weighs 50 pounds. Anyone who looks into the statue's eyes must succeed on a DC 14 Charisma saving throw or contract a random form of short-term madness (see \"{@table indefinite madness||Madness}\" in the {@book Dungeon Master's Guide|DMG}). A creature can be affected only once by the statue, after which it becomes immune to the effect.",
+												"{@b Chest 7} contains a 2-foot-tall stone statuette of Demogorgon that weighs 50 pounds. Anyone who looks into the statue's eyes must succeed on a DC 14 Charisma saving throw or contract a random form of short-term madness (see \"{@variantrule Madness}\" in the {@book Dungeon Master's Guide|DMG}). A creature can be affected only once by the statue, after which it becomes immune to the effect.",
 												"{@b Chest 8} houses an inanimate svirfneblin skeleton encrusted with {@hazard yellow mold} (see \"{@book Dungeon Hazards|DMG|5|Dungeon Hazards}\" in the {@book Dungeon Master's Guide|DMG}). The mold releases its spores as soon as the chest's lid is opened. Embedded in one of the skull's eye sockets is a false eye made of moonstone (75 gp)."
 											]
 										}
@@ -47029,7 +47029,7 @@
 											"page": 204,
 											"id": "55c",
 											"entries": [
-												"The stairs in the northwest corner of this room descend 90 feet to{@area area G5|554|x}."
+												"The stairs in the northwest corner of this room descend 90 feet to {@area area G5|554|x}."
 											]
 										}
 									]
@@ -53047,7 +53047,7 @@
 												"The yips and barks abate as you descend the stairs leading to this cave in which hangs the faint whiff of death."
 											]
 										},
-										"Five {@creature kobold vampire spawn|IDRotF} (see {@area appendix C|755|x}) dwell here. Add a sixth if the one from{@area area H4|5b8|x} escaped and made it all the way here. These creatures have sharp senses and know when living creatures are nearby. They use their Spider Climb trait to cling to the walls and pounce on the first character to enter their lair. The vampires fight until two or more of their number are slain, whereupon the rest retreat to {@area area H19|5e5|x} to make their final stand. {@item Professor Skant|IDRotF} recognizes the creature as vampires and knows their weaknesses.",
+										"Five {@creature kobold vampire spawn|IDRotF} (see {@area appendix C|755|x}) dwell here. Add a sixth if the one from {@area area H4|5b8|x} escaped and made it all the way here. These creatures have sharp senses and know when living creatures are nearby. They use their Spider Climb trait to cling to the walls and pounce on the first character to enter their lair. The vampires fight until two or more of their number are slain, whereupon the rest retreat to {@area area H19|5e5|x} to make their final stand. {@item Professor Skant|IDRotF} recognizes the creature as vampires and knows their weaknesses.",
 										"Aside from the vampires, the cave is empty. The 20-foot-high ceiling is festooned with icicles.",
 										{
 											"type": "entries",
@@ -53728,7 +53728,7 @@
 								{
 									"type": "list",
 									"items": [
-										"The characters gain a level after overcoming the challenges of all eight towers of magic (areas{@area Y4|640|x}, {@area Y7|64c|x}, {@area Y11|660|x}, {@area Y18|677|x}, {@area Y20|6ae|x}, {@area Y22|6b7|x}, {@area Y24|6bc|x}, and {@area Y26|6c4|x}).",
+										"The characters gain a level after overcoming the challenges of all eight towers of magic (areas {@area Y4|640|x}, {@area Y7|64c|x}, {@area Y11|660|x}, {@area Y18|677|x}, {@area Y20|6ae|x}, {@area Y22|6b7|x}, {@area Y24|6bc|x}, and {@area Y26|6c4|x}).",
 										"The characters gain a level when they reach Iriolarthas's study ({@area area Y19q|6a9|x}).",
 										"The characters gain a level if they accomplish something extraordinary, such as destroying Iriolarthas the demilich, all three of Auril's forms, or the obelisk in {@area area Y21|6b3|x}."
 									]

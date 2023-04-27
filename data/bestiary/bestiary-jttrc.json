@@ -20,6 +20,7 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 162,
 			"_copy": {
 				"name": "Archmage",
 				"source": "MM",
@@ -44,13 +45,15 @@
 				"Fey Ancestry",
 				"Magic Resistance"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Amanisha Manivarshi",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 127,
 			"_copy": {
 				"name": "Spy",
 				"source": "MM",
@@ -73,13 +76,15 @@
 				"N",
 				"G"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ameyali",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 108,
 			"_copy": {
 				"name": "Priest",
 				"source": "MM",
@@ -102,11 +107,13 @@
 				"N",
 				"G"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ashen Heir Anarchist",
 			"source": "JttRC",
+			"page": 158,
 			"_copy": {
 				"name": "Priest",
 				"source": "MM",
@@ -118,11 +125,13 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ashen Heir Assassin",
 			"source": "JttRC",
+			"page": 158,
 			"_copy": {
 				"name": "Assassin",
 				"source": "MM"
@@ -132,15 +141,18 @@
 		{
 			"name": "Ashen Heir Mage",
 			"source": "JttRC",
+			"page": 158,
 			"_copy": {
 				"name": "Mage",
 				"source": "MM"
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ashen Heir Veteran",
 			"source": "JttRC",
+			"page": 158,
 			"_copy": {
 				"name": "Veteran",
 				"source": "MM"
@@ -152,6 +164,7 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 166,
 			"_copy": {
 				"name": "Solar",
 				"source": "MM",
@@ -168,13 +181,15 @@
 				"L",
 				"N"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Atiba-Pa",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 171,
 			"_copy": {
 				"name": "Priest",
 				"source": "MM",
@@ -197,13 +212,15 @@
 				"L",
 				"G"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Aunt Dellie",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 36,
 			"_copy": {
 				"name": "Commoner",
 				"source": "MM",
@@ -216,7 +233,8 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Aurumvorax",
@@ -294,6 +312,9 @@
 						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) slashing damage. If the target is a Medium or smaller creature, it is {@condition grappled} (escape {@dc 12}). Until this grapple ends, the aurumvorax can't use its Claw attack on another target, and when it moves, it can drag the {@condition grappled} creature with it, without the aurumvorax's speed being halved."
 					]
 				}
+			],
+			"traitTags": [
+				"Tunneler"
 			],
 			"senseTags": [
 				"D"
@@ -409,6 +430,9 @@
 					]
 				}
 			],
+			"traitTags": [
+				"Tunneler"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -434,6 +458,7 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 95,
 			"_copy": {
 				"name": "Commoner",
 				"source": "MM",
@@ -446,13 +471,15 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Azra Nir",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 74,
 			"_copy": {
 				"name": "Acolyte",
 				"source": "MM",
@@ -465,7 +492,8 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bakunawa",
@@ -617,6 +645,7 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 178,
 			"_copy": {
 				"name": "Nightsea chil-liren",
 				"source": "JttRC",
@@ -633,7 +662,8 @@
 				"C",
 				"N"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dinosaur Skeleton",
@@ -670,6 +700,7 @@
 		{
 			"name": "Diva",
 			"source": "JttRC",
+			"page": 72,
 			"_copy": {
 				"name": "Scout",
 				"source": "MM",
@@ -695,13 +726,15 @@
 					]
 				}
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Diva Luma",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 71,
 			"_copy": {
 				"name": "Assassin",
 				"source": "MM",
@@ -728,13 +761,15 @@
 					]
 				}
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Djeneba",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 173,
 			"_copy": {
 				"name": "Mage",
 				"source": "MM",
@@ -757,7 +792,8 @@
 				"C",
 				"N"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dragon Hunter",
@@ -801,6 +837,7 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 124,
 			"_copy": {
 				"name": "Weretiger",
 				"source": "MM",
@@ -816,12 +853,14 @@
 			"alignment": [
 				"N"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Farmer",
 			"isNpc": true,
 			"source": "JttRC",
+			"page": 36,
 			"_copy": {
 				"name": "Cultist",
 				"source": "MM",
@@ -833,13 +872,15 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gammon Xungoon",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 20,
 			"_copy": {
 				"name": "Commoner",
 				"source": "MM",
@@ -864,7 +905,8 @@
 				"Pack Tactics",
 				"Sunlight Sensitivity"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Haint",
@@ -1014,6 +1056,7 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 195,
 			"_copy": {
 				"name": "Stone Golem",
 				"source": "MM",
@@ -1025,7 +1068,8 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Jijibisha Manivarshi",
@@ -1066,6 +1110,7 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 70,
 			"_copy": {
 				"name": "Druid",
 				"source": "MM",
@@ -1088,13 +1133,15 @@
 				"N",
 				"E"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kasem Aroon",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 21,
 			"_copy": {
 				"name": "Noble",
 				"source": "MM",
@@ -1117,13 +1164,15 @@
 				"C",
 				"N"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kedjou Kamal",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 96,
 			"_copy": {
 				"name": "Priest",
 				"source": "MM",
@@ -1146,13 +1195,15 @@
 				"N",
 				"E"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kianna",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 42,
 			"_copy": {
 				"name": "Commoner",
 				"source": "MM",
@@ -1175,11 +1226,13 @@
 				"C",
 				"N"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Koi Prawn",
 			"source": "JttRC",
+			"page": 26,
 			"_copy": {
 				"name": "Giant Sea Horse",
 				"source": "MM",
@@ -1191,13 +1244,15 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kun Ahn-Jun",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 81,
 			"_copy": {
 				"name": "Noble",
 				"source": "MM",
@@ -1220,13 +1275,15 @@
 				"N",
 				"G"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kusa Xungoon",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 20,
 			"_copy": {
 				"name": "Noble",
 				"source": "MM",
@@ -1251,13 +1308,15 @@
 				"Pack Tactics",
 				"Sunlight Sensitivity"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lady Dre",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 37,
 			"_copy": {
 				"name": "Scout",
 				"source": "MM",
@@ -1280,13 +1339,15 @@
 				"C",
 				"G"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Laleh Ghorbani",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 156,
 			"_copy": {
 				"name": "Scout",
 				"source": "MM",
@@ -1311,13 +1372,15 @@
 				"Fey Ancestry",
 				"Keen Senses"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lamai Tyenmo",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 20,
 			"_copy": {
 				"name": "Commoner",
 				"source": "MM",
@@ -1338,13 +1401,15 @@
 				"L",
 				"G"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lu Zhong Yin",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 189,
 			"_copy": {
 				"name": "Spy",
 				"source": "MM",
@@ -1367,13 +1432,15 @@
 				"L",
 				"N"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lungtian",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 136,
 			"_copy": {
 				"name": "Dryad",
 				"source": "MM",
@@ -1390,13 +1457,15 @@
 				"C",
 				"G"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Madam Kulp",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 27,
 			"_copy": {
 				"name": "Noble",
 				"source": "MM",
@@ -1416,13 +1485,15 @@
 			"alignment": [
 				"N"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Myx Nargis Ruba",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 71,
 			"_copy": {
 				"name": "Noble",
 				"source": "MM",
@@ -1446,13 +1517,15 @@
 			"traitTags": [
 				"Aggressive"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Navid",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 159,
 			"_copy": {
 				"name": "Efreeti",
 				"source": "MM",
@@ -1471,13 +1544,15 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nene",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 205,
 			"_copy": {
 				"name": "Hawk",
 				"source": "MM",
@@ -1495,7 +1570,8 @@
 			"languages": [
 				"Understands simple phrases and concepts in Common"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nightsea chil-liren",
@@ -1536,6 +1612,7 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 136,
 			"_copy": {
 				"name": "Mage",
 				"source": "MM",
@@ -1558,13 +1635,15 @@
 				"N",
 				"G"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ollin",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 109,
 			"_copy": {
 				"name": "Priest",
 				"source": "MM",
@@ -1599,13 +1678,15 @@
 				"CC",
 				"I"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Paloma",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 52,
 			"_copy": {
 				"name": "Assassin",
 				"source": "MM",
@@ -1626,13 +1707,15 @@
 				"C",
 				"G"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Paolo Maykapal",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 138,
 			"_copy": {
 				"name": "Dragon Hunter",
 				"source": "JttRC",
@@ -1645,7 +1728,8 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Pari",
@@ -1841,7 +1925,8 @@
 			"ac": [
 				11
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Prince Simbon",
@@ -1880,7 +1965,8 @@
 			"ac": [
 				11
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Riverine",
@@ -1938,7 +2024,11 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"The riverine casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 17}): At-will: control water, fog cloud"
+						"The riverine casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 17}):"
+					],
+					"will": [
+						"{@spell control water}",
+						"{@spell fog cloud}"
 					],
 					"daily": {
 						"1": [
@@ -2040,6 +2130,7 @@
 		{
 			"name": "Rooster",
 			"source": "JttRC",
+			"page": 206,
 			"_copy": {
 				"name": "Hawk",
 				"source": "MM",
@@ -2061,6 +2152,7 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 68,
 			"_copy": {
 				"name": "Spy",
 				"source": "MM",
@@ -2084,13 +2176,15 @@
 				"Fey Ancestry",
 				"Sneak Attack"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Serapio",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 61,
 			"_copy": {
 				"name": "Tlacatecolo",
 				"source": "JttRC",
@@ -2103,13 +2197,15 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sholeh",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 14,
 			"_copy": {
 				"name": "Ancient Brass Dragon",
 				"source": "MM",
@@ -2126,7 +2222,8 @@
 				"N",
 				"G"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Soul Shaker",
@@ -2506,6 +2603,7 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 110,
 			"_copy": {
 				"name": "Priest",
 				"source": "MM",
@@ -2526,13 +2624,15 @@
 				"L",
 				"N"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tungsten Ward",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 38,
 			"_copy": {
 				"name": "Acolyte",
 				"source": "MM",
@@ -2555,13 +2655,15 @@
 				"L",
 				"G"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Uzoma Baten",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 94,
 			"_copy": {
 				"name": "Guard",
 				"source": "MM",
@@ -2582,13 +2684,15 @@
 				"L",
 				"G"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vi Aroon",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 28,
 			"_copy": {
 				"name": "Noble",
 				"source": "MM",
@@ -2611,13 +2715,15 @@
 				"C",
 				"G"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Wei Feng Ying",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 188,
 			"_copy": {
 				"name": "Archmage",
 				"source": "MM",
@@ -2640,7 +2746,8 @@
 				"L",
 				"N"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Whistler",
@@ -2773,6 +2880,7 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 197,
 			"_copy": {
 				"name": "Noble",
 				"source": "MM",
@@ -2792,7 +2900,8 @@
 				"L",
 				"N"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Wynling",
@@ -2882,6 +2991,7 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 112,
 			"_copy": {
 				"name": "Fire Giant",
 				"source": "MM",
@@ -2919,13 +3029,15 @@
 			"alignment": [
 				"N"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yarana",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 204,
 			"_copy": {
 				"name": "Scout",
 				"source": "MM",
@@ -2948,13 +3060,15 @@
 				"N",
 				"G"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young-Gi",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 85,
 			"_copy": {
 				"name": "Noble",
 				"source": "MM",
@@ -2974,13 +3088,15 @@
 			"alignment": [
 				"N"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Zisatta",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "JttRC",
+			"page": 177,
 			"_copy": {
 				"name": "Nightsea chil-liren",
 				"source": "JttRC",
@@ -2997,7 +3113,8 @@
 				"L",
 				"N"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		}
 	]
 }

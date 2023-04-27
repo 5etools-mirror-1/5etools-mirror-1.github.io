@@ -2909,7 +2909,7 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"Starting at 17th level, you can call up visions of the past that relate to an object you hold or your immediate surroundings. You spend at least 1 minute in meditation and prayer, then receive dreamlike, shadowy glimpses of recent events. You can meditate in this way for a number of minutes equal to your Wisdom score and must maintain concentration during that time, as if you were casting a spell.",
+				"Starting at 17th level, you can call up visions of the past that relate to an object you hold or your immediate surroundings. You spend at least 1 minute in meditation and prayer, then receive dreamlike, shadowy glimpses of recent events. You can meditate in this way for a number of minutes equal to your Wisdom score and must maintain {@status concentration} during that time, as if you were casting a spell.",
 				"Once you use this feature, you can't use it again until you finish a short or long rest.",
 				{
 					"type": "entries",
@@ -3738,7 +3738,7 @@
 			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to create an illusory duplicate of yourself.",
-				"As an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell). The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.",
+				"As an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your {@status concentration} (as if you were {@status concentration||concentrating} on a spell). The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.",
 				"For the duration, you can cast spells as though you were in the illusion's space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how distracting the illusion is to the target."
 			]
 		},
@@ -4081,7 +4081,7 @@
 			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to create an illusory duplicate of yourself.",
-				"As an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell). The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.",
+				"As an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your {@status concentration} (as if you were {@status concentration||concentrating} on a spell). The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.",
 				"For the duration, you can cast spells as though you were in the illusion's space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how distracting the illusion is to the target."
 			]
 		},
@@ -4850,7 +4850,7 @@
 				"Starting at 2nd level, you can use your Channel Divinity to abjure otherworldly creatures.",
 				"As an action, you present your holy symbol, and one celestial, elemental, fey, or fiend of your choice that is within 30 feet of you must make a Wisdom saving throw, provided that the creature can see or hear you. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.",
 				"A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly end its move in a space within 30 feet of you. It also can't take reactions. For its action, it can use only the {@action Dash} action or try to escape from an effect that prevents it from moving. If there's nowhere to move, then the creature can use the {@action Dodge} action.",
-				"After you reach 5th level, when a creature fails its saving throw against your Arcane Abjuration feature, the creature is banished for 1 minute (as in the {@spell banishment} spell, no concentration required) if it isn't on its plane of origin, and its challenge rating is at or below a certain threshold, as shown below.",
+				"After you reach 5th level, when a creature fails its saving throw against your Arcane Abjuration feature, the creature is banished for 1 minute (as in the {@spell banishment} spell, no {@status concentration} required) if it isn't on its plane of origin, and its challenge rating is at or below a certain threshold, as shown below.",
 				{
 					"type": "table",
 					"caption": "Arcane Banishment",
@@ -6271,7 +6271,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 2nd-level Fate Domain Feature}",
-				"You can use your Channel Divinity to see and manipulate the strands of fate that weave around other individuals. As a bonus action, you can enter this state for up to 1 minute or until you lose your concentration (as if you were concentrating on a spell). For the duration, whenever another creature you can see makes an attack roll or an ability check, you can use a reaction to give the roll advantage or disadvantage (your choice)."
+				"You can use your Channel Divinity to see and manipulate the strands of fate that weave around other individuals. As a bonus action, you can enter this state for up to 1 minute or until you lose your {@status concentration} (as if you were {@status concentration||concentrating} on a spell). For the duration, whenever another creature you can see makes an attack roll or an ability check, you can use a reaction to give the roll advantage or disadvantage (your choice)."
 			]
 		},
 		{

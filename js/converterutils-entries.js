@@ -428,7 +428,7 @@ class QuickrefTag {
 						0,
 						str,
 						{
-							fnTag: this._fnTag,
+							fnTag: this._fnTag.bind(this),
 						},
 					);
 					return ptrStack._;
@@ -439,14 +439,18 @@ class QuickrefTag {
 
 	static _fnTag (strMod) {
 		return strMod
-			.replace(QuickrefTag._RE_BASIC, (...m) => `{@quickref ${QuickrefTag._LOOKUP[m[0]]}}`)
+			.replace(QuickrefTag._RE_BASIC, (...m) => `{@quickref ${QuickrefTag._LOOKUP_BASIC[m[0].toLowerCase()]}}`)
+			.replace(QuickrefTag._RE_VISION, (...m) => `{@quickref ${QuickrefTag._LOOKUP_VISION[m[0].toLowerCase()]}||${m[0]}}`)
 		;
 	}
 }
-QuickrefTag._RE_BASIC = /\b(difficult terrain|dim light|bright light|lightly obscured|heavily obscured|Vision and Light)\b/g;
-QuickrefTag._LOOKUP = {
+QuickrefTag._RE_BASIC = /\b([Dd]ifficult [Tt]errain|Vision and Light)\b/g;
+QuickrefTag._RE_VISION = /\b(dim light|bright light|lightly obscured|heavily obscured)\b/gi;
+QuickrefTag._LOOKUP_BASIC = {
 	"difficult terrain": "difficult terrain||3",
-	"Vision and Light": "Vision and Light||2",
+	"vision and light": "Vision and Light||2",
+};
+QuickrefTag._LOOKUP_VISION = {
 	"bright light": "Vision and Light||2",
 	"dim light": "Vision and Light||2",
 	"lightly obscured": "Vision and Light||2",
