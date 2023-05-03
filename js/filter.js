@@ -704,7 +704,7 @@ class FilterBox extends ProxyBase {
 					${$wrpBtnCombineFilters}
 				</div>
 				<div class="ve-flex-v-center mobile__m-1">
-					<div class="btn-group mr-2">
+					<div class="btn-group mr-2 ve-flex-h-center">
 						${$btnShowAllFilters}
 						${$btnHideAllFilters}
 					</div>
@@ -2998,9 +2998,12 @@ class SourceFilter extends Filter {
 	}
 
 	static getCompleteFilterSources (ent) {
-		return ent.otherSources
-			? [ent.source].concat(ent.otherSources.map(src => new SourceFilterItem({item: src.source, isIgnoreRed: true, isOtherSource: true})))
-			: ent.source;
+		if (!ent.otherSources) return ent.source;
+
+		const otherSourcesFilt = ent.otherSources.filter(src => !ExcludeUtil.isExcluded("*", "*", src.source, {isNoCount: true}));
+		if (!otherSourcesFilt.length) return ent.source;
+
+		return [ent.source].concat(otherSourcesFilt.map(src => new SourceFilterItem({item: src.source, isIgnoreRed: true, isOtherSource: true})));
 	}
 
 	_doRenderPills_doRenderWrpGroup_getHrDivider (group) {

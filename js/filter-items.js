@@ -24,6 +24,12 @@ class PageFilterEquipment extends PageFilter {
 		return this._getSortableDamageTerm(a.item) - this._getSortableDamageTerm(b.item);
 	}
 
+	static _getMasteryDisplay (mastery) {
+		const {name, source} = DataUtil.proxy.unpackUid("itemMastery", mastery, "itemMastery");
+		if (SourceUtil.isSiteSource(source)) return name.toTitleCase();
+		return `${name.toTitleCase()} (${Parser.sourceJsonToAbv(source)})`;
+	}
+
 	constructor ({filterOpts = null} = {}) {
 		super();
 
@@ -59,6 +65,7 @@ class PageFilterEquipment extends PageFilter {
 		this._damageDiceFilter = new Filter({header: "Weapon Damage Dice", items: ["1", "1d4", "1d6", "1d8", "1d10", "1d12", "2d6"], itemSortFn: (a, b) => PageFilterEquipment._sortDamageDice(a, b)});
 		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Item Group", "Bundle", "SRD", "Basic Rules", "Has Images", "Has Info"], isMiscFilter: true});
 		this._poisonTypeFilter = new Filter({header: "Poison Type", items: ["ingested", "injury", "inhaled", "contact"], displayFn: StrUtil.toTitleCase});
+		this._masteryFilter = new Filter({header: "Mastery", displayFn: this.constructor._getMasteryDisplay.bind(this)});
 	}
 
 	static mutateForFilters (item) {
@@ -104,6 +111,13 @@ class PageFilterEquipment extends PageFilter {
 		item._fDamageDice = [];
 		if (item.dmg1) item._fDamageDice.push(item.dmg1);
 		if (item.dmg2) item._fDamageDice.push(item.dmg2);
+
+		item._fMastery = item.mastery
+			? item.mastery.map(it => {
+				const {name, source} = DataUtil.proxy.unpackUid("itemMastery", it, "itemMastery", {isLower: true});
+				return [name, source].join("|");
+			})
+			: null;
 	}
 
 	addToFilters (item, isExcluded) {
@@ -116,6 +130,7 @@ class PageFilterEquipment extends PageFilter {
 		this._damageDiceFilter.addItem(item._fDamageDice);
 		this._poisonTypeFilter.addItem(item.poisonTypes);
 		this._miscFilter.addItem(item._fMisc);
+		this._masteryFilter.addItem(item._fMastery);
 	}
 
 	async _pPopulateBoxOptions (opts) {
@@ -131,6 +146,7 @@ class PageFilterEquipment extends PageFilter {
 			this._damageDiceFilter,
 			this._miscFilter,
 			this._poisonTypeFilter,
+			this._masteryFilter,
 		];
 	}
 
@@ -148,6 +164,7 @@ class PageFilterEquipment extends PageFilter {
 			it._fDamageDice,
 			it._fMisc,
 			it.poisonTypes,
+			it._fMastery,
 		);
 	}
 }
@@ -355,6 +372,7 @@ class PageFilterItems extends PageFilterEquipment {
 			this._miscFilter,
 			this._rechargeTypeFilter,
 			this._poisonTypeFilter,
+			this._masteryFilter,
 			this._lootTableFilter,
 			this._baseItemFilter,
 			this._baseSourceFilter,
@@ -382,6 +400,7 @@ class PageFilterItems extends PageFilterEquipment {
 			it._fMisc,
 			it.recharge,
 			it.poisonTypes,
+			it._fMastery,
 			it.lootTables,
 			it._fBaseItemAll,
 			it._baseSource,

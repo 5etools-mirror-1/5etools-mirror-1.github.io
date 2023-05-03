@@ -494,14 +494,50 @@ class StatGenUi extends BaseComponent {
 				this._state.pb_rules = [...this._state.pb_rules, this._getDefaultState_pb_rule(score, cost)];
 			});
 
-		const $btnResetRules = $(`<button class="btn btn-default btn-xs">Reset</button>`)
+		const $btnResetRules = $(`<button class="btn btn-danger btn-xs mr-2">Reset</button>`)
 			.click(() => {
 				this._state.pb_rules = this._getDefaultStatePointBuyCosts().pb_rules;
 			});
 
+		const menuCustom = ContextUtil.getMenu([
+			new ContextUtil.Action(
+				"Export as Code",
+				async () => {
+					await MiscUtil.pCopyTextToClipboard(this._serialize_pb_rules());
+					JqueryUtil.showCopiedEffect($btnContext);
+				},
+			),
+			new ContextUtil.Action(
+				"Import from Code",
+				async () => {
+					const raw = await InputUiUtil.pGetUserString({title: "Enter Code", isCode: true});
+					if (raw == null) return;
+					const parsed = this._deserialize_pb_rules(raw);
+					if (parsed == null) return;
+
+					const {pb_rules, pb_budget} = parsed;
+					this._proxyAssignSimple(
+						"state",
+						{
+							pb_rules,
+							pb_budget,
+							pb_isCustom: true,
+						},
+					);
+					JqueryUtil.doToast("Imported!");
+				},
+			),
+		]);
+
+		const $btnContext = $(`<button class="btn btn-default btn-xs" title="Menu"><span class="glyphicon glyphicon-option-vertical"></span></button>`)
+			.click(evt => ContextUtil.pOpenMenu(evt, menuCustom));
+
 		const $stgCustomCostControls = $$`<div class="ve-flex-col mb-auto ml-2 mobile__ml-0 mobile__mt-3">
 			<div class="btn-group-vertical ve-flex-col mb-2">${$btnAddLower}${$btnAddHigher}</div>
-			<div class="ve-flex-v-center">${$btnResetRules}</div>
+			<div class="ve-flex-v-center">
+				${$btnResetRules}
+				${$btnContext}
+			</div>
 		</div>`;
 
 		const $stgCostRows = $$`<div class="ve-flex-col"></div>`;
@@ -564,6 +600,42 @@ class StatGenUi extends BaseComponent {
 				${ComponentUiUtil.$getCbBool(this, "pb_isCustom")}
 			</label>
 		</div>`;
+	}
+
+	_serialize_pb_rules () {
+		const out = [
+			this._state.pb_budget,
+			...MiscUtil.copyFast(this._state.pb_rules).map(it => [it.entity.score, it.entity.cost]),
+		];
+		return JSON.stringify(out);
+	}
+
+	static _DESERIALIZE_MSG_INVALID = "Code was not valid!";
+
+	_deserialize_pb_rules (raw) {
+		let json;
+		try {
+			json = JSON.parse(raw);
+		} catch (e) {
+			JqueryUtil.doToast({type: "danger", content: `Failed to decode JSON! ${e.message}`});
+			return null;
+		}
+
+		if (!(json instanceof Array)) return void JqueryUtil.doToast({type: "danger", content: this.constructor._DESERIALIZE_MSG_INVALID});
+
+		const [budget, ...rules] = json;
+
+		if (isNaN(budget)) return void JqueryUtil.doToast({type: "danger", content: this.constructor._DESERIALIZE_MSG_INVALID});
+
+		if (
+			!rules
+				.every(it => it instanceof Array && it[0] != null && !isNaN(it[0]) && it[1] != null && !isNaN(it[1]))
+		) return void JqueryUtil.doToast({type: "danger", content: this.constructor._DESERIALIZE_MSG_INVALID});
+
+		return {
+			pb_budget: budget,
+			pb_rules: rules.map(it => this._getDefaultState_pb_rule(it[0], it[1])),
+		};
 	}
 
 	_render_all ($wrpTab) {

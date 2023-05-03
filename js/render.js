@@ -2924,21 +2924,31 @@ Renderer.utils = {
 	HTML_NO_IMAGES: "<i>No images available.</i>",
 
 	prerequisite: class {
-		static _WEIGHTS = {
-			level: 0,
-			pact: 1,
-			patron: 2,
-			spell: 3,
-			race: 4,
-			ability: 5,
-			proficiency: 6,
-			spellcasting: 7,
-			feature: 8,
-			item: 9,
-			other: 10,
-			otherSummary: 11,
-			[undefined]: 12,
-		};
+		static _WEIGHTS = [
+			"level",
+			"pact",
+			"patron",
+			"spell",
+			"race",
+			"alignment",
+			"ability",
+			"proficiency",
+			"spellcasting",
+			"spellcasting2020",
+			"psionics",
+			"feature",
+			"feat",
+			"background",
+			"item",
+			"itemType",
+			"itemProperty",
+			"campaign",
+			"group",
+			"other",
+			"otherSummary",
+			undefined,
+		]
+			.mergeMap((k, i) => ({[k]: i}));
 
 		static _getShortClassName (className) {
 			// remove all the vowels except the first
@@ -2968,57 +2978,72 @@ Renderer.utils = {
 
 			let cntPrerequisites = 0;
 			let hasNote = false;
-			const listOfChoices = prerequisites.map(pr => {
-				// Never include notes in list mode
-				const ptNote = !isListMode && pr.note ? Renderer.get().render(pr.note) : null;
-				if (ptNote) {
-					hasNote = true;
-				}
+			const listOfChoices = prerequisites
+				.map(pr => {
+					// Never include notes in list mode
+					const ptNote = !isListMode && pr.note ? Renderer.get().render(pr.note) : null;
+					if (ptNote) {
+						hasNote = true;
+					}
 
-				const prereqsToJoin = Object.entries(pr)
-					.filter(([k]) => !prereqsShared[k])
-					.sort(([kA], [kB]) => this._WEIGHTS[kA] - this._WEIGHTS[kB])
-					.map(([k, v]) => {
-						if (k === "note" || blocklistKeys.has(k)) return false;
+					const prereqsToJoin = Object.entries(pr)
+						.filter(([k]) => !prereqsShared[k])
+						.sort(([kA], [kB]) => this._WEIGHTS[kA] - this._WEIGHTS[kB])
+						.map(([k, v]) => {
+							if (k === "note" || blocklistKeys.has(k)) return false;
 
-						cntPrerequisites += 1;
+							cntPrerequisites += 1;
 
-						switch (k) {
-							case "level": return this._getHtml_level({v, isListMode, isTextOnly});
-							case "pact": return this._getHtml_pact({v, isListMode, isTextOnly});
-							case "patron": return this._getHtml_patron({v, isListMode, isTextOnly});
-							case "spell": return this._getHtml_spell({v, isListMode, isTextOnly});
-							case "feat": return this._getHtml_feat({v, isListMode, isTextOnly});
-							case "feature": return this._getHtml_feature({v, isListMode, isTextOnly});
-							case "item": return this._getHtml_item({v, isListMode, isTextOnly});
-							case "otherSummary": return this._getHtml_otherSummary({v, isListMode, isTextOnly});
-							case "other": return this._getHtml_other({v, isListMode, isTextOnly});
-							case "race": return this._getHtml_race({v, isListMode, isTextOnly});
-							case "background": return this._getHtml_background({v, isListMode, isTextOnly});
-							case "ability": return this._getHtml_ability({v, isListMode, isTextOnly});
-							case "proficiency": return this._getHtml_proficiency({v, isListMode, isTextOnly});
-							case "spellcasting": return this._getHtml_spellcasting({v, isListMode, isTextOnly});
-							case "spellcasting2020": return this._getHtml_spellcasting2020({v, isListMode, isTextOnly});
-							case "psionics": return this._getHtml_psionics({v, isListMode, isTextOnly});
-							case "alignment": return this._getHtml_alignment({v, isListMode, isTextOnly});
-							case "campaign": return this._getHtml_campaign({v, isListMode, isTextOnly});
-							case "group": return this._getHtml_group({v, isListMode, isTextOnly});
-							default: throw new Error(`Unhandled key: ${k}`);
-						}
-					})
-					.filter(Boolean);
+							switch (k) {
+								case "level": return this._getHtml_level({v, isListMode, isTextOnly});
+								case "pact": return this._getHtml_pact({v, isListMode, isTextOnly});
+								case "patron": return this._getHtml_patron({v, isListMode, isTextOnly});
+								case "spell": return this._getHtml_spell({v, isListMode, isTextOnly});
+								case "feat": return this._getHtml_feat({v, isListMode, isTextOnly});
+								case "feature": return this._getHtml_feature({v, isListMode, isTextOnly});
+								case "item": return this._getHtml_item({v, isListMode, isTextOnly});
+								case "itemType": return this._getHtml_itemType({v, isListMode, isTextOnly});
+								case "itemProperty": return this._getHtml_itemProperty({v, isListMode, isTextOnly});
+								case "otherSummary": return this._getHtml_otherSummary({v, isListMode, isTextOnly});
+								case "other": return this._getHtml_other({v, isListMode, isTextOnly});
+								case "race": return this._getHtml_race({v, isListMode, isTextOnly});
+								case "background": return this._getHtml_background({v, isListMode, isTextOnly});
+								case "ability": return this._getHtml_ability({v, isListMode, isTextOnly});
+								case "proficiency": return this._getHtml_proficiency({v, isListMode, isTextOnly});
+								case "spellcasting": return this._getHtml_spellcasting({v, isListMode, isTextOnly});
+								case "spellcasting2020": return this._getHtml_spellcasting2020({v, isListMode, isTextOnly});
+								case "psionics": return this._getHtml_psionics({v, isListMode, isTextOnly});
+								case "alignment": return this._getHtml_alignment({v, isListMode, isTextOnly});
+								case "campaign": return this._getHtml_campaign({v, isListMode, isTextOnly});
+								case "group": return this._getHtml_group({v, isListMode, isTextOnly});
+								default: throw new Error(`Unhandled key: ${k}`);
+							}
+						})
+						.filter(Boolean);
 
-				const ptPrereqs = prereqsToJoin
-					.join(prereqsToJoin.some(it => / or /.test(it)) ? "; " : ", ");
+					const ptPrereqs = prereqsToJoin
+						.join(prereqsToJoin.some(it => / or /.test(it)) ? "; " : ", ");
 
-				return [ptPrereqs, ptNote].filter(Boolean).join(". ");
-			}).filter(Boolean);
+					return [ptPrereqs, ptNote]
+						.filter(Boolean)
+						.join(". ");
+				})
+				.filter(Boolean);
 
 			if (!listOfChoices.length && !shared) return isListMode ? "\u2014" : "";
 			if (isListMode) return [shared, listOfChoices.join("/")].filter(Boolean).join(" + ");
 
-			const joinedChoices = hasNote ? listOfChoices.join(" Or, ") : listOfChoices.joinConjunct(listOfChoices.some(it => / or /.test(it)) ? "; " : ", ", " or ");
-			return `${isSkipPrefix ? "" : `${isListMode ? "" : "<b>"}Prerequisite${cntPrerequisites === 1 ? "" : "s"}:${isListMode ? "" : "</b>"} `}${[shared, joinedChoices].filter(Boolean).join(", plus ")}`;
+			const sharedSuffix = MiscUtil.findCommonSuffix(listOfChoices, {isRespectWordBoundaries: true});
+			const listOfChoicesTrimmed = sharedSuffix
+				? listOfChoices.map(it => it.slice(0, -sharedSuffix.length))
+				: listOfChoices;
+
+			const joinedChoices = (
+				hasNote
+					? listOfChoicesTrimmed.join(" Or, ")
+					: listOfChoicesTrimmed.joinConjunct(listOfChoicesTrimmed.some(it => / or /.test(it)) ? "; " : ", ", " or ")
+			) + sharedSuffix;
+			return `${isSkipPrefix ? "" : `<b>Prerequisite${cntPrerequisites === 1 ? "" : "s"}:</b> `}${[shared, joinedChoices].filter(Boolean).join(", plus ")}`;
 		}
 
 		static _getHtml_level ({v, isListMode}) {
@@ -3074,6 +3099,35 @@ Renderer.utils = {
 
 		static _getHtml_item ({v, isListMode}) {
 			return isListMode ? v.map(x => x.toTitleCase()).join("/") : v.joinConjunct(", ", " or ");
+		}
+
+		static _getHtml_itemType ({v, isListMode}) {
+			return isListMode
+				? v
+					.map(it => Renderer.item.getType(it))
+					.map(it => it?.abbreviation)
+					.join("+")
+				: v
+					.map(it => Renderer.item.getType(it))
+					.map(it => it?.name?.toTitleCase())
+					.joinConjunct(", ", " and ");
+		}
+
+		static _getHtml_itemProperty ({v, isListMode}) {
+			if (v == null) return isListMode ? "No Prop." : "No Other Properties";
+
+			return isListMode
+				? v
+					.map(it => Renderer.item.getProperty(it))
+					.map(it => it?.abbreviation)
+					.join("+")
+				: (
+					`${v
+						.map(it => Renderer.item.getProperty(it))
+						.map(it => it?.name?.toTitleCase())
+						.joinConjunct(", ", " and ")
+					} Property`
+				);
 		}
 
 		static _getHtml_otherSummary ({v, isListMode, isTextOnly}) {
@@ -3672,6 +3726,7 @@ Renderer.utils = {
 
 			case "@skill": { out.isFauxPage = true; out.page = "skill"; break; }
 			case "@sense": { out.isFauxPage = true; out.page = "sense"; break; }
+			case "@itemMastery": { out.isFauxPage = true; out.page = "itemMastery"; break; }
 
 			default: throw new Error(`Unhandled tag "${tag}"`);
 		}
@@ -4267,6 +4322,12 @@ Renderer.tag = class {
 		page = UrlUtil.PG_ITEMS;
 	};
 
+	static TagItemMastery = class extends this._TagPipedDisplayTextThird {
+		tagName = "itemMastery";
+		defaultSource = VeCt.STR_GENERIC; // TODO(Future) adjust as/when these are published
+		page = "itemMastery";
+	};
+
 	static TagLanguage = class extends this._TagPipedDisplayTextThird {
 		tagName = "language";
 		defaultSource = Parser.SRC_PHB;
@@ -4535,6 +4596,7 @@ Renderer.tag = class {
 		new this.TagFeat(),
 		new this.TagHazard(),
 		new this.TagItem(),
+		new this.TagItemMastery(),
 		new this.TagLanguage(),
 		new this.TagLegroup(),
 		new this.TagObject(),
@@ -4745,11 +4807,11 @@ Renderer.feat = {
 		if (abilityObj.choose.from.length === 6) {
 			return abilityObj.choose.entry
 				? Renderer.get().render(abilityObj.choose.entry) // only used in "Resilient"
-				: `Increase one ability score of your choice by ${abilityObj.choose.amount}, to a maximum of 20.`;
+				: `Increase one ability score of your choice by ${abilityObj.choose.amount ?? 1}, to a maximum of 20.`;
 		}
 
 		const abbChoicesText = abilityObj.choose.from.map(it => Parser.attAbvToFull(it)).joinConjunct(", ", " or ");
-		return `Increase your ${abbChoicesText} by ${abilityObj.choose.amount}, to a maximum of 20.`;
+		return `Increase your ${abbChoicesText} by ${abilityObj.choose.amount ?? 1}, to a maximum of 20.`;
 	},
 
 	initFullEntries (feat) {
@@ -5420,16 +5482,13 @@ Renderer.condition = {
 
 Renderer.background = {
 	getCompactRenderedString (bg) {
-		const prerequisite = Renderer.utils.prerequisite.getHtml(bg.prerequisite);
-
-		return `
-		${Renderer.utils.getExcludedTr({entity: bg, dataProp: "background", page: UrlUtil.PG_BACKGROUNDS})}
-		${Renderer.utils.getNameTr(bg, {page: UrlUtil.PG_BACKGROUNDS})}
-		<tr class="text"><td colspan="6">
-		${prerequisite ? `<p>${prerequisite}</p>` : ""}
-		${Renderer.get().render({type: "entries", entries: bg.entries})}
-		</td></tr>
-		`;
+		return Renderer.generic.getCompactRenderedString(
+			bg,
+			{
+				dataProp: "background",
+				page: UrlUtil.PG_BACKGROUNDS,
+			},
+		);
 	},
 
 	getSkillSummary (skillProfsArr, short, collectIn) {
@@ -7379,7 +7438,10 @@ Renderer.item = {
 	getDamageAndPropertiesText (item, {renderer = null} = {}) {
 		renderer = renderer || Renderer.get();
 
+		const damagePartsPre = [];
 		const damageParts = [];
+
+		if (item.mastery) damagePartsPre.push(`Mastery: ${item.mastery.map(it => renderer.render(`{@itemMastery ${it}}`)).join(", ")}`);
 
 		if (item.dmg1) damageParts.push(Renderer.item._renderDamage(item.dmg1, {renderer}));
 
@@ -7424,7 +7486,12 @@ Renderer.item = {
 			].filter(Boolean).join(renderer.getLineBreak()));
 		}
 
-		const damage = damageParts.join(", ");
+		const damage = [
+			damagePartsPre.join(", "),
+			damageParts.join(", "),
+		]
+			.filter(Boolean)
+			.join(renderer.getLineBreak());
 		const damageType = item.dmgType ? Parser.dmgTypeToFull(item.dmgType) : "";
 		const propertiesTxt = Renderer.item._getPropertiesText(item, {renderer});
 
@@ -7660,60 +7727,94 @@ Renderer.item = {
 		return !Renderer.item._hiddenRarity.has(rarity);
 	},
 
+	// ---
+
 	propertyMap: {},
+	_addProperty (prt) {
+		if (Renderer.item.propertyMap[prt.abbreviation]) return;
+		const cpy = MiscUtil.copyFast(prt);
+		Renderer.item.propertyMap[prt.abbreviation] = prt.name ? cpy : {
+			...cpy,
+			name: (prt.entries || prt.entriesTemplate)[0].name.toLowerCase(),
+		};
+	},
+
+	getProperty (abbv) { return Renderer.item.propertyMap[abbv]; },
+
+	// ---
+
 	typeMap: {},
+	_addType (typ) {
+		if (Renderer.item.typeMap[typ.abbreviation]?.entries || Renderer.item.typeMap[typ.abbreviation]?.entriesTemplate) return;
+		const cpy = MiscUtil.copyFast(typ);
+		Renderer.item.typeMap[typ.abbreviation] = typ.name ? cpy : {
+			...cpy,
+			name: (typ.entries || typ.entriesTemplate)[0].name.toLowerCase(),
+		};
+	},
+
+	getType (abbv) { return Renderer.item.typeMap[abbv]; },
+
+	// ---
+
 	entryMap: {},
-	_additionalEntriesMap: {},
-	_addProperty (p) {
-		if (Renderer.item.propertyMap[p.abbreviation]) return;
-		const cpy = MiscUtil.copyFast(p);
-		Renderer.item.propertyMap[p.abbreviation] = p.name ? cpy : {
-			...cpy,
-			name: (p.entries || p.entriesTemplate)[0].name.toLowerCase(),
-		};
-	},
-	_addType (t) {
-		if (Renderer.item.typeMap[t.abbreviation]?.entries || Renderer.item.typeMap[t.abbreviation]?.entriesTemplate) return;
-		const cpy = MiscUtil.copyFast(t);
-		Renderer.item.typeMap[t.abbreviation] = t.name ? cpy : {
-			...cpy,
-			name: (t.entries || t.entriesTemplate)[0].name.toLowerCase(),
-		};
-	},
 	_addEntry (ent) {
 		if (Renderer.item.entryMap[ent.source]?.[ent.name]) return;
 		MiscUtil.set(Renderer.item.entryMap, ent.source, ent.name, ent);
 	},
-	_addAdditionalEntries (e) {
-		if (Renderer.item._additionalEntriesMap[e.appliesTo]) return;
-		Renderer.item._additionalEntriesMap[e.appliesTo] = MiscUtil.copyFast(e.entries);
+
+	// ---
+
+	_additionalEntriesMap: {},
+	_addAdditionalEntries (ent) {
+		if (Renderer.item._additionalEntriesMap[ent.appliesTo]) return;
+		Renderer.item._additionalEntriesMap[ent.appliesTo] = MiscUtil.copyFast(ent.entries);
 	},
+
+	// ---
+
+	_masteryMap: {},
+	_addMastery (ent) {
+		const lookupSource = ent.source.toLowerCase();
+		const lookupName = ent.name.toLowerCase();
+		if (Renderer.item._masteryMap[lookupSource]?.[lookupName]) return;
+		MiscUtil.set(Renderer.item._masteryMap, lookupSource, lookupName, ent);
+	},
+
+	_getMastery (uid) {
+		const {name, source} = DataUtil.proxy.unpackUid("itemMastery", uid, "itemMastery", {isLower: true});
+		return MiscUtil.get(Renderer.item._masteryMap, source, name);
+	},
+
+	// ---
+
 	async _pAddPrereleaseBrewPropertiesAndTypes () {
 		if (typeof PrereleaseUtil !== "undefined") await this._pAddPrereleaseBrewPropertiesAndTypes_({brewUtil: PrereleaseUtil});
 		if (typeof BrewUtil2 !== "undefined") await this._pAddPrereleaseBrewPropertiesAndTypes_({brewUtil: BrewUtil2});
 	},
+
 	async _pAddPrereleaseBrewPropertiesAndTypes_ ({brewUtil}) {
 		const brew = await brewUtil.pGetBrewProcessed();
 		(brew.itemProperty || []).forEach(p => Renderer.item._addProperty(p));
 		(brew.itemType || []).forEach(t => Renderer.item._addType(t));
 		(brew.itemEntry || []).forEach(it => Renderer.item._addEntry(it));
 		(brew.itemTypeAdditionalEntries || []).forEach(it => Renderer.item._addAdditionalEntries(it));
+		(brew.itemMastery || []).forEach(it => Renderer.item._addMastery(it));
 	},
+
 	_addBasePropertiesAndTypes (baseItemData) {
 		Object.entries(Parser.ITEM_TYPE_JSON_TO_ABV).forEach(([abv, name]) => Renderer.item._addType({abbreviation: abv, name}));
+
 		// Convert the property and type list JSONs into look-ups, i.e. use the abbreviation as a JSON property name
-		baseItemData.itemProperty.forEach(p => Renderer.item._addProperty(p));
-		baseItemData.itemType.forEach(t => {
+		(baseItemData.itemProperty || []).forEach(it => Renderer.item._addProperty(it));
+		(baseItemData.itemType || []).forEach(it => {
 			// air/water vehicles share a type
-			if (t.abbreviation === "SHP") {
-				const cpy = MiscUtil.copyFast(t);
-				cpy.abbreviation = "AIR";
-				Renderer.item._addType(cpy);
-			}
-			Renderer.item._addType(t);
+			if (it.abbreviation === "SHP") Renderer.item._addType({...MiscUtil.copyFast(it), abbreviation: "AIR"});
+			Renderer.item._addType(it);
 		});
-		baseItemData.itemEntry.forEach(ent => Renderer.item._addEntry(ent));
-		baseItemData.itemTypeAdditionalEntries.forEach(e => Renderer.item._addAdditionalEntries(e));
+		(baseItemData.itemEntry || []).forEach(it => Renderer.item._addEntry(it));
+		(baseItemData.itemTypeAdditionalEntries || []).forEach(it => Renderer.item._addAdditionalEntries(it));
+		(baseItemData.itemMastery || []).forEach(it => Renderer.item._addMastery(it));
 
 		baseItemData.baseitem.forEach(it => it._isBaseItem = true);
 	},
@@ -8038,7 +8139,6 @@ Renderer.item = {
 	/**
 	 * @param genericVariants
 	 * @param opts
-	 * @param [opts.baseItemsUrl]
 	 * @param [opts.additionalBaseItems]
 	 * @param [opts.baseItems]
 	 * @param [opts.isSpecificVariantsOnly]
@@ -8050,8 +8150,7 @@ Renderer.item = {
 		if (opts.baseItems) {
 			baseItems = opts.baseItems;
 		} else {
-			opts.baseItemsUrl = opts.baseItemsUrl || `${Renderer.get().baseUrl}data/items-base.json`;
-			const baseItemData = await DataUtil.loadJSON(opts.baseItemsUrl);
+			const baseItemData = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/items-base.json`);
 			Renderer.item._addBasePropertiesAndTypes(baseItemData);
 			baseItems = [...baseItemData.baseitem, ...(opts.additionalBaseItems || [])];
 		}
@@ -8196,6 +8295,31 @@ Renderer.item = {
 				}
 			}
 		}
+
+		(item.mastery || [])
+			.forEach(uid => {
+				const mastery = Renderer.item._getMastery(uid);
+
+				if (!mastery) throw new Error(`Item mastery ${uid} not found. You probably meant to load the property/type reference first; see \`Renderer.item.pPopulatePropertyAndTypeReference()\`.`);
+				if (!mastery.entries && !mastery.entriesTemplate) return;
+
+				Renderer.item._initFullEntries(item);
+
+				item._fullEntries.push({
+					type: "wrapper",
+					wrapped: {
+						type: "entries",
+						name: `Mastery: ${mastery.name}`,
+						source: mastery.source,
+						page: mastery.page,
+						entries: Renderer.item._enhanceItem_getItemPropertyTypeEntries({item, ent: mastery}),
+					},
+					data: {
+						[VeCt.ENTDATA_ITEM_MERGED_ENTRY_TAG]: "mastery",
+					},
+				});
+			});
+
 		// add additional entries based on type (e.g. XGE variants)
 		if (item.type === "T" || item.type === "AT" || item.type === "INS" || item.type === "GS") { // tools, artisan's tools, instruments, gaming sets
 			Renderer.item._initFullAdditionalEntries(item);
@@ -9469,18 +9593,30 @@ Renderer.sense = {
 	},
 };
 
+Renderer.itemMastery = {
+	getCompactRenderedString (ent) {
+		return Renderer.generic.getCompactRenderedString(ent);
+	},
+};
+
 Renderer.generic = {
 	/**
 	 * @param it
 	 * @param [opts]
 	 * @param [opts.isSkipNameRow]
 	 * @param [opts.isSkipPageRow]
+	 * @param [opts.dataProp]
+	 * @param [opts.page]
 	 */
 	getCompactRenderedString (it, opts) {
 		opts = opts || {};
+		const prerequisite = Renderer.utils.prerequisite.getHtml(it.prerequisite);
+
 		return `
-		${opts.isSkipNameRow ? "" : Renderer.utils.getNameTr(it)}
+		${opts.dataProp && opts.page ? Renderer.utils.getExcludedTr({entity: it, dataProp: opts.dataProp, page: opts.page}) : ""}
+		${opts.isSkipNameRow ? "" : Renderer.utils.getNameTr(it, {page: opts.page})}
 		<tr class="text"><td colspan="6">
+		${prerequisite ? `<p>${prerequisite}</p>` : ""}
 		${Renderer.get().setFirstSection(true).render({entries: it.entries})}
 		</td></tr>
 		${opts.isSkipPageRow ? "" : Renderer.utils.getPageTr(it)}`;

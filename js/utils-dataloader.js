@@ -770,6 +770,12 @@ class _DataTypeLoaderItemEntry extends _DataTypeLoaderSingleSource {
 	_filename = "items-base.json";
 }
 
+class _DataTypeLoaderItemMastery extends _DataTypeLoaderSingleSource {
+	static PROPS = ["itemMastery"];
+
+	_filename = "items-base.json";
+}
+
 class _DataTypeLoaderBackgroundFluff extends _DataTypeLoaderSingleSource {
 	static PROPS = ["backgroundFluff"];
 	static PAGE = UrlUtil.PG_BACKGROUNDS;
@@ -1616,6 +1622,7 @@ class DataLoader {
 		_DataTypeLoaderSense.register({fnRegister});
 		_DataTypeLoaderLegendaryGroup.register({fnRegister});
 		_DataTypeLoaderItemEntry.register({fnRegister});
+		_DataTypeLoaderItemMastery.register({fnRegister});
 		// endregion
 
 		// region Fluff
