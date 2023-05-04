@@ -1,5 +1,10 @@
 {
 	"_meta": {
+		"dependencies": {
+			"monster": [
+				"MM"
+			]
+		},
 		"otherSources": {
 			"monster": {
 				"MM": "DIP",
@@ -578,6 +583,18 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Skeletal Riding Horse",
+			"source": "DIP",
+			"page": 21,
+			"_copy": {
+				"name": "Riding Horse",
+				"source": "MM"
+			},
+			"type": "undead",
+			"hasToken": true,
 			"hasFluffImages": true
 		}
 	]
