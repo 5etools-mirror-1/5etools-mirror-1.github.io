@@ -96,14 +96,20 @@ class RendererCard {
 
 		if (entry.caption) textStack[0] += `text | <b>${entry.caption}</b>\n`;
 
-		if (entry.colLabels && entry.colLabels.length) {
-			textStack[0] += `text | `;
-			for (let i = 0; i < entry.colLabels.length; ++i) {
-				const label = entry.colLabels[i];
-				this._recursiveRender(label, textStack, meta);
-				if (i !== entry.colLabels.length - 1) textStack[0] += _VERTICAL_LINE;
+		const headerRowMetas = Renderer.table.getHeaderRowMetas(entry);
+		if (headerRowMetas) {
+			for (let ixRow = 0; ixRow < headerRowMetas.length; ++ixRow) {
+				textStack[0] += `text | `;
+
+				const headerRowMeta = headerRowMetas[ixRow];
+				for (let ixCell = 0; ixCell < headerRowMeta.length; ++ixCell) {
+					const label = headerRowMeta[ixCell];
+					this._recursiveRender(label, textStack, meta);
+					if (ixCell !== headerRowMeta.length - 1) textStack[0] += _VERTICAL_LINE;
+				}
+
+				textStack[0] += `\n`;
 			}
-			textStack[0] += `\n`;
 		}
 
 		if (!entry.rows || !entry.rows.length) return;
@@ -219,9 +225,15 @@ class RendererCard {
 			this._recursiveRender(entry.entries[i], textStack, meta, {prefix: "text | <i>", suffix: "</i>"});
 			textStack[0] += `\n`;
 		}
-		if (entry.by) {
-			const tempStack = ["text | \u2014 "];
-			this._recursiveRender(entry.by, tempStack, meta);
+		const byArr = this._renderQuote_getBy(entry);
+		if (byArr) {
+			const tempStack = [];
+			for (let i = 0, len = byArr.length; i < len; ++i) {
+				const by = byArr[i];
+				tempStack[0] += `text | ${!i ? `\u2014 ` : ""}`;
+				this._recursiveRender(by, tempStack, meta);
+				if (i < len - 1) tempStack[0] += "\n";
+			}
 			textStack[0] += `${tempStack.join("")}${entry.from ? `, <i>${entry.from}</i>` : ""}\n`;
 		}
 	}

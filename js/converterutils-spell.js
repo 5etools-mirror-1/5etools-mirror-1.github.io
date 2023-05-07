@@ -138,7 +138,7 @@ class MiscTagsTagger {
 				object: (obj) => {
 					if (obj.type !== "table") return;
 
-					const rollMode = Renderer.getAutoConvertedTableRollMode(obj);
+					const rollMode = Renderer.table.getAutoConvertedRollMode(obj);
 					if (rollMode !== RollerUtil.ROLL_COL_NONE) this._addTag({tags, tag: "RO", options});
 				},
 			},

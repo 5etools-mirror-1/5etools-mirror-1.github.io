@@ -2,7 +2,7 @@
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 globalThis.IS_DEPLOYED = undefined;
-globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.180.0"/* 5ETOOLS_VERSION__CLOSE */;
+globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.181.0"/* 5ETOOLS_VERSION__CLOSE */;
 globalThis.DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 globalThis.DEPLOYED_IMG_ROOT = undefined;
 // for the roll20 script to set
@@ -386,6 +386,7 @@ CleanUtil.SHARED_REPLACEMENTS = {
 CleanUtil.STR_REPLACEMENTS = {
 	"—": "\\u2014",
 	"–": "\\u2013",
+	"‑": "\\u2011",
 	"−": "\\u2212",
 	" ": "\\u00A0",
 };
@@ -1621,7 +1622,7 @@ globalThis.MiscUtil = {
 		return new Promise(resolve => setTimeout(() => resolve(resolveAs), msecs));
 	},
 
-	GENERIC_WALKER_ENTRIES_KEY_BLOCKLIST: new Set(["caption", "type", "colLabels", "name", "colStyles", "style", "shortName", "subclassShortName", "id", "path"]),
+	GENERIC_WALKER_ENTRIES_KEY_BLOCKLIST: new Set(["caption", "type", "colLabels", "colLabelGroups", "name", "colStyles", "style", "shortName", "subclassShortName", "id", "path"]),
 
 	/**
 	 * @param [opts]

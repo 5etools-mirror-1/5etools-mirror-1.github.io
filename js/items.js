@@ -373,12 +373,22 @@ class ItemsPage extends ListPage {
 		$(`.side-label--mundane`).click(() => {
 			const filterValues = this._pageFilter.filterBox.getValues();
 			const curValue = MiscUtil.get(filterValues, "Miscellaneous", "Mundane");
-			this._pageFilter.filterBox.setFromValues({Miscellaneous: {Mundane: curValue === 1 ? 0 : 1}});
+			this._pageFilter.filterBox.setFromValues({
+				Miscellaneous: {
+					...(filterValues?.Miscellaneous || {}),
+					Mundane: curValue === 1 ? 0 : 1,
+				},
+			});
 		});
 		$(`.side-label--magic`).click(() => {
 			const filterValues = this._pageFilter.filterBox.getValues();
 			const curValue = MiscUtil.get(filterValues, "Miscellaneous", "Magic");
-			this._pageFilter.filterBox.setFromValues({Miscellaneous: {Magic: curValue === 1 ? 0 : 1}});
+			this._pageFilter.filterBox.setFromValues({
+				Miscellaneous: {
+					...(filterValues?.Miscellaneous || {}),
+					Magic: curValue === 1 ? 0 : 1,
+				},
+			});
 		});
 		const $outVisibleResults = $(`.lst__wrp-search-visible`);
 		const $wrpListMundane = $(`.itm__wrp-list--mundane`);

@@ -539,7 +539,7 @@ class TableDiceTest extends DataTesterBase {
 	static _checkTable (obj, {filePath}) {
 		if (obj.type !== "table") return;
 
-		const autoRollMode = Renderer.getAutoConvertedTableRollMode(obj);
+		const autoRollMode = Renderer.table.getAutoConvertedRollMode(obj);
 		if (!autoRollMode) return;
 
 		const toRenderLabel = autoRollMode ? RollerUtil.getFullRollCol(obj.colLabels[0]) : null;
@@ -593,7 +593,7 @@ class TableDiceTest extends DataTesterBase {
 				const max = wrpRollTree.tree.max({});
 				for (let i = min; i < max + 1; ++i) possibleRolls.add(i);
 			} else {
-				if (!hasPrompt) errors.push(`"${obj.colLabels[0]}" was not a valid rollable header?!`);
+				if (!hasPrompt) errors.push(`${JSON.stringify(obj.colLabels[0])} was not a valid rollable header?!`);
 			}
 		});
 

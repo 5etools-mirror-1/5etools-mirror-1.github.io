@@ -33,17 +33,17 @@ async function initDemo (data, rendererType) {
 		switch (rendererType) {
 			case "html": {
 				renderer = Renderer.get();
-				$out.removeClass("whitespace-pre");
+				$out.removeClass("whitespace-pre").removeClass("code");
 				break;
 			}
 			case "md": {
 				renderer = RendererMarkdown.get();
-				$out.addClass("whitespace-pre");
+				$out.addClass("whitespace-pre").addClass("code");
 				break;
 			}
 			case "cards": {
 				renderer = RendererCard.get();
-				$out.addClass("whitespace-pre");
+				$out.addClass("whitespace-pre").addClass("code");
 				break;
 			}
 			default: throw new Error(`Unhandled renderer!`);

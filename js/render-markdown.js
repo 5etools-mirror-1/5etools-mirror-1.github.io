@@ -143,7 +143,9 @@ class RendererMarkdown {
 
 		if (entry.caption) textStack[0] += `##### ${entry.caption}\n`;
 
-		const hasLabels = entry.colLabels && entry.colLabels.length;
+		const headerRowMetas = Renderer.table.getHeaderRowMetas(entry);
+
+		const hasLabels = headerRowMetas != null;
 		// If there's no data, render a stub table.
 		if (!hasLabels && (!entry.rows || !entry.rows.length)) {
 			textStack[0] += `|   |\n`;
@@ -153,15 +155,23 @@ class RendererMarkdown {
 		}
 
 		// Labels are required for Markdown tables
-		let labels = [...(entry.colLabels || [])];
+		let labelRows = MiscUtil.copyFast(headerRowMetas || []);
 		if (!hasLabels) {
 			const numCells = Math.max(...entry.rows.map(r => r.length));
-			labels = [...new Array(numCells)].map(() => "");
+			labelRows = [
+				[...new Array(numCells)].map(() => ""),
+			];
 		}
 
 		// Pad labels to style width
-		if (entry.colStyles && labels.length < entry.colStyles.length) {
-			labels = labels.concat([...new Array(entry.colStyles.length - labels.length)].map(() => ""));
+		if (entry.colStyles) {
+			labelRows
+				.filter(labelRow => labelRow.length < entry.colStyles.length)
+				.forEach(labelRow => {
+					labelRow.push(
+						...[...new Array(entry.colStyles.length - labelRow.length)].map(() => ""),
+					);
+				});
 		}
 
 		// region Prepare styles
@@ -169,15 +179,24 @@ class RendererMarkdown {
 		if (entry.colStyles) {
 			styles = [...entry.colStyles];
 			// Pad styles to label width
-			if (labels.length > styles.length) {
-				styles = styles.concat([...new Array(labels.length - styles.length)].map(() => ""));
-			}
+			labelRows
+				.forEach(labelRow => {
+					if (labelRow.length > styles.length) {
+						styles = styles.concat([...new Array(labelRow.length - styles.length)].map(() => ""));
+					}
+				});
 		}
 		// endregion
 
-		const mdHeaders = labels.map(label => ` ${Renderer.stripTags(label)} `);
+		const mdHeaderRows = labelRows.map(labelRow => labelRow.map(label => ` ${Renderer.stripTags(label)} `));
 
-		const widths = mdHeaders.map(str => str.length);
+		// Get per-cell max width
+		const widths = [
+			...new Array(
+				Math.max(...mdHeaderRows.map(mdHeaderRow => mdHeaderRow.length)),
+			),
+		]
+			.map((_, i) => Math.max(...mdHeaderRows.map(mdHeaderRow => (mdHeaderRow[i] || "").length)));
 
 		// region Build 2d array of table cells
 		const mdTable = [];
@@ -226,7 +245,11 @@ class RendererMarkdown {
 		}
 		// endregion
 
-		const mdHeadersPadded = mdHeaders.map((header, ixCell) => RendererMarkdown._md_getPaddedTableText({text: header, width: widths[ixCell], ixCell, styles}));
+		const mdHeaderRowsPadded = mdHeaderRows
+			.map(mdHeaderRow => {
+				return mdHeaderRow
+					.map((header, ixCell) => RendererMarkdown._md_getPaddedTableText({text: header, width: widths[ixCell], ixCell, styles}));
+			});
 
 		// region Build style headers
 		const mdStyles = [];
@@ -242,7 +265,9 @@ class RendererMarkdown {
 		// endregion
 
 		// region Assemble the table
-		textStack[0] += `|${mdHeadersPadded.join("|")}|\n`;
+		for (const mdHeaderRowPadded of mdHeaderRowsPadded) {
+			textStack[0] += `|${mdHeaderRowPadded.join("|")}|\n`;
+		}
 		if (mdStyles.length) textStack[0] += `|${mdStyles.join("|")}|\n`;
 		for (const mdRow of mdTable) {
 			textStack[0] += "|";
@@ -356,9 +381,14 @@ class RendererMarkdown {
 			this._recursiveRender(entry.entries[i], textStack, meta, {prefix: RendererMarkdown._getNextPrefix(options, "*"), suffix: "*"});
 			if (i !== entry.entries.length - 1) textStack[0] += `\n\n`;
 		}
-		if (entry.by) {
+		const byArr = this._renderQuote_getBy(entry);
+		if (byArr) {
 			const tempStack = [""];
-			this._recursiveRender(entry.by, tempStack, meta);
+			for (let i = 0, len = byArr.length; i < len; ++i) {
+				const by = byArr[i];
+				this._recursiveRender(by, tempStack, meta);
+				if (i < len - 1) tempStack[0] += "\n";
+			}
 			textStack[0] += `\u2014 ${tempStack.join("")}${entry.from ? `, *${entry.from}*` : ""}`;
 		}
 	}

@@ -3322,10 +3322,10 @@ class SourceUiUtil {
 					abbreviation: $iptAbv.val().trim(),
 					full: $iptName.val().trim(),
 					url: $iptUrl.val().trim(),
-					color: $iptColor.val().trim(),
 					authors: $iptAuthors.val().trim().split(",").map(it => it.trim()).filter(Boolean),
 					convertedBy: $iptConverters.val().trim().split(",").map(it => it.trim()).filter(Boolean),
 				};
+				if (hasColor) source.color = $iptColor.val().trim();
 
 				await options.cbConfirm(source, options.mode !== "edit");
 			});

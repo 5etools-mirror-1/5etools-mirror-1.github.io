@@ -1817,30 +1817,21 @@ tr.regionaleffect {
 
 // Book mode adjustments
 .stats--book-large {
-	border-radius: 0;
-	line-height: 1.7;
-	font-size: 1em;
 
-	.rd__h--0 {
-		font-size: 2.5em;
-	}
-
-	.rd__h--1 {
-		font-size: 1.9em;
-	}
-
-	.rd__h--2 {
-		font-size: 1.6em;
-	}
+	--sz-font-h0: 2.5em;
+	--sz-font-h1: 1.9em;
+	--sz-font-h2: 1.6em;
 
 	// FIXME this doesn't affect e.g. lists
 	//  Also, affects e.g. nested tables (bad!)
-	.rd__b--3,
-	table,
-	p {
-		margin: 0 0 15px;
-		text-indent: 0;
-	}
+	--h-mb-p: 15px;
+	--h-mb-quote-line: 10px;
+	--h-mb-li: 5px;
+	--w-text-indent-inline-p: 0;
+
+	border-radius: 0;
+	line-height: 1.7;
+	font-size: 1em;
 
 	.rd__spc-inline-post {
 		width: 100%;
@@ -1851,26 +1842,8 @@ tr.regionaleffect {
 		}
 	}
 
-	.rd__list {
-		margin-bottom: 15px;
-
-		+ .rd__list {
-			margin-top: -10px;
-		}
-
-		> .rd__list {
-			margin-bottom: 0;
-		}
-	}
-
 	.rd__list-hang-notitle {
 		> .rd__li {
-			margin-bottom: 5px;
-
-			> * {
-				margin: 0 0 5px;
-			}
-
 			> .rd__p-list-item {
 				text-indent: -1.1em;
 			}
@@ -1880,14 +1853,6 @@ tr.regionaleffect {
 	.rd__p-cont-indent {
 		text-indent: 0;
 		margin-top: 5px;
-	}
-
-	.rd__quote-line {
-		margin-bottom: 10px;
-
-		&--last {
-			margin-bottom: 5px;
-		}
 	}
 }
 

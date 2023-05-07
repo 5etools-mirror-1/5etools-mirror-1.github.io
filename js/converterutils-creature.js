@@ -4,7 +4,7 @@ class AcConvert {
 	static tryPostProcessAc (mon, cbMan, cbErr) {
 		if (this._tryPostProcessAc_special(mon, cbMan, cbErr)) return;
 
-		let nuAc = [];
+		const nuAc = [];
 
 		const parts = mon.ac.trim().split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX).map(it => it.trim()).filter(Boolean);
 		parts.forEach(pt => {
@@ -24,7 +24,7 @@ class AcConvert {
 			// Plain number
 			if (!fromRaw) return nuAc.push(acNum);
 
-			let nxtAc = null; // A distinct AC value included in this text from e.g. mage armor
+			const nuAcTail = [];
 			const cur = {ac: acNum};
 			const froms = [];
 
@@ -85,11 +85,11 @@ class AcConvert {
 											return `{@item ${name}${source ? `|${source}` : "|"}|${mWithBarding.groups.name}}`;
 										});
 
-									nxtAc = {
+									nuAcTail.push({
 										ac: Number(mWithBarding.groups.ac),
 										condition: `with ${simpleFromBarding}`,
 										braces: true,
-									};
+									});
 
 									return;
 								}
@@ -104,11 +104,11 @@ class AcConvert {
 								else if (numMatch[2] === "barkskin") spell = `{@spell barkskin}`;
 								else throw new Error(`Unhandled spell! ${numMatch[2]}`);
 
-								nxtAc = {
+								nuAcTail.push({
 									ac: Number(numMatch[1]),
 									condition: `with ${spell}`,
 									braces: true,
-								};
+								});
 
 								return;
 							}
@@ -137,6 +137,8 @@ class AcConvert {
 			} else {
 				nuAc.push(cur.ac);
 			}
+
+			if (nuAcTail.length) nuAc.push(...nuAcTail);
 		});
 
 		mon.ac = nuAc;

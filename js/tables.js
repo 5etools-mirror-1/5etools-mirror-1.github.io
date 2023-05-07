@@ -68,7 +68,19 @@ class TablesPage extends ListPage {
 			.map(tbl => {
 				const parser = new DOMParser();
 				const rows = tbl.rows.map(row => row.map(cell => parser.parseFromString(`<div>${Renderer.get().render(cell)}</div>`, "text/html").documentElement.textContent));
-				return DataUtil.getCsv((tbl.colLabels || []).map(it => Renderer.stripTags(it)), rows);
+
+				const headerRowMetas = Renderer.table.getHeaderRowMetas(tbl) || [];
+				const [headerRowMetasAsHeaders, ...headerRowMetasAsRows] = headerRowMetas
+					.map(headerRowMeta => headerRowMeta.map(it => Renderer.stripTags(it)));
+
+				return DataUtil.getCsv(
+					headerRowMetasAsHeaders,
+					[
+						// If there are extra headers, treat them as rows
+						...headerRowMetasAsRows,
+						...rows,
+					],
+				);
 			})
 			.join("\n\n");
 
