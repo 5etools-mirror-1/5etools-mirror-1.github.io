@@ -1546,6 +1546,13 @@ globalThis.Renderer = function () {
 				textStack[0] += `</span>`;
 				break;
 			}
+			case "@font": {
+				const [displayText, fontFamily] = Renderer.splitTagByPipe(text);
+				textStack[0] += `<span style="font-family: '${fontFamily}'">`;
+				this._recursiveRender(displayText, textStack, meta);
+				textStack[0] += `</span>`;
+				break;
+			}
 			case "@note":
 				textStack[0] += `<i class="ve-muted">`;
 				this._recursiveRender(text, textStack, meta);
@@ -4083,6 +4090,10 @@ Renderer.tag = class {
 		tagName = "style";
 	};
 
+	static TagFont = class extends this._TagTextStyle {
+		tagName = "font";
+	};
+
 	static TagComic = class extends this._TagTextStyle {
 		tagName = "comic";
 	};
@@ -4602,6 +4613,7 @@ Renderer.tag = class {
 		new this.TagKbd(),
 		new this.TagCode(),
 		new this.TagStyle(),
+		new this.TagFont(),
 
 		new this.TagComic(),
 		new this.TagComicH1(),

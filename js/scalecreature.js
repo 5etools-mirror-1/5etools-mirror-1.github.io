@@ -1701,7 +1701,13 @@ globalThis.ScaleCreature = {
 							});
 						};
 
-						const getDiceExp = (a = numDiceOut, b = diceFacesOut, c = modOut) => `${a}d${b}${c !== 0 ? ` ${c > 0 ? "+" : ""} ${c}` : ""}`;
+						const getDiceExp = (a = numDiceOut, b = diceFacesOut, c = modOut) => {
+							const ptDice = b === 1
+								? ((a || 1) * b)
+								: `${a}d${b}`;
+							const ptMod = `${c !== 0 ? ` ${c > 0 ? "+" : ""} ${c}` : ""}`;
+							return `${ptDice}${ptMod}`;
+						};
 						let loops = 0;
 						while (1) {
 							if (inRange(getAvgDpr(getDiceExp()))) break;
@@ -1743,14 +1749,16 @@ globalThis.ScaleCreature = {
 							};
 
 							const tryAdjustDiceFaces = () => {
-								if (diceFaces === 4 || diceFaces === 20) return; // can't be scaled
+								if (diceFaces === 1 || diceFaces === 20) return; // can't be scaled
 								let diceFacesTemp = diceFaces;
 								let tempAvgDpr = getAvgDpr(getDiceExp(undefined, diceFacesTemp));
 								let found = false;
 
 								if (adjustedDpr < tempAvgDpr) {
-									while (diceFacesTemp > 4 && tempAvgDpr >= targetDprRange[0]) {
-										diceFacesTemp = Renderer.dice.getPreviousDice(diceFacesTemp);
+									while (diceFacesTemp > 1 && tempAvgDpr >= targetDprRange[0]) {
+										diceFacesTemp = diceFacesTemp === 4
+											? 1
+											: Renderer.dice.getPreviousDice(diceFacesTemp);
 										tempAvgDpr = getAvgDpr(getDiceExp(undefined, diceFacesTemp));
 
 										if (inRange(getAvgDpr(getDiceExp(numDice, diceFacesTemp, modOut)))) {
@@ -1813,7 +1821,7 @@ globalThis.ScaleCreature = {
 						doPostCalc();
 						const diceExpOut = getDiceExp(undefined, undefined, modOut + offsetEnchant);
 						const avgDamOut = Math.floor(getAvgDpr(diceExpOut));
-						if (avgDamOut <= 0) return `1 ${suffix.replace(/^[^\w]+/, " ").replace(/ +/, " ")}`;
+						if (avgDamOut <= 0 || diceExpOut === "1") return `1 ${suffix.replace(/^[^\w]+/, " ").replace(/ +/, " ")}`;
 						return `${Math.floor(getAvgDpr(diceExpOut))}${prefix}${diceExpOut}${suffix}`;
 					});
 

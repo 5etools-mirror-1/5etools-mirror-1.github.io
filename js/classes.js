@@ -1721,9 +1721,12 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 				$wrpContent.removeClass("bkmv__wrp").addClass("h-100").addClass("ve-flex-col");
 				$wrpContent.parent().addClass("stats").addClass("stats--book");
 
+				const scs = [...cls.subclasses]
+					.sort((scA, scB) => SortUtil.ascSortLower(scA.shortName, scB.shortName));
+
 				const renderStack = [];
 				const levelsWithFeatures = [
-					...new Set(cls.subclasses
+					...new Set(scs
 						.filter(it => it?.subclassFeatures?.length)
 						.map(it => it.subclassFeatures.map(it => it.map(f => f.level)).flat()).flat()),
 				].sort(SortUtil.ascSort);
@@ -1738,7 +1741,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 
 					renderStack.push(`<div class="ve-flex ${isLastRow ? "mb-4" : ""}">`);
 
-					const isAnyFeature = cls.subclasses
+					const isAnyFeature = scs
 						.filter(sc => !this.constructor.isSubclassExcluded_(cls, sc))
 						.filter(sc => {
 							const key = UrlUtil.getStateKeySubclass(sc);
@@ -1755,7 +1758,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 						</div>`);
 					}
 
-					cls.subclasses
+					scs
 						.filter(sc => !this.constructor.isSubclassExcluded_(cls, sc))
 						.forEach((sc, ixSubclass) => {
 							const mod = ClassesPage.getSubclassCssMod(cls, sc);
@@ -1807,7 +1810,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 				$wrpContent.append(renderStack.join(""));
 
 				let numShown = 0;
-				cls.subclasses
+				scs
 					.filter(sc => !this.constructor.isSubclassExcluded_(cls, sc))
 					.forEach((sc, i) => {
 						const key = UrlUtil.getStateKeySubclass(sc);

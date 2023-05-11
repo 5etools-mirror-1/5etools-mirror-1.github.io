@@ -2421,5 +2421,10 @@
 		"date": "2023-05-07",
 		"title": "Brewtal",
 		"txt": "- Fixed Items page resetting all other Miscellaneous filters when the \"Mundane\" or \"Magic\" side-labels are clicked\n- (Brew) Added `@sup`, `@sub`, and `@kbd` tags, which produce the matching HTML elements\n- (Brew) Added `\"credit\"` field to `\"image\"` entries, allowing art credits to be specified\n- (Brew) Added support for `\"colLabelGroups\"` on tables, allowing multiple rows of table headers to be specified\n- (Brew) Added support for array `\"by\"` in `\"quote\"` entries\n- (Brew) Switched to rendering `\"hpNote\"` in vehicle components as an entry supporting @tags (rather than as a plain string)\n- (Brew) Tweaked rendering of `\"list\"` names to avoid breaking names away from list bodies in columnar layouts\n- (Brew) Fixed \"Add/Edit Homebrew Source\" always setting a brew's color to #000000 when not specified\n- (Brew) Fixed Creature Text Converter silently removing \"(X with mage armor)\" (and similar) AC terms\n- ((Brew) Added HTML sanitization to homebrew repository, lessening the risk of scripting antics from \"official\" sources)\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.181.1",
+		"date": "2023-05-11",
+		"txt": "- Added Misplaced Monster Volume 1 tokens\n- Fixed CR Scaler crash when scaling bonus-less damage to lower CR\n- (Brew) Added support for custom fonts\n- (Fixed typos/added tags)"
 	}
 ]

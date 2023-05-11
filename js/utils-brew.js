@@ -294,10 +294,37 @@ class _BrewUtil2Base {
 		// endregion
 
 		this._pInit_doBindDragDrop();
+		this._pInit_pDoLoadFonts().then(null);
 	}
 
 	/** @abstract */
 	_pInit_doBindDragDrop () { throw new Error("Unimplemented!"); }
+
+	async _pInit_pDoLoadFonts () {
+		const fontFaces = Object.entries(
+			(this._getBrewMetas() || [])
+				.map(({_meta}) => _meta?.fonts || {})
+				.mergeMap(it => it),
+		)
+			.map(([family, fontUrl]) => new FontFace(family, `url("${fontUrl}")`));
+
+		const results = await Promise.allSettled(
+			fontFaces.map(async fontFace => {
+				await fontFace.load();
+				return document.fonts.add(fontFace);
+			}),
+		);
+
+		const errors = results
+			.filter(({status}) => status === "rejected")
+			.map(({reason}, i) => ({message: `Font "${fontFaces[i].family}" failed to load!`, reason}));
+		if (errors.length) {
+			errors.forEach(({message}) => JqueryUtil.doToast({type: "danger", content: message}));
+			setTimeout(() => { throw new Error(errors.map(({message, reason}) => [message, reason].join("\n")).join("\n\n")); });
+		}
+
+		return document.fonts.ready;
+	}
 
 	/* -------------------------------------------- */
 

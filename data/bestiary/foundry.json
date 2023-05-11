@@ -157,6 +157,11 @@
 							"key": "data.abilities.wis.bonuses.save",
 							"mode": "ADD",
 							"value": "@srd5e.userchar.pb"
+						},
+						{
+							"key": "data.attributes.movement.fly",
+							"mode": "UPGRADE",
+							"value": "min(1, max(@srd5e.userchar.classes.ranger.levels - 6, 0)) * @attributes.movement.walk"
 						}
 					]
 				}

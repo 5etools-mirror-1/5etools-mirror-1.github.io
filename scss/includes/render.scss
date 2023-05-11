@@ -5,7 +5,6 @@ Renderer
 @import "vars";
 
 $rgb-inset-border: #656565;
-$w-list-indent: 24px;
 
 :root {
 	--sz-font-h0: 1.8em;
@@ -17,6 +16,8 @@ $w-list-indent: 24px;
 	--h-mb-quote-line-last: 5px;
 	--h-mb-li: 3px;
 	--w-text-indent-inline-p: 0.7em;
+	--w-pl-list: 24px;
+	--w-pl-list-no-bullets: 10px;
 }
 
 @mixin rd__h--large() {
@@ -75,16 +76,21 @@ $w-list-indent: 24px;
 		&list {
 			margin-top: 0;
 			margin-bottom: var(--h-mb-p);
-			padding-left: $w-list-indent;
+			padding-left: var(--w-pl-list);
 
 			> .rd__list:last-child {
 				margin-bottom: 0;
+			}
+
+			> .rd__list-name {
+				margin-left: calc(-1 * var(--w-pl-list));
 			}
 		}
 
 		&list-name {
 			margin: 0 0 var(--h-mb-li);
 			font-weight: bold;
+			list-style-type: none;
 		}
 
 		&li {
@@ -242,7 +248,7 @@ $w-list-indent: 24px;
 			list-style: none;
 
 			> .rd__list-name {
-				margin-left: -$w-list-indent;
+				margin-left: calc(-1 * var(--w-pl-list));
 			}
 
 			// Firefox workaround; list bullets are pseudo-elements "::marker"
@@ -266,7 +272,11 @@ $w-list-indent: 24px;
 
 		&list-no-bullets {
 			list-style: none;
-			padding: 0 10px;
+			padding: 0 0 0 var(--w-pl-list-no-bullets);
+
+			> .rd__list-name {
+				margin-left: calc(-1 * var(--w-pl-list-no-bullets));
+			}
 		}
 
 		&list-italic {
