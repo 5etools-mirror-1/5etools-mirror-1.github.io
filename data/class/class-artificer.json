@@ -1522,6 +1522,21 @@
 			"className": "Artificer",
 			"classSource": "UAArtificer",
 			"page": 5,
+			"optionalfeatureProgression": [
+				{
+					"name": "Alchemical Formula",
+					"featureType": [
+						"AF"
+					],
+					"progression": {
+						"1": 3,
+						"3": 1,
+						"9": 1,
+						"14": 1,
+						"17": 1
+					}
+				}
+			],
 			"subclassFeatures": [
 				"Alchemist|Artificer|UAArtificer|Alchemist|UAArtificer|1",
 				"Extra Alchemical Formula|Artificer|UAArtificer|Alchemist|UAArtificer|3",
