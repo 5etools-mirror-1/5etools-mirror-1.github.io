@@ -1999,7 +1999,7 @@
 											"page": 24,
 											"id": "057",
 											"entries": [
-												"On Omo's mark, the contestants plunge into the water and begin swimming. Competitors roll initiative when they dive into the water, with all participants expected to use the {@action dash||Dash} action every round. Any contestant who moves more than 30 feet on their turn must make a DC 13 Strength ({@skill Athletics}) check at the end of that turn. On a failed check, the contestant gains 1 level of {@condition exhaustion} and is pushed 15 feet downstream as they are pummeled by the current.",
+												"On Omo's mark, the contestants plunge into the water and begin swimming. Competitors roll initiative when they dive into the water, with all participants expected to use the {@action Dash} action every round. Any contestant who moves more than 30 feet on their turn must make a DC 13 Strength ({@skill Athletics}) check at the end of that turn. On a failed check, the contestant gains 1 level of {@condition exhaustion} and is pushed 15 feet downstream as they are pummeled by the current.",
 												"The distance from the pier to the spear is 75 feet, and it takes an action to wrench the spear free. A character can pull the spear out of another contestant's hands by swimming to within 5 feet of them and succeeding on a Strength check with a DC equal to 10 + the other contestant's Strength modifier. Whoever returns the spear to Omo is the winner."
 											]
 										},
@@ -14445,7 +14445,7 @@
 												"A crumbling staircase follows the inside wall as it climbs to a fifteen-foot-high balcony. The stairs continue upward until they disappear a few feet short of the open top of the tower. Armed, wraith-like forms move about inside the tower, like a battle-ready garrison that doesn't know the war is long over. Floating a few feet above the balcony is a pale, spectral orc."
 											]
 										},
-										"The tower is haunted by eight {@creature Sword Wraith Warrior|MPMM|sword wraith warriors} under the command of Beltreath, a lawful neutral {@creature Sword Wraith Commander|MPMM|sword wraith commander}. See {@adventure appendix A|CRCotN|8} for these creatures' stat blocks.",
+										"The tower is haunted by eight {@creature Sword Wraith Warrior|MPMM|sword wraith warriors} under the command of Beltreath, a lawful neutral {@creature sword wraith commander|MPMM}. See {@adventure appendix A|CRCotN|8} for these creatures' stat blocks.",
 										"The sword wraiths are former defenders of Cael Morrow who fell during the battle against Gruumsh. They are protecting the {@creature ghost} of Hadarai, a neutral good, orc priest of Corellon. Hadarai is soft-spoken and kindhearted. He swore a vow of pacifism centuries ago that he has never broken; even after being stripped of his mortal form, he won't fight or use Possession.",
 										{
 											"type": "entries",
@@ -18975,7 +18975,7 @@
 											"page": 148,
 											"id": "302",
 											"entries": [
-												"A group of soldiers\u2014allies of Alyxian in the battle against Torog\u2014have decided that since they saved this village, it is theirs to pillage. Four {@creature Sword Wraith Warrior|MPMM|sword wraith warriors} led by a {@creature Sword Wraith Commander|MPMM|sword wraith commander} (see {@adventure appendix A|CRCotN|8} for their stat blocks) take the shadowy shape of Alyxian's crass allies. They are bullying a group of ten {@creature Commoner||commoners} in the middle of the village. As the characters approach, the commander, a neutral evil human in his mid-twenties named Kalagothe, looks to them as if they were Alyxian and roars, \"Commander Alyxian, these people refuse to pay us tribute!\"",
+												"A group of soldiers\u2014allies of Alyxian in the battle against Torog\u2014have decided that since they saved this village, it is theirs to pillage. Four {@creature Sword Wraith Warrior|MPMM|sword wraith warriors} led by a {@creature sword wraith commander|MPMM} (see {@adventure appendix A|CRCotN|8} for their stat blocks) take the shadowy shape of Alyxian's crass allies. They are bullying a group of ten {@creature Commoner||commoners} in the middle of the village. As the characters approach, the commander, a neutral evil human in his mid-twenties named Kalagothe, looks to them as if they were Alyxian and roars, \"Commander Alyxian, these people refuse to pay us tribute!\"",
 												"Have the players roll initiative for their characters, then make one initiative roll for Kalagothe; the remaining sword wraiths act immediately after him in the initiative order. Roll initiative once for all the commoners, but don't waste time devising tactics for them; they cower or retreat from the soldiers on their turn.",
 												"A character can use an action to try to convince the soldiers to stand down, doing so with a successful DC 27 Charisma ({@skill Intimidation} or {@skill Persuasion}) check. The DC drops to 17 if Kalagothe is dead and only the {@creature Sword Wraith Warrior|MPMM|sword wraith warriors} need to be dealt with. Only three such attempts can be made, after which the sword wraiths are immune to such coercion.",
 												"Unless the soldiers are slain or forced to stand down, they capture and murder the commoners."
@@ -19064,7 +19064,7 @@
 																{
 																	"type": "item",
 																	"name": "Drawback.",
-																	"entry": "You can't take the {@action help||Help} action."
+																	"entry": "You can't take the {@action Help} action."
 																}
 															]
 														}
@@ -19403,7 +19403,7 @@
 											"page": 153,
 											"id": "327",
 											"entries": [
-												"This wave consists of one {@creature Sword Wraith Warrior|MPMM|sword wraith warrior} (see {@adventure appendix A|CRCotN|8}) per character, up to a maximum of five. These grim knights represent the evil soldiers of the Crawling King. As the battle is joined, Alyxian chimes in:",
+												"This wave consists of one {@creature sword wraith warrior|MPMM} (see {@adventure appendix A|CRCotN|8}) per character, up to a maximum of five. These grim knights represent the evil soldiers of the Crawling King. As the battle is joined, Alyxian chimes in:",
 												{
 													"type": "insetReadaloud",
 													"id": "328",
@@ -19437,7 +19437,7 @@
 											"page": 153,
 											"id": "32b",
 											"entries": [
-												"After the second wave is defeated, the characters have 1 round to heal and prepare for the final wave: a {@creature Sword Wraith Commander|MPMM|sword wraith commander} and four {@creature Sword Wraith Warrior|MPMM|sword wraith warriors} on the back of a {@creature horizonback tortoise|EGW} (see {@adventure appendix A|CRCotN|8} for these creatures' stat blocks). Alyxian shares his thoughts as the tortoise lumbers toward the party:",
+												"After the second wave is defeated, the characters have 1 round to heal and prepare for the final wave: a {@creature sword wraith commander|MPMM} and four {@creature Sword Wraith Warrior|MPMM|sword wraith warriors} on the back of a {@creature horizonback tortoise|EGW} (see {@adventure appendix A|CRCotN|8} for these creatures' stat blocks). Alyxian shares his thoughts as the tortoise lumbers toward the party:",
 												{
 													"type": "insetReadaloud",
 													"id": "32c",
@@ -19604,7 +19604,7 @@
 											]
 										},
 										"The saving throw DC is 15 to start and increases by 2 each time the initiative count reaches 0, making it harder for characters to resist the spear as time goes on. On a failed saving throw, a character takes 14 ({@dice 4d6}) psychic damage, and their mind is filled with the voices of lost loved ones telling them to stop resisting and surrender to the attack instead. On a successful saving throw, the character takes half as much damage and hears Alyxian's voice in their mind, pondering why he gave his life to save others when they wouldn't have done the same thing for him. The effect ends on any character who either is reduced to 0 hit points by the damage or succeeds on the saving throw three times. Such a character no longer feels the spear or sees the Betrayer God pinning them down with his mighty spear (though a character reduced to 0 hit points is dying and either needs to stabilize or be healed to avoid death).",
-										"Alyxian whispers in the mind of the first character to succeed on three saves, saying, \"Perhaps you will be remembered. Now, what about your companions?\" That character can take the {@action help||Help} action to speak words of encouragement to other characters still trapped by the spear, granting them advantage on the next saving throw they make to resist it.",
+										"Alyxian whispers in the mind of the first character to succeed on three saves, saying, \"Perhaps you will be remembered. Now, what about your companions?\" That character can take the {@action Help} action to speak words of encouragement to other characters still trapped by the spear, granting them advantage on the next saving throw they make to resist it.",
 										"When all the characters who were pinned by the Betrayer God's spear end the effect on themselves, the challenge is over, and the vision ends. Read:",
 										{
 											"type": "insetReadaloud",
@@ -20134,7 +20134,7 @@
 														],
 														[
 															"5\u20136",
-															"Vortex of Malice. In your mind, a voice that sounds like Alyxian's says, \"Embrace the malice that swirls deep within your heart, as it does within mine.\" You can't take the {@action help||Help} action, nor can you use a spell, magic item, or class feature to restore hit points or grant temporary hit points to another creature, until this curse on you ends."
+															"Vortex of Malice. In your mind, a voice that sounds like Alyxian's says, \"Embrace the malice that swirls deep within your heart, as it does within mine.\" You can't take the {@action Help} action, nor can you use a spell, magic item, or class feature to restore hit points or grant temporary hit points to another creature, until this curse on you ends."
 														]
 													]
 												}
@@ -20649,7 +20649,7 @@
 																{
 																	"type": "item",
 																	"name": "Drawback.",
-																	"entry": "You can't take the {@action disengage||Disengage} or {@action dodge||Dodge} action."
+																	"entry": "You can't take the {@action Disengage} or {@action Dodge} action."
 																}
 															]
 														}

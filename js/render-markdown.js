@@ -855,6 +855,8 @@ RendererMarkdown.monster = class {
 		const fnGetSpellTraits = RendererMarkdown.monster.getSpellcastingRenderedTraits.bind(RendererMarkdown.monster, meta);
 		const traitArray = Renderer.monster.getOrderedTraits(mon, {fnGetSpellTraits});
 		const actionArray = Renderer.monster.getOrderedActions(mon, {fnGetSpellTraits});
+		const bonusActionArray = Renderer.monster.getOrderedBonusActions(mon, {fnGetSpellTraits});
+		const reactionArray = Renderer.monster.getOrderedReactions(mon, {fnGetSpellTraits});
 
 		const traitsPart = traitArray?.length
 			? `\n${RendererMarkdown.monster._getRenderedSection({prop: "trait", entries: traitArray, depth: 1, meta})}`
@@ -863,11 +865,11 @@ RendererMarkdown.monster = class {
 		const actionsPart = actionArray?.length
 			? `${RendererMarkdown.monster._getRenderedSectionHeader({mon, title: "Actions", prop: "action"})}${RendererMarkdown.monster._getRenderedSection({mon, prop: "action", entries: actionArray, depth: 1, meta})}`
 			: "";
-		const bonusActionsPart = mon.bonus
-			? `${RendererMarkdown.monster._getRenderedSectionHeader({mon, title: "Bonus Actions", prop: "bonus"})}${RendererMarkdown.monster._getRenderedSection({mon, prop: "bonus", entries: mon.bonus, depth: 1, meta})}`
+		const bonusActionsPart = bonusActionArray?.length
+			? `${RendererMarkdown.monster._getRenderedSectionHeader({mon, title: "Bonus Actions", prop: "bonus"})}${RendererMarkdown.monster._getRenderedSection({mon, prop: "bonus", entries: bonusActionArray, depth: 1, meta})}`
 			: "";
-		const reactionsPart = mon.reaction
-			? `${RendererMarkdown.monster._getRenderedSectionHeader({mon, title: "Reactions", prop: "reaction"})}${RendererMarkdown.monster._getRenderedSection({mon, prop: "reaction", entries: mon.reaction, depth: 1, meta})}`
+		const reactionsPart = reactionArray?.length
+			? `${RendererMarkdown.monster._getRenderedSectionHeader({mon, title: "Reactions", prop: "reaction"})}${RendererMarkdown.monster._getRenderedSection({mon, prop: "reaction", entries: reactionArray, depth: 1, meta})}`
 			: "";
 		const legendaryActionsPart = mon.legendary
 			? `${RendererMarkdown.monster._getRenderedSectionHeader({mon, title: "Legendary Actions", prop: "legendary"})}>${Renderer.monster.getLegendaryActionIntro(mon, {renderer: RendererMarkdown.get()})}\n>\n${RendererMarkdown.monster._getRenderedLegendarySection(mon.legendary, 1, meta)}`

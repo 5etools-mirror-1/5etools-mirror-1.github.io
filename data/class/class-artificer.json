@@ -50,6 +50,13 @@
 					"{@item tinker's tools|PHB}",
 					"one type of {@item artisan's tools|PHB} of your choice"
 				],
+				"toolProficiencies": [
+					{
+						"thieves' tools": true,
+						"tinker's tools": true,
+						"anyArtisansTool": 1
+					}
+				],
 				"skills": [
 					{
 						"choose": {
@@ -445,6 +452,13 @@
 					"{@item tinker's tools|PHB}",
 					"one type of {@item artisan's tools|PHB} of your choice"
 				],
+				"toolProficiencies": [
+					{
+						"thieves' tools": true,
+						"tinker's tools": true,
+						"anyArtisansTool": 1
+					}
+				],
 				"skills": [
 					{
 						"choose": {
@@ -515,6 +529,12 @@
 					"tools": [
 						"{@item thieves' tools|PHB}",
 						"{@item tinker's tools|PHB}"
+					],
+					"toolProficiencies": [
+						{
+							"thieves' tools": true,
+							"tinker's tools": true
+						}
 					]
 				}
 			},
@@ -995,6 +1015,13 @@
 					"{@item tinker's tools|PHB}",
 					"one type of {@item artisan's tools|PHB} of your choice"
 				],
+				"toolProficiencies": [
+					{
+						"thieves' tools": true,
+						"tinker's tools": true,
+						"anyArtisansTool": 1
+					}
+				],
 				"skills": [
 					{
 						"choose": {
@@ -1065,6 +1092,12 @@
 					"tools": [
 						"{@item thieves' tools|PHB}",
 						"{@item tinker's tools|PHB}"
+					],
+					"toolProficiencies": [
+						{
+							"thieves' tools": true,
+							"tinker's tools": true
+						}
 					]
 				}
 			},
@@ -1522,6 +1555,21 @@
 			"className": "Artificer",
 			"classSource": "UAArtificer",
 			"page": 5,
+			"optionalfeatureProgression": [
+				{
+					"name": "Alchemical Formula",
+					"featureType": [
+						"AF"
+					],
+					"progression": {
+						"1": 3,
+						"3": 1,
+						"9": 1,
+						"14": 1,
+						"17": 1
+					}
+				}
+			],
 			"subclassFeatures": [
 				"Alchemist|Artificer|UAArtificer|Alchemist|UAArtificer|1",
 				"Extra Alchemical Formula|Artificer|UAArtificer|Alchemist|UAArtificer|3",

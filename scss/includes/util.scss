@@ -133,6 +133,12 @@ i > i {
 }
 // endregion
 
+// region Transforms
+.trans-x-flip {
+	transform: scaleX(-1) !important;
+}
+// endregion
+
 // region Cursor
 .clickable {
 	cursor: pointer !important;

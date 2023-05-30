@@ -496,7 +496,8 @@ class PageFilterSpells extends PageFilter {
 			...s._fClasses,
 			...s._fVariantClasses
 				.map(it => (it.userData.definedInSource && !SourceUtil.isNonstandardSource(it.userData.definedInSource)) ? new FilterItem({item: it.userData.equivalentClassName}) : null)
-				.filter(Boolean),
+				.filter(Boolean)
+				.filter(it => !s._fClasses.some(itCls => itCls.item === it.item)),
 		];
 		s._fRaces = Renderer.spell.getCombinedGeneric(s, {propSpell: "races", prop: "race"}).map(PageFilterSpells.getRaceFilterItem);
 		s._fBackgrounds = Renderer.spell.getCombinedGeneric(s, {propSpell: "backgrounds", prop: "background"}).map(it => it.name);

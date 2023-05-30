@@ -2,7 +2,7 @@
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 globalThis.IS_DEPLOYED = undefined;
-globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.181.1"/* 5ETOOLS_VERSION__CLOSE */;
+globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.181.3"/* 5ETOOLS_VERSION__CLOSE */;
 globalThis.DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 globalThis.DEPLOYED_IMG_ROOT = undefined;
 // for the roll20 script to set
@@ -92,12 +92,12 @@ String.prototype.lowercaseFirst = String.prototype.lowercaseFirst || function ()
 };
 
 String.prototype.toTitleCase = String.prototype.toTitleCase || function () {
-	let str = this.replace(/([^\W_]+[^-\u2014\s/]*) */g, m0 => m0.charAt(0).toUpperCase() + m0.substr(1).toLowerCase());
+	let str = this.replace(/([^\W_]+[^-\u2014\s/]*) */g, m0 => m0.charAt(0).toUpperCase() + m0.substring(1).toLowerCase());
 
 	// Require space surrounded, as title-case requires a full word on either side
 	StrUtil._TITLE_LOWER_WORDS_RE = StrUtil._TITLE_LOWER_WORDS_RE || StrUtil.TITLE_LOWER_WORDS.map(it => new RegExp(`\\s${it}\\s`, "gi"));
 	StrUtil._TITLE_UPPER_WORDS_RE = StrUtil._TITLE_UPPER_WORDS_RE || StrUtil.TITLE_UPPER_WORDS.map(it => new RegExp(`\\b${it}\\b`, "g"));
-	StrUtil._TITLE_UPPER_WORDS_PLURAL_RE = StrUtil._TITLE_UPPER_WORDS_PLURAL_RE || StrUtil.TITLE_UPPER_WORDS.map(it => new RegExp(`\\b${it}s\\b`, "g"));
+	StrUtil._TITLE_UPPER_WORDS_PLURAL_RE = StrUtil._TITLE_UPPER_WORDS_PLURAL_RE || StrUtil.TITLE_UPPER_WORDS_PLURAL.map(it => new RegExp(`\\b${it}\\b`, "g"));
 
 	const len = StrUtil.TITLE_LOWER_WORDS.length;
 	for (let i = 0; i < len; i++) {
@@ -118,7 +118,7 @@ String.prototype.toTitleCase = String.prototype.toTitleCase || function () {
 	for (let i = 0; i < len1; i++) {
 		str = str.replace(
 			StrUtil._TITLE_UPPER_WORDS_PLURAL_RE[i],
-			`${StrUtil.TITLE_UPPER_WORDS[i].toUpperCase()}s`,
+			`${StrUtil.TITLE_UPPER_WORDS_PLURAL[i].toUpperCase()}`,
 		);
 	}
 
@@ -152,6 +152,19 @@ String.prototype.toCamelCase = String.prototype.toCamelCase || function () {
 		if (index === 0) return word.toLowerCase();
 		return `${word.charAt(0).toUpperCase()}${word.slice(1).toLowerCase()}`;
 	}).join("");
+};
+
+String.prototype.toPlural = String.prototype.toPlural || function () {
+	let plural;
+	if (StrUtil.IRREGULAR_PLURAL_WORDS[this.toLowerCase()]) plural = StrUtil.IRREGULAR_PLURAL_WORDS[this.toLowerCase()];
+	else if (/(s|x|z|ch|sh)$/i.test(this)) plural = `${this}es`;
+	else if (/[bcdfghjklmnpqrstvwxyz]y$/i.test(this)) plural = this.replace(/y$/i, "ies");
+	else plural = `${this}s`;
+
+	if (this.toLowerCase() === this) return plural;
+	if (this.toUpperCase() === this) return plural.toUpperCase();
+	if (this.toTitleCase() === this) return plural.toTitleCase();
+	return plural;
 };
 
 String.prototype.escapeQuotes = String.prototype.escapeQuotes || function () {
@@ -289,6 +302,30 @@ globalThis.StrUtil = {
 	TITLE_LOWER_WORDS: ["a", "an", "the", "and", "but", "or", "for", "nor", "as", "at", "by", "for", "from", "in", "into", "near", "of", "on", "onto", "to", "with", "over", "von"],
 	// Certain words such as initialisms or acronyms should be left uppercase
 	TITLE_UPPER_WORDS: ["Id", "Tv", "Dm", "Ok", "Npc", "Pc", "Tpk", "Wip"],
+	TITLE_UPPER_WORDS_PLURAL: ["Ids", "Tvs", "Dms", "Oks", "Npcs", "Pcs", "Tpks", "Wips"], // (Manually pluralize, to avoid infinite loop)
+
+	IRREGULAR_PLURAL_WORDS: {
+		"cactus": "cacti",
+		"child": "children",
+		"die": "dice",
+		"djinni": "djinn",
+		"dwarf": "dwarves",
+		"efreeti": "efreet",
+		"elf": "elves",
+		"fey": "fey",
+		"foot": "feet",
+		"goose": "geese",
+		"ki": "ki",
+		"man": "men",
+		"mouse": "mice",
+		"ox": "oxen",
+		"person": "people",
+		"sheep": "sheep",
+		"slaad": "slaadi",
+		"tooth": "teeth",
+		"undead": "undead",
+		"woman": "women",
+	},
 
 	padNumber: (n, len, padder) => {
 		return String(n).padStart(len, padder);
@@ -2031,7 +2068,7 @@ globalThis.ContextUtil = {
 		if (ContextUtil._isInit) return;
 		ContextUtil._isInit = true;
 
-		$(document.body).on("pointerup", () => ContextUtil._menus.forEach(menu => menu.close()));
+		$(document.body).on("click", () => ContextUtil._menus.forEach(menu => menu.close()));
 	},
 
 	getMenu (actions) {
@@ -2185,7 +2222,7 @@ globalThis.ContextUtil = {
 
 		this._render_$btnAction = function ({menu}) {
 			const $btnAction = $(`<div class="w-100 min-w-0 ui-ctx__btn py-1 pl-5 ${this.fnActionAlt ? "" : "pr-5"}" ${this.isDisabled ? "disabled" : ""} tabindex="0">${this.text}</div>`)
-				.on("pointerup", async evt => {
+				.on("click", async evt => {
 					if (this.isDisabled) return;
 
 					evt.preventDefault();
@@ -2209,7 +2246,7 @@ globalThis.ContextUtil = {
 			if (!this.fnActionAlt) return null;
 
 			const $btnActionAlt = $(`<div class="ui-ctx__btn ml-1 bl-1 py-1 px-4" ${this.isDisabled ? "disabled" : ""}>${this.textAlt ?? `<span class="glyphicon glyphicon-cog"></span>`}</div>`)
-				.on("pointerup", async evt => {
+				.on("click", async evt => {
 					if (this.isDisabled) return;
 
 					evt.preventDefault();
@@ -2288,7 +2325,7 @@ globalThis.ContextUtil = {
 							text: this._fnGetDisplayValue ? this._fnGetDisplayValue(val) : val,
 						});
 					}),
-				pointerup: async evt => {
+				click: async evt => {
 					evt.preventDefault();
 					evt.stopPropagation();
 				},

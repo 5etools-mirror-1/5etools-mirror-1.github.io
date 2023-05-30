@@ -5974,6 +5974,7 @@
 			"rarity": "rare",
 			"reqAttune": true,
 			"wondrous": true,
+			"critThreshold": 19,
 			"entries": [
 				"This black leather apron is perpetually covered by blood, even after being washed off. You gain the following benefits while wearing the apron:",
 				{
@@ -21070,7 +21071,7 @@
 					"type": "entries",
 					"name": "Destroying the Deck",
 					"entries": [
-						"Luba's Tarokka of Souls can be destroyed only if all fourteen souls within are released and destroyed. This reveals a fifteenth soul, a {@creature lich}, that inhabits the Nether card, which appears only when the fourteen souls are defeated. If this ancient entity is destroyed, the Nether card vanishes and the deck becomes a normal {@deck Tarokka Deck|CoS|tarokka deck}, with no special properties, but it includes a new card of the DM's design.",
+						"Luba's Tarokka of Souls can be destroyed only if all fourteen souls within are released and destroyed. This reveals a fifteenth soul, a {@creature lich}, that inhabits the Nether card, which appears only when the fourteen souls are defeated. If this ancient entity is destroyed, the Nether card vanishes and the deck becomes a normal {@deck tarokka deck|CoS}, with no special properties, but it includes a new card of the DM's design.",
 						{
 							"type": "entries",
 							"name": "Mother Luba and the Vistani",

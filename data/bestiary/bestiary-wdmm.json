@@ -2971,6 +2971,65 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "Left Hand of Manshoon",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "WDMM",
+			"page": 119,
+			"_copy": {
+				"name": "Archmage",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "archmage",
+						"with": "hand",
+						"flags": "i"
+					},
+					"_": {
+						"mode": "replaceSpells",
+						"spells": {
+							"4": [
+								{
+									"replace": "{@spell banishment}",
+									"with": "{@spell blight}"
+								}
+							]
+						}
+					}
+				}
+			},
+			"size": [
+				"T"
+			],
+			"type": {
+				"type": "undead"
+			},
+			"alignment": [
+				"U"
+			],
+			"hp": {
+				"average": 63,
+				"formula": "18d4 + 18"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": {
+					"number": 30,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"senses": [
+				"blindsight 60 ft. (blind beyond this radius)"
+			],
+			"conditionImmune": [
+				"blinded",
+				"deafened"
+			],
+			"hasToken": true
+		},
+		{
 			"name": "Living Unseen Servant",
 			"source": "WDMM",
 			"page": 313,

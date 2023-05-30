@@ -2426,5 +2426,15 @@
 		"ver": "1.181.1",
 		"date": "2023-05-11",
 		"txt": "- Added Misplaced Monster Volume 1 tokens\n- Fixed CR Scaler crash when scaling bonus-less damage to lower CR\n- (Brew) Added support for custom fonts\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.181.2",
+		"date": "2023-05-25",
+		"txt": "- Added more options to the Classes Page \"Filter...\" dropdown\n  - \"View Official\" renamed to \"View Default\"\n  - Added \"View Official\" which shows official sources only (no homebrew)\n  - Added \"View Homebrew\" which shows homebrew\n- Added resource consumption display to Optional Features\n- Fixed pinned lists being displayed when printing\n- (Brew) Added support for `\"bonus\"` spellcasting `\"displayAs\"`\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.181.3",
+		"date": "2023-05-28",
+		"txt": "- Fixed Spells Page failing to filter combined class/class variant spells in some cases\n- (Brew) Added support for `\"reaction\"` spellcasting `\"displayAs\"`\n- (Fixed typos/added tags)"
 	}
 ]

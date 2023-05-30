@@ -709,7 +709,7 @@ class SaveManager extends BaseComponent {
 			cbOnUpload,
 		},
 	) {
-		const $wrp = $(`<div class="pt-2 ve-flex-col"></div>`);
+		const $wrp = $(`<div class="pt-2 ve-flex-col no-print"></div>`);
 
 		const renderableCollectionSummary = new SaveManager._RenderableCollectionSaves_Summary(
 			{
