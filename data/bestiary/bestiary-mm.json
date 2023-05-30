@@ -9912,7 +9912,22 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"variant": [
+				{
+					"type": "variant",
+					"name": "Summon Devil (1/Day)",
+					"entries": [
+						"The devil chooses what to summon and attempts a magical summoning.",
+						"A barbed devil has a {@chance 30|30 percent} chance of summoning one barbed devil.",
+						"A summoned devil appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other devils. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
+					],
+					"_version": {
+						"name": "Barbed Devil (Summoner)",
+						"addAs": "action"
+					}
+				}
+			]
 		},
 		{
 			"name": "Barlgura",
@@ -10467,7 +10482,22 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"variant": [
+				{
+					"type": "variant",
+					"name": "Summon Devil (1/Day)",
+					"entries": [
+						"The devil chooses what to summon and attempts a magical summoning.",
+						"A bearded devil has a {@chance 30|30 percent} chance of summoning one bearded devil.",
+						"A summoned devil appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other devils. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
+					],
+					"_version": {
+						"name": "Bearded Devil (Summoner)",
+						"addAs": "action"
+					}
+				}
+			]
 		},
 		{
 			"name": "Behir",
@@ -12488,6 +12518,19 @@
 					"_version": {
 						"name": "Bone Devil (Polearm)",
 						"addHeadersAs": "action"
+					}
+				},
+				{
+					"type": "variant",
+					"name": "Summon Devil (1/Day)",
+					"entries": [
+						"The devil chooses what to summon and attempts a magical summoning.",
+						"A bone devil has a {@chance 40|40 percent} chance of summoning {@dice 2d6} {@creature spined devil||spined devils} or one bone devil.",
+						"A summoned devil appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other devils. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
+					],
+					"_version": {
+						"name": "Bone Devil (Summoner)",
+						"addAs": "action"
 					}
 				}
 			],
@@ -23171,6 +23214,19 @@
 					"entries": [
 						"Some erinyes carry a {@item rope of entanglement} (detailed in the Dungeon Master's Guide). When such an erinyes uses its Multiattack, the erinyes can use the rope in place of two of the attacks."
 					]
+				},
+				{
+					"type": "variant",
+					"name": "Summon Devil (1/Day)",
+					"entries": [
+						"The devil chooses what to summon and attempts a magical summoning.",
+						"An erinyes has a {@chance 50|50 percent} chance of summoning {@dice 3d6} {@creature spined devil||spined devils}, {@dice 1d6} {@creature bearded devil||bearded devils}, or one {@creature erinyes}.",
+						"A summoned devil appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other devils. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
+					],
+					"_version": {
+						"name": "Erinyes (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -36899,7 +36955,22 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"variant": [
+				{
+					"type": "variant",
+					"name": "Summon Devil (1/Day)",
+					"entries": [
+						"The devil chooses what to summon and attempts a magical summoning.",
+						"A horned devil has a {@chance 30|30 percent} chance of summoning one horned devil.",
+						"A summoned devil appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other devils. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
+					],
+					"_version": {
+						"name": "Horned Devil (Summoner)",
+						"addAs": "action"
+					}
+				}
+			]
 		},
 		{
 			"name": "Hunter Shark",
@@ -37397,6 +37468,19 @@
 					"_version": {
 						"name": "Ice Devil (Spear)",
 						"addHeadersAs": "action"
+					}
+				},
+				{
+					"type": "variant",
+					"name": "Summon Devil (1/Day)",
+					"entries": [
+						"The devil chooses what to summon and attempts a magical summoning.",
+						"An ice devil has a {@chance 60|60 percent} chance of summoning one ice devil.",
+						"A summoned devil appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other devils. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
+					],
+					"_version": {
+						"name": "Ice Devil (Summoner)",
+						"addAs": "action"
 					}
 				}
 			],
@@ -49475,7 +49559,22 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"variant": [
+				{
+					"type": "variant",
+					"name": "Summon Devil (1/Day)",
+					"entries": [
+						"The devil chooses what to summon and attempts a magical summoning.",
+						"A pit fiend summons {@dice 2d4} {@creature bearded devil||bearded devils}, {@dice 1d4} {@creature barbed devil||barbed devils}, or one {@creature erinyes} with no chance of failure.",
+						"A summoned devil appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other devils. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
+					],
+					"_version": {
+						"name": "Pit Fiend (Summoner)",
+						"addAs": "action"
+					}
+				}
+			]
 		},
 		{
 			"name": "Pixie",
