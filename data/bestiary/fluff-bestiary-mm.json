@@ -87,16 +87,28 @@
 										"The aboleths' fall from power is written in stark clarity on their flawless memories, for aboleths never truly die. If an aboleth's body is destroyed, its spirit returns to the Elemental Plane of Water, where a new body coalesces for it over days or months.",
 										"Ultimately, aboleths dream of overthrowing the gods and regaining control of the world. Aboleths have had untold eons to plot and to prepare their plans for perfect execution."
 									]
-								},
-								{
-									"type": "entries",
-									"name": "An Aboleth's Lair",
-									"entries": [
-										"Aboleths lair in subterranean lakes or the rocky depths of the ocean, often surrounded by the ruins of an ancient, fallen aboleth city. An aboleth spends most of its existence underwater, surfacing occasionally to treat with visitors or deranged worshipers."
-									]
 								}
 							]
 						}
+					]
+				},
+				{
+					"type": "insetReadaloud",
+					"entries": [
+						{
+							"type": "quote",
+							"entries": [
+								"Could it be that the aboleths are older than the gods... that before the divine ones came to be, such horrors shaped the multiverse? Now there's a chilling thought."
+							],
+							"by": "Vaqir Zekh'r, githzerai philosopher and author of {@style The Far Realm: Real Yet Unreal|small-caps}"
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "An Aboleth's Lair",
+					"entries": [
+						"Aboleths lair in subterranean lakes or the rocky depths of the ocean, often surrounded by the ruins of an ancient, fallen aboleth city. An aboleth spends most of its existence underwater, surfacing occasionally to treat with visitors or deranged worshipers."
 					]
 				}
 			],
@@ -580,34 +592,19 @@
 		{
 			"name": "Animated Armor",
 			"source": "MM",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
-							"type": "entries",
-							"entries": [
-								"Animated objects are crafted with potent magic to follow the commands of their creators. When not commanded, they follow the last order they received to the best of their ability, and can act independently to fulfill simple instructions. Some animated objects (including many of those created in the Feywild) might converse fluently or adopt a persona, but most are simple automatons.",
-								{
-									"name": "Constructed Nature",
-									"type": "entries",
-									"entries": [
-										"An animated object doesn't require air, food, drink, or sleep. The magic that animates an object is dispelled when the construct drops to 0 hit points. An animated object reduced to 0 hit points becomes inanimate and is too damaged to be of much use or value to anyone."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Animated Armor",
-									"entries": [
-										"This empty steel shell clamors as it moves, heavy plates banging and grinding against one another like the vengeful spirit of a fallen knight. Ponderous but persistent, this magical guardian is almost always a suit of plate armor.",
-										"To add to its menace, animated armor is frequently enchanted with scripted speech, so the armor can utter warnings, demand passwords, or deliver riddles. Rare suits of animated armor are able to carry on an actual conversation."
-									]
-								}
-							]
-						}
-					]
+			"_copy": {
+				"name": "Animated Objects",
+				"source": "MM",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							"This empty steel shell clamors as it moves, heavy plates banging and grinding against one another like the vengeful spirit of a fallen knight. Ponderous but persistent, this magical guardian is almost always a suit of plate armor.",
+							"To add to its menace, animated armor is frequently enchanted with scripted speech, so the armor can utter warnings, demand passwords, or deliver riddles. Rare suits of animated armor are able to carry on an actual conversation."
+						]
+					}
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -886,6 +883,18 @@
 									]
 								}
 							]
+						},
+						{
+							"type": "insetReadaloud",
+							"entries": [
+								{
+									"type": "quote",
+									"entries": [
+										"Give me a hundred azer slaves, and I can forge an empire that would make the gods tremble."
+									],
+									"by": "Arakses al-Saqar, efreeti pasha"
+								}
+							]
 						}
 					]
 				}
@@ -1146,6 +1155,18 @@
 									]
 								}
 							]
+						},
+						{
+							"type": "insetReadaloud",
+							"entries": [
+								{
+									"type": "quote",
+									"entries": [
+										"No one carves statues of frightened warriors. If you see one, keep your eyes closed and your ears open."
+									],
+									"by": "X the Mystic's 4th rule of dungeon survival"
+								}
+							]
 						}
 					]
 				}
@@ -1237,6 +1258,18 @@
 									]
 								}
 							]
+						},
+						{
+							"type": "insetReadaloud",
+							"entries": [
+								{
+									"type": "quote",
+									"entries": [
+										"I've already eaten three giant bats, six troglodytes, and a mind flayer today, but that's okay. Plenty of room in my belly for you and your friends."
+									],
+									"by": "Lludd the behir, confronting adventurers in the Lost Caverns of Tsojcanth"
+								}
+							]
 						}
 					]
 				}
@@ -1285,16 +1318,28 @@
 										"Because they refuse to share territory with others, most beholders withdraw to frigid hills, abandoned ruins, and deep caverns to scheme. A beholder's lair is carved out by its disintegration eye ray, emphasizing vertical passages connecting chambers stacked on top of each other. Such an environment allows a beholder to move freely, even as it prevents intruders from easily creeping about. When intruders do break in, the height of its open ceilings allows a beholder to float up and harry foes on the floor.",
 										"As alien as their creator, the rooms in a beholder's lair reflect the creature's arrogance. It festoons its chambers with trophies from the battles it has won, including {@condition petrified} adventurers standing frozen in their horrified final moments, pieces of other beholders, and magic items wrested from powerful foes. A beholder judges its own worth by its acquisitions, and it never willingly parts with its treasures."
 									]
-								},
-								{
-									"type": "entries",
-									"name": "A Beholder's Lair",
-									"entries": [
-										"A beholder's central lair is typically a large, spacious cavern with high ceilings, where it can attack without fear of closing to melee range. A beholder encountered in its lair has a challenge rating of 14 (11,500 XP)."
-									]
 								}
 							]
 						}
+					]
+				},
+				{
+					"type": "insetReadaloud",
+					"entries": [
+						{
+							"type": "quote",
+							"entries": [
+								"Every beholder thinks it is the epitome of beholderkind, and the only thing it fears is that it might be wrong."
+							],
+							"by": "Valkara Ironfeel, dwarf sage"
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "A Beholder's Lair",
+					"entries": [
+						"A beholder's central lair is typically a large, spacious cavern with high ceilings, where it can attack without fear of closing to melee range. A beholder encountered in its lair has a challenge rating of 14 (11,500 XP)."
 					]
 				}
 			],
@@ -1351,51 +1396,53 @@
 				"_mod": {
 					"entries": {
 						"mode": "prependArr",
-						"items": {
-							"type": "entries",
-							"entries": [
-								{
-									"type": "entries",
-									"entries": [
-										"The most evil-tempered and vile of the chromatic dragons, black dragons collect the wreckage and treasures of fallen peoples. These dragons loathe seeing the weak prosper and revel in the collapse of humanoid kingdoms. They make their homes in fetid swamps and crumbling ruins where kingdoms once stood.",
-										"With deep-socketed eyes and broad nasal openings, a black dragon's face resembles a skull. Its curving, segmented horns are bone-colored near the base and darken to dead black at the tips. As a black dragon ages, the flesh around its horns and cheekbones deteriorates as though eaten by acid, leaving thin layers of hide that enhance its skeletal appearance. A black dragon's head is marked by spikes and horns. Its tongue is flat with a forked tip, drooling slime whose acidic scent adds to the dragon's reek of rotting vegetation and foul water.",
-										"When it hatches, a black dragon has glossy black scale. As it ages, its scales become thicker and duller, helping it blend in to the marshes and blasted ruins that are its home.",
-										{
-											"name": "Brutal and Cruel",
-											"type": "entries",
-											"entries": [
-												"All chromatic dragons are evil, but black dragons stand apart for their sadistic nature. A black dragon lives to watch its prey beg for mercy, and will often offer the illusion of respite or escape before finishing off its enemies.",
-												"A black dragon strikes at its weakest enemies first, ensuring a quick and brutal victory, which bolsters its ego as it terrifies its remaining foes. On the verge of defeat, a black dragon does anything it can to save itself, but it accepts death before allowing any other creature to claim mastery over it."
-											]
-										},
-										{
-											"name": "Foes and Servants",
-											"type": "entries",
-											"entries": [
-												"Black dragons hate and fear other dragons. They spy on draconic rivals from afar, looking for opportunities to slay weaker dragons and avoid stronger ones. If a stronger dragon threatens it, a black dragon abandons its lair and seeks out new territory.",
-												"Evil lizardfolk venerate and serve black dragons, raiding humanoid settlements for treasure and food to give as tribute and building crude draconic effigies along the borders of their dragon master's domain.",
-												"A black dragon's malevolent influence might also cause the spontaneous creation of evil shambling mounds that seek out and slay good creatures approaching the dragon's lair.",
-												"Kobolds infest the lairs of many black dragons like vermin. They become as cruel as their dark masters, often torturing and weakening captives with centipede bites and scorpion stings before delivering them to sate the dragon's hunger."
-											]
-										},
-										{
-											"name": "Wealth of the Ancients",
-											"type": "entries",
-											"entries": [
-												"Black dragons hoard the treasures and magic items of crumbled empires and conquered kingdoms to remind themselves of their greatness. The more civilizations a dragon outlasts, the more entitled it feels to claim the wealth of current civilizations for itself."
-											]
-										},
-										{
-											"type": "entries",
-											"name": "A Black Dragon's Lair",
-											"entries": [
-												"Black dragons dwell in swamps on the frayed edges of civilization. A black dragon's lair is a dismal cave, grotto, or ruin that is at least partially flooded, providing pools where the dragon rests, and where its victims can ferment. The lair is littered with the acid-pitted bones of previous victims and the fly-ridden carcasses of fresh kills, watched over by crumbling statues. Centipedes, scorpions, and snakes infest the lair, which is filled with the stench of death and decay."
-											]
-										}
-									]
-								}
-							]
-						}
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"The most evil-tempered and vile of the chromatic dragons, black dragons collect the wreckage and treasures of fallen peoples. These dragons loathe seeing the weak prosper and revel in the collapse of humanoid kingdoms. They make their homes in fetid swamps and crumbling ruins where kingdoms once stood.",
+											"With deep-socketed eyes and broad nasal openings, a black dragon's face resembles a skull. Its curving, segmented horns are bone-colored near the base and darken to dead black at the tips. As a black dragon ages, the flesh around its horns and cheekbones deteriorates as though eaten by acid, leaving thin layers of hide that enhance its skeletal appearance. A black dragon's head is marked by spikes and horns. Its tongue is flat with a forked tip, drooling slime whose acidic scent adds to the dragon's reek of rotting vegetation and foul water.",
+											"When it hatches, a black dragon has glossy black scale. As it ages, its scales become thicker and duller, helping it blend in to the marshes and blasted ruins that are its home.",
+											{
+												"name": "Brutal and Cruel",
+												"type": "entries",
+												"entries": [
+													"All chromatic dragons are evil, but black dragons stand apart for their sadistic nature. A black dragon lives to watch its prey beg for mercy, and will often offer the illusion of respite or escape before finishing off its enemies.",
+													"A black dragon strikes at its weakest enemies first, ensuring a quick and brutal victory, which bolsters its ego as it terrifies its remaining foes. On the verge of defeat, a black dragon does anything it can to save itself, but it accepts death before allowing any other creature to claim mastery over it."
+												]
+											},
+											{
+												"name": "Foes and Servants",
+												"type": "entries",
+												"entries": [
+													"Black dragons hate and fear other dragons. They spy on draconic rivals from afar, looking for opportunities to slay weaker dragons and avoid stronger ones. If a stronger dragon threatens it, a black dragon abandons its lair and seeks out new territory.",
+													"Evil lizardfolk venerate and serve black dragons, raiding humanoid settlements for treasure and food to give as tribute and building crude draconic effigies along the borders of their dragon master's domain.",
+													"A black dragon's malevolent influence might also cause the spontaneous creation of evil shambling mounds that seek out and slay good creatures approaching the dragon's lair.",
+													"Kobolds infest the lairs of many black dragons like vermin. They become as cruel as their dark masters, often torturing and weakening captives with centipede bites and scorpion stings before delivering them to sate the dragon's hunger."
+												]
+											},
+											{
+												"name": "Wealth of the Ancients",
+												"type": "entries",
+												"entries": [
+													"Black dragons hoard the treasures and magic items of crumbled empires and conquered kingdoms to remind themselves of their greatness. The more civilizations a dragon outlasts, the more entitled it feels to claim the wealth of current civilizations for itself."
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"type": "entries",
+								"name": "A Black Dragon's Lair",
+								"entries": [
+									"Black dragons dwell in swamps on the frayed edges of civilization. A black dragon's lair is a dismal cave, grotto, or ruin that is at least partially flooded, providing pools where the dragon rests, and where its victims can ferment. The lair is littered with the acid-pitted bones of previous victims and the fly-ridden carcasses of fresh kills, watched over by crumbling statues. Centipedes, scorpions, and snakes infest the lair, which is filled with the stench of death and decay."
+								]
+							}
+						]
 					},
 					"images": {
 						"mode": "prependArr",
@@ -1559,60 +1606,62 @@
 				"_mod": {
 					"entries": {
 						"mode": "prependArr",
-						"items": {
-							"type": "entries",
-							"entries": [
-								{
-									"type": "entries",
-									"entries": [
-										"Vain and territorial, blue dragons soar through the skies over deserts, preying on caravans and plundering herds and settlements in the verdant lands beyond the desert's reach. These dragons can also be found in dry steppes, searing badlands, and rocky coasts. They guard their territories against all potential competitors, especially brass dragons.",
-										"A blue dragon is recognized by its dramatic frilled ears and the massive ridged horn atop its blunt head. Rows of spikes extend back from its nostrils to line its brow, and cluster on its jutting lower jaw.",
-										"A blue dragon's scales vary in color from an iridescent azure to a deep indigo, polished to a glossy finish by the desert sands. As the dragon ages, its scales become thicker and harder, and its hide hums and crackles with static electricity. These effects intensify when the dragon is angry or about to attack, giving off an odor of ozone and dusty air.",
-										{
-											"name": "Vain and Deadly",
-											"type": "entries",
-											"entries": [
-												"A blue dragon will not stand for any remark or insinuation that it is weak or inferior, taking great pleasure in lording its power over humanoids and other lesser creatures.",
-												"A blue dragon is a patient and methodical combatant. When fighting on its own terms, it turns combat into an extended affair of hours or even days, attacking from a distance with volleys of lightning, then flying well out of harm's reach as it waits to attack again."
-											]
-										},
-										{
-											"name": "Desert Predators",
-											"type": "entries",
-											"entries": [
-												"Though they sometimes eat cacti and other desert plants to sate their great hunger, blue dragons are carnivores. They prefer to dine on herd animals, cooking those creatures with their lightning breath before gorging themselves. Their dining habits make blue dragons an enormous threat to desert caravans and nomadic tribes, which become convenient collections of food and treasure to a dragon's eye.",
-												"When it hunts, a blue dragon buries itself in the desert sand so that only the horn on its nose pokes above the surface, appearing to be an outcropping of stone. When prey draws near, the dragon rises up, sand pouring from its wings like an avalanche as it attacks."
-											]
-										},
-										{
-											"name": "Overlords and Minions",
-											"type": "entries",
-											"entries": [
-												"Blue dragons covet valuable and talented creatures whose service reinforces their sense of superiority. Bards, sages, artists, wizards, and assassins can become valuable agents for a blue dragon, which rewards loyal service handsomely.",
-												"A blue dragon keeps its lair secret and well protected, and even its most trusted servants are rarely allowed within. It encourages ankhegs, giant scorpions, and other creatures of the desert to dwell near its lair for additional security. Older blue dragons sometimes attract air elementals and other creatures to serve them."
-											]
-										},
-										{
-											"name": "Hoarders of Gems",
-											"type": "entries",
-											"entries": [
-												"Though blue dragons collect anything that looks valuable, they are especially fond of gems. Considering blue to be the most noble and beautiful of colors, they covet sapphires, favoring jewelery and magic items adorned with those gems.",
-												"A blue dragon buries its most valuable treasures deep in the sand, while scattering a few less valuable trinkets in plainer sight over hidden sinkholes to punish and eliminate would-be thieves."
-											]
-										},
-										{
-											"type": "entries",
-											"name": "A Blue Dragon's Lair",
-											"entries": [
-												"Blue dragons make their lairs in barren places, using their lightning breath and their burrowing ability to carve out crystallized caverns and tunnels beneath the sands.",
-												"Thunderstorms rage around a legendary blue dragon's lair, and narrow tubes lined with glassy sand ventilate the lair, all the while avoiding the deadly sinkholes that are the dragon's first line of defense.",
-												"A blue dragon will collapse the caverns that make up its lair if that lair is invaded. The dragon then burrows out, leaving its attackers to be crushed and suffocated. When it returns later, it collects its possessions-along with the wealth of the dead intruders."
-											]
-										}
-									]
-								}
-							]
-						}
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"Vain and territorial, blue dragons soar through the skies over deserts, preying on caravans and plundering herds and settlements in the verdant lands beyond the desert's reach. These dragons can also be found in dry steppes, searing badlands, and rocky coasts. They guard their territories against all potential competitors, especially brass dragons.",
+											"A blue dragon is recognized by its dramatic frilled ears and the massive ridged horn atop its blunt head. Rows of spikes extend back from its nostrils to line its brow, and cluster on its jutting lower jaw.",
+											"A blue dragon's scales vary in color from an iridescent azure to a deep indigo, polished to a glossy finish by the desert sands. As the dragon ages, its scales become thicker and harder, and its hide hums and crackles with static electricity. These effects intensify when the dragon is angry or about to attack, giving off an odor of ozone and dusty air.",
+											{
+												"name": "Vain and Deadly",
+												"type": "entries",
+												"entries": [
+													"A blue dragon will not stand for any remark or insinuation that it is weak or inferior, taking great pleasure in lording its power over humanoids and other lesser creatures.",
+													"A blue dragon is a patient and methodical combatant. When fighting on its own terms, it turns combat into an extended affair of hours or even days, attacking from a distance with volleys of lightning, then flying well out of harm's reach as it waits to attack again."
+												]
+											},
+											{
+												"name": "Desert Predators",
+												"type": "entries",
+												"entries": [
+													"Though they sometimes eat cacti and other desert plants to sate their great hunger, blue dragons are carnivores. They prefer to dine on herd animals, cooking those creatures with their lightning breath before gorging themselves. Their dining habits make blue dragons an enormous threat to desert caravans and nomadic tribes, which become convenient collections of food and treasure to a dragon's eye.",
+													"When it hunts, a blue dragon buries itself in the desert sand so that only the horn on its nose pokes above the surface, appearing to be an outcropping of stone. When prey draws near, the dragon rises up, sand pouring from its wings like an avalanche as it attacks."
+												]
+											},
+											{
+												"name": "Overlords and Minions",
+												"type": "entries",
+												"entries": [
+													"Blue dragons covet valuable and talented creatures whose service reinforces their sense of superiority. Bards, sages, artists, wizards, and assassins can become valuable agents for a blue dragon, which rewards loyal service handsomely.",
+													"A blue dragon keeps its lair secret and well protected, and even its most trusted servants are rarely allowed within. It encourages ankhegs, giant scorpions, and other creatures of the desert to dwell near its lair for additional security. Older blue dragons sometimes attract air elementals and other creatures to serve them."
+												]
+											},
+											{
+												"name": "Hoarders of Gems",
+												"type": "entries",
+												"entries": [
+													"Though blue dragons collect anything that looks valuable, they are especially fond of gems. Considering blue to be the most noble and beautiful of colors, they covet sapphires, favoring jewelery and magic items adorned with those gems.",
+													"A blue dragon buries its most valuable treasures deep in the sand, while scattering a few less valuable trinkets in plainer sight over hidden sinkholes to punish and eliminate would-be thieves."
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"type": "entries",
+								"name": "A Blue Dragon's Lair",
+								"entries": [
+									"Blue dragons make their lairs in barren places, using their lightning breath and their burrowing ability to carve out crystallized caverns and tunnels beneath the sands.",
+									"Thunderstorms rage around a legendary blue dragon's lair, and narrow tubes lined with glassy sand ventilate the lair, all the while avoiding the deadly sinkholes that are the dragon's first line of defense.",
+									"A blue dragon will collapse the caverns that make up its lair if that lair is invaded. The dragon then burrows out, leaving its attackers to be crushed and suffocated. When it returns later, it collects its possessions-along with the wealth of the dead intruders."
+								]
+							}
+						]
 					},
 					"images": {
 						"mode": "prependArr",
@@ -1761,41 +1810,43 @@
 				"_mod": {
 					"entries": {
 						"mode": "prependArr",
-						"items": {
-							"type": "entries",
-							"entries": [
-								{
-									"type": "entries",
-									"entries": [
-										"The most gregarious of the true dragons, brass dragons crave conversation, sunlight, and hot, dry climates.",
-										"A brass dragon's head is defined by the broad protective plate that expands from its forehead and the spikes protruding from its chin. A frill runs the length of its neck, and its tapering wings extend down the length of its tail. A brass dragon wyrmling's scales are a dull, mottled brown. As it ages, the dragon's scales begin to shine, eventually taking on a warm, burnished luster. Its wings and frills are mottled green toward the edges, darkening with age. As a brass dragon grows older, its pupils fade until its eyes resemble molten metal orbs.",
-										{
-											"name": "Boldly Talkative",
-											"type": "entries",
-											"entries": [
-												"A brass dragon engages in conversations with thousands of creatures throughout its long life, accumulating useful information which it will gladly share for gifts of treasure. If an intelligent creature tries to leave a brass dragon's presence without engaging in conversation, the dragon follows it. If the creature attempts to escape by magic or force, the dragon might respond with a fit of pique, using its sleep gas to incapacitate the creature. When it wakes, the creature finds itself pinned to the ground by giant claws or buried up to its neck in the sand while the dragon's thirst for small talk is slaked.",
-												"A brass dragon is trusting of creatures that appear to enjoy conversation as much as it does, but is smart enough to know when it is being manipulated. When that happens, the dragon often responds in kind, treating a bout of mutual trickery as a game."
-											]
-										},
-										{
-											"name": "Prized Treasures",
-											"type": "entries",
-											"entries": [
-												"Brass dragons covet magic items that allow them to converse with interesting personalities. An intelligent telepathic weapon or a magic lamp with a djinni bound inside it are among the greatest treasures a brass dragon can possess.",
-												"Brass dragons conceal their hoards under mounds of sand or in secret places far from their primary lairs. They have no trouble remembering where their treasure is buried, and therefore have no need for maps. Adventurers and wanderers should be wary if they happen across a chest hidden in an oasis or a treasure cache tucked away in a half-buried desert ruin, for these might be parts of a brass dragon's hoard."
-											]
-										},
-										{
-											"type": "entries",
-											"name": "A Brass Dragon's Lair",
-											"entries": [
-												"A brass dragon's desert lair is typically a ruin, canyon, or cave network with ceiling holes to allow for sunlight."
-											]
-										}
-									]
-								}
-							]
-						}
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"The most gregarious of the true dragons, brass dragons crave conversation, sunlight, and hot, dry climates.",
+											"A brass dragon's head is defined by the broad protective plate that expands from its forehead and the spikes protruding from its chin. A frill runs the length of its neck, and its tapering wings extend down the length of its tail. A brass dragon wyrmling's scales are a dull, mottled brown. As it ages, the dragon's scales begin to shine, eventually taking on a warm, burnished luster. Its wings and frills are mottled green toward the edges, darkening with age. As a brass dragon grows older, its pupils fade until its eyes resemble molten metal orbs.",
+											{
+												"name": "Boldly Talkative",
+												"type": "entries",
+												"entries": [
+													"A brass dragon engages in conversations with thousands of creatures throughout its long life, accumulating useful information which it will gladly share for gifts of treasure. If an intelligent creature tries to leave a brass dragon's presence without engaging in conversation, the dragon follows it. If the creature attempts to escape by magic or force, the dragon might respond with a fit of pique, using its sleep gas to incapacitate the creature. When it wakes, the creature finds itself pinned to the ground by giant claws or buried up to its neck in the sand while the dragon's thirst for small talk is slaked.",
+													"A brass dragon is trusting of creatures that appear to enjoy conversation as much as it does, but is smart enough to know when it is being manipulated. When that happens, the dragon often responds in kind, treating a bout of mutual trickery as a game."
+												]
+											},
+											{
+												"name": "Prized Treasures",
+												"type": "entries",
+												"entries": [
+													"Brass dragons covet magic items that allow them to converse with interesting personalities. An intelligent telepathic weapon or a magic lamp with a djinni bound inside it are among the greatest treasures a brass dragon can possess.",
+													"Brass dragons conceal their hoards under mounds of sand or in secret places far from their primary lairs. They have no trouble remembering where their treasure is buried, and therefore have no need for maps. Adventurers and wanderers should be wary if they happen across a chest hidden in an oasis or a treasure cache tucked away in a half-buried desert ruin, for these might be parts of a brass dragon's hoard."
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"type": "entries",
+								"name": "A Brass Dragon's Lair",
+								"entries": [
+									"A brass dragon's desert lair is typically a ruin, canyon, or cave network with ceiling holes to allow for sunlight."
+								]
+							}
+						]
 					},
 					"images": {
 						"mode": "prependArr",
@@ -1827,46 +1878,53 @@
 				"_mod": {
 					"entries": {
 						"mode": "prependArr",
-						"items": {
-							"type": "entries",
-							"entries": [
-								{
-									"type": "entries",
-									"entries": [
-										"Bronze dragons are coastal dwellers that feed primarily on aquatic plants and fish. They take the forms of friendly animals to observe other creatures of interest. They are also fascinated by warfare and eagerly join armies fighting for a just cause.",
-										"A ribbed and fluted crest defines the shape of a bronze dragon's head. Curving horns extend out from the crest, echoed by spines on its lower jaw and chin. To help them swim, bronze dragons have webbed feet and smooth scales. A bronze wyrmling's scales are yellow tinged with green; only as the dragon approaches adulthood does its color deepen to a darker, rich bronze tone. The pupils of a bronze dragon's eyes fade as the dragon ages, until they resemble glowing green orbs.",
-										{
-											"name": "Dragons of the Coast",
-											"type": "entries",
-											"entries": [
-												"Bronze dragons love to watch ships traveling up and down the coastlines near their lairs, sometimes taking the forms of dolphins or seagulls to inspect those ships and their crews more closely. A daring bronze dragon might slip aboard a ship in the guise of a bird or rat, inspecting the hold for treasure. If the dragon finds a worthy addition to its hoard, it barters with the ship's captain for the item."
-											]
-										},
-										{
-											"name": "War Machines",
-											"type": "entries",
-											"entries": [
-												"Bronze dragons actively oppose tyranny, and many bronze dragons yearn to test their mettle by putting their size and strength to good use. When a conflict unfolds near its lair, a bronze dragon ascertains the underlying cause, then offers its services to any side that fights for good. Once a bronze dragon commits to a cause, it remains a staunch ally.",
-												{
-													"name": "Well-Organized Wealth",
-													"entries": [
-														"Bronze dragons loot sunken ships and also collect colorful coral and pearls from the reefs and seabeds near their lairs. When a bronze dragon pledges to help an army wage war against tyranny, it asks for nominal payment. If such a request is beyond its allies' means, it might settle for a collection of old books on military history or a ceremonial item commemorating the alliance. A bronze dragon might also lay claim to a treasure held by the enemy that it feels would be safer under its protection."
-													],
-													"type": "entries"
-												}
-											]
-										},
-										{
-											"type": "entries",
-											"name": "A Bronze Dragon's Lair",
-											"entries": [
-												"A bronze dragon lairs in coastal caves. It might salvage a wrecked ship, reconstruct it within the confines of its lair, and use it as a treasure vault or nest for its eggs."
-											]
-										}
-									]
-								}
-							]
-						}
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"Bronze dragons are coastal dwellers that feed primarily on aquatic plants and fish. They take the forms of friendly animals to observe other creatures of interest. They are also fascinated by warfare and eagerly join armies fighting for a just cause.",
+											"A ribbed and fluted crest defines the shape of a bronze dragon's head. Curving horns extend out from the crest, echoed by spines on its lower jaw and chin. To help them swim, bronze dragons have webbed feet and smooth scales. A bronze wyrmling's scales are yellow tinged with green; only as the dragon approaches adulthood does its color deepen to a darker, rich bronze tone. The pupils of a bronze dragon's eyes fade as the dragon ages, until they resemble glowing green orbs.",
+											{
+												"type": "entries",
+												"entries": [
+													{
+														"name": "Dragons of the Coast",
+														"type": "entries",
+														"entries": [
+															"Bronze dragons love to watch ships traveling up and down the coastlines near their lairs, sometimes taking the forms of dolphins or seagulls to inspect those ships and their crews more closely. A daring bronze dragon might slip aboard a ship in the guise of a bird or rat, inspecting the hold for treasure. If the dragon finds a worthy addition to its hoard, it barters with the ship's captain for the item."
+														]
+													},
+													{
+														"name": "War Machines",
+														"type": "entries",
+														"entries": [
+															"Bronze dragons actively oppose tyranny, and many bronze dragons yearn to test their mettle by putting their size and strength to good use. When a conflict unfolds near its lair, a bronze dragon ascertains the underlying cause, then offers its services to any side that fights for good. Once a bronze dragon commits to a cause, it remains a staunch ally.",
+															{
+																"name": "Well-Organized Wealth",
+																"entries": [
+																	"Bronze dragons loot sunken ships and also collect colorful coral and pearls from the reefs and seabeds near their lairs. When a bronze dragon pledges to help an army wage war against tyranny, it asks for nominal payment. If such a request is beyond its allies' means, it might settle for a collection of old books on military history or a ceremonial item commemorating the alliance. A bronze dragon might also lay claim to a treasure held by the enemy that it feels would be safer under its protection."
+																],
+																"type": "entries"
+															}
+														]
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"type": "entries",
+								"name": "A Bronze Dragon's Lair",
+								"entries": [
+									"A bronze dragon lairs in coastal caves. It might salvage a wrecked ship, reconstruct it within the confines of its lair, and use it as a treasure vault or nest for its eggs."
+								]
+							}
+						]
 					},
 					"images": {
 						"mode": "prependArr",
@@ -2086,6 +2144,18 @@
 									]
 								}
 							]
+						},
+						{
+							"type": "insetReadaloud",
+							"entries": [
+								{
+									"type": "quote",
+									"entries": [
+										"They crawl from their mother's wombs to spread corruption throughout the multiverse. What's not to love?"
+									],
+									"by": "Baba Yaga"
+								}
+							]
 						}
 					]
 				}
@@ -2173,6 +2243,18 @@
 										"A centaur that can't keep pace with the rest of its tribe is left behind. Some such centaurs vanish into the wilderness and are never seen again. Those that can bear the loss of their tribe might take up residence among other races. Frontier settlements value the nature knowledge of their centaur residents. Many such communities owe their survival to the insight and acumen of a centaur.",
 										"Despite their reclusive nature, centaurs trade with elves and with the caravans of other benevolent humanoids they meet during their wanderings. A trader might save the life of a wounded or an elderly centaur unfit for long travel, escorting it to a settlement where it can peacefully live out the rest of its days."
 									]
+								}
+							]
+						},
+						{
+							"type": "insetReadaloud",
+							"entries": [
+								{
+									"type": "quote",
+									"entries": [
+										"I hear centaurs make excellent mounts!"
+									],
+									"by": "Batley Summerfoot, a halfling adventurer who never read {@style Hooves of Fury|small-caps} by Irvil Grayborn of Sundown"
 								}
 							]
 						}
@@ -2315,34 +2397,39 @@
 							"entries": [
 								"The black, blue, green, red, and white dragons represent the evil side of dragonkind. Aggressive, gluttonous, and vain, chromatic dragons are dark sages and powerful tyrants feared by all creatures-including each other.",
 								{
-									"name": "Driven by Greed",
-									"entries": [
-										"Chromatic dragons lust after treasure, and this greed colors their every scheme and plot. They believe that the world's wealth belongs to them by right, and a chromatic dragon seizes that wealth without regard for the humanoids and other creatures that have \"stolen\" it. With its piles of coins, gleaming gems, and magic items, a dragon's hoard is the stuff of legend. However, chromatic dragons have no interest in commerce, amassing wealth for no other reason than to have it."
-									],
-									"type": "entries"
-								},
-								{
-									"name": "Creatures of Ego",
 									"type": "entries",
 									"entries": [
-										"Chromatic dragons are united by their sense of superiority, believing themselves the most powerful and worthy of all mortal creatures. When they interact with other creatures, it is only to further their own interests. They believe in their innate right to rule, and this belief is the cornerstone of every chromatic dragon's personality and worldview. Trying to humble a chromatic dragon is like trying to convince the wind to stop blowing. To these creatures, humanoids are animals, fit to serve as prey or beasts of burden, and wholly unworthy of respect."
-									]
-								},
-								{
-									"name": "Dangerous Lairs",
-									"type": "entries",
-									"entries": [
-										"A dragon's lair serves as the seat of its power and a vault for its treasure. With its innate toughness and tolerance for severe environmental effects, a dragon selects or builds a lair not for shelter but for defense, favoring multiple entrances and exits, and security for its hoard.",
-										"Most chromatic dragon lairs are hidden in dangerous and remote locations to prevent all but the most audacious mortals from reaching them. A black dragon might lair in the heart of a vast swamp, while a red dragon might claim the caldera of an active volcano. In addition to the natural defenses of their lairs, powerful chromatic dragons use magical guardians, traps, and subservient creatures to protect their treasures."
-									]
-								},
-								{
-									"name": "Queen of Evil Dragons",
-									"type": "entries",
-									"entries": [
-										"Tiamat the Dragon Queen is the chief deity of evil dragonkind. She dwells on Avernus, the first layer of the Nine Hells. As a lesser god, Tiamat has the power to grant spells to her worshipers, though she is loath to share her power. She epitomizes the avarice of evil dragons, believing that the multiverse and all its treasures will one day be hers and hers alone.",
-										"Tiamat is a gigantic dragon whose five heads reflect the forms of the chromatic dragons that worship her-black, blue, green, red, and white. She is a terror on the battlefield, capable of annihilating whole armies with her five breath weapons, her formidable spellcasting, and her fearsome claws.",
-										"Tiamat's most hated enemy is Bahamut the Platinum Dragon, with whom she shares control of the faith of dragonkind. She also holds a special enmity for Asmodeus, who long ago stripped her of the rule of Avernus and who continues to curb the Dragon Queen's power."
+										{
+											"name": "Driven by Greed",
+											"entries": [
+												"Chromatic dragons lust after treasure, and this greed colors their every scheme and plot. They believe that the world's wealth belongs to them by right, and a chromatic dragon seizes that wealth without regard for the humanoids and other creatures that have \"stolen\" it. With its piles of coins, gleaming gems, and magic items, a dragon's hoard is the stuff of legend. However, chromatic dragons have no interest in commerce, amassing wealth for no other reason than to have it."
+											],
+											"type": "entries"
+										},
+										{
+											"name": "Creatures of Ego",
+											"type": "entries",
+											"entries": [
+												"Chromatic dragons are united by their sense of superiority, believing themselves the most powerful and worthy of all mortal creatures. When they interact with other creatures, it is only to further their own interests. They believe in their innate right to rule, and this belief is the cornerstone of every chromatic dragon's personality and worldview. Trying to humble a chromatic dragon is like trying to convince the wind to stop blowing. To these creatures, humanoids are animals, fit to serve as prey or beasts of burden, and wholly unworthy of respect."
+											]
+										},
+										{
+											"name": "Dangerous Lairs",
+											"type": "entries",
+											"entries": [
+												"A dragon's lair serves as the seat of its power and a vault for its treasure. With its innate toughness and tolerance for severe environmental effects, a dragon selects or builds a lair not for shelter but for defense, favoring multiple entrances and exits, and security for its hoard.",
+												"Most chromatic dragon lairs are hidden in dangerous and remote locations to prevent all but the most audacious mortals from reaching them. A black dragon might lair in the heart of a vast swamp, while a red dragon might claim the caldera of an active volcano. In addition to the natural defenses of their lairs, powerful chromatic dragons use magical guardians, traps, and subservient creatures to protect their treasures."
+											]
+										},
+										{
+											"name": "Queen of Evil Dragons",
+											"type": "entries",
+											"entries": [
+												"Tiamat the Dragon Queen is the chief deity of evil dragonkind. She dwells on Avernus, the first layer of the Nine Hells. As a lesser god, Tiamat has the power to grant spells to her worshipers, though she is loath to share her power. She epitomizes the avarice of evil dragons, believing that the multiverse and all its treasures will one day be hers and hers alone.",
+												"Tiamat is a gigantic dragon whose five heads reflect the forms of the chromatic dragons that worship her-black, blue, green, red, and white. She is a terror on the battlefield, capable of annihilating whole armies with her five breath weapons, her formidable spellcasting, and her fearsome claws.",
+												"Tiamat's most hated enemy is Bahamut the Platinum Dragon, with whom she shares control of the faith of dragonkind. She also holds a special enmity for Asmodeus, who long ago stripped her of the rule of Avernus and who continues to curb the Dragon Queen's power."
+											]
+										}
 									]
 								}
 							]
@@ -2682,41 +2769,48 @@
 				"_mod": {
 					"entries": {
 						"mode": "prependArr",
-						"items": {
-							"type": "entries",
-							"entries": [
-								{
-									"type": "entries",
-									"entries": [
-										"Copper dragons are incorrigible pranksters, joke tellers, and riddlers that live in hills and rocky uplands. Despite their gregarious and even-tempered natures, they possess a covetous, miserly streak, and can become dangerous when their hoards are threatened.",
-										"A copper dragon has brow plates jutting over its eyes, extending back to long horns that grow as a series of overlapping segments. Its backswept cheek ridges and jaw frills give it a pensive look. At birth, a copper dragon's scales are a ruddy brown with a metallic tint. As the dragon ages, its scales become more coppery in color, later taking on a green tint as it ages. A copper dragon's pupils fade with age, and the eyes of the oldest copper dragons resemble glowing turquoise orbs.",
-										{
-											"name": "Good Hosts",
-											"type": "entries",
-											"entries": [
-												"A copper dragon appreciates wit, a good joke, humorous story, or riddle. A copper dragon becomes annoyed with any creature that doesn't laugh at its jokes or accept its tricks with good humor.",
-												"Copper dragons are particularly fond of bards. A dragon might carve out part of its lair as a temporary abode for a bard willing to regale it with stories, riddles, and music. To a copper dragon, such companionship is a treasure to be coveted."
-											]
-										},
-										{
-											"name": "Cautious and Crafty",
-											"type": "entries",
-											"entries": [
-												"When building its hoard, a copper dragon prefers treasures from the earth. Metals and precious stones are favorites of these creatures.",
-												"A copper dragon is wary when it comes to showing off its possessions. If it knows that other creatures seek a specific item in its hoard, a copper dragon will not admit to possessing the item. Instead, it might send curious treasure hunters on a wild goose chase to search for the object while it watches from afar for its own pleasure."
-											]
-										},
-										{
-											"type": "entries",
-											"name": "A Copper Dragon's Lair",
-											"entries": [
-												"Copper dragons dwell in dry uplands and on hilltops, where they make their lairs in narrow caves. False walls in the lair hide secret antechambers where the dragon stores valuable ores, art objects, and other oddities it has collected over its lifetime. Worthless items are put on display in open caves to tantalize treasure seekers and distract them from where the real treasure is hidden."
-											]
-										}
-									]
-								}
-							]
-						}
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"Copper dragons are incorrigible pranksters, joke tellers, and riddlers that live in hills and rocky uplands. Despite their gregarious and even-tempered natures, they possess a covetous, miserly streak, and can become dangerous when their hoards are threatened.",
+											"A copper dragon has brow plates jutting over its eyes, extending back to long horns that grow as a series of overlapping segments. Its backswept cheek ridges and jaw frills give it a pensive look. At birth, a copper dragon's scales are a ruddy brown with a metallic tint. As the dragon ages, its scales become more coppery in color, later taking on a green tint as it ages. A copper dragon's pupils fade with age, and the eyes of the oldest copper dragons resemble glowing turquoise orbs.",
+											{
+												"type": "entries",
+												"entries": [
+													{
+														"name": "Good Hosts",
+														"type": "entries",
+														"entries": [
+															"A copper dragon appreciates wit, a good joke, humorous story, or riddle. A copper dragon becomes annoyed with any creature that doesn't laugh at its jokes or accept its tricks with good humor.",
+															"Copper dragons are particularly fond of bards. A dragon might carve out part of its lair as a temporary abode for a bard willing to regale it with stories, riddles, and music. To a copper dragon, such companionship is a treasure to be coveted."
+														]
+													},
+													{
+														"name": "Cautious and Crafty",
+														"type": "entries",
+														"entries": [
+															"When building its hoard, a copper dragon prefers treasures from the earth. Metals and precious stones are favorites of these creatures.",
+															"A copper dragon is wary when it comes to showing off its possessions. If it knows that other creatures seek a specific item in its hoard, a copper dragon will not admit to possessing the item. Instead, it might send curious treasure hunters on a wild goose chase to search for the object while it watches from afar for its own pleasure."
+														]
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"type": "entries",
+								"name": "A Copper Dragon's Lair",
+								"entries": [
+									"Copper dragons dwell in dry uplands and on hilltops, where they make their lairs in narrow caves. False walls in the lair hide secret antechambers where the dragon stores valuable ores, art objects, and other oddities it has collected over its lifetime. Worthless items are put on display in open caves to tantalize treasure seekers and distract them from where the real treasure is hidden."
+								]
+							}
+						]
 					},
 					"images": {
 						"mode": "prependArr",
@@ -2835,6 +2929,18 @@
 									"entries": [
 										"A crawling claw doesn't require air, food, drink, or sleep."
 									]
+								}
+							]
+						},
+						{
+							"type": "insetReadaloud",
+							"entries": [
+								{
+									"type": "quote",
+									"entries": [
+										"Makes you wonder what can be done with all those other murderer parts, doesn't it?"
+									],
+									"by": "Evangeliza Lavain, necromancer"
 								}
 							]
 						}
@@ -3020,6 +3126,18 @@
 								"A darkmantle clings to cavern ceilings, remaining perfectly still as it waits for creatures to pass beneath it. From a distance, it can pass itself off as a stalactite or a lump of stone. Then it drops from the ceiling and unfurls, surrounding itself with magical darkness as it engulfs and crushes its prey.",
 								"Darkmantles are found throughout the Underdark, but they are equally common on the Shadowfell. Thriving in that dark realm, they fill an ecological niche similar to bats on the Material Plane. Intelligent creatures of the Shadowfell sometimes train darkmantles as guardians or companions."
 							]
+						},
+						{
+							"type": "insetReadaloud",
+							"entries": [
+								{
+									"type": "quote",
+									"entries": [
+										"Remind me again why we're on this quest?"
+									],
+									"by": "Ethelrede the fighter, after his first darkmantle encounter"
+								}
+							]
 						}
 					]
 				}
@@ -3181,17 +3299,29 @@
 									"entries": [
 										"A death tyrant doesn't require air, food, drink, or sleep."
 									]
-								},
-								{
-									"type": "entries",
-									"name": "A Death Tyrant's Lair",
-									"entries": [
-										"A death tyrant's lair is usually the same site it held as a beholder, but it contains more trappings of death and decay. A death tyrant encountered in its lair has a challenge rating of 15 (13,000 XP).",
-										"The death tyrant can't repeat an effect until all three have been used, and it can't use the same effect on consecutive rounds."
-									]
 								}
 							]
 						}
+					]
+				},
+				{
+					"type": "insetReadaloud",
+					"entries": [
+						{
+							"type": "quote",
+							"entries": [
+								"A cluster of tiny lights descended from a dark crevice in the ceiling. These motes cast an eerie glow on the great, alien skull that hung beneath them."
+							],
+							"by": "From the Journal of Jastus Hollowquill, explorer of Undermountain"
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "A Death Tyrant's Lair",
+					"entries": [
+						"A death tyrant's lair is usually the same site it held as a beholder, but it contains more trappings of death and decay. A death tyrant encountered in its lair has a challenge rating of 15 (13,000 XP).",
+						"The death tyrant can't repeat an effect until all three have been used, and it can't use the same effect on consecutive rounds."
 					]
 				}
 			],
@@ -3303,6 +3433,18 @@
 											"type": "entries"
 										}
 									]
+								}
+							]
+						},
+						{
+							"type": "insetReadaloud",
+							"entries": [
+								{
+									"type": "quote",
+									"entries": [
+										"I, Achererak the Eternal, beckon you to you rdoom. Come, foolish ones, plunger my treasures, if you dare! Others have tried. All have failed! From your skin, tapestries shall be woven, and your bones will carpet my tomb. Only I am beyond Death's reach. Only I know the secret to true immortality!"
+									],
+									"by": "Epitaph of a demilich"
 								}
 							]
 						}
@@ -3674,6 +3816,18 @@
 										},
 										"A summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
 									]
+								}
+							]
+						},
+						{
+							"type": "insetReadaloud",
+							"entries": [
+								{
+									"type": "quote",
+									"entries": [
+										"Demons are painfully difficult to summon and control. It is not a burden for the weak of heart or the weak of spirit."
+									],
+									"by": "From the {@style Demonomicon of Iggwilv|small-caps}"
 								}
 							]
 						}
@@ -4300,44 +4454,50 @@
 			"name": "Dragons",
 			"source": "MM",
 			"entries": [
-				"True dragons are winged reptiles of ancient lineage and fearsome power. They are known and feared for their predatory cunning and greed, with the oldest dragons accounted as some of the most powerful creatures in the world. Dragons are also magical creatures whose innate power fuels their dreaded breath weapons and other preternatural abilities.",
-				"Many creatures, including wyverns and dragon turtles, have draconic blood. However, true dragons fall into the two broad categories of chromatic and metallic dragons. The black, blue, green, red, and white dragons are selfish, evil, and feared by all. The brass, bronze, copper, gold, and silver dragons are noble, good, and highly respected by the wise.",
-				"Though their goals and ideals vary tremendously, all true dragons covet wealth, hoarding mounds of coins and gathering gems, jewels, and magic items. Dragons with large hoards are loath to leave them for long, venturing out of their lairs only to patrol or feed.",
-				"True dragons pass through four distinct stages of life, from lowly wyrmlings to ancient dragons, which can live for over a thousand years. In that time, their might can become unrivaled and their hoards can grow beyond price.",
-				"Dragon Age Categories",
 				{
-					"type": "table",
-					"colLabels": [
-						"Category",
-						"Size",
-						"Age Range"
-					],
-					"colStyles": [
-						"col-4",
-						"col-4",
-						"col-4"
-					],
-					"rows": [
-						[
-							"Wyrmling",
-							"Medium",
-							"5 years or less"
-						],
-						[
-							"Young",
-							"Large",
-							"6\u2013100 years"
-						],
-						[
-							"Adult",
-							"Huge",
-							"101\u2013800 years"
-						],
-						[
-							"Ancient",
-							"Gargantuan",
-							"801 years or more"
-						]
+					"type": "section",
+					"name": "Dragons",
+					"entries": [
+						"True dragons are winged reptiles of ancient lineage and fearsome power. They are known and feared for their predatory cunning and greed, with the oldest dragons accounted as some of the most powerful creatures in the world. Dragons are also magical creatures whose innate power fuels their dreaded breath weapons and other preternatural abilities.",
+						"Many creatures, including wyverns and dragon turtles, have draconic blood. However, true dragons fall into the two broad categories of chromatic and metallic dragons. The black, blue, green, red, and white dragons are selfish, evil, and feared by all. The brass, bronze, copper, gold, and silver dragons are noble, good, and highly respected by the wise.",
+						"Though their goals and ideals vary tremendously, all true dragons covet wealth, hoarding mounds of coins and gathering gems, jewels, and magic items. Dragons with large hoards are loath to leave them for long, venturing out of their lairs only to patrol or feed.",
+						"True dragons pass through four distinct stages of life, from lowly wyrmlings to ancient dragons, which can live for over a thousand years. In that time, their might can become unrivaled and their hoards can grow beyond price.",
+						{
+							"type": "table",
+							"caption": "Dragon Age Categories",
+							"colLabels": [
+								"Category",
+								"Size",
+								"Age Range"
+							],
+							"colStyles": [
+								"col-4",
+								"col-4",
+								"col-4"
+							],
+							"rows": [
+								[
+									"Wyrmling",
+									"Medium",
+									"5 years or less"
+								],
+								[
+									"Young",
+									"Large",
+									"6\u2013100 years"
+								],
+								[
+									"Adult",
+									"Huge",
+									"101\u2013800 years"
+								],
+								[
+									"Ancient",
+									"Gargantuan",
+									"801 years or more"
+								]
+							]
+						}
 					]
 				}
 			]
@@ -4394,6 +4554,18 @@
 										"Drow transformed into driders return to the Material Plane as twisted and debased creatures. Driven by madness, they disappear into the Underdark to become hermits and hunters, either wandering alone or leading packs of giant spiders.",
 										"On rare occasion, a drider returns to the fringes of drow society despite its curse, most often to fulfill some longstanding vow or vendetta from its former life. Drow fear and shun the driders, holding them in lower esteem than slaves. However, they tolerate the presence of these creatures as living representatives of Lolth's will, and a reminder of the fate that awaits all who fail the Spider Queen."
 									]
+								}
+							]
+						},
+						{
+							"type": "insetReadaloud",
+							"entries": [
+								{
+									"type": "quote",
+									"entries": [
+										"I failed the Spider Queen once. Never again."
+									],
+									"by": "Pellanistra the drider"
 								}
 							]
 						}
@@ -4507,6 +4679,18 @@
 													]
 												}
 											]
+										}
+									]
+								},
+								{
+									"type": "insetReadaloud",
+									"entries": [
+										{
+											"type": "quote",
+											"entries": [
+												"Such depravity. Such terrifying cruelty. They are the vile poison that plagues all elvenkind."
+											],
+											"by": "Nelar Autumnwell, elf cleric of Corellon Larethian"
 										}
 									]
 								}
@@ -4885,39 +5069,45 @@
 			"name": "Elementals",
 			"source": "MM",
 			"entries": [
-				"Elementals are incarnations of the elements that make up the universe: air, earth, fire, and water. Though little more than animated energy on their own planes of existence, they can be called on by spellcasters and powerful beings to take shape and perform tasks.",
 				{
-					"type": "entries",
+					"type": "section",
+					"name": "Elementals",
 					"entries": [
+						"Elementals are incarnations of the elements that make up the universe: air, earth, fire, and water. Though little more than animated energy on their own planes of existence, they can be called on by spellcasters and powerful beings to take shape and perform tasks.",
 						{
 							"type": "entries",
 							"entries": [
 								{
 									"type": "entries",
-									"name": "Living Elements",
 									"entries": [
-										"On its home plane, an elemental is a bodiless life force. Its dim consciousness manifests as a physical shape only when focused by the power of magic. A wild spirit of elemental force has no desire except to course through the element of its native plane. Like beasts of the Material Plane, these elemental spirits have no society or culture, and little sense of being."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Conjured by Magic",
-									"entries": [
-										"Certain spells and magic items can conjure an elemental, summoning it from the Inner Planes to the Material Plane. Elementals instinctively resent being pulled from their native planes and bound into service. A creature that summons an elemental must assert force of will to control it."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Bound and Shaped",
-									"entries": [
-										"Powerful magic can bind an elemental spirit into a material template that defines a specific use and function. Invisible stalkers are air elementals bound to a specific form, in the same way that water elementals can be shaped into water weirds."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Elemental Nature",
-									"entries": [
-										"An elemental doesn't require air, food, drink, or sleep."
+										{
+											"type": "entries",
+											"name": "Living Elements",
+											"entries": [
+												"On its home plane, an elemental is a bodiless life force. Its dim consciousness manifests as a physical shape only when focused by the power of magic. A wild spirit of elemental force has no desire except to course through the element of its native plane. Like beasts of the Material Plane, these elemental spirits have no society or culture, and little sense of being."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Conjured by Magic",
+											"entries": [
+												"Certain spells and magic items can conjure an elemental, summoning it from the Inner Planes to the Material Plane. Elementals instinctively resent being pulled from their native planes and bound into service. A creature that summons an elemental must assert force of will to control it."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Bound and Shaped",
+											"entries": [
+												"Powerful magic can bind an elemental spirit into a material template that defines a specific use and function. Invisible stalkers are air elementals bound to a specific form, in the same way that water elementals can be shaped into water weirds."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Elemental Nature",
+											"entries": [
+												"An elemental doesn't require air, food, drink, or sleep."
+											]
+										}
 									]
 								}
 							]
@@ -4990,6 +5180,18 @@
 									"entries": [
 										"The most beautiful and striking of all lesser and greater devils, the erinyes are fierce and disciplined warriors. Sweeping down from the skies, they bring swift death to creatures that have wronged their masters or defied the edicts of Asmodeus. The erinyes appear as male or female humanoids with statuesque builds and large feathery wings. Most wear stylized armor and horned helms, and carry exquisite swords and bows. A few also use ropes of entanglement to ensnare powerful foes.",
 										"Legends tell that the first erinyes were angels that fell from the Upper Planes because of temptation or misdeed. Erinyes are always willing to take advantage of being mistaken for celestials in their missions of conquest and corruption.",
+										{
+											"type": "insetReadaloud",
+											"entries": [
+												{
+													"type": "quote",
+													"entries": [
+														"They live by the sword and kill by the sword. Their beauty is nothing compared to their wrath."
+													],
+													"by": "From {@style The Book of Vile Darkness|small-caps}"
+												}
+											]
+										},
 										{
 											"type": "inset",
 											"name": "Variant: Rope of Entanglement",
@@ -5561,35 +5763,62 @@
 			]
 		},
 		{
-			"name": "Flying Sword",
+			"name": "Animated Objects",
 			"source": "MM",
 			"entries": [
 				{
-					"type": "entries",
+					"type": "section",
+					"name": "Animated Objects",
 					"entries": [
+						"Animated objects are crafted with potent magic to follow the commands of their creators. When not commanded, they follow the last order they received to the best of their ability, and can act independently to fulfill simple instructions. Some animated objects (including many of those created in the Feywild) might converse fluently or adopt a persona, but most are simple automatons.",
 						{
 							"type": "entries",
 							"entries": [
-								"Animated objects are crafted with potent magic to follow the commands of their creators. When not commanded, they follow the last order they received to the best of their ability, and can act independently to fulfill simple instructions. Some animated objects (including many of those created in the Feywild) might converse fluently or adopt a persona, but most are simple automatons.",
-								{
-									"name": "Constructed Nature",
-									"type": "entries",
-									"entries": [
-										"An animated object doesn't require air, food, drink, or sleep. The magic that animates an object is dispelled when the construct drops to 0 hit points. An animated object reduced to 0 hit points becomes inanimate and is too damaged to be of much use or value to anyone."
-									]
-								},
 								{
 									"type": "entries",
-									"name": "Flying Sword",
 									"entries": [
-										"A flying sword dances through the air, fighting with the confidence of a warrior that can't be injured. Swords are the most common weapons animated with magic. Axes, clubs, daggers, maces, spears, and even self-loading crossbows are also known to exist in animated object form."
+										{
+											"name": "Constructed Nature",
+											"type": "entries",
+											"entries": [
+												"An animated object doesn't require air, food, drink, or sleep. The magic that animates an object is dispelled when the construct drops to 0 hit points. An animated object reduced to 0 hit points becomes inanimate and is too damaged to be of much use or value to anyone."
+											]
+										}
 									]
 								}
 							]
 						}
 					]
 				}
-			],
+			]
+		},
+		{
+			"name": "Flying Sword",
+			"source": "MM",
+			"_copy": {
+				"name": "Animated Objects",
+				"source": "MM",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							"A flying sword dances through the air, fighting with the confidence of a warrior that can't be injured. Swords are the most common weapons animated with magic. Axes, clubs, daggers, maces, spears, and even self-loading crossbows are also known to exist in animated object form.",
+							{
+								"type": "insetReadaloud",
+								"entries": [
+									{
+										"type": "quote",
+										"entries": [
+											"Lyin' next to the chest were the bones of {@style Cap'n Scornblade|small-caps} himself, still clutchin' his rusty sword. Imagine my surprise when the blade flew from his bony grasp! Still go the scar."
+										],
+										"by": "Levity Quickstitch, halfling rogue"
+									}
+								]
+							}
+						]
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
@@ -6980,47 +7209,49 @@
 				"_mod": {
 					"entries": {
 						"mode": "prependArr",
-						"items": {
-							"type": "entries",
-							"entries": [
-								{
-									"type": "entries",
-									"entries": [
-										"The most powerful and majestic of the metallic dragons, gold dragons are dedicated foes of evil.",
-										"A gold dragon has a sagacious face anointed with flexible spines that resemble whiskers. Its horns sweep back from its nose and brow, echoing twin frills that adorn its long neck. A gold dragon's sail-like wings start at its shoulders and trace down to the tip of its tail, letting it fly with a distinctive rippling motion as if swimming through the air. A gold dragon wyrmling has scales of dark yellow with metallic flecks. Those flecks grow larger as the dragon matures. As a gold dragon ages, its pupils fade until its eyes resemble pools of molten gold.",
-										{
-											"name": "Devourer of Wealth",
-											"type": "entries",
-											"entries": [
-												"Gold dragons can eat just about anything, but their preferred diet consists of pearls and gems. Thankfully, a gold dragon doesn't need to gorge itself on such wealth to feel satisfied. Gifts of treasure that it can consume are well received by a gold dragon, as long as they aren't bribes."
-											]
-										},
-										{
-											"name": "Reserved Shapeshifters",
-											"type": "entries",
-											"entries": [
-												"Gold dragons are respected by the other metallic dragons for their wisdom and fairness, but they are the most aloof and grim of the good-aligned dragons. They value their privacy to the extent that they rarely fraternize with other dragons except their own mates and offspring.",
-												"Older gold dragons can assume animal and humanoid forms. Rarely does a gold dragon in disguise reveal its true form. In the guise of a peddler, it might regularly visit a town to catch up on local gossip, patronize honest businesses, and lend a helping hand in unseen ways. In the guise of an animal, the dragon might befriend a lost child, a wandering minstrel, or an innkeeper, serving as a companion for days or weeks on end."
-											]
-										},
-										{
-											"name": "Master Hoarders",
-											"type": "entries",
-											"entries": [
-												"A gold dragon keeps its hoard in a well-guarded vault deep within its lair. Magical wards placed on the vault make it all but impossible to remove any treasures without the dragon knowing about it."
-											]
-										},
-										{
-											"type": "entries",
-											"name": "A Gold Dragon's Lair",
-											"entries": [
-												"Gold dragons make their homes in out-of-the-way places, where they can do as they please without arousing suspicion or fear. Most dwell near idyllic lakes and rivers, mist-shrouded islands, cave complexes hidden behind sparkling waterfalls, or ancient ruins."
-											]
-										}
-									]
-								}
-							]
-						}
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"The most powerful and majestic of the metallic dragons, gold dragons are dedicated foes of evil.",
+											"A gold dragon has a sagacious face anointed with flexible spines that resemble whiskers. Its horns sweep back from its nose and brow, echoing twin frills that adorn its long neck. A gold dragon's sail-like wings start at its shoulders and trace down to the tip of its tail, letting it fly with a distinctive rippling motion as if swimming through the air. A gold dragon wyrmling has scales of dark yellow with metallic flecks. Those flecks grow larger as the dragon matures. As a gold dragon ages, its pupils fade until its eyes resemble pools of molten gold.",
+											{
+												"name": "Devourer of Wealth",
+												"type": "entries",
+												"entries": [
+													"Gold dragons can eat just about anything, but their preferred diet consists of pearls and gems. Thankfully, a gold dragon doesn't need to gorge itself on such wealth to feel satisfied. Gifts of treasure that it can consume are well received by a gold dragon, as long as they aren't bribes."
+												]
+											},
+											{
+												"name": "Reserved Shapeshifters",
+												"type": "entries",
+												"entries": [
+													"Gold dragons are respected by the other metallic dragons for their wisdom and fairness, but they are the most aloof and grim of the good-aligned dragons. They value their privacy to the extent that they rarely fraternize with other dragons except their own mates and offspring.",
+													"Older gold dragons can assume animal and humanoid forms. Rarely does a gold dragon in disguise reveal its true form. In the guise of a peddler, it might regularly visit a town to catch up on local gossip, patronize honest businesses, and lend a helping hand in unseen ways. In the guise of an animal, the dragon might befriend a lost child, a wandering minstrel, or an innkeeper, serving as a companion for days or weeks on end."
+												]
+											},
+											{
+												"name": "Master Hoarders",
+												"type": "entries",
+												"entries": [
+													"A gold dragon keeps its hoard in a well-guarded vault deep within its lair. Magical wards placed on the vault make it all but impossible to remove any treasures without the dragon knowing about it."
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"type": "entries",
+								"name": "A Gold Dragon's Lair",
+								"entries": [
+									"Gold dragons make their homes in out-of-the-way places, where they can do as they please without arousing suspicion or fear. Most dwell near idyllic lakes and rivers, mist-shrouded islands, cave complexes hidden behind sparkling waterfalls, or ancient ruins."
+								]
+							}
+						]
 					},
 					"images": {
 						"mode": "prependArr",
@@ -7185,61 +7416,75 @@
 				"_mod": {
 					"entries": {
 						"mode": "prependArr",
-						"items": {
-							"type": "entries",
-							"entries": [
-								{
-									"type": "entries",
-									"entries": [
-										"The most cunning and treacherous of true dragons, green dragons use misdirection and trickery to get the upper hand against their enemies. Nasty tempered and thoroughly evil, they take special pleasure in subverting and corrupting the good-hearted. In the ancient forests they roam, green dragons demonstrate an aggression that is often less about territory than it is about gaining power and wealth with as little effort as possible.",
-										"A green dragon is recognized by its curved jawline and the crest that begins near its eyes and continues down its spine, reaching full height just behind the skull. A green dragon has no external ears, but bears leathery spiked plates that run down the sides of its neck.",
-										"A wyrmling green dragon's thin scales are a shade of green so dark as to appear nearly black. As a green dragon ages, its scales grow larger and lighter, turning shades of forest, emerald, and olive green to help it blend in with its wooded surroundings. Its wings have a dappled pattern, darker near the leading edges and lighter toward the trailing edges.",
-										"A green dragon's legs are longer in relation to its body than with any other dragon, enabling it to easily pass over underbrush and forest debris when it walks. With its equally long neck, an older green dragon can peer over the tops of trees without rearing up.",
-										{
-											"name": "Capricious Hunters",
-											"type": "entries",
-											"entries": [
-												"A green dragon hunts by patrolling its forest territory from the air and the ground. It eats any creature it can see, and will consume shrubs and small trees when hungry enough, but its favorite prey is elves.",
-												"Green dragons are consummate liars and masters of double talk. They favor intimidation of lesser creatures, but employ more subtle manipulations when dealing with other dragons. A green dragon attacks animals and monsters with no provocation, especially when dealing with potential threats to its territory. When dealing with sentient creatures, a green dragon demonstrates a lust for power that rivals its draconic desire for treasure, and it is always on the lookout for creatures that can help it further its ambitions.",
-												"A green dragon stalks its victims as it plans its assault, sometimes shadowing creatures for days. If a target is weak, the dragon enjoys the terror its appearance evokes before it attacks. It never slays all its foes, preferring to use intimidation to establish control over survivors. It then learns what it can about other creatures' activities near its territory, and about any treasure to be found nearby. Green dragons occasionally release prisoners if they can be ransomed. Otherwise, a creature must prove its value to the dragon daily or die."
-											]
-										},
-										{
-											"name": "Manipulative Schemers",
-											"type": "entries",
-											"entries": [
-												"A wily and subtle creature, a green dragon bends other creatures to its will by assessing and playing off their deepest desires. Any creature foolish enough to attempt to subdue a green dragon eventually realizes that the creature is only pretending to serve while it assesses its would-be master.",
-												"When manipulating other creatures, green dragons are honey-tongued, smooth, and sophisticated. Among their own kind, they are loud, crass, and rude, especially when dealing with dragons of the same age and status."
-											]
-										},
-										{
-											"name": "Conflict and Corruption",
-											"type": "entries",
-											"entries": [
-												"Green dragons sometimes clash with other dragons over territory where forest crosses over into other terrain. A green dragon typically pretends to back down, only to wait and watch-sometimes for decades-for the chance to slay the other dragon, then claim its lair and hoard.",
-												"Green dragons accept the servitude of sentient creatures such as goblinoids, ettercaps, ettins, kobolds, orcs, and yuan-ti. They also delight in corrupting and bending elves to their will. A green dragon sometimes wracks its minions' minds with fear to the point of insanity, with the fog that spreads throughout its forest reflecting those minions' tortured dreams."
-											]
-										},
-										{
-											"name": "Living Treasures",
-											"type": "entries",
-											"entries": [
-												"A green dragon's favored treasures are the sentient creatures it bends to its will, including significant figures such as popular heroes, well-known sages, and renowned bards. Among material treasures, a green dragon favors emeralds, wood carvings, musical instruments, and sculptures of humanoid subjects."
-											]
-										},
-										{
-											"type": "entries",
-											"name": "A Green Dragon's Lair",
-											"entries": [
-												"The forest-loving green dragons sometimes compete for territory with black dragons in marshy woods and with white dragons in subarctic taiga. However, a forest controlled by a green dragon is easy to spot. A perpetual fog hangs in the air in a legendary green dragon's wood, carrying an acrid whiff of the creature's poison breath.",
-												"The moss-covered trees grow close together except where winding pathways trace their way like a maze into the heart of the forest. The light that reaches the forest floor carries an emerald green cast, and every sound seems muffled.",
-												"At the center of its forest, a green dragon chooses a cave in a sheer cliff or hillside for its lair, preferring an entrance hidden from prying eyes. Some seek out cave mouths concealed behind waterfalls, or partly submerged caverns that can be accessed through lakes or streams. Others conceal the entrances to their lairs with vegetation."
-											]
-										}
-									]
-								}
-							]
-						}
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"The most cunning and treacherous of true dragons, green dragons use misdirection and trickery to get the upper hand against their enemies. Nasty tempered and thoroughly evil, they take special pleasure in subverting and corrupting the good-hearted. In the ancient forests they roam, green dragons demonstrate an aggression that is often less about territory than it is about gaining power and wealth with as little effort as possible.",
+											"A green dragon is recognized by its curved jawline and the crest that begins near its eyes and continues down its spine, reaching full height just behind the skull. A green dragon has no external ears, but bears leathery spiked plates that run down the sides of its neck.",
+											"A wyrmling green dragon's thin scales are a shade of green so dark as to appear nearly black. As a green dragon ages, its scales grow larger and lighter, turning shades of forest, emerald, and olive green to help it blend in with its wooded surroundings. Its wings have a dappled pattern, darker near the leading edges and lighter toward the trailing edges.",
+											"A green dragon's legs are longer in relation to its body than with any other dragon, enabling it to easily pass over underbrush and forest debris when it walks. With its equally long neck, an older green dragon can peer over the tops of trees without rearing up.",
+											{
+												"name": "Capricious Hunters",
+												"type": "entries",
+												"entries": [
+													"A green dragon hunts by patrolling its forest territory from the air and the ground. It eats any creature it can see, and will consume shrubs and small trees when hungry enough, but its favorite prey is elves.",
+													"Green dragons are consummate liars and masters of double talk. They favor intimidation of lesser creatures, but employ more subtle manipulations when dealing with other dragons. A green dragon attacks animals and monsters with no provocation, especially when dealing with potential threats to its territory. When dealing with sentient creatures, a green dragon demonstrates a lust for power that rivals its draconic desire for treasure, and it is always on the lookout for creatures that can help it further its ambitions.",
+													"A green dragon stalks its victims as it plans its assault, sometimes shadowing creatures for days. If a target is weak, the dragon enjoys the terror its appearance evokes before it attacks. It never slays all its foes, preferring to use intimidation to establish control over survivors. It then learns what it can about other creatures' activities near its territory, and about any treasure to be found nearby. Green dragons occasionally release prisoners if they can be ransomed. Otherwise, a creature must prove its value to the dragon daily or die."
+												]
+											},
+											{
+												"name": "Manipulative Schemers",
+												"type": "entries",
+												"entries": [
+													"A wily and subtle creature, a green dragon bends other creatures to its will by assessing and playing off their deepest desires. Any creature foolish enough to attempt to subdue a green dragon eventually realizes that the creature is only pretending to serve while it assesses its would-be master.",
+													"When manipulating other creatures, green dragons are honey-tongued, smooth, and sophisticated. Among their own kind, they are loud, crass, and rude, especially when dealing with dragons of the same age and status."
+												]
+											},
+											{
+												"name": "Conflict and Corruption",
+												"type": "entries",
+												"entries": [
+													"Green dragons sometimes clash with other dragons over territory where forest crosses over into other terrain. A green dragon typically pretends to back down, only to wait and watch-sometimes for decades-for the chance to slay the other dragon, then claim its lair and hoard.",
+													"Green dragons accept the servitude of sentient creatures such as goblinoids, ettercaps, ettins, kobolds, orcs, and yuan-ti. They also delight in corrupting and bending elves to their will. A green dragon sometimes wracks its minions' minds with fear to the point of insanity, with the fog that spreads throughout its forest reflecting those minions' tortured dreams."
+												]
+											},
+											{
+												"name": "Living Treasures",
+												"type": "entries",
+												"entries": [
+													"A green dragon's favored treasures are the sentient creatures it bends to its will, including significant figures such as popular heroes, well-known sages, and renowned bards. Among material treasures, a green dragon favors emeralds, wood carvings, musical instruments, and sculptures of humanoid subjects."
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"type": "insetReadaloud",
+								"entries": [
+									{
+										"type": "quote",
+										"entries": [
+											"I see an ancient elf king, his majesty long since faded, slumped and half asleep in his throne. A green dragon whispers in the king's ear, corrupting and twisting the king's dreams. This dragon's name is Cyan Bloodbane, and he means the destruction of us all."
+										],
+										"by": "Pelios of Ergoth, Silvanesti seer"
+									}
+								]
+							},
+							{
+								"type": "entries",
+								"name": "A Green Dragon's Lair",
+								"entries": [
+									"The forest-loving green dragons sometimes compete for territory with black dragons in marshy woods and with white dragons in subarctic taiga. However, a forest controlled by a green dragon is easy to spot. A perpetual fog hangs in the air in a legendary green dragon's wood, carrying an acrid whiff of the creature's poison breath.",
+									"The moss-covered trees grow close together except where winding pathways trace their way like a maze into the heart of the forest. The light that reaches the forest floor carries an emerald green cast, and every sound seems muffled.",
+									"At the center of its forest, a green dragon chooses a cave in a sheer cliff or hillside for its lair, preferring an entrance hidden from prying eyes. Some seek out cave mouths concealed behind waterfalls, or partly submerged caverns that can be accessed through lakes or streams. Others conceal the entrances to their lairs with vegetation."
+								]
+							}
+						]
 					},
 					"images": {
 						"mode": "prependArr",
@@ -9626,6 +9871,18 @@
 										"Souls of evil creatures that descend to the Lower Planes are transformed into manes-the lowest form of demonkind. These wretched fiends attack any non-demon they see, and they are called to the Material Plane by those seeking to sow death and chaos.",
 										"Orcus, the Prince of Undeath, has the power to transform manes into undead monsters, most often ghouls and shadows. Other demon lords feed on manes, destroying them utterly. Otherwise, killing a manes causes it to dissipate into a cloud of reeking vapor that reforms into another manes after one day."
 									]
+								},
+								{
+									"type": "insetReadaloud",
+									"entries": [
+										{
+											"type": "quote",
+											"entries": [
+												"Have no pity for this damnable wretch. Bloody thing could grow up to be a demon lord one day."
+											],
+											"by": "Emirikol the Chaotic"
+										}
+									]
 								}
 							]
 						}
@@ -9783,6 +10040,18 @@
 									"entries": [
 										"Terrible to behold, a marilith has the lower body of a great serpent and the upper torso of a humanoid female with six arms. Wielding a wicked blade in each of its six hands, a marilith is a devastating foe that few can match in battle.",
 										"These demons possess keen minds and a finely honed sense of tactics, and they are able to lead and unite other demons in common cause. Mariliths are often encountered as captains at the head of a demonic horde, where they embrace any opportunity to rush headlong into battle."
+									]
+								},
+								{
+									"type": "insetReadaloud",
+									"entries": [
+										{
+											"type": "quote",
+											"entries": [
+												"The temple was strewn with body parts. We concluded that the cultists had summoned a powerful demon and not lived to regret it. Not wanting to get hacked to pieces ourselves, we cut short our expedition and returned to the village of Hommlet with our tails between our legs. Rufus and Burne had a good laugh at our expense, let me tell you."
+											],
+											"by": "Nelumé, a young half-elf wizard, chronicling her one and only visit to the Temple of Elemental Evil"
+										}
 									]
 								}
 							]
@@ -9992,34 +10261,39 @@
 							"entries": [
 								"Metallic dragons seek to preserve and protect, viewing themselves as one powerful race among the many races that have a place in the world.",
 								{
-									"name": "Noble Curiosity",
 									"type": "entries",
 									"entries": [
-										"Metallic dragons covet treasure as do their evil chromatic kin, but they aren't driven as much by greed in their pursuit of wealth. Rather, metallic dragons are driven to investigate and collect, taking unclaimed relics and storing them in their lairs. A metallic dragon's treasure hoard is filled with items that reflect its persona, tell its history, and preserve its memories. Metallic dragons also seek to protect other creatures from dangerous magic. As such, powerful magic items and even evil artifacts are sometimes secreted away in a metallic dragon's hoard.",
-										"A metallic dragon can be persuaded to part with an item in its hoard for the greater good. However, another creature's need for or right to the item is often unclear from the dragon's point of view. A metallic dragon must be bribed or otherwise convinced to part with the item."
-									]
-								},
-								{
-									"name": "Solitary Shapeshifters",
-									"type": "entries",
-									"entries": [
-										"At some point in their long lives, metallic dragons gain the magical ability to assume the forms of humanoids and beasts. When a dragon learns how to disguise itself, it might immerse itself in other cultures for a time. Some dragons are too shy or paranoid to stray far from their lairs and their treasure hoards, but bolder dragons love to wander city streets in humanoid form, taking in the local culture and cuisine, and amusing themselves by observing how the smaller races live.",
-										"Some metallic dragons prefer to stay as far away from civilization as possible so as to not attract enemies. However, this means that they are often far out of touch with current events."
-									]
-								},
-								{
-									"name": "The Persistence of Memory",
-									"type": "entries",
-									"entries": [
-										"Metallic dragons have long memories, and they form opinions of humanoids based on previous contact with related humanoids. Good dragons can recognize humanoid bloodlines by smell, sniffing out each person they meet and remembering any relatives they have come into contact with over the years. A gold dragon might never suspect duplicity from a cunning villain, assuming that the villain is of the same mind and heart as a good and virtuous grandmother. On the other hand, the dragon might resent a noble paladin whose ancestor stole a silver statue from the dragon's hoard three centuries before."
-									]
-								},
-								{
-									"name": "King of Good Dragons",
-									"type": "entries",
-									"entries": [
-										"The chief deity of the metallic dragons is Bahamut, the Platinum Dragon. He dwells in the Seven Heavens of Mount Celestia, but often wanders the Material Plane in the magical guise of a venerable human male in peasant robes. In this form, he is usually accompanied by seven golden canaries-actually seven ancient gold dragons in polymorphed form.",
-										"Bahamut seldom interferes in the affairs of mortal creatures, though he makes exceptions to help thwart the machinations of Tiamat the Dragon Queen and her evil brood. Good-aligned clerics and paladins sometimes worship Bahamut for his dedication to justice and protection. As a lesser god, he has the power to grant divine spells."
+										{
+											"name": "Noble Curiosity",
+											"type": "entries",
+											"entries": [
+												"Metallic dragons covet treasure as do their evil chromatic kin, but they aren't driven as much by greed in their pursuit of wealth. Rather, metallic dragons are driven to investigate and collect, taking unclaimed relics and storing them in their lairs. A metallic dragon's treasure hoard is filled with items that reflect its persona, tell its history, and preserve its memories. Metallic dragons also seek to protect other creatures from dangerous magic. As such, powerful magic items and even evil artifacts are sometimes secreted away in a metallic dragon's hoard.",
+												"A metallic dragon can be persuaded to part with an item in its hoard for the greater good. However, another creature's need for or right to the item is often unclear from the dragon's point of view. A metallic dragon must be bribed or otherwise convinced to part with the item."
+											]
+										},
+										{
+											"name": "Solitary Shapeshifters",
+											"type": "entries",
+											"entries": [
+												"At some point in their long lives, metallic dragons gain the magical ability to assume the forms of humanoids and beasts. When a dragon learns how to disguise itself, it might immerse itself in other cultures for a time. Some dragons are too shy or paranoid to stray far from their lairs and their treasure hoards, but bolder dragons love to wander city streets in humanoid form, taking in the local culture and cuisine, and amusing themselves by observing how the smaller races live.",
+												"Some metallic dragons prefer to stay as far away from civilization as possible so as to not attract enemies. However, this means that they are often far out of touch with current events."
+											]
+										},
+										{
+											"name": "The Persistence of Memory",
+											"type": "entries",
+											"entries": [
+												"Metallic dragons have long memories, and they form opinions of humanoids based on previous contact with related humanoids. Good dragons can recognize humanoid bloodlines by smell, sniffing out each person they meet and remembering any relatives they have come into contact with over the years. A gold dragon might never suspect duplicity from a cunning villain, assuming that the villain is of the same mind and heart as a good and virtuous grandmother. On the other hand, the dragon might resent a noble paladin whose ancestor stole a silver statue from the dragon's hoard three centuries before."
+											]
+										},
+										{
+											"name": "King of Good Dragons",
+											"type": "entries",
+											"entries": [
+												"The chief deity of the metallic dragons is Bahamut, the Platinum Dragon. He dwells in the Seven Heavens of Mount Celestia, but often wanders the Material Plane in the magical guise of a venerable human male in peasant robes. In this form, he is usually accompanied by seven golden canaries-actually seven ancient gold dragons in polymorphed form.",
+												"Bahamut seldom interferes in the affairs of mortal creatures, though he makes exceptions to help thwart the machinations of Tiamat the Dragon Queen and her evil brood. Good-aligned clerics and paladins sometimes worship Bahamut for his dedication to justice and protection. As a lesser god, he has the power to grant divine spells."
+											]
+										}
 									]
 								}
 							]
@@ -10553,49 +10827,19 @@
 		{
 			"name": "Needle Blight",
 			"source": "MM",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
-							"type": "entries",
-							"entries": [
-								"Awakened plants gifted with the powers of intelligence and mobility, blights plague lands contaminated by darkness. Drinking that darkness from the soil, a blight carries out the will of ancient evil and attempts to spread that evil wherever it can.",
-								{
-									"name": "Roots of the Gulthias Tree",
-									"type": "entries",
-									"entries": [
-										"Legends tell of a vampire named Gulthias who worked terrible magic and raised up an abominable tower called Nightfang Spire. Gulthias was undone when a hero plunged a wooden stake through his heart, but as the vampire was destroyed, his blood infused the stake with a dreadful power. In time, tendrils of new growth sprouted from the wood, growing into a sapling infused with the vampire's evil essence. It is said that a mad druid discovered the sapling, transplanting it to an underground grotto where it could grow. From this Gulthias tree came the seeds from which the first blights were sown."
-									]
-								},
-								{
-									"name": "Dark Conquest",
-									"type": "entries",
-									"entries": [
-										"Wherever a tree or plant is contaminated by a fragment of an evil mind or power, a Gulthias tree can rise to infest and corrupt the surrounding forest. Its evil spreads through root and soil to other plants, which perish or transform into blights. As those blights spread, they poison and uproot healthy plants, replacing them with brambles, toxic weeds, and others of their kind. In time, an infestation of blights can turn any land or forest into a place of corruption.",
-										"In forests infested with blights, trees and plants grow with supernatural speed. Vines and undergrowth rapidly spread through buildings and overrun trails and roads. After blights have killed or driven off their inhabitants, whole villages can disappear in the space of days.",
-										{
-											"name": "Controlled by Evil",
-											"entries": [
-												"Blights are independent creatures, but most act under a Gulthias tree's control, often displaying the habits and traits of the life force or spirit that spawned them. By attacking their progenitor's old foes or seeking out treasures valuable to it, they carry on the legacy of long-lost evil."
-											],
-											"type": "entries"
-										}
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Needle Blight",
-									"entries": [
-										"In the shadows of a forest, needle blights might be taken at a distance for shuffling, hunched humanoids. Up close, these creatures reveal themselves as horrid plants whose conifer-like needles grow across their bodies in quivering clumps. A needle blight lashes out with these needles or launches them as an aerial assault that can punch through armor and flesh.",
-										"When needle blights detect a threat, they loose a pollen that the wind carries to other needle blights throughout the forest. Alerted to their foes' location, needle blights converge from all sides to drench their roots in blood."
-									]
-								}
-							]
-						}
-					]
+			"_copy": {
+				"name": "Blights",
+				"source": "MM",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							"In the shadows of a forest, needle blights might be taken at a distance for shuffling, hunched humanoids. Up close, these creatures reveal themselves as horrid plants whose conifer-like needles grow across their bodies in quivering clumps. A needle blight lashes out with these needles or launches them as an aerial assault that can punch through armor and flesh.",
+							"When needle blights detect a threat, they loose a pollen that the wind carries to other needle blights throughout the forest. Alerted to their foes' location, needle blights converge from all sides to drench their roots in blood."
+						]
+					}
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -11607,6 +11851,18 @@
 										"With an inflated sense of superiority and entitlement, pit fiends form a grotesque aristocracy in the infernal realm. These domineering and manipulative tyrants conspire to eliminate anything that stands between them and their desires, even as they negotiate the convoluted and dangerous politics of the Nine Hells.",
 										"A pit fiend is a hulking monster with a whip-like tail and enormous wings that it wraps around itself like a cloak. Armored scales cover its body, and its fanged maw drips a venom that can lay the mightiest mortal creatures low. Fearless in battle, a pit fiend takes on the most powerful foes in single combat, demonstrating its supremacy and an arrogance that prevents it from acknowledging any chance of defeat."
 									]
+								},
+								{
+									"type": "insetReadaloud",
+									"entries": [
+										{
+											"type": "quote",
+											"entries": [
+												"Your war-torn kingdom is rife with corruption, its people dying from starvation and strife. They cry out for new leadership\u2014someone with the charisma and the courage to put an end to the turmoil and suffering. You could be that someone!"
+											],
+											"by": "Herobaal, the Pit Fiend"
+										}
+									]
 								}
 							]
 						}
@@ -12283,57 +12539,59 @@
 				"_mod": {
 					"entries": {
 						"mode": "prependArr",
-						"items": {
-							"type": "entries",
-							"entries": [
-								{
-									"type": "entries",
-									"entries": [
-										"The most covetous of the true dragons, red dragons tirelessly seek to increase their treasure hoards. They are exceptionally vain, even for dragons, and their conceit is reflected in their proud bearing and their disdain for other creatures. The odor of sulfur and pumice surrounds a red dragon, whose swept-back horns and spinal frill define its silhouette. Its beaked snout vents smoke at all times, and its eyes dance with flame when it is angry. Its wings are the longest of any chromatic dragon, and have a blue-black tint along the trailing edge that resembles metal burned blue by fire.",
-										"The scales of a red dragon wyrmling are a bright glossy scarlet, turning a dull, deeper red and becoming as thick and strong as metal as the dragon ages. Its pupils also fade as it ages, and the oldest red dragons have eyes that resemble molten lava orbs.",
-										{
-											"name": "Mountain Masters",
-											"type": "entries",
-											"entries": [
-												"Red dragons prefer mountainous terrain, badlands, and any other locale where they can perch high and survey their domain. Their preference for mountains brings them into conflict with the hill-dwelling copper dragons from time to time."
-											]
-										},
-										{
-											"name": "Arrogant Tyrants",
-											"type": "entries",
-											"entries": [
-												"Red dragons fly into destructive rages and act on impulse when angered. They are so ferocious and vengeful that they are regarded as the archetypical evil dragon by many cultures.",
-												"No other dragon comes close to the arrogance of the red dragon. These creatures see themselves as kings and emperors, and view the rest of dragonkind as inferior. Believing that they are chosen by Tiamat to rule in her name, red dragons consider the world and every creature in it as theirs to command."
-											]
-										},
-										{
-											"name": "Status and Slaves",
-											"type": "entries",
-											"entries": [
-												"Red dragons are fiercely territorial and isolationist. However, they yearn to know about events in the wider world, and they make use of lesser creatures as informants, messengers, and spies. They are most interested in news about other red dragons, with which they compete constantly for status.",
-												"When it requires servants, a red dragon demands fealty from chaotic evil humanoids. If allegiance isn't forthcoming, it slaughters a tribe's leaders and claims lordship over the survivors. Creatures serving a red dragon live in constant terror of being roasted and eaten for displeasing it. They spend most of their time fawning over the creature in an attempt to stay alive."
-											]
-										},
-										{
-											"name": "Obsessive Collectors",
-											"type": "entries",
-											"entries": [
-												"Red dragons value wealth above all else, and their treasure hoards are legendary. They covet anything of monetary value, and can often judge the worth of a bauble to within a copper piece at a glance. A red dragon has a special affection for treasure claimed from powerful enemies it has slain, exhibiting that treasure to prove its superiority.",
-												"A red dragon knows the value and provenance of every item in its hoard, along with each item's exact location. It might notice the absence of a single coin, igniting its rage as it tracks down and slays the thief without mercy. If the thief can't be found, the dragon goes on a rampage, laying waste to towns and villages in an attempt to sate its wrath."
-											]
-										},
-										{
-											"type": "entries",
-											"name": "A Red Dragon's Lair",
-											"entries": [
-												"Red dragons lair in high mountains or hills, dwelling in caverns under snow-capped peaks, or within the deep halls of abandoned mines and dwarven strongholds. Caves with volcanic or geothermal activity are the most highly prized red dragon lairs, creating hazards that hinder intruders and letting searing heat and volcanic gases wash over a dragon as it sleeps. With its hoard well protected deep within the lair, a red dragon spends as much of its time outside the mountain as in it. For a red dragon, the great heights of the world are the throne from which it can look out to survey all it controls-and the wider world it seeks to control.",
-												"Throughout the lair complex, servants erect monuments to the dragon's power, telling the grim story of its life, the enemies it has slain, and the nations it has conquered."
-											]
-										}
-									]
-								}
-							]
-						}
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									"The most covetous of the true dragons, red dragons tirelessly seek to increase their treasure hoards. They are exceptionally vain, even for dragons, and their conceit is reflected in their proud bearing and their disdain for other creatures. The odor of sulfur and pumice surrounds a red dragon, whose swept-back horns and spinal frill define its silhouette. Its beaked snout vents smoke at all times, and its eyes dance with flame when it is angry. Its wings are the longest of any chromatic dragon, and have a blue-black tint along the trailing edge that resembles metal burned blue by fire.",
+									"The scales of a red dragon wyrmling are a bright glossy scarlet, turning a dull, deeper red and becoming as thick and strong as metal as the dragon ages. Its pupils also fade as it ages, and the oldest red dragons have eyes that resemble molten lava orbs.",
+									{
+										"type": "entries",
+										"entries": [
+											{
+												"name": "Mountain Masters",
+												"type": "entries",
+												"entries": [
+													"Red dragons prefer mountainous terrain, badlands, and any other locale where they can perch high and survey their domain. Their preference for mountains brings them into conflict with the hill-dwelling copper dragons from time to time."
+												]
+											},
+											{
+												"name": "Arrogant Tyrants",
+												"type": "entries",
+												"entries": [
+													"Red dragons fly into destructive rages and act on impulse when angered. They are so ferocious and vengeful that they are regarded as the archetypical evil dragon by many cultures.",
+													"No other dragon comes close to the arrogance of the red dragon. These creatures see themselves as kings and emperors, and view the rest of dragonkind as inferior. Believing that they are chosen by Tiamat to rule in her name, red dragons consider the world and every creature in it as theirs to command."
+												]
+											},
+											{
+												"name": "Status and Slaves",
+												"type": "entries",
+												"entries": [
+													"Red dragons are fiercely territorial and isolationist. However, they yearn to know about events in the wider world, and they make use of lesser creatures as informants, messengers, and spies. They are most interested in news about other red dragons, with which they compete constantly for status.",
+													"When it requires servants, a red dragon demands fealty from chaotic evil humanoids. If allegiance isn't forthcoming, it slaughters a tribe's leaders and claims lordship over the survivors. Creatures serving a red dragon live in constant terror of being roasted and eaten for displeasing it. They spend most of their time fawning over the creature in an attempt to stay alive."
+												]
+											},
+											{
+												"name": "Obsessive Collectors",
+												"type": "entries",
+												"entries": [
+													"Red dragons value wealth above all else, and their treasure hoards are legendary. They covet anything of monetary value, and can often judge the worth of a bauble to within a copper piece at a glance. A red dragon has a special affection for treasure claimed from powerful enemies it has slain, exhibiting that treasure to prove its superiority.",
+													"A red dragon knows the value and provenance of every item in its hoard, along with each item's exact location. It might notice the absence of a single coin, igniting its rage as it tracks down and slays the thief without mercy. If the thief can't be found, the dragon goes on a rampage, laying waste to towns and villages in an attempt to sate its wrath."
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"type": "entries",
+								"name": "A Red Dragon's Lair",
+								"entries": [
+									"Red dragons lair in high mountains or hills, dwelling in caverns under snow-capped peaks, or within the deep halls of abandoned mines and dwarven strongholds. Caves with volcanic or geothermal activity are the most highly prized red dragon lairs, creating hazards that hinder intruders and letting searing heat and volcanic gases wash over a dragon as it sleeps. With its hoard well protected deep within the lair, a red dragon spends as much of its time outside the mountain as in it. For a red dragon, the great heights of the world are the throne from which it can look out to survey all it controls-and the wider world it seeks to control.",
+									"Throughout the lair complex, servants erect monuments to the dragon's power, telling the grim story of its life, the enemies it has slain, and the nations it has conquered."
+								]
+							}
+						]
 					},
 					"images": {
 						"mode": "prependArr",
@@ -12595,35 +12853,20 @@
 		{
 			"name": "Rug of Smothering",
 			"source": "MM",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
-							"type": "entries",
-							"entries": [
-								"Would-be thieves and careless heroes arrive at the doorsteps of an enemy's abode, eyes and ears alert for traps, only to end their quest prematurely as the rugs beneath their feet animate and smother them to death.",
-								"A rug of smothering can be made in many different forms, from a finely woven carpet fit for a queen to a coarse mat in a peasant's hovel. Creatures with the ability to sense magic detect the rug's false magical aura.",
-								"In some cases, a rug of smothering is disguised as a carpet of flying or another beneficial magic item. However, a character who stands or sits on the rug, or who attempts to utter a word of command, is quickly trapped as the rug of smothering rolls itself tightly around its victim.",
-								{
-									"type": "entries",
-									"name": "Animated Objects",
-									"entries": [
-										"Animated objects are crafted with potent magic to follow the commands of their creators. When not commanded, they follow the last order they received to the best of their ability, and can act independently to fulfill simple instructions. Some animated objects (including many of those created in the Feywild) might converse fluently or adopt a persona, but most are simple automatons.",
-										{
-											"name": "Constructed Nature",
-											"entries": [
-												"An animated object doesn't require air, food, drink, or sleep. The magic that animates an object is dispelled when the construct drops to 0 hit points. An animated object reduced to 0 hit points becomes inanimate and is too damaged to be of much use or value to anyone."
-											],
-											"type": "entries"
-										}
-									]
-								}
-							]
-						}
-					]
+			"_copy": {
+				"name": "Animated Objects",
+				"source": "MM",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							"Would-be thieves and careless heroes arrive at the doorsteps of an enemy's abode, eyes and ears alert for traps, only to end their quest prematurely as the rugs beneath their feet animate and smother them to death.",
+							"A rug of smothering can be made in many different forms, from a finely woven carpet fit for a queen to a coarse mat in a peasant's hovel. Creatures with the ability to sense magic detect the rug's false magical aura.",
+							"In some cases, a rug of smothering is disguised as a {@item carpet of flying} or another beneficial magic item. However, a character who stands or sits on the rug, or who attempts to utter a word of command, is quickly trapped as the rug of smothering rolls itself tightly around its victim.",
+						]
+					}
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -13340,54 +13583,61 @@
 				"_mod": {
 					"entries": {
 						"mode": "prependArr",
-						"items": {
-							"type": "entries",
-							"entries": [
-								{
-									"type": "entries",
-									"entries": [
-										"The friendliest and most social of the metallic dragons, silver dragons cheerfully assist good creatures in need.",
-										"A silver dragon shimmers as if sculpted from pure metal, its face given a noble cast by its high eyes and sweeping beard-like chin spikes. A spiny frill rises high over its head, tracing down its neck to the tip of its tail. A silver wyrmling's scales are blue-gray with silver highlights. As the dragon approaches adulthood, its color gradually brightens until its individual scales are barely visible. As a silver dragon grows older, its pupils fade until its eyes resemble orbs of mercury.",
-										{
-											"name": "Dragons of Virtue",
-											"type": "entries",
-											"entries": [
-												"Silver dragons believe that living a moral life involves doing good deeds and ensuring that one's actions cause no undeserved harm to other sentient beings. They don't take it upon themselves to root out evil, as gold and bronze dragons do, but they will gladly oppose creatures that dare to commit evil acts or harm the innocent."
-											]
-										},
-										{
-											"name": "Friends of the Small Races",
-											"type": "entries",
-											"entries": [
-												"Silver dragons enjoy the company of other silver dragons. Their only true friendships outside their own kin arise in the company of humanoids, and many silver dragons spend as much time in humanoid form as they do in draconic form. A silver dragon adopts a benign humanoid persona such as a kindly old sage or a young wanderer, and it often has mortal companions with whom it develops strong friendships.",
-												"Silver dragons must step away from their humanoid lives on a regular basis, returning to their true forms to mate and rear offspring, or to tend to their hoards and personal affairs. Because many lose track of time while away, they sometimes return to find that their companions have grown old or died. Silver dragons often end up befriending several generations of humanoids within a single family as a result.",
-												{
-													"name": "Respect for Humanity",
-													"entries": [
-														"Silver dragons befriend humanoids of all races, but shorter-lived races such as humans spark their curiosity in a way the longer-lived elves and dwarves don't. Humans have a drive and zest for life that silver dragons find fascinating."
-													],
-													"type": "entries"
-												}
-											]
-										},
-										{
-											"name": "Hoarding History",
-											"type": "entries",
-											"entries": [
-												"Silver dragons love to possess relics of humanoid history. This includes the great piles of coins they covet, minted by current and fallen humanoid empires, as well as art objects and fine jewelery crafted by numerous races. Other treasures that make up their hoards can include intact ships, the remains of kings and queens, thrones, the crown jewels of ancient empires, inventions and contraptions, and monoliths carried from the ruins of fallen cities."
-											]
-										},
-										{
-											"type": "entries",
-											"name": "A Silver Dragon's Lair",
-											"entries": [
-												"Silver dragons dwell among the clouds, making their lairs on secluded cold mountain peaks. Though many are comfortable in natural cavern complexes or abandoned mines, silver dragons covet the lost outposts of humanoid civilization. An abandoned mountaintop citadel or a remote tower raised by a long-dead wizard is the sort of lair that every silver dragon dreams of."
-											]
-										}
-									]
-								}
-							]
-						}
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"The friendliest and most social of the metallic dragons, silver dragons cheerfully assist good creatures in need.",
+											"A silver dragon shimmers as if sculpted from pure metal, its face given a noble cast by its high eyes and sweeping beard-like chin spikes. A spiny frill rises high over its head, tracing down its neck to the tip of its tail. A silver wyrmling's scales are blue-gray with silver highlights. As the dragon approaches adulthood, its color gradually brightens until its individual scales are barely visible. As a silver dragon grows older, its pupils fade until its eyes resemble orbs of mercury.",
+											{
+												"type": "entries",
+												"entries": [
+													{
+														"name": "Dragons of Virtue",
+														"type": "entries",
+														"entries": [
+															"Silver dragons believe that living a moral life involves doing good deeds and ensuring that one's actions cause no undeserved harm to other sentient beings. They don't take it upon themselves to root out evil, as gold and bronze dragons do, but they will gladly oppose creatures that dare to commit evil acts or harm the innocent."
+														]
+													},
+													{
+														"name": "Friends of the Small Races",
+														"type": "entries",
+														"entries": [
+															"Silver dragons enjoy the company of other silver dragons. Their only true friendships outside their own kin arise in the company of humanoids, and many silver dragons spend as much time in humanoid form as they do in draconic form. A silver dragon adopts a benign humanoid persona such as a kindly old sage or a young wanderer, and it often has mortal companions with whom it develops strong friendships.",
+															"Silver dragons must step away from their humanoid lives on a regular basis, returning to their true forms to mate and rear offspring, or to tend to their hoards and personal affairs. Because many lose track of time while away, they sometimes return to find that their companions have grown old or died. Silver dragons often end up befriending several generations of humanoids within a single family as a result.",
+															{
+																"name": "Respect for Humanity",
+																"entries": [
+																	"Silver dragons befriend humanoids of all races, but shorter-lived races such as humans spark their curiosity in a way the longer-lived elves and dwarves don't. Humans have a drive and zest for life that silver dragons find fascinating."
+																],
+																"type": "entries"
+															}
+														]
+													},
+													{
+														"name": "Hoarding History",
+														"type": "entries",
+														"entries": [
+															"Silver dragons love to possess relics of humanoid history. This includes the great piles of coins they covet, minted by current and fallen humanoid empires, as well as art objects and fine jewelery crafted by numerous races. Other treasures that make up their hoards can include intact ships, the remains of kings and queens, thrones, the crown jewels of ancient empires, inventions and contraptions, and monoliths carried from the ruins of fallen cities."
+														]
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"type": "entries",
+								"name": "A Silver Dragon's Lair",
+								"entries": [
+									"Silver dragons dwell among the clouds, making their lairs on secluded cold mountain peaks. Though many are comfortable in natural cavern complexes or abandoned mines, silver dragons covet the lost outposts of humanoid civilization. An abandoned mountaintop citadel or a remote tower raised by a long-dead wizard is the sort of lair that every silver dragon dreams of."
+								]
+							}
+						]
 					},
 					"images": {
 						"mode": "prependArr",
@@ -13778,6 +14028,18 @@
 									"entries": [
 										"Smaller than most other devils, spinagons act as messengers and spies for greater devils and archdevils. They are the eyes and ears of the Nine Hells, and even fiends that despise a spined devil's weakness treat it with a modicum of respect. A spined devil's body and tail bristle with spines, and it can fling its tail spines as ranged weapons. The spines burst into flame on impact.",
 										"When not delivering messages or gathering intelligence, spined devils serve in the infernal legions as flying artillery, making up for their relative weakness by mobbing together to overwhelm their foes. Though they crave promotion and power, spined devils are craven by nature, and they will quickly scatter if a fight goes against them."
+									]
+								},
+								{
+									"type": "insetReadaloud",
+									"entries": [
+										{
+											"type": "quote",
+											"entries": [
+												"Fly, my pretties, fly! {@style Fly!|small-caps}"
+											],
+											"by": "Fierna, Archduchess of Phlegethos, commanding her spined devil legions"
+										}
 									]
 								}
 							]
@@ -14693,50 +14955,20 @@
 		{
 			"name": "Twig Blight",
 			"source": "MM",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
-							"type": "entries",
-							"entries": [
-								"Awakened plants gifted with the powers of intelligence and mobility, blights plague lands contaminated by darkness. Drinking that darkness from the soil, a blight carries out the will of ancient evil and attempts to spread that evil wherever it can.",
-								{
-									"name": "Roots of the Gulthias Tree",
-									"type": "entries",
-									"entries": [
-										"Legends tell of a vampire named Gulthias who worked terrible magic and raised up an abominable tower called Nightfang Spire. Gulthias was undone when a hero plunged a wooden stake through his heart, but as the vampire was destroyed, his blood infused the stake with a dreadful power. In time, tendrils of new growth sprouted from the wood, growing into a sapling infused with the vampire's evil essence. It is said that a mad druid discovered the sapling, transplanting it to an underground grotto where it could grow. From this Gulthias tree came the seeds from which the first blights were sown."
-									]
-								},
-								{
-									"name": "Dark Conquest",
-									"type": "entries",
-									"entries": [
-										"Wherever a tree or plant is contaminated by a fragment of an evil mind or power, a Gulthias tree can rise to infest and corrupt the surrounding forest. Its evil spreads through root and soil to other plants, which perish or transform into blights. As those blights spread, they poison and uproot healthy plants, replacing them with brambles, toxic weeds, and others of their kind. In time, an infestation of blights can turn any land or forest into a place of corruption.",
-										"In forests infested with blights, trees and plants grow with supernatural speed. Vines and undergrowth rapidly spread through buildings and overrun trails and roads. After blights have killed or driven off their inhabitants, whole villages can disappear in the space of days.",
-										{
-											"name": "Controlled by Evil",
-											"entries": [
-												"Blights are independent creatures, but most act under a Gulthias tree's control, often displaying the habits and traits of the life force or spirit that spawned them. By attacking their progenitor's old foes or seeking out treasures valuable to it, they carry on the legacy of long-lost evil."
-											],
-											"type": "entries"
-										}
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Twig Blight",
-									"entries": [
-										"Twig blights can root in soil, which they do when living prey are scarce. While rooted, they resemble woody shrubs. When it pulls its roots free of the ground to move, a twig blight's branches twist together to form a humanoid-looking body with a head and limbs.",
-										"Twig blights seek out campsites and watering holes, rooting there to set up ambushes for potential victims coming to drink or rest. Huddled together in groups, twig blights blend in with an area's natural vegetation or with piles of debris or firewood.",
-										"Given how dry they are, twig blights are particularly susceptible to fire."
-									]
-								}
-							]
-						}
-					]
+			"_copy": {
+				"name": "Blights",
+				"source": "MM",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": [
+							"Twig blights can root in soil, which they do when living prey are scarce. While rooted, they resemble woody shrubs. When it pulls its roots free of the ground to move, a twig blight's branches twist together to form a humanoid-looking body with a head and limbs.",
+							"Twig blights seek out campsites and watering holes, rooting there to set up ambushes for potential victims coming to drink or rest. Huddled together in groups, twig blights blend in with an area's natural vegetation or with piles of debris or firewood.",
+							"Given how dry they are, twig blights are particularly susceptible to fire."
+						]
+					}
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -15083,27 +15315,56 @@
 		{
 			"name": "Vine Blight",
 			"source": "MM",
+			"_copy": {
+				"name": "Blights",
+				"source": "MM",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": "Appearing as masses of slithering creepers, vine blights hide in undergrowth and wait for prey to draw near. By animating the plants around them, vine blights entangle and hinder their foes before attacking. Vine blights are the only blights capable of speech. Through its connection to the evil spirit of the Gulthias tree it serves, a vine blight speaks in a fractured version of its dead master's voice, taunting victims or bargaining with powerful foes."
+					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MM/Vine Blight.png"
+					}
+				}
+			]
+		},
+		{
+			"name": "Blights",
+			"source": "MM",
 			"entries": [
 				{
-					"type": "entries",
+					"type": "section",
+					"name": "Blights",
 					"entries": [
 						{
 							"type": "entries",
 							"entries": [
 								"Awakened plants gifted with the powers of intelligence and mobility, blights plague lands contaminated by darkness. Drinking that darkness from the soil, a blight carries out the will of ancient evil and attempts to spread that evil wherever it can.",
 								{
-									"name": "Roots of the Gulthias Tree",
 									"type": "entries",
 									"entries": [
-										"Legends tell of a vampire named Gulthias who worked terrible magic and raised up an abominable tower called Nightfang Spire. Gulthias was undone when a hero plunged a wooden stake through his heart, but as the vampire was destroyed, his blood infused the stake with a dreadful power. In time, tendrils of new growth sprouted from the wood, growing into a sapling infused with the vampire's evil essence. It is said that a mad druid discovered the sapling, transplanting it to an underground grotto where it could grow. From this Gulthias tree came the seeds from which the first blights were sown."
-									]
-								},
-								{
-									"name": "Dark Conquest",
-									"type": "entries",
-									"entries": [
-										"Wherever a tree or plant is contaminated by a fragment of an evil mind or power, a Gulthias tree can rise to infest and corrupt the surrounding forest. Its evil spreads through root and soil to other plants, which perish or transform into blights. As those blights spread, they poison and uproot healthy plants, replacing them with brambles, toxic weeds, and others of their kind. In time, an infestation of blights can turn any land or forest into a place of corruption.",
-										"In forests infested with blights, trees and plants grow with supernatural speed. Vines and undergrowth rapidly spread through buildings and overrun trails and roads. After blights have killed or driven off their inhabitants, whole villages can disappear in the space of days.",
+										{
+											"name": "Roots of the Gulthias Tree",
+											"type": "entries",
+											"entries": [
+												"Legends tell of a vampire named Gulthias who worked terrible magic and raised up an abominable tower called Nightfang Spire. Gulthias was undone when a hero plunged a wooden stake through his heart, but as the vampire was destroyed, his blood infused the stake with a dreadful power. In time, tendrils of new growth sprouted from the wood, growing into a sapling infused with the vampire's evil essence. It is said that a mad druid discovered the sapling, transplanting it to an underground grotto where it could grow. From this Gulthias tree came the seeds from which the first blights were sown."
+											]
+										},
+										{
+											"name": "Dark Conquest",
+											"type": "entries",
+											"entries": [
+												"Wherever a tree or plant is contaminated by a fragment of an evil mind or power, a Gulthias tree can rise to infest and corrupt the surrounding forest. Its evil spreads through root and soil to other plants, which perish or transform into blights. As those blights spread, they poison and uproot healthy plants, replacing them with brambles, toxic weeds, and others of their kind. In time, an infestation of blights can turn any land or forest into a place of corruption.",
+												"In forests infested with blights, trees and plants grow with supernatural speed. Vines and undergrowth rapidly spread through buildings and overrun trails and roads. After blights have killed or driven off their inhabitants, whole villages can disappear in the space of days."
+											]
+										},
 										{
 											"name": "Controlled by Evil",
 											"entries": [
@@ -15112,26 +15373,21 @@
 											"type": "entries"
 										}
 									]
-								},
+								}
+							]
+						},
+						{
+							"type": "insetReadaloud",
+							"entries": [
 								{
-									"type": "entries",
-									"name": "Vine Blight",
+									"type": "quote",
 									"entries": [
-										"Appearing as masses of slithering creepers, vine blights hide in undergrowth and wait for prey to draw near. By animating the plants around them, vine blights entangle and hinder their foes before attacking. Vine blights are the only blights capable of speech. Through its connection to the evil spirit of the Gulthias tree it serves, a vine blight speaks in a fractured version of its dead master's voice, taunting victims or bargaining with powerful foes."
+										"Behold the legacy of Gulthias the vampire: plants with a taste for blood."
 									]
 								}
 							]
 						}
 					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/MM/Vine Blight.png"
-					}
 				}
 			]
 		},
@@ -15490,54 +15746,56 @@
 				"_mod": {
 					"entries": {
 						"mode": "prependArr",
-						"items": {
-							"type": "entries",
-							"entries": [
-								{
-									"type": "entries",
-									"entries": [
-										"The smallest, least intelligent, and most animalistic of the chromatic dragons, white dragons dwell in frigid climes, favoring arctic areas or icy mountains. They are vicious, cruel reptiles driven by hunger and greed.",
-										"A white dragon has feral eyes, a sleek profile, and a spined crest. The scales of a wyrmling white dragon glisten pure white. As the dragon ages, its sheen disappears and some of its scales begin to darken, so that by the time it is old, it is mottled by patches of pale blue and light gray. This patterning helps the dragon blend into the realms of ice and stone in which it hunts, and to fade from view when it soars across a cloud-filled sky.",
-										{
-											"name": "Primal and Vengeful",
-											"type": "entries",
-											"entries": [
-												"White dragons lack the cunning and tactics of most other dragons. However, their bestial nature makes them the best hunters among all dragonkind, singularly focused on surviving and slaughtering their enemies. A white dragon consumes only food that has been frozen, devouring creatures killed by its breath weapon while they are still stiff and frigid. It encases other kills in ice or buries them in snow near its lair, and finding such a larder is a good indication that a white dragon dwells nearby.",
-												"A white dragon also keeps the bodies of its greatest enemies as trophies, freezing corpses where it can look upon them and gloat. The remains of giants, remorhazes, and other dragons are often positioned prominently within a white dragon's lair as warnings to intruders.",
-												"Though only moderately intelligent, white dragons have extraordinary memories. They recall every slight and defeat, and have been known to conduct malicious vendettas against creatures that have offended them. This often includes silver dragons, which lair in the same territories as whites. White dragons can speak as all dragons can, but they rarely talk unless moved to do so."
-											]
-										},
-										{
-											"name": "Lone Masters",
-											"type": "entries",
-											"entries": [
-												"White dragons avoid all other dragons except whites of the opposite sex. Even then, when white dragons seek each other out as mates, they stay together only long enough to conceive offspring before fleeing into isolation again.",
-												"White dragons can't abide rivals near their lairs. As a result, a white dragon attacks other creatures without provocation, viewing such creatures as either too weak or too powerful to live. The only creatures that typically serve a white dragon are intelligent humanoids that demonstrate enough strength to assuage the dragon's wrath, and can put up with sustaining regular losses as a result of its hunger. This includes dragon-worshiping kobolds, which are commonly found in their lairs.",
-												"Powerful creatures can sometimes gain a white dragon's obedience through a demonstration of physical or magical might. Frost giants challenge white dragons to prove their own strength and improve their status in their clans, and their cracked bones litter many a white dragon's lair. However, a white dragon defeated by a frost giant often becomes its servant, accepting the mastery of a superior creature in exchange for asserting its own domination over the other creatures that serve or oppose the giant."
-											]
-										},
-										{
-											"name": "Treasure Under Ice",
-											"type": "entries",
-											"entries": [
-												"White dragons love the cold sparkle of ice and favor treasure with similar qualities, particularly diamonds. However, in their remote arctic climes, the treasure hoards of white dragons more often contain walrus and mammoth tusk ivory, whale-bone sculptures, figureheads from ships, furs, and magic items seized from overly bold adventurers.",
-												"Loose coins and gems are spread across a white dragon's lair, glittering like stars when the light strikes them. Larger treasures and chests are encased in layers of rime created by the white dragon's breath, and held safe beneath layers of transparent ice. The dragon's great strength allows it to easily access its wealth, while lesser creatures must spend hours chipping away or melting the ice to reach the dragon's main hoard.",
-												"A white dragon's flawless memory means that it knows how it came to possess every coin, gem, and magic item in its hoard, and it associates each item with a specific victory. White dragons are notoriously difficult to bribe, since any offers of treasure are seen as an insult to their ability to simply slay the creature making the offer and seize the treasure on their own."
-											]
-										},
-										{
-											"type": "entries",
-											"name": "A White Dragon's Lair",
-											"entries": [
-												"White dragons lair in icy caves and deep subterranean chambers far from the sun. They favor high mountain vales accessible only by flying, caverns in cliff faces, and labyrinthine ice caves in glaciers. White dragons love vertical heights in their caverns, flying up to the ceiling to latch on like bats or slithering down icy crevasses.",
-												"A legendary white dragon's innate magic deepens the cold in the area around its lair. Mountain caverns are fast frozen by the white dragon's presence. A white dragon can often detect intruders by the way the keening wind in its lair changes tone.",
-												"A white dragon rests on high ice shelves and cliffs in its lair, the floor around it a treacherous morass of broken ice and stone, hidden pits, and slippery slopes. As foes struggle to move toward it, the dragon flies from perch to perch and destroys them with its freezing breath."
-											]
-										}
-									]
-								}
-							]
-						}
+						"items": [
+							{
+								"type": "entries",
+								"entries": [
+									{
+										"type": "entries",
+										"entries": [
+											"The smallest, least intelligent, and most animalistic of the chromatic dragons, white dragons dwell in frigid climes, favoring arctic areas or icy mountains. They are vicious, cruel reptiles driven by hunger and greed.",
+											"A white dragon has feral eyes, a sleek profile, and a spined crest. The scales of a wyrmling white dragon glisten pure white. As the dragon ages, its sheen disappears and some of its scales begin to darken, so that by the time it is old, it is mottled by patches of pale blue and light gray. This patterning helps the dragon blend into the realms of ice and stone in which it hunts, and to fade from view when it soars across a cloud-filled sky.",
+											{
+												"name": "Primal and Vengeful",
+												"type": "entries",
+												"entries": [
+													"White dragons lack the cunning and tactics of most other dragons. However, their bestial nature makes them the best hunters among all dragonkind, singularly focused on surviving and slaughtering their enemies. A white dragon consumes only food that has been frozen, devouring creatures killed by its breath weapon while they are still stiff and frigid. It encases other kills in ice or buries them in snow near its lair, and finding such a larder is a good indication that a white dragon dwells nearby.",
+													"A white dragon also keeps the bodies of its greatest enemies as trophies, freezing corpses where it can look upon them and gloat. The remains of giants, remorhazes, and other dragons are often positioned prominently within a white dragon's lair as warnings to intruders.",
+													"Though only moderately intelligent, white dragons have extraordinary memories. They recall every slight and defeat, and have been known to conduct malicious vendettas against creatures that have offended them. This often includes silver dragons, which lair in the same territories as whites. White dragons can speak as all dragons can, but they rarely talk unless moved to do so."
+												]
+											},
+											{
+												"name": "Lone Masters",
+												"type": "entries",
+												"entries": [
+													"White dragons avoid all other dragons except whites of the opposite sex. Even then, when white dragons seek each other out as mates, they stay together only long enough to conceive offspring before fleeing into isolation again.",
+													"White dragons can't abide rivals near their lairs. As a result, a white dragon attacks other creatures without provocation, viewing such creatures as either too weak or too powerful to live. The only creatures that typically serve a white dragon are intelligent humanoids that demonstrate enough strength to assuage the dragon's wrath, and can put up with sustaining regular losses as a result of its hunger. This includes dragon-worshiping kobolds, which are commonly found in their lairs.",
+													"Powerful creatures can sometimes gain a white dragon's obedience through a demonstration of physical or magical might. Frost giants challenge white dragons to prove their own strength and improve their status in their clans, and their cracked bones litter many a white dragon's lair. However, a white dragon defeated by a frost giant often becomes its servant, accepting the mastery of a superior creature in exchange for asserting its own domination over the other creatures that serve or oppose the giant."
+												]
+											},
+											{
+												"name": "Treasure Under Ice",
+												"type": "entries",
+												"entries": [
+													"White dragons love the cold sparkle of ice and favor treasure with similar qualities, particularly diamonds. However, in their remote arctic climes, the treasure hoards of white dragons more often contain walrus and mammoth tusk ivory, whale-bone sculptures, figureheads from ships, furs, and magic items seized from overly bold adventurers.",
+													"Loose coins and gems are spread across a white dragon's lair, glittering like stars when the light strikes them. Larger treasures and chests are encased in layers of rime created by the white dragon's breath, and held safe beneath layers of transparent ice. The dragon's great strength allows it to easily access its wealth, while lesser creatures must spend hours chipping away or melting the ice to reach the dragon's main hoard.",
+													"A white dragon's flawless memory means that it knows how it came to possess every coin, gem, and magic item in its hoard, and it associates each item with a specific victory. White dragons are notoriously difficult to bribe, since any offers of treasure are seen as an insult to their ability to simply slay the creature making the offer and seize the treasure on their own."
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"type": "entries",
+								"name": "A White Dragon's Lair",
+								"entries": [
+									"White dragons lair in icy caves and deep subterranean chambers far from the sun. They favor high mountain vales accessible only by flying, caverns in cliff faces, and labyrinthine ice caves in glaciers. White dragons love vertical heights in their caverns, flying up to the ceiling to latch on like bats or slithering down icy crevasses.",
+									"A legendary white dragon's innate magic deepens the cold in the area around its lair. Mountain caverns are fast frozen by the white dragon's presence. A white dragon can often detect intruders by the way the keening wind in its lair changes tone.",
+									"A white dragon rests on high ice shelves and cliffs in its lair, the floor around it a treacherous morass of broken ice and stone, hidden pits, and slippery slopes. As foes struggle to move toward it, the dragon flies from perch to perch and destroys them with its freezing breath."
+								]
+							}
+						]
 					},
 					"images": {
 						"mode": "prependArr",
