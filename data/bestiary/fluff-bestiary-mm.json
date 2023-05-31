@@ -2537,19 +2537,6 @@
 									]
 								}
 							]
-						},
-						{
-							"type": "insetReadaloud",
-							"entries": [
-								{
-									"type": "quote",
-									"entries": [
-										"Beyond the unopenable doors lay a grand hall ending before a towering stone throne, upon which sat an iron statue taller and wider than two men. In one  and it clutched an iron sword, in the other, a feather whip. We should have turned back then."
-									],
-									"by": "Mordenkainen the Archmage",
-									"from": "chronicling his party's harrowing exploits in the dungeons below Maure Castle"
-								}
-							]
 						}
 					]
 				}
@@ -9018,7 +9005,20 @@
 						"mode": "prependArr",
 						"items": [
 							"The mightiest of the golems, the iron golem is a massive, towering giant wrought of heavy metal. An iron golem's shape can be worked into any form, though most are fashioned to look like giant suits of armor. Its fist can destroy creatures with a single blow, and its clanging steps shake the earth beneath its feet. Iron golems wield enormous blades to extend their reach, and all can belch clouds of deadly poison.",
-							"An iron golem's body is smelted with rare tinctures and admixtures. Though other golems bear weaknesses inherent in their materials or the power of the elemental spirit bound within them, iron golems were designed to be nearly invulnerable. Their iron bodies imprison the spirits that drive them, and are susceptible only to weapons imbued with magic or the strength of adamantine."
+							"An iron golem's body is smelted with rare tinctures and admixtures. Though other golems bear weaknesses inherent in their materials or the power of the elemental spirit bound within them, iron golems were designed to be nearly invulnerable. Their iron bodies imprison the spirits that drive them, and are susceptible only to weapons imbued with magic or the strength of adamantine.",
+							{
+								"type": "insetReadaloud",
+								"entries": [
+									{
+										"type": "quote",
+										"entries": [
+											"Beyond the unopenable doors lay a grand hall ending before a towering stone throne, upon which sat an iron statue taller and wider than two men. In one  and it clutched an iron sword, in the other, a feather whip. We should have turned back then."
+										],
+										"by": "Mordenkainen the Archmage",
+										"from": "chronicling his party's harrowing exploits in the dungeons below Maure Castle"
+									}
+								]
+							}
 						]
 					}
 				}
