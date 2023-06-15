@@ -221,6 +221,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"quarterstaff|phb"
+			],
 			"languageTags": [
 				"C",
 				"DR"
@@ -1271,7 +1274,7 @@
 								[
 									"6th",
 									"38 ({@dice 7d8 + 7})",
-									"Extra Attack. Ayik can attack twice, instead of once, whenever he takes the {@action attack||Attack} action on his turn."
+									"Extra Attack. Ayik can attack twice, instead of once, whenever he takes the {@action Attack} action on his turn."
 								],
 								[
 									"7th",
@@ -1302,6 +1305,10 @@
 						}
 					]
 				}
+			],
+			"attachedItems": [
+				"longbow|phb",
+				"shortsword|phb"
 			],
 			"languageTags": [
 				"C"
@@ -1340,7 +1347,7 @@
 								{
 									"name": "Extra Attack",
 									"entries": [
-										"Ayik can attack twice, instead of once, whenever he takes the {@action attack||Attack} action on his turn."
+										"Ayik can attack twice, instead of once, whenever he takes the {@action Attack} action on his turn."
 									]
 								},
 								{
@@ -1423,7 +1430,7 @@
 								{
 									"name": "Extra Attack",
 									"entries": [
-										"Ayik can attack twice, instead of once, whenever he takes the {@action attack||Attack} action on his turn."
+										"Ayik can attack twice, instead of once, whenever he takes the {@action Attack} action on his turn."
 									]
 								},
 								{
@@ -1688,7 +1695,7 @@
 								{
 									"name": "Extra Attack",
 									"entries": [
-										"Ayik can attack twice, instead of once, whenever he takes the {@action attack||Attack} action on his turn."
+										"Ayik can attack twice, instead of once, whenever he takes the {@action Attack} action on his turn."
 									]
 								}
 							]
@@ -1758,7 +1765,7 @@
 								{
 									"name": "Extra Attack",
 									"entries": [
-										"Ayik can attack twice, instead of once, whenever he takes the {@action attack||Attack} action on his turn."
+										"Ayik can attack twice, instead of once, whenever he takes the {@action Attack} action on his turn."
 									]
 								},
 								{
@@ -1834,7 +1841,7 @@
 								{
 									"name": "Extra Attack",
 									"entries": [
-										"Ayik can attack twice, instead of once, whenever he takes the {@action attack||Attack} action on his turn."
+										"Ayik can attack twice, instead of once, whenever he takes the {@action Attack} action on his turn."
 									]
 								},
 								{
@@ -1910,7 +1917,7 @@
 								{
 									"name": "Extra Attack",
 									"entries": [
-										"Ayik can attack twice, instead of once, whenever he takes the {@action attack||Attack} action on his turn."
+										"Ayik can attack twice, instead of once, whenever he takes the {@action Attack} action on his turn."
 									]
 								},
 								{
@@ -2042,6 +2049,9 @@
 						"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d6 + 1}) piercing damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"shortsword|phb"
 			],
 			"traitTags": [
 				"Death Burst"
@@ -2298,6 +2308,9 @@
 						"{@atk rs} {@hit 4} to hit, range 60 ft., one target. {@h}10 ({@damage 3d6}) lightning damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"trident|phb"
 			],
 			"traitTags": [
 				"Death Burst"
@@ -2893,6 +2906,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"heavy crossbow|phb",
+				"vicious lance|dmg"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -2985,6 +3002,10 @@
 						"{@atk mw,rw} {@hit 4} to hit, reach 5 ft. or range 30/120 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage plus 2 ({@damage 1d4}) fire damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"javelin|phb",
+				"longsword|phb"
 			],
 			"actionTags": [
 				"Multiattack"
@@ -3118,6 +3139,10 @@
 						"{@atk mw,rw} {@hit 6} to hit, reach 5 ft. or range 30/120 ft., one target. {@h}11 ({@damage 2d6 + 4}) piercing damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"greatclub|phb",
+				"javelin|phb"
 			],
 			"senseTags": [
 				"D"
@@ -3472,6 +3497,9 @@
 						}
 					]
 				}
+			],
+			"attachedItems": [
+				"maul|phb"
 			],
 			"senseTags": [
 				"D"
@@ -4310,7 +4338,7 @@
 								[
 									"2nd",
 									"16 ({@dice 3d8 + 3})",
-									"Cunning Action. On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+									"Cunning Action. On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
 								],
 								[
 									"3rd",
@@ -4355,7 +4383,7 @@
 								[
 									"11th",
 									"66 ({@dice 12d8 + 12})",
-									"Inspiring Help. When Iriad takes the {@action help||Help} action, the creature who receives the help also gains a {@dice 1d6} bonus to the {@dice d20} roll. If that roll is an attack roll, the creature can forgo adding the bonus to it, and then if the attack hits, the creature can add the bonus to the attack's damage roll against one target."
+									"Inspiring Help. When Iriad takes the {@action Help} action, the creature who receives the help also gains a {@dice 1d6} bonus to the {@dice d20} roll. If that roll is an attack roll, the creature can forgo adding the bonus to it, and then if the attack hits, the creature can add the bonus to the attack's damage roll against one target."
 								]
 							]
 						}
@@ -4417,7 +4445,7 @@
 							"items": {
 								"name": "Cunning Action",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
 								]
 							}
 						}
@@ -4490,7 +4518,7 @@
 								{
 									"name": "Inspiring Help",
 									"entries": [
-										"When Iriad takes the {@action help||Help} action, the creature who receives the help also gains a {@dice 1d6} bonus to the {@dice d20} roll. If that roll is an attack roll, the creature can forgo adding the bonus to it, and then if the attack hits, the creature can add the bonus to the attack's damage roll against one target."
+										"When Iriad takes the {@action Help} action, the creature who receives the help also gains a {@dice 1d6} bonus to the {@dice d20} roll. If that roll is an attack roll, the creature can forgo adding the bonus to it, and then if the attack hits, the creature can add the bonus to the attack's damage roll against one target."
 									]
 								}
 							]
@@ -4500,7 +4528,7 @@
 							"items": {
 								"name": "Cunning Action",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
 								]
 							}
 						}
@@ -4554,7 +4582,7 @@
 							"items": {
 								"name": "Cunning Action",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
 								]
 							}
 						}
@@ -4584,7 +4612,7 @@
 							"items": {
 								"name": "Cunning Action",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
 								]
 							}
 						}
@@ -4623,7 +4651,7 @@
 							"items": {
 								"name": "Cunning Action",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
 								]
 							}
 						}
@@ -4682,7 +4710,7 @@
 							"items": {
 								"name": "Cunning Action",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
 								]
 							}
 						}
@@ -4751,7 +4779,7 @@
 							"items": {
 								"name": "Cunning Action",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
 								]
 							}
 						}
@@ -4826,7 +4854,7 @@
 							"items": {
 								"name": "Cunning Action",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
 								]
 							}
 						}
@@ -4901,7 +4929,7 @@
 							"items": {
 								"name": "Cunning Action",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
 								]
 							}
 						}
@@ -4978,7 +5006,7 @@
 							"items": {
 								"name": "Cunning Action",
 								"entries": [
-									"On Iriad's turn in combat, she can take the {@action dash||Dash}, {@action disengage||Disengage}, or {@action hide||Hide} action as a bonus action."
+									"On Iriad's turn in combat, she can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action."
 								]
 							}
 						}
@@ -5260,6 +5288,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"longsword|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -5398,6 +5429,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"pike|phb"
+			],
 			"senseTags": [
 				"U"
 			],
@@ -5515,6 +5549,9 @@
 						"{@atk mw,rw} {@hit 5} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}5 ({@damage 1d4 + 3}) piercing damage plus 7 ({@damage 2d6}) poison damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"dagger|phb"
 			],
 			"traitTags": [
 				"Death Burst"
@@ -5640,6 +5677,9 @@
 						"The kender takes the Disengage or Hide action."
 					]
 				}
+			],
+			"attachedItems": [
+				"hoopak|dsotdq"
 			],
 			"languageTags": [
 				"C"
@@ -6064,7 +6104,7 @@
 								[
 									"6th",
 									"45 ({@dice 7d8 + 14})",
-									"Extra Attack. Levna can attack twice, instead of once, whenever she takes the {@action attack||Attack} action on her turn."
+									"Extra Attack. Levna can attack twice, instead of once, whenever she takes the {@action Attack} action on her turn."
 								],
 								[
 									"7th",
@@ -6095,6 +6135,9 @@
 						}
 					]
 				}
+			],
+			"attachedItems": [
+				"greatsword|phb"
 			],
 			"traitTags": [
 				"Pack Tactics"
@@ -7319,6 +7362,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"longbow|phb",
+				"shortsword|phb"
+			],
 			"traitTags": [
 				"Fey Ancestry",
 				"Keen Senses"
@@ -7784,6 +7831,9 @@
 						}
 					]
 				}
+			],
+			"attachedItems": [
+				"hoopak|dsotdq"
 			],
 			"languageTags": [
 				"C"

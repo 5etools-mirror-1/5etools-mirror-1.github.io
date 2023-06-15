@@ -101,6 +101,9 @@
 				"type": "internal",
 				"path": "bestiary/aarakocra.mp3"
 			},
+			"attachedItems": [
+				"javelin|phb"
+			],
 			"languageTags": [
 				"AU",
 				"OTH"
@@ -586,6 +589,9 @@
 				"type": "internal",
 				"path": "bestiary/acolyte.mp3"
 			},
+			"attachedItems": [
+				"club|phb"
+			],
 			"languageTags": [
 				"C",
 				"X"
@@ -8225,6 +8231,9 @@
 				"type": "internal",
 				"path": "bestiary/archmage.mp3"
 			},
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -8437,6 +8446,10 @@
 				"type": "internal",
 				"path": "bestiary/assassin.mp3"
 			},
+			"attachedItems": [
+				"light crossbow|phb",
+				"shortsword|phb"
+			],
 			"traitTags": [
 				"Sneak Attack"
 			],
@@ -8835,6 +8848,9 @@
 				"type": "internal",
 				"path": "bestiary/azer.mp3"
 			},
+			"attachedItems": [
+				"warhammer|phb"
+			],
 			"traitTags": [
 				"Illumination"
 			],
@@ -9181,6 +9197,10 @@
 				"type": "internal",
 				"path": "bestiary/balor.mp3"
 			},
+			"attachedItems": [
+				"longsword|phb",
+				"whip|phb"
+			],
 			"traitTags": [
 				"Death Burst",
 				"Magic Resistance",
@@ -9363,6 +9383,10 @@
 					"source": "EGW"
 				}
 			],
+			"attachedItems": [
+				"light crossbow|phb",
+				"scimitar|phb"
+			],
 			"languageTags": [
 				"C",
 				"X"
@@ -9543,6 +9567,10 @@
 					"source": "MTF",
 					"page": 18
 				}
+			],
+			"attachedItems": [
+				"dagger|phb",
+				"scimitar|phb"
 			],
 			"actionTags": [
 				"Multiattack",
@@ -9883,6 +9911,21 @@
 					"entries": [
 						"{@atk rs} {@hit 5} to hit, range 150 ft., one target. {@h}10 ({@damage 3d6}) fire damage. If the target is a flammable object that isn't being worn or carried, it also catches fire."
 					]
+				}
+			],
+			"variant": [
+				{
+					"type": "variant",
+					"name": "Summon Devil (1/Day)",
+					"entries": [
+						"The devil chooses what to summon and attempts a magical summoning.",
+						"A barbed devil has a {@chance 30|30 percent} chance of summoning one barbed devil.",
+						"A summoned devil appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other devils. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
+					],
+					"_version": {
+						"name": "Barbed Devil (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -10436,10 +10479,28 @@
 					]
 				}
 			],
+			"variant": [
+				{
+					"type": "variant",
+					"name": "Summon Devil (1/Day)",
+					"entries": [
+						"The devil chooses what to summon and attempts a magical summoning.",
+						"A bearded devil has a {@chance 30|30 percent} chance of summoning one bearded devil.",
+						"A summoned devil appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other devils. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
+					],
+					"_version": {
+						"name": "Bearded Devil (Summoner)",
+						"addAs": "action"
+					}
+				}
+			],
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/bearded-devil.mp3"
 			},
+			"attachedItems": [
+				"glaive|phb"
+			],
 			"traitTags": [
 				"Devil's Sight",
 				"Magic Resistance"
@@ -11210,6 +11271,9 @@
 					"source": "MTF",
 					"page": 18
 				}
+			],
+			"attachedItems": [
+				"greataxe|phb"
 			],
 			"traitTags": [
 				"Reckless"
@@ -12489,6 +12553,19 @@
 						"name": "Bone Devil (Polearm)",
 						"addHeadersAs": "action"
 					}
+				},
+				{
+					"type": "variant",
+					"name": "Summon Devil (1/Day)",
+					"entries": [
+						"The devil chooses what to summon and attempts a magical summoning.",
+						"A bone devil has a {@chance 40|40 percent} chance of summoning {@dice 2d6} {@creature spined devil||spined devils} or one bone devil.",
+						"A summoned devil appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other devils. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
+					],
+					"_version": {
+						"name": "Bone Devil (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -13491,6 +13568,10 @@
 				"type": "internal",
 				"path": "bestiary/bugbear.mp3"
 			},
+			"attachedItems": [
+				"javelin|phb",
+				"morningstar|phb"
+			],
 			"traitTags": [
 				"Brute"
 			],
@@ -13623,6 +13704,10 @@
 				"type": "internal",
 				"path": "bestiary/bugbear-chief.mp3"
 			},
+			"attachedItems": [
+				"javelin|phb",
+				"morningstar|phb"
+			],
 			"traitTags": [
 				"Brute"
 			],
@@ -13885,6 +13970,9 @@
 					"source": "WDMM"
 				}
 			],
+			"attachedItems": [
+				"spear|phb"
+			],
 			"traitTags": [
 				"Amphibious"
 			],
@@ -14091,6 +14179,9 @@
 					"source": "MTF",
 					"page": 32
 				}
+			],
+			"attachedItems": [
+				"spear|phb"
 			],
 			"senseTags": [
 				"D"
@@ -14683,6 +14774,10 @@
 				"type": "internal",
 				"path": "bestiary/centaur.mp3"
 			},
+			"attachedItems": [
+				"longbow|phb",
+				"pike|phb"
+			],
 			"traitTags": [
 				"Charge"
 			],
@@ -15793,6 +15888,9 @@
 				"type": "internal",
 				"path": "bestiary/cloud-giant.mp3"
 			},
+			"attachedItems": [
+				"morningstar|phb"
+			],
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -16060,6 +16158,9 @@
 					"name": "Commoner",
 					"source": "EGW"
 				}
+			],
+			"attachedItems": [
+				"club|phb"
 			],
 			"languageTags": [
 				"C",
@@ -17072,6 +17173,9 @@
 					"page": 18
 				}
 			],
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -17254,6 +17358,9 @@
 					"source": "RMBRE"
 				}
 			],
+			"attachedItems": [
+				"scimitar|phb"
+			],
 			"languageTags": [
 				"C",
 				"X"
@@ -17373,6 +17480,9 @@
 				"type": "internal",
 				"path": "bestiary/cyclops.mp3"
 			},
+			"attachedItems": [
+				"greatclub|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -17568,6 +17678,9 @@
 				"type": "internal",
 				"path": "bestiary/dao.mp3"
 			},
+			"attachedItems": [
+				"maul|phb"
+			],
 			"senseTags": [
 				"SD"
 			],
@@ -18041,6 +18154,9 @@
 				"type": "internal",
 				"path": "bestiary/death-knight.mp3"
 			},
+			"attachedItems": [
+				"longsword|phb"
+			],
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -18271,6 +18387,9 @@
 				"type": "internal",
 				"path": "bestiary/death-slaad.mp3"
 			},
+			"attachedItems": [
+				"greatsword|phb"
+			],
 			"traitTags": [
 				"Magic Resistance",
 				"Magic Weapons",
@@ -18658,6 +18777,9 @@
 				"type": "internal",
 				"path": "bestiary/svirfneblin.mp3"
 			},
+			"attachedItems": [
+				"war pick|phb"
+			],
 			"senseTags": [
 				"SD"
 			],
@@ -19154,6 +19276,9 @@
 				"type": "internal",
 				"path": "bestiary/deva.mp3"
 			},
+			"attachedItems": [
+				"mace|phb"
+			],
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -19564,6 +19689,9 @@
 				"type": "internal",
 				"path": "bestiary/djinni.mp3"
 			},
+			"attachedItems": [
+				"scimitar|phb"
+			],
 			"senseTags": [
 				"SD"
 			],
@@ -20330,6 +20458,10 @@
 				"type": "internal",
 				"path": "bestiary/drider.mp3"
 			},
+			"attachedItems": [
+				"longbow|phb",
+				"longsword|phb"
+			],
 			"traitTags": [
 				"Fey Ancestry",
 				"Spider Climb",
@@ -20566,6 +20698,10 @@
 				"type": "internal",
 				"path": "bestiary/drow.mp3"
 			},
+			"attachedItems": [
+				"hand crossbow|phb",
+				"shortsword|phb"
+			],
 			"traitTags": [
 				"Fey Ancestry",
 				"Sunlight Sensitivity"
@@ -20801,6 +20937,10 @@
 				"type": "internal",
 				"path": "bestiary/drow-elite-warrior.mp3"
 			},
+			"attachedItems": [
+				"hand crossbow|phb",
+				"shortsword|phb"
+			],
 			"traitTags": [
 				"Fey Ancestry",
 				"Sunlight Sensitivity"
@@ -21537,6 +21677,9 @@
 					"page": 29
 				}
 			],
+			"attachedItems": [
+				"quarterstaff|phb"
+			],
 			"languageTags": [
 				"DU",
 				"X"
@@ -21705,6 +21848,9 @@
 				"type": "internal",
 				"path": "bestiary/dryad.mp3"
 			},
+			"attachedItems": [
+				"club|phb"
+			],
 			"traitTags": [
 				"Magic Resistance",
 				"Tree Stride"
@@ -21860,6 +22006,10 @@
 				"type": "internal",
 				"path": "bestiary/duergar.mp3"
 			},
+			"attachedItems": [
+				"javelin|phb",
+				"war pick|phb"
+			],
 			"traitTags": [
 				"Sunlight Sensitivity"
 			],
@@ -21982,6 +22132,9 @@
 				"type": "internal",
 				"path": "bestiary/duodrone.mp3"
 			},
+			"attachedItems": [
+				"javelin|phb"
+			],
 			"senseTags": [
 				"U"
 			],
@@ -22566,6 +22719,9 @@
 				"type": "internal",
 				"path": "bestiary/efreeti.mp3"
 			},
+			"attachedItems": [
+				"scimitar|phb"
+			],
 			"senseTags": [
 				"SD"
 			],
@@ -22998,6 +23154,9 @@
 				"type": "internal",
 				"path": "bestiary/empyrean.mp3"
 			},
+			"attachedItems": [
+				"maul|phb"
+			],
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -23171,12 +23330,29 @@
 					"entries": [
 						"Some erinyes carry a {@item rope of entanglement} (detailed in the Dungeon Master's Guide). When such an erinyes uses its Multiattack, the erinyes can use the rope in place of two of the attacks."
 					]
+				},
+				{
+					"type": "variant",
+					"name": "Summon Devil (1/Day)",
+					"entries": [
+						"The devil chooses what to summon and attempts a magical summoning.",
+						"An erinyes has a {@chance 50|50 percent} chance of summoning {@dice 3d6} {@creature spined devil||spined devils}, {@dice 1d6} {@creature bearded devil||bearded devils}, or one {@creature erinyes}.",
+						"A summoned devil appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other devils. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
+					],
+					"_version": {
+						"name": "Erinyes (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/erinyes.mp3"
 			},
+			"attachedItems": [
+				"longbow|phb",
+				"longsword|phb"
+			],
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -23518,6 +23694,10 @@
 				"type": "internal",
 				"path": "bestiary/ettin.mp3"
 			},
+			"attachedItems": [
+				"battleaxe|phb",
+				"morningstar|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -24936,6 +25116,9 @@
 				"type": "internal",
 				"path": "bestiary/fire-giant.mp3"
 			},
+			"attachedItems": [
+				"greatsword|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -25846,6 +26029,9 @@
 				"type": "internal",
 				"path": "bestiary/flying-sword.mp3"
 			},
+			"attachedItems": [
+				"longsword|phb"
+			],
 			"traitTags": [
 				"Antimagic Susceptibility",
 				"False Appearance"
@@ -25957,6 +26143,9 @@
 				"type": "internal",
 				"path": "bestiary/fomorian.mp3"
 			},
+			"attachedItems": [
+				"greatclub|phb"
+			],
 			"senseTags": [
 				"SD"
 			],
@@ -26186,6 +26375,9 @@
 				"type": "internal",
 				"path": "bestiary/frost-giant.mp3"
 			},
+			"attachedItems": [
+				"greataxe|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -30659,6 +30851,9 @@
 				"type": "internal",
 				"path": "bestiary/githyanki-warrior.mp3"
 			},
+			"attachedItems": [
+				"greatsword|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -31264,6 +31459,9 @@
 				"type": "internal",
 				"path": "bestiary/gladiator.mp3"
 			},
+			"attachedItems": [
+				"spear|phb"
+			],
 			"traitTags": [
 				"Brute"
 			],
@@ -31400,6 +31598,10 @@
 				"type": "internal",
 				"path": "bestiary/gnoll.mp3"
 			},
+			"attachedItems": [
+				"longbow|phb",
+				"spear|phb"
+			],
 			"traitTags": [
 				"Rampage"
 			],
@@ -31652,6 +31854,10 @@
 				"type": "internal",
 				"path": "bestiary/gnoll-pack-lord.mp3"
 			},
+			"attachedItems": [
+				"glaive|phb",
+				"longbow|phb"
+			],
 			"traitTags": [
 				"Rampage"
 			],
@@ -31931,6 +32137,10 @@
 					"source": "RMBRE"
 				}
 			],
+			"attachedItems": [
+				"scimitar|phb",
+				"shortbow|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -32077,6 +32287,10 @@
 				"type": "internal",
 				"path": "bestiary/goblin-boss.mp3"
 			},
+			"attachedItems": [
+				"javelin|phb",
+				"scimitar|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -32945,6 +33159,9 @@
 				"type": "internal",
 				"path": "bestiary/gray-slaad.mp3"
 			},
+			"attachedItems": [
+				"greatsword|phb"
+			],
 			"traitTags": [
 				"Magic Resistance",
 				"Magic Weapons",
@@ -34466,6 +34683,9 @@
 				"type": "internal",
 				"path": "bestiary/guard.mp3"
 			},
+			"attachedItems": [
+				"spear|phb"
+			],
 			"languageTags": [
 				"C",
 				"X"
@@ -34987,6 +35207,10 @@
 				"type": "internal",
 				"path": "bestiary/half-ogre.mp3"
 			},
+			"attachedItems": [
+				"battleaxe|phb",
+				"javelin|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -35112,6 +35336,11 @@
 				"type": "internal",
 				"path": "bestiary/half-red-dragon-veteran.mp3"
 			},
+			"attachedItems": [
+				"heavy crossbow|phb",
+				"longsword|phb",
+				"shortsword|phb"
+			],
 			"senseTags": [
 				"B",
 				"D"
@@ -35242,6 +35471,9 @@
 				"type": "internal",
 				"path": "bestiary/harpy.mp3"
 			},
+			"attachedItems": [
+				"club|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -35644,6 +35876,9 @@
 				"type": "internal",
 				"path": "bestiary/helmed-horror.mp3"
 			},
+			"attachedItems": [
+				"longsword|phb"
+			],
 			"traitTags": [
 				"Magic Resistance",
 				"Spell Immunity"
@@ -35958,6 +36193,9 @@
 				"type": "internal",
 				"path": "bestiary/hill-giant.mp3"
 			},
+			"attachedItems": [
+				"greatclub|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -36210,6 +36448,10 @@
 				"type": "internal",
 				"path": "bestiary/hobgoblin.mp3"
 			},
+			"attachedItems": [
+				"longbow|phb",
+				"longsword|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -36342,6 +36584,10 @@
 				"type": "internal",
 				"path": "bestiary/hobgoblin-captain.mp3"
 			},
+			"attachedItems": [
+				"greatsword|phb",
+				"javelin|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -36491,6 +36737,10 @@
 				"type": "internal",
 				"path": "bestiary/hobgoblin-warlord.mp3"
 			},
+			"attachedItems": [
+				"javelin|phb",
+				"longsword|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -36869,6 +37119,21 @@
 					"entries": [
 						"{@atk rs} {@hit 7} to hit, range 150 ft., one target. {@h}14 ({@damage 4d6}) fire damage. If the target is a flammable object that isn't being worn or carried, it also catches fire."
 					]
+				}
+			],
+			"variant": [
+				{
+					"type": "variant",
+					"name": "Summon Devil (1/Day)",
+					"entries": [
+						"The devil chooses what to summon and attempts a magical summoning.",
+						"A horned devil has a {@chance 30|30 percent} chance of summoning one horned devil.",
+						"A summoned devil appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other devils. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
+					],
+					"_version": {
+						"name": "Horned Devil (Summoner)",
+						"addAs": "action"
+					}
 				}
 			],
 			"soundClip": {
@@ -37397,6 +37662,19 @@
 					"_version": {
 						"name": "Ice Devil (Spear)",
 						"addHeadersAs": "action"
+					}
+				},
+				{
+					"type": "variant",
+					"name": "Summon Devil (1/Day)",
+					"entries": [
+						"The devil chooses what to summon and attempts a magical summoning.",
+						"An ice devil has a {@chance 60|60 percent} chance of summoning one ice devil.",
+						"A summoned devil appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other devils. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
+					],
+					"_version": {
+						"name": "Ice Devil (Summoner)",
+						"addAs": "action"
 					}
 				}
 			],
@@ -38647,6 +38925,9 @@
 				"type": "internal",
 				"path": "bestiary/jackalwere.mp3"
 			},
+			"attachedItems": [
+				"scimitar|phb"
+			],
 			"traitTags": [
 				"Keen Senses",
 				"Pack Tactics",
@@ -38772,6 +39053,10 @@
 				"type": "internal",
 				"path": "bestiary/kenku.mp3"
 			},
+			"attachedItems": [
+				"shortbow|phb",
+				"shortsword|phb"
+			],
 			"traitTags": [
 				"Ambusher"
 			],
@@ -39059,6 +39344,10 @@
 				"type": "internal",
 				"path": "bestiary/knight.mp3"
 			},
+			"attachedItems": [
+				"greatsword|phb",
+				"heavy crossbow|phb"
+			],
 			"actionTags": [
 				"Multiattack",
 				"Parry"
@@ -39201,6 +39490,10 @@
 				"type": "internal",
 				"path": "bestiary/kobold.mp3"
 			},
+			"attachedItems": [
+				"dagger|phb",
+				"sling|phb"
+			],
 			"traitTags": [
 				"Pack Tactics",
 				"Sunlight Sensitivity"
@@ -39574,6 +39867,10 @@
 				"type": "internal",
 				"path": "bestiary/kuo-toa.mp3"
 			},
+			"attachedItems": [
+				"net|phb",
+				"spear|phb"
+			],
 			"traitTags": [
 				"Amphibious",
 				"Sunlight Sensitivity"
@@ -40241,6 +40538,9 @@
 				"type": "internal",
 				"path": "bestiary/lamia.mp3"
 			},
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -40966,6 +41266,9 @@
 				"type": "internal",
 				"path": "bestiary/lizard-king-_-queen.mp3"
 			},
+			"attachedItems": [
+				"trident|phb"
+			],
 			"traitTags": [
 				"Hold Breath"
 			],
@@ -41100,6 +41403,9 @@
 				"type": "internal",
 				"path": "bestiary/lizard-king-_-queen.mp3"
 			},
+			"attachedItems": [
+				"trident|phb"
+			],
 			"traitTags": [
 				"Hold Breath"
 			],
@@ -41263,6 +41569,9 @@
 				"type": "internal",
 				"path": "bestiary/lizardfolk.mp3"
 			},
+			"attachedItems": [
+				"javelin|phb"
+			],
 			"traitTags": [
 				"Hold Breath"
 			],
@@ -41679,6 +41988,9 @@
 				"type": "internal",
 				"path": "bestiary/mage.mp3"
 			},
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"languageTags": [
 				"X"
 			],
@@ -42535,6 +42847,9 @@
 				"type": "internal",
 				"path": "bestiary/marid.mp3"
 			},
+			"attachedItems": [
+				"trident|phb"
+			],
 			"traitTags": [
 				"Amphibious"
 			],
@@ -42792,6 +43107,9 @@
 				"type": "internal",
 				"path": "bestiary/marilith.mp3"
 			},
+			"attachedItems": [
+				"longsword|phb"
+			],
 			"traitTags": [
 				"Magic Resistance",
 				"Magic Weapons"
@@ -43040,6 +43358,10 @@
 				"type": "internal",
 				"path": "bestiary/medusa.mp3"
 			},
+			"attachedItems": [
+				"longbow|phb",
+				"shortsword|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -43148,6 +43470,9 @@
 				"type": "internal",
 				"path": "bestiary/merfolk.mp3"
 			},
+			"attachedItems": [
+				"spear|phb"
+			],
 			"traitTags": [
 				"Amphibious"
 			],
@@ -43481,6 +43806,9 @@
 				"type": "internal",
 				"path": "bestiary/mezzoloth.mp3"
 			},
+			"attachedItems": [
+				"trident|phb"
+			],
 			"traitTags": [
 				"Magic Resistance",
 				"Magic Weapons"
@@ -44196,6 +44524,9 @@
 				"type": "internal",
 				"path": "bestiary/minotaur.mp3"
 			},
+			"attachedItems": [
+				"greataxe|phb"
+			],
 			"traitTags": [
 				"Charge",
 				"Reckless"
@@ -44333,6 +44664,9 @@
 				"type": "internal",
 				"path": "bestiary/minotaur-skeleton.mp3"
 			},
+			"attachedItems": [
+				"greataxe|phb"
+			],
 			"traitTags": [
 				"Charge"
 			],
@@ -44458,6 +44792,10 @@
 				"type": "internal",
 				"path": "bestiary/monodrone.mp3"
 			},
+			"attachedItems": [
+				"dagger|phb",
+				"javelin|phb"
+			],
 			"senseTags": [
 				"U"
 			],
@@ -45146,7 +45484,8 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Myconid Adult",
@@ -46460,6 +46799,9 @@
 				"type": "internal",
 				"path": "bestiary/noble.mp3"
 			},
+			"attachedItems": [
+				"rapier|phb"
+			],
 			"actionTags": [
 				"Parry"
 			],
@@ -46807,6 +47149,9 @@
 				"type": "internal",
 				"path": "bestiary/nycaloth.mp3"
 			},
+			"attachedItems": [
+				"greataxe|phb"
+			],
 			"traitTags": [
 				"Magic Resistance",
 				"Magic Weapons"
@@ -47227,6 +47572,10 @@
 				"type": "internal",
 				"path": "bestiary/ogre.mp3"
 			},
+			"attachedItems": [
+				"greatclub|phb",
+				"javelin|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -47339,6 +47688,9 @@
 				"type": "internal",
 				"path": "bestiary/ogre-zombie.mp3"
 			},
+			"attachedItems": [
+				"morningstar|phb"
+			],
 			"traitTags": [
 				"Undead Fortitude"
 			],
@@ -47519,6 +47871,9 @@
 				"type": "internal",
 				"path": "bestiary/oni.mp3"
 			},
+			"attachedItems": [
+				"glaive|phb"
+			],
 			"traitTags": [
 				"Magic Weapons",
 				"Regeneration"
@@ -47685,6 +48040,10 @@
 					"source": "PotA"
 				}
 			],
+			"attachedItems": [
+				"greataxe|phb",
+				"javelin|phb"
+			],
 			"traitTags": [
 				"Aggressive"
 			],
@@ -47844,6 +48203,9 @@
 				"type": "internal",
 				"path": "bestiary/orc-eye-of-gruumsh.mp3"
 			},
+			"attachedItems": [
+				"spear|phb"
+			],
 			"traitTags": [
 				"Aggressive"
 			],
@@ -48003,6 +48365,10 @@
 				"type": "internal",
 				"path": "bestiary/orc-war-chief.mp3"
 			},
+			"attachedItems": [
+				"greataxe|phb",
+				"spear|phb"
+			],
 			"traitTags": [
 				"Aggressive"
 			],
@@ -48142,6 +48508,10 @@
 				"type": "internal",
 				"path": "bestiary/orog.mp3"
 			},
+			"attachedItems": [
+				"greataxe|phb",
+				"javelin|phb"
+			],
 			"traitTags": [
 				"Aggressive"
 			],
@@ -49431,10 +49801,28 @@
 					]
 				}
 			],
+			"variant": [
+				{
+					"type": "variant",
+					"name": "Summon Devil (1/Day)",
+					"entries": [
+						"The devil chooses what to summon and attempts a magical summoning.",
+						"A pit fiend summons {@dice 2d4} {@creature bearded devil||bearded devils}, {@dice 1d4} {@creature barbed devil||barbed devils}, or one {@creature erinyes} with no chance of failure.",
+						"A summoned devil appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other devils. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."
+					],
+					"_version": {
+						"name": "Pit Fiend (Summoner)",
+						"addAs": "action"
+					}
+				}
+			],
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/pit-fiend.mp3"
 			},
+			"attachedItems": [
+				"mace|phb"
+			],
 			"traitTags": [
 				"Magic Resistance",
 				"Magic Weapons"
@@ -49760,6 +50148,9 @@
 				"type": "internal",
 				"path": "bestiary/planetar.mp3"
 			},
+			"attachedItems": [
+				"greatsword|phb"
+			],
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -50484,6 +50875,9 @@
 				"type": "internal",
 				"path": "bestiary/priest.mp3"
 			},
+			"attachedItems": [
+				"mace|phb"
+			],
 			"languageTags": [
 				"X"
 			],
@@ -50994,6 +51388,9 @@
 				"type": "internal",
 				"path": "bestiary/quadrone.mp3"
 			},
+			"attachedItems": [
+				"shortbow|phb"
+			],
 			"senseTags": [
 				"U"
 			],
@@ -53715,6 +54112,9 @@
 				"type": "internal",
 				"path": "bestiary/sahuagin.mp3"
 			},
+			"attachedItems": [
+				"spear|phb"
+			],
 			"senseTags": [
 				"SD"
 			],
@@ -53861,6 +54261,9 @@
 				"type": "internal",
 				"path": "bestiary/sahuagin-baron.mp3"
 			},
+			"attachedItems": [
+				"trident|phb"
+			],
 			"senseTags": [
 				"SD"
 			],
@@ -54188,6 +54591,9 @@
 				"type": "internal",
 				"path": "bestiary/salamander.mp3"
 			},
+			"attachedItems": [
+				"spear|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -54357,6 +54763,10 @@
 				"type": "internal",
 				"path": "bestiary/satyr.mp3"
 			},
+			"attachedItems": [
+				"shortbow|phb",
+				"shortsword|phb"
+			],
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -54753,6 +55163,10 @@
 				"type": "internal",
 				"path": "bestiary/scout.mp3"
 			},
+			"attachedItems": [
+				"longbow|phb",
+				"shortsword|phb"
+			],
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -55835,7 +56249,7 @@
 					]
 				}
 			],
-			"action": [
+			"reaction": [
 				{
 					"name": "Shriek",
 					"entries": [
@@ -56212,6 +56626,10 @@
 				"type": "internal",
 				"path": "bestiary/skeleton.mp3"
 			},
+			"attachedItems": [
+				"shortbow|phb",
+				"shortsword|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -56681,6 +57099,9 @@
 				"type": "internal",
 				"path": "bestiary/solar.mp3"
 			},
+			"attachedItems": [
+				"greatsword|phb"
+			],
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -57647,6 +58068,10 @@
 				"type": "internal",
 				"path": "bestiary/sprite.mp3"
 			},
+			"attachedItems": [
+				"longsword|phb",
+				"shortbow|phb"
+			],
 			"languageTags": [
 				"C",
 				"E",
@@ -57822,6 +58247,10 @@
 				"type": "internal",
 				"path": "bestiary/spy.mp3"
 			},
+			"attachedItems": [
+				"hand crossbow|phb",
+				"shortsword|phb"
+			],
 			"traitTags": [
 				"Sneak Attack"
 			],
@@ -58255,6 +58684,9 @@
 				"type": "internal",
 				"path": "bestiary/stone-giant.mp3"
 			},
+			"attachedItems": [
+				"greatclub|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -58625,6 +59057,9 @@
 				"type": "internal",
 				"path": "bestiary/storm-giant.mp3"
 			},
+			"attachedItems": [
+				"greatsword|phb"
+			],
 			"traitTags": [
 				"Amphibious"
 			],
@@ -60644,6 +61079,10 @@
 				"type": "internal",
 				"path": "bestiary/thug.mp3"
 			},
+			"attachedItems": [
+				"heavy crossbow|phb",
+				"mace|phb"
+			],
 			"traitTags": [
 				"Pack Tactics"
 			],
@@ -61050,6 +61489,9 @@
 				"type": "internal",
 				"path": "bestiary/tribal-warrior.mp3"
 			},
+			"attachedItems": [
+				"spear|phb"
+			],
 			"traitTags": [
 				"Pack Tactics"
 			],
@@ -61254,6 +61696,9 @@
 				"type": "internal",
 				"path": "bestiary/tridrone.mp3"
 			},
+			"attachedItems": [
+				"javelin|phb"
+			],
 			"senseTags": [
 				"U"
 			],
@@ -62148,6 +62593,9 @@
 				"type": "internal",
 				"path": "bestiary/ultroloth.mp3"
 			},
+			"attachedItems": [
+				"longsword|phb"
+			],
 			"traitTags": [
 				"Magic Resistance",
 				"Magic Weapons"
@@ -63423,6 +63871,9 @@
 				"type": "internal",
 				"path": "bestiary/vampire-warrior.mp3"
 			},
+			"attachedItems": [
+				"greatsword|phb"
+			],
 			"traitTags": [
 				"Legendary Resistances",
 				"Regeneration",
@@ -63620,6 +64071,11 @@
 				"type": "internal",
 				"path": "bestiary/veteran.mp3"
 			},
+			"attachedItems": [
+				"heavy crossbow|phb",
+				"longsword|phb",
+				"shortsword|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -65001,6 +65457,9 @@
 				"type": "internal",
 				"path": "bestiary/werebear.mp3"
 			},
+			"attachedItems": [
+				"greataxe|phb"
+			],
 			"traitTags": [
 				"Keen Senses",
 				"Shapechanger"
@@ -65177,6 +65636,9 @@
 				"type": "internal",
 				"path": "bestiary/wereboar.mp3"
 			},
+			"attachedItems": [
+				"maul|phb"
+			],
 			"traitTags": [
 				"Charge",
 				"Shapechanger"
@@ -65349,6 +65811,10 @@
 				"type": "internal",
 				"path": "bestiary/wererat.mp3"
 			},
+			"attachedItems": [
+				"hand crossbow|phb",
+				"shortsword|phb"
+			],
 			"traitTags": [
 				"Keen Senses",
 				"Shapechanger"
@@ -65519,6 +65985,10 @@
 				"type": "internal",
 				"path": "bestiary/weretiger.mp3"
 			},
+			"attachedItems": [
+				"longbow|phb",
+				"scimitar|phb"
+			],
 			"traitTags": [
 				"Keen Senses",
 				"Pounce",
@@ -65713,6 +66183,9 @@
 				"type": "internal",
 				"path": "bestiary/werewolf.mp3"
 			},
+			"attachedItems": [
+				"spear|phb"
+			],
 			"traitTags": [
 				"Keen Senses",
 				"Shapechanger"
@@ -66092,6 +66565,10 @@
 				"type": "internal",
 				"path": "bestiary/wight.mp3"
 			},
+			"attachedItems": [
+				"longbow|phb",
+				"longsword|phb"
+			],
 			"traitTags": [
 				"Sunlight Sensitivity"
 			],
@@ -66412,6 +66889,9 @@
 				"type": "internal",
 				"path": "bestiary/winged-kobold.mp3"
 			},
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"traitTags": [
 				"Pack Tactics",
 				"Sunlight Sensitivity"
@@ -70438,6 +70918,10 @@
 				"type": "internal",
 				"path": "bestiary/yuan-ti-abomination.mp3"
 			},
+			"attachedItems": [
+				"longbow|phb",
+				"scimitar|phb"
+			],
 			"traitTags": [
 				"Magic Resistance",
 				"Shapechanger"
@@ -70645,6 +71129,10 @@
 				"type": "internal",
 				"path": "bestiary/yuan-ti-malison.mp3"
 			},
+			"attachedItems": [
+				"longbow|phb",
+				"scimitar|phb"
+			],
 			"traitTags": [
 				"Magic Resistance",
 				"Shapechanger"
@@ -71027,6 +71515,10 @@
 				"type": "internal",
 				"path": "bestiary/yuan-ti-malison.mp3"
 			},
+			"attachedItems": [
+				"longbow|phb",
+				"scimitar|phb"
+			],
 			"traitTags": [
 				"Magic Resistance",
 				"Shapechanger"
@@ -71198,6 +71690,10 @@
 				"type": "internal",
 				"path": "bestiary/yuan-ti-pureblood.mp3"
 			},
+			"attachedItems": [
+				"scimitar|phb",
+				"shortbow|phb"
+			],
 			"traitTags": [
 				"Magic Resistance"
 			],

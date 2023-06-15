@@ -412,6 +412,9 @@ class CreatureBuilder extends Builder {
 			DamageTypeTag.tryRunSpells(this._state);
 			DamageTypeTag.tryRunRegionalsLairs(this._state);
 			MiscTag.tryRun(this._state);
+			TagImmResVulnConditional.tryRun(this._state);
+			DragonAgeTag.tryRun(this._state);
+			AttachedSpellTag.tryRun(this._state);
 
 			this.renderOutput();
 			this.doUiSave();
@@ -742,7 +745,7 @@ class CreatureBuilder extends Builder {
 			.change(() => {
 				setState();
 			})
-			.val(type);
+			.val(type || Parser.TP_HUMANOID);
 
 		const $btnRemove = $(`<button class="btn btn-xs btn-danger" title="Remove Row"><span class="glyphicon glyphicon-trash"/></button>`)
 			.click(() => {

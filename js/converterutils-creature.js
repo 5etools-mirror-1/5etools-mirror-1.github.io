@@ -1452,3 +1452,80 @@ class DragonAgeTag {
 }
 
 globalThis.DragonAgeTag = DragonAgeTag;
+
+class AttachedItemTag {
+	static _WEAPON_DETAIL_CACHE = {};
+
+	static init ({items}) {
+		for (const item of items) {
+			if (item.type === "GV") continue;
+			if (!["M", "R"].includes(item.type)) continue;
+
+			const lowName = item.name.toLowerCase();
+			// If there's e.g. a " +1" suffix on the end, make a copy with it as a prefix instead
+			const prefixBonusKey = lowName.replace(/^(.*?)( \+\d+)$/, (...m) => `${m[2].trim()} ${m[1].trim()}`);
+			// And vice-versa
+			const suffixBonusKey = lowName.replace(/^(\+\d+) (.*?)$/, (...m) => `${m[2].trim()} ${m[1].trim()}`);
+			const suffixBonusKeyComma = lowName.replace(/^(\+\d+) (.*?)$/, (...m) => `${m[2].trim()}, ${m[1].trim()}`);
+
+			const itemKeys = [
+				lowName,
+				prefixBonusKey === lowName ? null : prefixBonusKey,
+				suffixBonusKey === lowName ? null : suffixBonusKey,
+				suffixBonusKeyComma === lowName ? null : suffixBonusKeyComma,
+			].filter(Boolean);
+
+			const cpy = MiscUtil.copy(item);
+
+			itemKeys.forEach(k => {
+				if (!this._WEAPON_DETAIL_CACHE[k]) {
+					this._WEAPON_DETAIL_CACHE[k] = cpy;
+					return;
+				}
+
+				// If there is already something in the cache, prefer DMG + PHB entries, then official sources
+				const existing = this._WEAPON_DETAIL_CACHE[k];
+				if (
+					!(existing.source === Parser.SRC_DMG || existing.source === Parser.SRC_PHB)
+					&& SourceUtil.isNonstandardSource(existing.source)
+				) {
+					this._WEAPON_DETAIL_CACHE[k] = cpy;
+				}
+			});
+		}
+	}
+
+	static _isLikelyWeapon (act) {
+		if (!act.entries?.length || typeof act.entries[0] !== "string") return false;
+		const mAtk = /^{@atk ([^}]+)}/.exec(act.entries[0].trim());
+		if (!mAtk) return;
+		return mAtk[1].split(",").some(it => it.includes("w"));
+	}
+
+	static tryRun (mon, {cbNotFound = null, isAddOnly = false} = {}) {
+		if (!this._WEAPON_DETAIL_CACHE) throw new Error(`Attached item cache was not initialized!`);
+
+		if (!mon.action?.length) return;
+
+		const itemSet = new Set();
+
+		mon.action
+			.forEach(act => {
+				const weapon = this._WEAPON_DETAIL_CACHE[Renderer.monsterAction.getWeaponLookupName(act)];
+				if (weapon) return itemSet.add(DataUtil.proxy.getUid("item", weapon));
+
+				if (!cbNotFound) return;
+
+				if (!this._isLikelyWeapon(act)) return;
+
+				cbNotFound(act.name);
+			});
+
+		if (isAddOnly && mon.attachedItems) mon.attachedItems.forEach(it => itemSet.add(it));
+
+		if (!itemSet.size) delete mon.attachedItems;
+		else mon.attachedItems = [...itemSet].sort(SortUtil.ascSortLower);
+	}
+}
+
+globalThis.AttachedItemTag = AttachedItemTag;

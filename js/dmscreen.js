@@ -1,4 +1,4 @@
-"use strict";
+import {InitiativeTracker} from "./dmscreen/dmscreen-initiativetracker.js";
 
 const UP = "UP";
 const RIGHT = "RIGHT";

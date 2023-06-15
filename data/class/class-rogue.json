@@ -28,6 +28,11 @@
 				"tools": [
 					"{@item thieves' tools|PHB}"
 				],
+				"toolProficiencies": [
+					{
+						"thieves' tools": true
+					}
+				],
 				"skills": [
 					{
 						"choose": {
@@ -129,6 +134,11 @@
 					],
 					"tools": [
 						"{@item thieves' tools|PHB}"
+					],
+					"toolProficiencies": [
+						{
+							"thieves' tools": true
+						}
 					]
 				}
 			},
@@ -3420,7 +3430,7 @@
 			"subclassSource": "TCE",
 			"level": 3,
 			"consumes": {
-				"name": "Psionic Energy Dice"
+				"name": "Psionic Energy Die"
 			},
 			"entries": [
 				"When your nonpsionic training fails you, your psionic power can help: if you fail an ability check using a skill or tool with which you have proficiency, you can roll one Psionic Energy die and add the number rolled to the check, potentially turning failure into success. You expend the die only if the roll succeeds."

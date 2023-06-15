@@ -1,0 +1,80 @@
+@import "vars";
+
+.dm-money {
+	width: 100%;
+	height: 100%;
+	padding-top: 22px;
+
+	&__ {
+		&rows {
+			overflow-y: scroll;
+		}
+
+		&ctrl {
+			margin-top: 6px;
+			padding-top: 3px;
+			border-top: 1px solid $rgb-border-grey;
+			flex-shrink: 0;
+		}
+
+		&ctrl__lhs {
+			display: flex;
+			flex-direction: column;
+			padding: 3px;
+		}
+
+		&ctrl__lhs > * {
+			margin-bottom: 3px;
+		}
+
+		&ctrl__lhs > *:last-child {
+			margin-bottom: 0;
+		}
+
+		&ctrl__rhs {
+			display: flex;
+			flex-direction: column;
+			padding: 3px;
+		}
+
+		&ctrl__rhs > * {
+			margin-bottom: 3px;
+		}
+
+		&ctrl__rhs > *:last-child {
+			margin-bottom: 0;
+		}
+
+		&out,
+		&out[disabled] {
+			text-align: right;
+			background: #0000;
+		}
+
+		&row {
+			width: 100%;
+			display: flex;
+			margin-bottom: 3px;
+		}
+
+		&row:last-child {
+			margin-bottom: 0;
+		}
+
+		&row > * {
+			margin-right: 3px;
+		}
+
+		&row > *:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.night-mode .dm-money {
+	&__ {
+		&ctrl {
+			border-color: $rgb-border-grey--night;
+		}
+	}
+}

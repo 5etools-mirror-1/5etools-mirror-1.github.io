@@ -1,0 +1,48 @@
+@import "vars";
+
+.dm-map__ {
+	&picker-wrp-img {
+		display: inline-block;
+		width: 320px;
+		height: 340px;
+		line-height: 320px;
+		text-align: center;
+		font-size: 0;
+		border: 2px solid $rgb-border-grey;
+	}
+
+	&picker-img {
+		width: auto;
+		height: 320px;
+		vertical-align: middle;
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	&picker-disp-name {
+		top: calc(100% - 20px);
+		right: 14px;
+		bottom: 0;
+		left: 14px;
+		line-height: 20px;
+		font-size: 14px;
+		background: white;
+		border-top: 1px solid $rgb-border-grey;
+		border-right: 1px solid $rgb-border-grey;
+		border-left: 1px solid $rgb-border-grey;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+}
+
+.night-mode .dm-map__ {
+	&picker-wrp-img {
+		border-color: $rgb-border-grey--night;
+	}
+
+	&picker-disp-name {
+		background: $rgb-bg--night;
+		border-color: $rgb-border-grey--night;
+	}
+}

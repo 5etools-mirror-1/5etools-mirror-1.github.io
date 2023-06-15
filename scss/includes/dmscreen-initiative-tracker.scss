@@ -1,0 +1,273 @@
+@import "vars";
+
+.dm-init {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+}
+
+.dm-init__wrp-header-outer {
+	overflow-x: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.dm-init__wrp-header {
+	flex: none;
+	margin-bottom: 5px;
+	display: flex;
+	justify-content: space-between;
+	font-variant: small-caps;
+	border-bottom: 1px solid $rgb-border-grey;
+	min-width: min-content;
+}
+
+.dm-init__header {
+	padding: 5px 0;
+	width: 100%;
+	text-align: center;
+}
+
+.dm-init__header--input {
+	width: 40px;
+	margin-right: 3px;
+}
+
+.dm-init__header--input-wide {
+	width: 83px;
+	margin-right: 3px;
+}
+
+.dm-init__spc-header-buttons {
+	width: 52px;
+}
+
+.dm-init__wrp-entries {
+	overflow-y: scroll;
+	min-width: min-content;
+}
+
+.dm-init__row {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 3px;
+}
+
+.dm-init__row-lhs,
+.dm-init__row-rhs {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+
+.dm-init__row-lhs {
+	width: 100%;
+	min-width: 115px;
+}
+
+.dm-init__row-mid {
+	display: flex;
+}
+
+.dm-init__row-btn {
+	line-height: 26px;
+	padding: 1px 3px;
+}
+
+.dm-init__row-btn-flag,
+.dm-init__btn_eye {
+	margin-right: 3px;
+}
+
+.dm-init__number {
+	margin: 0 3px;
+}
+
+.dm-init__wrp-creature {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	margin: 0 3px 0 0;
+	padding-left: 5px;
+	border: 1px solid $rgb-border-grey;
+}
+
+.dm-init__wrp-creature .btn {
+	margin-right: 3px;
+	padding: 0 1px;
+	line-height: 12px;
+	font-size: 9px;
+}
+
+.dm-init__wrp-creature-link {
+	display: flex;
+	height: 20px;
+	overflow: hidden;
+}
+
+.dm-init__row-input {
+	height: auto;
+	margin-right: 3px;
+	padding: 5px 3px;
+	border-radius: 0;
+}
+
+.dm-init__ipt-name {
+	min-width: 50px;
+}
+
+.dm-init__ipt--rhs {
+	width: 40px;
+}
+
+.dm-init__row-rhs input[type=number]::-webkit-inner-spin-button,
+.dm-init__row-rhs input[type=number]::-webkit-outer-spin-button {
+	/* stylelint-disable-next-line property-no-vendor-prefix */
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.dm-init__row.dm-init__row-active input {
+	background: #cfe5ff78;
+}
+
+.dm-init__row.dm-init__row-active .dm-init__wrp-creature {
+	background: #cfe5ff78;
+}
+
+.dm-init__wrp-controls {
+	flex: none;
+	height: 29px;
+	padding: 3px;
+	border-top: 1px solid $rgb-border-grey;
+	justify-content: space-evenly;
+	display: flex;
+}
+
+.dm-init__rounds {
+	width: 35px;
+	height: $h-ipt-xs;
+	display: inline-block;
+	border-radius: 0;
+	padding: 0;
+	text-align: right;
+}
+
+.dm-init__modal-wrp-rows {
+	min-width: 400px;
+	padding: 7px;
+}
+
+.dm-init__btn-cond {
+	min-width: 85px;
+	color: white !important;
+	outline: none !important;
+}
+
+.dm-init__hp {
+	width: 42px;
+}
+
+.dm-init__hp--current {
+	margin-right: 0;
+	border-right: 0;
+}
+
+.dm-init__hp--max {
+	border-left: 0;
+}
+
+.dm-init__hp_slash {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	bottom: 0;
+	left: 40px;
+	display: flex;
+	align-items: center;
+	color: #888;
+}
+
+.dm-init__stats_rows {
+	width: 100%;
+	margin-right: 0;
+}
+
+.dm-init__stats_row {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin-bottom: 2px;
+}
+
+.dm-init__stats_up_down {
+	display: flex;
+	justify-content: center;
+}
+
+.dm-init__stats_down {
+	top: 2px;
+	left: 1px;
+}
+
+.dm-init__stats_add {
+	right: -1px;
+}
+
+.dm-init__stats_row--item:only-child .dm-init__stats_up_down {
+	display: none;
+}
+
+.dm-init__stats_up_down--spacer {
+	display: none;
+}
+
+.dm-init__stats_row--item:only-child .dm-init__stats_up_down--spacer {
+	display: block;
+}
+
+.dm-init__stats_row--item:only-child .dm-init__stats_del {
+	display: none;
+}
+
+.dm-init__stat_head {
+	margin-right: 3px;
+	padding: 5px 0;
+	width: 40px;
+	height: 20px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.dm-init__stat_ipt {
+	width: 40px;
+	margin-right: 3px;
+	padding: 5px 3px;
+	border-radius: 0;
+}
+
+.dm-init__stat_ipt[type=checkbox] {
+	margin-right: 3px;
+}
+
+.night-mode {
+	.dm-init__wrp-header {
+		border-color: $rgb-border-grey--night;
+	}
+
+	.dm-init__wrp-controls {
+		border-color: $rgb-border-grey--night;
+	}
+
+	.dm-init__wrp-creature {
+		border-color: $rgb-border-grey--night;
+	}
+
+	.dm-init__row.dm-init__row-active input,
+	.dm-init__row.dm-init__row-active .dm-init__wrp-creature {
+		background: #8dc1ff20;
+	}
+}
+

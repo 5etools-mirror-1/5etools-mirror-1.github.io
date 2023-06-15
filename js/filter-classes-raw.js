@@ -357,7 +357,7 @@ class PageFilterClassesRaw extends PageFilterClassesBase {
 	static async _pGetIgnoredAndApplySideData (entity, type) {
 		if (!PageFilterClassesRaw._IMPLS_SIDE_DATA[type]) throw new Error(`Unhandled type "${type}"`);
 
-		const sideData = await PageFilterClassesRaw._IMPLS_SIDE_DATA[type].pGetSideLoadedMatch(entity, {prop: type, isSilent: true});
+		const sideData = await PageFilterClassesRaw._IMPLS_SIDE_DATA[type].pGetSideLoaded(entity, {isSilent: true});
 
 		if (!sideData) return false;
 		if (sideData.isIgnored) return true;

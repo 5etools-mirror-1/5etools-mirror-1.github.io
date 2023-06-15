@@ -1,0 +1,33 @@
+@import "vars";
+
+.dm-unitconv {
+	width: 100%;
+	height: 100%;
+
+	&__ {
+		&wrp-ipt {
+			align-items: center;
+			height: 100%;
+		}
+
+		&wrp-ipt-inner {
+			align-items: center;
+			height: 100%;
+		}
+
+		&btn-switch {
+			margin: 0 5px;
+			font-weight: bold;
+		}
+
+		&ipt {
+			resize: none;
+			height: 100%;
+		}
+
+		&ipt.ipt-invalid:focus {
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(231, 99, 99, 0.6);
+			border-color: #e92b31;
+		}
+	}
+}

@@ -93,7 +93,7 @@ function addMonsterFeatures (mfData) {
 				</div>
 				<div class="col-2">${f.name}</div>
 				<div class="col-2">${Renderer.get().render(`{@creature ${f.example}}`)}</div>
-				<div class="col-7"><span title="${effectOnCr.join(", ")}">${f.effect}</span></div>
+				<div class="col-7"><span title="${effectOnCr.join(", ")}">${Renderer.get().render(f.effect)}</span></div>
 			</label>
 		`);
 	});

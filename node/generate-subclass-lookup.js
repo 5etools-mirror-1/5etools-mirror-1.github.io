@@ -8,7 +8,7 @@ Object.values(classIndex).forEach(f => {
 	const data = JSON.parse(fs.readFileSync(`./data/class/${f}`, "utf-8"));
 
 	(data.subclass || []).forEach(sc => {
-		MiscUtil.set(out, sc.classSource, sc.className, sc.source, sc.shortName, {isReprinted: sc.isReprinted});
+		MiscUtil.set(out, sc.classSource, sc.className, sc.source, sc.shortName, {name: sc.name, isReprinted: sc.isReprinted});
 	});
 });
 fs.writeFileSync(`./data/generated/gendata-subclass-lookup.json`, CleanUtil.getCleanJson(out, {isMinify: true}));

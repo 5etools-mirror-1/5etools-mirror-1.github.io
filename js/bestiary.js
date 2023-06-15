@@ -184,6 +184,12 @@ class BestiaryPage extends ListPageMultiSource {
 		return brew;
 	}
 
+	static _tableView_getEntryPropTransform ({mon, fnGet}) {
+		const fnGetSpellTraits = Renderer.monster.getSpellcastingRenderedTraits.bind(Renderer.monster, Renderer.get());
+		const allEntries = fnGet(mon, {fnGetSpellTraits});
+		return (allEntries || []).map(it => it.rendered || Renderer.get().render(it, 2)).join("");
+	}
+
 	constructor () {
 		const pFnGetFluff = Renderer.monster.pGetFluff.bind(Renderer.monster);
 
@@ -232,24 +238,24 @@ class BestiaryPage extends ListPageMultiSource {
 					_cr: {name: "CR", transform: mon => Parser.monCrToFull(mon.cr, {isMythic: !!mon.mythic})},
 					_trait: {
 						name: "Traits",
-						transform: mon => {
-							const fnGetSpellTraits = Renderer.monster.getSpellcastingRenderedTraits.bind(Renderer.monster, Renderer.get());
-							const allTraits = Renderer.monster.getOrderedTraits(mon, {fnGetSpellTraits});
-							return (allTraits || []).map(it => it.rendered || Renderer.get().render(it, 2)).join("");
-						},
+						transform: mon => BestiaryPage._tableView_getEntryPropTransform({mon, fnGet: Renderer.monster.getOrderedTraits}),
 						flex: 3,
 					},
 					_action: {
 						name: "Actions",
-						transform: mon => {
-							const fnGetSpellTraits = Renderer.monster.getSpellcastingRenderedTraits.bind(Renderer.monster, Renderer.get());
-							const allActions = Renderer.monster.getOrderedActions(mon, {fnGetSpellTraits});
-							return (allActions || []).map(it => it.rendered || Renderer.get().render(it, 2)).join("");
-						},
+						transform: mon => BestiaryPage._tableView_getEntryPropTransform({mon, fnGet: Renderer.monster.getOrderedActions}),
 						flex: 3,
 					},
-					bonus: {name: "Bonus Actions", transform: it => (it || []).map(x => Renderer.get().render(x, 2)).join(""), flex: 3},
-					reaction: {name: "Reactions", transform: it => (it || []).map(x => Renderer.get().render(x, 2)).join(""), flex: 3},
+					_bonus: {
+						name: "Bonus Actions",
+						transform: mon => BestiaryPage._tableView_getEntryPropTransform({mon, fnGet: Renderer.monster.getOrderedBonusActions}),
+						flex: 3,
+					},
+					_reaction: {
+						name: "Reactions",
+						transform: mon => BestiaryPage._tableView_getEntryPropTransform({mon, fnGet: Renderer.monster.getOrderedReactions}),
+						flex: 3,
+					},
 					legendary: {name: "Legendary Actions", transform: it => (it || []).map(x => Renderer.get().render(x, 2)).join(""), flex: 3},
 					mythic: {name: "Mythic Actions", transform: it => (it || []).map(x => Renderer.get().render(x, 2)).join(""), flex: 3},
 					_lairActions: {

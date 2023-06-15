@@ -4,6 +4,7 @@ class PageFilterBestiary extends PageFilter {
 	static _NEUT_ALIGNS = ["NX", "NY"];
 	static MISC_FILTER_SPELLCASTER = "Spellcaster, ";
 	static _RE_SPELL_TAG = /{@spell ([^}]+)}/g;
+	static _RE_ITEM_TAG = /{@item ([^}]+)}/g;
 	static _WALKER = null;
 	static _BASIC_ENTRY_PROPS = [
 		"trait",
@@ -233,6 +234,7 @@ class PageFilterBestiary extends PageFilter {
 			displayFn: it => Parser.getOrdinalForm(it),
 		});
 		this._spellKnownFilter = new SearchableFilter({header: "Spells Known", displayFn: (it) => it.split("|")[0].toTitleCase(), itemSortFn: SortUtil.ascSortLower});
+		this._equipmentFilter = new SearchableFilter({header: "Equipment", displayFn: (it) => it.split("|")[0].toTitleCase(), itemSortFn: SortUtil.ascSortLower});
 		this._dragonAgeFilter = new Filter({
 			header: "Dragon Age",
 			items: [...PageFilterBestiary._DRAGON_AGES],
@@ -340,7 +342,11 @@ class PageFilterBestiary extends PageFilter {
 
 		if (mon.languageTags?.length) mon._fLanguageTags = mon.languageTags;
 		else mon._fLanguageTags = ["None"];
+
+		mon._fEquipment = this._getEquipmentList(mon);
 	}
+
+	/* -------------------------------------------- */
 
 	static _getSpellcasterMeta (mon) {
 		if (!mon.spellcasting?.length) return null;
@@ -358,7 +364,7 @@ class PageFilterBestiary extends PageFilter {
 			PageFilterBestiary._WALKER.walk(
 				spc,
 				{
-					string: this._getSpellcasterMeta_stringHandler.bind(null, spellSet),
+					string: this._getSpellcasterMeta_stringHandler.bind(this, spellSet),
 				},
 			);
 		}
@@ -375,6 +381,8 @@ class PageFilterBestiary extends PageFilter {
 		});
 	}
 
+	/* -------------------------------------------- */
+
 	static _hasRecharge (mon) {
 		for (const prop of PageFilterBestiary._BASIC_ENTRY_PROPS) {
 			if (!mon[prop]) continue;
@@ -385,6 +393,41 @@ class PageFilterBestiary extends PageFilter {
 		}
 		return false;
 	}
+
+	/* -------------------------------------------- */
+
+	static _getEquipmentList (mon) {
+		const itemSet = new Set(mon.attachedItems || []);
+
+		for (const acItem of (mon.ac || [])) {
+			if (!acItem?.from?.length) continue;
+			for (const from of acItem.from) this._getEquipmentList_stringHandler(itemSet, from);
+		}
+
+		for (const trait of (mon.trait || [])) {
+			if (!trait.name.toLowerCase().startsWith("special equipment")) continue;
+			PageFilterBestiary._WALKER.walk(
+				trait.entries,
+				{
+					string: this._getEquipmentList_stringHandler.bind(this, itemSet),
+				},
+			);
+			break;
+		}
+
+		return [...itemSet];
+	}
+
+	static _getEquipmentList_stringHandler (itemSet, str) {
+		str
+			.replace(PageFilterBestiary._RE_ITEM_TAG, (...m) => {
+				const unpacked = DataUtil.proxy.unpackUid("item", m[1], "item", {isLower: true});
+				itemSet.add(DataUtil.proxy.getUid("item", unpacked));
+				return "";
+			});
+	}
+
+	/* -------------------------------------------- */
 
 	addToFilters (mon, isExcluded) {
 		if (isExcluded) return;
@@ -413,6 +456,7 @@ class PageFilterBestiary extends PageFilter {
 		this._passivePerceptionFilter.addItem(mon._fPassive);
 		this._spellSlotLevelFilter.addItem(mon._fSpellSlotLevels);
 		this._spellKnownFilter.addItem(mon._fSpellsKnown);
+		this._equipmentFilter.addItem(mon._fEquipment);
 		if (mon._versionBase_isVersion) this._miscFilter.addItem("Is Variant");
 		this._damageTypeFilterBase.addItem(mon.damageTags);
 		this._damageTypeFilterLegendary.addItem(mon.damageTagsLegendary);
@@ -462,6 +506,7 @@ class PageFilterBestiary extends PageFilter {
 			this._averageHpFilter,
 			this._abilityScoreFilter,
 			this._spellKnownFilter,
+			this._equipmentFilter,
 		];
 	}
 
@@ -518,6 +563,7 @@ class PageFilterBestiary extends PageFilter {
 				m._fCha,
 			],
 			m._fSpellsKnown,
+			m._fEquipment,
 		);
 	}
 }

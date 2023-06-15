@@ -1,11 +1,6 @@
 @import "includes/vars";
 
-body.dm-screen-locked .panel-control-bar,
-body.dm-screen-locked .content-tab-remove,
-body.dm-screen-locked .panel-history-control-remove-wrapper,
-body.dm-screen-locked .panel-history-control-middle {
-	display: none !important;
-}
+$rgb-bg-panel-control: #80808080;
 
 label {
 	margin-bottom: 0;
@@ -16,6 +11,10 @@ label {
 	&tab_hidden {
 		display: none !important;
 	}
+}
+
+.dm__panel-bg {
+	background: white;
 }
 
 .dm-screen {
@@ -38,6 +37,15 @@ label {
 
 .dm-screen-panel {
 	position: relative;
+	background-color: #f0f0f0;
+
+	&.faux-hover {
+		background: #e0e0e0;
+
+		.panel-content-wrapper-inner::after {
+			background: #e0e0e080;
+		}
+	}
 }
 
 .dm-screen-panel.faux-hover .panel-content-wrapper-inner::after {
@@ -58,6 +66,7 @@ label {
 	padding-left: 3px;
 	opacity: 0.2;
 	transition: opacity 0.1s;
+	background: $rgb-bg-panel-control;
 }
 
 .dm-screen-panel[empty="true"] .panel-control-bar {
@@ -113,6 +122,7 @@ label {
 	cursor: pointer;
 	font-size: 12px;
 	user-select: none;
+	color: rgba(255, 255, 255, 0.7);
 }
 
 .panel-add {
@@ -120,6 +130,7 @@ label {
 	justify-content: center;
 	align-items: center;
 	font-size: 5rem;
+	color: $rgb-border-grey;
 }
 
 .btn-panel-add {
@@ -128,6 +139,12 @@ label {
 	border-radius: 5px;
 	cursor: pointer;
 	user-select: none;
+	border: 1px solid $rgb-border-grey;
+
+	&:hover,
+	&.faux-hover {
+		background: #e0e0e0;
+	}
 }
 
 .board-content-hovering .btn-panel-add {
@@ -223,10 +240,15 @@ label {
 }
 
 .panel-content-wrapper-inner {
+	background: white;
 	height: 100%;
 	width: 100%;
 	overflow-y: auto;
 	overflow-x: hidden;
+
+	td div.border {
+		background-color: $rgb-name-red;
+	}
 }
 
 .panel-content-wrapper-inner::-webkit-scrollbar-track {
@@ -350,6 +372,11 @@ label {
 	border-bottom-left-radius: 0;
 	padding: 4px 5px;
 	cursor: pointer;
+
+	&[active="true"] {
+		background-color: #e6e6e6;
+		border-color: #adadad;
+	}
 }
 
 .panel-addmenu-view {
@@ -359,6 +386,7 @@ label {
 
 .underline-tabs {
 	margin-top: -1px;
+	border-top: 1px solid $rgb-border-grey;
 }
 
 .list {
@@ -542,6 +570,7 @@ body.is-fullscreen .sidemenu__hotzone {
 	right: 0;
 	transition: opacity 0.1s;
 	border-bottom-left-radius: 5px;
+	background: $rgb-bg-panel-control;
 }
 
 .sidemenu__history-item-cover:hover .panel-history-control-remove-wrapper {
@@ -558,6 +587,7 @@ body.is-fullscreen .sidemenu__hotzone {
 	cursor: pointer;
 	font-size: 12px;
 	user-select: none;
+	color: rgba(255, 255, 255, 0.7);
 }
 
 .panel-history-control-middle {
@@ -572,6 +602,8 @@ body.is-fullscreen .sidemenu__hotzone {
 	cursor: move;
 	border-radius: 50%;
 	transition: opacity 0.1s;
+	background: $rgb-border-grey--trans;
+	border: 1px solid $rgb-border-grey;
 }
 
 .sidemenu__history-item-cover:hover .panel-history-control-middle {
@@ -579,791 +611,77 @@ body.is-fullscreen .sidemenu__hotzone {
 	transition: opacity 0.1s;
 }
 
-.dm-init {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 100%;
-	height: 100%;
-}
-
-.dm-init-wrp-header-outer {
-	overflow-x: auto;
-	display: flex;
-	flex-direction: column;
-}
-
-.dm-init-wrp-header {
-	flex: none;
-	margin-bottom: 5px;
-	display: flex;
-	justify-content: space-between;
-	font-variant: small-caps;
-	border-bottom: 1px solid $rgb-border-grey;
-	min-width: min-content;
+.dm-screen-locked .panel-control-bar,
+.dm-screen-locked .content-tab-remove,
+.dm-screen-locked .panel-history-control-remove-wrapper,
+.dm-screen-locked .panel-history-control-middle {
+	display: none !important;
 }
 
 .night-mode {
-	.dm-init-wrp-header {
-		border-color: $rgb-border-grey--night;
-	}
-}
-
-.dm-init-header {
-	padding: 5px 0;
-	width: 100%;
-	text-align: center;
-}
-
-.dm-init-header--input {
-	width: 40px;
-	margin-right: 3px;
-}
-
-.dm-init-header--input-wide {
-	width: 83px;
-	margin-right: 3px;
-}
-
-.dm-init-wrp-entries {
-	overflow-y: scroll;
-	min-width: min-content;
-}
-
-.dm-init-row {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 3px;
-}
-
-.dm-init-row-lhs,
-.dm-init-row-rhs {
-	display: flex;
-	justify-content: space-between;
-	position: relative;
-}
-
-.dm-init-row-lhs {
-	width: 100%;
-	min-width: 115px;
-}
-
-.dm-init-row-mid {
-	display: flex;
-}
-
-.dm-init-row-btn {
-	line-height: 26px;
-	padding: 1px 3px;
-}
-
-.dm-init-row-btn-flag,
-.dm_init__btn_eye {
-	margin-right: 3px;
-}
-
-.dm_init__number {
-	margin: 0 3px;
-}
-
-.dm-init-row .init-wrp-creature {
-	display: flex;
-	width: 100%;
-	align-items: center;
-	margin: 0 3px 0 0;
-	padding-left: 5px;
-	border: 1px solid $rgb-border-grey;
-}
-
-.night-mode {
-	.init-wrp-creature {
-		border-color: $rgb-border-grey--night;
-	}
-}
-
-.dm-init-row .init-wrp-creature .btn {
-	margin-right: 3px;
-	padding: 0 1px;
-	line-height: 12px;
-	font-size: 9px;
-}
-
-.dm-init-row .init-wrp-creature-link {
-	display: flex;
-	height: 20px;
-	overflow: hidden;
-}
-
-.dm-init-row-input {
-	height: auto;
-	margin-right: 3px;
-	padding: 5px 3px;
-	border-radius: 0;
-}
-
-.dm-init-name {
-	min-width: 50px;
-}
-
-.dm_init__ipt--rhs {
-	width: 40px;
-}
-
-.dm-init-row-rhs input[type=number]::-webkit-inner-spin-button,
-.dm-init-row-rhs input[type=number]::-webkit-outer-spin-button {
-	/* stylelint-disable-next-line property-no-vendor-prefix */
-	-webkit-appearance: none;
-	margin: 0;
-}
-
-.dm-init-wrp-controls {
-	flex: none;
-	height: 29px;
-	padding: 3px;
-	border-top: 1px solid $rgb-border-grey;
-	justify-content: space-evenly;
-	display: flex;
-}
-
-.night-mode {
-	.dm-init-wrp-controls {
-		border-color: $rgb-border-grey--night;
-	}
-}
-
-.dm_init__rounds {
-	width: 35px;
-	height: $h-ipt-xs;
-	display: inline-block;
-	border-radius: 0;
-	padding: 0;
-	text-align: right;
-}
-
-.dm-init-modal-wrp-rows {
-	min-width: 400px;
-	padding: 7px;
-}
-
-.btn-dm-init-cond {
-	min-width: 85px;
-	color: white !important;
-	outline: none !important;
-}
-
-.dm_init__hp {
-	width: 42px;
-}
-
-.dm_init__hp--current {
-	margin-right: 0;
-	border-right: 0;
-}
-
-.dm_init__hp--max {
-	border-left: 0;
-}
-
-.dm_init__hp_slash {
-	position: absolute;
-	pointer-events: none;
-	top: 0;
-	bottom: 0;
-	left: 40px;
-	display: flex;
-	align-items: center;
-	color: #888;
-}
-
-.dm_init__stats_rows {
-	width: 100%;
-	margin-right: 0;
-}
-
-.dm_init__stats_row {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	margin-bottom: 2px;
-}
-
-.dm_init__stats_up_down {
-	display: flex;
-	justify-content: center;
-}
-
-.dm_init__stats_down {
-	top: 2px;
-	left: 1px;
-}
-
-.dm_init__stats_add {
-	right: -1px;
-}
-
-.dm_init__stats_row--item:only-child .dm_init__stats_up_down {
-	display: none;
-}
-
-.dm_init__stats_up_down--spacer {
-	display: none;
-}
-
-.dm_init__stats_row--item:only-child .dm_init__stats_up_down--spacer {
-	display: block;
-}
-
-.dm_init__stats_row--item:only-child .dm_init__stats_del {
-	display: none;
-}
-
-.dm_init__stat_head {
-	margin-right: 3px;
-	padding: 5px 0;
-	width: 40px;
-	height: 20px;
-	text-align: center;
-	overflow: hidden;
-}
-
-.dm_init__stat_ipt {
-	width: 40px;
-	margin-right: 3px;
-	padding: 5px 3px;
-	border-radius: 0;
-}
-
-.dm_init__stat_ipt[type=checkbox] {
-	margin-right: 3px;
-}
-
-/* player view */
-textarea.dm_init__pl_textarea {
-	resize: none;
-	width: 100%;
-	height: 240px;
-}
-
-// region Unit converter
-.dm-unitconv {
-	width: 100%;
-	height: 100%;
-
-	&__ {
-		&wrp-ipt {
-			align-items: center;
-			height: 100%;
-		}
-
-		&wrp-ipt-inner {
-			align-items: center;
-			height: 100%;
-		}
-
-		&btn-switch {
-			margin: 0 5px;
-			font-weight: bold;
-		}
-
-		&ipt {
-			resize: none;
-			height: 100%;
-		}
-
-		&ipt.ipt-invalid:focus {
-			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(231, 99, 99, 0.6);
-			border-color: #e92b31;
-		}
-	}
-}
-// endregion
-
-// region Coin converter
-.dm-money {
-	width: 100%;
-	height: 100%;
-	padding-top: 22px;
-
-	&__ {
-		&rows {
-			overflow-y: scroll;
-		}
-
-		&ctrl {
-			margin-top: 6px;
-			padding-top: 3px;
-			border-top: 1px solid $rgb-border-grey;
-			flex-shrink: 0;
-		}
-
-		&ctrl__lhs {
-			display: flex;
-			flex-direction: column;
-			padding: 3px;
-		}
-
-		&ctrl__lhs > * {
-			margin-bottom: 3px;
-		}
-
-		&ctrl__lhs > *:last-child {
-			margin-bottom: 0;
-		}
-
-		&ctrl__rhs {
-			display: flex;
-			flex-direction: column;
-			padding: 3px;
-		}
-
-		&ctrl__rhs > * {
-			margin-bottom: 3px;
-		}
-
-		&ctrl__rhs > *:last-child {
-			margin-bottom: 0;
-		}
-
-		&out,
-		&out[disabled] {
-			text-align: right;
-			background: #0000;
-		}
-
-		&row {
-			width: 100%;
-			display: flex;
-			margin-bottom: 3px;
-		}
-
-		&row:last-child {
-			margin-bottom: 0;
-		}
-
-		&row > * {
-			margin-right: 3px;
-		}
-
-		&row > *:last-child {
-			margin-right: 0;
-		}
-	}
-}
-
-.night-mode .dm-money {
-	&__ {
-		&ctrl {
-			border-color: $rgb-border-grey--night;
-		}
-	}
-}
-// endregion
-
-// region Book
-.dm-book__ {
-	&wrp-content {
-		overflow-y: auto;
-		overflow-x: hidden;
-		transform: translateZ(0);
-	}
-
-	&wrp-controls {
-		padding: 2px 2px 1px 21px;
-		border-top: 1px solid $rgb-border-grey;
-		justify-content: flex-end;
-	}
-
-	&controls-title {
-		height: 20px;
-		padding: 0 3px;
-		width: 50%;
-		flex-grow: 0;
-	}
-}
-
-.night-mode .dm-book__ {
-	&wrp-controls {
-		border-color: $rgb-border-grey--night;
-	}
-}
-// endregion
-
-/* region Clock/Calendar */
-.dm-time__ {
-	&btn-time {
-		width: 20px;
-	}
-
-	&btn-time--top {
-		border-bottom: 0;
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
-	}
-
-	&btn-time--bottom {
-		border-top: 0;
-		border-top-left-radius: 0;
-		border-top-right-radius: 0;
-	}
-
-	&sep-time {
-		font-size: 32px;
-		position: relative;
-		top: -2px;
-	}
-
-	&ipt-time {
-		width: 20px;
-		font-size: 20px;
-		font-weight: bold;
-	}
-
-	&bar-clock {
-		height: calc(100% - 8px);
-		margin: 4px 8px;
-		flex-shrink: 0;
-		border-left: 1px solid $rgb-border-grey;
-	}
-
-	&btn-day {
-		width: 16px;
-	}
-
-	&wrp-weather {
-		width: 100px;
-	}
-
-	&btn-weather {
-		width: 34px;
-		padding: 0;
-		font-size: 21px;
-		text-align: center;
-		height: 33px;
-		line-height: 33px;
-	}
-
-	&btn-random-weather {
-		border: 0;
-		padding: 0;
-	}
-
-	&ipt-weather {
-		width: 40px;
-	}
-
-	&btn-date-adjust {
-		width: 27px;
-		padding: 1px 3px;
-		flex-shrink: 0;
-		flex-grow: 0;
-	}
-
-	&disp-calendar-day {
-		cursor: pointer;
-		text-align: center;
-		border: 1px solid $rgb-border-grey;
-		border-radius: 3px;
-		padding: 0 2px;
-		font-size: 12px;
-		line-height: 1.5;
-		min-height: 21px;
-		user-select: none;
-	}
-
-	&disp-calendar-day--active {
-		background: $rgb-stripe-grey--night;
-	}
-
-	&disp-day-entry {
-		position: absolute;
-		right: 2px;
-		border-radius: 3px;
-		width: 9px;
-		height: 9px;
-		line-height: 16px;
-		font-weight: bold;
-		font-size: 16px;
-	}
-
-	&disp-day-entry--event {
-		top: 1px;
-		color: #61adef;
-	}
-
-	&disp-day-entry--encounter {
-		top: 10px;
-		color: #5cb85c;
-	}
-
-	&disp-clock-entry {
-		width: 12px;
-		height: 12px;
-		text-align: center;
-		position: relative;
-		font-size: 20px;
-		top: -4px;
-		font-weight: bold;
-		cursor: pointer;
-		user-select: none;
-	}
-
-	&disp-clock-entry--event {
-		color: #61adef;
-	}
-
-	&disp-clock-entry--encounter {
-		color: #5cb85c;
-	}
-
-	&disp-clock-entry--used-encounter {
-		color: #8a8a8a; /* Desaturated green */
-	}
-
-	&wrp-clock-events {
-		max-width: 100px;
-	}
-
-	&day-entry-header {
-		font-size: 15px;
-	}
-
-	&day-entry-wrapper {
-		max-height: 70%;
-	}
-
-	&spc-column-delete {
-		width: calc(24px + 0.5rem);
-	}
-
-	&row-delete:only-child .btn-danger {
-		display: none;
-	}
-
-	&spc-button {
-		display: none;
-		width: 24px;
-		height: 1px;
-		flex-shrink: 0;
-	}
-
-	&row-delete:only-child .dm-time__spc-button {
-		display: block;
-	}
-
-	&wrp-event-entries {
-		box-shadow: none;
-		border: 1px solid $rgb-border-grey;
-		border-radius: 3px;
-		margin-top: 3px;
-		margin-left: 6px;
-		width: calc(100% - 6px);
-	}
-
-	&bar-entry {
-		margin: 0 4px;
-		border-left: 1px solid $rgb-border-grey;
-	}
-
-	&wind-speed {
-		font-size: 10px;
-	}
-
-	&ipt-color-moon {
-		width: 22px;
-	}
-
-	&spc-drag-header {
-		width: 14px;
-	}
-
-	&disp-day-moon {
-		position: absolute;
-		top: 1px;
-		left: 1px;
-	}
-
-	&cvs-moon {
-		border-radius: 50%;
-	}
-
-	&clock-moon-phase {
-		width: 16px;
-		height: 16px;
-	}
-
-	&calendar-moon-phase {
-		width: 8px;
-		height: 8px;
-		margin-bottom: 1px;
-		line-height: 8px;
-	}
-
-	&calendar-moon-phase .glyphicon {
-		top: 0;
-		font-size: 8px;
-	}
-
-	&calendar-moon-phase:last-child {
-		margin-bottom: 0;
-	}
-
-	&calendar-ipt-date {
-		background: transparent;
-	}
-
-	&calendar-ipt-date--slashed-right {
-		border-right: 0;
-	}
-
-	&calendar-ipt-date--slashed-left {
-		border-left: 0;
-	}
-
-	&calendar-date-sep {
-		margin-right: -2px;
-		margin-left: -2px;
-		pointer-events: none;
-		user-select: none;
-	}
-
-	&ipt-event-time {
-		width: 40px;
-	}
-}
-
-.night-mode .dm-time__ {
-	&bar-clock {
+	.btn-panel-add {
 		border-color: $rgb-border-grey--night;
 	}
 
-	&disp-calendar-day {
+	.underline-tabs {
 		border-color: $rgb-border-grey--night;
 	}
 
-	&disp-day-entry--event,
-	&disp-clock-entry--event {
-		color: #7398b7;
+	.panel-history-control-middle {
+		background: #777a;
+		border-color: #aaa;
 	}
 
-	&disp-day-entry--encounter,
-	&disp-clock-entry--encounter {
-		color: #64cc64;
+	.dm-screen-panel {
+		background-color: #303030;
+
+		&.faux-hover {
+			background: #404040;
+
+			.panel-content-wrapper-inner::after {
+				background: #40404080;
+			}
+		}
 	}
 
-	&disp-clock-entry--used-encounter {
-		color: #989898; /* Desaturated night green */
+	.panel-control-icon {
+		color: rgba(255, 255, 255, 0.7);
 	}
 
-	&wrp-event-entries {
-		border-color: $rgb-border-grey--night;
+	.panel-add {
+		color: $rgb-border-grey;
 	}
 
-	&bar-entry {
-		border-color: $rgb-border-grey--night;
+	.btn-panel-add {
+		&:hover,
+		&.faux-hover {
+			background: #404040;
+		}
 	}
 
-	&cvs-moon {
-		border: 1px solid $rgb-border-grey--night;
-	}
-
-	&calendar-ipt-date {
-		background: transparent;
-	}
-}
-/* endregion */
-
-/* region Counter */
-.dm-cnt__ {
-	&ipt {
-		background: transparent;
-		flex-shrink: 0;
-		flex-grow: 0;
-		width: 50px;
-	}
-
-	&ipt--cur {
-		border-right: 0;
-	}
-
-	&ipt--max {
-		border-left: 0;
-	}
-
-	&slash {
-		margin-right: -2px;
-		margin-left: -2px;
-		width: 4px;
-		pointer-events: none;
-		user-select: none;
-	}
-}
-
-.night-mode .dm-cnt__ {
-	&ipt {
-		background: transparent;
-	}
-}
-/* endregion */
-
-/* region Map viewer */
-.dm-map__ {
-	&picker-wrp-img {
-		display: inline-block;
-		width: 320px;
-		height: 340px;
-		line-height: 320px;
-		text-align: center;
-		font-size: 0;
-		border: 2px solid $rgb-border-grey;
-	}
-
-	&picker-img {
-		width: auto;
-		height: 320px;
-		vertical-align: middle;
-		background-size: contain;
-		background-position: center;
-		background-repeat: no-repeat;
-	}
-
-	&picker-disp-name {
-		top: calc(100% - 20px);
-		right: 14px;
-		bottom: 0;
-		left: 14px;
-		line-height: 20px;
-		font-size: 14px;
-		background: white;
-		border-top: 1px solid $rgb-border-grey;
-		border-right: 1px solid $rgb-border-grey;
-		border-left: 1px solid $rgb-border-grey;
-		border-top-left-radius: 5px;
-		border-top-right-radius: 5px;
-	}
-}
-
-.night-mode .dm-map__ {
-	&picker-wrp-img {
-		border-color: $rgb-border-grey--night;
-	}
-
-	&picker-disp-name {
+	.panel-content-wrapper-inner {
 		background: $rgb-bg--night;
-		border-color: $rgb-border-grey--night;
 	}
-}
-/* endregion */
 
-// region Empty panels
-.dm-blank__ {
-	&panel {
-		background: $rgb-bg;
+	.panel-addmenu-tab-head[active="true"] {
+		background-color: $rgb-btn-default-active--night !important;
 	}
-}
 
-.night-mode .dm-blank__ {
-	&panel {
+	.panel-content-wrapper-inner td div.border {
+		background-color: $rgb-name-red--night;
+	}
+
+	.dm__panel-bg {
 		background: $rgb-bg--night;
 	}
 }
-// endregion
+
+@import "includes/dmscreen-book-viewer";
+@import "includes/dmscreen-calender";
+@import "includes/dmscreen-coin-converter";
+@import "includes/dmscreen-counter";
+@import "includes/dmscreen-initiative-tracker";
+@import "includes/dmscreen-initiative-tracker-player";
+@import "includes/dmscreen-map-viewer";
+@import "includes/dmscreen-panels-empty";
+@import "includes/dmscreen-unit-converter";

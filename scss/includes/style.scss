@@ -1317,114 +1317,7 @@ img.token:hover {
 	font-size: 0.9em;
 }
 
-/* DM Screen */
-.dm-screen-panel {
-	background-color: #f0f0f0;
-
-	&.faux-hover {
-		background: #e0e0e0;
-
-		.panel-content-wrapper-inner::after {
-			background: #e0e0e080;
-		}
-	}
-}
-
-.panel-history-control-remove-wrapper,
-.panel-control-bar {
-	background: #80808080;
-}
-
-.panel-control-icon {
-	color: rgba(255, 255, 255, 0.7);
-}
-
-.panel-add {
-	color: $rgb-border-grey;
-}
-
-.btn-panel-add {
-	border: 1px solid $rgb-border-grey;
-
-	&:hover,
-	&.faux-hover {
-		background: #e0e0e0;
-	}
-}
-
-.night-mode .btn-panel-add {
-	border-color: $rgb-border-grey--night;
-}
-
-.panel-content-wrapper-inner {
-	background: white;
-}
-
-.panel-addmenu-tab-head[active="true"] {
-	background-color: #e6e6e6;
-	border-color: #adadad;
-}
-
-.btn-spotlight {
-	background-color: #e8f5ff;
-	border-color: #c4cace;
-}
-
-.btn-spotlight:focus {
-	color: $rgb-off-black;
-	background-color: #d2dee6;
-	border-color: #85898c;
-}
-
-.btn-spotlight:hover {
-	color: $rgb-off-black;
-	background-color: #d2dee6;
-	border-color: #85898c;
-}
-
-.panel-addmenu-tab-head.btn-spotlight[active="true"] {
-	background-color: #d2dee6;
-	border-color: #85898c;
-}
-
-.underline-tabs {
-	border-top: 1px solid $rgb-border-grey;
-}
-
-.night-mode .underline-tabs {
-	border-color: $rgb-border-grey--night;
-}
-
-.panel-content-wrapper-inner td div.border {
-	background-color: $rgb-name-red;
-}
-
-.panel-history-control-remove {
-	color: rgba(255, 255, 255, 0.7);
-}
-
-.panel-history-control-middle {
-	background: $rgb-border-grey--trans;
-	border: 1px solid $rgb-border-grey;
-}
-
-.night-mode .panel-history-control-middle {
-	background: #777a;
-	border-color: #aaa;
-}
-
-.dm-init-row.dm-init-row-active input {
-	background: #cfe5ff78;
-}
-
-.dm-init-row.dm-init-row-active .init-wrp-creature {
-	background: #cfe5ff78;
-}
-
-.dm__panel-bg {
-	background: white;
-}
-
+// region Initiative tracker
 .init__ {
 	&wrp_conds {
 		display: flex;
@@ -1447,10 +1340,9 @@ img.token:hover {
 		height: 100%;
 	}
 }
+// endregion
 
-/* *** */
-
-/* Player initiative tracker */
+// region Player initiative tracker
 .initp__ {
 	&content {
 		overflow-y: auto;
@@ -1563,8 +1455,7 @@ img.token:hover {
 		border-color: $rgb-border-grey--night;
 	}
 }
-
-/* *** */
+// endregion
 
 /**** Search and filter bar ****/
 .lst__ {
@@ -2347,7 +2238,7 @@ th.border {
 }
 
 .homebrew-section {
-	background-color: rgba(255, 0, 0, 0.05);
+	background-color: $rgb-bg-homebrew;
 
 	.homebrew-float {
 		float: right;
@@ -2372,7 +2263,7 @@ th.border {
 }
 
 .homebrew-inline {
-	background-color: rgba(255, 0, 0, 0.05);
+	background-color: $rgb-bg-homebrew;
 	text-decoration: underline dotted;
 }
 
@@ -3297,43 +3188,6 @@ th.border {
 		border: 1px solid rgba(255, 255, 255, 0.15);
 	}
 
-	/* DM Screen */
-	.dm-screen-panel {
-		background-color: #303030;
-
-		&.faux-hover {
-			background: #404040;
-
-			.panel-content-wrapper-inner::after {
-				background: #40404080;
-			}
-		}
-	}
-
-	.panel-control-icon {
-		color: rgba(255, 255, 255, 0.7);
-	}
-
-	.panel-add {
-		color: $rgb-border-grey;
-	}
-
-	.btn-panel-add {
-		&:hover,
-		&.faux-hover {
-			background: #404040;
-		}
-	}
-
-	.panel-content-wrapper-inner {
-		background: $rgb-bg--night;
-	}
-
-	.panel-addmenu-tab-head[active="true"] {
-		background-color: $rgb-btn-default-active--night !important;
-	}
-
-	.panel-content-wrapper-inner td div.border,
 	.hwin td div.border {
 		background-color: $rgb-name-red--night;
 	}
@@ -3350,21 +3204,12 @@ th.border {
 		background: $rgb-bg--night;
 	}
 
-	.dm-init-row.dm-init-row-active input,
-	.dm-init-row.dm-init-row-active .init-wrp-creature {
-		background: #8dc1ff20;
-	}
-
-	.dm__panel-bg {
-		background: $rgb-bg--night;
-	}
-
 	.content-tab-bar {
 		background: $rgb-bg--night;
 	}
 
 	.homebrew-section {
-		background-color: rgba(255, 0, 0, 0.1);
+		background-color: $rgb-bg-homebrew--night;
 
 		.homebrew-old-content {
 			color: #f99;
@@ -3372,7 +3217,7 @@ th.border {
 	}
 
 	.homebrew-inline {
-		background-color: rgba(255, 0, 0, 0.1);
+		background-color: $rgb-bg-homebrew--night;
 	}
 
 	.highlight {

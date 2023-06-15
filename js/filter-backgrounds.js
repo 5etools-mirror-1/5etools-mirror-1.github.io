@@ -3,6 +3,7 @@
 class PageFilterBackgrounds extends PageFilter {
 	static _getToolDisplayText (tool) {
 		if (tool === "anyArtisansTool") return "Any Artisan's Tool";
+		if (tool === "anyMusicalInstrument") return "Any Musical Instrument";
 		return tool.toTitleCase();
 	}
 

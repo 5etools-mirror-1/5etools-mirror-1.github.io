@@ -216,6 +216,7 @@ PropOrder._MONSTER = [
 
 	"altArt",
 
+	new PropOrder._ArrayKey("attachedItems", {fnSort: SortUtil.ascSortLower}),
 	new PropOrder._ArrayKey("traitTags", {fnSort: SortUtil.ascSortLower}),
 	new PropOrder._ArrayKey("senseTags", {fnSort: SortUtil.ascSortLower}),
 	new PropOrder._ArrayKey("actionTags", {fnSort: SortUtil.ascSortLower}),

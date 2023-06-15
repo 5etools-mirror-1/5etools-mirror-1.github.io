@@ -164,6 +164,23 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Butcher's Bib",
+			"source": "EGW",
+			"effects": [
+				{
+					"name": "Butcher's Bib",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "flags.dnd5e.weaponCriticalThreshold",
+							"mode": "OVERRIDE",
+							"value": 19
+						}
+					]
+				}
+			]
 		}
 	]
 }

@@ -890,8 +890,16 @@
 			color: $rgb-subclass-ua--night;
 		}
 
+		&--feature-ua-subclass-reprint {
+			color: $rgb-subclass-ua--stale;
+		}
+
 		&--feature-brew-subclass {
 			color: $rgb-class-brew--night;
+		}
+
+		&--feature-brew-subclass-reprint {
+			color: $rgb-class-variant-brew;
 		}
 
 		&--feature-variant {

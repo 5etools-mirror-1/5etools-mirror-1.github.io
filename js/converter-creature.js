@@ -1137,6 +1137,7 @@ class CreatureParser extends BaseParser {
 		DetectNamedCreature.tryRun(stats);
 		TagImmResVulnConditional.tryRun(stats);
 		DragonAgeTag.tryRun(stats);
+		AttachedSpellTag.tryRun(stats);
 		this._doStatblockPostProcess_doCleanup(stats, options);
 	}
 

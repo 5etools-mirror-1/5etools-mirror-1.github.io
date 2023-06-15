@@ -164,7 +164,6 @@ class _DataLoaderDereferencerClassSubclassFeatures extends _DataLoaderDereferenc
 		const cpy = this._getCopyFromCache({page: prop, entriesWithoutRefs, refUnpacked, refHash});
 		if (!cpy) return new this.constructor._DereferenceMeta({cntReplaces: 0});
 
-		delete cpy.level;
 		delete cpy.header;
 		if (toReplaceMeta.name) cpy.name = toReplaceMeta.name;
 		toReplaceMeta.array[toReplaceMeta.ix] = cpy;
@@ -774,6 +773,12 @@ class _DataTypeLoaderItemMastery extends _DataTypeLoaderSingleSource {
 	static PROPS = ["itemMastery"];
 
 	_filename = "items-base.json";
+
+	async _pPrePopulate ({data, isPrerelease, isBrew}) {
+		// Ensure properties are loaded
+		await Renderer.item.pGetSiteUnresolvedRefItems();
+		Renderer.item.addPrereleaseBrewPropertiesAndTypesFrom({data});
+	}
 }
 
 class _DataTypeLoaderBackgroundFluff extends _DataTypeLoaderSingleSource {
@@ -880,7 +885,7 @@ class _DataTypeLoaderPredefined extends _DataTypeLoader {
 }
 
 class _DataTypeLoaderRace extends _DataTypeLoaderPredefined {
-	static PROPS = ["race", "subrace"];
+	static PROPS = [...UrlUtil.PAGE_TO_PROPS[UrlUtil.PG_RACES]];
 	static PAGE = UrlUtil.PG_RACES;
 
 	_loader = "race";
@@ -1228,12 +1233,16 @@ class _DataTypeLoaderCustomItem extends _DataTypeLoader {
 	}
 
 	async _pGetStoredPrereleaseBrewData ({brewUtil, isPrerelease, isBrew}) {
-		const prereleaseBrew = await brewUtil.pGetBrewProcessed();
-
+		const prereleaseBrewData = await brewUtil.pGetBrewProcessed();
+		await this._pPrePopulate({data: prereleaseBrewData, isPrerelease, isBrew});
 		return {
-			item: await Renderer.item.pGetSiteUnresolvedRefItemsFromPrereleaseBrew({brewUtil, brew: prereleaseBrew}),
-			itemEntry: prereleaseBrew.itemEntry || [],
+			item: await Renderer.item.pGetSiteUnresolvedRefItemsFromPrereleaseBrew({brewUtil, brew: prereleaseBrewData}),
+			itemEntry: prereleaseBrewData.itemEntry || [],
 		};
+	}
+
+	async _pPrePopulate ({data, isPrerelease, isBrew}) {
+		Renderer.item.addPrereleaseBrewPropertiesAndTypesFrom({data});
 	}
 
 	async _pGetPostCacheData_obj ({siteData, obj, lockToken2}) {

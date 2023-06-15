@@ -1,0 +1,29 @@
+@import "vars";
+
+.dm-book__ {
+	&wrp-content {
+		overflow-y: auto;
+		overflow-x: hidden;
+		transform: translateZ(0);
+	}
+
+	&wrp-controls {
+		padding: 2px 2px 1px 21px;
+		border-top: 1px solid $rgb-border-grey;
+		justify-content: flex-end;
+	}
+
+	&controls-title {
+		height: 20px;
+		padding: 0 3px;
+		width: 50%;
+		flex-grow: 0;
+	}
+}
+
+.night-mode .dm-book__ {
+	&wrp-controls {
+		border-color: $rgb-border-grey--night;
+	}
+}
+

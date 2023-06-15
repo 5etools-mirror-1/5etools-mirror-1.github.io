@@ -61,7 +61,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you make a Dexterity ({@skill Stealth}) check or an initiative roll, you can expend one superiority die and add the die to the roll, provided you aren't {@condition incapacitated}."
@@ -76,7 +76,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you make a Dexterity ({@skill Stealth}) check or an initiative roll, you can expend one superiority die and add the die to the roll."
@@ -337,7 +337,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you're within 5 feet of a creature on your turn, you can expend one superiority die and switch places with that creature, provided you spend at least 5 feet of movement and the creature is willing and isn't {@condition incapacitated}. This movement doesn't provoke opportunity attacks.",
@@ -353,7 +353,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you're within 5 feet of an ally on your turn, you can expend one superiority die and switch places with that ally, provided you spend at least 5 feet of movement. This movement doesn't provoke opportunity attacks.",
@@ -718,7 +718,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When a creature you can see moves into the reach you have with the melee weapon you're wielding, you can use your reaction to expend one superiority die and make one attack against the creature, using that weapon. If the attack hits, add the superiority die to the weapon's damage roll."
@@ -733,7 +733,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When an enemy you can see moves within 5 feet of you, you can use your reaction to expend one superiority die and make one weapon attack against that creature. If the attack hits, add the superiority die to the attack's damage roll."
@@ -898,7 +898,7 @@
 				"MM"
 			],
 			"consumes": {
-				"name": "Sorcery Points"
+				"name": "Sorcery Point"
 			},
 			"entries": [
 				"When you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, you spend 1 sorcery point and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell."
@@ -1151,7 +1151,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you take the {@action Attack} action on your turn, you can forgo one of your attacks and use a bonus action to direct one of your companions to strike. When you do so, choose a friendly creature who can see or hear you and expend one superiority die. That creature can immediately use its reaction to make one weapon attack, adding the superiority die to the attack's damage roll."
@@ -1166,7 +1166,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you make a Charisma ({@skill Intimidation}), a Charisma ({@skill Performance}), or a Charisma ({@skill Persuasion}) check, you can expend one superiority die and add the superiority die to the ability check."
@@ -1180,7 +1180,7 @@
 				"MV:C2-UA"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you make a Wisdom ({@skill Animal Handling}) check to influence a creature that you or an ally is riding, you can expend one superiority die, roll it, and add the number rolled to the check. You can do this before or after rolling the {@dice d20}, but before applying the results of the check."
@@ -1277,7 +1277,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to disarm the target, forcing it to drop one item of your choice that it's holding. You add the superiority die to the attack's damage roll, and the target must make a Strength saving throw. On a failed save, it drops the object you choose. The object lands at its feet."
@@ -1303,7 +1303,7 @@
 				"MM"
 			],
 			"consumes": {
-				"name": "Sorcery Points"
+				"name": "Sorcery Point"
 			},
 			"entries": [
 				"When you cast a spell that has a range of 5 feet or greater, you can spend 1 sorcery point to double the range of the spell.",
@@ -1318,7 +1318,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to distract the creature, giving your allies an opening. You add the superiority die to the attack's damage roll. The next attack roll against the target by an attacker other than you has advantage if the attack is made before the start of your next turn."
@@ -1609,7 +1609,7 @@
 				"MM"
 			],
 			"consumes": {
-				"name": "Sorcery Points"
+				"name": "Sorcery Point"
 			},
 			"entries": [
 				"When you cast a spell that deals a type of damage from the following list, you can spend 1 sorcery point to change that damage type to one of the other listed types: acid, cold, fire, lightning, thunder."
@@ -1624,7 +1624,7 @@
 				"MM"
 			],
 			"consumes": {
-				"name": "Sorcery Points"
+				"name": "Sorcery Point"
 			},
 			"entries": [
 				"When you roll damage for a spell, you can spend 1 sorcery point to reroll a number of the damage dice up to your Charisma modifier (minimum of one). You must use the new rolls.",
@@ -1825,7 +1825,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you move, you can expend one superiority die, rolling the die and adding the number rolled to your AC until you stop moving."
@@ -1840,7 +1840,8 @@
 				"MM"
 			],
 			"consumes": {
-				"name": "Sorcery Points"
+				"name": "Sorcery Point",
+				"amount": 1
 			},
 			"entries": [
 				"When you cast a spell that has a duration of 1 minute or longer, you can spend 1 sorcery point to double its duration, to a maximum duration of 24 hours."
@@ -1945,7 +1946,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"You can expend one superiority die and use a bonus action on your turn to feint, choosing one creature within 5 feet of you as your target. You have advantage on your next attack roll against that creature this turn. If that attack hits, add the superiority die to the attack's damage roll."
@@ -2350,7 +2351,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to goad the target into attacking you. You add the superiority die to the attack's damage roll, and the target must make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls against targets other than you until the end of your next turn."
@@ -2404,7 +2405,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"Immediately after you hit a creature with a melee attack on your turn, you can expend one superiority die and then try to grapple the target as a bonus action (see the Player's Handbook for rules on grappling). Add the superiority die to your Strength ({@skill Athletics}) check."
@@ -2580,7 +2581,7 @@
 				"MM"
 			],
 			"consumes": {
-				"name": "Sorcery Points",
+				"name": "Sorcery Point",
 				"amount": 3
 			},
 			"entries": [
@@ -2954,7 +2955,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you make a melee weapon attack on your turn, you can expend one superiority die to increase your reach for that attack by 5 feet. If you hit, you add the superiority die to the attack's damage roll."
@@ -3034,7 +3035,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to maneuver one of your comrades into a more advantageous position. You add the superiority die to the attack's damage roll, and you choose a friendly creature who can see or hear you. That creature can use its reaction to move up to half its speed without provoking opportunity attacks from the target of your attack."
@@ -3138,7 +3139,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to frighten the target. You add the superiority die to the attack's damage roll, and the target must make a Wisdom saving throw. On a failed save, it is {@condition frightened} of you until the end of your next turn."
@@ -3533,7 +3534,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When another creature damages you with a melee attack, you can use your reaction and expend one superiority die to reduce the damage by the number you roll on your superiority die + your Dexterity modifier."
@@ -3607,7 +3608,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you make a weapon attack roll against a creature, you can expend one superiority die to add it to the roll. You can use this maneuver before or after making the attack roll, but before any effects of the attack are applied."
@@ -3621,7 +3622,7 @@
 				"MV:C2-UA"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you make a weapon attack against a creature, you can expend one superiority die, roll it, and add it to the attack roll. You can use this ability before or after rolling the {@dice d20}, but before any of the effects of the attack are applied."
@@ -3711,7 +3712,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to drive the target back. You add the superiority die to the attack's damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you push the target up to 15 feet away from you."
@@ -3726,7 +3727,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"As a bonus action, you can expend one superiority die and make a ranged attack with a weapon that has the thrown property. You can draw the weapon as part of making this attack. If you hit, add the superiority die to the weapon's damage roll."
@@ -3741,7 +3742,7 @@
 				"MM"
 			],
 			"consumes": {
-				"name": "Sorcery Points",
+				"name": "Sorcery Point",
 				"amount": 2
 			},
 			"entries": [
@@ -3812,7 +3813,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"On your turn, you can use a bonus action and expend one superiority die to bolster the resolve of one of your companions. When you do so, choose a friendly creature who can see or hear you. That creature gains temporary hit points equal to the superiority die roll + your Charisma modifier."
@@ -4236,7 +4237,7 @@
 							"Yes"
 						],
 						[
-							"{@item Belt of Hill Giant Strength||Belt of hill giant strength}",
+							"{@item Belt of hill giant strength}",
 							"Yes"
 						],
 						[
@@ -4655,7 +4656,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"Immediately after you hit a creature with a melee weapon attack on your turn, you can expend one superiority die and use a bonus action to grapple the target (see chapter 9 in the Player's Handbook for rules on grappling). Add the superiority die to your Strength ({@skill Athletics}) check. The target is also {@condition restrained} while {@condition grappled} in this way."
@@ -4750,7 +4751,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When a creature misses you with a melee attack, you can use your reaction and expend one superiority die to make a melee weapon attack against the creature. If you hit, you add the superiority die to the attack's damage roll."
@@ -4955,7 +4956,7 @@
 				"MM"
 			],
 			"consumes": {
-				"name": "Sorcery Points",
+				"name": "Sorcery Point",
 				"amount": 2
 			},
 			"entries": [
@@ -4972,7 +4973,7 @@
 				"MM"
 			],
 			"consumes": {
-				"name": "Sorcery Points"
+				"name": "Sorcery Point"
 			},
 			"entries": [
 				"When you cast a spell that requires you to make a spell attack roll or that forces a target to make a Dexterity saving throw, you can spend 1 sorcery point to ignore the effects of half- and three-quarters cover against targets of the spell."
@@ -5163,7 +5164,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you make a Charisma ({@skill Deception}) check or a Charisma ({@skill Persuasion}) check, you can expend one superiority die, and add the superiority die to the ability check."
@@ -5201,7 +5202,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"As a bonus action, you can expend one superiority die and make a ranged weapon attack. You can draw a thrown weapon as part of making this attack. If you hit, add the superiority die to the attack's damage roll."
@@ -5323,7 +5324,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you make a Wisdom ({@skill Insight}) check or an Intelligence ({@skill Investigation}) check, you can expend one superiority die, and add the superiority die to the ability check."
@@ -5338,7 +5339,7 @@
 				"MM"
 			],
 			"consumes": {
-				"name": "Sorcery Points"
+				"name": "Sorcery Point"
 			},
 			"entries": [
 				"When you cast a spell, you can spend 1 sorcery point to cast it without any somatic or verbal components."
@@ -5422,7 +5423,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you hit a creature with a melee weapon attack, you can expend one superiority die to attempt to damage another creature with the same attack. Choose another creature within 5 feet of the original target and within your reach. If the original attack roll would hit the second creature, it takes damage equal to the number you roll on your superiority die. The damage is of the same type dealt by the original attack."
@@ -5485,7 +5486,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you make an Intelligence ({@skill Investigation}), an Intelligence ({@skill History}), or a Wisdom ({@skill Insight}) check, you can expend one superiority die and add the superiority die to the ability check."
@@ -5664,7 +5665,7 @@
 				"MM"
 			],
 			"consumes": {
-				"name": "Sorcery Points"
+				"name": "Sorcery Point"
 			},
 			"entries": [
 				"When you cast a spell that deals a type of damage from the following list, you can spend 1 sorcery point to change that damage type to one of the other listed types: acid, cold, fire, lightning, poison, thunder."
@@ -5750,7 +5751,7 @@
 				"MV:B"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to knock the target down. You add the superiority die to the attack's damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you knock the target {@condition prone}."
@@ -5764,7 +5765,7 @@
 				"MV:C2-UA"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to knock the target down. Roll the die, and add it to the attack's damage roll. If the target is Large or smaller, it must also succeed on a Strength saving throw (DC 8 + your proficiency bonus + your Strength modifier) or be knocked {@condition prone}."
@@ -5792,8 +5793,9 @@
 				"MM"
 			],
 			"consumes": {
-				"name": "Sorcery Points",
-				"amount": 1
+				"name": "Sorcery Point",
+				"amountMin": 1,
+				"amountMax": 9
 			},
 			"entries": [
 				"When you cast a spell that targets only one creature and doesn't have a range of self, you can spend a number of sorcery points equal to the spell's level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip).",
@@ -5937,7 +5939,7 @@
 				"MM"
 			],
 			"consumes": {
-				"name": "Sorcery Points",
+				"name": "Sorcery Point",
 				"amount": 2
 			},
 			"entries": [
@@ -6013,7 +6015,7 @@
 				"MV:C2-UA"
 			],
 			"consumes": {
-				"name": "Superiority Dice"
+				"name": "Superiority Die"
 			},
 			"entries": [
 				"If you or a creature within 5 feet of you is hit by an attack, you can expend one superiority die as a reaction if you're wielding a weapon or a shield. Roll the die, and add the number rolled to the target's AC against that attack. If the attack still hits, the target has resistance against the attack's damage."

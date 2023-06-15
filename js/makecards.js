@@ -443,6 +443,8 @@ class MakeCards extends BaseComponent {
 		const fnGetSpellTraits = Renderer.monster.getSpellcastingRenderedTraits.bind(Renderer.monster, renderer);
 		const allTraits = Renderer.monster.getOrderedTraits(mon, {fnGetSpellTraits});
 		const allActions = Renderer.monster.getOrderedActions(mon, {fnGetSpellTraits});
+		const allBonusActions = Renderer.monster.getOrderedBonusActions(mon, {fnGetSpellTraits});
+		const allReactions = Renderer.monster.getOrderedReactions(mon, {fnGetSpellTraits});
 
 		return [
 			this._ct_subtitle(Renderer.monster.getTypeAlignmentPart(mon)),
@@ -464,13 +466,13 @@ class MakeCards extends BaseComponent {
 			this._ct_property("Languages", this._ct_htmlToText(Renderer.monster.getRenderedLanguages(mon.languages))),
 			this._ct_property("Challenge", this._ct_htmlToText(Parser.monCrToFull(mon.cr, {isMythic: !!mon.mythic}))),
 			this._ct_rule(),
-			...(allTraits ? this._ct_renderEntries(allTraits, 2) : []),
-			allActions ? this._ct_section("Actions") : null,
-			...(allActions ? this._ct_renderEntries(allActions, 2) : []),
-			mon.bonus ? this._ct_section("Bonus Actions") : null,
-			...(mon.bonus ? this._ct_renderEntries(mon.bonus, 2) : []),
-			mon.reaction ? this._ct_section("Reactions") : null,
-			...(mon.reaction ? this._ct_renderEntries(mon.reaction, 2) : []),
+			...(allTraits?.length ? this._ct_renderEntries(allTraits, 2) : []),
+			allActions?.length ? this._ct_section("Actions") : null,
+			...(allActions?.length ? this._ct_renderEntries(allActions, 2) : []),
+			allBonusActions?.length ? this._ct_section("Bonus Actions") : null,
+			...(allBonusActions?.length ? this._ct_renderEntries(allBonusActions, 2) : []),
+			allReactions?.length ? this._ct_section("Reactions") : null,
+			...(allReactions?.length ? this._ct_renderEntries(mon.reaction, 2) : []),
 			mon.legendary ? this._ct_section("Legendary Actions") : null,
 			mon.legendary ? this._ct_text(this._ct_htmlToText(Renderer.monster.getLegendaryActionIntro(mon, {renderer}))) : null,
 			...(mon.legendary ? this._ct_renderEntries(mon.legendary, 2) : []),
@@ -859,9 +861,9 @@ MakeCards.utils = class {
 	static enhanceItemAlt (item) {
 		delete item._fullEntries;
 
-		if (item.type && (MakeCards.utils.itemPropertyMap[item.type] || Renderer.item.typeMap[item.type])) {
+		if (item.type && (MakeCards.utils.itemPropertyMap[item.type] || Renderer.item.getType(item.type))) {
 			Renderer.item._initFullEntries(item);
-			(((MakeCards.utils.itemTypeMap[item.type] || Renderer.item.typeMap[item.type]) || {}).entries || []).forEach(e => item._fullEntries.push(e));
+			(((MakeCards.utils.itemTypeMap[item.type] || Renderer.item.getType(item.type)) || {}).entries || []).forEach(e => item._fullEntries.push(e));
 		}
 
 		if (item.property) {
@@ -871,9 +873,9 @@ MakeCards.utils = class {
 						Renderer.item._initFullEntries(item);
 						MakeCards.utils.itemPropertyMap[p].entries.forEach(e => item._fullEntries.push(e));
 					}
-				} else if (Renderer.item.propertyMap[p].entries) {
+				} else if (Renderer.item.getProperty(p).entries) {
 					Renderer.item._initFullEntries(item);
-					Renderer.item.propertyMap[p].entries.forEach(e => item._fullEntries.push(e));
+					Renderer.item.getProperty(p).entries.forEach(e => item._fullEntries.push(e));
 				}
 			});
 		}

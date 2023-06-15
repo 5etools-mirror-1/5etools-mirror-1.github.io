@@ -71,7 +71,7 @@ class PageFilterEquipment extends PageFilter {
 	static mutateForFilters (item) {
 		item._fSources = SourceFilter.getCompleteFilterSources(item);
 
-		item._fProperties = item.property ? item.property.map(p => Renderer.item.propertyMap[p].name).filter(n => n) : [];
+		item._fProperties = item.property ? item.property.map(p => Renderer.item.getProperty(p).name).filter(n => n) : [];
 
 		item._fMisc = [];
 		if (item._isItemGroup) item._fMisc.push("Item Group");

@@ -1105,6 +1105,7 @@ async function doPageInit () {
 	TaggerUtils.init({legendaryGroups, spells});
 	await TagJsons.pInit({spells});
 	RaceTraitTag.init({itemsRaw});
+	AttachedItemTag.init({items});
 
 	const ui = new ConverterUi();
 

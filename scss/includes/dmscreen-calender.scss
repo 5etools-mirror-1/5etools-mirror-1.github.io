@@ -1,0 +1,283 @@
+@import "vars";
+
+.dm-time__ {
+	&btn-time {
+		width: 20px;
+	}
+
+	&btn-time--top {
+		border-bottom: 0;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	&btn-time--bottom {
+		border-top: 0;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+
+	&sep-time {
+		font-size: 32px;
+		position: relative;
+		top: -2px;
+	}
+
+	&ipt-time {
+		width: 20px;
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	&bar-clock {
+		height: calc(100% - 8px);
+		margin: 4px 8px;
+		flex-shrink: 0;
+		border-left: 1px solid $rgb-border-grey;
+	}
+
+	&btn-day {
+		width: 16px;
+	}
+
+	&wrp-weather {
+		width: 100px;
+	}
+
+	&btn-weather {
+		width: 34px;
+		padding: 0;
+		font-size: 21px;
+		text-align: center;
+		height: 33px;
+		line-height: 33px;
+	}
+
+	&btn-random-weather {
+		border: 0;
+		padding: 0;
+	}
+
+	&ipt-weather {
+		width: 40px;
+	}
+
+	&btn-date-adjust {
+		width: 27px;
+		padding: 1px 3px;
+		flex-shrink: 0;
+		flex-grow: 0;
+	}
+
+	&disp-calendar-day {
+		cursor: pointer;
+		text-align: center;
+		border: 1px solid $rgb-border-grey;
+		border-radius: 3px;
+		padding: 0 2px;
+		font-size: 12px;
+		line-height: 1.5;
+		min-height: 21px;
+		user-select: none;
+	}
+
+	&disp-calendar-day--active {
+		background: $rgb-stripe-grey--night;
+	}
+
+	&disp-day-entry {
+		position: absolute;
+		right: 2px;
+		border-radius: 3px;
+		width: 9px;
+		height: 9px;
+		line-height: 16px;
+		font-weight: bold;
+		font-size: 16px;
+	}
+
+	&disp-day-entry--event {
+		top: 1px;
+		color: #61adef;
+	}
+
+	&disp-day-entry--encounter {
+		top: 10px;
+		color: #5cb85c;
+	}
+
+	&disp-clock-entry {
+		width: 12px;
+		height: 12px;
+		text-align: center;
+		position: relative;
+		font-size: 20px;
+		top: -4px;
+		font-weight: bold;
+		cursor: pointer;
+		user-select: none;
+	}
+
+	&disp-clock-entry--event {
+		color: #61adef;
+	}
+
+	&disp-clock-entry--encounter {
+		color: #5cb85c;
+	}
+
+	&disp-clock-entry--used-encounter {
+		color: #8a8a8a; /* Desaturated green */
+	}
+
+	&wrp-clock-events {
+		max-width: 100px;
+	}
+
+	&day-entry-header {
+		font-size: 15px;
+	}
+
+	&day-entry-wrapper {
+		max-height: 70%;
+	}
+
+	&spc-column-delete {
+		width: calc(24px + 0.5rem);
+	}
+
+	&row-delete:only-child .btn-danger {
+		display: none;
+	}
+
+	&spc-button {
+		display: none;
+		width: 24px;
+		height: 1px;
+		flex-shrink: 0;
+	}
+
+	&row-delete:only-child .dm-time__spc-button {
+		display: block;
+	}
+
+	&wrp-event-entries {
+		box-shadow: none;
+		border: 1px solid $rgb-border-grey;
+		border-radius: 3px;
+		margin-top: 3px;
+		margin-left: 6px;
+		width: calc(100% - 6px);
+	}
+
+	&bar-entry {
+		margin: 0 4px;
+		border-left: 1px solid $rgb-border-grey;
+	}
+
+	&wind-speed {
+		font-size: 10px;
+	}
+
+	&ipt-color-moon {
+		width: 22px;
+	}
+
+	&spc-drag-header {
+		width: 14px;
+	}
+
+	&disp-day-moon {
+		position: absolute;
+		top: 1px;
+		left: 1px;
+	}
+
+	&cvs-moon {
+		border-radius: 50%;
+	}
+
+	&clock-moon-phase {
+		width: 16px;
+		height: 16px;
+	}
+
+	&calendar-moon-phase {
+		width: 8px;
+		height: 8px;
+		margin-bottom: 1px;
+		line-height: 8px;
+	}
+
+	&calendar-moon-phase .glyphicon {
+		top: 0;
+		font-size: 8px;
+	}
+
+	&calendar-moon-phase:last-child {
+		margin-bottom: 0;
+	}
+
+	&calendar-ipt-date {
+		background: transparent;
+	}
+
+	&calendar-ipt-date--slashed-right {
+		border-right: 0;
+	}
+
+	&calendar-ipt-date--slashed-left {
+		border-left: 0;
+	}
+
+	&calendar-date-sep {
+		margin-right: -2px;
+		margin-left: -2px;
+		pointer-events: none;
+		user-select: none;
+	}
+
+	&ipt-event-time {
+		width: 40px;
+	}
+}
+
+.night-mode .dm-time__ {
+	&bar-clock {
+		border-color: $rgb-border-grey--night;
+	}
+
+	&disp-calendar-day {
+		border-color: $rgb-border-grey--night;
+	}
+
+	&disp-day-entry--event,
+	&disp-clock-entry--event {
+		color: #7398b7;
+	}
+
+	&disp-day-entry--encounter,
+	&disp-clock-entry--encounter {
+		color: #64cc64;
+	}
+
+	&disp-clock-entry--used-encounter {
+		color: #989898; /* Desaturated night green */
+	}
+
+	&wrp-event-entries {
+		border-color: $rgb-border-grey--night;
+	}
+
+	&bar-entry {
+		border-color: $rgb-border-grey--night;
+	}
+
+	&cvs-moon {
+		border: 1px solid $rgb-border-grey--night;
+	}
+
+	&calendar-ipt-date {
+		background: transparent;
+	}
+}
