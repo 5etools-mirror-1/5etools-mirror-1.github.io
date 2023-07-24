@@ -17,9 +17,9 @@ class OptionalFeaturesSublistManager extends SublistManager {
 		const $ele = $(`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="bold col-4 pl-0">${it.name}</span>
-				<span class="col-2 text-center" title="${it._dFeatureType}">${it._lFeatureType}</span>
-				<span class="col-4-5 ${prerequisite === "\u2014" ? "text-center" : ""}">${prerequisite}</span>
-				<span class="col-1-5 text-center pr-0">${level}</span>
+				<span class="col-2 ve-text-center" title="${it._dFeatureType}">${it._lFeatureType}</span>
+				<span class="col-4-5 ${prerequisite === "\u2014" ? "ve-text-center" : ""}">${prerequisite}</span>
+				<span class="col-1-5 ve-text-center pr-0">${level}</span>
 			</a>
 		</div>`)
 			.contextmenu(evt => this._handleSublistItemContextMenu(evt, listItem))
@@ -82,10 +82,10 @@ class OptionalFeaturesPage extends ListPage {
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="col-0-3 px-0 ve-flex-vh-center lst__btn-toggle-expand ve-self-flex-stretch">[+]</span>
 			<span class="bold col-3 px-1">${it.name}</span>
-			<span class="col-1-5 text-center" title="${it._dFeatureType}">${it._lFeatureType}</span>
-			<span class="col-4-7 text-center">${prerequisite}</span>
-			<span class="col-1 text-center">${level}</span>
-			<span class="col-1-5 ${Parser.sourceJsonToColor(it.source)} text-center pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${Parser.sourceJsonToStyle(it.source)}>${source}</span>
+			<span class="col-1-5 ve-text-center" title="${it._dFeatureType}">${it._lFeatureType}</span>
+			<span class="col-4-7 ve-text-center">${prerequisite}</span>
+			<span class="col-1 ve-text-center">${level}</span>
+			<span class="col-1-5 ${Parser.sourceJsonToColor(it.source)} ve-text-center pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${Parser.sourceJsonToStyle(it.source)}>${source}</span>
 		</a>
 		<div class="ve-flex ve-hidden relative lst__wrp-preview">
 			<div class="vr-0 absolute lst__vr-preview"></div>

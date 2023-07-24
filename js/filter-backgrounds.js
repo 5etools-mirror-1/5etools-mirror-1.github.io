@@ -12,7 +12,14 @@ class PageFilterBackgrounds extends PageFilter {
 
 		this._skillFilter = new Filter({header: "Skill Proficiencies", displayFn: StrUtil.toTitleCase});
 		this._toolFilter = new Filter({header: "Tool Proficiencies", displayFn: PageFilterBackgrounds._getToolDisplayText.bind(PageFilterBackgrounds)});
-		this._languageFilter = new Filter({header: "Language Proficiencies", displayFn: it => it === "anyStandard" ? "Any Standard" : StrUtil.toTitleCase(it)});
+		this._languageFilter = new Filter({
+			header: "Language Proficiencies",
+			displayFn: it => it === "anyStandard"
+				? "Any Standard"
+				: it === "anyExotic"
+					? "Any Exotic"
+					: StrUtil.toTitleCase(it),
+		});
 		this._asiFilter = new AbilityScoreFilter({header: "Ability Scores"});
 		this._otherBenefitsFilter = new Filter({header: "Other Benefits"});
 		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Has Info", "Has Images", "SRD", "Basic Rules"], isMiscFilter: true});
@@ -122,7 +129,7 @@ class ModalFilterBackgrounds extends ModalFilter {
 
 			<div class="col-4 ${bg._versionBase_isVersion ? "italic" : ""} ${this._getNameStyle()}">${bg._versionBase_isVersion ? `<span class="px-3"></span>` : ""}${bg.name}</div>
 			<div class="col-6">${bg._skillDisplay}</div>
-			<div class="col-1 pr-0 text-center ${Parser.sourceJsonToColor(bg.source)}" title="${Parser.sourceJsonToFull(bg.source)}" ${Parser.sourceJsonToStyle(bg.source)}>${source}</div>
+			<div class="col-1 pr-0 ve-text-center ${Parser.sourceJsonToColor(bg.source)}" title="${Parser.sourceJsonToFull(bg.source)}" ${Parser.sourceJsonToStyle(bg.source)}>${source}</div>
 		</div>`;
 
 		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;

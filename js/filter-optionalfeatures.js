@@ -202,10 +202,10 @@ class ModalFilterOptionalFeatures extends ModalFilter {
 			</div>
 
 			<div class="col-3 ${optfeat._versionBase_isVersion ? "italic" : ""} ${this._getNameStyle()}">${optfeat._versionBase_isVersion ? `<span class="px-3"></span>` : ""}${optfeat.name}</div>
-			<span class="col-2 text-center" title="${optfeat._dFeatureType}">${optfeat._lFeatureType}</span>
-			<span class="col-4 text-center">${prerequisite}</span>
-			<span class="col-1 text-center">${level}</span>
-			<div class="col-1 pr-0 text-center ${Parser.sourceJsonToColor(optfeat.source)}" title="${Parser.sourceJsonToFull(optfeat.source)}" ${Parser.sourceJsonToStyle(optfeat.source)}>${source}</div>
+			<span class="col-2 ve-text-center" title="${optfeat._dFeatureType}">${optfeat._lFeatureType}</span>
+			<span class="col-4 ve-text-center">${prerequisite}</span>
+			<span class="col-1 ve-text-center">${level}</span>
+			<div class="col-1 pr-0 ve-text-center ${Parser.sourceJsonToColor(optfeat.source)}" title="${Parser.sourceJsonToFull(optfeat.source)}" ${Parser.sourceJsonToStyle(optfeat.source)}>${source}</div>
 		</div>`;
 
 		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;

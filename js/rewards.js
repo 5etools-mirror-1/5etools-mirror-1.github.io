@@ -10,7 +10,7 @@ class RewardsSublistManager extends SublistManager {
 	pGetSublistItem (reward, hash) {
 		const $ele = $(`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
-				<span class="name col-2 pl-0 text-center">${reward.type}</span>
+				<span class="name col-2 pl-0 ve-text-center">${reward.type}</span>
 				<span class="name col-10 pr-0">${reward.name}</span>
 			</a>
 		</div>`)
@@ -57,9 +57,9 @@ class RewardsPage extends ListPage {
 		const hash = UrlUtil.autoEncodeHash(reward);
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
-			<span class="col-2 text-center pl-0">${reward.type}</span>
+			<span class="col-2 ve-text-center pl-0">${reward.type}</span>
 			<span class="bold col-8">${reward.name}</span>
-			<span class="col-2 text-center ${Parser.sourceJsonToColor(reward.source)} pr-0" title="${Parser.sourceJsonToFull(reward.source)}" ${Parser.sourceJsonToStyle(reward.source)}>${source}</span>
+			<span class="col-2 ve-text-center ${Parser.sourceJsonToColor(reward.source)} pr-0" title="${Parser.sourceJsonToFull(reward.source)}" ${Parser.sourceJsonToStyle(reward.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(

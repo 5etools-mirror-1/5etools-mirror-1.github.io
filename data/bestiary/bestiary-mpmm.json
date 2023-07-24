@@ -4192,6 +4192,24 @@
 				"telepathy 120 ft."
 			],
 			"cr": "7",
+			"spellcasting": [
+				{
+					"name": "Creeping Darkness {@recharge}",
+					"headerEntries": [
+						"The abishai casts {@spell darkness} at a point within 120 feet of it, requiring no spell components or {@status concentration}. Wisdom is its spellcasting ability for this spell. While the spell persists, the abishai can move the area of darkness up to 60 feet as a bonus action."
+					],
+					"recharge": {
+						"6": [
+							"{@spell darkness}"
+						]
+					},
+					"ability": "wis",
+					"displayAs": "action",
+					"hidden": [
+						"recharge"
+					]
+				}
+			],
 			"trait": [
 				{
 					"name": "Devil's Sight",
@@ -4223,12 +4241,6 @@
 					"name": "Scimitar",
 					"entries": [
 						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) force damage."
-					]
-				},
-				{
-					"name": "Creeping Darkness {@recharge}",
-					"entries": [
-						"The abishai casts {@spell darkness} at a point within 120 feet of it, requiring no spell components or {@status concentration}. Wisdom is its spellcasting ability for this spell. While the spell persists, the abishai can move the area of darkness up to 60 feet as a bonus action."
 					]
 				}
 			],
@@ -7602,6 +7614,24 @@
 				"Sylvan"
 			],
 			"cr": "2",
+			"spellcasting": [
+				{
+					"name": "Darkness (Recharges after a Short or Long Rest)",
+					"headerEntries": [
+						"The darkling elder casts {@spell darkness}, requiring no spell components and using Wisdom as the spellcasting ability."
+					],
+					"rest": {
+						"1": [
+							"{@spell darkness}"
+						]
+					},
+					"ability": "wis",
+					"displayAs": "action",
+					"hidden": [
+						"rest"
+					]
+				}
+			],
 			"trait": [
 				{
 					"name": "Death Burn",
@@ -7621,12 +7651,6 @@
 					"name": "Scimitar",
 					"entries": [
 						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) slashing damage plus 7 ({@damage 2d6}) necrotic damage."
-					]
-				},
-				{
-					"name": "Darkness (Recharges after a Short or Long Rest)",
-					"entries": [
-						"The darkling elder casts {@spell darkness}, requiring no spell components and using Wisdom as the spellcasting ability."
 					]
 				}
 			],
@@ -8370,6 +8394,22 @@
 			],
 			"passive": 10,
 			"cr": "1/4",
+			"spellcasting": [
+				{
+					"name": "Dancing Lights",
+					"headerEntries": [
+						"The rothé casts {@spell dancing lights}, requiring no spell components and using Wisdom as the spellcasting ability."
+					],
+					"will": [
+						"{@spell dancing lights}"
+					],
+					"ability": "wis",
+					"displayAs": "action",
+					"hidden": [
+						"will"
+					]
+				}
+			],
 			"trait": [
 				{
 					"name": "Beast of Burden",
@@ -8383,12 +8423,6 @@
 					"name": "Gore",
 					"entries": [
 						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d6 + 4}) piercing damage. If the rothé moved at least 20 feet straight toward the target immediately before the hit, the target takes an extra 7 ({@damage 2d6}) piercing damage."
-					]
-				},
-				{
-					"name": "Dancing Lights",
-					"entries": [
-						"The rothé casts {@spell dancing lights}, requiring no spell components and using Wisdom as the spellcasting ability."
 					]
 				}
 			],
@@ -22853,6 +22887,24 @@
 				"all but rarely speaks"
 			],
 			"cr": "25",
+			"spellcasting": [
+				{
+					"name": "Plane Shift (3/Day)",
+					"headerEntries": [
+						"The marut casts {@spell plane shift}, requiring no material components and using Intelligence as the spellcasting ability. The marut can cast the spell normally, or it can cast the spell on an unwilling creature it can see within 60 feet of it. If it uses the latter option, the targeted creature must succeed on a {@dc 20} Charisma saving throw or be banished to a teleportation circle in the Hall of Concordance in Sigil."
+					],
+					"daily": {
+						"3": [
+							"{@spell plane shift}"
+						]
+					},
+					"ability": "int",
+					"displayAs": "action",
+					"hidden": [
+						"daily"
+					]
+				}
+			],
 			"trait": [
 				{
 					"name": "Immutable Form",
@@ -22896,12 +22948,6 @@
 					"name": "Blazing Edict {@recharge 5}",
 					"entries": [
 						"Arcane energy emanates from the marut's chest in a 60-foot cube. Every creature in that area takes 45 radiant damage. Each creature that takes any of this damage must succeed on a {@dc 20} Wisdom saving throw or be {@condition stunned} until the end of the marut's next turn."
-					]
-				},
-				{
-					"name": "Plane Shift (3/Day)",
-					"entries": [
-						"The marut casts {@spell plane shift}, requiring no material components and using Intelligence as the spellcasting ability. The marut can cast the spell normally, or it can cast the spell on an unwilling creature it can see within 60 feet of it. If it uses the latter option, the targeted creature must succeed on a {@dc 20} Charisma saving throw or be banished to a teleportation circle in the Hall of Concordance in Sigil."
 					]
 				}
 			],

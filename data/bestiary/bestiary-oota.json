@@ -246,9 +246,42 @@
 						"replace": "the orog",
 						"with": "Blurg",
 						"flags": "i"
+					},
+					"languages": [
+						{
+							"mode": "appendIfNotExistsArr",
+							"items": [
+								"Dwarvish",
+								"Elvish",
+								"Undercommon"
+							]
+						}
+					],
+					"spellcasting": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"name": "Innate Spellcasting",
+								"headerEntries": [
+									"Blurg can innately cast can cast the {@spell teleport} spell once per day, but the intended destination must be within 30 feet of another {@adventure society member|OotA|1|Society of Brilliance}. This teleport effect can be disrupted (see \"{@adventure Faerzress|OotA|1|Faerzress}\"), which is how society members sometimes end up in far corners of the Underdark, separated from their fellows."
+								],
+								"daily": {
+									"1e": [
+										"{@spell teleport}"
+									]
+								},
+								"hidden": [
+									"daily"
+								]
+							}
+						]
 					}
 				}
 			},
+			"alignment": [
+				"N"
+			],
+			"int": 18,
 			"hasToken": true,
 			"hasFluffImages": true
 		},
@@ -2171,9 +2204,42 @@
 						"replace": "the mind flayer",
 						"with": "Grazilaxx",
 						"flags": "i"
+					},
+					"languages": [
+						{
+							"mode": "appendIfNotExistsArr",
+							"items": [
+								"Dwarvish",
+								"Elvish",
+								"Undercommon"
+							]
+						}
+					],
+					"spellcasting": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"name": "Innate Spellcasting",
+								"headerEntries": [
+									"Grazilaxx can innately cast can cast the {@spell teleport} spell once per day, but the intended destination must be within 30 feet of another {@adventure society member|OotA|1|Society of Brilliance}. This teleport effect can be disrupted (see \"{@adventure Faerzress|OotA|1|Faerzress}\"), which is how society members sometimes end up in far corners of the Underdark, separated from their fellows."
+								],
+								"daily": {
+									"1e": [
+										"{@spell teleport}"
+									]
+								},
+								"hidden": [
+									"daily"
+								]
+							}
+						]
 					}
 				}
 			},
+			"alignment": [
+				"N"
+			],
+			"int": 18,
 			"hasToken": true,
 			"hasFluffImages": true
 		},
@@ -3256,7 +3322,7 @@
 			"source": "OotA",
 			"page": 103,
 			"_copy": {
-				"name": "Priest",
+				"name": "Veteran",
 				"source": "MM",
 				"_trait": {
 					"name": "Deep Gnome",
@@ -3877,9 +3943,42 @@
 						"replace": "the troglodyte",
 						"with": "Skriss",
 						"flags": "i"
+					},
+					"languages": [
+						{
+							"mode": "appendIfNotExistsArr",
+							"items": [
+								"Dwarvish",
+								"Elvish",
+								"Undercommon"
+							]
+						}
+					],
+					"spellcasting": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"name": "Innate Spellcasting",
+								"headerEntries": [
+									"Skriss can innately cast can cast the {@spell teleport} spell once per day, but the intended destination must be within 30 feet of another {@adventure society member|OotA|1|Society of Brilliance}. This teleport effect can be disrupted (see \"{@adventure Faerzress|OotA|1|Faerzress}\"), which is how society members sometimes end up in far corners of the Underdark, separated from their fellows."
+								],
+								"daily": {
+									"1e": [
+										"{@spell teleport}"
+									]
+								},
+								"hidden": [
+									"daily"
+								]
+							}
+						]
 					}
 				}
 			},
+			"alignment": [
+				"N"
+			],
+			"int": 18,
 			"hasToken": true,
 			"hasFluffImages": true
 		},
@@ -3934,9 +4033,42 @@
 						"replace": "the kuo-toa",
 						"with": "Sloopidoop",
 						"flags": "i"
+					},
+					"languages": [
+						{
+							"mode": "appendIfNotExistsArr",
+							"items": [
+								"Dwarvish",
+								"Elvish",
+								"Undercommon"
+							]
+						}
+					],
+					"spellcasting": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"name": "Innate Spellcasting",
+								"headerEntries": [
+									"Sloopidoop can innately cast can cast the {@spell teleport} spell once per day, but the intended destination must be within 30 feet of another {@adventure society member|OotA|1|Society of Brilliance}. This teleport effect can be disrupted (see \"{@adventure Faerzress|OotA|1|Faerzress}\"), which is how society members sometimes end up in far corners of the Underdark, separated from their fellows."
+								],
+								"daily": {
+									"1e": [
+										"{@spell teleport}"
+									]
+								},
+								"hidden": [
+									"daily"
+								]
+							}
+						]
 					}
 				}
 			},
+			"alignment": [
+				"N"
+			],
+			"int": 18,
 			"hasToken": true,
 			"hasFluffImages": true
 		},
@@ -4981,9 +5113,42 @@
 						"replace": "the derro savant",
 						"with": "Y",
 						"flags": "i"
+					},
+					"languages": [
+						{
+							"mode": "appendIfNotExistsArr",
+							"items": [
+								"Dwarvish",
+								"Elvish",
+								"Undercommon"
+							]
+						}
+					],
+					"spellcasting": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"name": "Innate Spellcasting",
+								"headerEntries": [
+									"Y can innately cast can cast the {@spell teleport} spell once per day, but the intended destination must be within 30 feet of another {@adventure society member|OotA|1|Society of Brilliance}. This teleport effect can be disrupted (see \"{@adventure Faerzress|OotA|1|Faerzress}\"), which is how society members sometimes end up in far corners of the Underdark, separated from their fellows."
+								],
+								"daily": {
+									"1e": [
+										"{@spell teleport}"
+									]
+								},
+								"hidden": [
+									"daily"
+								]
+							}
+						]
 					}
 				}
 			},
+			"alignment": [
+				"N"
+			],
+			"int": 18,
 			"hasToken": true,
 			"hasFluffImages": true
 		},

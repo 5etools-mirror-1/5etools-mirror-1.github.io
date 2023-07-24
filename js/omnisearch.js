@@ -38,7 +38,7 @@ class Omnisearch {
 			Renderer.hover.cleanTempWindows();
 			switch (evt.key) {
 				case "Enter":
-					if (evt.ctrlKey || evt.metaKey) {
+					if (EventUtil.isCtrlMetaKey(evt)) {
 						window.location = `${Renderer.get().baseUrl}${UrlUtil.PG_SEARCH}?${this._iptSearch.val()}`;
 						break;
 					}
@@ -98,7 +98,7 @@ class Omnisearch {
 		const btnClearSearch = e_({
 			tag: "span",
 			clazz: "absolute glyphicon glyphicon-remove omni__btn-clear",
-			click: evt => {
+			mousedown: evt => {
 				evt.stopPropagation();
 				evt.preventDefault();
 				this._iptSearch.val("").focus();

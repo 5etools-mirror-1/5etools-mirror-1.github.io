@@ -2613,7 +2613,7 @@ class SearchableFilter extends Filter {
 						const visibleRowMetas = rowMetas.filter(it => it.isVisible);
 						if (!visibleRowMetas.length) return;
 						if (evt.shiftKey) this._doSetPillsClear();
-						this._state[visibleRowMetas[0].item.item] = (evt.ctrlKey || evt.metaKey) ? 2 : 1;
+						this._state[visibleRowMetas[0].item.item] = (EventUtil.isCtrlMetaKey(evt)) ? 2 : 1;
 						$iptSearch.blur();
 						break;
 					}
@@ -2711,7 +2711,7 @@ class SearchableFilter extends Filter {
 
 					case "Enter": {
 						if (evt.shiftKey) this._doSetPillsClear();
-						this._state[item.item] = (evt.ctrlKey || evt.metaKey) ? 2 : 1;
+						this._state[item.item] = (EventUtil.isCtrlMetaKey(evt)) ? 2 : 1;
 						row.blur();
 						break;
 					}

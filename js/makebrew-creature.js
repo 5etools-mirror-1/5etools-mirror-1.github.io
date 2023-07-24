@@ -1478,7 +1478,7 @@ class CreatureBuilder extends Builder {
 				? this._state[prop].special
 				: this._state[prop];
 
-			const $iptAbil = $(`<input class="form-control form-control--minimal input-xs text-center">`)
+			const $iptAbil = $(`<input class="form-control form-control--minimal input-xs ve-text-center">`)
 				.val(valInitial)
 				.change(() => {
 					const val = $iptAbil.val().trim();
@@ -1511,7 +1511,7 @@ class CreatureBuilder extends Builder {
 		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Saving Throws", {isMarked: true, isRow: true});
 
 		const $getRow = (name, prop) => {
-			const $iptVal = $(`<input class="form-control form-control--minimal input-xs mb-2 text-center">`)
+			const $iptVal = $(`<input class="form-control form-control--minimal input-xs mb-2 ve-text-center">`)
 				.change(() => {
 					$btnProf.removeClass("active");
 					delete this._meta.profSave[prop];
@@ -1564,7 +1564,7 @@ class CreatureBuilder extends Builder {
 		const $getRow = (name, prop) => {
 			const abilProp = Parser.skillToAbilityAbv(prop);
 
-			const $iptVal = $(`<input class="form-control form-control--minimal input-xs mr-2 text-center">`)
+			const $iptVal = $(`<input class="form-control form-control--minimal input-xs mr-2 ve-text-center">`)
 				.change(() => {
 					if (this._meta.profSkill[prop]) {
 						$btnProf.removeClass("active");

@@ -1145,7 +1145,7 @@
 					"page": 19,
 					"id": "03d",
 					"entries": [
-						"This chapter has two parts: the {@area Festival of Merit|042|x} and the {@adventure Emerald Grotto|CRCotN|1|<$AREA_TAG-emeraldgrotto$>}. Each part can be played in a single 3- to 4-hour session. Be sure to review the information about the rival nonplayer characters in the \"{@area Rivals|026|x}\" section of the {@adventure introduction|CRCotN|0} before running this chapter. The rivals' interactions with the characters in this chapter will lay the groundwork for relationships that could last throughout the adventure.",
+						"This chapter has two parts: the {@area Festival of Merit|042|x} and the {@adventure Emerald Grotto|CRCotN|1|The Emerald Grotto}. Each part can be played in a single 3- to 4-hour session. Be sure to review the information about the rival nonplayer characters in the \"{@area Rivals|026|x}\" section of the {@adventure introduction|CRCotN|0} before running this chapter. The rivals' interactions with the characters in this chapter will lay the groundwork for relationships that could last throughout the adventure.",
 						"The first half of the chapter is a lighthearted and free-form exploration of Jigow and the Festival of Merit. Familiarize yourself with the map of Jigow and the locations keyed to it so that you can effectively guide the characters as they explore the settlement and partake in the festival games.",
 						"The second part is a dangerous but straightforward dungeon delve into the Emerald Grotto near Jigow. The characters must overcome a series of challenges to reach the treasure at the end of the dungeon before the rivals do.",
 						{
@@ -10372,7 +10372,7 @@
 											"page": 102,
 											"id": "1f2",
 											"entries": [
-												"This site is the center of Allegiance operations in Cael Morrow. Professor {@skill Insight} Acuere runs the show from here."
+												"This site is the center of Allegiance operations in Cael Morrow. Professor {@creature Insight Acuere|CRCotN} runs the show from here."
 											]
 										},
 										{
@@ -11894,7 +11894,7 @@
 											"type": "list",
 											"items": [
 												"Enter Cael Morrow and rendezvous with Professor {@creature Insight Acuere|CRCotN} at the Allegiance of Allsight base camp.",
-												"Earn {@skill Insight}'s trust and learn how to access the Netherdeep.",
+												"Earn {@creature Insight Acuere|CRCotN|Insight}'s trust and learn how to access the Netherdeep.",
 												"Acquire the \"key\" to the Netherdeep."
 											]
 										},
@@ -11908,19 +11908,19 @@
 									"page": 118,
 									"id": "266",
 									"entries": [
-										"The characters can meet {@skill Insight} in the Allegiance base camp ({@area area M3|28b|x} in {@adventure chapter 5|CRCotN|5}). She tells them that her companions are searching for the writings of an ancient hero who tried to save Cael Morrow from destruction during the Calamity. Earlier expeditions found dozens of stone tablets from the period in question at the south end of the excavation site. Her team, however, no longer has the force of arms to fight the dangerous creatures that lurk in this region. If the characters can find more of these tablets and return them to her, she'll be grateful.",
+										"The characters can meet {@creature Insight Acuere|CRCotN|Insight} in the Allegiance base camp ({@area area M3|28b|x} in {@adventure chapter 5|CRCotN|5}). She tells them that her companions are searching for the writings of an ancient hero who tried to save Cael Morrow from destruction during the Calamity. Earlier expeditions found dozens of stone tablets from the period in question at the south end of the excavation site. Her team, however, no longer has the force of arms to fight the dangerous creatures that lurk in this region. If the characters can find more of these tablets and return them to her, she'll be grateful.",
 										{
 											"type": "entries",
 											"name": "Insight's Reward",
 											"page": 118,
 											"id": "267",
 											"entries": [
-												"If the characters bring back the tablet from {@area area M10|2b5|x} in {@adventure chapter 5|CRCotN|5}, {@skill Insight} shares the following information:",
+												"If the characters bring back the tablet from {@area area M10|2b5|x} in {@adventure chapter 5|CRCotN|5}, {@creature Insight Acuere|CRCotN|Insight} shares the following information:",
 												{
 													"type": "list",
 													"items": [
-														"{@skill Insight} reveals the location of the rift leading to the Netherdeep ({@area area M17|2ce|x} in {@adventure chapter 5|CRCotN|5}) and informs the characters that weapons infused with ruidium can open this rift.",
-														"{@skill Insight} believes there might be keys to the rift in Cael Morrow\u2014left behind by agents of the Consortium of the Vermilion Dream."
+														"{@creature Insight Acuere|CRCotN|Insight} reveals the location of the rift leading to the Netherdeep ({@area area M17|2ce|x} in {@adventure chapter 5|CRCotN|5}) and informs the characters that weapons infused with ruidium can open this rift.",
+														"{@creature Insight Acuere|CRCotN|Insight} believes there might be keys to the rift in Cael Morrow\u2014left behind by agents of the Consortium of the Vermilion Dream."
 													]
 												}
 											]
@@ -11960,7 +11960,7 @@
 											"page": 118,
 											"id": "26a",
 											"entries": [
-												"This location contains the tablet that {@skill Insight} seeks."
+												"This location contains the tablet that {@creature Insight Acuere|CRCotN|Insight} seeks."
 											]
 										},
 										{
@@ -13733,8 +13733,8 @@
 												"At the bottom of the staircase is a plain, windowless room containing boxes of archaeological tools and crates marked with the emblem of the Allegiance of Allsight. Not far away is a passage that leads to a stone door also marked with the Allegiance's symbol. Leaning against the wall next to the door is an orc wearing the badge of an Allegiance of Allsight member. He doesn't seem to have noticed you."
 											]
 										},
-										"The person near the door is a sullen, lawful neutral orc named Gortag Inkdrinker (use the {@creature scholarly agent|CRCotN} stat block in {@adventure appendix A|CRCotN|8}). The characters can surprise him if they act quickly. If the characters are members of the Allegiance of Allsight or the Library of the Cobalt Soul, Gortag treats them as allies and invites them to meet with his superior, Professor {@skill Insight} Acuere, in the Allegiance base camp ({@area area M3|28b|x}). If the characters accept the invitation, he escorts them there.",
-										"If one or more characters aren't wearing Allegiance badges or claim to be in league with the Consortium of the Vermilion Dream, Gortag tells them to halt and return up the stairs and does his best to hinder their progress without provoking conflict. If combat breaks out, he opens the door he's guarding, pushes himself through the magical barrier that extends across the doorway (see \"{@area Features of Cael Morrow|27b|x}\" earlier in the chapter), and alerts the guards in area M2. If he's successful, he runs to area M3 to warn {@skill Insight} that enemies have entered the Drowned City. If Gortag is unable to flee, he throws himself on the characters' mercy and can be persuaded to lead the party past the guards in area M2, if only to avoid harm.",
+										"The person near the door is a sullen, lawful neutral orc named Gortag Inkdrinker (use the {@creature scholarly agent|CRCotN} stat block in {@adventure appendix A|CRCotN|8}). The characters can surprise him if they act quickly. If the characters are members of the Allegiance of Allsight or the Library of the Cobalt Soul, Gortag treats them as allies and invites them to meet with his superior, Professor {@creature Insight Acuere|CRCotN}, in the Allegiance base camp ({@area area M3|28b|x}). If the characters accept the invitation, he escorts them there.",
+										"If one or more characters aren't wearing Allegiance badges or claim to be in league with the Consortium of the Vermilion Dream, Gortag tells them to halt and return up the stairs and does his best to hinder their progress without provoking conflict. If combat breaks out, he opens the door he's guarding, pushes himself through the magical barrier that extends across the doorway (see \"{@area Features of Cael Morrow|27b|x}\" earlier in the chapter), and alerts the guards in area M2. If he's successful, he runs to area M3 to warn {@creature Insight Acuere|CRCotN|Insight} that enemies have entered the Drowned City. If Gortag is unable to flee, he throws himself on the characters' mercy and can be persuaded to lead the party past the guards in area M2, if only to avoid harm.",
 										{
 											"type": "entries",
 											"name": "Crates",
@@ -13798,16 +13798,16 @@
 												"Three individuals wearing Allegiance of Allsight garb and badges\u2014a tiefling, a goliath, and a kenku\u2014bustle about the space, engrossed in their work."
 											]
 										},
-										"The Allegiance's base of operations in the ruins is maintained by an adjunct professor of archaeology named {@skill Insight} Acuere, a lawful good tiefling. Most of her team has been recalled to the Crystal Chateau, but she still has two research technicians helping her: the laconic {@creature Scribble|CRCotN}, a chaotic neutral kenku, and the rambunctious {@creature Xot|CRCotN}, a neutral good goliath (see the \"{@area Goliaths of Exandria|1a4|x}\" sidebar in {@adventure chapter 4|CRCotN|4}). See below for their statistics and roleplaying information.",
+										"The Allegiance's base of operations in the ruins is maintained by an adjunct professor of archaeology named {@creature Insight Acuere|CRCotN}, a lawful good tiefling. Most of her team has been recalled to the Crystal Chateau, but she still has two research technicians helping her: the laconic {@creature Scribble|CRCotN}, a chaotic neutral kenku, and the rambunctious {@creature Xot|CRCotN}, a neutral good goliath (see the \"{@area Goliaths of Exandria|1a4|x}\" sidebar in {@adventure chapter 4|CRCotN|4}). See below for their statistics and roleplaying information.",
 										"Nearly inseparable, {@creature Scribble|CRCotN} and {@creature Xot|CRCotN} have been working together at the camp for months. They complement each other as friends and scholars. {@creature Xot|CRCotN} tends to talk ceaselessly about her latest discoveries, and {@creature Scribble|CRCotN} patiently listens, absorbing many of {@creature Xot|CRCotN}'s excited ramblings into his own speech.",
-										"If {@skill Insight}, {@creature Scribble|CRCotN}, and {@creature Xot|CRCotN} become hostile toward intruders, they fight to kill. On the first turn of combat, {@skill Insight} uses a {@item sending stone|AI} to contact Headmaster Cryon in the Crystal Chateau and request aid. Twenty minutes later, ten {@creature Scholarly Agent|CRCotN|scholarly agents} and five {@creature Scholarly Excavator|CRCotN|scholarly excavators} (see {@adventure appendix A|CRCotN|8} for both stat blocks) arrive by way of area M1 to secure the base camp.",
+										"If {@creature Insight Acuere|CRCotN|Insight}, {@creature Scribble|CRCotN}, and {@creature Xot|CRCotN} become hostile toward intruders, they fight to kill. On the first turn of combat, {@creature Insight Acuere|CRCotN|Insight} uses a {@item sending stone|AI} to contact Headmaster Cryon in the Crystal Chateau and request aid. Twenty minutes later, ten {@creature Scholarly Agent|CRCotN|scholarly agents} and five {@creature Scholarly Excavator|CRCotN|scholarly excavators} (see {@adventure appendix A|CRCotN|8} for both stat blocks) arrive by way of area M1 to secure the base camp.",
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
 												"path": "adventure/CRCotN/065-05-003.professor-insight-acuere.webp"
 											},
-											"title": "Professor {@skill Insight} Acuere",
+											"title": "Professor {@creature Insight Acuere|CRCotN}",
 											"width": 487,
 											"height": 850
 										},
@@ -13825,14 +13825,14 @@
 														"She has resistance to fire damage and {@sense darkvision} out to a range of 60 feet."
 													]
 												},
-												"{@skill Insight} won't cooperate with the Consortium of the Vermilion Dream unless she is tricked or magically compelled into doing so. If the characters are members of the Allegiance of Allsight, {@skill Insight} informs them that they have arrived earlier than she expected, but she's nonetheless happy to see them. If they're allied with the Cobalt Soul, she requires them to prove their usefulness before she reveals any information (see \"{@area Insight's Quest|266|x}\" in {@area mission 4|263|x} of the Cobalt Soul Story Track in {@adventure chapter 4|CRCotN|4}).",
-												"{@skill Insight} is the primary archivist for the Cael Morrow archaeological project and would put her life on the line to ensure its success. She is willing to share the results of her research with fellow Allegiance members. {@skill Insight} can offer the following information in response to the characters' questions:",
+												"{@creature Insight Acuere|CRCotN|Insight} won't cooperate with the Consortium of the Vermilion Dream unless she is tricked or magically compelled into doing so. If the characters are members of the Allegiance of Allsight, {@creature Insight Acuere|CRCotN|Insight} informs them that they have arrived earlier than she expected, but she's nonetheless happy to see them. If they're allied with the Cobalt Soul, she requires them to prove their usefulness before she reveals any information (see \"{@area Insight's Quest|266|x}\" in {@area mission 4|263|x} of the Cobalt Soul Story Track in {@adventure chapter 4|CRCotN|4}).",
+												"{@creature Insight Acuere|CRCotN|Insight} is the primary archivist for the Cael Morrow archaeological project and would put her life on the line to ensure its success. She is willing to share the results of her research with fellow Allegiance members. {@creature Insight Acuere|CRCotN|Insight} can offer the following information in response to the characters' questions:",
 												{
 													"type": "list",
 													"items": [
 														"The wards keeping the water at bay are magically generated by keystones in each warded location. These keystones look like small stone cubes with glowing runes carved into their sides. Removing a keystone from the area it protects causes the barriers around that location to vanish, allowing the water in.",
 														"The wards that have been erected end at an ancient temple to Corellon the Arch Heart, which seems to have its own magical way of holding back the water. Allegiance members have yet to breach the temple's ward.",
-														"A fourth member of the expedition, {@skill Insight}'s friend {@creature Galeokaerda|CRCotN}, a high elf professor of ancient literature, hasn't been seen in three days. {@skill Insight} is concerned but hasn't yet considered raising a search party because {@creature Galeokaerda|CRCotN} has a shield guardian to protect her."
+														"A fourth member of the expedition, {@creature Insight Acuere|CRCotN|Insight}'s friend {@creature Galeokaerda|CRCotN}, a high elf professor of ancient literature, hasn't been seen in three days. {@creature Insight Acuere|CRCotN|Insight} is concerned but hasn't yet considered raising a search party because {@creature Galeokaerda|CRCotN} has a shield guardian to protect her."
 													]
 												}
 											]
@@ -13877,7 +13877,7 @@
 											"page": 127,
 											"id": "290",
 											"entries": [
-												"Characters who are following the {@area Allegiance Story Track|1cc|x} might come to Cael Morrow hoping to expose a double agent in the expedition. A character who speaks with {@skill Insight} Acuere, {@creature Scribble|CRCotN}, or {@creature Xot|CRCotN} can make a DC 15 Wisdom ({@skill Insight}) check to get a sense of that person's loyalty. On a successful check, it's apparent to the character that the individual is fully dedicated to the expedition and doesn't have any intention of betraying their faction."
+												"Characters who are following the {@area Allegiance Story Track|1cc|x} might come to Cael Morrow hoping to expose a double agent in the expedition. A character who speaks with {@creature Insight Acuere|CRCotN}, {@creature Scribble|CRCotN}, or {@creature Xot|CRCotN} can make a DC 15 Wisdom ({@skill Insight}) check to get a sense of that person's loyalty. On a successful check, it's apparent to the character that the individual is fully dedicated to the expedition and doesn't have any intention of betraying their faction."
 											]
 										},
 										{
@@ -13899,7 +13899,7 @@
 														{
 															"type": "item",
 															"name": "Third Floor.",
-															"entry": "Allegiance members come up here to rest. Large holes in the roof are covered by magical barriers of blue force, thanks to a keystone hidden on this floor (see \"Keystone\" below). This former attic holds six small crates of preserved food, a dozen casks of fresh water, six cots with soft pillows and blankets, and an unlocked wooden case containing two {@item Breathing Bubble|EGW|breathing bubbles} (see {@adventure appendix B|CRCotN|9|{@item Breathing Bubble|EGW}}) with full air supplies and three {@item Potion of Water Breathing||potions of water breathing}. {@skill Insight} and her companions won't permit the theft of these items, but {@skill Insight} is willing to share them with the characters if they request her aid and their goals align with hers."
+															"entry": "Allegiance members come up here to rest. Large holes in the roof are covered by magical barriers of blue force, thanks to a keystone hidden on this floor (see \"Keystone\" below). This former attic holds six small crates of preserved food, a dozen casks of fresh water, six cots with soft pillows and blankets, and an unlocked wooden case containing two {@item Breathing Bubble|EGW|breathing bubbles} (see {@adventure appendix B|CRCotN|9|{@item Breathing Bubble|EGW}}) with full air supplies and three {@item Potion of Water Breathing||potions of water breathing}. {@creature Insight Acuere|CRCotN|Insight} and her companions won't permit the theft of these items, but {@creature Insight Acuere|CRCotN|Insight} is willing to share them with the characters if they request her aid and their goals align with hers."
 														}
 													]
 												}
@@ -13911,7 +13911,7 @@
 											"page": 128,
 											"id": "292",
 											"entries": [
-												"The keystone that keeps the water out of this building and the L-shaped corridor linking it to area M4 (see \"{@area Features of Cael Morrow|27b|x}\" earlier in the chapter) is hidden in a wall on the building's third floor behind a loose stone. {@skill Insight}, {@creature Scribble|CRCotN}, and {@creature Xot|CRCotN} know where the keystone is, but they won't divulge its location to others if doing so might endanger them or any other Allegiance members.",
+												"The keystone that keeps the water out of this building and the L-shaped corridor linking it to area M4 (see \"{@area Features of Cael Morrow|27b|x}\" earlier in the chapter) is hidden in a wall on the building's third floor behind a loose stone. {@creature Insight Acuere|CRCotN|Insight}, {@creature Scribble|CRCotN}, and {@creature Xot|CRCotN} know where the keystone is, but they won't divulge its location to others if doing so might endanger them or any other Allegiance members.",
 												"It takes 10 minutes for a character to thoroughly search the third floor. At the end of that time, the character can make a DC 15 Wisdom ({@skill Perception}) check, finding the keystone on a successful check. If the keystone is destroyed or removed from this area, water comes gushing in through the rooftop. In addition, the barriers that form the corridor to M4 disappear, engulfing the corridor's occupants in water."
 											]
 										}
@@ -14102,7 +14102,7 @@
 												"She has advantage on saving throws against being {@condition charmed}, and magic can't put her to sleep."
 											]
 										},
-										"As described in the faction story tracks in {@adventure chapter 4|CRCotN|4}, {@creature Galeokaerda|CRCotN} has long posed as a professor of the Allegiance of Allsight and has become {@skill Insight}'s friend. Now she regrets betraying her friend and secretly hopes that she can convince {@skill Insight} to turn against the Allegiance of Allsight when {@creature Galeokaerda|CRCotN} and the Consortium of the Vermilion Dream take over Cael Morrow.",
+										"As described in the faction story tracks in {@adventure chapter 4|CRCotN|4}, {@creature Galeokaerda|CRCotN} has long posed as a professor of the Allegiance of Allsight and has become {@creature Insight Acuere|CRCotN|Insight}'s friend. Now she regrets betraying her friend and secretly hopes that she can convince {@creature Insight Acuere|CRCotN|Insight} to turn against the Allegiance of Allsight when {@creature Galeokaerda|CRCotN} and the Consortium of the Vermilion Dream take over Cael Morrow.",
 										{
 											"type": "image",
 											"href": {
@@ -14315,7 +14315,7 @@
 											"page": 134,
 											"id": "2b7",
 											"entries": [
-												"Characters who spend 10 minutes searching the floor of the building find, among other clay tablets that describe ancient prayers and catechisms of the monks of the temple of Corellon, the particular tablet that {@skill Insight} has been seeking (see \"{@area Insight's Quest|266|x}\" in {@area mission 4|263|x} of the Cobalt Soul Story Track in {@adventure chapter 4|CRCotN|4}). This tablet is written in Celestial script. It reads:",
+												"Characters who spend 10 minutes searching the floor of the building find, among other clay tablets that describe ancient prayers and catechisms of the monks of the temple of Corellon, the particular tablet that {@creature Insight Acuere|CRCotN|Insight} has been seeking (see \"{@area Insight's Quest|266|x}\" in {@area mission 4|263|x} of the Cobalt Soul Story Track in {@adventure chapter 4|CRCotN|4}). This tablet is written in Celestial script. It reads:",
 												{
 													"type": "insetReadaloud",
 													"id": "2b8",

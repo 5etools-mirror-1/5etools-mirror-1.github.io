@@ -10,7 +10,7 @@ import "../js/render.js";
 import "../js/render-dice.js";
 import * as ut from "./util.js";
 
-const IS_DEV_MODE = !!process.env.VET_SEO_IS_DEV_MODE;
+const IS_DEV_MODE = true; // !!process.env.VET_SEO_IS_DEV_MODE; // N.b.: disabled as all known deployments are "dev"
 const BASE_SITE_URL = process.env.VET_BASE_SITE_URL || "https://5e.tools/";
 const isSkipUaEtc = !!process.env.VET_SEO_IS_SKIP_UA_ETC;
 const isOnlyVanilla = !!process.env.VET_SEO_IS_ONLY_VANILLA;

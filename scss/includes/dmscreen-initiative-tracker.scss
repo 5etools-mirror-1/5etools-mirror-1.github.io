@@ -36,12 +36,16 @@
 }
 
 .dm-init__header--input-wide {
-	width: 83px;
+	width: 80px;
 	margin-right: 3px;
 }
 
 .dm-init__spc-header-buttons {
 	width: 52px;
+
+	&--single {
+		width: 32px;
+	}
 }
 
 .dm-init__wrp-entries {
@@ -94,9 +98,8 @@
 	border: 1px solid $rgb-border-grey;
 }
 
-.dm-init__wrp-creature .btn {
-	margin-right: 3px;
-	padding: 0 1px;
+.dm-init__btn-creature {
+	padding: 1px 2px;
 	line-height: 12px;
 	font-size: 9px;
 }
@@ -122,6 +125,10 @@
 	width: 40px;
 }
 
+.dm-init__wrp-stat-cb {
+	margin-right: 3px;
+}
+
 .dm-init__row-rhs input[type=number]::-webkit-inner-spin-button,
 .dm-init__row-rhs input[type=number]::-webkit-outer-spin-button {
 	/* stylelint-disable-next-line property-no-vendor-prefix */
@@ -129,12 +136,15 @@
 	margin: 0;
 }
 
-.dm-init__row.dm-init__row-active input {
+.dm-init__row.dm-init__row-active input,
+.dm-init__row.dm-init__row-active .dm-init__wrp-creature,
+.dm-init__row.dm-init__row-active .dm-init__wrp-stat-cb {
 	background: #cfe5ff78;
 }
 
-.dm-init__row.dm-init__row-active .dm-init__wrp-creature {
-	background: #cfe5ff78;
+.dm-init__row.dm-init__row-active .dm-init__wrp-stat-cb {
+	border-top: 1px solid $rgb-border-grey;
+	border-bottom: 1px solid $rgb-border-grey;
 }
 
 .dm-init__wrp-controls {
@@ -152,41 +162,19 @@
 	display: inline-block;
 	border-radius: 0;
 	padding: 0;
-	text-align: right;
-}
-
-.dm-init__modal-wrp-rows {
-	min-width: 400px;
-	padding: 7px;
-}
-
-.dm-init__btn-cond {
-	min-width: 85px;
-	color: white !important;
-	outline: none !important;
 }
 
 .dm-init__hp {
 	width: 42px;
 }
 
-.dm-init__hp--current {
-	margin-right: 0;
-	border-right: 0;
-}
-
-.dm-init__hp--max {
-	border-left: 0;
-}
-
-.dm-init__hp_slash {
+.dm-init__sep-fields-slash {
 	position: absolute;
 	pointer-events: none;
 	top: 0;
 	bottom: 0;
-	left: 40px;
-	display: flex;
-	align-items: center;
+	left: calc(50% - 6px);
+	width: 12px;
 	color: #888;
 }
 
@@ -206,8 +194,16 @@
 	border-radius: 0;
 }
 
-.dm-init__stat_ipt[type=checkbox] {
-	margin-right: 3px;
+.dm-init-cond__ {
+	&wrp-btns {
+		max-width: 540px;
+	}
+
+	&btn-cond {
+		min-width: 85px;
+		color: white !important;
+		outline: none !important;
+	}
 }
 
 .night-mode {
@@ -224,8 +220,13 @@
 	}
 
 	.dm-init__row.dm-init__row-active input,
-	.dm-init__row.dm-init__row-active .dm-init__wrp-creature {
+	.dm-init__row.dm-init__row-active .dm-init__wrp-creature,
+	.dm-init__row.dm-init__row-active .dm-init__wrp-stat-cb {
 		background: #8dc1ff20;
+	}
+
+	.dm-init__row.dm-init__row-active .dm-init__wrp-stat-cb {
+		border-color: $rgb-border-grey--night;
 	}
 }
 

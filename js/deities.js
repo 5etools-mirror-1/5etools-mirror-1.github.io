@@ -67,10 +67,10 @@ class DeitiesPage extends ListPage {
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="bold col-3 pl-0">${g.name}</span>
-			<span class="col-2 text-center">${g.pantheon}</span>
-			<span class="col-2 text-center">${alignment}</span>
+			<span class="col-2 ve-text-center">${g.pantheon}</span>
+			<span class="col-2 ve-text-center">${alignment}</span>
 			<span class="col-3 ${g.domains[0] === VeCt.STR_NONE ? `list-entry-none` : ""}">${domains}</span>
-			<span class="col-2 text-center ${Parser.sourceJsonToColor(g.source)} pr-0" title="${Parser.sourceJsonToFull(g.source)}" ${Parser.sourceJsonToStyle(g.source)}>${source}</span>
+			<span class="col-2 ve-text-center ${Parser.sourceJsonToColor(g.source)} pr-0" title="${Parser.sourceJsonToFull(g.source)}" ${Parser.sourceJsonToStyle(g.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(

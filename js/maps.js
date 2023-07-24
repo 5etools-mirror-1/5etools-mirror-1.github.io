@@ -2,9 +2,10 @@
 
 class MapsPage extends BaseComponent {
 	static _STORAGE_STATE = "state";
-	static _PROPS_STORABLE_STATE = [
-		"imageScale",
+	static _PROPS_NON_STORABLE_STATE = [
+		"search",
 	];
+	static _PROP_PREFIX_DISPLAY = "isDisplay";
 
 	static _RenderState = class {
 		constructor () {
@@ -21,9 +22,39 @@ class MapsPage extends BaseComponent {
 	}
 
 	getBaseSaveableState () {
+		const cpy = MiscUtil.copyFast(this.__state);
+
+		this.constructor._PROPS_NON_STORABLE_STATE
+			.forEach(prop => delete cpy[prop]);
+
 		return {
-			state: this.constructor._PROPS_STORABLE_STATE.mergeMap(prop => ({[prop]: this._state[prop]})),
+			state: cpy,
 		};
+	}
+
+	async _pGetStoredState ({mapData}) {
+		const savedState = await StorageUtil.pGetForPage(this.constructor._STORAGE_STATE);
+		if (!savedState) return savedState;
+
+		const cpy = MiscUtil.copyFast(savedState);
+
+		// region Remove keys for invalid sources/chapters
+		const validPropsDisplay = new Set(
+			Object.values(mapData)
+				.flatMap(sourceMeta => [
+					this._getPropsId(sourceMeta.id).propDisplaySource,
+					...sourceMeta.chapters
+						.map((_, ixChapter) => this._getPropsChapter(sourceMeta.id, ixChapter).propDisplayChapter),
+				]),
+		);
+
+		Object.keys(cpy)
+			.filter(k => k.startsWith(this.constructor._PROP_PREFIX_DISPLAY))
+			.filter(k => !validPropsDisplay.has(k))
+			.forEach(k => delete cpy[k]);
+		// endregion
+
+		return cpy;
 	}
 
 	async pOnLoad () {
@@ -33,13 +64,12 @@ class MapsPage extends BaseComponent {
 		]);
 		await ExcludeUtil.pInitialise();
 
-		const savedState = await StorageUtil.pGetForPage(this.constructor._STORAGE_STATE);
+		const mapData = await this._pGetMapData();
+
+		const savedState = await this._pGetStoredState({mapData});
 		if (savedState) this.setBaseSaveableStateFrom(savedState);
 
-		const hkSave = () => this.saveSettingsDebounced();
-		this.constructor._PROPS_STORABLE_STATE.forEach(prop => this._addHookBase(prop, hkSave));
-
-		const mapData = await this._pGetMapData();
+		this._addHookAllBase(() => this.saveSettingsDebounced());
 
 		Renderer.get().setLazyImages(true);
 		this._renderContent({mapData});
@@ -88,13 +118,13 @@ class MapsPage extends BaseComponent {
 
 	_getPropsId (id) {
 		return {
-			propDisplaySource: `isDisplayId_${id}`,
+			propDisplaySource: `${this.constructor._PROP_PREFIX_DISPLAY}Id_${id}`,
 		};
 	}
 
 	_getPropsChapter (id, ixCh) {
 		return {
-			propDisplayChapter: `isDisplayChapter_${id}_${ixCh}`,
+			propDisplayChapter: `${this.constructor._PROP_PREFIX_DISPLAY}Chapter_${id}_${ixCh}`,
 		};
 	}
 
@@ -120,7 +150,7 @@ class MapsPage extends BaseComponent {
 		// endregion
 
 		// region Menu
-		const $cbSource = ComponentUiUtil.$getCbBool(this, propDisplaySource, {displayNullAsIndeterminate: true});
+		const $cbSource = ComponentUiUtil.$getCbBool(this, propDisplaySource, {isDisplayNullAsIndeterminate: true, isTreatIndeterminateNullAsPositive: true});
 
 		const $wrpMenu = $$`<div class="ve-flex-col w-100">
 			<label class="split-v-center maps-menu__label-cb pl-2 clickable">
@@ -195,7 +225,7 @@ class MapsPage extends BaseComponent {
 				$wrpContent[0].scrollIntoView({block: "nearest", inline: "nearest"});
 			});
 
-		const $cbChapter = ComponentUiUtil.$getCbBool(this, propDisplayChapter, {displayNullAsIndeterminate: true});
+		const $cbChapter = ComponentUiUtil.$getCbBool(this, propDisplayChapter, {isDisplayNullAsIndeterminate: true, isTreatIndeterminateNullAsPositive: true});
 
 		const $wrpMenu = $$`<div class="ve-flex-v-center maps-menu__label-cb">
 			${$btnScrollTo}
@@ -266,7 +296,7 @@ class MapsPage extends BaseComponent {
 
 		const {$wrp: $wrpIptSearch} = ComponentUiUtil.$getIptStr(this, "search", {placeholder: "Search sources...", decorationLeft: "search", decorationRight: "clear", asMeta: true});
 
-		const $cbIsAllChecked = ComponentUiUtil.$getCbBool(this, "isAllChecked", {displayNullAsIndeterminate: true});
+		const $cbIsAllChecked = ComponentUiUtil.$getCbBool(this, "isAllChecked", {isDisplayNullAsIndeterminate: true, isTreatIndeterminateNullAsPositive: true});
 
 		const $sldImageScale = ComponentUiUtil.$getSliderNumber(this, "imageScale", {min: 0.1, max: 2.0, step: 0.1});
 
@@ -279,7 +309,9 @@ class MapsPage extends BaseComponent {
 		this._addHookBase("imageScale", hkImageScale);
 		hkImageScale();
 
-		const $dispNoneVisible = $(`<div class="ve-flex-vh-center ve-muted w-100 h-100 initial-message italic">Select some sources to view from the sidebar</div>`);
+		const $dispNoneVisible = $(`<div class="ve-flex-vh-center h-100 w-100">
+			<div class="ve-flex ve-muted initial-message italic maps__disp-message-initial px-3">Select some sources to view from the sidebar</div>
+		</div>`);
 		const hkAnyVisible = () => $dispNoneVisible.toggleVe(this._state.isAllChecked === false);
 		this._addHookBase("isAllChecked", hkAnyVisible);
 		hkAnyVisible();

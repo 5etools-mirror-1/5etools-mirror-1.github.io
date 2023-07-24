@@ -131,7 +131,7 @@ class DecksPage extends ListPage {
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="col-10 bold pl-0">${ent.name}</span>
-			<span class="col-2 text-center ${Parser.sourceJsonToColor(ent.source)} pr-0" title="${Parser.sourceJsonToFull(ent.source)}" ${Parser.sourceJsonToStyle(ent.source)}>${source}</span>
+			<span class="col-2 ve-text-center ${Parser.sourceJsonToColor(ent.source)} pr-0" title="${Parser.sourceJsonToFull(ent.source)}" ${Parser.sourceJsonToStyle(ent.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(
@@ -172,7 +172,7 @@ class DecksPage extends ListPage {
 				const card = RollerUtil.rollOnArray(cards);
 				if (!card._isReplacement || evt.shiftKey) await this._compCardState.pDrawCard(ent, card);
 
-				if (evt.ctrlKey || evt.metaKey) {
+				if (EventUtil.isCtrlMetaKey(evt)) {
 					const $eleChat = $$`<span>Drew card: ${Renderer.get().render(`{@card ${card.name}|${card.set}|${card.source}}`)}</span>`;
 
 					Renderer.dice.addRoll({

@@ -14,6 +14,7 @@ async function main () {
 	if (!(await (await import("./test-misc.js")).default)) handleFail();
 	if (!(await (await import("./test-multisource.js")).default)) handleFail();
 	if (!(await (await import("./test-language-fonts.js")).default)) handleFail();
+	if (!(await (await import("./test-adventure-book-contents.js")).default)) handleFail();
 	if (!(await (await import("./test-foundry.js")).default)) handleFail();
 	process.exit(0);
 }

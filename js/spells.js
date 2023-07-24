@@ -19,10 +19,10 @@ class SpellsSublistManager extends SublistManager {
 		const $ele = $(`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${UrlUtil.autoEncodeHash(spell)}" title="${spell.name}" class="lst--border lst__row-inner">
 				<span class="bold col-3-2 pl-0">${spell.name}</span>
-				<span class="capitalize col-1-5 text-center">${PageFilterSpells.getTblLevelStr(spell)}</span>
-				<span class="col-1-8 text-center">${time}</span>
-				<span class="capitalize col-1-6 sp__school-${spell.school} text-center" title="${Parser.spSchoolAndSubschoolsAbvsToFull(spell.school, spell.subschools)}" ${Parser.spSchoolAbvToStyle(spell.school)}>${school}</span>
-				<span class="concentration--sublist col-0-7 text-center" title="Concentration">${concentration}</span>
+				<span class="capitalize col-1-5 ve-text-center">${PageFilterSpells.getTblLevelStr(spell)}</span>
+				<span class="col-1-8 ve-text-center">${time}</span>
+				<span class="capitalize col-1-6 sp__school-${spell.school} ve-text-center" title="${Parser.spSchoolAndSubschoolsAbvsToFull(spell.school, spell.subschools)}" ${Parser.spSchoolAbvToStyle(spell.school)}>${school}</span>
+				<span class="concentration--sublist col-0-7 ve-text-center" title="Concentration">${concentration}</span>
 				<span class="range col-3-2 pr-0 text-right">${range}</span>
 			</a>
 		</div>`)
@@ -273,20 +273,20 @@ class SpellsPage extends ListPageMultiSource {
 					clazz: "lst--border lst__row-inner",
 					children: [
 						e_({tag: "span", clazz: `bold col-2-9 pl-0`, text: spell.name}),
-						e_({tag: "span", clazz: `col-1-5 text-center`, text: PageFilterSpells.getTblLevelStr(spell)}),
-						e_({tag: "span", clazz: `col-1-7 text-center`, text: time}),
+						e_({tag: "span", clazz: `col-1-5 ve-text-center`, text: PageFilterSpells.getTblLevelStr(spell)}),
+						e_({tag: "span", clazz: `col-1-7 ve-text-center`, text: time}),
 						e_({
 							tag: "span",
-							clazz: `col-1-2 sp__school-${spell.school} text-center`,
+							clazz: `col-1-2 sp__school-${spell.school} ve-text-center`,
 							title: Parser.spSchoolAndSubschoolsAbvsToFull(spell.school, spell.subschools),
 							style: Parser.spSchoolAbvToStylePart(spell.school),
 							text: school,
 						}),
-						e_({tag: "span", clazz: `col-0-6 text-center`, title: "Concentration", text: concentration}),
+						e_({tag: "span", clazz: `col-0-6 ve-text-center`, title: "Concentration", text: concentration}),
 						e_({tag: "span", clazz: `col-2-4 text-right`, text: range}),
 						e_({
 							tag: "span",
-							clazz: `col-1-7 text-center ${Parser.sourceJsonToColor(spell.source)} pr-0`,
+							clazz: `col-1-7 ve-text-center ${Parser.sourceJsonToColor(spell.source)} pr-0`,
 							style: Parser.sourceJsonToStylePart(spell.source),
 							title: `${Parser.sourceJsonToFull(spell.source)}${Renderer.utils.getSourceSubText(spell)}`,
 							text: source,

@@ -1,5 +1,10 @@
 {
-	"trait": [
+	"_meta": {
+		"internalCopies": [
+			"monsterTemplate"
+		]
+	},
+	"monsterTemplate": [
 		{
 			"name": "Aarakocra",
 			"source": "DMG",
@@ -283,10 +288,8 @@
 					"type": {
 						"type": "humanoid",
 						"tags": [
-							{
-								"tag": "elf",
-								"prefix": "Drow"
-							}
+							"drow",
+							"elf"
 						]
 					}
 				},
@@ -463,21 +466,20 @@
 							"Giant"
 						]
 					},
-					"spellcasting": {
+					"trait": {
 						"mode": "appendArr",
 						"items": [
 							{
-								"name": "Innate Spellcasting",
-								"headerEntries": [
-									"<$title_short_name$>'s innate spellcasting ability is Wisdom (spell save {@dc <$spell_dc__wis$>}). <$title_short_name$> can innately cast the following spells, requiring no material components:"
-								],
-								"rest": {
-									"1e": [
-										"{@spell detect magic}",
-										"{@spell disguise self} (can seem up to 3 feet shorter than normal)"
-									]
-								},
-								"ability": "wis"
+								"name": "Powerful Build",
+								"entries": [
+									"<$title_short_name$> counts as one size larger when determining their carrying capacity and the weight they can push, drag, or lift."
+								]
+							},
+							{
+								"name": "Speech of Beast and Leaf",
+								"entries": [
+									"<$title_short_name$> can communicate in a limited way with Beasts and Plants. These creatures understand the meaning of <$title_short_name$>'s words, though <$title_short_name$> has no ability to understand their languages. In addition, <$title_short_name$> has advantage on Charisma checks they make to influence a Beast or Plant."
+								]
 							}
 						]
 					}
@@ -2356,7 +2358,7 @@
 						"tags": [
 							{
 								"tag": "dwarf",
-								"prefix": "Shield"
+								"prefix": "Mountain"
 							}
 						]
 					},
@@ -2391,6 +2393,58 @@
 							}
 						]
 					}
+				}
+			}
+		},
+		{
+			"name": "Hill Dwarf",
+			"source": "PHB",
+			"_copy": {
+				"name": "Mountain Dwarf",
+				"source": "PHB",
+				"_mod": {
+					"*": {
+						"mode": "setProp",
+						"prop": "apply._root.type",
+						"value": {
+							"type": "humanoid",
+							"tags": [
+								{
+									"tag": "dwarf",
+									"prefix": "Hill"
+								}
+							]
+						}
+					}
+				},
+				"_preserve": {
+					"page": true
+				}
+			}
+		},
+		{
+			"name": "Shield Dwarf",
+			"source": "PHB",
+			"_copy": {
+				"name": "Mountain Dwarf",
+				"source": "PHB",
+				"_mod": {
+					"*": {
+						"mode": "setProp",
+						"prop": "apply._root.type",
+						"value": {
+							"type": "humanoid",
+							"tags": [
+								{
+									"tag": "dwarf",
+									"prefix": "Shield"
+								}
+							]
+						}
+					}
+				},
+				"_preserve": {
+					"page": true
 				}
 			}
 		},

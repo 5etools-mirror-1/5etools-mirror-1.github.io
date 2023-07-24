@@ -19,7 +19,7 @@ export class InitiativeTrackerSettingsImport extends BaseComponent {
 
 	/* -------------------------------------------- */
 
-	getSettingsUpdate () {
+	getStateUpdate () {
 		return MiscUtil.copyFast(this._state);
 	}
 

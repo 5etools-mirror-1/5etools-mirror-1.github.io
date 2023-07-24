@@ -1366,14 +1366,9 @@ img.token:hover {
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
+		padding: 0 3px;
 		font-variant: small-caps;
 		border-bottom: 1px solid $rgb-border-grey;
-	}
-
-	&h_name,
-	&r_name {
-		min-width: 115px;
-		width: 100%;
 	}
 
 	&h_name--compact {
@@ -1383,12 +1378,6 @@ img.token:hover {
 	&r_name {
 		display: flex;
 		justify-content: space-between;
-	}
-
-	&h_hp,
-	&r_hp {
-		min-width: 100px;
-		width: 100%;
 	}
 
 	&h_hp--compact {
@@ -1430,7 +1419,7 @@ img.token:hover {
 		display: flex;
 		justify-content: space-between;
 		padding: 2px 3px;
-		border-bottom: 1px solid #e0e0e0;
+		border-bottom: 1px solid $rgb-border-grey--trans;
 
 		&:last-of-type {
 			border-bottom: 0;
@@ -1453,6 +1442,18 @@ img.token:hover {
 .night-mode .initp__ {
 	&header {
 		border-color: $rgb-border-grey--night;
+	}
+
+	&r {
+		border-color: $rgb-border-grey--trans-night;
+
+		&:hover {
+			background: #ffffff18;
+		}
+
+		&--active:hover {
+			background: #93bae838;
+		}
 	}
 }
 // endregion
@@ -1716,6 +1717,7 @@ tr.regionaleffect {
 	// FIXME this doesn't affect e.g. lists
 	//  Also, affects e.g. nested tables (bad!)
 	--h-mb-p: 15px;
+	--h-mb-p-inline: var(--h-mb-p);
 	--h-mb-quote-line: 10px;
 	--h-mb-li: 5px;
 	--w-text-indent-inline-p: 0;
@@ -1726,7 +1728,7 @@ tr.regionaleffect {
 
 	.rd__spc-inline-post {
 		width: 100%;
-		height: 15px;
+		height: var(--h-mb-p);
 
 		&:last-child {
 			height: 0;
@@ -2587,6 +2589,10 @@ th.border {
 
 	.bb-1p {
 		border-bottom-color: $rgb-border-grey--night !important;
+
+		&-trans {
+			border-bottom-color: $rgb-border-grey--trans-night !important;
+		}
 	}
 
 	.bl-1p {

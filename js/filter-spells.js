@@ -679,12 +679,12 @@ class ModalFilterSpells extends ModalFilter {
 			</div>
 
 			<div class="col-3 ${spell._versionBase_isVersion ? "italic" : ""} ${this._getNameStyle()}">${spell._versionBase_isVersion ? `<span class="px-3"></span>` : ""}${spell.name}</div>
-			<div class="col-1-5 text-center">${levelText}</div>
-			<div class="col-2 text-center">${time}</div>
-			<div class="col-1 sp__school-${spell.school} text-center" title="${Parser.spSchoolAndSubschoolsAbvsToFull(spell.school, spell.subschools)}" ${Parser.spSchoolAbvToStyle(spell.school)}>${school}</div>
-			<div class="col-0-5 text-center" title="Concentration">${concentration}</div>
+			<div class="col-1-5 ve-text-center">${levelText}</div>
+			<div class="col-2 ve-text-center">${time}</div>
+			<div class="col-1 sp__school-${spell.school} ve-text-center" title="${Parser.spSchoolAndSubschoolsAbvsToFull(spell.school, spell.subschools)}" ${Parser.spSchoolAbvToStyle(spell.school)}>${school}</div>
+			<div class="col-0-5 ve-text-center" title="Concentration">${concentration}</div>
 			<div class="col-2 text-right">${range}</div>
-			<div class="col-1 pr-0 text-center ${Parser.sourceJsonToColor(spell.source)}" title="${Parser.sourceJsonToFull(spell.source)}" ${Parser.sourceJsonToStyle(spell.source)}>${source}</div>
+			<div class="col-1 pr-0 ve-text-center ${Parser.sourceJsonToColor(spell.source)}" title="${Parser.sourceJsonToFull(spell.source)}" ${Parser.sourceJsonToStyle(spell.source)}>${source}</div>
 		</div>`;
 
 		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;

@@ -431,6 +431,13 @@ globalThis.Renderer = function () {
 		}
 	};
 
+	this._RE_TEXT_CENTER = /\btext-center\b/;
+
+	this._getMutatedStyleString = function (str) {
+		if (!str) return str;
+		return str.replace(this._RE_TEXT_CENTER, "ve-text-center");
+	};
+
 	this._adjustDepth = function (meta, dDepth) {
 		const cachedDepth = meta.depth;
 		meta.depth += dDepth;
@@ -457,8 +464,9 @@ globalThis.Renderer = function () {
 	this._renderImage = function (entry, textStack, meta, options) {
 		if (entry.title) this._handleTrackTitles(entry.title, {isImage: true});
 
-		if (entry.imageType === "map" || entry.imageType === "mapPlayer") textStack[0] += `<div class="rd__wrp-map">`;
 		textStack[0] += `<div class="float-clear"></div>`;
+
+		if (entry.imageType === "map" || entry.imageType === "mapPlayer") textStack[0] += `<div class="rd__wrp-map">`;
 		textStack[0] += `<div class="${meta._typeStack.includes("gallery") ? "rd__wrp-gallery-image" : ""}">`;
 
 		const href = this._renderImage_getUrl(entry);
@@ -472,7 +480,7 @@ globalThis.Renderer = function () {
 			</a>
 		</div>`;
 
-		if (entry.title || entry.credit || entry.mapRegions) {
+		if (!this._renderImage_isComicStyling(entry) && (entry.title || entry.credit || entry.mapRegions)) {
 			const ptAdventureBookMeta = entry.mapRegions && meta.adventureBookPage && meta.adventureBookSource && meta.adventureBookHash
 				? `data-rd-adventure-book-map-page="${meta.adventureBookPage.qq()}" data-rd-adventure-book-map-source="${meta.adventureBookSource.qq()}" data-rd-adventure-book-map-hash="${meta.adventureBookHash.qq()}"`
 				: "";
@@ -532,6 +540,11 @@ globalThis.Renderer = function () {
 			source: entry.source,
 			hash: entry.hash,
 		};
+	};
+
+	this._renderImage_isComicStyling = function (entry) {
+		if (!entry.style) return false;
+		return ["comic-speaker-left", "comic-speaker-right"].includes(entry.style);
 	};
 
 	this._renderImage_getWrapperClasses = function (entry) {
@@ -594,7 +607,7 @@ globalThis.Renderer = function () {
 			}
 		}
 
-		textStack[0] += `<table class="w-100 rd__table ${entry.style || ""} ${entry.isStriped === false ? "" : "stripe-odd-table"}">`;
+		textStack[0] += `<table class="w-100 rd__table ${this._getMutatedStyleString(entry.style || "")} ${entry.isStriped === false ? "" : "stripe-odd-table"}">`;
 
 		const headerRowMetas = Renderer.table.getHeaderRowMetas(entry);
 		const autoRollMode = Renderer.table.getAutoConvertedRollMode(entry, {headerRowMetas});
@@ -736,11 +749,11 @@ globalThis.Renderer = function () {
 	};
 
 	this._renderTable_getTableThClassText = function (entry, i) {
-		return entry.colStyles == null || i >= entry.colStyles.length ? "" : `class="${entry.colStyles[i]}"`;
+		return entry.colStyles == null || i >= entry.colStyles.length ? "" : `class="${this._getMutatedStyleString(entry.colStyles[i])}"`;
 	};
 
 	this._renderTable_makeTableTdClassText = function (entry, i) {
-		if (entry.rowStyles != null) return i >= entry.rowStyles.length ? "" : `class="${entry.rowStyles[i]}"`;
+		if (entry.rowStyles != null) return i >= entry.rowStyles.length ? "" : `class="${this._getMutatedStyleString(entry.rowStyles[i])}"`;
 		else return this._renderTable_getTableThClassText(entry, i);
 	};
 
@@ -884,7 +897,7 @@ globalThis.Renderer = function () {
 
 	this._renderInset = function (entry, textStack, meta, options) {
 		const dataString = this._renderEntriesSubtypes_getDataString(entry);
-		textStack[0] += `<${this.wrapperTag} class="rd__b-special rd__b-inset ${entry.style || ""}" ${dataString}>`;
+		textStack[0] += `<${this.wrapperTag} class="rd__b-special rd__b-inset ${this._getMutatedStyleString(entry.style || "")}" ${dataString}>`;
 
 		const cachedLastDepthTrackerProps = MiscUtil.copyFast(this._lastDepthTrackerInheritedProps);
 		this._handleTrackDepth(entry, 1);
@@ -917,7 +930,7 @@ globalThis.Renderer = function () {
 
 	this._renderInsetReadaloud = function (entry, textStack, meta, options) {
 		const dataString = this._renderEntriesSubtypes_getDataString(entry);
-		textStack[0] += `<${this.wrapperTag} class="rd__b-special rd__b-inset rd__b-inset--readaloud ${entry.style || ""}" ${dataString}>`;
+		textStack[0] += `<${this.wrapperTag} class="rd__b-special rd__b-inset rd__b-inset--readaloud ${this._getMutatedStyleString(entry.style || "")}" ${dataString}>`;
 
 		const cachedLastDepthTrackerProps = MiscUtil.copyFast(this._lastDepthTrackerInheritedProps);
 		this._handleTrackDepth(entry, 1);
@@ -1010,11 +1023,12 @@ globalThis.Renderer = function () {
 		const hidden = new Set(entry.hidden || []);
 		const toRender = [{type: "entries", name: entry.name, entries: entry.headerEntries ? MiscUtil.copyFast(entry.headerEntries) : []}];
 
-		if (entry.constant || entry.will || entry.rest || entry.daily || entry.weekly || entry.yearly || entry.ritual) {
+		if (entry.constant || entry.will || entry.recharge || entry.charges || entry.rest || entry.daily || entry.weekly || entry.yearly || entry.ritual) {
 			const tempList = {type: "list", style: "list-hang-notitle", items: [], data: {isSpellList: true}};
 			if (entry.constant && !hidden.has("constant")) tempList.items.push({type: "itemSpell", name: `Constant:`, entry: this._renderSpellcasting_getRenderableList(entry.constant).join(", ")});
 			if (entry.will && !hidden.has("will")) tempList.items.push({type: "itemSpell", name: `At will:`, entry: this._renderSpellcasting_getRenderableList(entry.will).join(", ")});
 
+			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "recharge", fnGetDurationText: num => `{@recharge ${num}|m}`, isSkipPrefix: true});
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "charges", fnGetDurationText: num => ` charge${num === 1 ? "" : "s"}`});
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "rest", durationText: "/rest"});
 			this._renderSpellcasting_getEntries_procPerDuration({entry, tempList, hidden, prop: "daily", durationText: "/day"});
@@ -1049,16 +1063,27 @@ globalThis.Renderer = function () {
 		return toRender;
 	};
 
-	this._renderSpellcasting_getEntries_procPerDuration = function ({entry, hidden, tempList, prop, durationText, fnGetDurationText}) {
+	this._renderSpellcasting_getEntries_procPerDuration = function ({entry, hidden, tempList, prop, durationText, fnGetDurationText, isSkipPrefix}) {
 		if (!entry[prop] || hidden.has(prop)) return;
 
 		for (let lvl = 9; lvl > 0; lvl--) {
 			const perDur = entry[prop];
-			if (perDur[lvl]) tempList.items.push({type: "itemSpell", name: `${lvl}${fnGetDurationText ? fnGetDurationText(lvl) : durationText}:`, entry: this._renderSpellcasting_getRenderableList(perDur[lvl]).join(", ")});
+			if (perDur[lvl]) {
+				tempList.items.push({
+					type: "itemSpell",
+					name: `${isSkipPrefix ? "" : lvl}${fnGetDurationText ? fnGetDurationText(lvl) : durationText}:`,
+					entry: this._renderSpellcasting_getRenderableList(perDur[lvl]).join(", "),
+				});
+			}
+
 			const lvlEach = `${lvl}e`;
 			if (perDur[lvlEach]) {
 				const isHideEach = !perDur[lvl] && perDur[lvlEach].length === 1;
-				tempList.items.push({type: "itemSpell", name: `${lvl}${fnGetDurationText ? fnGetDurationText(lvl) : durationText}${isHideEach ? "" : ` each`}:`, entry: this._renderSpellcasting_getRenderableList(perDur[lvlEach]).join(", ")});
+				tempList.items.push({
+					type: "itemSpell",
+					name: `${isSkipPrefix ? "" : lvl}${fnGetDurationText ? fnGetDurationText(lvl) : durationText}${isHideEach ? "" : ` each`}:`,
+					entry: this._renderSpellcasting_getRenderableList(perDur[lvlEach]).join(", "),
+				});
 			}
 		}
 	};
@@ -1111,7 +1136,7 @@ globalThis.Renderer = function () {
 
 	this._renderAbilityDc = function (entry, textStack, meta, options) {
 		this._renderPrefix(entry, textStack, meta, options);
-		textStack[0] += `<div class="text-center"><b>`;
+		textStack[0] += `<div class="ve-text-center"><b>`;
 		this._recursiveRender(entry.name, textStack, meta);
 		textStack[0] += ` save DC</b> = 8 + your proficiency bonus + your ${Parser.attrChooseToFull(entry.attributes)}</div>`;
 		this._renderSuffix(entry, textStack, meta, options);
@@ -1119,7 +1144,7 @@ globalThis.Renderer = function () {
 
 	this._renderAbilityAttackMod = function (entry, textStack, meta, options) {
 		this._renderPrefix(entry, textStack, meta, options);
-		textStack[0] += `<div class="text-center"><b>`;
+		textStack[0] += `<div class="ve-text-center"><b>`;
 		this._recursiveRender(entry.name, textStack, meta);
 		textStack[0] += ` attack modifier</b> = your proficiency bonus + your ${Parser.attrChooseToFull(entry.attributes)}</div>`;
 		this._renderSuffix(entry, textStack, meta, options);
@@ -1127,7 +1152,7 @@ globalThis.Renderer = function () {
 
 	this._renderAbilityGeneric = function (entry, textStack, meta, options) {
 		this._renderPrefix(entry, textStack, meta, options);
-		textStack[0] += `<div class="text-center">`;
+		textStack[0] += `<div class="ve-text-center">`;
 		if (entry.name) this._recursiveRender(entry.name, textStack, meta, {prefix: "<b>", suffix: "</b> = "});
 		textStack[0] += `${entry.text}${entry.attributes ? ` ${Parser.attrChooseToFull(entry.attributes)}` : ""}</div>`;
 		this._renderSuffix(entry, textStack, meta, options);
@@ -1198,7 +1223,7 @@ globalThis.Renderer = function () {
 	this._renderItem = function (entry, textStack, meta, options) {
 		this._renderPrefix(entry, textStack, meta, options);
 		const isAddPeriod = entry.name && entry.nameDot !== false && !Renderer._INLINE_HEADER_TERMINATORS.has(entry.name[entry.name.length - 1]);
-		textStack[0] += `<p class="rd__p-list-item"><span class="${entry.style || "bold"} rd__list-item-name">${this.render(entry.name)}${isAddPeriod ? "." : ""}</span> `;
+		textStack[0] += `<p class="rd__p-list-item"><span class="${this._getMutatedStyleString(entry.style) || "bold"} rd__list-item-name">${this.render(entry.name)}${isAddPeriod ? "." : ""}</span> `;
 		if (entry.entry) this._recursiveRender(entry.entry, textStack, meta);
 		else if (entry.entries) {
 			const len = entry.entries.length;
@@ -1217,7 +1242,11 @@ globalThis.Renderer = function () {
 
 	this._renderItemSpell = function (entry, textStack, meta, options) {
 		this._renderPrefix(entry, textStack, meta, options);
-		this._recursiveRender(entry.entry, textStack, meta, {prefix: `<p>${entry.name} `, suffix: "</p>"});
+
+		const tempStack = [""];
+		this._recursiveRender(entry.name || "", tempStack, meta);
+
+		this._recursiveRender(entry.entry, textStack, meta, {prefix: `<p>${tempStack.join("")} `, suffix: "</p>"});
 		this._renderSuffix(entry, textStack, meta, options);
 	};
 
@@ -1376,7 +1405,7 @@ globalThis.Renderer = function () {
 
 	this._renderFlowBlock = function (entry, textStack, meta, options) {
 		const dataString = this._renderEntriesSubtypes_getDataString(entry);
-		textStack[0] += `<${this.wrapperTag} class="rd__b-special rd__b-flow text-center" ${dataString}>`;
+		textStack[0] += `<${this.wrapperTag} class="rd__b-special rd__b-flow ve-text-center" ${dataString}>`;
 
 		const cachedLastDepthTrackerProps = MiscUtil.copyFast(this._lastDepthTrackerInheritedProps);
 		this._handleTrackDepth(entry, 1);
@@ -1468,7 +1497,7 @@ globalThis.Renderer = function () {
 			const fromFn = this._fnsGetStyleClasses[k](entry);
 			if (fromFn) outList.push(...fromFn);
 		}
-		if (entry.style) outList.push(entry.style);
+		if (entry.style) outList.push(this._getMutatedStyleString(entry.style));
 		return outList.join(" ");
 	};
 
@@ -2684,7 +2713,7 @@ Renderer.utils = {
 			isExcluded = isExcluded
 				|| dataProp === "item" ? Renderer.item.isExcluded(entity, {hash}) : ExcludeUtil.isExcluded(hash, dataProp, entity.source);
 		}
-		return isExcluded ? `<div class="text-center text-danger"><b><i>Warning: This content has been <a href="blocklist.html">blocklisted</a>.</i></b></div>` : "";
+		return isExcluded ? `<div class="ve-text-center text-danger"><b><i>Warning: This content has been <a href="blocklist.html">blocklisted</a>.</i></b></div>` : "";
 	},
 
 	getSourceAndPageTrHtml (it, {tag, fnUnpackUid} = {}) {
@@ -5871,14 +5900,14 @@ Renderer.race = {
 			<tr><td colspan="6">
 				<table class="w-100 summary stripe-even-table">
 					<tr>
-						<th class="col-4 text-center">Ability Scores</th>
-						<th class="col-4 text-center">Size</th>
-						<th class="col-4 text-center">Speed</th>
+						<th class="col-4 ve-text-center">Ability Scores</th>
+						<th class="col-4 ve-text-center">Size</th>
+						<th class="col-4 ve-text-center">Speed</th>
 					</tr>
 					<tr>
-						<td class="text-center">${ability.asText}</td>
-						<td class="text-center">${(race.size || [Parser.SZ_VARIES]).map(sz => Parser.sizeAbvToFull(sz)).join("/")}</td>
-						<td class="text-center">${Parser.getSpeedString(race)}</td>
+						<td class="ve-text-center">${ability.asText}</td>
+						<td class="ve-text-center">${(race.size || [Parser.SZ_VARIES]).map(sz => Parser.sizeAbvToFull(sz)).join("/")}</td>
+						<td class="ve-text-center">${Parser.getSpeedString(race)}</td>
 					</tr>
 				</table>
 			</td></tr>
@@ -5900,7 +5929,7 @@ Renderer.race = {
 		if (race._isBaseRace) return null;
 
 		const colLabels = ["Base Height", "Base Weight", "Height Modifier", "Weight Modifier"];
-		const colStyles = ["col-2-3 text-center", "col-2-3 text-center", "col-2-3 text-center", "col-2 text-center"];
+		const colStyles = ["col-2-3 ve-text-center", "col-2-3 ve-text-center", "col-2-3 ve-text-center", "col-2 ve-text-center"];
 		const row = [
 			Renderer.race.getRenderedHeight(race.heightAndWeight.baseHeight),
 			`${race.heightAndWeight.baseWeight} lb.`,
@@ -5910,7 +5939,7 @@ Renderer.race = {
 
 		if (!isStatic) {
 			colLabels.push("");
-			colStyles.push("col-3-1 text-center");
+			colStyles.push("col-3-1 ve-text-center");
 			row.push(`<div class="ve-flex-vh-center">
 				<div class="ve-hidden race__disp-result-height-weight ve-flex-v-baseline">
 					<div class="mr-1">=</div>
@@ -6103,7 +6132,7 @@ Renderer.race = {
 		return MiscUtil.copyFast(race.subraces).map(s => Renderer.race._getMergedSubrace(race, s));
 	},
 
-	_getMergedSubrace (race, s) {
+	_getMergedSubrace (race, cpySr) {
 		const cpy = MiscUtil.copyFast(race);
 		cpy._baseName = cpy.name;
 		cpy._baseSource = cpy.source;
@@ -6115,29 +6144,30 @@ Renderer.race = {
 		delete cpy._versions;
 		delete cpy.hasFluff;
 		delete cpy.hasFluffImages;
+		delete cpySr.__prop;
 
 		// merge names, abilities, entries, tags
-		if (s.name) {
-			cpy._subraceName = s.name;
+		if (cpySr.name) {
+			cpy._subraceName = cpySr.name;
 
-			if (s.alias) {
-				cpy.alias = s.alias.map(it => Renderer.race.getSubraceName(cpy.name, it));
-				delete s.alias;
+			if (cpySr.alias) {
+				cpy.alias = cpySr.alias.map(it => Renderer.race.getSubraceName(cpy.name, it));
+				delete cpySr.alias;
 			}
 
-			cpy.name = Renderer.race.getSubraceName(cpy.name, s.name);
-			delete s.name;
+			cpy.name = Renderer.race.getSubraceName(cpy.name, cpySr.name);
+			delete cpySr.name;
 		}
-		if (s.ability) {
+		if (cpySr.ability) {
 			// If the base race doesn't have any ability scores, make a set of empty records
-			if ((s.overwrite && s.overwrite.ability) || !cpy.ability) cpy.ability = s.ability.map(() => ({}));
+			if ((cpySr.overwrite && cpySr.overwrite.ability) || !cpy.ability) cpy.ability = cpySr.ability.map(() => ({}));
 
-			if (cpy.ability.length !== s.ability.length) throw new Error(`Race and subrace ability array lengths did not match!`);
-			s.ability.forEach((obj, i) => Object.assign(cpy.ability[i], obj));
-			delete s.ability;
+			if (cpy.ability.length !== cpySr.ability.length) throw new Error(`Race and subrace ability array lengths did not match!`);
+			cpySr.ability.forEach((obj, i) => Object.assign(cpy.ability[i], obj));
+			delete cpySr.ability;
 		}
-		if (s.entries) {
-			s.entries.forEach(e => {
+		if (cpySr.entries) {
+			cpySr.entries.forEach(e => {
 				if (e.data && e.data.overwrite) {
 					const toOverwrite = cpy.entries.findIndex(it => it.name.toLowerCase().trim() === e.data.overwrite.toLowerCase().trim());
 					if (~toOverwrite) cpy.entries[toOverwrite] = e;
@@ -6146,43 +6176,43 @@ Renderer.race = {
 					cpy.entries.push(e);
 				}
 			});
-			delete s.entries;
+			delete cpySr.entries;
 		}
 
-		if (s.traitTags) {
-			if (s.overwrite && s.overwrite.traitTags) cpy.traitTags = s.traitTags;
-			else cpy.traitTags = (cpy.traitTags || []).concat(s.traitTags);
-			delete s.traitTags;
+		if (cpySr.traitTags) {
+			if (cpySr.overwrite && cpySr.overwrite.traitTags) cpy.traitTags = cpySr.traitTags;
+			else cpy.traitTags = (cpy.traitTags || []).concat(cpySr.traitTags);
+			delete cpySr.traitTags;
 		}
 
-		if (s.languageProficiencies) {
-			if (s.overwrite && s.overwrite.languageProficiencies) cpy.languageProficiencies = s.languageProficiencies;
-			else cpy.languageProficiencies = cpy.languageProficiencies = (cpy.languageProficiencies || []).concat(s.languageProficiencies);
-			delete s.languageProficiencies;
+		if (cpySr.languageProficiencies) {
+			if (cpySr.overwrite && cpySr.overwrite.languageProficiencies) cpy.languageProficiencies = cpySr.languageProficiencies;
+			else cpy.languageProficiencies = cpy.languageProficiencies = (cpy.languageProficiencies || []).concat(cpySr.languageProficiencies);
+			delete cpySr.languageProficiencies;
 		}
 
 		// TODO make a generalised merge system? Probably have one of those lying around somewhere [bestiary schema?]
-		if (s.skillProficiencies) {
+		if (cpySr.skillProficiencies) {
 			// Overwrite if possible
-			if (!cpy.skillProficiencies || (s.overwrite && s.overwrite["skillProficiencies"])) cpy.skillProficiencies = s.skillProficiencies;
+			if (!cpy.skillProficiencies || (cpySr.overwrite && cpySr.overwrite["skillProficiencies"])) cpy.skillProficiencies = cpySr.skillProficiencies;
 			else {
-				if (!s.skillProficiencies.length || !cpy.skillProficiencies.length) throw new Error(`No items!`);
-				if (s.skillProficiencies.length > 1 || cpy.skillProficiencies.length > 1) throw new Error(`Subrace merging does not handle choices!`); // Implement if required
+				if (!cpySr.skillProficiencies.length || !cpy.skillProficiencies.length) throw new Error(`No items!`);
+				if (cpySr.skillProficiencies.length > 1 || cpy.skillProficiencies.length > 1) throw new Error(`Subrace merging does not handle choices!`); // Implement if required
 
 				// Otherwise, merge
-				if (s.skillProficiencies.choose) {
+				if (cpySr.skillProficiencies.choose) {
 					if (cpy.skillProficiencies.choose) throw new Error(`Subrace choose merging is not supported!!`); // Implement if required
-					cpy.skillProficiencies.choose = s.skillProficiencies.choose;
-					delete s.skillProficiencies.choose;
+					cpy.skillProficiencies.choose = cpySr.skillProficiencies.choose;
+					delete cpySr.skillProficiencies.choose;
 				}
-				Object.assign(cpy.skillProficiencies[0], s.skillProficiencies[0]);
+				Object.assign(cpy.skillProficiencies[0], cpySr.skillProficiencies[0]);
 			}
 
-			delete s.skillProficiencies;
+			delete cpySr.skillProficiencies;
 		}
 
 		// overwrite everything else
-		Object.assign(cpy, s);
+		Object.assign(cpy, cpySr);
 
 		// For any null'd out fields on the subrace, delete the field
 		Object.entries(cpy)
@@ -7085,8 +7115,8 @@ Renderer.monster = {
 		const hasToken = mon.tokenUrl || mon.hasToken;
 		const extraThClasses = !opts.isCompact && hasToken ? ["mon__name--token"] : null;
 
-		const isCr = Parser.crToNumber(mon.cr) !== VeCt.CR_UNKNOWN;
-		const isShowSpellLevelScaler = opts.isShowScalers && !isCr && mon.summonedBySpellLevel != null;
+		const isShowCrScaler = ScaleCreature.isCrInScaleRange(mon);
+		const isShowSpellLevelScaler = opts.isShowScalers && !isShowCrScaler && mon.summonedBySpellLevel != null;
 		const isShowClassLevelScaler = opts.isShowScalers && !isShowSpellLevelScaler && mon.summonedByClass != null;
 
 		const fnGetSpellTraits = Renderer.monster.getSpellcastingRenderedTraits.bind(Renderer.monster, renderer);
@@ -7101,7 +7131,7 @@ Renderer.monster = {
 			//   here and expect to return it in the HTML.
 			const selHtml = isShowSpellLevelScaler ? Renderer.monster.getSelSummonSpellLevel(mon)?.outerHTML : Renderer.monster.getSelSummonClassLevel(mon)?.outerHTML;
 			ptCrSpellLevel = `<td colspan="2">${selHtml || ""}</td>`;
-		} else if (isCr && ScaleCreature.isCrInScaleRange(mon)) {
+		} else if (isShowCrScaler) {
 			ptCrSpellLevel = `<td colspan="2">
 				${Parser.monCrToFull(mon.cr, {isMythic: !!mon.mythic})}
 				${opts.isShowScalers && !opts.isScaledCr && Parser.isValidCr(mon.cr ? (mon.cr.cr || mon.cr) : null) ? `
@@ -7247,10 +7277,10 @@ Renderer.monster = {
 		const absRemaining = Parser.ABIL_ABVS.filter(ab => !seenAbs.has(ab));
 
 		return `<tr>
-			${absRemaining.map(ab => `<th class="col-2 text-center bold">${ab.toUpperCase()}</th>`).join("")}
+			${absRemaining.map(ab => `<th class="col-2 ve-text-center bold">${ab.toUpperCase()}</th>`).join("")}
 		</tr>
 		<tr>
-			${absRemaining.map(ab => `<td class="text-center">${Renderer.utils.getAbilityRoller(mon, ab)}</td>`).join("")}
+			${absRemaining.map(ab => `<td class="ve-text-center">${Renderer.utils.getAbilityRoller(mon, ab)}</td>`).join("")}
 		</tr>`;
 	},
 
@@ -7587,6 +7617,69 @@ Renderer.monster = {
 
 	bindListenersCompact (mon, ele) {
 		Renderer.monster._bindListenersScale(mon, ele);
+	},
+
+	hover: class {
+		static bindFluffImageMouseover ({mon, $ele}) {
+			$ele
+				.on("mouseover", evt => this._pOnFluffImageMouseover({evt, mon, $ele}));
+		}
+
+		static async _pOnFluffImageMouseover ({evt, mon, $ele}) {
+			// We'll rebuild the mouseover handler with whatever we load
+			$ele.off("mouseover");
+
+			const fluff = mon ? await Renderer.monster.pGetFluff(mon) : null;
+
+			if (fluff?.images?.length) return this._pOnFluffImageMouseover_hasImage({mon, $ele, fluff});
+			return this._pOnFluffImageMouseover_noImage({mon, $ele});
+		}
+
+		static _pOnFluffImageMouseover_noImage ({mon, $ele}) {
+			const hoverMeta = this.getMakePredefinedFluffImageHoverNoImage({name: mon?.name});
+			$ele
+				.on("mouseover", evt => hoverMeta.mouseOver(evt, $ele[0]))
+				.on("mousemove", evt => hoverMeta.mouseMove(evt, $ele[0]))
+				.on("mouseleave", evt => hoverMeta.mouseLeave(evt, $ele[0]))
+				.trigger("mouseover");
+		}
+
+		static _pOnFluffImageMouseover_hasImage ({mon, $ele, fluff}) {
+			const hoverMeta = this.getMakePredefinedFluffImageHoverHasImage({imageHref: fluff.images[0].href, name: mon.name});
+			$ele
+				.on("mouseover", evt => hoverMeta.mouseOver(evt, $ele[0]))
+				.on("mousemove", evt => hoverMeta.mouseMove(evt, $ele[0]))
+				.on("mouseleave", evt => hoverMeta.mouseLeave(evt, $ele[0]))
+				.trigger("mouseover");
+		}
+
+		static getMakePredefinedFluffImageHoverNoImage ({name}) {
+			return Renderer.hover.getMakePredefinedHover(
+				{
+					type: "entries",
+					entries: [
+						Renderer.utils.HTML_NO_IMAGES,
+					],
+					data: {
+						hoverTitle: name ? `Image \u2014 ${name}` : "Image",
+					},
+				},
+				{isBookContent: true},
+			);
+		}
+
+		static getMakePredefinedFluffImageHoverHasImage ({imageHref, name}) {
+			return Renderer.hover.getMakePredefinedHover(
+				{
+					type: "image",
+					href: imageHref,
+					data: {
+						hoverTitle: name ? `Image \u2014 ${name}` : "Image",
+					},
+				},
+				{isBookContent: true},
+			);
+		}
 	},
 };
 Renderer.monster.CHILD_PROPS_EXTENDED = [...Renderer.monster.CHILD_PROPS, "lairActions", "regionalEffects"];
@@ -8994,9 +9087,9 @@ Renderer.table = {
 				tableRaw.rollAttitude ? `Attitude` : null,
 			].filter(Boolean),
 			colStyles: [
-				"col-2 text-center",
+				"col-2 ve-text-center",
 				tableRaw.rollAttitude ? "col-8" : "col-10",
-				tableRaw.rollAttitude ? `col-2 text-center` : null,
+				tableRaw.rollAttitude ? `col-2 ve-text-center` : null,
 			].filter(Boolean),
 			rows: tableRaw.table.map(it => [
 				`${getPadded(it.min)}${it.max != null && it.max !== it.min ? `-${getPadded(it.max)}` : ""}`,
@@ -9297,20 +9390,20 @@ Renderer.vehicle = {
 		return Parser.ABIL_ABVS.some(it => veh[it] != null) ? `<tr><td colspan="6">
 			<table class="w-100 summary stripe-even-table">
 				<tr>
-					<th class="col-2 text-center">STR</th>
-					<th class="col-2 text-center">DEX</th>
-					<th class="col-2 text-center">CON</th>
-					<th class="col-2 text-center">INT</th>
-					<th class="col-2 text-center">WIS</th>
-					<th class="col-2 text-center">CHA</th>
+					<th class="col-2 ve-text-center">STR</th>
+					<th class="col-2 ve-text-center">DEX</th>
+					<th class="col-2 ve-text-center">CON</th>
+					<th class="col-2 ve-text-center">INT</th>
+					<th class="col-2 ve-text-center">WIS</th>
+					<th class="col-2 ve-text-center">CHA</th>
 				</tr>
 				<tr>
-					<td class="text-center">${Renderer.utils.getAbilityRoller(veh, "str")}</td>
-					<td class="text-center">${Renderer.utils.getAbilityRoller(veh, "dex")}</td>
-					<td class="text-center">${Renderer.utils.getAbilityRoller(veh, "con")}</td>
-					<td class="text-center">${Renderer.utils.getAbilityRoller(veh, "int")}</td>
-					<td class="text-center">${Renderer.utils.getAbilityRoller(veh, "wis")}</td>
-					<td class="text-center">${Renderer.utils.getAbilityRoller(veh, "cha")}</td>
+					<td class="ve-text-center">${Renderer.utils.getAbilityRoller(veh, "str")}</td>
+					<td class="ve-text-center">${Renderer.utils.getAbilityRoller(veh, "dex")}</td>
+					<td class="ve-text-center">${Renderer.utils.getAbilityRoller(veh, "con")}</td>
+					<td class="ve-text-center">${Renderer.utils.getAbilityRoller(veh, "int")}</td>
+					<td class="ve-text-center">${Renderer.utils.getAbilityRoller(veh, "wis")}</td>
+					<td class="ve-text-center">${Renderer.utils.getAbilityRoller(veh, "cha")}</td>
 				</tr>
 			</table>
 		</td></tr>` : "";
@@ -9999,12 +10092,22 @@ Renderer.hover = {
 	},
 
 	cleanTempWindows () {
-		for (const [ele, meta] of Renderer.hover._eleCache.entries()) {
-			if (!meta.isPermanent && meta.windowMeta && !document.body.contains(ele)) {
+		for (const [key, meta] of Renderer.hover._eleCache.entries()) {
+			// If this is an element-less "permanent" show which has been closed
+			if (!meta.isPermanent && meta.windowMeta && typeof key === "number") {
 				meta.windowMeta.doClose();
-			} else if (!meta.isPermanent && meta.isHovered && meta.windowMeta) {
+				Renderer.hover._eleCache.delete(key);
+				return;
+			}
+
+			if (!meta.isPermanent && meta.windowMeta && !document.body.contains(key)) {
+				meta.windowMeta.doClose();
+				return;
+			}
+
+			if (!meta.isPermanent && meta.isHovered && meta.windowMeta) {
 				// Check if any elements have failed to clear their hovering status on mouse move
-				const bounds = ele.getBoundingClientRect();
+				const bounds = key.getBoundingClientRect();
 				if (EventUtil._mouseX < bounds.x
 					|| EventUtil._mouseY < bounds.y
 					|| EventUtil._mouseX > bounds.x + bounds.width
@@ -10026,7 +10129,7 @@ Renderer.hover = {
 		return Renderer.hover._eleCache.get(ele);
 	},
 
-	_handleGenericMouseOverStart (evt, ele) {
+	_handleGenericMouseOverStart ({evt, ele}) {
 		// Don't open on small screens unless forced
 		if (Renderer.hover.isSmallScreen(evt) && !evt.shiftKey) return;
 
@@ -10041,6 +10144,16 @@ Renderer.hover = {
 		meta.isHovered = true;
 		meta.isLoading = true;
 		meta.isPermanent = evt.shiftKey;
+
+		return meta;
+	},
+
+	_doPredefinedShowStart ({entryId}) {
+		Renderer.hover.cleanTempWindows();
+
+		const meta = Renderer.hover._getSetMeta(entryId);
+
+		meta.isPermanent = true;
 
 		return meta;
 	},
@@ -10065,10 +10178,10 @@ Renderer.hover = {
 			isFauxPage = ele.dataset.vetIsFauxPage;
 		}
 
-		let meta = Renderer.hover._handleGenericMouseOverStart(evt, ele);
+		let meta = Renderer.hover._handleGenericMouseOverStart({evt, ele});
 		if (meta == null) return;
 
-		if ((evt.ctrlKey || evt.metaKey) && Renderer.hover._pageToFluffFn(page)) meta.isFluff = true;
+		if ((EventUtil.isCtrlMetaKey(evt)) && Renderer.hover._pageToFluffFn(page)) meta.isFluff = true;
 
 		let toRender;
 		if (preloadId != null) { // FIXME(Future) remove in favor of `customHashId`
@@ -10232,7 +10345,7 @@ Renderer.hover = {
 	handlePredefinedMouseOver (evt, ele, entryId, opts) {
 		opts = opts || {};
 
-		const meta = Renderer.hover._handleGenericMouseOverStart(evt, ele);
+		const meta = Renderer.hover._handleGenericMouseOverStart({evt, ele});
 		if (meta == null) return;
 
 		Renderer.hover.cleanTempWindows();
@@ -10257,6 +10370,29 @@ Renderer.hover = {
 
 		// Reset cursor
 		ele.style.cursor = "";
+	},
+
+	doPredefinedShow (entryId, opts) {
+		opts = opts || {};
+
+		const meta = Renderer.hover._doPredefinedShowStart({entryId});
+		if (meta == null) return;
+
+		Renderer.hover.cleanTempWindows();
+
+		const toRender = Renderer.hover._entryCache[entryId];
+
+		const $content = Renderer.hover.$getHoverContent_generic(toRender, opts);
+		meta.windowMeta = Renderer.hover.getShowWindow(
+			$content,
+			Renderer.hover.getWindowPositionExact((window.innerWidth / 2) - (Renderer.hover._DEFAULT_WIDTH_PX / 2), 100),
+			{
+				title: toRender.data && toRender.data.hoverTitle != null ? toRender.data.hoverTitle : toRender.name,
+				isPermanent: meta.isPermanent,
+				cbClose: () => meta.isHovered = meta.isPermanent = meta.isLoading = false,
+				sourceData: toRender,
+			},
+		);
 	},
 
 	// (Baked into render strings)
@@ -10555,7 +10691,7 @@ Renderer.hover = {
 			.on("click", (evt) => {
 				evt.stopPropagation();
 
-				if (evt.ctrlKey || evt.metaKey) {
+				if (EventUtil.isCtrlMetaKey(evt)) {
 					Renderer.hover._doCloseAllWindows();
 					return;
 				}
@@ -10895,6 +11031,7 @@ Renderer.hover = {
 			mouseMove: (evt, ele) => Renderer.hover.handlePredefinedMouseMove(evt, ele),
 			mouseLeave: (evt, ele) => Renderer.hover.handlePredefinedMouseLeave(evt, ele),
 			touchStart: (evt, ele) => Renderer.hover.handleTouchStart(evt, ele),
+			show: () => Renderer.hover.doPredefinedShow(id, opts),
 		};
 	},
 
@@ -11136,7 +11273,7 @@ Renderer.hover = {
 		if (page === UrlUtil.PG_RECIPES) opts = {...MiscUtil.copyFast(opts), isBookContent: true};
 
 		if (!toRender) {
-			return $$`<table class="w-100 stats ${opts.isBookContent ? `stats--book` : ""}"><tr class="text"><td colspan="6" class="p-2 text-center">${Renderer.utils.HTML_NO_INFO}</td></tr></table>`;
+			return $$`<table class="w-100 stats ${opts.isBookContent ? `stats--book` : ""}"><tr class="text"><td colspan="6" class="p-2 ve-text-center">${Renderer.utils.HTML_NO_INFO}</td></tr></table>`;
 		}
 
 		toRender = MiscUtil.copyFast(toRender);

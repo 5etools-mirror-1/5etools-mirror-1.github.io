@@ -63,9 +63,9 @@ class MakeCards extends BaseComponent {
 
 		$$($wrpConfig)`<h5 class="split-v-center"><div>New Card Defaults</div>${$btnResetDefaults}</h5>
 		<div class="ve-flex-v-center bold">
-			<div class="col-4 text-center pr-2">Type</div>
-			<div class="col-4 text-center p-2">Color</div>
-			<div class="col-4 text-center pl-2">Icon</div>
+			<div class="col-4 ve-text-center pr-2">Type</div>
+			<div class="col-4 ve-text-center p-2">Color</div>
+			<div class="col-4 ve-text-center pl-2">Icon</div>
 		</div>`;
 
 		const $getColorIconConfigRow = (entityType) => {
@@ -332,7 +332,7 @@ class MakeCards extends BaseComponent {
 			this._doSaveStateDebounced();
 		};
 
-		const $iptCount = $(`<input class="form-control form-control--minimal input-xs text-center">`)
+		const $iptCount = $(`<input class="form-control form-control--minimal input-xs ve-text-center">`)
 			.change(() => {
 				const asNum = UiUtil.strToInt($iptCount.val(), 1, {min: 1, fallbackOnNaN: 1});
 				listItem.values.count = asNum;

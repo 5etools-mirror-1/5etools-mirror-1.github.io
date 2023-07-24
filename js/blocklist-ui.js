@@ -533,10 +533,10 @@ class BlocklistUi {
 			});
 
 		const $ele = $$`<div class="${this._addListItem_getItemStyles()}">
-			<span class="col-4 text-center">${sourceFull}</span>
-			<span class="col-2 text-center">${display.displayCategory}</span>
-			<span class="col-5 text-center">${displayName}</span>
-			<span class="col-1 text-center">${$btnRemove}</span>
+			<span class="col-4 ve-text-center">${sourceFull}</span>
+			<span class="col-2 ve-text-center">${display.displayCategory}</span>
+			<span class="col-5 ve-text-center">${displayName}</span>
+			<span class="col-1 ve-text-center">${$btnRemove}</span>
 		</div>`;
 
 		const listItem = new ListItem(

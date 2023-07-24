@@ -9,7 +9,7 @@ class PageFilterRaces extends PageFilter {
 		lProfs.forEach(lProfGroup => {
 			Object.keys(lProfGroup)
 				.forEach(k => {
-					if (k !== "choose" && k !== "any" && k !== "anyStandard") outSet.add(k.toTitleCase());
+					if (!["choose", "any", "anyStandard", "anyExotic"].includes(k)) outSet.add(k.toTitleCase());
 					else outSet.add("Choose");
 				});
 		});
@@ -284,8 +284,8 @@ class ModalFilterRaces extends ModalFilter {
 
 			<div class="col-4 ${race._versionBase_isVersion ? "italic" : ""} ${this._getNameStyle()}">${race._versionBase_isVersion ? `<span class="px-3"></span>` : ""}${race.name}</div>
 			<div class="col-4">${ability.asTextShort}</div>
-			<div class="col-2 text-center">${size}</div>
-			<div class="col-1 pr-0 text-center ${Parser.sourceJsonToColor(race.source)}" title="${Parser.sourceJsonToFull(race.source)}" ${Parser.sourceJsonToStyle(race.source)}>${source}</div>
+			<div class="col-2 ve-text-center">${size}</div>
+			<div class="col-1 pr-0 ve-text-center ${Parser.sourceJsonToColor(race.source)}" title="${Parser.sourceJsonToFull(race.source)}" ${Parser.sourceJsonToStyle(race.source)}>${source}</div>
 		</div>`;
 
 		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;

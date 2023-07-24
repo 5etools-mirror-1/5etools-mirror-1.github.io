@@ -10,7 +10,7 @@ class CharCreationOptionsSublistManager extends SublistManager {
 	pGetSublistItem (it, hash) {
 		const $ele = $$`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
-				<span class="col-5 text-center pl-0">${it._fOptionType}</span>
+				<span class="col-5 ve-text-center pl-0">${it._fOptionType}</span>
 				<span class="bold col-7 pr-0">${it.name}</span>
 			</a>
 		</div>`
@@ -61,9 +61,9 @@ class CharCreationOptionsPage extends ListPage {
 		const source = Parser.sourceJsonToAbv(it.source);
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
-			<span class="col-5 text-center pl-0">${it._fOptionType}</span>
+			<span class="col-5 ve-text-center pl-0">${it._fOptionType}</span>
 			<span class="bold col-5">${it.name}</span>
-			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)}" title="${Parser.sourceJsonToFull(it.source)} pr-0" ${Parser.sourceJsonToStyle(it.source)}>${source}</span>
+			<span class="col-2 ve-text-center ${Parser.sourceJsonToColor(it.source)}" title="${Parser.sourceJsonToFull(it.source)} pr-0" ${Parser.sourceJsonToStyle(it.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(

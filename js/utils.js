@@ -2,7 +2,7 @@
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 globalThis.IS_DEPLOYED = undefined;
-globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.181.8"/* 5ETOOLS_VERSION__CLOSE */;
+globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.182.0"/* 5ETOOLS_VERSION__CLOSE */;
 globalThis.DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 globalThis.DEPLOYED_IMG_ROOT = undefined;
 // for the roll20 script to set
@@ -670,7 +670,7 @@ globalThis.JqueryUtil = {
 		/**
 		 * Template strings which can contain jQuery objects.
 		 * Usage: $$`<div>Press this button: ${$btn}</div>`
-		 * @return JQuery
+		 * @return jQuery
 		 */
 		window.$$ = function (parts, ...args) {
 			if (parts instanceof jQuery || parts instanceof HTMLElement) {
@@ -1038,6 +1038,7 @@ globalThis.ElementUtil = {
 		ele.txt = ele.txt || ElementUtil._txt.bind(ele);
 		ele.tooltip = ele.tooltip || ElementUtil._tooltip.bind(ele);
 		ele.disableSpellcheck = ele.disableSpellcheck || ElementUtil._disableSpellcheck.bind(ele);
+		ele.on = ele.on || ElementUtil._onX.bind(ele);
 		ele.onClick = ele.onClick || ElementUtil._onX.bind(ele, "click");
 		ele.onContextmenu = ele.onContextmenu || ElementUtil._onX.bind(ele, "contextmenu");
 		ele.onChange = ele.onChange || ElementUtil._onX.bind(ele, "change");
@@ -2030,6 +2031,10 @@ globalThis.EventUtil = {
 			|| evt.target.getAttribute("contenteditable") === "true";
 	},
 
+	isCtrlMetaKey (evt) {
+		return evt.ctrlKey || evt.metaKey;
+	},
+
 	noModifierKeys (evt) { return !evt.ctrlKey && !evt.altKey && !evt.metaKey; },
 
 	getKeyIgnoreCapsLock (evt) {
@@ -2086,7 +2091,7 @@ globalThis.ContextUtil = {
 		if (ContextUtil._isInit) return;
 		ContextUtil._isInit = true;
 
-		$(document.body).on("click", () => ContextUtil._menus.forEach(menu => menu.close()));
+		document.body.addEventListener("click", () => ContextUtil.closeAllMenus());
 	},
 
 	getMenu (actions) {
@@ -2105,7 +2110,13 @@ globalThis.ContextUtil = {
 		if (~ix) ContextUtil._menus.splice(ix, 1);
 	},
 
-	pOpenMenu (evt, menu, userData) {
+	/**
+	 * @param evt
+	 * @param menu
+	 * @param {?object} userData
+	 * @return {Promise<*>}
+	 */
+	pOpenMenu (evt, menu, {userData = null} = {}) {
 		evt.preventDefault();
 		evt.stopPropagation();
 
@@ -2114,25 +2125,37 @@ globalThis.ContextUtil = {
 		// Close any other open menus
 		ContextUtil._menus.filter(it => it !== menu).forEach(it => it.close());
 
-		return menu.pOpen(evt, userData);
+		return menu.pOpen(evt, {userData});
 	},
 
-	Menu: function (actions) {
-		this._actions = actions;
-		this._pResult = null;
-		this.resolveResult_ = null;
+	closeAllMenus () {
+		ContextUtil._menus.forEach(menu => menu.close());
+	},
 
-		this.userData = null;
+	Menu: class {
+		constructor (actions) {
+			this._actions = actions;
+			this._pResult = null;
+			this.resolveResult_ = null;
 
-		this._$ele = null;
-		this._metasActions = [];
+			this.userData = null;
 
-		this.remove = function () { if (this._$ele) this._$ele.remove(); };
+			this._$ele = null;
+			this._metasActions = [];
 
-		this.width = function () { return this._$ele ? this._$ele.width() : undefined; };
-		this.height = function () { return this._$ele ? this._$ele.height() : undefined; };
+			this._menusSub = [];
+		}
 
-		this.pOpen = function (evt, userData) {
+		remove () {
+			if (!this._$ele) return;
+			this._$ele.remove();
+			this._$ele = null;
+		}
+
+		width () { return this._$ele ? this._$ele.width() : undefined; }
+		height () { return this._$ele ? this._$ele.height() : undefined; }
+
+		pOpen (evt, {userData = null, offsetY = null, boundsX = null} = {}) {
 			evt.stopPropagation();
 			evt.preventDefault();
 
@@ -2155,8 +2178,8 @@ globalThis.ContextUtil = {
 				.showVe()
 				// Use the accurate width/height to set the final position, and remove our temp styling
 				.css({
-					left: this._getMenuPosition(evt, "x"),
-					top: this._getMenuPosition(evt, "y"),
+					left: this._getMenuPosition(evt, "x", {bounds: boundsX}),
+					top: this._getMenuPosition(evt, "y", {offset: offsetY}),
 					opacity: "",
 					pointerEvents: "",
 				});
@@ -2164,10 +2187,21 @@ globalThis.ContextUtil = {
 			this._metasActions[0].$eleRow.focus();
 
 			return this._pResult;
-		};
-		this.close = function () { if (this._$ele) this._$ele.hideVe(); };
+		}
 
-		this._initLazy = function () {
+		close () {
+			if (!this._$ele) return;
+			this._$ele.hideVe();
+
+			this.closeSubMenus();
+		}
+
+		isOpen () {
+			if (!this._$ele) return false;
+			return !this._$ele.hasClass("ve-hidden");
+		}
+
+		_initLazy () {
 			if (this._$ele) {
 				this._metasActions.forEach(meta => meta.action.update());
 				return;
@@ -2184,9 +2218,9 @@ globalThis.ContextUtil = {
 			this._$ele = $$`<div class="ve-flex-col ui-ctx__wrp py-2 absolute">${$elesAction}</div>`
 				.hideVe()
 				.appendTo(document.body);
-		};
+		}
 
-		this._getMenuPosition = function (evt, axis) {
+		_getMenuPosition (evt, axis, {bounds = null, offset = null} = {}) {
 			const {fnMenuSize, fnGetEventPos, fnWindowSize, fnScrollDir} = axis === "x"
 				? {fnMenuSize: "width", fnGetEventPos: "getClientX", fnWindowSize: "width", fnScrollDir: "scrollLeft"}
 				: {fnMenuSize: "height", fnGetEventPos: "getClientY", fnWindowSize: "height", fnScrollDir: "scrollTop"};
@@ -2195,11 +2229,41 @@ globalThis.ContextUtil = {
 			const szWin = $(window)[fnWindowSize]();
 			const posScroll = $(window)[fnScrollDir]();
 			let position = posMouse + posScroll;
+
+			if (offset) position += offset;
+
 			const szMenu = this[fnMenuSize]();
+
+			// region opening menu would violate bounds
+			if (bounds != null) {
+				const {trailingLower, leadingUpper} = bounds;
+
+				const posTrailing = position;
+				const posLeading = position + szMenu;
+
+				if (posTrailing < trailingLower) {
+					position += trailingLower - posTrailing;
+				} else if (posLeading > leadingUpper) {
+					position -= posLeading - leadingUpper;
+				}
+			}
+			// endregion
+
 			// opening menu would pass the side of the page
-			if (posMouse + szMenu > szWin && szMenu < posMouse) position -= szMenu;
+			if (position + szMenu > szWin && szMenu < position) position -= szMenu;
+
 			return position;
-		};
+		}
+
+		addSubMenu (menu) {
+			this._menusSub.push(menu);
+		}
+
+		closeSubMenus (menuSubExclude = null) {
+			this._menusSub
+				.filter(menuSub => menuSubExclude == null || menuSub !== menuSubExclude)
+				.forEach(menuSub => menuSub.close());
+		}
 	},
 
 	/**
@@ -2248,7 +2312,7 @@ globalThis.ContextUtil = {
 
 					menu.close();
 
-					const result = await this.fnAction(evt, menu.userData);
+					const result = await this.fnAction(evt, {userData: menu.userData});
 					if (menu.resolveResult_) menu.resolveResult_(result);
 				})
 				.keydown(evt => {
@@ -2272,7 +2336,7 @@ globalThis.ContextUtil = {
 
 					menu.close();
 
-					const result = await this.fnActionAlt(evt, menu.userData);
+					const result = await this.fnActionAlt(evt, {userData: menu.userData});
 					if (menu.resolveResult_) menu.resolveResult_(result);
 				});
 			if (this.titleAlt) $btnActionAlt.title(this.titleAlt);
@@ -2372,6 +2436,51 @@ globalThis.ContextUtil = {
 		};
 
 		this.update = function () { /* Implement as required */ };
+	},
+
+	ActionSubMenu: class {
+		constructor (name, actions) {
+			this._name = name;
+			this._actions = actions;
+		}
+
+		render ({menu}) {
+			const menuSub = ContextUtil.getMenu(this._actions);
+			menu.addSubMenu(menuSub);
+
+			const $eleRow = $$`<div class="ui-ctx__btn py-1 px-5 split-v-center">
+				<div>${this._name}</div>
+				<div class="pl-4"><span class="caret caret--right"></span></div>
+			</div>`
+				.on("click", async evt => {
+					evt.stopPropagation();
+					if (menuSub.isOpen()) return menuSub.close();
+
+					menu.closeSubMenus(menuSub);
+
+					const bcr = $eleRow[0].getBoundingClientRect();
+
+					await menuSub.pOpen(
+						evt,
+						{
+							offsetY: bcr.top - EventUtil.getClientY(evt),
+							boundsX: {
+								trailingLower: bcr.right,
+								leadingUpper: bcr.left,
+							},
+						},
+					);
+
+					menu.close();
+				});
+
+			return {
+				action: this,
+				$eleRow,
+			};
+		}
+
+		update () { /* Implement as required */ }
 	},
 };
 
@@ -2755,10 +2864,13 @@ Object.keys(UrlUtil.URL_TO_HASH_BUILDER)
 	.filter(k => !k.endsWith(".html"))
 	.forEach(k => UrlUtil.URL_TO_HASH_BUILDER[`raw_${k}`] = UrlUtil.URL_TO_HASH_BUILDER[k]);
 
-// Add fluff aliases
+// Add fluff aliases; template aliases
 Object.keys(UrlUtil.URL_TO_HASH_BUILDER)
 	.filter(k => !k.endsWith(".html"))
-	.forEach(k => UrlUtil.URL_TO_HASH_BUILDER[`${k}Fluff`] = UrlUtil.URL_TO_HASH_BUILDER[k]);
+	.forEach(k => {
+		UrlUtil.URL_TO_HASH_BUILDER[`${k}Fluff`] = UrlUtil.URL_TO_HASH_BUILDER[k];
+		UrlUtil.URL_TO_HASH_BUILDER[`${k}Template`] = UrlUtil.URL_TO_HASH_BUILDER[k];
+	});
 // endregion
 
 UrlUtil.PG_TO_NAME = {};
@@ -3829,11 +3941,11 @@ globalThis.DataUtil = {
 			// Handle recursive copy
 			if (it._copy) await DataUtil.generic._pMergeCopy(impl, page, entryList, it, options);
 
-			// Preload traits, if required
-			const traitData = entry._copy?._trait
-				? (await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/bestiary/traits.json`))
+			// Preload templates, if required
+			const templateData = entry._copy?._trait
+				? (await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/bestiary/template.json`))
 				: null;
-			return DataUtil.generic._applyCopy(impl, MiscUtil.copyFast(it), entry, traitData, options);
+			return DataUtil.generic._applyCopy(impl, MiscUtil.copyFast(it), entry, templateData, options);
 		},
 
 		_pMergeCopy_search (impl, page, entryList, entry, options) {
@@ -3849,7 +3961,7 @@ globalThis.DataUtil = {
 			"action", "bonus", "reaction", "trait", "legendary", "mythic", "variant", "spellcasting",
 			"actionHeader", "bonusHeader", "reactionHeader", "legendaryHeader", "mythicHeader",
 		],
-		_applyCopy (impl, copyFrom, copyTo, traitData, options = {}) {
+		_applyCopy (impl, copyFrom, copyTo, templateData, options = {}) {
 			if (options.doKeepCopy) copyTo.__copy = MiscUtil.copyFast(copyFrom);
 
 			// convert everything to arrays
@@ -3865,22 +3977,22 @@ globalThis.DataUtil = {
 
 			if (copyMeta._mod) normaliseMods(copyMeta);
 
-			// fetch and apply any external traits -- append them to existing copy mods where available
-			let racials = null;
+			// fetch and apply any external template -- append them to existing copy mods where available
+			let template = null;
 			if (copyMeta._trait) {
-				racials = traitData.trait.find(t => t.name.toLowerCase() === copyMeta._trait.name.toLowerCase() && t.source.toLowerCase() === copyMeta._trait.source.toLowerCase());
-				if (!racials) throw new Error(`${msgPtFailed} Could not find traits to apply with name "${copyMeta._trait.name}" and source "${copyMeta._trait.source}"`);
-				racials = MiscUtil.copyFast(racials);
+				template = templateData.monsterTemplate.find(t => t.name.toLowerCase() === copyMeta._trait.name.toLowerCase() && t.source.toLowerCase() === copyMeta._trait.source.toLowerCase());
+				if (!template) throw new Error(`${msgPtFailed} Could not find traits to apply with name "${copyMeta._trait.name}" and source "${copyMeta._trait.source}"`);
+				template = MiscUtil.copyFast(template);
 
-				if (racials.apply._mod) {
-					normaliseMods(racials.apply);
+				if (template.apply._mod) {
+					normaliseMods(template.apply);
 
 					if (copyMeta._mod) {
-						Object.entries(racials.apply._mod).forEach(([k, v]) => {
+						Object.entries(template.apply._mod).forEach(([k, v]) => {
 							if (copyMeta._mod[k]) copyMeta._mod[k] = copyMeta._mod[k].concat(v);
 							else copyMeta._mod[k] = v;
 						});
-					} else copyMeta._mod = racials.apply._mod;
+					} else copyMeta._mod = template.apply._mod;
 				}
 
 				delete copyMeta._trait;
@@ -3899,8 +4011,8 @@ globalThis.DataUtil = {
 			});
 
 			// apply any root racial properties after doing base copy
-			if (racials && racials.apply._root) {
-				Object.entries(racials.apply._root)
+			if (template && template.apply._root) {
+				Object.entries(template.apply._root)
 					.filter(([k, v]) => !copyToRootProps.has(k)) // avoid overwriting any real root properties
 					.forEach(([k, v]) => copyTo[k] = v);
 			}
@@ -4172,7 +4284,7 @@ globalThis.DataUtil = {
 					modInfo[prop].forEach(sp => (spellcasting[prop] = spellcasting[prop] || []).push(sp));
 				});
 
-				["rest", "daily", "weekly", "yearly"].forEach(prop => {
+				["recharge", "charges", "rest", "daily", "weekly", "yearly"].forEach(prop => {
 					if (!modInfo[prop]) return;
 
 					for (let i = 1; i <= 9; ++i) {
@@ -4255,7 +4367,7 @@ globalThis.DataUtil = {
 					spellcasting[prop].filter(it => !modInfo[prop].includes(it));
 				});
 
-				["rest", "daily", "weekly", "yearly"].forEach(prop => {
+				["recharge", "charges", "rest", "daily", "weekly", "yearly"].forEach(prop => {
 					if (!modInfo[prop]) return;
 
 					for (let i = 1; i <= 9; ++i) {
@@ -4313,6 +4425,12 @@ globalThis.DataUtil = {
 				}
 			}
 
+			function doMod_setProp (modInfo, prop) {
+				const propPath = modInfo.prop.split(".");
+				if (prop !== "*") propPath.unshift(prop);
+				MiscUtil.set(copyTo, ...propPath, MiscUtil.copyFast(modInfo.value));
+			}
+
 			function doMod (modInfos, ...properties) {
 				function handleProp (prop) {
 					modInfos.forEach(modInfo => {
@@ -4336,6 +4454,7 @@ globalThis.DataUtil = {
 								case "calculateProp": return doMod_calculateProp(modInfo, prop);
 								case "scalarAddProp": return doMod_scalarAddProp(modInfo, prop);
 								case "scalarMultProp": return doMod_scalarMultProp(modInfo, prop);
+								case "setProp": return doMod_setProp(modInfo, prop);
 								// region Bestiary specific
 								case "addSenses": return doMod_addSenses(modInfo);
 								case "addSaves": return doMod_addSaves(modInfo);
@@ -4658,6 +4777,11 @@ globalThis.DataUtil = {
 		static _PAGE = UrlUtil.PG_BESTIARY;
 		static _DIR = "bestiary";
 		static _PROP = "monsterFluff";
+	},
+
+	monsterTemplate: class extends _DataUtilPropConfigSingleSource {
+		static _PAGE = "monsterTemplate";
+		static _FILENAME = "bestiary/template.json";
 	},
 
 	spell: class extends _DataUtilPropConfigMultiSource {
@@ -6463,6 +6587,18 @@ Array.prototype.pSerialAwaitFirst || Object.defineProperty(Array.prototype, "pSe
 			const result = await fnMapFind(this[i], i, this);
 			if (result) return result;
 		}
+	},
+});
+
+Array.prototype.pSerialAwaitReduce || Object.defineProperty(Array.prototype, "pSerialAwaitReduce", {
+	enumerable: false,
+	writable: true,
+	value: async function (fnReduce, initialValue) {
+		let accumulator = initialValue === undefined ? this[0] : initialValue;
+		for (let i = (initialValue === undefined ? 1 : 0), len = this.length; i < len; ++i) {
+			accumulator = await fnReduce(accumulator, this[i], i, this);
+		}
+		return accumulator;
 	},
 });
 

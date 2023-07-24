@@ -1,4 +1,9 @@
-"use strict";
+import {
+	InitiativeTrackerPlayerMessageHandlerV0,
+	InitiativeTrackerPlayerMessageHandlerV1,
+	InitiativeTrackerPlayerUiV0,
+	InitiativeTrackerPlayerUiV1,
+} from "./initiativetracker/initiativetracker-player.js";
 
 window.addEventListener("load", async () => {
 	await Promise.all([
@@ -32,8 +37,8 @@ class InitTrackerPlayerViews extends BaseComponent {
 		const $wrpContent = $(`#page-content`).empty();
 
 		const iptTabMetas = [
-			new TabUiUtil.TabMeta({name: "Standard", hasBorder: true, hasBackground: false}),
-			new TabUiUtil.TabMeta({name: "Manual (Legacy)", hasBorder: true, hasBackground: false}),
+			new TabUiUtil.TabMeta({name: "Standard", hasBorder: true, hasBackground: true}),
+			new TabUiUtil.TabMeta({name: "Manual (Legacy)", hasBorder: true, hasBackground: true}),
 		];
 
 		const tabMetas = this._renderTabs(iptTabMetas, {$parent: $wrpContent, additionalClassesWrpHeads: "initp__fullscreen-hidden"});
@@ -123,7 +128,7 @@ class InitTrackerPlayerViewV1 {
 				}
 			});
 
-		$$(tabMeta.$wrpTab)`<div class="initp__content px-2 py-3">
+		$$(tabMeta.$wrpTab)`<div class="ve-flex-col initp__content px-2 py-3 min-h-0">
 			<div class="initp__initial row">
 				<div class="col-12">
 					<p>
@@ -142,7 +147,7 @@ class InitTrackerPlayerViewV1 {
 			<div class="initp__initial row w-100 ve-flex">
 				<div class="col-5 bold mr-4">Player Name</div>
 				<div class="col-5 bold">Server Token</div>
-				<div class="col-2 text-center"></div>
+				<div class="col-2 ve-text-center"></div>
 			</div>
 			<div class="initp__initial row w-100 ve-flex mb-4">
 				<div class="col-5 bold mr-4">${$iptPlayerName}</div>
@@ -226,7 +231,7 @@ class InitTrackerPlayerViewV0 {
 			<p>Use of &quot;Standard&quot; mode is strongly recommended, as it provides a simplified workflow. If Standard mode is unavailable, &quot;Manual&quot; mode may be used instead.</p>
 		</div>`);
 
-		$$(tabMeta.$wrpTab)`<div class="initp__content px-2 py-3">
+		$$(tabMeta.$wrpTab)`<div class="ve-flex-col initp__content px-2 py-3 min-h-0">
 			${$dispWarning}
 
 			<div class="initp__initial ve-flex">
@@ -245,7 +250,7 @@ class InitTrackerPlayerViewV0 {
 
 			<div class="initp__initial ve-flex-h-center w-100">
 				<div class="col-5 bold">Server Token</div>
-				<div class="col-2 text-center"></div>
+				<div class="col-2 ve-text-center"></div>
 				<div class="col-5 bold">Client Token</div>
 			</div>
 			<div class="initp__initial ve-flex-h-center w-100 flex mb-4">

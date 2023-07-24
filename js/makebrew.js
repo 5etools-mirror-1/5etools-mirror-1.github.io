@@ -758,7 +758,7 @@ class Builder extends ProxyBase {
 	 * @param [opts] Options object.
 	 * @param [opts.isProtectLast]
 	 * @param [opts.isExtraSmall]
-	 * @return {JQuery}
+	 * @return {jQuery}
 	 */
 	static $getBtnRemoveRow (doUpdateState, rowArr, row, $wrpRow, title, opts) {
 		opts = opts || {};

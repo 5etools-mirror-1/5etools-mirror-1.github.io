@@ -320,7 +320,7 @@ class RenderMap {
 			${$cvs}
 		</div>`
 			.on("mousewheel DOMMouseScroll", evt => {
-				if (!evt.ctrlKey || evt.metaKey) return;
+				if (!EventUtil.isCtrlMetaKey(evt)) return;
 				evt.stopPropagation();
 				evt.preventDefault();
 				evt = evt.originalEvent; // Access the underlying properties

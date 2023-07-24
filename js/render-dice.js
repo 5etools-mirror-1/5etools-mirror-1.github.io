@@ -200,7 +200,7 @@ Renderer.dice = {
 		const rollData = $ele.data("packed-dice");
 		let name = $ele.data("roll-name");
 		let shiftKey = evt.shiftKey;
-		let ctrlKey = evt.ctrlKey || evt.metaKey;
+		let ctrlKey = EventUtil.isCtrlMetaKey(evt);
 
 		const options = rollData.toRoll.split(";").map(it => it.trim()).filter(Boolean);
 
@@ -218,7 +218,7 @@ Renderer.dice = {
 					`Roll ${it}`,
 					evt => {
 						shiftKey = shiftKey || evt.shiftKey;
-						ctrlKey = ctrlKey || (evt.ctrlKey || evt.metaKey);
+						ctrlKey = ctrlKey || (EventUtil.isCtrlMetaKey(evt));
 						cpyRollData.toRoll = it;
 						return cpyRollData;
 					},
@@ -280,7 +280,7 @@ Renderer.dice = {
 							title,
 							evt => {
 								shiftKey = shiftKey || evt.shiftKey;
-								ctrlKey = ctrlKey || (evt.ctrlKey || evt.metaKey);
+								ctrlKey = ctrlKey || (EventUtil.isCtrlMetaKey(evt));
 
 								const fromScaling = rollDataCpy.prompt.options[it];
 								if (!fromScaling) {
@@ -531,7 +531,7 @@ Renderer.dice = {
 			} else out.rollCount = 2; // otherwise, just roll twice
 		}
 
-		if (evt.ctrlKey || evt.metaKey) {
+		if (EventUtil.isCtrlMetaKey(evt)) {
 			if (entry.subType === "damage") { // If CTRL is held, half the damage
 				entry.toRoll = `floor((${entry.toRoll}) / 2)`;
 			} else if (entry.subType === "d20") { // If CTRL is held, roll disadvantage (assuming SHIFT is not held)

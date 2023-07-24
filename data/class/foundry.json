@@ -419,7 +419,8 @@
 						}
 					]
 				}
-			]
+			],
+			"ignoreSrdEffects": true
 		},
 		{
 			"name": "Expertise",
@@ -3623,7 +3624,7 @@
 						"alchemist's supplies": true
 					},
 					{
-						"anyArtisansTool": true
+						"anyArtisansTool": 1
 					}
 				]
 			}
@@ -3647,7 +3648,7 @@
 						"smith's tools": true
 					},
 					{
-						"anyArtisansTool": true
+						"anyArtisansTool": 1
 					}
 				]
 			}
@@ -3666,7 +3667,7 @@
 						"woodcarver's tools": true
 					},
 					{
-						"anyArtisansTool": true
+						"anyArtisansTool": 1
 					}
 				]
 			}
@@ -3701,7 +3702,7 @@
 						"smith's tools": true
 					},
 					{
-						"anyArtisansTool": true
+						"anyArtisansTool": 1
 					}
 				]
 			}
@@ -3914,7 +3915,7 @@
 			"entryData": {
 				"toolProficiencies": [
 					{
-						"anyArtisansTool": true
+						"anyArtisansTool": 1
 					}
 				]
 			}
@@ -4309,7 +4310,7 @@
 						"recharge": "restLong",
 						"count": "2 * PB",
 						"number": 1,
-						"faces": "(6 + ((ceil((<$level$> + 2) / 6) - 1) * 2))"
+						"faces": "(6 + (ceil((<$level$> + 2) / 6) - 1) * 2)"
 					}
 				]
 			}

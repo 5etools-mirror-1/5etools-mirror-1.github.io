@@ -165,7 +165,7 @@ class SublistManager {
 		return this._isSublistItemsCountable
 			? new ContextUtil.Action(
 				"Remove",
-				async (evt, userData) => {
+				async (evt, {userData}) => {
 					const {selection} = userData;
 					await Promise.all(selection.map(item => this.pDoSublistRemove({entity: item.data.entity, doFinalize: false})));
 					await this._pFinaliseSublist();
@@ -173,7 +173,7 @@ class SublistManager {
 			)
 			: new ContextUtil.Action(
 				"Unpin",
-				async (evt, userData) => {
+				async (evt, {userData}) => {
 					const {selection} = userData;
 					for (const item of selection) {
 						await this.pDoSublistRemove({entity: item.data.entity, doFinalize: false});
@@ -187,7 +187,7 @@ class SublistManager {
 		const subActions = [
 			new ContextUtil.Action(
 				"Popout",
-				(evt, userData) => {
+				(evt, {userData}) => {
 					const {ele, selection} = userData;
 					const entities = selection.map(listItem => ({entity: listItem.data.entity, hash: listItem.values.hash}));
 					return _UtilListPage.pDoMassPopout(evt, ele, entities);
@@ -237,7 +237,7 @@ class SublistManager {
 		}
 
 		const ele = listItem.ele instanceof $ ? listItem.ele[0] : listItem.ele;
-		ContextUtil.pOpenMenu(evt, menu, {ele: ele, selection});
+		ContextUtil.pOpenMenu(evt, menu, {userData: {ele: ele, selection}});
 	}
 
 	pGetSublistItem () { throw new Error(`Unimplemented!`); }
@@ -1251,7 +1251,7 @@ class ListPage {
 			.on("click", async evt => {
 				let url = window.location.href;
 
-				if (evt.ctrlKey || evt.metaKey) {
+				if (EventUtil.isCtrlMetaKey(evt)) {
 					await MiscUtil.pCopyTextToClipboard(this._filterBox.getFilterTag());
 					JqueryUtil.showCopiedEffect($btn);
 					return;
@@ -1279,7 +1279,7 @@ class ListPage {
 				(evt) => {
 					if (Hist.lastLoadedId === null) return;
 
-					if (this._isMarkdownPopout && (evt.ctrlKey || evt.metaKey)) return this._bindPopoutButton_doShowMarkdown(evt);
+					if (this._isMarkdownPopout && (EventUtil.isCtrlMetaKey(evt))) return this._bindPopoutButton_doShowMarkdown(evt);
 					return this._bindPopoutButton_doShowStatblock(evt);
 				},
 			);
@@ -1492,7 +1492,7 @@ class ListPage {
 			selection = [listItem];
 		}
 
-		ContextUtil.pOpenMenu(evt, this._contextMenuList, {ele: listItem.ele, selection});
+		ContextUtil.pOpenMenu(evt, this._contextMenuList, {userData: {ele: listItem.ele, selection}});
 	}
 
 	_initContextMenu () {
@@ -1501,7 +1501,7 @@ class ListPage {
 		this._contextMenuList = ContextUtil.getMenu([
 			new ContextUtil.Action(
 				"Popout",
-				async (evt, userData) => {
+				async (evt, {userData}) => {
 					const {ele, selection} = userData;
 					await this._handleGenericContextMenuClick_pDoMassPopout(evt, ele, selection);
 				},
@@ -1542,7 +1542,7 @@ class ListPage {
 	_getContextActionBlocklist () {
 		return new ContextUtil.Action(
 			"Blocklist",
-			async (evt, userData) => {
+			async (evt, {userData}) => {
 				const {ele, selection} = userData;
 				await this._handleGenericContextMenuClick_pDoMassBlocklist(evt, ele, selection);
 			},

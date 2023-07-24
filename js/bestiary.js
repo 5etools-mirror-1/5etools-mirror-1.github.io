@@ -88,21 +88,21 @@ class BestiarySublistManager extends SublistManager {
 			.mousemove(evt => hovTokenMeta.mouseMove(evt, $hovToken[0]))
 			.mouseleave(evt => hovTokenMeta.mouseLeave(evt, $hovToken[0]));
 
-		const $hovImage = $(`<span class="col-1-2 ecgen__visible help help--hover">Image</span>`)
-			.mouseover(evt => this._encounterBuilder.handleImageMouseOver(evt, $hovImage, mon));
+		const $hovImage = $(`<span class="col-1-2 ecgen__visible help help--hover">Image</span>`);
+		Renderer.monster.hover.bindFluffImageMouseover({mon, $ele: $hovImage});
 
 		const $ptCr = (() => {
-			if (!ScaleCreature.isCrInScaleRange(mon)) return $(`<span class="col-1-2 text-center">${cr}</span>`);
+			if (!ScaleCreature.isCrInScaleRange(mon)) return $(`<span class="col-1-2 ve-text-center">${cr}</span>`);
 
-			const $iptCr = $(`<input value="${cr}" class="w-100 text-center form-control form-control--minimal input-xs">`)
+			const $iptCr = $(`<input value="${cr}" class="w-100 ve-text-center form-control form-control--minimal input-xs">`)
 				.click(() => $iptCr.select())
 				.change(() => this._encounterBuilder.pDoCrChange($iptCr, mon, mon._scaledCr));
 
-			return $$`<span class="col-1-2 text-center">${$iptCr}</span>`;
+			return $$`<span class="col-1-2 ve-text-center">${$iptCr}</span>`;
 		})();
 
-		const $eleCount1 = $(`<span class="col-2 text-center">${count}</span>`);
-		const $eleCount2 = $(`<span class="col-2 pr-0 text-center">${count}</span>`);
+		const $eleCount1 = $(`<span class="col-2 ve-text-center">${count}</span>`);
+		const $eleCount2 = $(`<span class="col-2 pr-0 ve-text-center">${count}</span>`);
 
 		const listItem = new ListItem(
 			hash,
@@ -137,7 +137,7 @@ class BestiarySublistManager extends SublistManager {
 			<a href="#${hash}" draggable="false" class="ecgen__hidden lst--border lst__row-inner">
 				<span class="bold col-5 pl-0">${name}</span>
 				<span class="col-3-8">${type}</span>
-				<span class="col-1-2 text-center">${cr}</span>
+				<span class="col-1-2 ve-text-center">${cr}</span>
 				${$eleCount1}
 			</a>
 
@@ -422,10 +422,10 @@ class BestiaryPage extends ListPageMultiSource {
 						this._encounterBuilder.getButtons(mI),
 						e_({tag: "span", clazz: `ecgen__name bold col-4-2 pl-0`, text: mon.name}),
 						e_({tag: "span", clazz: `col-4-1`, text: type}),
-						e_({tag: "span", clazz: `col-1-7 text-center`, text: cr}),
+						e_({tag: "span", clazz: `col-1-7 ve-text-center`, text: cr}),
 						e_({
 							tag: "span",
-							clazz: `col-2 text-center ${Parser.sourceJsonToColor(mon.source)} pr-0`,
+							clazz: `col-2 ve-text-center ${Parser.sourceJsonToColor(mon.source)} pr-0`,
 							style: Parser.sourceJsonToStylePart(mon.source),
 							title: `${Parser.sourceJsonToFull(mon.source)}${Renderer.utils.getSourceSubText(mon)}`,
 							text: source,

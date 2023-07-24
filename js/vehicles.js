@@ -11,7 +11,7 @@ class VehiclesSublistManager extends SublistManager {
 		const displayType = it.vehicleType ? Parser.vehicleTypeToFull(it.vehicleType) : it.upgradeType.map(t => Parser.vehicleTypeToFull(t));
 
 		const $ele = $(`<div class="lst__row lst__row--sublist ve-flex-col"><a href="#${hash}" class="lst--border lst__row-inner">
-			<span class="col-8 pl-0 text-center">${displayType}</span>
+			<span class="col-8 pl-0 ve-text-center">${displayType}</span>
 			<span class="bold col-4 pr-0">${it.name}</span>
 		</a></div>`)
 			.contextmenu(evt => this._handleSublistItemContextMenu(evt, listItem))
@@ -67,9 +67,9 @@ class VehiclesPage extends ListPage {
 		const displayType = it.vehicleType ? Parser.vehicleTypeToFull(it.vehicleType) : it.upgradeType.map(t => Parser.vehicleTypeToFull(t));
 
 		eleLi.innerHTML = `<a href="#${UrlUtil.autoEncodeHash(it)}" class="lst--border lst__row-inner">
-			<span class="col-6 pl-0 text-center">${displayType}</span>
+			<span class="col-6 pl-0 ve-text-center">${displayType}</span>
 			<span class="bold col-4">${it.name}</span>
-			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${Parser.sourceJsonToStyle(it.source)}>${source}</span>
+			<span class="col-2 ve-text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${Parser.sourceJsonToStyle(it.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(

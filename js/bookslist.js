@@ -181,7 +181,7 @@ class AdventuresBooksList {
 			// region Alt list (covers/thumbnails)
 			const eleLiAlt = $(`<a href="${this._rootPage}#${UrlUtil.encodeForHash(it.id)}" class="ve-flex-col ve-flex-v-center m-3 bks__wrp-bookshelf-item ${isExcluded ? `bks__wrp-bookshelf-item--blocklisted` : ""} py-3 px-2 ${Parser.sourceJsonToColor(it.source)}" ${Parser.sourceJsonToStyle(it.source)}>
 				<img src="${Renderer.adventureBook.getCoverUrl(it)}" class="mb-2 bks__bookshelf-image" loading="lazy" alt="Cover Image: ${(it.name || "").qq()}">
-				<div class="bks__bookshelf-item-name ve-flex-vh-center text-center">${it.name}</div>
+				<div class="bks__bookshelf-item-name ve-flex-vh-center ve-text-center">${it.name}</div>
 			</a>`)[0];
 			const listItemAlt = new ListItem(
 				this._dataIx,

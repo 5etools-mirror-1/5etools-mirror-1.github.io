@@ -18,7 +18,7 @@ class RecipesSublistManager extends SublistManager {
 		const $ele = $(`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="bold col-9 pl-0">${name}</span>
-				<span class="col-3 text-center pr-0">${it.type || "\u2014"}</span>
+				<span class="col-3 ve-text-center pr-0">${it.type || "\u2014"}</span>
 			</a>
 		</div>`)
 			.contextmenu(evt => this._handleSublistItemContextMenu(evt, listItem))
@@ -74,8 +74,8 @@ class RecipesPage extends ListPage {
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="col-6 bold pl-0">${it.name}</span>
-			<span class="col-4 text-center">${it.type || "\u2014"}</span>
-			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${Parser.sourceJsonToStyle(it.source)}>${source}</span>
+			<span class="col-4 ve-text-center">${it.type || "\u2014"}</span>
+			<span class="col-2 ve-text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${Parser.sourceJsonToStyle(it.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(

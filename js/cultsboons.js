@@ -10,8 +10,8 @@ class CultsBoonsSublistManager extends SublistManager {
 	pGetSublistItem (it, hash) {
 		const $ele = $(`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
-				<span class="col-2 text-center pl-0">${it._lType}</span>
-				<span class="col-2 text-center">${it._lSubType}</span>
+				<span class="col-2 ve-text-center pl-0">${it._lType}</span>
+				<span class="col-2 ve-text-center">${it._lSubType}</span>
 				<span class="bold col-8 pr-0">${it.name}</span>
 			</a>
 		</div>`)
@@ -62,10 +62,10 @@ class CultsBoonsPage extends ListPage {
 		const hash = UrlUtil.autoEncodeHash(it);
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
-			<span class="col-2 text-center pl-0">${it._lType}</span>
-			<span class="col-2 text-center">${it._lSubType}</span>
+			<span class="col-2 ve-text-center pl-0">${it._lType}</span>
+			<span class="col-2 ve-text-center">${it._lSubType}</span>
 			<span class="bold col-6">${it.name}</span>
-			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${Parser.sourceJsonToStyle(it.source)}>${source}</span>
+			<span class="col-2 ve-text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${Parser.sourceJsonToStyle(it.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(

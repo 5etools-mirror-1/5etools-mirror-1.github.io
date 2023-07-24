@@ -468,21 +468,23 @@ class _BrewUtil2Base {
 		const indexLocal = await DataUtil.loadJSON(`${Renderer.get().baseUrl}${this._PATH_LOCAL_INDEX}`);
 		if (!indexLocal?.toImport?.length) return this._cache_brewsLocal = [];
 
-		const out = await indexLocal.toImport.pMap(async name => {
-			name = `${name}`.trim();
-			const url = /^https?:\/\//.test(name) ? name : `${Renderer.get().baseUrl}${this._PATH_LOCAL_DIR}/${name}`;
-			const filename = UrlUtil.getFilename(url);
-			try {
-				const json = await DataUtil.loadRawJSON(url);
-				return this._getBrewDoc({json, url, filename, isLocal: true});
-			} catch (e) {
-				JqueryUtil.doToast({type: "danger", content: `Failed to load local homebrew from URL "${url}"! ${VeCt.STR_SEE_CONSOLE}`});
-				setTimeout(() => { throw e; });
-				return null;
-			}
-		});
+		const brewDocs = (await indexLocal.toImport
+			.pMap(async name => {
+				name = `${name}`.trim();
+				const url = /^https?:\/\//.test(name) ? name : `${Renderer.get().baseUrl}${this._PATH_LOCAL_DIR}/${name}`;
+				const filename = UrlUtil.getFilename(url);
+				try {
+					const json = await DataUtil.loadRawJSON(url);
+					return this._getBrewDoc({json, url, filename, isLocal: true});
+				} catch (e) {
+					JqueryUtil.doToast({type: "danger", content: `Failed to load local homebrew from URL "${url}"! ${VeCt.STR_SEE_CONSOLE}`});
+					setTimeout(() => { throw e; });
+					return null;
+				}
+			}))
+			.filter(Boolean);
 
-		return this._cache_brewsLocal = out.filter(Boolean);
+		return this._cache_brewsLocal = brewDocs;
 	}
 
 	/* -------------------------------------------- */
@@ -738,7 +740,7 @@ class _BrewUtil2Base {
 			lockToken = await this._LOCK.pLock({token: lockToken});
 			const brews = MiscUtil.copyFast(await this._pGetBrewRaw({lockToken}));
 
-			const brewDocsDependencies = await this._pAddBrewDependencies({brewDocs: [brewDoc], brewsRaw: brews, lockToken});
+			const brewDocsDependencies = await this._pAddBrewDependencies({brewDocs, brewsRaw: brews, lockToken});
 			brewDocs.push(...brewDocsDependencies);
 
 			const brewsNxt = this._getNextBrews(brews, brewDocs);
@@ -1935,7 +1937,7 @@ class ManageBrewUi {
 				const lnkUrl = brewSource.url
 					? e_({
 						tag: "a",
-						clazz: "col-2 text-center",
+						clazz: "col-2 ve-text-center",
 						href: brewSource.url,
 						attrs: {
 							target: "_blank",
@@ -1945,7 +1947,7 @@ class ManageBrewUi {
 					})
 					: e_({
 						tag: "span",
-						clazz: "col-2 text-center",
+						clazz: "col-2 ve-text-center",
 					});
 
 				const eleRow = e_({
@@ -2070,7 +2072,7 @@ class ManageBrewUi {
 				}),
 				e_({
 					tag: "div",
-					clazz: `col-1 text-center italic mobile__text-clip-ellipsis`,
+					clazz: `col-1 ve-text-center italic mobile__text-clip-ellipsis`,
 					title: ptCategory.title,
 					text: ptCategory.short,
 				}),
@@ -2610,7 +2612,7 @@ class GetBrewUi {
 
 		rdState.pageFilter = new this.constructor._PageFilterGetBrew({brewUtil: this._brewUtil});
 
-		const $btnAddSelected = $(`<button class="btn ${this._brewUtil.STYLE_BTN} btn-sm col-0-5 text-center" disabled title="Add Selected"><span class="glyphicon glyphicon-save"></button>`);
+		const $btnAddSelected = $(`<button class="btn ${this._brewUtil.STYLE_BTN} btn-sm col-0-5 ve-text-center" disabled title="Add Selected"><span class="glyphicon glyphicon-save"></button>`);
 
 		const $wrpRows = $$`<div class="list smooth-scroll max-h-unset"><div class="lst__row ve-flex-col"><div class="lst__wrp-cells lst--border lst__row-inner ve-flex w-100"><i>Loading...</i></div></div></div>`;
 
@@ -2751,12 +2753,12 @@ class GetBrewUi {
 						}),
 						btnAdd,
 						e_({tag: "span", clazz: "col-3", text: brewInfo._brewAuthor}),
-						e_({tag: "span", clazz: "col-1-2 text-center mobile__text-clip-ellipsis", text: brewInfo._brewPropDisplayName, title: brewInfo._brewPropDisplayName}),
-						e_({tag: "span", clazz: "col-1-4 text-center code", text: timestampModified}),
-						e_({tag: "span", clazz: "col-1-4 text-center code", text: timestampAdded}),
+						e_({tag: "span", clazz: "col-1-2 ve-text-center mobile__text-clip-ellipsis", text: brewInfo._brewPropDisplayName, title: brewInfo._brewPropDisplayName}),
+						e_({tag: "span", clazz: "col-1-4 ve-text-center code", text: timestampModified}),
+						e_({tag: "span", clazz: "col-1-4 ve-text-center code", text: timestampAdded}),
 						e_({
 							tag: "span",
-							clazz: "col-1 manbrew__source text-center pr-0",
+							clazz: "col-1 manbrew__source ve-text-center pr-0",
 							children: [
 								e_({
 									tag: "a",
@@ -3188,7 +3190,7 @@ class ManageEditableBrewContentsUi extends BaseComponent {
 		eleLi.innerHTML = `<label class="lst--border lst__row-inner no-select mb-0 ve-flex-v-center">
 			<div class="pl-0 col-1 ve-flex-vh-center"><input type="checkbox" class="no-events"></div>
 			<div class="col-5 bold">${dispName}</div>
-			<div class="col-1 text-center" title="${(sourceMeta.full || "").qq()}" ${this._brewUtil.sourceToStyle(sourceMeta)}>${sourceMeta.abbreviation}</div>
+			<div class="col-1 ve-text-center" title="${(sourceMeta.full || "").qq()}" ${this._brewUtil.sourceToStyle(sourceMeta)}>${sourceMeta.abbreviation}</div>
 			<div class="col-5 ve-flex-vh-center pr-0">${dispProp}</div>
 		</label>`;
 
@@ -3321,7 +3323,7 @@ class ManageEditableBrewContentsUi extends BaseComponent {
 		eleLi.innerHTML = `<label class="lst--border lst__row-inner no-select mb-0 ve-flex-v-center">
 			<div class="pl-0 col-1 ve-flex-vh-center"><input type="checkbox" class="no-events"></div>
 			<div class="col-5 bold">${name}</div>
-			<div class="col-2 text-center">${abv}</div>
+			<div class="col-2 ve-text-center">${abv}</div>
 			<div class="col-4 ve-flex-vh-center pr-0">${source.json}</div>
 		</label>`;
 

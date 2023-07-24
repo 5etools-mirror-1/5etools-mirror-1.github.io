@@ -242,7 +242,7 @@ class LootGenUi extends BaseComponent {
 									"Item",
 								],
 								colStyles: [
-									"col-2 text-center",
+									"col-2 ve-text-center",
 									"col-10",
 								],
 								rows: items.map((it, i) => ([i + 1, `{@item ${it.name}|${it.source}}`])),

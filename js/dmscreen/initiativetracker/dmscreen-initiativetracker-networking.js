@@ -1,11 +1,79 @@
+
+class _InitiativeTrackerNetworkingP2pMetaV1 {
+	constructor () {
+		this.rows = [];
+		this.serverInfo = null;
+		this.serverPeer = null;
+	}
+}
+
+class _InitiativeTrackerNetworkingP2pMetaV0 {
+	constructor () {
+		this.rows = [];
+		this.serverInfo = null;
+	}
+}
+
 export class InitiativeTrackerNetworking {
 	constructor ({board}) {
 		this._board = board;
+
+		this._p2pMetaV1 = new _InitiativeTrackerNetworkingP2pMetaV1();
+		this._p2pMetaV0 = new _InitiativeTrackerNetworkingP2pMetaV0();
 	}
+
+	/* -------------------------------------------- */
+
+	sendStateToClients ({fnGetToSend}) {
+		return this._sendMessageToClients({fnGetToSend});
+	}
+
+	sendShowImageMessageToClients ({imageHref}) {
+		return this._sendMessageToClients({
+			fnGetToSend: () => ({
+				type: "showImage",
+				payload: {
+					imageHref,
+				},
+			}),
+		});
+	}
+
+	_sendMessageToClients ({fnGetToSend}) {
+		let toSend = null;
+
+		// region V1
+		if (this._p2pMetaV1.serverPeer) {
+			if (!this._p2pMetaV1.serverPeer.hasConnections()) return;
+
+			toSend ||= fnGetToSend();
+			this._p2pMetaV1.serverPeer.sendMessage(toSend);
+		}
+		// endregion
+
+		// region V0
+		if (this._p2pMetaV0.serverInfo) {
+			this._p2pMetaV0.rows = this._p2pMetaV0.rows.filter(row => !row.isDeleted);
+			this._p2pMetaV0.serverInfo = this._p2pMetaV0.serverInfo.filter(row => {
+				if (row.isDeleted) {
+					row.server.close();
+					return false;
+				}
+				return true;
+			});
+
+			toSend ||= fnGetToSend();
+			try {
+				this._p2pMetaV0.serverInfo.filter(info => info.server.isActive).forEach(info => info.server.sendMessage(toSend));
+			} catch (e) { setTimeout(() => { throw e; }); }
+		}
+		// endregion
+	}
+
+	/* -------------------------------------------- */
 
 	/**
 	 * @param opts
-	 * @param opts.p2pMetaV1
 	 * @param opts.doUpdateExternalStates
 	 * @param [opts.$btnStartServer]
 	 * @param [opts.$btnGetToken]
@@ -16,19 +84,22 @@ export class InitiativeTrackerNetworking {
 	async startServerV1 (opts) {
 		opts = opts || {};
 
-		if (opts.p2pMetaV1.serverPeer) {
-			await opts.p2pMetaV1.serverPeer.pInit();
-			return true;
+		if (this._p2pMetaV1.serverPeer) {
+			await this._p2pMetaV1.serverPeer.pInit();
+			return {
+				isRunning: true,
+				token: this._p2pMetaV1.serverPeer?.token,
+			};
 		}
 
 		try {
 			if (opts.$btnStartServer) opts.$btnStartServer.prop("disabled", true);
-			opts.p2pMetaV1.serverPeer = new PeerVeServer();
-			await opts.p2pMetaV1.serverPeer.pInit();
+			this._p2pMetaV1.serverPeer = new PeerVeServer();
+			await this._p2pMetaV1.serverPeer.pInit();
 			if (opts.$btnGetToken) opts.$btnGetToken.prop("disabled", false);
 			if (opts.$btnGetLink) opts.$btnGetLink.prop("disabled", false);
 
-			opts.p2pMetaV1.serverPeer.on("connection", connection => {
+			this._p2pMetaV1.serverPeer.on("connection", connection => {
 				const pConnected = new Promise(resolve => {
 					connection.on("open", () => {
 						resolve(true);
@@ -52,26 +123,32 @@ export class InitiativeTrackerNetworking {
 
 			if (opts.fnDispServerRunningState) opts.fnDispServerRunningState();
 
-			return true;
+			return {
+				isRunning: true,
+				token: this._p2pMetaV1.serverPeer?.token,
+			};
 		} catch (e) {
 			if (opts.fnDispServerStoppedState) opts.fnDispServerStoppedState();
 			if (opts.$btnStartServer) opts.$btnStartServer.prop("disabled", false);
-			opts.p2pMetaV1.serverPeer = null;
+			this._p2pMetaV1.serverPeer = null;
 			JqueryUtil.doToast({content: `Failed to start server! ${VeCt.STR_SEE_CONSOLE}`, type: "danger"});
 			setTimeout(() => { throw e; });
 		}
 
-		return false;
+		return {
+			isRunning: false,
+			token: this._p2pMetaV1.serverPeer?.token,
+		};
 	}
 
-	handleClick_playerWindowV1 ({p2pMetaV1, doUpdateExternalStates}) {
+	handleClick_playerWindowV1 ({doUpdateExternalStates}) {
 		const {$modalInner} = UiUtil.getShowModal({
 			title: "Configure Player View",
 			isUncappedHeight: true,
 			isHeight100: true,
 			cbClose: () => {
-				if (p2pMetaV1.rows.length) p2pMetaV1.rows.forEach(row => row.$row.detach());
-				if (p2pMetaV1.serverPeer) p2pMetaV1.serverPeer.offTemp("connection");
+				if (this._p2pMetaV1.rows.length) this._p2pMetaV1.rows.forEach(row => row.$row.detach());
+				if (this._p2pMetaV1.serverPeer) this._p2pMetaV1.serverPeer.offTemp("connection");
 			},
 		});
 
@@ -91,28 +168,28 @@ export class InitiativeTrackerNetworking {
 
 		const $btnStartServer = $(`<button class="btn btn-default mr-2"></button>`)
 			.click(async () => {
-				const isRunning = await this.startServerV1({p2pMetaV1, doUpdateExternalStates, $btnStartServer, $btnGetToken, $btnGetLink, fnDispServerStoppedState, fnDispServerRunningState});
-				if (isRunning) {
-					p2pMetaV1.serverPeer.onTemp("connection", showConnected);
-					showConnected();
-				}
+				const {isRunning} = await this.startServerV1({doUpdateExternalStates, $btnStartServer, $btnGetToken, $btnGetLink, fnDispServerStoppedState, fnDispServerRunningState});
+				if (!isRunning) return;
+
+				this._p2pMetaV1.serverPeer.onTemp("connection", showConnected);
+				showConnected();
 			});
 
 		const $btnGetToken = $(`<button class="btn btn-default mr-2" disabled><span class="glyphicon glyphicon-copy"></span> Copy Token</button>`).appendTo($wrpHelp)
-			.click(() => {
-				MiscUtil.pCopyTextToClipboard(p2pMetaV1.serverPeer.token);
+			.click(async () => {
+				await MiscUtil.pCopyTextToClipboard(this._p2pMetaV1.serverPeer.token);
 				JqueryUtil.showCopiedEffect($btnGetToken);
 			});
 
 		const $btnGetLink = $(`<button class="btn btn-default" disabled><span class="glyphicon glyphicon-link"></span> Copy Link</button>`).appendTo($wrpHelp)
-			.click(() => {
+			.click(async () => {
 				const cleanOrigin = window.location.origin.replace(/\/+$/, "");
-				const url = `${cleanOrigin}/inittrackerplayerview.html#v1:${p2pMetaV1.serverPeer.token}`;
-				MiscUtil.pCopyTextToClipboard(url);
+				const url = `${cleanOrigin}/inittrackerplayerview.html#v1:${this._p2pMetaV1.serverPeer.token}`;
+				await MiscUtil.pCopyTextToClipboard(url);
 				JqueryUtil.showCopiedEffect($btnGetLink);
 			});
 
-		if (p2pMetaV1.serverPeer) fnDispServerRunningState();
+		if (this._p2pMetaV1.serverPeer) fnDispServerRunningState();
 		else fnDispServerStoppedState();
 
 		$$`<div class="row w-100">
@@ -135,10 +212,10 @@ export class InitiativeTrackerNetworking {
 		const $wrpConnected = UiUtil.$getAddModalRow($modalInner, "div").addClass("flx-col");
 
 		const showConnected = () => {
-			if (!p2pMetaV1.serverPeer) return $wrpConnected.html(`<div class="w-100 ve-flex-vh-center"><i>No clients connected.</i></div>`);
+			if (!this._p2pMetaV1.serverPeer) return $wrpConnected.html(`<div class="w-100 ve-flex-vh-center"><i>No clients connected.</i></div>`);
 
 			let stack = `<div class="w-100"><h5>Connected Clients:</h5><ul>`;
-			p2pMetaV1.serverPeer.getActiveConnections()
+			this._p2pMetaV1.serverPeer.getActiveConnections()
 				.map(it => it.label || "(Unknown)")
 				.sort(SortUtil.ascSortLower)
 				.forEach(it => stack += `<li>${it.escapeQuotes()}</li>`);
@@ -146,7 +223,7 @@ export class InitiativeTrackerNetworking {
 			$wrpConnected.html(stack);
 		};
 
-		if (p2pMetaV1.serverPeer) p2pMetaV1.serverPeer.onTemp("connection", showConnected);
+		if (this._p2pMetaV1.serverPeer) this._p2pMetaV1.serverPeer.onTemp("connection", showConnected);
 
 		showConnected();
 	}
@@ -165,7 +242,7 @@ export class InitiativeTrackerNetworking {
 		}
 	};
 
-	async _playerWindowV0_pGetServerTokens ({p2pMetaV0, rowMetas}) {
+	async _playerWindowV0_pGetServerTokens ({rowMetas}) {
 		const targetRows = rowMetas.filter(it => !it.isDeleted).filter(it => !it.isActive);
 		if (targetRows.every(it => it.isActive)) {
 			return JqueryUtil.doToast({
@@ -193,12 +270,12 @@ export class InitiativeTrackerNetworking {
 			return row.$iptName.val();
 		});
 
-		if (p2pMetaV0.serverInfo) {
-			await p2pMetaV0.serverInfo;
+		if (this._p2pMetaV0.serverInfo) {
+			await this._p2pMetaV0.serverInfo;
 
 			const serverInfo = await PeerUtilV0.pInitialiseServersAddToExisting(
 				names,
-				p2pMetaV0.serverInfo,
+				this._p2pMetaV0.serverInfo,
 				this._playerWindowV0_DM_MESSAGE_RECEIVER,
 				this._playerWindowV0_DM_ERROR_HANDLER,
 			);
@@ -216,33 +293,33 @@ export class InitiativeTrackerNetworking {
 				return serverInfo[i].textifiedSdp;
 			});
 		} else {
-			p2pMetaV0.serverInfo = (async () => {
-				p2pMetaV0.serverInfo = await PeerUtilV0.pInitialiseServers(names, this._playerWindowV0_DM_MESSAGE_RECEIVER, this._playerWindowV0_DM_ERROR_HANDLER);
+			this._p2pMetaV0.serverInfo = (async () => {
+				this._p2pMetaV0.serverInfo = await PeerUtilV0.pInitialiseServers(names, this._playerWindowV0_DM_MESSAGE_RECEIVER, this._playerWindowV0_DM_ERROR_HANDLER);
 
 				targetRows.forEach((row, i) => {
-					row.name = p2pMetaV0.serverInfo[i].name;
-					row.serverInfo = p2pMetaV0.serverInfo[i];
-					row.$iptTokenServer.val(p2pMetaV0.serverInfo[i].textifiedSdp).attr("disabled", false);
+					row.name = this._p2pMetaV0.serverInfo[i].name;
+					row.serverInfo = this._p2pMetaV0.serverInfo[i];
+					row.$iptTokenServer.val(this._p2pMetaV0.serverInfo[i].textifiedSdp).attr("disabled", false);
 
-					p2pMetaV0.serverInfo[i].rowMeta = row;
+					this._p2pMetaV0.serverInfo[i].rowMeta = row;
 
 					row.$iptTokenClient.attr("disabled", false);
 					row.$btnAcceptClientToken.attr("disabled", false);
 				});
 			})();
 
-			await p2pMetaV0.serverInfo;
+			await this._p2pMetaV0.serverInfo;
 			return targetRows.map(row => row.serverInfo.textifiedSdp);
 		}
 	}
 
-	handleClick_playerWindowV0 ({p2pMetaV0, doUpdateExternalStates}) {
+	handleClick_playerWindowV0 ({doUpdateExternalStates}) {
 		const {$modalInner} = UiUtil.getShowModal({
 			title: "Configure Player View",
 			isUncappedHeight: true,
 			isHeight100: true,
 			cbClose: () => {
-				if (p2pMetaV0.rows.length) p2pMetaV0.rows.forEach(row => row.$row.detach());
+				if (this._p2pMetaV0.rows.length) this._p2pMetaV0.rows.forEach(row => row.$row.detach());
 			},
 		});
 
@@ -277,7 +354,7 @@ export class InitiativeTrackerNetworking {
 
 		const $btnCopyServers = $(`<button class="btn btn-xs btn-primary" title="Copy any available server tokens to the clipboard">Copy Server Tokens</button>`)
 			.click(async () => {
-				const targetRows = p2pMetaV0.rows.filter(it => !it.isDeleted && !it.$iptTokenClient.attr("disabled"));
+				const targetRows = this._p2pMetaV0.rows.filter(it => !it.isDeleted && !it.$iptTokenClient.attr("disabled"));
 				if (!targetRows.length) {
 					JqueryUtil.doToast({
 						content: `No free server tokens to copy. Generate some!`,
@@ -296,14 +373,14 @@ export class InitiativeTrackerNetworking {
 				const $iptText = $(`<textarea class="form-control dm-init-pl__textarea block mb-2"></textarea>`)
 					.keydown(() => $iptText.removeClass("error-background"));
 
-				const $btnAccept = $(`<button class="btn btn-xs btn-primary block text-center" title="Add Client">Accept Multiple Clients</button>`)
+				const $btnAccept = $(`<button class="btn btn-xs btn-primary block ve-text-center" title="Add Client">Accept Multiple Clients</button>`)
 					.click(async () => {
 						$iptText.removeClass("error-background");
 						const txt = $iptText.val();
 						if (!txt.trim() || !PeerUtilV0.containsAnyTokens(txt)) {
 							$iptText.addClass("error-background");
 						} else {
-							const connected = await PeerUtilV0.pConnectClientsToServers(p2pMetaV0.serverInfo, txt);
+							const connected = await PeerUtilV0.pConnectClientsToServers(this._p2pMetaV0.serverInfo, txt);
 							this._board.doBindAlertOnNavigation();
 							connected.forEach(serverInfo => {
 								serverInfo.rowMeta.$iptTokenClient.val(serverInfo._tempTokenToDisplay || "").attr("disabled", true);
@@ -344,14 +421,14 @@ export class InitiativeTrackerNetworking {
 		UiUtil.addModalSep($modalInner);
 
 		const $btnGenServerTokens = $(`<button class="btn btn-primary btn-xs">Generate All</button>`)
-			.click(() => this._playerWindowV0_pGetServerTokens({p2pMetaV0, rowMetas: p2pMetaV0.rows}));
+			.click(() => this._playerWindowV0_pGetServerTokens({rowMetas: this._p2pMetaV0.rows}));
 
 		UiUtil.$getAddModalRow($modalInner, "div")
 			.append($$`
 			<div class="ve-flex w-100">
 				<div class="col-2 bold">Player Name</div>
 				<div class="col-3-5 bold">Server Token</div>
-				<div class="col-1 text-center">${$btnGenServerTokens}</div>
+				<div class="col-1 ve-text-center">${$btnGenServerTokens}</div>
 				<div class="col-3-5 bold">Client Token</div>
 			</div>
 		`);
@@ -390,7 +467,7 @@ export class InitiativeTrackerNetworking {
 				}).disableSpellcheck();
 
 			const $btnGenServerToken = $(`<button class="btn btn-xs btn-primary" title="Generate Server Token">Generate</button>`)
-				.click(() => this._playerWindowV0_pGetServerTokens({p2pMetaV0, rowMetas: [rowMeta]}));
+				.click(() => this._playerWindowV0_pGetServerTokens({rowMetas: [rowMeta]}));
 
 			const $iptTokenClient = $(`<input class="form-control input-sm code" disabled>`)
 				.keydown(evt => {
@@ -446,7 +523,7 @@ export class InitiativeTrackerNetworking {
 			rowMeta.$btnGenServerToken = $btnGenServerToken;
 			rowMeta.$iptTokenClient = $iptTokenClient;
 			rowMeta.$btnAcceptClientToken = $btnAcceptClientToken;
-			p2pMetaV0.rows.push(rowMeta);
+			this._p2pMetaV0.rows.push(rowMeta);
 
 			return rowMeta;
 		};
@@ -454,11 +531,11 @@ export class InitiativeTrackerNetworking {
 		const $wrpRows = UiUtil.$getAddModalRow($modalInner, "div");
 		const $wrpRowsInner = $(`<div class="w-100"></div>`).appendTo($wrpRows);
 
-		if (p2pMetaV0.rows.length) p2pMetaV0.rows.forEach(row => row.$row.appendTo($wrpRowsInner));
+		if (this._p2pMetaV0.rows.length) this._p2pMetaV0.rows.forEach(row => row.$row.appendTo($wrpRowsInner));
 		else addClientRow();
 	}
 
-	async pHandleDoConnectLocalV0 ({p2pMetaV0, clientView}) {
+	async pHandleDoConnectLocalV0 ({clientView}) {
 		// generate a stub/fake row meta
 		const rowMeta = {
 			id: CryptUtil.uid(),
@@ -470,9 +547,9 @@ export class InitiativeTrackerNetworking {
 			$btnAcceptClientToken: $(),
 		};
 
-		p2pMetaV0.rows.push(rowMeta);
+		this._p2pMetaV0.rows.push(rowMeta);
 
-		const serverTokens = await this._playerWindowV0_pGetServerTokens({p2pMetaV0, rowMetas: [rowMeta]});
+		const serverTokens = await this._playerWindowV0_pGetServerTokens({rowMetas: [rowMeta]});
 		const clientData = await PeerUtilV0.pInitialiseClient(
 			serverTokens[0],
 			msg => clientView.handleMessage(msg),

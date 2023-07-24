@@ -1,4 +1,5 @@
 import {PANEL_TYP_INITIATIVE_TRACKER} from "./dmscreen-consts.js";
+import {DmScreenUtil} from "./dmscreen-util.js";
 
 const _TIME_TRACKER_MOON_SPRITE = new Image();
 export const TIME_TRACKER_MOON_SPRITE_LOADER = new Promise(resolve => {
@@ -483,7 +484,7 @@ class TimeTrackerBase extends TimeTrackerComponent {
 		const metas = [];
 
 		const $getIpt = (title, propMax, valProp, propMult) => {
-			const $ipt = $(`<input class="form-control input-xs form-control--minimal text-center dm-time__ipt-event-time code mx-1" title="${title}">`)
+			const $ipt = $(`<input class="form-control input-xs form-control--minimal ve-text-center dm-time__ipt-event-time code mx-1" title="${title}">`)
 				.change(() => {
 					const maxVal = timeInfo[propMax] - 1;
 					const nxtRaw = getIptNum($ipt);
@@ -863,7 +864,7 @@ class TimeTrackerRoot_Clock extends TimeTrackerComponent {
 			.click(() => doModTime(getSecsToNextDay(getTimeInfo({isBase: true})), {isBase: true}));
 
 		const $getIpt = (propMax, timeProp, multProp) => {
-			const $ipt = $(`<input class="form-control form-control--minimal text-center dm-time__ipt-time code mx-1">`)
+			const $ipt = $(`<input class="form-control form-control--minimal ve-text-center dm-time__ipt-time code mx-1">`)
 				.change(() => {
 					const timeInfo = getTimeInfo({isBase: true});
 					const multiplier = (multProp ? timeInfo[multProp] : 1);
@@ -895,7 +896,7 @@ class TimeTrackerRoot_Clock extends TimeTrackerComponent {
 		const $iptMinutes = $getIpt("minutesPerHour", "numMinutes", "secsPerMinute");
 		const $iptSeconds = $getIpt("secondsPerMinute", "numSecs");
 
-		const $wrpDays = $(`<div class="small-caps text-center mb-1"/>`);
+		const $wrpDays = $(`<div class="small-caps ve-text-center mb-1"/>`);
 		const $wrpHours = $$`<div class="ve-flex ve-flex-vh-center">${$iptHours}</div>`;
 		const $wrpMinutes = $$`<div class="ve-flex ve-flex-vh-center">${$iptMinutes}</div>`;
 		const $wrpSeconds = $$`<div class="ve-flex ve-flex-vh-center">${$iptSeconds}</div>`;
@@ -1110,19 +1111,19 @@ class TimeTrackerRoot_Clock extends TimeTrackerComponent {
 			.click(evt => doModTime(this._parent.get("hoursPerDay") * this._parent.get("minutesPerHour") * this._parent.get("secondsPerMinute") * (evt.shiftKey ? 5 : 1), {isBase: true}));
 
 		const $btnAddHour = $(`<button class="btn btn-xs btn-default dm-time__btn-time dm-time__btn-time--top" title="Add Hour (SHIFT for 5, CTRL for 12)">+</button>`)
-			.click(evt => doModTime(this._parent.get("minutesPerHour") * this._parent.get("secondsPerMinute") * (evt.shiftKey ? 5 : (evt.ctrlKey || evt.metaKey ? 12 : 1)), {isBase: true}));
+			.click(evt => doModTime(this._parent.get("minutesPerHour") * this._parent.get("secondsPerMinute") * (evt.shiftKey ? 5 : (EventUtil.isCtrlMetaKey(evt) ? 12 : 1)), {isBase: true}));
 		const $btnSubHour = $(`<button class="btn btn-xs btn-default dm-time__btn-time dm-time__btn-time--bottom" title="Subtract Hour (SHIFT for 5, CTRL for 12)">-</button>`)
-			.click(evt => doModTime(-1 * this._parent.get("minutesPerHour") * this._parent.get("secondsPerMinute") * (evt.shiftKey ? 5 : (evt.ctrlKey || evt.metaKey ? 12 : 1)), {isBase: true}));
+			.click(evt => doModTime(-1 * this._parent.get("minutesPerHour") * this._parent.get("secondsPerMinute") * (evt.shiftKey ? 5 : (EventUtil.isCtrlMetaKey(evt) ? 12 : 1)), {isBase: true}));
 
 		const $btnAddMinute = $(`<button class="btn btn-xs btn-default dm-time__btn-time dm-time__btn-time--top" title="Add Minute (SHIFT for 5, CTRL for 15, Both for 30)">+</button>`)
-			.click(evt => doModTime(this._parent.get("secondsPerMinute") * (evt.shiftKey && (evt.ctrlKey || evt.metaKey) ? 30 : (evt.ctrlKey || evt.metaKey ? 15 : (evt.shiftKey ? 5 : 1))), {isBase: true}));
+			.click(evt => doModTime(this._parent.get("secondsPerMinute") * (evt.shiftKey && (EventUtil.isCtrlMetaKey(evt)) ? 30 : (EventUtil.isCtrlMetaKey(evt) ? 15 : (evt.shiftKey ? 5 : 1))), {isBase: true}));
 		const $btnSubMinute = $(`<button class="btn btn-xs btn-default dm-time__btn-time dm-time__btn-time--bottom" title="Subtract Minute (SHIFT for 5, CTRL for 15, Both for 30)">-</button>`)
-			.click(evt => doModTime(-1 * this._parent.get("secondsPerMinute") * (evt.shiftKey && (evt.ctrlKey || evt.metaKey) ? 30 : (evt.ctrlKey || evt.metaKey ? 15 : (evt.shiftKey ? 5 : 1))), {isBase: true}));
+			.click(evt => doModTime(-1 * this._parent.get("secondsPerMinute") * (evt.shiftKey && (EventUtil.isCtrlMetaKey(evt)) ? 30 : (EventUtil.isCtrlMetaKey(evt) ? 15 : (evt.shiftKey ? 5 : 1))), {isBase: true}));
 
 		const $btnAddSecond = $(`<button class="btn btn-xs btn-default dm-time__btn-time dm-time__btn-time--top" title="Add Second (SHIFT for 5, CTRL for 15, Both for 30)">+</button>`)
-			.click(evt => doModTime((evt.shiftKey && (evt.ctrlKey || evt.metaKey) ? 30 : (evt.ctrlKey || evt.metaKey ? 15 : (evt.shiftKey ? 5 : 1))), {isBase: true}));
+			.click(evt => doModTime((evt.shiftKey && (EventUtil.isCtrlMetaKey(evt)) ? 30 : (EventUtil.isCtrlMetaKey(evt) ? 15 : (evt.shiftKey ? 5 : 1))), {isBase: true}));
 		const $btnSubSecond = $(`<button class="btn btn-xs btn-default dm-time__btn-time dm-time__btn-time--bottom" title="Subtract Second (SHIFT for 5, CTRL for 15, Both for 30)">-</button>`)
-			.click(evt => doModTime(-1 * (evt.shiftKey && (evt.ctrlKey || evt.metaKey) ? 30 : (evt.ctrlKey || evt.metaKey ? 15 : (evt.shiftKey ? 5 : 1))), {isBase: true}));
+			.click(evt => doModTime(-1 * (evt.shiftKey && (EventUtil.isCtrlMetaKey(evt)) ? 30 : (EventUtil.isCtrlMetaKey(evt) ? 15 : (evt.shiftKey ? 5 : 1))), {isBase: true}));
 
 		const $btnIsPaused = $(`<button class="btn btn-default"><span class="glyphicon glyphicon-pause"></span></button>`)
 			.click(() => this._parent.set("isPaused", !this._parent.get("isPaused")));
@@ -1914,7 +1915,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 		const $btnAddYear = $(`<button class="btn btn-xs btn-default dm-time__btn-date-adjust" title="Add Year (SHIFT for 5)">Y+</button>`)
 			.click(evt => doModTime(getTimeInfo().secsPerYear * (evt.shiftKey ? 5 : 1)));
 
-		const $iptYear = $(`<input class="form-control form-control--minimal text-center input-xs dm-time__calendar-ipt-date dm-time__calendar-ipt-date--slashed-right" title="Year">`)
+		const $iptYear = $(`<input class="form-control form-control--minimal ve-text-center input-xs dm-time__calendar-ipt-date dm-time__calendar-ipt-date--slashed-right" title="Year">`)
 			.change(() => {
 				const {
 					secsPerYear,
@@ -1925,7 +1926,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 				const diffYears = nxt - year;
 				doModTime(diffYears * secsPerYear);
 			});
-		const $iptMonth = $(`<input class="form-control form-control--minimal text-center input-xs dm-time__calendar-ipt-date dm-time__calendar-ipt-date--slashed-left ${opts.isHideDays ? "" : "dm-time__calendar-ipt-date--slashed-right"}" title="Month">`)
+		const $iptMonth = $(`<input class="form-control form-control--minimal ve-text-center input-xs dm-time__calendar-ipt-date dm-time__calendar-ipt-date--slashed-left ${opts.isHideDays ? "" : "dm-time__calendar-ipt-date--slashed-right"}" title="Month">`)
 			.change(() => {
 				const {
 					month,
@@ -1937,7 +1938,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 				const diffMonths = nxt - month;
 				doModMonths(diffMonths);
 			});
-		const $iptDay = opts.isHideDays ? null : $(`<input class="form-control form-control--minimal text-center input-xs dm-time__calendar-ipt-date dm-time__calendar-ipt-date--slashed-left" title="Day">`)
+		const $iptDay = opts.isHideDays ? null : $(`<input class="form-control form-control--minimal ve-text-center input-xs dm-time__calendar-ipt-date dm-time__calendar-ipt-date--slashed-left" title="Day">`)
 			.change(() => {
 				const {
 					secsPerDay,
@@ -2008,7 +2009,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 		if (opts.hasColumnLabels) {
 			const days = parent.getAllDayInfos();
 			days.forEach((it, i) => {
-				$(`<div class="small text-muted small-caps text-center" title="${it.name.escapeQuotes()}">${it.name.slice(0, 2)}</div>`)
+				$(`<div class="small text-muted small-caps ve-text-center" title="${it.name.escapeQuotes()}">${it.name.slice(0, 2)}</div>`)
 					.css({
 						"grid-column-start": `${i + gridOffsetX + 1}`,
 						"grid-column-end": `${i + gridOffsetX + 2}`,
@@ -2401,7 +2402,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 						"exactHour",
 						0,
 						{
-							$ele: $(`<input class="form-control input-xs form-control--minimal text-center mr-1">`),
+							$ele: $(`<input class="form-control input-xs form-control--minimal ve-text-center mr-1">`),
 							padLength: padLengthHours,
 							min: 0,
 							max: hoursPerDay - 1,
@@ -2412,7 +2413,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 						"exactMinute",
 						0,
 						{
-							$ele: $(`<input class="form-control input-xs form-control--minimal text-center mr-1">`),
+							$ele: $(`<input class="form-control input-xs form-control--minimal ve-text-center mr-1">`),
 							padLength: padLengthMinutes,
 							min: 0,
 							max: minutesPerHour - 1,
@@ -2423,7 +2424,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 						"exactSec",
 						0,
 						{
-							$ele: $(`<input class="form-control input-xs form-control--minimal text-center">`),
+							$ele: $(`<input class="form-control input-xs form-control--minimal ve-text-center">`),
 							padLength: padLengthSecs,
 							min: 0,
 							max: secsPerMinute - 1,
@@ -2443,7 +2444,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 						"offsetHour",
 						0,
 						{
-							$ele: $(`<input class="form-control input-xs form-control--minimal text-center mr-1">`),
+							$ele: $(`<input class="form-control input-xs form-control--minimal ve-text-center mr-1">`),
 							min: -TimeTrackerBase._MAX_TIME,
 							max: TimeTrackerBase._MAX_TIME,
 						},
@@ -2453,7 +2454,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 						"offsetMinute",
 						0,
 						{
-							$ele: $(`<input class="form-control input-xs form-control--minimal text-center mr-1">`),
+							$ele: $(`<input class="form-control input-xs form-control--minimal ve-text-center mr-1">`),
 							min: -TimeTrackerBase._MAX_TIME,
 							max: TimeTrackerBase._MAX_TIME,
 						},
@@ -2463,7 +2464,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 						"offsetSec",
 						0,
 						{
-							$ele: $(`<input class="form-control input-xs form-control--minimal text-center mr-1">`),
+							$ele: $(`<input class="form-control input-xs form-control--minimal ve-text-center mr-1">`),
 							min: -TimeTrackerBase._MAX_TIME,
 							max: TimeTrackerBase._MAX_TIME,
 						},
@@ -2656,15 +2657,12 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 	static async pDoRunEncounter (parent, encounter) {
 		if (encounter.countUses > 0) return;
 
-		// TODO(DMS)
-		const $existingTrackers = parent.component._board.getPanelsByType(PANEL_TYP_INITIATIVE_TRACKER)
-			.map(it => it.tabDatas.filter(td => td.type === PANEL_TYP_INITIATIVE_TRACKER).map(td => td.$content.find(`.dm__data-anchor`)))
-			.flat();
+		const $elesData = DmScreenUtil.$getPanelDataElements({board: parent.component._board, type: PANEL_TYP_INITIATIVE_TRACKER});
 
-		if ($existingTrackers.length) {
+		if ($elesData.length) {
 			let $tracker;
-			if ($existingTrackers.length === 1) {
-				$tracker = $existingTrackers[0];
+			if ($elesData.length === 1) {
+				$tracker = $elesData[0];
 			} else {
 				const ix = await InputUiUtil.pGetUserEnum({
 					default: 0,
@@ -2672,7 +2670,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 					placeholder: "Select tracker",
 				});
 				if (ix != null && ~ix) {
-					$tracker = $existingTrackers[ix];
+					$tracker = $elesData[ix];
 				}
 			}
 
@@ -2859,7 +2857,7 @@ class TimeTrackerRoot_Settings extends TimeTrackerComponent {
 		const $sectMonths = $$`<div class="no-shrink w-100">
 			<div class="ve-flex w-100 mb-1 mt-1">
 				<div class="w-100 ve-flex-v-center">Name</div>
-				<div class="w-25 no-shrink text-center mr-2">Days</div>
+				<div class="w-25 no-shrink ve-text-center mr-2">Days</div>
 				<div class="dm-time__spc-drag-header no-shrink mr-2"/>
 				${metaMonths.$btnAdd.addClass("no-shrink")}
 			</div>
@@ -2871,10 +2869,10 @@ class TimeTrackerRoot_Settings extends TimeTrackerComponent {
 		const $sectSeasons = $$`<div class="no-shrink w-100">
 			<div class="ve-flex w-100 mb-1 mt-1">
 				<div class="w-100 ve-flex-v-center">Name</div>
-				<div class="w-15 no-shrink text-center mr-2 help-subtle" title="In hours. For example, to have the sun rise at 05:00, enter &quot;5&quot;.">Sunrise</div>
-				<div class="w-15 no-shrink text-center mr-2 help-subtle" title="In hours. For example, to have the sun set at 22:00, enter &quot;22&quot;.">Sunset</div>
-				<div class="w-15 no-shrink text-center mr-2 help-subtle" title="For example, to have a season start on the 1st day of the year, enter &quot;1&quot;.">Start</div>
-				<div class="w-15 no-shrink text-center mr-2 help-subtle" title="For example, to have a season end on the 90th day of the year, enter &quot;90&quot;.">End</div>
+				<div class="w-15 no-shrink ve-text-center mr-2 help-subtle" title="In hours. For example, to have the sun rise at 05:00, enter &quot;5&quot;.">Sunrise</div>
+				<div class="w-15 no-shrink ve-text-center mr-2 help-subtle" title="In hours. For example, to have the sun set at 22:00, enter &quot;22&quot;.">Sunset</div>
+				<div class="w-15 no-shrink ve-text-center mr-2 help-subtle" title="For example, to have a season start on the 1st day of the year, enter &quot;1&quot;.">Start</div>
+				<div class="w-15 no-shrink ve-text-center mr-2 help-subtle" title="For example, to have a season end on the 90th day of the year, enter &quot;90&quot;.">End</div>
 				${metaSeasons.$btnAdd.addClass("no-shrink")}
 			</div>
 			${metaSeasons.$wrpRows}
@@ -2885,7 +2883,7 @@ class TimeTrackerRoot_Settings extends TimeTrackerComponent {
 		const $sectYears = $$`<div class="no-shrink w-100">
 			<div class="ve-flex w-100 mb-1 mt-1">
 				<div class="w-100 ve-flex-v-center">Name</div>
-				<div class="w-25 no-shrink text-center mr-2">Year</div>
+				<div class="w-25 no-shrink ve-text-center mr-2">Year</div>
 				${metaYears.$btnAdd.addClass("no-shrink")}
 			</div>
 			${metaYears.$wrpRows}
@@ -2896,9 +2894,9 @@ class TimeTrackerRoot_Settings extends TimeTrackerComponent {
 		const $sectEras = $$`<div class="no-shrink w-100">
 			<div class="ve-flex w-100 mb-1 mt-1">
 				<div class="w-100 ve-flex-v-center">Name</div>
-				<div class="w-15 no-shrink text-center mr-2">Abbv.</div>
-				<div class="w-15 no-shrink text-center mr-2">Start</div>
-				<div class="w-15 no-shrink text-center mr-2">End</div>
+				<div class="w-15 no-shrink ve-text-center mr-2">Abbv.</div>
+				<div class="w-15 no-shrink ve-text-center mr-2">Start</div>
+				<div class="w-15 no-shrink ve-text-center mr-2">End</div>
 				${metaEras.$btnAdd.addClass("no-shrink")}
 			</div>
 			${metaEras.$wrpRows}
@@ -2909,8 +2907,8 @@ class TimeTrackerRoot_Settings extends TimeTrackerComponent {
 		const $sectMoons = $$`<div class="no-shrink w-100">
 			<div class="ve-flex w-100 mb-1 mt-1">
 				<div class="w-100 ve-flex-v-center">Moon</div>
-				<div class="w-25 no-shrink text-center mr-2 help-subtle" title="For example, to have a new moon appear on the third day of the first year, enter &quot;3&quot;.">Offset</div>
-				<div class="w-25 no-shrink text-center mr-2 help-subtle" title="Measured in days. Multiples of eight are recommended, as there are eight distinct moon phases.">Period</div>
+				<div class="w-25 no-shrink ve-text-center mr-2 help-subtle" title="For example, to have a new moon appear on the third day of the first year, enter &quot;3&quot;.">Offset</div>
+				<div class="w-25 no-shrink ve-text-center mr-2 help-subtle" title="Measured in days. Multiples of eight are recommended, as there are eight distinct moon phases.">Period</div>
 				${metaMoons.$btnAdd.addClass("no-shrink")}
 			</div>
 			${metaMoons.$wrpRows}

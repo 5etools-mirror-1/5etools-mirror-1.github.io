@@ -1,5 +1,6 @@
 import {InitiativeTrackerUi} from "./dmscreen-initiativetracker-ui.js";
 import {
+	GROUP_DISPLAY_NAMES,
 	InitiativeTrackerStatColumnFactory,
 	IS_PLAYER_VISIBLE_ALL,
 	IS_PLAYER_VISIBLE_NONE,
@@ -22,30 +23,7 @@ class _RenderableCollectionStatsCols extends RenderableCollectionGenericRows {
 	_populateRow ({comp, $wrpRow, entity}) {
 		$wrpRow.addClass("py-1p");
 
-		const ptOptions = InitiativeTrackerStatColumnFactory.getGroupedByUi()
-			.map(Clsses => {
-				return Clsses
-					.map(Cls => `<option value="${Cls.POPULATE_WITH}">${Cls.NAME}</option>`)
-					.join("\n");
-			})
-			.join(`<option disabled>\u2014</option>`);
-
-		const $selPre = $(`
-			<select class="form-control input-xs">
-				${ptOptions}
-			</select>
-		`)
-			.change(() => {
-				const statCol = InitiativeTrackerStatColumnFactory.fromPopulateWith({
-					populateWith: $selPre.val() || "",
-					populateWithPrevious: comp._state.populateWith,
-				});
-
-				const asStateData = statCol.getAsStateData();
-				delete asStateData.id;
-				comp._proxyAssignSimple("state", asStateData);
-			});
-		if (comp._state.populateWith) $selPre.val(comp._state.populateWith);
+		const meta = InitiativeTrackerStatColumnFactory.fromPopulateWith({populateWith: comp._state.populateWith});
 
 		const $iptAbv = ComponentUiUtil.$getIptStr(comp, "abbreviation");
 
@@ -61,15 +39,15 @@ class _RenderableCollectionStatsCols extends RenderableCollectionGenericRows {
 			true,
 		);
 
-		const $btnDelete = this._$getBtnDelete({entity});
+		const $btnDelete = this._utils.$getBtnDelete({entity});
 
-		const $padDrag = this._$getPadDrag({$wrpRow});
+		const $padDrag = this._utils.$getPadDrag({$wrpRow});
 
 		$$($wrpRow)`
-			<div class="col-5 pr-1">${$selPre}</div>
+			<div class="col-5 pr-1">${meta.constructor.NAME}</div>
 			<div class="col-3 pr-1">${$iptAbv}</div>
-			<div class="col-1-5 text-center">${$cbIsEditable}</div>
-			<div class="col-1-5 text-center">${$btnVisible}</div>
+			<div class="col-1-5 ve-text-center">${$cbIsEditable}</div>
+			<div class="col-1-5 ve-text-center">${$btnVisible}</div>
 
 			<div class="col-0-5 ve-flex-vh-center">${$btnDelete}</div>
 			<div class="col-0-5 ve-flex-vh-center">${$padDrag}</div>
@@ -81,6 +59,8 @@ export class InitiativeTrackerSettings extends BaseComponent {
 	static _PROPS_TRACKED = [
 		"isRollInit",
 		"isRollHp",
+		"isRollGroups",
+		"isRerollInitiativeEachRound",
 		"playerInitShowExactPlayerHp",
 		"playerInitShowExactMonsterHp",
 		"playerInitHideNewMonster",
@@ -124,7 +104,7 @@ export class InitiativeTrackerSettings extends BaseComponent {
 
 	/* -------------------------------------------- */
 
-	getSettingsUpdate () {
+	getStateUpdate () {
 		const out = MiscUtil.copyFast(this._state);
 		out.statsCols = this._getStatColsDataFormat(out.statsCols);
 		return out;
@@ -156,6 +136,8 @@ export class InitiativeTrackerSettings extends BaseComponent {
 	_pGetShowModalResults_renderSection_isRolls ({$modalInner}) {
 		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRollInit", text: "Roll initiative"});
 		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRollHp", text: "Roll hit points"});
+		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRollGroups", text: "Roll groups of creatures together"});
+		UiUtil.$getAddModalRowCb2({$wrp: $modalInner, comp: this, prop: "isRerollInitiativeEachRound", text: "Reroll initiative each round"});
 	}
 
 	_pGetShowModalResults_renderSection_playerView ({$modalInner}) {
@@ -172,13 +154,34 @@ export class InitiativeTrackerSettings extends BaseComponent {
 	}
 
 	_pGetShowModalResults_renderSection_additionalCols_head ({$modalInner}) {
-		const $btnAddRow = $(`<button class="btn btn-default btn-xs bb-0 bbr-0 bbl-0" title="Add"><span class="glyphicon glyphicon-plus"></span></button>`)
-			.click(() => this._addStatsCol());
+		const getAction = Cls => new ContextUtil.Action(
+			Cls.NAME,
+			() => {
+				this._state.statsCols = [...this._state.statsCols, new Cls().getAsCollectionRowStateData()];
+			},
+		);
 
-		const $wrpTblStatsHead = $$`<div class="ve-flex-vh-center w-100 mb-2 bb-1p">
+		const menuAddStatsCol = ContextUtil.getMenu(
+			InitiativeTrackerStatColumnFactory.getGroupedByUi()
+				.map(group => {
+					const [ClsHead] = group;
+
+					if (group.length === 1) return getAction(ClsHead);
+
+					return new ContextUtil.ActionSubMenu(
+						GROUP_DISPLAY_NAMES[ClsHead.GROUP],
+						group.map(Cls => getAction(Cls)),
+					);
+				}),
+		);
+
+		const $btnAddRow = $(`<button class="btn btn-default btn-xs bb-0 bbr-0 bbl-0" title="Add"><span class="glyphicon glyphicon-plus"></span></button>`)
+			.click(evt => ContextUtil.pOpenMenu(evt, menuAddStatsCol));
+
+		const $wrpTblStatsHead = $$`<div class="ve-flex-vh-center w-100 mb-2 bb-1p-trans">
 			<div class="col-5">Contains</div>
 			<div class="col-3">Abbreviation</div>
-			<div class="col-1-5 text-center help" title="Only affects creatures. Players are always editable.">Editable</div>
+			<div class="col-1-5 ve-text-center help" title="Only affects creatures. Players are always editable.">Editable</div>
 			<div class="col-1-5">&nbsp;</div>
 			<div class="col-1 ve-flex-v-center ve-flex-h-right">${$btnAddRow}</div>
 		</div>`
@@ -190,8 +193,6 @@ export class InitiativeTrackerSettings extends BaseComponent {
 	_pGetShowModalResults_renderSection_additionalCols_body ({$modalInner}) {
 		const $wrpRows = $(`<div class="pr-1 h-120p ve-flex-col overflow-y-auto relative"></div>`).appendTo($modalInner);
 		this._addHookBase("statsAddColumns", () => $wrpRows.toggleVe(this._state.statsAddColumns))();
-
-		if (!this._state.statsCols.length) this._addStatsCol();
 
 		const renderableCollectionStatsCols = new _RenderableCollectionStatsCols(
 			{
@@ -214,13 +215,5 @@ export class InitiativeTrackerSettings extends BaseComponent {
 		$$($modalFooter)`<div class="w-100 py-3 no-shrink">
 			${$btnSave}
 		</div>`;
-	}
-
-	/* -------------------------------------------- */
-
-	_addStatsCol () {
-		const statsColData = InitiativeTrackerStatColumnFactory.fromNew().getAsCollectionRowStateData();
-		this._state.statsCols = [...this._state.statsCols, statsColData];
-		return statsColData;
 	}
 }

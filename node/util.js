@@ -80,11 +80,13 @@ class PatchLoadJson {
 		PatchLoadJson._CACHED = PatchLoadJson._CACHED || DataUtil.loadJSON.bind(DataUtil);
 
 		const loadJsonCache = {};
-		DataUtil.loadJSON = async (url) => {
+		DataUtil.loadJSON = (url) => {
 			if (!loadJsonCache[url]) {
-				const data = readJson(url);
-				await DataUtil.pDoMetaMerge(url, data, {isSkipMetaMergeCache: true});
-				loadJsonCache[url] = data;
+				loadJsonCache[url] = (async () => {
+					const data = readJson(url);
+					await DataUtil.pDoMetaMerge(url, data, {isSkipMetaMergeCache: true});
+					return data;
+				})();
 			}
 			return loadJsonCache[url];
 		};

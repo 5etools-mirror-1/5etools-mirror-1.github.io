@@ -540,7 +540,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 
 		const $lnk = $(`<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="bold col-8 pl-0">${cls.name}</span>
-			<span class="col-4 text-center ${Parser.sourceJsonToColor(cls.source)} pr-0" title="${Parser.sourceJsonToFull(cls.source)}" ${Parser.sourceJsonToStyle(cls.source)}>${source}</span>
+			<span class="col-4 ve-text-center ${Parser.sourceJsonToColor(cls.source)} pr-0" title="${Parser.sourceJsonToFull(cls.source)}" ${Parser.sourceJsonToStyle(cls.source)}>${source}</span>
 		</a>`);
 
 		const $ele = $$`<li class="lst__row ve-flex-col ${isExcluded ? "row--blocklisted" : ""}">${$lnk}</li>`;
@@ -1381,7 +1381,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 				const allStateKeys = cls.subclasses.map(sc => UrlUtil.getStateKeySubclass(sc));
 				if (evt.shiftKey) {
 					this._doSelectAllSubclasses({allowlistMods: new Set(["fresh", "brew", "spicy"])});
-				} else if (evt.ctrlKey || evt.metaKey) {
+				} else if (EventUtil.isCtrlMetaKey(evt)) {
 					const nxtState = {};
 					allStateKeys.forEach(k => nxtState[k] = false);
 					this._listSubclass.visibleItems

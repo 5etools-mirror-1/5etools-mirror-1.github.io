@@ -371,6 +371,8 @@ class UiUtil {
 			if (opts.isIndestructible) wrpOverlay.detach();
 			else wrpOverlay.remove();
 
+			ContextUtil.closeAllMenus();
+
 			doTeardown();
 		};
 
@@ -1397,7 +1399,7 @@ class TabUiUtilSide extends TabUiUtilBase {
 		super.decorate(obj, {isInitMeta});
 
 		obj.__$getBtnTab = function ({isSingleTab, tabMeta, _propProxy, propActive, ixTab}) {
-			return isSingleTab ? null : $(`<button class="btn btn-default btn-sm ui-tab-side__btn-tab mb-2 br-0 btr-0 bbr-0 text-left ve-flex-v-center" title="${tabMeta.name.qq()}"><div class="${tabMeta.icon} ui-tab-side__icon-tab mr-2 mobile-ish__mr-0 text-center"></div><div class="mobile-ish__hidden">${tabMeta.name.qq()}</div></button>`)
+			return isSingleTab ? null : $(`<button class="btn btn-default btn-sm ui-tab-side__btn-tab mb-2 br-0 btr-0 bbr-0 text-left ve-flex-v-center" title="${tabMeta.name.qq()}"><div class="${tabMeta.icon} ui-tab-side__icon-tab mr-2 mobile-ish__mr-0 ve-text-center"></div><div class="mobile-ish__hidden">${tabMeta.name.qq()}</div></button>`)
 				.click(() => this[_propProxy][propActive] = ixTab);
 		};
 
@@ -3067,7 +3069,7 @@ class InputUiUtil {
 		comp.render = function ($parent) {
 			$parent.empty();
 
-			const $iptNum = ComponentUiUtil.$getIptInt(this, "num", 0, {$ele: $(`<input class="form-control input-xs form-control--minimal text-center mr-1">`)})
+			const $iptNum = ComponentUiUtil.$getIptInt(this, "num", 0, {$ele: $(`<input class="form-control input-xs form-control--minimal ve-text-center mr-1">`)})
 				.appendTo($parent)
 				.keydown(evt => {
 					if (evt.key === "Escape") { $iptNum.blur(); return; }
@@ -3076,9 +3078,9 @@ class InputUiUtil {
 					evt.stopPropagation();
 				});
 			const $selFaces = ComponentUiUtil.$getSelEnum(this, "faces", {values: Renderer.dice.DICE})
-				.addClass("mr-2").addClass("text-center").css("textAlignLast", "center");
+				.addClass("mr-2").addClass("ve-text-center").css("textAlignLast", "center");
 
-			const $iptBonus = $(`<input class="form-control input-xs form-control--minimal text-center">`)
+			const $iptBonus = $(`<input class="form-control input-xs form-control--minimal ve-text-center">`)
 				.change(() => this._state.bonus = UiUtil.strToInt($iptBonus.val(), null, {fallbackOnNaN: null}))
 				.keydown(evt => {
 					if (evt.key === "Escape") { $iptBonus.blur(); return; }
@@ -3292,7 +3294,7 @@ class SourceUiUtil {
 		const $iptName = $(`<input class="form-control ui-source__ipt-named">`)
 			.keydown(evt => { if (evt.key === "Escape") $iptName.blur(); })
 			.change(() => {
-				if (!jsonDirty && !isEditMode) $iptJson.val($iptName.val().replace(/[^-_a-zA-Z]/g, ""));
+				if (!jsonDirty && !isEditMode) $iptJson.val($iptName.val().replace(/[^-0-9a-zA-Z]/g, ""));
 				$iptName.removeClass("form-control--error");
 			});
 		if (options.source) $iptName.val(options.source.full);
@@ -3367,7 +3369,7 @@ class SourceUiUtil {
 			});
 
 		const $stageInitial = $$`<div class="h-100 w-100 ve-flex-vh-center"><div class="ve-flex-col">
-			<h3 class="text-center">${isEditMode ? "Edit Homebrew Source" : "Add a Homebrew Source"}</h3>
+			<h3 class="ve-text-center">${isEditMode ? "Edit Homebrew Source" : "Add a Homebrew Source"}</h3>
 			<div class="ui-source__row mb-2"><div class="col-12 ve-flex-v-center">
 				<span class="mr-2 ui-source__name help" title="The name or title for the homebrew you wish to create. This could be the name of a book or PDF; for example, 'Monster Manual'">Title</span>
 				${$iptName}
@@ -3396,7 +3398,7 @@ class SourceUiUtil {
 				<span class="mr-2 ui-source__name help" title="A comma-separated list of people who converted the homebrew to 5etools' format, e.g. 'John Doe, Joe Bloggs'">Converted By</span>
 				${$iptConverters}
 			</div></div>
-			<div class="text-center mb-2">${$btnOk}${$btnCancel}</div>
+			<div class="ve-text-center mb-2">${$btnOk}${$btnCancel}</div>
 
 			${!isEditMode && BrewUtil2.getMetaLookup("sources")?.length ? $$`<div class="ve-flex-vh-center mb-3 mt-3"><span class="ui-source__divider"></span>or<span class="ui-source__divider"></span></div>
 			<div class="ve-flex-vh-center">${$btnUseExisting}</div>` : ""}
@@ -3433,7 +3435,7 @@ class SourceUiUtil {
 			});
 
 		const $stageExisting = $$`<div class="h-100 w-100 ve-flex-vh-center ve-hidden"><div>
-			<h3 class="text-center">Select a Homebrew Source</h3>
+			<h3 class="ve-text-center">Select a Homebrew Source</h3>
 			<div class="mb-2"><div class="col-12 ve-flex-vh-center">${$selExisting}</div></div>
 			<div class="col-12 ve-flex-vh-center">${$btnBackExisting}${$btnConfirmExisting}</div>
 		</div></div>`.appendTo(options.$parent);
@@ -3549,10 +3551,20 @@ function MixinBaseComponent (Cls) {
 			opts = opts || {};
 
 			const rendered = this._getRenderedCollection(opts);
+			const entities = this._state[opts.prop] || [];
+			return this._renderCollection_doRender(rendered, entities, opts);
+		}
+
+		_renderCollection_doRender (rendered, entities, opts) {
+			opts = opts || {};
+
 			const toDelete = new Set(Object.keys(rendered));
 
-			(this._state[opts.prop] || []).forEach((it, i) => {
+			for (let i = 0; i < entities.length; ++i) {
+				const it = entities[i];
+
 				if (it.id == null) throw new Error(`Collection item did not have an ID!`);
+				// N.B.: Meta can be an array, if one item maps to multiple renders (e.g. the same is shown in two places)
 				const meta = rendered[it.id];
 
 				toDelete.delete(it.id);
@@ -3560,9 +3572,8 @@ function MixinBaseComponent (Cls) {
 					if (opts.isDiffMode) {
 						// Hashing the stringified JSON relies on the property order remaining consistent, but this is fine
 						const nxtHash = CryptUtil.md5(JSON.stringify(it));
-						if (nxtHash !== meta.__hash) {
-							meta.__hash = nxtHash;
-						} else return;
+						if (nxtHash !== meta.__hash) meta.__hash = nxtHash;
+						else continue;
 					}
 
 					meta.data = it; // update any existing pointers
@@ -3571,27 +3582,31 @@ function MixinBaseComponent (Cls) {
 					const meta = opts.fnGetNew(it, i);
 
 					// If the "get new" function returns null, skip rendering this entity
-					if (meta == null) return;
+					if (meta == null) continue;
 
-					meta.data = it;
-					if (!meta.$wrpRow && !meta.fmRemoveEles) throw new Error(`A "$wrpRow" or a "fmRemoveEles" property is required for deletes!`);
+					meta.data = it; // update any existing pointers
+					if (!meta.$wrpRow && !meta.fnRemoveEles) throw new Error(`A "$wrpRow" or a "fnRemoveEles" property is required for deletes!`);
 
-					if (opts.isDiffMode) meta.hash = CryptUtil.md5(JSON.stringify(it));
+					if (opts.isDiffMode) meta.__hash = CryptUtil.md5(JSON.stringify(it));
 
 					rendered[it.id] = meta;
 				}
-			});
+			}
+
+			const doRemoveElements = meta => {
+				if (meta.$wrpRow) meta.$wrpRow.remove();
+				if (meta.fnRemoveEles) meta.fnRemoveEles();
+			};
 
 			toDelete.forEach(id => {
 				const meta = rendered[id];
-				if (meta.$wrpRow) meta.$wrpRow.remove();
-				if (meta.fmRemoveEles) meta.fmRemoveEles();
+				doRemoveElements(meta);
 				delete rendered[id];
 				if (opts.fnDeleteExisting) opts.fnDeleteExisting(meta);
 			});
 
 			if (opts.fnReorderExisting) {
-				(this._state[opts.prop] || []).forEach((it, i) => {
+				entities.forEach((it, i) => {
 					const meta = rendered[it.id];
 					opts.fnReorderExisting(meta, it, i);
 				});
@@ -3616,7 +3631,7 @@ function MixinBaseComponent (Cls) {
 			opts = opts || {};
 
 			const rendered = this._getRenderedCollection(opts);
-			const entities = this._state[opts.prop];
+			const entities = this._state[opts.prop] || [];
 			return this._pRenderCollection_doRender(rendered, entities, opts);
 		}
 
@@ -3648,11 +3663,12 @@ function MixinBaseComponent (Cls) {
 					if (opts.isMultiRender) rendered[it.id] = nxtMeta;
 				} else {
 					const meta = await opts.pFnGetNew(it);
-					// If the generator decides there's nothing to render, skip this item
+
+					// If the "get new" function returns null, skip rendering this entity
 					if (meta == null) continue;
 
-					if (opts.isMultiRender && meta.some(it => !it.$wrpRow && !it.fmRemoveEles)) throw new Error(`A "$wrpRow" or a "fmRemoveEles" property is required for deletes!`);
-					if (!opts.isMultiRender && !meta.$wrpRow && !meta.fmRemoveEles) throw new Error(`A "$wrpRow" or a "fmRemoveEles" property is required for deletes!`);
+					if (!opts.isMultiRender && !meta.$wrpRow && !meta.fnRemoveEles) throw new Error(`A "$wrpRow" or a "fnRemoveEles" property is required for deletes!`);
+					if (opts.isMultiRender && meta.some(it => !it.$wrpRow && !it.fnRemoveEles)) throw new Error(`A "$wrpRow" or a "fnRemoveEles" property is required for deletes!`);
 
 					if (opts.isDiffMode) meta.__hash = CryptUtil.md5(JSON.stringify(it));
 
@@ -3660,18 +3676,25 @@ function MixinBaseComponent (Cls) {
 				}
 			}
 
-			const doRemoveELements = meta => {
+			const doRemoveElements = meta => {
 				if (meta.$wrpRow) meta.$wrpRow.remove();
-				if (meta.fmRemoveEles) meta.fmRemoveEles();
+				if (meta.fnRemoveEles) meta.fnRemoveEles();
 			};
 
 			for (const id of toDelete) {
 				const meta = rendered[id];
-				if (opts.isMultiRender) meta.forEach(it => doRemoveELements(it));
-				else doRemoveELements(meta);
+				if (opts.isMultiRender) meta.forEach(it => doRemoveElements(it));
+				else doRemoveElements(meta);
 				if (opts.additionalCaches) opts.additionalCaches.forEach(it => delete it[id]);
 				delete rendered[id];
 				if (opts.pFnDeleteExisting) await opts.pFnDeleteExisting(meta);
+			}
+
+			if (opts.pFnReorderExisting) {
+				await entities.pSerialAwaitMap(async (it, i) => {
+					const meta = rendered[it.id];
+					await opts.pFnReorderExisting(meta, it, i);
+				});
 			}
 		}
 
@@ -3777,6 +3800,7 @@ class BaseComponent extends MixinBaseComponent(ProxyBase) {}
 
 globalThis.BaseComponent = BaseComponent;
 
+/** @abstract */
 class RenderableCollectionBase {
 	/**
 	 * @param comp
@@ -3793,10 +3817,12 @@ class RenderableCollectionBase {
 		this._isDiffMode = opts.isDiffMode;
 	}
 
+	/** @abstract */
 	getNewRender (entity, i) {
 		throw new Error(`Unimplemented!`);
 	}
 
+	/** @abstract */
 	doUpdateExistingRender (renderedMeta, entity, i) {
 		throw new Error(`Unimplemented!`);
 	}
@@ -3831,18 +3857,29 @@ class RenderableCollectionBase {
 	}
 }
 
-class RenderableCollectionGenericRows extends RenderableCollectionBase {
-	/**
-	 * @param comp
-	 * @param prop
-	 * @param $wrpRows
-	 * @param [opts]
-	 * @param [opts.namespace]
-	 * @param [opts.isDiffMode]
-	 */
-	constructor (comp, prop, $wrpRows, opts) {
-		super(comp, prop, opts);
+globalThis.RenderableCollectionBase = RenderableCollectionBase;
+
+class _RenderableCollectionGenericRowsSyncAsyncUtils {
+	constructor ({comp, prop, $wrpRows, namespace}) {
+		this._comp = comp;
+		this._prop = prop;
 		this._$wrpRows = $wrpRows;
+		this._namespace = namespace;
+	}
+
+	/* -------------------------------------------- */
+
+	_getCollectionItem (id) {
+		return this._comp._state[this._prop].find(it => it.id === id);
+	}
+
+	getNewRenderComp (entity, i) {
+		const comp = BaseComponent.fromObject(entity.entity, "*");
+		comp._addHookAll("state", () => {
+			this._getCollectionItem(entity.id).entity = comp.toObject("*");
+			this._comp._triggerCollectionUpdate(this._prop);
+		});
+		return comp;
 	}
 
 	doUpdateExistingRender (renderedMeta, entity, i) {
@@ -3850,53 +3887,44 @@ class RenderableCollectionGenericRows extends RenderableCollectionBase {
 		if (!renderedMeta.$wrpRow.parent().is(this._$wrpRows)) renderedMeta.$wrpRow.appendTo(this._$wrpRows);
 	}
 
+	static _doSwapJqueryElements ($eles, ixA, ixB) {
+		if (ixA > ixB) [ixA, ixB] = [ixB, ixA];
+
+		const eleA = $eles.get(ixA);
+		const eleB = $eles.get(ixB);
+		$(eleA).insertAfter(eleB);
+		$(eleB).insertBefore($eles.get(ixA + 1));
+	}
+
 	doReorderExistingComponent (renderedMeta, entity, i) {
 		const ix = this._comp._state[this._prop].map(it => it.id).indexOf(entity.id);
-		const curIx = this._$wrpRows.find(`> *`).index(renderedMeta.$wrpRow);
+		const $rows = this._$wrpRows.find(`> *`);
+		const curIx = $rows.index(renderedMeta.$wrpRow);
 
 		const isMove = !this._$wrpRows.length || curIx !== ix;
-		if (isMove) renderedMeta.$wrpRow.detach().appendTo(this._$wrpRows);
+		if (!isMove) return;
+
+		this.constructor._doSwapJqueryElements($rows, curIx, ix);
 	}
 
-	getNewRender (entity, i) {
-		const comp = BaseComponent.fromObject(entity.entity, "*");
-		comp._addHookAll("state", () => {
-			this._getCollectionItem(entity.id).entity = comp.toObject("*");
-			this._comp._triggerCollectionUpdate(this._prop);
-		});
+	/* -------------------------------------------- */
 
-		const $wrpRow = this._$getWrpRow()
-			.appendTo(this._$wrpRows);
-
-		this._populateRow({comp, $wrpRow, entity});
-
-		return {
-			comp,
-			$wrpRow,
-		};
-	}
-
-	_$getWrpRow () {
-		return $(`<div class="ve-flex-v-center w-100"></div>`);
-	}
-
-	/**
-	 * @return void
-	 */
-	_populateRow ({comp, $wrpRow, entity}) {
-		throw new Error(`Unimplemented!`);
-	}
-
-	_$getBtnDelete ({entity}) {
+	$getBtnDelete ({entity}) {
 		return $(`<button class="btn btn-xxs btn-danger" title="Delete"><span class="glyphicon glyphicon-trash"></span></button>`)
-			.click(() => this._doDelete({entity}));
+			.click(() => this.doDelete({entity}));
 	}
 
-	_doDelete ({entity}) {
+	doDelete ({entity}) {
 		this._comp._state[this._prop] = this._comp._state[this._prop].filter(it => it !== entity);
 	}
 
-	_$getPadDrag ({$wrpRow}) {
+	doDeleteMultiple ({entities}) {
+		this._comp._state[this._prop] = this._comp._state[this._prop].filter(it => !entities.includes(it));
+	}
+
+	/* -------------------------------------------- */
+
+	$getPadDrag ({$wrpRow}) {
 		return DragReorderUiUtil.$getDragPadOpts(
 			() => $wrpRow,
 			{
@@ -3915,8 +3943,66 @@ class RenderableCollectionGenericRows extends RenderableCollectionBase {
 	}
 }
 
+class RenderableCollectionGenericRows extends RenderableCollectionBase {
+	/**
+	 * @param comp
+	 * @param prop
+	 * @param $wrpRows
+	 * @param [opts]
+	 * @param [opts.namespace]
+	 * @param [opts.isDiffMode]
+	 */
+	constructor (comp, prop, $wrpRows, opts) {
+		super(comp, prop, opts);
+		this._$wrpRows = $wrpRows;
+
+		this._utils = new _RenderableCollectionGenericRowsSyncAsyncUtils({
+			comp,
+			prop,
+			$wrpRows,
+			namespace: opts?.namespace,
+		});
+	}
+
+	doUpdateExistingRender (renderedMeta, entity, i) {
+		return this._utils.doUpdateExistingRender(renderedMeta, entity, i);
+	}
+
+	doReorderExistingComponent (renderedMeta, entity, i) {
+		return this._utils.doReorderExistingComponent(renderedMeta, entity, i);
+	}
+
+	getNewRender (entity, i) {
+		const comp = this._utils.getNewRenderComp(entity, i);
+
+		const $wrpRow = this._$getWrpRow()
+			.appendTo(this._$wrpRows);
+
+		const renderAdditional = this._populateRow({comp, $wrpRow, entity});
+
+		return {
+			...(renderAdditional || {}),
+			id: entity.id,
+			comp,
+			$wrpRow,
+		};
+	}
+
+	_$getWrpRow () {
+		return $(`<div class="ve-flex-v-center w-100"></div>`);
+	}
+
+	/**
+	 * @return {?object}
+	 */
+	_populateRow ({comp, $wrpRow, entity}) {
+		throw new Error(`Unimplemented!`);
+	}
+}
+
 globalThis.RenderableCollectionGenericRows = RenderableCollectionGenericRows;
 
+/** @abstract */
 class RenderableCollectionAsyncBase {
 	/**
 	 * @param comp
@@ -3937,29 +4023,100 @@ class RenderableCollectionAsyncBase {
 		this._additionalCaches = opts.additionalCaches;
 	}
 
-	pGetNewRender (entity, i) {
+	/** @abstract */
+	async pGetNewRender (entity, i) {
 		throw new Error(`Unimplemented!`);
 	}
 
-	pDoUpdateExistingRender (renderedMeta, entity, i) {
+	/** @abstract */
+	async pDoUpdateExistingRender (renderedMeta, entity, i) {
 		throw new Error(`Unimplemented!`);
+	}
+
+	async pDoDeleteExistingRender (renderedMeta) {
+		// No-op
+	}
+
+	async pDoReorderExistingComponent (renderedMeta, entity, i) {
+		// No-op
 	}
 
 	/**
 	 * @param [opts] Temporary override options.
 	 * @param [opts.isDiffMode]
 	 */
-	render (opts) {
+	async pRender (opts) {
 		opts = opts || {};
-		this._comp._pRenderCollection({
+		return this._comp._pRenderCollection({
 			prop: this._prop,
-			fnUpdateExisting: (rendered, source, i) => this.pDoUpdateExistingRender(rendered, source, i),
-			fnGetNew: (entity, i) => this.pGetNewRender(entity, i),
+			pFnUpdateExisting: (rendered, source, i) => this.pDoUpdateExistingRender(rendered, source, i),
+			pFnGetNew: (entity, i) => this.pGetNewRender(entity, i),
+			pFnDeleteExisting: (rendered) => this.pDoDeleteExistingRender(rendered),
+			pFnReorderExisting: (rendered, ent, i) => this.pDoReorderExistingComponent(rendered, ent, i),
 			namespace: this._namespace,
 			isDiffMode: opts.isDiffMode != null ? opts.isDiffMode : this._isDiffMode,
 			isMultiRender: this._isMultiRender,
 			additionalCaches: this._additionalCaches,
 		});
+	}
+}
+
+globalThis.RenderableCollectionAsyncBase = RenderableCollectionAsyncBase;
+
+class RenderableCollectionAsyncGenericRows extends RenderableCollectionAsyncBase {
+	/**
+	 * @param comp
+	 * @param prop
+	 * @param $wrpRows
+	 * @param [opts]
+	 * @param [opts.namespace]
+	 * @param [opts.isDiffMode]
+	 */
+	constructor (comp, prop, $wrpRows, opts) {
+		super(comp, prop, opts);
+		this._$wrpRows = $wrpRows;
+
+		this._utils = new _RenderableCollectionGenericRowsSyncAsyncUtils({
+			comp,
+			prop,
+			$wrpRows,
+			namespace: opts?.namespace,
+		});
+	}
+
+	pDoUpdateExistingRender (renderedMeta, entity, i) {
+		return this._utils.doUpdateExistingRender(renderedMeta, entity, i);
+	}
+
+	pDoReorderExistingComponent (renderedMeta, entity, i) {
+		return this._utils.doReorderExistingComponent(renderedMeta, entity, i);
+	}
+
+	async pGetNewRender (entity, i) {
+		const comp = this._utils.getNewRenderComp(entity, i);
+
+		const $wrpRow = this._$getWrpRow()
+			.appendTo(this._$wrpRows);
+
+		const renderAdditional = await this._pPopulateRow({comp, $wrpRow, entity});
+
+		return {
+			...(renderAdditional || {}),
+			id: entity.id,
+			comp,
+			$wrpRow,
+		};
+	}
+
+	_$getWrpRow () {
+		return $(`<div class="ve-flex-v-center w-100"></div>`);
+	}
+
+	/**
+	 * @return {?object}
+	 */
+	async _pPopulateRow ({comp, $wrpRow, entity}) {
+		throw new Error(`Unimplemented!`);
 	}
 }
 
@@ -4268,7 +4425,7 @@ class ComponentUiUtil {
 	 * @param [opts.hookTracker] Object in which to track hook.
 	 * @param [opts.decorationLeft] Decoration to be added to the left-hand-side of the input. Can be `"ticker"` or `"clear"`. REQUIRES `asMeta` TO BE SET.
 	 * @param [opts.decorationRight] Decoration to be added to the right-hand-side of the input. Can be `"ticker"` or `"clear"`. REQUIRES `asMeta` TO BE SET.
-	 * @return {JQuery}
+	 * @return {jQuery}
 	 */
 	static $getIptInt (component, prop, fallbackEmpty = 0, opts) {
 		return ComponentUiUtil._$getIptNumeric(component, prop, UiUtil.strToInt, fallbackEmpty, opts);
@@ -4290,7 +4447,7 @@ class ComponentUiUtil {
 	 * @param [opts.asMeta] If a meta-object should be returned containing the hook and the checkbox.
 	 * @param [opts.decorationLeft] Decoration to be added to the left-hand-side of the input. Can be `"ticker"` or `"clear"`. REQUIRES `asMeta` TO BE SET.
 	 * @param [opts.decorationRight] Decoration to be added to the right-hand-side of the input. Can be `"ticker"` or `"clear"`. REQUIRES `asMeta` TO BE SET.
-	 * @return {JQuery}
+	 * @return {jQuery}
 	 */
 	static $getIptNumber (component, prop, fallbackEmpty = 0, opts) {
 		return ComponentUiUtil._$getIptNumeric(component, prop, UiUtil.strToNumber, fallbackEmpty, opts);
@@ -4494,12 +4651,13 @@ class ComponentUiUtil {
 	 * @param prop Component to hook on.
 	 * @param [opts] Options Object.
 	 * @param [opts.$ele] Element to use.
-	 * @return {JQuery}
+	 * @param [opts.html] HTML to convert to element to use.
+	 * @return {jQuery}
 	 */
 	static $getIptColor (component, prop, opts) {
 		opts = opts || {};
 
-		const $ipt = (opts.$ele || $(`<input class="form-control input-xs form-control--minimal ui__ipt-color" type="color">`))
+		const $ipt = (opts.$ele || $(opts.html || `<input class="form-control input-xs form-control--minimal ui__ipt-color" type="color">`))
 			.change(() => component._state[prop] = $ipt.val());
 		const hook = () => $ipt.val(component._state[prop]);
 		component._addHookBase(prop, hook);
@@ -4572,7 +4730,7 @@ class ComponentUiUtil {
 	 * @param [opts.title]
 	 * @param [opts.activeTitle] Title to use when setting the button as "active."
 	 * @param [opts.inactiveTitle] Title to use when setting the button as "active."
-	 * @return {JQuery}
+	 * @return {jQuery}
 	 */
 	static $getBtnBool (component, prop, opts) {
 		const nxtOpts = {...opts};
@@ -4589,10 +4747,11 @@ class ComponentUiUtil {
 	 * @param [opts] Options Object.
 	 * @param [opts.$ele] Element to use.
 	 * @param [opts.asMeta] If a meta-object should be returned containing the hook and the input.
-	 * @param [opts.displayNullAsIndeterminate]
+	 * @param [opts.isDisplayNullAsIndeterminate]
+	 * @param [opts.isTreatIndeterminateNullAsPositive]
 	 * @param [opts.stateName] State name.
 	 * @param [opts.stateProp] State prop.
-	 * @return {JQuery}
+	 * @return {jQuery}
 	 */
 	static $getCbBool (component, prop, opts) {
 		opts = opts || {};
@@ -4607,13 +4766,18 @@ class ComponentUiUtil {
 				if (evt.key === "Escape") cb.blur();
 			},
 			change: () => {
+				if (opts.isTreatIndeterminateNullAsPositive && component[stateProp][prop] == null) {
+					component[stateProp][prop] = false;
+					return;
+				}
+
 				component[stateProp][prop] = cb.checked;
 			},
 		});
 
 		const hook = () => {
 			cb.checked = !!component[stateProp][prop];
-			if (opts.displayNullAsIndeterminate) cb.indeterminate = component[stateProp][prop] == null;
+			if (opts.isDisplayNullAsIndeterminate) cb.indeterminate = component[stateProp][prop] == null;
 		};
 		component._addHook(stateName, prop, hook);
 		hook();
@@ -4638,7 +4802,7 @@ class ComponentUiUtil {
 	 * @param [opts.fnGetAdditionalStyleClasses] Function which converts an item into CSS classes.
 	 * @param [opts.asMeta] If a meta-object should be returned containing the hook and the select.
 	 * @param [opts.isDisabled] If the selector should be display-only
-	 * @return {JQuery}
+	 * @return {jQuery}
 	 */
 	static $getSelSearchable (comp, prop, opts) {
 		opts = opts || {};
@@ -4970,7 +5134,7 @@ class ComponentUiUtil {
 			Object.entries(this._state).forEach(([k, v]) => {
 				if (v === false) return;
 
-				const $btnRemove = $(`<button class="btn btn-danger ui-pick__btn-remove text-center">×</button>`)
+				const $btnRemove = $(`<button class="btn btn-danger ui-pick__btn-remove ve-text-center">×</button>`)
 					.click(() => this._state[k] = false);
 				const txt = `${opts.fnDisplay ? opts.fnDisplay(k) : k}`;
 				$$`<div class="ve-flex mx-1 mb-1 ui-pick__disp-pill max-w-100 min-w-0"><div class="px-1 ui-pick__disp-text ve-flex-v-center text-clip-ellipsis" title="${txt.qq()}">${txt}</div>${$btnRemove}</div>`.appendTo($parent);
@@ -5000,7 +5164,7 @@ class ComponentUiUtil {
 	 * @param [opts.isDisallowNull] True if null is not an allowed value.
 	 * @param [opts.asMeta] If a meta-object should be returned containing the hook and the wrapper.
 	 * @param [opts.isIndent] If the checkboxes should be indented.
-	 * @return {JQuery}
+	 * @return {jQuery}
 	 */
 	static $getCbsEnum (component, prop, opts) {
 		opts = opts || {};
@@ -5793,4 +5957,3 @@ globalThis.DragReorderUiUtil = DragReorderUiUtil;
 globalThis.SourceUiUtil = SourceUiUtil;
 globalThis.BaseComponent = BaseComponent;
 globalThis.ComponentUiUtil = ComponentUiUtil;
-globalThis.RenderableCollectionBase = RenderableCollectionBase;

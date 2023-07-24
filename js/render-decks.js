@@ -210,7 +210,7 @@ class RenderDecks {
 
 		const ptText = RenderDecks.getCardTextHtml({card});
 
-		const $wrpInfo = $$`<div class="stats stats--book decks-draw__wrp-desc mobile__hidden px-2 text-center mb-4">${ptText}</div>`
+		const $wrpInfo = $$`<div class="stats stats--book decks-draw__wrp-desc mobile__hidden px-2 ve-text-center mb-4">${ptText}</div>`
 			.click(evt => evt.stopPropagation());
 
 		const $btnFlip = imgBack

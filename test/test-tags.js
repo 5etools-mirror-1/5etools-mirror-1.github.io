@@ -517,7 +517,7 @@ class StripTagTest extends DataTesterBase {
 	}
 
 	static _checkString (str, {filePath}) {
-		if (filePath === "./data/bestiary/traits.json") return;
+		if (filePath === "./data/bestiary/template.json") return;
 
 		try {
 			Renderer.stripTags(str);

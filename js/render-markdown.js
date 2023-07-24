@@ -257,7 +257,7 @@ class RendererMarkdown {
 			styles.forEach((style, i) => {
 				const w = widths[i];
 
-				if (style.includes("text-center")) mdStyles.push(`:${"-".repeat(Math.max(w - 2, 3))}:`);
+				if (style.includes("ve-text-center")) mdStyles.push(`:${"-".repeat(Math.max(w - 2, 3))}:`);
 				else if (style.includes("text-right")) mdStyles.push(`${"-".repeat(Math.max(w - 1, 3))}:`);
 				else mdStyles.push("-".repeat(Math.max(w, 3)));
 			});
@@ -302,7 +302,7 @@ class RendererMarkdown {
 	static _md_getPaddedTableText ({text, width, ixCell, styles}) {
 		if (text.length >= width) return text;
 
-		if (styles?.[ixCell]?.includes("text-center")) return text.padStart(Math.floor((width - text.length) / 2) + text.length, " ").padEnd(width, " ");
+		if (styles?.[ixCell]?.includes("ve-text-center")) return text.padStart(Math.floor((width - text.length) / 2) + text.length, " ").padEnd(width, " ");
 		if (styles?.[ixCell]?.includes("text-right")) return text.padStart(width, " ");
 		return text.padEnd(width, " ");
 	}
@@ -1773,7 +1773,7 @@ class MarkdownConverter {
 				if (cells.every(c => !c || !!/^:?\s*---+\s*:?$/.exec(c))) { // a header break
 					alignment = cells.map(c => {
 						if (c.startsWith(":") && c.endsWith(":")) {
-							return "text-center";
+							return "ve-text-center";
 						} else if (c.startsWith(":")) {
 							return "text-align-left";
 						} else if (c.endsWith(":")) {
@@ -1904,13 +1904,13 @@ class MarkdownConverter {
 			assignColWidths(isAllBelowCap ? maxWidths : avgWidths);
 		})();
 
-		if (isDiceCol0 && !tbl.colStyles.includes("text-center")) tbl.colStyles[0] += " text-center";
+		if (isDiceCol0 && !tbl.colStyles.includes("ve-text-center")) tbl.colStyles[0] += " ve-text-center";
 
 		(function doCheckNumericCols () {
 			if (isDiceCol0 && tbl.colStyles.length === 2) return; // don't apply this step for generic rollable tables
 
 			tbl.colStyles.forEach((col, i) => {
-				if (col.includes("text-center") || col.includes("text-right")) return;
+				if (col.includes("ve-text-center") || col.includes("text-right")) return;
 
 				const counts = {number: 0, text: 0};
 
@@ -1926,7 +1926,7 @@ class MarkdownConverter {
 				// If most of the cells in this column contain number data, right-align
 				// Unless it's the first column, in which case, center-align
 				if ((counts.number / tbl.rows.length) >= 0.80) {
-					if (i === 0) tbl.colStyles[i] += ` text-center`;
+					if (i === 0) tbl.colStyles[i] += ` ve-text-center`;
 					else tbl.colStyles[i] += ` text-right`;
 				}
 			});
@@ -1942,7 +1942,7 @@ class MarkdownConverter {
 				const col = tbl.colStyles[i];
 
 				// If we're the first column and other columns are not center-aligned, don't center
-				if (i === 0 && tbl.colStyles.length > 1 && tbl.colStyles.filter((_, i) => i !== 0).some(it => !it.includes("text-center"))) continue;
+				if (i === 0 && tbl.colStyles.length > 1 && tbl.colStyles.filter((_, i) => i !== 0).some(it => !it.includes("ve-text-center"))) continue;
 
 				const counts = {short: 0, long: 0};
 
@@ -1956,8 +1956,8 @@ class MarkdownConverter {
 				// If most of the cells in this column contain short text, center-align
 				if ((counts.short / tbl.rows.length) >= 0.80) {
 					if (i === 1) isFewWordsCol1 = true;
-					if (col.includes("text-center") || col.includes("text-right")) continue;
-					tbl.colStyles[i] += ` text-center`;
+					if (col.includes("ve-text-center") || col.includes("text-right")) continue;
+					tbl.colStyles[i] += ` ve-text-center`;
 				}
 			}
 		})();
@@ -1967,7 +1967,7 @@ class MarkdownConverter {
 		(function doEvenCenteredColumns () {
 			if (!isDiceCol0) return;
 			if (tbl.colStyles.length === 2 && isFewWordsCol1) {
-				tbl.colStyles = ["col-6 text-center", "col-6 text-center"];
+				tbl.colStyles = ["col-6 ve-text-center", "col-6 ve-text-center"];
 			}
 		})();
 

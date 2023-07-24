@@ -12,6 +12,7 @@ $rgb-inset-border: #656565;
 	--sz-font-h2: 1.35em;
 
 	--h-mb-p: 5px;
+	--h-mb-p-inline: 0;
 	--h-mb-quote-line: 5px;
 	--h-mb-quote-line-last: 5px;
 	--h-mb-li: 3px;
@@ -373,7 +374,7 @@ $rgb-inset-border: #656565;
 		&b--3 > p,
 		&b--4 > p {
 			text-indent: var(--w-text-indent-inline-p);
-			margin-bottom: 0;
+			margin-bottom: var(--h-mb-p-inline);
 
 			&:first-of-type {
 				display: inline;
@@ -506,8 +507,8 @@ $rgb-inset-border: #656565;
 			}
 
 			&-img-speaker {
-				margin-top: -20px;
-				margin-bottom: -20px;
+				margin-top: -5px;
+				margin-bottom: -5px;
 
 				&--left {
 					float: left;
