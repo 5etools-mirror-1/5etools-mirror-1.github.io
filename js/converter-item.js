@@ -387,6 +387,8 @@ class ItemParser extends BaseParser {
 		delete cpyStatsQuarterstaff.page;
 		delete cpyStatsQuarterstaff.rarity;
 		delete cpyStatsQuarterstaff.value;
+		delete cpyStatsQuarterstaff.srd;
+		delete cpyStatsQuarterstaff.basicRules;
 		// region tags found only on basic items
 		delete cpyStatsQuarterstaff.weapon;
 		delete cpyStatsQuarterstaff.dagger;

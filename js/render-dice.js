@@ -196,6 +196,9 @@ Renderer.dice = {
 
 	// region Event handling
 	async pRollerClickUseData (evt, ele) {
+		evt.stopPropagation();
+		evt.preventDefault();
+
 		const $ele = $(ele);
 		const rollData = $ele.data("packed-dice");
 		let name = $ele.data("roll-name");

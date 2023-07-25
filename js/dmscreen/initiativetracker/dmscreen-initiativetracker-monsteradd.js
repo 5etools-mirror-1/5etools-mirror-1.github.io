@@ -298,7 +298,7 @@ export class InitiativeTrackerMonsterAdd extends BaseComponent {
 
 				results.forEach(res => {
 					const $row = this._render_$getSearchRow({rdState, res}).appendTo($results);
-					SearchWidget.bindRowHandlers({result: res, $row, $ptrRows, fnHandleClick: this._render_pHandleClickRow.bind({rdState}), $iptSearch});
+					SearchWidget.bindRowHandlers({result: res, $row, $ptrRows, fnHandleClick: this._render_pHandleClickRow.bind(this, {rdState}), $iptSearch});
 					$ptrRows._.push($row);
 				});
 
