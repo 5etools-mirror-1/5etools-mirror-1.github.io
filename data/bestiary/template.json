@@ -1192,6 +1192,32 @@
 			}
 		},
 		{
+			"name": "Hill Dwarf",
+			"source": "PHB",
+			"_copy": {
+				"name": "Mountain Dwarf",
+				"source": "PHB",
+				"_mod": {
+					"*": {
+						"mode": "setProp",
+						"prop": "apply._root.type",
+						"value": {
+							"type": "humanoid",
+							"tags": [
+								{
+									"tag": "dwarf",
+									"prefix": "Hill"
+								}
+							]
+						}
+					}
+				},
+				"_preserve": {
+					"page": true
+				}
+			}
+		},
+		{
 			"name": "Huge Half-Black Dragon",
 			"source": "MM",
 			"page": 180,
@@ -2397,58 +2423,6 @@
 			}
 		},
 		{
-			"name": "Hill Dwarf",
-			"source": "PHB",
-			"_copy": {
-				"name": "Mountain Dwarf",
-				"source": "PHB",
-				"_mod": {
-					"*": {
-						"mode": "setProp",
-						"prop": "apply._root.type",
-						"value": {
-							"type": "humanoid",
-							"tags": [
-								{
-									"tag": "dwarf",
-									"prefix": "Hill"
-								}
-							]
-						}
-					}
-				},
-				"_preserve": {
-					"page": true
-				}
-			}
-		},
-		{
-			"name": "Shield Dwarf",
-			"source": "PHB",
-			"_copy": {
-				"name": "Mountain Dwarf",
-				"source": "PHB",
-				"_mod": {
-					"*": {
-						"mode": "setProp",
-						"prop": "apply._root.type",
-						"value": {
-							"type": "humanoid",
-							"tags": [
-								{
-									"tag": "dwarf",
-									"prefix": "Shield"
-								}
-							]
-						}
-					}
-				},
-				"_preserve": {
-					"page": true
-				}
-			}
-		},
-		{
 			"name": "Orc",
 			"source": "DMG",
 			"page": 120,
@@ -2644,6 +2618,32 @@
 							}
 						]
 					}
+				}
+			}
+		},
+		{
+			"name": "Shield Dwarf",
+			"source": "PHB",
+			"_copy": {
+				"name": "Mountain Dwarf",
+				"source": "PHB",
+				"_mod": {
+					"*": {
+						"mode": "setProp",
+						"prop": "apply._root.type",
+						"value": {
+							"type": "humanoid",
+							"tags": [
+								{
+									"tag": "dwarf",
+									"prefix": "Shield"
+								}
+							]
+						}
+					}
+				},
+				"_preserve": {
+					"page": true
 				}
 			}
 		},

@@ -2,7 +2,7 @@
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 globalThis.IS_DEPLOYED = undefined;
-globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.182.1"/* 5ETOOLS_VERSION__CLOSE */;
+globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.182.2"/* 5ETOOLS_VERSION__CLOSE */;
 globalThis.DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 globalThis.DEPLOYED_IMG_ROOT = undefined;
 // for the roll20 script to set
@@ -7298,10 +7298,18 @@ if (!IS_VTT && typeof window !== "undefined") {
 
 	window.addEventListener("load", () => {
 		document.body.addEventListener("click", (evt) => {
-			if (!evt?.target.hasAttribute("data-packed-dice")) return;
+			const eleDice = evt.target.hasAttribute("data-packed-dice")
+				? evt.target
+				// Tolerate e.g. Bestiary wrapped proficiency dice rollers
+				: evt.target.parentElement.hasAttribute("data-packed-dice")
+					? evt.target.parentElement
+					: null;
+
+			if (!eleDice) return;
+
 			evt.preventDefault();
 			evt.stopImmediatePropagation();
-			Renderer.dice.pRollerClickUseData(evt, evt.target).then(null);
+			Renderer.dice.pRollerClickUseData(evt, eleDice).then(null);
 		});
 		Renderer.events.bindGeneric();
 	});

@@ -163,7 +163,7 @@ export class InitiativeTrackerRowStateBuilderActive extends _InitiativeTrackerRo
 				hpCurrent = hpMax = await this._roller.pGetOrRollHp(mon, {isRollHp: this._comp._state.isRollHp});
 			}
 
-			if (initiative == null) {
+			if (initiative == null && this._comp._state.isRollInit) {
 				initiative = await this._roller.pGetRollInitiative({mon});
 			}
 

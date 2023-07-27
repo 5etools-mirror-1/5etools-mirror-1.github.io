@@ -38,9 +38,9 @@ function getFnListSort (prop) {
 		case "spell":
 		case "monster":
 		case "monsterFluff":
+		case "monsterTemplate":
 		case "action":
 		case "background":
-		case "trait":
 		case "legendaryGroup":
 		case "language":
 		case "languageScript":

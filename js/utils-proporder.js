@@ -264,6 +264,48 @@ PropOrder._MONSTER__COPY_MOD = [
 			return it;
 		}),
 ];
+PropOrder._MONSTER_TEMPLATE = [
+	"name",
+
+	"source",
+	"page",
+
+	"ref",
+
+	new PropOrder._ObjectKey("_copy", {
+		order: [
+			"name",
+			"source",
+			"_trait",
+			new PropOrder._ObjectKey("_mod", {
+				fnGetOrder: () => PropOrder._MONSTER_TEMPLATE__COPY_MOD,
+			}),
+			"_preserve",
+		],
+	}),
+
+	"crMin",
+	"crMax",
+
+	new PropOrder._ObjectKey("prerequisite", {
+		order: PropOrder._MONSTER,
+	}),
+	new PropOrder._ObjectKey("apply", {
+		order: [
+			new PropOrder._ObjectKey("_root", {
+				order: PropOrder._MONSTER,
+			}),
+			new PropOrder._ObjectKey("_mod", {
+				fnGetOrder: () => PropOrder._MONSTER__COPY_MOD,
+			}),
+		],
+	}),
+];
+PropOrder._MONSTER_TEMPLATE__COPY_MOD = [
+	"*",
+	"_",
+	...PropOrder._MONSTER_TEMPLATE,
+];
 PropOrder._GENERIC_FLUFF = [
 	"name",
 	"source",
@@ -410,30 +452,6 @@ PropOrder._BACKGROUND__COPY_MOD = [
 	"*",
 	"_",
 	...PropOrder._BACKGROUND,
-];
-PropOrder._TRAIT = [
-	"name",
-
-	"source",
-	"page",
-
-	"ref",
-
-	"crMin",
-
-	new PropOrder._ObjectKey("prerequisite", {
-		order: PropOrder._MONSTER,
-	}),
-	new PropOrder._ObjectKey("apply", {
-		order: [
-			new PropOrder._ObjectKey("_root", {
-				order: PropOrder._MONSTER,
-			}),
-			new PropOrder._ObjectKey("_mod", {
-				fnGetOrder: () => PropOrder._MONSTER__COPY_MOD,
-			}),
-		],
-	}),
 ];
 PropOrder._LEGENDARY_GROUP = [
 	"name",
@@ -1435,6 +1453,7 @@ PropOrder._CARD = [
 PropOrder._PROP_TO_LIST = {
 	"monster": PropOrder._MONSTER,
 	"monsterFluff": PropOrder._GENERIC_FLUFF,
+	"monsterTemplate": PropOrder._MONSTER_TEMPLATE,
 	"backgroundFluff": PropOrder._GENERIC_FLUFF,
 	"featFluff": PropOrder._GENERIC_FLUFF,
 	"conditionFluff": PropOrder._GENERIC_FLUFF,
