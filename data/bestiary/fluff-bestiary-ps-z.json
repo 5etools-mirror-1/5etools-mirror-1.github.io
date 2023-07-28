@@ -1,0 +1,592 @@
+{
+	"_meta": {
+		"internalCopies": [
+			"monsterFluff"
+		]
+	},
+	"monsterFluff": [
+		{
+			"name": "Angel",
+			"source": "PSZ",
+			"entries": [
+				"The angels of Zendikar are living manifestations of white mana, and they embody its inherent tendencies toward morality and order. Peace and harmony are their goals, though they are more concerned with reestablishing the natural order of the plane than with interfering in disputes between the lowly mortal races. Angels appear similar to female humans possessing two, four, or six feathered wings. Their eyes glow with inner light, and glowing golden rings surround their heads\u2014usually positioned to cover their eyes.",
+				"Zendikar's people consider the angels to be aloof but benevolent. Their resistance to the Eldrazi broods in the ancient past is vaguely remembered in the myths of the humans, kor, and merfolk. Humans in particular venerate angels as divine protectors because of those myths.",
+				"You can represent most angels in Zendikar using the {@creature deva} in the Monster Manual. For unique or more powerful angels, you can use the {@creature planetar} or {@creature solar} instead. Perhaps {@creature Linvala|PSZ} is a {@creature planetar} and {@creature Iona|PSZ} is a {@creature solar}."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Angel.webp"
+					},
+					"title": "Angel of Renewal",
+					"credit": "Todd Lockwood"
+				}
+			]
+		},
+		{
+			"name": "Archon of Redemption",
+			"source": "PSZ",
+			"entries": [
+				"Like angels, archons are incarnations of white mana. They serve the archangels as embodiments of white mana's harsher aspects: a rigid sense of justice and a ruthless execution of punishment for those who defy the law. The appearance of the archons is deceptive: they look like hooded humans riding winged lions, but they are single creatures with just one mind and will.",
+				"An archon's game statistics are nearly identical to those of a {@creature deva}."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Archon of Redemption.webp"
+					},
+					"title": "Archon of Redemption",
+					"credit": "Steven Belledin"
+				}
+			]
+		},
+		{
+			"name": "Baloth",
+			"source": "PSZ",
+			"entries": [
+				"Baloths are perhaps the most distinctive of Zendikar's beasts. They are muscular, omnivorous hunters covered in horns, spines, and plates of various shapes. The woodcrasher baloths of the Turntimber forest are surprisingly agile, leaping from tree to tree by using their great claws to clutch each spiraling trunk. The leatherback baloths of Ora Ondar are heavier and keep to the ground, where their thick, plated hide protects them from danger. Baloth herds occasionally stampede across the Onduan plains\u2014and do so more frequently since the rise of the Eldrazi, as if sharing in Zendikar's anger. Use the {@creature triceratops} statistics for baloths, but woodcrasher baloths have a climbing speed of 30 feet in addition to their normal walking speed."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Baloth.webp"
+					},
+					"title": "Rampaging Baloths",
+					"credit": "Eric Deschamps"
+				}
+			]
+		},
+		{
+			"name": "Boulderfoot Giant",
+			"source": "PSZ",
+			"_copy": {
+				"name": "Turntimber Giant",
+				"source": "PSZ"
+			}
+		},
+		{
+			"name": "Caustic Crawler",
+			"source": "PSZ",
+			"_copy": {
+				"name": "Heartstabber Mosquito",
+				"source": "PSZ"
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Caustic Crawler.webp"
+					},
+					"title": "Caustic Crawler",
+					"credit": "Raymond Swanland"
+				}
+			]
+		},
+		{
+			"name": "Drake (Large)",
+			"source": "PSZ",
+			"entries": [
+				"Drakes are superficially similar to dragons, with reptilian bodies and large, leathery wings. They have only two legs, though. They are strongly associated with blue mana, the air, and the sea, rather than the dragons' mountains and fire. Many drakes are found in Akoum, but they typically live at higher altitudes and farther north than the dragons there.",
+				"A {@creature pteranodon} can represent a smaller drake, while a larger one is more like a {@creature giant eagle}."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Drake.webp"
+					},
+					"title": "Champion's Drake",
+					"credit": "Lars Grant-West"
+				}
+			]
+		},
+		{
+			"name": "Drake (Small)",
+			"source": "PSZ",
+			"_copy": {
+				"name": "Drake (Large)",
+				"source": "PSZ"
+			}
+		},
+		{
+			"name": "Emrakul",
+			"source": "PSZ",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Emrakul.webp"
+					},
+					"title": "Eldrazi Mimic",
+					"credit": "Craig J. Speaning"
+				}
+			]
+		},
+		{
+			"name": "Felidar",
+			"source": "PSZ",
+			"entries": [
+				"Standing fully ten feet high at the shoulder, the great cats called felidars are noble, fierce beasts charged with white mana. Felidars consent to be ridden only by knights they consider virtuous. The crystalline horns rising from a hard plate on their foreheads glow with white or golden light when they spring into battle, sometimes brightly enough to blind their foes.",
+				"In game terms, a felidar is similar to a {@creature unicorn|MM}, with changes that reflect its feline nature."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Felidar.webp"
+					},
+					"title": "Hero of Goma Fada",
+					"credit": "Willian Murai"
+				}
+			]
+		},
+		{
+			"name": "Gnarlid",
+			"source": "PSZ",
+			"entries": [
+				"Gnarlids are about the size of a large dog and resemble a cross between a bear and a wolverine. They have horns with distinctive shapes that vary by species, and some varieties have similar spikes elsewhere on their bodies. They have an innate ability to grow larger by drawing on green mana in the environment, nearly doubling in size as well as ferocity. In this enlarged state, a gnarlid can be represented with the {@creature brown bear} statistics in the Monster Manual. If some magic reduces its size, cut both its hit point maximum and its attack damage in half."
+			]
+		},
+		{
+			"name": "Gomazoa",
+			"source": "PSZ",
+			"entries": [
+				"Zendikar's seas and skies tend to blur together, and creatures typically found in the sea often find their way to the clouds, gliding through the plane's gravitational currents by consuming the mana infused in the wind. The windrider eels hunted by the kor and the cloud mantas sometimes ridden by Emeria-creed merfolk are two examples. The gomazoas found in Murasa and the Makindi Trenches are another.",
+				"Gomazoas are similar to aquatic jellyfish, but their bodies are encased in stony growths. A gomazoa drifts motionless among floating rocks or hedrons with its long, sticky tentacles dangling below. When they brush against another creature, those tentacles grab and constrict it, or might slam larger prey against a cliff face. Some species can withdraw their tentacles into their bodies, extending them only to grab their prey. Gomazoas almost never release prey once they've caught it.",
+				"A gomazoa might be represented by the {@creature roper} statistics in the {@i Monster Manual}, with a flying speed of 10 feet in place of its walking and climbing speeds."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Gomazoa.webp"
+					},
+					"title": "Guard Gomazoa",
+					"credit": "Rob Alexander"
+				}
+			]
+		},
+		{
+			"name": "Great Cat",
+			"source": "PSZ",
+			"entries": [
+				"At least two varieties of great cat (similar to the {@creature saber-toothed tiger}) sport enormous blades jutting back from the forelegs, which help them cut through heavy undergrowth and take down much larger prey."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Great Cat.webp"
+					},
+					"title": "Scythe Leopard",
+					"credit": "Winona Nelson"
+				}
+			]
+		},
+		{
+			"name": "Griffin (Type 1)",
+			"source": "PSZ",
+			"entries": [
+				"Less intelligent and less magical than {@creature felidar|PSZ|felidars}, griffins share those great cats' noble nature and alignment with the principles of white mana. Larger griffin species are about the size of horses and can be ridden. Indeed, such griffins are often the only reliable means of reaching certain remote locations, particularly in Akoum. Smaller griffins range from the size of donkeys to large dogs, and are trained to carry messages or supplies without a rider.",
+				"Zendikar's griffins are much like D&D's {@creature griffon|MM|griffons} (aside from the spelling) and {@creature hippogriff|MM|hippogriffs}."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Griffin.webp"
+					},
+					"title": "Courier Griffin",
+					"credit": "Kieran Yanner"
+				}
+			]
+		},
+		{
+			"name": "Griffin (Type 2)",
+			"source": "PSZ",
+			"_copy": {
+				"name": "Griffin (Type 1)",
+				"source": "PSZ"
+			}
+		},
+		{
+			"name": "Heartstabber Mosquito",
+			"source": "PSZ",
+			"entries": [
+				"The black mana that brews and festers in Zendikar's swamps infuses a wide variety of natural animals, creating large, deadly vermin\u2014rats, bats, insects, scorpions, and spiders that spread death and decay with their bites, stings, or caustic saliva. The swamps of Guul Draz are home to many such creatures, from the enormous heartstabber mosquitoes (best represented with {@creature stirge} statistics) to giant scorpions large enough to hold a struggling vampire in one claw. The gigantic, ant-like caustic crawlers (similar to {@creature ankheg|MM|ankhegs}) shape burrows from stone with their acidic saliva, creating strangely smooth walls easily mistaken for ancient construction. Gloomhunter bats the size of griffins have reservoirs of vaporous mana in their heads, causing their bite to tear at the spirit as well as the flesh. These and other creatures can be built from the offerings in {@book appendix A of the Monster Manual|MM|1}."
+			]
+		},
+		{
+			"name": "Hellion",
+			"source": "PSZ",
+			"entries": [
+				"Similar to wurms, hellions are enormous serpentine creatures that dwell in the lava deep beneath the surface of Akoum. When an eruption brings lava to the surface, hellions occasionally emerge as well. Thrust into what seems to them like freezing air, the hellions begin a rampage of devastation resembling an extension of the lava flow.",
+				"A hellion bears a certain resemblance to both a millipede and a crustacean. Small legs tucked close to its body help propel it through its tunnels. Six long, jointed limbs protrude from its head, allowing it to drag prey into its mouth. Its body exudes infernal heat and its movements shake the earth like a tremor.",
+				"The {@creature remorhaz} statistics in the Monster Manual work well for hellions of different sizes."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Hellion.webp"
+					},
+					"title": "Hellion Eruption",
+					"credit": "Anthony Francisco"
+				}
+			]
+		},
+		{
+			"name": "Hurda",
+			"source": "PSZ",
+			"entries": [
+				"Hurdas are huge, semi-humanoid creatures thought to be distantly related to giants. They are primarily employed as heavy labor\u2014hauling stone, shifting earth, and drawing the huge carts of the Goma Fada caravan, for example. They are essentially beasts of burden, no more intelligent than a {@creature baloth|PSZ} or {@creature terastodon|PSZ}\u2014but significantly more pliable. Murasan hurdas are more aggressive than their calmer Onduan kin, serving as protection for the caravans instead of drawing its carts.",
+				"Hurdas are bipedal, but they walk on their hugely developed arms while their tiny, vestigial legs dangle beneath them. Thick tails keep them balanced. Their massive bulk allows them to carry tremendous loads in addition to pulling carts and wagons behind them.",
+				"Use {@creature hill giant} statistics to represent hurdas, replacing the greatclub attack with an unarmed smash attack."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Hurda.webp"
+					},
+					"title": "Battle Hurda",
+					"credit": "Christopher Moeller"
+				}
+			]
+		},
+		{
+			"name": "Iona",
+			"source": "PSZ",
+			"_copy": {
+				"name": "Angel",
+				"source": "PSZ"
+			}
+		},
+		{
+			"name": "Kraken",
+			"source": "PSZ",
+			"entries": [
+				"Lurking in the deepest reaches of Zendikar's seas, krakens are mysterious monsters of unpredictable wrath and terrible destruction. Though they take the form of rampaging brutes when they appear on the surface, the truth of their existence is more complex. Krakens embody force of will and the drive for self-determination shared by all thinking beings. When their will is turned to destruction, they are capable of wreaking terrible havoc upon ships at sea or coastal settlements. But they live most of their adult lives in utter isolation in the deeps, focused on their own probing of the seas' mysteries.",
+				"A kraken has a roughly humanoid shape, with two strong arms and a broad chest. Its head is encased in a rough shell that sprouts two large horns, and one of its hands is a bony claw. It has dozens of tentacles\u2014a writhing mass below its toothy mouth, another mass at the end of one arm, and several long tentacles in place of legs. On its back is a huge conch-like shell.",
+				"Though the Monster Manual has its own version of the kraken, Zendikar's krakens are actually more similar to storm giants."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Kraken.webp"
+					},
+					"title": "Wrexial, the Risen Deep",
+					"credit": "Eric Deschamps"
+				}
+			]
+		},
+		{
+			"name": "Linvala",
+			"source": "PSZ",
+			"_copy": {
+				"name": "Angel",
+				"source": "PSZ"
+			}
+		},
+		{
+			"name": "Ogre Channeler",
+			"source": "PSZ",
+			"entries": [
+				"The ogres of Zendikar are towering brutes driven by cruelty, greed, and savage ferocity. They favor the jagged mountains of Akoum but can be found on every continent. Their size and strength help protect them from the dangers of Zendikar, so they have little need of walls or roofs\u2014which is good, since they have little skill at building. Ogre society, such as it is, revolves around leaders who gather small gangs (usually six to ten other ogres) to join them in pillaging, extorting, or slaving. The Monster Manual's {@creature ogre} statistics work fine for Zendikar ogres.",
+				"Despite their low intelligence, some more clever ogres\u2014perhaps represented as {@creature oni}\u2014master the use of certain kinds of magic. The use of red mana complements an ogre's fierce and angry tendencies, and some ogres can produce fiery spells and manipulate the volcanic forces of Akoum. Other ogres channel black mana to immerse themselves in necromancy and diabolism, accentuating their amoral nature and their willingness to enslave others for their own benefit."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Ogre Channeler.webp"
+					},
+					"title": "Ogre Sentry",
+					"credit": "Eric Deschamps"
+				}
+			]
+		},
+		{
+			"name": "Oxen",
+			"source": "PSZ",
+			"entries": [
+				"The oxen (use the {@creature giant goat} statistics) of Murasa's Pillar Plains are renowned for their stubbornness, but are still used as pack animals thanks to their tremendous strength."
+			]
+		},
+		{
+			"name": "Pestilence Demon",
+			"source": "PSZ",
+			"entries": [
+				"The dark reflections of angels, demons are the incarnation of black mana and all it represents\u2014selfish desire and lust for power. Their forms are roughly humanoid, but distorted and bestial. Their grotesque heads feature elongated ears, spiky protrusions, and large horns. (The size and number of a demon's horns are an indication of its age and power.) Spikes protrude from their backs and arms, and their hands are warped into large, sharp claws. Most demons have large, leathery wings, and a few have long tails. Their skin has an inhuman texture\u2014dry and leathery for some; stony and cold for others. Their eyes are small points of red or blue light that glow as if revealing an inner inferno.",
+				"Unlike angels, demons reject any form of society or alliance. They are utterly selfish and hoard power in many different forms, including wealth, magic, territory, and slaves. Drawn to places where black mana flows freely, they often dwell in ancient crypts or in ruins deep in swampy terrain. Their presence defiles any remaining scrap of purity or goodness in an area, and often extends the bounds of a swamp or stirs up the restless spirits of the dead.",
+				"Any {@filter demon, devil, or yugoloth in the Monster Manual|bestiary|source=mm=|tag=demon;devil;yugoloth|miscellaneous=} can stand in for a demon of Zendikar. The vile green mist surrounding a pestilence demon suggests it might have poison like a {@creature vrock}, for example."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Pestilence Demon.webp"
+					},
+					"title": "Pestilence Demon",
+					"credit": "Justin Sweet"
+				}
+			]
+		},
+		{
+			"name": "Shade",
+			"source": "PSZ",
+			"_copy": {
+				"name": "Spirit",
+				"source": "PSZ"
+			}
+		},
+		{
+			"name": "Shatterskull Giant",
+			"source": "PSZ",
+			"_copy": {
+				"name": "Turntimber Giant",
+				"source": "PSZ"
+			}
+		},
+		{
+			"name": "Shoal Serpent",
+			"source": "PSZ",
+			"entries": [
+				"The oceans, bays, and swamps of Zendikar are home to a variety of aquatic creatures that are at least as deadly as those on land, including monstrosities that can face the largest Eldrazi on almost equal footing. Given the dangers of Zendikar, even mundane animals such as octopuses, frogs, turtles, crabs, and crocodiles can grow to tremendous size (using the appropriate statistics from appendix A of the Monster Manual). The crabs of Ondu, the crocodiles of Guul Draz, the tortoises of Tazeem, and the octopuses of the deep sea (of which Lorthos the Tidemaker is but one giant specimen) are examples of these aquatic monstrosities. Enormous shoal serpents\u2014sometimes compared to \"a reef that runs aground on ships\"\u2014are a persistent danger to vessels along the Onduan coast. The {@creature plesiosaurus} in the Monster Manual can represent these serpents."
+			]
+		},
+		{
+			"name": "Sphinx (Type 1)",
+			"source": "PSZ",
+			"entries": [
+				"Utterly inscrutable, sphinxes are mysterious creatures known for their wisdom and knowledge. Closely aligned with blue mana, they are utterly devoted to gaining and possessing knowledge\u2014but not to sharing or acting upon it. Sphinxes are content to search out the mysteries of Zendikar, then sit in quiet contemplation of what they have learned. To them, everything is an intellectual exercise, including conversation. They are famously oblique, answering questions with questions and posing riddles to test the acuity of others.",
+				"Sphinxes choose remote locations for their lairs, preferring sites of great natural beauty such as waterfalls, high promontories, and small islands. They jealously protect their lairs from other sphinxes and large predators, such as dragons, but they pay little attention to smaller visitors. A sphinx's lair is often difficult to reach, and typically involves treacherous climbing for creatures without the ability to fly. A visitor who can reach the spot is often rewarded with an audience\u2014but those who come in search of answers are likely to leave disappointed.",
+				"Either sphinx in the Monster Manual can represent the various sphinxes of Zendikar."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Sphinx.webp"
+					},
+					"title": "Sphinx of the Final Word",
+					"credit": "Lius Lasahido"
+				}
+			]
+		},
+		{
+			"name": "Sphinx (Type 2)",
+			"source": "PSZ",
+			"_copy": {
+				"name": "Sphinx (Type 1)",
+				"source": "PSZ"
+			}
+		},
+		{
+			"name": "Spirit",
+			"source": "PSZ",
+			"entries": [
+				"Magic fueled by black mana can alter the natural cycle of life and death. Whether wielded by mortal wizards or demons, or simply an environmental manifestation of black mana's flow through the land, such magic can trap spirits between the realm of the living and the mysterious fate of the dead. These ghostly undead are as destructive and hateful as the magic that calls them into being. Zendikar's shades and wraiths can be represented by the {@creature shadow||shadows} and {@creature wraith||wraiths} in the Monster Manual.",
+				"Not all spirits are created with black mana, however, and not all are malevolent. The spirits of the dead sometimes linger in the world to protect their kin or communities, or to stand guard over sacred or important sites. These spirits can be dangerous, but they are not usually malicious. Both the kor and the Mul Daya elves remain in communion with the spirits of their dead kindred, entreating them for wisdom and protection. Such spirits are best described as the {@creature ghost||ghosts}} in the Monster Manual."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Spirit.webp"
+					},
+					"title": "Bog Tatters",
+					"credit": "Daarken"
+				}
+			]
+		},
+		{
+			"name": "Surrakar",
+			"source": "PSZ",
+			"entries": [
+				"The surrakar are a race of hulking amphibian humanoids native to Bala Ged. They have broad shoulders and long arms that drag on the ground when they walk. Their splayed feet and hands are webbed, and long tusks protrude from their large mouths. They have little culture and no written language, and some members of other races believe they are merely animals with no true language at all.",
+				"Surrakar are similar to D&D's {@creature lizardfolk|MM}."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Surrakar.webp"
+					},
+					"title": "Shoreline Salvager",
+					"credit": "Igor Kieryluk"
+				}
+			]
+		},
+		{
+			"name": "Terastodon",
+			"source": "PSZ",
+			"entries": [
+				"A terastodon is an enormous elephant (use the {@creature mammoth} statistics) with four tusks and armored hide. A bony plate on its head, sharply pointed on the edges, extends back to protect its neck."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Terastodon.webp"
+					},
+					"title": "Terastodon",
+					"credit": "Lars Grant-West"
+				}
+			]
+		},
+		{
+			"name": "Terra Stomper",
+			"source": "PSZ",
+			"entries": [
+				"Terra stompers are six-legged behemoths that can grow as large as the trees in the Vastwood of Tazeem. (Use the {@creature tyrannosaurus rex} statistics for these fierce beasts.)"
+			]
+		},
+		{
+			"name": "Timbermaw",
+			"source": "PSZ",
+			"entries": [
+				"Timbermaws dwell in the hollow trunks of strange floating trees, emerging with deadly speed when prey wanders near. (The {@creature grick} statistics can represent a timbermaw, adjusting its stone camouflage trait to hide it in the woodlands.)"
+			]
+		},
+		{
+			"name": "Trench Giant",
+			"source": "PSZ",
+			"_copy": {
+				"name": "Turntimber Giant",
+				"source": "PSZ"
+			}
+		},
+		{
+			"name": "Turntimber Giant",
+			"source": "PSZ",
+			"entries": [
+				"Zendikar's giants are enormous humanoids that live in tight-knit tribes as far as possible from the settlements of other races. Compared to ogres and minotaurs, they are civilized and intelligent, though they are wilder than the smaller humanoid races.",
+				"Three major groupings of giants inhabit three of Zendikar's continents. In the mountains of Akoum, the giants of the Boulderfoot tribe have a well-earned reputation for trampling their enemies underfoot (hence their name). In the Skyfang Mountains of Murasa, the giants of the Shatterskull tribe are rough brigands who often extort \"tolls\" from travelers trying to navigate the treacherous pass that shares the tribe's name. The Boulderfoot and Shatterskull giants are {@creature stone giant|MM|stone giants} in D&D terms.",
+				"In Ondu, the giants of the Turntimber tribe live in the forest of the same name. They hunt baloths and other large game, living in close harmony with the woodland. Their druids are the only giants of Zendikar that are inclined toward magic. Some legends hold that the Turntimber giants are unrelated to the other giant tribes, but were originally druids who became giants only after years of living among the twisted trees. Elsewhere on Ondu, in the Makindi Trenches, a handful of deformed giants called trench giants scale the canyon walls looking for prey. They are solitary and do not think of themselves as members of a tribe. In fact, they are outcasts of the Turntimber tribe, banished because the mana of the forest warped their bodies and their hearts. The giants of the Turntimber tribe are similar to {@creature cloud giant|MM|cloud giants}, and the trench giants can be considered {@creature fomorian|MM|fomorians}."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Turntimber Giant.webp"
+					},
+					"title": "Ondu Giant",
+					"credit": "Igor Kieryluk"
+				}
+			]
+		},
+		{
+			"name": "Ulamog",
+			"source": "PSZ",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Ulamog.webp"
+					},
+					"title": "Oracle of Dust",
+					"credit": "Jason Rainville"
+				}
+			]
+		},
+		{
+			"name": "Vampire Null",
+			"source": "PSZ",
+			"entries": [
+				"The various forms of undead ghosts are the incorporeal remnants of life and personality left after the death of a mortal body. But sometimes the reverse is true: a body retains its animation and hunger while losing any trace of its soul, becoming a zombie. When a vampire who is not a bloodchief drains the blood from a living humanoid, that creature undergoes a horrible transformation, becoming a stronger, faster version of a {@creature zombie} called a null. Nulls' heads are featureless except for a gaping mouth filled with jagged teeth. Their bodies are shriveled and distorted, but preternaturally strong. They are mindlessly loyal servants to the vampire nobility, and the number of nulls under a vampire's control is a mark of status and power among the vampire houses of Guul Draz."
+			]
+		},
+		{
+			"name": "Woodcrasher Baloth",
+			"source": "PSZ",
+			"_copy": {
+				"name": "Baloth",
+				"source": "PSZ"
+			}
+		},
+		{
+			"name": "Wraith",
+			"source": "PSZ",
+			"_copy": {
+				"name": "Spirit",
+				"source": "PSZ"
+			}
+		},
+		{
+			"name": "Wurm",
+			"source": "PSZ",
+			"entries": [
+				"The wurms of Zendikar are gigantic creatures with features akin to both snakes and insects. A wurm's serpentine body is covered in heavy bands of scales, giving it a segmented appearance. Its misshapen head is crowned with at least eight eyes, and is dominated by a ring of four or five enormous, hook-like fangs surrounding the mouth. The creature's jaws extend like a tube out from its mouth when it is ready to feed, accompanied by a horrendous carrion stench and a nauseating squelching sound.",
+				"The {@creature purple worm} in the Monster Manual is a fine representation of Zendikar's wurms."
+			]
+		},
+		{
+			"name": "Zendikar Dragon",
+			"source": "PSZ",
+			"entries": [
+				"Dragons are the ultimate representation of the chaos, ferocity, and reckless independence of red mana. They are found across Zendikar in mountainous regions where red mana is plentiful, particularly in Akoum, though never in great numbers.",
+				"A dragon is an enormous reptilian monster with thick, tough scales and leathery wings. Sharp spines or thick plates run down its back, and most dragons have large horns. A dragon's body has a vaguely feline shape, with a long neck supporting a large head, and a long, thick tail lashing behind it. Its four legs end in sharp claws that are deadly weapons, and its mouth is full of sharp teeth. Even a young dragon is larger than a powerful warhorse, and the largest are on par with some of the larger Eldrazi (though not as mighty as the towering Eldrazi titans).",
+				"The dragons of Zendikar are not particularly intelligent, especially in comparison to the genius dragon Planeswalker Nicol Bolas. They are more aware than the average beast and perhaps slightly smarter than an ogre, but dragons are still driven primarily by their instincts\u2014to hunt for prey and to guard their territories against any intruders. They are hot-tempered and ferocious, typically rending or incinerating anything they perceive as an enemy before even thinking to ask questions.",
+				"A dragon's most fearsome aspect is its ability to exhale a blast of fire from its mouth. As it draws breath, a red glow like that of molten metal forms around its mouth, and is sometimes visible in its neck and chest as well. The fire then erupts in a long stream or a broad cone, shaped by the dragon as it chooses. A dragon might strafe the ground with fire as it flies overhead, covering as much ground\u2014and incinerating as many foes\u2014as possible. A grounded dragon turns its head back and forth as it breathes, blanketing its foes in flame or creating a barrier of burning earth to cover its retreat.",
+				"The {@creature young red dragon} in the Monster Manual can represent the dragons of Zendikar, but its Intelligence score is only 8 (\u22121). This change has no effect on its other statistics."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Zendikar Dragon.webp"
+					},
+					"title": "Tyrant of Valakut",
+					"credit": "Steven Belledin"
+				}
+			]
+		},
+		{
+			"name": "Zendikar Golem",
+			"source": "PSZ",
+			"entries": [
+				"With the power of magic at their disposal, mages of the ancient past and of Zendikar's present have been able to create objects bearing the semblance of life, capable of carrying out orders and even acting independently.",
+				"In a number of ancient sites associated with the Eldrazi, stone creatures have been found standing eternal guard. Created from fragments of hedrons or carved to resemble them, these constructs were intended to help the people of Zendikar eliminate the brood lineages after the titans were imprisoned, and were implanted with a fragment of the power that bound and imprisoned the Eldrazi. They have served as useful allies in battling the Eldrazi broods, and some mages have had limited success in prying the secrets of their magic from their artificial minds. Other hedron constructs are of more recent make, fashioned in imitation of the originals. These have no power over the Eldrazi beyond what their physical strength gives them, and their creators used them for menial tasks. They are most often found in the ancient ruins of the kor or in merfolk cities. The various {@b modrons} can be used to represent these dedicated constructs.",
+				"The golems of Zendikar are effectively artificial elementals, and can be represented by {@creature stone golem|MM|stone golems}. Mages fashion bodies from special stone and infuse them with the power of movement and limited understanding. Golems are rare and powerful, especially when shaped from stone that already possesses magical power."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSZ/Hedrons.webp"
+					},
+					"title": "Hedron Crawler",
+					"credit": "Daniel Ljunggren"
+				}
+			]
+		}
+	]
+}
