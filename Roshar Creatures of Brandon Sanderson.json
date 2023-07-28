@@ -1,0 +1,723 @@
+{
+	"_meta": {
+		"sources": [
+			{
+				"json": "RosharCreaturesBrandonSanderson",
+				"abbreviation": "RCBS",
+				"full": "Roshar Creatures of Brandon Sanderson",
+				"url": "",
+				"authors": [
+					"Talondrius"
+				],
+				"convertedBy": [
+					"Talondrius"
+				]
+			}
+		]
+	},
+	"monster": [
+		{
+			"name": "Whitespine",
+			"size": [
+				"L"
+			],
+			"type": "monstrosity",
+			"source": "RosharCreaturesBrandonSanderson",
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				15
+			],
+			"hp": {
+				"formula": "15d10 + 45",
+				"average": 127
+			},
+			"speed": {
+				"walk": 40,
+				"swim": 20
+			},
+			"str": 18,
+			"dex": 12,
+			"con": 16,
+			"int": 6,
+			"wis": 10,
+			"cha": 8,
+			"passive": 13,
+			"cr": "5",
+			"save": {
+				"str": "+7",
+				"con": "+6"
+			},
+			"skill": {
+				"perception": "+3",
+				"stealth": "+4"
+			},
+			"traitTags": [
+				"Ambusher",
+				"Keen Senses",
+				"Pack Tactics"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"actionTags": [
+				"Swallow"
+			],
+			"action": [
+				{
+					"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit +5} to hit, reach 5 ft., one creature. {@h}11 ({@damage 2d6 + 4}) piercing damage."
+					]
+				},
+				{
+					"name": "Claw",
+					"entries": [
+						"{@atk mw} {@hit +5} to hit, reach 5 ft., one creature. {@h}7 ({@damage 1d6 + 4}) slashing damage."
+					]
+				}
+			],
+			"conditionInflict": [
+				"frightened",
+				"prone"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"environment": [
+				"roshar"
+			],
+			"group": [
+				"Roshar Creatures"
+			],
+			"alias": [
+				"Espina blanca"
+			],
+			"shortName": true,
+			"fluff": {
+				"entries": [
+					"Whitespines are dangerous crustaceans that live on Roshar. The eponymous spine is a row of spikes that runs from the head along the back of a whitespine. They are as large as horses, with a carapaced back, powerful legs, and a reptilian appearance. They have long white tusks that are used for impalement which can break off and remain lodged in their prey, causing severe damage. Whitespines have claws, including a set of vestigial claws behind their primary legs, and they smell quite unpleasant, especially when wet. They also have a nose of some sort that allows them to sniff and sneeze. They are able to enter a dormant state, most likely to hibernate, during which they appear to become coated in a thick, hard crystal-like substance that takes time to accumulate. Water washes away the crystal coating in its early stages of forming, which would make it difficult for a whitespine to undergo this metamorphosis during a highstorm.",
+					"Whitespines live in packs in dens that are often strewn with the bones of the creatures they have killed. Sometimes they will live near roadways to pick off travelers as prey. They hide near the carcass of their recent kill after consuming its meat, then hunt the scavengers that are attracted to the carcass. Whitespines are native to Alethkar and possibly other areas. They are \"nastier\" than chasmfiends.",
+					"Source: https://coppermind.net/wiki/Whitespine"
+				],
+				"images": [
+					{
+						"type": "image",
+						"href": {
+							"type": "external",
+							"url": "https://coppermind.net/w/images/Whitespine_by_Amanda_Diaz.jpg"
+						}
+					}
+				]
+			},
+			"trait": [
+				{
+					"name": "Keen Smell",
+					"entries": [
+						"The Whitespine has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+					]
+				},
+				{
+					"name": "Pack Tactics",
+					"entries": [
+						"The Whitespine has advantage on an attack roll against a creature if at least one of the Whitespine's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+					]
+				},
+				{
+					"name": "Trampling Charge",
+					"entries": [
+						"If the Whitespine moves at least 20 feet straight toward a creature and then hits it with a Bite attack on the same turn the target takes an extra 3 ({@damage 1d6}) piercing damage. If the target is a creature, it must succeed on a {@dc 15} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the Whitespine can make one Bite attack against it as a bonus action."
+					]
+				}
+			],
+			"actionHeader": [
+				"Multiattack. The Whitespine makes one Bite attack and one Claw attack or two Claw attacks."
+			],
+			"bonus": [
+				{
+					"name": "Frightening Roar",
+					"entries": [
+						"Each creature of the Whitespine's choice that is within 120 feet of the Whitespine and aware of it must succeed on a {@dc 14} Wisdom saving throw or become {@condition frightened} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the Whitespine's Frightful Presence for the next 24 hours."
+					]
+				}
+			],
+			"tokenUrl": "https://i.imgur.com/kVS0Ahj.png"
+		},
+		{
+			"name": "Axehound",
+			"size": [
+				"M"
+			],
+			"type": "monstrosity",
+			"source": "RosharCreaturesBrandonSanderson",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"formula": "3d8 + 3",
+				"average": 16
+			},
+			"speed": {
+				"walk": 40,
+				"swim": 20
+			},
+			"str": 14,
+			"dex": 16,
+			"con": 12,
+			"int": 4,
+			"wis": 12,
+			"cha": 6,
+			"passive": 15,
+			"cr": "0",
+			"fluff": {
+				"entries": [
+					"Axehounds are animals native to Roshar that fill a similar niche as dogs do on Earth. They have been domesticated, but there are also still wild axehounds.",
+					"Axehounds are hexapedal creatures with a smooth hide that is a cross between skin and carapace. It is more flexible than true carapace, but, like carapace, is formed of interlocking sections. They have a fluting fish-like tail. Axehounds have a pair of feather-like antennae positioned on the top of their heads which they can move as a form of communication. The antennae are implied to be sensitive, with Axehound often bellowing when they get their antenna twisted. They have ear holes slightly further back on the sides of their heads. Axehounds have a main jaw as well as a pair of outer mandibles that they use to break into the shells of their prey. Much like other species on Roshar, such as Chasmfiends, their blood is violet.",
+					"There are a wide variety of breeds of axehounds. The largest come up to a man's waist while the smallest can easily hide in the underbrush of a lait. Smaller breeds of axehounds tend to be very fast.",
+					"Axehounds have very small gemhearts.",
+					"Wild axehounds are social creatures who live and hunt in groups. Female axehounds are attentive mothers who actively protect their pups. Axehounds are predators willing to prey on everything from songlings to hogs.",
+					"The axehound call consists of two voices that overlap and echo with one another and is referred to as \"trumping\". When an axehound is content, their trumping can sound like a hum, but when angered or in pain, it is more of a bellow.",
+					"Source: https://coppermind.net/wiki/File:Axehound_by_Shallan.jpg"
+				],
+				"images": [
+					{
+						"type": "image",
+						"href": {
+							"type": "external",
+							"url": "https://coppermind.net/w/images/Axehound_by_Shallan.jpg"
+						}
+					}
+				]
+			},
+			"alias": [
+				"Sabuesohacha"
+			],
+			"action": [
+				{
+					"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}8 ({@damage 2d4 + 3}) piercing damage. If the target is a creature, it must succeed on a {@dc 13} Strength saving throw or be knocked {@condition prone}."
+					]
+				}
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"trait": [
+				{
+					"name": "Pack Tactics",
+					"entries": [
+						"The axehound has advantage on an attack roll against a creature if at least one of the axehound's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+					]
+				},
+				{
+					"name": "Keen Sight and Smell",
+					"entries": [
+						"The axehound has advantage on Wisdom ({@skill Perception}) checks that rely on sight or smell."
+					]
+				},
+				{
+					"name": "Surprise Attack",
+					"entries": [
+						"If the axehound surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 2 ({@dice 1d4}) damage from the attack."
+					]
+				}
+			],
+			"traitTags": [
+				"Ambusher",
+				"Keen Senses",
+				"Pack Tactics"
+			],
+			"save": {
+				"dex": "+5",
+				"wis": "+3"
+			},
+			"skill": {
+				"perception": "+5",
+				"stealth": "+5"
+			},
+			"environment": [
+				"roshar"
+			],
+			"tokenUrl": "https://i.imgur.com/zetsNtv.png"
+		},
+		{
+			"name": "Giant Skyeel",
+			"size": [
+				"L"
+			],
+			"type": "monstrosity",
+			"source": "RosharCreaturesBrandonSanderson",
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"formula": "8d10 + 8",
+				"average": 52
+			},
+			"speed": {
+				"walk": 15,
+				"fly": {
+					"number": 60,
+					"condition": "(hover)"
+				},
+				"swim": 40,
+				"canHover": true
+			},
+			"str": 19,
+			"dex": 14,
+			"con": 12,
+			"int": 6,
+			"wis": 10,
+			"cha": 3,
+			"passive": 10,
+			"cr": "3",
+			"shortName": true,
+			"senses": [
+				"darkvision 60 ft.",
+				"blindsight 10 ft."
+			],
+			"senseTags": [
+				"D",
+				"B"
+			],
+			"save": {
+				"str": "+6",
+				"wis": "+2"
+			},
+			"skill": {
+				"perception": "+2",
+				"stealth": "+4"
+			},
+			"conditionImmune": [
+				"prone"
+			],
+			"trait": [
+				{
+					"name": "Flyby",
+					"entries": [
+						"The Giant Skyeel doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+					]
+				},
+				{
+					"name": "Second Pair of Jaws",
+					"entries": [
+						"Giant Skyeel has advantage on attack rolls against any creature {@condition grappled} by it, but can only use its Bite attack on the {@condition grappled} creature. Giant Skyeel can release the {@condition grappled} creature as a bonus action."
+					]
+				},
+				{
+					"name": "Charge",
+					"entries": [
+						"If the Giant Skyeel moves at least 15 ft. straight toward a target and then hits it with a Bite attack on the same turn, the target takes an extra 9 ({@damage 2d8}) piercing damage. If the target is a creature, it must succeed on a {@dc 16} Strength saving throw or be {@condition grappled}."
+					]
+				}
+			],
+			"traitTags": [
+				"Charge",
+				"Flyby"
+			],
+			"conditionInflict": [
+				"grappled",
+				"stunned"
+			],
+			"damageTags": [
+				"L",
+				"P"
+			],
+			"action": [
+				{
+					"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d8 + 2}) piercing damage."
+					]
+				}
+			],
+			"miscTags": [
+				"MW"
+			],
+			"fluff": {
+				"entries": [
+					"They look similar to the moray eels found on Earth, but have an extra pair of larger flowing fins along their sides with air pouches tucked under them that help the skyeel fly. These pouches deflate as the skyeel dives and are refilled as the skyeel extracts lighter-than-air gasses from its prey during the digestive process. Like moray eels, skyeels have a second set of jaws, known as pharyngeal jaws.",
+					"When they fly, small arrow-headed luckspren often appear and dart around them and may be the reason skyeels can fly, as \"mathematically\" they should be heavier than they actually are.",
+					"Skyeels have pale bellies so that they camouflage with the sky from below and dappled skin on their back that lets them blend in with the water they fly over from above.",
+					"Skyeels are graceful as they undulate through the air, but somewhat awkward on land. ",
+					"Their diet consists of fish, small rodents (such as rats and minks) and crabs. When a skyeel spots prey, they go into a sharp dive and coil around it as they snatch it up. It can take an hour or two for a skyeel to refill its gas pouches after diving. During this time, they usually find somewhere to hide. Skyeels are known to fight over their prey.",
+					"Skyeels nest and watch carefully over their young, and they have a reputation for being vicious and repellant.",
+					"Source:  https://coppermind.net/wiki/Skyeel"
+				],
+				"images": [
+					{
+						"type": "image",
+						"href": {
+							"type": "external",
+							"url": "https://coppermind.net/w/images/Skyeel.jpg"
+						}
+					}
+				]
+			},
+			"environment": [
+				"roshar"
+			],
+			"variant": [
+				{
+					"name": "Giant Lightning Skyeel",
+					"entries": [
+						"Damage Resistances lightning, thunder.",
+						"Bite also deals {@damage 1d8} lightning damage.",
+						"And as a bonus action can make Lightning Jolt (recharge 5-6). Once creature the Giant Skyeel touches within 5 feet of it outside water, or each creature within 15 feet of it in a body of water, must make a 14 Constitution saving throw. On failed save, a target takes 13 ({@damage 3d8}) lightning damage. If the target takes any of this damage, the target is {@condition stunned} until the end of the Giant Skyeel's next turn. On a successful save, a target takes half as much damage and isn't {@condition stunned}."
+					],
+					"type": "variant"
+				}
+			],
+			"tokenUrl": "https://i.imgur.com/Fb5zEqy.png"
+		},
+		{
+			"name": "Skyeel",
+			"size": [
+				"S"
+			],
+			"type": "monstrosity",
+			"source": "RosharCreaturesBrandonSanderson",
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				14
+			],
+			"hp": {
+				"formula": "2d4 + 2",
+				"average": 7
+			},
+			"speed": {
+				"walk": 10,
+				"fly": {
+					"number": 60,
+					"condition": "(hover)"
+				},
+				"swim": 30,
+				"canHover": true
+			},
+			"str": 4,
+			"dex": 18,
+			"con": 12,
+			"int": 6,
+			"wis": 12,
+			"cha": 5,
+			"passive": 13,
+			"cr": "1/8",
+			"shortName": true,
+			"senses": [
+				"darkvision 60 ft.",
+				"blindsight 10 ft."
+			],
+			"senseTags": [
+				"D",
+				"B"
+			],
+			"skill": {
+				"perception": "+3",
+				"stealth": "+6"
+			},
+			"conditionImmune": [
+				"prone"
+			],
+			"trait": [
+				{
+					"name": "Flyby",
+					"entries": [
+						"The Giant Skyeel doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+					]
+				},
+				{
+					"name": "Second Pair of Jaws",
+					"entries": [
+						"Giant Skyeel has advantage on attack rolls against any creature {@condition grappled} by it, but can only use its Bite attack on the {@condition grappled} creature. Giant Skyeel can release the {@condition grappled} creature as a bonus action."
+					]
+				},
+				{
+					"name": "Charge",
+					"entries": [
+						"If the Giant Skyeel moves at least 15 ft. straight toward a target and then hits it with a Bite attack on the same turn, the target takes an extra 5 ({@damage 2d4}) piercing damage. If the target is a creature, it must succeed on a {@dc 14} Dexterity saving throw or be {@condition grappled}."
+					]
+				}
+			],
+			"traitTags": [
+				"Charge",
+				"Flyby"
+			],
+			"conditionInflict": [
+				"grappled",
+				"stunned"
+			],
+			"damageTags": [
+				"L",
+				"P"
+			],
+			"action": [
+				{
+					"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}7 ({@damage 2d4 + 2}) piercing damage."
+					]
+				}
+			],
+			"miscTags": [
+				"MW"
+			],
+			"fluff": {
+				"entries": [
+					"Skyeels are a flying creature on Roshar, typically found in coastal regions. Adult skyeels are typically 4-5 feet long, but are known to grow as long as 7 feet.",
+					"They look similar to the moray eels found on Earth, but have an extra pair of larger flowing fins along their sides with air pouches tucked under them that help the skyeel fly. These pouches deflate as the skyeel dives and are refilled as the skyeel extracts lighter-than-air gasses from its prey during the digestive process. Like moray eels, skyeels have a second set of jaws, known as pharyngeal jaws.",
+					"When they fly, small arrow-headed luckspren often appear and dart around them and may be the reason skyeels can fly, as \"mathematically\" they should be heavier than they actually are.",
+					"Skyeels have pale bellies so that they camouflage with the sky from below and dappled skin on their back that lets them blend in with the water they fly over from above.",
+					"Skyeels are graceful as they undulate through the air, but somewhat awkward on land. ",
+					"Their diet consists of fish, small rodents (such as rats and minks) and crabs. When a skyeel spots prey, they go into a sharp dive and coil around it as they snatch it up. It can take an hour or two for a skyeel to refill its gas pouches after diving. During this time, they usually find somewhere to hide. Skyeels are known to fight over their prey.",
+					"Skyeels nest and watch carefully over their young, and they have a reputation for being vicious and repellant.",
+					"Source:  https://coppermind.net/wiki/Skyeel"
+				],
+				"images": [
+					{
+						"type": "image",
+						"href": {
+							"type": "external",
+							"url": "https://coppermind.net/w/images/Skyeel.jpg"
+						}
+					}
+				]
+			},
+			"environment": [
+				"roshar"
+			],
+			"variant": [
+				{
+					"name": "Lightning Skyeel",
+					"entries": [
+						"Damage Resistances lightning, thunder.",
+						"Bite also deals {@damage 1d4} lightning damage.",
+						"And as a bonus action can make Lightning Jolt (recharge 5-6). Once creature the Giant Skyeel touches within 5 feet of it outside water, or each creature within 15 feet of it in a body of water, must make a 13 Constitution saving throw. On failed save, a target takes 7 ({@damage 3d4}) lightning damage. If the target takes any of this damage, the target is {@condition stunned} until the end of the Giant Skyeel's next turn. On a successful save, a target takes half as much damage and isn't {@condition stunned}."
+					],
+					"type": "variant"
+				}
+			],
+			"save": {
+				"dex": "+6",
+				"wis": "+3"
+			},
+			"tokenUrl": "https://i.imgur.com/MKfQi59.png"
+		},
+		{
+			"name": "Cremling",
+			"size": [
+				"T"
+			],
+			"type": "monstrosity",
+			"source": "RosharCreaturesBrandonSanderson",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"formula": "1d4",
+				"average": 2
+			},
+			"speed": {
+				"walk": 20,
+				"climb": 20
+			},
+			"str": 2,
+			"dex": 12,
+			"con": 10,
+			"int": 1,
+			"wis": 8,
+			"cha": 2,
+			"passive": 9,
+			"cr": "0",
+			"shortName": true,
+			"senses": [
+				"blindsight 10 ft."
+			],
+			"senseTags": [
+				"B"
+			],
+			"trait": [
+				{
+					"name": "Evasion",
+					"entries": [
+						"If the Cremling is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the Cremling instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+					]
+				}
+			],
+			"damageTags": [
+				"B"
+			],
+			"action": [
+				{
+					"name": "Claw",
+					"entries": [
+						"{@atk mw} {@hit 0} to hit, reach 5 ft., one target. {@h}1 bludgeoning damage."
+					]
+				}
+			],
+			"miscTags": [
+				"MW"
+			],
+			"fluff": {
+				"entries": [
+					"A cremling is a type of scavenger crustacean that can be found almost everywhere on Roshar. Rather than a single species, the term — derived from crem, a type of sediment — encompasses a wide variety of creatures.",
+					"As there are many species of cremlings, their appearance is not uniform. They tend to be tiny, multilegged, and thin, with elongated bodies and purple blood. Most have claws and a carapace.",
+					"Cremlings come in variety of colors. Ones living in the chasms of the Shattered Plains have a reddish hue with semi-transparent carapace, making their organs visible. In Kharbranth, there are cremlings shaded like the feelers of shalebark, while in the Purelake, they have a multitude of colors. Some species, including a variety called \"sigs cremlings\" by the listeners, are poisonous, and indicate so by having vividly red claws or bright coloring on their backs.",
+					"Cremlings can make sounds, including screeching and clicking. Songling - a small crustacean capable of far wider vocal range - might be a type of cremling.",
+					"Cremlings grow from larvae, which mature in stagnant pools of water. Adults live in burrows often located in cracks in the rock. Some creatures that Rosharans call cremlings are actually larvae forms of larger animals, like chulls or maybe even Tai-na.",
+					"Cremlings have two primary food sources: scavenging and plant matter. Typically, they drink blood and eat the flesh of the deceased humans, Parshendi, and other creatures, such as chasmfiends. In the period immediately after highstorms, they expand their diet to plants, as those will often unfurl to drink in the nutrient-rich rainwater, allowing the cremlings to feed on the newly-exposed parts. In addition, some cremlings seem to have a symbiotic relationship with shalebark. They clean the shalebark by eating anything that has built up on it, and take on coloring that helps them blend with it, disguising them from predators.",
+					"Cremlings are in turn preyed upon by graspers, who will swiftly seize them and pull them into their lairs.",
+					"For an unknown reason, some cremlings molt occasionally, shedding their carapace. Some cremlings are capable of seeing Investiture.",
+					"Source: https://coppermind.net/wiki/Cremling"
+				],
+				"images": [
+					{
+						"type": "image",
+						"href": {
+							"type": "external",
+							"url": "https://coppermind.net/w/images/Cremlings.jpg"
+						}
+					}
+				]
+			},
+			"environment": [
+				"roshar"
+			],
+			"familiar": true,
+			"variant": [
+				{
+					"name": "sig cremling",
+					"entries": [
+						"This is a poisonous cremling, and indicate so by having vividly red claws or bright coloring on their backs.",
+						"The Claw attack deals extra {@damage 1d4} poison damage."
+					],
+					"type": "variant"
+				},
+				{
+					"name": "Songling",
+					"entries": [
+						"Songlings are fist-sized creatures that live on Roshar that are difficult to catch. Songlings are shaped like a peaked disc with four arms. The arms reach out to the sides and over the body, scraping their ridged shells to make a sound. It is described as a creak or \"zipping rattle\". Each songling maintains its own repetitive beat and tone, and the sound is percussive rather than melodic. They also have four legs situated underneath the body. The legs are squat and can hold the animal onto a rock wall.",
+						"Mimicry Trait. The Cremling can mimic simple sounds it has heard, such as a person whispering, a baby crying, or an animal chittering. A creature that hears the sounds can tell they are imitations with a successful {@dc 10} Wisdom ({@skill Insight}) check. "
+					],
+					"type": "variant"
+				}
+			],
+			"tokenUrl": "https://i.imgur.com/ncMCwSJ.png"
+		},
+		{
+			"name": "Chull",
+			"size": [
+				"H"
+			],
+			"type": "monstrosity",
+			"source": "RosharCreaturesBrandonSanderson",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				14
+			],
+			"hp": {
+				"formula": "8d12 + 24",
+				"average": 76
+			},
+			"speed": {
+				"walk": 20
+			},
+			"str": 22,
+			"dex": 8,
+			"con": 16,
+			"int": 3,
+			"wis": 10,
+			"cha": 3,
+			"passive": 10,
+			"cr": "4",
+			"shortName": true,
+			"traitTags": [
+				"Turn Resistance"
+			],
+			"trait": [
+				{
+					"name": "Rock Toughness",
+					"entries": [
+						"Meanwhile, the chull remains immobile with its eyes and claws glued to its body, has Resistances to blunt, piercing and slashing damage from non-magical attacks. And it has advantage to resist any attemp to be pulled or pushed."
+					]
+				}
+			],
+			"skill": {
+				"athletics": "+10"
+			},
+			"actionHeader": [
+				"Multiattack. The chull makes two attacks with its claws."
+			],
+			"action": [
+				{
+					"name": "Claw",
+					"entries": [
+						"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}22 ({@damage 3d10 + 6}) bludgeoning damage. If the target is a medium or smaller creature, it must succeed on a {@dc 14} Stregth or Dexterity saving throw (target's choice) or be {@condition grappled} by the claw (escape {@dc 16}). The crab has two claws, each of which can grapple only one target."
+					]
+				}
+			],
+			"conditionInflict": [
+				"grappled"
+			],
+			"damageTags": [
+				"B"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"environment": [
+				"roshar"
+			],
+			"fluff": {
+				"entries": [
+					"The chull is a species of crustacean useful for labor intensive jobs. There are differing breeds of chulls and they come in a variety of shapes and sizes. They are found all across Roshar.",
+					"Chulls are massive crustaceans with thick legs with large claws and a stone-like shell. Their carapaces are typically red. Chulls have whip-like antennae that grow in pace with their shell as they age, so that the chull can sense out spaces to determine if they're large enough to pass through, and beady fist-size black eyes.",
+					"Chull shells are a light, porous stone created from minerals the chull consumes in its food and water and then excretes. Since the shell is not alive, chulls are not hurt when their shells are cracked or shaped. In the wild, there are often plants growing in the crevices of a chull's shell. Chulls pull their legs and head into their shell when they sleep, and as a result sleeping chulls look like large boulders or small hills.",
+					"The Reshi, and likely others, paint their chulls' shells. One can identify what island a Reshi chull handler is from by the colors and patterns on their chulls' shells. Chulls are generally docile creatures. They have claws that are said to be strong enough to break a man's arm, but it is very unusual for them to behave aggressively. They tend to move with a slow, lumbering gait and are generally slower than humans.",
+					"They are capable of making a wide range of noises, including a gravelly bleating, trumpeting, and snorting. Chulls are omnivorous creatures. They eat everything from rockbuds to slugs to smaller crustaceans. Domestic chulls are often fed grain. Chulls are considered less intelligent than horses and in some cases, stubborn. Chulls breed by way of laying eggs.",
+					"There are several different methods of training chull.",
+					"In the rural areas of Jah Keved, chulls are harnessed and controlled with complex leather bridles.",
+					"In the coastal region around Kharbranth, chull drivers often sit directly on the chull's shell and direct them by tapping on their antennae with long poles.",
+					"Some chulls are trained to respond to different rhythms tapped out on their shells with a guiding reed. These reeds are often as long as a person is tall and allow the driver to drive from the wagon or cart rather than riding on the chull itself.",
+					"Chull are highly valued as work animals. Some people maintain chull herds and rent their labor out on a contract basis. They are slow but strong and are used to pull everything. Since their shells can be carved without harming the animal, some people sand flat places on top of a chull to ride and many carts are hooked to fittings drilled directly into their shells. Shelves and racks can also be carved into or attached directly to chull shells. Since it is lightweight and durable, chull shell is used as a crafting material. ",
+					"Chull meat is edible. It can be dried and stored as jerky. In some cultures, including Herdazian and Unkalaki, chull head is considered a delicacy.",
+					"Source: https://coppermind.net/wiki/Chull"
+				],
+				"images": [
+					{
+						"type": "image",
+						"href": {
+							"type": "external",
+							"url": "https://coppermind.net/w/images/Chull.jpg"
+						}
+					}
+				]
+			},
+			"tokenUrl": "https://i.imgur.com/h41f14q.png"
+		}
+	]
+}
