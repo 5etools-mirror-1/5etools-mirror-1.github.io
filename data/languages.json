@@ -288,6 +288,18 @@
 			]
 		},
 		{
+			"name": "Common",
+			"source": "PSI",
+			"page": 9,
+			"typicalSpeakers": [
+				"{@race Human (Innistrad)|PSI|Humans}",
+				"Members of the Church",
+				"{@creature Vampire Neonate|PSI|Vampires}",
+				"{@creature Werewolf (Krallenhorde)|PSI|Werewolves}",
+				"{@creature Geist|PSI|Geists}"
+			]
+		},
+		{
 			"name": "Daelkyr",
 			"source": "ERLW",
 			"page": 6,
@@ -360,6 +372,15 @@
 			"script": "none"
 		},
 		{
+			"name": "Demonic",
+			"source": "PSI",
+			"page": 9,
+			"typicalSpeakers": [
+				"{@filter Demons|bestiary|source=|tag=demon}",
+				"{@filter Devils|bestiary|source=|tag=devil}"
+			]
+		},
+		{
 			"name": "Draconic",
 			"source": "DSotDQ",
 			"page": 9,
@@ -421,6 +442,14 @@
 				"Draconic is thought to be one of the oldest languages and is often used in the study of magic. The language sounds harsh to most other creatures and includes numerous hard consonants and sibilants."
 			],
 			"hasFluffImages": true
+		},
+		{
+			"name": "Draconic",
+			"source": "PSI",
+			"page": 9,
+			"typicalSpeakers": [
+				"{@filter Dragons|bestiary|source=PSI|type=dragon}"
+			]
 		},
 		{
 			"name": "Druidic",
@@ -1271,6 +1300,14 @@
 				"Primordial is a guttural language, filled with harsh syllables and hard consonants."
 			],
 			"hasFluffImages": true
+		},
+		{
+			"name": "Primordial",
+			"source": "PSI",
+			"page": 9,
+			"typicalSpeakers": [
+				"Elementals"
+			]
 		},
 		{
 			"name": "Qualith",
