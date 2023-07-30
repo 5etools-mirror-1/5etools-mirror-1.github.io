@@ -186,6 +186,8 @@ PropOrder._MONSTER = [
 			"ability",
 			"displayAs",
 			"hidden",
+
+			"type",
 		],
 	}),
 	"trait",
