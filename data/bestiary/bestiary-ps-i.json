@@ -74,6 +74,71 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "Avacyn",
+			"isNamedCreature": true,
+			"source": "PSI",
+			"page": 26,
+			"_copy": {
+				"name": "Solar",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "Solar",
+						"with": "Avacyn",
+						"flags": "i"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Moonsilver Spear",
+							"entries": [
+								"An angel of the Flight of Moonsilver wields a spear made from a shard of the Helvault. Hit points lost to this weapon's damage can be regained only through a short or long rest, rather than by regeneration, magic, or any other means. Once per turn, when the angel hits a creature with an attack using this weapon, it can wound the target. At the start of each of the wounded creature's turns, it takes {@damage 1d4} necrotic damage for each time the angel has wounded it, and it can then make a {@dc 15} Constitution saving throw, ending the effect of all such wounds on itself on a success. Alternatively, the wounded creature, or a creature within 5 feet of it, can use an action to make a {@dc 15} Wisdom ({@skill Medicine}) check, ending the effect of such wounds on it on a success."
+							]
+						}
+					}
+				}
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Bruna",
+			"alias": [
+				"Light of Alabaster"
+			],
+			"isNamedCreature": true,
+			"source": "PSI",
+			"page": 26,
+			"_copy": {
+				"name": "Planetar",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "planetar",
+						"with": "Bruna",
+						"flags": "i"
+					},
+					"_": {
+						"mode": "addSpells",
+						"will": [
+							"{@spell protection from evil and good}"
+						],
+						"daily": {
+							"1e": [
+								"{@spell dispel evil and good}"
+							]
+						}
+					}
+				}
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"name": "Creepy Doll",
 			"source": "PSI",
 			"page": 25,
@@ -444,6 +509,27 @@
 					]
 				}
 			],
+			"variant": [
+				{
+					"type": "variant",
+					"name": "Geist Powers",
+					"entries": [
+						"Geists are as varied as the humans they were in life. In addition to the traits and actions all geists possess, an individual geist might have any of the following special characteristics.",
+						{
+							"name": "Intangible Virtue",
+							"entries": [
+								"A living creature possessed by a white-aligned geist gains immunity to the {@condition charmed} and {@condition frightened} conditions, and resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks. While the creature is possessed, the geist can allow it to take control of its body, but the geist can regain control at any time (no action required)."
+							]
+						},
+						{
+							"name": "Horrifying Visage",
+							"entries": [
+								"Black-aligned geists can make themselves terrible to behold, even when they are possessing the living. Each non-undead creature within 60 feet of the geist that can see it must succeed on a {@dc 13} Wisdom saving throw or be {@condition frightened} for 1 minute. If the save fails by 5 or more, the target also ages {@dice 1d4 × 10} years. A {@condition frightened} target can repeat the saving throw at the end of each of its turns, ending the {@condition frightened} condition on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to this geist's Horrifying Visage for the next 24 hours. The aging effect can be reversed with a {@spell greater restoration} spell, but only within 24 hours of it occurring."
+							]
+						}
+					]
+				}
+			],
 			"traitTags": [
 				"Incorporeal Movement"
 			],
@@ -514,7 +600,67 @@
 				"Blade of Goldnight",
 				"Blade of the Church"
 			],
-			"hasToken": true
+			"isNamedCreature": true,
+			"source": "PSI",
+			"page": 26,
+			"_copy": {
+				"name": "Planetar",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "Planetar",
+						"with": "Gisela",
+						"flags": "i"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Goldnight Menace",
+							"entries": [
+								"As an action, an angel of Flight Goldnight can strike fear into the hearts of its enemies. Each creature of the angel's choice that is within 120 feet of it and is aware of it must succeed on a Wisdom saving throw or become {@condition frightened} for 1 minute. The DC for this saving throw is the same as for the angel's Innate Spellcasting trait. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to that angel's Goldnight Menace for the next 24 hours."
+							]
+						}
+					}
+				}
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Gisela",
+			"alias": [
+				"Blade of Goldnight",
+				"Blade of the Church"
+			],
+			"isNamedCreature": true,
+			"source": "PSI",
+			"page": 26,
+			"_copy": {
+				"name": "Planetar",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "Planetar",
+						"with": "Gisela",
+						"flags": "i"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Goldnight Menace",
+							"entries": [
+								"As an action, an angel of Flight Goldnight can strike fear into the hearts of its enemies. Each creature of the angel's choice that is within 120 feet of it and is aware of it must succeed on a Wisdom saving throw or become {@condition frightened} for 1 minute. The DC for this saving throw is the same as for the angel's Innate Spellcasting trait. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to that angel's Goldnight Menace for the next 24 hours."
+							]
+						}
+					}
+				}
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gisela",
