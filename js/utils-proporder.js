@@ -167,6 +167,7 @@ PropOrder._MONSTER = [
 	new PropOrder._ArrayKey("spellcasting", {
 		fnGetOrder: () => [
 			"name",
+			"type",
 			"headerEntries",
 
 			"will",
