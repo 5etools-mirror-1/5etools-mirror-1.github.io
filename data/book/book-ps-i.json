@@ -5,17 +5,69 @@
 			"name": "Introduction",
 			"page": 3,
 			"entries": [
-				"Clouds of purple and red shroud the sky above the forbidding mountains of the Geier Reach, never allowing the sun's full light to shine on the ground below. The jagged spires of Maurer Estate jut up from the peaks, keeping silent watch over the isolated valley. Stoic and enduring, the people of Stensia huddle in their stone-crafted villages\u2014Shadowgrange, Krezk, Lammas\u2014built against the mountainsides. Wisps of thick fog twine amid the trunks of black pines in the Somberwald, thick bogs suck dead trees slowly down into their murky depths, and dusky pastureland provides scant sustenance to flocks of scrawny sheep.",
-				"The lord of this bleak, remote part of Stensia's outland valleys is Strefan Maurer, who drank angel's blood alongside Edgar Markov and Olivia Voldaren centuries ago. His bloodline is small and mostly irrelevant to the larger world, but in the outland valleys of Stensia, he is the ultimate master. Avacyn and Sigarda offer scant hope to his grim subjects. Abandoned by their angels and hunted by vampires, all the Stensians can do is endure the unending dusk.",
+				{
+					"type": "gallery",
+					"images": [
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSI/000.webp"
+							},
+							"width": 1229,
+							"height": 1589
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSI/018.webp"
+							},
+							"title": "Humble the Brute",
+							"credit": "Daarken",
+							"width": 1224,
+							"height": 1584
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSI/019.webp"
+							},
+							"title": "Humble the Brute",
+							"credit": "Daarken",
+							"width": 610,
+							"height": 1584
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"style": "italic",
+					"entries": [
+						"Clouds of purple and red shroud the sky above the forbidding mountains of the Geier Reach, never allowing the sun's full light to shine on the ground below. The jagged spires of Maurer Estate jut up from the peaks, keeping silent watch over the isolated valley. Stoic and enduring, the people of Stensia huddle in their stone-crafted villages\u2014Shadowgrange, Krezk, Lammas\u2014built against the mountainsides. Wisps of thick fog twine amid the trunks of black pines in the Somberwald, thick bogs suck dead trees slowly down into their murky depths, and dusky pastureland provides scant sustenance to flocks of scrawny sheep.",
+						"The lord of this bleak, remote part of Stensia's outland valleys is Strefan Maurer, who drank angel's blood alongside Edgar Markov and Olivia Voldaren centuries ago. His bloodline is small and mostly irrelevant to the larger world, but in the outland valleys of Stensia, he is the ultimate master. Avacyn and Sigarda offer scant hope to his grim subjects. Abandoned by their angels and hunted by vampires, all the Stensians can do is endure the unending dusk."
+					]
+				},
+				{
+					"type": "entries",
+					"style": "text-center",
+					"entries": [
+						"• • •"
+					]
+				},
 				{
 					"type": "quote",
+					"skipItalics": true,
+					"skipMarks": true,
 					"entries": [
-						"By the time Plane Shift: Zendikar saw the light of day, the game and story of Magic: The Gathering had moved on from Zendikar and started the tale of Shadows over Innistrad. I had already finished writing The Art of Magic: The Gathering\u2014Innistrad, at the same time that Curse of Strahd, a horror-themed adventure for Dungeons & Dragons, was on the shelves. All this meant that I turned my attention pretty quickly to the next installment, Plane Shift: Innistrad!",
-						"The starting point for this document was The Art of Magic: The Gathering\u2014Innistrad. Consider that book to be a useful resource in creating your Innistrad campaign, but not strictly necessary. An abundance of lore about Innistrad can be found on the Magic website. This document is designed to help you turn the book's adventure hooks and story seeds into a resource for your campaign with a minimum of changes to the fifth edition D&D rules.",
-						"This document also contains guidelines for adapting the Curse of Strahd adventure to set it in Innistrad. With a bit of creative improvisation, these tips should get you on your way."
+						"By the time {@i Plane Shift: Zendikar} saw the light of day, the game and story of {@i Magic: The Gathering} had moved on from Zendikar and started the tale of {@i Shadows over Innistrad}. I had already finished writing {@i The Art of Magic: The Gathering\u2014Innistrad}, at the same time that {@i Curse of Strahd}, a horror-themed adventure for Dungeons & Dragons, was on the shelves. All this meant that I turned my attention pretty quickly to the next installment, {@i Plane Shift: Innistrad}!",
+						"The starting point for this document was {@i The Art of Magic: The Gathering\u2014Innistrad}. Consider that book to be a useful resource in creating your Innistrad campaign, but not strictly necessary. An abundance of lore about Innistrad can be found on the Magic website. This document is designed to help you turn the book's adventure hooks and story seeds into a resource for your campaign with a minimum of changes to the fifth edition D&D rules.",
+						"This document also contains guidelines for adapting the {@i Curse of Strahd} adventure to set it in Innistrad. With a bit of creative improvisation, these tips should get you on your way."
 					],
 					"by": "James Wyatt"
-				}
+				},
+				"The game mechanics in this supplement are usable in your D&D campaign but are not fully tempered by playtests and design iterations. For these reasons, material in this supplement is not legal in D&D Organized Play events."
 			],
 			"id": "000"
 		},
@@ -24,6 +76,17 @@
 			"name": "The World of Innistrad",
 			"page": 5,
 			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSI/020.webp"
+					},
+					"title": "Ghost Quarter",
+					"credit": "Peter Mohrbacher",
+					"width": 1225,
+					"height": 1585
+				},
 				"On the plane of Innistrad, horrors stalk the shadows and scratch at doors in the night. Humanity is beset on all sides: vampires thirst for human blood, werewolves live for the thrill of the hunt, the restless spirits of the dead haunt the living, and no corpse is safe from reanimation at the hands of cruel necromancers or cunning scientists. Only their grim determination\u2014and their staunch faith in the protection of their patron archangel, Avacyn\u2014has allowed humans to survive in this nightmarish realm.",
 				{
 					"type": "entries",
@@ -42,6 +105,8 @@
 						"type": "internal",
 						"path": "book/PSI/001.webp"
 					},
+					"title": "Demonic Taskmaster",
+					"credit": "Chris Rahn",
 					"width": 1229,
 					"height": 810
 				},
@@ -63,6 +128,8 @@
 						"type": "internal",
 						"path": "book/PSI/002.webp"
 					},
+					"title": "Goldnight Commander",
+					"credit": "Chris Rahn",
 					"width": 1225,
 					"height": 948
 				}
@@ -78,8 +145,21 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
+						"path": "book/PSI/021.webp"
+					},
+					"title": "Gavony Township",
+					"credit": "Peter Mohrbacher",
+					"width": 1226,
+					"height": 1586
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
 						"path": "book/PSI/003.webp"
 					},
+					"title": "Diregraf Escort",
+					"credit": "Ryan Pancoast",
 					"width": 617,
 					"height": 673
 				},
@@ -93,6 +173,17 @@
 						"{@race Human (Innistrad; Nephalia)|PSI}",
 						"{@race Human (Innistrad; Stensia)|PSI}"
 					]
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "races/PSI/Innistrad3.webp"
+					},
+					"title": "Lunar Mystic",
+					"credit": "Wesley Burt",
+					"width": 807,
+					"height": 575
 				},
 				{
 					"type": "entries",
@@ -121,8 +212,8 @@
 					"page": 9,
 					"entries": [
 						"Innistrad is not a world with a variety of languages, unlike most D&D settings. The people who inhabit the world all speak the same tongue, and the most common monsters\u2014including vampires, werewolves, and geists\u2014speak it as well, since they were once human.",
-						"Ordinarily, all humans learn an additional language, and many backgrounds give access to languages as well\u2014so the easiest way to deal with these extra languages is to ignore them. Humans speak only Common. If a background gives access to a language, the character can choose a tool proficiency instead.",
-						"Alternatively, you can diversify the languages of Innistrad. Perhaps the Common tongue is the language of the church, used to facilitate communication among people in different provinces, even as each province has its own language or dialect. Characters might also be able to learn Demonic (spoken by demons and devils), Draconic (spoken by dragons), or Primordial (spoken by elementals)."
+						"Ordinarily, all humans learn an additional language, and many backgrounds give access to languages as well\u2014so the easiest way to deal with these extra languages is to ignore them. Humans speak only {@language Common|PSI}. If a background gives access to a language, the character can choose a tool proficiency instead.",
+						"Alternatively, you can diversify the languages of Innistrad. Perhaps the {@language Common|PSI} tongue is the language of the church, used to facilitate communication among people in different provinces, even as each province has its own language or dialect. Characters might also be able to learn {@language Demonic|PSI} (spoken by demons and devils), {@language Draconic|PSI} (spoken by dragons), or {@language Primordial|PSI} (spoken by elementals)."
 					],
 					"id": "006"
 				},
@@ -139,6 +230,8 @@
 								"type": "internal",
 								"path": "book/PSI/004.webp"
 							},
+							"title": "Silverblade Paladin",
+							"credit": "Jason Chan",
 							"width": 865,
 							"height": 624
 						},
@@ -150,7 +243,7 @@
 								"The church is headed by the Lunarch Council. Consisting of bishops and cathars of the highest ranks, the council continues to struggle to come to terms with the madness of Avacyn and her angels.",
 								"Bishops are the leaders of the spiritual and temporal affairs of the church. Elders govern the parishes that make up each province, combining the administrative responsibilities of a mayor with the religious authority of a minor bishop. Priests attend to the needs of the people at parish churches, village chapels, and crossway altars. All priests have the ability to perform magic, though some are more powerful than others. Most of them focus on the protective blessings that make up the rituals of the church.",
 								"Monks are wandering priests, not connected to a specific location. Some feel called to minister to those isolated people living beyond the reach of a parish priest, but others take up the life of a monk because they disagree with their superiors in the hierarchy. Some are wild-eyed fanatics or heretical teachers, but many are quiet, peaceful souls with firm convictions that set them apart from the church.",
-								"A player character cleric is probably referred to as a monk in the church hierarchy, having the freedom to move around with no responsibility to any congregation. The acolyte background is ideal for such a character. A cleric's choice of domain might reflect a connection to one of the archangels subservient to Avacyn. The Knowledge domain is particularly associated with Bruna and Flight Alabaster, the Life domain is strongly connected to Sigarda and the Host of Herons, and the War domain is tied to Gisela and Flight Goldnight."
+								"A player character cleric is probably referred to as a monk in the church hierarchy, having the freedom to move around with no responsibility to any congregation. The {@background acolyte} background is ideal for such a character. A cleric's choice of domain might reflect a connection to one of the archangels subservient to Avacyn. The Knowledge domain is particularly associated with Bruna and Flight Alabaster, the Life domain is strongly connected to Sigarda and the Host of Herons, and the War domain is tied to Gisela and Flight Goldnight."
 							],
 							"id": "008"
 						},
@@ -171,9 +264,20 @@
 										"The Quiver of Kessig is an order recently split off from the parish-blades. Its members specialize in archery and long-range defense, and often guard town walls and church roofs against spirits, vampires, specters, demons, and other flying attackers."
 									]
 								},
-								"Cathar characters might be clerics (especially moor chaplains), fighters or paladins (especially Gavony Riders, mausoleum guards, midnight duelists, or parish-blades), or rangers (in the Quiver of Kessig). The soldier background works well for cathars."
+								"Cathar characters might be clerics (especially moor chaplains), fighters or paladins (especially Gavony Riders, mausoleum guards, midnight duelists, or parish-blades), or rangers (in the Quiver of Kessig). The {@background soldier} background works well for cathars."
 							],
 							"id": "009"
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSI/022.webp"
+							},
+							"title": "Demolish",
+							"credit": "Raymond Swanland",
+							"width": 1130,
+							"height": 832
 						},
 						{
 							"type": "entries",
@@ -184,7 +288,7 @@
 								"Spearsages, the archmages of Goldnight, use powerful and aggressive spells associated with the sun, channeling blinding rays of holy light and powerful prayers to bolster their allies' speed and courage.",
 								"Moonsages, the archmages of Alabaster, are concerned with preserving the Blessed Rest, preventing humans from returning as zombies. They use preventative and warding spells, banishing the undead to the void and making sure graves remain sealed.",
 								"Springsages, the archmages of Herons, are healers who use their magic to aid individuals, whole villages, and even the land itself. They act much like wandering priests or monks, traveling the remote reaches to minister to the people and heal the sick.",
-								"Avacynian archmages might be clerics, wizards, or (in the case of the springsages) druids. The favored soul sorcerer presented in Unearthed {@skill Arcana} could also work for an archmage, and the sage background is ideal for such characters."
+								"Avacynian archmages might be clerics, wizards, or (in the case of the springsages) druids. The {@class Sorcerer|PHB|favored soul sorcerer presented in Unearthed Arcana|Favored Soul v3 (UA)|UARevisedSubclasses} could also work for an archmage, and the {@background sage} background is ideal for such characters."
 							],
 							"id": "00a"
 						}
@@ -203,6 +307,8 @@
 								"type": "internal",
 								"path": "book/PSI/005.webp"
 							},
+							"title": "Moorland Inquisitor",
+							"credit": "David Palumbo",
 							"width": 617,
 							"height": 919
 						}
@@ -217,8 +323,19 @@
 			"name": "Creatures of the Night",
 			"entries": [
 				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSI/023.webp"
+					},
+					"title": "Moonrise Intruder",
+					"credit": "Daarken",
+					"width": 1224,
+					"height": 1585
+				},
+				{
 					"type": "list",
-					"columns": 2,
+					"columns": 3,
 					"items": [
 						"{@creature Creepy Doll|PSI}",
 						"{@creature Demonlord of Ashmouth|PSI}",
@@ -228,6 +345,7 @@
 						"{@creature Geist|PSI}",
 						"{@creature Host of Herons Angel|PSI}",
 						"{@creature Keeper of the Feather|PSI}",
+						"{@creature Necro-Alchemist|PSI}",
 						"{@creature Skaab|PSI}",
 						"{@creature Vampire Neonate|PSI}",
 						"{@creature Werewolf (Krallenhorde)|PSI}",
@@ -237,13 +355,121 @@
 					]
 				},
 				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/PSI/017.webp"
-					},
-					"width": 1227,
-					"height": 821
+					"type": "hr"
+				},
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Liches",
+							"page": 21,
+							"entries": [
+								"Liches are powerful necromancers who fuse the magic of the ghoulcaller with the arcane science of necro-alchemy, preserving themselves in hideous unlife while retaining their sentience and magical power. One lich is known to reside in the Nephalian town of Havengul, but others might exist that are more skilled at hiding their presence. The {@creature lich} in the {@i Monster Manual} can represent these undead necromancers."
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Demons",
+					"page": 22,
+					"entries": [
+						"Demons are the dark counterparts of angels\u2014malevolent creatures of raw black mana. Some were once humans who sold their souls for power, and all are utterly corrupt and evil. As creatures of pure mana, demons can never be truly destroyed. When a demon dies, its essence is scattered for a time, but that essence eventually coalesces into a new form. The power of Avacynian magic keeps the essence of slain demons from creating new demonic forms as quickly as was common in Avacyn's early days. To fight against such magic and extend their influence into the mortal world while keeping out of easy reach of the angels, demons make pacts with cultists and witches, bending those humans to their sinister will.",
+						"As it did during Avacyn's absence, the most prominent demon cult on Innistrad exists within the highest levels of the hierarchy of Avacyn's church. The influence of the Skirsdag Cult is strong within the Lunarch Council, and that influence has whipped the church into a murderous frenzy in response to the angels' madness. The terrible inquisition that has arisen as a result has proven as great a threat to Innistrad as the angels themselves. Throughout it all, the demons remain hidden, but their reach is greater than it has ever been.",
+						"Virtually any {@filter demon, devil, or yugoloth in the Monster Manual|bestiary|source=mm|tag=demon;devil;yugoloth|miscellaneous=} can stand in for a demon of Innistrad. The greatest demons, such as Griselbrand, Ormendahl, and Withengar, are mighty beings on par with the demon princes described in the {@adventure Out of the Abyss adventure|OotA}. When any demon is destroyed, it gains a new body after somewhere between ninety-nine days and ninety-nine years.",
+						{
+							"type": "entries",
+							"name": "Devils",
+							"page": 22,
+							"entries": [
+								"Devils are infernal perpetrators of malicious mischief. They make up the personal armies and entourages of the demons\u2014those creatures' selfish desires and urges made flesh. Cruel and gleefully sadistic, devils have no regard for the safety of themselves or others. They delight in destruction, mayhem, and pain.",
+								"Devils stand about three or four feet tall and have faces full of needlelike teeth. Most have ruddy or deep red skin, one or two back-sweeping horns, and long, whiplike tails. However, their morphology varies from individual to individual. Devils are agile and make passable fighters, but they do their best destructive work by sabotaging things of value and inciting violence in others.",
+								"Devils are best represented by the smaller demons and devils presented in the Monster Manual\u2014{@creature dretch|MM|dretches}, {@creature imp|MM|imps}, {@creature lemure|MM|lemures}, {@creature manes}, {@creature quasit|MM|quasits}, and {@creature spined devil|MM|spined devils}.",
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSI/024.webp"
+									},
+									"title": "Reaper from the Abyss",
+									"credit": "Matt Stewart",
+									"width": 1224,
+									"height": 710
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Cults and Witches",
+					"page": 23,
+					"entries": [
+						"With the madness of the angels, a variety of new cults sprang up across Innistrad. Some were direct continuations of the demon cults that had proliferated during Avacyn's absence, but others were entirely new\u2014centered on madness and revering monsters that had arisen in response to the angels' madness. Many such cults can be traced to the activity of Nahiri\u2014the stoneforging Planeswalker known as the Lithomancer.",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSI/025.webp"
+							},
+							"title": "Welcome to the Fold",
+							"credit": "David Palumbo",
+							"width": 835,
+							"height": 657
+						},
+						{
+							"type": "entries",
+							"name": "Cults of Madness",
+							"page": 23,
+							"entries": [
+								"Many of the cults that once followed demons saw their patrons destroyed when Avacyn emerged from the Helvault. The people who belonged to those cults were not so quickly restored to church and community, and many of them remain disgruntled, rebellious, or insane. Nahiri has played on their discontent and given them new masters to serve. Some revere her, especially in Stensia, believing that she is an ancient vampire. Others offer sacrifices to the monsters of the world\u2014including those in Nephalia who worship the monstrous kraken-like Kralmar.",
+								"Many of these cults gather around spires of twisted stone (called cryptoliths) that Nahiri has raised from the ground across the provinces. The true purpose of these stones\u2014redirecting the ley lines of mana flowing through the plane\u2014is lost on the cultists, but the redirection of mana has caused the madness of the angels, who are formed of raw mana. Whether this was Nahiri's intent or simply a side effect of some greater plan remains a mystery. Many cultists view the angels' madness as a sign of the dawning of a new age, believing that the angels are purging those who are unworthy to be present when some unknown apocalypse occurs.",
+								"be present when some unknown apocalypse occurs. Followers of Nahiri's cults are physically as well as mentally warped. Their features twist into bestial or fishlike forms, as if they might be regressing through millions of years of evolution. Some even grow tentacles or tails, transforming into slimy horrors resembling octopuses or amphibians."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Demon Cults and Witches",
+							"page": 23,
+							"entries": [
+								"Not all the demons were killed when Avacyn escaped the Helvault, and some of their cults remain intact. The most important of these is the Skirsdag, which hides within the very hierarchy of the church in Thraben. Once dedicated to the archdemon Griselbrand, the Skirsdag is now led by Ormendahl the Reaper, a demon who survived the angelic purge by hiding in caverns deep beneath the cathedral. With the madness of Avacyn, the Skirsdag gains increasing influence over the Lunarch Council, adding violent zeal to the church's inquisition.",
+								"The distinction between a demon cult and a witch's coven is subtle. Cultists worship demons, but witches derive actual magical power from them, forging contracts similar to those that gave the Planeswalker Liliana Vess her magical power.",
+								"These cultists can be represented in the game using the statistics for {@creature cultist|MM|cultists} or {@creature cult fanatic|MM|cult fanatics}. The cults of madness might include {@creature yuan-ti pureblood|MM|yuan-ti purebloods} or {@creature kuo-toa} (in the most advanced cases of corruption). Demon cultists could be {@creature acolyte|MM|acolytes} or {@creature priest|MM|priests}, and witches could be {@creature mage|MM|mages} or {@creature druid|MM|druids} (particularly in the case of the forcemages, who derive their power from nature spirits rather than demons)."
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Dragons and Wurms",
+					"page": 24,
+					"entries": [
+						"Dragons are extremely rare on Innistrad, mostly confined to the remotest parts of the Geier Reach in Stensia. Most of these dragons are brutal fire-breathers that prey on any creature that strays into their territories, making them best represented by the {@filter red dragons in the Monster Manual|bestiary|source=mm|miscellaneous=|dragon casting color=red}.",
+						"A few dragons are known to favor more monstrous prey, hunting vampires and flying into Kessig to feast on werewolves. Known as moonveil dragons, these extremely rare creatures have shimmering, transparent wings that gleam in the moonlight as they hunt. The sight of one is considered an inspiring good omen by those who fight the evils of the world. Use the {@filter brass dragon statistics|bestiary|source=mm|miscellaneous=|dragon casting color=brass} for a moonveil dragon.",
+						"{@creature Wurm|PSZ|Wurms} are enormous serpentine creatures that burrow through the ground, consuming corpses. Fortunately quite rare, they are thought to be physical manifestations of corrupted green mana. The {@creature purple worm} in the Monster Manual can represent these monstrosities.",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSI/026.webp"
+							},
+							"title": "Balefire Dragon",
+							"credit": "Eric Deschamps",
+							"width": 1229,
+							"height": 1155
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Elementals",
+					"page": 25,
+					"entries": [
+						"Elementals are manifestations of the forces of nature, and on Innistrad that generally means sinister forces. They arise from the twisted woods\u2014the Ulvenwald and the Somberwald\u2014that hide some of Innistrad's most fearsome monsters, or spawn from the fiery chasms that seethe like cauldrons of hate in the midst of the land. Like geists, elementals are closely associated with specific colors of mana.",
+						"Green-aligned elementals usually take on gnarled humanoid shapes made up of wood stalks and twisting vines, best represented as {@creature treant|MM|treants}, {@b blights}, {@creature shambling mound|MM|shambling mounds}, or {@creature awakened tree|MM|awakened trees} and {@creature awakened shrub|MM|awakened shrubs}. Others are nature spirits and spirit animals. Some of these are relatively benign, including beautiful nature spirits ({@creature dryad|MM|dryads}) wrapped in vine and thorn. Cold-burning geistflames made of unnatural fire ({@creature will-o'-wisp|MM|will-o'-wisps}) seem unconcerned with human life, but often lead travelers through the woods and bogs into danger. Malign kindercatches ({@creature green hag|MM|green hags}) steal children from the forest villages of Kessig.",
+						"Red-aligned elementals are fiery beasts ({@creature hell hound|MM|hell hounds}) or spirits ({@creature fire elemental|MM|fire elementals}) that haunt places like Ashmouth or Devil's Breach."
+					]
 				}
 			],
 			"id": "00c"
@@ -252,6 +478,17 @@
 			"type": "section",
 			"name": "Rise of Emrakul",
 			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSI/027.webp"
+					},
+					"title": "Stromkirk Occultist",
+					"credit": "Magali Villanueve",
+					"width": 1225,
+					"height": 1584
+				},
 				"Emrakul is the largest and most fearsome of the three Eldrazi titans imprisoned on Zendikar. She causes silent horror wherever she soars, embodying desolation, emotional and physical distance, the chill of the void, and the terror of being alone. Thus, in many ways, she is perfectly at home on Innistrad.",
 				"Emrakul's initial approach to Innistrad pressed on the minds of that plane's inhabitants, straining their sanity. Her full manifestation then amplified that effect. Cultists who bordered on mad obsession descended into gibbering adulation of their Eldrazi idol, and scholars who pried into dark secrets fell catatonic with the full realization of the alien horror they studied.",
 				"Emrakul arrived on Innistrad without her brood of drones and other spawn, so she immediately began warping the native creatures of the plane\u2014both natural and unnatural\u2014in her own monstrous image. Beings transformed into Emrakul's spawn manifested fleshy lattice structures, distorted symmetry, and tentacles ending in knobby, vestigial digits. Those who had already begun their descent into corruption before the Eldrazi's arrival were warped almost beyond recognition, but even those who fought against the madness during her approach were susceptible to the life-warping affects of her presence.",
@@ -270,6 +507,8 @@
 								"type": "internal",
 								"path": "book/PSI/006.webp"
 							},
+							"title": "Emrakul, the Promised End",
+							"credit": "Jaime Jones",
 							"width": 818,
 							"height": 939
 						},
@@ -325,6 +564,8 @@
 												"type": "internal",
 												"path": "book/PSI/007.webp"
 											},
+											"title": "It That Rides as One",
+											"credit": "Daarken",
 											"width": 617,
 											"height": 1179
 										}
@@ -345,10 +586,21 @@
 			"name": "Curse of Innistrad",
 			"page": 32,
 			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSI/028.webp"
+					},
+					"title": "Curse of Strahd",
+					"credit": "Ben Oliver",
+					"width": 1225,
+					"height": 1585
+				},
 				"Innistrad's ancient history speaks of a human alchemist and healer named Edgar Markov, who sought to preserve his own life and the lives of his family. As old age began to claim him, he despaired of finding an alchemical solution and turned to black magic. Not long after, the demon Shilgengar appeared to Markov and revealed a means by which he could achieve immortality: a dark ritual that involved drinking an angel's blood.",
 				"The vampires of Innistrad are all descended from twelve ancient sires\u2014the congregation that participated in Markov's blasphemous ritual. Of these twelve bloodlines, four constitute the vast majority of Innistrad's vampires: Markov, Voldaren, Falkenrath, and Stromkirk. Three of the others have died out completely, while five are so few in number as to be irrelevant. One of those nearly irrelevant lines is that of Strefan Maurer, who rules a remote region in Stensia's outland valleys.",
-				"This chapter offers suggestions for situating the region of Barovia, which is detailed in the Ravenloft adventure Curse of Strahd, within the plane of Innistrad. The changes range from the merely cosmetic (changing the Balinok Mountains to the Geier Reach, for example) to more thorough reimaginings of Ravenloft elements foreign to Innistrad, such as dusk elves, wereravens, and the enigmatic Vistani.",
-				"Much of the description of Barovia presented in chapter 2 of Curse of Strahd applies to Innistrad generally and to the outland valleys of Stensia in particular. Some elements do not apply, including the mists of Ravenloft. No magical barrier imprisons people in the outland valleys, or even on Innistrad as a whole. Planeswalkers, at least, can leave the plane, and high-level spellcasters native to Innistrad might be able to glimpse realms beyond the Blind Eternities through their magic.",
+				"This chapter offers suggestions for situating the region of Barovia, which is detailed in the Ravenloft adventure {@adventure Curse of Strahd|CoS}, within the plane of Innistrad. The changes range from the merely cosmetic (changing the Balinok Mountains to the Geier Reach, for example) to more thorough reimaginings of Ravenloft elements foreign to Innistrad, such as dusk elves, wereravens, and the enigmatic Vistani.",
+				"Much of the description of Barovia presented in {@adventure chapter 2 of Curse of Strahd|CoS|3} applies to Innistrad generally and to the outland valleys of Stensia in particular. Some elements do not apply, including the mists of Ravenloft. No magical barrier imprisons people in the outland valleys, or even on Innistrad as a whole. Planeswalkers, at least, can leave the plane, and high-level spellcasters native to Innistrad might be able to glimpse realms beyond the Blind Eternities through their magic.",
 				"The description of the dour people of Barovia applies to Stensians as a rule. However, all Stensians have souls, and those souls are not trapped on Innistrad.",
 				{
 					"type": "image",
@@ -356,6 +608,8 @@
 						"type": "internal",
 						"path": "book/PSI/008.webp"
 					},
+					"title": "Forest",
+					"credit": "James Paick",
 					"width": 1229,
 					"height": 878
 				},
@@ -365,7 +619,18 @@
 					"page": 33,
 					"entries": [
 						"The history of Strefan Maurer runs parallel to that of Strahd von Zarovich. After his father's death, Strefan studied magic and forged a pact with the demon Shilgengar in return for the promise of immortality. After murdering his brother Sergei and drinking his blood, Strefan journeyed to Markov Manor and consulted with Edgar Markov. Together, they worked with Shilgengar to create the twelve bloodlines of vampires on Innistrad. Maurer Estate (Castle Ravenloft) was not spirited away to a demiplane\u2014it was already on Innistrad, itself a place of nightmares. And Strefan is not trapped here, so he is not seeking a successor in hopes of escaping. Newcomers to his domain do attract his attention, though, as the possibility of meeting a new consort is always on Strefan's mind.",
-						"Strefan's statistics are unchanged from the statistics of Strahd in the Curse of Strahd adventure, except that he lacks the Vampire Weaknesses feature. Instead, Strefan has the weaknesses shared by Innistrad vampires (see that earlier section)."
+						"Strefan's statistics are unchanged from the statistics of Strahd in the Curse of Strahd adventure, except that he lacks the Vampire Weaknesses feature. Instead, Strefan has the weaknesses shared by Innistrad vampires (see that earlier section).",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSI/009.webp"
+							},
+							"title": "Falkenrath Noble",
+							"credit": "Slawomir Maniak",
+							"width": 1227,
+							"height": 823
+						}
 					],
 					"id": "016"
 				},
@@ -376,7 +641,7 @@
 					"entries": [
 						"The region shown on the map in the Curse of Strahd adventure covers most of the outland valleys, the dales of the Geier Reach that are farthest from Gavony and Kessig. Only place names within the region need updating; the rest of the region's geography is unchanged. The Balinok Mountains are the Geier Reach, the Svalich Woods are the Somberwald, Lake Zarovich is Maurer Lake, and the Old Svalich Road is Somber Road.",
 						"Two passes cross the Geier Reach to connect the outland valleys with the wider world. Hofsaddel is the more often used, a wide and well-trodden pass mostly ignored by the vampires. The Somber Road runs through this pass, but it is a long and circuitous route. By contrast, Needle's Eye is a narrow, treacherous, and deadly path haunted by vengeful geists. It is a more direct path, but it runs perilously close to the demonic gateway known as Ashmouth, so humans use this pass only in the most dire need.",
-						"The lore known to the people of Stensia is different in detail but similar in substance to what is presented in the Curse of Strahd adventure.",
+						"The lore known to the people of Stensia is different in detail but similar in substance to what is presented in the {@i Curse of Strahd} adventure.",
 						{
 							"type": "entries",
 							"name": "Strefan the Fiend",
@@ -391,15 +656,6 @@
 										"Vampires have three supernatural characteristics that are shared across all bloodlines: agelessness, superhuman strength (mostly an exaggeration), and an aura of silence that emanates from them at will to a radius of two feet. Elder vampires can learn powerful magic of many different kinds, such as flight, a hypnotic gaze, or the ability to transform into other forms such as that of a bat or a mist.",
 										"Weapons cut from living wood are particularly effective against vampires, though any weapon can harm or kill them. A vampire can't cross running water that shows the reflection of the moon, and water blessed by Avacyn burns vampire flesh like acid. The holy symbols of Avacyn, blessed in the proper rituals of the church, can fill a vampire with a paralyzing fear and a desire to flee."
 									]
-								},
-								{
-									"type": "image",
-									"href": {
-										"type": "internal",
-										"path": "book/PSI/009.webp"
-									},
-									"width": 1227,
-									"height": 823
 								}
 							],
 							"id": "018"
@@ -421,6 +677,17 @@
 										"Wine is the lifeblood of the outland valleys\u2014for some, it is the only reason to keep living. Taverns here get their wine from the Wizard of Wines winery near Krezk.",
 										"A mad wizard of great power haunts the foothills of Mount Baratok. He is an outsider and no friend of the vampire's."
 									]
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSI/010.webp"
+									},
+									"title": "Mountain",
+									"credit": "Andreas Rocha",
+									"width": 1225,
+									"height": 671
 								}
 							],
 							"id": "019"
@@ -439,15 +706,6 @@
 										"The Bitterhearts (Innistrad's version of Ravenloft's Vistani) serve Strefan the fiend.",
 										"Never harm a raven, lest ill fortune befall you!"
 									]
-								},
-								{
-									"type": "image",
-									"href": {
-										"type": "internal",
-										"path": "book/PSI/010.webp"
-									},
-									"width": 1225,
-									"height": 671
 								}
 							],
 							"id": "01a"
@@ -460,8 +718,8 @@
 					"name": "Village of Barovia\u2014Shadowgrange",
 					"page": 35,
 					"entries": [
-						"Little changes about this peaceful village as it is described in the Curse of Strahd adventure, except that the religious trappings found in the church use the iconography of the church of Avacyn and the archangel Sigarda. The holy symbol seen in the office is not a sunburst but Avacyn's Y-shaped collar, looking slightly distorted because of the angels' madness. The priest Donavich prays to the angels, not the gods.",
-						"The books found in the church office are called Hymns to the Heron (chants to Sigarda) and The Blade of Truth: The Uses of Logic in the War Against Demonic Heresies, as Fought by the Lunarch Andreas."
+						"Little changes about this peaceful village as it is described in the {@i Curse of Strahd} adventure, except that the religious trappings found in the church use the iconography of the church of Avacyn and the archangel Sigarda. The holy symbol seen in the office is not a sunburst but Avacyn's Y-shaped collar, looking slightly distorted because of the angels' madness. The priest Donavich prays to the angels, not the gods.",
+						"The books found in the church office are called {@i Hymns to the Heron} (chants to Sigarda) and {@i The Blade of Truth: The Uses of Logic in the War Against Demonic Heresies, as Fought by the Lunarch Andreas}."
 					],
 					"id": "01b"
 				},
@@ -469,23 +727,25 @@
 					"type": "entries",
 					"name": "Vistani\u2014Bitterhearts",
 					"entries": [
-						"Madam Eva's people are the Bitterhearts, represented on cards like Bitterheart Witch (from the original Innistrad set) and Wakedancer (from Dark Ascension). They are descended from a people whose village was swallowed up in the chasm of Ashmouth. To ensure their survival, they made a pact with a demon and took up a nomadic existence. Of course, not all Bitterhearts are witches. Some have taken up a life of banditry, some serve Strefan directly, and some remember their people's ancient devotion to the Demonlord of Ashmouth.",
-						"As with the other people of the outland valleys, the lore known by the Bitterhearts is mostly the same as that known by the Vistani in Curse of Strahd.",
+						"Madam Eva's people are the Bitterhearts, represented on cards like {@link Bitterheart Witch|https://gatherer.wizards.com/pages/card/Details.aspx?multiverseid=222205} (from the original Innistrad set) and {@link Wakedancer|https://gatherer.wizards.com/pages/card/details.aspx?multiverseid=262836} (from Dark Ascension). They are descended from a people whose village was swallowed up in the chasm of Ashmouth. To ensure their survival, they made a pact with a demon and took up a nomadic existence. Of course, not all Bitterhearts are witches. Some have taken up a life of banditry, some serve Strefan directly, and some remember their people's ancient devotion to the Demonlord of Ashmouth.",
+						"As with the other people of the outland valleys, the lore known by the Bitterhearts is mostly the same as that known by the Vistani in {@i Curse of Strahd}.",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSI/011.webp"
+							},
+							"title": "Bitterheart Witch",
+							"credit": "Karl Kopinski",
+							"width": 1229,
+							"height": 860
+						},
 						{
 							"type": "entries",
 							"name": "Bitterheart Lore\u2014Strefan",
 							"page": 36,
 							"entries": [
 								"The Bitterhearts have their own beliefs about Strefan, their world, and their place in it:",
-								{
-									"type": "image",
-									"href": {
-										"type": "internal",
-										"path": "book/PSI/011.webp"
-									},
-									"width": 1229,
-									"height": 860
-								},
 								{
 									"type": "list",
 									"items": [
@@ -506,7 +766,7 @@
 									"type": "list",
 									"items": [
 										"Strefan conquered this land centuries ago. He uses wolves, bats, and other creatures to spy on all of his realm.",
-										"The Stensians are a simple, {@condition frightened} people.",
+										"The Stensians are a simple, frightened people.",
 										"The Old Somber Road passes through Strefan's domain. Three settlements lie on the road like beads on a string: Krezk to the west, Lammas in the heart of the valley, and Shadowgrange to the east. Strefan has spies in each settlement.",
 										"An old windmill stands along the road between the village of Shadowgrange and the town of Lammas. It should be avoided at all costs. (The Bitterhearts refuse to say more.)",
 										"It is wise to stick to the road. Wild druids, wayward geists, and packs of wolves and werewolves haunt the Somberwald."
@@ -547,10 +807,12 @@
 								"type": "internal",
 								"path": "book/PSI/012.webp"
 							},
+							"title": "Lunarch Inquisitors",
+							"credit": "Wayne Reynolds",
 							"width": 721,
 							"height": 505
 						},
-						"Lammas also harbors the rebellious Blade of the Inquisitors, Rem Karolus, who is staying at the Blue Water Inn and goes by the name Rictavio. (People speaking of him do not describe pointed ears, since he is and appears fully human.) Rather than a saber-toothed tiger, he has a captive nettle swine (a giant boar). Rictavio's journal describes \"oddities\" that can be attributed to the approach of Emrakul:",
+						"Lammas also harbors the rebellious Blade of the Inquisitors, Rem Karolus, who is staying at the Blue Water Inn and goes by the name Rictavio. (People speaking of him do not describe pointed ears, since he is and appears fully human.) Rather than a saber-toothed tiger, he has a captive nettle swine (a {@creature giant boar}). Rictavio's journal describes \"oddities\" that can be attributed to the approach of Emrakul:",
 						{
 							"type": "list",
 							"items": [
@@ -571,7 +833,18 @@
 					"name": "Argynvostholt\u2014Heron's Light Hold",
 					"page": 37,
 					"entries": [
-						"This ancient hold was constructed by a group of knights called the Order of Heron's Light (replacing the adventure's Order of the Silver Dragon), led by the archangel Sigarda herself. Sigarda was not slain in the ancient confrontation with Strefan, but after her knights were all killed, she abandoned the valleys. Though she does not physically appear, she does try to influence the adventurers to help the knights find peace. Rather than a silver dragon, the hold uses imagery of herons."
+						"This ancient hold was constructed by a group of knights called the Order of Heron's Light (replacing the adventure's Order of the Silver Dragon), led by the archangel Sigarda herself. Sigarda was not slain in the ancient confrontation with Strefan, but after her knights were all killed, she abandoned the valleys. Though she does not physically appear, she does try to influence the adventurers to help the knights find peace. Rather than a silver dragon, the hold uses imagery of herons.",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSI/013.webp"
+							},
+							"title": "Sigarda, Host of Herons",
+							"credit": "Chris Rahn",
+							"width": 724,
+							"height": 505
+						}
 					],
 					"id": "021"
 				},
@@ -581,16 +854,7 @@
 					"page": 37,
 					"entries": [
 						"This fortified village is dominated by the Abbey of Saint Traft (replacing Saint Markovia), which is a madhouse. The abbey is named for an ancient saint who fought demons alongside the host of Avacyn. For all his bravery and zeal, Traft was betrayed by a demon and slain, and his spirit never entered the Blessed Sleep.",
-						{
-							"type": "image",
-							"href": {
-								"type": "internal",
-								"path": "book/PSI/013.webp"
-							},
-							"width": 724,
-							"height": 505
-						},
-						"The approach of Emrakul has filled the abbey to overflowing, and physical corruption commensurate with the growing madness has transformed unfortunate victims into creatures akin to the mongrelfolk of the Curse of Strahd adventure. The abbess of the madhouse is an angel who once fought alongside Saint Traft, and who has descended into utter madness since the ancient saint's death."
+						"The approach of Emrakul has filled the abbey to overflowing, and physical corruption commensurate with the growing madness has transformed unfortunate victims into creatures akin to the mongrelfolk of the {@i Curse of Strahd} adventure. The abbess of the madhouse is an angel who once fought alongside Saint Traft, and who has descended into utter madness since the ancient saint's death."
 					],
 					"id": "022"
 				},
@@ -599,7 +863,7 @@
 					"name": "Tsolenka Pass\u2014The Needle's Eye",
 					"page": 37,
 					"entries": [
-						"The Needle's Eye traverses the Midland Range to connect Stensia's outland valleys and inland valleys. Its proximity to Ashmouth means it is haunted by demons, including the vrocks atop the gatehouse wall. Far worse, replacing the roc of Mount Ghakis, is the Demonlord of Ashmouth, a terrible and ancient fiend. It uses the statistics of a horned devil, except that it uses a battleaxe instead of a fork."
+						"The Needle's Eye traverses the Midland Range to connect Stensia's outland valleys and inland valleys. Its proximity to Ashmouth means it is haunted by demons, including the {@creature vrock|MM|vrocks} atop the gatehouse wall. Far worse, replacing the roc of Mount Ghakis, is the {@creature Demonlord of Ashmouth|PSI}, a terrible and ancient fiend. It uses the statistics of a horned devil, except that it uses a battleaxe instead of a fork."
 					],
 					"id": "023"
 				},
@@ -628,7 +892,7 @@
 					"page": 38,
 					"entries": [
 						"The Martikov family who run this winery made a pact with a raven spirit of the Somberwald and became forcemages, forming the nucleus of the Keepers of the Feather. These witches stand on the side of humanity against the horrors of Innistrad, and against Strefan Maurer specifically. Their pact gives them magical power, supplemented by their extensive knowledge of herbalism.",
-						"The {@creature druid||druids} and {@filter blight|bestiary|search=blight} here come from Yester Hill."
+						"The {@creature druid||druids} and {@filter blights|bestiary|search=blight} here come from Yester Hill."
 					],
 					"id": "026"
 				},
@@ -637,7 +901,7 @@
 					"name": "The Amber Temple\u2014The Moonsilver Temple",
 					"page": 38,
 					"entries": [
-						"This ancient structure predates any of the known peoples and cultures of Innistrad. The good-aligned wizards who built it anticipated the Helvault by entrapping semidivine evil forces in silver-lined prisons. Everywhere in the temple that amber is described, use silver instead. Both the arcanaloth and the death slaad here are various forms of Innistrad demons."
+						"This ancient structure predates any of the known peoples and cultures of Innistrad. The good-aligned wizards who built it anticipated the Helvault by entrapping semidivine evil forces in silver-lined prisons. Everywhere in the temple that amber is described, use silver instead. Both the {@creature arcanaloth} and the {@creature death slaad} here are various forms of Innistrad demons."
 					],
 					"id": "027"
 				},
@@ -655,7 +919,18 @@
 					"name": "Werewolf Den",
 					"page": 38,
 					"entries": [
-						"The werewolves are a branch of the Mondronen howlpack, who practice dark forms of blood magic."
+						"The werewolves are a branch of the Mondronen howlpack, who practice dark forms of blood magic.",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSI/029.webp"
+							},
+							"title": "Tovolar's Magehunter",
+							"credit": "Anthony Palumbo",
+							"width": 799,
+							"height": 661
+						}
 					],
 					"id": "029"
 				},
@@ -672,6 +947,8 @@
 								"type": "internal",
 								"path": "book/PSI/014.webp"
 							},
+							"title": "Nearheath Stalker",
+							"credit": "Michael C. Hayes",
 							"width": 533,
 							"height": 565
 						}
@@ -683,7 +960,7 @@
 					"name": "Adventure Hooks",
 					"page": 39,
 					"entries": [
-						"You can adapt the adventure hooks found in Curse of Strahd as follows.",
+						"You can adapt the adventure hooks found in {@i Curse of Strahd} as follows.",
 						{
 							"type": "entries",
 							"entries": [
@@ -717,7 +994,7 @@
 												"In place of the Harpers, use the parish-blades\u2014specifically the Stensian branch, casually called the roadwatchers.",
 												"Instead of the Order of the Gauntlet, use the knight-inquisitors of Saint Raban. Taking their name from the legendary investigator and slayer of werewolves, this order of cathars serves as inquisitors in the classic sense\u2014not slaughtering the populace, but investigating mysteries and secrets. They are detectives, investigators, and delvers into enigmas best left untouched.",
 												"Rather than the Emerald Enclave, use a group of springsages, the archmages of Herons, which includes a number of druids.",
-												"Instead of the Lords' Alliance, use the Quiver of Kessig, who are experts at hunting werewolves. Eravien (a human Kessiger, not a half-elf as in Curse of Strahd) tells the adventurers that the werewolves are a branch of the Mondronen howlpack, which practices dark forms of blood magic.",
+												"Instead of the Lords' Alliance, use the Quiver of Kessig, who are experts at hunting werewolves. Eravien (a human Kessiger, not a half-elf as in {@i Curse of Strahd}) tells the adventurers that the werewolves are a branch of the Mondronen howlpack, which practices dark forms of blood magic.",
 												"In place of the Zhentarim, use a criminal syndicate connected with Lord Mayor Herzag of Havengul, a corrupt merchant who allows the illicit underground to flourish for his own personal gain."
 											]
 										},
@@ -728,6 +1005,8 @@
 												"type": "internal",
 												"path": "book/PSI/015.webp"
 											},
+											"title": "Harrowing Journey",
+											"credit": "James Paick",
 											"width": 772,
 											"height": 551
 										}
@@ -739,7 +1018,7 @@
 									"name": "Creeping Fog",
 									"page": 39,
 									"entries": [
-										"Since there are no mists to transport characters to Stensia's outland valleys, this hook doesn't apply if you are running Curse of Strahd in Innistrad."
+										"Since there are no mists to transport characters to Stensia's outland valleys, this hook doesn't apply if you are running {@i Curse of Strahd} in Innistrad."
 									],
 									"id": "030"
 								}
@@ -763,7 +1042,7 @@
 									"name": "Barovian Scouts",
 									"page": 39,
 									"entries": [
-										"The first time the player characters encounter these Somberwald trappers, the group is led by a man named Paulin (whom the players might recognize from flavor text on a handful of cards in the original Innistrad block). He leaves them with some words of wisdom: \"Bury your dead deep. The boars are hungriest while the corpse is still warm.\" (At your discretion, you can also replace {@creature berserker||berserkers} with a like number of {@creature giant boar||giant boars} in a random encounter.) Harrowing Journey James Paick"
+										"The first time the player characters encounter these Somberwald trappers, the group is led by a man named Paulin (whom the players might recognize from flavor text on a handful of cards in the original Innistrad block). He leaves them with some words of wisdom: \"Bury your dead deep. The boars are hungriest while the corpse is still warm.\" (At your discretion, you can also replace {@creature berserker||berserkers} with a like number of {@creature giant boar||giant boars} in a random encounter.)"
 									],
 									"id": "033"
 								},
@@ -772,7 +1051,18 @@
 									"name": "Bluto",
 									"page": 40,
 									"entries": [
-										"Found on Maurer Lake, Bluto has gone mad under the influence of the approach of Emrakul. He has devoted himself to an aquatic being he believes lives in the depths of the lake\u2014something akin to the Gitrog monster or the squidlike Kralmar worshiped by coastal cults in Nephalia. Bluto has gill-like flaps on his neck. At your discretion, you could introduce an encounter with the creature he worships, which might be something like a {@creature giant crocodile}."
+										"Found on Maurer Lake, Bluto has gone mad under the influence of the approach of Emrakul. He has devoted himself to an aquatic being he believes lives in the depths of the lake\u2014something akin to the Gitrog monster or the squidlike Kralmar worshiped by coastal cults in Nephalia. Bluto has gill-like flaps on his neck. At your discretion, you could introduce an encounter with the creature he worships, which might be something like a {@creature giant crocodile}.",
+										{
+											"type": "image",
+											"href": {
+												"type": "internal",
+												"path": "book/PSI/030.webp"
+											},
+											"title": "Wayward Disciple",
+											"credit": "Kev Walker",
+											"width": 613,
+											"height": 600
+										}
 									],
 									"id": "034"
 								},
@@ -781,7 +1071,7 @@
 									"name": "Mad Mage of Mount Baratok",
 									"page": 40,
 									"entries": [
-										"You can use Mordenkainen as written in Curse of Strahd. Or, in a twisted nod to the storyline of Shadows over Innistrad, this mad planeswalking mage could be Jace Beleren. Create a different list of spells for Jace, focusing on mind-altering and illusion magic."
+										"You can use Mordenkainen as written in {@i Curse of Strahd}. Or, in a twisted nod to the storyline of {@i Shadows over Innistrad}, this mad planeswalking mage could be Jace Beleren. Create a different list of spells for Jace, focusing on mind-altering and illusion magic."
 									],
 									"id": "035"
 								},
@@ -799,7 +1089,18 @@
 									"name": "Vampire Spawn",
 									"page": 40,
 									"entries": [
-										"Use the vampire neonate statistics in this document whenever the adventurers encounter vampire spawn, rather than the vampire spawn statistics in the Monster Manual. The first time the adventurers encounter exactly two vampire spawn, they meet the infamous twins of Maurer Estate, two young girls named Ruby and Carmine. The two enjoy pretending to be helpless young girls, lost and alone, in order to get close to their prey."
+										"Use the {@creature vampire neonate|PSI} statistics in this document whenever the adventurers encounter vampire spawn, rather than the {@creature vampire spawn} statistics in the {@i Monster Manual}. The first time the adventurers encounter exactly two vampire spawn, they meet the infamous twins of Maurer Estate, two young girls named Ruby and Carmine. The two enjoy pretending to be helpless young girls, lost and alone, in order to get close to their prey.",
+										{
+											"type": "image",
+											"href": {
+												"type": "internal",
+												"path": "book/PSI/016.webp"
+											},
+											"title": "Twins of Maurer Estate",
+											"credit": "Darek Zabrocki",
+											"width": 1076,
+											"height": 699
+										}
 									],
 									"id": "037"
 								},
@@ -808,16 +1109,7 @@
 									"name": "Wereravens",
 									"page": 40,
 									"entries": [
-										"Use the wereraven statistics in the adventure, except that the beak attack cannot transmit lycanthropy (since the witches of the Keeper of the Feather are not lycanthropes). Wereravens also have the spellcasting ability of the {@creature druid} presented in the Monster Manual.",
-										{
-											"type": "image",
-											"href": {
-												"type": "internal",
-												"path": "book/PSI/016.webp"
-											},
-											"width": 1076,
-											"height": 699
-										}
+										"Use the {@creature Young Wereraven|CoS|wereraven} statistics in the adventure, except that the beak attack cannot transmit lycanthropy (since the witches of the Keeper of the Feather are not lycanthropes). Wereravens also have the spellcasting ability of the {@creature druid} presented in the {@i Monster Manual}."
 									],
 									"id": "038"
 								}

@@ -1,0 +1,473 @@
+{
+	"_meta": {
+		"internalCopies": [
+			"monsterFluff"
+		]
+	},
+	"monsterFluff": [
+		{
+			"name": "Angels",
+			"source": "PSI",
+			"entries": [
+				"{@creature Avacyn|PSI} was the archangel of Innistrad, revered across the plane as the source of hope, of protection, and of the Blessed Rest\u2014a peaceful eternity of slumber in the grave. She offered the faithful magical wards against vampires and werewolves, a tranquil oblivion rather than the damned fate of a tormented spirit or undead abomination, and a distant hope that someday, their descendants might live in an Innistrad free from all the horrors of darkness.",
+				"Traditionally, three groups of angels known as flights or hosts served {@creature Avacyn|PSI}, each under the leadership of a lesser archangel.",
+				{
+					"type": "entries",
+					"name": "Flight Alabaster",
+					"page": 26,
+					"entries": [
+						"The practical and sympathetic angels of Flight Alabaster were instrumental in maintaining Avacyn's wards against the supernatural evils of Innistrad. They preferred the use of spells to weapons, and engaged in battle only when they had exhausted other options. As a result, angels of other flights sometimes dismissed them as overly sentimental. Alabaster angels aided priests and cathars in maintaining the protective wards on city walls and at holy sites throughout the plane, and also aided Avacyn in conducting the spirits of the dead to their ultimate fate, dissolving into Innistrad's Æthereal essence. The leader of Flight Alabaster was {@creature Bruna|PSI}, called the Light of Alabaster."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Host of Herons",
+					"page": 26,
+					"entries": [
+						"The Host of Herons comprised the angels of birth, rebirth, and purity, whose magic was said to ward humans against harm in life. This was always the smallest flight of angels, and its primary function was the scouting and tracking of werewolves and other marauding monsters. {@creature Sigarda|PSI} led the Host of Herons, wielding a scythe shaped like the head of a heron."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Flight Goldnight",
+					"page": 26,
+					"entries": [
+						"Flight Goldnight was an army of soldier-angels focused on the martial strength of the church. These angels were characterized by pragmatism and strict observance of church law. They were strategists in battle and skillful leaders during armed conflicts, cultivating a martial mindset that made them more than willing to take up arms when the need arose. The leader of Flight Goldnight was {@creature Gisela|PSI}, called the Blade of Goldnight or the Blade of the Church."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "The Madness of Avacyn",
+					"page": 27,
+					"entries": [
+						"When the Eldrazi titan Emrakul first approached Innistrad, {@creature Avacyn|PSI} perceived her influence as a contagion that must be expunged from the world. However, unable to identify the source of that contagion, {@creature Avacyn|PSI} was driven mad, lashing out instead at every living thing. She led the angels in a vain effort to purge this corruption from the plane, viewing the humans they once protected as part of the maddening illness. The different flights of angels even began to war against each other, drastically reducing the number of angels on the plane.",
+						"Wielding fiery swords and clad in full armor, the soldier-angels of Flight Goldnight became the scourge of all mortal life on Innistrad. None could predict what would trigger their violent judgment or where they would strike next. The angels of Flight Alabaster had always been at the forefront of the church's efforts to root out and punish demon cultists, necromancers, and other heretics. With Emrakul's approach, they grew at least as mad as {@creature Avacyn|PSI} herself. Their fervent obsession drove the forces of the Lunarch Inquisition, the church's efforts to root out sin among the human populace. The angels prodded the church to ever greater and more desperate action.",
+						"Amid the chaos, {@creature Avacyn|PSI} created a new angelic flight to serve as her honor guard. Armed with moonsilver spears forged from shards of the broken Helvault, these angels of the Flight of Moonsilver served as sentries and guards at Thraben Cathedral, and flew alongside {@creature Avacyn|PSI} into battle against any perceived threat to Innistrad.",
+						"Only {@creature Sigarda|PSI} and the Host of Herons remained unaffected by Avacyn's madness, perhaps because they were the angels of purity. The survivors of this host retreated to their old haunt in Gavony's remote parish of Videns to maintain a safe distance from {@creature Avacyn|PSI}.",
+						"Angels that have gone mad can cast {@spell flame strike} once per day using their Innate Spellcasting trait. Additionally, the extra damage from their Angelic Weapons is half fire damage and half radiant damage."
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSI/Angel1.webp"
+					},
+					"title": "Gisela, Blade of Goldnight",
+					"credit": "Jason Chan"
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSI/Angel2.webp"
+					},
+					"title": "Fiery Temper",
+					"credit": "Johannes Voss"
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSI/013.webp"
+					},
+					"title": "Sigarda, Host of Herons",
+					"credit": "Chris Rahn"
+				}
+			]
+		},
+		{
+			"name": "Avacyn",
+			"source": "PSI",
+			"_copy": {
+				"name": "Angels",
+				"source": "PSI"
+			}
+		},
+		{
+			"name": "Bruna",
+			"source": "PSI",
+			"_copy": {
+				"name": "Angels",
+				"source": "PSI"
+			}
+		},
+		{
+			"name": "Creepy Doll",
+			"source": "PSI",
+			"entries": [
+				"Many of the evils that plague humanity on Innistrad arise from within humanity itself, and among the most terrible of these are creatures built by human hands. Some of these are animated by the magic of {@creature necro-alchemist|PSI|necro-alchemists} or witches, but others are inhabited and given life by hostile spirits or other malign forces. These include {@creature gargoyle|MM|gargoyles} and {@creature scarecrow|MM|scarecrows}, haunted dolls and suits of {@creature animated armor}, {@creature stone golem|MM|stone golems} formed of gravestones and mausoleums, and {@creature homunculus|MM|homunculi} created by stitchers and {@creature necro-alchemist|PSI|necro-alchemists}."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSI/Creepy Doll.webp"
+					},
+					"title": "Creepy Doll",
+					"credit": "Matt Stewart"
+				}
+			]
+		},
+		{
+			"name": "Flight Alabaster Angel",
+			"source": "PSI",
+			"_copy": {
+				"name": "Angels",
+				"source": "PSI"
+			}
+		},
+		{
+			"name": "Flight Goldnight Angel",
+			"source": "PSI",
+			"_copy": {
+				"name": "Angels",
+				"source": "PSI"
+			}
+		},
+		{
+			"name": "Flight of Moonsilver Angel",
+			"source": "PSI",
+			"_copy": {
+				"name": "Angels",
+				"source": "PSI"
+			}
+		},
+		{
+			"name": "Geist",
+			"source": "PSI",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								"Innistrad is filled with the ghosts of the human dead. These spirits, called geists, take many forms. Some are protective ancestors, some are simply lost between life and death, and others are vengeful creatures bent on resolving conflicts they couldn't in life. While Avacyn stood as guardian over Innistrad, she and the angels of Flight Alabaster ushered the spirits of the departed into the Æther, where they rejoined the essence of the plane. In her absence\u2014and now her madness\u2014many spirits cling to the world of the living, unable or unwilling to find their way to the Blessed Sleep.",
+								"Geists exist in the space between the material and immaterial realms. Although their nature and substance are fundamentally insubstantial, allowing them to pass through walls or disappear entirely from view, they can affect the material world in a variety of ways. Some can make themselves solid for a brief time, or can solidify parts of themselves or items they hold\u2014 typically long enough to slash open a throat with a weapon or claws. Others operate at the level of the mind, instilling deadly fear within the living or twisting their senses. Victims believe so strongly in the illusory harm being inflicted on them by a geist that they actually suffer injury. Some geists can affect temperatures, using cold to numb or freeze the living\u2014particularly when humans get lost on the moors or wander too far into bogs. Some use psychokinetic power to wrap brambles, chains, spikes, or glass around themselves, then wield those objects against the living.",
+								"Geists have always been a presence on Innistrad. Some manifest on the plane only because of a grudge or regret powerful enough to disturb the Blessed Sleep of the body to which they were connected. Others linger because of a strong desire to protect their living kin, or because of some obsession forcing them to continue a duty they performed in life.",
+								{
+									"type": "entries",
+									"name": "Ghostly Possession",
+									"page": 18,
+									"entries": [
+										"Most geists have the ability to take control of corporeal bodies, including those still inhabited by the living. To possess a living person, a geist must overpower its victim's will, making it much easier to inhabit a corpse or a zombie. As long as the possession lasts, the geist has complete control over a living victim, which is forced to watch its body act without any ability to stop it."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Mana Connection",
+									"page": 19,
+									"entries": [
+										"As creatures of pure spirit, geists are partially sustained by the mana that flows through the plane of Innistrad. Thus, each geist is closely associated with one or more colors of mana, and its nature and attitude are shaped by the characteristics of that mana. The effects of possession by a geist likewise depend on the geist:",
+										{
+											"type": "list",
+											"page": 19,
+											"items": [
+												"Most white-aligned geists are benevolent, sheltering spirits, and they generally possess the living for their own protection.",
+												"Blue-aligned geists are prone to performing repetitive actions\u2014knocking, arranging things in patterns, stacking objects, making marks, and so on. When they possess the living, they often induce this same kind of obsessive behavior.",
+												"Black-aligned geists hate the living, hungering eternally for life, power, or the settling of a wicked grudge. The victims they possess are forced to commit terrible crimes of violence and murder, and are often left injured, permanently crippled, or dying. These geists might be represented by the {@creature shadow}, {@creature specter}, {@creature will-o'-wisp}, or {@creature wraith} statistics in the Monster Manual.",
+												"Human spirits motivated by fury sometimes return as red-aligned geists called {@creature poltergeist|MM|poltergeists}. Use the {@creature specter} statistics from the Monster Manual with the {@creature poltergeist} variant for these creatures.",
+												"Rarely, human spirits return as benevolent green-aligned geists. Similar to white geists, these spirits protect homes nestled in the forest and keep watch over orchards and groves."
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSI/Geist.webp"
+					},
+					"title": "Bygone Bishop",
+					"credit": "Jason A. Engle"
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSI/Geist2.webp"
+					},
+					"title": "Geist-Honored Monk",
+					"credit": "Clint Cearley"
+				}
+			]
+		},
+		{
+			"name": "Gisela",
+			"source": "PSI",
+			"_copy": {
+				"name": "Angels",
+				"source": "PSI"
+			}
+		},
+		{
+			"name": "Host of Herons Angel",
+			"source": "PSI",
+			"_copy": {
+				"name": "Angels",
+				"source": "PSI"
+			}
+		},
+		{
+			"name": "Necro-Alchemist",
+			"source": "PSI",
+			"entries": [
+				"Some bizarre and eccentric scientists use geists\u2014the spirits of the dead\u2014as an energy source to conduct strange experiments on living creatures and fuel crazed technological inventions. Necro-alchemists sometimes call themselves geistmages, but different practitioners identify themselves in different ways. What all have in common, however, is their use of elaborate contraptions to capture, bind, and draw the energy from geists.",
+				"This technology is often employed to power sprawling laboratories. But some necro-alchemists have managed to bind geists to smaller containers, including tubelike canisters that are strapped to the back and attached to weapons that hurl lightning. At their best, necro-alchemists use their technological advances to fight the crazed angels. However, even the most true-hearted geistmages have been known to capture the spirits of fallen allies to recharge a geist-lightning weapon that has run out of fuel.",
+				"Necro-alchemists are best described using the {@creature mage} statistics in the Monster Manual, with the assumption that their spellcasting is facilitated by the use of geist-powered devices."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSI/Necro-Alchemist.webp"
+					},
+					"title": "Laboratory Maniac",
+					"credit": "Jason Felix"
+				}
+			]
+		},
+		{
+			"name": "Sigarda",
+			"source": "PSI",
+			"_copy": {
+				"name": "Angels",
+				"source": "PSI"
+			}
+		},
+		{
+			"name": "Skaab",
+			"source": "PSI",
+			"entries": [
+				"Skaberen, also called stitchers, are scientist-mages who create artificial forms of life. The true goal of a skaberen is to create real life, an undertaking which usually produces a malformed \"offspring\" for the practitioner. This offspring is a skaab\u2014a constructed zombie.",
+				"Skaabs are assembled from disparate body parts and animated through scientific means. Most skaabs are more or less humanlike, but creative stitchers have crafted winged skaabs similar to the drakes of other worlds, towering giant skaabs, and unrecognizable horrors.",
+				"Skaberen go through an elaborate process to gather body parts, bind them together, infuse the stitched body with vital fluid, and plant a vital force in its unliving flesh. Some skaberen even use necro-alchemy to fuel their laboratories, leading to even more confusion in terminology.",
+				"Skaberen usually ply their trade in remote and inhospitable places, since they are viewed as blasphemers by the church of Avacyn. They often become obsessed hermits who surround themselves with ancient scrolls and books, phials of rare noxious liquids, glass jars full of pickled organs, anatomical charts for both humans and beasts, rune-engraved skeletal remains, and small anvils and hammers for inscribing brass and copper plates.",
+				"Some skaberen might be mere {@creature commoner|MM|commoners}, or perhaps {@creature cultist|MM|cultists}. The most powerful among them might be {@creature mage|MM|mages} (using geist-powered devices), but the true power of most skaberen is in their creations ({@creature skaab|PSI|flesh golems}), not their own magic."
+			]
+		},
+		{
+			"name": "Strefan Maurer",
+			"source": "PSI",
+			"entries": [
+				"The history of Strefan Maurer runs parallel to that of Strahd von Zarovich. After his father's death, Strefan studied magic and forged a pact with the demon Shilgengar in return for the promise of immortality. After murdering his brother Sergei and drinking his blood, Strefan journeyed to Markov Manor and consulted with Edgar Markov. Together, they worked with Shilgengar to create the twelve bloodlines of vampires on Innistrad. Maurer Estate (Castle Ravenloft) was not spirited away to a demiplane\u2014it was already on Innistrad, itself a place of nightmares. And Strefan is not trapped here, so he is not seeking a successor in hopes of escaping. Newcomers to his domain do attract his attention, though, as the possibility of meeting a new consort is always on Strefan's mind.",
+				"Strefan's statistics are unchanged from the statistics of {@creature Strahd von Zarovich|CoS|Strahd} in the Curse of Strahd adventure, except that he lacks the Vampire Weaknesses feature. Instead, Strefan has the weaknesses shared by Innistrad vampires (see that earlier section)."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSI/009.webp"
+					},
+					"title": "Falkenrath Noble",
+					"credit": "Slawomir Maniak"
+				}
+			]
+		},
+		{
+			"name": "Vampire Neonate",
+			"source": "PSI",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"The vampires of Innistrad form a civilization that stands alongside and in direct competition with humanity, presenting the greatest danger to human life on the plane. Like werewolves, vampires were originally human, and they view themselves as successors to the weak human race\u2014even as they grudgingly recognize that they require humans to feed upon. Vampires are the embodiment of self-indulgent desire, pursuing hedonistic cravings that humans suppress out of a sense of morality and propriety. In their stately manor houses, sprawling courts, and towering castles, four great family lines of vampires show varying degrees of aggressiveness toward their human prey.",
+						{
+							"type": "entries",
+							"name": "The Nature of Vampirism",
+							"page": 16,
+							"entries": [
+								"Vampirism on Innistrad is an anointing that persists and is perpetuated by magic\u2014not a curse or a disease, but a physical state that the vampires somewhat euphemistically call a \"condition of the blood.\"",
+								{
+									"type": "entries",
+									"name": "Vampire Appearance",
+									"page": 16,
+									"entries": [
+										"Vampires have distinctive eyes, appearing as pools of gold or silver surrounded by black. Their hair is often black but can also be deep purple, dark magenta, burgundy, or even dark blue-green. Some vampires wear wigs for variety, novelty, or to disguise themselves more easily among humans. They have pale skin that is cool to the touch. Their canine teeth are slightly pronounced at all times, and they extend significantly when they bite to feed. Vampires also tend to have long and slightly curved fingernails."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Vampiric Glamer",
+									"page": 16,
+									"entries": [
+										"Many vampires learn a unique form of mind-affecting magic that enables them to move among humans undetected. Called the glamer, this power alters what nearby humans think they're perceiving, as opposed to true illusion magic that masks the subject's appearance. As such, particularly strong-willed humans can sometimes shake off the effects of the glamer to see a vampire's true form."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Vampire Vulnerabilities",
+									"page": 16,
+									"entries": [
+										"Weapons cut from living wood are particularly effective against vampires, though any weapon can harm or kill them. A vampire can't cross running water that shows the reflection of the moon, and water blessed by Avacyn ({@item Holy Water (flask)|PHB|holy water}) burns vampire flesh like acid. A vampire's reflection in silver (including a silver-backed glass mirror) appears as the vampire would have looked without the vampiric condition\u2014neither its true appearance nor its glamer, but a normal human, flaws and all. For that reason, vampires go to great lengths to avoid mirrors, and the presence of silver in any form is unsettling to them."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "The Unquenchable Thirst",
+									"page": 17,
+									"entries": [
+										"A vampire needs to consume the blood of living humans for sustenance. At a minimum, during any given cycle of the moon, a vampire must drink as much blood as an average adult human contains (about five liters). Without enough blood, the vampire dries and shrivels, eventually crumbling to dust. Given the opportunity, most vampires will happily consume more blood than they strictly need.",
+										"Typically, a vampire drinks so much blood from a human that the victim dies, but sometimes the vampire is interrupted and the human survives and recovers. Such survivors are often met with suspicion and fear, but they never become vampires unless an actual exchange of blood has occurred\u2014which is always a deliberate act on the vampire's part. These survivors are often plagued by unsettling (and sometimes disturbingly erotic) dreams, but they suffer no other lasting consequences."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Vampire Personality",
+									"page": 17,
+									"entries": [
+										"The selfish and arrogant vampires view humans as cattle in comparison to the elegance and sophistication of vampire society. Of course, that \"sophistication\" consists mostly of treachery and debauchery, where grudges and betrayals are a source of amusement. The vampires' endless revels, feasts, romances, and intrigues are rife with decadence and hedonism. They overindulge in everything, including sex, food, drink, entertainment, sleep, and scheming."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Vampire Bloodlines",
+							"page": 17,
+							"entries": [
+								"Innistrad's ancient history speaks of a human alchemist and healer named Edgar Markov, who sought to preserve his own life and the lives of his family. As old age began to claim him, he despaired of finding an alchemical solution and turned to black magic. Not long after, the demon Shilgengar appeared to Markov and revealed a means by which he could achieve immortality: a dark ritual that involved drinking an angel's blood.",
+								"The vampires of Innistrad are all descended from twelve ancient sires\u2014the congregation that participated in Markov's blasphemous ritual. Of these twelve bloodlines, four constitute the vast majority of Innistrad's vampires: Markov, Voldaren, Falkenrath, and Stromkirk."
+							]
+						}
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSI/Vampire Neonate.webp"
+					},
+					"title": "Markov Dreadknight",
+					"credit": "Cynthia Sheppard"
+				}
+			]
+		},
+		{
+			"name": "Werewolf (Krallenhorde)",
+			"source": "PSI",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"Driven by their passions, their supernatural hunger, and the cycle of the moon, werewolves shed their tenuous humanity to embrace the savage predator within. They live along the boundary between humanity and supernatural evil, between civilization and the wilds, between light and utter darkness. Gathering in wild packs or hunting alone under the silver moon, werewolves embody the urge to violence, the rebellion against social mores and the chains of conscience, and the hunting instinct that lives within the human heart.",
+						{
+							"type": "entries",
+							"name": "The Nature of Lycanthropy",
+							"page": 14,
+							"entries": [
+								"Lycanthropy\u2014the condition that turns humans into werewolves\u2014is a supernatural curse that causes the victim's spiritual essence to become mingled with the wild essence of nature, symbolized by the wolf. The lycanthrope can be thought of as possessing two souls, or a single soul split between two essences that constantly battle for control. When the wild wolf essence triumphs, the werewolf change occurs. This might explain why werewolves hunt humans so often; the wolf essence desires to destroy the human side and triumph over humanity, and does so symbolically through brutal murder.",
+								{
+									"type": "entries",
+									"name": "A Tenuous Hold on Humanity",
+									"page": 14,
+									"entries": [
+										"A person afflicted with lycanthropy is forever in doubt of his or her own urges and instincts. In human form, a werewolf feels the pull of the wolf's essence even while fully engaged with human society. All lycanthropes feel the war of emotions in their hearts, and as the moon grows full, conscience, religion, and personal restraint wield less and less influence. The full moon makes the change inevitable, but any strong emotion or traumatic experience can also trigger the transformation.",
+										"Werewolves in either form seem to be able to tell a human-form lycanthrope by scent. Indeed, humans who are mysteriously spared during werewolf rampages are often suspected of being werewolves themselves."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "A Natural Killing Machine",
+									"page": 14,
+									"entries": [
+										"Werewolves in canid form are beings of unparalleled savagery and strength. Their bodies are perfectly engineered for slaughter, with jaws capable of snapping bone and claws sharp enough to rip the entrails from a beast many times their size. Their minds are explosions of instinct and adrenaline, fed supernatural awareness from their heightened senses yet cognitively blind to almost everything but the kill. They can walk upright for manual dexterity or lope on four limbs for speed. Their howl is said to release the wolf's spirit within, a harrowing sound that fogs the air and chills the night. Werewolves in canid form cannot speak human languages, but seem to be able to communicate with each other on matters of hunting, dominance, and social hierarchy, as canines do in the wild.",
+										"If a werewolf dies in canid form, it changes back to human form, a process called death reversion."
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Transmitting the Curse",
+							"page": 15,
+							"entries": [
+								"The exact means by which a person is subjected to the curse of lycanthropy is unknown and clouded by superstition. It's likely that the curse can be imposed by a variety of different means\u2014including intentional participation in a ritual meant to invoke the curse. Sometimes, it seems that a werewolf howlpack chooses a victim; certainly, most victims share a common experience of being called to join the pack."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Werewolf Howlpacks",
+							"page": 15,
+							"entries": [
+								"Werewolves are often lone hunters, stalking and killing humans as singular monsters in towns and villages. But some werewolves form loose social groups in the wild, called howlpacks. The population of any howlpack waxes and wanes like the moon, gaining and losing members as individual lycanthropes enter or leave their canid state. Some werewolves seem to be continually drawn back to a familiar howlpack, returning to it time after time as they drop their human guise to reenter the wild.",
+								"Howlpacks can be tiny hunting parties of just a few werewolves or massive hordes of over a hundred beasts. They are typically led by single alphas (male or female) that dominate the pack. Alphas must often defend their power by defeating challengers in combat."
+							]
+						}
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSI/Werewolf (Krallenhorde).webp"
+					},
+					"title": "Moonmist",
+					"credit": "Ryan Yee"
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSI/Werewolf (Krallenhorde)2.webp"
+					},
+					"title": "Bound by Moonsilver",
+					"credit": "Joseph Meehan"
+				}
+			]
+		},
+		{
+			"name": "Zombie Cat",
+			"source": "PSI",
+			"entries": [
+				"Ghoulcallers are necromancers\u2014mages who use black mana to call forth the dead from graveyards. These risen dead are called ghouls, or the unhallowed. The ghoulcaller fills the fragile mind of his or her creation with a single driving purpose, which the ghoul carries out to the best of its ability using whatever skills it has. The result is a grotesque parody of life: risen blacksmiths attempting to \"reforge\" their opponents, fallen warriors rasping incoherent battle cries, undead murderers reawakening their deadly slyness, and fallen mages trying to weave spells that often result in some horrible distortion of their original purpose.",
+				"The clergy of Avacyn perform rituals on the final resting places of the dead to ensure the Blessed Sleep, but during Avacyn's time in the Helvault, ghoulcallers had an easier time in their work. In this present age of Avacyn's madness, not only are necromancers easily able to plunder the graves of the fallen, but ghouls seem to arise spontaneously from graves across Innistrad.",
+				"The {@creature zombie|MM|zombies} in the {@i Monster Manual} describe the most common ghouls of Innistrad. More powerful necromancers might raise unhallowed dead with the statistics of {@creature ghast|MM|ghasts}, {@creature ghoul|MM|ghouls}, {@creature mummy|MM|mummies}, or {@creature wight|MM|wights}.",
+				"Ghouls also include zombie animals, often animated by necromancers to serve as familiars\u2014most commonly {@creature zombie cat|PSI|cats}, {@creature zombie rat|PSI|rats}, and {@creature zombie snake|PSI|snakes}. These creatures have the statistics of the small animals in the {@i Monster Manual}, with the addition of the zombie's Undead Fortitude trait."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSI/Zombies.webp"
+					},
+					"title": "Unbreathing Horde",
+					"credit": "Dave Kendall"
+				}
+			]
+		},
+		{
+			"name": "Zombie Rat",
+			"source": "PSI",
+			"_copy": {
+				"name": "Zombie Cat",
+				"source": "PSI"
+			}
+		},
+		{
+			"name": "Zombie Snake",
+			"source": "PSI",
+			"_copy": {
+				"name": "Zombie Cat",
+				"source": "PSI"
+			}
+		}
+	]
+}

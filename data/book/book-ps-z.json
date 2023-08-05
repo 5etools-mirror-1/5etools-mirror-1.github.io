@@ -5,17 +5,55 @@
 			"name": "Introduction",
 			"page": 3,
 			"entries": [
-				"Dungeons & Dragons and Magic: The Gathering are two different games, but that doesn't mean their multiverses can't meet",
+				{
+					"type": "gallery",
+					"images": [
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSZ/001.webp"
+							},
+							"width": 1229,
+							"height": 1586
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSZ/002.webp"
+							},
+							"title": "Tazeem",
+							"credit": "Aleksi Briclot",
+							"width": 480,
+							"height": 621
+						}
+					]
+				},
 				{
 					"type": "quote",
 					"entries": [
-						"From the beginning, Magic's plane of Zendikar was conceived as an \"adventure world\" where parties of explorers delve into ancient ruins in search of wonders and treasures, fighting the monsters they encounter on the way. Many of the plane's creative roots lie in D&D, so it should be no surprise that The Art of Magic: The Gathering\u2014Zendikar feels a lot like a D&D campaign setting book. It's littered with adventure hooks and story seeds, and lacks only the specific rules references you'd need to adapt Zendikar's races, monsters, and adventures to a tabletop D&D campaign. And it's all surrounded by amazing fantasy art that holds boundless inspiration in itself.",
-						"You can think of Plane Shift: Zendikar as a sort of supplement to The Art of Magic: The Gathering\u2014Zendikar, designed to help you take the world detail and story seeds contained in that book and turn them into an exciting D&D campaign. The easiest way to approach a D&D campaign set on Zendikar is to use the rules that D&D provides mostly as written: A druid on Zendikar might call on green mana and cast spells like giant growth, but she's still just a druid in the D&D rules (perhaps casting giant insect).",
-						"Plane Shift: Zendikar was made using the fifth edition of the D&D rules that you can find here",
-						"D&D is a flexible rules system designed to model any kind of fantasy world. The D&D magic system doesn't involve five colors of mana or a ramping-up to your most powerful spells, but the goal isn't to mirror the experience of playing Magic in your roleplaying game. The point is to experience the worlds of Magic in a new way, through the lens of the D&D rules. All you really need is races for the characters, monsters for them to face, and some ideas to build a campaign.",
-						"Finally, The Art of Magic: The Gathering\u2014Zendikar will help you create a D&D campaign in Zendikar, but you don't actually need the book to make use of this material\u2014you can also refer to the abundance of lore about Zendikar found on {@link magicthegathering.com}."
+						"{@i Dungeons & Dragons and Magic: The Gathering} are two different games, but that doesn't mean their multiverses can't meet.",
+						"From the beginning, Magic's plane of Zendikar was conceived as an \"adventure world\" where parties of explorers delve into ancient ruins in search of wonders and treasures, fighting the monsters they encounter on the way. Many of the plane's creative roots lie in D&D, so it should be no surprise that {@i The Art of Magic: The Gathering\u2014Zendikar} feels a lot like a D&D campaign setting book. It's littered with adventure hooks and story seeds, and lacks only the specific rules references you'd need to adapt Zendikar's races, monsters, and adventures to a tabletop D&D campaign. And it's all surrounded by amazing fantasy art that holds boundless inspiration in itself.",
+						"You can think of {@i Plane Shift: Zendikar} as a sort of supplement to {@i The Art of Magic: The Gathering\u2014Zendikar}, designed to help you take the world detail and story seeds contained in that book and turn them into an exciting D&D campaign. The easiest way to approach a D&D campaign set on Zendikar is to use the rules that D&D provides mostly as written: A druid on Zendikar might call on green mana and cast spells like giant growth, but she's still just a druid in the D&D rules (perhaps casting {@spell giant insect}).",
+						"{@i Plane Shift: Zendikar} was made using the fifth edition of the D&D rules that you can find here. D&D is a flexible rules system designed to model any kind of fantasy world. The D&D magic system doesn't involve five colors of mana or a ramping-up to your most powerful spells, but the goal isn't to mirror the experience of {@i playing} Magic in your roleplaying game. The point is to experience the {@i worlds} of Magic in a new way, through the lens of the D&D rules. All you really need is races for the characters, monsters for them to face, and some ideas to build a campaign.",
+						"Finally, {@i The Art of Magic: The Gathering\u2014Zendikar} will help you create a D&D campaign in Zendikar, but you don't actually need the book to make use of this material\u2014you can also refer to the abundance of lore about Zendikar found on {@link magicthegathering.com}."
 					],
+					"skipItalics": true,
+					"skipMarks": true,
 					"by": "James Wyatt"
+				},
+				"The game mechanics in this supplement are usable in your D&D campaign but are not fully tempered by playtests and design iterations. For these reasons, material in this supplement is not legal in D&D Organized Play events.",
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSZ/003.webp"
+					},
+					"title": "Seek the Wilds",
+					"credit": "Anna Steinbauer",
+					"width": 254,
+					"height": 620
 				},
 				{
 					"type": "section",
@@ -26,10 +64,12 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/PSZ/001.webp"
+								"path": "book/PSZ/004.webp"
 							},
 							"width": 314,
-							"height": 828
+							"height": 828,
+							"title": "Battle for Zendikar",
+							"credit": "Greg Semkow"
 						},
 						"Zendikar is a dangerous world of lethal risks and priceless rewards. From the perspective of its inhabitants, it is a hostile place that seems to be actively trying to kill any creature that has the audacity to live there. The danger is unrelenting. Precarious terrain, cunning predators, and natural disasters on a massive scale all present a constant challenge to survival\u2014as do the unpredictable ripples of change that wash through the plane, known to its people as the Roil. Even the mana that suffuses the land is wild and hard to tame. It feels almost alive to those who wield it, and sometimes causes the land to manifest magical effects much like spells. Zendikar is a plane of deadly peril, but the denizens of that plane grow up strong and resilient, prepared for the dangers of the only world they know.",
 						"Planeswalkers\u2014powerful mages with the ability to travel from world to world in the vast multiverse\u2014have a larger perspective. To them, the dangers of Zendikar take on a different meaning. Ages ago, three alien beings of tremendous power were imprisoned on Zendikar in an effort to prevent them from consuming the entire multiverse, plane by plane. But the presence of these Eldrazi within the plane is like a festering infection within a living body. Zendikar isn't trying to exterminate all the creatures that inhabit the plane\u2014it's been trying in vain to destroy the Eldrazi. Its inhabitants just happen to get in the way.",
@@ -72,6 +112,17 @@
 														"The Sunspring (Tazeem)",
 														"Benthidrix (Sejiri)"
 													]
+												},
+												{
+													"type": "image",
+													"href": {
+														"type": "internal",
+														"path": "book/PSZ/005.webp"
+													},
+													"title": "Ior Ruin Expedition",
+													"credit": "Chris Rahn",
+													"width": 597,
+													"height": 372
 												}
 											],
 											"id": "005"
@@ -92,6 +143,17 @@
 														"Crypt of Agadeem (Ondu)",
 														"Emeria, the Sky Ruin (Tazeem)"
 													]
+												},
+												{
+													"type": "image",
+													"href": {
+														"type": "internal",
+														"path": "book/PSZ/006.webp"
+													},
+													"title": "Emeria, the Sky Ruin",
+													"credit": "Jamie Jones",
+													"width": 485,
+													"height": 503
 												}
 											],
 											"id": "006"
@@ -111,6 +173,17 @@
 														"Hagra Cistern (Guul Draz)",
 														"Helix of Zof (Guul Draz)"
 													]
+												},
+												{
+													"type": "image",
+													"href": {
+														"type": "internal",
+														"path": "book/PSZ/007.webp"
+													},
+													"title": "Watery Grave",
+													"credit": "Min Yum",
+													"width": 354,
+													"height": 818
 												}
 											],
 											"id": "007"
@@ -133,6 +206,17 @@
 			"page": 7,
 			"entries": [
 				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSZ/008.webp"
+					},
+					"title": "Inspired Charge",
+					"credit": "Willian Murai",
+					"width": 477,
+					"height": 617
+				},
+				{
 					"type": "list",
 					"columns": 3,
 					"items": [
@@ -152,12 +236,24 @@
 			"name": "A Zendikar Bestiary",
 			"page": 20,
 			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSZ/009.webp"
+					},
+					"title": "Iona, Shield of Emeria",
+					"credit": "Jason Chan",
+					"width": 480,
+					"height": 620
+				},
 				"For the most part, there's no need to craft new monsters out of whole cloth to reflect the creatures of Zendikar. The D&D Monster Manual is full of creatures that have obvious equivalents on Zendikar. That plane's loam lion is just a kind of lion, for example. There are also plenty of close equivalents. An ankheg from the Monster Manual is a fine way to represent a caustic crawler, and similar examples abound. The goal of this section is to guide your choices of such equivalents. The Eldrazi are an exception\u2014they're such an important part of the story of Zendikar that they deserve a little more attention.",
 				{
 					"type": "list",
+					"columns": 3,
 					"items": [
 						"{@creature Angel|PSZ}",
-						"{@creature Archon Of Redemption|PSZ}",
+						"{@creature Archon of Redemption|PSZ}",
 						"{@creature Baloth|PSZ}",
 						"{@creature Boulderfoot Giant|PSZ}",
 						"{@creature Caustic Crawler|PSZ}",
