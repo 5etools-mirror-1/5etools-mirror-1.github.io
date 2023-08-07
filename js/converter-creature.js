@@ -34,6 +34,14 @@ class _ParseMeta {
 	isSkippableCurLine () {
 		return this.curLine === "";
 	}
+
+	getNextLineMeta () {
+		for (let i = this.ixToConvert + 1; i < this.toConvert.length; ++i) {
+			const l = this.toConvert[i]?.trim();
+			if (l) return {ixToConvertNext: i, nxtLine: l};
+		}
+		return null;
+	}
 }
 
 // TODO easy improvements to be made:
@@ -59,10 +67,11 @@ class CreatureParser extends BaseParser {
 	static _NO_ABSORB_TITLES = [
 		"ACTION",
 		"LEGENDARY ACTION",
-		"VILLAIN ACTION",
+		"VILLAIN ACTION", // homebrew
 		"MYTHIC ACTION",
 		"REACTION",
 		"BONUS ACTION",
+		"UTILITY SPELL", // homebrew
 	];
 
 	static _RE_START_SAVING_THROWS = "(?:Saving Throw|Save)s?";
@@ -84,6 +93,7 @@ class CreatureParser extends BaseParser {
 		BONUS_ACTIONS: "bonusActions",
 		LEGENDARY_ACTIONS: "legendaryActions",
 		MYTHIC_ACTIONS: "mythicActions",
+		BREW_FEATURES: "brewFeatures", // homebrew
 	};
 
 	/**
@@ -115,7 +125,7 @@ class CreatureParser extends BaseParser {
 	static _isStartNextLineParsingPhase ({line}) {
 		return /^(?:action|legendary action|mythic action|reaction|bonus action)s?(?:\s+\([^)]+\))?$/i.test(line)
 			// Homebrew
-			|| /^(?:feature|villain action)s?(?:\s+\([^)]+\))?$/i.test(line);
+			|| /^(?:feature|villain action|utility spell)s?(?:\s+\([^)]+\))?$/i.test(line);
 	}
 
 	/**
@@ -148,7 +158,7 @@ class CreatureParser extends BaseParser {
 		for (; meta.ixToConvert < meta.toConvert.length; meta.ixToConvert++) {
 			meta.initCurLine();
 			if (meta.isSkippableCurLine()) continue;
-			if (this._doParseText_crAlt({meta, stats})) continue;
+			if (this._doParseText_crAlt({meta, stats, cbWarning: options.cbWarning})) continue;
 			if (this._doParseText_role({meta})) continue;
 		}
 		meta.doPostLoop();
@@ -175,7 +185,7 @@ class CreatureParser extends BaseParser {
 			}
 
 			// challenge rating alt
-			if (this._doParseText_crAlt({meta, stats})) continue;
+			if (this._doParseText_crAlt({meta, stats, cbWarning: options.cbWarning})) continue;
 
 			// homebrew "role"
 			if (this._doParseText_role({meta})) continue;
@@ -258,7 +268,7 @@ class CreatureParser extends BaseParser {
 			if (ConvertUtil.isStatblockLineHeaderStart({reStartStr: this._RE_START_SKILLS, line: meta.curLine})) {
 				// noinspection StatementWithEmptyBodyJS
 				while (this._absorbBrokenLine({meta}));
-				this._setCleanSkills(stats, meta.curLine);
+				this._setCleanSkills(stats, meta.curLine, options);
 				continue;
 			}
 
@@ -306,7 +316,7 @@ class CreatureParser extends BaseParser {
 			if (ConvertUtil.isStatblockLineHeaderStart({reStartStr: this._RE_START_SENSES, line: meta.curLine})) {
 				// noinspection StatementWithEmptyBodyJS
 				while (this._absorbBrokenLine({meta}));
-				this._setCleanSenses(stats, meta.curLine);
+				this._setCleanSenses({stats, line: meta.curLine, cbWarning: options.cbWarning});
 				continue;
 			}
 
@@ -322,7 +332,7 @@ class CreatureParser extends BaseParser {
 			if (ConvertUtil.isStatblockLineHeaderStart({reStartStr: this._RE_START_CHALLENGE, line: meta.curLine})) {
 				// noinspection StatementWithEmptyBodyJS
 				while (this._absorbBrokenLine({isCrLine: true, meta}));
-				this._setCleanCr(stats, meta, {header: this._RE_START_CHALLENGE});
+				this._setCleanCr(stats, meta, {cbWarning: options.cbWarning, header: this._RE_START_CHALLENGE});
 				continue;
 			}
 
@@ -364,6 +374,7 @@ class CreatureParser extends BaseParser {
 
 				meta.toConvert[j] = `${line.trim()} ${lineNxt.trim()}`;
 				meta.toConvert.splice(j + 1, 1);
+				if (j === meta.ixToConvert) meta.curLine = meta.toConvert[meta.ixToConvert];
 				--j;
 			}
 
@@ -373,7 +384,18 @@ class CreatureParser extends BaseParser {
 					lineMode = this._LINE_MODES.UNKNOWN;
 
 					// Homebrew
-					if (ConvertUtil.isStatblockLineHeaderStart({reStartStr: "FEATURES?", line: meta.curLine.toUpperCase()})) lineMode = this._LINE_MODES.TRAITS;
+					if (ConvertUtil.isStatblockLineHeaderStart({reStartStr: "FEATURES?", line: meta.curLine.toUpperCase()})) lineMode = this._LINE_MODES.BREW_FEATURES;
+
+					// Homebrew
+					if (ConvertUtil.isStatblockLineHeaderStart({reStartStr: "UTILITY SPELLS?", line: meta.curLine.toUpperCase()})) {
+						lineMode = this._LINE_MODES.TRAITS;
+
+						// Fake a spellcasting entry by adding a generic header
+						const nxtLineMeta = meta.getNextLineMeta();
+						if (nxtLineMeta) {
+							meta.toConvert[nxtLineMeta.ixToConvertNext] = `Spellcasting (Utility). ${meta.toConvert[nxtLineMeta.ixToConvertNext]}`;
+						}
+					}
 
 					if (ConvertUtil.isStatblockLineHeaderStart({reStartStr: "ACTIONS?", line: meta.curLine.toUpperCase()})) lineMode = this._LINE_MODES.ACTIONS;
 					if (lineMode === this._LINE_MODES.ACTIONS) {
@@ -468,6 +490,14 @@ class CreatureParser extends BaseParser {
 						case this._LINE_MODES.BONUS_ACTIONS: if (this._hasEntryContent(curTrait)) stats.bonus.push(curTrait); break;
 						case this._LINE_MODES.LEGENDARY_ACTIONS: if (this._hasEntryContent(curTrait)) stats.legendary.push(curTrait); break;
 						case this._LINE_MODES.MYTHIC_ACTIONS: if (this._hasEntryContent(curTrait)) stats.mythic.push(curTrait); break;
+
+						case this._LINE_MODES.BREW_FEATURES: {
+							if (!this._hasEntryContent(curTrait)) break;
+							const prop = this._getEntryProp({entry: curTrait});
+							stats[prop].push(curTrait);
+							break;
+						}
+
 						default: throw new Error(`Unhandled line mode "${lineMode}"!`);
 					}
 				}
@@ -478,6 +508,7 @@ class CreatureParser extends BaseParser {
 			CreatureParser._PROPS_ENTRIES.forEach(prop => this._doMergeBulletedLists(stats, prop));
 			CreatureParser._PROPS_ENTRIES.forEach(prop => this._doMergeNumberedLists(stats, prop));
 			["action"].forEach(prop => this._doMergeBreathWeaponLists(stats, prop));
+			CreatureParser._PROPS_ENTRIES.forEach(prop => this._doMergeHangingLists(stats, prop));
 
 			// Remove keys if they are empty
 			if (stats.trait.length === 0) delete stats.trait;
@@ -498,7 +529,7 @@ class CreatureParser extends BaseParser {
 		options.cbOutput(statsOut, options.isAppend);
 	}
 
-	static _doParseText_crAlt ({meta, stats}) {
+	static _doParseText_crAlt ({meta, stats, cbWarning}) {
 		if (!ConvertUtil.isStatblockLineHeaderStart({reStartStr: "CR", line: meta.curLine})) return false;
 
 		// noinspection StatementWithEmptyBodyJS
@@ -513,7 +544,7 @@ class CreatureParser extends BaseParser {
 		}
 		// endregion
 
-		this._setCleanCr(stats, meta, {header: "CR"});
+		this._setCleanCr(stats, meta, {cbWarning, header: "CR"});
 
 		// remove the line, as we expect alignment as line 1
 		meta.toConvert.splice(meta.ixToConvert, 1);
@@ -549,21 +580,39 @@ class CreatureParser extends BaseParser {
 			.forEach(({re, original}) => clean = clean.replace(re, `\n${original}\n`));
 		// endregion
 
-		// region Handle bad OCR'ing of dice
-		clean = clean.replace(/\nl\/(?<unit>day)[.:]\s*/g, (...m) => `\n1/${m.last().unit}: `)
+		clean = clean
+			// region Handle bad OCR'ing of dice
+			.replace(/\nl\/(?<unit>day)[.:]\s*/g, (...m) => `\n1/${m.last().unit}: `)
 			.replace(/\b(?<num>[liI!]|\d+)?d[1liI!]\s*[oO0]\b/g, (...m) => `${m.last().num ? isNaN(m.last().num) ? "1" : m.last().num : ""}d10`)
 			.replace(/\b(?<num>[liI!]|\d+)?d[1liI!]\s*2\b/g, (...m) => `${m.last().num ? isNaN(m.last().num) ? "1" : m.last().num : ""}d12`)
 			.replace(/\b[liI!1]\s*d\s*(?<faces>\d+)\b/g, (...m) => `1d${m.last().faces}`)
 			.replace(/\b(?<num>\d+)\s*d\s*(?<faces>\d+)\b/g, (...m) => `${m.last().num}d${m.last().faces}`)
 			// endregion
+
 			// region Handle misc OCR issues
 			.replace(/\bI nt\b/g, "Int")
 			.replace(/\(-[lI!]\)/g, "(-1)")
 			// endregion
-			// Handle pluses split across lines
-			.replace(/(\+\s*)\n+(\d+)/g, (...m) => `${m[1]}${m[2]}`)
+
+			// Handle modifiers split across lines
+			.replace(/([-+] +)\n +(\d+|PB)/g, (...m) => `${m[1]}${m[2]}`)
+
 			// Handle CR XP on separate line
 			.replace(/\n(\([\d,]+ XP\)\n)/g, (...m) => m[1])
+
+		// region Split sentences which should *generally* in the same paragraph
+
+			// Handle split "DC-sentence then effect-sentence"
+			.replace(/(\.\s*?)\n(On a (?:failed save|failure|success|successful save)\b)/g, (...m) => `${m[1].trimEnd()} ${m[2]}`)
+			// Handle split "The target..." sentences
+			.replace(/(\.\s*?)\n(The target (?:then|must|regains)\b)/g, (...m) => `${m[1].trimEnd()} ${m[2]}`)
+			// Handle split "A creature..." sentences
+			.replace(/(\.\s*?)\n(A creature (?:takes)\b)/g, (...m) => `${m[1].trimEnd()} ${m[2]}`)
+
+		// endregion
+
+			// Handle split `Melee Attack: ...`
+			.replace(/((?:Melee|Ranged) (?:(?:Weapon|Spell|Area) )?Attack:)\s*?\n\s*([-+])/g, (...m) => `${m[1]} ${m[2]}`)
 		;
 
 		clean = clean
@@ -574,7 +623,7 @@ class CreatureParser extends BaseParser {
 
 		statsHeadFootSpl[0] = statsHeadFootSpl[0]
 			// collapse multi-line ability scores
-			.replace(/(\d\d?\s*\([-—+]?\d+\)\s*)+/gi, (...m) => `${m[0].replace(/\n/g, " ").replace(/\s+/g, " ")}\n`);
+			.replace(/^(?:\d\d?\s*\([-—+]?\d+\)\s*)+$/gim, (...m) => `${m[0].replace(/\n/g, " ").replace(/\s+/g, " ")}\n`);
 
 		// (re-assemble after cleaning ability scores and) split into lines
 		clean = statsHeadFootSpl.join("");
@@ -621,6 +670,15 @@ class CreatureParser extends BaseParser {
 
 		meta.ixToConvert += i - meta.ixToConvert;
 		return true;
+	}
+
+	static _getEntryProp ({entry}) {
+		if (typeof entry?.entries?.[0] !== "string") return "trait";
+		const [str] = entry.entries;
+		if (/\bas a bonus action\b/i.test(str)) return "bonus";
+		if (/\bas a reaction\b/i.test(str)) return "reaction";
+		if (/\bas an action\b/i.test(str)) return "action";
+		return "trait";
 	}
 
 	static _doCleanLegendaryActionHeader (stats) {
@@ -681,6 +739,13 @@ class CreatureParser extends BaseParser {
 			});
 	}
 
+	static _mutAssignPrettyType ({obj, type}) {
+		const tmp = {...obj};
+		Object.keys(obj).forEach(k => delete obj[k]);
+		obj.type = "item";
+		Object.assign(obj, tmp);
+	}
+
 	static _doMergeNumberedLists (stats, prop) {
 		if (!stats[prop]) return;
 
@@ -702,8 +767,7 @@ class CreatureParser extends BaseParser {
 							cur.entries.push(lst);
 						}
 
-						nxt.type = "item";
-						nxt.name += ".";
+						this._mutAssignPrettyType({obj: nxt, type: "item"});
 						lst.items.push(nxt);
 						stats[prop].splice(i + 1, 1);
 
@@ -738,8 +802,7 @@ class CreatureParser extends BaseParser {
 							cur.entries.push(lst);
 						}
 
-						nxt.type = "item";
-						nxt.name += ".";
+						this._mutAssignPrettyType({obj: nxt, type: "item"});
 						lst.items.push(nxt);
 						stats[prop].splice(i + 1, 1);
 
@@ -748,6 +811,52 @@ class CreatureParser extends BaseParser {
 
 					break;
 				}
+			}
+		}
+	}
+
+	/**
+	 * Merge together likely hanging lists. Note that this should be fairly conservative, as merging unwanted entries
+	 * into the list is worse than not merging some list entries.
+	 */
+	static _doMergeHangingLists (stats, prop) {
+		if (!stats[prop]) return;
+
+		for (let i = 0; i < stats[prop].length; ++i) {
+			const cur = stats[prop][i];
+
+			if (typeof cur?.entries?.last() !== "string" || !cur?.entries?.last().trim().endsWith(":")) continue;
+
+			let lst = null;
+
+			if (
+				/\bfollowing effects\b/.test(cur.entries.last().trim())
+			) {
+				while (stats[prop].length) {
+					const nxt = stats[prop][i + 1];
+
+					const entry = nxt?.entries?.[0];
+					if (!entry || typeof entry !== "string") break;
+
+					if (
+						/\bthe target\b/i.test(entry)
+					) {
+						if (!lst) {
+							lst = {type: "list", style: "list-hang-notitle", items: []};
+							cur.entries.push(lst);
+						}
+
+						this._mutAssignPrettyType({obj: nxt, type: "item"});
+						lst.items.push(nxt);
+						stats[prop].splice(i + 1, 1);
+
+						continue;
+					}
+
+					break;
+				}
+
+				continue;
 			}
 		}
 	}
@@ -921,7 +1030,7 @@ class CreatureParser extends BaseParser {
 
 				// skills (optional)
 				if (~meta.curLine.indexOf("Skills")) {
-					this._setCleanSkills(stats, ConverterUtilsMarkdown.getNoDashStarStar(meta.curLine));
+					this._setCleanSkills(stats, ConverterUtilsMarkdown.getNoDashStarStar(meta.curLine), options);
 					continue;
 				}
 
@@ -951,7 +1060,7 @@ class CreatureParser extends BaseParser {
 
 				// senses
 				if (~meta.curLine.indexOf("Senses")) {
-					this._setCleanSenses(stats, ConverterUtilsMarkdown.getNoDashStarStar(meta.curLine));
+					this._setCleanSenses({stats, line: ConverterUtilsMarkdown.getNoDashStarStar(meta.curLine), cbWarning: options.cbWarning});
 					continue;
 				}
 
@@ -964,7 +1073,7 @@ class CreatureParser extends BaseParser {
 				// CR
 				if (~meta.curLine.indexOf("Challenge")) {
 					meta.curLine = ConverterUtilsMarkdown.getNoDashStarStar(meta.curLine);
-					this._setCleanCr(stats, meta);
+					this._setCleanCr(stats, meta, {cbWarning: options.cbWarning});
 					continue;
 				}
 
@@ -1547,7 +1656,7 @@ class CreatureParser extends BaseParser {
 		stats.save = out;
 	}
 
-	static _setCleanSkills (stats, line) {
+	static _setCleanSkills (stats, line, options) {
 		stats.skill = ConvertUtil.getStatblockLineHeaderText({reStartStr: this._RE_START_SKILLS, line}).toLowerCase();
 		const split = stats.skill.split(",").map(it => it.trim()).filter(Boolean);
 
@@ -1590,16 +1699,27 @@ class CreatureParser extends BaseParser {
 		stats.conditionImmune = this._tryParseConditionImmune(stats.conditionImmune, "conditionImmune", options);
 	}
 
-	static _setCleanSenses (stats, line) {
+	static _setCleanSenses ({stats, line, cbWarning}) {
 		const senses = ConvertUtil.getStatblockLineHeaderText({reStartStr: this._RE_START_SENSES, line}).toLowerCase();
 		const tempSenses = [];
-		senses.split(StrUtil.COMMA_SPACE_NOT_IN_PARENTHESES_REGEX).forEach(s => {
-			s = s.trim();
-			if (s) {
-				if (s.includes("passive perception")) stats.passive = this._tryConvertNumber(s.split("passive perception")[1].trim());
-				else tempSenses.push(s.trim());
-			}
-		});
+		senses.split(StrUtil.COMMA_SPACE_NOT_IN_PARENTHESES_REGEX)
+			.forEach(s => {
+				s = s.trim();
+				if (!s) return;
+
+				if (!s.includes("passive perception")) return tempSenses.push(s.trim());
+
+				let ptPassive = s.split("passive perception")[1].trim();
+				if (!isNaN(ptPassive)) return stats.passive = this._tryConvertNumber(ptPassive);
+
+				if (
+					!/^\d+\s+(?:plus|\+)\s+PB$/i.test(ptPassive)
+					&& !/^\d+\s+(?:plus|\+)\s+\(PB\s*(?:×|\*|x|times)\s*\d+\)$/i.test(ptPassive)
+				) return cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Passive perception "${ptPassive}" requires manual conversion`);
+
+				// Handle e.g. "10 plus pb"
+				stats.passive = ptPassive;
+			});
 		if (tempSenses.length) stats.senses = tempSenses;
 		else delete stats.senses;
 	}
@@ -1624,19 +1744,50 @@ class CreatureParser extends BaseParser {
 		}
 	}
 
-	static _setCleanCr (stats, meta, {header = "Challenge"} = {}) {
-		stats.cr = ConvertUtil.getStatblockLineHeaderText({reStartStr: header, line: meta.curLine}).split("(")[0].trim();
-		if (!stats.cr) return;
+	static _setCleanCr (stats, meta, {cbWarning, header = "Challenge"} = {}) {
+		let line = ConvertUtil.getStatblockLineHeaderText({reStartStr: header, line: meta.curLine});
+		let xp = null;
+
+		line = line
+			.replace(/\((?<amount>[0-9,]+)\s*XP\)/i, (...m) => {
+				const amountRaw = m.last().amount.replace(/,/, "");
+				if (isNaN(amountRaw)) return m[0];
+
+				xp = Number(amountRaw);
+
+				return "";
+			})
+			.trim();
+
+		if (!line) return;
+		if (/^[-\u2012-\u2014]$/.test(line)) return;
 
 		const reTags = new RegExp(`\\b(?<tag>${Object.keys(this._BREW_CR_LINE_TAGS).map(it => it.escapeRegexp()).join("|")})\\b`, "gi");
-		stats.cr = stats.cr
+		line = line
 			.replace(reTags, (...m) => {
 				meta.addAdditionalTypeTag(this._BREW_CR_LINE_TAGS[m.last().tag.toLowerCase()]);
 				return "";
 			})
 			.trim();
 
-		if (/^[-\u2012-\u2014]$/.test(stats.cr.trim())) delete stats.cr;
+		if (!line) return;
+
+		if (!/^(\d+\/\d+|\d+)$/.test(line)) {
+			cbWarning(`${stats.name ? `(${stats.name}) ` : ""}CR requires manual conversion "${line}"`);
+			return;
+		}
+
+		const cr = line;
+
+		if (xp != null && Parser.crToXpNumber(cr) !== xp) {
+			stats.cr = {
+				cr,
+				xp,
+			};
+			return;
+		}
+
+		stats.cr = cr;
 	}
 
 	static _BREW_CR_LINE_TAGS = {

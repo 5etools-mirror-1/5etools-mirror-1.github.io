@@ -1064,6 +1064,7 @@ Renderer.dice.lang = {
 
 		str = str
 			.trim()
+			.replace(/\bPBd(?=\d)/g, "(PB)d") // Convert case-sensitive leading PB
 			.toLowerCase()
 			// region Convert some natural language
 			.replace(/\s*?\bplus\b\s*?/g, " + ")

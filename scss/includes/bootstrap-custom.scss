@@ -91,8 +91,11 @@ hr {
 /* *** */
 
 /* custom scrollbars */
-* {
-	scrollbar-width: thin;
+// Firefox only--use thinner scrollbars where possible (Chrome uses `-webkit` custom styling instead)
+@-moz-document url-prefix() {
+	* {
+		scrollbar-width: thin;
+	}
 }
 
 ::-webkit-scrollbar {

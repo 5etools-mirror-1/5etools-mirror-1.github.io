@@ -60,8 +60,8 @@ class BaseParser {
 		iptClean = iptClean
 			// Connect together e.g. `5d10\nForce damage`
 			.replace(new RegExp(`(?<start>\\d+) *\\n+(?<end>${ConverterConst.STR_RE_DAMAGE_TYPE} damage)\\b`, "gi"), (...m) => `${m.last().start} ${m.last().end}`)
-			// Connect together likely determiners/conjunctions
-			.replace(/(?<start>\b(the|a|an|this|that|these|those|its|his|her|their|have|extra|and|or) *)\n+\s*/g, (...m) => `${m.last().start} `)
+			// Connect together likely determiners/conjunctions/etc.
+			.replace(/(?<start>\b(the|a|a cumulative|an|this|that|these|those|its|his|her|their|have|extra|and|or|as|on|uses|to|at|using) *)\n+\s*/g, (...m) => `${m.last().start} `)
 			// Connect together e.g.:
 			//  - `+5\nto hit`, `your Spell Attack Modifier\nto hit`
 			//  - `your Wisdom\nmodifier`
@@ -70,6 +70,8 @@ class BaseParser {
 			.replace(new RegExp(`\\b(?<start>${Object.values(Parser.ATB_ABV_TO_FULL).join("|")}) *\\n+ *(?<end>\\((?:${Object.keys(Parser.SKILL_TO_ATB_ABV).join("|")})\\))`, "gi"), (...m) => `${m.last().start.trim()} ${m.last().end.trim()}`)
 			// Connect together e.g. `increases by\n1d6 when`
 			.replace(/(?<start>[a-z0-9]) *\n+ *(?<end>\d+d\d+ [a-z]+)/g, (...m) => `${m.last().start} ${m.last().end}`)
+			// Connect together e.g. `2d4\n+PB`
+			.replace(/(?<start>(?:\d+)?d\d+) *\n *(?<end>[-+] *(?:\d+|PB) [a-z]+)/g, (...m) => `${m.last().start} ${m.last().end}`)
 			// Connect together likely word pairs
 			.replace(/\b(?<start>hit) *\n* *(?<end>points)\b/gi, (...m) => `${m.last().start} ${m.last().end}`)
 		;
@@ -578,7 +580,7 @@ class DiceConvert {
 		}
 
 		// re-tag + format dice
-		str = str.replace(/\b(\s*[-+]\s*)?(([1-9]\d*)?d([1-9]\d*)(\s*?[-+×x*÷/]\s*?(\d,\d|\d)+(\.\d+)?)?)+(?:\s*\+\s*\bPB\b)?\b/gi, (...m) => {
+		str = str.replace(/\b(\s*[-+]\s*)?(([1-9]\d*|PB)?d([1-9]\d*)(\s*?[-+×x*÷/]\s*?(\d,\d|\d)+(\.\d+)?)?)+(?:\s*\+\s*\bPB\b)?\b/gi, (...m) => {
 			const expanded = m[0].replace(/([^0-9d.,PB])/gi, " $1 ").replace(/\s+/g, " ");
 			return `{@dice ${expanded}}`;
 		});
@@ -927,6 +929,13 @@ class ConvertUtil {
 	static isNameLine (line, {exceptions = null, splitterPunc = null} = {}) {
 		const spl = this._getMergedSplitName({line, splitterPunc});
 		if (spl.map(it => it.trim()).filter(Boolean).length === 1) return false;
+
+		if (
+			// Heuristic: single-column text is generally 50-60 characters; shorter lines with no other text are likely not name lines
+			spl.join("").length <= 40
+			&& spl.map(it => it.trim()).filter(Boolean).length === 2
+			&& /^[.!?:]$/.test(spl[1])
+		) return false;
 
 		// ignore everything inside parentheses
 		const namePart = ConvertUtil.getWithoutParens(spl[0]);

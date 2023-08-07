@@ -29,6 +29,12 @@
 		"selector-class-pattern": null,
 		"max-nesting-depth": null,
 		"scss/at-mixin-pattern": null,
-		"scss/dollar-variable-pattern": null
+		"scss/dollar-variable-pattern": null,
+		"function-url-quotes": [
+			"always",
+			{
+				"except": ["empty"]
+			}
+		]
 	}
 }

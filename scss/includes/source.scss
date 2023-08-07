@@ -70,7 +70,8 @@
 	$rgb-source-PSX: #bb2722;
 	$rgb-source-PSZ: #6f8a2d;
 	$rgb-source-KftGV: #876e38;
-	$rgb-source-hat: #a24545;
+	$rgb-source-HAT: #a24545;
+	$rgb-source-BGG: #469cb7;
 
 	// region Categories
 
@@ -541,9 +542,15 @@
 
 	&HAT-TG,
 	&HAT-LMI {
-		color: $rgb-source-hat !important;
-		border-color: $rgb-source-hat !important;
-		text-decoration-color: $rgb-source-hat !important;
+		color: $rgb-source-HAT !important;
+		border-color: $rgb-source-HAT !important;
+		text-decoration-color: $rgb-source-HAT !important;
+	}
+
+	&BGG {
+		color: $rgb-source-BGG !important;
+		border-color: $rgb-source-BGG !important;
+		text-decoration-color: $rgb-source-BGG !important;
 	}
 	// endregion
 }

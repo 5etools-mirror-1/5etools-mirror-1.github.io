@@ -2,7 +2,7 @@
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 globalThis.IS_DEPLOYED = undefined;
-globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.183.0"/* 5ETOOLS_VERSION__CLOSE */;
+globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.183.1"/* 5ETOOLS_VERSION__CLOSE */;
 globalThis.DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 globalThis.DEPLOYED_IMG_ROOT = undefined;
 // for the roll20 script to set
@@ -3945,7 +3945,7 @@ globalThis.DataUtil = {
 			const templateData = entry._copy?._trait
 				? (await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/bestiary/template.json`))
 				: null;
-			return DataUtil.generic._applyCopy(impl, MiscUtil.copyFast(it), entry, templateData, options);
+			return DataUtil.generic.copyApplier.getCopy(impl, MiscUtil.copyFast(it), entry, templateData, options);
 		},
 
 		_pMergeCopy_search (impl, page, entryList, entry, options) {
@@ -3957,76 +3957,29 @@ globalThis.DataUtil = {
 			});
 		},
 
-		COPY_ENTRY_PROPS: [
-			"action", "bonus", "reaction", "trait", "legendary", "mythic", "variant", "spellcasting",
-			"actionHeader", "bonusHeader", "reactionHeader", "legendaryHeader", "mythicHeader",
-		],
-		_applyCopy (impl, copyFrom, copyTo, templateData, options = {}) {
-			if (options.doKeepCopy) copyTo.__copy = MiscUtil.copyFast(copyFrom);
+		copyApplier: class {
+			static _COPY_ENTRY_PROPS = [
+				"action", "bonus", "reaction", "trait", "legendary", "mythic", "variant", "spellcasting",
+				"actionHeader", "bonusHeader", "reactionHeader", "legendaryHeader", "mythicHeader",
+			];
 
 			// convert everything to arrays
-			function normaliseMods (obj) {
+			static _normaliseMods (obj) {
 				Object.entries(obj._mod).forEach(([k, v]) => {
 					if (!(v instanceof Array)) obj._mod[k] = [v];
 				});
 			}
 
-			const msgPtFailed = `Failed to apply _copy to "${copyTo.name}" ("${copyTo.source}").`;
-
-			const copyMeta = copyTo._copy || {};
-
-			if (copyMeta._mod) normaliseMods(copyMeta);
-
-			// fetch and apply any external template -- append them to existing copy mods where available
-			let template = null;
-			if (copyMeta._trait) {
-				template = templateData.monsterTemplate.find(t => t.name.toLowerCase() === copyMeta._trait.name.toLowerCase() && t.source.toLowerCase() === copyMeta._trait.source.toLowerCase());
-				if (!template) throw new Error(`${msgPtFailed} Could not find traits to apply with name "${copyMeta._trait.name}" and source "${copyMeta._trait.source}"`);
-				template = MiscUtil.copyFast(template);
-
-				if (template.apply._mod) {
-					normaliseMods(template.apply);
-
-					if (copyMeta._mod) {
-						Object.entries(template.apply._mod).forEach(([k, v]) => {
-							if (copyMeta._mod[k]) copyMeta._mod[k] = copyMeta._mod[k].concat(v);
-							else copyMeta._mod[k] = v;
-						});
-					} else copyMeta._mod = template.apply._mod;
-				}
-
-				delete copyMeta._trait;
-			}
-
-			const copyToRootProps = new Set(Object.keys(copyTo));
-
-			// copy over required values
-			Object.keys(copyFrom).forEach(k => {
-				if (copyTo[k] === null) return delete copyTo[k];
-				if (copyTo[k] == null) {
-					if (DataUtil.generic._MERGE_REQUIRES_PRESERVE_BASE[k] || impl?._MERGE_REQUIRES_PRESERVE[k]) {
-						if (copyTo._copy._preserve?.["*"] || copyTo._copy._preserve?.[k]) copyTo[k] = copyFrom[k];
-					} else copyTo[k] = copyFrom[k];
-				}
-			});
-
-			// apply any root racial properties after doing base copy
-			if (template && template.apply._root) {
-				Object.entries(template.apply._root)
-					.filter(([k, v]) => !copyToRootProps.has(k)) // avoid overwriting any real root properties
-					.forEach(([k, v]) => copyTo[k] = v);
-			}
-
 			// mod helpers /////////////////
-			function doEnsureArray (obj, prop) {
+			static _doEnsureArray ({obj, prop}) {
 				if (!(obj[prop] instanceof Array)) obj[prop] = [obj[prop]];
 			}
 
-			function getRegexFromReplaceModInfo (replace, flags) {
+			static _getRegexFromReplaceModInfo ({replace, flags}) {
 				return new RegExp(replace, `g${flags || ""}`);
 			}
 
-			function doReplaceStringHandler (re, withStr, str) {
+			static _doReplaceStringHandler ({re, withStr}, str) {
 				// TODO(Future) may need to have this handle replaces inside _some_ tags
 				const split = Renderer.splitByTags(str);
 				const len = split.length;
@@ -4037,29 +3990,29 @@ globalThis.DataUtil = {
 				return split.join("");
 			}
 
-			function doMod_appendStr (modInfo, prop) {
+			static _doMod_appendStr ({copyTo, copyFrom, modInfo, msgPtFailed, prop}) {
 				if (copyTo[prop]) copyTo[prop] = `${copyTo[prop]}${modInfo.joiner || ""}${modInfo.str}`;
 				else copyTo[prop] = modInfo.str;
 			}
 
-			function doMod_replaceName (modInfo, prop) {
+			static _doMod_replaceName ({copyTo, copyFrom, modInfo, msgPtFailed, prop}) {
 				if (!copyTo[prop]) return;
 
 				DataUtil.generic._walker_replaceTxt = DataUtil.generic._walker_replaceTxt || MiscUtil.getWalker();
-				const re = getRegexFromReplaceModInfo(modInfo.replace, modInfo.flags);
-				const handlers = {string: doReplaceStringHandler.bind(null, re, modInfo.with)};
+				const re = this._getRegexFromReplaceModInfo({replace: modInfo.replace, flags: modInfo.flags});
+				const handlers = {string: this._doReplaceStringHandler.bind(null, {re: re, withStr: modInfo.with})};
 
 				copyTo[prop].forEach(it => {
 					if (it.name) it.name = DataUtil.generic._walker_replaceTxt.walk(it.name, handlers);
 				});
 			}
 
-			function doMod_replaceTxt (modInfo, prop) {
+			static _doMod_replaceTxt ({copyTo, copyFrom, modInfo, msgPtFailed, prop}) {
 				if (!copyTo[prop]) return;
 
 				DataUtil.generic._walker_replaceTxt = DataUtil.generic._walker_replaceTxt || MiscUtil.getWalker();
-				const re = getRegexFromReplaceModInfo(modInfo.replace, modInfo.flags);
-				const handlers = {string: doReplaceStringHandler.bind(null, re, modInfo.with)};
+				const re = this._getRegexFromReplaceModInfo({replace: modInfo.replace, flags: modInfo.flags});
+				const handlers = {string: this._doReplaceStringHandler.bind(null, {re: re, withStr: modInfo.with})};
 
 				const props = modInfo.props || [null, "entries", "headerEntries", "footerEntries"];
 				if (!props.length) return;
@@ -4080,24 +4033,24 @@ globalThis.DataUtil = {
 				});
 			}
 
-			function doMod_prependArr (modInfo, prop) {
-				doEnsureArray(modInfo, "items");
+			static _doMod_prependArr ({copyTo, copyFrom, modInfo, msgPtFailed, prop}) {
+				this._doEnsureArray({obj: modInfo, prop: "items"});
 				copyTo[prop] = copyTo[prop] ? modInfo.items.concat(copyTo[prop]) : modInfo.items;
 			}
 
-			function doMod_appendArr (modInfo, prop) {
-				doEnsureArray(modInfo, "items");
+			static _doMod_appendArr ({copyTo, copyFrom, modInfo, msgPtFailed, prop}) {
+				this._doEnsureArray({obj: modInfo, prop: "items"});
 				copyTo[prop] = copyTo[prop] ? copyTo[prop].concat(modInfo.items) : modInfo.items;
 			}
 
-			function doMod_appendIfNotExistsArr (modInfo, prop) {
-				doEnsureArray(modInfo, "items");
+			static _doMod_appendIfNotExistsArr ({copyTo, copyFrom, modInfo, msgPtFailed, prop}) {
+				this._doEnsureArray({obj: modInfo, prop: "items"});
 				if (!copyTo[prop]) return copyTo[prop] = modInfo.items;
 				copyTo[prop] = copyTo[prop].concat(modInfo.items.filter(it => !copyTo[prop].some(x => CollectionUtil.deepEquals(it, x))));
 			}
 
-			function doMod_replaceArr (modInfo, prop, isThrow = true) {
-				doEnsureArray(modInfo, "items");
+			static _doMod_replaceArr ({copyTo, copyFrom, modInfo, msgPtFailed, prop, isThrow = true}) {
+				this._doEnsureArray({obj: modInfo, prop: "items"});
 
 				if (!copyTo[prop]) {
 					if (isThrow) throw new Error(`${msgPtFailed} Could not find "${prop}" array`);
@@ -4121,20 +4074,20 @@ globalThis.DataUtil = {
 				return false;
 			}
 
-			function doMod_replaceOrAppendArr (modInfo, prop) {
-				const didReplace = doMod_replaceArr(modInfo, prop, false);
-				if (!didReplace) doMod_appendArr(modInfo, prop);
+			static _doMod_replaceOrAppendArr ({copyTo, copyFrom, modInfo, msgPtFailed, prop}) {
+				const didReplace = this._doMod_replaceArr({copyTo, copyFrom, modInfo, msgPtFailed, prop, isThrow: false});
+				if (!didReplace) this._doMod_appendArr({copyTo, copyFrom, modInfo, msgPtFailed, prop});
 			}
 
-			function doMod_insertArr (modInfo, prop) {
-				doEnsureArray(modInfo, "items");
+			static _doMod_insertArr ({copyTo, copyFrom, modInfo, msgPtFailed, prop}) {
+				this._doEnsureArray({obj: modInfo, prop: "items"});
 				if (!copyTo[prop]) throw new Error(`${msgPtFailed} Could not find "${prop}" array`);
 				copyTo[prop].splice(~modInfo.index ? modInfo.index : copyTo[prop].length, 0, ...modInfo.items);
 			}
 
-			function doMod_removeArr (modInfo, prop) {
+			static _doMod_removeArr ({copyTo, copyFrom, modInfo, msgPtFailed, prop}) {
 				if (modInfo.names) {
-					doEnsureArray(modInfo, "names");
+					this._doEnsureArray({obj: modInfo, prop: "names"});
 					modInfo.names.forEach(nameToRemove => {
 						const ixOld = copyTo[prop].findIndex(it => it.name === nameToRemove);
 						if (~ixOld) copyTo[prop].splice(ixOld, 1);
@@ -4143,7 +4096,7 @@ globalThis.DataUtil = {
 						}
 					});
 				} else if (modInfo.items) {
-					doEnsureArray(modInfo, "items");
+					this._doEnsureArray({obj: modInfo, prop: "items"});
 					modInfo.items.forEach(itemToRemove => {
 						const ixOld = copyTo[prop].findIndex(it => it === itemToRemove);
 						if (~ixOld) copyTo[prop].splice(ixOld, 1);
@@ -4152,7 +4105,7 @@ globalThis.DataUtil = {
 				} else throw new Error(`${msgPtFailed} One of "names" or "items" must be provided!`);
 			}
 
-			function doMod_calculateProp (modInfo, prop) {
+			static _doMod_calculateProp ({copyTo, copyFrom, modInfo, msgPtFailed, prop}) {
 				copyTo[prop] = copyTo[prop] || {};
 				const toExec = modInfo.formula.replace(/<\$([^$]+)\$>/g, (...m) => {
 					switch (m[1]) {
@@ -4165,33 +4118,33 @@ globalThis.DataUtil = {
 				copyTo[prop][modInfo.prop] = eval(toExec);
 			}
 
-			function doMod_scalarAddProp (modInfo, prop) {
-				function applyTo (k) {
+			static _doMod_scalarAddProp ({copyTo, copyFrom, modInfo, msgPtFailed, prop}) {
+				const applyTo = (k) => {
 					const out = Number(copyTo[prop][k]) + modInfo.scalar;
 					const isString = typeof copyTo[prop][k] === "string";
 					copyTo[prop][k] = isString ? `${out >= 0 ? "+" : ""}${out}` : out;
-				}
+				};
 
 				if (!copyTo[prop]) return;
 				if (modInfo.prop === "*") Object.keys(copyTo[prop]).forEach(k => applyTo(k));
 				else applyTo(modInfo.prop);
 			}
 
-			function doMod_scalarMultProp (modInfo, prop) {
-				function applyTo (k) {
+			static _doMod_scalarMultProp ({copyTo, copyFrom, modInfo, msgPtFailed, prop}) {
+				const applyTo = (k) => {
 					let out = Number(copyTo[prop][k]) * modInfo.scalar;
 					if (modInfo.floor) out = Math.floor(out);
 					const isString = typeof copyTo[prop][k] === "string";
 					copyTo[prop][k] = isString ? `${out >= 0 ? "+" : ""}${out}` : out;
-				}
+				};
 
 				if (!copyTo[prop]) return;
 				if (modInfo.prop === "*") Object.keys(copyTo[prop]).forEach(k => applyTo(k));
 				else applyTo(modInfo.prop);
 			}
 
-			function doMod_addSenses (modInfo) {
-				doEnsureArray(modInfo, "senses");
+			static _doMod_addSenses ({copyTo, copyFrom, modInfo, msgPtFailed}) {
+				this._doEnsureArray({obj: modInfo, prop: "senses"});
 				copyTo.senses = copyTo.senses || [];
 				modInfo.senses.forEach(sense => {
 					let found = false;
@@ -4211,7 +4164,7 @@ globalThis.DataUtil = {
 				});
 			}
 
-			function doMod_addSaves (modInfo) {
+			static _doMod_addSaves ({copyTo, copyFrom, modInfo, msgPtFailed}) {
 				copyTo.save = copyTo.save || {};
 				Object.entries(modInfo.saves).forEach(([save, mode]) => {
 					// mode: 1 = proficient; 2 = expert
@@ -4224,7 +4177,7 @@ globalThis.DataUtil = {
 				});
 			}
 
-			function doMod_addSkills (modInfo) {
+			static _doMod_addSkills ({copyTo, copyFrom, modInfo, msgPtFailed}) {
 				copyTo.skill = copyTo.skill || {};
 				Object.entries(modInfo.skills).forEach(([skill, mode]) => {
 					// mode: 1 = proficient; 2 = expert
@@ -4237,21 +4190,31 @@ globalThis.DataUtil = {
 				});
 			}
 
-			function doMod_addAllSaves (modInfo) {
-				return doMod_addSaves({
-					mode: "addSaves",
-					saves: Object.keys(Parser.ATB_ABV_TO_FULL).mergeMap(it => ({[it]: modInfo.saves})),
+			static _doMod_addAllSaves ({copyTo, copyFrom, modInfo, msgPtFailed}) {
+				return this._doMod_addSaves({
+					copyTo,
+					copyFrom,
+					modInfo: {
+						mode: "addSaves",
+						saves: Object.keys(Parser.ATB_ABV_TO_FULL).mergeMap(it => ({[it]: modInfo.saves})),
+					},
+					msgPtFailed,
 				});
 			}
 
-			function doMod_addAllSkills (modInfo) {
-				return doMod_addSkills({
-					mode: "addSkills",
-					skills: Object.keys(Parser.SKILL_TO_ATB_ABV).mergeMap(it => ({[it]: modInfo.skills})),
+			static _doMod_addAllSkills ({copyTo, copyFrom, modInfo, msgPtFailed}) {
+				return this._doMod_addSkills({
+					copyTo,
+					copyFrom,
+					modInfo: {
+						mode: "addSkills",
+						skills: Object.keys(Parser.SKILL_TO_ATB_ABV).mergeMap(it => ({[it]: modInfo.skills})),
+					},
+					msgPtFailed,
 				});
 			}
 
-			function doMod_addSpells (modInfo) {
+			static _doMod_addSpells ({copyTo, copyFrom, modInfo, msgPtFailed}) {
 				if (!copyTo.spellcasting) throw new Error(`${msgPtFailed} Creature did not have a spellcasting property!`);
 
 				// TODO could accept a "position" or "name" parameter should spells need to be added to other spellcasting traits
@@ -4303,14 +4266,14 @@ globalThis.DataUtil = {
 				});
 			}
 
-			function doMod_replaceSpells (modInfo) {
+			static _doMod_replaceSpells ({copyTo, copyFrom, modInfo, msgPtFailed}) {
 				if (!copyTo.spellcasting) throw new Error(`${msgPtFailed} Creature did not have a spellcasting property!`);
 
 				// TODO could accept a "position" or "name" parameter should spells need to be added to other spellcasting traits
 				const spellcasting = copyTo.spellcasting[0];
 
 				const handleReplace = (curSpells, replaceMeta, k) => {
-					doEnsureArray(replaceMeta, "with");
+					this._doEnsureArray({obj: replaceMeta, prop: "with"});
 
 					const ix = curSpells[k].indexOf(replaceMeta.replace);
 					if (~ix) {
@@ -4346,7 +4309,7 @@ globalThis.DataUtil = {
 				}
 			}
 
-			function doMod_removeSpells (modInfo) {
+			static _doMod_removeSpells ({copyTo, copyFrom, modInfo, msgPtFailed}) {
 				if (!copyTo.spellcasting) throw new Error(`${msgPtFailed} Creature did not have a spellcasting property!`);
 
 				// TODO could accept a "position" or "name" parameter should spells need to be added to other spellcasting traits
@@ -4386,17 +4349,17 @@ globalThis.DataUtil = {
 				});
 			}
 
-			function doMod_scalarAddHit (modInfo, prop) {
+			static _doMod_scalarAddHit ({copyTo, copyFrom, modInfo, msgPtFailed, prop}) {
 				if (!copyTo[prop]) return;
 				copyTo[prop] = JSON.parse(JSON.stringify(copyTo[prop]).replace(/{@hit ([-+]?\d+)}/g, (m0, m1) => `{@hit ${Number(m1) + modInfo.scalar}}`));
 			}
 
-			function doMod_scalarAddDc (modInfo, prop) {
+			static _doMod_scalarAddDc ({copyTo, copyFrom, modInfo, msgPtFailed, prop}) {
 				if (!copyTo[prop]) return;
 				copyTo[prop] = JSON.parse(JSON.stringify(copyTo[prop]).replace(/{@dc (\d+)(?:\|[^}]+)?}/g, (m0, m1) => `{@dc ${Number(m1) + modInfo.scalar}}`));
 			}
 
-			function doMod_maxSize (modInfo) {
+			static _doMod_maxSize ({copyTo, copyFrom, modInfo, msgPtFailed}) {
 				const sizes = [...copyTo.size].sort(SortUtil.ascSortSize);
 
 				const ixsCur = sizes.map(it => Parser.SIZE_ABVS.indexOf(it));
@@ -4410,12 +4373,12 @@ globalThis.DataUtil = {
 				copyTo.size = ixsNxt.map(ix => Parser.SIZE_ABVS[ix]);
 			}
 
-			function doMod_scalarMultXp (modInfo) {
-				function getOutput (input) {
+			static _doMod_scalarMultXp ({copyTo, copyFrom, modInfo, msgPtFailed}) {
+				const getOutput = (input) => {
 					let out = input * modInfo.scalar;
 					if (modInfo.floor) out = Math.floor(out);
 					return out;
-				}
+				};
 
 				if (copyTo.cr.xp) copyTo.cr.xp = getOutput(copyTo.cr.xp);
 				else {
@@ -4425,80 +4388,141 @@ globalThis.DataUtil = {
 				}
 			}
 
-			function doMod_setProp (modInfo, prop) {
+			static _doMod_setProp ({copyTo, copyFrom, modInfo, msgPtFailed, prop}) {
 				const propPath = modInfo.prop.split(".");
 				if (prop !== "*") propPath.unshift(prop);
 				MiscUtil.set(copyTo, ...propPath, MiscUtil.copyFast(modInfo.value));
 			}
 
-			function doMod (modInfos, ...properties) {
-				function handleProp (prop) {
-					modInfos.forEach(modInfo => {
-						if (typeof modInfo === "string") {
-							switch (modInfo) {
-								case "remove": return delete copyTo[prop];
-								default: throw new Error(`${msgPtFailed} Unhandled mode: ${modInfo}`);
-							}
-						} else {
-							switch (modInfo.mode) {
-								case "appendStr": return doMod_appendStr(modInfo, prop);
-								case "replaceName": return doMod_replaceName(modInfo, prop);
-								case "replaceTxt": return doMod_replaceTxt(modInfo, prop);
-								case "prependArr": return doMod_prependArr(modInfo, prop);
-								case "appendArr": return doMod_appendArr(modInfo, prop);
-								case "replaceArr": return doMod_replaceArr(modInfo, prop);
-								case "replaceOrAppendArr": return doMod_replaceOrAppendArr(modInfo, prop);
-								case "appendIfNotExistsArr": return doMod_appendIfNotExistsArr(modInfo, prop);
-								case "insertArr": return doMod_insertArr(modInfo, prop);
-								case "removeArr": return doMod_removeArr(modInfo, prop);
-								case "calculateProp": return doMod_calculateProp(modInfo, prop);
-								case "scalarAddProp": return doMod_scalarAddProp(modInfo, prop);
-								case "scalarMultProp": return doMod_scalarMultProp(modInfo, prop);
-								case "setProp": return doMod_setProp(modInfo, prop);
-								// region Bestiary specific
-								case "addSenses": return doMod_addSenses(modInfo);
-								case "addSaves": return doMod_addSaves(modInfo);
-								case "addSkills": return doMod_addSkills(modInfo);
-								case "addAllSaves": return doMod_addAllSaves(modInfo);
-								case "addAllSkills": return doMod_addAllSkills(modInfo);
-								case "addSpells": return doMod_addSpells(modInfo);
-								case "replaceSpells": return doMod_replaceSpells(modInfo);
-								case "removeSpells": return doMod_removeSpells(modInfo);
-								case "scalarAddHit": return doMod_scalarAddHit(modInfo, prop);
-								case "scalarAddDc": return doMod_scalarAddDc(modInfo, prop);
-								case "maxSize": return doMod_maxSize(modInfo);
-								case "scalarMultXp": return doMod_scalarMultXp(modInfo);
-								// endregion
-								default: throw new Error(`${msgPtFailed} Unhandled mode: ${modInfo.mode}`);
-							}
+			static _doMod_handleProp ({copyTo, copyFrom, modInfos, msgPtFailed, prop = null}) {
+				modInfos.forEach(modInfo => {
+					if (typeof modInfo === "string") {
+						switch (modInfo) {
+							case "remove": return delete copyTo[prop];
+							default: throw new Error(`${msgPtFailed} Unhandled mode: ${modInfo}`);
 						}
+					} else {
+						switch (modInfo.mode) {
+							case "appendStr": return this._doMod_appendStr({copyTo, copyFrom, modInfo, msgPtFailed, prop});
+							case "replaceName": return this._doMod_replaceName({copyTo, copyFrom, modInfo, msgPtFailed, prop});
+							case "replaceTxt": return this._doMod_replaceTxt({copyTo, copyFrom, modInfo, msgPtFailed, prop});
+							case "prependArr": return this._doMod_prependArr({copyTo, copyFrom, modInfo, msgPtFailed, prop});
+							case "appendArr": return this._doMod_appendArr({copyTo, copyFrom, modInfo, msgPtFailed, prop});
+							case "replaceArr": return this._doMod_replaceArr({copyTo, copyFrom, modInfo, msgPtFailed, prop});
+							case "replaceOrAppendArr": return this._doMod_replaceOrAppendArr({copyTo, copyFrom, modInfo, msgPtFailed, prop});
+							case "appendIfNotExistsArr": return this._doMod_appendIfNotExistsArr({copyTo, copyFrom, modInfo, msgPtFailed, prop});
+							case "insertArr": return this._doMod_insertArr({copyTo, copyFrom, modInfo, msgPtFailed, prop});
+							case "removeArr": return this._doMod_removeArr({copyTo, copyFrom, modInfo, msgPtFailed, prop});
+							case "calculateProp": return this._doMod_calculateProp({copyTo, copyFrom, modInfo, msgPtFailed, prop});
+							case "scalarAddProp": return this._doMod_scalarAddProp({copyTo, copyFrom, modInfo, msgPtFailed, prop});
+							case "scalarMultProp": return this._doMod_scalarMultProp({copyTo, copyFrom, modInfo, msgPtFailed, prop});
+							case "setProp": return this._doMod_setProp({copyTo, copyFrom, modInfo, msgPtFailed, prop});
+							// region Bestiary specific
+							case "addSenses": return this._doMod_addSenses({copyTo, copyFrom, modInfo, msgPtFailed});
+							case "addSaves": return this._doMod_addSaves({copyTo, copyFrom, modInfo, msgPtFailed});
+							case "addSkills": return this._doMod_addSkills({copyTo, copyFrom, modInfo, msgPtFailed});
+							case "addAllSaves": return this._doMod_addAllSaves({copyTo, copyFrom, modInfo, msgPtFailed});
+							case "addAllSkills": return this._doMod_addAllSkills({copyTo, copyFrom, modInfo, msgPtFailed});
+							case "addSpells": return this._doMod_addSpells({copyTo, copyFrom, modInfo, msgPtFailed});
+							case "replaceSpells": return this._doMod_replaceSpells({copyTo, copyFrom, modInfo, msgPtFailed});
+							case "removeSpells": return this._doMod_removeSpells({copyTo, copyFrom, modInfo, msgPtFailed});
+							case "maxSize": return this._doMod_maxSize({copyTo, copyFrom, modInfo, msgPtFailed});
+							case "scalarMultXp": return this._doMod_scalarMultXp({copyTo, copyFrom, modInfo, msgPtFailed});
+							case "scalarAddHit": return this._doMod_scalarAddHit({copyTo, copyFrom, modInfo, msgPtFailed, prop});
+							case "scalarAddDc": return this._doMod_scalarAddDc({copyTo, copyFrom, modInfo, msgPtFailed, prop});
+							// endregion
+							default: throw new Error(`${msgPtFailed} Unhandled mode: ${modInfo.mode}`);
+						}
+					}
+				});
+			}
+
+			/**
+			 * @param copyTo
+			 * @param copyFrom
+			 * @param modInfos
+			 * @param msgPtFailed
+			 * @param {?array} props
+			 * @param isExternalApplicationIdentityOnly
+			 * @private
+			 */
+			static _doMod ({copyTo, copyFrom, modInfos, msgPtFailed, props = null, isExternalApplicationIdentityOnly}) {
+				if (isExternalApplicationIdentityOnly) return;
+
+				if (props?.length) props.forEach(prop => this._doMod_handleProp({copyTo, copyFrom, modInfos, msgPtFailed, prop}));
+				// special case for "no property" modifications, i.e. underscore-key'd
+				else this._doMod_handleProp({copyTo, copyFrom, modInfos, msgPtFailed});
+			}
+
+			static getCopy (impl, copyFrom, copyTo, templateData, {isExternalApplicationKeepCopy = false, isExternalApplicationIdentityOnly = false} = {}) {
+				if (isExternalApplicationKeepCopy) copyTo.__copy = MiscUtil.copyFast(copyFrom);
+
+				const msgPtFailed = `Failed to apply _copy to "${copyTo.name}" ("${copyTo.source}").`;
+
+				const copyMeta = copyTo._copy || {};
+
+				if (copyMeta._mod) this._normaliseMods(copyMeta);
+
+				// fetch and apply any external template -- append them to existing copy mods where available
+				let template = null;
+				if (copyMeta._trait) {
+					template = templateData.monsterTemplate.find(t => t.name.toLowerCase() === copyMeta._trait.name.toLowerCase() && t.source.toLowerCase() === copyMeta._trait.source.toLowerCase());
+					if (!template) throw new Error(`${msgPtFailed} Could not find traits to apply with name "${copyMeta._trait.name}" and source "${copyMeta._trait.source}"`);
+					template = MiscUtil.copyFast(template);
+
+					if (template.apply._mod) {
+						this._normaliseMods(template.apply);
+
+						if (copyMeta._mod) {
+							Object.entries(template.apply._mod).forEach(([k, v]) => {
+								if (copyMeta._mod[k]) copyMeta._mod[k] = copyMeta._mod[k].concat(v);
+								else copyMeta._mod[k] = v;
+							});
+						} else copyMeta._mod = template.apply._mod;
+					}
+
+					delete copyMeta._trait;
+				}
+
+				const copyToRootProps = new Set(Object.keys(copyTo));
+
+				// copy over required values
+				Object.keys(copyFrom).forEach(k => {
+					if (copyTo[k] === null) return delete copyTo[k];
+					if (copyTo[k] == null) {
+						if (DataUtil.generic._MERGE_REQUIRES_PRESERVE_BASE[k] || impl?._MERGE_REQUIRES_PRESERVE[k]) {
+							if (copyTo._copy._preserve?.["*"] || copyTo._copy._preserve?.[k]) copyTo[k] = copyFrom[k];
+						} else copyTo[k] = copyFrom[k];
+					}
+				});
+
+				// apply any root racial properties after doing base copy
+				if (template && template.apply._root) {
+					Object.entries(template.apply._root)
+						.filter(([k, v]) => !copyToRootProps.has(k)) // avoid overwriting any real root properties
+						.forEach(([k, v]) => copyTo[k] = v);
+				}
+
+				// apply mods
+				if (copyMeta._mod) {
+					// pre-convert any dynamic text
+					Object.entries(copyMeta._mod).forEach(([k, v]) => {
+						copyMeta._mod[k] = DataUtil.generic.variableResolver.resolve({obj: v, ent: copyTo});
+					});
+
+					Object.entries(copyMeta._mod).forEach(([prop, modInfos]) => {
+						if (prop === "*") this._doMod({copyTo, copyFrom, modInfos, props: this._COPY_ENTRY_PROPS, msgPtFailed, isExternalApplicationIdentityOnly});
+						else if (prop === "_") this._doMod({copyTo, copyFrom, modInfos, msgPtFailed, isExternalApplicationIdentityOnly});
+						else this._doMod({copyTo, copyFrom, modInfos, props: [prop], msgPtFailed, isExternalApplicationIdentityOnly});
 					});
 				}
 
-				properties.forEach(prop => handleProp(prop));
-				// special case for "no property" modifications, i.e. underscore-key'd
-				if (!properties.length) handleProp();
+				// add filter tag
+				copyTo._isCopy = true;
+
+				// cleanup
+				delete copyTo._copy;
 			}
-
-			// apply mods
-			if (copyMeta._mod) {
-				// pre-convert any dynamic text
-				Object.entries(copyMeta._mod).forEach(([k, v]) => {
-					copyMeta._mod[k] = DataUtil.generic.variableResolver.resolve({obj: v, ent: copyTo});
-				});
-
-				Object.entries(copyMeta._mod).forEach(([prop, modInfos]) => {
-					if (prop === "*") doMod(modInfos, ...DataUtil.generic.COPY_ENTRY_PROPS);
-					else if (prop === "_") doMod(modInfos);
-					else doMod(modInfos, prop);
-				});
-			}
-
-			// add filter tag
-			copyTo._isCopy = true;
-
-			// cleanup
-			delete copyTo._copy;
 		},
 
 		variableResolver: class {
@@ -4570,7 +4594,7 @@ globalThis.DataUtil = {
 			}
 		},
 
-		getVersions (parent) {
+		getVersions (parent, {isExternalApplicationIdentityOnly = false} = {}) {
 			if (!parent?._versions?.length) return [];
 
 			return parent._versions
@@ -4579,7 +4603,7 @@ globalThis.DataUtil = {
 					return DataUtil.generic._getVersions_basic({ver});
 				})
 				.flat()
-				.map(ver => DataUtil.generic._getVersion({parentEntity: parent, version: ver}));
+				.map(ver => DataUtil.generic._getVersion({parentEntity: parent, version: ver, isExternalApplicationIdentityOnly}));
 		},
 
 		_getVersions_template ({ver}) {
@@ -4622,7 +4646,7 @@ globalThis.DataUtil = {
 			delete ent._mod;
 		},
 
-		_getVersion ({parentEntity, version}) {
+		_getVersion ({parentEntity, version, isExternalApplicationIdentityOnly}) {
 			const additionalData = {
 				_versionBase_isVersion: true,
 				_versionBase_name: parentEntity.name,
@@ -4638,11 +4662,12 @@ globalThis.DataUtil = {
 			delete cpyParentEntity.hasFluff;
 			delete cpyParentEntity.hasFluffImages;
 
-			DataUtil.generic._applyCopy(
+			DataUtil.generic.copyApplier.getCopy(
 				null,
 				cpyParentEntity,
 				version,
 				null,
+				{isExternalApplicationIdentityOnly},
 			);
 			Object.assign(version, additionalData);
 			return version;
@@ -4650,9 +4675,9 @@ globalThis.DataUtil = {
 	},
 
 	proxy: {
-		getVersions (prop, ent) {
-			if (DataUtil[prop]?.getVersions) return DataUtil[prop]?.getVersions(ent);
-			return DataUtil.generic.getVersions(ent);
+		getVersions (prop, ent, {isExternalApplicationIdentityOnly = false} = {}) {
+			if (DataUtil[prop]?.getVersions) return DataUtil[prop]?.getVersions(ent, {isExternalApplicationIdentityOnly});
+			return DataUtil.generic.getVersions(ent, {isExternalApplicationIdentityOnly});
 		},
 
 		unpackUid (prop, uid, tag, opts) {
@@ -4692,13 +4717,13 @@ globalThis.DataUtil = {
 			return super.loadJSON();
 		}
 
-		static getVersions (mon) {
+		static getVersions (mon, {isExternalApplicationIdentityOnly = false} = {}) {
 			const additionalVersionData = DataUtil.monster._getAdditionalVersionsData(mon);
 			if (additionalVersionData.length) {
 				mon = MiscUtil.copyFast(mon);
 				(mon._versions = mon._versions || []).push(...additionalVersionData);
 			}
-			return DataUtil.generic.getVersions(mon);
+			return DataUtil.generic.getVersions(mon, {isExternalApplicationIdentityOnly});
 		}
 
 		static _getAdditionalVersionsData (mon) {

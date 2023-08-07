@@ -85,7 +85,7 @@ class _RenderableCollectionRowDataActive extends RenderableCollectionRowDataBase
 				this._comp._state[this._prop] = InitiativeTrackerSort.getSortedRows({
 					rows: [
 						...this._comp._state[this._prop],
-						await this.pGetNewRowState({
+						await this._rowStateBuilder.pGetNewRowState({
 							isActive,
 							isPlayerVisible: comp._state.isPlayerVisible,
 							name: comp._state.name,
@@ -162,7 +162,7 @@ class _RenderableCollectionRowDataActive extends RenderableCollectionRowDataBase
 				];
 			});
 
-		const $wrpConds = $(`<div class="init__wrp_conds"></div>`);
+		const $wrpConds = $(`<div class="init__wrp_conds h-100"></div>`);
 
 		$$`<div class="split">
 			${$wrpConds}
