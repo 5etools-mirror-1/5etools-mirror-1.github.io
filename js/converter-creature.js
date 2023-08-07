@@ -944,6 +944,52 @@ class CreatureParser extends BaseParser {
 	}
 
 	/**
+	 * Merge together likely hanging lists. Note that this should be fairly conservative, as merging unwanted entries
+	 * into the list is worse than not merging some list entries.
+	 */
+	static _doMergeHangingLists (stats, prop) {
+		if (!stats[prop]) return;
+
+		for (let i = 0; i < stats[prop].length; ++i) {
+			const cur = stats[prop][i];
+
+			if (typeof cur?.entries?.last() !== "string" || !cur?.entries?.last().trim().endsWith(":")) continue;
+
+			let lst = null;
+
+			if (
+				/\bfollowing effects\b/.test(cur.entries.last().trim())
+			) {
+				while (stats[prop].length) {
+					const nxt = stats[prop][i + 1];
+
+					const entry = nxt?.entries?.[0];
+					if (!entry || typeof entry !== "string") break;
+
+					if (
+						/\bthe target\b/i.test(entry)
+					) {
+						if (!lst) {
+							lst = {type: "list", style: "list-hang-notitle", items: []};
+							cur.entries.push(lst);
+						}
+
+						this._mutAssignPrettyType({obj: nxt, type: "item"});
+						lst.items.push(nxt);
+						stats[prop].splice(i + 1, 1);
+
+						continue;
+					}
+
+					break;
+				}
+
+				continue;
+			}
+		}
+	}
+
+	/**
 	 * Parses statblocks from Homebrewery/GM Binder Markdown
 	 * @param inText Input text.
 	 * @param options Options object.
