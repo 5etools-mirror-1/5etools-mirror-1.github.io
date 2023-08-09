@@ -1210,18 +1210,38 @@ class SpellcastingTraitConvert {
 		return spellPart.split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX).map(it => this._parseSpell(it));
 	}
 
-	static _parseSpell (name) {
-		name = name.trim();
-		let asterisk = name.indexOf("*");
-		let brackets = name.indexOf(" (");
-		if (asterisk !== -1) {
-			const trueName = name.substr(0, asterisk);
-			return `{@spell ${trueName}${this._parseSpell_getSourcePart(trueName)}}*`;
-		} else if (brackets !== -1) {
-			const trueName = name.substr(0, brackets);
-			return `{@spell ${trueName}${this._parseSpell_getSourcePart(trueName)}}${name.substring(brackets)}`;
+	// Homebrew (e.g. "Flee, Mortals!", page 3)
+	static _SPELL_BREW_SUPER_CAST_TIME_TO_FULL = {
+		"A": "1 action",
+		"B": "1 bonus action",
+		"R": "1 reaction",
+		"+": "Longer than 1 action (see spell description)",
+	};
+
+	static _parseSpell (str) {
+		str = str.trim();
+
+		const ixAsterisk = str.indexOf("*");
+		const ixParenOpen = str.indexOf(" (");
+
+		if (~ixAsterisk) {
+			const name = str.substring(0, ixAsterisk);
+			return `{@spell ${name}${this._parseSpell_getSourcePart(name)}}*`;
 		}
-		return `{@spell ${name}${this._parseSpell_getSourcePart(name)}}`;
+
+		if (~ixParenOpen) {
+			const name = str.substring(0, ixParenOpen);
+			return `{@spell ${name}${this._parseSpell_getSourcePart(name)}}${str.substring(ixParenOpen)}`;
+		}
+
+		const mBrewSuffixCastingTime = / +(?<time>[ABR+])$/.exec(str);
+		if (mBrewSuffixCastingTime) {
+			const name = str.slice(0, -mBrewSuffixCastingTime[0].length);
+			const time = mBrewSuffixCastingTime.groups.time;
+			return `{@spell ${name}${this._parseSpell_getSourcePart(name)}}{@footnote {@sup ${time}}|Casting time: ${this._SPELL_BREW_SUPER_CAST_TIME_TO_FULL[time]}}`;
+		}
+
+		return `{@spell ${str}${this._parseSpell_getSourcePart(str)}}`;
 	}
 
 	static _parseSpell_getSourcePart (spellName) {

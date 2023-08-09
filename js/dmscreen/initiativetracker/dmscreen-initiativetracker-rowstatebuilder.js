@@ -121,6 +121,8 @@ class _InitiativeTrackerRowStateBuilderBase {
 }
 
 export class InitiativeTrackerRowStateBuilderActive extends _InitiativeTrackerRowStateBuilderBase {
+	_prop = "rows";
+
 	async pGetScaledCreature ({isMon, name, source, scaledCr, scaledSummonSpellLevel, scaledSummonClassLevel}) {
 		if (!isMon) return null;
 		return DmScreenUtil.pGetScaledCreature({name, source, scaledCr, scaledSummonSpellLevel, scaledSummonClassLevel});
@@ -277,4 +279,6 @@ export class InitiativeTrackerRowStateBuilderActive extends _InitiativeTrackerRo
 	}
 }
 
-export class InitiativeTrackerRowStateBuilderDefaultParty extends _InitiativeTrackerRowStateBuilderBase {}
+export class InitiativeTrackerRowStateBuilderDefaultParty extends _InitiativeTrackerRowStateBuilderBase {
+	_prop = "rowsDefaultParty";
+}

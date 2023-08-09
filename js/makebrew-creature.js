@@ -193,6 +193,8 @@ class CreatureBuilder extends Builder {
 
 		this._bestiaryFluffIndex = bestiaryFluffIndex;
 
+		AttachedItemTag.init({items});
+
 		await this._pBuildLegendaryGroupCache();
 
 		this._jsonCreatureTraits = [

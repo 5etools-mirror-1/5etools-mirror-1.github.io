@@ -176,7 +176,7 @@ export class InitiativeTrackerPlayerMessageHandlerV1 {
 			"*",
 		);
 
-		const $wrpConds = $$`<div class="init__wrp_conds"></div>`;
+		const $wrpConds = $$`<div class="init__wrp_conds h-100"></div>`;
 
 		const collectionConditions = new RenderableCollectionConditions({
 			comp: comp,
