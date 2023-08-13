@@ -1319,12 +1319,13 @@ class Makebrew {
 		]);
 		ExcludeUtil.pInitialise().then(null); // don't await, as this is only used for search
 		await this.pPrepareExistingEditableBrew();
-		await BrewUtil2.pGetBrewProcessed();
+		const brew = await BrewUtil2.pGetBrewProcessed();
 		await SearchUiUtil.pDoGlobalInit();
 		// Do this asynchronously, to avoid blocking the load
 		SearchWidget.pDoGlobalInit();
 
 		TaggerUtils.init({legendaryGroups: await DataUtil.legendaryGroup.pLoadAll(), spells: await DataUtil.spell.pLoadAll()});
+		TagCondition.init({conditionsBrew: brew.condition});
 
 		// page-specific init
 		await Builder.pInitAll();

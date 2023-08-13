@@ -1121,7 +1121,7 @@ async function doPageInit () {
 		BrewUtil2.pInit(),
 	]);
 	ExcludeUtil.pInitialise().then(null); // don't await, as this is only used for search
-	const [spells, items, itemsRaw, legendaryGroups, classes] = await Promise.all([
+	const [spells, items, itemsRaw, legendaryGroups, classes, brew] = await Promise.all([
 		DataUtil.spell.pLoadAll(),
 		Renderer.item.pBuildList(),
 		DataUtil.item.loadRawJSON(),
@@ -1137,6 +1137,7 @@ async function doPageInit () {
 	await TagJsons.pInit({spells});
 	RaceTraitTag.init({itemsRaw});
 	AttachedItemTag.init({items});
+	TagCondition.init({conditionsBrew: brew.condition});
 
 	const ui = new ConverterUi();
 

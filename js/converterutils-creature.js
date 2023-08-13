@@ -17,7 +17,7 @@ class AcConvert {
 				return;
 			}
 
-			const [_, acRaw, fromRaw] = mAc;
+			const [, acRaw, fromRaw] = mAc;
 
 			const acNum = Number(acRaw);
 
@@ -28,16 +28,62 @@ class AcConvert {
 			const cur = {ac: acNum};
 			const froms = [];
 
+			let fromClean = fromRaw;
+
+			// region Handle alternates of the form:
+			//   - `natural armor; 22 in shield form`
+			//   - `natural armor; 16 while flying`
+			//   - `natural armor; 18 with hardened by flame`
+			//   - `shield; ac 12 without shield`
+			fromClean = fromClean
+				.replace(/^(?<from>.+); (?:(?:ac )?(?<nxtVal>\d+) (?<nxtCond>in .*? form|while .*?|includes .*?|without .*?|with .*?))$/i, (...m) => {
+					nuAcTail.push({
+						ac: Number(m.last().nxtVal),
+						condition: m.last().nxtCond,
+						braces: true,
+					});
+					return m.last().from;
+				});
+			// endregion
+
+			// region Handle alternates of the form:
+			//   - `medium armor; includes shield`
+			fromClean = fromClean
+				.replace(/^(?<from>.+); (?:(?<nxtCond>includes .*?))$/i, (...m) => {
+					cur.condition = `(${m.last().nxtCond})`;
+					cur.braces = true;
+					return m.last().from;
+				});
+			// endregion
+
 			// region Handle "in ... form" parts
-			let fromClean = fromRaw
+			fromClean = fromClean
 				// FIXME(Future) Find an example of a creature with this AC form to check accuracy of this parse
-				.replace(/ \(in .*? form\)$/i, (...m) => {
+				.replace(/(?<nxtVal>\d+)? \((?<nxtCond>in .*? form)\)$/i, (...m) => {
+					if (m.last().nxtVal) {
+						nuAcTail.push({
+							ac: Number(m.last().nxtVal),
+							condition: m.last().nxtCond,
+							braces: true,
+						});
+						return "";
+					}
+
 					if (cur.condition) throw new Error(`Multiple AC conditions! "${cur.condition}" and "${m[0]}"`);
 					cur.condition = m[0].trim().toLowerCase();
 					return "";
 				})
 				.trim()
-				.replace(/ in .*? form$/i, (...m) => {
+				.replace(/(?<nxtVal>\d+)? (?<nxtCond>in .*? form)$/i, (...m) => {
+					if (m.last().nxtVal) {
+						nuAcTail.push({
+							ac: Number(m.last().nxtVal),
+							condition: m.last().nxtCond,
+							braces: true,
+						});
+						return "";
+					}
+
 					if (cur.condition) throw new Error(`Multiple AC conditions! "${cur.condition}" and "${m[0]}"`);
 					cur.condition = m[0].trim().toLowerCase();
 					return "";
@@ -55,6 +101,7 @@ class AcConvert {
 			// endregion
 
 			fromClean
+				.trim()
 				.toLowerCase()
 				.replace(/^\(|\)$/g, "")
 				.split(",")
@@ -197,9 +244,16 @@ class AcConvert {
 				// endregion
 
 			// region homebrew
-			case "light armor": // "Flee, Mortals!" retainers
-			case "medium armor": // "Flee, Mortals!" retainers
-			case "heavy armor": // "Flee, Mortals!" retainers
+			// "Flee, Mortals!" retainers
+			case "light armor":
+			case "medium armor":
+			case "heavy armor":
+				return fromLow;
+			// "Flee, Mortals!"
+			case "issenblau plating":
+			case "psionic power armor":
+			case "precog reflexes":
+			case "pathfinder's boots":
 				return fromLow;
 				// endregion
 
@@ -295,6 +349,176 @@ AcConvert._ITEM_LOOKUP = null;
 
 globalThis.AcConvert = AcConvert;
 
+/** @abstract */
+class _CreatureImmunityResistanceVulnerabilityConverterBase {
+	static _modProp;
+
+	static _getCleanIpt ({ipt}) {
+		return ipt
+			.replace(/^none\b/i, "") // Thanks.
+			.trim()
+		;
+	}
+
+	static _getSplitInput ({ipt}) {
+		return ipt
+			.toLowerCase()
+			.split(";")
+			.map(it => it.trim())
+			.filter(Boolean);
+	}
+
+	/**
+	 * @abstract
+	 * @return {?object}
+	 */
+	static _getSpecialFromPart ({pt}) { throw new Error("Unimplemented!"); }
+
+	static _getIxPreNote ({pt}) { return -1; }
+
+	static _getUid (name) { return name; }
+
+	static getParsed (ipt, opts) {
+		ipt = this._getCleanIpt({ipt});
+		if (!ipt) return null;
+
+		let noteAll = null;
+		if (ipt.startsWith("(") && ipt.endsWith(")")) {
+			ipt = ipt
+				.replace(/^\(([^)]+)\)$/, "$1")
+				// Reflected in `TagImmResVulnConditional`
+				.replace(/ (in .* form)$/i, (...m) => {
+					noteAll = m[1];
+					return "";
+				});
+		}
+
+		const spl = this._getSplitInput({ipt});
+
+		const out = [];
+
+		try {
+			spl
+				.forEach(section => {
+					let note = noteAll;
+					let preNote;
+					const newGroup = [];
+
+					section
+						.split(/,/g)
+						.forEach(pt => {
+							pt = pt.trim().replace(/^and /i, "").trim();
+
+							const special = this._getSpecialFromPart({pt});
+							if (special) return out.push(special);
+
+							pt = pt.replace(/\(from [^)]+\)$/i, (...m) => {
+								if (note) throw new Error(`Already has note!`);
+								note = m[0];
+								return "";
+							}).trim();
+
+							pt = pt.replace(/(?:damage )?(?:from|during) [^)]+$/i, (...m) => {
+								if (note) throw new Error(`Already has note!`);
+								note = m[0];
+								return "";
+							}).trim();
+
+							pt = pt.replace(/\bthat is nonmagical$/i, (...m) => {
+								if (note) throw new Error(`Already has note!`);
+								note = m[0];
+								return "";
+							}).trim();
+
+							const ixPreNote = this._getIxPreNote({pt});
+							if (ixPreNote > 0) {
+								preNote = pt.slice(0, ixPreNote).trim();
+								pt = pt.slice(ixPreNote).trim();
+							}
+
+							if (pt) newGroup.push(pt);
+						});
+
+					const newGroupOut = newGroup
+						.map(it => this._getUid(it));
+
+					if (note || preNote) {
+						if (!newGroupOut.length) {
+							out.push({special: [preNote, note].filter(Boolean).join(" ")});
+							return;
+						}
+
+						const toAdd = {[this._modProp]: newGroupOut};
+						if (preNote) toAdd.preNote = preNote;
+						if (note) toAdd.note = note;
+						out.push(toAdd);
+						return;
+					}
+
+					// If there is no group metadata, flatten into the main array
+					out.push(...newGroupOut);
+				});
+
+			return out;
+		} catch (ignored) {
+			opts.cbWarning(`Res/imm/vuln ("${this._modProp}") "${ipt}" requires manual conversion`);
+			return ipt;
+		}
+	}
+}
+
+class _CreatureDamageImmunityResistanceVulnerabilityConverter extends _CreatureImmunityResistanceVulnerabilityConverterBase {
+	static _getCleanIpt ({ipt}) {
+		return super._getCleanIpt({ipt})
+			// Handle parens used instead of commas (e.g. "Hobgoblin Smokebinder" from Flee, Mortals!)
+			.replace(/(?:^|,? )\(([^)]+ in [^)]+ form)\)/gi, ", $1")
+			// handle the case where a comma is mistakenly used instead of a semicolon
+			.replace(/, (bludgeoning, piercing, and slashing from)/gi, "; $1")
+		;
+	}
+
+	static _getSpecialFromPart ({pt}) {
+		// region `"damage from spells"`
+		const mDamageFromThing = /^damage from .*$/i.exec(pt);
+		if (mDamageFromThing) return {special: pt};
+		// endregion
+	}
+
+	static _getIxPreNote ({pt}) {
+		return Math.min(...Parser.DMG_TYPES.map(it => pt.toLowerCase().indexOf(it)).filter(ix => ~ix));
+	}
+}
+
+class CreatureDamageVulnerabilityConverter extends _CreatureDamageImmunityResistanceVulnerabilityConverter {
+	static _modProp = "vulnerable";
+}
+
+globalThis.CreatureDamageVulnerabilityConverter = CreatureDamageVulnerabilityConverter;
+
+class CreatureDamageResistanceConverter extends _CreatureDamageImmunityResistanceVulnerabilityConverter {
+	static _modProp = "resist";
+}
+
+globalThis.CreatureDamageResistanceConverter = CreatureDamageResistanceConverter;
+
+class CreatureDamageImmunityConverter extends _CreatureDamageImmunityResistanceVulnerabilityConverter {
+	static _modProp = "immune";
+}
+
+globalThis.CreatureDamageImmunityConverter = CreatureDamageImmunityConverter;
+
+class CreatureConditionImmunityConverter extends _CreatureImmunityResistanceVulnerabilityConverterBase {
+	static _modProp = "conditionImmune";
+
+	static _getSpecialFromPart ({pt}) { return null; }
+
+	static _getUid (name) {
+		return TagCondition.getConditionUid(name);
+	}
+}
+
+globalThis.CreatureConditionImmunityConverter = CreatureConditionImmunityConverter;
+
 class TagAttack {
 	static tryTagAttacks (m, cbMan) {
 		TagAttack._PROPS.forEach(prop => this._handleProp({m, prop, cbMan}));
@@ -334,6 +558,9 @@ TagAttack.MAP = {
 	"ranged spell attack:": "{@atk rs}",
 	"melee or ranged spell attack:": "{@atk ms,rs}",
 	"melee or ranged attack:": "{@atk m,r}",
+	"melee power attack:": "{@atk mp}",
+	"ranged power attack:": "{@atk rp}",
+	"melee or ranged power attack:": "{@atk mp,rp}",
 };
 
 globalThis.TagAttack = TagAttack;
@@ -1221,27 +1448,33 @@ class SpellcastingTraitConvert {
 	static _parseSpell (str) {
 		str = str.trim();
 
-		const ixAsterisk = str.indexOf("*");
-		const ixParenOpen = str.indexOf(" (");
+		const ptsSuffix = [];
 
-		if (~ixAsterisk) {
-			const name = str.substring(0, ixAsterisk);
-			return `{@spell ${name}${this._parseSpell_getSourcePart(name)}}*`;
-		}
-
-		if (~ixParenOpen) {
-			const name = str.substring(0, ixParenOpen);
-			return `{@spell ${name}${this._parseSpell_getSourcePart(name)}}${str.substring(ixParenOpen)}`;
-		}
-
-		const mBrewSuffixCastingTime = / +(?<time>[ABR+])$/.exec(str);
+		const mBrewSuffixCastingTime = / +(?<time>[ABR+])\s*$/.exec(str);
 		if (mBrewSuffixCastingTime) {
-			const name = str.slice(0, -mBrewSuffixCastingTime[0].length);
-			const time = mBrewSuffixCastingTime.groups.time;
-			return `{@spell ${name}${this._parseSpell_getSourcePart(name)}}{@footnote {@sup ${time}}|Casting time: ${this._SPELL_BREW_SUPER_CAST_TIME_TO_FULL[time]}}`;
+			str = str.slice(0, -mBrewSuffixCastingTime[0].length);
+			const action = mBrewSuffixCastingTime.groups.time;
+			ptsSuffix.unshift(`{@footnote {@sup ${action}}|Casting time: ${this._SPELL_BREW_SUPER_CAST_TIME_TO_FULL[action]}}`);
 		}
 
-		return `{@spell ${str}${this._parseSpell_getSourcePart(str)}}`;
+		const ixAsterisk = str.indexOf("*");
+		if (~ixAsterisk) {
+			ptsSuffix.unshift("*");
+			str = str.substring(0, ixAsterisk);
+		}
+
+		const ixParenOpen = str.indexOf(" (");
+		if (~ixParenOpen) {
+			ptsSuffix.unshift(str.substring(ixParenOpen).trim());
+			str = str.substring(0, ixParenOpen);
+		}
+
+		return [
+			`{@spell ${str}${this._parseSpell_getSourcePart(str)}}`,
+			ptsSuffix.join(" "),
+		]
+			.filter(Boolean)
+			.join(" ");
 	}
 
 	static _parseSpell_getSourcePart (spellName) {
@@ -1488,6 +1721,7 @@ class TagImmResVulnConditional {
 		this._handleProp(mon, "resist");
 		this._handleProp(mon, "immune");
 		this._handleProp(mon, "vulnerable");
+		this._handleProp(mon, "conditionImmune");
 	}
 
 	static _handleProp (mon, prop) {
@@ -1507,6 +1741,7 @@ class TagImmResVulnConditional {
 				|| note.startsWith("except ")
 				|| note.startsWith("with ")
 				|| note.startsWith("that is ")
+				|| /in .* form$/i.test(note)
 			) {
 				obj.cond = true;
 			}

@@ -609,16 +609,16 @@ class _BrewUtil2Base {
 		return [...brews, ...brewsToAdd];
 	}
 
-	async _pAddBrewDependencies ({brewDocs, brewsRaw = null, brewsRawLocal = null, lockToken}) {
+	async _pGetBrewDependencies ({brewDocs, brewsRaw = null, brewsRawLocal = null, lockToken}) {
 		try {
 			lockToken = await this._LOCK.pLock({token: lockToken});
-			return (await this._pAddBrewDependencies_({brewDocs, brewsRaw, brewsRawLocal, lockToken}));
+			return (await this._pGetBrewDependencies_({brewDocs, brewsRaw, brewsRawLocal, lockToken}));
 		} finally {
 			this._LOCK.unlock();
 		}
 	}
 
-	async _pAddBrewDependencies_ ({brewDocs, brewsRaw = null, brewsRawLocal = null, lockToken}) {
+	async _pGetBrewDependencies_ ({brewDocs, brewsRaw = null, brewsRawLocal = null, lockToken}) {
 		const urlRoot = await this.pGetCustomUrl();
 		const brewIndex = await this._pGetSourceIndex(urlRoot);
 
@@ -740,7 +740,7 @@ class _BrewUtil2Base {
 			lockToken = await this._LOCK.pLock({token: lockToken});
 			const brews = MiscUtil.copyFast(await this._pGetBrewRaw({lockToken}));
 
-			const brewDocsDependencies = await this._pAddBrewDependencies({brewDocs, brewsRaw: brews, lockToken});
+			const brewDocsDependencies = await this._pGetBrewDependencies({brewDocs, brewsRaw: brews, lockToken});
 			brewDocs.push(...brewDocsDependencies);
 
 			const brewsNxt = this._getNextBrews(brews, brewDocs);
@@ -770,7 +770,7 @@ class _BrewUtil2Base {
 
 		const brews = MiscUtil.copyFast(await this._pGetBrewRaw({lockToken}));
 
-		const brewDocsDependencies = await this._pAddBrewDependencies({brewDocs, brewsRaw: brews, lockToken});
+		const brewDocsDependencies = await this._pGetBrewDependencies({brewDocs, brewsRaw: brews, lockToken});
 		brewDocs.push(...brewDocsDependencies);
 
 		const brewsNxt = this._getNextBrews(brews, brewDocs);
@@ -789,10 +789,13 @@ class _BrewUtil2Base {
 	}
 
 	async _pAddBrewsLazyFinalize_ ({lockToken}) {
-		const brews = MiscUtil.copyFast(await this._pGetBrewRaw({lockToken}));
-		const brewsNxt = this._getNextBrews(brews, this._addLazy_brewsTemp);
+		const brewsRaw = await this._pGetBrewRaw({lockToken});
+		const brewDeps = await this._pGetBrewDependencies({brewDocs: this._addLazy_brewsTemp, brewsRaw, lockToken});
+		const out = MiscUtil.copyFast(brewDeps);
+		const brewsNxt = this._getNextBrews(MiscUtil.copyFast(brewsRaw), [...this._addLazy_brewsTemp, ...brewDeps]);
 		await this.pSetBrew(brewsNxt, {lockToken});
 		this._addLazy_brewsTemp = [];
+		return out;
 	}
 
 	async pPullAllBrews ({brews} = {}) {
@@ -2833,7 +2836,8 @@ class GetBrewUi {
 		});
 
 		await Promise.allSettled(listItems.map(it => it.data.pFnDoDownload({isLazy: true})));
-		await this._brewUtil.pAddBrewsLazyFinalize();
+		const lazyDepsAdded = await this._brewUtil.pAddBrewsLazyFinalize();
+		this._brewsLoaded.push(...lazyDepsAdded);
 		JqueryUtil.doToast(`Finished loading selected ${this._brewUtil.DISPLAY_NAME}!`);
 	}
 

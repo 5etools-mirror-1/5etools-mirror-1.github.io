@@ -2889,6 +2889,10 @@ class SourceFilter extends Filter {
 				() => this._doSetPinsVanilla(),
 				{title: `Select a baseline set of sources suitable for any campaign.`},
 			),
+			new ContextUtil.Action(
+				"Select All Non-UA Sources",
+				() => this._doSetPinsNonUa(),
+			),
 			null,
 			new ContextUtil.Action(
 				"Select SRD Sources",
@@ -2963,6 +2967,10 @@ class SourceFilter extends Filter {
 
 	_doSetPinsVanilla () {
 		Object.keys(this._state).forEach(k => this._state[k] = Parser.SOURCES_VANILLA.has(k) ? 1 : 0);
+	}
+
+	_doSetPinsNonUa () {
+		Object.keys(this._state).forEach(k => this._state[k] = !SourceUtil.isPrereleaseSource(k) ? 1 : 0);
 	}
 
 	_doSetPinsSrd () {

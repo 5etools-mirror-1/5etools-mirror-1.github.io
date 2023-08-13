@@ -2,7 +2,7 @@
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 globalThis.IS_DEPLOYED = undefined;
-globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.183.1"/* 5ETOOLS_VERSION__CLOSE */;
+globalThis.VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.183.2"/* 5ETOOLS_VERSION__CLOSE */;
 globalThis.DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 globalThis.DEPLOYED_IMG_ROOT = undefined;
 // for the roll20 script to set
@@ -3957,12 +3957,12 @@ globalThis.DataUtil = {
 			});
 		},
 
-		copyApplier: class {
-			static _COPY_ENTRY_PROPS = [
-				"action", "bonus", "reaction", "trait", "legendary", "mythic", "variant", "spellcasting",
-				"actionHeader", "bonusHeader", "reactionHeader", "legendaryHeader", "mythicHeader",
-			];
+		COPY_ENTRY_PROPS: [
+			"action", "bonus", "reaction", "trait", "legendary", "mythic", "variant", "spellcasting",
+			"actionHeader", "bonusHeader", "reactionHeader", "legendaryHeader", "mythicHeader",
+		],
 
+		copyApplier: class {
 			// convert everything to arrays
 			static _normaliseMods (obj) {
 				Object.entries(obj._mod).forEach(([k, v]) => {
@@ -4511,7 +4511,7 @@ globalThis.DataUtil = {
 					});
 
 					Object.entries(copyMeta._mod).forEach(([prop, modInfos]) => {
-						if (prop === "*") this._doMod({copyTo, copyFrom, modInfos, props: this._COPY_ENTRY_PROPS, msgPtFailed, isExternalApplicationIdentityOnly});
+						if (prop === "*") this._doMod({copyTo, copyFrom, modInfos, props: DataUtil.generic.COPY_ENTRY_PROPS, msgPtFailed, isExternalApplicationIdentityOnly});
 						else if (prop === "_") this._doMod({copyTo, copyFrom, modInfos, msgPtFailed, isExternalApplicationIdentityOnly});
 						else this._doMod({copyTo, copyFrom, modInfos, props: [prop], msgPtFailed, isExternalApplicationIdentityOnly});
 					});

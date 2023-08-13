@@ -61,7 +61,7 @@ class BaseParser {
 			// Connect together e.g. `5d10\nForce damage`
 			.replace(new RegExp(`(?<start>\\d+) *\\n+(?<end>${ConverterConst.STR_RE_DAMAGE_TYPE} damage)\\b`, "gi"), (...m) => `${m.last().start} ${m.last().end}`)
 			// Connect together likely determiners/conjunctions/etc.
-			.replace(/(?<start>\b(the|a|a cumulative|an|this|that|these|those|its|his|her|their|have|extra|and|or|as|on|uses|to|at|using) *)\n+\s*/g, (...m) => `${m.last().start} `)
+			.replace(/(?<start>\b(the|a|a cumulative|an|this|that|these|those|its|his|her|their|they|have|extra|and|or|as|on|uses|to|at|using|reduced|effect|reaches) *)\n+\s*/g, (...m) => `${m.last().start} `)
 			// Connect together e.g.:
 			//  - `+5\nto hit`, `your Spell Attack Modifier\nto hit`
 			//  - `your Wisdom\nmodifier`
@@ -289,8 +289,59 @@ class TaggerUtils {
 }
 
 class TagCondition {
+	static _KEY_BLOCKLIST = new Set([
+		...MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLOCKLIST,
+		"conditionImmune",
+	]);
+
+	static _CONDITIONS = [
+		"blinded",
+		"charmed",
+		"deafened",
+		"exhaustion",
+		"frightened",
+		"grappled",
+		"incapacitated",
+		"invisible",
+		"paralyzed",
+		"petrified",
+		"poisoned",
+		"prone",
+		"restrained",
+		"stunned",
+		"unconscious",
+	];
+
+	static _STATUS_MATCHER = new RegExp(`\\b(concentration)\\b`, "g");
+
+	static _STATUS_MATCHER_ALT = new RegExp(`\\b(concentrating)\\b`, "g");
+
+	static _STATUS_MATCHER_ALT_REPLACEMENTS = {
+		"concentrating": "concentration||",
+	};
+
+	static _conditionMatcher = null;
+	static _conditionSourceMap = null;
+
+	static init ({conditionsBrew = []} = {}) {
+		const conditions = [
+			...this._CONDITIONS,
+			...(conditionsBrew || []).map(it => it.name.toLowerCase().escapeRegexp()),
+		];
+
+		this._conditionMatcher = new RegExp(`\\b(${conditions.join("|")})\\b`, "g");
+		this._conditionSourceMap = conditionsBrew.mergeMap(({name, source}) => ({[name.toLowerCase()]: source}));
+	}
+
+	static getConditionUid (conditionName) {
+		const lower = conditionName.toLowerCase();
+		const source = this._conditionSourceMap[lower];
+		if (!source) return lower;
+		return `${lower}|${source.toLowerCase()}`;
+	}
+
 	static _getConvertedEntry (mon, entry, {inflictedSet, inflictedAllowlist} = {}) {
-		const walker = MiscUtil.getWalker({keyBlocklist: TagCondition._KEY_BLOCKLIST});
+		const walker = MiscUtil.getWalker({keyBlocklist: this._KEY_BLOCKLIST});
 		const nameStack = [];
 		const walkerHandlers = {
 			preObject: (obj) => nameStack.push(obj.name),
@@ -300,7 +351,7 @@ class TagCondition {
 					if (nameStack.includes("Antimagic Susceptibility")) return str;
 					if (nameStack.includes("Sneak Attack (1/Turn)")) return str;
 					const ptrStack = {_: ""};
-					return TagCondition._walkerStringHandler(ptrStack, 0, 0, str, {inflictedSet, inflictedAllowlist});
+					return this._walkerStringHandler(ptrStack, 0, 0, str, {inflictedSet, inflictedAllowlist});
 				},
 			],
 		};
@@ -310,9 +361,14 @@ class TagCondition {
 
 	static _getModifiedString (str) {
 		return str
-			.replace(TagCondition._CONDITION_MATCHER, (...m) => `{@condition ${m[1]}}`)
-			.replace(TagCondition._STATUS_MATCHER, (...m) => `{@status ${m[1]}}`)
-			.replace(TagCondition._STATUS_MATCHER_ALT, (...m) => `{@status ${TagCondition._STATUS_MATCHER_ALT_REPLACEMENTS[m[1].toLowerCase()]}${m[1]}}`)
+			.replace(this._conditionMatcher, (...m) => {
+				const name = m[1];
+				const source = this._conditionSourceMap[name.toLowerCase()];
+				if (!source) return `{@condition ${name}}`;
+				return `{@condition ${name}|${source}}`;
+			})
+			.replace(this._STATUS_MATCHER, (...m) => `{@status ${m[1]}}`)
+			.replace(this._STATUS_MATCHER_ALT, (...m) => `{@status ${this._STATUS_MATCHER_ALT_REPLACEMENTS[m[1].toLowerCase()]}${m[1]}}`)
 		;
 	}
 
@@ -408,17 +464,17 @@ class TagCondition {
 
 		if (isInflictedAddOnly) {
 			(m[prop] || []).forEach(it => inflictedSet.add(it));
-			if (inflictedSet.size) m[prop] = [...inflictedSet].sort(SortUtil.ascSortLower);
+			if (inflictedSet.size) m[prop] = [...inflictedSet].map(it => it.toLowerCase()).sort(SortUtil.ascSortLower);
 			return;
 		}
 
-		if (inflictedSet.size) m[prop] = [...inflictedSet].sort(SortUtil.ascSortLower);
+		if (inflictedSet.size) m[prop] = [...inflictedSet].map(it => it.toLowerCase()).sort(SortUtil.ascSortLower);
 		else delete m[prop];
 	}
 
 	// region Run basic tagging
 	static tryRunBasic (it) {
-		const walker = MiscUtil.getWalker({keyBlocklist: TagCondition._KEY_BLOCKLIST});
+		const walker = MiscUtil.getWalker({keyBlocklist: this._KEY_BLOCKLIST});
 
 		return walker.walk(
 			it,
@@ -444,33 +500,6 @@ class TagCondition {
 	}
 	// endregion
 }
-TagCondition._KEY_BLOCKLIST = new Set([
-	...MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLOCKLIST,
-	"conditionImmune",
-]);
-TagCondition._CONDITIONS = [
-	"blinded",
-	"charmed",
-	"deafened",
-	"exhaustion",
-	"frightened",
-	"grappled",
-	"incapacitated",
-	"invisible",
-	"paralyzed",
-	"petrified",
-	"poisoned",
-	"prone",
-	"restrained",
-	"stunned",
-	"unconscious",
-];
-TagCondition._CONDITION_MATCHER = new RegExp(`\\b(${TagCondition._CONDITIONS.join("|")})\\b`, "g");
-TagCondition._STATUS_MATCHER = new RegExp(`\\b(concentration)\\b`, "g");
-TagCondition._STATUS_MATCHER_ALT = new RegExp(`\\b(concentrating)\\b`, "g");
-TagCondition._STATUS_MATCHER_ALT_REPLACEMENTS = {
-	"concentrating": "concentration||",
-};
 // Each should have one group which matches the condition name.
 //   A comma/and part is appended to the end to handle chains of conditions.
 TagCondition.__TGT = `(?:target|wielder)`;
@@ -571,19 +600,36 @@ class DiceConvert {
 		return DiceConvert._walker.walk(entry, DiceConvert._walkerHandlers);
 	}
 
+	static _RE_NO_FORMAT_STRINGS = /(\b(?:plus|minus|PB)\b)/;
+
 	static _walkerStringHandler (isTagHits, str) {
 		if (isTagHits) {
-			// replace e.g. "+X to hit"
-			str = str.replace(/(?<op>[-+])?(?<bonus>\d+)(?= to hit)\b/g, (...m) => {
-				return `{@hit ${m.last().op === "-" ? "-" : ""}${m.last().bonus}}`;
-			});
+			str = str
+				// Handle e.g. `+3 to hit`
+				// Handle e.g. `+3 plus PB to hit`
+				.replace(/(?<op>[-+])?(?<bonus>\d+(?: (?:plus|minus|[-+]) PB)?)(?= to hit)\b/g, (...m) => `{@hit ${m.last().op === "-" ? "-" : ""}${m.last().bonus}}`)
+			;
 		}
 
 		// re-tag + format dice
-		str = str.replace(/\b(\s*[-+]\s*)?(([1-9]\d*|PB)?d([1-9]\d*)(\s*?[-+×x*÷/]\s*?(\d,\d|\d)+(\.\d+)?)?)+(?:\s*\+\s*\bPB\b)?\b/gi, (...m) => {
-			const expanded = m[0].replace(/([^0-9d.,PB])/gi, " $1 ").replace(/\s+/g, " ");
-			return `{@dice ${expanded}}`;
-		});
+		str = str
+			.replace(/\b(\s*[-+]\s*)?(([1-9]\d*|PB)?d([1-9]\d*)(\s*?(?:plus|minus|[-+×x*÷/])\s*?(\d,\d|\d|PB)+(\.\d+)?)?)+(?:\s*\+\s*\bPB\b)?\b/gi, (...m) => {
+				const expanded = m[0]
+					.split(this._RE_NO_FORMAT_STRINGS)
+					.map(pt => {
+						pt = pt.trim();
+						if (!pt) return pt;
+
+						if (this._RE_NO_FORMAT_STRINGS.test(pt)) return pt;
+
+						return pt
+							.replace(/([^0-9d.,PB])/g, " $1 ")
+							.replace(/\s+/g, " ");
+					})
+					.filter(Boolean)
+					.join(" ");
+				return `{@dice ${expanded}}`;
+			});
 
 		// unwrap double-tagged
 		let last;
@@ -608,10 +654,10 @@ class DiceConvert {
 		} while (last !== str);
 
 		// tag @damage (creature style)
-		str = str.replace(/\d+ \({@dice (?:[-+0-9d PB]*)}\)(?:\s+[-+]\s+[-+a-zA-Z0-9 ]*?)?(?: [a-z]+(?:(?:, |, or | or )[a-z]+)*)? damage/ig, (...m) => m[0].replace(/{@dice /gi, "{@damage "));
+		str = str.replace(/\d+ \({@dice (?:[^|}]*)}\)(?:\s+[-+]\s+[-+a-zA-Z0-9 ]*?)?(?: [a-z]+(?:(?:, |, or | or )[a-z]+)*)? damage/ig, (...m) => m[0].replace(/{@dice /gi, "{@damage "));
 
 		// tag @damage (spell/etc style)
-		str = str.replace(/{@dice (?:[-+0-9d PB]*)}(?:\s+[-+]\s+[-+a-zA-Z0-9 ]*?)?(?:\s+[-+]\s+the spell's level)?(?: [a-z]+(?:(?:, |, or | or )[a-z]+)*)? damage/ig, (...m) => m[0].replace(/{@dice /gi, "{@damage "));
+		str = str.replace(/{@dice (?:[^|}]*)}(?:\s+[-+]\s+[-+a-zA-Z0-9 ]*?)?(?:\s+[-+]\s+the spell's level)?(?: [a-z]+(?:(?:, |, or | or )[a-z]+)*)? damage/ig, (...m) => m[0].replace(/{@dice /gi, "{@damage "));
 
 		return str;
 	}
@@ -971,7 +1017,7 @@ class ConvertUtil {
 
 	static isListItemLine (line) { return /^[•●]/.test(line.trim()); }
 
-	static splitNameLine (line, isKeepPunctuation) {
+	static splitNameLine (line, isKeepPunctuation = false) {
 		const spl = this._getMergedSplitName({line});
 		const rawName = spl[0];
 		const entry = line.substring(rawName.length + spl[1].length, line.length).trim();
@@ -988,7 +1034,7 @@ class ConvertUtil {
 	}
 
 	static _getMergedSplitName ({line, splitterPunc}) {
-		let spl = line.split(splitterPunc || /([.!?:])/g);
+		let spl = line.split(splitterPunc || /([.!?:]+)/g);
 
 		if (
 			spl.length > 3
@@ -1017,13 +1063,26 @@ class ConvertUtil {
 			spl.splice(i + 1, 2);
 		}
 
+		// Handle e.g. "Shield? Shield! ..."
+		if (
+			spl.length > 4
+			&& spl[0].trim() === spl[2].trim()
+			&& /^[.!?:]+$/g.test(spl[1])
+			&& /^[.!?:]+$/g.test(spl[3])
+		) {
+			spl = [
+				spl.slice(0, 3).join(""),
+				...spl.slice(3),
+			];
+		}
+
 		// Handle e.g. "3rd Level: Death from Above! (3/Day). ..."
 		if (
 			spl.length > 3
 			&& (
-				/^[.!?:]$/.test(spl[1])
+				/^[.!?:]+$/.test(spl[1])
 				&& /^\s*\([^)]+\)\s*$/.test(spl[2])
-				&& /^[.!?:]$/.test(spl[3])
+				&& /^[.!?:]+$/.test(spl[3])
 			)
 		) {
 			spl = [
