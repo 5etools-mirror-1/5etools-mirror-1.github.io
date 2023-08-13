@@ -3972,11 +3972,12 @@ class _RenderableCollectionGenericRowsSyncAsyncUtils {
 	}
 
 	doDelete ({entity}) {
-		this._comp._state[this._prop] = this._comp._state[this._prop].filter(it => it !== entity);
+		this._comp._state[this._prop] = this._comp._state[this._prop].filter(it => it?.id !== entity.id);
 	}
 
 	doDeleteMultiple ({entities}) {
-		this._comp._state[this._prop] = this._comp._state[this._prop].filter(it => !entities.includes(it));
+		const ids = new Set(entities.map(it => it.id));
+		this._comp._state[this._prop] = this._comp._state[this._prop].filter(it => !ids.has(it?.id));
 	}
 
 	/* -------------------------------------------- */

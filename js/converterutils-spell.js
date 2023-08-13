@@ -112,7 +112,7 @@ class MiscTagsTagger {
 
 					if (/\b(?:lightly|heavily) obscured\b/i.test(str)) this._addTag({tags, tag: "OBS", options});
 
-					if (/\bis difficult terrain\b/i.test(Renderer.stripTags(str)) || /spends? \d+ (?:feet|foot) of movement for every 1 foot/.test(str)) this._addTag({tags, tag: "DFT", options});
+					if (/\b(?:is|creates an area of|becomes?) difficult terrain\b/i.test(Renderer.stripTags(str)) || /spends? \d+ (?:feet|foot) of movement for every 1 foot/.test(str)) this._addTag({tags, tag: "DFT", options});
 
 					if (
 						/\battacks? deals? an extra\b[^.!?]+\bdamage\b/.test(str)

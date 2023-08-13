@@ -99,7 +99,7 @@ class _RenderableCollectionRowDataActive extends RenderableCollectionRowDataBase
 							hpMax: hpMax,
 							initiative,
 							ordinal: Math.max(...similarCreatureRows.map(row => row.entity.ordinal)) + 1,
-							rowStatColData: isRollNew ? this._getInitialRowStatColData({mon, fluff}) : MiscUtil.copyFast(comp._state.rowStatColData),
+							rowStatColData: isRollNew ? this._rowStateBuilder._getInitialRowStatColData({mon, fluff}) : MiscUtil.copyFast(comp._state.rowStatColData),
 							conditions: [],
 						}),
 					]

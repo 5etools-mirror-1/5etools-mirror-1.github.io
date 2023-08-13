@@ -1866,16 +1866,34 @@
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Oathbreaker Channel Divinity: Control Undead|Paladin||Oathbreaker|DMG|3"
-				},
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "Oathbreaker Channel Divinity: Dreadful Aspect|Paladin||Oathbreaker|DMG|3"
+					"subclassFeature": "Channel Divinity|Paladin||Oathbreaker|DMG|3"
 				}
 			]
 		},
 		{
-			"name": "Oathbreaker Channel Divinity: Control Undead",
+			"name": "Channel Divinity",
+			"source": "DMG",
+			"page": 97,
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Oathbreaker",
+			"subclassSource": "DMG",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"An Oathbreaker paladin of 3rd level or higher gains the following two Channel Divinity options.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Control Undead|Paladin||Oathbreaker|DMG|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Dreadful Aspect|Paladin||Oathbreaker|DMG|3"
+				}
+			]
+		},
+		{
+			"name": "Control Undead",
 			"source": "DMG",
 			"page": 97,
 			"className": "Paladin",
@@ -1889,7 +1907,7 @@
 			]
 		},
 		{
-			"name": "Oathbreaker Channel Divinity: Dreadful Aspect",
+			"name": "Dreadful Aspect",
 			"source": "DMG",
 			"page": 97,
 			"className": "Paladin",
@@ -2016,16 +2034,12 @@
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Nature's Wrath|Paladin||Ancients||3"
-				},
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Turn the Faithless|Paladin||Ancients||3"
+					"subclassFeature": "Channel Divinity|Paladin||Ancients||3"
 				}
 			]
 		},
 		{
-			"name": "Channel Divinity: Nature's Wrath",
+			"name": "Channel Divinity",
 			"source": "PHB",
 			"page": 86,
 			"className": "Paladin",
@@ -2038,11 +2052,19 @@
 				"name": "Channel Divinity"
 			},
 			"entries": [
-				"You can use your Channel Divinity to invoke primeval forces to ensnare a foe. As an action, you can cause spectral vines to spring up and reach for a creature within 10 feet of you that you can see. The creature must succeed on a Strength or Dexterity saving throw (its choice) or be {@condition restrained}. While {@condition restrained} by the vines, the creature repeats the saving throw at the end of each of its turns. On a success, it frees itself and the vines vanish."
+				"When you take this oath at 3rd level, you gain the following two Channel Divinity options.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Nature's Wrath|Paladin||Ancients||3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Turn the Faithless|Paladin||Ancients||3"
+				}
 			]
 		},
 		{
-			"name": "Channel Divinity: Turn the Faithless",
+			"name": "Nature's Wrath",
 			"source": "PHB",
 			"page": 86,
 			"className": "Paladin",
@@ -2051,13 +2073,8 @@
 			"subclassSource": "PHB",
 			"level": 3,
 			"header": 1,
-			"consumes": {
-				"name": "Channel Divinity"
-			},
 			"entries": [
-				"You can use your Channel Divinity to utter ancient words that are painful for fey and fiends to hear. As an action, you present your holy symbol, and each fey or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage.",
-				"A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the {@action Dash} action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the {@action Dodge} action.",
-				"If the creature's true form is concealed by an illusion, shapeshifting, or other effect, that form is revealed while it is turned."
+				"You can use your Channel Divinity to invoke primeval forces to ensnare a foe. As an action, you can cause spectral vines to spring up and reach for a creature within 10 feet of you that you can see. The creature must succeed on a Strength or Dexterity saving throw (its choice) or be {@condition restrained}. While {@condition restrained} by the vines, the creature repeats the saving throw at the end of each of its turns. On a success, it frees itself and the vines vanish."
 			]
 		},
 		{
@@ -2171,6 +2188,22 @@
 			]
 		},
 		{
+			"name": "Turn the Faithless",
+			"source": "PHB",
+			"page": 86,
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Ancients",
+			"subclassSource": "PHB",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"You can use your Channel Divinity to utter ancient words that are painful for fey and fiends to hear. As an action, you present your holy symbol, and each fey or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage.",
+				"A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the {@action Dash} action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the {@action Dodge} action.",
+				"If the creature's true form is concealed by an illusion, shapeshifting, or other effect, that form is revealed while it is turned."
+			]
+		},
+		{
 			"name": "Aura of Warding",
 			"source": "PHB",
 			"page": 86,
@@ -2246,16 +2279,12 @@
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Sacred Weapon|Paladin||Devotion||3"
-				},
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Turn the Unholy|Paladin||Devotion||3"
+					"subclassFeature": "Channel Divinity|Paladin||Devotion||3"
 				}
 			]
 		},
 		{
-			"name": "Channel Divinity: Sacred Weapon",
+			"name": "Channel Divinity",
 			"source": "PHB",
 			"page": 85,
 			"srd": true,
@@ -2269,27 +2298,15 @@
 				"name": "Channel Divinity"
 			},
 			"entries": [
-				"As an action, you can imbue one weapon that you are holding with positive energy, using your Channel Divinity. For 1 minute, you add your Charisma modifier to attack rolls made with that weapon (with a minimum bonus of +1). The weapon also emits bright light in a 20-foot radius and dim light 20 feet beyond that. If the weapon is not already magical, it becomes magical for the duration.",
-				"You can end this effect on your turn as part of any other action. If you are no longer holding or carrying this weapon, or if you fall {@condition unconscious}, this effect ends."
-			]
-		},
-		{
-			"name": "Channel Divinity: Turn the Unholy",
-			"source": "PHB",
-			"page": 85,
-			"srd": true,
-			"className": "Paladin",
-			"classSource": "PHB",
-			"subclassShortName": "Devotion",
-			"subclassSource": "PHB",
-			"level": 3,
-			"header": 1,
-			"consumes": {
-				"name": "Channel Divinity"
-			},
-			"entries": [
-				"As an action, you present your holy symbol and speak a prayer censuring fiends and undead, using your Channel Divinity. Each fiend or undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes damage.",
-				"A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the {@action Dash} action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the {@action Dodge} action."
+				"When you take this oath at 3rd level, you gain the following two Channel Divinity options.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Sacred Weapon|Paladin||Devotion||3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Turn the Unholy|Paladin||Devotion||3"
+				}
 			]
 		},
 		{
@@ -2339,6 +2356,22 @@
 						]
 					]
 				}
+			]
+		},
+		{
+			"name": "Sacred Weapon",
+			"source": "PHB",
+			"page": 85,
+			"srd": true,
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Devotion",
+			"subclassSource": "PHB",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"As an action, you can imbue one weapon that you are holding with positive energy, using your Channel Divinity. For 1 minute, you add your Charisma modifier to attack rolls made with that weapon (with a minimum bonus of +1). The weapon also emits bright light in a 20-foot radius and dim light 20 feet beyond that. If the weapon is not already magical, it becomes magical for the duration.",
+				"You can end this effect on your turn as part of any other action. If you are no longer holding or carrying this weapon, or if you fall {@condition unconscious}, this effect ends."
 			]
 		},
 		{
@@ -2417,6 +2450,22 @@
 			]
 		},
 		{
+			"name": "Turn the Unholy",
+			"source": "PHB",
+			"page": 85,
+			"srd": true,
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Devotion",
+			"subclassSource": "PHB",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"As an action, you present your holy symbol and speak a prayer censuring fiends and undead, using your Channel Divinity. Each fiend or undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes damage.",
+				"A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the {@action Dash} action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the {@action Dodge} action."
+			]
+		},
+		{
 			"name": "Aura of Devotion",
 			"source": "PHB",
 			"page": 85,
@@ -2486,16 +2535,12 @@
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Abjure Enemy|Paladin||Vengeance||3"
-				},
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Vow of Enmity|Paladin||Vengeance||3"
+					"subclassFeature": "Channel Divinity|Paladin||Vengeance||3"
 				}
 			]
 		},
 		{
-			"name": "Channel Divinity: Abjure Enemy",
+			"name": "Abjure Enemy",
 			"source": "PHB",
 			"page": 87,
 			"className": "Paladin",
@@ -2504,9 +2549,6 @@
 			"subclassSource": "PHB",
 			"level": 3,
 			"header": 1,
-			"consumes": {
-				"name": "Channel Divinity"
-			},
 			"entries": [
 				"As an action, you present your holy symbol and speak a prayer of denunciation, using your Channel Divinity. Choose one creature within 60 feet of you that you can see. That creature must make a Wisdom saving throw, unless it is immune to being {@condition frightened}. Fiends and undead have disadvantage on this saving throw.",
 				"On a failed save, the creature is {@condition frightened} for 1 minute or until it takes any damage. While {@condition frightened}, the creature's speed is 0, and it can't benefit from any bonus to its speed.",
@@ -2514,7 +2556,7 @@
 			]
 		},
 		{
-			"name": "Channel Divinity: Vow of Enmity",
+			"name": "Channel Divinity",
 			"source": "PHB",
 			"page": 87,
 			"className": "Paladin",
@@ -2527,7 +2569,15 @@
 				"name": "Channel Divinity"
 			},
 			"entries": [
-				"As a bonus action, you can utter a vow of enmity against a creature you can see within 10 feet of you, using your Channel Divinity. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hit points or falls {@condition unconscious}."
+				"When you take this oath at 3rd level, you gain the following two Channel Divinity options.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Abjure Enemy|Paladin||Vengeance||3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Vow of Enmity|Paladin||Vengeance||3"
+				}
 			]
 		},
 		{
@@ -2641,6 +2691,20 @@
 			]
 		},
 		{
+			"name": "Vow of Enmity",
+			"source": "PHB",
+			"page": 87,
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Vengeance",
+			"subclassSource": "PHB",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"As a bonus action, you can utter a vow of enmity against a creature you can see within 10 feet of you, using your Channel Divinity. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hit points or falls {@condition unconscious}."
+			]
+		},
+		{
 			"name": "Relentless Avenger",
 			"source": "PHB",
 			"page": 87,
@@ -2711,16 +2775,12 @@
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Champion Challenge|Paladin||Crown|SCAG|3"
-				},
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Turn the Tide|Paladin||Crown|SCAG|3"
+					"subclassFeature": "Channel Divinity|Paladin||Crown|SCAG|3"
 				}
 			]
 		},
 		{
-			"name": "Channel Divinity: Champion Challenge",
+			"name": "Champion Challenge",
 			"source": "SCAG",
 			"page": 132,
 			"className": "Paladin",
@@ -2729,15 +2789,12 @@
 			"subclassSource": "SCAG",
 			"level": 3,
 			"header": 1,
-			"consumes": {
-				"name": "Channel Divinity"
-			},
 			"entries": [
 				"As a bonus action, you issue a challenge that compels other creatures to do battle with you. Each creature of your choice that you can see within 30 feet of you must make a Wisdom saving throw. On a failed save, a creature can't willingly move more than 30 feet away from you. This effect ends on the creature if you are {@condition incapacitated} or die or if the creature is more than 30 feet away from you."
 			]
 		},
 		{
-			"name": "Channel Divinity: Turn the Tide",
+			"name": "Channel Divinity",
 			"source": "SCAG",
 			"page": 132,
 			"className": "Paladin",
@@ -2750,7 +2807,15 @@
 				"name": "Channel Divinity"
 			},
 			"entries": [
-				"As a bonus action, you can bolster injured creatures with your Channel Divinity. Each creature of your choice that can hear you within 30 feet of you regains hit points equal to {@dice 1d6} + your Charisma modifier (minimum of 1) if it has no more than half of its hit points."
+				"When you take this oath at 3rd level, you gain the following two Channel Divinity options.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Champion Challenge|Paladin||Crown|SCAG|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Turn the Tide|Paladin||Crown|SCAG|3"
+				}
 			]
 		},
 		{
@@ -2864,6 +2929,20 @@
 			]
 		},
 		{
+			"name": "Turn the Tide",
+			"source": "SCAG",
+			"page": 132,
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Crown",
+			"subclassSource": "SCAG",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"As a bonus action, you can bolster injured creatures with your Channel Divinity. Each creature of your choice that can hear you within 30 feet of you regains hit points equal to {@dice 1d6} + your Charisma modifier (minimum of 1) if it has no more than half of its hit points."
+			]
+		},
+		{
 			"name": "Divine Allegiance",
 			"source": "SCAG",
 			"page": 132,
@@ -2969,11 +3048,11 @@
 				"You gain the following two Channel Divinity options. See the Sacred Oath class feature for how Channel Divinity works.",
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Peerless Athlete|Paladin||Glory|TCE|3"
+					"subclassFeature": "Peerless Athlete|Paladin||Glory|TCE|3"
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Inspiring Smite|Paladin||Glory|TCE|3"
+					"subclassFeature": "Inspiring Smite|Paladin||Glory|TCE|3"
 				}
 			]
 		},
@@ -3081,7 +3160,7 @@
 			]
 		},
 		{
-			"name": "Channel Divinity: Inspiring Smite",
+			"name": "Inspiring Smite",
 			"source": "TCE",
 			"page": 53,
 			"otherSources": [
@@ -3101,7 +3180,7 @@
 			]
 		},
 		{
-			"name": "Channel Divinity: Peerless Athlete",
+			"name": "Peerless Athlete",
 			"source": "TCE",
 			"page": 53,
 			"otherSources": [
@@ -3203,9 +3282,6 @@
 			"subclassShortName": "Watchers",
 			"subclassSource": "TCE",
 			"level": 3,
-			"consumes": {
-				"name": "Channel Divinity"
-			},
 			"entries": [
 				"The Oath of the Watchers binds paladins to protect mortal realms from the predations of extraplanar creatures, many of which can lay waste to mortal soldiers. Thus, the Watchers hone their minds, spirits, and bodies to be the ultimate weapons against such threats.",
 				"Paladins who follow the Watchers' oath are ever vigilant in spotting the influence of extraplanar forces, often establishing a network of spies and informants to gather information on suspected cults. To a Watcher, keeping a healthy suspicion and awareness about one's surroundings is as natural as wearing armor in battle.",
@@ -3404,9 +3480,6 @@
 			"subclassShortName": "Watchers (UA)",
 			"subclassSource": "UA2020SubclassesPt1",
 			"level": 3,
-			"consumes": {
-				"name": "Channel Divinity"
-			},
 			"entries": [
 				"Paladins who vow the Oath of the Watchers seek to protect the mortal realm from the predations of extraplanar creatures, many of which can lay waste to mortal soldiers. Thus, the Watchers hone their minds, spirits, and bodies to be the ultimate weapons against such threats.",
 				"Paladins who follow the Watchers' oath are ever vigilant in spotting the influence of extraplanar forces, often establishing a network of spies and informants to gather information on suspected cults. To a Watcher, keeping a healthy suspicion and awareness about one's surroundings is as natural as wearing armor in battle.",
@@ -3604,9 +3677,6 @@
 			"subclassShortName": "Redemption (UA)",
 			"subclassSource": "UAATrioOfSubclasses",
 			"level": 3,
-			"consumes": {
-				"name": "Channel Divinity"
-			},
 			"entries": [
 				"The Oath of Redemption sets a paladin on a difficult path, one that requires a holy warrior to use violence only as a last resort. Paladins who dedicate themselves to this oath believe that any person can be redeemed and that the path of benevolence and justice is one that anyone can walk. These paladins face evil creatures in the hope of turning them to the light, and the paladins slay them only when such a deed will clearly save other lives. Paladins who follow this path are known as redeemers.",
 				"While redeemers are idealists, they are no fools. Redeemers know that undead, demons, devils, and other supernatural threats can be inherently evil. Against such foes, the paladins bring the full wrath of their weapons and spells to bear. Yet the redeemers still pray that, one day, even creatures of wickedness will invite their own redemption.",
@@ -3628,11 +3698,7 @@
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Emissary of Peace|Paladin||Redemption (UA)|UAATrioOfSubclasses|3"
-				},
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Rebuke the Violent|Paladin||Redemption (UA)|UAATrioOfSubclasses|3"
+					"subclassFeature": "Channel Divinity|Paladin||Redemption (UA)|UAATrioOfSubclasses|3"
 				}
 			]
 		},
@@ -3651,7 +3717,7 @@
 			]
 		},
 		{
-			"name": "Channel Divinity: Emissary of Peace",
+			"name": "Channel Divinity",
 			"source": "UAATrioOfSubclasses",
 			"page": 1,
 			"className": "Paladin",
@@ -3664,11 +3730,19 @@
 				"name": "Channel Divinity"
 			},
 			"entries": [
-				"You can use your Channel Divinity to augment your presence with divine power. As a bonus action, you grant yourself a +5 bonus to the next Charisma ({@skill Persuasion}) check you make within the next minute."
+				"When you take this oath at 3rd level, you gain the following two Channel Divinity options.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Emissary of Peace|Paladin||Redemption (UA)|UAATrioOfSubclasses|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Rebuke the Violent|Paladin||Redemption (UA)|UAATrioOfSubclasses|3"
+				}
 			]
 		},
 		{
-			"name": "Channel Divinity: Rebuke the Violent",
+			"name": "Emissary of Peace",
 			"source": "UAATrioOfSubclasses",
 			"page": 1,
 			"className": "Paladin",
@@ -3677,11 +3751,8 @@
 			"subclassSource": "UAATrioOfSubclasses",
 			"level": 3,
 			"header": 1,
-			"consumes": {
-				"name": "Channel Divinity"
-			},
 			"entries": [
-				"You can use your Channel Divinity to rebuke those who use violence. As a reaction when an enemy within 10 feet of you deals damage with a melee attack against one creature other than you, you force that attacker to make a Wisdom saving throw. On a failed save, the attacker takes radiant damage equal to the damage it just dealt. On a successful save, it takes half as much damage."
+				"You can use your Channel Divinity to augment your presence with divine power. As a bonus action, you grant yourself a +5 bonus to the next Charisma ({@skill Persuasion}) check you make within the next minute."
 			]
 		},
 		{
@@ -3730,6 +3801,20 @@
 						]
 					]
 				}
+			]
+		},
+		{
+			"name": "Rebuke the Violent",
+			"source": "UAATrioOfSubclasses",
+			"page": 1,
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Redemption (UA)",
+			"subclassSource": "UAATrioOfSubclasses",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"You can use your Channel Divinity to rebuke those who use violence. As a reaction when an enemy within 10 feet of you deals damage with a melee attack against one creature other than you, you force that attacker to make a Wisdom saving throw. On a failed save, the attacker takes radiant damage equal to the damage it just dealt. On a successful save, it takes half as much damage."
 			]
 		},
 		{
@@ -4089,16 +4174,12 @@
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Conquering Strike|Paladin||Conquest (UA)|UAPaladin|3"
-				},
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Guided Strike|Paladin||Conquest (UA)|UAPaladin|3"
+					"subclassFeature": "Channel Divinity|Paladin||Conquest (UA)|UAPaladin|3"
 				}
 			]
 		},
 		{
-			"name": "Channel Divinity: Conquering Strike",
+			"name": "Channel Divinity",
 			"source": "UAPaladin",
 			"page": 1,
 			"className": "Paladin",
@@ -4111,11 +4192,19 @@
 				"name": "Channel Divinity"
 			},
 			"entries": [
-				"You can use your Channel Divinity to break a foe's will. When you hit a creature with a melee weapon attack as part of the {@action Attack} action, you can also use your Channel Divinity to force the target to make a Wisdom saving throw. On a failed save, the target becomes {@condition frightened} of you for 1 minute. The {@condition frightened} creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success."
+				"When you take this oath at 3rd level, you gain the following two Channel Divinity options.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Conquering Strike|Paladin||Conquest (UA)|UAPaladin|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Guided Strike|Paladin||Conquest (UA)|UAPaladin|3"
+				}
 			]
 		},
 		{
-			"name": "Channel Divinity: Guided Strike",
+			"name": "Conquering Strike",
 			"source": "UAPaladin",
 			"page": 1,
 			"className": "Paladin",
@@ -4124,9 +4213,20 @@
 			"subclassSource": "UAPaladin",
 			"level": 3,
 			"header": 1,
-			"consumes": {
-				"name": "Channel Divinity"
-			},
+			"entries": [
+				"You can use your Channel Divinity to break a foe's will. When you hit a creature with a melee weapon attack as part of the {@action Attack} action, you can also use your Channel Divinity to force the target to make a Wisdom saving throw. On a failed save, the target becomes {@condition frightened} of you for 1 minute. The {@condition frightened} creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success."
+			]
+		},
+		{
+			"name": "Guided Strike",
+			"source": "UAPaladin",
+			"page": 1,
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Conquest (UA)",
+			"subclassSource": "UAPaladin",
+			"level": 3,
+			"header": 1,
 			"entries": [
 				"You can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the attack hits or misses."
 			]
@@ -4302,16 +4402,12 @@
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Conjure Duplicate|Paladin||Treachery (UA)|UAPaladin|3"
-				},
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Poison Strike|Paladin||Treachery (UA)|UAPaladin|3"
+					"subclassFeature": "Channel Divinity|Paladin||Treachery (UA)|UAPaladin|3"
 				}
 			]
 		},
 		{
-			"name": "Channel Divinity: Conjure Duplicate",
+			"name": "Channel Divinity",
 			"source": "UAPaladin",
 			"page": 2,
 			"className": "Paladin",
@@ -4324,12 +4420,19 @@
 				"name": "Channel Divinity"
 			},
 			"entries": [
-				"As an action, you create a visual illusion of yourself that lasts for 1 minute, or until you lose your {@status concentration} (as if you were {@status concentration||concentrating} on a spell). The illusion appears in an unoccupied space of your choice that you can see within 30 feet of you. The illusion looks exactly like you; it is silent; it is your size, is insubstantial, doesn't occupy its space; and it is unaffected by attacks and damage. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but the illusion must remain within 120 feet of you.",
-				"For the duration, you can cast spells as though you were in the illusion's space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how uncanny the illusion is."
+				"When you take this oath at 3rd level, you gain the following two Channel Divinity options.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Conjure Duplicate|Paladin||Treachery (UA)|UAPaladin|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Poison Strike|Paladin||Treachery (UA)|UAPaladin|3"
+				}
 			]
 		},
 		{
-			"name": "Channel Divinity: Poison Strike",
+			"name": "Conjure Duplicate",
 			"source": "UAPaladin",
 			"page": 2,
 			"className": "Paladin",
@@ -4338,11 +4441,9 @@
 			"subclassSource": "UAPaladin",
 			"level": 3,
 			"header": 1,
-			"consumes": {
-				"name": "Channel Divinity"
-			},
 			"entries": [
-				"You can use your Channel Divinity to make a weapon deadlier. As a bonus action, you touch one weapon or piece of ammunition and conjure a special poison on it. The poison lasts for 1 minute. The next time you hit a target with an attack using that weapon or ammunition, the target takes poison damage immediately after the attack. The poison damage equals {@dice 2d10} + your paladin level, or 20 + your paladin level if you had advantage on the attack roll."
+				"As an action, you create a visual illusion of yourself that lasts for 1 minute, or until you lose your {@status concentration} (as if you were {@status concentration||concentrating} on a spell). The illusion appears in an unoccupied space of your choice that you can see within 30 feet of you. The illusion looks exactly like you; it is silent; it is your size, is insubstantial, doesn't occupy its space; and it is unaffected by attacks and damage. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but the illusion must remain within 120 feet of you.",
+				"For the duration, you can cast spells as though you were in the illusion's space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how uncanny the illusion is."
 			]
 		},
 		{
@@ -4391,6 +4492,20 @@
 						]
 					]
 				}
+			]
+		},
+		{
+			"name": "Poison Strike",
+			"source": "UAPaladin",
+			"page": 2,
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Treachery (UA)",
+			"subclassSource": "UAPaladin",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"You can use your Channel Divinity to make a weapon deadlier. As a bonus action, you touch one weapon or piece of ammunition and conjure a special poison on it. The poison lasts for 1 minute. The next time you hit a target with an attack using that weapon or ammunition, the target takes poison damage immediately after the attack. The poison damage equals {@dice 2d10} + your paladin level, or 20 + your paladin level if you had advantage on the attack roll."
 			]
 		},
 		{
@@ -4505,16 +4620,12 @@
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Conquering Presence|Paladin||Conquest v2 (UA)|UARevisedClassOptions|3"
-				},
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Guided Strike|Paladin||Conquest v2 (UA)|UARevisedClassOptions|3"
+					"subclassFeature": "Channel Divinity|Paladin||Conquest v2 (UA)|UARevisedClassOptions|3"
 				}
 			]
 		},
 		{
-			"name": "Channel Divinity: Conquering Presence",
+			"name": "Channel Divinity",
 			"source": "UARevisedClassOptions",
 			"page": 3,
 			"className": "Paladin",
@@ -4527,11 +4638,19 @@
 				"name": "Channel Divinity"
 			},
 			"entries": [
-				"You can use your Channel Divinity to exude a terrifying presence. As an action, you force each creature of your choice that you can see within 30 feet of you to make a Wisdom saving throw. On a failed save, a creature becomes {@condition frightened} of you for 1 minute. The {@condition frightened} creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success."
+				"When you take this oath at 3rd level, you gain the following two Channel Divinity options.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Conquering Presence|Paladin||Conquest v2 (UA)|UARevisedClassOptions|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Guided Strike|Paladin||Conquest v2 (UA)|UARevisedClassOptions|3"
+				}
 			]
 		},
 		{
-			"name": "Channel Divinity: Guided Strike",
+			"name": "Conquering Presence",
 			"source": "UARevisedClassOptions",
 			"page": 3,
 			"className": "Paladin",
@@ -4540,9 +4659,20 @@
 			"subclassSource": "UARevisedClassOptions",
 			"level": 3,
 			"header": 1,
-			"consumes": {
-				"name": "Channel Divinity"
-			},
+			"entries": [
+				"You can use your Channel Divinity to exude a terrifying presence. As an action, you force each creature of your choice that you can see within 30 feet of you to make a Wisdom saving throw. On a failed save, a creature becomes {@condition frightened} of you for 1 minute. The {@condition frightened} creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success."
+			]
+		},
+		{
+			"name": "Guided Strike",
+			"source": "UARevisedClassOptions",
+			"page": 3,
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Conquest v2 (UA)",
+			"subclassSource": "UARevisedClassOptions",
+			"level": 3,
+			"header": 1,
 			"entries": [
 				"You can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the attack hits or misses."
 			]
@@ -4719,16 +4849,12 @@
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Conquering Presence|Paladin||Conquest|XGE|3"
-				},
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Guided Strike|Paladin||Conquest|XGE|3"
+					"subclassFeature": "Channel Divinity|Paladin||Conquest|XGE|3"
 				}
 			]
 		},
 		{
-			"name": "Channel Divinity: Conquering Presence",
+			"name": "Channel Divinity",
 			"source": "XGE",
 			"page": 37,
 			"className": "Paladin",
@@ -4741,11 +4867,19 @@
 				"name": "Channel Divinity"
 			},
 			"entries": [
-				"You can use your Channel Divinity to exude a terrifying presence. As an action, you force each creature of your choice that you can see within 30 feet of you to make a Wisdom saving throw. On a failed save, a creature becomes {@condition frightened} of you for 1 minute. The {@condition frightened} creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success."
+				"When you take this oath at 3rd level, you gain the following two Channel Divinity options.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Conquering Presence|Paladin||Conquest|XGE|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Guided Strike|Paladin||Conquest|XGE|3"
+				}
 			]
 		},
 		{
-			"name": "Channel Divinity: Guided Strike",
+			"name": "Conquering Presence",
 			"source": "XGE",
 			"page": 37,
 			"className": "Paladin",
@@ -4754,9 +4888,20 @@
 			"subclassSource": "XGE",
 			"level": 3,
 			"header": 1,
-			"consumes": {
-				"name": "Channel Divinity"
-			},
+			"entries": [
+				"You can use your Channel Divinity to exude a terrifying presence. As an action, you force each creature of your choice that you can see within 30 feet of you to make a Wisdom saving throw. On a failed save, a creature becomes {@condition frightened} of you for 1 minute. The {@condition frightened} creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success."
+			]
+		},
+		{
+			"name": "Guided Strike",
+			"source": "XGE",
+			"page": 37,
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Conquest",
+			"subclassSource": "XGE",
+			"level": 3,
+			"header": 1,
 			"entries": [
 				"You can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the attack hits or misses."
 			]
@@ -4924,16 +5069,12 @@
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Emissary of Peace|Paladin||Redemption|XGE|3"
-				},
-				{
-					"type": "refSubclassFeature",
-					"subclassFeature": "Channel Divinity: Rebuke the Violent|Paladin||Redemption|XGE|3"
+					"subclassFeature": "Channel Divinity|Paladin||Redemption|XGE|3"
 				}
 			]
 		},
 		{
-			"name": "Channel Divinity: Emissary of Peace",
+			"name": "Channel Divinity",
 			"source": "XGE",
 			"page": 38,
 			"className": "Paladin",
@@ -4946,11 +5087,19 @@
 				"name": "Channel Divinity"
 			},
 			"entries": [
-				"You can use your Channel Divinity to augment your presence with divine power. As a bonus action, you grant yourself a +5 bonus to Charisma ({@skill Persuasion}) checks for the next 10 minutes."
+				"When you take this oath at 3rd level, you gain the following two Channel Divinity options.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Emissary of Peace|Paladin||Redemption|XGE|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Rebuke the Violent|Paladin||Redemption|XGE|3"
+				}
 			]
 		},
 		{
-			"name": "Channel Divinity: Rebuke the Violent",
+			"name": "Emissary of Peace",
 			"source": "XGE",
 			"page": 38,
 			"className": "Paladin",
@@ -4959,11 +5108,8 @@
 			"subclassSource": "XGE",
 			"level": 3,
 			"header": 1,
-			"consumes": {
-				"name": "Channel Divinity"
-			},
 			"entries": [
-				"You can use your Channel Divinity to rebuke those who use violence. Immediately after an attacker within 30 feet of you deals damage with an attack against a creature other than you, you can use your reaction to force the attacker to make a Wisdom saving throw. On a failed save, the attacker takes radiant damage equal to the damage it just dealt. On a successful save, it takes half as much damage."
+				"You can use your Channel Divinity to augment your presence with divine power. As a bonus action, you grant yourself a +5 bonus to Charisma ({@skill Persuasion}) checks for the next 10 minutes."
 			]
 		},
 		{
@@ -5012,6 +5158,20 @@
 						]
 					]
 				}
+			]
+		},
+		{
+			"name": "Rebuke the Violent",
+			"source": "XGE",
+			"page": 38,
+			"className": "Paladin",
+			"classSource": "PHB",
+			"subclassShortName": "Redemption",
+			"subclassSource": "XGE",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"You can use your Channel Divinity to rebuke those who use violence. Immediately after an attacker within 30 feet of you deals damage with an attack against a creature other than you, you can use your reaction to force the attacker to make a Wisdom saving throw. On a failed save, the attacker takes radiant damage equal to the damage it just dealt. On a successful save, it takes half as much damage."
 			]
 		},
 		{
