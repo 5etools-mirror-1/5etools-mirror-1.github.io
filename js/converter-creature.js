@@ -953,22 +953,15 @@ class CreatureParser extends BaseParser {
 		for (let i = 0; i < stats[prop].length; ++i) {
 			const cur = stats[prop][i];
 
-			if (typeof cur?.entries?.last() !== "string" || !cur?.entries?.last().trim().endsWith(":")) continue;
-
-			let lst = null;
-
 			if (
-				/\bfollowing effects\b/.test(cur.entries.last().trim())
+				/^eye (?:ray|psionic)s?/i.test(cur.name || "")
 			) {
+				let lst = null;
+
 				while (stats[prop].length) {
 					const nxt = stats[prop][i + 1];
 
-					const entry = nxt?.entries?.[0];
-					if (!entry || typeof entry !== "string") break;
-
-					if (
-						/\bthe target\b/i.test(entry)
-					) {
+					if (/^\d+\.\s+/i.test(nxt?.name || "")) {
 						if (!lst) {
 							lst = {type: "list", style: "list-hang-notitle", items: []};
 							cur.entries.push(lst);
@@ -983,10 +976,72 @@ class CreatureParser extends BaseParser {
 
 					break;
 				}
-
-				continue;
 			}
 		}
+	}
+
+	/**
+	 * Merge together likely hanging lists. Note that this should be fairly conservative, as merging unwanted entries
+	 * into the list is worse than not merging some list entries.
+	 */
+	static _doMergeHangingLists (stats, prop) {
+		if (!stats[prop]) return;
+
+		for (let i = 0; i < stats[prop].length; ++i) {
+			const cur = stats[prop][i];
+
+			if (typeof cur?.entries?.last() !== "string" || !cur?.entries?.last().trim().endsWith(":")) continue;
+
+			const ptrList = {_: null};
+
+			if (
+				this._doMergeHangingLists_generic({
+					stats,
+					prop,
+					ix: i,
+					cur,
+					ptrList,
+					fnIsMatchCurEntry: cur => /\b(?:following( effects)?|their effects follow)[^.!?]*:/.test(cur.entries.last().trim()),
+					fnIsMatchNxtStr: ({entryNxt, entryNxtStr}) => /\bthe target\b/i.test(entryNxtStr) && !entryNxt.name?.includes("("),
+				})
+			) continue;
+
+			if (
+				this._doMergeHangingLists_generic({
+					stats,
+					prop,
+					ix: i,
+					cur,
+					ptrList,
+					fnIsMatchCurEntry: cur => /\bfollowing effects of that Elemental's choice\b/.test(cur.entries.last().trim()),
+					fnIsMatchNxtStr: ({entryNxt, entryNxtStr}) => /\b[Tt]he Elemental\b/i.test(entryNxtStr),
+				})
+			) continue;
+		}
+	}
+
+	static _doMergeHangingLists_generic ({stats, prop, ix, cur, ptrList, fnIsMatchCurEntry, fnIsMatchNxtStr}) {
+		if (!fnIsMatchCurEntry(cur)) return false;
+
+		while (stats[prop].length) {
+			const entryNxt = stats[prop][ix + 1];
+
+			const entryNxtStr = entryNxt?.entries?.[0];
+			if (!entryNxtStr || typeof entryNxtStr !== "string") break;
+
+			if (!fnIsMatchNxtStr({entryNxt, entryNxtStr})) break;
+
+			if (!ptrList._) {
+				ptrList._ = {type: "list", style: "list-hang-notitle", items: []};
+				cur.entries.push(ptrList._);
+			}
+
+			this._mutAssignPrettyType({obj: entryNxt, type: "item"});
+			ptrList._.items.push(entryNxt);
+			stats[prop].splice(ix + 1, 1);
+		}
+
+		return true;
 	}
 
 	/**
