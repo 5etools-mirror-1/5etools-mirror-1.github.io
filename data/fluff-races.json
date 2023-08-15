@@ -409,20 +409,31 @@
 			"name": "Aetherborn",
 			"source": "PSK",
 			"entries": [
+				{
+					"type": "quote",
+					"entries": [
+						"A day not spent indulging the senses is a day wasted"
+					]
+				},
 				"When the events of a lifetime are compressed down to almost nothing, each fleeting moment must be savored\u2014drained of every drop of enjoyment it can offer. This is the philosophy that informs the lives and minds of the aetherborn. Given just a few short years\u2014or sometimes only a few months\u2014to live, each aetherborn views time as exceedingly precious. Each moment spent in a way that does not bring delight is a wasted moment. And though aetherborn differ in their drives and pleasures, nearly all of them share this desire to squeeze the most out of the brief time they are given.",
 				"Aetherborn come into being spontaneously as part of the aether refinement process. Their bodies and minds are apparently formed out of some interaction between the volatile elements of aether that are removed during refinement and the psychic impressions created by the people involved in the process. But each aetherborn is a unique individual, not a mere copy of some other person's mind and shape. This race is little understood, and few aetherborn are willing to waste any of their short lives allowing vedalken scholars to study their biological and psychological characteristics.",
 				{
 					"type": "entries",
-					"name": "Aetherborn and Gender",
 					"entries": [
-						"Aetherborn are a strange living by-product of the process of aether refinement, cast in humanoid form but lacking any of the biological qualities of other races. They don't eat or sleep, and they don't reproduce\u2014nor do they have any physical sexual characteristics. Language that categorizes people into male or female categories thus breaks down when it comes to aetherborn. Most aetherborn prefer that others use the pronoun \"they\" to refer to them, since it doesn't attribute a gender that they don't possess. Only a relative few prefer \"he\" or \"she,\" having chosen to adopt a gender."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "Aetherborn Politics",
-					"entries": [
-						"The relationship between aetherborn and the Consulate is complicated. On the one hand, aetherborn understand that their race wouldn't exist without the Consulate's aether refining operations, so they feel at least some motivation to ensure that those operations continue to run smoothly. On the other hand, few aetherborn have any patience for the tedious and cumbersome politics and regulations of the Consulate, which gives them at least a little sympathy with renegade philosophy. Typically, aetherborn are drawn to one side or the other more by the lure of excitement and entertainment than by any serious political beliefs."
+						{
+							"type": "entries",
+							"name": "Aetherborn and Gender",
+							"entries": [
+								"Aetherborn are a strange living by-product of the process of aether refinement, cast in humanoid form but lacking any of the biological qualities of other races. They don't eat or sleep, and they don't reproduce\u2014nor do they have any physical sexual characteristics. Language that categorizes people into male or female categories thus breaks down when it comes to aetherborn. Most aetherborn prefer that others use the pronoun \"they\" to refer to them, since it doesn't attribute a gender that they don't possess. Only a relative few prefer \"he\" or \"she,\" having chosen to adopt a gender."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Aetherborn Politics",
+							"entries": [
+								"The relationship between aetherborn and the Consulate is complicated. On the one hand, aetherborn understand that their race wouldn't exist without the Consulate's aether refining operations, so they feel at least some motivation to ensure that those operations continue to run smoothly. On the other hand, few aetherborn have any patience for the tedious and cumbersome politics and regulations of the Consulate, which gives them at least a little sympathy with renegade philosophy. Typically, aetherborn are drawn to one side or the other more by the lure of excitement and entertainment than by any serious political beliefs."
+							]
+						}
 					]
 				}
 			],
@@ -432,14 +443,18 @@
 					"href": {
 						"type": "internal",
 						"path": "races/PSK/Aetherborn.webp"
-					}
+					},
+					"title": "On Kaladesh, an aether-powered {@item arrow of slaying (*)|DMG|arrow of slaying} can be launched without a bow.",
+					"credit": "Tidy Conclusion by Bastien L. Deharme"
 				},
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "races/PSK/Aetherborn2.webp"
-					}
+					},
+					"title": "Essence Extraction",
+					"credit": "Min Yum"
 				}
 			]
 		},
@@ -1716,15 +1731,26 @@
 			"name": "Dwarf (Kaladesh)",
 			"source": "PSK",
 			"entries": [
+				{
+					"type": "quote",
+					"entries": [
+						"It's dwarf built. There is no finer mark of quality."
+					]
+				},
 				"To the artisans of Kaladesh, a device's beauty is almost as important as its function. Different artists, though, have different definitions of beauty, and to most dwarves, the highest mark of beauty is quality. Nothing is more exquisite than a machine that endures\u2014one that functions perfectly, with a minimum of maintenance, despite the passage of years.",
 				"Dwarves don't understand laziness or shortcuts. Just as a machine must function smoothly at all times, so too an artisan should work steadily and with care. Dwarves take pride in their work ethic, and abhor any attitude or behavior that would undermine the quality of their work. They are more thorough than speedy, and although a dwarf's work might take longer to complete, its quality makes the time worthwhile. If a job must be done, a dwarf will see that it is done correctly. And when a dwarf repairs a machine, it will work as well as it did when it was first built, if not better\u2014and it will last.",
 				"Among the folk of other races, dwarves have a reputation for being utterly fearless. This is largely because their work often finds them scaling tall buildings or hanging from the undersides of airships. Far from being reckless, though, dwarves enter any potentially dangerous situation with firm safeguards in place, thoroughly prepared to avoid any accident. With an unshakable trust in the quality of harnesses, scaffolding, and handiwork, a dwarf has no need to fear falling.",
 				{
 					"type": "entries",
-					"name": "Dwarf Politics",
 					"entries": [
-						"Dwarves gravitate to where the work is. Accordingly, many dwarves appreciate the Consulate as an inexhaustible source of work opportunities. For its part, the Consulate values dwarves for their painstaking, perfectionist approach to building and maintenance. As a result, dwarves are employed at every level of the Consulate government, including having representatives among the Enlightened Keepers, the consuls themselves. Dwarf edificers keep the machinery of the cities running smoothly, while dwarf enforcers protect property and help keep the peace. However, it is the potential for making great things, more so than any philosophical leaning, that ties most dwarves to the Consulate.",
-						"Dwarves are not typically drawn to politics, but some do take issue with what they see as slapdash construction carried out in the Consulate's foundries. Mass production on the scale of the Consulate's efforts is an affront to the ideals of true artisanship, they argue, and those who are most offended by this insult sometimes align themselves with renegade groups."
+						{
+							"type": "entries",
+							"name": "Dwarf Politics",
+							"entries": [
+								"Dwarves gravitate to where the work is. Accordingly, many dwarves appreciate the Consulate as an inexhaustible source of work opportunities. For its part, the Consulate values dwarves for their painstaking, perfectionist approach to building and maintenance. As a result, dwarves are employed at every level of the Consulate government, including having representatives among the Enlightened Keepers, the consuls themselves. Dwarf edificers keep the machinery of the cities running smoothly, while dwarf enforcers protect property and help keep the peace. However, it is the potential for making great things, more so than any philosophical leaning, that ties most dwarves to the Consulate.",
+								"Dwarves are not typically drawn to politics, but some do take issue with what they see as slapdash construction carried out in the Consulate's foundries. Mass production on the scale of the Consulate's efforts is an affront to the ideals of true artisanship, they argue, and those who are most offended by this insult sometimes align themselves with renegade groups."
+							]
+						}
 					]
 				}
 			],
@@ -1734,14 +1760,18 @@
 					"href": {
 						"type": "internal",
 						"path": "races/PSK/Dwarf.webp"
-					}
+					},
+					"title": "Inspired Charge",
+					"credit": "Deruchenko Alexander"
 				},
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "races/PSK/Dwarf2.webp"
-					}
+					},
+					"title": "Acrobatic Maneuver",
+					"credit": "Winona Nelson"
 				}
 			]
 		},
@@ -2282,6 +2312,12 @@
 			"name": "Elf (Kaladesh)",
 			"source": "PSK",
 			"entries": [
+				{
+					"type": "quote",
+					"entries": [
+						"Everything is connected, and aether flows through it all."
+					]
+				},
 				"The movement of aether through the world is visible and obvious where it courses in glowing rivers across the sky, sweeps across sculpted plains, or pours through great urban pipelines. But the elves of Kaladesh are uniquely in tune with the flow of aether throughout the plane, both seen and unseen, and with the subtle ways it suffuses and influences all life. They call this flow the Great Conduit, and they believe that the only way to truly grasp it is to be a part of it, simultaneously shaping it and being shaped in return.",
 				"Thanks to this sensitivity, elves feel a deep connection to other living things. They engage deeply with the world around them, delighting in natural systems and social interactions alike. They revel in exploring the interconnectedness of nature and society, seeing the flow of aether from nature to invention, from person to person, from body to mind and heart.",
 				"Elves live in harmony with both nature and technology. They believe that nature inspires technology: each piece of artifice is an expression of natural laws and principles, and captures one element of aether's flow in a sort of microcosmic system. Technology, in turn, can nurture the natural world, helping life grow and flourish in places and ways that would otherwise be impossible."
@@ -2292,14 +2328,18 @@
 					"href": {
 						"type": "internal",
 						"path": "races/PSK/Elf.webp"
-					}
+					},
+					"title": "Wild Wanderer",
+					"credit": "Sidharth Chaturvedi"
 				},
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "races/PSK/Elf2.webp"
-					}
+					},
+					"title": "Cultivator's Caravan",
+					"credit": "Mark Zug"
 				}
 			]
 		},
@@ -2311,12 +2351,13 @@
 				"source": "PSK",
 				"_mod": {
 					"entries": {
-						"mode": "prependArr",
+						"mode": "appendArr",
 						"items": {
-							"type": "section",
+							"type": "entries",
 							"entries": [
 								{
 									"type": "entries",
+									"name": "Bishtahar and Tirahar",
 									"entries": [
 										"Elves who dwell in the forest and countryside are known as the Bishtahar. Most live in isolated communities away from other races, though they still trade with them. In fact, much of Kaladesh's food supply is grown by elves. Bishtahar cultivators grow food, decorative flowers, wood for building, and elaborate living sculptures in their meandering gardens and fields. They use the plane's ubiquitous technology to foster the growth of plants and animals, utilizing automatons as gardeners and herders, and employing elaborate, nearly invisible systems controlling heat, water, and nutrients.",
 										"A garden tended by elves seems to grow naturally in an aesthetically pleasing fashion. In fact, many of the forests and plains of Kaladesh are planted and tended by elves as well. What might appear at first to be wild countryside is more likely a carefully planned landscape designed to meet the needs of the people and animals that live there.",
@@ -2337,12 +2378,13 @@
 				"source": "PSK",
 				"_mod": {
 					"entries": {
-						"mode": "prependArr",
+						"mode": "appendArr",
 						"items": {
-							"type": "section",
+							"type": "entries",
 							"entries": [
 								{
 									"type": "entries",
+									"name": "Vahadar",
 									"entries": [
 										"The Vahadar are elves who dwell in the cities of Kaladesh. They are comfortable with technology, and work as planners, architects, aether-seers, or inventors. Some of them use the techniques of Bishtahar cultivators to grow food on rooftops, towers, and greenways. The Vahadar are generally integrated into the rest of society on Kaladesh, living in cities dominated by the other races (though, as in Ghirapur, many of them live in specific garden-like neighborhoods) and engaging in trade."
 									]
@@ -4973,6 +5015,31 @@
 						"type": "internal",
 						"path": "races/PSX/Human3.webp"
 					}
+				}
+			]
+		},
+		{
+			"name": "Human (Kaladesh)",
+			"source": "PSK",
+			"entries": [
+				{
+					"type": "quote",
+					"entries": [
+						"Curiosity is an itch that must be scratched."
+					]
+				},
+				"The humans of Kaladesh are a race full of passionate aspiration. At their best, humans attempt grand and expansive endeavors, driven to strive after the loftiest and most impossible goals. At their worst, humans are superficial, impractical dreamers who are blind to the consequences of their misguided actions. However, there can be no denying that the best and the worst of humankind\u2014along with the vast swath of humanity in between\u2014have been instrumental in shaping the history of Kaladesh, and continue to shape the destiny of the plane. Their curiosity, their ambition, their apparently boundless energy, and the scope of their vision are powerful forces that drive invention forward.",
+				"Human characters thrive on variety and crave new experiences. It's not uncommon for humans to explore several different fields and disciplines in their lifetimes, sometimes abandoning years of accomplishments in one pursuit for the sake of pursuing something new and exciting. This tendency often produces characters who have just enough knowledge of many different fields to be dangerous in all of them. But at the same time, many humans excel at creating synthesis and finding connections between apparently disparate disciplines, bringing a cross-pollination to the process of invention that drives innovation across every field."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "races/PSK/Human.webp"
+					},
+					"title": "Artificer's Epiphany",
+					"credit": "Kieran Yanner"
 				}
 			]
 		},
@@ -8364,14 +8431,25 @@
 			"name": "Vedalken",
 			"source": "PSK",
 			"entries": [
+				{
+					"type": "quote",
+					"entries": [
+						"Of course it's flawed. Everything is. And it's a good thing, too! Can you imagine how dreadful it would be if everything was already perfect?"
+					]
+				},
 				"Vedalken have an unusual view of progress. They believe that nothing is perfect, nor can it ever be perfect\u2014and they rejoice in this. Every imperfection is a chance for improvement, and progress is an endless march toward a state of perfection that can never actually be reached. Thus, pointing out imperfection is hardly an insult\u2014which leads vedalken to note flaws and problems with an enthusiasm that members of other races sometimes find exasperating.",
 				"This enthusiasm extends to every aspect of vedalken work, both practical and theoretical. They are curious and excitable, and often become deeply engrossed in their labors. It's not uncommon for a vedalken to spend hours on end caught up in the details of an abstract question or a minute engineering problem. Vedalken can be utterly oblivious to their surroundings while meditating on thorny issues, and they are prone to launching into lengthy explanations of their current research, since most find that talking about a problem often leads to a solution.",
 				"As a rule, vedalken are gregarious in conversation. However, they are quite circumspect concerning their personal lives, and they engage more with ideas than with people. They form close friendships based around mutual interests or compelling disagreements, and their interactions focus on their thoughts about those issues rather than their feelings about them. Emotional dynamics don't particularly interest vedalken, either as a conversational topic or a field of study. When they talk about their feelings, it is primarily to provide information that might be helpful to others. For example, a vedalken might tell her colleagues, \"I'm feeling irritated right now, so I might not be reacting appropriately. Perhaps we should continue this later.\" But any questions about the cause of the irritation are likely to be brushed off as being irrelevant to the situation.",
 				{
 					"type": "entries",
-					"name": "Vedalken Politics",
 					"entries": [
-						"Most vedalken care far more about invention and inquiry than about politics. They would rather unlock the hidden potential of aether-based devices than dwell on the question of how aether should be distributed to the Consulate's citizens. For that reason, though vedalken are found both among the officials of the Consulate and among the renegades, their dedication to either cause often lacks the partisan fervor found in the members of other races"
+						{
+							"type": "entries",
+							"name": "Vedalken Politics",
+							"entries": [
+								"Most vedalken care far more about invention and inquiry than about politics. They would rather unlock the hidden potential of aether-based devices than dwell on the question of how aether should be distributed to the Consulate's citizens. For that reason, though vedalken are found both among the officials of the Consulate and among the renegades, their dedication to either cause often lacks the partisan fervor found in the members of other races"
+							]
+						}
 					]
 				}
 			],
@@ -8381,14 +8459,18 @@
 					"href": {
 						"type": "internal",
 						"path": "races/PSK/Vedalken.webp"
-					}
+					},
+					"title": "A flash of genius\u2014resulting in a {@item wand of binding}, a {@item crystal ball}, or a {@item sphere of annihilation}?",
+					"credit": "Glimmer of Genius by Tommy Arnold"
 				},
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "races/PSK/Vedalken2.webp"
-					}
+					},
+					"title": "Curio Vendor",
+					"credit": "Igor Kieryluk"
 				}
 			]
 		},
