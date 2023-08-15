@@ -10,7 +10,8 @@
 			"source": "PSK",
 			"entries": [
 				"Angels are mysterious, detached beings seldom glimpsed by mortal eyes. They are the living incarnations of white mana, and embody its inherent tendencies toward order and harmony. Some inventors view angels in the context of the Aether Cycle as an expression of a Great Design. Given divine inspiration and an utterly perfect stage of innovation, an angel is the constructed result\u2014a living invention. Their masks, headdresses, and armor give them an almost mechanical appearance, but they are living beings with brightly colored skin almost entirely concealed beneath their armor and decorative robes. Because of their perfection, angels are believed to be immune to the final stages of the Aether Cycle, which would involve their destruction.",
-				"The people of Kaladesh do not worship angels or beseech their intervention in mortal affairs, and such prayers would go unheard anyway. The solitary angels interact with each other only in formal, nuanced rituals whose meanings are obscure. But the sight of an angel is thought to be a good omen, and in particular, it is believed to presage success with invention."
+				"The people of Kaladesh do not worship angels or beseech their intervention in mortal affairs, and such prayers would go unheard anyway. The solitary angels interact with each other only in formal, nuanced rituals whose meanings are obscure. But the sight of an angel is thought to be a good omen, and in particular, it is believed to presage success with invention.",
+				"Use the statistics of a {@creature deva|MM} for an angel on Kaladesh. Some angels (such as the one shown on the {@link Angel of Invention card|https://gatherer.wizards.com/pages/card/Details.aspx?multiverseid=547813}) wield four swords with their four arms. When such an angel uses the Multiattack action, it makes four attacks rather than two. However, its weapons deal only an extra {@damage 1d10} radiant damage from its Angelic Weapons trait, so that each sword attack deals 7 ({@damage 1d6 + 4}) slashing damage plus 5 ({@damage 1d10}) radiant damage on a hit."
 			],
 			"images": [
 				{
@@ -18,25 +19,61 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSK/Angel.webp"
-					}
+					},
+					"title": "Exquisite Archangel",
+					"credit": "Brad Rigney"
+				}
+			]
+		},
+		{
+			"name": "Artifact Creatures",
+			"source": "PSK",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Artifact Creatures",
+							"entries": [
+								"Many of the products of Kaladesh's most inventive minds are tools meant to be wielded, piloted, or otherwise employed by other people. But the crowning achievement of the artificer's art is the imitation of life itself, crafting artificial creatures with the capability to move, act, and even make decisions independently, according to a comprehensive set of instructions.",
+								"Ghirapur is full of such artifact creatures\u2014courier devices dashing through the streets of Bomat, thopters flitting from aerie to aerie, and assembly workers crafting more artifacts in busy foundries. These creatures are as diverse in their forms and appearance as they are in their purposes, but they can be broadly grouped into four categories: constructs, servos, thopters, and lifecraft creatures."
+							]
+						}
+					]
 				}
 			]
 		},
 		{
 			"name": "Construct (Animated Armor)",
 			"source": "PSK",
-			"entries": [
-				"The term \"construct\" encompasses a tremendous variety of artifact creatures. Some are automatons designed for battle\u2014most often to fight each other in arenas, but also in real combat. Many of these battle constructs specialize in defense, sometimes carrying shields to protect their creators, or simply escorting their charges like a watchdog.",
-				"Many constructs are intended for use in foundries and workshops, assisting inventors or performing repetitive tasks. Such a construct might find and deliver a specific tool its inventor requests, or perform routine maintenance in parts of a foundry that are difficult or dangerous to reach.",
-				"Other constructs have been designed to carry messages or packages, to load and unload goods from barges and airships, to trawl the sewers for salvageable materials, and even\u2014during the height of the Aether Revolt\u2014to scan crowds of people for known renegades and fugitives, recognizing their facial features."
-			],
+			"_copy": {
+				"name": "Artifact Creatures",
+				"source": "PSK",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								"The term \"construct\" encompasses a tremendous variety of artifact creatures. Some are automatons designed for battle\u2014most often to fight each other in arenas, but also in real combat. Many of these battle constructs specialize in defense, sometimes carrying shields to protect their creators, or simply escorting their charges like a watchdog.",
+								"Many constructs are intended for use in foundries and workshops, assisting inventors or performing repetitive tasks. Such a construct might find and deliver a specific tool its inventor requests, or perform routine maintenance in parts of a foundry that are difficult or dangerous to reach.",
+								"Other constructs have been designed to carry messages or packages, to load and unload goods from barges and airships, to trawl the sewers for salvageable materials, and even\u2014during the height of the Aether Revolt\u2014to scan crowds of people for known renegades and fugitives, recognizing their facial features.",
+								"Almost any creature in the {@book Monster Manual|MM} with the construct type could be used as a construct on Kaladesh, including {@creature animated armor}, {@creature helmed horror|MM|helmed horrors}, {@creature shield guardian|MM|shield guardians}, and {@creature monodrone|MM|modrons}."
+							]
+						}
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSK/Construct.webp"
-					}
+					},
+					"title": "Prizefighter Construct",
+					"credit": "Daniel Ljunggren"
 				}
 			]
 		},
@@ -69,7 +106,9 @@
 			"source": "PSK",
 			"entries": [
 				"Demons are artificial creatures, carefully constructed and imbued with aether according to a pattern called the Dark Schematic. Unknown artificers of the ancient past devised this blueprint\u2014perhaps in an attempt to imitate the angels, or possibly to replicate native demons that have since been hunted to extinction. Just as angels embody white mana and the construction phase of the Aether Cycle, demons are ravenous incarnations of black mana that feast on aether. They raid night markets, pillage airships, and break into refinement plants seeking aether to slake their thirst, causing as much destruction as possible in the process. They can thus be imagined as an embodiment of the reclamation stage of the Aether Cycle.",
-				"Artificers execute the Dark Schematic only in great desperation, often in the course of seeking power for themselves or revenge against their enemies. The destructive might of demons is hard to control, though, and these creatures have no particular regard for or gratitude toward their creators. As often as not, even an inventor who performs the steps necessary to create a demon with the utmost care suffers the same dismal fate as all its other victims."
+				"Artificers execute the Dark Schematic only in great desperation, often in the course of seeking power for themselves or revenge against their enemies. The destructive might of demons is hard to control, though, and these creatures have no particular regard for or gratitude toward their creators. As often as not, even an inventor who performs the steps necessary to create a demon with the utmost care suffers the same dismal fate as all its other victims.",
+				"Demons resemble angels on a superficial level, wearing ornate masks and headdresses, and often armored. The aether a demon consumes marks its skin with whorls of fiery red, deep purple, or searing yellow.",
+				"The statistics of an {@creature erinyes|MM} work well for demons on Kaladesh, but their weapons deal extra necrotic damage rather than extra poison damage."
 			],
 			"images": [
 				{
@@ -77,7 +116,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSK/Demon.webp"
-					}
+					},
+					"title": "Demon of Dark Schemes",
+					"credit": "Daarken"
 				}
 			]
 		},
@@ -86,8 +127,9 @@
 			"source": "PSK",
 			"entries": [
 				"Dragons are the apex predators of the skies. They are usually found in rural areas, avoiding the crowds of air ships and thopters found above the cities of Kaladesh. Their favorite prey are the sky whales that drift through the aethersphere, but they also hunt leviathans, wurms, hydras, drakes, giants\u2014and airships.",
-				"Dragons typically hunt by perching on a promonto ry or hilltop, remaining perfectly still as they wait for prey to come into view. With a single snap of its pow erful wings, a dragon can launch itself into the air with lightning speed, hurtling toward its target like a deadly arrow.",
-				"Dragons resemble a cross between a lizard and a tiger, with powerful feline bodies covered in striped fur, reptilian heads crowned with long horns, and enormous leathery wings that propel them through the sky at tre mendous speed. Their chests are adorned with elabo rate patterns resembling fine filigree."
+				"Dragons typically hunt by perching on a promontory or hilltop, remaining perfectly still as they wait for prey to come into view. With a single snap of its powerful wings, a dragon can launch itself into the air with lightning speed, hurtling toward its target like a deadly arrow.",
+				"Dragons resemble a cross between a lizard and a tiger, with powerful feline bodies covered in striped fur, reptilian heads crowned with long horns, and enormous leathery wings that propel them through the sky at tremendous speed. Their chests are adorned with elaborate patterns resembling fine filigree.",
+				"The {@creature adult red dragon|MM|red dragon} statistics work well for the dragons of Kaladesh, though dragons rarely reach ancient age on that plane. They can spew great blasts of flame, but a dragon's preferred method of assault is to hold flame in its mouth as it attacks. This counts as a use of the dragon's breath weapon, but the dragon makes a special bite attack. On a hit, the bite attack deals its normal piercing damage plus the fire damage from the dragon's breath weapon, with no saving throw."
 			],
 			"images": [
 				{
@@ -95,7 +137,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSK/Dragon.webp"
-					}
+					},
+					"title": "Skyship Stalker",
+					"credit": "Tyler Jacobson"
 				}
 			]
 		},
@@ -112,7 +156,8 @@
 			"source": "PSK",
 			"entries": [
 				"Drakes are skittish, opportunistic predators that hunt the skies of Kaladesh in units called rushes, made up of as many as a dozen drakes. Though they prey mostly on birds, they can also be seen clinging to the hides of leviathans and whales, picking off winged leeches and other parasites and scavengers that attach themselves to the huge sky beasts. Occasionally, a rush of drakes will descend on a herd of mountain goats or other game found at high elevations.",
-				"Drakes have reptilian bodies and large, leathery wings. They use the sharp claws on their two legs to cling to rocky crags, whales, or leviathans, as well as to grasp and tear at larger prey. Drakes are highly territori al, and have been known to attack airships from time to time. A drake is intelligent enough to recognize specific airships that have killed other members of its rush, and drake harassment often forces such ships to find new routes to avoid a rush's territory."
+				"Drakes have reptilian bodies and large, leathery wings. They use the sharp claws on their two legs to cling to rocky crags, whales, or leviathans, as well as to grasp and tear at larger prey. Drakes are highly territori al, and have been known to attack airships from time to time. A drake is intelligent enough to recognize specific airships that have killed other members of its rush, and drake harassment often forces such ships to find new routes to avoid a rush's territory.",
+				"A {@creature pteranodon|MM} can represent a smaller drake, while a larger one is more like a {@creature giant eagle|MM}."
 			],
 			"images": [
 				{
@@ -120,7 +165,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSK/Drake.webp"
-					}
+					},
+					"title": "Take Down",
+					"credit": "Izzy"
 				}
 			]
 		},
@@ -130,7 +177,8 @@
 			"entries": [
 				"Standing twenty to thirty feet tall, giants are towering bipedal creatures that follow the flow of aether on regular migratory routes. Once they start moving, they build both momentum and a single-mindedness that makes them nearly impossible to stop. Anything in their path, whether it's a building or a force of soldiers, is crushed without thought.",
 				"Giants eat whatever they happen across in the course of their migrations, which includes many other creatures drawn to the aether flow. They are beings of pure aggressive instinct, but without a hint of malice. In all likelihood, giants aren't intelligent enough to wish harm on anyone or anything. Still, the combination of their regular migrations and their sheer destructive power makes these creatures a menace.",
-				"Any structure built along one of their migratory paths is sure to be destroyed unless special accommodations are made. The zone of Giant's Walk in Ghirapur was designed by the city's engineers and edificers to include such accommodations, including rotating platforms, shifting bridges, and adjustable canal locks that provide the giants a clear and easy pathway during their biannual migration through the city."
+				"Any structure built along one of their migratory paths is sure to be destroyed unless special accommodations are made. The zone of Giant's Walk in Ghirapur was designed by the city's engineers and edificers to include such accommodations, including rotating platforms, shifting bridges, and adjustable canal locks that provide the giants a clear and easy pathway during their biannual migration through the city.",
+				"The {@creature stone giant|MM} statistics in the Monster Manual work well for the giants of Kaladesh."
 			],
 			"images": [
 				{
@@ -138,7 +186,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSK/Giant.webp"
-					}
+					},
+					"title": "Enraged Giant",
+					"credit": "Anthony Palumbo"
 				}
 			]
 		},
@@ -155,7 +205,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSK/Gremlin.webp"
-					}
+					},
+					"title": "Brazen Scourge",
+					"credit": "Kev Walker"
 				}
 			]
 		},
@@ -171,7 +223,8 @@
 			"name": "Hellion (Large)",
 			"source": "PSK",
 			"entries": [
-				"Hellions appear similar to wurms, though the two creatures are unrelated. A hellion has a long, segmented body like that of a centipede, with innumerable short legs that propel it above or below ground. Its huge, toothy maw is surrounded by anywhere from six to twelve long appendages resembling clawed fingers, which it uses to grasp and pull prey to its mouth. Hellions are found in mountainous areas, where they burst up from the rocky ground to ambush their prey."
+				"Hellions appear similar to wurms, though the two creatures are unrelated. A hellion has a long, segmented body like that of a centipede, with innumerable short legs that propel it above or below ground. Its huge, toothy maw is surrounded by anywhere from six to twelve long appendages resembling clawed fingers, which it uses to grasp and pull prey to its mouth. Hellions are found in mountainous areas, where they burst up from the rocky ground to ambush their prey.",
+				"The {@creature remorhaz} statistics in the {@book Monster Manual|MM} work well for hellions of different sizes."
 			],
 			"images": [
 				{
@@ -179,7 +232,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSK/Hellion.webp"
-					}
+					},
+					"title": "Lathnu Hellion",
+					"credit": "Lars Grant-West"
 				}
 			]
 		},
@@ -188,7 +243,8 @@
 			"source": "PSK",
 			"entries": [
 				"Hydras are giant lizards resembling iguanas, with multiple heads set atop long, snakelike necks. Aether traces whorling patterns through their scales, shapes the crests running down their necks and tails, and glows blue within the skin under their chins. Most hydras have five or six heads, but small hydras with as few as three heads\u2014as well as enormous specimens with eight or more\u2014have been seen in the deep forests far from Ghirapur.",
-				"Hydras are fierce predators, favoring prey that has absorbed large quantities of aether from the environment. This taste for aether also leads them to devour aether-powered machines whenever they encounter such devices, from thopters to automatons. In the remote wilderness near Peema where hydras are plentiful, such altercations are rarely an issue. But in the rare event of a hydra coming too close to civilization\u2014or even wandering into one of Ghirapur's greenbelts\u2014they can cause widespread destruction in their hunt for aether."
+				"Hydras are fierce predators, favoring prey that has absorbed large quantities of aether from the environment. This taste for aether also leads them to devour aether-powered machines whenever they encounter such devices, from thopters to automatons. In the remote wilderness near Peema where hydras are plentiful, such altercations are rarely an issue. But in the rare event of a hydra coming too close to civilization\u2014or even wandering into one of Ghirapur's greenbelts\u2014they can cause widespread destruction in their hunt for aether.",
+				"Use the {@creature hydra} statistics in the {@book Monster Manual|MM}."
 			],
 			"images": [
 				{
@@ -196,23 +252,59 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSK/Hydra.webp"
-					}
+					},
+					"title": "Bristling Hydra",
+					"credit": "Chris Rahn"
 				}
 			]
 		},
 		{
-			"name": "Servo",
+			"name": "Lifecraft Elephant",
 			"source": "PSK",
 			"entries": [
-				"Servos are tiny constructs that function as personal assistants. They are often seen perched on the shoulders of their inventors, acting as a fashion statement as well as a useful extra hand. Servos are small enough to be grasped in one hand, with tiny gears providing impressive motive force from a small aether supply. They rarely stray far from their inventor-masters, but they can be sent to carry messages or perform similar tasks."
+				"Many inventors\u2014particularly elves, but members of the other races as well\u2014view nature as the greatest artificer and strive to imitate it as closely as possible. The Greenwheel Lifecrafters are an inventor society dedicated to this kind of work, and they are responsible for coining the term \"lifecrafting\" to describe it. Lifecraft creatures are automatons that mimic the forms of natural animals in intricate detail. More than merely artistic endeavors, these creatures often serve practical purposes, just as domesticated animals would. A lifecraft elephant hauling a cart or carrying passengers through the streets of Ghirapur is just as effective in that work as a natural elephant, but it can't be spooked and it leaves no messy waste in its path.",
+				"The work of elf lifecrafters is particularly notable. Like most elf inventions, it incorporates living wood and foliage into its design, creating striking hybrids of plant life and animal form united as a perfect aesthetic whole.",
+				"Inventors can create lifecraft versions of virtually any creature. A lifecraft creature's type changes to construct, and it gains immunity to poison damage and to the {@condition charmed} and {@condition poisoned} conditions. Its other statistics are typically unchanged."
 			],
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/PSK/Servo.webp"
+						"path": "bestiary/PSK/Lifecraft.webp"
+					},
+					"credit": "Adam Paquette"
+				}
+			]
+		},
+		{
+			"name": "Servo",
+			"source": "PSK",
+			"_copy": {
+				"name": "Artifact Creatures",
+				"source": "PSK",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								"Servos are tiny constructs that function as personal assistants. They are often seen perched on the shoulders of their inventors, acting as a fashion statement as well as a useful extra hand. Servos are small enough to be grasped in one hand, with tiny gears providing impressive motive force from a small aether supply. They rarely stray far from their inventor-masters, but they can be sent to carry messages or perform similar tasks.",
+								"A servo can serve as a familiar to a character with the {@feat Servo Crafting|PSK} feat (see \"{@book Inventing Options|PS-K|1|Inventing Options}\"), using the statistics below."
+							]
+						}
 					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSK/Servo.webp"
+					},
+					"title": "Servo",
+					"credit": "Igor Kieryluk"
 				}
 			]
 		},
@@ -221,7 +313,8 @@
 			"source": "PSK",
 			"entries": [
 				"The aethersphere is home to its own ecosystem. Tiny organisms float in the aether currents, deriving all their energy from it and serving as food for larger creatures. Leviathans (similar in form to enormous eels) and flying whales filter these organisms out of the air as they swim through the aethersphere. The whales, as a rule, are not hostile by nature, though they can cause devastating sparks or destructive storms as they move through the aether flows. But leviathans are perpetually hungry, and feed on drakes and airships just as readily as they do on smaller creatures. Along with dragons, leviathans are the primary reason that aether-mining airships carry enormous harpoons.",
-				"A sky leviathan is similar to a purple worm in its propensity to swallow prey whole, but it lacks the worm's poison stinger and is therefore significantly less dangerous. Use the statistics presented here. Sky whales are generally docile filter-feeders that avoid confrontations with airships and flying predators whenever possible."
+				"A sky leviathan is similar to a {@creature purple worm|MM} in its propensity to swallow prey whole, but it lacks the worm's poison stinger and is therefore significantly less dangerous. Use the statistics presented here.",
+				"Sky whales are generally docile filter-feeders that avoid confrontations with airships and flying predators whenever possible. Use the statistics for a {@creature giant crocodile|MM}, but replace its bite attack with a flipper attack that is identical to its tail attack. A sky whale has a flying speed of 50 feet and can hover."
 			],
 			"images": [
 				{
@@ -229,23 +322,57 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSK/Sky Leviathan.webp"
-					}
+					},
+					"title": "Aethersquall Ancient",
+					"credit": "Sam Burley"
 				}
 			]
 		},
 		{
+			"name": "Sky Whale",
+			"source": "PSK",
+			"_copy": {
+				"name": "Sky Leviathan",
+				"source": "PSK"
+			}
+		},
+		{
 			"name": "Thopter (Bat)",
 			"source": "PSK",
-			"entries": [
-				"Thopters are small automatons that fly using some combination of whirling rotors and stretched-fabric wings. They are ubiquitous in Ghirapur and other settlements, where they carry messages like carrier pigeons, hunt gremlins like trained hawks, race each other in friendly and not-so-friendly competitions\u2014and serve as remote viewing devices for Consulate authorities and crime lords alike. Thopters range from the size of pigeons to the size of eagles, with extremely intricate gearwork usually partly visible beneath glass orbs and filigree."
-			],
+			"_copy": {
+				"name": "Artifact Creatures",
+				"source": "PSK",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								"Thopters are small automatons that fly using some combination of whirling rotors and stretched-fabric wings. They are ubiquitous in Ghirapur and other settlements, where they carry messages like carrier pigeons, hunt gremlins like trained hawks, race each other in friendly and not-so-friendly competitions\u2014and serve as remote viewing devices for Consulate authorities and crime lords alike. Thopters range from the size of pigeons to the size of eagles, with extremely intricate gearwork usually partly visible beneath glass orbs and filigree.",
+								"Different kinds of thopters could be represented by the statistics for a {@creature bat}, {@creature blood hawk}, {@creature eagle}, {@creature hawk}, {@creature owl}, {@creature pseudodragon}, {@creature raven}, or {@creature vulture} from the {@book Monster Manual|MM}. All thopters have the construct type, immunity to poison damage, and immunity to the {@condition charmed} and {@condition poisoned} conditions."
+							]
+						}
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/PSK/Servo.webp"
-					}
+						"path": "bestiary/PSK/Thopter.webp"
+					},
+					"title": "Dukhara Peafowl",
+					"credit": "Craig J Spearing"
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSK/Thopter2.webp"
+					},
+					"title": "Thopter",
+					"credit": "Svetlin Velinov"
 				}
 			]
 		},
@@ -310,7 +437,8 @@
 			"source": "PSK",
 			"entries": [
 				"Wurms are enormous, legless creatures that burrow under the forests, mountains, and plains of Kaladesh, and which can exceed fifty feet in length when fully grown. A wurm devours everything in its path\u2014flora, fauna, and inanimate objects alike\u2014with a gaping maw containing multiple rings of sharp teeth and grinding plates. Rumor has it that at least one wurm tunnels beneath the large, lush park in Ghirapur called the Cowl, accounting for at least some of the mysterious disappearances there.",
-				"Both the colored scales of a wurm's skin and the winding patterns of its tunnels mimic the flow of aether through the sky. Some elf aether-seers believe that these tunnels reveal a deep connection between wurms and aether, and they explore wurm burrows in the hope of developing a similar connection. It is said that a wurm never doubles back along its own path, so following those paths is less dangerous than it might seem. However, the existence of a single wurm in an area suggests that others might be nearby, and wurm tunnels do cross each other\u2014so not all these brave aether-seers return. Those who do are said to gain insights that they find difficult to express to others."
+				"Both the colored scales of a wurm's skin and the winding patterns of its tunnels mimic the flow of aether through the sky. Some elf aether-seers believe that these tunnels reveal a deep connection between wurms and aether, and they explore wurm burrows in the hope of developing a similar connection. It is said that a wurm never doubles back along its own path, so following those paths is less dangerous than it might seem. However, the existence of a single wurm in an area suggests that others might be nearby, and wurm tunnels do cross each other\u2014so not all these brave aether-seers return. Those who do are said to gain insights that they find difficult to express to others.",
+				"The {@creature purple worm|MM} in the {@book Monster Manual|MM} works well as a representation of Kaladesh's wurms."
 			],
 			"images": [
 				{
@@ -318,7 +446,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSK/Wurm.webp"
-					}
+					},
+					"title": "Cowl Prowler",
+					"credit": "Tomasz Jedruszek"
 				}
 			]
 		}
