@@ -7558,6 +7558,62 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "Human (Kaladesh)",
+			"source": "PSK",
+			"page": 22,
+			"_copy": {
+				"name": "Human",
+				"source": "PHB",
+				"_mod": {
+					"entries": [
+						{
+							"mode": "appendArr",
+							"items": {
+								"name": "Alignment",
+								"type": "entries",
+								"entries": [
+									"Humans tend toward no particular alignment."
+								]
+							}
+						},
+						{
+							"mode": "appendArr",
+							"items": {
+								"name": "Speed",
+								"type": "entries",
+								"entries": [
+									"Your base walking speed is 30 feet."
+								]
+							}
+						},
+						{
+							"mode": "replaceArr",
+							"replace": "Languages",
+							"items": {
+								"name": "Languages",
+								"type": "entries",
+								"entries": [
+									"You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Dwarvish curses, Elvish musical expressions, {@race Vedalken|PSK} scholarly jargon, and so on."
+								]
+							}
+						}
+					]
+				}
+			},
+			"ability": [
+				{
+					"str": 1,
+					"dex": 1,
+					"con": 1,
+					"int": 1,
+					"wis": 1,
+					"cha": 1
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"name": "Human (Zendikar)",
 			"source": "PSZ",
 			"page": 9,
