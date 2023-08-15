@@ -160,7 +160,7 @@
 						"items": {
 							"name": "Hellish Weapons",
 							"entries": [
-								"The erinyes's weapon attacks are magical and deal an extra 13 ({@dice 3d8}) necrotic damage on a hit (included in the attacks)."
+								"The demon's weapon attacks are magical and deal an extra 13 ({@dice 3d8}) necrotic damage on a hit (included in the attacks)."
 							]
 						}
 					},
@@ -203,12 +203,15 @@
 					"action": {
 						"mode": "appendArr",
 						"items": {
-							"name": "Fiery Bite",
+							"name": "Fiery Bite {@recharge 5}",
 							"entries": [
 								"{@atk mw} {@hit 14} to hit, reach 10 ft., one target. {@h}19 ({@damage 2d10 + 8}) piercing damage plus 63 ({@damage 18d6}) fire damage. This counts as a use of the dragon's breath weapon."
 							]
 						}
 					}
+				},
+				"_preserve": {
+					"legendaryGroup": true
 				}
 			},
 			"hasToken": true,
@@ -388,6 +391,26 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "Lifecraft Elephant",
+			"source": "PSK",
+			"page": 33,
+			"_copy": {
+				"name": "Elephant",
+				"source": "MM"
+			},
+			"type": "construct",
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"charmed",
+				"poisoned"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"name": "Servo",
 			"source": "PSK",
 			"page": 32,
@@ -436,6 +459,7 @@
 					]
 				}
 			],
+			"familiar": true,
 			"damageTags": [
 				"S"
 			],
@@ -516,6 +540,44 @@
 				"constitution",
 				"dexterity"
 			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Sky Whale",
+			"source": "PSK",
+			"page": 28,
+			"_copy": {
+				"name": "Giant Crocodile",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "crocodile ",
+						"with": "whale"
+					},
+					"action": [
+						{
+							"mode": "replaceArr",
+							"replace": "Bite",
+							"items": {
+								"name": "Flipper",
+								"entries": [
+									"{@atk mw} {@hit 8} to hit, reach 10 ft., one target not {@condition grappled} by the whale. {@h}14 ({@damage 2d8 + 5}) bludgeoning damage. If the target is a creature, it must succeed on a {@dc 16} Strength saving throw or be knocked {@condition prone}."
+								]
+							}
+						}
+					]
+				}
+			},
+			"speed": {
+				"fly": {
+					"number": 50,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true

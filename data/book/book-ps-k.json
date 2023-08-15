@@ -6,25 +6,41 @@
 			"page": 2,
 			"entries": [
 				{
-					"type": "quote",
-					"entries": [
-						"From the beginning, I've approached all these Plane Shift projects as if I were tinkering in a workshop like the inventors of Kaladesh. I believe that some of the great beauty of Dungeons & Dragons comes from its tremendous flexibility, which includes not just the ability to make stuff up out of whole cloth, but also the ease with which you can take the existing pieces of the game apart and reassemble them into something new.",
-						"That approach of combining pieces of different rules to form new rules continues for Kaladesh. As one of the designers of the artificer class for Eberron back in 2003, I tinkered for a long time with possible designs for such a class in Kaladesh, but I ultimately came to a couple of important conclusions. First, invention on Kaladesh is fundamentally democratic\u2014it's a skill anyone can learn, and it shouldn't be restricted to a single character class. And more importantly, designing an entirely new class is far beyond the scope of what I've set out to do in these articles.",
-						"The D&D team works like the Consulate: they take a serious approach to the job of crafting a class, testing it for balance, sharing it for public playtest, and finetuning it before final publication. I'm more like a renegade inventor (having left the D&D team for the Magic team a couple of years ago), fiddling around in my workshop and unleashing my inventions on the public without the same degree of safety testing. But with that said, the D&D team has just released an artificer class for playtesting, and you should feel free to tinker with that class to adapt it for your Kaladesh campaign.",
-						"Of course, you'll find a lot of information about aether-powered devices and invention in this document, in keeping with the spirit of Kaladesh. But it's more along the lines of rearranging the building blocks and altering the appearance of existing magic items, rather than creating a lot of new things. If you want your character to look like the guy on the Dispersal Technician card, just give him a {@item ring of the ram}.",
-						"As always, the starting point for this document was The Art of Magic: The Gathering\u2014Kaladesh. This document is designed to help you turn that book's adventure hooks and story seeds into a resource for your campaign with a minimum of changes to the fifth edition of the D&D rules, which you can find here. And even without the book, you can find lore about Kaladesh on the Magic web site.",
-						"Happy inventing!"
-					],
-					"by": "James Wyatt"
-				},
-				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "book/PSK/001.webp"
 					},
 					"width": 1280,
-					"height": 1654
+					"height": 1654,
+					"title": "Kaladesh",
+					"credit": "Chase Stone"
+				},
+				{
+					"type": "quote",
+					"skipItalics": true,
+					"skipMarks": true,
+					"entries": [
+						"From the beginning, I've approached all these Plane Shift projects as if I were tinkering in a workshop like the inventors of Kaladesh. I believe that some of the great beauty of Dungeons & Dragons comes from its tremendous flexibility, which includes not just the ability to make stuff up out of whole cloth, but also the ease with which you can take the existing pieces of the game apart and reassemble them into something new.",
+						"That approach of combining pieces of different rules to form new rules continues for Kaladesh. As one of the designers of the artificer class for Eberron back in 2003, I tinkered for a long time with possible designs for such a class in Kaladesh, but I ultimately came to a couple of important conclusions. First, invention on Kaladesh is fundamentally democratic\u2014it's a skill anyone can learn, and it shouldn't be restricted to a single character class. And more importantly, designing an entirely new class is far beyond the scope of what I've set out to do in these articles.",
+						"The D&D team works like the Consulate: they take a serious approach to the job of crafting a class, testing it for balance, sharing it for public playtest, and finetuning it before final publication. I'm more like a renegade inventor (having left the D&D team for the Magic team a couple of years ago), fiddling around in my workshop and unleashing my inventions on the public without the same degree of safety testing. But with that said, the D&D team has just released {@class Artificer|UAArtificer|an artificer class} for playtesting, and you should feel free to tinker with that class to adapt it for your Kaladesh campaign.",
+						"Of course, you'll find a lot of information about aether-powered devices and invention in this document, in keeping with the spirit of Kaladesh. But it's more along the lines of rearranging the building blocks and altering the appearance of existing magic items, rather than creating a lot of new things. If you want your character to look like the guy on the Dispersal Technician card, just give him a {@item ring of the ram}.",
+						"As always, the starting point for this document was {@i The Art of Magic: The Gathering\u2014Kaladesh}. This document is designed to help you turn that book's adventure hooks and story seeds into a resource for your campaign with a minimum of changes to the fifth edition of the D&D rules, which you can {@link find here|https://dnd.wizards.com/what-is-dnd/basic-rules}. And even without the book, you can find lore about Kaladesh on {@link the Magic web site|https://magic.wizards.com/}.",
+						"Happy inventing!"
+					],
+					"by": "James Wyatt"
+				},
+				"{@note The game mechanics in this supplement are usable in your D&D campaign but are not fully tempered by playtests and design iterations. For these reasons, material in this supplement is not legal in D&D Organized Play events.}",
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSK/002.webp"
+					},
+					"title": "Era of Innovation",
+					"credit": "Jason Rainville",
+					"width": 634,
+					"height": 1652
 				}
 			],
 			"id": "000"
@@ -33,6 +49,17 @@
 			"type": "section",
 			"name": "The World of Kaladesh",
 			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSK/003.webp"
+					},
+					"title": "Useful Sidekick",
+					"credit": "Victor Adame Minguez",
+					"width": 1276,
+					"height": 1651
+				},
 				"Kaladesh is a living work of art\u2014a vibrant, beautiful plane where anything is possible. Optimism, innovation, and the spirit of creativity fuel an intoxicating renaissance of invention and artifice across Kaladesh. Its inhabitants frequently assert that \"anything can be built,\" and brilliant inventors seem to prove that saying every day.",
 				"Clockwork automatons walk the streets, acting as servants and bodyguards, soldiers and sentries, mounts, and even pets. Soaring airships provide transport both within and between the cities and villages of the plane, and carry prospectors high into the sky to draw on limitless reserves of magical aether. Intricate and ornate whirling thopters flit over marketplaces, carrying messages, gathering information, and driving away gremlin infestations. Elegant interlocking gear mechanisms raise and lower bridges over canals. Exquisite tools gleam like jewelry, incorporated into the bright and colorful fashions of artisans, prospectors, and inventors alike. In all these fabulous constructions, intricate design and graceful beauty are prized almost as much as efficient function. The artifice that produces these works is viewed as the ultimate form of creative and intellectual expression\u2014both stemming from and further feeding the inventive spirit of the plane.",
 				"Kaladesh is bright and hopeful, and its people are inspired. Every invention is an astonishing work of art, holding the potential to dramatically improve quality of life. The natural world mirrors the beauty and harmony of the plane's cities, with gracefully curving trees, eddying streams, sculpted mountains, and sapphire skies punctuated with brilliant blue streams of aether.",
@@ -52,10 +79,12 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/PSK/002.webp"
+								"path": "book/PSK/004.webp"
 							},
 							"width": 1280,
-							"height": 758
+							"height": 758,
+							"title": "Swamp",
+							"credit": "Adam Paquette"
 						}
 					],
 					"id": "002"
@@ -75,19 +104,23 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/PSK/003.webp"
+										"path": "book/PSK/005.webp"
 									},
 									"width": 631,
-									"height": 913
+									"height": 913,
+									"title": "Consulate officials sometimes supplement their authority with a {@item rod of rulership}.",
+									"credit": "Ninth Bridge Patrol by Ryan Alexander Lee"
 								},
 								{
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/PSK/003a.webp"
+										"path": "book/PSK/006.webp"
 									},
 									"width": 630,
-									"height": 913
+									"height": 913,
+									"title": "Converting aether to electricity allows this renegade to mimic the effects of a {@item staff of thunder and lightning}.",
+									"credit": "Harnessed Lightning by Chris Rallis"
 								}
 							]
 						},
@@ -211,10 +244,12 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/PSK/004.webp"
+										"path": "book/PSK/007.webp"
 									},
 									"width": 928,
-									"height": 728
+									"height": 728,
+									"title": "Spontaneous Artist",
+									"credit": "Viktor Titov"
 								}
 							],
 							"id": "005"
@@ -227,11 +262,22 @@
 					"name": "Invention and Magic",
 					"page": 8,
 					"entries": [
-						"Invention and artifice are the cornerstones of life and culture on Kaladesh. Inventors are significant cultural figures, from the {@condition invisible} functionaries creating the conveniences of civilized life in the Consulate's foundries, to the renowned free artisans who attract groups of admirers when they walk the streets of Ghirapur. Societies of inventors and artisans are a key social unit, uniting people who share similar interests, and providing the basis for social interaction and the exchange of ideas.",
+						"Invention and artifice are the cornerstones of life and culture on Kaladesh. Inventors are significant cultural figures, from the invisible functionaries creating the conveniences of civilized life in the Consulate's foundries, to the renowned free artisans who attract groups of admirers when they walk the streets of Ghirapur. Societies of inventors and artisans are a key social unit, uniting people who share similar interests, and providing the basis for social interaction and the exchange of ideas.",
 						"Mages who can cast actual spells\u2014without the assistance of aether-powered devices\u2014are a rarity on Kaladesh. Under the Consulate's rule, mages have always been regarded as dangerous and unstable, to the point that a special Consulate force is tasked with protecting the world from them. Led by Inspector-General Baral, this force seeks mages out, learns their secrets, disrupts their plans, and brings them to justice for their crimes\u2014whether actual or potential.",
 						{
 							"type": "entries",
 							"entries": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSK/008.webp"
+									},
+									"width": 1275,
+									"height": 885,
+									"title": "Servant of the Conduit",
+									"credit": "Magali Villeneuve"
+								},
 								{
 									"type": "entries",
 									"name": "Player Character Classes",
@@ -254,13 +300,26 @@
 									"id": "016"
 								},
 								{
+									"type": "statblock",
+									"prop": "subclass",
+									"source": "PSK",
+									"name": "Pyromancer (PSK)",
+									"displayName": "Sorcerous Origin: Pyromancer",
+									"className": "Sorcerer",
+									"classSource": "PHB",
+									"page": 9,
+									"style": "inset"
+								},
+								{
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/PSK/005.webp"
+										"path": "book/PSK/009.webp"
 									},
-									"width": 1275,
-									"height": 885
+									"width": 1276,
+									"height": 659,
+									"title": "{@item Gauntlets of ogre power} (or a {@item belt of giant strength}) might look quite different on Kaladesh, but they have the same effect.",
+									"credit": "Engineered Might by Lake Hurwitz"
 								},
 								{
 									"type": "entries",
@@ -268,7 +327,7 @@
 									"page": 10,
 									"entries": [
 										"The citizens of the Consulate enjoy what is perhaps the most exciting and inspiring period in Kaladesh's history. In the sixty years since Avaati Vya discovered the process of aether refinement, aether has transformed virtually all day-to-day activities and reshaped the way people think about their lives. Over the course of the last half century, hundreds of thousands of new devices, machines, vehicles, constructs, and even weapons have sprung from the minds of talented inventors\u2014all powered by the wonders of aether.",
-										"The tremendous variety of aether-powered devices on Kaladesh can be represented by many of the magic items in the Dungeon Master's Guide. These items are far more common on Kaladesh than they are in most D&D worlds, and are readily available for purchase (see \"Buying and Selling Devices\"). A DM should feel free to be generous in allowing characters access to magic items, in the spirit of Kaladesh.",
+										"The tremendous variety of aether-powered devices on Kaladesh can be represented by many of the magic items in the {@book Dungeon Master's Guide|DMG}. These items are far more common on Kaladesh than they are in most D&D worlds, and are readily available for purchase (see \"{@book Buying and Selling Devices|PSK|1|Buying and Selling Devices}\"). A DM should feel free to be generous in allowing characters access to magic items, in the spirit of Kaladesh.",
 										"The following guidelines\u2014plus a healthy dash of inventor's ingenuity\u2014can be used to adapt D&D magic items to the world of Kaladesh. Additionally, the captions that appear beside some of the art in this document offer examples of how you might translate Kaladesh's aether-powered wonders into the magic items of D&D.",
 										{
 											"type": "entries",
@@ -293,7 +352,7 @@
 											"name": "Attunement",
 											"page": 10,
 											"entries": [
-												"The process of attuning to an aether-powered device represents a few different aspects of working with the invention. Many devices must be carefully modified to fit and function for a particular user, which can be accomplished as part of the attunement process. The limitation on the number of A {@item spell scroll} of sleep might take the form of a fumigating device attached to a thopter. Fumigate Svetlin Velinov items a character can attune to reflect the basic supplies of aether that are available to and transportable by a single character. Items that require attunement by a cleric, paladin, or other class that does not exist in your campaign have no aether-powered equivalent."
+												"The process of attuning to an aether-powered device represents a few different aspects of working with the invention. Many devices must be carefully modified to fit and function for a particular user, which can be accomplished as part of the attunement process. The limitation on the number of items a character can attune to reflect the basic supplies of aether that are available to and transportable by a single character. Items that require attunement by a cleric, paladin, or other class that does not exist in your campaign have no aether-powered equivalent."
 											],
 											"id": "01a"
 										},
@@ -301,8 +360,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/PSK/006.webp"
+												"path": "book/PSK/010.webp"
 											},
+											"title": "A {@item spell scroll} of {@spell sleep} might take the form of a fumigating device attached to a thopter.",
+											"credit": "Fumigate by Svetlin Velinov",
 											"width": 1125,
 											"height": 755
 										},
@@ -349,8 +410,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/PSK/007.webp"
+										"path": "book/PSK/011.webp"
 									},
+									"title": "{@item Wings of flying} in various forms are popular inventions.",
+									"credit": "Aspiring Aeronaut by Willian Murai",
 									"width": 1280,
 									"height": 761
 								},
@@ -359,10 +422,10 @@
 									"name": "Inventing and Manufacturing Devices",
 									"page": 11,
 									"entries": [
-										"Aether-powered devices are created by inventors. Some are mass-produced in Consulate foundries, but all spring from the minds of creative, ingenious thinkers. Player characters can invent and manufacture their own devices using the rules for crafting magic items in chapter 6 of the Dungeon Master's Guide, with a few modifications to the requirements.",
+										"Aether-powered devices are created by inventors. Some are mass-produced in Consulate foundries, but all spring from the minds of creative, ingenious thinkers. Player characters can invent and manufacture their own devices using the {@variantrule Downtime Activity: Crafting a Magic Item|DMG|rules for crafting magic items in chapter 6 of the Dungeon Master's Guide}, with a few modifications to the requirements.",
 										"Crafting a known kind of device requires a schematic plan (the equivalent of a formula for crafting a magic item). The crafter need not be a spellcaster, but must have an ample supply of refined aether, which is included in the cost of crafting the item. If crafting the equivalent magic item would require an expensive material component, that cost represents additional aether that must be purchased to make the device.",
 										"If a character does not possess a schematic plan, it is possible to invent one. A character who is inventing a device rather than following a schematic must make a successful Intelligence ({@skill Arcana}) check each day of crafting. The difficulty of the check is determined by the rarity of the item: {@dc 10} for a common or uncommon item, {@dc 15} for a rare or very rare item, or {@dc 20} for a legendary item. On a failed check, the character still spends the 25 gp for that day's work, but that day does not count toward completing the item.",
-										"If a group of characters is working together to invent an item, each character who is contributing can attempt the Intelligence ({@skill Arcana}) check. If any character succeeds, the group makes progress toward inventing and completing the item. {@item Wings of flying} in various forms are popular inventions. Aspiring Aeronaut Willian Murai"
+										"If a group of characters is working together to invent an item, each character who is contributing can attempt the Intelligence ({@skill Arcana}) check. If any character succeeds, the group makes progress toward inventing and completing the item."
 									],
 									"id": "01f"
 								},
@@ -372,7 +435,7 @@
 									"page": 12,
 									"entries": [
 										"On Kaladesh, aether-powered devices are available for sale on the open market. Some devices are mass-produced in Consulate foundries, carefully tested for safety and functionality, and sold at prices ordinary citizens can afford. Others are crafted by renegade inventors who bypass the Consulate regulations and sell their devices in night markets or back alleys.",
-										"The DM decides whether a particular item is mass-produced and legally available for purchase. As a rule, weapons and other destructive items fail to pass Consulate safety regulations. A device purchased in a legal market costs 70 to 120 percent ({@dice 1d6 + 6} × 10 percent) of the cost to create the device. (Mass production allows many devices to be manufactured at significant savings.) An illegal device costs 150 to 200 percent ({@dice 1d6 + 14} × 10 percent) of that cost.",
+										"The DM decides whether a particular item is mass-produced and legally available for purchase. As a rule, weapons and other destructive items fail to pass Consulate safety regulations. A device purchased in a legal market costs 70 to 120 percent ({@dice (1d6 + 6) × 10|1d6 + 6 × 10 percent}) of the cost to create the device. (Mass production allows many devices to be manufactured at significant savings.) An illegal device costs 150 to 200 percent ({@dice (1d6 + 14) × 10|1d6 + 14 × 10 percent}) of that cost.",
 										"A character who invents and manufactures a device can sell the item for 150\u2013200 percent of the creation cost. It might also be possible to sell the invention to a Consulate inquirium for further development, so that it can be mass-produced in the future if it passes all required testing."
 									],
 									"id": "020"
@@ -382,44 +445,44 @@
 									"name": "Automatons and Vehicles",
 									"page": 12,
 									"entries": [
-										"Certain categories of aether-powered inventions are not easily described as magic items, but they can still be created in the same way. An artifact creature such as a battle automaton or a lifecraft animal can be considered a magic item with a rarity determined by its challenge rating:"
+										"Certain categories of aether-powered inventions are not easily described as magic items, but they can still be created in the same way. An artifact creature such as a battle automaton or a lifecraft animal can be considered a magic item with a rarity determined by its challenge rating:",
+										{
+											"type": "table",
+											"colLabels": [
+												"Challenge Rating",
+												"Item Rarity"
+											],
+											"colStyles": [
+												"col-6 text-center",
+												"col-6 text-center"
+											],
+											"rows": [
+												[
+													"0\u20132",
+													"Common"
+												],
+												[
+													"3\u20135",
+													"Uncommon"
+												],
+												[
+													"6\u201310",
+													"Rare"
+												],
+												[
+													"11\u201316",
+													"Very rare"
+												],
+												[
+													"17+",
+													"Legendary"
+												]
+											]
+										},
+										"Aether-powered vehicles can be priced as if they were magic items. Simple self-drawn carriages might cost no more than the {@item carriage|PHB|carriage in the Player's Handbook} (100 gp, the equivalent of a common magic item), while the dragsters used in races in Ovalchase can cost five times that amount (as much as an uncommon magic item). Flying vehicles are significantly more expensive. A small sky skiff or copter might be a rare item, and a larger skyship should be considered very rare or even legendary."
 									],
 									"id": "021"
-								},
-								{
-									"type": "table",
-									"colLabels": [
-										"Challenge Rating",
-										"Item Rarity"
-									],
-									"colStyles": [
-										"col-6 text-center",
-										"col-6 text-center"
-									],
-									"rows": [
-										[
-											"0\u20132",
-											"Common"
-										],
-										[
-											"3\u20135",
-											"Uncommon"
-										],
-										[
-											"6\u201310",
-											"Rare"
-										],
-										[
-											"11\u201316",
-											"Very rare"
-										],
-										[
-											"17+",
-											"Legendary"
-										]
-									]
-								},
-								"Aether-powered vehicles can be priced as if they were magic items. Simple self-drawn carriages might cost no more than the carriage in the Player's Handbook (100 gp, the equivalent of a common magic item), while the dragsters used in races in Ovalchase can cost five times that amount (as much as an uncommon magic item). Flying vehicles are significantly more expensive. A small sky skiff or copter might be a rare item, and a larger skyship should be considered very rare or even legendary."
+								}
 							],
 							"id": "015"
 						}
@@ -430,10 +493,12 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "book/PSK/008.webp"
+						"path": "book/PSK/012.webp"
 					},
 					"width": 1275,
-					"height": 853
+					"height": 853,
+					"title": "Skysovereign, Consul Flagship",
+					"credit": "Jung Park"
 				},
 				{
 					"type": "section",
@@ -442,6 +507,7 @@
 						"In campaigns that make use of feats, player characters can gain additional abilities related to aether and invention.",
 						{
 							"type": "list",
+							"columns": 2,
 							"items": [
 								"{@feat Quicksmithing|PSK}",
 								"{@feat Servo Crafting|PSK}"
@@ -451,10 +517,12 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/PSK/009.webp"
+								"path": "book/PSK/013.webp"
 							},
 							"width": 739,
-							"height": 985
+							"height": 985,
+							"title": "Servo",
+							"credit": "Igor Kieryluk"
 						}
 					],
 					"id": "022"
@@ -464,7 +532,7 @@
 					"name": "A Kaladesh Campaign",
 					"page": 14,
 					"entries": [
-						"Kaladesh is not a typical D&D world as far as adventuring and adventurers are concerned. It doesn't lend itself to dungeon exploration, and it's not crawling with evil humanoid monsters for characters to fight. That said, the plane is ripe with opportunities for urbanfocused and intrigue-driven campaigns. Consider the following elements for use in your Kaladesh campaign.",
+						"Kaladesh is not a typical D&D world as far as adventuring and adventurers are concerned. It doesn't lend itself to dungeon exploration, and it's not crawling with evil humanoid monsters for characters to fight. That said, the plane is ripe with opportunities for urban-focused and intrigue-driven campaigns. Consider the following elements for use in your Kaladesh campaign.",
 						{
 							"type": "entries",
 							"entries": [
@@ -473,7 +541,7 @@
 									"name": "Aether Revolt",
 									"page": 14,
 									"entries": [
-										"The main storyline of the Kaladesh block is an out-andout rebellion of renegades when the Consulate government takes an oppressive turn. A campaign focusing on this revolt might put the player characters in the position of renegades trying to capture an aether reservoir or masterminding the sabotage of a Consulate airship. Alternatively, they might be Consulate agents trying to suppress the rebellion\u2014or perhaps infiltrate it. The rebellion could also be the backdrop for a campaign focused more on urban intrigue, or it could interrupt the regular activities of such a campaign. Aether supplies might be significantly constrained in such a campaign, increasing the cost of creating and using aether-powered devices. Acquiring aether could then easily become the focus of a number of adventures."
+										"The main storyline of the Kaladesh block is an out-and-out rebellion of renegades when the Consulate government takes an oppressive turn. A campaign focusing on this revolt might put the player characters in the position of renegades trying to capture an aether reservoir or masterminding the sabotage of a Consulate airship. Alternatively, they might be Consulate agents trying to suppress the rebellion\u2014or perhaps infiltrate it. The rebellion could also be the backdrop for a campaign focused more on urban intrigue, or it could interrupt the regular activities of such a campaign. Aether supplies might be significantly constrained in such a campaign, increasing the cost of creating and using aether-powered devices. Acquiring aether could then easily become the focus of a number of adventures."
 									],
 									"id": "025"
 								},
@@ -499,10 +567,12 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/PSK/010.webp"
+										"path": "book/PSK/014.webp"
 									},
 									"width": 1125,
-									"height": 713
+									"height": 713,
+									"title": "A Dhund gauntlet functions just like a {@item dagger of venom}.",
+									"credit": "Dhund Operative by Magali Villeneuve"
 								}
 							],
 							"id": "024"
@@ -518,22 +588,28 @@
 			"name": "Races of Kaladesh",
 			"entries": [
 				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSK/015.webp"
+					},
+					"width": 1277,
+					"height": 1652,
+					"title": "Larger than Life",
+					"credit": "Jaime Jones"
+				},
+				{
 					"type": "list",
+					"columns": 3,
 					"items": [
 						"{@race Aetherborn|PSK}",
 						"{@race Dwarf (Kaladesh)|PSK}",
 						"{@race Elf (Kaladesh)|PSK}",
+						"{@race Elf (Kaladesh; Bishatar and Tirahar)|PSK}",
+						"{@race Elf (Kaladesh; Vahadar)|PSK}",
+						"{@race Human (Kaladesh)|PSK}",
 						"{@race Vedalken|PSK}"
 					]
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/PSK/011.webp"
-					},
-					"width": 1173,
-					"height": 885
 				}
 			],
 			"id": "028"
@@ -543,7 +619,19 @@
 			"name": "A Kaladesh Bestiary",
 			"entries": [
 				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSK/016.webp"
+					},
+					"width": 1275,
+					"height": 1650,
+					"title": "Skyship Stalker",
+					"credit": "Chris Rahn"
+				},
+				{
 					"type": "list",
+					"columns": 3,
 					"items": [
 						"{@creature Angel|PSK}",
 						"{@creature Construct (Animated Armor)|PSK}",
@@ -559,8 +647,10 @@
 						"{@creature Hellion (Huge)|PSK}",
 						"{@creature Hellion (Large)|PSK}",
 						"{@creature Hydra|PSK}",
+						"{@creature Lifecraft Elephant|PSK}",
 						"{@creature Servo|PSK}",
 						"{@creature Sky Leviathan|PSK}",
+						"{@creature Sky Whale|PSK}",
 						"{@creature Thopter (Bat)|PSK}",
 						"{@creature Thopter (Blood Hawk)|PSK}",
 						"{@creature Thopter (Eagle)|PSK}",
@@ -571,15 +661,6 @@
 						"{@creature Thopter (Vulture)|PSK}",
 						"{@creature Wurm|PSK}"
 					]
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/PSK/012.webp"
-					},
-					"width": 1278,
-					"height": 850
 				}
 			],
 			"id": "029"
