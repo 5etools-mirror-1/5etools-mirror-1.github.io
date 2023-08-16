@@ -5190,44 +5190,6 @@
 			"hasFluff": true
 		},
 		{
-			"name": "Dissenter",
-			"source": "PSA",
-			"page": 11,
-			"skillProficiencies": [
-				{
-					"athletics": true,
-					"intimidation": true
-				},
-				{
-					"history": true,
-					"religion": true
-				}
-			],
-			"entries": [
-				{
-					"name": "Overview",
-					"type": "entries",
-					"entries": [
-						"Even in the carefully constructed and curated city-state of Naktamun, and in the presence of the five gods, some people rebel against the doctrines of the God-Pharaoh. They don't challenge the existence of the gods, of course, for those gods are visible nearly every day in the streets of the city. Nor do they question the fact of life after death, which is plain to see in the anointed mummies that surround them, as well as the marauding mummies outside the Hekma. Rather, these dissenters simply refuse to follow the ordained course of life that leads to the glorious afterlife.",
-						"Some dissenters are spurred by fear, not wanting to subject themselves to a violent death in the trials (or in training for the trials). Some are moved by conscience, unwilling to kill their crop-mates in the trials. For while they cannot deny that the gods exist, they can deny that the gods are just\u2014and can fight to prove that the dictates of an unjust god need not be obeyed. Some believe that one god (probably Bontu) has corrupted the process of the trials and the path to the afterlife. Others correctly intuit that the God-Pharaoh did not actually have the people's best interests in mind when he ordered their society.",
-						"A character who is identified as a dissenter loses the benefit of the {@background initiate|psa}'s or {@background vizier|psa}'s background feature. In its place, the character gains the following feature:"
-					]
-				},
-				{
-					"name": "Feature: Shelter of Dissenters",
-					"type": "entries",
-					"entries": [
-						"If they wish to have any hope of survival, whether hiding within the city or cast out into the desert, dissenters must help each other. You can find a place to hide, rest, or recuperate among other dissenters. They will help shield you from those who hunt you, possibly even risking their lives for you."
-					],
-					"data": {
-						"isFeature": true
-					}
-				}
-			],
-			"hasFluff": true,
-			"hasFluffImages": true
-		},
-		{
 			"name": "Dragon Casualty",
 			"source": "ALCurseOfStrahd",
 			"page": 3,
@@ -12478,50 +12440,7 @@
 					"name": "Feature: Trials of the Five Gods",
 					"type": "entries",
 					"entries": [
-						"Your life is oriented around your participation in the five trials that will determine your worthiness in the afterlife. While you prepare for and undergo those trials, you have constant access to training. A comfortable place to live and regular meals are provided to you by servitor mummies (the anointed) under the supervision of viziers. You can enjoy these benefits only as long as you obey the societal norms of Naktamun\u2014training for the trials (with or without your crop), obeying the orders of the gods, and following the instructions of their viziers. If you violate these norms, you risk being treated as a dissenter. See \"Trials of the Five Gods\" for more information about undertaking the trials and their rewards.",
-						"The five gods are the effective rulers of Amonkhet. They are not the creators of the plane, but they are its stewards while the people of Naktamun await the return of the God-Pharaoh. The five gods believe they were created by the God-Pharaoh, who charged them with teaching the people the ways of the God-Pharaoh, and with protecting them until he comes.",
-						"The five gods embody the five virtues the God-Pharaoh wishes to cultivate in those who will become his Eternals in the afterlife. Each god is responsible for modeling and teaching one of those virtues to the acolytes and initiates of Naktamun, and then testing those initiates to ensure that they have mastered their teachings. Thus, they are present during the acolytes' first lessons, during the Ceremony of Measuring, during the initiates' intense training, and at each of the trials that are part of an initiate's journey.",
-						"In the absence of the God-Pharaoh, only the gods can determine whether initiates have proven themselves worthy of the glory of the afterlife. The gods in turn prove their own worthiness by executing their duties infallibly. They make the trials as challenging as possible to ensure that only the most worthy are selected.",
-						{
-							"name": "Oketra (Solidarity Domain)",
-							"type": "inset",
-							"entries": [
-								"\"The worthy must know and respect all others whom the God-Pharaoh deems worthy, for in the afterlife, all will be united in purpose and action.\"",
-								"Oketra is charged with expounding upon this teaching of the God-Pharaoh, instilling in every initiate the virtue of solidarity. She forges each group of children into a crop of acolytes with just one purpose: to be judged worthy of a glorious afterlife. And she instills in each crop the ability to unite in a single action in pursuit of that purpose. She is fond of poetic imagery to communicate her ideals."
-							]
-						},
-						{
-							"name": "Kefnet (Knowledge Domain)",
-							"type": "inset",
-							"entries": [
-								"\"The worthy shall cultivate a nimble mind that can perceive the wonders beyond imagination that wait in the afterlife.\"",
-								"Kefnet's task is to pass on this teaching of the God-Pharaoh and elucidate its meaning. He teaches that the afterlife will be inhabited only by those who have proved by their wits that they are worthy of dwelling in the glorious presence of the God-Pharaoh. He trains acolytes and initiates to push their limits and challenge their mental capacity with spells of ever-greater power."
-							]
-						},
-						{
-							"name": "Rhonas (Strength Domain)",
-							"type": "inset",
-							"entries": [
-								"\"The worthy shall hone a strong body that can withstand the boundless energies of the afterlife.\"",
-								"It falls to Rhonas to instill this teaching in those who would enter the afterlife\u2014but to his mind, the words themselves don't matter. Strength can't be taught. It must be built through practice and training. Rhonas demonstrates his teachings by his example, rather than by giving his students any kind of academic instruction. He welcomes the people of Naktamun to stand by the Hekma and watch him as he storms into the desert to battle the greatest horrors. He encourages them to observe his indomitable strength, for though they will never equal it, they can aspire to mimicry. He invites them to scrutinize every move and practice what they see."
-							]
-						},
-						{
-							"name": "Bontu (Ambition Domain)",
-							"type": "inset",
-							"entries": [
-								"\"The worthy shall strive for greatness\u2014supremacy in life leads to supremacy in the afterlife. \"",
-								"Bontu has fully embraced this dictum, and though she expends little effort in teaching it, she surely leads by example. Her viziers subtly plant the seeds that flower into the ambition the God-Pharaoh desires. Through insinuation, they remind acolytes and initiates alike that achieving one's place in the afterlife at the expense of others is not shameful, but is proof of the initiate's determination and drive. Nothing is more important than that drive, they suggest\u2014not the bonds of a crop, not friendship or love. Not even devotion to a deity."
-							]
-						},
-						{
-							"name": "Hazoret (Zeal Domain)",
-							"type": "inset",
-							"entries": [
-								"\"The worthy shall rush to the God-Pharaoh's side with relentless zeal, rising to overcome every obstacle in their way.\"",
-								"The God-Pharaoh expects those he welcomes into the afterlife to desire it above all other pleasures and achievements, and for them to show their dedication, passion, and fervor through their actions. Hazoret is charged with cultivating this zeal in the initiates who come under her care, and she has undertaken the task with appropriate enthusiasm. She recognizes, however, that the best way to teach zeal is by demonstrating it."
-							]
-						}
+						"Your life is oriented around your participation in the five trials that will determine your worthiness in the afterlife. While you prepare for and undergo those trials, you have constant access to training. A comfortable place to live and regular meals are provided to you by servitor mummies (the anointed) under the supervision of viziers. You can enjoy these benefits only as long as you obey the societal norms of Naktamun\u2014training for the trials (with or without your crop), obeying the orders of the gods, and following the instructions of their viziers. If you violate these norms, you risk being treated as a dissenter. See \"{@book Trials of the Five Gods|PS-A|3}\" for more information about undertaking the trials and their rewards."
 					],
 					"data": {
 						"isFeature": true
@@ -12590,27 +12509,27 @@
 							"rows": [
 								[
 									"1",
-									"Solidarity. The thing that matters most of all is that we're there for each other. (Lawful)"
+									"{@b Solidarity.} The thing that matters most of all is that we're there for each other. (Lawful)"
 								],
 								[
 									"2",
-									"Knowledge. The world is a puzzle\u2014a mystery waiting to be solved. (Neutral)"
+									"{@b Knowledge.} The world is a puzzle\u2014a mystery waiting to be solved. (Neutral)"
 								],
 								[
 									"3",
-									"Strength. All that matters to me is my own perfection. Let everyone else seek that perfection in their own way. (Any)"
+									"{@b Strength.} All that matters to me is my own perfection. Let everyone else seek that perfection in their own way. (Any)"
 								],
 								[
 									"4",
-									"Ambition. I'm going to prove that I deserve only the best\u2014of everything. (Evil)"
+									"{@b Ambition.} I'm going to prove that I deserve only the best\u2014of everything. (Evil)"
 								],
 								[
 									"5",
-									"Zeal. Anything worth doing is worth throwing my whole self into. (Any)"
+									"{@b Zeal.} Anything worth doing is worth throwing my whole self into. (Any)"
 								],
 								[
 									"6",
-									"Redemption. I will train all the harder to make up for the doubt I entertained when I was younger. (Any)"
+									"{@b Redemption.} I will train all the harder to make up for the doubt I entertained when I was younger. (Any)"
 								]
 							]
 						},
@@ -12691,6 +12610,33 @@
 					]
 				}
 			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Initiate (Dissenter)",
+			"source": "PSA",
+			"page": 11,
+			"_copy": {
+				"name": "Initiate",
+				"source": "PSA",
+				"_mod": {
+					"entries": {
+						"mode": "replaceArr",
+						"replace": "Feature: Trials of the Five Gods",
+						"items": {
+							"name": "Feature: Shelter of Dissenters",
+							"type": "entries",
+							"entries": [
+								"If they wish to have any hope of survival, whether hiding within the city or cast out into the desert, dissenters must help each other. You can find a place to hide, rest, or recuperate among other dissenters. They will help shield you from those who hunt you, possibly even risking their lives for you."
+							],
+							"data": {
+								"isFeature": true
+							}
+						}
+					}
+				}
+			},
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -23703,7 +23649,7 @@
 								"name": "Feature: Retainers",
 								"type": "entries",
 								"entries": [
-									"You have the service of three retainers loyal to your family. These retainers can be attendants or messengers, and one might be a majordomo. Your retainers are commoners who can perform mundane tasks for you, but they do not fight for you, will not follow you into obviously dangerous areas (such as dungeons), and will leave if they are frequently endangered or abused"
+									"You have the service of three retainers loyal to your family. These retainers can be attendants or messengers, and one might be a majordomo. Your retainers are commoners who can perform mundane tasks for you, but they do not fight for you, will not follow you into obviously dangerous areas (such as dungeons), and will leave if they are frequently endangered or abused."
 								],
 								"data": {
 									"isFeature": true
@@ -23889,27 +23835,27 @@
 							"rows": [
 								[
 									"1",
-									"Solidarity. The worthy must respect the worthy. In the afterlife, all will be united in goal and action. (Oketra)"
+									"{@b Solidarity.} The worthy must respect the worthy. In the afterlife, all will be united in goal and action. (Oketra)"
 								],
 								[
 									"2",
-									"Knowledge. The worthy shall cultivate a nimble mind, so as to perceive the wonders beyond imagination that wait in the afterlife. (Kefnet)"
+									"{@b Knowledge.} The worthy shall cultivate a nimble mind, so as to perceive the wonders beyond imagination that wait in the afterlife. (Kefnet)"
 								],
 								[
 									"3",
-									"Strength. The worthy shall hone a strong body that can withstand the boundless energies of the afterlife. (Rhonas)"
+									"{@b Strength.} The worthy shall hone a strong body that can withstand the boundless energies of the afterlife. (Rhonas)"
 								],
 								[
 									"4",
-									"Ambition. The worthy shall strive for greatness, for supremacy in life leads to supremacy in the afterlife. (Bontu)"
+									"{@b Ambition.} The worthy shall strive for greatness, for supremacy in life leads to supremacy in the afterlife. (Bontu)"
 								],
 								[
 									"5",
-									"Zeal. The worthy shall rush to the God-Pharaoh's side with relentless passion, rising to overcome every obstacle in their way. (Hazoret)"
+									"{@b Zeal.} The worthy shall rush to the God-Pharaoh's side with relentless passion, rising to overcome every obstacle in their way. (Hazoret)"
 								],
 								[
 									"6",
-									"Naktamun. The life of the city is ordered according to the plan of the God-Pharaoh, and that order must be preserved at all costs."
+									"{@b Naktamun.} The life of the city is ordered according to the plan of the God-Pharaoh, and that order must be preserved at all costs."
 								]
 							]
 						},
@@ -23990,6 +23936,33 @@
 					]
 				}
 			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Vizier (Dissenter)",
+			"source": "PSA",
+			"page": 11,
+			"_copy": {
+				"name": "Vizier",
+				"source": "PSA",
+				"_mod": {
+					"entries": {
+						"mode": "replaceArr",
+						"replace": "Feature: Voice of Authority",
+						"items": {
+							"name": "Feature: Shelter of Dissenters",
+							"type": "entries",
+							"entries": [
+								"If they wish to have any hope of survival, whether hiding within the city or cast out into the desert, dissenters must help each other. You can find a place to hide, rest, or recuperate among other dissenters. They will help shield you from those who hunt you, possibly even risking their lives for you."
+							],
+							"data": {
+								"isFeature": true
+							}
+						}
+					}
+				}
+			},
 			"hasFluff": true,
 			"hasFluffImages": true
 		},

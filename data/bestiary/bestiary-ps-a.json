@@ -67,7 +67,7 @@
 						"items": {
 							"name": "Bite",
 							"entries": [
-								"{@atk mw} {@hit 8} to hit, reach 10 ft., one target. {@h}7 ({@damage 1d4 + 5}) piercing damage, and the target must make on a DC 16 Constitution saving throw, taking 7 ({@damage 2d6}) poison damage on a failed save, or half as much damage on a successful one."
+								"{@atk mw} {@hit 8} to hit, reach 10 ft., one target. {@h}7 ({@damage 1d4 + 5}) piercing damage, and the target must make on a {@dc 16} Constitution saving throw, taking 7 ({@damage 2d6}) poison damage on a failed save, or half as much damage on a successful one."
 							]
 						}
 					}

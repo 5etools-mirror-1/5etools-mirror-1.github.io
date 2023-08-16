@@ -625,34 +625,6 @@
 			]
 		},
 		{
-			"name": "Dissenter",
-			"source": "PSA",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
-							"type": "entries",
-							"entries": [
-								"Even in the carefully constructed and curated city-state of Naktamun, and in the presence of the five gods, some people rebel against the doctrines of the God-Pharaoh. They don't challenge the existence of the gods, of course, for those gods are visible nearly every day in the streets of the city. Nor do they question the fact of life after death, which is plain to see in the anointed mummies that surround them, as well as the marauding mummies outside the Hekma. Rather, these dissenters simply refuse to follow the ordained course of life that leads to the glorious afterlife.",
-								"Some dissenters are spurred by fear, not wanting to subject themselves to a violent death in the trials (or in training for the trials). Some are moved by conscience, unwilling to kill their crop-mates in the trials. For while they cannot deny that the gods exist, they can deny that the gods are just\u2014and can fight to prove that the dictates of an unjust god need not be obeyed. Some believe that one god (probably Bontu) has corrupted the process of the trials and the path to the afterlife. Others correctly intuit that the God-Pharaoh did not actually have the people's best interests in mind when he ordered their society.",
-								"A character who is identified as a dissenter loses the benefit of the initiate's or vizier's background feature. In its place, the character gains the Shelter of Dissenters feature."
-							]
-						}
-					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "backgrounds/PSA/Dissenter.webp"
-					}
-				}
-			]
-		},
-		{
 			"name": "Dragon Casualty",
 			"source": "ALCurseOfStrahd",
 			"entries": [
@@ -1252,7 +1224,7 @@
 							"type": "entries",
 							"entries": [
 								"You are an initiate, on the path to completing the trials of the five gods in the hope of earning a glorified death in the final Trial of Zeal. Some combination of your natural aptitude, your crop's needs, and your teachers' assessment while you were an acolyte led you to focus your training in one particular area of specialization\u2014hand-to-hand combat, long-range combat, or spellcasting. But only a well-rounded initiate can be called truly worthy of the afterlife.",
-								"If you are a hand-to-hand specialist, consider the barbarian, fighter, monk, paladin, or rogue classes. As a long-range combat specialist, you might be a fighter, a ranger, or a rogue. If you are a spellcasting specialist, you might be a bard, sorcerer, or wizard. And beyond this initial choice, you might consider multiclassing or using feats to round out your skills in all three areas."
+								"If you are a hand-to-hand specialist, consider the {@class barbarian}, {@class fighter}, {@class monk}, {@class paladin}, or {@class rogue} classes. As a long-range combat specialist, you might be a {@class fighter}, a {@class ranger}, or a {@class rogue}. If you are a spellcasting specialist, you might be a {@class bard}, {@class sorcerer}, or {@class wizard}. And beyond this initial choice, you might consider multiclassing or using feats to round out your skills in all three areas."
 							]
 						}
 					]
@@ -1264,16 +1236,61 @@
 					"href": {
 						"type": "internal",
 						"path": "backgrounds/PSA/Initiate.webp"
-					}
+					},
+					"title": "Unwavering Initiate",
+					"credit": "Greg Opalinski"
 				},
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "backgrounds/PSA/Initiate2.webp"
-					}
+					},
+					"title": "Gust Walker",
+					"credit": "Jason Rainville"
 				}
 			]
+		},
+		{
+			"name": "Initiate (Dissenter)",
+			"source": "PSA",
+			"_copy": {
+				"name": "Initiate",
+				"source": "PSA",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"entries": [
+										"Even in the carefully constructed and curated city-state of Naktamun, and in the presence of the five gods, some people rebel against the doctrines of the God-Pharaoh. They don't challenge the existence of the gods, of course, for those gods are visible nearly every day in the streets of the city. Nor do they question the fact of life after death, which is plain to see in the anointed mummies that surround them, as well as the marauding mummies outside the Hekma. Rather, these dissenters simply refuse to follow the ordained course of life that leads to the glorious afterlife.",
+										"Some dissenters are spurred by fear, not wanting to subject themselves to a violent death in the trials (or in training for the trials). Some are moved by conscience, unwilling to kill their crop-mates in the trials. For while they cannot deny that the gods exist, they can deny that the gods are just\u2014and can fight to prove that the dictates of an unjust god need not be obeyed. Some believe that one god (probably Bontu) has corrupted the process of the trials and the path to the afterlife. Others correctly intuit that the God-Pharaoh did not actually have the people's best interests in mind when he ordered their society.",
+										"A character who is identified as a dissenter loses the benefit of the initiate's or vizier's background feature. In its place, the character gains the Shelter of Dissenters feature.",
+										{
+											"type": "hr"
+										}
+									]
+								}
+							]
+						}
+					},
+					"images": {
+						"mode": "prependArr",
+						"items": {
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "backgrounds/PSA/Dissenter.webp"
+							},
+							"title": "Samut, Voice of Dissent",
+							"credit": "Aleksi Briclot"
+						}
+					}
+				}
+			}
 		},
 		{
 			"name": "Inquisitor",
@@ -2213,7 +2230,7 @@
 							"type": "entries",
 							"entries": [
 								"You are a vizier, a servant of your god. You perform tasks that are essential to facilitating the initiates' journey, so the gods reward you with entry into the afterlife with the God-Pharaoh's blessing. You hope to achieve the most honored status in the afterlife by being the best possible servant to your god.",
-								"As a vizier, you can have any class, but you are especially likely to be a cleric, a druid (particularly if you serve Rhonas), or a paladin."
+								"As a vizier, you can have any class, but you are especially likely to be a {@class cleric}, a {@class druid} (particularly if you serve Rhonas), or a {@class paladin}."
 							]
 						}
 					]
@@ -2225,9 +2242,52 @@
 					"href": {
 						"type": "internal",
 						"path": "backgrounds/PSA/Vizier.webp"
-					}
+					},
+					"title": "Shadowstorm Vizier",
+					"credit": "Yongjae Choi"
 				}
 			]
+		},
+		{
+			"name": "Vizier (Dissenter)",
+			"source": "PSA",
+			"_copy": {
+				"name": "Vizier",
+				"source": "PSA",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"entries": [
+										"Even in the carefully constructed and curated city-state of Naktamun, and in the presence of the five gods, some people rebel against the doctrines of the God-Pharaoh. They don't challenge the existence of the gods, of course, for those gods are visible nearly every day in the streets of the city. Nor do they question the fact of life after death, which is plain to see in the anointed mummies that surround them, as well as the marauding mummies outside the Hekma. Rather, these dissenters simply refuse to follow the ordained course of life that leads to the glorious afterlife.",
+										"Some dissenters are spurred by fear, not wanting to subject themselves to a violent death in the trials (or in training for the trials). Some are moved by conscience, unwilling to kill their crop-mates in the trials. For while they cannot deny that the gods exist, they can deny that the gods are just\u2014and can fight to prove that the dictates of an unjust god need not be obeyed. Some believe that one god (probably Bontu) has corrupted the process of the trials and the path to the afterlife. Others correctly intuit that the God-Pharaoh did not actually have the people's best interests in mind when he ordered their society.",
+										"A character who is identified as a dissenter loses the benefit of the initiate's or vizier's background feature. In its place, the character gains the Shelter of Dissenters feature.",
+										{
+											"type": "hr"
+										}
+									]
+								}
+							]
+						}
+					},
+					"images": {
+						"mode": "prependArr",
+						"items": {
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "backgrounds/PSA/Dissenter.webp"
+							},
+							"title": "Samut, Voice of Dissent",
+							"credit": "Aleksi Briclot"
+						}
+					}
+				}
+			}
 		},
 		{
 			"name": "Volstrucker Agent",
