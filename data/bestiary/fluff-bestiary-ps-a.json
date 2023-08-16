@@ -36,7 +36,8 @@
 									"name": "Demons",
 									"entries": [
 										"Deep in the desert, far from the protection of the Hekma and the safety of Naktamun, lies a place called Ifnir, the Demons' Nest. The people of Amonkhet believe that the God-Pharaoh banished all the demons of this plane to the desolation of Ifnir as punishment when they rose up in rebellion against him. Some say that the angels carry the worst dissenters into the heart of Ifnir, which is a fate far worse than merely being abandoned amid the scouring sands.",
-										"The demons of Ifnir bear some resemblance to Bolas, with long limbs and tails, huge wings, and gaunt bodies adorned with horns and blades. Other demonic creatures have more bestial features, including {@creature ammit|PSA|ammits}\u2014crocodilian demons sometimes used as challenges within the trials of the five gods\u2014and the scorpion demons called {@creature soulstinger demon|PSA|soulstingers}, whose venom causes excruciating pain in its victims."
+										"The demons of Ifnir bear some resemblance to Bolas, with long limbs and tails, huge wings, and gaunt bodies adorned with horns and blades. Other demonic creatures have more bestial features, including {@creature ammit|PSA|ammits}\u2014crocodilian demons sometimes used as challenges within the trials of the five gods\u2014and the scorpion demons called {@creature soulstinger demon|PSA|soulstingers}, whose venom causes excruciating pain in its victims.",
+										"Use the statistics of a {@creature nalfeshnee|MM} for a demon such as an {@creature Archfiend of Ifnir|PSA}. The statistics of a {@creature giant crocodile|MM} can model an {@creature ammit|PSA}, and those of a {@creature bone devil|MM} work well for a {@creature soulstinger demon|PSA}."
 									]
 								}
 							]
@@ -50,7 +51,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSA/Archfiend of Ifnir.webp"
-					}
+					},
+					"title": "Archfiend of Ifnir",
+					"credit": "Slawomir Maniak"
 				}
 			]
 		},
@@ -66,9 +69,9 @@
 							"entries": [
 								{
 									"type": "entries",
-									"name": "Dragons",
 									"entries": [
-										"Dragons are fierce monsters with heavy reptilian bodies, crocodilian heads, and leathery wings, and are dis-tinguished by their ability to breathe fire. Though Nicol Bolas is also a dragon, he feels no kinship for these savage, dim-witted beasts. They live mostly in the remote reaches of the desert, soaring in lazy circles through the sky as they search for prey. Sometimes they are captured and brought inside the Hekma, where they are put to use within the trials of the five gods\u2014especially in the climactic battles of the final Trial of Zeal."
+										"Dragons are fierce monsters with heavy reptilian bodies, crocodilian heads, and leathery wings, and are dis-tinguished by their ability to breathe fire. Though Nicol Bolas is also a dragon, he feels no kinship for these savage, dim-witted beasts. They live mostly in the remote reaches of the desert, soaring in lazy circles through the sky as they search for prey. Sometimes they are captured and brought inside the Hekma, where they are put to use within the trials of the five gods\u2014especially in the climactic battles of the final Trial of Zeal.",
+										"The dragons of Amonkhet are {@b red dragons}, though they lack the high Intelligence of the red dragons in the {@book Monster Manual|PHB}."
 									]
 								}
 							]
@@ -82,7 +85,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSA/Amonkhet Dragon.webp"
-					}
+					},
+					"title": "Glorybringer",
+					"credit": "Sam Burley"
 				}
 			]
 		},
@@ -97,47 +102,30 @@
 		{
 			"name": "Amonkhet Hydra",
 			"source": "PSA",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
+			"_copy": {
+				"name": "Desert Lands",
+				"source": "PSA",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
 							"type": "entries",
 							"entries": [
-								"The hydra is a reptilian horror with a crocodilian body and multiple heads on long, serpentine necks. Although its heads can be severed, the hydra magically regrows them in short order. A typical specimen has five heads. At the dawn of time, {@deity Tiamat|dawn war|dmg}, the Queen of Evil Dragons, slew a rival dragon god named Lernaea and cast her blood across the multiverse. Each drop that fell upon a world spawned a multi-headed hydra consumed by a hunger as great as the fallen god's hatred. Great champions are known to test their mettle against these fearsome creatures.",
-								{
-									"type": "entries",
-									"name": "The Desert Lands",
-									"entries": [
-										"The desolate wilderness beyond the protection of the Hekma is largely uncharted. Immediately beyond the protective veil is a chaotic dune sea called Shefet, the Scouring Sands. The desert wears away at the edges of the fertile lands surrounding Naktamun, serving as a constant reminder that only the bounty and protection of the God-Pharaoh stand between the people of the city-state and a grisly death in the sands beyond. Beyond Shefet are parched, cracked expanses called Ramunap, the Broken Lands. The ruins of ancient civilizations are said to lie in the Broken Lands, though no one has ever explored such ruins and returned to Naktamun to tell of them."
-									]
-								},
-								{
-									"name": "Everlasting Hunger",
-									"type": "entries",
-									"entries": [
-										"A rapacious and gluttonous monster, a hydra snatches and tears apart its prey in a frenzy of feeding. When a hydra has cleared a territory of food and driven off any creatures smart enough to avoid it, it moves on to seek its meals elsewhere. A hydra's hunger is so great that if it can't feed, it might turn against itself, its heads attacking each other as the creature eats itself alive."
-									]
-								},
-								{
-									"name": "Hardy Water Dwellers",
-									"type": "entries",
-									"entries": [
-										"Hydras are natural swimmers, dwelling in rivers, along lakeshores, in ocean shallows, and in wetland bogs. A hydra rarely requires shelter from the elements, so it doesn't normally have a lair. Only in colder climes are hydras drawn to the protection of sheltered caverns and ruins. When a hydra sleeps, at least one of its heads remains awake and alert, making the creature difficult to catch by surprise."
-									]
-								}
+								"The hydras of Amonkhet have heads like those of a cobra. A successful bite attack from one of these heads deals 7 ({@damage 1d4 + 5}) piercing damage, and the target must make a {@dc 16} Constitution saving throw, taking 7 ({@damage 2d6}) poison damage on a failed save, or half as much damage on a successful one."
 							]
 						}
-					]
+					}
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSA/Amonkhet Hydra.webp"
-					}
+					},
+					"title": "Honored Hydra",
+					"credit": "Todd Lockwood"
 				}
 			]
 		},
@@ -158,7 +146,7 @@
 									"type": "entries",
 									"name": "The Curse of Wandering",
 									"entries": [
-										"The Curse of Wandering is the greatest danger of the desert lands. A creature killed in the desert rises again as a {@creature zombie} as soon as the moisture has dried from its flesh. As a result, the corpses of every kind of desert creature shamble across the dunes alongside the humanoid {@creature zombie||zombies} of {@background dissenter|PSA|dissenters} and would-be explorers. Most of these former humanoids are mindless marauders, though some tales speak of {@creature amonkhet mummy|PSA|mummies} that have retained a sinister intelligence and even magical ability, becoming {@creature amonkhet mummy lord|PSA|mummy lords}."
+										"The Curse of Wandering is the greatest danger of the desert lands. A creature killed in the desert rises again as a {@creature zombie} as soon as the moisture has dried from its flesh. As a result, the corpses of every kind of desert creature shamble across the dunes alongside the humanoid {@creature zombie||zombies} of {@filter dissenters|backgrounds|source=psa|search=dissenter} and would-be explorers. Most of these former humanoids are mindless marauders, though some tales speak of {@creature amonkhet mummy|PSA|mummies} that have retained a sinister intelligence and even magical ability, becoming {@creature amonkhet mummy lord|PSA|mummy lords}."
 									]
 								}
 							]
@@ -172,7 +160,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSA/Amonkhet Mummy Lord.webp"
-					}
+					},
+					"title": "Lord of the Accursed",
+					"credit": "Grzegorz Rutkowski"
 				}
 			]
 		},
@@ -195,7 +185,8 @@
 							"type": "entries",
 							"entries": [
 								"Sphinxes are inscrutable beings, and keepers of secrets and mysteries. They have leonine bodies, hawklike wings, and faces resembling humans, framed by great frills or manes of feathers. Their powerful forearms are also feathered, and fans of long feathers form their tails.",
-								"The sphinxes of Amonkhet are perhaps the only creatures to remain uncorrupted by the influence of Nicol Bolas on this plane. Their impenetrable minds proved to be beyond even Bolas's ability to control\u2014but even so, he was able to place them under a curse to guarantee their silence. A sphinx is utterly incapable of communication\u2014verbal or nonverbal, even written\u2014as long as the curse remains in effect. In this way, Bolas has prevented the sphinxes from revealing his system of lies to the people or gods of Naktamun."
+								"The sphinxes of Amonkhet are perhaps the only creatures to remain uncorrupted by the influence of Nicol Bolas on this plane. Their impenetrable minds proved to be beyond even Bolas's ability to control\u2014but even so, he was able to place them under a curse to guarantee their silence. A sphinx is utterly incapable of communication\u2014verbal or nonverbal, even written\u2014as long as the curse remains in effect. In this way, Bolas has prevented the sphinxes from revealing his system of lies to the people or gods of Naktamun.",
+								"Use the statistics of an {@creature androsphinx|MM} for the common sphinxes of Amonkhet."
 							]
 						}
 					]
@@ -207,7 +198,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSA/Amonkhet Sphinx.webp"
-					}
+					},
+					"title": "Ominous Sphinx",
+					"credit": "Lars Grant-West"
 				}
 			]
 		},
@@ -230,7 +223,8 @@
 							"type": "entries",
 							"entries": [
 								"Whatever their original forms might have been, the angels of Amonkhet have been twisted into distorted reflections of Nicol Bolas. Their limbs are long and thin, with elongated shins and forearms. Their huge wings are adorned with white and black feathers. Light shines through their joints and chests as if from an internal fire, and their eyes glow with a gold or orange light.",
-								"Bolas's angels are his personal agents during his absence from Amonkhet. Their mission, which they pursue with unwavering devotion, is to keep Naktamun free of dissenting voices. They stand as sentinels over the city, extending supernatural senses to detect the presence of {@background dissenter|psa|dissenters}. They use their long, hooked {@item staff|phb|staffs} to capture those who question the God-Pharaoh's rule, and are tasked with carrying out the punishment that Bolas's law demands. {@background dissenter|PSA|Dissenters} are bound into sarcophagi\u2014the Tombs of Disgrace\u2014and exposed to the mockery of fellow citizens in the Display of Doubt. On the following morning, the angels carry the sarcophagi into the desert and abandon the {@background dissenter|PSA|dissenters} to the horrors of the sands\u2014and the Curse of Wandering."
+								"Bolas's angels are his personal agents during his absence from Amonkhet. Their mission, which they pursue with unwavering devotion, is to keep Naktamun free of dissenting voices. They stand as sentinels over the city, extending supernatural senses to detect the presence of {@filter dissenters|backgrounds|source=psa|search=dissenter}. They use their long, hooked {@item staff|PHB|staffs} to capture those who question the God-Pharaoh's rule, and are tasked with carrying out the punishment that Bolas's law demands. {@filter Dissenters|backgrounds|source=psa|search=dissenter} are bound into sarcophagi\u2014the Tombs of Disgrace\u2014and exposed to the mockery of fellow citizens in the Display of Doubt. On the following morning, the angels carry the sarcophagi into the desert and abandon the {@filter dissenters|backgrounds|source=psa|search=dissenter} to the horrors of the sands\u2014and the Curse of Wandering.",
+								"Use the statistics of a {@creature deva|MM} for an angel on Amonkhet, replacing its mace attack with a staff attack. When the angel hits with a melee attack using its staff, the target is {@condition grappled} (escape {@dc 17}). Until this grapple ends, the target is {@condition restrained} and the angel can't attack another target with its staff."
 							]
 						}
 					]
@@ -242,7 +236,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSA/Angel of Amonkhet.webp"
-					}
+					},
+					"title": "Seraph of the Suns",
+					"credit": "Winona Nelson"
 				}
 			]
 		},
@@ -252,16 +248,7 @@
 			"_copy": {
 				"name": "Amonkhet Mummy",
 				"source": "PSA"
-			},
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/PSA/Anointed.webp"
-					}
-				}
-			]
+			}
 		},
 		{
 			"name": "Archfiend of Ifnir",
@@ -274,33 +261,42 @@
 		{
 			"name": "Cerodon",
 			"source": "PSA",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
+			"_copy": {
+				"name": "Desert Lands",
+				"source": "PSA",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
 							"type": "entries",
 							"entries": [
-								"Cerodons are sometimes mistaken for herbivores because of their resemblance to bulls, but they are never mistaken for harmless. They stand over thirty feet tall at the shoulder, and their heads are crowned with enormous horns that jut forward from the nose, then extend backward almost the entire length of their bodies. The horn structure resembles a sandstone cliff, and a cerodon can use it to ruin buildings or monuments with a minimum of effort. Cerodons are extremely aggressive, and often mistake the shimmering Hekma for an intruder into their territory.",
+								"Cerodons are sometimes mistaken for herbivores because of their resemblance to bulls, but they are never mistaken for harmless. They stand over thirty feet tall at the shoulder, and their heads are crowned with enormous horns that jut forward from the nose, then extend backward almost the entire length of their bodies. The horn structure resembles a sandstone cliff, and a cerodon can use it to ruin buildings or monuments with a minimum of effort. Cerodons are extremely aggressive, and often mistake the shimmering Hekma for an intruder into their territory. Use the statistics of a {@creature mammoth} for these creatures, with the following additional trait:",
 								{
 									"type": "entries",
-									"name": "The Desert Lands",
 									"entries": [
-										"The desolate wilderness beyond the protection of the Hekma is largely uncharted. Immediately beyond the protective veil is a chaotic dune sea called Shefet, the Scouring Sands. The desert wears away at the edges of the fertile lands surrounding Naktamun, serving as a constant reminder that only the bounty and protection of the God-Pharaoh stand between the people of the city-state and a grisly death in the sands beyond. Beyond Shefet are parched, cracked expanses called Ramunap, the Broken Lands. The ruins of ancient civilizations are said to lie in the Broken Lands, though no one has ever explored such ruins and returned to Naktamun to tell of them."
+										{
+											"type": "entries",
+											"name": "Siege Monster",
+											"entries": [
+												"The cerodon deals double damage to objects and structures."
+											]
+										}
 									]
 								}
 							]
 						}
-					]
+					}
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSA/Cerodon.webp"
-					}
+					},
+					"title": "Desert Cerodon",
+					"credit": "Igor Kieryluk"
 				}
 			]
 		},
@@ -334,7 +330,27 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSA/Criosphinx.webp"
-					}
+					},
+					"title": "Unesh, Criosphinx Sovereign",
+					"credit": "Adrian Majkrzak"
+				}
+			]
+		},
+		{
+			"name": "Desert Lands",
+			"source": "PSA",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "The Desert Lands",
+							"entries": [
+								"The desolate wilderness beyond the protection of the Hekma is largely uncharted. Immediately beyond the protective veil is a chaotic dune sea called Shefet, the Scouring Sands. The desert wears away at the edges of the fertile lands surrounding Naktamun, serving as a constant reminder that only the bounty and protection of the God-Pharaoh stand between the people of the city-state and a grisly death in the sands beyond. Beyond Shefet are parched, cracked expanses called Ramunap, the Broken Lands. The ruins of ancient civilizations are said to lie in the Broken Lands, though no one has ever explored such ruins and returned to Naktamun to tell of them."
+							]
+						}
+					]
 				}
 			]
 		},
@@ -348,7 +364,8 @@
 						{
 							"type": "entries",
 							"entries": [
-								"Drakes are similar to dragons, though they lack any ability to breathe fire and have only two legs in addi-tion to their huge wings. They are less aggressive than dragons, and possibly slightly more intelligent. They are drawn by the glint of lazotep in mines, the shine of gold in Naktamun, and the glimmer of the sun on the water of the Luxa river. They also like to perch on obelisks and other spires on city buildings."
+								"Drakes are similar to dragons, though they lack any ability to breathe fire and have only two legs in addi-tion to their huge wings. They are less aggressive than dragons, and possibly slightly more intelligent. They are drawn by the glint of lazotep in mines, the shine of gold in Naktamun, and the glimmer of the sun on the water of the Luxa river. They also like to perch on obelisks and other spires on city buildings.",
+								"A {@creature pteranodon} can represent a smaller drake, while a larger one is more like a {@creature giant eagle}."
 							]
 						}
 					]
@@ -360,7 +377,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSA/Drake.webp"
-					}
+					},
+					"title": "Angler Drake",
+					"credit": "Svetlin Velinov"
 				}
 			]
 		},
@@ -376,25 +395,10 @@
 							"entries": [
 								{
 									"type": "entries",
-									"name": "The Curse of Wandering",
-									"entries": [
-										"The Curse of Wandering is the greatest danger of the desert lands. A creature killed in the desert rises again as a {@creature zombie} as soon as the moisture has dried from its flesh. As a result, the corpses of every kind of desert creature shamble across the dunes alongside the humanoid {@creature zombie||zombies} of {@background dissenter|PSA|dissenters} and would-be explorers. Most of these former humanoids are mindless marauders, though some tales speak of {@creature amonkhet mummy|PSA|mummies} that have retained a sinister intelligence and even magical ability, becoming {@creature amonkhet mummy lord|PSA|mummy lords}."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "The Anointed",
-									"entries": [
-										"Not every citizen of Naktamun proves to be worthy of the afterlife. Acolytes sometimes die before the Ceremony of Measurement, perhaps in training accidents. Many {@background initiate|PSA|initiates} perish in one of the first four trials, before earning their five cartouches. {@background vizier|PSA|Viziers} sometimes die before they have truly earned a place in the afterlife serving their gods. Without having proven themselves worthy, these poor souls have no place as Eternals in the afterlife\u2014but neither have they committed a grievous sin that would warrant abandoning them to the Curse of Wandering as marauding {@creature amonkhet mummy|PSA|mummies}.",
-										"Fortunately, the beneficence of the God-Pharaoh is great enough to provide a role for these people. Called the {@creature anointed|PSA}, they are carefully embalmed, protected from the Curse of Wandering, and allowed to spend another lifetime in service to the worthy. The God-Pharaoh promises that those who faithfully serve as the {@creature anointed|PSA} will earn a place as attendants in the afterlife as well, and even an eternity of service in the afterlife is preferable to an eternity subjected to the Curse of Wandering.",
-										"The bodies of the anointed are carefully wrapped in cloth and adorned with cartouches. In contrast to the cartouches of {@background initiate|PSA|initiates} and {@background vizier|PSA|viziers}, these do not harbor the life essence of the deceased at their best. Instead, they coach the {@creature anointed|PSA} for a particular form of service. With their cartouches in place, the {@creature anointed|PSA} rise and join the ranks of serving mummies who attend to the needs of daily life in Amonkhet."
-									]
-								},
-								{
-									"type": "entries",
 									"name": "An Eternal Army",
 									"entries": [
-										"A being as mighty and magnificent as Nicol Bolas demands a fighting force of the highest caliber, so that an ordinary army of zombies could never be worthy of the God-Pharaoh. The Eternals are elite soldiers with all the skill and prowess of living soldiers, but none of the disadvantages that arise in living beings, such as emotions, hesitation, or disloyalty. Bolas has personally crafted all of Amonkhet to create just such an army."
+										"A being as mighty and magnificent as Nicol Bolas demands a fighting force of the highest caliber, so that an ordinary army of zombies could never be worthy of the God-Pharaoh. The Eternals are elite soldiers with all the skill and prowess of living soldiers, but none of the disadvantages that arise in living beings, such as emotions, hesitation, or disloyalty. Bolas has personally crafted all of Amonkhet to create just such an army.",
+										"Eternals have the statistics of {@creature wight|MM|wights}\u2014individually fearsome, and terrifying as they march in endless ranks."
 									]
 								}
 							]
@@ -408,7 +412,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSA/Eternal.webp"
-					}
+					},
+					"title": "Wildfire Eternal",
+					"credit": "Magali Villeneuve"
 				}
 			]
 		},
@@ -431,33 +437,30 @@
 		{
 			"name": "Manticore, Heart-Piercer",
 			"source": "PSA",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
+			"_copy": {
+				"name": "Desert Lands",
+				"source": "PSA",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
 							"type": "entries",
 							"entries": [
-								"Manticores are catlike creatures with feline bodies, tails like those of {@creature scorpion||scorpions}, and chitinous plates on their lower legs and feet. The venom of their tail stingers is the most virulent poison known on Amonkhet, and they can sting with lightning speed even while tearing at a foe with claws and teeth. Their deadliness makes them prized for use in the Trial of Zeal, where they grant glorified deaths to many initiates.",
-								{
-									"type": "entries",
-									"name": "The Desert Lands",
-									"entries": [
-										"The desolate wilderness beyond the protection of the Hekma is largely uncharted. Immediately beyond the protective veil is a chaotic dune sea called Shefet, the Scouring Sands. The desert wears away at the edges of the fertile lands surrounding Naktamun, serving as a constant reminder that only the bounty and protection of the God-Pharaoh stand between the people of the city-state and a grisly death in the sands beyond. Beyond Shefet are parched, cracked expanses called Ramunap, the Broken Lands. The ruins of ancient civilizations are said to lie in the Broken Lands, though no one has ever explored such ruins and returned to Naktamun to tell of them."
-									]
-								}
+								"Manticores are catlike creatures with feline bodies, tails like those of {@creature scorpion||scorpions}, and chitinous plates on their lower legs and feet. The venom of their tail stingers is the most virulent poison known on Amonkhet, and they can sting with lightning speed even while tearing at a foe with claws and teeth. Their deadliness makes them prized for use in the Trial of Zeal, where they grant glorified deaths to many initiates."
 							]
 						}
-					]
+					}
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSA/Manticore, Heart-Piercer.webp"
-					}
+					},
+					"title": "Heart-Piercer Manticore",
+					"credit": "Scott Murphy"
 				}
 			]
 		},
@@ -473,9 +476,10 @@
 							"entries": [
 								{
 									"type": "entries",
-									"name": "The Luxa River",
 									"entries": [
-										"The Luxa river is an abundant source of life, fertilizing the lush valley around Naktamun and providing water to humanoids and animals alike. It is also a vibrant habitat for countless creatures, including many species of birds, fish, and frogs. {@creature crocodile||Crocodiles} and {@creature hippopotamus|PSA|hippopotamuses} can be a danger to boats and barges, but perhaps the most feared denizens of the river are the {@creature giant river serpent|PSA|giant serpents} known to lurk near its bottom. When roused to anger, they can sink fishing boats by the dozens and flood the shore."
+										"The Luxa river is an abundant source of life, fertilizing the lush valley around Naktamun and providing water to humanoids and animals alike. It is also a vibrant habitat for countless creatures, including many species of birds, fish, and frogs. {@creature crocodile||Crocodiles} and {@creature hippopotamus|PSA|hippopotamuses} can be a danger to boats and barges, but perhaps the most feared denizens of the river are the {@creature giant river serpent|PSA|giant serpents} known to lurk near its bottom. When roused to anger, they can sink fishing boats by the dozens and flood the shore.",
+										"Monsters found in the river include fish such as {@creature quipper|MM|quippers}, {@creature giant frog|MM|giant frogs}, and {@creature crocodile|MM|crocodiles}.",
+										"River serpents range from fairly mundane specimens that resemble {@creature giant constrictor snake|MM|giant constrictor snakes} to more monstrous versions with the statistics of a {@creature behir} (but without lightning immunity or lightning breath)."
 									]
 								}
 							]
@@ -489,73 +493,69 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSA/River Serpent.webp"
-					}
+					},
+					"title": "River Serpent",
+					"credit": "Christopher Moeller"
 				}
 			]
 		},
 		{
 			"name": "Sandwurm",
 			"source": "PSA",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
+			"_copy": {
+				"name": "Desert Lands",
+				"source": "PSA",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
 							"type": "entries",
 							"entries": [
-								"Sandwurms are the largest predators of Shefet, swimming through the sandy dunes like {@creature river serpent|PSA|serpents} through water. They are capable of amazing speed and can lift their lamprey-like heads far above the ground to snatch even flying creatures. But they can also lie in wait beneath the sands for years, until the slightest tremor alerts them to the presence of prey.",
-								{
-									"type": "entries",
-									"name": "The Desert Lands",
-									"entries": [
-										"The desolate wilderness beyond the protection of the Hekma is largely uncharted. Immediately beyond the protective veil is a chaotic dune sea called Shefet, the Scouring Sands. The desert wears away at the edges of the fertile lands surrounding Naktamun, serving as a constant reminder that only the bounty and protection of the God-Pharaoh stand between the people of the city-state and a grisly death in the sands beyond. Beyond Shefet are parched, cracked expanses called Ramunap, the Broken Lands. The ruins of ancient civilizations are said to lie in the Broken Lands, though no one has ever explored such ruins and returned to Naktamun to tell of them."
-									]
-								}
+								"Sandwurms are the largest predators of Shefet, swimming through the sandy dunes like {@creature river serpent|PSA|serpents} through water. They are capable of amazing speed and can lift their lamprey-like heads far above the ground to snatch even flying creatures. But they can also lie in wait beneath the sands for years, until the slightest tremor alerts them to the presence of prey."
 							]
 						}
-					]
+					}
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSA/Sandwurm.webp"
-					}
+					},
+					"title": "Sandwurm Convergence",
+					"credit": "Slawomir Maniak"
 				}
 			]
 		},
 		{
 			"name": "Serpopard",
 			"source": "PSA",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
+			"_copy": {
+				"name": "Desert Lands",
+				"source": "PSA",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
 							"type": "entries",
 							"entries": [
-								"Serpopards are strange felines with serpentine features, including long, flexible bodies, venomous fangs, and sensitive tongues they can use to detect the scent of prey from a great distance. They like to perch in trees near desert oases or along the Luxa river, inside the Hekma, to drop down on creatures that come near the water.",
-								{
-									"type": "entries",
-									"name": "The Desert Lands",
-									"entries": [
-										"The desolate wilderness beyond the protection of the Hekma is largely uncharted. Immediately beyond the protective veil is a chaotic dune sea called Shefet, the Scouring Sands. The desert wears away at the edges of the fertile lands surrounding Naktamun, serving as a constant reminder that only the bounty and protection of the God-Pharaoh stand between the people of the city-state and a grisly death in the sands beyond. Beyond Shefet are parched, cracked expanses called Ramunap, the Broken Lands. The ruins of ancient civilizations are said to lie in the Broken Lands, though no one has ever explored such ruins and returned to Naktamun to tell of them."
-									]
-								}
+								"Serpopards are strange felines with serpentine features, including long, flexible bodies, venomous fangs, and sensitive tongues they can use to detect the scent of prey from a great distance. They like to perch in trees near desert oases or along the Luxa river, inside the Hekma, to drop down on creatures that come near the water."
 							]
 						}
-					]
+					}
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSA/Serpopard.webp"
-					}
+					},
+					"title": "Prowling Serpopard",
+					"credit": "Tyler Jacobson"
 				}
 			]
 		},
