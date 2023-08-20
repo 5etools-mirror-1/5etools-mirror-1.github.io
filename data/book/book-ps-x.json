@@ -5,277 +5,29 @@
 			"name": "Introduction",
 			"entries": [
 				{
-					"type": "quote",
-					"entries": [
-						"This is a pretty special installment of the Plane Shift series for me, because I was the creative lead for Ixalan world building. Perhaps betraying my fourteen-year history working on Dungeons & Dragons, Ixalan is a world of exploration and treasure, marked by ancient sites waiting to be explored by intrepid heroes. One of those sites, shown on a card in the Ixalan set, is obviously inspired by a classic D&D adventure, The Hidden Shrine of Tamoachan. This plane lacks only dragons to be a fully realized D&D milieu\u2014there's even a world map! Ultimately, that means that writing Plane Shift: Ixalan was both a ton of fun and relatively easy. The people who populate Ixalan have a lot in common with D&D characters already, and mapping them to existing classes and backgrounds was a pretty straightforward task. Similarly, the creatures of the plane\u2014especially the dinosaurs\u2014had a lot of analogues in the game already. And still, this is the longest installment of Plane Shift yet! That's partly because I had the freedom to really cut loose on ideas and inspiration to help you play a character in this exciting world. You'll find more tables in here than ever before\u2014tables of personality traits and ideals to flesh out your character, of treasures to flavor your hoards, and inspiration to bring your party together. This sort of thing is both really enjoyable and really challenging to write\u2014a lot like the flavor text on Magic cards, actually, because each one is a self-contained nugget, a complete idea in a single sentence. I hope that all this stuff enriches your game. The appendix in this document is an extended musing on the colors of Magic and their relationship to D&D characters and spells. This is the sort of thing that dominates a lot of lunchtime conversations with members of the Magic creative team who are also avid D&D fans, and also the sort of thing I get a lot of questions about on Twitter. As with much of the rest of this document, the focus is more on roleplaying and character building than on rules. It's a first stab, though, toward a more comprehensive understanding of the relationship between the worlds of both games. As always, The Art of Magic: The Gathering\u2014Ixalan is the definitive resource for information about the plane. With this document, you can use that information to build a campaign with a minimum of changes to the fifth edition D&D rules, which you can find here. And even without the book, you can find lore about Ixalan on the Magic web site. There's a lot of open space on that map. I hope you have fun exploring the world of Ixalan!"
-					],
-					"by": "James Wyatt"
-				},
-				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "book/PSX/001.webp"
 					},
 					"width": 1278,
-					"height": 1654
-				}
-			],
-			"id": "000"
-		},
-		{
-			"type": "section",
-			"name": "Sun Empire",
-			"page": 5,
-			"entries": [
-				"The Sun Empire is a powerful civilization that dominates the eastern coast of Ixalan. The empire's fierce warriors are supported by priests who wield the power of the sun and command the mighty dinosaurs that inhabit the continent. A new ruler has brought the empire into an era of expansion, seeking to reclaim the lands in the continent's interior that it once held. At the same time, a foreign incursion into those same lands sparks a search for the artifact known as the Immortal Sun, which the people of the empire view as a potent symbol of their identity.",
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Races:",
-							"entries": [
-								"{@race Human}"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Suggested Backgrounds:",
-							"entries": [
-								"{@background Acolyte}, {@background entertainer}, {@background folk hero}, {@background guild artisan}, {@background hermit}, {@background noble}, {@background sage}, {@background soldier}, {@background urchin}"
-							]
-						}
-					]
+					"height": 1654,
+					"title": "Deeproot Champion",
+					"credit": "Raymond Swanland"
 				},
 				{
-					"type": "entries",
+					"type": "quote",
+					"skipItalics": true,
+					"skipMarks": true,
 					"entries": [
-						{
-							"type": "entries",
-							"name": "Suggested Classes",
-							"page": 5,
-							"entries": [
-								"Consider the following class options for your Sun Empire character.",
-								{
-									"type": "entries",
-									"name": "{@class Barbarian}",
-									"page": 5,
-									"entries": [
-										"Certain warriors devoted to Tilonalli (the destructive aspect of the Threefold Sun\u2014the deity worshiped by the folk of the empire) enter a berserk rage in combat. The Path of the Berserker is appropriate for these characters, or the Path of the Totem Warrior (replacing bear, eagle, and wolf totem spirits with ceratops, aerosaur, and raptor spirits, respectively)."
-									],
-									"id": "004"
-								},
-								{
-									"type": "entries",
-									"name": "{@class Bard}",
-									"page": 5,
-									"entries": [
-										"Poetry is a respected art among the warriors of the Sun Empire, so bards of the College of Valor might be found within their ranks."
-									],
-									"id": "005"
-								},
-								{
-									"type": "entries",
-									"name": "{@class Cleric}",
-									"page": 5,
-									"entries": [
-										"Sun Empire clerics are typically devoted to one particular aspect of the Threefold Sun. Kinjalli, the Wakening Sun, represents the deity's creative aspects and grants access to the Life and Light domains. Ixalli, the Verdant Sun, represents its sustaining and nourishing aspects, granting access to the Life and {@skill Nature} domains. Tilonalli, the Burning Sun, represents its destructive aspects and grants access to the Tempest and War domains."
-									],
-									"id": "006"
-								},
-								{
-									"type": "entries",
-									"name": "{@class Druid}",
-									"page": 5,
-									"entries": [
-										"Certain shamans of the Sun Empire are closely attuned to the forces of nature, and use wild shape to take on dinosaur forms. These druids typically follow the Circle of the Moon."
-									],
-									"id": "007"
-								},
-								{
-									"type": "entries",
-									"name": "{@class Fighter}",
-									"page": 5,
-									"entries": [
-										"Highly trained soldiers and warriors are the backbone of the Sun Empire. They are typically Battle Masters or Champions."
-									],
-									"id": "008"
-								},
-								{
-									"type": "entries",
-									"name": "{@class Paladin}",
-									"page": 5,
-									"entries": [
-										"Knights of the Sun Empire are drawn to the Oath of the Ancients and (increasingly, as vampires and pirates mount incursions into their lands) the Oath of Vengeance. These paladins often use the {@spell find steed} spell to acquire dinosaur mounts (typically a hadrosaurus, described in Volo's Guide to Monsters)."
-									],
-									"id": "009"
-								},
-								{
-									"type": "entries",
-									"name": "{@class Ranger}",
-									"page": 5,
-									"entries": [
-										"Scouts of the Sun Empire are often rangers, including both Beast Masters and Hunters. The pteranodon, dimetrodon, and velociraptor are all appropriate ranger's companions."
-									],
-									"id": "00a"
-								}
-							],
-							"id": "003"
-						}
+						"This is a pretty special installment of the Plane Shift series for me, because I was the creative lead for Ixalan world building. Perhaps betraying my fourteen-year history working on {@style Dungeons & Dragons|small-caps;dnd-font}, Ixalan is a world of exploration and treasure, marked by ancient sites waiting to be explored by intrepid heroes. One of those sites, shown on a card in the {@i Ixalan} set, is obviously inspired by a classic D&D adventure, {@adventure The Hidden Shrine of Tamoachan|TftYP-THSoT}. This plane lacks only dragons to be a fully realized D&D milieu\u2014there's even a world map!",
+						"Ultimately, that means that writing {@i Plane Shift: Ixalan} was both a ton of fun and relatively easy. The people who populate Ixalan have a lot in common with D&D characters already, and mapping them to existing classes and backgrounds was a pretty straightforward task. Similarly, the creatures of the plane\u2014especially the dinosaurs\u2014had a lot of analogues in the game already. And still, this is the longest installment of Plane Shift yet!",
+						"That's partly because I had the freedom to really cut loose on ideas and inspiration to help you play a character in this exciting world. You'll find more tables in here than ever before\u2014tables of personality traits and ideals to flesh out your character, of treasures to flavor your hoards, and inspiration to bring your party together. This sort of thing is both really enjoyable and really challenging to write\u2014a lot like the flavor text on Magic cards, actually, because each one is a self-contained nugget, a complete idea in a single sentence. I hope that all this stuff enriches your game.",
+						"The appendix in this document is an extended musing on the colors of Magic and their relationship to D&D characters and spells. This is the sort of thing that dominates a lot of lunchtime conversations with members of the Magic creative team who are also avid D&D fans, and also the sort of thing I get a lot of questions about on Twitter. As with much of the rest of this document, the focus is more on roleplaying and character building than on rules. It's a first stab, though, toward a more comprehensive understanding of the relationship between the worlds of both games.",
+						"As always, {@i The Art of Magic: The Gathering\u2014Ixalan} is the definitive resource for information about the plane. With this document, you can use that information to build a campaign with a minimum of changes to the fifth edition D&D rules, which you can {@link find here|https://dnd.wizards.com/what-is-dnd/basic-rules}. And even without the book, you can find lore about Ixalan on {@link the Magic web site|https://magic.wizards.com/}.",
+						"There's a lot of open space on that map. I hope you have fun exploring the world of Ixalan!"
 					],
-					"id": "002"
-				},
-				{
-					"type": "inset",
-					"name": "Four Peoples, One Party",
-					"page": 5,
-					"entries": [
-						"The trickiest thing about playing D&D in a highly factionalized setting like Ixalan is bringing player characters together who belong to different groups and would have no obvious reason to want to cooperate\u2014let alone trust each other with their lives. One possibility, of course, is for all the characters to belong to the same faction. An all-vampire party bent on conquest or an all-pirate party set to explore the Stormwreck Sea can find plenty of adventure in Ixalan. But if one player is intent on playing a merfolk and one is determined to be an orc, some extra effort is required to bring them together.",
-						"The most straightforward approach is to put the characters into a situation where they need to work together to survive or to achieve some goal they all share. Necessity makes strange bedfellows, as the saying goes, and characters who find themselves in a bad situation have a strong incentive to put aside their differences and work together, at least until they get out of that situation. They might all be trapped in the same place, or each character could have something that the whole group needs.",
-						"You can roll on the following table to generate ideas for bringing characters together at the start of the campaign. Ideally, by the time they have overcome whatever circumstance has thrown them together, they will have learned to trust each other and perhaps even become friends.",
-						{
-							"type": "table",
-							"colLabels": [
-								"1d10",
-								"Reason for Cooperating"
-							],
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
-							],
-							"rows": [
-								[
-									"1",
-									"The characters begin the campaign captured, whether as prisoners of the Legion of Dusk, captives in a pirate ship's brig, or trapped in jungle snares."
-								],
-								[
-									"2",
-									"The characters are fighting each other when a dinosaur attacks."
-								],
-								[
-									"3",
-									"The characters are trapped together by a cave-in, a sinkhole opening, or some similar disaster."
-								],
-								[
-									"4",
-									"Each character has one piece of a treasure map, or one key of several required to open a treasure vault."
-								],
-								[
-									"5",
-									"A strange dream leads each of the characters to the same destination."
-								],
-								[
-									"6",
-									"The characters are all hopelessly lost in the jungle."
-								],
-								[
-									"7",
-									"Leaders of the characters' factions have ordered them to cooperate on a secret mission."
-								],
-								[
-									"8",
-									"A pirate captain or other villain is a common enemy to all the characters."
-								],
-								[
-									"9",
-									"A magical or natural phenomenon threatens all folk of Ixalan."
-								],
-								[
-									"10",
-									"The characters are all trying to avert the catastrophe of a fullscale war among their peoples."
-								]
-							]
-						}
-					],
-					"id": "00b"
-				},
-				{
-					"type": "table",
-					"caption": "Suggested Ideals",
-					"colLabels": [
-						"d6",
-						"Ideal"
-					],
-					"colStyles": [
-						"col-1 text-center",
-						"col-11"
-					],
-					"rows": [
-						[
-							"1",
-							"{@b Nation.} The invaders must be driven out and the ancient capital of Orazca reclaimed."
-						],
-						[
-							"2",
-							"{@b Glory.} I wish to earn great glory in battle\u2014ideally, by making my foes surrender."
-						],
-						[
-							"3",
-							"{@b Poetry.} Beauty is to be found in all things, from creation to destruction, and it should all be recorded in words."
-						],
-						[
-							"4",
-							"{@b Zeal.} I am devoted to the Threefold Sun and the commands of the priests."
-						],
-						[
-							"5",
-							"{@b History.} I seek to understand the empire's history so I can better chart a course for its future."
-						],
-						[
-							"6",
-							"{@b Peace.} I would like to believe that peace can be forged among the peoples of this land."
-						]
-					]
-				},
-				{
-					"type": "table",
-					"caption": "Suggested Bonds",
-					"colLabels": [
-						"d6",
-						"Bond"
-					],
-					"colStyles": [
-						"col-1 text-center",
-						"col-11"
-					],
-					"rows": [
-						[
-							"1",
-							"I left behind a family (living or dead) when I set out on my journey of exploration."
-						],
-						[
-							"2",
-							"I have ties to the imperial line."
-						],
-						[
-							"3",
-							"I come from a noble family, and have kin who live as hostages in the imperial capital."
-						],
-						[
-							"4",
-							"I have fallen in love with a member of a pirate crew."
-						],
-						[
-							"5",
-							"I discovered an ancient ruin in the jungle, but I keep it a secret."
-						],
-						[
-							"6",
-							"I will one day find the Immortal Sun and restore the empire's ancient glory"
-						]
-					]
-				},
-				{
-					"type": "inset",
-					"name": "Languages",
-					"entries": [
-						"Generally, in a D&D campaign, it's a good idea to ensure that all the player characters can understand each other. That's why the game maintains the convenient fiction of a Common tongue. But Ixalan is about the clash of four cultures, so you might want to emphasize the differences among those cultures by making the folk of each speak entirely different languages.",
-						"If you go this route, Merfolk is the language of the River Heralds and Vampire is the language of the Legion of Dusk. The humans of the Sun Empire speak their own language, Itzocan, and the humans of the Brazen Coalition speak a different language\u2014a pidgin of Orc, Siren, and a native human language that is similar to Vampire (about as closely related as Italian is to Spanish). Orcs, sirens, and goblins also speak this Brazen Coalition pidgin.",
-						"You might still wish to admit the existence of a sort of Common\u2014a trade pidgin used in circumstances where members of different peoples do interact with each other. But such a language is almost impossible to use for discussions of matters of any depth."
-					],
-					"id": "00c"
+					"by": "James Wyatt"
 				},
 				{
 					"type": "image",
@@ -284,7 +36,295 @@
 						"path": "book/PSX/002.webp"
 					},
 					"width": 1278,
-					"height": 830
+					"height": 1654,
+					"title": "Sunrise Seeker",
+					"credit": "Filip Burburan"
+				}
+			],
+			"id": "000"
+		},
+		{
+			"type": "section",
+			"name": "The World of Ixalan",
+			"page": 4,
+			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSX/003.webp"
+					},
+					"width": 1278,
+					"height": 1654,
+					"title": "Thunderherd Migration",
+					"credit": "Lars Grant-West"
+				},
+				{
+					"type": "section",
+					"name": "Sun Empire",
+					"page": 5,
+					"entries": [
+						"The Sun Empire is a powerful civilization that dominates the eastern coast of Ixalan. The empire's fierce warriors are supported by priests who wield the power of the sun and command the mighty dinosaurs that inhabit the continent. A new ruler has brought the empire into an era of expansion, seeking to reclaim the lands in the continent's interior that it once held. At the same time, a foreign incursion into those same lands sparks a search for the artifact known as the Immortal Sun, which the people of the empire view as a potent symbol of their identity.",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Races:",
+									"entries": [
+										"{@race Human (Ixalan)|PSX|Human}"
+									]
+								},
+								{
+									"type": "item",
+									"name": "Suggested Backgrounds:",
+									"entries": [
+										"{@background Acolyte}, {@background entertainer}, {@background folk hero}, {@background guild artisan}, {@background hermit}, {@background noble}, {@background sage}, {@background soldier}, {@background urchin}"
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "Suggested Classes",
+									"page": 5,
+									"entries": [
+										"Consider the following class options for your Sun Empire character.",
+										{
+											"type": "entries",
+											"name": "{@class Barbarian}",
+											"page": 5,
+											"entries": [
+												"Certain warriors devoted to Tilonalli (the destructive aspect of the Threefold Sun\u2014the deity worshiped by the folk of the empire) enter a berserk rage in combat. The {@class Barbarian||Path of the Berserker|Berserker} is appropriate for these characters, or the {@class Barbarian||Path of the Totem Warrior|Totem Warrior} (replacing bear, eagle, and wolf totem spirits with {@creature ceratops|PSX}, {@creature aerosaur (large)|PSX|aerosaur}, and {@creature velociraptor|VGM|raptor} spirits, respectively)."
+											],
+											"id": "004"
+										},
+										{
+											"type": "entries",
+											"name": "{@class Bard}",
+											"page": 5,
+											"entries": [
+												"Poetry is a respected art among the warriors of the Sun Empire, so bards of the {@class Bard||College of Valor|Valor} might be found within their ranks."
+											],
+											"id": "005"
+										},
+										{
+											"type": "entries",
+											"name": "{@class Cleric}",
+											"page": 5,
+											"entries": [
+												"Sun Empire clerics are typically devoted to one particular aspect of the Threefold Sun. Kinjalli, the Wakening Sun, represents the deity's creative aspects and grants access to the {@class Cleric||Life|Life} and {@class Cleric||Light|Light} domains. Ixalli, the Verdant Sun, represents its sustaining and nourishing aspects, granting access to the {@class Cleric||Life|Life} and {@class Cleric||Nature|Nature} domains. Tilonalli, the Burning Sun, represents its destructive aspects and grants access to the {@class Cleric||Tempest|Tempest} and {@class Cleric||War|War} domains."
+											],
+											"id": "006"
+										},
+										{
+											"type": "entries",
+											"name": "{@class Druid}",
+											"page": 5,
+											"entries": [
+												"Certain shamans of the Sun Empire are closely attuned to the forces of nature, and use wild shape to take on dinosaur forms. These druids typically follow the {@class Druid||Circle of the Moon|Moon}."
+											],
+											"id": "007"
+										},
+										{
+											"type": "entries",
+											"name": "{@class Fighter}",
+											"page": 5,
+											"entries": [
+												"Highly trained soldiers and warriors are the backbone of the Sun Empire. They are typically {@class Fighter||Battle Masters|Battle Master} or {@class Fighter||Champions|Champion}."
+											],
+											"id": "008"
+										},
+										{
+											"type": "entries",
+											"name": "{@class Paladin}",
+											"page": 5,
+											"entries": [
+												"Knights of the Sun Empire are drawn to the {@class Paladin||Oath of the Ancients|Ancients} and (increasingly, as vampires and pirates mount incursions into their lands) the {@class Paladin||Oath of Vengeance|Vengeance}. These paladins often use the {@spell find steed} spell to acquire dinosaur mounts (typically a {@creature hadrosaurus|VGM}, described in {@book Volo's Guide to Monsters|VGM})."
+											],
+											"id": "009"
+										},
+										{
+											"type": "entries",
+											"name": "{@class Ranger}",
+											"page": 5,
+											"entries": [
+												"Scouts of the Sun Empire are often rangers, including both {@class Ranger||Beast Masters|Beast Master} and {@class Ranger||Hunters|Hunter}. The {@creature pteranodon}, {@creature dimetrodon|VGM}, and {@creature velociraptor|VGM} are all appropriate ranger's companions."
+											],
+											"id": "00a"
+										}
+									],
+									"id": "003"
+								}
+							],
+							"id": "002"
+						},
+						{
+							"type": "inset",
+							"name": "Four Peoples, One Party",
+							"page": 5,
+							"entries": [
+								"The trickiest thing about playing D&D in a highly factionalized setting like Ixalan is bringing player characters together who belong to different groups and would have no obvious reason to want to cooperate\u2014let alone trust each other with their lives. One possibility, of course, is for all the characters to belong to the same faction. An all-vampire party bent on conquest or an all-pirate party set to explore the Stormwreck Sea can find plenty of adventure in Ixalan. But if one player is intent on playing a merfolk and one is determined to be an orc, some extra effort is required to bring them together.",
+								"The most straightforward approach is to put the characters into a situation where they need to work together to survive or to achieve some goal they all share. Necessity makes strange bedfellows, as the saying goes, and characters who find themselves in a bad situation have a strong incentive to put aside their differences and work together, at least until they get out of that situation. They might all be trapped in the same place, or each character could have something that the whole group needs.",
+								"You can roll on the following table to generate ideas for bringing characters together at the start of the campaign. Ideally, by the time they have overcome whatever circumstance has thrown them together, they will have learned to trust each other and perhaps even become friends.",
+								{
+									"type": "table",
+									"colLabels": [
+										"1d10",
+										"Reason for Cooperating"
+									],
+									"colStyles": [
+										"col-1 text-center",
+										"col-11"
+									],
+									"rows": [
+										[
+											"1",
+											"The characters begin the campaign captured, whether as prisoners of the Legion of Dusk, captives in a pirate ship's brig, or trapped in jungle snares."
+										],
+										[
+											"2",
+											"The characters are fighting each other when a dinosaur attacks."
+										],
+										[
+											"3",
+											"The characters are trapped together by a cave-in, a sinkhole opening, or some similar disaster."
+										],
+										[
+											"4",
+											"Each character has one piece of a treasure map, or one key of several required to open a treasure vault."
+										],
+										[
+											"5",
+											"A strange dream leads each of the characters to the same destination."
+										],
+										[
+											"6",
+											"The characters are all hopelessly lost in the jungle."
+										],
+										[
+											"7",
+											"Leaders of the characters' factions have ordered them to cooperate on a secret mission."
+										],
+										[
+											"8",
+											"A pirate captain or other villain is a common enemy to all the characters."
+										],
+										[
+											"9",
+											"A magical or natural phenomenon threatens all folk of Ixalan."
+										],
+										[
+											"10",
+											"The characters are all trying to avert the catastrophe of a fullscale war among their peoples."
+										]
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Suggested Ideals",
+									"colLabels": [
+										"d6",
+										"Ideal"
+									],
+									"colStyles": [
+										"col-1 text-center",
+										"col-11"
+									],
+									"rows": [
+										[
+											"1",
+											"{@b Nation.} The invaders must be driven out and the ancient capital of Orazca reclaimed."
+										],
+										[
+											"2",
+											"{@b Glory.} I wish to earn great glory in battle\u2014ideally, by making my foes surrender."
+										],
+										[
+											"3",
+											"{@b Poetry.} Beauty is to be found in all things, from creation to destruction, and it should all be recorded in words."
+										],
+										[
+											"4",
+											"{@b Zeal.} I am devoted to the Threefold Sun and the commands of the priests."
+										],
+										[
+											"5",
+											"{@b History.} I seek to understand the empire's history so I can better chart a course for its future."
+										],
+										[
+											"6",
+											"{@b Peace.} I would like to believe that peace can be forged among the peoples of this land."
+										]
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Suggested Bonds",
+									"colLabels": [
+										"d6",
+										"Bond"
+									],
+									"colStyles": [
+										"col-1 text-center",
+										"col-11"
+									],
+									"rows": [
+										[
+											"1",
+											"I left behind a family (living or dead) when I set out on my journey of exploration."
+										],
+										[
+											"2",
+											"I have ties to the imperial line."
+										],
+										[
+											"3",
+											"I come from a noble family, and have kin who live as hostages in the imperial capital."
+										],
+										[
+											"4",
+											"I have fallen in love with a member of a pirate crew."
+										],
+										[
+											"5",
+											"I discovered an ancient ruin in the jungle, but I keep it a secret."
+										],
+										[
+											"6",
+											"I will one day find the Immortal Sun and restore the empire's ancient glory"
+										]
+									]
+								}
+							],
+							"id": "00b"
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSX/004.webp"
+							},
+							"width": 1278,
+							"height": 830,
+							"title": "Drover of the Mighty",
+							"credit": "Eric Deschamps"
+						},
+						{
+							"type": "inset",
+							"name": "Languages",
+							"entries": [
+								"Generally, in a D&D campaign, it's a good idea to ensure that all the player characters can understand each other. That's why the game maintains the convenient fiction of a Common tongue. But Ixalan is about the clash of four cultures, so you might want to emphasize the differences among those cultures by making the folk of each speak entirely different languages.",
+								"If you go this route, {@language Merfolk|PSX} is the language of the River Heralds and {@language Vampire|PSX} is the language of the Legion of Dusk. The humans of the Sun Empire speak their own language, {@language Itzocan|PSX}, and the humans of the Brazen Coalition speak a different language\u2014a pidgin of Orc, Siren, and a native human language that is similar to {@language Vampire|PSX} (about as closely related as Italian is to Spanish). Orcs, sirens, and goblins also speak this Brazen {@language Coalition pidgin|PSX}.",
+								"You might still wish to admit the existence of a {@language Common Trade Pidgin|PSX|sort of Common}\u2014a trade pidgin used in circumstances where members of different peoples do interact with each other. But such a language is almost impossible to use for discussions of matters of any depth."
+							],
+							"id": "00c"
+						}
+					]
 				},
 				{
 					"type": "section",
@@ -300,7 +340,7 @@
 									"type": "item",
 									"name": "Races:",
 									"entries": [
-										"{@race Merfolk (Ixalan)|PSX}"
+										"{@race Merfolk (Ixalan; Blue)|PSX}, {@race Merfolk (Ixalan; Green)|PSX}"
 									]
 								},
 								{
@@ -326,7 +366,7 @@
 											"name": "{@class Druid}",
 											"page": 7,
 											"entries": [
-												"Many River Herald shamans are druids of the Circle of the Land."
+												"Many River Herald shamans are druids of the {@class Druid||Circle of the Land|Land}."
 											],
 											"id": "010"
 										},
@@ -335,7 +375,7 @@
 											"name": "{@class Fighter}",
 											"page": 7,
 											"entries": [
-												"The warriors among the River Heralds include cunning strategists (often Battle Masters), bold Champions, and Eldritch Knights who fuse arcane magic with their use of weapons."
+												"The warriors among the River Heralds include cunning strategists (often {@class Fighter||Battle Masters|Battle Master}), bold {@class Fighter||Champions|Champion}, and {@class Fighter||Eldritch Knights|Eldritch Knight} who fuse arcane magic with their use of weapons."
 											],
 											"id": "011"
 										},
@@ -344,7 +384,7 @@
 											"name": "{@class Ranger}",
 											"page": 7,
 											"entries": [
-												"Other River Herald warriors wield the druidic magic of the forest in the defense of their lands. Wizard. The magic of wind, mist, illusion, and misdirection is the province of River Herald wizards."
+												"Other River Herald warriors wield the druidic magic of the forest in the defense of their lands."
 											],
 											"id": "012"
 										},
@@ -438,18 +478,20 @@
 									"I will one day find the Immortal Sun and use its power to drive the invaders from our land."
 								]
 							]
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSX/005.webp"
+							},
+							"width": 1275,
+							"height": 750,
+							"title": "Herald of Secret Streams",
+							"credit": "Sara Winters"
 						}
 					],
 					"id": "00d"
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/PSX/003.webp"
-					},
-					"width": 1275,
-					"height": 750
 				},
 				{
 					"type": "section",
@@ -491,7 +533,7 @@
 											"name": "{@class Cleric}",
 											"page": 8,
 											"entries": [
-												"Clerics of the Church of Dusk typically choose the Death, Life, or War domains."
+												"Clerics of the Church of Dusk typically choose the {@class Cleric||Death|Death|DMG}, {@class Cleric||Life|Life}, or {@class Cleric||War|War} domains."
 											],
 											"id": "017"
 										},
@@ -500,7 +542,7 @@
 											"name": "{@class Fighter}",
 											"page": 8,
 											"entries": [
-												"The bulk of the Legion of Dusk is made up of soldiers and knights, who might be Battle Masters or Champions."
+												"The bulk of the Legion of Dusk is made up of soldiers and knights, who might be {@class Fighter||Battle Masters|Battle Master} or {@class Fighter||Champions|Champion}."
 											],
 											"id": "018"
 										},
@@ -509,7 +551,7 @@
 											"name": "{@class Monk}",
 											"page": 8,
 											"entries": [
-												"Certain vampire clerics live under strict rules of fasting, prayer, and martial discipline, and might be considered monks of the Way of the Open Hand or the Way of Shadow. The latter often act as agents for Queen Miralda, who rules the Legion of Dusk with an iron hand."
+												"Certain vampire clerics live under strict rules of fasting, prayer, and martial discipline, and might be considered monks of the {@class Monk||Way of the Open Hand|Open Hand} or the {@class Monk||Way of Shadow|Shadow}. The latter often act as agents for Queen Miralda, who rules the Legion of Dusk with an iron hand."
 											],
 											"id": "019"
 										},
@@ -518,148 +560,150 @@
 											"name": "{@class Paladin}",
 											"page": 8,
 											"entries": [
-												"Vampire paladins of the Legion of Dusk typically swear the Oath of Devotion, though the tenets they follow are appropriate to their particular faith. (If you are using Xanathar's Guide to Everything, the Oath of Conquest is even more appropriate.)",
-												{
-													"type": "table",
-													"caption": "Suggested Ideals",
-													"colLabels": [
-														"d6",
-														"Ideal"
-													],
-													"colStyles": [
-														"col-1 text-center",
-														"col-11"
-													],
-													"rows": [
-														[
-															"1",
-															"{@b Conquest.} The destiny of my people is to rule the world."
-														],
-														[
-															"2",
-															"{@b Order.} The purpose of our conquest is to establish law and order in the lands we rule."
-														],
-														[
-															"3",
-															"{@b Devotion.} Following the tenets of the church is the only way to earn eternal life in the coming age of ever-flowing blood."
-														],
-														[
-															"4",
-															"{@b Slaughter.} I love the feeling of warm blood running down my chin."
-														],
-														[
-															"5",
-															"{@b Glory.} Those who prove their worth in battle will win eternal life."
-														],
-														[
-															"6",
-															"Strength. In life as in war, the stronger force wins."
-														]
-													]
-												},
-												{
-													"type": "table",
-													"caption": "Suggested Bonds",
-													"colLabels": [
-														"d6",
-														"Bond"
-													],
-													"colStyles": [
-														"col-1 text-center",
-														"col-11"
-													],
-													"rows": [
-														[
-															"1",
-															"My family has been feuding with another noble family for seven hundred years."
-														],
-														[
-															"2",
-															"I became friends with a merfolk shaman I captured."
-														],
-														[
-															"3",
-															"I am a knight of the Bloodstained order, and have forsaken all other bonds since the day I slaughtered my own family."
-														],
-														[
-															"4",
-															"I carry a relic of one of the vampire saints known as the Venerables, counting it as my dearest possession."
-														],
-														[
-															"5",
-															"I would do anything for the soldiers in my company."
-														],
-														[
-															"6",
-															"I will one day find the Immortal Sun and use its power to supplant the queen."
-														]
-													]
-												},
-												{
-													"type": "inset",
-													"name": "Tenets of Blood",
-													"page": 8,
-													"entries": [
-														"The vampires of the Legion of Dusk can hardly be considered good, but they do favor law and a sense of honor. The tenets of the vampire paladins' oath reflect that view.",
-														{
-															"type": "entries",
-															"name": "Honesty",
-															"page": 8,
-															"entries": [
-																"Don't demean yourself with lying and cheating. Don't make promises you can't keep."
-															],
-															"id": "01c"
-														},
-														{
-															"type": "entries",
-															"name": "Courage",
-															"page": 8,
-															"entries": [
-																"Never let a foe see your fear."
-															],
-															"id": "01d"
-														},
-														{
-															"type": "entries",
-															"name": "Honor",
-															"page": 8,
-															"entries": [
-																"Treat your peers with fairness and your lessers with exactly what they deserve. Those who recognize your position deserve at least a modicum of respect."
-															],
-															"id": "01e"
-														},
-														{
-															"type": "entries",
-															"name": "Duty",
-															"page": 8,
-															"entries": [
-																"Your actions should serve the aims of the queen and the church, and not bring dishonor to either. Take responsibility for your actions and their consequences, and obey your superiors."
-															],
-															"id": "01f"
-														}
-													],
-													"id": "01b"
-												}
+												"Vampire paladins of the Legion of Dusk typically swear the {@class Paladin||Oath of Devotion|Devotion}, though the tenets they follow are appropriate to their particular faith. (If you are using {@book Xanathar's Guide to Everything|XGE}, the {@class Paladin||Oath of Conquest|Conquest|XGE} is even more appropriate.)"
 											],
 											"id": "01a"
 										}
 									],
 									"id": "016"
+								},
+								{
+									"type": "table",
+									"caption": "Suggested Ideals",
+									"colLabels": [
+										"d6",
+										"Ideal"
+									],
+									"colStyles": [
+										"col-1 text-center",
+										"col-11"
+									],
+									"rows": [
+										[
+											"1",
+											"{@b Conquest.} The destiny of my people is to rule the world."
+										],
+										[
+											"2",
+											"{@b Order.} The purpose of our conquest is to establish law and order in the lands we rule."
+										],
+										[
+											"3",
+											"{@b Devotion.} Following the tenets of the church is the only way to earn eternal life in the coming age of ever-flowing blood."
+										],
+										[
+											"4",
+											"{@b Slaughter.} I love the feeling of warm blood running down my chin."
+										],
+										[
+											"5",
+											"{@b Glory.} Those who prove their worth in battle will win eternal life."
+										],
+										[
+											"6",
+											"{@b Strength.} In life as in war, the stronger force wins."
+										]
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Suggested Bonds",
+									"colLabels": [
+										"d6",
+										"Bond"
+									],
+									"colStyles": [
+										"col-1 text-center",
+										"col-11"
+									],
+									"rows": [
+										[
+											"1",
+											"My family has been feuding with another noble family for seven hundred years."
+										],
+										[
+											"2",
+											"I became friends with a merfolk shaman I captured."
+										],
+										[
+											"3",
+											"I am a knight of the Bloodstained order, and have forsaken all other bonds since the day I slaughtered my own family."
+										],
+										[
+											"4",
+											"I carry a relic of one of the vampire saints known as the Venerables, counting it as my dearest possession."
+										],
+										[
+											"5",
+											"I would do anything for the soldiers in my company."
+										],
+										[
+											"6",
+											"I will one day find the Immortal Sun and use its power to supplant the queen."
+										]
+									]
+								},
+								{
+									"type": "inset",
+									"name": "Tenets of Blood",
+									"page": 8,
+									"entries": [
+										"The vampires of the Legion of Dusk can hardly be considered good, but they do favor law and a sense of honor. The tenets of the vampire paladins' oath reflect that view.",
+										{
+											"type": "entries",
+											"name": "Honesty",
+											"page": 8,
+											"entries": [
+												"Don't demean yourself with lying and cheating. Don't make promises you can't keep."
+											],
+											"id": "01c"
+										},
+										{
+											"type": "entries",
+											"name": "Courage",
+											"page": 8,
+											"entries": [
+												"Never let a foe see your fear."
+											],
+											"id": "01d"
+										},
+										{
+											"type": "entries",
+											"name": "Honor",
+											"page": 8,
+											"entries": [
+												"Treat your peers with fairness and your lessers with exactly what they deserve. Those who recognize your position deserve at least a modicum of respect."
+											],
+											"id": "01e"
+										},
+										{
+											"type": "entries",
+											"name": "Duty",
+											"page": 8,
+											"entries": [
+												"Your actions should serve the aims of the queen and the church, and not bring dishonor to either. Take responsibility for your actions and their consequences, and obey your superiors."
+											],
+											"id": "01f"
+										}
+									],
+									"id": "01b"
 								}
 							],
 							"id": "015"
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSX/006.webp"
+							},
+							"width": 1275,
+							"height": 523,
+							"title": "Sanctum Seeker",
+							"credit": "Volkan Baga"
 						}
 					],
 					"id": "014"
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/PSX/004.webp"
-					},
-					"width": 1275,
-					"height": 523
 				},
 				{
 					"type": "section",
@@ -701,7 +745,7 @@
 											"name": "{@class Bard}",
 											"page": 9,
 											"entries": [
-												"Sirens are frequently bards, and other pirates (especially in Captain Parrish's Deadeye fleet) collect knowledge as members of the College of Lore."
+												"{@race Siren|PSX|Sirens} are frequently bards, and other pirates (especially in Captain Parrish's Deadeye fleet) collect knowledge as members of the {@class Bard||College of Lore|Lore}."
 											],
 											"id": "023"
 										},
@@ -710,7 +754,7 @@
 											"name": "{@class Fighter}",
 											"page": 9,
 											"entries": [
-												"A great many pirates are fighters, including not just Champions and Battlemasters, but also Eldritch Knights who combine martial skill with the magical talents common in the Coalition."
+												"A great many pirates are fighters, including not just {@class Fighter||Champions|Champion} and {@class Fighter||Battlemasters|Battle master}, but also {@class Fighter||Eldritch Knights|Eldritch Knight} who combine martial skill with the magical talents common in the Coalition."
 											],
 											"id": "024"
 										},
@@ -719,7 +763,7 @@
 											"name": "{@class Rogue}",
 											"page": 9,
 											"entries": [
-												"Scoundrels, swashbucklers, thieves, and killers make up the majority of the Brazen Coalition."
+												"Scoundrels, {@class Rogue||swashbucklers|Swashbuckler|XGE}, {@class Rogue||thieves|thief}, and killers make up the majority of the Brazen Coalition."
 											],
 											"id": "025"
 										},
@@ -728,7 +772,7 @@
 											"name": "{@class Warlock}",
 											"page": 9,
 											"entries": [
-												"Of all the peoples of Ixalan, the pirates of the Dire Fleet are most likely to traffic with demons. Many of its sailors become warlocks as a result of striking bargains with the Fiend."
+												"Of all the peoples of Ixalan, the pirates of the Dire Fleet are most likely to traffic with demons. Many of its sailors become warlocks as a result of striking bargains with the {@class Warlock||Fiend|Fiend}."
 											],
 											"id": "026"
 										},
@@ -737,103 +781,105 @@
 											"name": "{@class Wizard}",
 											"page": 9,
 											"entries": [
-												"Orc wizards use fire and necromantic magic, sirens are fond of enchantments, and humans employ a variety of magical talents, including the invention of magic items.",
-												{
-													"type": "table",
-													"caption": "Suggested Ideals",
-													"colLabels": [
-														"d6",
-														"Ideal"
-													],
-													"colStyles": [
-														"col-1 text-center",
-														"col-11"
-													],
-													"rows": [
-														[
-															"1",
-															"{@b Wealth.} Money can buy anything."
-														],
-														[
-															"2",
-															"{@b Freedom.} The sea is the freedom to go anywhere and do anything."
-														],
-														[
-															"3",
-															"{@b Knowledge.} I'm as greedy for secrets and lore as others are for treasure."
-														],
-														[
-															"4",
-															"{@b Pillage.} It's not the having, it's the taking that shows who's strongest."
-														],
-														[
-															"5",
-															"{@b Crew.} I'm committed to my crewmates, not to ideals."
-														],
-														[
-															"6",
-															"{@b Coalition.} I believe we're not just stronger but also better when we join forces in unity."
-														]
-													]
-												},
-												{
-													"type": "table",
-													"caption": "Suggested Bonds",
-													"colLabels": [
-														"d6",
-														"Bond"
-													],
-													"colStyles": [
-														"col-1 text-center",
-														"col-11"
-													],
-													"rows": [
-														[
-															"1",
-															"My captain is dearer to me than any other person or possession."
-														],
-														[
-															"2",
-															"My greatest dream is to return across the sea to the land my ancestors left."
-														],
-														[
-															"3",
-															"I abandoned a child to be fostered in a city somewhere."
-														],
-														[
-															"4",
-															"I was shipwrecked on an island with a vampire, and we became good friends."
-														],
-														[
-															"5",
-															"I buried a great treasure somewhere. . . and lost the map."
-														],
-														[
-															"6",
-															"I have one piece of a treasure map, and no idea where the other pieces are."
-														]
-													]
-												}
+												"{@race Orc (Ixalan)|PSX|Orc} wizards use {@class Wizard||fire|Evocation} and {@class Wizard||necromantic|Necromancy} magic, {@race Siren|PSX|sirens} are fond of {@class Wizard||enchantments|Enchantment}, and {@race Human (Ixalan)|PSX|humans} employ a variety of magical talents, including the invention of magic items."
 											],
 											"id": "027"
 										}
 									],
 									"id": "022"
+								},
+								{
+									"type": "table",
+									"caption": "Suggested Ideals",
+									"colLabels": [
+										"d6",
+										"Ideal"
+									],
+									"colStyles": [
+										"col-1 text-center",
+										"col-11"
+									],
+									"rows": [
+										[
+											"1",
+											"{@b Wealth.} Money can buy anything."
+										],
+										[
+											"2",
+											"{@b Freedom.} The sea is the freedom to go anywhere and do anything."
+										],
+										[
+											"3",
+											"{@b Knowledge.} I'm as greedy for secrets and lore as others are for treasure."
+										],
+										[
+											"4",
+											"{@b Pillage.} It's not the having, it's the taking that shows who's strongest."
+										],
+										[
+											"5",
+											"{@b Crew.} I'm committed to my crewmates, not to ideals."
+										],
+										[
+											"6",
+											"{@b Coalition.} I believe we're not just stronger but also better when we join forces in unity."
+										]
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Suggested Bonds",
+									"colLabels": [
+										"d6",
+										"Bond"
+									],
+									"colStyles": [
+										"col-1 text-center",
+										"col-11"
+									],
+									"rows": [
+										[
+											"1",
+											"My captain is dearer to me than any other person or possession."
+										],
+										[
+											"2",
+											"My greatest dream is to return across the sea to the land my ancestors left."
+										],
+										[
+											"3",
+											"I abandoned a child to be fostered in a city somewhere."
+										],
+										[
+											"4",
+											"I was shipwrecked on an island with a vampire, and we became good friends."
+										],
+										[
+											"5",
+											"I buried a great treasure somewhere... and lost the map."
+										],
+										[
+											"6",
+											"I have one piece of a treasure map, and no idea where the other pieces are."
+										]
+									]
 								}
 							],
 							"id": "021"
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSX/005.webp"
+							},
+							"width": 1276,
+							"height": 693,
+							"title": "Captivating Crew",
+							"credit": "Winona Nelson"
 						}
 					],
 					"id": "020"
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/PSX/005.webp"
-					},
-					"width": 1276,
-					"height": 693
 				}
 			],
 			"id": "001"
@@ -843,15 +889,144 @@
 			"name": "Races of Ixalan",
 			"entries": [
 				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSX/008.webp"
+					},
+					"title": "Sailor of Means",
+					"credit": "Ryan Pancoast"
+				},
+				{
 					"type": "list",
 					"columns": 3,
 					"items": [
 						"{@race Human (Ixalan)|PSX}",
-						"{@race Merfolk (Ixalan)|PSX}",
+						"{@race Merfolk (Ixalan; Blue)|PSX}",
+						"{@race Merfolk (Ixalan; Green)|PSX}",
 						"{@race Vampire (Ixalan)|PSX}",
 						"{@race Orc (Ixalan)|PSX}",
 						"{@race Goblin (Ixalan)|PSX}",
 						"{@race Siren|PSX}"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Vampire Feat",
+					"page": 14,
+					"entries": [
+						"If your campaign uses feats, a vampire character can take this feat to gain the ability of flight shared by Legion of Dusk skymarchers.",
+						{
+							"type": "list",
+							"items": [
+								"{@feat Vampiric Exultation|PSX}"
+							]
+						}
+					]
+				},
+				{
+					"type": "inset",
+					"page": 18,
+					"name": "Planes and Subraces",
+					"entries": [
+						"Three of the races of Ixalan\u2014goblins, merfolk, and vampires\u2014are also found on Zendikar and appear in {@book Plane Shift: Zendikar|PS-Z}. They are presented here as races unto themselves, but in effect, the {@race Vampire (Ixalan)|PSX|vampires of Ixalan} and the {@race Vampire (Zendikar)|PSZ|vampires of Zendikar} can be treated as two subraces of the same vampire race.",
+						"The core merfolk race presented here is the same as {@race Merfolk|PSZ|the one in Plane Shift: Zendikar}, so {@race Merfolk (Ixalan; Green)|PSX|green} and {@race Merfolk (Ixalan; Blue)|PSX|blue merfolk} are simply additional subraces.",
+						"For vampires, these traits presented in Plane Shift: Zendikar are features of the {@race Vampire (Zendikar)|PSZ|Zendikar subraces} of vampires:",
+						{
+							"type": "list",
+							"style": "list-hang",
+							"page": 18,
+							"items": [
+								{
+									"type": "item",
+									"name": "Ability Score Increase",
+									"entries": [
+										"Your Intelligence score increases by 1."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Null Transformation",
+									"entries": [
+										"A humanoid killed with your Bloodthirst ability becomes a {@creature Vampire Null|PSZ|null}."
+									]
+								},
+								"The Ixalan vampire's increase to Wisdom and Feast of Blood trait are features of the {@race Vampire (Ixalan)|PSX|Ixalan subrace}."
+							]
+						},
+						"For goblins, each of the Zendikar subraces gains the following traits:",
+						{
+							"type": "list",
+							"style": "list-hang",
+							"page": 18,
+							"items": [
+								{
+									"type": "item",
+									"name": "Ability Score Increase",
+									"entries": [
+										"Your Constitution score increases by 2."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Grit",
+									"entries": [
+										"You have resistance against acid and fire damage. In addition, when you are wearing no armor, your AC is equal to 11 + your Dexterity bonus."
+									]
+								},
+								"The Ixalan goblin's increase to Dexterity and Agile Climber trait are features of the {@race Goblin (Ixalan)|PSX|Ixalan subrace}."
+							]
+						}
+					]
+				},
+				{
+					"type": "gallery",
+					"images": [
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSX/009.webp"
+							},
+							"title": "Coralhelm Commander",
+							"credit": "Jaime Jones"
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSX/010.webp"
+							},
+							"title": "Kalitas, Bloodchief of Ghet",
+							"credit": "Todd Lockwood"
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSX/011.webp"
+							},
+							"title": "Zada, Hedron Grinder",
+							"credit": "Chris Rallis"
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSX/012.webp"
+							},
+							"title": "Arterial Flow",
+							"credit": "Josh Hass"
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSX/013.webp"
+							},
+							"title": "Goblin Trailblazer",
+							"credit": "Josh Hass"
+						}
 					]
 				}
 			],
@@ -862,15 +1037,48 @@
 			"name": "Land of the Great River",
 			"page": 20,
 			"entries": [
-				"The center of the world is the great continent known as Ixalan, which has given its name to the plane as a whole. A tropical land covered in lush rain forest, soaring mountains, lofty plains, and winding rivers, Ixalan is shaped like a large crescent enfolding a vast inner sea. Its history has been shaped by the interaction between the Sun Empire and the River Heralds. Both peoples lived in balance while the Sun Empire maintained its stewardship of the Immortal Sun. But that balance was upset when the emperor abused the artifact's power. Now the Sun Empire has been pushed to the coastal lands of Ixalan, while the River Heralds dominate the interior.",
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "book/PSX/012.webp"
+						"path": "book/PSX/014.webp"
 					},
-					"width": 1613,
-					"height": 1075
+					"title": "New Horizons",
+					"credit": "Noah Bradley"
+				},
+				{
+					"type": "section",
+					"name": "Geography of Ixalan",
+					"page": 20,
+					"entries": [
+						"The center of the world is the great continent known as Ixalan, which has given its name to the plane as a whole. A tropical land covered in lush rain forest, soaring mountains, lofty plains, and winding rivers, Ixalan is shaped like a large crescent enfolding a vast inner sea. Its history has been shaped by the interaction between the Sun Empire and the River Heralds. Both peoples lived in balance while the Sun Empire maintained its stewardship of the Immortal Sun. But that balance was upset when the emperor abused the artifact's power. Now the Sun Empire has been pushed to the coastal lands of Ixalan, while the River Heralds dominate the interior.",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSX/015.webp"
+							},
+							"width": 1613,
+							"height": 1075,
+							"title": "Island",
+							"credit": "Christine Choi"
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSX/016.webp"
+							},
+							"width": 1613,
+							"height": 1075,
+							"title": "Ixalan",
+							"credit": "Jared Blando",
+							"imageType": "map",
+							"grid": {
+								"type": "none"
+							}
+						}
+					]
 				},
 				{
 					"type": "section",
@@ -883,19 +1091,43 @@
 						"Techepec was a retreat for the emperor and the imperial family, a place where they could escape the trials of life at court for a time. In fact, Emperor Huatzan II used Techepec as a sort of capital-in-exile during a brief period of insurrection, when another pretender sat on the throne in Orazca.",
 						"Azcanta, now called the Sunken Ruin, was a thriving population center until a prolonged conflict with the River Heralds caused it to sink into the waters of the Inner Sea. Its buildings are still largely intact far beneath the waves, and some pirates now seek the city's treasures.",
 						"A few lone shrines and temples dot the jungle as well, the last remnants of cities whose wooden buildings have long since rotted away. These include Tonalixco, the temple of the eastern sun, which marked the western edge of the empire in the fortress-city of Tanaztac. Icalaquiampa, the temple of sunset, was the focus of a religious sect that tried to replace the emperor with a high priest and establish theocratic rule.",
-						"Aclazotz was a temple dedicated to a bat god of the night, opposed to the Threefold Sun and the empire devoted to the sun. The temple makes an appearance in \"X Marks the Spot,\" a special D&D Ixalan adventure created for Extra Life 2017, but there's much more to this legendary site. Aclazotz was partially inspired by the classic D&D adventure The Hidden Shrine of Tamoachan, which appears in updated form in Tales from the Yawning Portal. If you want to more fully explore the ruins, you might use that adventure as a starting point. Perhaps this is where Elenda, the knight who brought the rites of vampirism to the Legion of Dusk, underwent her own transformation.",
-						"Of course, the grandest ruin of the ancient Sun Empire is Orazca, the glorious golden city where the Immortal Sun still lies hidden. It was the empire's capital for many centuries, and tribute from across the breadth of Ixalan was brought to adorn its palaces and temples. Gold covers nearly every building in the city, and jade inlays reflect the influence of the ancient merfolk who shared Orazca with the humans of the empire. But the world has since closed up over the golden city, hiding its secrets and its treasures from all who seek it. Three golden spires are now the only visible signs of Orazca where they rise above the forest floor."
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSX/017.webp"
+							},
+							"width": 1276,
+							"height": 923,
+							"title": "Primal Wellspring",
+							"credit": "John Avon"
+						},
+						"Aclazotz was a temple dedicated to a bat god of the night, opposed to the Threefold Sun and the empire devoted to the sun. The temple makes an appearance in \"{@adventure X Marks the Spot|XMTS}\", a special D&D Ixalan adventure created for {@link Extra Life|https://www.extra-life.org/} 2017, but there's much more to this legendary site. Aclazotz was partially inspired by the classic D&D adventure {@adventure The Hidden Shrine of Tamoachan|TftYP-THSoT}, which appears in updated form in {@i Tales from the Yawning Portal}. If you want to more fully explore the ruins, you might use that adventure as a starting point. Perhaps this is where Elenda, the knight who brought the rites of vampirism to the Legion of Dusk, underwent her own transformation.",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSX/018.webp"
+							},
+							"width": 1276,
+							"height": 923,
+							"title": "Temple of Aclazotz",
+							"credit": "Daarken"
+						},
+						"Of course, the grandest ruin of the ancient Sun Empire is Orazca, the glorious golden city where the Immortal Sun still lies hidden. It was the empire's capital for many centuries, and tribute from across the breadth of Ixalan was brought to adorn its palaces and temples. Gold covers nearly every building in the city, and jade inlays reflect the influence of the ancient merfolk who shared Orazca with the humans of the empire. But the world has since closed up over the golden city, hiding its secrets and its treasures from all who seek it. Three golden spires are now the only visible signs of Orazca where they rise above the forest floor.",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSX/019.webp"
+							},
+							"width": 1276,
+							"height": 923,
+							"title": "Spires of Orazca",
+							"credit": "Yeong-Hao Han"
+						}
 					],
 					"id": "02a"
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/PSX/013.webp"
-					},
-					"width": 1276,
-					"height": 923
 				},
 				{
 					"type": "section",
@@ -915,15 +1147,56 @@
 							]
 						},
 						{
-							"type": "image",
-							"href": {
-								"type": "internal",
-								"path": "book/PSX/015.webp"
-							},
-							"width": 630,
-							"height": 698
+							"type": "gallery",
+							"images": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSX/020.webp"
+									},
+									"title": "Treasure",
+									"credit": "Florian de Gesincourt"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSX/021.webp"
+									},
+									"title": "Treasure",
+									"credit": "Jason Felix"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSX/022.webp"
+									},
+									"title": "Treasure",
+									"credit": "Milivoj Ceran"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSX/023.webp"
+									},
+									"title": "Treasure",
+									"credit": "Zoltan Boros"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSX/024.webp"
+									},
+									"title": "Treasure",
+									"credit": "Cliff Childs"
+								}
+							]
 						},
-						"When adventurers discover magic items as treasure, you can use {@table Who Created It or Was Intended to Use It?|PSX|this table} in place of the one in chapter 7 of the Dungeon Master's Guide to determine the character of any particular magic item."
+						"When adventurers discover magic items as treasure, you can use {@table Who Created It or Was Intended to Use It?|PSX|this table} in place of {@table Special Features; Who Created It or Was Intended to Use It?|DMG|the one in chapter 7 of the Dungeon Master's Guide} to determine the character of any particular magic item."
 					],
 					"id": "02b"
 				}
@@ -935,8 +1208,17 @@
 			"name": "An Ixalan Bestiary",
 			"entries": [
 				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSX/025.webp"
+					},
+					"title": "Charging Monstrosaur",
+					"credit": "Zack Stella"
+				},
+				{
 					"type": "list",
-					"columns": 2,
+					"columns": 3,
 					"items": [
 						"{@creature Aegisaur|PSX}",
 						"{@creature Aerosaur (Large)|PSX}",
@@ -949,7 +1231,6 @@
 						"{@creature Ceratops|PSX}",
 						"{@creature Chupacabra|PSX}",
 						"{@creature Coatl|PSX}",
-						"{@creature Deinonychus|PSX}",
 						"{@creature Demon|PSX}",
 						"{@creature Dryad|PSX}",
 						"{@creature Earth Totem Elemental|PSX}",
@@ -984,455 +1265,359 @@
 						"{@creature Trilobite|PSX}",
 						"{@creature Trilobite (Giant)|PSX}",
 						"{@creature Tyrant|PSX}",
-						"{@creature Velociraptor|PSX}",
 						"{@creature Water Totem Elemental|PSX}"
 					]
 				},
 				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Scales, Spikes, and Hammers",
+							"page": 28,
+							"entries": [
+								"Other herbivores rely on speed, stealth, or numbers to aid their chances of survival. The {@creature hadrosaurus|VGM} in {@book Volo's Guide to Monsters|VGM} is a good example of such creatures."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "The Flesh-Eaters",
+							"page": 30,
+							"entries": [
+								"The most feared dinosaurs are the aggressive bipedal predators that hunt other dinosaurs\u2014none of which are averse to feeding on humanoids when they can. Despite their ferocity, flesh-eaters make excellent mounts, since they do not balk or shy away from combat. These dinosaurs include a huge variety of raptors, ranging from dog-sized creatures that hunt in packs to monsters large enough to carry an armored knight into battle. {@book Volo's Guide to Monsters|VGM} includes the {@creature deinonychus|VGM} and the {@creature velociraptor|VGM} to represent these dinosaurs."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Life in the Forest",
+							"page": 39,
+							"entries": [
+								"The river and rain forest boast a teeming multitude of species, which make their homes everywhere from the canopy to the depths of the water. Animals live and feed in every layer of the forest, from the tops of the tallest emergent trees to the ferns, leaves, and roots reaching deep into the soil. And certain plants are just as active at hunting prey as predatory animals are.",
+								"{@creature bat|MM|Bats} are common sights in rocky caves and jungle trees. They are considered enemies of the sun and closely associated with demons, even though most varieties are harmless. {@creature Giant bat|MM|Giant bats} are a more significant threat.",
+								"The forest teems with all manner of insects, {@b spiders}, and other arthropods. Mosquitoes breed in stagnant water and swarm around any animal with blood. Centipedes, millipedes, roaches, and beetles crawl through the detritus and humus on the forest floor. Wasps, dragonflies, {@creature scorpion|MM|scorpions}, ants, and beetles are everywhere, ranging in size from diminutive to gigantic. {@creature swarm of insects|MM|Swarms of insects} pose a significant threat to adventurers, as do {@creature giant centipede|MM|giant centipedes}, {@creature giant fire beetle|MM|giant fire beetles}, {@creature giant spider|MM|giant spiders}, {@creature giant wasp|MM|giant wasps}, and {@creature giant wolf spider|MM|giant wolf spiders}.",
+								"Many predatory plants attract food by producing smells redolent of food\u2014whether the odor of sweet nectar or the stench of decaying meat. They then close jaw-like leaves around their prey or capture them in sticky pools of digestive juice. A few plants are even more active, lunging up from the forest canopy to grab flying dinosaurs in woody claws or tangle them in vines. Others pull up their roots and creep across the forest floor in search of good hunting grounds. {@creature Awakened shrub|MM|Awakened shrubs}, {@creature awakened tree|MM|awakened trees}, and various forms of {@b fungi} can represent many of these plants."
+							]
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSX/026.webp"
+							},
+							"title": "Skittering Heartstopper",
+							"credit": "Aaron Miller"
+						},
+						{
+							"type": "entries",
+							"name": "Life of the Waters",
+							"page": 40,
+							"entries": [
+								"The rivers and seas of Ixalan teem with life as plentiful\u2014and as dangerous\u2014as that of the forests.",
+								"To ships on the Stormwreck Sea, storms are only the most prominent and visible danger. Bone-plated fish, squid, sea serpents, turtles, and whales can grow large enough to capsize a ship, pull it underwater, or smash it to flinders. The largest sharks ({@creature giant shark|MM|giant sharks}) are the most feared, but even smaller sharks ({@creature hunter shark|MM|hunter sharks}) can be deadly alone\u2014and are more so in schools. Their taste for blood makes them a fearsome threat to anyone at sea, especially those forced to walk the plank of a pirate ship.",
+								"The Inner Sea is less prone to storms but more crowded with reefs, rocks, and narrow straits. It is home to similar monstrous swimmers, with the addition of large saltwater {@creature crocodile|MM|crocodiles}.",
+								"The waters of the Great River and all its tributaries are home to fish that serve as one of the most important food sources for other animals in the forest. These include large predatory fish, as well as churning swarms of small biting fish such as {@creature piranha|PSX|piranhas} (equivalent to {@creature quipper|MM|quippers} and {@creature swarm of quippers|MM|swarms of quippers}). Enormous {@creature crocodile|MM|crocodiles} lurk in the waters and bask on the riverbanks.",
+								"On the beaches and banks of the rivers and seas, crabs scuttle across the sand and birds wade in the shallow water. Trilobites are among the most common shore-dwellers, including predatory varieties as well as scavengers and filter-feeders consuming scraps they find in the sand. Use the {@creature crab|MM} or {@creature giant crab|MM} statistics in the {@book Monster Manual|MM} for {@creature trilobite|PSX|trilobites}."
+							]
+						}
+					]
+				}
+			],
+			"id": "02c"
+		},
+		{
+			"type": "section",
+			"name": "Appendix: The Colors of Magic",
+			"page": 41,
+			"entries": [
+				"All the planes of Magic's Multiverse are suffused with mana\u2014the energy that fuels magic in all its forms. Mana is intricately linked with the physical world, and different types of terrain produce different \"colors\" of mana. Most mages specialize in the use of one or perhaps two colors of mana, and in the particular types of magical effects that mana can create.",
+				{
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "book/PSX/016.webp"
+						"path": "book/PSX/027.webp"
 					},
-					"width": 628,
-					"height": 609
+					"title": "Unclaimed Territory",
+					"credit": "Dimitar"
 				},
+				"Color is a fundamental organizing principle of the Multiverse, closely linked with everything from physical geography to human personality. The following are just some of the correlations between color and other aspects of existence:",
 				{
-					"type": "section",
-					"name": "Appendix: The Colors of Magic",
-					"page": 41,
-					"entries": [
-						"All the planes of Magic's Multiverse are suffused with mana\u2014the energy that fuels magic in all its forms. Mana is intricately linked with the physical world, and different types of terrain produce different \"colors\" of mana. Most mages specialize in the use of one or perhaps two colors of mana, and in the particular types of magical effects that mana can create.",
-						"Color is a fundamental organizing principle of the Multiverse, closely linked with everything from physical geography to human personality. The following are just some of the correlations between color and other aspects of existence:",
+					"type": "list",
+					"items": [
 						{
-							"type": "list",
-							"items": [
-								{
-									"type": "item",
-									"name": "Lands:",
-									"entry": "Different types of terrain generate mana of different colors. For example, mountains produce red mana,while plains produce white mana."
-								},
-								{
-									"type": "item",
-									"name": "Philosophical Principles:",
-									"entry": "Each color is associated with a set of ideals, values, and principles. White is connected with protection and order, and green with life and nature."
-								},
-								{
-									"type": "item",
-									"name": "Magical Effects:",
-									"entry": "Different colors of mana are used to power different kinds of spells. Spells of fire, lightning, and speed draw on red mana, while spells of water, ice, and the mind use blue mana."
-								},
-								{
-									"type": "item",
-									"name": "Races and Creatures:",
-									"entry": "Humans are exceptional, in that they don't have a particular aptitude or affinity for one color of mana. For other races, and even for nonsentient creatures, the connection is much stronger. Elves, for example, are typically green aligned. They use nature magic, and they value things like balance, stability, and interdependence. Hydras are also green aligned, though they don't use magic and they don't have values\u2014even as they can be seen to embody those values. So if you wanted to summon a hydra, you'd use a green spell to do it."
-								},
-								{
-									"type": "item",
-									"name": "Metaphysical Essence:",
-									"entry": "Sometimes magic or even powerful emotions can change the basic nature of people or creatures in a way that alters their color alignment. A vile curse might change someone from green aligned to black aligned (or both green and black aligned). A terrible loss that spurs someone to vengeance might add red to the person's color alignment\u2014temporarily or even permanently."
-								},
-								{
-									"type": "item",
-									"name": "Personality Traits:",
-									"entry": "Different colors of mana are associated with different qualities of personality. It might be that a person who is emotionally driven, creative, and energetic is naturally drawn to the use of red mana; or perhaps using red mana brings out those qualities in a person. Most likely, the effect runs both ways."
-								}
-							]
+							"type": "item",
+							"name": "Lands:",
+							"entry": "Different types of terrain generate mana of different colors. For example, mountains produce red mana,while plains produce white mana."
 						},
-						"A character's or creature's \"color alignment\" is a sort of shorthand that sketches out its personality, alignment, and power suite\u2014the kinds of effects that it creates with its magic or through its behavior. This section goes over the traits of each of the five colors, and offers suggestions for ways they might influence a D&D character.",
+						{
+							"type": "item",
+							"name": "Philosophical Principles:",
+							"entry": "Each color is associated with a set of ideals, values, and principles. White is connected with protection and order, and green with life and nature."
+						},
+						{
+							"type": "item",
+							"name": "Magical Effects:",
+							"entry": "Different colors of mana are used to power different kinds of spells. Spells of fire, lightning, and speed draw on red mana, while spells of water, ice, and the mind use blue mana."
+						},
+						{
+							"type": "item",
+							"name": "Races and Creatures:",
+							"entry": "Humans are exceptional, in that they don't have a particular aptitude or affinity for one color of mana. For other races, and even for nonsentient creatures, the connection is much stronger. Elves, for example, are typically green aligned. They use nature magic, and they value things like balance, stability, and interdependence. Hydras are also green aligned, though they don't use magic and they don't have values\u2014even as they can be seen to embody those values. So if you wanted to summon a hydra, you'd use a green spell to do it."
+						},
+						{
+							"type": "item",
+							"name": "Metaphysical Essence:",
+							"entry": "Sometimes magic or even powerful emotions can change the basic nature of people or creatures in a way that alters their color alignment. A vile curse might change someone from green aligned to black aligned (or both green and black aligned). A terrible loss that spurs someone to vengeance might add red to the person's color alignment\u2014temporarily or even permanently."
+						},
+						{
+							"type": "item",
+							"name": "Personality Traits:",
+							"entry": "Different colors of mana are associated with different qualities of personality. It might be that a person who is emotionally driven, creative, and energetic is naturally drawn to the use of red mana; or perhaps using red mana brings out those qualities in a person. Most likely, the effect runs both ways."
+						}
+					]
+				},
+				"A character's or creature's \"color alignment\" is a sort of shorthand that sketches out its personality, alignment, and power suite\u2014the kinds of effects that it creates with its magic or through its behavior. This section goes over the traits of each of the five colors, and offers suggestions for ways they might influence a D&D character.",
+				{
+					"type": "entries",
+					"entries": [
 						{
 							"type": "entries",
 							"entries": [
 								{
 									"type": "entries",
+									"name": "Multiple Colors",
+									"page": 41,
 									"entries": [
-										{
-											"type": "entries",
-											"name": "Multiple Colors",
-											"page": 41,
-											"entries": [
-												"Many mages, especially Planeswalkers, routinely draw on two or more colors of mana. In some worlds, color pairs or triads have such a strong identity that they are manifested in the world. The guilds of Ravnica, for example, are each aligned to a specific pair of mana colors, and each of the clans of Tarkir used three colors. And some lands produce mana of more than one color, so that a highland lake might produce both red and blue mana. Mana pairs similarly suggest certain principles, create certain magical effects, and favor certain personality traits.",
-												"Based on the color wheel, it's possible to speak of two colors of mana as either \"allied\" (adjacent to each other on the wheel) or \"enemy\" (separated by another color). White's allied colors are green and blue; its enemy colors are red and black. That doesn't mean that creatures associated with allied colors are necessarily on the same side of any conflict, or that creatures associated with enemy colors are actually enemies. But if conflict does arise\u2014for example, in a party of adventurers\u2014it's more likely to arise between a whitealigned and a red-aligned character than between a white-aligned and a blue-aligned one. That's the natural result of the different personalities and principles associated with each color. A white character might put a lot of stress on the value of law and order, and of working together toward a common goal. A red-aligned character values freedom and individuality."
-											],
-											"id": "030"
-										},
-										{
-											"type": "image",
-											"href": {
-												"type": "internal",
-												"path": "book/PSX/016a.webp"
-											},
-											"width": 742,
-											"height": 742
-										},
-										{
-											"type": "entries",
-											"name": "Characters and Colors",
-											"page": 41,
-											"entries": [
-												"In the language of the D&D game, the colors of mana are a means of categorizing the types of magic that suffuse all existence. When a spellcaster draws upon or manipulates the Weave (see chapter 10 in the Player's Handbook), part of that process involves tugging on a strand that connects to a land that produces mana of the desired color. Whether consciously or unconsciously, a druid casting barkskin tugs on a strand of the Weave connected to a forest in the world, drawing out the green mana needed to cast the spell.",
-												"There's no rules weight to this material; it's simply about roleplaying your character. If you're playing a cleric, you might find it helpful to imagine your character drawing on white mana, and you'll find that a lot of your spells could indeed be white spells in Magic. You might also find inspiration in the personality traits and ideals described in the white mana entry. But there's no rule preventing your character from using spells like divination (a blue spell), stone shape (a red spell), create undead (a black spell), or insect plague (a green spell). On the other hand, you might find that thinking about your cleric as a white-aligned caster shapes your choice of spells as well as your personality."
-											],
-											"id": "031"
-										}
+										"Many mages, especially Planeswalkers, routinely draw on two or more colors of mana. In some worlds, color pairs or triads have such a strong identity that they are manifested in the world. The guilds of Ravnica, for example, are each aligned to a specific pair of mana colors, and each of the clans of Tarkir used three colors. And some lands produce mana of more than one color, so that a highland lake might produce both red and blue mana. Mana pairs similarly suggest certain principles, create certain magical effects, and favor certain personality traits.",
+										"Based on the color wheel, it's possible to speak of two colors of mana as either \"allied\" (adjacent to each other on the wheel) or \"enemy\" (separated by another color). White's allied colors are green and blue; its enemy colors are red and black. That doesn't mean that creatures associated with allied colors are necessarily on the same side of any conflict, or that creatures associated with enemy colors are actually enemies. But if conflict does arise\u2014for example, in a party of adventurers\u2014it's more likely to arise between a whitealigned and a red-aligned character than between a white-aligned and a blue-aligned one. That's the natural result of the different personalities and principles associated with each color. A white character might put a lot of stress on the value of law and order, and of working together toward a common goal. A red-aligned character values freedom and individuality."
 									],
-									"id": "02f"
+									"id": "030"
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSX/028.webp"
+									}
 								},
 								{
 									"type": "entries",
-									"name": "White",
+									"name": "Characters and Colors",
+									"page": 41,
+									"entries": [
+										"In the language of the D&D game, the colors of mana are a means of categorizing the types of magic that suffuse all existence. When a spellcaster draws upon or manipulates the Weave (see {@book chapter 10 in the Player's Handbook|PHB|10}), part of that process involves tugging on a strand that connects to a land that produces mana of the desired color. Whether consciously or unconsciously, a druid casting {@spell barkskin} tugs on a strand of the Weave connected to a forest in the world, drawing out the green mana needed to cast the spell.",
+										"There's no rules weight to this material; it's simply about roleplaying your character. If you're playing a cleric, you might find it helpful to imagine your character drawing on white mana, and you'll find that a lot of your spells could indeed be white spells in Magic. You might also find inspiration in the personality traits and ideals described in the white mana entry. But there's no rule preventing your character from using spells like {@spell divination} (a blue spell), {@spell stone shape} (a red spell), {@spell create undead} (a black spell), or {@spell insect plague} (a green spell). On the other hand, you might find that thinking about your cleric as a white-aligned caster shapes your choice of spells as well as your personality."
+									],
+									"id": "031"
+								}
+							],
+							"id": "02f"
+						},
+						{
+							"type": "entries",
+							"name": "White",
+							"page": 43,
+							"entries": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSX/029.webp"
+									},
+									"title": "A steadfast temple guardian, devoted to her duty of protecting the people and places in her charge, exemplifies the ideals of white.",
+									"credit": "Tocatli Honor Guard by Sara Winters"
+								},
+								"Order. Protection. Community. White draws strength from groups working together, standing firm against the chaos that would divide them. The whole is greater than the sum of its parts, and safety is found in numbers. You can read a lot more about white {@link in this article|https://magic.wizards.com/en/articles/archive/making-magic/great-white-way-revisited-2015-07-13} by Mark Rosewater, Magic's head designer.",
+								{
+									"type": "list",
+									"style": "list-hang-notitle",
+									"items": [
+										{
+											"type": "item",
+											"name": "Alignment:",
+											"entry": "Lawful (any) or good (any)"
+										},
+										{
+											"type": "item",
+											"name": "Power Suite:",
+											"entry": "Healing, protecting, binding, bolstering"
+										},
+										{
+											"type": "item",
+											"name": "Suggested Races:",
+											"entry": "{@race Human (Ixalan)|PSX|Human}, {@race kor|PSZ}, {@race dwarf}, {@race aven|PSA}, {@race vampire (Ixalan)|PSX}"
+										},
+										{
+											"type": "item",
+											"name": "Suggested Classes:",
+											"entry": "{@class Cleric}, {@class paladin}, {@class fighter}"
+										},
+										{
+											"type": "item",
+											"name": "Suggested Backgrounds:",
+											"entry": "{@background Acolyte}, {@background folk hero}, {@background noble}, {@background soldier}"
+										}
+									]
+								},
+								{
+									"type": "entries",
 									"page": 43,
 									"entries": [
 										{
-											"type": "image",
-											"href": {
-												"type": "internal",
-												"path": "book/PSX/017.webp"
-											},
-											"width": 1275,
-											"height": 764
-										},
-										"Order. Protection. Community. White draws strength from groups working together, standing firm against the chaos that would divide them. The whole is greater than the sum of its parts, and safety is found in numbers. You can read a lot more about white {@link in this article|https://magic.wizards.com/en/articles/archive/making-magic/great-white-way-revisited-2015-07-13} by Mark Rosewater, Magic's head designer.",
-										{
-											"type": "list",
-											"style": "list-hang-notitle",
-											"items": [
-												{
-													"type": "item",
-													"name": "Alignment:",
-													"entry": "Lawful (any) or good (any)"
-												},
-												{
-													"type": "item",
-													"name": "Power Suite:",
-													"entry": "Healing, protecting, binding, bolstering"
-												},
-												{
-													"type": "item",
-													"name": "Suggested Races:",
-													"entry": "{@race Human}, {@race kor|PSZ}, {@race dwarf}, {@race aven|PSA}, {@race vampire (Ixalan)|PSX}"
-												},
-												{
-													"type": "item",
-													"name": "Suggested Classes:",
-													"entry": "{@class Cleric}, {@class paladin}, {@class fighter}"
-												},
-												{
-													"type": "item",
-													"name": "Suggested Backgrounds:",
-													"entry": "{@background Acolyte}, {@background folk hero}, {@background noble}, {@background soldier}"
-												}
+											"type": "table",
+											"caption": "White Personality Traits",
+											"colLabels": [
+												"d8",
+												"Personality Trait"
+											],
+											"colStyles": [
+												"col-1 text-center",
+												"col-11"
+											],
+											"rows": [
+												[
+													"1",
+													"I can find common ground with even the fiercest enemies, empathizing with them and always working toward peace."
+												],
+												[
+													"2",
+													"I would rather make a new friend than a new enemy."
+												],
+												[
+													"3",
+													"If someone is in trouble, I'm always ready to lend aid."
+												],
+												[
+													"4",
+													"I get overly upset when people break even minor rules."
+												],
+												[
+													"5",
+													"I am honest to the point of being blunt or rude."
+												],
+												[
+													"6",
+													"I go into every situation with at least one backup plan, but I can get lost when my plans go awry."
+												],
+												[
+													"7",
+													"I have no patience for selfish or greedy people."
+												],
+												[
+													"8",
+													"I like my environment to be well ordered and clean."
+												]
 											]
 										},
 										{
-											"type": "entries",
-											"page": 43,
-											"entries": [
-												{
-													"type": "table",
-													"caption": "White Personality Traits",
-													"colLabels": [
-														"d8",
-														"Personality Trait"
-													],
-													"colStyles": [
-														"col-1 text-center",
-														"col-11"
-													],
-													"rows": [
-														[
-															"1",
-															"I can find common ground with even the fiercest enemies, empathizing with them and always working toward peace."
-														],
-														[
-															"2",
-															"I would rather make a new friend than a new enemy."
-														],
-														[
-															"3",
-															"If someone is in trouble, I'm always ready to lend aid."
-														],
-														[
-															"4",
-															"I get overly upset when people break even minor rules."
-														],
-														[
-															"5",
-															"I am honest to the point of being blunt or rude."
-														],
-														[
-															"6",
-															"I go into every situation with at least one backup plan, but I can get lost when my plans go awry."
-														],
-														[
-															"7",
-															"I have no patience for selfish or greedy people."
-														],
-														[
-															"8",
-															"I like my environment to be well ordered and clean."
-														]
-													]
-												},
-												{
-													"type": "table",
-													"caption": "White Ideals",
-													"colLabels": [
-														"d6",
-														"Ideal"
-													],
-													"colStyles": [
-														"col-1 text-center",
-														"col-11"
-													],
-													"rows": [
-														[
-															"1",
-															"{@b Harmony.} I long for a world in which everyone gets along."
-														],
-														[
-															"2",
-															"{@b Community.} It is the duty of all civilized people to strengthen the bonds of community and the security of civilization."
-														],
-														[
-															"3",
-															"{@b Peace.} It is each person's responsibility to make the most happiness for the whole community."
-														],
-														[
-															"4",
-															"{@b Solidarity.} Working together, we are stronger than any of us alone."
-														],
-														[
-															"5",
-															"{@b Law and Order.} We all must obey those in authority and follow laws, or society will devolve into chaos."
-														],
-														[
-															"6",
-															"{@b Honor.} If I dishonor myself, I undermine the foundation of my community."
-														]
-													]
-												}
+											"type": "table",
+											"caption": "White Ideals",
+											"colLabels": [
+												"d6",
+												"Ideal"
 											],
-											"id": "033"
-										},
-										{
-											"type": "entries",
-											"name": "Color Combinations",
-											"page": 43,
-											"entries": [
-												"Adding blue to white steers it toward lawful neutral, creating archetypes such as the devout monk or the honorable paladin.",
-												"Adding black to white steers it toward lawful evil, exemplified by oppressive clerics and fallen paladins.",
-												"Adding red to white makes it zealously lawful good, as in the case of a fervent paladin.",
-												"Adding green to white steers it toward neutral good and gentler notions of community, embodied in characters such as healing druids, bards, or kindly rangers."
+											"colStyles": [
+												"col-1 text-center",
+												"col-11"
 											],
-											"id": "034"
+											"rows": [
+												[
+													"1",
+													"{@b Harmony.} I long for a world in which everyone gets along."
+												],
+												[
+													"2",
+													"{@b Community.} It is the duty of all civilized people to strengthen the bonds of community and the security of civilization."
+												],
+												[
+													"3",
+													"{@b Peace.} It is each person's responsibility to make the most happiness for the whole community."
+												],
+												[
+													"4",
+													"{@b Solidarity.} Working together, we are stronger than any of us alone."
+												],
+												[
+													"5",
+													"{@b Law and Order.} We all must obey those in authority and follow laws, or society will devolve into chaos."
+												],
+												[
+													"6",
+													"{@b Honor.} If I dishonor myself, I undermine the foundation of my community."
+												]
+											]
 										}
 									],
-									"id": "032"
+									"id": "033"
 								},
 								{
 									"type": "entries",
-									"name": "Blue",
+									"name": "Color Combinations",
+									"page": 43,
+									"entries": [
+										"Adding blue to white steers it toward lawful neutral, creating archetypes such as the devout monk or the honorable paladin.",
+										"Adding black to white steers it toward lawful evil, exemplified by oppressive clerics and fallen paladins.",
+										"Adding red to white makes it zealously lawful good, as in the case of a fervent paladin.",
+										"Adding green to white steers it toward neutral good and gentler notions of community, embodied in characters such as healing druids, bards, or kindly rangers."
+									],
+									"id": "034"
+								}
+							],
+							"id": "032"
+						},
+						{
+							"type": "entries",
+							"name": "Blue",
+							"page": 44,
+							"entries": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSX/030.webp"
+									},
+									"title": "Merfolk are often blue aligned, combining an affinity with the wind and water with a natural cunning and a drive to understand the world.",
+									"credit": "Wind Strider by Magali Villeneuve"
+								},
+								"Wisdom. Contemplation. Manipulation. Blue's strength is the power of the mind\u2014its limitless ability to imagine, invent, strategize, and deceive. Knowledge is power, and victory goes to the smarter foe.",
+								"More information about blue's philosophies and powers can be found {@link here|https://magic.wizards.com/en/articles/archive/making-magic/true-blue-revisited-2015-07-20}.",
+								{
+									"type": "list",
+									"style": "list-hang-notitle",
+									"items": [
+										{
+											"type": "item",
+											"name": "Alignment:",
+											"entry": "Neutral (any)"
+										},
+										{
+											"type": "item",
+											"name": "Power Suite:",
+											"entry": "Control, the mind, counterspells, illusion, transformation, time, wind, water, and ice"
+										},
+										{
+											"type": "item",
+											"name": "Suggested Races:",
+											"entry": "{@race Human (Ixalan)|PSX|Human}, {@race Merfolk|PSZ|merfolk}, {@race vedalken|GGR}, {@race aven|PSA}, {@race naga|PSA}, {@race siren|PSX}"
+										},
+										{
+											"type": "item",
+											"name": "Suggested Classes:",
+											"entry": "{@class Wizard}, {@class monk}, {@class rogue}"
+										},
+										{
+											"type": "item",
+											"name": "Suggested Backgrounds:",
+											"entry": "{@background Charlatan}, {@background hermit}, {@background sage}"
+										}
+									]
+								},
+								{
+									"type": "entries",
 									"page": 44,
 									"entries": [
 										{
-											"type": "image",
-											"href": {
-												"type": "internal",
-												"path": "book/PSX/018.webp"
-											},
-											"width": 1275,
-											"height": 680
-										},
-										"Wisdom. Contemplation. Manipulation. Blue's strength is the power of the mind\u2014its limitless ability to imagine, invent, strategize, and deceive. Knowledge is power, and victory goes to the smarter foe.",
-										"More information about blue's philosophies and powers can be found {@link here|https://magic.wizards.com/en/articles/archive/making-magic/true-blue-revisited-2015-07-20}.",
-										{
-											"type": "list",
-											"style": "list-hang-notitle",
-											"items": [
-												{
-													"type": "item",
-													"name": "Alignment:",
-													"entry": "Neutral (any)"
-												},
-												{
-													"type": "item",
-													"name": "Power Suite:",
-													"entry": "Control, the mind, counterspells, illusion, transformation, time, wind, water, and ice"
-												},
-												{
-													"type": "item",
-													"name": "Suggested Races:",
-													"entry": "{@race Human}, {@race Merfolk (Ixalan)|PSX|merfolk}, {@race vedalken|GGR}, {@race aven|PSA}, {@race naga|PSA}, {@race siren|PSX}"
-												},
-												{
-													"type": "item",
-													"name": "Suggested Classes:",
-													"entry": "{@class Wizard}, {@class monk}, {@class rogue}"
-												},
-												{
-													"type": "item",
-													"name": "Suggested Backgrounds:",
-													"entry": "{@background Charlatan}, {@background hermit}, {@background sage}"
-												}
-											]
-										},
-										{
-											"type": "entries",
-											"page": 44,
-											"entries": [
-												{
-													"type": "table",
-													"caption": "Blue Personality Traits",
-													"colLabels": [
-														"d8",
-														"Personality Trait"
-													],
-													"colStyles": [
-														"col-1 text-center",
-														"col-11"
-													],
-													"rows": [
-														[
-															"1",
-															"I employ a polysyllabic vocabulary that conveys the impression of tremendous erudition."
-														],
-														[
-															"2",
-															"I'm used to helping out those who aren't as smart as I am, and I patiently explain anything and everything to others."
-														],
-														[
-															"3",
-															"I often get lost in my own thoughts and contemplation, becoming oblivious to my surroundings."
-														],
-														[
-															"4",
-															"I believe that anything worth doing is worth doing right. I can't help it\u2014I'm a perfectionist."
-														],
-														[
-															"5",
-															"I want to know how things work and what makes people act as they do."
-														],
-														[
-															"6",
-															"There's nothing I like more than a good mystery."
-														],
-														[
-															"7",
-															"Messing up just means an opportunity to learn from my mistakes."
-														],
-														[
-															"8",
-															"There's no need to rush into action; I prefer to plan before I act."
-														]
-													]
-												},
-												{
-													"type": "table",
-													"caption": "Blue Ideals",
-													"colLabels": [
-														"d6",
-														"Ideal"
-													],
-													"colStyles": [
-														"col-1 text-center",
-														"col-11"
-													],
-													"rows": [
-														[
-															"1",
-															"{@b Perfection.} The goal of a life of study is to constantly improve oneself."
-														],
-														[
-															"2",
-															"{@b Education.} Information can change the world only when it is widely shared."
-														],
-														[
-															"3",
-															"{@b Knowledge.} The path to power and self-improvement comes through mastery of what can be known."
-														],
-														[
-															"4",
-															"{@b Change.} The world is in constant flux, and we must be ready to change with it."
-														],
-														[
-															"5",
-															"{@b Logic.} Emotions must not cloud our clear thinking."
-														],
-														[
-															"6",
-															"{@b Self-Knowledge.} If you know yourself, there's nothing left to know."
-														]
-													]
-												}
-											],
-											"id": "036"
-										},
-										{
-											"type": "entries",
-											"name": "Color Combinations",
-											"page": 44,
-											"entries": [
-												"Adding white to blue steers it toward lawful neutral, creating archetypes such as the devout monk or the honorable paladin.",
-												"Adding black to blue steers it toward neutral evil and the behavior of stealthy spies, scoundrels, and infiltrators.",
-												"Adding red to blue steers it toward chaotic neutral, exemplified by madcap mages\u2014elementalist wizards or sorcerers.",
-												"Adding green to blue solidifies its neutrality, embodied in archetypes such as the sagacious druid or the scholar of nature."
-											],
-											"id": "037"
-										}
-									],
-									"id": "035"
-								},
-								{
-									"type": "entries",
-									"name": "Black",
-									"page": 45,
-									"entries": [
-										{
-											"type": "image",
-											"href": {
-												"type": "internal",
-												"path": "book/PSX/019.webp"
-											},
-											"width": 631,
-											"height": 1459
-										},
-										"Ambition. Cruelty. Death. Black draws its power from the slow decay of all things and the inevitability of extinction. Supremacy belongs to those who are willing to do whatever it takes\u2014including hastening death's arrival\u2014to achieve their ends.",
-										"Mark Rosewater has written more about black {@link here|https://magic.wizards.com/en/articles/archive/making-magic/black-revisited-2015-07-27}.",
-										{
-											"type": "list",
-											"style": "list-hang-notitle",
-											"items": [
-												{
-													"type": "item",
-													"name": "Alignment",
-													"entry": "Evil (any)"
-												},
-												{
-													"type": "item",
-													"name": "Power Suite:",
-													"entry": "Necromancy, fear, pain, darkness, disease, corruption"
-												},
-												{
-													"type": "item",
-													"name": "Suggested Races:",
-													"entry": "{@race Human}, {@race Vampire (Ixalan)|PSX|vampire}, {@race aetherborn|PSK}, {@race minotaur|GGR}, {@race Vampire (Zendikar)|PSZ|vampire}, {@race Orc (Ixalan)|PSX|orc}"
-												},
-												{
-													"type": "item",
-													"name": "Suggested Classes:",
-													"entry": "{@class Warlock}, {@class cleric}, {@class rogue}"
-												},
-												{
-													"type": "item",
-													"name": "Suggested Backgrounds:",
-													"entry": "{@background Charlatan}, {@background criminal}, {@background noble}"
-												}
-											]
-										},
-										{
 											"type": "table",
-											"caption": "Black Personality Traits",
+											"caption": "Blue Personality Traits",
 											"colLabels": [
 												"d8",
 												"Personality Trait"
@@ -1444,41 +1629,41 @@
 											"rows": [
 												[
 													"1",
-													"The best way to get me to do something is to tell me I can't do it."
+													"I employ a polysyllabic vocabulary that conveys the impression of tremendous erudition."
 												],
 												[
 													"2",
-													"If you do me an injury, I will crush you, ruin your name, and salt your family's lands for all time."
+													"I'm used to helping out those who aren't as smart as I am, and I patiently explain anything and everything to others."
 												],
 												[
 													"3",
-													"The first thing I do in a new place is note the locations of everything valuable\u2014or where such things might be hidden."
+													"I often get lost in my own thoughts and contemplation, becoming oblivious to my surroundings."
 												],
 												[
 													"4",
-													"I get bitter if I'm not the center of attention."
+													"I believe that anything worth doing is worth doing right. I can't help it\u2014I'm a perfectionist."
 												],
 												[
 													"5",
-													"I can't stand the dangerous idiots who deny their own needs in order to help others. It's often difficult to motivate them to do what I want."
+													"I want to know how things work and what makes people act as they do."
 												],
 												[
 													"6",
-													"If others won't do things when you ask nicely, stop asking nicely."
+													"There's nothing I like more than a good mystery."
 												],
 												[
 													"7",
-													"Inspiring fear can be the most effective way to motivate people."
+													"Messing up just means an opportunity to learn from my mistakes."
 												],
 												[
 													"8",
-													"I don't care about morality or taboos\u2014only results. I'll do whatever it takes to get the results I want."
+													"There's no need to rush into action; I prefer to plan before I act."
 												]
 											]
 										},
 										{
 											"type": "table",
-											"caption": "Black Ideals",
+											"caption": "Blue Ideals",
 											"colLabels": [
 												"d6",
 												"Ideal"
@@ -1490,342 +1675,488 @@
 											"rows": [
 												[
 													"1",
-													"{@b Power.} Power is the only way to guarantee your ability to control your life\u2014and thus your happiness."
+													"{@b Perfection.} The goal of a life of study is to constantly improve oneself."
 												],
 												[
 													"2",
-													"{@b Self-Interest.} If I don't look out for myself, no one else is going to."
+													"{@b Education.} Information can change the world only when it is widely shared."
 												],
 												[
 													"3",
-													"Strength. Helping the weak is merely delaying their inevitable failure."
+													"{@b Knowledge.} The path to power and self-improvement comes through mastery of what can be known."
 												],
 												[
 													"4",
-													"{@b Freedom.} If I need something, I'm a fool if I let laws or morality stand in my way."
+													"{@b Change.} The world is in constant flux, and we must be ready to change with it."
 												],
 												[
 													"5",
-													"{@b Greed.} The clearest way to get ahead in this world is with money."
+													"{@b Logic.} Emotions must not cloud our clear thinking."
 												],
 												[
 													"6",
-													"{@b Independence.} No one tells me what to do."
+													"{@b Self-Knowledge.} If you know yourself, there's nothing left to know."
 												]
 											]
-										},
-										{
-											"type": "entries",
-											"name": "Color Combinations",
-											"page": 45,
-											"entries": [
-												"Adding white to black steers it toward lawful evil, exemplified by oppressive clerics and fallen paladins. ",
-												"Adding blue to black steers it toward neutral evil and the behavior of stealthy spies, scoundrels, and infiltrators. Adding red to black creates the chaotic evil icons of bloodthirsty barbarians and battle priests.",
-												"Adding green to black steers it toward neutral evil, in the form of sinister druids and stalking rangers."
-											],
-											"id": "039"
 										}
 									],
-									"id": "038"
+									"id": "036"
 								},
 								{
 									"type": "entries",
-									"name": "Red",
-									"page": 46,
+									"name": "Color Combinations",
+									"page": 44,
 									"entries": [
-										{
-											"type": "image",
-											"href": {
-												"type": "internal",
-												"path": "book/PSX/020.webp"
-											},
-											"width": 1276,
-											"height": 727
-										},
-										"Passion. Impulse. Immolation. Red values action over reflection, emotion over reason, and instinct over learning. Its power is the volatile energy of fire and lightning, the seismic energy of the earth, and the savagery of untamed fury.",
-										"{@link This article|https://magic.wizards.com/en/articles/archive/making-magic/seeing-red-revisited-2015-08-03} discusses the motivations and actions of red in more detail.",
-										{
-											"type": "list",
-											"style": "list-hang-notitle",
-											"items": [
-												{
-													"type": "item",
-													"name": "Alignment:",
-													"entry": "Chaotic (any)"
-												},
-												{
-													"type": "item",
-													"name": "Power Suite:",
-													"entry": "Fire and lightning, earth, emotion, rage, destruction"
-												},
-												{
-													"type": "item",
-													"name": "Suggested Races:",
-													"entry": "{@race Human}, {@race goblin|GGR}, {@race khenra|PSA}, {@race minotaur|GGR}"
-												},
-												{
-													"type": "item",
-													"name": "Suggested Classes:",
-													"entry": "{@class Sorcerer}, {@class barbarian}, {@class fighter}"
-												},
-												{
-													"type": "item",
-													"name": "Suggested Backgrounds:",
-													"entry": "{@background Charlatan}, {@background entertainer}, {@background sailor}, {@background soldier}, {@background urchin}"
-												}
-											]
-										},
-										{
-											"type": "table",
-											"caption": "Red Personality Traits",
-											"colLabels": [
-												"d8",
-												"Personality Trait"
-											],
-											"colStyles": [
-												"col-1 text-center",
-												"col-11"
-											],
-											"rows": [
-												[
-													"1",
-													"I always speak and act before I think."
-												],
-												[
-													"2",
-													"My changing emotions dominate my personality, leaving no one in any doubt about what I'm feeling."
-												],
-												[
-													"3",
-													"I fall in and out of love faster than the weather changes."
-												],
-												[
-													"4",
-													"I'm always angry."
-												],
-												[
-													"5",
-													"I either love something or I hate it; there is no in-between."
-												],
-												[
-													"6",
-													"I'm always working on some piece of art to express my feelings."
-												],
-												[
-													"7",
-													"I revel in the storms and the destruction that give expression to the turmoil inside me."
-												],
-												[
-													"8",
-													"I have no patience for people who think they can boss others around."
-												]
-											]
-										},
-										{
-											"type": "table",
-											"caption": "Red Ideals",
-											"colLabels": [
-												"d6",
-												"Ideal"
-											],
-											"colStyles": [
-												"col-1 text-center",
-												"col-11"
-											],
-											"rows": [
-												[
-													"1",
-													"{@b Freedom.} Everyone should be free to pursue their own dreams."
-												],
-												[
-													"2",
-													"{@b Emotion.} My heart tells me what it needs. All I have to do is listen and act accordingly."
-												],
-												[
-													"3",
-													"{@b Adventure.} Life is an adventure, and it's up to each individual to experience it."
-												],
-												[
-													"4",
-													"{@b Relationships.} Part of life is embracing the passion, loyalty, and camaraderie that ties us to others."
-												],
-												[
-													"5",
-													"{@b Creativity.} The world is in need of new ideas and bold action."
-												],
-												[
-													"6",
-													"{@b Sincerity.} No one should pretend to be something they're not."
-												]
-											]
-										},
-										{
-											"type": "entries",
-											"name": "Color Combinations",
-											"page": 46,
-											"entries": [
-												"Adding white to red makes it more zealously lawful good, as in the case of a fervent paladin.",
-												"Adding blue to red steers it toward chaotic neutral, exemplified by madcap mages\u2014elementalist wizards or sorcerers.",
-												"Adding black to red creates the chaotic evil icons of bloodthirsty barbarians and battle priests. Adding green to red leads to an intense neutral or chaotic neutral, embodied in a totemic barbarian or fierce ranger."
-											],
-											"id": "03b"
-										}
+										"Adding white to blue steers it toward lawful neutral, creating archetypes such as the devout monk or the honorable paladin.",
+										"Adding black to blue steers it toward neutral evil and the behavior of stealthy spies, scoundrels, and infiltrators.",
+										"Adding red to blue steers it toward chaotic neutral, exemplified by madcap mages\u2014elementalist wizards or sorcerers.",
+										"Adding green to blue solidifies its neutrality, embodied in archetypes such as the sagacious druid or the scholar of nature."
 									],
-									"id": "03a"
-								},
-								{
-									"type": "entries",
-									"name": "Green",
-									"page": 47,
-									"entries": [
-										{
-											"type": "image",
-											"href": {
-												"type": "internal",
-												"path": "book/PSX/021.webp"
-											},
-											"width": 1275,
-											"height": 708
-										},
-										"Nature's abundance. Lush growth. Vibrant life. Green knows that the artificial trappings of civilization are temporary but the vast ecosystems of nature will always endure\u2014adapting and evolving in a delicate balance. Those who would prosper must also evolve, embracing their wild side and letting nature have its way.",
-										"Mark Rosewater's essay on the nature and philosophy of green can be found {@link here|http://magic.wizards.com/en/articles/archive/making-magic/its-not-easy-being-green-revisited-2015-08-10}.",
-										{
-											"type": "list",
-											"style": "list-hang-notitle",
-											"items": [
-												{
-													"type": "item",
-													"name": "Alignment:",
-													"entry": "Neutral (any)"
-												},
-												{
-													"type": "item",
-													"name": "Power Suite:",
-													"entry": "Nature, plants, animals, growth"
-												},
-												{
-													"type": "item",
-													"name": "Suggested Races:",
-													"entry": "{@race Human}, {@race elf}, {@race khenra|PSA}, {@race naga|PSA}, {@race merfolk (Ixalan)|PSX}"
-												},
-												{
-													"type": "item",
-													"name": "Suggested Classes:",
-													"entry": "{@class Druid}, {@class ranger}, {@class fighter}, {@class bard}"
-												},
-												{
-													"type": "item",
-													"name": "Suggested Backgrounds:",
-													"entry": "{@background Acolyte}, {@background guild artisan}, {@background hermit}, {@background outlander}"
-												}
-											]
-										},
-										{
-											"type": "table",
-											"caption": "Green Personality Traits",
-											"colLabels": [
-												"d8",
-												"Personality Trait"
-											],
-											"colStyles": [
-												"col-1 text-center",
-												"col-11"
-											],
-											"rows": [
-												[
-													"1",
-													"I'm sharply attuned to the cycles of nature, and can almost feel the pull of the full moon."
-												],
-												[
-													"2",
-													"My instincts never lead me astray."
-												],
-												[
-													"3",
-													"I get along better with animals than I do with most people."
-												],
-												[
-													"4",
-													"There is more wisdom in a forest pool than in any library."
-												],
-												[
-													"5",
-													"Beasts of the wild have no need for manners, and neither do I."
-												],
-												[
-													"6",
-													"Nothing raises my ire like seeing people treat life as disposable."
-												],
-												[
-													"7",
-													"I can identify hundreds of bird species by their songs."
-												],
-												[
-													"8",
-													"I see omens in every ripple, gust of wind, and flight of birds."
-												]
-											]
-										},
-										{
-											"type": "table",
-											"caption": "Green Ideals",
-											"colLabels": [
-												"d6",
-												"Ideal"
-											],
-											"colStyles": [
-												"col-1 text-center",
-												"col-11"
-											],
-											"rows": [
-												[
-													"1",
-													"{@b Acceptance.} Things are as they are for a reason, and it's foolish to try to change them."
-												],
-												[
-													"2",
-													"{@b Nature.} The natural world is more important than the constructs of civilization."
-												],
-												[
-													"3",
-													"{@b Potential.} The secret to happiness is to find one's place in the natural order and embrace it."
-												],
-												[
-													"4",
-													"{@b Interdependence.} My role is deeply connected to the web of life, and my actions have consequences for everyone around me."
-												],
-												[
-													"5",
-													"{@b Live and Let Live.} Ideals aren't worth killing or going to war for."
-												],
-												[
-													"6",
-													"{@b History.} Only through studying the past can we avoid repeating past mistakes."
-												]
-											]
-										},
-										{
-											"type": "entries",
-											"name": "Color Combinations",
-											"page": 47,
-											"entries": [
-												"Adding white to green steers it toward neutral good and gentler notions of community, embodied in characters such as healing druids, bards, or kindly rangers.",
-												"Adding blue to green solidifies its neutrality, embodied in archetypes such as the sagacious druid or scholar of nature.",
-												"Adding black to green steers it toward neutral evil in the form of sinister druids and stalking rangers. Adding red to green leads to an intense neutral or chaotic neutral, embodied in a totemic barbarian or fierce ranger."
-											],
-											"id": "03d"
-										}
-									],
-									"id": "03c"
+									"id": "037"
 								}
 							],
-							"id": "02e"
+							"id": "035"
+						},
+						{
+							"type": "entries",
+							"name": "Black",
+							"page": 45,
+							"entries": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSX/031.webp"
+									},
+									"title": "Vampires, whose survival relies on their willingness to kill others, embody the worst aspects of black.",
+									"credit": "Bishop of the Bloodstained by Yongjae Choi"
+								},
+								"Ambition. Cruelty. Death. Black draws its power from the slow decay of all things and the inevitability of extinction. Supremacy belongs to those who are willing to do whatever it takes\u2014including hastening death's arrival\u2014to achieve their ends.",
+								"Mark Rosewater has written more about black {@link here|https://magic.wizards.com/en/articles/archive/making-magic/black-revisited-2015-07-27}.",
+								{
+									"type": "list",
+									"style": "list-hang-notitle",
+									"items": [
+										{
+											"type": "item",
+											"name": "Alignment",
+											"entry": "Evil (any)"
+										},
+										{
+											"type": "item",
+											"name": "Power Suite:",
+											"entry": "Necromancy, fear, pain, darkness, disease, corruption"
+										},
+										{
+											"type": "item",
+											"name": "Suggested Races:",
+											"entry": "{@race Human (Ixalan)|PSX|Human}, {@race Vampire (Ixalan)|PSX|vampire}, {@race aetherborn|PSK}, {@race minotaur|GGR}, {@race Vampire (Zendikar)|PSZ|vampire}, {@race Orc (Ixalan)|PSX|orc}"
+										},
+										{
+											"type": "item",
+											"name": "Suggested Classes:",
+											"entry": "{@class Warlock}, {@class cleric}, {@class rogue}"
+										},
+										{
+											"type": "item",
+											"name": "Suggested Backgrounds:",
+											"entry": "{@background Charlatan}, {@background criminal}, {@background noble}"
+										}
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Black Personality Traits",
+									"colLabels": [
+										"d8",
+										"Personality Trait"
+									],
+									"colStyles": [
+										"col-1 text-center",
+										"col-11"
+									],
+									"rows": [
+										[
+											"1",
+											"The best way to get me to do something is to tell me I can't do it."
+										],
+										[
+											"2",
+											"If you do me an injury, I will crush you, ruin your name, and salt your family's lands for all time."
+										],
+										[
+											"3",
+											"The first thing I do in a new place is note the locations of everything valuable\u2014or where such things might be hidden."
+										],
+										[
+											"4",
+											"I get bitter if I'm not the center of attention."
+										],
+										[
+											"5",
+											"I can't stand the dangerous idiots who deny their own needs in order to help others. It's often difficult to motivate them to do what I want."
+										],
+										[
+											"6",
+											"If others won't do things when you ask nicely, stop asking nicely."
+										],
+										[
+											"7",
+											"Inspiring fear can be the most effective way to motivate people."
+										],
+										[
+											"8",
+											"I don't care about morality or taboos\u2014only results. I'll do whatever it takes to get the results I want."
+										]
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Black Ideals",
+									"colLabels": [
+										"d6",
+										"Ideal"
+									],
+									"colStyles": [
+										"col-1 text-center",
+										"col-11"
+									],
+									"rows": [
+										[
+											"1",
+											"{@b Power.} Power is the only way to guarantee your ability to control your life\u2014and thus your happiness."
+										],
+										[
+											"2",
+											"{@b Self-Interest.} If I don't look out for myself, no one else is going to."
+										],
+										[
+											"3",
+											"Strength. Helping the weak is merely delaying their inevitable failure."
+										],
+										[
+											"4",
+											"{@b Freedom.} If I need something, I'm a fool if I let laws or morality stand in my way."
+										],
+										[
+											"5",
+											"{@b Greed.} The clearest way to get ahead in this world is with money."
+										],
+										[
+											"6",
+											"{@b Independence.} No one tells me what to do."
+										]
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Color Combinations",
+									"page": 45,
+									"entries": [
+										"Adding white to black steers it toward lawful evil, exemplified by oppressive clerics and fallen paladins. ",
+										"Adding blue to black steers it toward neutral evil and the behavior of stealthy spies, scoundrels, and infiltrators. Adding red to black creates the chaotic evil icons of bloodthirsty barbarians and battle priests.",
+										"Adding green to black steers it toward neutral evil, in the form of sinister druids and stalking rangers."
+									],
+									"id": "039"
+								}
+							],
+							"id": "038"
+						},
+						{
+							"type": "entries",
+							"name": "Red",
+							"page": 46,
+							"entries": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSX/032.webp"
+									},
+									"title": "Red-aligned pirates are gutsy tricksters, adventurous voyagers, fearless combat mages, and confident brawlers.",
+									"credit": "Captain Lannery Storm by Chris Rallis"
+								},
+								"Passion. Impulse. Immolation. Red values action over reflection, emotion over reason, and instinct over learning. Its power is the volatile energy of fire and lightning, the seismic energy of the earth, and the savagery of untamed fury.",
+								"{@link This article|https://magic.wizards.com/en/articles/archive/making-magic/seeing-red-revisited-2015-08-03} discusses the motivations and actions of red in more detail.",
+								{
+									"type": "list",
+									"style": "list-hang-notitle",
+									"items": [
+										{
+											"type": "item",
+											"name": "Alignment:",
+											"entry": "Chaotic (any)"
+										},
+										{
+											"type": "item",
+											"name": "Power Suite:",
+											"entry": "Fire and lightning, earth, emotion, rage, destruction"
+										},
+										{
+											"type": "item",
+											"name": "Suggested Races:",
+											"entry": "{@race Human (Ixalan)|PSX|Human}, {@race goblin|GGR}, {@race khenra|PSA}, {@race minotaur|GGR}"
+										},
+										{
+											"type": "item",
+											"name": "Suggested Classes:",
+											"entry": "{@class Sorcerer}, {@class barbarian}, {@class fighter}"
+										},
+										{
+											"type": "item",
+											"name": "Suggested Backgrounds:",
+											"entry": "{@background Charlatan}, {@background entertainer}, {@background sailor}, {@background soldier}, {@background urchin}"
+										}
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Red Personality Traits",
+									"colLabels": [
+										"d8",
+										"Personality Trait"
+									],
+									"colStyles": [
+										"col-1 text-center",
+										"col-11"
+									],
+									"rows": [
+										[
+											"1",
+											"I always speak and act before I think."
+										],
+										[
+											"2",
+											"My changing emotions dominate my personality, leaving no one in any doubt about what I'm feeling."
+										],
+										[
+											"3",
+											"I fall in and out of love faster than the weather changes."
+										],
+										[
+											"4",
+											"I'm always angry."
+										],
+										[
+											"5",
+											"I either love something or I hate it; there is no in-between."
+										],
+										[
+											"6",
+											"I'm always working on some piece of art to express my feelings."
+										],
+										[
+											"7",
+											"I revel in the storms and the destruction that give expression to the turmoil inside me."
+										],
+										[
+											"8",
+											"I have no patience for people who think they can boss others around."
+										]
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Red Ideals",
+									"colLabels": [
+										"d6",
+										"Ideal"
+									],
+									"colStyles": [
+										"col-1 text-center",
+										"col-11"
+									],
+									"rows": [
+										[
+											"1",
+											"{@b Freedom.} Everyone should be free to pursue their own dreams."
+										],
+										[
+											"2",
+											"{@b Emotion.} My heart tells me what it needs. All I have to do is listen and act accordingly."
+										],
+										[
+											"3",
+											"{@b Adventure.} Life is an adventure, and it's up to each individual to experience it."
+										],
+										[
+											"4",
+											"{@b Relationships.} Part of life is embracing the passion, loyalty, and camaraderie that ties us to others."
+										],
+										[
+											"5",
+											"{@b Creativity.} The world is in need of new ideas and bold action."
+										],
+										[
+											"6",
+											"{@b Sincerity.} No one should pretend to be something they're not."
+										]
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Color Combinations",
+									"page": 46,
+									"entries": [
+										"Adding white to red makes it more zealously lawful good, as in the case of a fervent paladin.",
+										"Adding blue to red steers it toward chaotic neutral, exemplified by madcap mages\u2014elementalist wizards or sorcerers.",
+										"Adding black to red creates the chaotic evil icons of bloodthirsty barbarians and battle priests. Adding green to red leads to an intense neutral or chaotic neutral, embodied in a totemic barbarian or fierce ranger."
+									],
+									"id": "03b"
+								}
+							],
+							"id": "03a"
+						},
+						{
+							"type": "entries",
+							"name": "Green",
+							"page": 47,
+							"entries": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSX/033.webp"
+									},
+									"title": "Those aligned with green are attuned to nature, including beasts, plants, and the world itself.",
+									"credit": "Ixalli's Diviner by Lucas Graciano"
+								},
+								"Nature's abundance. Lush growth. Vibrant life. Green knows that the artificial trappings of civilization are temporary but the vast ecosystems of nature will always endure\u2014adapting and evolving in a delicate balance. Those who would prosper must also evolve, embracing their wild side and letting nature have its way.",
+								"Mark Rosewater's essay on the nature and philosophy of green can be found {@link here|http://magic.wizards.com/en/articles/archive/making-magic/its-not-easy-being-green-revisited-2015-08-10}.",
+								{
+									"type": "list",
+									"style": "list-hang-notitle",
+									"items": [
+										{
+											"type": "item",
+											"name": "Alignment:",
+											"entry": "Neutral (any)"
+										},
+										{
+											"type": "item",
+											"name": "Power Suite:",
+											"entry": "Nature, plants, animals, growth"
+										},
+										{
+											"type": "item",
+											"name": "Suggested Races:",
+											"entry": "{@race Human (Ixalan)|PSX|Human}, {@race elf}, {@race khenra|PSA}, {@race naga|PSA}, {@race merfolk|PSZ}"
+										},
+										{
+											"type": "item",
+											"name": "Suggested Classes:",
+											"entry": "{@class Druid}, {@class ranger}, {@class fighter}, {@class bard}"
+										},
+										{
+											"type": "item",
+											"name": "Suggested Backgrounds:",
+											"entry": "{@background Acolyte}, {@background guild artisan}, {@background hermit}, {@background outlander}"
+										}
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Green Personality Traits",
+									"colLabels": [
+										"d8",
+										"Personality Trait"
+									],
+									"colStyles": [
+										"col-1 text-center",
+										"col-11"
+									],
+									"rows": [
+										[
+											"1",
+											"I'm sharply attuned to the cycles of nature, and can almost feel the pull of the full moon."
+										],
+										[
+											"2",
+											"My instincts never lead me astray."
+										],
+										[
+											"3",
+											"I get along better with animals than I do with most people."
+										],
+										[
+											"4",
+											"There is more wisdom in a forest pool than in any library."
+										],
+										[
+											"5",
+											"Beasts of the wild have no need for manners, and neither do I."
+										],
+										[
+											"6",
+											"Nothing raises my ire like seeing people treat life as disposable."
+										],
+										[
+											"7",
+											"I can identify hundreds of bird species by their songs."
+										],
+										[
+											"8",
+											"I see omens in every ripple, gust of wind, and flight of birds."
+										]
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Green Ideals",
+									"colLabels": [
+										"d6",
+										"Ideal"
+									],
+									"colStyles": [
+										"col-1 text-center",
+										"col-11"
+									],
+									"rows": [
+										[
+											"1",
+											"{@b Acceptance.} Things are as they are for a reason, and it's foolish to try to change them."
+										],
+										[
+											"2",
+											"{@b Nature.} The natural world is more important than the constructs of civilization."
+										],
+										[
+											"3",
+											"{@b Potential.} The secret to happiness is to find one's place in the natural order and embrace it."
+										],
+										[
+											"4",
+											"{@b Interdependence.} My role is deeply connected to the web of life, and my actions have consequences for everyone around me."
+										],
+										[
+											"5",
+											"{@b Live and Let Live.} Ideals aren't worth killing or going to war for."
+										],
+										[
+											"6",
+											"{@b History.} Only through studying the past can we avoid repeating past mistakes."
+										]
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Color Combinations",
+									"page": 47,
+									"entries": [
+										"Adding white to green steers it toward neutral good and gentler notions of community, embodied in characters such as healing druids, bards, or kindly rangers.",
+										"Adding blue to green solidifies its neutrality, embodied in archetypes such as the sagacious druid or scholar of nature.",
+										"Adding black to green steers it toward neutral evil in the form of sinister druids and stalking rangers. Adding red to green leads to an intense neutral or chaotic neutral, embodied in a totemic barbarian or fierce ranger."
+									],
+									"id": "03d"
+								}
+							],
+							"id": "03c"
 						}
 					],
-					"id": "02d"
+					"id": "02e"
 				}
 			],
-			"id": "02c"
+			"id": "02d"
 		}
 	]
 }
