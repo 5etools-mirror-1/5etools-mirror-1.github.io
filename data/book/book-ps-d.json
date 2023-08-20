@@ -5,92 +5,124 @@
 			"name": "Introduction",
 			"entries": [
 				{
-					"type": "quote",
-					"entries": [
-						"By the time you read this, you'll have heard news of the forthcoming publication of Guildmaster's Guide to Ravnica, which I privately refer to as \"Plane Shift: Ravnica.\" That book is the primary reason that this installment of the Plane Shift series is relatively late, because the D&D part of my brain was occupied with working on it. But that book is also the culmination of all the work I've done on this series over the last couple of years. Plane Shift\u2014and your overwhelmingly positive response to it\u2014paved the way for the hardcover Ravnica book, by proving that a D&D/Magic crossover was something that people wanted to see. So your delight and enthusiasm for this pet project is directly responsible for the Guildmaster's Guide to Ravnica coming later this year. Thank you! When I started working on the D&D team at Wizards of the Coast in 2000, there was already some talk of doing a crossover product between D&D and Magic: The Gathering. At the time, Magic was more or less synonymous with the world of Dominaria. So in a way, this installment of the Plane Shift series is over eighteen years in the making. This work isn't comprehensive, of course. As always, The Art of Magic: The Gathering\u2014Dominaria is the definitive resource, but even that book could only scratch the surface of Dominaria. The art book was built on the world guide, and the world guide specifically chose ten regions of the world\u2014two per mana color\u2014as a focus for the card set. Of those ten regions, seven are either located on or around the continent of Aerona or have a significant impact on it. For that reason, I made the decision in this article to focus on the Domains, omitting the regions of Urborg, Shiv, and Yavimaya. I figured that leaving those out would diminish the temptation for characters to circumnavigate a globe that includes so many regions already omitted from the art book. That said, the art book includes a complete map, and the Internet is home to abundant information about Dominaria (especially on {@link the Magic Website|https://magic.wizards.com/en}). So if you want to expand your campaign beyond Aerona, you should have little trouble doing so. There's not a lot of rules content in this article, largely because Dominaria is as close as Magic comes to the classic fantasy that D&D draws from. Feel free to make extensive use of class options, monsters, and other parts of the fifth edition D&D rules (which you can {@link find here|https://dnd.wizards.com/articles/features/basicrules}). Once more, thanks for showing so much support for the Plane Shift series, and for making possible the even more exciting projects to come!"
-					],
-					"by": "James Wyatt"
-				},
-				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "book/PSD/001.webp"
 					},
+					"title": "Tolarian Scholar",
+					"credit": "Sara Winters",
 					"width": 768,
 					"height": 990
 				},
 				{
-					"type": "section",
-					"name": "The Domains",
-					"page": 4,
+					"type": "quote",
+					"skipItalics": true,
+					"skipMarks": true,
 					"entries": [
-						"Dominaria is an enormous plane, with numerous landmasses separated by vast oceans. This article, though, focuses on the continent of Aerona and its surrounding lands, which are collectively known as the Domains.",
-						{
-							"type": "entries",
-							"entries": [
-								{
-									"type": "entries",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "Aerona",
-											"page": 4,
-											"entries": [
-												"The continent of Aerona is sharply split between its northern and southern parts, with the division marked by a wide bay and a forbidding mountain range.",
-												"The southern part of Aerona is dominated by {@b Benalia}, the foremost mercantile and military power on Dominaria. It spreads along the western coast and out to the nearby islands, including the Isle of Avenant to the north and much of the Spice Isles to the west. Though most famous for their fertile fields, the lands of Benalia also include old-growth forests, rolling mountains, and a lengthy coastline.",
-												"The skies above Benalia are dotted with the curved, floating spires of the {@b Church of Serra}, with a heavy concentration of them above Benalia City. In stark contrast to the beneficence of the church, agents of {@b Belzenlok's Cabal} have been infiltrating Benalia from their stronghold to the east, in Urborg.",
-												"South and east of Benalia lie the impassable tangles of the {@b Llanowar} forest. Llanowar is populated by diverse elven societies that are threatened by the goblins and orcs of the Ironclaw Mountains.",
-												"Land passage through Benalia to the east coast of Aerona is virtually impossible thanks to the peaks of the Ironclaws, but the Benalish are the preeminent naval power in the region. By informal but frequently reiterated agreement, Benalish ships stay out of the Voda Sea, and the merfolk of {@b Vodalia} allow shipping to pass along Aerona's coastlines largely unhindered. This command of Aerona's southern coasts allows the Benalish to maintain a permanent presence in Sursi on the east coast of the continent.",
-												"To the northeast of Benalia are the Red Iron Mountains, which divide the more sparsely populated northern half of Aerona from the lands to the south. The mountains' native Crookshank kobolds fared poorly during the chaos of the Rift Years, and the mountains are now dotted with Benalish mining settlements.",
-												"To the east, the Red Iron Mountains divide as the continent does, with the Ironcrowns veering off to the south. The northern branch becomes the formidable peaks of the Hurloon Mountains, home of a peaceful but reclusive nation of minotaurs. The occasional Benalish trading mission ventures into Hurloon, but permanent settlements and Serran missionaries are met with open hostility."
-											],
-											"id": "004"
-										},
-										{
-											"type": "entries",
-											"name": "Icehaven",
-											"page": 4,
-											"entries": [
-												"The forbidding subcontinent north of Aerona is Icehaven, home to the warrior nation of {@b Keld}. Keldon raiders and Benalish colonists now clash regularly along the west coast of northern Aerona, both seeking to control the relatively narrow stretch of land between the Sea of Avenant and the Whispering Woods to the east."
-											],
-											"id": "005"
-										},
-										{
-											"type": "entries",
-											"name": "Spice Isles",
-											"page": 4,
-											"entries": [
-												"West of Benalia spreads a vast ocean dotted with islands. The most prominent of the {@b Tolarian Academies}, Tolaria West, is situated in the northwestern Spice Isles. (A second Tolarian Academy is situated on Walassa to the east of Aerona, part of the mercantile empire of Orvada.)"
-											],
-											"id": "006"
-										}
-									],
-									"id": "003"
-								}
-							],
-							"id": "002"
-						}
+						"By the time you read this, you'll have heard news of the forthcoming publication of {@book Guildmaster's Guide to Ravnica|GGR}, which I privately refer to as \"Plane Shift: Ravnica.\" That book is the primary reason that this installment of the Plane Shift series is relatively late, because the D&D part of my brain was occupied with working on it. But that book is also the culmination of all the work I've done on this series over the last couple of years. Plane Shift\u2014and your overwhelmingly positive response to it\u2014paved the way for the hardcover Ravnica book, by proving that a D&D/Magic crossover was something that people wanted to see. So your delight and enthusiasm for this pet project is directly responsible for the {@book Guildmaster's Guide to Ravnica|GGR} coming later this year. Thank you!",
+						"When I started working on the D&D team at Wizards of the Coast in 2000, there was already some talk of doing a crossover product between D&D and Magic: The Gathering. At the time, Magic was more or less synonymous with the world of Dominaria. So in a way, this installment of the Plane Shift series is over eighteen years in the making.",
+						"This work isn't comprehensive, of course. As always, {@i The Art of Magic: The Gathering\u2014Dominaria} is the definitive resource, but even that book could only scratch the surface of Dominaria. The art book was built on the world guide, and the world guide specifically chose ten regions of the world\u2014two per mana color\u2014as a focus for the card set. Of those ten regions, seven are either located on or around the continent of Aerona or have a significant impact on it. For that reason, I made the decision in this article to focus on the Domains, omitting the regions of Urborg, Shiv, and Yavimaya. I figured that leaving those out would diminish the temptation for characters to circumnavigate a globe that includes so many regions already omitted from the art book. That said, the art book includes a complete map, and the Internet is home to abundant information about Dominaria (especially on {@link the Magic Website|https://magic.wizards.com/en}). So if you want to expand your campaign beyond Aerona, you should have little trouble doing so.",
+						"There's not a lot of rules content in this article, largely because Dominaria is as close as Magic comes to the classic fantasy that D&D draws from. Feel free to make extensive use of class options, monsters, and other parts of the fifth edition D&D rules (which you can {@link find here|https://dnd.wizards.com/articles/features/basicrules}).",
+						"Once more, thanks for showing so much support for the Plane Shift series, and for making possible the even more exciting projects to come!"
 					],
-					"id": "001"
+					"by": "James Wyatt"
 				},
+				"{@note The game mechanics in this supplement are usable in your D&D campaign but are not fully tempered by playtests and design iterations. For these reasons, material in this supplement is not legal in D&D Organized Play events.}",
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "book/PSD/002.webp"
 					},
-					"width": 609,
-					"height": 609
+					"title": "Clifftop Retreat",
+					"credit": "Christine Choi",
+					"width": 378,
+					"height": 992
 				}
 			],
 			"id": "000"
 		},
 		{
 			"type": "section",
+			"name": "The Domains",
+			"page": 4,
+			"entries": [
+				"Dominaria is an enormous plane, with numerous landmasses separated by vast oceans. This article, though, focuses on the continent of Aerona and its surrounding lands, which are collectively known as the Domains.",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "Aerona",
+									"page": 4,
+									"entries": [
+										"The continent of Aerona is sharply split between its northern and southern parts, with the division marked by a wide bay and a forbidding mountain range.",
+										"The southern part of Aerona is dominated by {@b Benalia}, the foremost mercantile and military power on Dominaria. It spreads along the western coast and out to the nearby islands, including the Isle of Avenant to the north and much of the Spice Isles to the west. Though most famous for their fertile fields, the lands of Benalia also include old-growth forests, rolling mountains, and a lengthy coastline.",
+										"The skies above Benalia are dotted with the curved, floating spires of the {@b Church of Serra}, with a heavy concentration of them above Benalia City. In stark contrast to the beneficence of the church, agents of {@b Belzenlok's Cabal} have been infiltrating Benalia from their stronghold to the east, in Urborg.",
+										"South and east of Benalia lie the impassable tangles of the {@b Llanowar} forest. Llanowar is populated by diverse elven societies that are threatened by the goblins and orcs of the Ironclaw Mountains.",
+										"Land passage through Benalia to the east coast of Aerona is virtually impossible thanks to the peaks of the Ironclaws, but the Benalish are the preeminent naval power in the region. By informal but frequently reiterated agreement, Benalish ships stay out of the Voda Sea, and the merfolk of {@b Vodalia} allow shipping to pass along Aerona's coastlines largely unhindered. This command of Aerona's southern coasts allows the Benalish to maintain a permanent presence in Sursi on the east coast of the continent.",
+										"To the northeast of Benalia are the Red Iron Mountains, which divide the more sparsely populated northern half of Aerona from the lands to the south. The mountains' native Crookshank kobolds fared poorly during the chaos of the Rift Years, and the mountains are now dotted with Benalish mining settlements.",
+										"To the east, the Red Iron Mountains divide as the continent does, with the Ironcrowns veering off to the south. The northern branch becomes the formidable peaks of the Hurloon Mountains, home of a peaceful but reclusive nation of minotaurs. The occasional Benalish trading mission ventures into Hurloon, but permanent settlements and Serran missionaries are met with open hostility."
+									],
+									"id": "004"
+								},
+								{
+									"type": "entries",
+									"name": "Icehaven",
+									"page": 4,
+									"entries": [
+										"The forbidding subcontinent north of Aerona is Icehaven, home to the warrior nation of {@b Keld}. Keldon raiders and Benalish colonists now clash regularly along the west coast of northern Aerona, both seeking to control the relatively narrow stretch of land between the Sea of Avenant and the Whispering Woods to the east."
+									],
+									"id": "005"
+								},
+								{
+									"type": "entries",
+									"name": "Spice Isles",
+									"page": 4,
+									"entries": [
+										"West of Benalia spreads a vast ocean dotted with islands. The most prominent of the {@b Tolarian Academies}, Tolaria West, is situated in the northwestern Spice Isles. (A second Tolarian Academy is situated on Walassa to the east of Aerona, part of the mercantile empire of Orvada.)"
+									],
+									"id": "006"
+								}
+							],
+							"id": "003"
+						}
+					],
+					"id": "002"
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSD/003.webp"
+					},
+					"credit": "Jared Blando",
+					"width": 609,
+					"height": 609
+				}
+			],
+			"id": "001"
+		},
+		{
+			"type": "section",
 			"name": "Seven Pillars of Benalia",
 			"page": 5,
 			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSD/004.webp"
+					},
+					"title": "Danitha Capashen, Paragon",
+					"credit": "Chris Rallis",
+					"width": 626,
+					"height": 315
+				},
 				"Benalia is a land of natural and architectural beauty: vast fields of sun-kissed grain crisscrossed by meandering rivers and dotted with cities of white limestone towers and vivid stained glass. One would hardly guess that less than a century before, this great empire was fractured, its people scattered, and its shining capital city a salt-choked ruin. Today, the seven noble houses of Benalia once again rule one of the most prosperous and powerful nations of Dominaria. The Benalish are keenly aware that their New Benalia is in its infancy, with a thousand years of heroic ancestors and tales of bravery to live up to. But they are a diligent people\u2014and proud enough to consider themselves equal to the task.",
 				{
 					"type": "entries",
@@ -248,18 +280,20 @@
 					"name": "Aven",
 					"page": 6,
 					"entries": [
-						"See the {@race Aven|PSD} entry."
+						"{@note See the {@race Aven|PSD} race.}",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSD/005.webp"
+							},
+							"width": 767,
+							"height": 543,
+							"title": "Aven Sentry",
+							"credit": "Dan Scott"
+						}
 					],
 					"id": "00e"
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/PSD/003.webp"
-					},
-					"width": 767,
-					"height": 543
 				},
 				{
 					"type": "entries",
@@ -295,7 +329,7 @@
 										],
 										[
 											"3",
-											"{@action Help} settle a dispute between two of the Great Houses."
+											"Help settle a dispute between two of the Great Houses."
 										],
 										[
 											"4",
@@ -428,6 +462,17 @@
 											"An important noble has fallen under the influence of an advisor with ties to the Cabal, and is advancing the Cabal's plans without knowing it."
 										]
 									]
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSD/006.webp"
+									},
+									"title": "Caligo Skin-Witch",
+									"credit": "Daarken",
+									"width": 386,
+									"height": 546
 								}
 							],
 							"id": "012"
@@ -441,8 +486,19 @@
 		{
 			"type": "section",
 			"name": "Church of Serra",
-			"page": 5,
+			"page": 8,
 			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSD/007.webp"
+					},
+					"title": "Invoke the Divine",
+					"credit": "Magali Villeneuve",
+					"width": 391,
+					"height": 261
+				},
 				"Gracefully curved towers float in a golden sky, so serene that not even gravity can touch them. Devout priests sing beautiful songs of veneration. Winged angels fly through the air on their way to bring gentle comfort to the needy and swift justice to the cruel. This is the Church of Serra, a benevolent religion founded to honor the memory and example of its goddess.",
 				{
 					"type": "entries",
@@ -482,7 +538,7 @@
 									"name": "{@class Cleric}",
 									"page": 8,
 									"entries": [
-										"Many different ranks of priests fill the church hierarchy, but they all serve the same essential functions of ministering to the populace and interpreting the teachings of Serra. Priests who go out into the world and spread Serra's word are known as missionaries. As a cleric of Serra, you can choose from the Knowledge, Life, Light, and War domains."
+										"Many different ranks of priests fill the church hierarchy, but they all serve the same essential functions of ministering to the populace and interpreting the teachings of Serra. Priests who go out into the world and spread Serra's word are known as missionaries. As a cleric of Serra, you can choose from the {@class Cleric||Knowledge|Knowledge}, {@class Cleric||Life|Life}, {@class Cleric||Light|Light}, and {@class Cleric||War|War} domains."
 									],
 									"id": "016"
 								},
@@ -500,7 +556,7 @@
 									"name": "{@class Paladin}",
 									"page": 8,
 									"entries": [
-										"Even within the peaceful Church of Serra, some are called to fight. Soldiers (called acolytes and guardians) serve a largely ceremonial function, protecting the cathedrals of Serra. But paladins are more worldly, venturing out across the land in search of evil to defeat. Serran paladins typically swear the Oath of Devotion. Those who are devoted to the Four Virtues of art, discourse, freedom, and peace are more apt to swear the Oath of the Ancients."
+										"Even within the peaceful Church of Serra, some are called to fight. Soldiers (called acolytes and guardians) serve a largely ceremonial function, protecting the cathedrals of Serra. But paladins are more worldly, venturing out across the land in search of evil to defeat. Serran paladins typically swear the {@class Paladin||Oath of Devotion|Devotion}. Those who are devoted to the Four Virtues of art, discourse, freedom, and peace are more apt to swear the {@class Paladin||Oath of the Ancients|Ancients}."
 									],
 									"id": "018"
 								}
@@ -521,23 +577,23 @@
 							"rows": [
 								[
 									"1",
-									"{@b Law.} \"Law must be upheld. If the knots of order are loosened, chaos will spill through.\" (Song of All, Canto 167)"
+									"{@b Law.} \"Law must be upheld. If the knots of order are loosened, chaos will spill through.\" ({@i Song of All}, Canto 167)"
 								],
 								[
 									"2",
-									"{@b Grace.} \"Grace must be preserved. If the strands of Grace are unraveled, its design will be lost, and the people with it.\" (Song of All, Canto 167)"
+									"{@b Grace.} \"Grace must be preserved. If the strands of Grace are unraveled, its design will be lost, and the people with it.\" ({@i Song of All}, Canto 167)"
 								],
 								[
 									"3",
-									"{@b Duty.} \"Duty must be obeyed. If the frame of Duty is broken, none shall weave life's fabric.\" (Song of All, Canto 167)"
+									"{@b Duty.} \"Duty must be obeyed. If the frame of Duty is broken, none shall weave life's fabric.\" ({@i Song of All}, Canto 167)"
 								],
 								[
 									"4",
-									"{@b Reason.} \"Reason must be retained. If the web of Reason comes unwoven, madness will escape.\" (Song of All, Canto 167)"
+									"{@b Reason.} \"Reason must be retained. If the web of Reason comes unwoven, madness will escape.\" ({@i Song of All}, Canto 167)"
 								],
 								[
 									"5",
-									"{@b Truth.} \"Truth must be set free. If the wings of Truth are clipped, the voices will fall silent.\" (Song of All, Canto 167)"
+									"{@b Truth.} \"Truth must be set free. If the wings of Truth are clipped, the voices will fall silent.\" ({@i Song of All}, Canto 167)"
 								],
 								[
 									"6",
@@ -589,7 +645,18 @@
 							"page": 9,
 							"entries": [
 								"The most visible and recognized symbols of the Church of Serra are her angels\u2014both those that were personally created by Serra and those that appeared spontaneously in the Cathedral at Sursi. Some angels live contemplative lives within the cathedrals, but most are active defenders of the faith, protecting Serra's people across the world. Powerful angels often take responsibility for large regions of the world. Lyra, for example, stands as the protector of Benalia, and Shalai plays a similar role in Llanowar. Serra's angels are believed to hear prayers addressed to Serra, and they have an uncanny tendency to arrive exactly when they are needed.",
-								"Any of the angels in the Monster Manual can serve as Serra angels. The deva represents the most common angels, while the planetar and solar are appropriate for powerful angels such as Lyra and Shalai."
+								"Any of the angels in the {@book Monster Manual|MM} can serve as {@creature serra angel|PSD|Serra angels}. The {@creature deva|MM} represents the most common angels, while the {@creature planetar|MM} and {@creature solar|MM} are appropriate for powerful angels such as {@creature Lyra|PSD} and {@creature Shalai|PSD}.",
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSD/008.webp"
+									},
+									"title": "Angel",
+									"credit": "Winona Nelson",
+									"width": 348,
+									"height": 495
+								}
 							],
 							"id": "019"
 						}
@@ -602,15 +669,6 @@
 					"page": 9,
 					"entries": [
 						"As a major force for good in the world, the Church of Serra is more likely to act as a patron for heroic adventurers than as an adversary. That said, even the most well-meaning paladin can take on a villainous nature, either out of misguided zeal or when manipulated by a sinister force. You can use the following tables to help inspire adventure ideas dealing with the Church of Serra.",
-						{
-							"type": "image",
-							"href": {
-								"type": "internal",
-								"path": "book/PSD/004.webp"
-							},
-							"width": 348,
-							"height": 495
-						},
 						{
 							"type": "entries",
 							"name": "Serran Quests",
@@ -787,6 +845,17 @@
 			"name": "Tolarian Academy",
 			"page": 10,
 			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSD/009.webp"
+					},
+					"title": "Academy Journeymage",
+					"credit": "Magali Villeneuve",
+					"width": 630,
+					"height": 204
+				},
 				"To the mages and scholars of the Tolarian Academies, magic is one science among many. Their books of lore contain eldritch runes as well as elaborate equations, and they employ complex constructs alongside enchanted golems. What happens to bronze if you transmute the tin it contains into iron after smelting? Does introducing an electrical charge enhance the scrying ability of a {@item crystal ball}? To the Tolarians, there's nothing strange or even interdisciplinary about these questions\u2014even if the answer in either case could easily turn out to be: \"It explodes.\"",
 				{
 					"type": "entries",
@@ -913,8 +982,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/PSD/005.webp"
+								"path": "book/PSD/010.webp"
 							},
+							"title": "Arcane Flight",
+							"credit": "Steve Prescott",
 							"width": 765,
 							"height": 473
 						},
@@ -1079,6 +1150,17 @@
 											"A misguided master wizard is trying to trace a single \"true Tolarian ancestry,\" so as to prevent those who don't belong to that human bloodline from entering the Academies and studying magic."
 										]
 									]
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSD/011.webp"
+									},
+									"title": "Rona, Disciple of Gix",
+									"credit": "Tommy Arnold",
+									"width": 768,
+									"height": 992
 								}
 							],
 							"id": "024"
@@ -1094,6 +1176,17 @@
 			"name": "Merfolk of Vodalia",
 			"page": 13,
 			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSD/012.webp"
+					},
+					"title": "Salvager of Secrets",
+					"credit": "Lars Grant-West",
+					"width": 643,
+					"height": 423
+				},
 				"Dominaria is home to many continents and many different species and nations. But most of the world is covered in water, and the vast expanses beneath the white-capped waves belong to the merfolk. Secretive and proud, the merfolk rule the world's only true global empire\u2014a federation of tribes and states knit together by trade and common heritage. The center of this society lies in the Voda Sea off the eastern coast of Aerona, in the empire known as Vodalia.",
 				"Unlike the merfolk of many other planes, Dominarian merfolk have no legs. As such, they can't leave the sea without magical aid, so they are not presented here as a potential player character race. This section instead focuses on adventures involving Vodalia and the seas.",
 				{
@@ -1148,15 +1241,6 @@
 								}
 							],
 							"id": "027"
-						},
-						{
-							"type": "image",
-							"href": {
-								"type": "internal",
-								"path": "book/PSD/006.webp"
-							},
-							"width": 643,
-							"height": 423
 						},
 						{
 							"type": "entries",
@@ -1272,6 +1356,17 @@
 											"A wizard seeks the Golgothian Sylex\u2014the artifact that destroyed the island of Argoth and launched the ice age\u2014in hopes of destroying all land on Dominaria."
 										]
 									]
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSD/013.webp"
+									},
+									"title": "Merfolk Trickster",
+									"credit": "Jesper Ejsing",
+									"width": 768,
+									"height": 991
 								}
 							],
 							"id": "029"
@@ -1284,7 +1379,8 @@
 					"name": "Homarid",
 					"page": 15,
 					"entries": [
-						"The merfolk of Vodalia have waged bitter war for generations against the cryptic, cold-loving crustacean race of {@creature Homarid|PSD|homarids}. The surface ocean waters have become too warm for the homarids in recent times, but in the years following the Brothers' War, as a global ice age settled over Dominaria, the homarids swarmed to the surface and nearly unraveled the fabric of the first Vodalian Empire. Even now, these creatures teem in the deep, frigid trenches to the west of the Voda Sea."
+						"The merfolk of Vodalia have waged bitter war for generations against the cryptic, cold-loving crustacean race of {@creature Homarid|PSD|homarids}. The surface ocean waters have become too warm for the homarids in recent times, but in the years following the Brothers' War, as a global ice age settled over Dominaria, the homarids swarmed to the surface and nearly unraveled the fabric of the first Vodalian Empire. Even now, these creatures teem in the deep, frigid trenches to the west of the Voda Sea.",
+						"{@note See the {@creature Homarid|PSD} creature.}"
 					],
 					"id": "02a"
 				}
@@ -1296,6 +1392,17 @@
 			"name": "Belezenlok's Cabal",
 			"page": 16,
 			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSD/014.webp"
+					},
+					"title": "Demonlord Belzenlok",
+					"credit": "Tyler Jacobson",
+					"width": 644,
+					"height": 428
+				},
 				"The Cabal has worshiped darkness since its founding. Today, the demonlord Belzenlok is that order's latest and most fearsome god. From his place in the black heart of the mile-high Stronghold, Belzenlok sends his fervent worshipers to every corner of the globe. In his name, they sow terror, seize powerful relics, and prepare Dominaria for the coming of its true lord and master.",
 				"Though it began as a crime syndicate organized as an extended family, the Cabal under Belzenlok has become a full-blown demonic cult. In the field, the knights of Belzenlok are dark paladins devoted to his gruesome glory, while inside his temples, shaven-headed initiates bow as dark-robed priests chant his name.",
 				"Because the Cabal is a worldwide force of evil in modern Dominaria, this section assumes that the organization is playing the role of a villain in the campaign and not producing heroes or sending them on quests.",
@@ -1369,15 +1476,6 @@
 							"id": "02d"
 						},
 						{
-							"type": "image",
-							"href": {
-								"type": "internal",
-								"path": "book/PSD/007.webp"
-							},
-							"width": 644,
-							"height": 428
-						},
-						{
 							"type": "entries",
 							"name": "Cabal Villains",
 							"page": 17,
@@ -1428,6 +1526,17 @@
 											"Cabal infiltrators detonate nightmare devices designed to cause as much terror as possible, striking in highly populated areas at unpredictable times."
 										]
 									]
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSD/015.webp"
+									},
+									"title": "Whisper, Blood Liturgist",
+									"credit": "Kieran Yanner",
+									"width": 386,
+									"height": 341
 								}
 							],
 							"id": "02e"
@@ -1437,6 +1546,7 @@
 							"name": "Belzenlok's Cultists",
 							"page": 17,
 							"entries": [
+								"{@note See {@cult Cult of Belzenlok|PSD}.}",
 								"Cabalists are uniformly fanatical, tormented into zealotry by pain, greed, and the distinctive power of their dementia magic. From the Cabal's beginning, spellcasters known as dementists have manipulated the very stuff of nightmares, reshaping reality and creating items and creatures from the parallel realm of \"dementia space.\" Though it has been greatly changed by centuries of hardship, dementia magic remains a powerful asset of the Cabal, and cabalists value prowess with such magic above everything except the favor of Belzenlok."
 							],
 							"id": "02f"
@@ -1447,7 +1557,7 @@
 							"page": 17,
 							"entries": [
 								"Most members of the Cabal serve it in a religious capacity. Cells of Cabal cultists are found throughout the world, worshiping Belzenlok in secret. Once inducted into the Cabal more formally, cultists shave their heads and become initiates, assisting priests in their dark rites. As Cabal priests rise through the ranks, they dress more ornately, often wearing headgear or high collars that set them apart from initiates. Most Cabal clerics are dementists, and carry with them implements of sacrifice and veneration. But a few are more martial in nature, wielding heavy blades and viewing combat as the most active form of sacrifice to Belzenlok.",
-								"These figures might be represented by acolytes, cultists, cult fanatics, mages, or priests, starting off with the statistics in the Monster Manual. You can then modify those statistics using the guidelines found under \"Cabalist Characteristics,\" below."
+								"These figures might be represented by {@creature acolyte|MM|acolytes}, {@creature cultist|MM|cultists}, {@creature cult fanatic|MM|cult fanatics}, {@creature mage|MM|mages}, or {@creature priest|MM|priests}, starting off with the statistics in the {@book Monster Manual|MM}. You can then modify those statistics using the guidelines found under \"Cabalist Characteristics,\" below."
 							],
 							"id": "030"
 						},
@@ -1458,7 +1568,7 @@
 							"entries": [
 								"Cabal knights are all members of an order called the Grimnant. The armor they wear has been melted down from scavenged or stolen pieces and forged anew, painted in a black lacquer and with its edges honed. Often, the armor is molded to mirror aspects of the demon Belzenlok, a form of idol worship that Grimnant knights believe gains them power and favor.",
 								"Grimnants are brutal combatants who arrive after the Cabal's infiltration has weakened a target. Most have some minor knowledge of dementia magic or carry trinkets that give them the ability to wield dark magic in battle, but they're not generally known as spellcasters. Appearing stoic from afar, most Grimnant knights experience a bloodlust in battle and enjoy going in close for the kill.",
-								"Grimnant knights can use the statistics of gladiators, guards, knights, or veterans, as modified by the information under \"Cabalist Characteristics.\" Some Grimnants are actually wights riding undead horses with the statistics of zombies (except that their size is Large)."
+								"Grimnant knights can use the statistics of {@creature gladiator|MM|gladiators}, {@creature guard|MM|guards}, {@creature knight|MM|knights}, or {@creature veteran|MM|veterans}, as modified by the information under \"Cabalist Characteristics.\" Some Grimnants are actually {@creature wight|MM|wights} riding {@creature zombie horse|PSD|undead horses} with the statistics of {@creature zombie|MM|zombies} (except that their size is Large)."
 							],
 							"id": "031"
 						},
@@ -1467,7 +1577,7 @@
 							"name": "Infiltrators and Assassins",
 							"page": 17,
 							"entries": [
-								"In its cells throughout the world, the Cabal has need for more than prayer. Whether striking from the shadows or venturing out in full regalia to spread open terror, Belzenlok's infiltrators and assassins emphasize what many fear: that the Cabal is already everywhere. You can use the statistics for assassins, bandits, bandit captains, spies, or thugs for these characters, modifying them as desired using the information below."
+								"In its cells throughout the world, the Cabal has need for more than prayer. Whether striking from the shadows or venturing out in full regalia to spread open terror, Belzenlok's infiltrators and assassins emphasize what many fear: that the Cabal is already everywhere. You can use the statistics for {@creature assassin|MM|assassins}, {@creature bandit|MM|bandits}, {@creature bandit captain|MM|bandit captains}, {@creature spy|MM|spies}, or {@creature thug|MM|thugs} for these characters, modifying them as desired using the information below."
 							],
 							"id": "032"
 						},
@@ -1476,7 +1586,7 @@
 							"name": "Cabalist Characteristics",
 							"page": 17,
 							"entries": [
-								"Like the diabolical cults and demonic boons that appear in Mordenkainen's Tome of Foes, the following boons can enhance the abilities of Belzenlok's cabalists. For any monster or NPC that can cast spells, you can replace any of those spells with spells from the signature spells list, as long as the new spell is of the same level as the spell it replaces.",
+								"Like the diabolical cults and demonic boons that appear in {@book Mordenkainen's Tome of Foes|MTF}, the following boons can enhance the abilities of Belzenlok's cabalists. For any monster or NPC that can cast spells, you can replace any of those spells with spells from the signature spells list, as long as the new spell is of the same level as the spell it replaces.",
 								{
 									"type": "list",
 									"style": "list-hang-notitle",
@@ -1521,6 +1631,17 @@
 			"name": "Warhosts of Keld",
 			"page": 18,
 			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSD/016.webp"
+					},
+					"title": "Garna, the Bloodflame",
+					"credit": "Winona Nelson",
+					"width": 628,
+					"height": 371
+				},
 				"Hailing from the merciless and barren land of Keld on the far northern continent of Icehaven, the brutal Keldons are hulking, gray-skinned humans. Though they are often perceived as a horde of brutish, unthinking barbarians and a threat to civilization in all its forms, the Keldons have a deep and rich culture that goes back many centuries. Having endured devastation on a massive scale and lived through their own prophesied apocalyptic judgment, today's Keldons fight to be worthy of their glorious ancestors, their unforgiving home, and their strongest champions.",
 				{
 					"type": "entries",
@@ -1569,7 +1690,7 @@
 									"name": "{@class Bard} or {@class Cleric}",
 									"page": 18,
 									"entries": [
-										"Traditional Keldon shamans retain an important place in the warhosts. These shamans are historians as well, keeping alive the link between Keld's past traditions and its present. Their chief responsibility is in maintaining, annotating, and interpreting the enormous Book of Keld. Most Keldon warriors have little patience for reading, so the keepers also act as bards or skalds, recounting the tales within the book to inspire Keldons in battle. Keldon clerics typically choose the Forge domain (presented in Xanathar's Guide to Everything).",
+										"Traditional Keldon shamans retain an important place in the warhosts. These shamans are historians as well, keeping alive the link between Keld's past traditions and its present. Their chief responsibility is in maintaining, annotating, and interpreting the enormous Book of Keld. Most Keldon warriors have little patience for reading, so the keepers also act as bards or skalds, recounting the tales within the book to inspire Keldons in battle. Keldon clerics typically choose the {@class cleric||Forge|Forge|XGE} domain (presented in {@book Xanathar's Guide to Everything|XGE}).",
 										{
 											"type": "table",
 											"caption": "Suggested Ideals",
@@ -1656,15 +1777,6 @@
 					"id": "037"
 				},
 				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/PSD/008.webp"
-					},
-					"width": 464,
-					"height": 901
-				},
-				{
 					"type": "entries",
 					"name": "Keldons",
 					"page": 19,
@@ -1681,6 +1793,17 @@
 					"page": 20,
 					"entries": [
 						"The Keldons are a fierce, warlike people. As adventurers\u2014or adventure patrons\u2014they typically pursue objectives with violent ends. As villains, they are a dangerous force of conquest not easily dissuaded from their goals.",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSD/017.webp"
+							},
+							"title": "Rampaging Cyclops",
+							"credit": "Tomasz Jedruszek",
+							"width": 386,
+							"height": 495
+						},
 						{
 							"type": "entries",
 							"name": "Keld Quests",
@@ -1857,6 +1980,17 @@
 			"name": "Elves of Llanowar",
 			"page": 21,
 			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/PSD/018.webp"
+					},
+					"title": "Hallar, the Firefletcher",
+					"credit": "Bram Sels",
+					"width": 644,
+					"height": 474
+				},
 				"Few outsiders dare to venture into the vast and ancient Llanowar forest, where huge old-growth trees tower a thousand feet above the ground. Among those trees live the fierce Llanowar elves, whose appearance of savagery and reputation for xenophobic hostility are enough to keep most other folk away from even the shadow of the forest. In reality, however, the Llanowar are a reclusive people, and careful visitors can enter and leave their domain without ever seeing its inhabitants. When the Llanowar elves are seen, it is because they wish to be seen\u2014and often to an intruder's detriment.",
 				{
 					"type": "entries",
@@ -1901,20 +2035,22 @@
 									"id": "043"
 								},
 								{
-									"type": "image",
-									"href": {
-										"type": "internal",
-										"path": "book/PSD/009.webp"
-									},
-									"width": 768,
-									"height": 600
-								},
-								{
 									"type": "entries",
 									"name": "{@class Fighter} or {@class Ranger}",
 									"page": 21,
 									"entries": [
 										"From kavu-riding cavalry to branch-walking archers, the elves of Llanowar are accomplished warriors who take easily to either of these classes.",
+										{
+											"type": "image",
+											"href": {
+												"type": "internal",
+												"path": "book/PSD/019.webp"
+											},
+											"title": "Elfhame Druid",
+											"credit": "Yongjae Choi",
+											"width": 768,
+											"height": 600
+										},
 										{
 											"type": "table",
 											"caption": "Suggested Ideals",
@@ -2021,6 +2157,17 @@
 					"name": "Llanowar Adventures",
 					"page": 23,
 					"entries": [
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/PSD/020.webp"
+							},
+							"title": "Mammoth Spider",
+							"credit": "Lars Grant-West",
+							"width": 496,
+							"height": 369
+						},
 						"The most well-known cultural feature of the Llanowar elves is a reclusiveness that borders on xenophobia. This distrust has varied in its degree and harshness throughout history\u2014and it can vary more widely among the different societies of Llanowar. Some elves conduct cautious trade at carefully patrolled border sites, while others harshly punish any transgression of their unwritten laws.",
 						{
 							"type": "entries",
@@ -2183,6 +2330,17 @@
 											"A leader of the Order of the Steel Leaf is in league with the Cabal, and tries to undermine the Staprion offensive against that order."
 										]
 									]
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/PSD/021.webp"
+									},
+									"title": "Forest",
+									"credit": "Jonas De Ro",
+									"width": 375,
+									"height": 216
 								}
 							],
 							"id": "048"
@@ -2203,15 +2361,6 @@
 								}
 							],
 							"id": "049"
-						},
-						{
-							"type": "image",
-							"href": {
-								"type": "internal",
-								"path": "book/PSD/010.webp"
-							},
-							"width": 375,
-							"height": 216
 						}
 					],
 					"id": "045"

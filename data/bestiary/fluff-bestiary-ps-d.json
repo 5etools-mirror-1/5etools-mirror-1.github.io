@@ -1,0 +1,181 @@
+{
+	"_meta": {
+		"internalCopies": [
+			"monsterFluff"
+		]
+	},
+	"monsterFluff": [
+		{
+			"name": "Homarid",
+			"source": "PSD",
+			"entries": [
+				"The merfolk of Vodalia have waged bitter war for generations against the cryptic, cold-loving crustacean race of {@creature Homarid|PSD|homarids}. The surface ocean waters have become too warm for the homarids in recent times, but in the years following the Brothers' War, as a global ice age settled over Dominaria, the homarids swarmed to the surface and nearly unraveled the fabric of the first Vodalian Empire. Even now, these creatures teem in the deep, frigid trenches to the west of the Voda Sea.",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "Genocidal Foe",
+									"page": 15,
+									"entries": [
+										"Homarids don't seem to understand any language other than {@language Homarid|PSD|their own}\u2014and might have only the barest suspicion that the sounds made by other creatures can communicate meaning at all. In their minds, they are the most advanced species on Dominaria, and all others are effectively animals. In the Homarid Wars that coincided with the start of the ice age, the homarids treated their merfolk enemies like cattle, to be slain and then tossed into spawning beds to provide food for homarid hatchlings. However, later historical revision tried to portray the expansionist homarids as victims of the merfolk Empress Galina's aggression."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Offshoots",
+									"page": 15,
+									"entries": [
+										"A variety of homarid more suited to warm water, called viscerids, lives in less frigid seas, particularly around Yavimaya."
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSD/Homarid.webp"
+					},
+					"title": "Homarid Explorer",
+					"credit": "Jehan Choo"
+				}
+			]
+		},
+		{
+			"name": "Kavu",
+			"source": "PSD",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Kavu",
+							"page": 24,
+							"entries": [
+								"Kavu are reptilian creatures that are either very ancient or a relatively recent creation on Dominaria. Either awakening from a millennia-long hibernation or springing fully formed into being, they emerged from the ground to defend against the Phyrexian Invasion. The Llanowar elves now breed the kavu to fill a variety of roles, believing that these creatures were the goddess Gaea's means of intervening in Dominaria's defense. The close relationship between elves and kavu is a constant reminder of Gaea's beneficence. Every Kelfae bonds with an arboreal kavu companion, and some Kelfae and Basiphem warriors ride them into battle."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Kavu Predator",
+			"source": "PSD",
+			"_copy": {
+				"name": "Kavu",
+				"source": "PSD",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "Arboreal Foes",
+									"page": 24,
+									"entries": [
+										"The arboreal kavu bred by the Kelfae are capable of climbing sheer surfaces at any angle, and of charging at astonishing speed at ground level. Kelfae warriors ride a large breed of kavu predators, using a series of cloth slings as safety restraints while sitting or dangling from the creature's back. The nimble and acrobatic Kelfae kavu riders are called arborealists."
+									]
+								}
+							]
+						}
+					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSD/Kavu Predator.webp"
+					},
+					"title": "Kavu Climber",
+					"credit": "Jonathan Kuo"
+				}
+			]
+		},
+		{
+			"name": "Lyra",
+			"source": "PSD",
+			"_copy": {
+				"name": "Serra Angel",
+				"source": "PSD"
+			}
+		},
+		{
+			"name": "Serra Angel",
+			"source": "PSD",
+			"entries": [
+				"The most visible and recognized symbols of the Church of Serra are her angels\u2014both those that were personally created by Serra and those that appeared spontaneously in the Cathedral at Sursi. Some angels live contemplative lives within the cathedrals, but most are active defenders of the faith, protecting Serra's people across the world. Powerful angels often take responsibility for large regions of the world. Lyra, for example, stands as the protector of Benalia, and Shalai plays a similar role in Llanowar. Serra's angels are believed to hear prayers addressed to Serra, and they have an uncanny tendency to arrive exactly when they are needed.",
+				"Any of the angels in the {@book Monster Manual|MM} can serve as {@creature serra angel|PSD|Serra angels}. The {@creature deva|MM} represents the most common angels, while the {@creature planetar|MM} and {@creature solar|MM} are appropriate for powerful angels such as {@creature Lyra|PSD} and {@creature Shalai|PSD}."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSD/Serra Angel.webp"
+					},
+					"title": "Angel",
+					"credit": "Winona Nelson"
+				}
+			]
+		},
+		{
+			"name": "Shalai",
+			"source": "PSD",
+			"_copy": {
+				"name": "Serra Angel",
+				"source": "PSD"
+			}
+		},
+		{
+			"name": "Steel Leaf Kavu",
+			"source": "PSD",
+			"_copy": {
+				"name": "Kavu",
+				"source": "PSD",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "Deadly Chargers",
+									"page": 24,
+									"entries": [
+										"Though the Basiphem dwell in the highest layer of the forest, they maintain extensive stables on the forest floor to house and train the largest ground-dwelling kavu. Members of the Order of the Steel Leaf often ride these creatures into battle, with the largest of the kavu sometimes reaching the size of elephants."
+									]
+								}
+							]
+						}
+					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSD/Steel Leaf Kavu.webp"
+					},
+					"title": "Kavu Climber",
+					"credit": "Jonathan Kuo"
+				}
+			]
+		}
+	]
+}
