@@ -233,6 +233,21 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "Coalition Pidgin",
+			"source": "PSX",
+			"page": 6,
+			"typicalSpeakers": [
+				"Brazen Coalition",
+				"{@race Human (Ixalan)|PSX|Humans}",
+				"{@race Orc (Ixalan)|PSX|Orcs}",
+				"{@race Siren|PSX|Sirens}",
+				"{@race Goblin (Ixalan)|PSX|Goblins}"
+			],
+			"entries": [
+				"The humans of the Brazen Coalition speak a different language\u2014a pidgin of Orc, Siren, and a native human language that is similar to {@language Vampire|PSX} (about as closely related as Italian is to Spanish). Orcs, sirens, and goblins also speak this Brazen Coalition pidgin."
+			]
+		},
+		{
 			"name": "Common",
 			"source": "DSotDQ",
 			"page": 9,
@@ -297,6 +312,24 @@
 				"{@creature Vampire Neonate|PSI|Vampires}",
 				"{@creature Werewolf (Krallenhorde)|PSI|Werewolves}",
 				"{@creature Geist|PSI|Geists}"
+			]
+		},
+		{
+			"name": "Common Trade Pidgin",
+			"source": "PSX",
+			"page": 6,
+			"typicalSpeakers": [
+				"Sun Empire",
+				"River Heralds",
+				"Legion of Dusk",
+				"Brazen Coalition",
+				"{@race Human (Ixalan)|PSX|Humans}",
+				"{@race Orc (Ixalan)|PSX|Orcs}",
+				"{@race Siren|PSX|Sirens}",
+				"{@race Goblin (Ixalan)|PSX|Goblins}"
+			],
+			"entries": [
+				"A trade pidgin used in circumstances where members of different peoples do interact with each other. But this language is almost impossible to use for discussions of matters of any depth."
 			]
 		},
 		{
@@ -963,6 +996,15 @@
 			"script": "Istarian"
 		},
 		{
+			"name": "Itzocan",
+			"source": "PSX",
+			"page": 6,
+			"typicalSpeakers": [
+				"Sun Empire",
+				"{@race Human (Ixalan)|PSX|Humans}"
+			]
+		},
+		{
 			"name": "Ixitxachitl",
 			"source": "OotA",
 			"page": 225,
@@ -1089,6 +1131,15 @@
 			"type": "standard",
 			"typicalSpeakers": [
 				"{@filter merfolk|bestiary|source=GGR|tag=any race;merfolk}"
+			],
+			"script": "Merfolk"
+		},
+		{
+			"name": "Merfolk",
+			"source": "PSX",
+			"page": 6,
+			"typicalSpeakers": [
+				"River Heralds"
 			],
 			"script": "Merfolk"
 		},
@@ -1450,6 +1501,14 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "Siren",
+			"source": "PSX",
+			"page": 17,
+			"typicalSpeakers": [
+				"{@race Siren|PSX|Sirens}"
+			]
+		},
+		{
 			"name": "Slaad",
 			"source": "MM",
 			"page": 276,
@@ -1732,6 +1791,14 @@
 				}
 			],
 			"hasFluffImages": true
+		},
+		{
+			"name": "Vampire",
+			"source": "PSX",
+			"page": 6,
+			"typicalSpeakers": [
+				"Legion of Dusk"
+			]
 		},
 		{
 			"name": "Vedalken",

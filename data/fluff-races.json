@@ -3669,6 +3669,47 @@
 		},
 		{
 			"name": "Goblin",
+			"source": "PSZ",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"Goblins are an inquisitive and adaptable race hampered by their small size, their natural cowardice, and a severe shortage of common sense. They eagerly explore areas that others hesitate to enter, and obsessively fiddle with magic that more sensible folk would take careful precautions with. They prize ancient artifacts not for their inherent value, but primarily as a mark of status\u2014for a precious trophy proves that its owner survived a delve into a deep and dangerous ruin.",
+						"Goblins are associated with red mana. Their shamans are fond of spells that create or control fire and lightning to smite their foes, and they are quick to follow their impulses and passions into action without much forethought. Life to a goblin is an adventure full of new things to explore and experience.",
+						{
+							"type": "entries",
+							"name": "Long Arms and Stony Skin",
+							"entries": [
+								"A typical goblin stands between three-and-a-half and five feet tall, with a slender, elongated build. Goblins' arms are unusually long and spindly, making them adept at climbing cliffs and trees. Their skin has a stony texture, ranging in color from red-brown to moss green or gray. Their ears are large and swept back, their eyes are intensely red, and many sport heavy bone protrusions on their spines or elbows. Males have similar growths jutting from their chins, while females have heavier growths on their foreheads.",
+								"This distinctive appearance is a direct result of the goblins' unusual diet. Before the Eldrazi's rise, goblins supplemented their normal diet with a kind of rock they pounded into bits and called \"grit.\" The presence of the Eldrazi in Zendikar has poisoned this rock, so the goblins have taken to eating powdered hedrons instead. Eating this magic-infused stone has given the goblins resistance to the maddening psychic emanations of the Eldrazi. As an added benefit, it toughens their skin, protecting them from the elements and from physical dangers."
+							]
+						}
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "races/PSZ/Goblin.webp"
+					},
+					"title": "Zada, Hedron Grinder",
+					"credit": "Chris Rallis"
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "races/PSZ/Goblin2.webp"
+					},
+					"title": "Slab Hammer",
+					"credit": "Joeseph Meehan"
+				}
+			]
+		},
+		{
+			"name": "Goblin",
 			"source": "VGM",
 			"monstrous": true,
 			"images": [
@@ -3719,48 +3760,18 @@
 					"href": {
 						"type": "internal",
 						"path": "races/PSX/Goblin.webp"
-					}
-				}
-			]
-		},
-		{
-			"name": "Goblin (Zendikar)",
-			"source": "PSZ",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						"Goblins are an inquisitive and adaptable race hampered by their small size, their natural cowardice, and a severe shortage of common sense. They eagerly explore areas that others hesitate to enter, and obsessively fiddle with magic that more sensible folk would take careful precautions with. They prize ancient artifacts not for their inherent value, but primarily as a mark of status\u2014for a precious trophy proves that its owner survived a delve into a deep and dangerous ruin.",
-						"Goblins are associated with red mana. Their shamans are fond of spells that create or control fire and lightning to smite their foes, and they are quick to follow their impulses and passions into action without much forethought. Life to a goblin is an adventure full of new things to explore and experience.",
-						{
-							"type": "entries",
-							"name": "Long Arms and Stony Skin",
-							"entries": [
-								"A typical goblin stands between three-and-a-half and five feet tall, with a slender, elongated build. Goblins' arms are unusually long and spindly, making them adept at climbing cliffs and trees. Their skin has a stony texture, ranging in color from red-brown to moss green or gray. Their ears are large and swept back, their eyes are intensely red, and many sport heavy bone protrusions on their spines or elbows. Males have similar growths jutting from their chins, while females have heavier growths on their foreheads.",
-								"This distinctive appearance is a direct result of the goblins' unusual diet. Before the Eldrazi's rise, goblins supplemented their normal diet with a kind of rock they pounded into bits and called \"grit.\" The presence of the Eldrazi in Zendikar has poisoned this rock, so the goblins have taken to eating powdered hedrons instead. Eating this magic-infused stone has given the goblins resistance to the maddening psychic emanations of the Eldrazi. As an added benefit, it toughens their skin, protecting them from the elements and from physical dangers."
-							]
-						}
-					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "races/PSZ/Goblin.webp"
 					},
-					"title": "Zada, Hedron Grinder",
-					"credit": "Chris Rallis"
+					"title": "Firecannon Blast",
+					"credit": "Svetlin Velinov"
 				},
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "races/PSZ/Goblin2.webp"
+						"path": "races/PSX/Goblin2.webp"
 					},
-					"title": "Slab Hammer",
-					"credit": "Joeseph Meehan"
+					"title": "Goblin Trailblazer",
+					"credit": "Josh Hass"
 				}
 			]
 		},
@@ -3768,7 +3779,7 @@
 			"name": "Goblin (Zendikar; Grotag Tribe)",
 			"source": "PSZ",
 			"_copy": {
-				"name": "Goblin (Zendikar)",
+				"name": "Goblin",
 				"source": "PSZ",
 				"_mod": {
 					"entries": {
@@ -3792,7 +3803,7 @@
 			"name": "Goblin (Zendikar; Lavastep Tribe)",
 			"source": "PSZ",
 			"_copy": {
-				"name": "Goblin (Zendikar)",
+				"name": "Goblin",
 				"source": "PSZ",
 				"_mod": {
 					"entries": {
@@ -3816,7 +3827,7 @@
 			"name": "Goblin (Zendikar; Tuktuk Tribe)",
 			"source": "PSZ",
 			"_copy": {
-				"name": "Goblin (Zendikar)",
+				"name": "Goblin",
 				"source": "PSZ",
 				"_mod": {
 					"entries": {
@@ -5017,21 +5028,27 @@
 					"href": {
 						"type": "internal",
 						"path": "races/PSX/Human.webp"
-					}
+					},
+					"title": "Ixalli's Keeper",
+					"credit": "Lake Hurwitz"
 				},
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "races/PSX/Human2.webp"
-					}
+					},
+					"title": "Navigator's Ruin",
+					"credit": "Zoltan Boros"
 				},
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "races/PSX/Human3.webp"
-					}
+					},
+					"title": "Seeker's Squire",
+					"credit": "Anthony Palumbo"
 				}
 			]
 		},
@@ -6006,6 +6023,47 @@
 			]
 		},
 		{
+			"name": "Merfolk",
+			"source": "PSZ",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"Curious, thoughtful, and analytical, the merfolk of Zendikar are natural scholars and explorers. In the past, merfolk society was organized around their belief in three deities. But in the wake of the reappearance of the Eldrazi, the merfolk have realized that their faith was a web of lies, built on a corrupted memory of the Eldrazi titans handed down from generation to generation. In peaceful times, the merfolk might have fought over the ultimate meaning of this revelation. But faced with the danger presented by the Eldrazi broods, the merfolk have largely set aside their differences and joined together in a united force. Old grudges still linger, but the well-being of the merfolk race\u2014and the world\u2014far outweigh any ancient conflicts between creeds.",
+						"Merfolk are associated with blue mana, though the traditional merfolk creeds express this connection in different ways.",
+						{
+							"type": "entries",
+							"name": "Born of the Sea",
+							"entries": [
+								"Merfolk are an amphibious race, born and at home in the water but comfortable on dry land. Humanoid in form, they have skin of ivory, silver, russet, blue, or deep purple. Long fins extend from the backs of their forearms and calves, and their fingers and toes are webbed. The hairlike growths on their heads are either thick and bristly like the needles of a sea urchin, or long and wavy, resembling fine seaweed. In either case, these growths typically range in color from red to warm brown to black. Male merfolk have similar growths extending down from their cheekbones.",
+								"Merfolk wear little clothing unless they are armored for battle. Even then, they drape themselves with nets and a minimum of cloth, wearing armor crafted of large, bleached seashells and augmented with leather."
+							]
+						}
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "races/PSZ/Merfolk.webp"
+					},
+					"title": "Enclave Elite",
+					"credit": "Igor Kieryluk"
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "races/PSZ/Merfolk2.webp"
+					},
+					"title": "Coralhelm Commander",
+					"credit": "Jaime Jones"
+				}
+			]
+		},
+		{
 			"name": "Merfolk (Ixalan)",
 			"source": "PSX",
 			"entries": [
@@ -6017,7 +6075,18 @@
 					"href": {
 						"type": "internal",
 						"path": "races/PSX/Merfolk.webp"
-					}
+					},
+					"title": "Vineshaper Mystic",
+					"credit": "Kieran Yanner"
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "races/PSX/Merfolk2.webp"
+					},
+					"title": "Coralhelm Commander",
+					"credit": "Jaime Jones"
 				}
 			]
 		},
@@ -6070,51 +6139,10 @@
 			}
 		},
 		{
-			"name": "Merfolk (Zendikar)",
-			"source": "PSZ",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						"Curious, thoughtful, and analytical, the merfolk of Zendikar are natural scholars and explorers. In the past, merfolk society was organized around their belief in three deities. But in the wake of the reappearance of the Eldrazi, the merfolk have realized that their faith was a web of lies, built on a corrupted memory of the Eldrazi titans handed down from generation to generation. In peaceful times, the merfolk might have fought over the ultimate meaning of this revelation. But faced with the danger presented by the Eldrazi broods, the merfolk have largely set aside their differences and joined together in a united force. Old grudges still linger, but the well-being of the merfolk race\u2014and the world\u2014far outweigh any ancient conflicts between creeds.",
-						"Merfolk are associated with blue mana, though the traditional merfolk creeds express this connection in different ways.",
-						{
-							"type": "entries",
-							"name": "Born of the Sea",
-							"entries": [
-								"Merfolk are an amphibious race, born and at home in the water but comfortable on dry land. Humanoid in form, they have skin of ivory, silver, russet, blue, or deep purple. Long fins extend from the backs of their forearms and calves, and their fingers and toes are webbed. The hairlike growths on their heads are either thick and bristly like the needles of a sea urchin, or long and wavy, resembling fine seaweed. In either case, these growths typically range in color from red to warm brown to black. Male merfolk have similar growths extending down from their cheekbones.",
-								"Merfolk wear little clothing unless they are armored for battle. Even then, they drape themselves with nets and a minimum of cloth, wearing armor crafted of large, bleached seashells and augmented with leather."
-							]
-						}
-					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "races/PSZ/Merfolk.webp"
-					},
-					"title": "Enclave Elite",
-					"credit": "Igor Kieryluk"
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "races/PSZ/Merfolk2.webp"
-					},
-					"title": "Coralhelm Commander",
-					"credit": "Jaime Jones"
-				}
-			]
-		},
-		{
 			"name": "Merfolk (Zendikar; Cosi Creed)",
 			"source": "PSZ",
 			"_copy": {
-				"name": "Merfolk (Zendikar)",
+				"name": "Merfolk",
 				"source": "PSZ",
 				"_mod": {
 					"entries": {
@@ -6138,7 +6166,7 @@
 			"name": "Merfolk (Zendikar; Emeria Creed)",
 			"source": "PSZ",
 			"_copy": {
-				"name": "Merfolk (Zendikar)",
+				"name": "Merfolk",
 				"source": "PSZ",
 				"_mod": {
 					"entries": {
@@ -6162,7 +6190,7 @@
 			"name": "Merfolk (Zendikar; Ula Creed)",
 			"source": "PSZ",
 			"_copy": {
-				"name": "Merfolk (Zendikar)",
+				"name": "Merfolk",
 				"source": "PSZ",
 				"_mod": {
 					"entries": {
@@ -6547,7 +6575,9 @@
 					"href": {
 						"type": "internal",
 						"path": "races/PSX/Orc.webp"
-					}
+					},
+					"title": "Dire Fleet Ravager",
+					"credit": "Bram Sels"
 				}
 			]
 		},
@@ -7358,7 +7388,7 @@
 			"source": "PSX",
 			"entries": [
 				"Sirens are at home along the waters of the Stormwreck Sea. They settle on rocky coasts and remote islands, and even on floating piles of kelp. Sirens are mercurial creatures who can turn in an instant from lonely to repulsed, from desirous to hateful, from welcoming to irritated, from loving to murderous\u2014and then back again. They are fascinated with ships, and enjoy toying with them. One siren might call out to a passing crew for company, only to capriciously draw the ship into an entangling mass of kelp. Another might lure a vessel onto jagged rocks so as to study the wreckage and learn more about the strange contraption. But as the number of Brazen Coalition ships passing through siren-controlled waters has increased over the years, a growing number of sirens have decided to satisfy their curiosity by taking positions on ship crews\u2014including, in at least one case, the position of captain.",
-				"Sirens are humanoid creatures with birdlike features. Their long, slender arms extend into powerful wings that easily carry their light frames into the air. Their fingers bear sharp claws but are nimble enough to wield weapons and perform fine manipulation. Crests of feathery plumage start"
+				"Sirens are humanoid creatures with birdlike features. Their long, slender arms extend into powerful wings that easily carry their light frames into the air. Their fingers bear sharp claws but are nimble enough to wield weapons and perform fine manipulation. Crests of feathery plumage start between their eyes and cover the backs of their heads."
 			],
 			"images": [
 				{
@@ -7366,7 +7396,9 @@
 					"href": {
 						"type": "internal",
 						"path": "races/PSX/Siren.webp"
-					}
+					},
+					"title": "Dreamcaller Siren",
+					"credit": "Eric Deschamps"
 				}
 			]
 		},
@@ -8318,33 +8350,7 @@
 			]
 		},
 		{
-			"name": "Vampire (Ixalan)",
-			"source": "PSX",
-			"entries": [
-				"The Legion of Dusk is dominated by an aristocratic class made up of vampires. They are faster and stronger than most humans, and gifted with supernatural abilities that made them the most formidable force in their homeland. Now, as they push into the depths of Ixalan in search of the Immortal Sun, they bring this strength to bear against all who would resist their advance.",
-				"For many vampires, the Rite of Redemption that transforms a human into a vampire is an act of personal sacrifice, paving the way for a promised glorious age. These vampires embody Torrezon's noble tradition in Ixalan. They are often guided by their dual loyalties to church and crown, believing that the monarch acts with righteous purpose. As such, these vampires carry themselves with a self-assurance that is both imposing and imperial. Other societies seem inferior and unclean compared to their own, leading them to feel that they have a right to claim new lands despite the presence of people already inhabiting those lands.",
-				"Other vampires view vampirism merely as a means to attain a powerful advantage over others. These vampires are fierce, ruthless, and often cruel, relishing conflict\u2014be it political or armed\u2014as a means of demonstrating their superiority. Many are politically ambitious, invoking Torrezon's hierarchy when it serves their interests, but ignoring all the rules of church, state, and morality when those rules become a burden. When these vampires come to Ixalan, they are conquerors, motivated by the prospect of personal glory and the accumulation of riches. Those who achieve wealth and power display it ostentatiously.",
-				"The core of every vampire's nature is the Feast of Blood. Though it is forbidden to feed on human citizens of Torrezon, including the human sailors and servants who accompany the vampire conquistadors to Ixalan, vampires are encouraged to feed on outsiders and heretics. The Feast of Blood sends new life essence flowing through the vampire who partakes of it, manifesting as even greater strength and speed."
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "races/PSX/Vampire.webp"
-					}
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "races/PSX/Vampire2.webp"
-					}
-				}
-			]
-		},
-		{
-			"name": "Vampire (Zendikar)",
+			"name": "Vampire",
 			"source": "PSZ",
 			"entries": [
 				{
@@ -8383,6 +8389,53 @@
 					"credit": "Jason Chan"
 				}
 			]
+		},
+		{
+			"name": "Vampire (Ixalan)",
+			"source": "PSX",
+			"entries": [
+				"The Legion of Dusk is dominated by an aristocratic class made up of vampires. They are faster and stronger than most humans, and gifted with supernatural abilities that made them the most formidable force in their homeland. Now, as they push into the depths of Ixalan in search of the Immortal Sun, they bring this strength to bear against all who would resist their advance.",
+				"For many vampires, the Rite of Redemption that transforms a human into a vampire is an act of personal sacrifice, paving the way for a promised glorious age. These vampires embody Torrezon's noble tradition in Ixalan. They are often guided by their dual loyalties to church and crown, believing that the monarch acts with righteous purpose. As such, these vampires carry themselves with a self-assurance that is both imposing and imperial. Other societies seem inferior and unclean compared to their own, leading them to feel that they have a right to claim new lands despite the presence of people already inhabiting those lands.",
+				"Other vampires view vampirism merely as a means to attain a powerful advantage over others. These vampires are fierce, ruthless, and often cruel, relishing conflict\u2014be it political or armed\u2014as a means of demonstrating their superiority. Many are politically ambitious, invoking Torrezon's hierarchy when it serves their interests, but ignoring all the rules of church, state, and morality when those rules become a burden. When these vampires come to Ixalan, they are conquerors, motivated by the prospect of personal glory and the accumulation of riches. Those who achieve wealth and power display it ostentatiously.",
+				"The core of every vampire's nature is the Feast of Blood. Though it is forbidden to feed on human citizens of Torrezon, including the human sailors and servants who accompany the vampire conquistadors to Ixalan, vampires are encouraged to feed on outsiders and heretics. The Feast of Blood sends new life essence flowing through the vampire who partakes of it, manifesting as even greater strength and speed."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "races/PSX/Vampire.webp"
+					},
+					"title": "Vicious Conquistador",
+					"credit": "Kieran Yanner"
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "races/PSX/Vampire2.webp"
+					},
+					"title": "Glorifier of Dusk",
+					"credit": "Viktor Titov"
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "races/PSX/Vampire3.webp"
+					},
+					"title": "Arterial Flow",
+					"credit": "Josh Hass"
+				}
+			]
+		},
+		{
+			"name": "Vampire (Zendikar)",
+			"source": "PSZ",
+			"_copy": {
+				"name": "Vampire",
+				"source": "PSZ"
+			}
 		},
 		{
 			"name": "Vedalken",

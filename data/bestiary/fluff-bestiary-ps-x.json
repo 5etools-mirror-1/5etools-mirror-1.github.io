@@ -8,17 +8,38 @@
 		{
 			"name": "Aegisaur",
 			"source": "PSX",
-			"entries": [
-				"For dinosaurs without the prominent horns of the cera topses, armored plating and deadly tails are an effective defense against predators.",
-				"An aegisaur's back is covered with thick, armored scales that resemble a turtle's shell, while its tail is tipped with a massive bony club that can smash an ag gressor's skull."
-			],
+			"_copy": {
+				"name": "Dinosaurs",
+				"source": "PSX",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "Scales, Spikes, and Hammers",
+									"page": 27,
+									"entries": [
+										"For dinosaurs without the prominent horns of the ceratopses, armored plating and deadly tails are an effective defense against predators.",
+										"An aegisaur's back is covered with thick, armored scales that resemble a turtle's shell, while its tail is tipped with a massive bony club that can smash an aggressor's skull. Use the {@creature ankylosaurus|MM} in the {@book Monster Manual|MM} for these creatures."
+									]
+								}
+							]
+						}
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Aegisaur.webp"
-					}
+					},
+					"title": "Bellowing Aegisaur",
+					"credit": "Craig J. Spearing"
 				}
 			]
 		},
@@ -34,7 +55,7 @@
 			"name": "Aerosaur (Small)",
 			"source": "PSX",
 			"entries": [
-				"Aerosaurs include several varieties of large reptiles with leathery wings, including pterodons and sunwings. Though they are generally clumsy fliers, better at gliding from high perches or riding coastal updrafts than at lifting themselves from the ground, aerosaurs are sometimes used as mounts by knights of the Sun Empire."
+				"Aerosaurs include several varieties of large reptiles with leathery wings, including pterodons and sunwings. Though they are generally clumsy fliers, better at gliding from high perches or riding coastal updrafts than at lifting themselves from the ground, aerosaurs are sometimes used as mounts by knights of the Sun Empire. Smaller aerosaurs can be represented by the {@creature pteranodon|MM} in the {@book Monster Manual|MM}, while larger ones are more like the {@creature quetzalcoatlus|VGM} in {@book Volo's Guide to Monsters|VGM}."
 			],
 			"images": [
 				{
@@ -42,7 +63,18 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Aerosaur.webp"
-					}
+					},
+					"title": "Shining Aerosaur",
+					"credit": "Dan Scott"
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSX/Aerosaur2.webp"
+					},
+					"title": "Sky Terror",
+					"credit": "Johann Bodin"
 				}
 			]
 		},
@@ -59,23 +91,66 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Air Totem Elemental.webp"
-					}
+					},
+					"title": "Air Elemental",
+					"credit": "Tomasz Jedruszek"
+				}
+			]
+		},
+		{
+			"name": "Altisaur",
+			"source": "PSX",
+			"_copy": {
+				"name": "Brontodon",
+				"source": "PSX"
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSX/Altisaur.webp"
+					},
+					"title": "Itlimoc, Cradle of the Sun",
+					"credit": "Grzegorz Rutkowski"
 				}
 			]
 		},
 		{
 			"name": "Armasaur",
 			"source": "PSX",
-			"entries": [
-				"Armasaurs also have plates on their backs, but these rise up like spikes along their spines. Their whiplike tails bear sharp spikes for protection."
-			],
+			"_copy": {
+				"name": "Dinosaurs",
+				"source": "PSX",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "Scales, Spikes, and Hammers",
+									"page": 27,
+									"entries": [
+										"For dinosaurs without the prominent horns of the ceratopses, armored plating and deadly tails are an effective defense against predators.",
+										"Armasaurs also have plates on their backs, but these rise up like spikes along their spines. Their whiplike tails bear sharp spikes for protection. Use the {@creature stegosaurus|VGM} in {@book Volo's Guide to Monsters|VGM} for the armasaur."
+									]
+								}
+							]
+						}
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Armasaur.webp"
-					}
+					},
+					"title": "Steadfast Armasaur",
+					"credit": "Greg Opalanski"
 				}
 			]
 		},
@@ -98,49 +173,105 @@
 		{
 			"name": "Brontodon",
 			"source": "PSX",
-			"entries": [
-				"The largest of the dinosaurs are huge, long-necked herbi vores that feed on the leaves of tall trees. The enormous size of these dinosaurs means that a single beast\u2014often a young, old, or injured one that becomes separated from the herd\u2014can feed a whole pack of smaller preda tors. The magnificent altisaurs wander across the plains and through the sparse forests of the Sun Coast, grazing on the tops of trees. Brontodons travel in herds, causing the ground to thunder beneath their tremendous weight when they build up speed."
-			],
+			"_copy": {
+				"name": "Dinosaurs",
+				"source": "PSX",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "The Rumbling Herds",
+									"page": 27,
+									"entries": [
+										"The largest of the dinosaurs are huge, long-necked herbivores that feed on the leaves of tall trees. The enormous size of these dinosaurs means that a single beast\u2014often a young, old, or injured one that becomes separated from the herd\u2014can feed a whole pack of smaller predators. The magnificent Altisaurs wander across the plains and through the sparse forests of the Sun Coast, grazing on the tops of trees. Brontodons travel in herds, causing the ground to thunder beneath their tremendous weight when they build up speed. Use {@creature brontosaurus|VGM} stats from {@book Volo's Guide to Monsters|VGM} for these beasts."
+									]
+								}
+							]
+						}
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Brontodon.webp"
-					}
+					},
+					"title": "Belligerent Brontodon",
+					"credit": "Dan Scott"
 				}
 			]
 		},
 		{
 			"name": "Ceratops",
 			"source": "PSX",
-			"entries": [
-				"Many smaller herbivores are found on the plains of Ix alan. Rather than depending on size for defense, these dinosaurs are protected by plated scales, sharp horns, or spiked tails. Most are aggressively proactive in chas ing off predators even before they are attacked, and the people of the Sun Empire find these creatures among the hardest dinosaurs to control.",
-				"Ceratopses sport enormous horns on and around the large, feathered frills that protect their necks. The re lated snubhorns lack the sharp pointed horns of their cousins. Despite their surly temper, ceratopses make excellent mounts."
-			],
+			"_copy": {
+				"name": "Dinosaurs",
+				"source": "PSX",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "Horned Herbivores",
+									"page": 28,
+									"entries": [
+										"Many smaller herbivores are found on the plains of Ixalan. Rather than depending on size for defense, these dinosaurs are protected by plated scales, sharp horns, or spiked tails. Most are aggressively proactive in chasing off predators even before they are attacked, and the people of the Sun Empire find these creatures among the hardest dinosaurs to control.",
+										"Ceratopses sport enormous horns on and around the large, feathered frills that protect their necks. The related snubhorns lack the sharp pointed horns of their cousins. Despite their surly temper, ceratopses make excellent mounts. The {@creature triceratops|MM} in the {@book Monster Manual|MM} can represent all of these dinosaurs."
+									]
+								}
+							]
+						}
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Ceratops.webp"
-					}
+					},
+					"title": "Goring Ceratops",
+					"credit": "Zezhou Chen"
 				}
 			]
 		},
 		{
 			"name": "Chupacabra",
 			"source": "PSX",
-			"entries": [
-				"Indescribable creatures of nightmare lurk in the ruins and dark places of Ixalan. Many are thought to be the corrupted remnants of the life energy and brilliant light left behind in places the Sun Empire has abandoned. Such creatures include a monster that lurks in the darkness of the jungle and feeds on the blood of mammals and dinosaurs, called the chupacabra. It is stealthy and elusive, known more by the blood-drained prey it leaves behind than by actual physical sightings."
-			],
+			"_copy": {
+				"name": "Night Terrors",
+				"source": "PSX",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								"Indescribable creatures of nightmare lurk in the ruins and dark places of Ixalan. Many are thought to be the corrupted remnants of the life energy and brilliant light left behind in places the Sun Empire has abandoned. Such creatures include a monster that lurks in the darkness of the jungle and feeds on the blood of mammals and dinosaurs, called the chupacabra. It is stealthy and elusive, known more by the blood-drained prey it leaves behind than by actual physical sightings."
+							]
+						}
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Chupacabra.webp"
-					}
+					},
+					"title": "Lurking Chupacabra",
+					"credit": "YW Tang"
 				}
 			]
 		},
@@ -149,7 +280,7 @@
 			"source": "PSX",
 			"entries": [
 				"The River Heralds believe that the waters of the world are divided into two spheres: the river and the sea are the lower half, with the jungle and the sky above. They believe that the sea possesses an unfathomable wisdom, the deep musings of the unspeakably ancient world. But the wisdom of the sky and the rivers is embodied in the coatls\u2014winged serpents that twist through the air to reflect the course of rivers along the ground.",
-				"Coatls are immortal guardians of the sky, dwelling always among the clouds. The River Heralds say that they can be enticed to the ground by the earnest supplication of the wisest of merfolk shamans. Coatls are said to be wise beyond mortal measure and incapable of speaking a falsehood, so their advice is often sought in times of desperate need. The sight of a coatl is thought to foretell favorable winds\u2014a belief that has begun to spread from the River Herald shamans to the pirates of the Brazen Coalition."
+				"Coatls are immortal guardians of the sky, dwelling always among the clouds. The River Heralds say that they can be enticed to the ground by the earnest supplication of the wisest of merfolk shamans. Coatls are said to be wise beyond mortal measure and incapable of speaking a falsehood, so their advice is often sought in times of desperate need. The sight of a coatl is thought to foretell favorable winds\u2014a belief that has begun to spread from the River Herald shamans to the pirates of the Brazen Coalition. Use the {@creature couatl|MM} statistics in the {@book Monster Manual|MM} for Ixalan's coatls."
 			],
 			"images": [
 				{
@@ -157,39 +288,57 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Coatl.webp"
-					}
-				}
-			]
-		},
-		{
-			"name": "Deinonychus",
-			"source": "PSX",
-			"entries": [
-				"The most feared dinosaurs are the aggressive bipedal predators that hunt other dinosaurs\u2014none of which are averse to feeding on humanoids when they can. Despite their ferocity, flesh-eaters make excellent mounts, since they do not balk or shy away from combat. These dinosaurs include a huge variety of raptors, ranging from dog-sized creatures that hunt in packs to monsters large enough to carry an armored knight into battle."
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/PSX/Deinonychus.webp"
-					}
+					},
+					"title": "Favorable Winds",
+					"credit": "Shreya Shetty"
 				}
 			]
 		},
 		{
 			"name": "Demon",
 			"source": "PSX",
-			"entries": [
-				"Resembling twisted bats, the demons of Ixalan are the spawn of a bat-god, the source of all darkness. While the sun's aspects include destruction as well as creation and growth, the demons represent stagnation and decay. The sun consumes in glorious fire; demons work through rot and degeneration. They are said to be active at night, when the sun is hidden, and their efforts are directed toward preventing the sun from rising again each morning. In the meantime, they spread plague and corruption across the land."
-			],
+			"_copy": {
+				"name": "Night Terrors",
+				"source": "PSX",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								"Resembling twisted bats, the demons of Ixalan are the spawn of a bat-god, the source of all darkness. While the sun's aspects include destruction as well as creation and growth, the demons represent stagnation and decay. The sun consumes in glorious fire; demons work through rot and degeneration. They are said to be active at night, when the sun is hidden, and their efforts are directed toward preventing the sun from rising again each morning. In the meantime, they spread plague and corruption across the land. The {@creature vrock|MM} in the {@book Monster Manual|MM} is a good representation of Ixalan's demons."
+							]
+						}
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Demon.webp"
-					}
+					},
+					"credit": "Zack Stella"
+				}
+			]
+		},
+		{
+			"name": "Dinosaurs",
+			"source": "PSX",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Dinosaurs",
+							"page": 27,
+							"entries": [
+								"Dinosaurs are the dominant form of animal life in Ixalan\u2014the absolute rulers of the coastal lands held by the Sun Empire, and a force to be reckoned with in the interior jungles. A number of dinosaurs appear in the {@book Monster Manual|MM}, with even more to be found in {@book Volo's Guide to Monsters|VGM}, making that a particularly worthwhile resource for an Ixalan campaign. (Many of the dinosaurs in {@book Volo's Guide|VGM} also appear in {@adventure Tomb of Annihilation|ToA}.)"
+							]
+						}
+					]
 				}
 			]
 		},
@@ -198,7 +347,8 @@
 			"source": "PSX",
 			"entries": [
 				"It is said that the only force on Ixalan not interested in finding the golden city is Ixalan itself. Dryads, as incarnations of the land and its will, prove the saying true. Their only concern is the health of the forest: when the trees and ferns are healthy, the dryads flourish. But when the vampires' dusk fog or a demon's unwholesome influence cause the jungle to wither, the dryads suffer. As a result, they are generally friendly with the River Heralds, who live in harmony with nature, and hostile to the Legion of Dusk.",
-				"The dryads otherwise have no stake in the conflict between the people of Ixalan and the invaders, but as creatures of life and growth, they hate to see any living being suffer. Thus, they have been known to tend to wounded people left in the jungle to die, sharing their own abundant life energy with those in their care."
+				"The dryads otherwise have no stake in the conflict between the people of Ixalan and the invaders, but as creatures of life and growth, they hate to see any living being suffer. Thus, they have been known to tend to wounded people left in the jungle to die, sharing their own abundant life energy with those in their care.",
+				"Ixalan's dryads are identical to the {@creature dryad|MM|dryads} in the {@book Monster Manual|MM}."
 			],
 			"images": [
 				{
@@ -206,7 +356,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Dryad.webp"
-					}
+					},
+					"title": "Old-Growth Dryads",
+					"credit": "Yongjae Choi"
 				}
 			]
 		},
@@ -230,7 +382,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Elder Dinosaur.webp"
-					}
+					},
+					"title": "Regisaur Alpha",
+					"credit": "Jonathan Kuo"
 				}
 			]
 		},
@@ -247,7 +401,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Elder Dinosaur (Etali, Primal Storm).webp"
-					}
+					},
+					"title": "Etali, Primal Storm",
+					"credit": "Raymond Swanland"
 				}
 			]
 		},
@@ -264,7 +420,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Elder Dinosaur (Ghalta, Primal Hunger).webp"
-					}
+					},
+					"title": "Ghalta, Primal Hunger",
+					"credit": "Chase Stone"
 				}
 			]
 		},
@@ -281,7 +439,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Elder Dinosaur (Nezahal, Primal Tide).webp"
-					}
+					},
+					"title": "Nezahal, Primal Tide",
+					"credit": "Sam Burley"
 				}
 			]
 		},
@@ -298,7 +458,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Elder Dinosaur (Tetzimoc, Primal Death).webp"
-					}
+					},
+					"title": "Tetzimoc, Primal Death",
+					"credit": "Zack Stella"
 				}
 			]
 		},
@@ -315,7 +477,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Elder Dinosaur (Zacama, Primal Calamity).webp"
-					}
+					},
+					"title": "Zacama, Primal Calamity",
+					"credit": "Jaime Jones"
 				}
 			]
 		},
@@ -332,15 +496,47 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Elder Dinosaur (Zetalpa, Primal Dawn).webp"
-					}
+					},
+					"title": "Zetalpa, Primal Dawn",
+					"credit": "Chris Rallis"
 				}
 			]
 		},
 		{
 			"name": "Ferocidon",
 			"source": "PSX",
-			"entries": [
-				"Ferocidons are particularly vicious relatives of raptors, specialized to take down much larger prey."
+			"_copy": {
+				"name": "Dinosaurs",
+				"source": "PSX",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "Teeth and Frills",
+									"page": 30,
+									"entries": [
+										"Ferocidons are particularly vicious relatives of raptors, specialized to take down much larger prey. Use the {@creature allosaurus|MM} statistics in the {@book Monster Manual|MM} for these creatures."
+									]
+								}
+							]
+						}
+					}
+				}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSX/Ferocidon.webp"
+					},
+					"title": "Thrash of Raptors",
+					"credit": "Jonathan Kuo"
+				}
 			]
 		},
 		{
@@ -354,16 +550,30 @@
 		{
 			"name": "Frilled Deathspitter",
 			"source": "PSX",
-			"entries": [
-				"The dinosaurs aptly known as deathspitters can spit venom to blind their prey before closing in for the kill."
-			],
+			"_copy": {
+				"name": "Dinosaurs",
+				"source": "PSX",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								"The dinosaurs aptly known as deathspitters can spit venom to blind their prey before closing in for the kill."
+							]
+						}
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Frilled Deathspitter.webp"
-					}
+					},
+					"title": "Frilled Deathspitter",
+					"credit": "Zoltan Boros"
 				}
 			]
 		},
@@ -380,7 +590,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Gishath, Sun's Avatar.webp"
-					}
+					},
+					"title": "Gishath, Sun's Avatar",
+					"credit": "Zack Stella"
 				}
 			]
 		},
@@ -396,7 +608,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Griffin.webp"
-					}
+					},
+					"title": "Resplendent Griffin",
+					"credit": "Sam Rowan"
 				}
 			]
 		},
@@ -410,32 +624,69 @@
 		{
 			"name": "Hammerskull",
 			"source": "PSX",
-			"entries": [
-				"Even lacking horns or spikes, hammerskulls can protect themselves with their thickly plated heads."
-			],
+			"_copy": {
+				"name": "Dinosaurs",
+				"source": "PSX",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "Scales, Spikes, and Hammers",
+									"page": 27,
+									"entries": [
+										"For dinosaurs without the prominent horns of the ceratopses, armored plating and deadly tails are an effective defense against predators.",
+										"Even lacking horns or spikes, hammerskulls can protect themselves with their thickly plated heads. The {@creature giant goat|MM} statistics in the {@book Monster Manual|MM} can represent a hammerskull."
+									]
+								}
+							]
+						}
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Hammerskull.webp"
-					}
+					},
+					"title": "Territorial Hammerskull",
+					"credit": "Lars Grant-West"
 				}
 			]
 		},
 		{
 			"name": "Harpy",
 			"source": "PSX",
-			"entries": [
-				"Harpies are the mortal servants of demons, and they resemble them in their general features. Their faces are like those of owls, and they have large, feathered wings that suggest their corrupt connection to the Sun Empire\u2014or perhaps their heritage as sirens who were corrupted by the evil of the demons. Utterly nasty in temperament, harpies inhabit many of the islands in both the Stormwreck Sea and the Inner Sea, and dwell on high cliffs on the mainland of Ixalan. Their filthy bodies carry disease that they can spread through their bite."
-			],
+			"_copy": {
+				"name": "Night Terrors",
+				"source": "PSX",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								"Harpies are the mortal servants of demons, and they resemble them in their general features. Their faces are like those of owls, and they have large, feathered wings that suggest their corrupt connection to the Sun Empire\u2014or perhaps their heritage as sirens who were corrupted by the evil of the demons. Utterly nasty in temperament, harpies inhabit many of the islands in both the Stormwreck Sea and the Inner Sea, and dwell on high cliffs on the mainland of Ixalan. Their filthy bodies carry disease that they can spread through their bite.",
+								"Use the {@creature harpy|MM} statistics in the {@book Monster Manual|MM} for Ixalan's harpies, but replace the club attack with a bite attack."
+							]
+						}
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Harpy.webp"
-					}
+					},
+					"title": "Mausoleum Harpy",
+					"credit": "Randy Vargas"
 				}
 			]
 		},
@@ -450,7 +701,26 @@
 			"name": "Macaw",
 			"source": "PSX",
 			"entries": [
-				"A wide variety of native birds are found throughout Ixalan, singing complex songs that contribute to the chorus of sounds within the jungle. Hummingbirds are sometimes poetically described as embodiments of freedom and the pursuit of pleasure. Large macaws and parrots make their homes in the trees and can often be found gathering over clay licks along riverbeds and the sea coast. The wily birds enjoy toying with people from the trees, with many of them calling out in imitation of humanoid voices to lead pirates and other explorers astray."
+				"A wide variety of native birds are found throughout Ixalan, singing complex songs that contribute to the chorus of sounds within the jungle. Hummingbirds are sometimes poetically described as embodiments of freedom and the pursuit of pleasure. Large macaws and parrots (with statistics like those of {@creature raven|MM|ravens}) make their homes in the trees and can often be found gathering over clay licks along riverbeds and the sea coast. The wily birds enjoy toying with people from the trees, with many of them calling out in imitation of humanoid voices to lead pirates and other explorers astray."
+			]
+		},
+		{
+			"name": "Night Terrors",
+			"source": "PSX",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Night Terrors",
+							"page": 36,
+							"entries": [
+								"The legends of the Sun Empire are populated with the enemies of the sun\u2014terrible monsters that threaten to devour its light and undo its work. Unfortunately for the people of Ixalan, these are not just creatures of legend but real monsters with supernatural power, lurking in the darkness of night and the shadows of ancient ruins and crypts."
+							]
+						}
+					]
+				}
 			]
 		},
 		{
@@ -471,16 +741,37 @@
 		{
 			"name": "Sailback",
 			"source": "PSX",
-			"entries": [
-				"Sailbacks are predators that lurk in lakes and rivers to ambush unwary prey."
-			],
+			"_copy": {
+				"name": "Dinosaurs",
+				"source": "PSX",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "Scales, Spikes, and Hammers",
+									"page": 27,
+									"entries": [
+										"Sailbacks are predators that lurk in lakes and rivers to ambush unwary prey. Their statistics are equivalent to those of the {@creature giant crocodile|MM} in the {@book Monster Manual|MM}."
+									]
+								}
+							]
+						}
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Sailback.webp"
-					}
+					},
+					"title": "Snapping Sailback",
+					"credit": "Dan Scott"
 				}
 			]
 		},
@@ -497,7 +788,8 @@
 			"source": "PSX",
 			"entries": [
 				"Through the years in which the Sun Empire was ruled from Orazca, its priests crafted huge stone guardians to protect the empire's cities and temples. The incredible magic of the Immortal Sun gave a semblance of life to these artificial creatures, endowing them with the ability to move their stone bodies, a keen awareness of their surroundings, and a limited ability to think and reason in order to help them carry out their orders. These stone guardians were tasked with standing watch\u2014constantly alert, vigilant to any danger, never sleeping, and unswerving in their duty.",
-				"Most stone guardians are inactive now. In ancient ruins lying far from the old capital, the magic that gave them life has faded over the centuries. Even within the golden city, many of them have become inert, and those who seek to explore Orazca or other ancient ruins must be on constant guard. Any carved figure or statue might well be a stone guardian whose magic has failed. But it might also be a guardian that is simply waiting for a threat before it activates and drives that threat away."
+				"Most stone guardians are inactive now. In ancient ruins lying far from the old capital, the magic that gave them life has faded over the centuries. Even within the golden city, many of them have become inert, and those who seek to explore Orazca or other ancient ruins must be on constant guard. Any carved figure or statue might well be a stone guardian whose magic has failed. But it might also be a guardian that is simply waiting for a threat before it activates and drives that threat away.",
+				"Constructs such as {@creature animated armor|MM}, {@creature helmed horror|MM|helmed horrors}, {@creature shield guardian|MM|shield guardians}, and {@creature stone golem|MM|stone golems} can represent these guardians."
 			],
 			"images": [
 				{
@@ -505,7 +797,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Stone Guardian.webp"
-					}
+					},
+					"title": "Golden Guardian",
+					"credit": "Svetlin Velinov"
 				}
 			]
 		},
@@ -545,7 +839,9 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Sunbird.webp"
-					}
+					},
+					"title": "Sunbird's Invocation",
+					"credit": "Christine Choi"
 				}
 			]
 		},
@@ -562,7 +858,8 @@
 			"source": "PSX",
 			"entries": [
 				"Elementals are an even more primal embodiment of natural forces. They are living beings of raw natural energy, but magic can shape and bind them into physical forms composed of wind, water, fire, or the verdant growth of the forest. The River Heralds construct jade totems that hold elementals in stasis until activated by trespassers. When a totem opens, the elemental's physical form comes together, and the intruders are quickly dispatched.",
-				"River Heralds also make use of elementals formed of air, water, or vegetation. In ancient times when folk of the River Heralds and the Sun Empire worked together, they harnessed fire elementals into guardians that still keep watch over certain forgotten ruins."
+				"River Heralds also make use of elementals formed of air, water, or vegetation. In ancient times when folk of the River Heralds and the Sun Empire worked together, they harnessed fire elementals into guardians that still keep watch over certain forgotten ruins.",
+				"Any of the various elemental and plant creatures in the {@book Monster Manual|MM} can represent the elementals of Ixalan. The River Heralds' totem elementals are similar to the basic {@creature air elemental|MM|air}, {@creature earth elemental|MM|earth}, and {@creature water elemental|MM|water elementals}, or to {@creature treant|MM|treants}, blights, {@creature shambling mound|MM|shambling mounds}, or {@creature awakened tree|MM|awakened trees} and {@creature awakened shrub|MM|awakened shrubs}. Fire guardians are similar to {@creature fire elemental|MM|fire elementals}."
 			]
 		},
 		{
@@ -578,6 +875,17 @@
 			"source": "PSX",
 			"entries": [
 				"On the beaches and banks of the rivers and seas, crabs scuttle across the sand and birds wade in the shallow water. Trilobites are among the most common shore-dwellers, including predatory varieties as well as scavengers and filter-feeders consuming scraps they find in the sand."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/PSX/Trilobite.webp"
+					},
+					"title": "Shore Keeper",
+					"credit": "YW Tang"
+				}
 			]
 		},
 		{
@@ -591,26 +899,39 @@
 		{
 			"name": "Tyrant",
 			"source": "PSX",
-			"entries": [
-				"Ixalan's largest predators comprise a family of dinosaurs with large heads, blade-like teeth, and short, almost vestigial front legs. These terrifying creatures bear names like monstrosaurs, dreadmaws, swordtooths, regisaurs, and tyrants, and their roars inspire terror in those who hear them. Most of these dinosaurs are solitary hunters, but regisaurs in particular are known for hunting in small packs."
-			],
+			"_copy": {
+				"name": "Dinosaurs",
+				"source": "PSX",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "Dinosaur Tyrants",
+									"page": 31,
+									"entries": [
+										"Ixalan's largest predators comprise a family of dinosaurs with large heads, blade-like teeth, and short, almost vestigial front legs. These terrifying creatures bear names like monstrosaurs, dreadmaws, swordtooths, regisaurs, and tyrants, and their roars inspire terror in those who hear them. Most of these dinosaurs are solitary hunters, but regisaurs in particular are known for hunting in small packs. Use the {@creature tyrannosaurus rex|MM} statistics in the {@book Monster Manual|MM} for all these giant predators."
+									]
+								}
+							]
+						}
+					}
+				}
+			},
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
 						"path": "bestiary/PSX/Tyrant.webp"
-					}
+					},
+					"title": "Regisaur Alpha",
+					"credit": "Jonathan Kuo"
 				}
 			]
-		},
-		{
-			"name": "Velociraptor",
-			"source": "PSX",
-			"_copy": {
-				"name": "Deinonychus",
-				"source": "PSX"
-			}
 		},
 		{
 			"name": "Water Totem Elemental",
