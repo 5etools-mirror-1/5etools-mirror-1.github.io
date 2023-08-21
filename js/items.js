@@ -275,6 +275,7 @@ class ItemsPage extends ListPage {
 						children: [
 							e_({tag: "span", clazz: `col-3-5 pl-0 bold`, text: item.name}),
 							e_({tag: "span", clazz: `col-4`, text: type}),
+							e_({tag: "span", clazz: `col-1-5 ve-text-center`, text: `${item.value || item.valueMult ? Parser.itemValueToFullMultiCurrency(item, {isShortForm: true}).replace(/ +/g, "\u00A0") : "\u2014"}`}),
 							e_({tag: "span", clazz: `col-1-5 ve-text-center`, text: Parser.itemWeightToFull(item, true) || "\u2014"}),
 							e_({tag: "span", clazz: `col-0-6 ve-text-center`, text: item._attunementCategory !== VeCt.STR_NO_ATTUNEMENT ? "×" : ""}),
 							e_({tag: "span", clazz: `col-1-4 ve-text-center`, text: (item.rarity || "").toTitleCase()}),
@@ -300,6 +301,7 @@ class ItemsPage extends ListPage {
 					type,
 					rarity: item.rarity,
 					attunement: item._attunementCategory !== VeCt.STR_NO_ATTUNEMENT,
+					cost: item.value || Infinity,
 					weight: Parser.weightValueToNumber(item.weight),
 				},
 			);
