@@ -2920,6 +2920,7 @@
 								"type": "internal",
 								"path": "book/RMR/090-c3-02.png"
 							},
+							"maxWidth": 350,
 							"width": 548,
 							"height": 600,
 							"credit": "Troy Little"
@@ -5700,1852 +5701,746 @@
 						"Presented in alphabetical order, these spells are used by characters and monsters in this set.",
 						"Some of the spells cause {@b conditions}, including {@condition charmed}, {@condition deafened}, {@condition frightened}, {@condition invisible}, {@condition paralyzed}, {@condition prone}, {@condition restrained}, and {@condition unconscious}. Consult {@book appendix A|RMR|4} to learn a condition's effects in the game.",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Aid",
 							"page": 50,
-							"id": "139",
-							"entries": [
-								"{@i 2nd-level abjuration}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 30 feet",
-										"{@b Components}: V, S, M (a tiny strip of white cloth)",
-										"{@b Duration}: 8 hours"
-									]
-								},
-								"Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.",
-								{
-									"type": "entries",
-									"id": "13a",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 50,
-											"id": "13b",
-											"entries": [
-												"When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd.",
-												"{@comic {@comicH3 Pure Jerry spell!} Why help other people when you could jack yourself up with magic and kick more ass?!}"
-											]
-										}
-									]
-								}
-							]
+							"collapsed": true
 						},
+						"{@comic {@comicH3 Pure Jerry spell!} Why help other people when you could jack yourself up with magic and kick more ass?!}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Augury",
 							"page": 50,
-							"id": "13c",
-							"entries": [
-								"{@i 2nd-level divination (ritual})",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 minute",
-										"{@b Range}: Self",
-										"{@b Components}: V, S, M (specially marked sticks, bones, or similar tokens worth at least 25 gp)",
-										"{@b Duration}: Instantaneous"
-									]
-								},
-								"By casting gem-inlaid sticks, rolling dragon bones, laying out ornate cards, or employing some other divining tool, you receive an omen from an otherworldly entity about the results of a specific course of action that you plan to take within the next 30 minutes. The DM chooses from the following possible omens:",
-								{
-									"type": "list",
-									"items": [
-										"{@i Weal}, for good results",
-										"{@i Woe}, for bad results",
-										"{@i Weal and woe}, for both good and bad results",
-										"{@i Nothing}, for results that are not especially good or bad"
-									]
-								},
-								"The spell doesn't take into account any possible circumstances that might change the outcome, such as the casting of additional spells or the loss or gain of a companion.",
-								"If you cast the spell two or more times before completing your next long rest, there is a cumulative {@chance 25|25 percent} chance for each casting after the first that you get a false reading. The DM makes this roll in secret.",
-								"{@comic This is for theater majors and Jerrys. Don't worry about divining the future when you play D&D, Morty. The story will find you when you start killing.}"
-							]
+							"collapsed": true
 						},
+						"{@comic This is for theater majors and Jerrys. Don't worry about divining the future when you play D&D, Morty. The story will find you when you start killing.}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Beacon of Hope",
 							"page": 50,
-							"id": "13d",
-							"entries": [
-								"{@i 3rd-level abjuration}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 30 feet",
-										"{@b Components}: V, S",
-										"{@b Duration}: Concentration, up to 1 minute"
-									]
-								},
-								"This spell bestows hope and vitality. Choose any number of creatures within range. For the duration, each target has advantage on Wisdom saving throws and death saving throws, and regains the maximum number of hit points possible from any healing.",
-								"{@comic Jerry spell in full effect! Don't waste your spell slots helping other people! You know what'll help them even more? If you {@b kill} the creatures {@b attacking} everyone!}"
-							]
+							"collapsed": true
 						},
+						"{@comic Jerry spell in full effect! Don't waste your spell slots helping other people! You know what'll help them even more? If you {@b kill} the creatures {@b attacking} everyone!}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Bless",
 							"page": 50,
-							"id": "13e",
-							"entries": [
-								"{@i 1st-level enchantment}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 30 feet",
-										"{@b Components}: V, S, M (a sprinkling of holy water)",
-										"{@b Duration}: Concentration, up to 1 minute"
-									]
-								},
-								"You bless up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target can roll a {@dice d4} and add the number rolled to the attack roll or saving throw.",
-								{
-									"type": "entries",
-									"id": "13f",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 50,
-											"id": "140",
-											"entries": [
-												"When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.",
-												"{@comic Almost a Jerry spell, but at least you can pump up a bunch of people so they can kill s*** better.}"
-											]
-										}
-									]
-								}
-							]
+							"collapsed": true
 						},
+						"{@comic Almost a Jerry spell, but at least you can pump up a bunch of people so they can kill s*** better.}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Blur",
 							"page": 50,
-							"id": "141",
-							"entries": [
-								"{@i 2nd-level illusion}",
-								{
-									"type": "image",
-									"href": {
-										"type": "internal",
-										"path": "book/RMR/131-c4-08.png"
-									},
-									"maxWidth": 150,
-									"width": 637,
-									"height": 600,
-									"credit": "Troy Little"
-								},
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Self",
-										"{@b Components}: V",
-										"{@b Duration}: Concentration, up to 1 minute"
-									]
-								},
-								"Your body becomes blurred, shifting and wavering to all who can see you. For the duration, any creature has disadvantage on attack rolls against you. An attacker is immune to this effect if it doesn't rely on sight, as with {@sense blindsight}, or can see through illusions, as with {@sense truesight}.",
-								"{@comic If I wanna see blurry, shifting, wavering people in front of me, I'll just keep drinking.}"
-							]
+							"collapsed": true
+						},
+						"{@comic If I wanna see blurry, shifting, wavering people in front of me, I'll just keep drinking.}",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/RMR/131-c4-08.png"
+							},
+							"maxWidth": 250,
+							"width": 637,
+							"height": 600,
+							"credit": "Troy Little"
 						},
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Burning Hands",
 							"page": 51,
-							"id": "142",
+							"collapsed": true
+						},
+						{
+							"type": "inset",
+							"id": "145",
 							"entries": [
-								"{@i 1st-level evocation}",
 								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Self (15-foot cone)",
-										"{@b Components}: V, S",
-										"{@b Duration}: Instantaneous"
-									]
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/RMR/132-ram-head-ehlol.png"
+									},
+									"style": "comic-speaker-left",
+									"width": 130,
+									"height": 155,
+									"credit": "Troy Little"
 								},
-								"As you hold your hands with thumbs touching and fingers spread, a thin sheet of flames shoots forth from your outstretched fingertips. Each creature in a 15-foot cone must make a Dexterity saving throw. A creature takes {@dice 3d6} fire damage on a failed save, or half as much damage on a successful one.",
-								"The fire ignites any flammable objects in the area that are not being worn or carried.",
-								{
-									"type": "entries",
-									"id": "143",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 51,
-											"id": "144",
-											"entries": [
-												"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d6} for each slot level above 1st.",
-												{
-													"type": "inset",
-													"id": "145",
-													"entries": [
-														{
-															"type": "image",
-															"href": {
-																"type": "internal",
-																"path": "book/RMR/132-ram-head-ehlol.png"
-															},
-															"style": "comic-speaker-left",
-															"width": 130,
-															"height": 155,
-															"credit": "Troy Little"
-														},
-														"{@comic {@i \"Sheet of Flames\"} sounds like a heavy metal concept album.}",
-														"{@comic I dig it.}"
-													]
-												}
-											]
-										}
-									]
-								}
+								"{@comic {@i \"Sheet of Flames\"} sounds like a heavy metal concept album.}",
+								"{@comic I dig it.}"
 							]
 						},
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Charm Person",
 							"page": 51,
-							"id": "146",
-							"entries": [
-								"{@i 1st-level enchantment}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 30 feet",
-										"{@b Components}: V, S",
-										"{@b Duration}: 1 hour"
-									]
-								},
-								"You attempt to charm a humanoid you choose within range. It must make a Wisdom saving throw, and does so with advantage if you or your companions are fighting it. If it fails the saving throw, it is {@condition charmed} by you until the spell ends or until you or your companions do anything harmful to it. The {@condition charmed} creature regards you as a friendly acquaintance.",
-								{
-									"type": "entries",
-									"id": "147",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 51,
-											"id": "148",
-											"entries": [
-												"When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
-												"{@comic Jerry needs this spell just to make friends.}",
-												"{@comic If you really wanna charm someone, do what everyone else does\u2014get rich and buy their loyalty.}"
-											]
-										}
-									]
-								}
-							]
+							"collapsed": true
 						},
+						"{@comic Jerry needs this spell just to make friends.}",
+						"{@comic If you really wanna charm someone, do what everyone else does\u2014get rich and buy their loyalty.}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Command",
 							"page": 51,
-							"id": "149",
-							"entries": [
-								"{@i 1st-level enchantment}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 60 feet",
-										"{@b Components}: V",
-										"{@b Duration}: 1 round"
-									]
-								},
-								"You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.",
-								"Some typical commands and their effects follow. You might issue a command other than one described here. If you do so, the DM determines how the target behaves. If the target is prevented from following your command, the spell ends.",
-								{
-									"type": "entries",
-									"id": "14a",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "Approach",
-											"page": 51,
-											"id": "14b",
-											"entries": [
-												"The target moves toward you by the shortest and most direct route, ending its turn if it moves within 5 feet of you."
-											]
-										},
-										{
-											"type": "entries",
-											"name": "Drop",
-											"page": 51,
-											"id": "14c",
-											"entries": [
-												"The target drops whatever it is holding and then ends its turn."
-											]
-										},
-										{
-											"type": "entries",
-											"name": "Flee",
-											"page": 51,
-											"id": "14d",
-											"entries": [
-												"The target spends its turn moving away from you by the fastest available means."
-											]
-										},
-										{
-											"type": "entries",
-											"name": "Grovel",
-											"page": 51,
-											"id": "14e",
-											"entries": [
-												"The target falls {@condition prone} and then ends its turn."
-											]
-										},
-										{
-											"type": "entries",
-											"name": "Halt",
-											"page": 51,
-											"id": "14f",
-											"entries": [
-												"The target doesn't move and takes no actions. A flying creature stays aloft, provided that it is able to do so. If it must move to stay aloft, it flies the minimum distance needed to remain in the air.",
-												{
-													"type": "image",
-													"href": {
-														"type": "internal",
-														"path": "book/RMR/133-c4-09.jpg"
-													},
-													"width": 800,
-													"height": 503,
-													"credit": "Troy Little"
-												}
-											]
-										},
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 51,
-											"id": "150",
-											"entries": [
-												"When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
-												"{@comic As much as forcing people to grovel amuses me, it's easier to make 'em fear you by lighting all their s*** on {@i fire}.}",
-												"{@comic Save your spell slots, Morty.}"
-											]
-										}
-									]
-								}
-							]
+							"collapsed": true
+						},
+						"{@comic As much as forcing people to grovel amuses me, it's easier to make 'em fear you by lighting all their s*** on {@i fire}.}",
+						"{@comic Save your spell slots, Morty.}",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/RMR/133-c4-09.jpg"
+							},
+							"width": 800,
+							"height": 503,
+							"credit": "Troy Little"
 						},
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Comprehend Languages",
 							"page": 52,
-							"id": "151",
-							"entries": [
-								"{@i 1st-level divination (ritual})",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Self",
-										"{@b Components}: V, S, M (a pinch of soot and salt)",
-										"{@b Duration}: 1 hour"
-									]
-								},
-								"For the duration, you understand the literal meaning of spoken language that you hear. You also understand written language that you see, but you must be touching the surface on which the words are written. It takes about 1 minute to read one page of text.",
-								"This spell does not decode secret messages in a text or any glyph, such as an arcane sigil, that isn't part of a written language.",
-								"{@comic The only language you need to know in D&D is {@comicH3 the language of violence}, Morty.}",
-								"{@comic Everyone speaks it and translations are crystal clear. Jerrys want to talk through a battle or \"parlay\" their asses out of conflict. Never do that.}"
-							]
+							"collapsed": true
 						},
+						"{@comic The only language you need to know in D&D is {@comicH3 the language of violence}, Morty.}",
+						"{@comic Everyone speaks it and translations are crystal clear. Jerrys want to talk through a battle or \"parlay\" their asses out of conflict. Never do that.}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Cure Wounds",
 							"page": 52,
-							"id": "152",
-							"entries": [
-								"{@i 1st-level evocation}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Touch",
-										"{@b Components}: V, S",
-										"{@b Duration}: Instantaneous"
-									]
-								},
-								"A creature you touch regains a number of hit points equal to {@dice 1d8} + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
-								{
-									"type": "entries",
-									"id": "153",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 52,
-											"id": "154",
-											"entries": [
-												"When you cast this spell using a spell slot of 2nd level or higher, the healing increases by {@dice 1d8} for each slot level above 1st.",
-												"{@comic It's a necessary evil. When you get hurt, you gotta get {@i healed}. I recommend {@b not} getting hurt.}"
-											]
-										}
-									]
-								}
-							]
+							"collapsed": true
 						},
+						"{@comic It's a necessary evil. When you get hurt, you gotta get {@i healed}. I recommend {@b not} getting hurt.}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Dancing Lights",
 							"page": 52,
-							"id": "155",
-							"entries": [
-								"{@i Evocation cantrip}",
-								{
-									"type": "image",
-									"href": {
-										"type": "internal",
-										"path": "book/RMR/134-c4-10.png"
-									},
-									"maxWidth": 150,
-									"width": 363,
-									"height": 600,
-									"credit": "Troy Little"
-								},
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 120 feet",
-										"{@b Components}: V, S, M (a bit of phosphorus or wychwood, or a glowworm)",
-										"{@b Duration}: Concentration, up to 1 minute"
-									]
-								},
-								"You create up to four torch-sized lights within range, making them appear as torches, lanterns, or glowing orbs that hover in the air for the duration. You can also combine the four lights into one glowing vaguely humanoid form of Medium size. Whichever form you choose, each light sheds dim light in a 10-foot radius.",
-								"As a bonus action on your turn, you can move the lights up to 60 feet to a new spot within range. A light must be within 20 feet of another light created by this spell, and a light winks out if it exceeds the spell's range.",
-								"{@comic {@comicH3 Pure Jerry.} This is life or death combat, not a f***ing {@b rave}.}"
-							]
+							"collapsed": true
 						},
 						{
-							"type": "entries",
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/RMR/134-c4-10.png"
+							},
+							"maxWidth": 150,
+							"width": 363,
+							"height": 600,
+							"credit": "Troy Little"
+						},
+						"{@comic {@comicH3 Pure Jerry.} This is life or death combat, not a f***ing {@b rave}.}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Darkness",
 							"page": 52,
-							"id": "156",
-							"entries": [
-								"{@i 2nd-level evocation}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 60 feet",
-										"{@b Components}: V, M (bat fur and a drop of pitch or piece of coal)"
-									]
-								},
-								"{@b Duration}: Concentration, up to 10 minutes",
-								"Magical darkness spreads from a point you choose within range to fill a 15-foot-radius sphere for the duration. The darkness spreads around corners. A creature with {@sense darkvision} can't see through this darkness, and no nonmagical light can illuminate it.",
-								"If the point you choose is on an object you are holding or one that is not being worn or carried, the darkness emanates from the object and moves with it. Covering the source of the darkness with an opaque object, such as a bowl or a helm, blocks the darkness.",
-								"If any of this spell's area overlaps with an area of light created by a spell of 2nd level or lower, the entire area of light is dispelled.",
-								"{@comic Not as good as blasting monsters, but it has its place. Getting the drop on some sucker and gutting 'em is pretty sweet.}"
-							]
+							"collapsed": true
 						},
+						"{@comic Not as good as blasting monsters, but it has its place. Getting the drop on some sucker and gutting 'em is pretty sweet.}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Detect Magic",
 							"page": 52,
-							"id": "157",
-							"entries": [
-								"{@i 1st-level divination (ritual})",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Self",
-										"{@b Components}: V, S",
-										"{@b Duration}: Concentration, up to 10 minutes"
-									]
-								},
-								"For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any.",
-								"The spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.",
-								"{@comic Anything that helps you find more magic loot is fine by me.}"
-							]
+							"collapsed": true
 						},
+						"{@comic Anything that helps you find more magic loot is fine by me.}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Dispel Magic",
 							"page": 53,
-							"id": "158",
+							"collapsed": true
+						},
+						{
+							"type": "inset",
+							"id": "15b",
 							"entries": [
-								"{@i 3rd-level abjuration}",
 								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 120 feet",
-										"{@b Components}: V, S",
-										"{@b Duration}: Instantaneous"
-									]
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/RMR/135-ram-head-rick-madconfused.png"
+									},
+									"style": "comic-speaker-left",
+									"width": 140,
+									"height": 181,
+									"credit": "Troy Little"
 								},
-								"Choose one creature, object, or magical effect within range. Any spell of 3rd level or lower on the target ends. For each spell of 4th level or higher on the target, make an ability check using your spellcasting ability. The DC equals 10 + the spell's level. On a successful check, the spell ends.",
-								{
-									"type": "entries",
-									"id": "159",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 53,
-											"id": "15a",
-											"entries": [
-												"When you cast this spell using a spell slot of 4th level or higher, you automatically end the effects of a spell on the target if the spell's level is equal to or less than the level of the spell slot you used.",
-												{
-													"type": "inset",
-													"id": "15b",
-													"entries": [
-														{
-															"type": "image",
-															"href": {
-																"type": "internal",
-																"path": "book/RMR/135-ram-head-rick-madconfused.png"
-															},
-															"style": "comic-speaker-left",
-															"width": 140,
-															"height": 181,
-															"credit": "Troy Little"
-														},
-														"{@comic Why would I waste a spell slot to just get rid of someone else's spell?}",
-														"{@comic {@i That's so stupid}!}",
-														"{@comic Abjuration is the {@b worst}, Morty. I-i-it's so Jerry.}"
-													]
-												}
-											]
-										}
-									]
-								}
+								"{@comic Why would I waste a spell slot to just get rid of someone else's spell?}",
+								"{@comic {@i That's so stupid}!}",
+								"{@comic Abjuration is the {@b worst}, Morty. I-i-it's so Jerry.}"
 							]
 						},
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Feather Fall",
 							"page": 53,
-							"id": "15c",
-							"entries": [
-								"{@i 1st-level transmutation}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 reaction, which you take when you or a creature within 60 feet of you falls",
-										"{@b Range}: 60 feet",
-										"{@b Components}: V, M (a small feather or piece of down)",
-										"{@b Duration}: 1 minute"
-									]
-								},
-								"Choose up to five falling creatures within range. A falling creature's rate of descent slows to 60 feet per round until the spell ends. If the creature lands before the spell ends, it takes no falling damage and can land on its feet, and the spell ends for that creature.",
-								"{@comic Wanna freak people out? Jump off an airship, and while everyone's screaming, \"He's gonna die!\", cast this little number after you pass through a cloud.}",
-								"{@comic You'll float safely to the ground, while those suckers are tearily planning your funeral.}"
-							]
+							"collapsed": true
 						},
+						"{@comic Wanna freak people out? Jump off an airship, and while everyone's screaming, \"He's gonna die!\", cast this little number after you pass through a cloud.}",
+						"{@comic You'll float safely to the ground, while those suckers are tearily planning your funeral.}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Fireball",
 							"page": 53,
-							"id": "15d",
-							"entries": [
-								"{@i 3rd-level evocation}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 150 feet",
-										"{@b Components}: V, S, M (a tiny ball of bat guano and sulfur)",
-										"{@b Duration}: Instantaneous"
-									]
-								},
-								"A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A target takes {@dice 8d6} fire damage on a failed save, or half as much damage on a successful one.",
-								"The fire spreads around corners. It ignites flammable objects in the area that are not being worn or carried.",
-								{
-									"type": "entries",
-									"id": "15e",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 53,
-											"id": "15f",
-											"entries": [
-												"When you cast this spell using a spell slot of 4th level or higher, the damage increases by {@dice 1d6} for each slot level above 3rd.",
-												"{@comic If you're a wizard and don't take this when it comes available, then just eat your own character sheet.}",
-												"{@comic This is {@b the} classic {@comicH3 pyro-bomb} and it's beautiful, Morty. Chuck this into a room of monsters and get out the marshmallows.}"
-											]
-										}
-									]
-								}
-							]
+							"collapsed": true
 						},
+						"{@comic If you're a wizard and don't take this when it comes available, then just eat your own character sheet.}",
+						"{@comic This is {@b the} classic {@comicH3 pyro-bomb} and it's beautiful, Morty. Chuck this into a room of monsters and get out the marshmallows.}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Flaming Sphere",
 							"page": 53,
-							"id": "160",
-							"entries": [
-								"{@i 2nd-level conjuration}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 60 feet",
-										"{@b Components}: V, S, M (a bit of tallow, a pinch of brimstone, and a dusting of powdered iron)",
-										"{@b Duration}: Concentration, up to 1 minute"
-									]
-								},
-								"A 5-foot-diameter sphere of fire appears in an unoccupied space of your choice within range and lasts for the duration. Any creature that ends its turn within 5 feet of the sphere must make a Dexterity saving throw. The creature takes {@dice 2d6} fire damage on a failed save, or half as much damage on a successful one.",
-								"As a bonus action, you can move the sphere up to 30 feet. If you ram the sphere into a creature, that creature must make the saving throw against the sphere's damage, and the sphere stops moving this turn.",
-								"When you move the sphere, you can direct it over barriers up to 5 feet tall and jump it across pits up to 10 feet wide. The sphere ignites flammable objects not being worn or carried, and it sheds bright light in a 20-foot radius and dim light for an additional 20 feet.",
-								{
-									"type": "entries",
-									"id": "161",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 53,
-											"id": "162",
-											"entries": [
-												"When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@dice 1d6} for each slot level above 2nd.",
-												"{@comic This is {@i fireball's} slightly stunted younger brother, Morty. That said, there {@i is} something viscerally satisfying about rolling a ball of fire around over a bunch of a-holes.}"
-											]
-										}
-									]
-								}
-							]
+							"collapsed": true
 						},
+						"{@comic This is {@i fireball's} slightly stunted younger brother, Morty. That said, there {@i is} something viscerally satisfying about rolling a ball of fire around over a bunch of a-holes.}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Fly",
 							"page": 54,
-							"id": "163",
+							"collapsed": true
+						},
+						{
+							"type": "inset",
+							"id": "166",
 							"entries": [
-								"{@i 3rd-level transmutation}",
 								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Touch",
-										"{@b Components}: V, S, M (a wing feather from any bird)",
-										"{@b Duration}: Concentration, up to 10 minutes"
-									]
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/RMR/136-ram-head-rick-lol2.png"
+									},
+									"style": "comic-speaker-left",
+									"width": 129,
+									"height": 139,
+									"credit": "Troy Little"
 								},
-								"You touch a willing creature. The target gains a flying speed of 60 feet for the duration. When the spell ends, the target falls if it is still aloft, unless it can stop the fall.",
-								{
-									"type": "entries",
-									"id": "164",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 54,
-											"id": "165",
-											"entries": [
-												"When you cast this spell using a spell slot of 4th level or higher, you can target one additional creature for each slot level above 3rd.",
-												{
-													"type": "inset",
-													"id": "166",
-													"entries": [
-														{
-															"type": "image",
-															"href": {
-																"type": "internal",
-																"path": "book/RMR/136-ram-head-rick-lol2.png"
-															},
-															"style": "comic-speaker-left",
-															"width": 129,
-															"height": 139,
-															"credit": "Troy Little"
-														},
-														"{@comic Peeing on your opponents from above is a top shelf move.}"
-													]
-												}
-											]
-										}
-									]
-								}
+								"{@comic Peeing on your opponents from above is a top shelf move.}"
 							]
 						},
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Guidance",
 							"page": 54,
-							"id": "167",
-							"entries": [
-								"{@i Divination cantrip}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Touch",
-										"{@b Components}: V, S",
-										"{@b Duration}: Concentration, up to 1 minute"
-									]
-								},
-								"You touch one willing creature. Once before the spell ends, the target can roll a {@dice d4} and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends.",
-								"{@comic If you need this spell to make your ability check, maybe you just shouldn't do that thing you're doing? Stay in your lane, Jerry.}"
-							]
+							"collapsed": true
 						},
+						"{@comic If you need this spell to make your ability check, maybe you just shouldn't do that thing you're doing? Stay in your lane, Jerry.}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Guiding Bolt",
 							"page": 54,
-							"id": "168",
-							"entries": [
-								"{@i 1st-level evocation}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 120 feet",
-										"{@b Components}: V, S",
-										"{@b Duration}: 1 round"
-									]
-								},
-								"A flash of light streaks toward a creature of your choice within range. Make a ranged spell attack against the target. On a hit, the target takes {@dice 4d6} radiant damage, and the next attack roll made against this target before the end of your next turn has advantage, thanks to the mystical dim light glittering on the target until then.",
-								{
-									"type": "entries",
-									"id": "169",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 54,
-											"id": "16a",
-											"entries": [
-												"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d6} for each slot level above 1st.",
-												"{@comic Awwww yeah, {@comicH3 God Bolt}. Give 'em that radiant damage where the sun don't shine.}"
-											]
-										}
-									]
-								}
-							]
+							"collapsed": true
 						},
+						"{@comic Awwww yeah, {@comicH3 God Bolt}. Give 'em that radiant damage where the sun don't shine.}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Healing Word",
 							"page": 54,
-							"id": "16b",
-							"entries": [
-								"{@i 1st-level evocation}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 bonus action",
-										"{@b Range}: 60 feet",
-										"{@b Components}: V",
-										"{@b Duration}: Instantaneous"
-									]
-								},
-								"A creature of your choice within range regains hit points equal to {@dice 1d4} + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
-								{
-									"type": "entries",
-									"id": "16c",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 54,
-											"id": "16d",
-											"entries": [
-												"When you cast this spell using a spell slot of 2nd level or higher, the healing increases by {@dice 1d4} for each slot level above 1st.",
-												"{@comic You can just utter a word to yourself and you feel quantifiably better, Morty! Your life's essence goes back up! Who needs a long rest!}"
-											]
-										}
-									]
-								}
-							]
+							"collapsed": true
 						},
+						"{@comic You can just utter a word to yourself and you feel quantifiably better, Morty! Your life's essence goes back up! Who needs a long rest!}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Hold Person",
 							"page": 54,
-							"id": "16e",
-							"entries": [
-								"{@i 2nd-level enchantment}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 60 feet",
-										"{@b Components}: V, S, M (a small, straight piece of iron)",
-										"{@b Duration}: Concentration, up to 1 minute"
-									]
-								},
-								"Choose a humanoid within range that you can see. The target must succeed on a Wisdom saving throw or be {@condition paralyzed} for the duration. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the spell ends on the target.",
-								{
-									"type": "entries",
-									"id": "16f",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 54,
-											"id": "170",
-											"entries": [
-												"When you cast this spell using a spell slot of 3rd level or higher, you can target one additional humanoid for each slot level above 2nd. The humanoids must be within 30 feet of each other when you target them.",
-												"{@comic Stopping some dingus in their tracks is aight. Not as cool as lighting them on fire, but maybe that's step two.}"
-											]
-										}
-									]
-								}
-							]
+							"collapsed": true
 						},
+						"{@comic Stopping some dingus in their tracks is aight. Not as cool as lighting them on fire, but maybe that's step two.}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Identify",
 							"page": 54,
-							"id": "171",
-							"entries": [
-								"{@i 1st-level divination (ritual})",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 minute",
-										"{@b Range}: Touch",
-										"{@b Components}: V, S, M (a pearl worth at least 100 gp and an owl feather)",
-										"{@b Duration}: Instantaneous"
-									]
-								},
-								"You choose one object that you must touch throughout the casting of the spell. If it is a magic item or some other magic-imbued object, you learn its properties and how to use them, whether it requires attunement to use, and how many charges it has, if any. You learn whether any spells are affecting the item and what they are. If the item was created by a spell, you learn which spell created it.",
-								"If you instead touch a creature throughout the casting, you learn what spells, if any, are currently affecting it.",
-								"{@comic Learning what magic loot you just pulled off the corpses of your vanquished foes is a worthwhile investment.}"
-							]
+							"collapsed": true
 						},
+						"{@comic Learning what magic loot you just pulled off the corpses of your vanquished foes is a worthwhile investment.}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Inflict Wounds",
 							"page": 55,
-							"id": "172",
-							"entries": [
-								"{@i 1st-level necromancy}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Touch",
-										"{@b Components}: V, S",
-										"{@b Duration}: Instantaneous"
-									]
-								},
-								"Make a melee spell attack against a creature you can reach. On a hit, the target takes {@dice 3d10} necrotic damage.",
-								{
-									"type": "entries",
-									"id": "173",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 55,
-											"id": "174",
-											"entries": [
-												"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d10} for each slot level above 1st.",
-												"{@comic \"Necrotic damage\" is a classy way of saying \"your taint just rotted off.\"}"
-											]
-										}
-									]
-								}
-							]
+							"collapsed": true
 						},
+						"{@comic \"Necrotic damage\" is a classy way of saying \"your taint just rotted off.\"}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Invisibility",
 							"page": 55,
-							"id": "175",
-							"entries": [
-								"{@i 2nd-level illusion}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Touch",
-										"{@b Components}: V, S, M (an eyelash encased in gum arabic)",
-										"{@b Duration}: Concentration, up to 1 hour"
-									]
-								},
-								"A creature you touch becomes {@condition invisible} until the spell ends. Anything the target is wearing or carrying is {@condition invisible} as long as it is on the target's person. The spell ends early for a target that attacks or casts a spell.",
-								{
-									"type": "entries",
-									"id": "176",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 55,
-											"id": "177",
-											"entries": [
-												"When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
-												"{@comic Drop eldritch vengeance on your enemies and then VORP right outta sight. {@b Classic}.}"
-											]
-										}
-									]
-								}
-							]
+							"collapsed": true
 						},
+						"{@comic Drop eldritch vengeance on your enemies and then VORP right outta sight. {@b Classic}.}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Lesser Restoration",
 							"page": 55,
-							"id": "178",
+							"collapsed": true
+						},
+						{
+							"type": "inset",
+							"id": "179",
 							"entries": [
 								{
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/RMR/137-c4-11.png"
+										"path": "book/RMR/138-ram-head-dafuq.png"
 									},
-									"width": 420,
-									"height": 872,
+									"style": "comic-speaker-left",
+									"width": 140,
+									"height": 172,
 									"credit": "Troy Little"
 								},
-								"{@i 2nd-level abjuration}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Touch",
-										"{@b Components}: V, S",
-										"{@b Duration}: Instantaneous"
-									]
-								},
-								"You touch a creature and can end either one disease or one condition afflicting it. The condition can be {@condition blinded}, {@condition deafened}, {@condition paralyzed}, or {@condition poisoned}.",
-								{
-									"type": "inset",
-									"id": "179",
-									"entries": [
-										{
-											"type": "image",
-											"href": {
-												"type": "internal",
-												"path": "book/RMR/138-ram-head-dafuq.png"
-											},
-											"style": "comic-speaker-left",
-											"width": 140,
-											"height": 172,
-											"credit": "Troy Little"
-										},
-										"{@comic The world of D&D is a dirty place, Morty. Th-th-they don't have body wash or tetanus shots or even tweezers. It's disgusting when you think about it.}",
-										"{@comic They should just call this spell {@i \"Magic Soap.\"}}"
-									]
-								}
+								"{@comic The world of D&D is a dirty place, Morty. Th-th-they don't have body wash or tetanus shots or even tweezers. It's disgusting when you think about it.}",
+								"{@comic They should just call this spell {@i \"Magic Soap.\"}}"
 							]
 						},
 						{
-							"type": "entries",
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/RMR/137-c4-11.png"
+							},
+							"width": 420,
+							"height": 872,
+							"credit": "Troy Little"
+						},
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Light",
 							"page": 55,
-							"id": "17a",
-							"entries": [
-								"{@i Evocation cantrip}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Touch",
-										"{@b Components}: V, M (a firefly or phosphorescent moss)",
-										"{@b Duration}: 1 hour"
-									]
-								},
-								"You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet. The light can be colored as you like, and covering the object with something opaque blocks the light. The spell ends early if you cast it again or dismiss it as an action.",
-								"If you target an object held or worn by a hostile creature, that creature must succeed on a Dexterity saving throw to avoid the spell.",
-								"{@comic When you're going down in a dirty hole to kill monsters, it's kinda useful to be able to see where the f*** they are.}"
-							]
+							"collapsed": true
 						},
+						"{@comic When you're going down in a dirty hole to kill monsters, it's kinda useful to be able to see where the f*** they are.}",
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Lightning Bolt",
 							"page": 56,
-							"id": "17b",
-							"entries": [
-								{
-									"type": "image",
-									"href": {
-										"type": "internal",
-										"path": "book/RMR/139-c4-12.png"
-									},
-									"width": 420,
-									"height": 772,
-									"credit": "Troy Little"
-								},
-								"{@i 3rd-level evocation}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Self (100-foot line)",
-										"{@b Components}: V, S, M (a bit of fur and a rod of amber, crystal, or glass)",
-										"{@b Duration}: Instantaneous"
-									]
-								},
-								"A stroke of lightning forming a line 100 feet long and 5 feet wide blasts out from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes {@dice 8d6} lightning damage on a failed save, or half as much damage on a successful one.",
-								"The lightning ignites flammable objects in the area that are not being worn or carried.",
-								{
-									"type": "entries",
-									"id": "17c",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 56,
-											"id": "17d",
-											"entries": [
-												"When you cast this spell using a spell slot of 4th level or higher, the damage increases by {@dice 1d6} for each slot level above 3rd.",
-												"{@comic If you're stupid and didn't pick up fireball, then you better grab this. Zap, Crackle, Pop, b*****s!}"
-											]
-										}
-									]
-								}
-							]
+							"collapsed": true
+						},
+						"{@comic If you're stupid and didn't pick up fireball, then you better grab this. Zap, Crackle, Pop, b*****s!}",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/RMR/139-c4-12.png"
+							},
+							"width": 420,
+							"height": 772,
+							"credit": "Troy Little"
 						},
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Mage Armor",
 							"page": 56,
-							"id": "17e",
-							"entries": [
-								"{@i 1st-level abjuration}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Touch",
-										"{@b Components}: V, S, M (a piece of cured leather)",
-										"{@b Duration}: 8 hours"
-									]
-								},
-								"You touch a willing creature who isn't wearing armor, and a protective magical force surrounds it until the spell ends. The target's base AC becomes 13 + its Dexterity modifier. The spell ends early if the target dons armor or if you dismiss the spell as an action.",
-								{
-									"type": "inset",
-									"id": "17f",
-									"entries": [
-										{
-											"type": "image",
-											"href": {
-												"type": "internal",
-												"path": "book/RMR/140-ram-head-sarcasm.png"
-											},
-											"style": "comic-speaker-left",
-											"width": 140,
-											"height": 174,
-											"credit": "Troy Little"
-										},
-										"{@comic {@comicH3 Abjuration} is usually garbage, but since wizards are forced to walk around wearing {@comicH3 toilet paper} for protection because Wizards of the Coast thinks they're OP, this spell might actually keep you alive.}"
-									]
-								}
-							]
+							"collapsed": true
 						},
 						{
-							"type": "entries",
-							"name": "Mage Hand",
-							"page": 56,
-							"id": "180",
+							"type": "inset",
+							"id": "17f",
 							"entries": [
-								"{@i Conjuration cantrip}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 30 feet",
-										"{@b Components}: V, S",
-										"{@b Duration}: 1 minute"
-									]
-								},
-								"A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration or until you dismiss it as an action. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again.",
-								"You can use your action to control the hand. You can use the hand to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour the contents out of a vial. You can move the hand up to 30 feet each time you use it.",
-								"The hand can't attack, activate magic items, or carry more than 10 pounds.",
-								"{@comic Push stuff around.}",
-								"{@comic Trigger a trap from a safe distance.}",
-								"{@comic Mess with your friends.}",
-								"{@comic Pick your horse's nose while riding said horse.}",
-								"{@comic {@b I-I can keep going.}}"
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Magic Missile",
-							"page": 57,
-							"id": "181",
-							"entries": [
-								"{@i 1st-level evocation}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 120 feet",
-										"{@b Components}: V, S",
-										"{@b Duration}: Instantaneous"
-									]
-								},
-								"You create three glowing darts of magical force. Each dart hits a creature of your choice within range that you can see. A dart deals {@dice 1d4 + 1} force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several.",
-								{
-									"type": "entries",
-									"id": "182",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 57,
-											"id": "183",
-											"entries": [
-												"When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot level above 1st.",
-												"{@comic Notice this spell's most {@b important} feature, Morty: {@comicH3 NO ATTACK ROLL.}}",
-												"{@comic It hits and hurts. Simple-dimple. Little glowing arrows of death at your command, and nobody can do s*** about it.}"
-											]
-										}
-									]
-								}
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Mass Healing Word",
-							"page": 57,
-							"id": "184",
-							"entries": [
-								"{@i 3rd-level evocation}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 bonus action",
-										"{@b Range}: 60 feet",
-										"{@b Components}: V",
-										"{@b Duration}: Instantaneous"
-									]
-								},
-								"As you call out words of restoration, up to six creatures you choose within range regain hit points equal to {@dice 1d4} + your spellcasting ability modifier. The targets must be within 30 feet of each other. This spell has no effect on undead or constructs.",
-								{
-									"type": "entries",
-									"id": "185",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 57,
-											"id": "186",
-											"entries": [
-												"When you cast this spell using a spell slot of 4th level or higher, the healing increases by {@dice 1d4} for each slot level above 3rd.",
-												"{@comic Smart clerics hold this spell in reserve until their party members pay up. These heals don't come cheap.}"
-											]
-										}
-									]
-								}
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Misty Step",
-							"page": 57,
-							"id": "187",
-							"entries": [
-								"{@i 2nd-level conjuration}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 bonus action",
-										"{@b Range}: Self",
-										"{@b Components}: V",
-										"{@b Duration}: Instantaneous"
-									]
-								},
-								"Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied space that you can see.",
-								{
-									"type": "inset",
-									"id": "188",
-									"entries": [
-										{
-											"type": "image",
-											"href": {
-												"type": "internal",
-												"path": "book/RMR/141-ram-head-smile2.png"
-											},
-											"style": "comic-speaker-left",
-											"width": 139,
-											"height": 156,
-											"credit": "Troy Little"
-										},
-										"{@comic Perfect for ripping a big nasty fart and then moving elsewhere for maximum deniability.}"
-									]
-								}
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Prayer of Healing",
-							"page": 57,
-							"id": "189",
-							"entries": [
-								"{@i 2nd-level evocation}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 10 minutes",
-										"{@b Range}: 30 feet",
-										"{@b Components}: V",
-										"{@b Duration}: Instantaneous"
-									]
-								},
-								"Up to six creatures of your choice within range each regain hit points equal to {@dice 2d8} + your spellcasting ability modifier. This spell has no effect on undead or constructs.",
-								{
-									"type": "entries",
-									"id": "18a",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 57,
-											"id": "18b",
-											"entries": [
-												"When you cast this spell using a spell slot of 3rd level or higher, the healing increases by {@dice 1d8} for each slot level above 2nd.",
-												"{@comic That 10-minute casting time is a {@i buzzkill}, but when your crew's doing the downtime thing, it gives you something to occupy yourself with so you don't have to participate in their campfire bonding rituals.}"
-											]
-										}
-									]
-								}
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Prestidigitation",
-							"page": 57,
-							"id": "18c",
-							"entries": [
-								"{@i Transmutation cantrip}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 10 feet",
-										"{@b Components}: V, S",
-										"{@b Duration}: Up to 1 hour"
-									]
-								},
-								"This spell is a minor magical trick that novice spellcasters use for practice. You create one of the following magical effects within range:",
-								{
-									"type": "list",
-									"items": [
-										"Create an instantaneous, harmless sensory effect, such as a shower of sparks, a puff of wind, faint musical notes, or an odd odor.",
-										"Instantaneously light or snuff out a candle, a torch, or a small campfire.",
-										"Instantaneously clean or soil an object no larger than 1 cubic foot.",
-										"Chill, warm, or flavor up to 1 cubic foot of nonliving material for 1 hour.",
-										"Make a color, a small mark, or a symbol appear on an object or a surface for 1 hour.",
-										"Create a nonmagical trinket or an illusory image that can fit in your hand and that lasts until the end of your next turn."
-									]
-								},
-								"If you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action.",
-								"{@comic I bet at first glance you figured I'd call this as a Jerry spell, but it's {@i not}, Morty. Prestidigitation is {@b awesome}! It doesn't take up any spell slots because it's a cantrip. That means you can use it {@b constantly}... and you {@i should}.}",
-								"{@comic Everywhere your wizard goes, they'll have glittering teeth, musky magic cologne, a warming glow, and their own personal soundtrack. Clean clothes, too. The other members of your party are gonna shamble into town smelling like ass while you get to be Slick McDick, Wizard Supreme.}"
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Protection from Energy",
-							"page": 58,
-							"id": "18d",
-							"entries": [
-								"{@i 3rd-level abjuration}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Touch",
-										"{@b Components}: V, S",
-										"{@b Duration}: Concentration, up to 1 hour"
-									]
-								},
-								"For the duration, the willing creature you touch has resistance to one damage type of your choice: acid, cold, fire, lightning, or thunder.",
-								"{@comic Don't waste third level spell slots on protecto-trash. Kill your enemies fast and you won't even need defense.}"
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Ray of Frost",
-							"page": 58,
-							"id": "18e",
-							"entries": [
-								"{@i Evocation cantrip}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 60 feet",
-										"{@b Components}: V, S",
-										"{@b Duration}: Instantaneous"
-									]
-								},
-								"A frigid beam of blue-white light streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, it takes {@dice 1d8} cold damage, and its speed is reduced by 10 feet until the start of your next turn.",
-								"The spell's damage increases by {@dice 1d8} when you reach 5th level ({@dice 2d8}), 11th level ({@dice 3d8}), and 17th level ({@dice 4d8}).",
-								"{@comic This is it, Morty, the third of the holy triumvirate of low-level wizard DPS. It's a song of ice {@b and} fire {@b AND} lightning.}"
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Resistance",
-							"page": 58,
-							"id": "18f",
-							"entries": [
-								"{@i Abjuration cantrip}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Touch",
-										"{@b Components}: V, S, M (a miniature cloak)",
-										"{@b Duration}: Concentration, up to 1 minute"
-									]
-								},
-								"You touch one willing creature. Once before the spell ends, the target can roll a {@dice d4} and add the number rolled to one saving throw of its choice. It can roll the die before or after making the saving throw. The spell then ends.",
-								{
-									"type": "inset",
-									"id": "190",
-									"entries": [
-										{
-											"type": "image",
-											"href": {
-												"type": "internal",
-												"path": "book/RMR/142-ram-head-rick-smile-flip.png"
-											},
-											"style": "comic-speaker-right",
-											"width": 150,
-											"height": 178,
-											"credit": "Troy Little"
-										},
-										"{@comic Wait, the material component for this is \"a miniature cloak\"?}",
-										"{@comic Who the f*** is running around with a pouch full of miniature cloaks?}",
-										"{@comic Wizards of the Coast, whatever you're smoking, I want some.}"
-									]
-								}
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Revivify",
-							"page": 58,
-							"id": "191",
-							"entries": [
-								"{@i 3rd-level necromancy}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Touch",
-										"{@b Components}: V, S, M (diamonds worth 300 gp, which are consumed when the spell is cast)",
-										"{@b Duration}: Instantaneous"
-									]
-								},
-								"You touch a creature that has died within the last minute. That creature returns to life with 1 hit point. This spell cannot return to life a creature that has died of old age, nor can it restore any missing body parts.",
-								{
-									"type": "inset",
-									"id": "192",
-									"entries": [
-										{
-											"type": "image",
-											"href": {
-												"type": "internal",
-												"path": "book/RMR/143-ram-head-meh.png"
-											},
-											"style": "comic-speaker-left",
-											"width": 130,
-											"height": 153,
-											"credit": "Troy Little"
-										},
-										"{@comic Calling the spell \"Have you tried {@i not} dying?\" would be more accurate, but not as catchy.}"
-									]
-								}
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Sacred Flame",
-							"page": 58,
-							"id": "193",
-							"entries": [
-								"{@i Evocation cantrip}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 60 feet",
-										"{@b Components}: V, S",
-										"{@b Duration}: Instantaneous"
-									]
-								},
-								"Flame-like radiance descends on a creature within range that you can see. The target must succeed on a Dexterity saving throw or take {@dice 1d8} radiant damage. The target gains no benefit from cover for this saving throw.",
-								"The spell's damage increases by {@dice 1d8} when you reach 5th level ({@dice 2d8}), 11th level ({@dice 3d8}), and 17th level ({@dice 4d8}).",
-								"{@comic Not bad, but radiant damage means your enemy's clothes don't catch on fire, so it's not as funny.}"
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Sanctuary",
-							"page": 58,
-							"id": "194",
-							"entries": [
-								"{@i 1st-level abjuration}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 bonus action",
-										"{@b Range}: 30 feet",
-										"{@b Components}: V, S, M (a small silver mirror)",
-										"{@b Duration}: 1 minute"
-									]
-								},
-								"You ward a creature within range against attack. Until the spell ends, any creature who targets the warded creature with an attack or a harmful spell must first make a Wisdom saving throw. On a failed save, the creature must choose a new target or lose the attack or spell. This spell doesn't protect the warded creature from area effects, such as the explosion of a fireball.",
-								"If the warded creature makes an attack or casts a spell that affects an enemy creature, this spell ends early.",
-								"{@comic Don't worry about {@b protecting} things, Morty. Everything dies.}"
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Shield",
-							"page": 59,
-							"id": "195",
-							"entries": [
-								"{@i 1st-level abjuration}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 reaction, which you take when you are hit by an attack or targeted by the {@spell magic missile} spell",
-										"{@b Range}: Self",
-										"{@b Components}: V, S",
-										"{@b Duration}: 1 round"
-									]
-								},
-								"An {@condition invisible} barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from {@spell magic missile}.",
-								"{@comic The spellcasting equivalent of a {@b jockstrap}: useful in the right circumstances, but way cooler if you can do your thing without needing it\u2014and eventually it'll need a wash.}"
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Shield of Faith",
-							"page": 59,
-							"id": "196",
-							"entries": [
-								"{@i 1st-level abjuration}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 bonus action",
-										"{@b Range}: 60 feet",
-										"{@b Components}: V, S, M (a small parchment with a bit of holy text written on it)",
-										"{@b Duration}: Concentration, up to 10 minutes"
-									]
-								},
-								"A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.",
-								"{@comic I dunno, I kinda respect this.}",
-								"{@comic A cleric who takes 10 minutes to concentrate on how much they love their god so {@i you} can get punched harder. That's pretty metal.}"
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Shocking Grasp",
-							"page": 59,
-							"id": "197",
-							"entries": [
-								"{@i Evocation cantrip}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Touch",
-										"{@b Components}: V, S",
-										"{@b Duration}: Instantaneous"
-									]
-								},
-								"Lightning springs from your hand to deliver a shock to a creature you try to touch. Make a melee spell attack against the target. You have advantage on the attack roll if the target is wearing armor made of metal. On a hit, the target takes {@dice 1d8} lightning damage, and it can't take reactions until the start of its next turn.",
-								"The spell's damage increases by {@dice 1d8} when you reach 5th level ({@dice 2d8}), 11th level ({@dice 3d8}), and 17th level ({@dice 4d8}).",
-								"{@comic Like shuffling your feet on a carpet just before slapping some sense into a goblin.}"
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Silence",
-							"page": 59,
-							"id": "198",
-							"entries": [
-								"{@i 2nd-level illusion (ritual})",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 120 feet",
-										"{@b Components}: V, S",
-										"{@b Duration}: Concentration, up to 10 minutes"
-									]
-								},
-								"For the duration, no sound can be created within or pass through a 20-foot-radius sphere centered on a point you choose within range. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are {@condition deafened} while entirely inside it. Casting a spell that includes a verbal component is impossible there.",
-								"{@comic I like busting this one out on enemy spellcasters and then throwing up the universal sign language for \"Oops! Guess you're f***ed!\"}"
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Sleep",
-							"page": 59,
-							"id": "199",
-							"entries": [
-								"{@i 1st-level enchantment}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 90 feet",
-										"{@b Components}: V, S, M (a pinch of fine sand, rose petals, or a cricket)",
-										"{@b Duration}: 1 minute"
-									]
-								},
-								"This spell sends creatures into a magical slumber. Roll {@dice 5d8}; the total is how many hit points of creatures this spell can affect. Creatures within 20 feet of a point you choose within range are affected in increasing order of their current hit points (ignoring {@condition unconscious} creatures).",
-								"Starting with the creature that has the lowest current hit points, each creature affected by this spell falls {@condition unconscious} until the spell ends, the sleeper takes damage, or someone uses an action to shake or slap the sleeper awake. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for that creature to be affected.",
-								"Undead and creatures immune to being {@condition charmed} aren't affected by this spell.",
-								{
-									"type": "entries",
-									"id": "19a",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 59,
-											"id": "19b",
-											"entries": [
-												"When you cast this spell using a spell slot of 2nd level or higher, roll an additional {@dice 2d8} for each slot level above 1st.",
-												"{@comic A spell that requires me to tiptoe around the battlefield is not my style, Morty. Like, I get that it can be useful, but it still just feels like a stopgap.}",
-												"{@comic It's not {@i full} Jerry, but it's also not rushing into my prepared spell list either.}"
-											]
-										}
-									]
-								}
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Spider Climb",
-							"page": 60,
-							"id": "19c",
-							"entries": [
-								"{@i 2nd-level transmutation}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Touch",
-										"{@b Components}: V, S, M (a drop of bitumen and a spider)",
-										"{@b Duration}: Concentration, up to 1 hour"
-									]
-								},
-								"Until the spell ends, one willing creature you touch gains the ability to move up, down, and across vertical surfaces and upside down along ceilings, while leaving its hands free. The target also gains a climbing speed equal to its walking speed.",
-								{
-									"type": "inset",
-									"id": "19d",
-									"entries": [
-										{
-											"type": "image",
-											"href": {
-												"type": "internal",
-												"path": "book/RMR/144-ram-head-smile3.png"
-											},
-											"style": "comic-speaker-right",
-											"width": 139,
-											"height": 157,
-											"credit": "Troy Little"
-										},
-										"{@comic I enjoy throwing spells down from above while walking on the ceiling. I'm man enough to admit it.}"
-									]
-								}
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Spirit Guardians",
-							"page": 60,
-							"id": "19e",
-							"entries": [
-								"{@i 3rd-level conjuration}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Self (15-foot radius)",
-										"{@b Components}: V, S, M (a holy symbol)",
-										"{@b Duration}: Concentration, up to 10 minutes"
-									]
-								},
-								"You call forth spirits to protect you. They flit around you to a distance of 15 feet for the duration. If you are good or neutral, their spectral form appears angelic or fey (your choice). If you are evil, they appear fiendish.",
-								"When you cast this spell, you can designate any number of creatures you can see to be unaffected by it. An affected creature's speed is halved in the area, and when the creature enters the area or starts its turn there, it must make a Wisdom saving throw (no more than once per turn). On a failed save, the creature takes {@dice 3d8} radiant damage (if you are good or neutral) or {@dice 3d8} necrotic damage (if you are evil). On a successful save, the creature takes half as much damage.",
-								{
-									"type": "entries",
-									"id": "19f",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 60,
-											"id": "1a0",
-											"entries": [
-												"When you cast this spell using a spell slot of 4th level or higher, the damage increases by {@dice 1d8} for each slot level above 3rd.",
-												"{@comic Crazy ghosts that zap monsters for you?}",
-												"{@comic That's f***ing cool.}",
-												"{@comic It's more hands-off than my typical \"crush your enemies, see them driven before you\" approach, but I definitely see the appeal.}"
-											]
-										}
-									]
-								}
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Spiritual Weapon",
-							"page": 60,
-							"id": "1a1",
-							"entries": [
-								"{@i 2nd-level evocation}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 bonus action",
-										"{@b Range}: 60 feet",
-										"{@b Components}: V, S",
-										"{@b Duration}: 1 minute"
-									]
-								},
-								"You create a floating, spectral weapon within range that lasts for the duration or until you cast this spell again. When you cast the spell, you can make a melee spell attack against a creature within 5 feet of the weapon. On a hit, the target takes force damage equal to {@dice 1d8} + your spellcasting ability modifier.",
-								"As a bonus action on your turn, you can move the weapon up to 20 feet and repeat the attack against a creature within 5 feet of it.",
-								"The weapon can take whatever form you choose. Clerics of deities who are associated with a particular weapon (as St. Cuthbert is known for his mace and Thor for his hammer) make this spell's effect resemble that weapon.",
-								{
-									"type": "entries",
-									"id": "1a2",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 60,
-											"id": "1a3",
-											"entries": [
-												"When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@dice 1d8} for every two slot levels above the 2nd.",
-												"{@comic There's {@i nothing} as demoralizing as being hit by a big ol' {@comicH3 ghost schlong}.}"
-											]
-										}
-									]
-								}
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Suggestion",
-							"page": 60,
-							"id": "1a4",
-							"entries": [
-								"{@i 2nd-level enchantment}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 30 feet",
-										"{@b Components}: V, M (a snake's tongue and either a bit of honeycomb or a drop of sweet oil)",
-										"{@b Duration}: Concentration, up to 8 hours"
-									]
-								},
-								"You suggest a course of activity (limited to a sentence or two) and magically influence a creature you choose within range that can hear and understand you. Creatures that can't be {@condition charmed} are immune to this effect. The suggestion must be worded in such a manner as to make the course of action sound reasonable. Asking the creature to stab itself, throw itself onto a spear, immolate itself, or do some other obviously harmful act automatically negates the effect of the spell.",
-								"The target must make a Wisdom saving throw. On a failed save, it pursues the course of action you described to the best of its ability. The suggested course of action can continue for the entire duration. If the suggested activity can be completed in a shorter time, the spell ends when the subject finishes what it was asked to do.",
-								"You can also specify conditions that will trigger a special activity during the duration. For example, you might suggest that a knight give her warhorse to the first beggar she meets. If the condition is not met before the spell expires, the activity is not performed.",
-								"If you or any of your companions damage the target, the spell ends early.",
-								"{@comic Here's a {@b real} suggestion: don't take a spell that requires 10 minutes of arguing at the table to figure out if it worked or not.}"
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Thaumaturgy",
-							"page": 61,
-							"id": "1a5",
-							"entries": [
-								"{@i Transmutation cantrip}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 30 feet",
-										"{@b Components}: V",
-										"{@b Duration}: Up to 1 minute"
-									]
-								},
-								"You manifest a minor wonder, a sign of supernatural power, within range. You create one of the following magical effects within range:",
-								{
-									"type": "list",
-									"items": [
-										"Your voice booms up to three times as loud as normal for 1 minute.",
-										"You cause flames to flicker, brighten, dim, or change color for 1 minute.",
-										"You cause harmless tremors in the ground for 1 minute.",
-										"You create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers.",
-										"You instantaneously cause an unlocked door or window to fly open or slam shut.",
-										"You alter the appearance of your eyes for 1 minute."
-									]
-								},
-								"If you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time, and you can dismiss such an effect as an action.",
-								"{@comic This spell wants to be prestidigitation for clerics, but it's definitely on the weak side. Here's some harmless tremors for you\u2014*FAAART*}"
-							]
-						},
-						{
-							"type": "entries",
-							"name": "Thunderwave",
-							"page": 61,
-							"id": "1a6",
-							"entries": [
-								"{@i 1st-level evocation}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Self (15-foot cube)",
-										"{@b Components}: V, S",
-										"{@b Duration}: Instantaneous"
-									]
-								},
 								{
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/RMR/145-c4-13-rick-hooray.png"
+										"path": "book/RMR/140-ram-head-sarcasm.png"
 									},
-									"maxWidth": 150,
-									"width": 676,
-									"height": 800,
+									"style": "comic-speaker-left",
+									"width": 140,
+									"height": 174,
 									"credit": "Troy Little"
 								},
-								"A wave of thunderous force sweeps out from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw. On a failed save, a creature takes {@dice 2d8} thunder damage and is pushed 10 feet away from you. On a successful save, the creature takes half as much damage and is not pushed.",
-								"In addition, unsecured objects that are completely within the area of effect are automatically pushed 10 feet away from you by the spell's effect, and the spell emits a thunderous boom audible out to 300 feet.",
-								{
-									"type": "entries",
-									"id": "1a7",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "At Higher Levels",
-											"page": 61,
-											"id": "1a8",
-											"entries": [
-												"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d8} for each slot level above 1st.",
-												"{@comic Let this baby fly when the bass drops, Morty. Trust me. The crowd will go {@i wild}.}"
-											]
-										}
-									]
-								}
+								"{@comic {@comicH3 Abjuration} is usually garbage, but since wizards are forced to walk around wearing {@comicH3 toilet paper} for protection because Wizards of the Coast thinks they're OP, this spell might actually keep you alive.}"
 							]
 						},
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Mage Hand",
+							"page": 56,
+							"collapsed": true
+						},
+						"{@comic Push stuff around.}",
+						"{@comic Trigger a trap from a safe distance.}",
+						"{@comic Mess with your friends.}",
+						"{@comic Pick your horse's nose while riding said horse.}",
+						"{@comic {@b I-I can keep going.}}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Magic Missile",
+							"page": 57,
+							"collapsed": true
+						},
+						"{@comic Notice this spell's most {@b important} feature, Morty: {@comicH3 NO ATTACK ROLL.}}",
+						"{@comic It hits and hurts. Simple-dimple. Little glowing arrows of death at your command, and nobody can do s*** about it.}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Mass Healing Word",
+							"page": 57,
+							"collapsed": true
+						},
+						"{@comic Smart clerics hold this spell in reserve until their party members pay up. These heals don't come cheap.}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Misty Step",
+							"page": 57,
+							"collapsed": true
+						},
+						{
+							"type": "inset",
+							"id": "188",
+							"entries": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/RMR/141-ram-head-smile2.png"
+									},
+									"style": "comic-speaker-left",
+									"width": 139,
+									"height": 156,
+									"credit": "Troy Little"
+								},
+								"{@comic Perfect for ripping a big nasty fart and then moving elsewhere for maximum deniability.}"
+							]
+						},
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Prayer of Healing",
+							"page": 57,
+							"collapsed": true
+						},
+						"{@comic That 10-minute casting time is a {@i buzzkill}, but when your crew's doing the downtime thing, it gives you something to occupy yourself with so you don't have to participate in their campfire bonding rituals.}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Prestidigitation",
+							"page": 57,
+							"collapsed": true
+						},
+						"{@comic I bet at first glance you figured I'd call this as a Jerry spell, but it's {@i not}, Morty. Prestidigitation is {@b awesome}! It doesn't take up any spell slots because it's a cantrip. That means you can use it {@b constantly}... and you {@i should}.}",
+						"{@comic Everywhere your wizard goes, they'll have glittering teeth, musky magic cologne, a warming glow, and their own personal soundtrack. Clean clothes, too. The other members of your party are gonna shamble into town smelling like ass while you get to be Slick McDick, Wizard Supreme.}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Protection from Energy",
+							"page": 58,
+							"collapsed": true
+						},
+						"{@comic Don't waste third level spell slots on protecto-trash. Kill your enemies fast and you won't even need defense.}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Ray of Frost",
+							"page": 58,
+							"collapsed": true
+						},
+						"{@comic This is it, Morty, the third of the holy triumvirate of low-level wizard DPS. It's a song of ice {@b and} fire {@b AND} lightning.}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Resistance",
+							"page": 58,
+							"collapsed": true
+						},
+						{
+							"type": "inset",
+							"id": "190",
+							"entries": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/RMR/142-ram-head-rick-smile-flip.png"
+									},
+									"style": "comic-speaker-right",
+									"width": 150,
+									"height": 178,
+									"credit": "Troy Little"
+								},
+								"{@comic Wait, the material component for this is \"a miniature cloak\"?}",
+								"{@comic Who the f*** is running around with a pouch full of miniature cloaks?}",
+								"{@comic Wizards of the Coast, whatever you're smoking, I want some.}"
+							]
+						},
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Revivify",
+							"page": 58,
+							"collapsed": true
+						},
+						{
+							"type": "inset",
+							"id": "192",
+							"entries": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/RMR/143-ram-head-meh.png"
+									},
+									"style": "comic-speaker-left",
+									"width": 130,
+									"height": 153,
+									"credit": "Troy Little"
+								},
+								"{@comic Calling the spell \"Have you tried {@i not} dying?\" would be more accurate, but not as catchy.}"
+							]
+						},
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Sacred Flame",
+							"page": 58,
+							"collapsed": true
+						},
+						"{@comic Not bad, but radiant damage means your enemy's clothes don't catch on fire, so it's not as funny.}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Sanctuary",
+							"page": 58,
+							"collapsed": true
+						},
+						"{@comic Don't worry about {@b protecting} things, Morty. Everything dies.}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Shield",
+							"page": 59,
+							"collapsed": true
+						},
+						"{@comic The spellcasting equivalent of a {@b jockstrap}: useful in the right circumstances, but way cooler if you can do your thing without needing it\u2014and eventually it'll need a wash.}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Shield of Faith",
+							"page": 59,
+							"collapsed": true
+						},
+						"{@comic I dunno, I kinda respect this.}",
+						"{@comic A cleric who takes 10 minutes to {@status concentration||concentrate} on how much they love their god so {@i you} can get punched harder. That's pretty metal.}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Shocking Grasp",
+							"page": 59,
+							"collapsed": true
+						},
+						"{@comic Like shuffling your feet on a carpet just before slapping some sense into a goblin.}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Silence",
+							"page": 59,
+							"collapsed": true
+						},
+						"{@comic I like busting this one out on enemy spellcasters and then throwing up the universal sign language for \"Oops! Guess you're f***ed!\"}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Sleep",
+							"page": 59,
+							"collapsed": true
+						},
+						"{@comic A spell that requires me to tiptoe around the battlefield is not my style, Morty. Like, I get that it can be useful, but it still just feels like a stopgap.}",
+						"{@comic It's not {@i full} Jerry, but it's also not rushing into my prepared spell list either.}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Spider Climb",
+							"page": 60,
+							"collapsed": true
+						},
+						{
+							"type": "inset",
+							"id": "19d",
+							"entries": [
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/RMR/144-ram-head-smile3.png"
+									},
+									"style": "comic-speaker-right",
+									"width": 139,
+									"height": 157,
+									"credit": "Troy Little"
+								},
+								"{@comic I enjoy throwing spells down from above while walking on the ceiling. I'm man enough to admit it.}"
+							]
+						},
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Spirit Guardians",
+							"page": 60,
+							"collapsed": true
+						},
+						"{@comic Crazy ghosts that zap monsters for you?}",
+						"{@comic That's f***ing cool.}",
+						"{@comic It's more hands-off than my typical \"crush your enemies, see them driven before you\" approach, but I definitely see the appeal.}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Spiritual Weapon",
+							"page": 60,
+							"collapsed": true
+						},
+						"{@comic There's {@i nothing} as demoralizing as being hit by a big ol' {@comicH3 ghost schlong}.}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Suggestion",
+							"page": 60,
+							"collapsed": true
+						},
+						"{@comic Here's a {@b real} suggestion: don't take a spell that requires 10 minutes of arguing at the table to figure out if it worked or not.}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Thaumaturgy",
+							"page": 61,
+							"collapsed": true
+						},
+						"{@comic This spell wants to be prestidigitation for clerics, but it's definitely on the weak side. Here's some harmless tremors for you\u2014*FAAART*}",
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
+							"name": "Thunderwave",
+							"page": 61,
+							"collapsed": true
+						},
+						"{@comic Let this baby fly when the bass drops, Morty. Trust me. The crowd will go {@i wild}.}",
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/RMR/145-c4-13-rick-hooray.png"
+							},
+							"maxWidth": 250,
+							"width": 676,
+							"height": 800,
+							"credit": "Troy Little"
+						},
+						{
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Warding Bond",
 							"page": 61,
-							"id": "1a9",
+							"collapsed": true
+						},
+						{
+							"type": "inset",
+							"id": "1aa",
 							"entries": [
-								"{@i 2nd-level abjuration}",
 								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: Touch",
-										"{@b Components}: V, S, M (a pair of platinum rings worth at least 50 gp each, which you and the target must wear for the duration)",
-										"{@b Duration}: 1 hour"
-									]
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/RMR/146-ram-head-meh.png"
+									},
+									"style": "comic-speaker-left",
+									"width": 140,
+									"height": 165,
+									"credit": "Troy Little"
 								},
-								"This spell wards a willing creature you touch and creates a mystic connection between you and the subject until the spell ends. While the target is within 60 feet of you, it gains a +1 bonus to AC and saving throws, and it has resistance to all damage. Also, each time it takes damage, you take the same amount of damage.",
-								"The spell ends early if you drop to 0 hit points or if you and the subject become separated by more than 60 feet. You can also dismiss the spell as an action.",
-								{
-									"type": "inset",
-									"id": "1aa",
-									"entries": [
-										{
-											"type": "image",
-											"href": {
-												"type": "internal",
-												"path": "book/RMR/146-ram-head-meh.png"
-											},
-											"style": "comic-speaker-left",
-											"width": 140,
-											"height": 165,
-											"credit": "Troy Little"
-										},
-										"{@comic Here's a better idea: How about I {@i don't} link my life force to somebody else? I don't know or trust any of these clowns.}"
-									]
-								}
+								"{@comic Here's a better idea: How about I {@i don't} link my life force to somebody else? I don't know or trust any of these clowns.}"
 							]
 						},
 						{
-							"type": "entries",
+							"type": "statblock",
+							"tag": "spell",
+							"source": "PHB",
 							"name": "Web",
 							"page": 61,
-							"id": "1ab",
-							"entries": [
-								"{@i 2nd-level conjuration}",
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										"{@b Casting Time}: 1 action",
-										"{@b Range}: 60 feet",
-										"{@b Components}: V, S, M (a bit of spiderweb)",
-										"{@b Duration}: Concentration, up to 1 hour"
-									]
-								},
-								"You conjure a mass of thick, sticky webbing at a point of your choice within range. The webs fill a 20-foot cube from that point for the duration. The webs are {@quickref difficult terrain||3} and lightly obscure their area.",
-								"If the webs are not anchored between two solid masses (such as walls or trees) or layered across a floor, wall, or ceiling, the conjured web collapses on itself, and the spell ends at the start of your next turn. Webs layered over a flat surface have a depth of 5 feet.",
-								"Each creature that starts its turn in the webs or that enters them during its turn must make a Dexterity saving throw. On a failed save, the creature is {@condition restrained} as long as it remains in the webs or until it breaks free.",
-								"A creature {@condition restrained} by the webs can use its action to make a Strength check against your spell save DC. If it succeeds, it is no longer {@condition restrained}.",
-								"The webs are flammable. Any 5-foot cube of webs exposed to fire burns away in 1 round, dealing {@dice 2d4} fire damage to any creature that starts its turn in the fire.",
-								"{@comic I'm not here to tell anyone {@b where} and {@b when} they should blow their personal sticky load, y'know? Th-th-that's a personal choice.}",
-								"{@comic Everybody needs to make their own decisions.}"
-							]
-						}
+							"collapsed": true
+						},
+						"{@comic I'm not here to tell anyone {@b where} and {@b when} they should blow their personal sticky load, y'know? Th-th-that's a personal choice.}",
+						"{@comic Everybody needs to make their own decisions.}"
 					]
 				}
 			]
@@ -7561,344 +6456,179 @@
 				"If multiple effects impose the same condition on a creature, each instance of the condition has its own duration, but the condition's effects don't get worse. A creature either has a condition or doesn't.",
 				"The following definitions specify what happens to a creature while it is subjected to a condition.",
 				{
-					"type": "section",
+					"type": "statblock",
+					"tag": "condition",
+					"source": "PHB",
 					"name": "Blinded",
-					"page": 62,
-					"id": "1ad",
-					"entries": [
-						{
-							"type": "list",
-							"items": [
-								"A {@condition blinded} creature can't see and automatically fails any ability check that requires sight.",
-								"Attack rolls against the creature have advantage, and the creature's attack rolls have disadvantage."
-							]
-						}
-					]
+					"page": 62
 				},
 				{
-					"type": "section",
+					"type": "statblock",
+					"tag": "condition",
+					"source": "PHB",
 					"name": "Charmed",
-					"page": 62,
-					"id": "1ae",
-					"entries": [
-						{
-							"type": "image",
-							"href": {
-								"type": "internal",
-								"path": "book/RMR/147-ram-condition-charmed.png"
-							},
-							"width": 529,
-							"height": 542,
-							"credit": "Troy Little"
-						},
-						{
-							"type": "list",
-							"items": [
-								"A {@condition charmed} creature can't attack the charmer or target the charmer with harmful abilities or magical effects.",
-								"The charmer has advantage on any ability check to interact socially with the creature."
-							]
-						}
-					]
+					"page": 62
 				},
 				{
-					"type": "section",
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/RMR/147-ram-condition-charmed.png"
+					},
+					"width": 529,
+					"height": 542,
+					"credit": "Troy Little"
+				},
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"source": "PHB",
 					"name": "Deafened",
-					"page": 62,
-					"id": "1af",
-					"entries": [
-						{
-							"type": "list",
-							"items": [
-								"A {@condition deafened} creature can't hear and automatically fails any ability check that requires hearing."
-							]
-						}
-					]
+					"page": 62
 				},
 				{
-					"type": "section",
+					"type": "statblock",
+					"tag": "condition",
+					"source": "PHB",
 					"name": "Exhaustion",
-					"page": 62,
-					"id": "1b0",
-					"entries": [
-						"Some special abilities and environmental hazards, such as starvation and the long-term effects of freezing or scorching temperatures, can lead to a special condition called exhaustion. Exhaustion is measured in six levels. An effect can give a creature one or more levels of exhaustion, as specified in the effect's description.",
-						{
-							"type": "table",
-							"colLabels": [
-								"Level",
-								"Effect"
-							],
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
-							],
-							"rows": [
-								[
-									"1",
-									"Disadvantage on ability checks"
-								],
-								[
-									"2",
-									"Speed halved"
-								],
-								[
-									"3",
-									"Disadvantage on attack rolls and saving throws"
-								],
-								[
-									"4",
-									"Hit point maximum halved"
-								],
-								[
-									"5",
-									"Speed reduced to 0"
-								],
-								[
-									"6",
-									"Death"
-								]
-							]
-						},
-						"If an already exhausted creature suffers another effect that causes exhaustion, its current level of exhaustion increases by the amount specified in the effect's description.",
-						"A creature suffers the effect of its current level of exhaustion as well as all lower levels. For example, a creature suffering level 2 exhaustion has its speed halved and has disadvantage on ability checks.",
-						"An effect that removes exhaustion reduces its level as specified in the effect's description, with all exhaustion effects ending if a creature's exhaustion level is reduced below 1.",
-						"Finishing a long rest reduces a creature's exhaustion level by 1, provided that the creature has also ingested some food and drink. Also, being raised from the dead reduces a creature's exhaustion level by 1."
-					]
+					"page": 62
 				},
 				{
-					"type": "section",
+					"type": "statblock",
+					"tag": "condition",
+					"source": "PHB",
 					"name": "Frightened",
-					"page": 62,
-					"id": "1b1",
-					"entries": [
-						{
-							"type": "list",
-							"items": [
-								"A {@condition frightened} creature has disadvantage on ability checks and attack rolls while the source of its fear is within line of sight.",
-								"The creature can't willingly move closer to the source of its fear."
-							]
-						}
-					]
+					"page": 62
 				},
 				{
-					"type": "section",
+					"type": "statblock",
+					"tag": "condition",
+					"source": "PHB",
 					"name": "Grappled",
-					"page": 62,
-					"id": "1b2",
-					"entries": [
-						{
-							"type": "image",
-							"href": {
-								"type": "internal",
-								"path": "book/RMR/148-ram-condition-grappled.png"
-							},
-							"width": 392,
-							"height": 489,
-							"credit": "Troy Little"
-						},
-						{
-							"type": "list",
-							"items": [
-								"A {@condition grappled} creature's speed becomes 0, and it can't benefit from any bonus to its speed.",
-								"The condition ends if the grappler is {@condition incapacitated} (see the condition).",
-								"The condition also ends if an effect removes the {@condition grappled} creature from the reach of the grappler or grappling effect, such as when a creature is hurled away by the {@spell thunderwave} spell."
-							]
-						}
-					]
+					"page": 62
 				},
 				{
-					"type": "section",
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/RMR/148-ram-condition-grappled.png"
+					},
+					"width": 392,
+					"height": 489,
+					"credit": "Troy Little"
+				},
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"source": "PHB",
 					"name": "Incapacitated",
-					"page": 62,
-					"id": "1b3",
-					"entries": [
-						{
-							"type": "list",
-							"items": [
-								"An {@condition incapacitated} creature can't take actions or reactions."
-							]
-						}
-					]
+					"page": 62
 				},
 				{
-					"type": "section",
+					"type": "statblock",
+					"tag": "condition",
+					"source": "PHB",
 					"name": "Invisible",
-					"page": 62,
-					"id": "1b4",
-					"entries": [
-						{
-							"type": "list",
-							"items": [
-								"An {@condition invisible} creature is impossible to see without the aid of magic or a special sense. For the purpose of hiding, the creature is heavily obscured. The creature's location can be detected by any noise it makes or any tracks it leaves.",
-								"Attack rolls against the creature have disadvantage, and the creature's attack rolls have advantage."
-							]
-						}
-					]
+					"page": 62
 				},
 				{
-					"type": "section",
+					"type": "statblock",
+					"tag": "condition",
+					"source": "PHB",
 					"name": "Paralyzed",
-					"page": 62,
-					"id": "1b5",
-					"entries": [
-						{
-							"type": "image",
-							"href": {
-								"type": "internal",
-								"path": "book/RMR/149-ram-condition-paralyzed.png"
-							},
-							"width": 805,
-							"height": 500,
-							"credit": "Troy Little"
-						},
-						{
-							"type": "list",
-							"items": [
-								"A {@condition paralyzed} creature is {@condition incapacitated} (see the condition) and can't move or speak.",
-								"The creature automatically fails Strength and Dexterity saving throws.",
-								"Attack rolls against the creature have advantage.",
-								"Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature."
-							]
-						}
-					]
+					"page": 62
 				},
 				{
-					"type": "section",
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/RMR/149-ram-condition-paralyzed.png"
+					},
+					"width": 805,
+					"height": 500,
+					"credit": "Troy Little"
+				},
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"source": "PHB",
 					"name": "Petrified",
-					"page": 62,
-					"id": "1b6",
-					"entries": [
-						{
-							"type": "image",
-							"href": {
-								"type": "internal",
-								"path": "book/RMR/150-ram-condition-petrified.png"
-							},
-							"width": 404,
-							"height": 496,
-							"credit": "Troy Little"
-						},
-						{
-							"type": "list",
-							"items": [
-								"A {@condition petrified} creature is transformed, along with any nonmagical object it is wearing or carrying, into a solid inanimate substance (usually stone). Its weight increases by a factor of ten, and it ceases aging.",
-								"The creature is {@condition incapacitated} (see the condition), can't move or speak, and is unaware of its surroundings.",
-								"Attack rolls against the creature have advantage.",
-								"The creature automatically fails Strength and Dexterity saving throws.",
-								"The creature has resistance to all damage.",
-								"The creature is immune to poison and disease, although a poison or disease already in its system is suspended, not neutralized."
-							]
-						}
-					]
+					"page": 62
 				},
 				{
-					"type": "section",
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/RMR/150-ram-condition-petrified.png"
+					},
+					"width": 404,
+					"height": 496,
+					"credit": "Troy Little"
+				},
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"source": "PHB",
 					"name": "Poisoned",
-					"page": 62,
-					"id": "1b7",
-					"entries": [
-						{
-							"type": "list",
-							"items": [
-								"A {@condition poisoned} creature has disadvantage on attack rolls and ability checks."
-							]
-						}
-					]
+					"page": 62
 				},
 				{
-					"type": "section",
+					"type": "statblock",
+					"tag": "condition",
+					"source": "PHB",
 					"name": "Prone",
-					"page": 62,
-					"id": "1b8",
-					"entries": [
-						{
-							"type": "image",
-							"href": {
-								"type": "internal",
-								"path": "book/RMR/151-ram-condition-prone.png"
-							},
-							"width": 443,
-							"height": 600,
-							"credit": "Troy Little"
-						},
-						{
-							"type": "list",
-							"items": [
-								"A {@condition prone} creature's only movement option is to crawl, unless it stands up and thereby ends the condition.",
-								"The creature has disadvantage on attack rolls.",
-								"An attack roll against the creature has advantage if the attacker is within 5 feet of the creature. Otherwise, the attack roll has disadvantage."
-							]
-						}
-					]
+					"page": 62
 				},
 				{
-					"type": "section",
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/RMR/151-ram-condition-prone.png"
+					},
+					"width": 443,
+					"height": 600,
+					"credit": "Troy Little"
+				},
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"source": "PHB",
 					"name": "Restrained",
-					"page": 62,
-					"id": "1b9",
-					"entries": [
-						{
-							"type": "list",
-							"items": [
-								"A {@condition restrained} creature's speed becomes 0, and it can't benefit from any bonus to its speed.",
-								"Attack rolls against the creature have advantage, and the creature's attack rolls have disadvantage.",
-								"The creature has disadvantage on Dexterity saving throws."
-							]
-						}
-					]
+					"page": 62
 				},
 				{
-					"type": "section",
+					"type": "statblock",
+					"tag": "condition",
+					"source": "PHB",
 					"name": "Stunned",
-					"page": 62,
-					"id": "1ba",
-					"entries": [
-						{
-							"type": "image",
-							"href": {
-								"type": "internal",
-								"path": "book/RMR/152-ram-condition-stunned.png"
-							},
-							"width": 321,
-							"height": 508,
-							"credit": "Troy Little"
-						},
-						{
-							"type": "list",
-							"items": [
-								"A {@condition stunned} creature is {@condition incapacitated} (see the condition), can't move, and can speak only falteringly.",
-								"The creature automatically fails Strength and Dexterity saving throws.",
-								"Attack rolls against the creature have advantage."
-							]
-						}
-					]
+					"page": 62
 				},
 				{
-					"type": "section",
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/RMR/152-ram-condition-stunned.png"
+					},
+					"width": 321,
+					"height": 508,
+					"credit": "Troy Little"
+				},
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"source": "PHB",
 					"name": "Unconscious",
-					"page": 62,
-					"id": "1bb",
-					"entries": [
-						{
-							"type": "image",
-							"href": {
-								"type": "internal",
-								"path": "book/RMR/153-ram-condition-unconscious.png"
-							},
-							"width": 479,
-							"height": 371,
-							"credit": "Troy Little"
-						},
-						{
-							"type": "list",
-							"items": [
-								"An {@condition unconscious} creature is {@condition incapacitated} (see the condition), can't move or speak, and is unaware of its surroundings.",
-								"The creature drops whatever it's holding and falls {@condition prone}.",
-								"The creature automatically fails Strength and Dexterity saving throws.",
-								"Attack rolls against the creature have advantage.",
-								"Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature."
-							]
-						}
-					]
+					"page": 62
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/RMR/153-ram-condition-unconscious.png"
+					},
+					"width": 479,
+					"height": 371,
+					"credit": "Troy Little"
 				}
 			]
 		},
@@ -7931,7 +6661,7 @@
 				"{@comic Yeah, I said it.}",
 				"{@comic {@comicH3 Truth bomb barr}*uuuuurrrrp*{@comicH3 age!}}",
 				"{@comic Ready to see how a {@b master} crafts a memorable dungeoneering experience, Morty? Keep a hold of your butt cheeks and take a peek at the {@b adventure book}:}",
-				"{@comicH1 the lost dungeon of rickedness: Big Rick Energy}"
+				"{@comicH1 {@adventure the lost dungeon of rickedness: Big Rick Energy|RMBRE}}"
 			]
 		}
 	]
