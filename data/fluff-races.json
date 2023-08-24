@@ -700,6 +700,20 @@
 		},
 		{
 			"name": "Bugbear",
+			"source": "ERLW",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "races/ERLW/Goblinoids.png"
+					},
+					"credit": "Cory Trego-Erdner"
+				}
+			]
+		},
+		{
+			"name": "Bugbear",
 			"source": "MPMM",
 			"entries": [
 				"Neither bugs nor bears, bugbears are the hulking cousins of goblins and hobgoblins. With roots in the Feywild, early bugbears resided in hidden places, in hard-to-reach and shadowed spaces. Long ago and from out of the corner of your eye, they came to the Material Plane, urged to spread throughout the multiverse by the conquering god Maglubiyet. Centuries later, they still bear a fey gift for lurking just out of sight, and many of them have sneaked away from that god's influence.",
@@ -1027,7 +1041,9 @@
 					"href": {
 						"type": "internal",
 						"path": "races/ERLW/Changeling.png"
-					}
+					},
+					"title": "Changeling adopting a person's appearance",
+					"credit": "Olga Drebas"
 				},
 				{
 					"type": "image",
@@ -3591,6 +3607,14 @@
 		},
 		{
 			"name": "Goblin",
+			"source": "ERLW",
+			"_copy": {
+				"name": "Bugbear",
+				"source": "ERLW"
+			}
+		},
+		{
+			"name": "Goblin",
 			"source": "GGR",
 			"entries": [
 				{
@@ -4552,6 +4576,14 @@
 		},
 		{
 			"name": "Hobgoblin",
+			"source": "ERLW",
+			"_copy": {
+				"name": "Bugbear",
+				"source": "ERLW"
+			}
+		},
+		{
+			"name": "Hobgoblin",
 			"source": "MPMM",
 			"entries": [
 				"Hobgoblins trace their origins to the ancient courts of the Feywild, where they first appeared with their goblin and bugbear kin. Many of them were driven from the Feywild by the conquering god Maglubiyet, who marshaled them as soldiers, but the fey realm left its mark; wherever they are in the multiverse, they continue to channel an aspect of the Feywild's rule of reciprocity, which creates a mystical bond between the giver and the receiver of a gift.",
@@ -5254,7 +5286,8 @@
 					"href": {
 						"type": "internal",
 						"path": "races/ERLW/Kalashtar.png"
-					}
+					},
+					"credit": "Eric Belisle"
 				},
 				{
 					"type": "image",
@@ -7291,7 +7324,8 @@
 							"href": {
 								"type": "internal",
 								"path": "races/ERLW/Shifter (Wildhunt).png"
-							}
+							},
+							"credit": "Eric Belisle"
 						}
 					}
 				}
@@ -8825,7 +8859,8 @@
 					"href": {
 						"type": "internal",
 						"path": "races/ERLW/Warforged.png"
-					}
+					},
+					"credit": "Craig J Spearing"
 				},
 				{
 					"type": "image",
