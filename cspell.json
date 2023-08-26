@@ -11,15 +11,20 @@
 			"name": "javascript-words",
 			"path": "./spellcheck/javascript-words.txt",
 			"addWords": true
+		},
+		{
+			"name": "artist-names",
+			"path": "./spellcheck/artist-names.txt",
+			"addWords": true
 		}
 	],
 	"dictionaries": [
 		"dnd-words",
-		"javascript-words"
+		"javascript-words",
+		"artist-names"
 	],
 	"ignorePaths": [
-		"./spellcheck/dnd-words.txt",
-		"./spellcheck/javascript-words.txt",
+		"./spellcheck/*.txt",
 		"node_modules",
 		"lib/",
 		"js/sw-files.js"
