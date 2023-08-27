@@ -1985,123 +1985,14 @@
 			"page": 24,
 			"name": "Adventure Aids",
 			"entries": [
-				"The following pages provide easy-to-use versions of appendices D and E from The Wild Beyond the Witchlight, as well as the adventure's Story Tracker.",
+				"The following pages provide easy-to-use versions of appendices {@adventure D|WbtW|9} and {@adventure E|WbtW|10} from {@adventure The Wild Beyond the Witchlight|WbtW}, as well as the adventure's {@adventure Story Tracker|WbtW|11}.",
 				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/DoD/aids1.webp"
-					},
-					"width": 655,
-					"height": 845
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/DoD/aids2.webp"
-					},
-					"width": 653,
-					"height": 847
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/DoD/aids3.webp"
-					},
-					"width": 653,
-					"height": 845
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/DoD/aids4.webp"
-					},
-					"width": 656,
-					"height": 848
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/DoD/aids5.webp"
-					},
-					"width": 654,
-					"height": 847
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/DoD/aids6.webp"
-					},
-					"width": 652,
-					"height": 846
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/DoD/aids7.webp"
-					},
-					"width": 651,
-					"height": 843
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/DoD/aids8.webp"
-					},
-					"width": 653,
-					"height": 845
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/DoD/aids9.webp"
-					},
-					"width": 621,
-					"height": 928
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/DoD/aids10.webp"
-					},
-					"width": 620,
-					"height": 928
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/DoD/aids11.webp"
-					},
-					"width": 617,
-					"height": 796
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/DoD/tracker1.webp"
-					},
-					"width": 717,
-					"height": 973
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/DoD/tracker2.webp"
-					},
-					"width": 713,
-					"height": 958
+					"type": "list",
+					"items": [
+						"{@note See the {@deck Roleplaying Cards|WbtW} deck entry for individual cards, or {@adventure Appendix D of Wild Beyond the Witchlight|WbtW|9} for printable assets.}",
+						"{@note See the {@deck Stagefright's Lines|WbtW} table to roll, or {@adventure Appendix E of Wild Beyond the Witchlight|WbtW|10} for printable assets.}",
+						"{@note See the {@adventure Story Tracker Appendix of Wild Beyond the Witchlight|WbtW|10} for printable story tracker assets.}"
+					]
 				}
 			],
 			"id": "038"

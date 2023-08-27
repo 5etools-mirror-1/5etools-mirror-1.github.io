@@ -1415,6 +1415,7 @@ PropOrder._DECK = [
 	"page",
 	"srd",
 	"basicRules",
+	"otherSources",
 
 	new PropOrder._ObjectKey("_copy", {
 		order: [
