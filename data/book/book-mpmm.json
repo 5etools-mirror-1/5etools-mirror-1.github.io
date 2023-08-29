@@ -5,7 +5,7 @@
 			"name": "Using This Book",
 			"page": 4,
 			"entries": [
-				"The multiverse of Dungeons and Dragons brims with peril, and many of the greatest dangers are monsters. A companion to the Monster Manual, this book collects monsters from many different planes of existence, each creature ready to imperil D&D heroes of different levels. The book also includes game statistics for nonplayer characters, who may assist or oppose the heroes, and an array of fantastical races for players to consider for their characters. The monsters and fantastical races in the following chapters are accompanied by the occasional comments of the mighty wizard Mordenkainen, one of the most learned mages of the D&D world of Greyhawk. The archmage Tasha, Mordenkainen's friendly rival, interjects as well. All together, the monsters, nonplayer characters, and fantastical races herein provide a host of new friends and foes to populate your D&D worlds.",
+				"The multiverse of Dungeons and Dragons brims with peril, and many of the greatest dangers are monsters. A companion to the {@book Monster Manual|MM}, this book collects monsters from many different planes of existence, each creature ready to imperil D&D heroes of different levels. The book also includes game statistics for nonplayer characters, who may assist or oppose the heroes, and an array of fantastical races for players to consider for their characters. The monsters and fantastical races in the following chapters are accompanied by the occasional comments of the mighty wizard Mordenkainen, one of the most learned mages of the D&D world of Greyhawk. The archmage Tasha, Mordenkainen's friendly rival, interjects as well. All together, the monsters, nonplayer characters, and fantastical races herein provide a host of new friends and foes to populate your D&D worlds.",
 				{
 					"type": "entries",
 					"name": "What You'll Find Within",
@@ -18,12 +18,12 @@
 								{
 									"type": "item",
 									"name": "Chapter 1, \"Fantastical Races,\"",
-									"entry": "presents over 30 race options for player characters, complementing the options in the Player's Handbook and other D&D books. These races debuted elsewhere and appear all together for the first time here, each of them revised to fit into the current state of the game."
+									"entry": "presents over 30 race options for player characters, complementing the options in the {@book Player's Handbook|PHB} and other D&D books. These races debuted elsewhere and appear all together for the first time here, each of them revised to fit into the current state of the game."
 								},
 								{
 									"type": "item",
 									"name": "Chapter 2, \"Bestiary,\"",
-									"entry": "contains over 250 monsters and NPCs, each one represented by a stat block and story text. When you're preparing to run an adventure as the DM, consider sprinkling these creatures into your games, mixing them with the monsters and NPCs from the Monster Manual. The creatures in this chapter fit seamlessly with the ones you use from other D&D books."
+									"entry": "contains over 250 monsters and NPCs, each one represented by a stat block and story text. When you're preparing to run an adventure as the DM, consider sprinkling these creatures into your games, mixing them with the monsters and NPCs from the {@book Monster Manual|MM}. The creatures in this chapter fit seamlessly with the ones you use from other D&D books."
 								},
 								{
 									"type": "item",
@@ -50,9 +50,10 @@
 						"path": "book/MPMM/01-001.ch1-splash.webp"
 					},
 					"width": 1700,
-					"height": 1467
+					"height": 1467,
+					"credit": "Zuzanna Wuzyk"
 				},
-				"Gathering together fantastical races from throughout the D&D multiverse, this chapter offers the following races for player characters, supplementing the race options in the Player's Handbook:",
+				"Gathering together fantastical races from throughout the D&D multiverse, this chapter offers the following races for player characters, supplementing the race options in the {@book Player's Handbook|PHB}:",
 				{
 					"type": "list",
 					"columns": 4,
@@ -67,22 +68,22 @@
 						"{@race Eladrin|MPMM}",
 						"{@race Fairy|MPMM}",
 						"{@race Firbolg|MPMM}",
-						"{@race Harengon|MPMM}",
 						"{@race Genasi (Air)|MPMM|Genasi, Air}",
-						"{@race Hobgoblin|MPMM}",
 						"{@race Genasi (Earth)|MPMM|Genasi, Earth}",
-						"{@race Kenku|MPMM}",
 						"{@race Genasi (Fire)|MPMM|Genasi, Fire}",
-						"{@race Kobold|MPMM}",
 						"{@race Genasi (Water)|MPMM|Genasi, Water}",
-						"{@race Lizardfolk|MPMM}",
 						"{@race Githyanki|MPMM}",
-						"{@race Minotaur|MPMM}",
 						"{@race Githzerai|MPMM}",
-						"{@race Orc|MPMM}",
 						"{@race Goblin|MPMM}",
-						"{@race Satyr|MPMM}",
 						"{@race Goliath|MPMM}",
+						"{@race Harengon|MPMM}",
+						"{@race Hobgoblin|MPMM}",
+						"{@race Kenku|MPMM}",
+						"{@race Kobold|MPMM}",
+						"{@race Lizardfolk|MPMM}",
+						"{@race Minotaur|MPMM}",
+						"{@race Orc|MPMM}",
+						"{@race Satyr|MPMM}",
 						"{@race Sea Elf|MPMM}",
 						"{@race Shadar-kai|MPMM}",
 						"{@race Shifter|MPMM}",
@@ -92,52 +93,59 @@
 						"{@race Yuan-ti|MPMM}"
 					]
 				},
-				"Many of these races are based on creatures that appear in the Monster Manual or the bestiary of this book. Consult with your DM to see whether an option here is appropriate for your campaign. If you do use a race in this chapter, first read the \"Creating Your Character\" section below.",
-				"At 1st level, you choose whether your character is a member of the human race or of a fantastical race. If you select a fantastical race in this chapter, follow these additional rules during character creation.",
+				"Many of these races are based on creatures that appear in the {@book Monster Manual|MM} or the bestiary of this book. Consult with your DM to see whether an option here is appropriate for your campaign. If you do use a race in this chapter, first read the \"Creating Your Character\" section below.",
 				{
-					"type": "entries",
-					"name": "Ability Score Increases",
+					"type": "section",
+					"name": "Creating Your Character",
 					"page": 5,
 					"entries": [
-						"When determining your character's ability scores, increase one score by 2 and increase a different score by 1, or increase three different scores by 1. Follow this rule regardless of the method you use to determine the scores, such as rolling or point buy. The \"Quick Build\" section for your character's class offers suggestions on which scores to increase. You can follow those suggestions or ignore them, but you can't raise any of your scores above 20."
-					],
-					"id": "003"
-				},
-				{
-					"type": "entries",
-					"name": "Languages",
-					"page": 5,
-					"entries": [
-						"Your character can speak, read, and write Common and one other language that you and your DM agree is appropriate for the character. The Player's Handbook offers a list of languages to choose from. The DM is free to modify that list for a campaign."
-					],
-					"id": "004"
-				},
-				{
-					"type": "entries",
-					"name": "Creature Type",
-					"page": 6,
-					"entries": [
-						"Every creature in D&D, including each player character, has a special tag in the rules that identifies the type of creature they are. Most player characters are of the Humanoid type. A race in this chapter tells you what your character's creature type is. Here's a list of the game's creature types in alphabetical order: Aberration, Beast, Celestial, Construct, Dragon, Elemental, Fey, Fiend, Giant, Humanoid, Monstrosity, Ooze, Plant, Undead. These types don't have rules themselves, but some rules in the game affect creatures of certain types in different ways. For example, the cure wounds spell doesn't work on a Construct or an Undead."
-					],
-					"id": "005"
-				},
-				{
-					"type": "entries",
-					"name": "Life Span",
-					"page": 6,
-					"entries": [
-						"The typical life span of a player character in the D&D multiverse is about a century, assuming the character doesn't meet a violent end on an adventure. Members of some races, such as dwarves and elves, can live for centuries. If typical members of a race in this book can live longer than a century, that fact is mentioned in the race's description."
-					],
-					"id": "006"
-				},
-				{
-					"type": "entries",
-					"name": "Height and Weight",
-					"page": 6,
-					"entries": [
-						"Player characters, regardless of race, typically fall into the same ranges of height and weight that humans have in our world. If you'd like to determine your character's height or weight randomly, consult the Random Height and Weight table in the Player's Handbook, and choose the row in the table that best represents the build you imagine for your character."
-					],
-					"id": "007"
+						"At 1st level, you choose whether your character is a member of the human race or of a fantastical race. If you select a fantastical race in this chapter, follow these additional rules during character creation.",
+						{
+							"type": "entries",
+							"name": "Ability Score Increases",
+							"page": 5,
+							"entries": [
+								"When determining your character's ability scores, increase one score by 2 and increase a different score by 1, or increase three different scores by 1. Follow this rule regardless of the method you use to determine the scores, such as rolling or point buy. The \"Quick Build\" section for your character's class offers suggestions on which scores to increase. You can follow those suggestions or ignore them, but you can't raise any of your scores above 20."
+							],
+							"id": "003"
+						},
+						{
+							"type": "entries",
+							"name": "Languages",
+							"page": 5,
+							"entries": [
+								"Your character can speak, read, and write Common and one other language that you and your DM agree is appropriate for the character. The Player's Handbook offers a list of languages to choose from. The DM is free to modify that list for a campaign."
+							],
+							"id": "004"
+						},
+						{
+							"type": "entries",
+							"name": "Creature Type",
+							"page": 6,
+							"entries": [
+								"Every creature in D&D, including each player character, has a special tag in the rules that identifies the type of creature they are. Most player characters are of the Humanoid type. A race in this chapter tells you what your character's creature type is. Here's a list of the game's creature types in alphabetical order: Aberration, Beast, Celestial, Construct, Dragon, Elemental, Fey, Fiend, Giant, Humanoid, Monstrosity, Ooze, Plant, Undead. These types don't have rules themselves, but some rules in the game affect creatures of certain types in different ways. For example, the {@spell cure wounds} spell doesn't work on a Construct or an Undead."
+							],
+							"id": "005"
+						},
+						{
+							"type": "entries",
+							"name": "Life Span",
+							"page": 6,
+							"entries": [
+								"The typical life span of a player character in the D&D multiverse is about a century, assuming the character doesn't meet a violent end on an adventure. Members of some races, such as dwarves and elves, can live for centuries. If typical members of a race in this book can live longer than a century, that fact is mentioned in the race's description."
+							],
+							"id": "006"
+						},
+						{
+							"type": "entries",
+							"name": "Height and Weight",
+							"page": 6,
+							"entries": [
+								"Player characters, regardless of race, typically fall into the same ranges of height and weight that humans have in our world. If you'd like to determine your character's height or weight randomly, consult the Random Height and Weight table in the Player's Handbook, and choose the row in the table that best represents the build you imagine for your character."
+							],
+							"id": "007"
+						}
+					]
 				}
 			],
 			"id": "002"
@@ -154,10 +162,11 @@
 						"path": "book/MPMM/02-001.ch2-splash.webp"
 					},
 					"width": 1700,
-					"height": 1467
+					"height": 1467,
+					"credit": "Tom Babbey"
 				},
 				"This bestiary provides game statistics and lore for more than 250 monsters, which are suitable for any D&D campaign. The chapter includes old favorites from past editions of the game as well as creatures created for the current edition.",
-				"This chapter is a companion to the Monster Manual and adopts a similar presentation. If you are unfamiliar with the monster stat block format, read the introduction of the Monster Manual before proceeding further. It explains stat block terminology and gives rules for various monster traits\u2014information that isn't repeated here.",
+				"This chapter is a companion to the {@book Monster Manual|MM} and adopts a similar presentation. If you are unfamiliar with the monster stat block format, read the introduction of the {@book Monster Manual|MM} before proceeding further. It explains stat block terminology and gives rules for various monster traits\u2014information that isn't repeated here.",
 				"The creatures in this bestiary are organized alphabetically. A few are gathered under a group heading; for example, the \"Dinosaurs\" section contains stat blocks for various dinosaurs.",
 				"Herein you will find some weapons that deal unusual damage types and spellcasting that functions in atypical ways. Such an exception is a special feature of a monster and represents how it uses the weapon or casts its spells; the exception has no affect on how a weapon or a spell functions for someone else.",
 				"Finally, if a stat block contains the name of a class in the monster's name or in parentheses under the name, the monster is considered a member of that class for the purpose of meeting prerequisites for magic items.",
