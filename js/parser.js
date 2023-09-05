@@ -35,8 +35,8 @@ Parser.numberToText = function (number) {
 	if (number == null) throw new TypeError(`undefined or null object passed to parser`);
 	if (Math.abs(number) >= 100) return `${number}`;
 
-	function getAsText (num) {
-		const abs = Math.abs(num);
+	function getIntAsText (num2) {
+		const abs = Math.abs(num2);
 		switch (abs) {
 			case 0: return "zero";
 			case 1: return "one";
@@ -68,9 +68,42 @@ Parser.numberToText = function (number) {
 			case 90: return "ninety";
 			default: {
 				const str = String(abs);
-				return `${getAsText(Number(`${str[0]}0`))}-${getAsText(Number(str[1]))}`;
+				return `${getIntAsText(Number(`${str[0]}0`))}-${getIntAsText(Number(str[1]))}`;
 			}
 		}
+	}
+
+	function getAsText (num) {
+		const spl = `${num}`.replace(/^-/, "").split(".");
+
+		if (spl.length === 2) {
+			let preDot = spl[0] === "0" ? "" : `${getIntAsText(Math.trunc(num))} and `;
+
+			switch (spl[1]) {
+				case "125": return `${preDot}one-eighth`;
+				case "2": return `${preDot}one-fifth`;
+				case "25": return `${preDot}one-quarter`;
+				case "375": return `${preDot}three-eighths`;
+				case "4": return `${preDot}two-fifths`;
+				case "5": return `${preDot}one-half`;
+				case "6": return `${preDot}three-fifths`;
+				case "625": return `${preDot}five-eighths`;
+				case "75": return `${preDot}three-quarters`;
+				case "8": return `${preDot}four-fifths`;
+				case "875": return `${preDot}seven-eighths`;
+
+				default: {
+					// Handle recursive
+					const asNum = Number(`0.${spl[1]}`);
+
+					if (asNum.toFixed(2) === (1 / 3).toFixed(2)) return `${preDot}one-third`;
+					if (asNum.toFixed(2) === (2 / 3).toFixed(2)) return `${preDot}two-thirds`;
+
+					if (asNum.toFixed(2) === (1 / 6).toFixed(2)) return `${preDot}one-sixth`;
+					if (asNum.toFixed(2) === (5 / 6).toFixed(2)) return `${preDot}five-sixths`;
+				}
+			}
+		} else return `${getIntAsText(num)}`;
 	}
 	return `${number < 0 ? "negative " : ""}${getAsText(number)}`;
 };
@@ -102,7 +135,7 @@ Parser.textToNumber = function (str) {
 		case "twenty": return 20;
 		case "thirty": return 30;
 		case "forty": return 40;
-		case "fifty": case "fiddy": return 50;
+		case "fifty": case "fiddy": return 50; // :^(
 		case "sixty": return 60;
 		case "seventy": return 70;
 		case "eighty": return 80;

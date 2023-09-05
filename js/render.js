@@ -2070,7 +2070,15 @@ Renderer.applyProperties = function (entry, object) {
 			let fromProp = object[path];
 
 			if (modifiers) {
-				for (const modifier of modifiers) {
+				const operationOrder = [
+					"r", "f", "c", // operate on value first
+					"v", "x", // cast to desired type
+					"l", "t", "u", "a", // operate on value representation
+				];
+				const modifierArr = [...modifiers];
+				const orderedModifiers = modifierArr.sort((a, b) => operationOrder.indexOf(a) - operationOrder.indexOf(b));
+
+				for (const modifier of orderedModifiers) {
 					switch (modifier) {
 						case "a": // render "a"/"an" depending on prop value
 							fromProp = Renderer.applyProperties._leadingAn.has(fromProp[0].toLowerCase()) ? "an" : "a";
@@ -2080,6 +2088,7 @@ Renderer.applyProperties = function (entry, object) {
 						case "t": fromProp = fromProp.toTitleCase(); break; // title-case text
 						case "u": fromProp = fromProp.toUpperCase(); break; // uppercase text
 						case "v": fromProp = Parser.numberToVulgar(fromProp); break; // vulgarize number
+						case "x": fromProp = Parser.numberToText(fromProp); break; // convert number to text
 						case "r": fromProp = Math.round(fromProp); break; // round number
 						case "f": fromProp = Math.floor(fromProp); break; // floor number
 						case "c": fromProp = Math.ceil(fromProp); break; // ceiling number
