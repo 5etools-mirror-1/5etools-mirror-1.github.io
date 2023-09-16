@@ -26,15 +26,132 @@ const FILE_BLOCKLIST = new Set([
 	"renderdemo.json",
 	"foundry.json",
 	"makebrew-creature.json",
+
+	"index-meta.json",
+	"index-props.json",
+	"index-sources.json",
+	"index-timestamps.json",
+
+	"package.json",
+	"package-lock.json",
 ]);
 
 const _FILE_PROP_ORDER = [
 	"_meta",
 
+	"$schema",
+	"blocklist",
+
+	"adventure",
+	"adventureData",
+	"book",
+	"bookData",
+
+	"variantrule",
+	"table",
+
+	"monster",
+	"monsterFluff",
+	"foundryMonster",
+	"legendaryGroup",
+
 	"class",
+	"foundryClass",
 	"subclass",
+	"foundrySubclass",
 	"classFeature",
+	"foundryClassFeature",
 	"subclassFeature",
+	"foundrySubclassFeature",
+
+	"optionalfeature",
+
+	"spell",
+	"spellFluff",
+	"foundrySpell",
+	"roll20Spell",
+	"spellList",
+
+	"psionic",
+	"psionicDisciplineFocus",
+	"psionicDisciplineActive",
+	"action",
+
+	"baseitem",
+	"item",
+	"itemGroup",
+	"magicvariant",
+	"itemFluff",
+
+	"itemProperty",
+	"itemType",
+	"itemEntry",
+	"itemTypeAdditionalEntries",
+	"itemMastery",
+	"linkedLootTables",
+
+	"object",
+	"objectFluff",
+
+	"background",
+	"backgroundFeature",
+	"backgroundFluff",
+
+	"charoption",
+	"charoptionFluff",
+
+	"status",
+	"disease",
+	"condition",
+	"conditionFluff",
+
+	"skill",
+
+	"sense",
+
+	"cult",
+	"boon",
+
+	"deity",
+
+	"encounter",
+
+	"feat",
+	"featFluff",
+
+	"language",
+	"languageFluff",
+
+	"makebrewCreatureTrait",
+	"makebrewCreatureAction",
+	"monsterfeatures",
+	"reducedItemProperty",
+	"reducedItemType",
+
+	"name",
+
+	"race",
+	"subrace",
+	"foundryRace",
+	"foundryRaceFeature",
+	"raceFluff",
+	"raceFluffMeta",
+
+	"recipe",
+	"recipeFluff",
+
+	"reward",
+	"rewardFluff",
+
+	"trap",
+	"hazard",
+
+	"deck",
+	"card",
+
+	"vehicle",
+	"vehicleUpgrade",
+	"vehicleFluff",
 ];
 
 const KEY_BLOCKLIST = new Set(["data", "itemTypeAdditionalEntries", "itemType", "itemProperty", "itemEntry"]);
@@ -44,15 +161,21 @@ const PROPS_TO_UNHANDLED_KEYS = {};
 function getFnListSort (prop) {
 	switch (prop) {
 		case "spell":
+		case "roll20Spell":
+		case "foundrySpell":
 		case "spellList":
 		case "monster":
+		case "foundryMonster":
 		case "monsterFluff":
 		case "monsterTemplate":
+		case "makebrewCreatureTrait":
+		case "makebrewCreatureAction":
 		case "action":
 		case "background":
 		case "legendaryGroup":
 		case "language":
 		case "languageScript":
+		case "name":
 		case "condition":
 		case "disease":
 		case "status":
@@ -82,6 +205,7 @@ function getFnListSort (prop) {
 		case "rewardFluff":
 		case "variantrule":
 		case "race":
+		case "foundryRaceFeature":
 		case "table":
 		case "trap":
 		case "hazard":
@@ -98,15 +222,20 @@ function getFnListSort (prop) {
 		case "card":
 			return SortUtil.ascSortCard.bind(SortUtil);
 		case "class":
+		case "foundryClass":
 			return (a, b) => SortUtil.ascSortDateString(Parser.sourceJsonToDate(b.source), Parser.sourceJsonToDate(a.source)) || SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source);
 		case "subclass":
 			return (a, b) => SortUtil.ascSortDateString(Parser.sourceJsonToDate(b.source), Parser.sourceJsonToDate(a.source)) || SortUtil.ascSortLower(a.name, b.name);
-		case "classFeature": return (a, b) => SortUtil.ascSortLower(a.classSource, b.classSource)
+		case "classFeature":
+		case "foundryClassFeature":
+			return (a, b) => SortUtil.ascSortLower(a.classSource, b.classSource)
 			|| SortUtil.ascSortLower(a.className, b.className)
 			|| SortUtil.ascSort(a.level, b.level)
 			|| SortUtil.ascSortLower(a.name, b.name)
 			|| SortUtil.ascSortLower(a.source, b.source);
-		case "subclassFeature": return (a, b) => SortUtil.ascSortLower(a.classSource, b.classSource)
+		case "subclassFeature":
+		case "foundrySubclassFeature":
+			return (a, b) => SortUtil.ascSortLower(a.classSource, b.classSource)
 			|| SortUtil.ascSortLower(a.className, b.className)
 			|| SortUtil.ascSortLower(a.subclassSource, b.subclassSource)
 			|| SortUtil.ascSortLower(a.subclassShortName, b.subclassShortName)
@@ -120,7 +249,9 @@ function getFnListSort (prop) {
 			|| SortUtil.ascSortLower(a.source, b.source);
 		case "adventure": return SortUtil.ascSortAdventure.bind(SortUtil);
 		case "book": return SortUtil.ascSortBook.bind(SortUtil);
-		case "bookData": return SortUtil.ascSortBookData.bind(SortUtil);
+		case "adventureData":
+		case "bookData":
+			return SortUtil.ascSortBookData.bind(SortUtil);
 		default: throw new Error(`Unhandled prop "${prop}"`);
 	}
 }
