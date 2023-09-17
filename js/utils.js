@@ -3940,8 +3940,7 @@ globalThis.DataUtil = {
 		},
 
 		getUid (ent, {isMaintainCase = false} = {}) {
-			const {name} = ent;
-			const {slug} = ent;
+			const {name, slug} = ent;
 			const source = SourceUtil.getEntitySource(ent);
 			if (!name || !source) throw new Error(`Entity did not have a name and source!`);
 			const out = [slug || name, source].join("|");
