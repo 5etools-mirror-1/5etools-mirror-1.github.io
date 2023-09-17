@@ -2785,7 +2785,7 @@ UrlUtil.PG_MAPS = "maps.html";
 UrlUtil.PG_SEARCH = "search.html";
 UrlUtil.PG_DECKS = "decks.html";
 
-UrlUtil.URL_TO_HASH_GENERIC = (it) => UrlUtil.encodeArrayForHash(it.name, it.source);
+UrlUtil.URL_TO_HASH_GENERIC = (it) => UrlUtil.encodeArrayForHash(it.slug || it.name, it.source);
 
 UrlUtil.URL_TO_HASH_BUILDER = {};
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BESTIARY] = UrlUtil.URL_TO_HASH_GENERIC;
@@ -3929,7 +3929,7 @@ globalThis.DataUtil = {
 			// <name>|<source>
 			const sourceDefault = Parser.getTagSource(tag);
 			return [
-				ent.name,
+				ent.slug || ent.name,
 				(ent.source || "").toLowerCase() === sourceDefault.toLowerCase() ? "" : ent.source,
 			].join("|").replace(/\|+$/, ""); // Trim trailing pipes
 		},
@@ -3941,9 +3941,10 @@ globalThis.DataUtil = {
 
 		getUid (ent, {isMaintainCase = false} = {}) {
 			const {name} = ent;
+			const {slug} = ent;
 			const source = SourceUtil.getEntitySource(ent);
 			if (!name || !source) throw new Error(`Entity did not have a name and source!`);
-			const out = [name, source].join("|");
+			const out = [slug || name, source].join("|");
 			if (isMaintainCase) return out;
 			return out.toLowerCase();
 		},
