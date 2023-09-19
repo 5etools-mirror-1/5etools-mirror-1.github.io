@@ -49,9 +49,9 @@
 					"transfer": true,
 					"changes": [
 						{
-							"key": "data.attributes.hp.max",
+							"key": "system.attributes.hp.bonuses.level",
 							"mode": "ADD",
-							"value": "@details.level"
+							"value": "1"
 						}
 					]
 				}
