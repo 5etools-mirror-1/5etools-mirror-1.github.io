@@ -1675,6 +1675,33 @@
 				}
 			],
 			"hasCardArt": true
+		},
+		{
+			"name": "Trickster Gods of Omu",
+			"source": "ToA",
+			"page": 256,
+			"cards": [
+				"I'jin|Trickster Gods of Omu|ToA",
+				"Kubazan|Trickster Gods of Omu|ToA",
+				"Moa|Trickster Gods of Omu|ToA",
+				"Nangnang|Trickster Gods of Omu|ToA",
+				"Obo'laka|Trickster Gods of Omu|ToA",
+				"Papazotl|Trickster Gods of Omu|ToA",
+				"Shagambi|Trickster Gods of Omu|ToA",
+				"Unkh|Trickster Gods of Omu|ToA",
+				"Wongo|Trickster Gods of Omu|ToA"
+			],
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/generic/back.webp"
+				}
+			},
+			"entries": [
+				"{@note See the {@adventure Spirits of the Nine Trickster Gods|ToA|5|Spirits of the Nine Trickster Gods} section for more information.}"
+			],
+			"hasCardArt": true
 		}
 	],
 	"card": [
@@ -7201,6 +7228,348 @@
 			},
 			"entries": [
 				"Mystery and riddles; the unknown; those who crave magical power and great knowledge"
+			]
+		},
+		{
+			"name": "I'jin",
+			"source": "ToA",
+			"set": "Trickster Gods of Omu",
+			"page": 256,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ToA/Trickster Gods of Omu/115-tg01.webp"
+				}
+			},
+			"entries": [
+				"{@i (pronounced EYE-jin)}",
+				"I'jin the {@creature Almiraj|ToA}, is fickle and unpredictable.",
+				{
+					"type": "section",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Flaw",
+							"page": 256,
+							"entries": [
+								"While inhabited by I'jin, you gain the following flaw, which overrides any opposing flaw: \"I never stick to a plan.\""
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Power",
+							"page": 256,
+							"entries": [
+								"While I'jin inhabits you, your Dexterity score becomes 23 unless it is already higher."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Kubazan",
+			"source": "ToA",
+			"set": "Trickster Gods of Omu",
+			"page": 256,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ToA/Trickster Gods of Omu/116-tg02.webp"
+				}
+			},
+			"entries": [
+				"{@i (pronounced KOO-bah-zahn)}",
+				"Kubazan the {@creature Froghemoth|ToA}, is wild and spirited.",
+				{
+					"type": "section",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Flaw",
+							"page": 256,
+							"entries": [
+								"While inhabited by Kubazan, you gain the following flaw, which overrides any opposing flaw: \"I am fearless and not afraid to take great risks.\""
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Power",
+							"page": 256,
+							"entries": [
+								"While Kubazan inhabits you, your Strength score becomes 23 unless it is already higher."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Moa",
+			"source": "ToA",
+			"set": "Trickster Gods of Omu",
+			"page": 256,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ToA/Trickster Gods of Omu/117-tg03.webp"
+				}
+			},
+			"entries": [
+				"{@i (pronounced MOH-ah)}",
+				"Moa the {@creature Jaculi|ToA}, is truthful and kind.",
+				{
+					"type": "section",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Flaw",
+							"page": 256,
+							"entries": [
+								"While inhabited by Moa, you gain the following flaw, which overrides any opposing flaw: \"I must always speak the truth.\""
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Power",
+							"page": 256,
+							"entries": [
+								"While inhabited by Moa, you can use an action to turn {@condition invisible}. Anything you are wearing or carrying is invisible as long as it is on your person. The effect ends if you attack, cast a spell, force a saving throw, or deal damage."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Nangnang",
+			"source": "ToA",
+			"set": "Trickster Gods of Omu",
+			"page": 256,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ToA/Trickster Gods of Omu/118-tg04.webp"
+				}
+			},
+			"entries": [
+				"{@i (pronounced NANG-nang)}",
+				"Nangnang the {@creature Grung|VGM}, is selfish and cruel.",
+				{
+					"type": "section",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Flaw",
+							"page": 256,
+							"entries": [
+								"While inhabited by Nangnang, you gain the following flaw, which overrides any opposing flaw: \"I won't share with others.\""
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Power",
+							"page": 256,
+							"entries": [
+								"While inhabited by Nangnang, you can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free. You also gain a climbing speed equal to your walking speed."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Obo'laka",
+			"source": "ToA",
+			"set": "Trickster Gods of Omu",
+			"page": 256,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ToA/Trickster Gods of Omu/119-tg05.webp"
+				}
+			},
+			"entries": [
+				"{@i (pronounced oh-boh-LAH-kah)}",
+				"Obo'laka the {@creature Zorbo|ToA}, is nervous and obsessive.",
+				{
+					"type": "section",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Flaw",
+							"page": 256,
+							"entries": [
+								"While inhabited by Obo'laka, you gain the following flaw, which overrides any opposing flaw: \"I am risk-averse and a slave to routine.\""
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Power",
+							"page": 256,
+							"entries": [
+								"While Obo'laka inhabits you, you can attune to one additional magic item. When Obo'laka leaves you, all magic items to which you are attuned are no longer attuned to you."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Papazotl",
+			"source": "ToA",
+			"set": "Trickster Gods of Omu",
+			"page": 256,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ToA/Trickster Gods of Omu/120-tg06.webp"
+				}
+			},
+			"entries": [
+				"{@i (pronounced pah-pah-ZAH-tul)}",
+				"Papazotl the {@creature Eblis|ToA}, is shrewd and conniving.",
+				{
+					"type": "section",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Flaw",
+							"page": 256,
+							"entries": [
+								"While inhabited by Papazotl, you gain the following flaw, which overrides any opposing flaw: \"I bow before no one and expect others to do as I command.\""
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Power",
+							"page": 256,
+							"entries": [
+								"While inhabited by Papazotl, you can't be surprised, you gain advantage on all Wisdom checks, and you never take damage from falling."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Shagambi",
+			"source": "ToA",
+			"set": "Trickster Gods of Omu",
+			"page": 256,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ToA/Trickster Gods of Omu/121-tg07.webp"
+				}
+			},
+			"entries": [
+				"{@i (pronounced shah-GOM-bee)}",
+				"Shagambi the {@creature Kamadan|ToA}, is wise and virtuous.",
+				{
+					"type": "section",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Flaw",
+							"page": 256,
+							"entries": [
+								"While inhabited by Shagambi, you gain the following flaw, which overrides any opposing flaw: \"I never show mercy to evildoers.\""
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Power",
+							"page": 256,
+							"entries": [
+								"While inhabited by Shagambi, you can make one extra attack when taking the {@action Attack} action on your turn."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Unkh",
+			"source": "ToA",
+			"set": "Trickster Gods of Omu",
+			"page": 256,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ToA/Trickster Gods of Omu/122-tg08.webp"
+				}
+			},
+			"entries": [
+				"{@i (pronounced UNK)}",
+				"Unkh the {@creature Flail Snail|VGM}, is self-absorbed and indecisive.",
+				{
+					"type": "section",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Flaw",
+							"page": 256,
+							"entries": [
+								"While inhabited by Unkh, you gain the following flaw, which overrides any opposing flaw: \"I am incapable of making decisions.\""
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Power",
+							"page": 256,
+							"entries": [
+								"While Unkh inhabits you, your Constitution score becomes 23 unless it is already higher."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Wongo",
+			"source": "ToA",
+			"set": "Trickster Gods of Omu",
+			"page": 256,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ToA/Trickster Gods of Omu/123-tg09.webp"
+				}
+			},
+			"entries": [
+				"{@i (pronounced WONG-go)}",
+				"Wongo the {@creature Su-monster|ToA}, is violent and deranged.",
+				{
+					"type": "section",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Flaw",
+							"page": 256,
+							"entries": [
+								"While inhabited by Wongo, you gain the following flaw, which overrides any opposing flaw: \"I act without concern for the well-being of others.\""
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Power",
+							"page": 256,
+							"entries": [
+								"While inhabited by Wongo, you can use your action to unleash a psionic assault on a creature you can see within 60 feet of you. The target must succeed on a {@dc 16} Wisdom saving throw or be {@condition stunned} until the end of its next turn."
+							]
+						}
+					]
+				}
 			]
 		}
 	]
