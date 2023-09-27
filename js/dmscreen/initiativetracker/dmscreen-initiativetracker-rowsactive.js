@@ -1,6 +1,4 @@
 import {
-	INITIATIVE_APPLICABILITY_NOT_APPLICABLE,
-	InitiativeTrackerStatColumnFactory,
 	IS_PLAYER_VISIBLE_ALL,
 	IS_PLAYER_VISIBLE_NONE,
 } from "./dmscreen-initiativetracker-statcolumns.js";

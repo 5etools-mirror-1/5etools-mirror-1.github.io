@@ -2094,7 +2094,7 @@ class LootGenMagicItemSpellScroll extends LootGenMagicItem {
 					${$btnRerollSpell}
 					${$dispSpell}
 					<span class="ve-muted mx-2 no-wrap">-or-</span>
-					<div class="no-wrap">${Renderer.get().render(`{@filter see all ${Parser.spLevelToFullLevelText(this._state.spellLevel, true)} spells|spells|level=${this._state.spellLevel}}`)}</div>
+					<div class="no-wrap">${Renderer.get().render(`{@filter see all ${Parser.spLevelToFullLevelText(this._state.spellLevel, {isDash: true})} spells|spells|level=${this._state.spellLevel}}`)}</div>
 					<span>)</span>
 				</div>
 				${$dispRoll}

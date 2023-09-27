@@ -48,6 +48,8 @@ class CharCreationOptionsPage extends ListPage {
 			listClass: "charcreationoptions",
 
 			dataProps: ["charoption"],
+
+			isMarkdownPopout: true,
 		});
 	}
 

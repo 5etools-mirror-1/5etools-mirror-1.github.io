@@ -3221,8 +3221,16 @@ Renderer.utils = {
 
 		static _getHtml_spell ({v, isListMode, isTextOnly}) {
 			return isListMode
-				? v.map(x => x.split("#")[0].split("|")[0].toTitleCase()).join("/")
-				: v.map(sp => Parser.prereqSpellToFull(sp, {isTextOnly})).joinConjunct(", ", " or ");
+				? v.map(sp => {
+					if (typeof sp === "string") return sp.split("#")[0].split("|")[0].toTitleCase();
+					return sp.entrySummary || sp.entry;
+				})
+					.join("/")
+				: v.map(sp => {
+					if (typeof sp === "string") return Parser.prereqSpellToFull(sp, {isTextOnly});
+					return Renderer.get().render(`{@filter ${sp.entry}|spells|${sp.choose}}`);
+				})
+					.joinConjunct(", ", " or ");
 		}
 
 		static _getHtml_feat ({v, isListMode, isTextOnly}) {

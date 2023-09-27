@@ -13,7 +13,8 @@
 						"path": "adventure/DIP/000-rta-01.png"
 					},
 					"width": 1572,
-					"height": 1000
+					"height": 1000,
+					"credit": "Claudio Pozas"
 				},
 				"This book is written for the Dungeon Master. It contains a complete Dungeons & Dragons adventure, as well as descriptions for every creature that appears in the adventure. It also teaches you how to run a D&D game.",
 				"The other book that accompanies this one (called \"{@book the rulebook|PHB}\") contains the information the players need to create and advance their characters (the adventurers and heroes of the story), as well as the rules you need to adjudicate situations that arise during the adventure.",
@@ -127,13 +128,13 @@
 									"id": "00b",
 									"entries": [
 										"The box contains the following cards:",
-										"{@b Combat Step by Step Cards}. These identical cards outline the order of combat, as described in the rulebook.",
-										"{@b Condition Cards}. These cards describe various conditions that can affect creatures in the game. A player whose character is suffering from a condition can keep the card as a reminder, giving it back to you when the condition ends for that character.",
-										"{@b Initiative Cards}. After the characters and each group of monsters involved in a combat roll initiative, distribute these cards among the combat participants, from the highest to lowest initiative count. For example, whoever rolls the highest initiative gets the \"1\" card and acts first, whoever rolls the second highest initiative gets the \"2\" card, and so on. Keep the numbered cards for the creatures you're running.",
-										"{@b Magic Charm Card}. This card describes a special charm (see \"{@area Charm of the Storm|194|x}.\" You become charged with the power of the storm, to the extent that tiny sparks crackle in your eyes. You can cast the {@spell lightning bolt} spell (3rd-level version) as an action. Once used three times, the charm vanishes from you.). Give the card to the player whose character receives the charm. Collect the card when the charm ends for that character.",
-										"{@b Magic Item Cards}. When the characters acquire a magic item and identify it, give the players the card for that item. Let the player whose character has the item keep the card for reference until the item is expended or no longer in that character's possession.",
-										"{@b Quest Cards}. When a new quest becomes available to the characters, give that quest's card to the players. Collect the card if the characters complete the quest or decide they don't want to complete it.",
-										"{@b Sidekick Cards}. If you're running the game for a single player, give the player these cards and let them choose a sidekick. The sidekick's corresponding stat block can be found in the rulebook. If the sidekick dies, collect the card; the player can't choose that sidekick again.",
+										"{@deck Combat Step by Step Cards|ESK}. These identical cards outline the order of combat, as described in the rulebook.",
+										"{@deck Condition Cards|ESK}. These cards describe various conditions that can affect creatures in the game. A player whose character is suffering from a condition can keep the card as a reminder, giving it back to you when the condition ends for that character.",
+										"{@deck Initiative Cards|ESK}. After the characters and each group of monsters involved in a combat roll initiative, distribute these cards among the combat participants, from the highest to lowest initiative count. For example, whoever rolls the highest initiative gets the \"1\" card and acts first, whoever rolls the second highest initiative gets the \"2\" card, and so on. Keep the numbered cards for the creatures you're running.",
+										"{@deck Magic Charm Cards|DIP|Magic Charm Card}. This card describes a special charm (see \"{@area Charm of the Storm|194|x}.\" You become charged with the power of the storm, to the extent that tiny sparks crackle in your eyes. You can cast the {@spell lightning bolt} spell (3rd-level version) as an action. Once used three times, the charm vanishes from you.). Give the card to the player whose character receives the charm. Collect the card when the charm ends for that character.",
+										"{@deck Magic Item Cards|DIP}. When the characters acquire a magic item and identify it, give the players the card for that item. Let the player whose character has the item keep the card for reference until the item is expended or no longer in that character's possession.",
+										"{@deck Quest Cards|DIP}. When a new quest becomes available to the characters, give that quest's card to the players. Collect the card if the characters complete the quest or decide they don't want to complete it.",
+										"{@deck Sidekick Cards|DIP}. If you're running the game for a single player, give the player these cards and let them choose a sidekick. The sidekick's corresponding stat block can be found in the rulebook. If the sidekick dies, collect the card; the player can't choose that sidekick again.",
 										{
 											"type": "inset",
 											"name": "Adventure Maps",
@@ -187,7 +188,8 @@
 												"offsetY": -80,
 												"units": "miles"
 											},
-											"id": "25b"
+											"id": "25b",
+											"credit": "Mike Schley"
 										},
 										{
 											"type": "image",
@@ -209,7 +211,8 @@
 											"mapParent": {
 												"id": "25b",
 												"autoScale": true
-											}
+											},
+											"credit": "Mike Schley"
 										}
 									]
 								},
@@ -411,7 +414,7 @@
 							"page": 6,
 							"id": "01f",
 							"entries": [
-								"If you're running this adventure for a single player, you can give that player a sidekick as a secondary character. Let the player choose one of the pregenerated sidekicks from the selection of Sidekick Cards. Rules and stat blocks for sidekicks appear in the rulebook. You might need to help the player run the sidekick for the first few sessions. If a sidekick is lost or no longer needed, the character can return to Phandalin and acquire a new one.",
+								"If you're running this adventure for a single player, you can give that player a sidekick as a secondary character. Let the player choose one of the pregenerated sidekicks from the selection of {@deck Sidekick Cards|DIP}. Rules and stat blocks for sidekicks appear in the rulebook. You might need to help the player run the sidekick for the first few sessions. If a sidekick is lost or no longer needed, the character can return to Phandalin and acquire a new one.",
 								{
 									"type": "entries",
 									"name": "Using Sidekicks",
@@ -499,7 +502,8 @@
 										"path": "adventure/DIP/003-rta-02.png"
 									},
 									"width": 1448,
-									"height": 1000
+									"height": 1000,
+									"credit": "Craig J Spearing"
 								}
 							]
 						}
@@ -783,7 +787,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/DIP/thumbnail/004-map-phandalin.webp"
-											}
+											},
+											"credit": "Mike Schley"
 										},
 										{
 											"type": "image",
@@ -803,7 +808,8 @@
 											"mapParent": {
 												"id": "25c",
 												"autoScale": true
-											}
+											},
+											"credit": "Mike Schley"
 										}
 									]
 								},
@@ -934,7 +940,7 @@
 							"page": 10,
 							"id": "036",
 							"entries": [
-								"The job board outside the townmaster's hall is where adventurers can learn about quests. Each quest is printed on a card, which you can give to the players when that quest becomes available (see \"{@area Starting Quests|03a|x}\" and \"{@area Follow-Up Quests|03b|x}\" below). Let the players choose which quest to complete first, second, third, and so on. If the players don't like a particular quest, they are under no obligation to complete it. However, completing quests helps the characters become more powerful (see \"{@area Leveling Up|03c|x}\").",
+								"The job board outside the townmaster's hall is where adventurers can learn about quests. Each quest is {@deck quest cards|DIP|printed on a card}, which you can give to the players when that quest becomes available (see \"{@area Starting Quests|03a|x}\" and \"{@area Follow-Up Quests|03b|x}\" below). Let the players choose which quest to complete first, second, third, and so on. If the players don't like a particular quest, they are under no obligation to complete it. However, completing quests helps the characters become more powerful (see \"{@area Leveling Up|03c|x}\").",
 								{
 									"type": "entries",
 									"name": "Harbin Wester, Quest Giver",
@@ -971,7 +977,7 @@
 									"page": 10,
 									"id": "03a",
 									"entries": [
-										"When the characters first visit the job board, there are three quests posted. Give the players the cards for these quests so that they can choose which to pursue.",
+										"When the characters first visit the job board, there are three quests posted. Give the players the {@deck quest cards|DIP|cards for these quests} so that they can choose which to pursue.",
 										{
 											"type": "image",
 											"href": {
@@ -4809,7 +4815,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/DIP/thumbnail/007-map-axeholm-dm.webp"
-											}
+											},
+											"credit": "Jason A. Engle"
 										},
 										{
 											"type": "image",
@@ -4830,7 +4837,8 @@
 											},
 											"mapParent": {
 												"id": "25d"
-											}
+											},
+											"credit": "Jason A. Engle"
 										}
 									]
 								},
@@ -5045,7 +5053,7 @@
 													"type": "list",
 													"items": [
 														"A platinum amulet on a thin but sturdy gold chain. This amulet is a holy symbol of Moradin (the dwarven god of creation) and bears his symbol: a hammer and anvil. Any dwarf character recognizes the symbol immediately, while a non-dwarf recognizes it with a successful DC 10 Intelligence ({@skill Religion}) check.",
-														"An unlocked steel coffer weighing 5 pounds. This small box is packed with silt, nestled in which is a {@item potion of superior healing}. Give the players the {@item Potion of Superior Healing} card when they find this magic item or they can reference it in the {@5etools Magic Items Listing|items.html}."
+														"An unlocked steel coffer weighing 5 pounds. This small box is packed with silt, nestled in which is a {@item potion of superior healing}. Give the players the {@item Potion of Superior Healing} {@card potion of superior healing|Magic Item Cards|DIP|card} when they find this magic item or they can reference it in the {@5etools Magic Items Listing|items.html}."
 													]
 												}
 											]
@@ -5168,7 +5176,7 @@
 											"page": 15,
 											"id": "070",
 											"entries": [
-												"The chest contains a {@item dread helm|XGE} and a pair of {@item gauntlets of ogre power}. Give the players the {@item Dread Helm|XGE} and {@item Gauntlets of Ogre Power} cards when they find and identify these two magic items or they can reference them in the {@5etools Magic Items Listing|items.html}."
+												"The chest contains a {@item dread helm|XGE} and a pair of {@item gauntlets of ogre power}. Give the players the {@item Dread Helm|XGE} and {@item Gauntlets of Ogre Power} {@deck magic item cards|DIP|cards} when they find and identify these two magic items or they can reference them in the {@5etools Magic Items Listing|items.html}."
 											]
 										}
 									]
@@ -5663,7 +5671,8 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/DIP/thumbnail/009-map-br-dm.webp"
-									}
+									},
+									"credit": "Jason A. Engle"
 								},
 								{
 									"type": "image",
@@ -5684,7 +5693,8 @@
 									},
 									"mapParent": {
 										"id": "25e"
-									}
+									},
+									"credit": "Jason A. Engle"
 								}
 							]
 						},
@@ -5754,7 +5764,7 @@
 											"page": 17,
 											"id": "082",
 											"entries": [
-												"Any character who searches the wardrobe and succeeds on a DC 15 Wisdom ({@skill Perception}) check finds a secret compartment at the bottom, stuffed inside which is a suit of {@item mithral chain mail}. (If the characters acquire and identify this magic item, give them the {@item Mithral Chain Mail} card or they can reference it in the {@5etools Magic Items Listing|items.html}.)"
+												"Any character who searches the wardrobe and succeeds on a DC 15 Wisdom ({@skill Perception}) check finds a secret compartment at the bottom, stuffed inside which is a suit of {@item mithral chain mail}. (If the characters acquire and identify this magic item, give them the {@item Mithral Chain Mail} {@card Mithral Chain Mail|Magic Item Cards|DIP|card} or they can reference it in the {@5etools Magic Items Listing|items.html}.)"
 											]
 										}
 									]
@@ -5951,7 +5961,7 @@
 											"page": 18,
 											"id": "098",
 											"entries": [
-												"Yargath carries a {@item potion of greater healing}. If the characters acquire this potion, give the players the {@item Potion of Greater Healing} card or they can reference it in the {@5etools Magic Items Listing|items.html}."
+												"Yargath carries a {@item potion of greater healing}. If the characters acquire this potion, give the players the {@item Potion of Greater Healing} {@card potion of greater healing|Magic Item Cards|DIP|card} or they can reference it in the {@5etools Magic Items Listing|items.html}."
 											]
 										}
 									]
@@ -6830,7 +6840,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/DIP/thumbnail/011-map-cot-dm.webp"
-											}
+											},
+											"credit": "Jason A. Engle"
 										},
 										{
 											"type": "image",
@@ -6851,7 +6862,8 @@
 											},
 											"mapParent": {
 												"id": "25f"
-											}
+											},
+											"credit": "Jason A. Engle"
 										}
 									]
 								},
@@ -6887,7 +6899,7 @@
 											"page": 19,
 											"id": "09f",
 											"entries": [
-												"Flenz hides a {@item potion of invulnerability} in his quarters, buried in a random square beneath the floor. If the characters obtain the potion, give the players the {@item Potion of Invulnerability} card or they can reference it in the {@5etools Magic Items Listing|items.html}."
+												"Flenz hides a {@item potion of invulnerability} in his quarters, buried in a random square beneath the floor. If the characters obtain the potion, give the players the {@item Potion of Invulnerability} {@card potion of invulnerability|Magic Item Cards|DIP|card} or they can reference it in the {@5etools Magic Items Listing|items.html}."
 											]
 										}
 									]
@@ -6905,7 +6917,7 @@
 											"page": 19,
 											"id": "0a1",
 											"entries": [
-												"Narux hides a {@item +1 shield} in his quarters, buried beneath the floor. If the characters obtain and identify it, give the players the {@item +1 Shield} card or they can reference it in the {@5etools Magic Items Listing|items.html}."
+												"Narux hides a {@item +1 shield} in his quarters, buried beneath the floor. If the characters obtain and identify it, give the players the {@item +1 Shield} {@card +1 Shield|Magic Item Cards|DIP|card} or they can reference it in the {@5etools Magic Items Listing|items.html}."
 											]
 										}
 									]
@@ -8143,7 +8155,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/DIP/thumbnail/013-map-db-dm.webp"
-											}
+											},
+											"credit": "Jason A. Engle"
 										},
 										{
 											"type": "image",
@@ -8164,7 +8177,8 @@
 											},
 											"mapParent": {
 												"id": "260"
-											}
+											},
+											"credit": "Jason A. Engle"
 										}
 									]
 								},
@@ -8236,7 +8250,7 @@
 											"page": 21,
 											"id": "0b7",
 											"entries": [
-												"The northwest sarcophagus contains the dead bard, who was buried with a {@item Instrument of Illusions|XGE|lute of illusions}. Sealed with the dead wizard in the southeast sarcophagus is a {@item necklace of fireballs}. If the characters acquire and identify these magic items, give them the {@item Instrument of Illusions|XGE|Lute of Illusions} and {@item Necklace of Fireballs} cards or they can reference them in the {@5etools Magic Items Listing|items.html}."
+												"The northwest sarcophagus contains the dead bard, who was buried with a {@item Instrument of Illusions|XGE|lute of illusions}. Sealed with the dead wizard in the southeast sarcophagus is a {@item necklace of fireballs}. If the characters acquire and identify these magic items, give them the {@item Instrument of Illusions|XGE|Lute of Illusions} and {@item Necklace of Fireballs} {@deck magic item cards|DIP|cards} or they can reference them in the {@5etools Magic Items Listing|items.html}."
 											]
 										}
 									]
@@ -8254,7 +8268,7 @@
 											"page": 21,
 											"id": "0b9",
 											"entries": [
-												"The sword is Lady Alagondar's {@item Dragon Slayer Longsword||dragon slayer}. Give the {@item Dragon Slayer Longsword||Dragon Slayer} card to whoever takes it or they can reference it in the {@5etools Magic Items Listing|items.html}. If the sword is taken, an {@creature invisible stalker} appears and attacks anyone in this area until the sword is put back, or until that guardian is destroyed."
+												"The sword is Lady Alagondar's {@item Dragon Slayer Longsword||dragon slayer}. Give the {@item Dragon Slayer Longsword||Dragon Slayer} {@card dragon slayer|Magic Item Cards|DIP|card} to whoever takes it or they can reference it in the {@5etools Magic Items Listing|items.html}. If the sword is taken, an {@creature invisible stalker} appears and attacks anyone in this area until the sword is put back, or until that guardian is destroyed."
 											]
 										}
 									]
@@ -9506,7 +9520,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/DIP/thumbnail/015-map-de-dm.webp"
-											}
+											},
+											"credit": "Jason A. Engle"
 										},
 										{
 											"type": "image",
@@ -9527,7 +9542,8 @@
 											},
 											"mapParent": {
 												"id": "261"
-											}
+											},
+											"credit": "Jason A. Engle"
 										}
 									]
 								},
@@ -9565,7 +9581,7 @@
 											]
 										},
 										"If they haven't been encountered yet, Dazlyn and Norbus are eating rations behind the easternmost rubble pile while keeping an eye on the temple entrance ({@area area E4|0c9|x}). Each is a shield dwarf {@creature commoner} who speaks Common and Dwarvish, and who has {@sense darkvision} out to a range of 60 feet. Dazlyn is forthright and honest to a fault. Norbus is gruff and excessively cautious. They banter like an old married couple.",
-										"Each dwarf has ten days of {@item Rations (1 day)|PHB|rations}, a {@item waterskin|PHB}, mining tools, and one of two matching {@item sending stones}. The dwarves offer these magic items to anyone willing to kill the {@creature Ochre Jelly||ochre jellies} in {@area area E5|0ca|x}, search the temple for other obvious threats, and make it safe. If the characters obtain these stones, give the players both {@item Sending Stones||Sending Stone} cards or they can reference them in the {@5etools Magic Items Listing|items.html}. Eager to resume their excavation, the dwarves offer to split what they find with characters who help them.",
+										"Each dwarf has ten days of {@item Rations (1 day)|PHB|rations}, a {@item waterskin|PHB}, mining tools, and one of two matching {@item sending stones}. The dwarves offer these magic items to anyone willing to kill the {@creature Ochre Jelly||ochre jellies} in {@area area E5|0ca|x}, search the temple for other obvious threats, and make it safe. If the characters obtain these stones, give the players both {@item Sending Stones||Sending Stone} {@card sending stone|Magic Item Cards|DIP|cards} or they can reference them in the {@5etools Magic Items Listing|items.html}. Eager to resume their excavation, the dwarves offer to split what they find with characters who help them.",
 										{
 											"type": "inset",
 											"name": "Temple Features",
@@ -9775,7 +9791,7 @@
 									"page": 24,
 									"id": "0d9",
 									"entries": [
-										"If the characters are eligible to undertake the {@area Woodland Manse Quest|03b|x}, Falcon offers a pair of {@item boots of elvenkind} as a reward for completing it. Give the players the {@item Boots of Elvenkind} card once the boots are acquired or they can reference them in the {@5etools Magic Items Listing|items.html}.",
+										"If the characters are eligible to undertake the {@area Woodland Manse Quest|03b|x}, Falcon offers a pair of {@item boots of elvenkind} as a reward for completing it. Give the players the {@item Boots of Elvenkind} {@card Boots of Elvenkind|Magic Item Cards|DIP|card} once the boots are acquired or they can reference them in the {@5etools Magic Items Listing|items.html}.",
 										"Falcon politely declines any offer to join the characters on a quest, stating that he must remain at the lodge in case nobles from Neverwinter come looking for his services.",
 										{
 											"type": "inset",
@@ -10370,7 +10386,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/DIP/thumbnail/017-map-fhl-dm.webp"
-											}
+											},
+											"credit": "Jason A. Engle"
 										},
 										{
 											"type": "image",
@@ -10391,7 +10408,8 @@
 											},
 											"mapParent": {
 												"id": "262"
-											}
+											},
+											"credit": "Jason A. Engle"
 										}
 									]
 								},
@@ -10619,7 +10637,7 @@
 									"page": 26,
 									"id": "0f9",
 									"entries": [
-										"If the characters rescue Gnerkli and end Korboz's madness, the grateful gnomes give them a {@item clockwork amulet|XGE} and {@item pole of collapsing|XGE} (from {@area area G13|10f|x}). The characters also receive a gift from each king: a {@item wand of pyrotechnics|XGE} from Gnerkli and a {@item hat of wizardry|XGE} from Korboz. Give the players the {@item Clockwork Amulet|XGE}, {@item Hat of Wizardry|XGE}, {@item Pole of Collapsing|XGE}, and {@item Wand of Pyrotechnics|XGE} cards as their characters obtain and identify each item or they can reference them in the {@5etools Magic Items Listing|items.html}."
+										"If the characters rescue Gnerkli and end Korboz's madness, the grateful gnomes give them a {@item clockwork amulet|XGE} and {@item pole of collapsing|XGE} (from {@area area G13|10f|x}). The characters also receive a gift from each king: a {@item wand of pyrotechnics|XGE} from Gnerkli and a {@item hat of wizardry|XGE} from Korboz. Give the players the {@item Clockwork Amulet|XGE}, {@item Hat of Wizardry|XGE}, {@item Pole of Collapsing|XGE}, and {@item Wand of Pyrotechnics|XGE} {@deck magic item cards|DIP|cards} as their characters obtain and identify each item or they can reference them in the {@5etools Magic Items Listing|items.html}."
 									]
 								}
 							]
@@ -13273,7 +13291,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/DIP/thumbnail/019-map-gnomegarde-dm.webp"
-											}
+											},
+											"credit": "Jason A. Engle"
 										},
 										{
 											"type": "image",
@@ -13294,7 +13313,8 @@
 											},
 											"mapParent": {
 												"id": "263"
-											}
+											},
+											"credit": "Jason A. Engle"
 										}
 									]
 								},
@@ -13475,7 +13495,7 @@
 											"page": 29,
 											"id": "110",
 											"entries": [
-												"Amid the clutter, the characters can find a {@item clockwork amulet|XGE} and a {@item pole of collapsing|XGE}, most easily by scanning the room with a {@spell detect magic} spell. It otherwise takes 1 hour to find each item. Give the players the {@item Clockwork Amulet|XGE} and {@item Pole of Collapsing|XGE} cards if their characters acquire and identify these magic items or they can reference them in the {@5etools Magic Items Listing|items.html}."
+												"Amid the clutter, the characters can find a {@item clockwork amulet|XGE} and a {@item pole of collapsing|XGE}, most easily by scanning the room with a {@spell detect magic} spell. It otherwise takes 1 hour to find each item. Give the players the {@item Clockwork Amulet|XGE} and {@item Pole of Collapsing|XGE} {@deck magic item cards|DIP|cards} if their characters acquire and identify these magic items or they can reference them in the {@5etools Magic Items Listing|items.html}."
 											]
 										}
 									]
@@ -13503,7 +13523,7 @@
 											"page": 29,
 											"id": "113",
 											"entries": [
-												"A small unlocked chest under the gnomes' bed contains a {@item hat of wizardry|XGE} and a fully charged {@item wand of pyrotechnics|XGE}. Give the players the {@item Hat of Wizardry|XGE} and {@item Wand of Pyrotechnics|XGE} cards if their characters acquire and identify these magic items or they can reference them in the {@5etools Magic Items Listing|items.html}."
+												"A small unlocked chest under the gnomes' bed contains a {@item hat of wizardry|XGE} and a fully charged {@item wand of pyrotechnics|XGE}. Give the players the {@item Hat of Wizardry|XGE} and {@item Wand of Pyrotechnics|XGE} {@deck Magic Item Cards|DIP|cards} if their characters acquire and identify these magic items or they can reference them in the {@5etools Magic Items Listing|items.html}."
 											]
 										}
 									]
@@ -13631,7 +13651,7 @@
 											"page": 31,
 											"id": "121",
 											"entries": [
-												"If the characters are low on healing magic, they find three {@item Potion of Healing||potions of healing} in the ogre's sack along with the worthless items above. (Give the players three {@item Potion of Healing||Potions of Healing} cards or they can reference them in the {@5etools Equipment Items Listing|items.html}.)"
+												"If the characters are low on healing magic, they find three {@item Potion of Healing||potions of healing} in the ogre's sack along with the worthless items above. (Give the players three {@item Potion of Healing||Potions of Healing} {@card potion of healing|Magic Item Cards|DIP|cards} or they can reference them in the {@5etools Equipment Items Listing|items.html}.)"
 											]
 										}
 									]
@@ -16464,7 +16484,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/DIP/thumbnail/021-map-ih-dm.webp"
-											}
+											},
+											"credit": "Jason A. Engle"
 										},
 										{
 											"type": "image",
@@ -16485,7 +16506,8 @@
 											},
 											"mapParent": {
 												"id": "264"
-											}
+											},
+											"credit": "Jason A. Engle"
 										}
 									]
 								},
@@ -17305,7 +17327,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/DIP/thumbnail/023-map-lc-dm.webp"
-											}
+											},
+											"credit": "Jason A. Engle"
 										},
 										{
 											"type": "image",
@@ -17326,7 +17349,8 @@
 											},
 											"mapParent": {
 												"id": "265"
-											}
+											},
+											"credit": "Jason A. Engle"
 										}
 									]
 								},
@@ -19538,7 +19562,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/DIP/thumbnail/025-map-mtgm-dm.webp"
-											}
+											},
+											"credit": "Jason A. Engle"
 										},
 										{
 											"type": "image",
@@ -19559,7 +19584,8 @@
 											},
 											"mapParent": {
 												"id": "266"
-											}
+											},
+											"credit": "Jason A. Engle"
 										}
 									]
 								},
@@ -19604,7 +19630,7 @@
 											"page": 37,
 											"id": "168",
 											"entries": [
-												"Characters who search the cave find two sacks hidden under debris. One sack contains ten fist-sized chunks of gold ore worth 10 gp each. The other holds 82 sp, 450 cp, and a pair of {@item goggles of night}. If the characters obtain and identify the goggles, give the {@item Goggles of Night} card to the players or they can reference it in the {@5etools Magic Items Listing|items.html}."
+												"Characters who search the cave find two sacks hidden under debris. One sack contains ten fist-sized chunks of gold ore worth 10 gp each. The other holds 82 sp, 450 cp, and a pair of {@item goggles of night}. If the characters obtain and identify the goggles, give the {@item Goggles of Night} {@card Goggles of Night|Magic Item Cards|DIP|card} to the players or they can reference it in the {@5etools Magic Items Listing|items.html}."
 											]
 										}
 									]
@@ -20422,7 +20448,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/DIP/thumbnail/027-map-sos-dm.webp"
-											}
+											},
+											"credit": "Jason A. Engle"
 										},
 										{
 											"type": "image",
@@ -20443,7 +20470,8 @@
 											},
 											"mapParent": {
 												"id": "267"
-											}
+											},
+											"credit": "Jason A. Engle"
 										}
 									]
 								},
@@ -20558,7 +20586,7 @@
 											"page": 39,
 											"id": "185",
 											"entries": [
-												"Any character who searches the altar and succeeds on a DC 10 Wisdom ({@skill Perception}) check realizes that the altar's base doesn't quite touch the floor. The altar has stone rollers built into it and can be pushed 3 feet to the south, revealing an unlocked wooden coffer tucked inside a 1-foot-square cavity in the floor. This coffer contains 57 gp and a {@item mystery key|XGE}. If the characters acquire and identify the {@item mystery key|XGE}, give the players the {@item Mystery Key|XGE} card or they can reference it in the {@5etools Magic Items Listing|items.html}."
+												"Any character who searches the altar and succeeds on a DC 10 Wisdom ({@skill Perception}) check realizes that the altar's base doesn't quite touch the floor. The altar has stone rollers built into it and can be pushed 3 feet to the south, revealing an unlocked wooden coffer tucked inside a 1-foot-square cavity in the floor. This coffer contains 57 gp and a {@item mystery key|XGE}. If the characters acquire and identify the {@item mystery key|XGE}, give the players the {@item Mystery Key|XGE} {@card Mystery Key|Magic Item Cards|DIP|card} or they can reference it in the {@5etools Magic Items Listing|items.html}."
 											]
 										}
 									]
@@ -21775,7 +21803,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/DIP/thumbnail/029-map-tos-dm.webp"
-											}
+											},
+											"credit": "Jason A. Engle"
 										},
 										{
 											"type": "image",
@@ -21796,7 +21825,8 @@
 											},
 											"mapParent": {
 												"id": "268"
-											}
+											},
+											"credit": "Jason A. Engle"
 										}
 									]
 								},
@@ -21851,7 +21881,7 @@
 											"page": 41,
 											"id": "193",
 											"entries": [
-												"The lightning rod on the roof ({@area area T8|19a|x}) channels electricity into the altar, which converts that raw elemental power into magical energy. The first character to touch the altar gains the Charm of the Storm, described below. Give that character's player the Charm of the Storm card."
+												"The lightning rod on the roof ({@area area T8|19a|x}) channels electricity into the altar, which converts that raw elemental power into magical energy. The first character to touch the altar gains the {@reward Charm of the Storm|DIP}, described below. Give that character's player the {@card Charm of the Storm|Magic Charm Cards|DIP|Charm of the Storm card}."
 											]
 										},
 										{
@@ -21879,7 +21909,7 @@
 											"page": 41,
 											"id": "196",
 											"entries": [
-												"Characters who search through the harpies' nest find a {@item potion of water breathing}. If the characters acquire this potion, give them the {@item Potion of Water Breathing} card or they can reference it in the {@5etools Magic Items Listing|items.html}."
+												"Characters who search through the harpies' nest find a {@item potion of water breathing}. If the characters acquire this potion, give them the {@item Potion of Water Breathing} {@card potion of Water Breathing|Magic Item Cards|DIP|card} or they can reference it in the {@5etools Magic Items Listing|items.html}."
 											]
 										}
 									]
@@ -21961,7 +21991,7 @@
 										"The crews aboard these five vessels perished when the beacon's evil light compelled them to crash into the rocky outcropping. Fish have picked clean their skeletal remains, which lie scattered throughout the doomed vessels. Three sharks patrol the wreckage (see the \"Exploring the Wrecks\" sidebar).",
 										"The Shipwrecks table below gives the name of each ship and the treasure that can be found within it. A character can spend an action searching the inside of a shipwreck. As part of that action, the character makes a DC 15 Wisdom ({@skill Perception}) check, finding the ship's treasure on a success. Once a ship's treasure is found, nothing else of value can be retrieved from that wreck.",
 										"If the item found is a locked chest, a character can use an action to search the wreck for the key to the chest, finding it with a successful DC 20 Wisdom ({@skill Perception}) check. Conversely, a character can pick the chest's sturdy lock with a successful DC 15 Dexterity check using thieves' tools.",
-										"When a magic item is found and identified, give the players the corresponding magic item card or they can reference it in the {@5etools Magic Items Listing|items.html}. In the case of the {@item +1 weapon} in area T10, choose from among the weapons available ({@item +1 battleaxe}, {@item +1 longbow}, {@item +1 mace}, or {@item +1 shortsword}). Only one {@item +1 weapon} can be found, so choose a weapon with which at least one party member has proficiency.",
+										"When a magic item is found and identified, give the players the corresponding {@deck magic item cards|DIP|magic item card} or they can reference it in the {@5etools Magic Items Listing|items.html}. In the case of the {@item +1 weapon} in area T10, choose from among the weapons available ({@item +1 battleaxe}, {@item +1 longbow}, {@item +1 mace}, or {@item +1 shortsword}). Only one {@item +1 weapon} can be found, so choose a weapon with which at least one party member has proficiency.",
 										{
 											"type": "table",
 											"caption": "Shipwrecks",
@@ -22282,7 +22312,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/DIP/thumbnail/031-map-uh-dm.webp"
-											}
+											},
+											"credit": "Jason A. Engle"
 										},
 										{
 											"type": "image",
@@ -22303,7 +22334,8 @@
 											},
 											"mapParent": {
 												"id": "269"
-											}
+											},
+											"credit": "Jason A. Engle"
 										}
 									]
 								},
@@ -22338,7 +22370,7 @@
 											"page": 43,
 											"id": "1a7",
 											"entries": [
-												"Adabra sells {@item Potion of Healing||potions of healing} for 50 gp. Give a {@item Potion of Healing} card to any player whose character acquires one of these potions or they can reference it in the {@5etools Magic Items Listing|items.html}. If you run out of cards, Adabra has no potions left to sell. ({@note There are six cards included with the physical product})."
+												"Adabra sells {@item Potion of Healing||potions of healing} for 50 gp. Give a {@item Potion of Healing} {@card potion of healing|Magic Item Cards|DIP|card} to any player whose character acquires one of these potions or they can reference it in the {@5etools Magic Items Listing|items.html}. If you run out of cards, Adabra has no potions left to sell. ({@note There are six cards included with the physical product})."
 											]
 										}
 									]
@@ -24255,7 +24287,8 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/DIP/thumbnail/033-map-wm-dm.webp"
-											}
+											},
+											"credit": "Jason A. Engle"
 										},
 										{
 											"type": "image",
@@ -24276,7 +24309,8 @@
 											},
 											"mapParent": {
 												"id": "26a"
-											}
+											},
+											"credit": "Jason A. Engle"
 										}
 									]
 								},
@@ -24516,7 +24550,7 @@
 											"page": 47,
 											"id": "1cd",
 											"entries": [
-												"The books found here are old texts written in Elvish that describe long-lost elven kingdoms and civilizations. They are too damaged to be worth anything. Additionally, one desk has a small book tucked under one of its back legs to level it off. The book is titled {@i Elvish Idioms}, and its pages have been cut out to conceal a tiny leather packet containing {@item dust of disappearance}. If the characters find the packet and identify the dust, give the players the {@item Dust of Disappearance} card or they can reference it in the {@5etools Magic Items Listing|items.html}."
+												"The books found here are old texts written in Elvish that describe long-lost elven kingdoms and civilizations. They are too damaged to be worth anything. Additionally, one desk has a small book tucked under one of its back legs to level it off. The book is titled {@i Elvish Idioms}, and its pages have been cut out to conceal a tiny leather packet containing {@item dust of disappearance}. If the characters find the packet and identify the dust, give the players the {@item Dust of Disappearance} {@card Dust of Disappearance|Magic Item Cards|DIP|card} or they can reference it in the {@5etools Magic Items Listing|items.html}."
 											]
 										}
 									]
@@ -24534,7 +24568,7 @@
 											"page": 47,
 											"id": "1cf",
 											"entries": [
-												"A {@spell detect magic} spell reveals an aura of conjuration magic emanating from the fireplace mantel. Any character who searches it and succeeds on a DC 10 Wisdom ({@skill Perception}) check discovers that the mantelpiece is actually a lid concealing a long, hidden compartment. The wizard who built the manse hid her {@item staff of birdcalls|XGE} here. If the characters obtain and identify the staff, give the players the {@item Staff of Birdcalls|XGE} card or they can reference it in the {@5etools Magic Items Listing|items.html}."
+												"A {@spell detect magic} spell reveals an aura of conjuration magic emanating from the fireplace mantel. Any character who searches it and succeeds on a DC 10 Wisdom ({@skill Perception}) check discovers that the mantelpiece is actually a lid concealing a long, hidden compartment. The wizard who built the manse hid her {@item staff of birdcalls|XGE} here. If the characters obtain and identify the staff, give the players the {@item Staff of Birdcalls|XGE} {@card Staff of Birdcalls|Magic Item Cards|DIP|card} or they can reference it in the {@5etools Magic Items Listing|items.html}."
 											]
 										}
 									]
@@ -24560,7 +24594,7 @@
 											"page": 47,
 											"id": "1d2",
 											"entries": [
-												"The garment hanging on the hook is a {@item cloak of billowing|XGE}, and the chest contains an {@item immovable rod} wrapped in a black cloth. If the characters acquire and identify these magic items, give the players the {@item Cloak of Billowing|XGE} and {@item Immovable Rod} cards  or they can reference them in the {@5etools Magic Items Listing|items.html}."
+												"The garment hanging on the hook is a {@item cloak of billowing|XGE}, and the chest contains an {@item immovable rod} wrapped in a black cloth. If the characters acquire and identify these magic items, give the players the {@item Cloak of Billowing|XGE} and {@item Immovable Rod} {@deck Magic Item Cards|DIP|cards} or they can reference them in the {@5etools Magic Items Listing|items.html}."
 											]
 										}
 									]
@@ -24657,9 +24691,10 @@
 						"type": "internal",
 						"path": "adventure/DIP/035-eta-01.png"
 					},
-					"title": "ROCK GNOME RECLUSE",
+					"title": "Rock Gnome Recluse",
 					"width": 800,
-					"height": 1000
+					"height": 1000,
+					"credit": "Olga Drebas"
 				},
 				"The adventure can end in one of several ways. Ideally, it concludes with the defeat of Cryovain the white dragon, the completion of all the Phandalin quests, or both. By then, the characters should be 6th level. Give the players a chance to wrap up loose ends before declaring the adventure over. For example, the characters might need to return to {@area Phandalin|02a|x} to collect an outstanding reward or notify townsfolk that the dragon has been dealt with. Armed with such good news, Townmaster {@area Harbin Wester|037|x} might plan a feast in the heroes' honor. What happens next is up to you.",
 				"If the worst happens and the characters die, their adventure is also over. You can let the players roll up new characters and pick up where their last ones left off, or you can also start over with new characters, tweaking quests as you see fit to surprise players who might be familiar with them.",
@@ -25113,7 +25148,8 @@
 										"path": "adventure/DIP/036-636960342199103296.png"
 									},
 									"width": 400,
-									"height": 389
+									"height": 389,
+									"credit": "Claudio Pozas"
 								}
 							]
 						},
@@ -25131,7 +25167,8 @@
 										"path": "adventure/DIP/037-636460582309128084.png"
 									},
 									"width": 400,
-									"height": 526
+									"height": 526,
+									"credit": "Christopher Burdett"
 								}
 							]
 						},
@@ -25150,7 +25187,8 @@
 										"path": "adventure/DIP/038-636460867586552503.png"
 									},
 									"width": 400,
-									"height": 660
+									"height": 660,
+									"credit": "Tomas Giorello"
 								}
 							]
 						},
@@ -25168,7 +25206,8 @@
 										"path": "adventure/DIP/039-blights-v3-corrected-foot.png"
 									},
 									"width": 1098,
-									"height": 1000
+									"height": 1000,
+									"credit": "Brynn Metheney"
 								},
 								{
 									"type": "entries",
@@ -25222,7 +25261,8 @@
 										"path": "adventure/DIP/040-636460892787682128.png"
 									},
 									"width": 400,
-									"height": 323
+									"height": 323,
+									"credit": "Brynn Metheney"
 								}
 							]
 						},
@@ -25240,7 +25280,8 @@
 										"path": "adventure/DIP/041-636460662223625909.png"
 									},
 									"width": 399,
-									"height": 308
+									"height": 308,
+									"credit": "Wesley Burt"
 								}
 							]
 						},
@@ -25276,7 +25317,8 @@
 										"path": "adventure/DIP/042-636960517654418879.png"
 									},
 									"width": 380,
-									"height": 475
+									"height": 475,
+									"credit": "Olga Drebas"
 								}
 							]
 						},
@@ -25294,7 +25336,8 @@
 										"path": "adventure/DIP/043-636960516130812600.png"
 									},
 									"width": 380,
-									"height": 406
+									"height": 406,
+									"credit": "Claudio Pozas"
 								}
 							]
 						},
@@ -25312,7 +25355,8 @@
 										"path": "adventure/DIP/044-ghoul.png"
 									},
 									"width": 350,
-									"height": 445
+									"height": 445,
+									"credit": "Christopher Burdett"
 								}
 							]
 						},
@@ -25348,7 +25392,8 @@
 										"path": "adventure/DIP/045-636460723371288078.png"
 									},
 									"width": 399,
-									"height": 302
+									"height": 302,
+									"credit": "Brynn Metheney"
 								}
 							]
 						},
@@ -25366,7 +25411,8 @@
 										"path": "adventure/DIP/046-636960495200331563.png"
 									},
 									"width": 400,
-									"height": 418
+									"height": 418,
+									"credit": "Claudio Pozas"
 								}
 							]
 						},
@@ -25384,7 +25430,8 @@
 										"path": "adventure/DIP/047-636460790974137538.png"
 									},
 									"width": 300,
-									"height": 313
+									"height": 313,
+									"credit": "Jesper Ejsing"
 								}
 							]
 						},
@@ -25420,7 +25467,8 @@
 										"path": "adventure/DIP/048-636460819451261614.png"
 									},
 									"width": 399,
-									"height": 305
+									"height": 305,
+									"credit": "Zack Stella"
 								}
 							]
 						},
@@ -25438,7 +25486,8 @@
 										"path": "adventure/DIP/049-636460814187935933.png"
 									},
 									"width": 400,
-									"height": 318
+									"height": 318,
+									"credit": "Eric Belisle"
 								}
 							]
 						},
@@ -25456,7 +25505,8 @@
 										"path": "adventure/DIP/050-636460820040081881.png"
 									},
 									"width": 400,
-									"height": 341
+									"height": 341,
+									"credit": "Conceptopolis"
 								}
 							]
 						},
@@ -25474,7 +25524,8 @@
 										"path": "adventure/DIP/051-636460821919719183.png"
 									},
 									"width": 379,
-									"height": 458
+									"height": 458,
+									"credit": "Mark Behm"
 								}
 							]
 						},
@@ -25492,7 +25543,8 @@
 										"path": "adventure/DIP/052-636460824964500193.png"
 									},
 									"width": 230,
-									"height": 377
+									"height": 377,
+									"credit": "Conceptopolis"
 								}
 							]
 						},
@@ -25528,7 +25580,8 @@
 										"path": "adventure/DIP/053-636460847348942387.png"
 									},
 									"width": 400,
-									"height": 285
+									"height": 285,
+									"credit": "Brynn Metheney"
 								}
 							]
 						},
@@ -25590,7 +25643,8 @@
 										"path": "adventure/DIP/054-636460866443987084.png"
 									},
 									"width": 399,
-									"height": 201
+									"height": 201,
+									"credit": "Lars Grant-West"
 								}
 							]
 						}
@@ -25615,49 +25669,8 @@
 					"page": 65,
 					"entries": [
 						{
-							"type": "inset",
-							"name": "Donnabella Fiasco",
-							"page": 66,
-							"entries": [
-								"{@i Human Spellcaster}",
-								"Donnabella is a young magic-user who wears a papier-mâché unicorn mask because it makes her feel more magical.",
-								"Use the {@creature Spellcaster|esk} sidekick stat block to represent her.",
-								{
-									"type": "entries",
-									"name": "Personality",
-									"page": 66,
-									"entries": [
-										"\"I'd rather talk to a book than most people.\""
-									],
-									"id": "22e"
-								},
-								{
-									"type": "entries",
-									"name": "Ideal",
-									"page": 66,
-									"entries": [
-										"\"We all have a little magic in us. The trick is finding it and bringing it forth.\""
-									],
-									"id": "22f"
-								},
-								{
-									"type": "entries",
-									"name": "Bond",
-									"page": 66,
-									"entries": [
-										"\"I want to join a prestigious wizards' academy one day. I just hope they accept unicorns!\""
-									],
-									"id": "230"
-								},
-								{
-									"type": "entries",
-									"name": "Flaw",
-									"page": 66,
-									"entries": [
-										"\"I can't keep a secret to save my life\u2014or anyone else's.\""
-									],
-									"id": "231"
-								},
+							"type": "gallery",
+							"images": [
 								{
 									"type": "image",
 									"href": {
@@ -25665,54 +25678,9 @@
 										"path": "adventure/DIP/056-ynkgo-donnabella.png"
 									},
 									"width": 850,
-									"height": 1000
-								}
-							],
-							"id": "22d"
-						},
-						{
-							"type": "inset",
-							"name": "Galandro Luna",
-							"page": 6,
-							"entries": [
-								"{@i Human Expert}",
-								"Galandro's most treasured possession is a fiddle that he tunes and plucks constantly.",
-								"Use the {@creature Expert|esk} sidekick stat block to represent him.",
-								{
-									"type": "entries",
-									"name": "Personality",
-									"page": 66,
-									"entries": [
-										"\"I love a good insult, even one directed at me.\""
-									],
-									"id": "233"
-								},
-								{
-									"type": "entries",
-									"name": "Ideal",
-									"page": 66,
-									"entries": [
-										"\"I like seeing the smiles on people's faces when I perform. That plus their adoration is all that matters.\""
-									],
-									"id": "234"
-								},
-								{
-									"type": "entries",
-									"name": "Bond",
-									"page": 66,
-									"entries": [
-										"\"My fiddle was gifted to me by a good friend. I cherish it above all other things.\""
-									],
-									"id": "235"
-								},
-								{
-									"type": "entries",
-									"name": "Flaw",
-									"page": 66,
-									"entries": [
-										"\"I'll do anything to win fame and renown.\""
-									],
-									"id": "236"
+									"height": 1000,
+									"credit": "Shawn Wood",
+									"title": "Donnabella Fiasco"
 								},
 								{
 									"type": "image",
@@ -25721,54 +25689,9 @@
 										"path": "adventure/DIP/057-leeom-galandro.png"
 									},
 									"width": 850,
-									"height": 1000
-								}
-							],
-							"id": "232"
-						},
-						{
-							"type": "inset",
-							"name": "Inverna Nightbreeze",
-							"page": 66,
-							"entries": [
-								"{@i Moon Elf Warrior}",
-								"Inverna has a scar on her cheek where she was grazed by an orc's javelin. She is cautious by nature and suspicious of strangers.",
-								"Use the {@creature Warrior|esk} sidekick stat block to represent her.",
-								{
-									"type": "entries",
-									"name": "Personality",
-									"page": 66,
-									"entries": [
-										"\"I choose my words very carefully. Sarcasm, I'm told, is my sharpest weapon.\""
-									],
-									"id": "238"
-								},
-								{
-									"type": "entries",
-									"name": "Ideal",
-									"page": 66,
-									"entries": [
-										"\"All people deserve to be treated with dignity, regardless of their station. Of course, orcs aren't people.\""
-									],
-									"id": "239"
-								},
-								{
-									"type": "entries",
-									"name": "Bond",
-									"page": 66,
-									"entries": [
-										"\"Orcs are a blight on the land. For the sake of the natural and civilized worlds, I kill them on sight.\""
-									],
-									"id": "23a"
-								},
-								{
-									"type": "entries",
-									"name": "Flaw",
-									"page": 66,
-									"entries": [
-										"\"I can't admit when I'm wrong.\""
-									],
-									"id": "23b"
+									"height": 1000,
+									"credit": "Shawn Wood",
+									"title": "Galandro Luna"
 								},
 								{
 									"type": "image",
@@ -25777,54 +25700,9 @@
 										"path": "adventure/DIP/058-l3v6r-inverna.png"
 									},
 									"width": 850,
-									"height": 1000
-								}
-							],
-							"id": "237"
-						},
-						{
-							"type": "inset",
-							"name": "Nib Addlespur",
-							"page": 66,
-							"entries": [
-								"{@i Lightfoot Halfling Spellcaster}",
-								"Nib is a happy-go-lucky gambler who keeps a deck of Three-Dragon Ante cards in her vest pocket. She also has a goldfinch named Lil.",
-								"Use the {@creature Spellcaster|esk} sidekick stat block to represent her.",
-								{
-									"type": "entries",
-									"name": "Personality",
-									"page": 66,
-									"entries": [
-										"\"I can't resist a sure bet or a friendly wager.\""
-									],
-									"id": "23d"
-								},
-								{
-									"type": "entries",
-									"name": "Ideal",
-									"page": 66,
-									"entries": [
-										"\"The more complicated the scheme, the better.\""
-									],
-									"id": "23e"
-								},
-								{
-									"type": "entries",
-									"name": "Bond",
-									"page": 66,
-									"entries": [
-										"\"I love birds and will do what I can to look after them.\""
-									],
-									"id": "23f"
-								},
-								{
-									"type": "entries",
-									"name": "Flaw",
-									"page": 66,
-									"entries": [
-										"\"Deep water terrifies me. I would rather be swallowed by a dragon than get in a boat or go for a swim.\""
-									],
-									"id": "240"
+									"height": 1000,
+									"credit": "Shawn Wood",
+									"title": "Inverna Nightbreeze"
 								},
 								{
 									"type": "image",
@@ -25833,54 +25711,9 @@
 										"path": "adventure/DIP/059-3krsm-nib.png"
 									},
 									"width": 850,
-									"height": 1000
-								}
-							],
-							"id": "23c"
-						},
-						{
-							"type": "inset",
-							"name": "Pickled Pete",
-							"page": 66,
-							"entries": [
-								"{@i Human Expert}",
-								"Pete likes ale and tends to function better while tipsy. At his best, he's quite the handyman and comes up with all sorts of crazy ways to get things done.",
-								"Use the {@creature Expert|esk} sidekick stat block to represent him.",
-								{
-									"type": "entries",
-									"name": "Personality",
-									"page": 66,
-									"entries": [
-										"\"My friends know they can rely on me, no matter what.\""
-									],
-									"id": "242"
-								},
-								{
-									"type": "entries",
-									"name": "Ideal",
-									"page": 66,
-									"entries": [
-										"\"I like coming up with new ways to do things. What problem can't be solved with a little ingenuity?\""
-									],
-									"id": "243"
-								},
-								{
-									"type": "entries",
-									"name": "Bond",
-									"page": 66,
-									"entries": [
-										"\"A full flask of wine is worth ten pockets full of gold.\""
-									],
-									"id": "244"
-								},
-								{
-									"type": "entries",
-									"name": "Flaw",
-									"page": 66,
-									"entries": [
-										"\"All this drinking is bad for my memory. Seriously, I can't remember my last name.\""
-									],
-									"id": "245"
+									"height": 1000,
+									"credit": "Shawn Wood",
+									"title": "Nib Addlespur"
 								},
 								{
 									"type": "image",
@@ -25889,54 +25722,9 @@
 										"path": "adventure/DIP/060-pu4f2-pete.png"
 									},
 									"width": 850,
-									"height": 1000
-								}
-							],
-							"id": "241"
-						},
-						{
-							"type": "inset",
-							"name": "Quinn Hightopple",
-							"page": 66,
-							"entries": [
-								"{@i Lightfoot Halfling Warrior}",
-								"Quinn is a happy little scrapper who likes to punch people in the groin.",
-								"Use the {@creature Warrior|esk} sidekick stat block to represent him.",
-								{
-									"type": "entries",
-									"name": "Personality",
-									"page": 66,
-									"entries": [
-										"\"Nice set of teeth you got there. Be a shame if something bad happened to 'em.\""
-									],
-									"id": "247"
-								},
-								{
-									"type": "entries",
-									"name": "Ideal",
-									"page": 66,
-									"entries": [
-										"\"No challenge is too big to overcome. As Papa Bartho always says, the bigger they are, the harder they fall.\""
-									],
-									"id": "248"
-								},
-								{
-									"type": "entries",
-									"name": "Bond",
-									"page": 66,
-									"entries": [
-										"\"Nothing's more important than friendship. That's why I'll never leave a friend behind.\""
-									],
-									"id": "249"
-								},
-								{
-									"type": "entries",
-									"name": "Flaw",
-									"page": 66,
-									"entries": [
-										"\"I can't resist punching tall folk in the groin. I call it the Halfling Hello.\""
-									],
-									"id": "24a"
+									"height": 1000,
+									"credit": "Shawn Wood",
+									"title": "Pickled Pete"
 								},
 								{
 									"type": "image",
@@ -25945,54 +25733,9 @@
 										"path": "adventure/DIP/061-gttxp-quinn.png"
 									},
 									"width": 850,
-									"height": 1000
-								}
-							],
-							"id": "246"
-						},
-						{
-							"type": "inset",
-							"name": "Ruby Hammerwhacker",
-							"page": 66,
-							"entries": [
-								"{@i Shield Dwarf Warrior}",
-								"Ruby lacks the customary dwarven stoicism and greets every day with a warm smile and a renewed sense of optimism.",
-								"Use the {@creature Warrior|esk} sidekick stat block to represent her.",
-								{
-									"type": "entries",
-									"name": "Personality",
-									"page": 66,
-									"entries": [
-										"\"Nothing can shake my optimistic attitude.\""
-									],
-									"id": "24c"
-								},
-								{
-									"type": "entries",
-									"name": "Ideal",
-									"page": 66,
-									"entries": [
-										"\"We should all seek the betterment of ourselves. There's always room for improvement.\""
-									],
-									"id": "24d"
-								},
-								{
-									"type": "entries",
-									"name": "Bond",
-									"page": 66,
-									"entries": [
-										"\"I fight for those who cannot fight for themselves\""
-									],
-									"id": "24e"
-								},
-								{
-									"type": "entries",
-									"name": "Flaw",
-									"page": 66,
-									"entries": [
-										"\"\"Tell me I can't do something, and I must prove you wrong.\""
-									],
-									"id": "24f"
+									"height": 1000,
+									"credit": "Shawn Wood",
+									"title": "Quinn Hightopple"
 								},
 								{
 									"type": "image",
@@ -26001,54 +25744,9 @@
 										"path": "adventure/DIP/062-1qyge-ruby.png"
 									},
 									"width": 850,
-									"height": 1000
-								}
-							],
-							"id": "24b"
-						},
-						{
-							"type": "inset",
-							"name": "Shanjan Kwan",
-							"page": 66,
-							"entries": [
-								"{@i Human Spellcaster}",
-								"Kwan died and was raised from the dead as an infant, whereupon a tiny black glyph\u2014the symbol of necromancy\u2014appeared on his forehead.",
-								"Use the {@creature Spellcaster|esk} sidekick stat block to represent him.",
-								{
-									"type": "entries",
-									"name": "Personality",
-									"page": 66,
-									"entries": [
-										"\"I've cheated death once. I can do it again.\""
-									],
-									"id": "251"
-								},
-								{
-									"type": "entries",
-									"name": "Ideal",
-									"page": 66,
-									"entries": [
-										"\"Great beauty can hide great ugliness. The reverse is also true.\""
-									],
-									"id": "252"
-								},
-								{
-									"type": "entries",
-									"name": "Bond",
-									"page": 66,
-									"entries": [
-										"\"I've been searching my whole life for the answer to a simple question: Am I a god?\""
-									],
-									"id": "253"
-								},
-								{
-									"type": "entries",
-									"name": "Flaw",
-									"page": 66,
-									"entries": [
-										"\"I don't like mysteries. Unraveling them keeps me up at night.\""
-									],
-									"id": "254"
+									"height": 1000,
+									"credit": "Shawn Wood",
+									"title": "Ruby Hammerwhacker"
 								},
 								{
 									"type": "image",
@@ -26057,54 +25755,9 @@
 										"path": "adventure/DIP/063-nemem-shanjan.png"
 									},
 									"width": 850,
-									"height": 1000
-								}
-							],
-							"id": "250"
-						},
-						{
-							"type": "inset",
-							"name": "Talon Thornwild",
-							"page": 66,
-							"entries": [
-								"{@i Human Expert}",
-								"Talon loves gold and adventure, and dreams of being a famous gold prospector.",
-								"Use the {@creature Expert|esk} sidekick stat block to represent them.",
-								{
-									"type": "entries",
-									"name": "Personality",
-									"page": 66,
-									"entries": [
-										"\"Yes, I eat like a pig and have bad manners, but those are my only flaws, I swear. I'm darn near perfect otherwise.\""
-									],
-									"id": "256"
-								},
-								{
-									"type": "entries",
-									"name": "Ideal",
-									"page": 66,
-									"entries": [
-										"\"The low are lifted up, and the high and mighty are brought down. Change is the nature of things.\""
-									],
-									"id": "257"
-								},
-								{
-									"type": "entries",
-									"name": "Bond",
-									"page": 66,
-									"entries": [
-										"\"I like gold. I like its color, its texture, its majestic gleam.\""
-									],
-									"id": "258"
-								},
-								{
-									"type": "entries",
-									"name": "Flaw",
-									"page": 66,
-									"entries": [
-										"\"It's not stealing if I need it more than someone else.\""
-									],
-									"id": "259"
+									"height": 1000,
+									"credit": "Shawn Wood",
+									"title": "Shanjan Kwan"
 								},
 								{
 									"type": "image",
@@ -26113,10 +25766,18 @@
 										"path": "adventure/DIP/064-nrqv1-talon.png"
 									},
 									"width": 850,
-									"height": 1000
+									"height": 1000,
+									"credit": "Shawn Wood",
+									"title": "Talon Thornwild"
 								}
-							],
-							"id": "255"
+							]
+						},
+						{
+							"type": "statblock",
+							"tag": "deck",
+							"source": "DIP",
+							"name": "Sidekick Cards",
+							"page": 66
 						}
 					],
 					"id": "22c"
@@ -26126,7 +25787,14 @@
 					"name": "Sidekick Stat Blocks",
 					"page": 66,
 					"entries": [
-						"See the {@variantrule Sidekicks|ESK} rules entry."
+						"See the {@variantrule Sidekicks|ESK} rules entry.",
+						{
+							"type": "statblock",
+							"tag": "variantrule",
+							"source": "ESK",
+							"name": "Sidekicks",
+							"page": 66
+						}
 					],
 					"id": "25a"
 				}
@@ -26134,10 +25802,24 @@
 		},
 		{
 			"type": "section",
-			"name": "Quest Cards",
+			"name": "Printable Assets",
 			"page": 66,
 			"id": "22b",
 			"entries": [
+				"{@note This section provides printable assets for the decks that can be found on the decks page:}",
+				{
+					"type": "list",
+					"columns": 3,
+					"items": [
+						"{@deck Initiative Cards|ESK}",
+						"{@deck Condition Cards|ESK}",
+						"{@deck Combat Step by Step Cards|ESK}",
+						"{@deck Sidekick Cards|DIP}",
+						"{@deck Quest Cards|DIP}",
+						"{@deck Magic Item Cards|DIP}",
+						"{@deck Magic Charm Cards|DIP}"
+					]
+				},
 				{
 					"type": "gallery",
 					"images": [
@@ -26145,82 +25827,154 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/DIP/055-1.png"
+								"path": "adventure/DIP/QuestsFront.webp"
 							},
-							"width": 838,
-							"height": 1103
+							"title": "Quest Card Faces",
+							"width": 5078,
+							"height": 6560
 						},
 						{
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/DIP/056-2.png"
+								"path": "adventure/DIP/QuestsBack.webp"
 							},
-							"width": 838,
-							"height": 1103
+							"title": "Quest Card Backs",
+							"width": 5057,
+							"height": 6554
 						},
 						{
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/DIP/057-3.png"
+								"path": "adventure/DIP/MagicItemsFront1.webp"
 							},
-							"width": 838,
-							"height": 1103
+							"title": "Magic Item Card Faces 1",
+							"width": 5064,
+							"height": 6564
 						},
 						{
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/DIP/058-4.png"
+								"path": "adventure/DIP/MagicItemsFront2.webp"
 							},
-							"width": 838,
-							"height": 1103
+							"title": "Magic Item Card Faces 2",
+							"width": 5054,
+							"height": 6538
 						},
 						{
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/DIP/059-5.png"
+								"path": "adventure/DIP/MagicItemsFront3.webp"
 							},
-							"width": 838,
-							"height": 1103
+							"title": "Magic Item Card Faces 3",
+							"width": 5053,
+							"height": 6553
 						},
 						{
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/DIP/060-6.png"
+								"path": "adventure/DIP/MagicItemsFront4.webp"
 							},
-							"width": 838,
-							"height": 1103
+							"title": "Magic Item Card Faces 4",
+							"width": 5053,
+							"height": 6540
 						},
 						{
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/DIP/061-7.png"
+								"path": "adventure/DIP/MagicItemsBack.webp"
 							},
-							"width": 838,
-							"height": 1103
+							"title": "Magic Item Card Backs",
+							"width": 5064,
+							"height": 6555
 						},
 						{
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/DIP/062-8.png"
+								"path": "adventure/DIP/SidekicksFront.webp"
 							},
-							"width": 838,
-							"height": 1103
+							"title": "Sidekick Card Faces",
+							"credit": "Shawn Wood",
+							"width": 5053,
+							"height": 6564
 						},
 						{
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/DIP/063-9.png"
+								"path": "adventure/DIP/SidekicksBack.webp"
 							},
-							"width": 838,
-							"height": 1103
+							"title": "Sidekick Card Backs",
+							"width": 5051,
+							"height": 6537
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "adventure/DIP/ConditionsFront.webp"
+							},
+							"title": "Condition Card Faces",
+							"credit": "Richard Whitters",
+							"width": 5070,
+							"height": 6554
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "adventure/DIP/ConditionsBack.webp"
+							},
+							"title": "Condition Card Backs",
+							"width": 5045,
+							"height": 6566
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "adventure/DIP/MixedFront.webp"
+							},
+							"title": "Mixed Condition, Combat and Charm Card Faces",
+							"credit": "Richard Whitters",
+							"width": 5039,
+							"height": 6540
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "adventure/DIP/MixedBack.webp"
+							},
+							"title": "Mixed Condition, Combat and Charm Card Backs",
+							"width": 5060,
+							"height": 6552
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "adventure/DIP/InitiativeFront.webp"
+							},
+							"title": "Initiative Card Faces",
+							"width": 5052,
+							"height": 6550
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "adventure/DIP/InitiativeBack.webp"
+							},
+							"title": "Initiative Card Backs",
+							"width": 5062,
+							"height": 6544
 						}
 					]
 				}

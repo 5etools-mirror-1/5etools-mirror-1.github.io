@@ -20644,18 +20644,11 @@
 											"entries": [
 												"When the characters purify the crypt, any character that helped put a haunt to rest or defeated one of the crypt's ghosts gains the blessing of Dumathoin. Dumathoin can rescind this blessing at any time, at your discretion, such as if the character proves to be an enemy of dwarvenkind. The blessing otherwise adheres to the rules for {@book blessings|DMG|7|Blessings} presented in the {@book Dungeon Master's Guide|DMG}:",
 												{
-													"type": "insetReadaloud",
-													"id": "28f",
-													"entries": [
-														{
-															"type": "entries",
-															"name": "Blessing of Dumathoin",
-															"id": "290",
-															"entries": [
-																"Your eyes become keen enough to pick out hidden secrets. You gain {@sense darkvision}. If you already had {@sense darkvision}, you can see in color in the dark. In addition, you can use an action to gain {@sense truesight} for 1 minute. Once you gain {@sense truesight} in this way, you can't do so again until you finish a long rest."
-															]
-														}
-													]
+													"type": "statblock",
+													"tag": "reward",
+													"name": "Blessing of Dumathoin",
+													"source": "PaBTSO",
+													"style": "inset"
 												}
 											]
 										}
@@ -40954,18 +40947,11 @@
 												"Jomlus is initially indifferent toward the characters. Jomlus hasn't ever left this chamber and doesn't know anything about the Briny Maze except that an {@creature encephalon cluster|PaBTSO} sometimes prowls the corridors nearby. The encephalon cluster leaves Jomlus alone, which the spectator ascribes to the encephalon cluster mistaking Jomlus for a beholder.",
 												"If the characters are interested in helping Jomlus with his task, the spectator believes it is close to properly pronouncing an entire page. Jomlus needs active listeners to correct its speech. The words are grating and tickle at the back of listeners' minds. Characters who stay here with Jomlus for 24 hours while the spectator rereads the page hear Jomlus hit on the correct pronunciation, giving them the following blessing. This blessing adheres to the rules for {@book blessings|DMG|7|Blessings} presented in the {@book Dungeon Master's Guide|DMG}:",
 												{
-													"type": "insetReadaloud",
-													"id": "3fd",
-													"entries": [
-														{
-															"type": "entries",
-															"name": "Blessing of the Solipsistic Mind",
-															"id": "3fe",
-															"entries": [
-																"You access esoteric truths from an ancient tome by focusing deeply on your own thoughts. You can take an action to focus your inner mind. This focus lasts for 1 hour. While your inner mind is focused, you can't take reactions. For the duration, when you make an Intelligence check, Wisdom check, Intelligence saving throw, or Wisdom saving throw, you can roll a {@dice d8} and add the number rolled to the ability check or saving throw. You regain the ability to focus your inner mind when you finish a long rest."
-															]
-														}
-													]
+													"type": "statblock",
+													"tag": "reward",
+													"name": "Blessing of the Solipsistic Mind",
+													"source": "PaBTSO",
+													"style": "inset"
 												}
 											]
 										},

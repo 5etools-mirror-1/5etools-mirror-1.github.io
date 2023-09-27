@@ -71,9 +71,29 @@ class PageFilterOptionalFeatures extends PageFilter {
 			it._sPrereq = true;
 			it._fPrereqPact = it.prerequisite.filter(it => it.pact).map(it => it.pact);
 			it._fPrereqPatron = it.prerequisite.filter(it => it.patron).map(it => it.patron);
-			it._fprereqSpell = it.prerequisite.filter(it => it.spell).map(it => {
-				return (it.spell || []).map(it => it.split("#")[0].split("|")[0]);
-			});
+			it._fprereqSpell = it.prerequisite
+				.filter(it => it.spell)
+				.map(prereq => {
+					return (prereq.spell || [])
+						.map(strOrObj => {
+							if (typeof strOrObj === "string") return strOrObj.split("#")[0].split("|")[0];
+
+							// TODO(Future) improve if required -- refactor this + `PageFilterSpells` display fns to e.g. render
+							const ptChoose = strOrObj.choose
+								.split("|")
+								.sort(SortUtil.ascSortLower)
+								.map(pt => {
+									const [filter, values] = pt.split("=");
+									switch (filter.toLowerCase()) {
+										case "level": return values.split(";").map(v => Parser.spLevelToFullLevelText(Number(v), {isPluralCantrips: false})).join("/");
+										case "class": return values.split(";").map(v => v.toTitleCase()).join("/");
+										default: return pt;
+									}
+								})
+								.join(" ");
+							return `Any ${ptChoose}`;
+						});
+				});
 			it._fprereqFeature = it.prerequisite.filter(it => it.feature).map(it => it.feature);
 			it._fPrereqLevel = it.prerequisite.filter(it => it.level).map(it => {
 				const lvlMeta = it.level;

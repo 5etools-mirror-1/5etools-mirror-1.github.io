@@ -6,6 +6,98 @@
 	},
 	"deck": [
 		{
+			"name": "Combat Step by Step Cards",
+			"source": "ESK",
+			"page": 3,
+			"cards": [
+				{
+					"uid": "Combat Step by Step|Combat Step by Step Cards|ESK",
+					"count": 3
+				}
+			],
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Combat Step by Step/CombatBack.webp"
+				},
+				"width": 1640,
+				"height": 2187
+			},
+			"entries": [
+				"These identical cards outline the order of combat, as described in the {@book rulebook|PHB}.",
+				"{@note Printable assets are available {@adventure here.|DIP|18}}"
+			],
+			"hasCardArt": true
+		},
+		{
+			"name": "Condition Cards",
+			"source": "ESK",
+			"page": 3,
+			"cards": [
+				{
+					"uid": "Deafened|Condition Cards|ESK",
+					"replacement": true
+				},
+				{
+					"uid": "Charmed|Condition Cards|ESK",
+					"replacement": true
+				},
+				{
+					"uid": "Blinded|Condition Cards|ESK",
+					"replacement": true
+				},
+				{
+					"uid": "Incapacitated|Condition Cards|ESK",
+					"replacement": true
+				},
+				{
+					"uid": "Grappled|Condition Cards|ESK",
+					"replacement": true
+				},
+				{
+					"uid": "Frightened|Condition Cards|ESK",
+					"replacement": true
+				},
+				{
+					"uid": "Petrified|Condition Cards|ESK",
+					"replacement": true
+				},
+				{
+					"uid": "Paralyzed|Condition Cards|ESK",
+					"replacement": true
+				},
+				{
+					"uid": "Invisible|Condition Cards|ESK",
+					"replacement": true
+				},
+				{
+					"uid": "Restrained|Condition Cards|ESK",
+					"replacement": true
+				},
+				{
+					"uid": "Prone|Condition Cards|ESK",
+					"replacement": true
+				},
+				{
+					"uid": "Poisoned|Condition Cards|ESK",
+					"replacement": true
+				},
+				{
+					"uid": "Unconscious|Condition Cards|ESK",
+					"replacement": true
+				},
+				{
+					"uid": "Stunned|Condition Cards|ESK",
+					"replacement": true
+				}
+			],
+			"entries": [
+				"These cards describe various conditions that can affect creatures in the game. A player whose character is suffering from a condition can keep the card as a reminder, giving it back to you when the condition ends for that character; {@note either physically with the {@adventure printed copies|DIP|18}, or in a VTT.}"
+			],
+			"hasCardArt": true
+		},
+		{
 			"name": "Condition Cards",
 			"source": "ScreenDungeonKit",
 			"cards": [
@@ -1381,6 +1473,76 @@
 			]
 		},
 		{
+			"name": "Elder Runes Deck",
+			"source": "WDMM",
+			"page": 318,
+			"cards": [
+				"Anarath|Elder Runes Deck|WDMM",
+				"Angras|Elder Runes Deck|WDMM",
+				"Halaster|Elder Runes Deck|WDMM",
+				"Korombos|Elder Runes Deck|WDMM",
+				"Laebos|Elder Runes Deck|WDMM",
+				"Lammath|Elder Runes Deck|WDMM",
+				"Nchasme|Elder Runes Deck|WDMM",
+				"Savaros|Elder Runes Deck|WDMM",
+				"Ullathar|Elder Runes Deck|WDMM"
+			],
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/generic/back.webp"
+				},
+				"width": 411,
+				"height": 561
+			},
+			"entries": [
+				"Elder runes are ancient symbols imbued with magical power. With years of study, any creature that can cast the {@spell symbol} spell can learn an elder rune and add it to the selection of symbols that can be created with the spell. Halaster has spent lifetimes studying elder runes, inventing new ones, and harnessing their volatile magic. He likes to place them throughout Undermountain as hazards.",
+				"{@adventure Appendix B|WDMM|26} presents several {@deck elder runes deck|WDMM|elder runes on paper cards} that you can photocopy and cut out to create an {@deck Elder Runes Deck|WDMM}. When circumstances call for the appearance of an elder rune, a card is drawn from this deck to determine which rune appears and what it does.",
+				"Elder runes function as symbols cast using the {@spell symbol} spell, with these changes:",
+				{
+					"type": "list",
+					"items": [
+						"An elder rune has two possible effects: one beneficial (called the boon effect) and the other harmful (called the bane effect). The elder rune's creator chooses which effect occurs or can randomize it so that a die is rolled to determine whether the bane effect (odd die roll) or the boon effect (even die roll) is triggered.",
+						"A triggered elder rune targets one or more creatures within 60 feet of it, according to the caster's specifications. Once the effect activates, the elder rune disappears and the spell ends."
+					]
+				},
+				"A creature doesn't make a saving throw against an elder rune's boon effect. Saving throws made to resist the bane effect of Halaster's elder rune have a spell save DC of 22.",
+				"{@note Printable assets are available {@adventure here.|WDMM|26}}"
+			],
+			"hasCardArt": true
+		},
+		{
+			"name": "Fragments of Suffering",
+			"source": "CRCotN",
+			"page": 218,
+			"cards": [
+				"Fragment of Abhorrence|Fragments of Suffering|CRCotN",
+				"Fragment of Attachment|Fragments of Suffering|CRCotN",
+				"Fragment of Deception|Fragments of Suffering|CRCotN",
+				"Fragment of Despondence|Fragments of Suffering|CRCotN",
+				"Fragment of Intransigence|Fragments of Suffering|CRCotN",
+				"Fragment of Loathing|Fragments of Suffering|CRCotN",
+				"Fragment of Melancholy|Fragments of Suffering|CRCotN",
+				"Fragment of Pity|Fragments of Suffering|CRCotN",
+				"Fragment of Rancor|Fragments of Suffering|CRCotN"
+			],
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/generic/back.webp"
+				},
+				"width": 411,
+				"height": 561
+			},
+			"entries": [
+				"The cards in {@adventure appendix D|CRCotN|11} are meant to be given to players whose characters gain {@deck Fragments of Suffering|CRCotN} in {@adventure chapter 6|CRCotN|6} (see that chapter for more information).",
+				"{@note Printable assets are available in {@adventure Appendix D.|CRCotN|11}}"
+			],
+			"hasCardArt": true
+		},
+		{
 			"name": "Geomorph Cards",
 			"source": "ScreenDungeonKit",
 			"cards": [
@@ -1459,6 +1621,36 @@
 		},
 		{
 			"name": "Initiative Cards",
+			"source": "ESK",
+			"page": 3,
+			"cards": [
+				"One|Initiative Cards|ESK",
+				"Two|Initiative Cards|ESK",
+				"Three|Initiative Cards|ESK",
+				"Four|Initiative Cards|ESK",
+				"Five|Initiative Cards|ESK",
+				"Six|Initiative Cards|ESK",
+				"Seven|Initiative Cards|ESK",
+				"Eight|Initiative Cards|ESK",
+				"Nine|Initiative Cards|ESK"
+			],
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Initiative/InitiativeBack.webp"
+				},
+				"width": 1567,
+				"height": 2090
+			},
+			"entries": [
+				"After the characters and each group of monsters involved in a combat roll initiative, distribute these cards among the combat participants, from the highest to lowest initiative count. For example, whoever rolls the highest initiative gets the \"1\" card and acts first, whoever rolls the second highest initiative gets the \"2\" card, and so on. Keep the numbered cards for the creatures you're running.",
+				"{@note Printable assets are available {@adventure here.|DIP|18}}"
+			],
+			"hasCardArt": true
+		},
+		{
+			"name": "Initiative Cards",
 			"source": "ScreenDungeonKit",
 			"cards": [
 				"One|Initiative Cards|ScreenDungeonKit",
@@ -1482,6 +1674,144 @@
 			},
 			"entries": [
 				"{@note These cards can be used to track initiative order; either physically with the {@book printed copies|ScreenDungeonKit|1}, or in a VTT.}"
+			],
+			"hasCardArt": true
+		},
+		{
+			"name": "Magic Charm Cards",
+			"source": "DIP",
+			"page": 3,
+			"cards": [
+				"Charm of the Storm|Magic Charm Cards|DIP"
+			],
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Charm/CharmBack.webp"
+				},
+				"width": 1640,
+				"height": 2186
+			},
+			"entries": [
+				"This card describes a special charm. Give the card to the player whose character receives the charm. Collect the card when the charm ends for that character.",
+				"{@note Printable assets are available {@adventure here.|DIP|18}}"
+			],
+			"hasCardArt": true
+		},
+		{
+			"name": "Magic Item Cards",
+			"source": "DIP",
+			"page": 3,
+			"cards": [
+				"+1 Battleaxe|Magic Item Cards|DIP",
+				"+1 Longbow|Magic Item Cards|DIP",
+				"+1 Mace|Magic Item Cards|DIP",
+				"+1 Shield|Magic Item Cards|DIP",
+				"+1 Shortsword|Magic Item Cards|DIP",
+				"Boots of Elvenkind|Magic Item Cards|DIP",
+				"Cloak of Billowing|Magic Item Cards|DIP",
+				"Cloak of Many Fashions|Magic Item Cards|DIP",
+				"Clockwork Amulet|Magic Item Cards|DIP",
+				"Dragon Slayer|Magic Item Cards|DIP",
+				"Dread Helm|Magic Item Cards|DIP",
+				"Dust of Disappearance|Magic Item Cards|DIP",
+				"Gauntlets of Ogre Power|Magic Item Cards|DIP",
+				"Goggles of Night|Magic Item Cards|DIP",
+				"Hat of Wizardry|Magic Item Cards|DIP",
+				"Immovable Rod|Magic Item Cards|DIP",
+				"Lute of Illusions|Magic Item Cards|DIP",
+				"Mithral Chain Mail|Magic Item Cards|DIP",
+				"Mystery Key|Magic Item Cards|DIP",
+				"Necklace of Fireballs|Magic Item Cards|DIP",
+				"Pole of Collapsing|Magic Item Cards|DIP",
+				"Potion of Greater Healing|Magic Item Cards|DIP",
+				{
+					"uid": "Potion of Healing|Magic Item Cards|DIP",
+					"count": 6
+				},
+				"Potion of Invulnerability|Magic Item Cards|DIP",
+				"Potion of Superior Healing|Magic Item Cards|DIP",
+				"Potion of Water Breathing|Magic Item Cards|DIP",
+				{
+					"uid": "Sending Stone|Magic Item Cards|DIP",
+					"count": 2
+				},
+				"Staff of Birdcalls|Magic Item Cards|DIP",
+				"Wand of Pyrotechnics|Magic Item Cards|DIP",
+				"Wand of Secrets|Magic Item Cards|DIP"
+			],
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/MagicItemBack.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				"When the characters acquire a magic item and {@book identify it|DMG|7|Identifying a Magic Item}, give the players the card for that item. Let the player whose character has the item keep the card for reference until the item is expended or no longer in that character's possession.",
+				"{@note Printable assets are available {@adventure here.|DIP|18}}"
+			],
+			"hasCardArt": true
+		},
+		{
+			"name": "Medals of Merit",
+			"source": "CRCotN",
+			"page": 217,
+			"cards": [
+				"Medal of Muscle|Medals of Merit|CRCotN",
+				"Medal of the Conch|Medals of Merit|CRCotN",
+				"Medal of the Horizonback|Medals of Merit|CRCotN",
+				"Medal of the Maze|Medals of Merit|CRCotN",
+				"Medal of the Meat Pie|Medals of Merit|CRCotN",
+				"Medal of the Wetlands|Medals of Merit|CRCotN",
+				"Medal of Wit|Medals of Merit|CRCotN",
+				"Using the Cards|Medals of Merit|CRCotN"
+			],
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/generic/back.webp"
+				},
+				"width": 411,
+				"height": 561
+			},
+			"entries": [
+				"The cards on this page are meant to be photocopied and given to players whose characters win {@deck Medals of Merit|CRCotN} in {@adventure chapter 1|CRCotN|1} (see that chapter for contest rules).",
+				"{@note Printable assets are available in {@adventure Appendix C.|CRCotN|10}}"
+			],
+			"hasCardArt": true
+		},
+		{
+			"name": "Quest Cards",
+			"source": "DIP",
+			"page": 3,
+			"cards": [
+				"Dwarven Excavation|Quest Cards|DIP",
+				"Gnomengarde|Quest Cards|DIP",
+				"Umbrage Hill|Quest Cards|DIP",
+				"Butterskull Ranch|Quest Cards|DIP",
+				"Loggers' Camp|Quest Cards|DIP",
+				"Mountain's Toe|Quest Cards|DIP",
+				"Axeholm|Quest Cards|DIP",
+				"Dragon Barrow|Quest Cards|DIP",
+				"Woodland Manse|Quest Cards|DIP"
+			],
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Quests/QuestBack.webp"
+				},
+				"width": 1649,
+				"height": 2199
+			},
+			"entries": [
+				"When a new quest becomes available to the characters, give that quest's card to the players. Collect the card if the characters complete the quest or decide they don't want to complete it.",
+				"{@note Printable assets are available {@adventure here.|DIP|18}}"
 			],
 			"hasCardArt": true
 		},
@@ -1539,6 +1869,72 @@
 			"entries": [
 				"The following pages provide easy-to-use versions of {@adventure Appendix D|WBtW|9} from {@adventure The Wild Beyond the Witchlight|WBtW}.",
 				"{@note See the appendices for printable assets.}"
+			],
+			"hasCardArt": true
+		},
+		{
+			"name": "Secrets Deck",
+			"source": "WDMM",
+			"page": 319,
+			"cards": [
+				"Guild of Many Eyes|Secrets Deck|WDMM",
+				"Immortal Insanity|Secrets Deck|WDMM",
+				"Skullport|Secrets Deck|WDMM",
+				"Tangled Web|Secrets Deck|WDMM",
+				"Arcturiadoom|Secrets Deck|WDMM",
+				"What Drow Fear|Secrets Deck|WDMM",
+				"Dwarfcraft|Secrets Deck|WDMM",
+				"School of Magic|Secrets Deck|WDMM",
+				"Mad House|Secrets Deck|WDMM",
+				"Underground Forest|Secrets Deck|WDMM",
+				"Scavenger|Secrets Deck|WDMM",
+				"Trobriand's Army|Secrets Deck|WDMM",
+				"Death Tyrant|Secrets Deck|WDMM",
+				"Nester's Fate|Secrets Deck|WDMM",
+				"Dark Elf Menace|Secrets Deck|WDMM",
+				"Emerald Blade|Secrets Deck|WDMM",
+				"Gith Who's Coming to Dinner?|Secrets Deck|WDMM",
+				"Spire and Snail|Secrets Deck|WDMM"
+			],
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/generic/back.webp"
+				},
+				"width": 411,
+				"height": 561
+			},
+			"entries": [
+				"{@adventure Appendix C|WDMM|27} of this book contains the {@deck Secrets Deck|WDMM}\u2014paper cards for you to photocopy and hand out to the players when their characters learn reliable information about Halaster and Undermountain.",
+				"Any character who spends at least four hours in the Yawning Portal is likely to overhear tall tales about the Mad Mage and his dungeon. Not all rumors are to be believed, however, and characters need keen ears and sharp insight to determine which stories have weight. Have each character make a DC 20 Intelligence ({@skill Investigation}) check or Wisdom ({@skill Insight}) check. If the check succeeds, the character learns a secret about Undermountain, and the player can draw a card from the {@deck Secrets Deck|WDMM}.",
+				"Players can hold onto these cards for later reference. When the characters meet an NPC in Undermountain who knows a fact, have one of the players draw another card from the {@deck Secrets Deck|WDMM} to determine what that NPC knows about Halaster and his dungeon.",
+				"{@note Printable assets are available {@adventure here.|WDMM|27}}"
+			],
+			"hasCardArt": true
+		},
+		{
+			"name": "Sidekick Cards",
+			"source": "DIP",
+			"page": 65,
+			"cards": [
+				"Donnabella Fiasco|Sidekick Cards|DIP",
+				"Galandro Luna|Sidekick Cards|DIP",
+				"Inverna Nightbreeze|Sidekick Cards|DIP",
+				"Nib Addlespur|Sidekick Cards|DIP",
+				"Pickled Pete|Sidekick Cards|DIP",
+				"Quinn Hightopple|Sidekick Cards|DIP",
+				"Ruby Hammerwhacker|Sidekick Cards|DIP",
+				"Shanjan Kwan|Sidekick Cards|DIP",
+				"Talon Thornwild|Sidekick Cards|DIP"
+			],
+			"entries": [
+				"On your adventures, the DM might reveal that you've befriended a special character called a sidekick, who joins your party. This appendix presents the game statistics for sidekicks, of which there are three types:",
+				"{@creature Expert|ESK}, an agile and exceedingly helpful jack of all trades",
+				"{@creature Spellcaster|ESK}, a magic-user who can cast spells to harm your foes or heal you and your friends",
+				"{@creature Warrior|ESK}, a martial companion who specializes in striking your foes or defending you and your allies",
+				"The DM will either tell you which type of sidekick to use or let you choose one. It's up to you and the DM to decide who controls the sidekick in play.",
+				"{@note Printable assets are available {@adventure here.|DIP|18}}"
 			],
 			"hasCardArt": true
 		},
@@ -1707,6 +2103,526 @@
 		}
 	],
 	"card": [
+		{
+			"name": "Combat Step by Step",
+			"source": "ESK",
+			"set": "Combat Step by Step Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Combat Step by Step/CombatFront.webp"
+				},
+				"width": 1693,
+				"height": 2179
+			},
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-decimal",
+					"items": [
+						{
+							"type": "item",
+							"name": "Determine surprise",
+							"entries": [
+								"The DM determines whether anyone involved in the combat encounter is {@quickref Surprise|PHB|3|0|surprised}."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Establish positions",
+							"entries": [
+								"The DM decides where all the characters and monsters are located. Given the character's marching order and their stated positions, the DM figures out where the adversaries are\u2014how far away and in what direction."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Roll initiative",
+							"entries": [
+								"Everyone involved rolls initiative, determining the order of combatants' turns."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Take turns",
+							"entries": [
+								"Each participant in the combat takes a turn in the initiative order."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Begin the next round",
+							"entries": [
+								"When every participant in the combat has had a turn, the round ends. Repeat step 4 until the fighting stops."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Blinded",
+			"source": "ESK",
+			"set": "Condition Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/Blinded.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/BlindedBack.webp"
+				},
+				"width": 1679,
+				"height": 2170
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Blinded"
+				}
+			]
+		},
+		{
+			"name": "Charmed",
+			"source": "ESK",
+			"set": "Condition Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/Charmed.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/CharmedBack.webp"
+				},
+				"width": 1695,
+				"height": 2170
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Charmed"
+				}
+			]
+		},
+		{
+			"name": "Deafened",
+			"source": "ESK",
+			"set": "Condition Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/Deafened.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/DeafenedBack.webp"
+				},
+				"width": 1660,
+				"height": 2170
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Deafened"
+				}
+			]
+		},
+		{
+			"name": "Frightened",
+			"source": "ESK",
+			"set": "Condition Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/Frightened.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/FrightenedBack.webp"
+				},
+				"width": 1679,
+				"height": 2194
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Frightened"
+				}
+			]
+		},
+		{
+			"name": "Grappled",
+			"source": "ESK",
+			"set": "Condition Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/Grappled.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/GrappledBack.webp"
+				},
+				"width": 1695,
+				"height": 2194
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Grappled"
+				}
+			]
+		},
+		{
+			"name": "Incapacitated",
+			"source": "ESK",
+			"set": "Condition Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/Incapacitated.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/IncapacitatedBack.webp"
+				},
+				"width": 1660,
+				"height": 2194
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Incapacitated"
+				}
+			]
+		},
+		{
+			"name": "Invisible",
+			"source": "ESK",
+			"set": "Condition Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/Invisible.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/InvisibleBack.webp"
+				},
+				"width": 1679,
+				"height": 2167
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Invisible"
+				}
+			]
+		},
+		{
+			"name": "Paralyzed",
+			"source": "ESK",
+			"set": "Condition Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/Paralyzed.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/ParalyzedBack.webp"
+				},
+				"width": 1695,
+				"height": 2167
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Paralyzed"
+				}
+			]
+		},
+		{
+			"name": "Petrified",
+			"source": "ESK",
+			"set": "Condition Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/Petrified.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/PetrifiedBack.webp"
+				},
+				"width": 1660,
+				"height": 2167
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Petrified"
+				}
+			]
+		},
+		{
+			"name": "Poisoned",
+			"source": "ESK",
+			"set": "Condition Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/Poisoned.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/PoisonedBack.webp"
+				},
+				"width": 1693,
+				"height": 2166
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Poisoned"
+				}
+			]
+		},
+		{
+			"name": "Prone",
+			"source": "ESK",
+			"set": "Condition Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/Prone.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/ProneBack.webp"
+				},
+				"width": 1695,
+				"height": 2166
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Prone"
+				}
+			]
+		},
+		{
+			"name": "Restrained",
+			"source": "ESK",
+			"set": "Condition Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/Restrained.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/RestrainedBack.webp"
+				},
+				"width": 1662,
+				"height": 2166
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Restrained"
+				}
+			]
+		},
+		{
+			"name": "Stunned",
+			"source": "ESK",
+			"set": "Condition Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/Stunned.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/StunnedBack.webp"
+				},
+				"width": 1693,
+				"height": 2194
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Stunned"
+				}
+			]
+		},
+		{
+			"name": "Unconscious",
+			"source": "ESK",
+			"set": "Condition Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/Unconscious.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Conditions/UnconsciousBack.webp"
+				},
+				"width": 1695,
+				"height": 2194
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "condition",
+					"style": "inset",
+					"source": "PHB",
+					"name": "Unconscious"
+				}
+			]
+		},
 		{
 			"name": "Blinded",
 			"source": "ScreenDungeonKit",
@@ -3498,6 +4414,517 @@
 			]
 		},
 		{
+			"name": "Anarath",
+			"source": "WDMM",
+			"set": "Elder Runes Deck",
+			"page": 318,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Elder Runes/Anarath.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"{@i Elder Rune of Protection and Sacrifice}",
+				{
+					"type": "entries",
+					"name": "Bane Effect:",
+					"entries": [
+						"The target must succeed on a Constitution saving throw or it can't regain hit points until a {@spell remove curse} or {@spell greater restoration} spell is cast on it."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Boon Effect:",
+					"entries": [
+						"The target is immune to the {@condition blinded}, {@condition charmed}, {@condition deafened}, {@condition frightened}, {@condition paralyzed}, {@condition petrified}, {@condition poisoned}, and {@condition stunned} conditions. In addition, the tar get stabilizes immediately when it drops to 0 hit points. This boon effect lasts for 24 hours."
+					]
+				}
+			]
+		},
+		{
+			"name": "Angras",
+			"source": "WDMM",
+			"set": "Elder Runes Deck",
+			"page": 318,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Elder Runes/Angras.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"{@i Elder Rune of War}",
+				{
+					"type": "entries",
+					"name": "Bane Effect:",
+					"entries": [
+						"The target must succeed on a Constitution saving throw or it gains vulnerability to all damage and a \u22122 penalty to death saving throws for 24 hours."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Boon Effect:",
+					"entries": [
+						"When the target hits with an attack, the target can turn that hit into a critical hit, after which this boon effect ends."
+					]
+				}
+			]
+		},
+		{
+			"name": "Halaster",
+			"source": "WDMM",
+			"set": "Elder Runes Deck",
+			"page": 318,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Elder Runes/Halaster.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"{@i Elder Rune of the Mad Mage}",
+				{
+					"type": "entries",
+					"name": "Bane Effect:",
+					"entries": [
+						"The target must make a Constitution saving throw {@note (DC 22)}, taking {@damage 20d6} force damage on a failed save, or half as much damage on a successful one."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Boon Effect:",
+					"entries": [
+						"The target recovers its expended spell slots of 6th level and lower. If the target has no spell slots to recover, a magical shield surrounds the target for 1 hour instead. This shield grants the target resistance to all damage and can't be dispelled, though contact with an {@spell antimagic field} destroys it."
+					]
+				}
+			]
+		},
+		{
+			"name": "Korombos",
+			"source": "WDMM",
+			"set": "Elder Runes Deck",
+			"page": 318,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Elder Runes/Korombos.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"{@i Elder Rune of Chaos}",
+				{
+					"type": "entries",
+					"name": "Bane Effect:",
+					"entries": [
+						"The target must succeed on a Wisdom saving throw or suffer the effect of a {@spell confusion} spell with a duration of 1 minute."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Boon Effect:",
+					"entries": [
+						"When the target rolls damage, it can reroll any of the damage dice once. It must use the new rolls, after which this boon effect ends."
+					]
+				}
+			]
+		},
+		{
+			"name": "Laebos",
+			"source": "WDMM",
+			"set": "Elder Runes Deck",
+			"page": 318,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Elder Runes/Laebos.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"{@i Elder Rune of Fire}",
+				{
+					"type": "entries",
+					"name": "Bane Effect:",
+					"entries": [
+						"The target must make a Dexterity saving throw, taking {@damage 10d10} fire damage on a failed save, or half as much damage on a successful save."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Boon Effect:",
+					"entries": [
+						"The target gains a pool of ten {@dice d6|d6s}. Up to two of these dice can be expended at a time and added to any damage roll the target makes when it hits with a weapon attack. The damage added by these dice is fire damage."
+					]
+				}
+			]
+		},
+		{
+			"name": "Lammath",
+			"source": "WDMM",
+			"set": "Elder Runes Deck",
+			"page": 318,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Elder Runes/Lammath.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"{@i Elder Rune of Security}",
+				{
+					"type": "entries",
+					"name": "Bane Effect:",
+					"entries": [
+						"For the next 24 hours, the target can't gain advantage on attack rolls, ability checks, or saving throws."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Boon Effect:",
+					"entries": [
+						"Once within the next 24 hours, the target can use its reaction to reduce the damage it takes from one source by {@dice 10d6}."
+					]
+				}
+			]
+		},
+		{
+			"name": "Nchasme",
+			"source": "WDMM",
+			"set": "Elder Runes Deck",
+			"page": 318,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Elder Runes/Nchasme.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"{@i Elder Rune of Decision}",
+				{
+					"type": "entries",
+					"name": "Bane Effect:",
+					"entries": [
+						"The target must succeed on a Wisdom saving throw or be {@condition incapacitated} for 1 hour. While {@condition incapacitated} in this way, the target gains the following personality flaw, which supersedes any opposing flaw: \"I fundamentally disagree with everything anyone else says.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Boon Effect:",
+					"entries": [
+						"The target can cast the {@spell augury} spell as an action three times, requiring no components and with no chance of a random reading."
+					]
+				}
+			]
+		},
+		{
+			"name": "Savaros",
+			"source": "WDMM",
+			"set": "Elder Runes Deck",
+			"page": 318,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Elder Runes/Savaros.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"{@i Elder Rune of Goblinkind}",
+				{
+					"type": "entries",
+					"name": "Bane Effect:",
+					"entries": [
+						"All nonmagical coins and gems on the target's person vanish."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Boon Effect:",
+					"entries": [
+						"The rune magically summons a goblin (use the {@creature goblin} stat block in the Monster Manual), which appears in an unoccupied space within 20 feet of the target. The goblin is rude to everyone except the target and obeys the target's commands. The goblin vanishes in a puff of smoke if it drops to 0 hit points."
+					]
+				}
+			]
+		},
+		{
+			"name": "Ullathar",
+			"source": "WDMM",
+			"set": "Elder Runes Deck",
+			"page": 318,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Elder Runes/Ullathar.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"{@i Elder Rune of Passage}",
+				{
+					"type": "entries",
+					"name": "Bane Effect:",
+					"entries": [
+						"The target must succeed on a Wisdom saving throw or be {@condition restrained} for 24 hours."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Boon Effect:",
+					"entries": [
+						"For the next 24 hours, the target gains the following benefits:",
+						{
+							"type": "list",
+							"items": [
+								"The effects of the {@spell freedom of movement} spell",
+								"The ability to cast the {@spell knock} spell at will, requiring no components"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Fragment of Abhorrence",
+			"source": "CRCotN",
+			"set": "Fragments of Suffering",
+			"page": 218,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CRCotN/Fragments of Suffering/Fragment of Abhorrence.webp"
+				},
+				"width": 563,
+				"height": 787
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "reward",
+					"source": "CRCotN",
+					"name": "Fragment of Abhorrence",
+					"page": 218
+				}
+			]
+		},
+		{
+			"name": "Fragment of Attachment",
+			"source": "CRCotN",
+			"set": "Fragments of Suffering",
+			"page": 218,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CRCotN/Fragments of Suffering/Fragment of Attachment.webp"
+				},
+				"width": 563,
+				"height": 787
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "reward",
+					"source": "CRCotN",
+					"name": "Fragment of Attachment",
+					"page": 218
+				}
+			]
+		},
+		{
+			"name": "Fragment of Deception",
+			"source": "CRCotN",
+			"set": "Fragments of Suffering",
+			"page": 218,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CRCotN/Fragments of Suffering/Fragment of Deception.webp"
+				},
+				"width": 563,
+				"height": 787
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "reward",
+					"source": "CRCotN",
+					"name": "Fragment of Deception",
+					"page": 218
+				}
+			]
+		},
+		{
+			"name": "Fragment of Despondence",
+			"source": "CRCotN",
+			"set": "Fragments of Suffering",
+			"page": 218,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CRCotN/Fragments of Suffering/Fragment of Despondence.webp"
+				},
+				"width": 563,
+				"height": 787
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "reward",
+					"source": "CRCotN",
+					"name": "Fragment of Despondence",
+					"page": 218
+				}
+			]
+		},
+		{
+			"name": "Fragment of Intransigence",
+			"source": "CRCotN",
+			"set": "Fragments of Suffering",
+			"page": 218,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CRCotN/Fragments of Suffering/Fragment of Intransigence.webp"
+				},
+				"width": 563,
+				"height": 787
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "reward",
+					"source": "CRCotN",
+					"name": "Fragment of Intransigence",
+					"page": 218
+				}
+			]
+		},
+		{
+			"name": "Fragment of Loathing",
+			"source": "CRCotN",
+			"set": "Fragments of Suffering",
+			"page": 218,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CRCotN/Fragments of Suffering/Fragment of Loathing.webp"
+				},
+				"width": 563,
+				"height": 787
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "reward",
+					"source": "CRCotN",
+					"name": "Fragment of Loathing",
+					"page": 218
+				}
+			]
+		},
+		{
+			"name": "Fragment of Melancholy",
+			"source": "CRCotN",
+			"set": "Fragments of Suffering",
+			"page": 218,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CRCotN/Fragments of Suffering/Fragment of Melancholy.webp"
+				},
+				"width": 563,
+				"height": 787
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "reward",
+					"source": "CRCotN",
+					"name": "Fragment of Melancholy",
+					"page": 218
+				}
+			]
+		},
+		{
+			"name": "Fragment of Pity",
+			"source": "CRCotN",
+			"set": "Fragments of Suffering",
+			"page": 218,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CRCotN/Fragments of Suffering/Fragment of Pity.webp"
+				},
+				"width": 563,
+				"height": 787
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "reward",
+					"source": "CRCotN",
+					"name": "Fragment of Pity",
+					"page": 218
+				}
+			]
+		},
+		{
+			"name": "Fragment of Rancor",
+			"source": "CRCotN",
+			"set": "Fragments of Suffering",
+			"page": 218,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CRCotN/Fragments of Suffering/Fragment of Rancor.webp"
+				},
+				"width": 563,
+				"height": 787
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "reward",
+					"source": "CRCotN",
+					"name": "Fragment of Rancor",
+					"page": 218
+				}
+			]
+		},
+		{
 			"name": "Eight",
 			"source": "ScreenDungeonKit",
 			"set": "Geomorph Cards",
@@ -4099,6 +5526,168 @@
 		},
 		{
 			"name": "Eight",
+			"source": "ESK",
+			"set": "Initiative Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Initiative/Initiative8.webp"
+				},
+				"width": 1567,
+				"height": 2090
+			},
+			"entries": [
+				"You will go eighth in the initiative order."
+			]
+		},
+		{
+			"name": "Five",
+			"source": "ESK",
+			"set": "Initiative Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Initiative/Initiative5.webp"
+				},
+				"width": 1567,
+				"height": 2090
+			},
+			"entries": [
+				"You will go fifth in the initiative order."
+			]
+		},
+		{
+			"name": "Four",
+			"source": "ESK",
+			"set": "Initiative Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Initiative/Initiative4.webp"
+				},
+				"width": 1567,
+				"height": 2090
+			},
+			"entries": [
+				"You will go fourth in the initiative order."
+			]
+		},
+		{
+			"name": "Nine",
+			"source": "ESK",
+			"set": "Initiative Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Initiative/Initiative9.webp"
+				},
+				"width": 1567,
+				"height": 2090
+			},
+			"entries": [
+				"You will go ninth in the initiative order."
+			]
+		},
+		{
+			"name": "One",
+			"source": "ESK",
+			"set": "Initiative Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Initiative/Initiative1.webp"
+				},
+				"width": 1567,
+				"height": 2090
+			},
+			"entries": [
+				"You will go first in the initiative order."
+			]
+		},
+		{
+			"name": "Seven",
+			"source": "ESK",
+			"set": "Initiative Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Initiative/Initiative7.webp"
+				},
+				"width": 1567,
+				"height": 2090
+			},
+			"entries": [
+				"You will go seventh in the initiative order."
+			]
+		},
+		{
+			"name": "Six",
+			"source": "ESK",
+			"set": "Initiative Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Initiative/Initiative6.webp"
+				},
+				"width": 1567,
+				"height": 2090
+			},
+			"entries": [
+				"You will go sixth in the initiative order."
+			]
+		},
+		{
+			"name": "Three",
+			"source": "ESK",
+			"set": "Initiative Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Initiative/Initiative3.webp"
+				},
+				"width": 1567,
+				"height": 2090
+			},
+			"entries": [
+				"You will go third in the initiative order."
+			]
+		},
+		{
+			"name": "Two",
+			"source": "ESK",
+			"set": "Initiative Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/ESK/Initiative/Initiative2.webp"
+				},
+				"width": 1567,
+				"height": 2090
+			},
+			"entries": [
+				"You will go second in the initiative order."
+			]
+		},
+		{
+			"name": "Eight",
 			"source": "ScreenDungeonKit",
 			"set": "Initiative Cards",
 			"face": {
@@ -4248,6 +5837,1130 @@
 			},
 			"entries": [
 				"You will go second in the initiative order."
+			]
+		},
+		{
+			"name": "Charm of the Storm",
+			"source": "DIP",
+			"set": "Magic Charm Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Charm/CharmFront.webp"
+				},
+				"width": 1620,
+				"height": 2160
+			},
+			"entries": [
+				"This card describes a special charm. Give the card to the player whose character receives the charm. Collect the card when the charm ends for that character.",
+				{
+					"type": "statblock",
+					"tag": "reward",
+					"source": "DIP",
+					"name": "Charm of the Storm",
+					"page": 41,
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "+1 Battleaxe",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/Plus1Battleaxe.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "+1 Battleaxe",
+					"style": "inset"
+				},
+				{
+					"type": "entries",
+					"name": "Minor Property",
+					"entries": [
+						"While the battleaxe is in your possession, you can speak and understand {@language Dwarvish}."
+					]
+				}
+			]
+		},
+		{
+			"name": "+1 Longbow",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/Plus1Longbow.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "+1 Longbow",
+					"style": "inset"
+				},
+				{
+					"type": "entries",
+					"name": "Minor Property",
+					"entries": [
+						"While wielding the longbow, you can use an action to learn which way is north."
+					]
+				}
+			]
+		},
+		{
+			"name": "+1 Mace",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/Plus1Mace.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "+1 Mace",
+					"style": "inset"
+				},
+				{
+					"type": "entries",
+					"name": "Minor Property",
+					"entries": [
+						"While holding the mace, you can use an action to cause your voice to carry clearly for up to 300 feet until the end of your next turn."
+					]
+				}
+			]
+		},
+		{
+			"name": "+1 Shield",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/Plus1Shield.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "+1 Shield",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "+1 Shortsword",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/Plus1Shortsword.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "+1 Shortsword",
+					"style": "inset"
+				},
+				{
+					"type": "entries",
+					"name": "Minor Property",
+					"entries": [
+						"While holding the shortsword, you can use a bonus action to cause the weapon to shed bright light in a 10-foot radius and dim light for an additional 10 feet, or to extinguish the light."
+					]
+				}
+			]
+		},
+		{
+			"name": "Boots of Elvenkind",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/BootsofElvenkind.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "Boots of Elvenkind",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Cloak of Billowing",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/CloakofBillowing.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "XGE",
+					"name": "Cloak of Billowing",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Cloak of Many Fashions",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/CloakofManyFashions.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "XGE",
+					"name": "Cloak of Many Fashions",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Clockwork Amulet",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/ClockworkAmulet.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "XGE",
+					"name": "Clockwork Amulet",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Dragon Slayer",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/DragonSlayer.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "Dragon Slayer Longsword",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Dread Helm",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/DreadHelm.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "XGE",
+					"name": "Dread Helm",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Dust of Disappearance",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/DustofDisappearance.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "Dust of Disappearance",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Gauntlets of Ogre Power",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/GauntletsofOgrePower.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "Gauntlets of Ogre Power",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Goggles of Night",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/GogglesofNight.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "Goggles of Night",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Hat of Wizardry",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/HatofWizardry.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "XGE",
+					"name": "Hat of Wizardry",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Immovable Rod",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/ImmovableRod.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "Immovable Rod",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Lute of Illusions",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/LuteofIllusions.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				"{@note Specifically a {@item lute|PHB} in this instance.}",
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "XGE",
+					"name": "Instrument of Illusions",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Mithral Chain Mail",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/MithralChainMail.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "Mithral Chain Mail",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Mystery Key",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/MysteryKey.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "XGE",
+					"name": "Mystery Key",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Necklace of Fireballs",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/NecklaceofFireballs.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "Necklace of Fireballs",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Pole of Collapsing",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/PoleofCollapsing.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "XGE",
+					"name": "Pole of Collapsing",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Potion of Greater Healing",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/PotionofGreaterHealing.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "Potion of Greater Healing",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Potion of Healing",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/PotionofHealing.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "Potion of Healing",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Potion of Invulnerability",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/PotionofInvulnerability.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "Potion of Invulnerability",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Potion of Superior Healing",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/PotionofSuperiorHealing.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "Potion of Superior Healing",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Potion of Water Breathing",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/PotionofWaterBreathing.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "Potion of Water Breathing",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Sending Stone",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/SendingStone.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "Sending Stones",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Staff of Birdcalls",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/StaffofBirdcalls.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "XGE",
+					"name": "Staff of Birdcalls",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Wand of Pyrotechnics",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/WandofPyrotechnics.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "XGE",
+					"name": "Wand of Pyrotechnics",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Wand of Secrets",
+			"source": "DIP",
+			"set": "Magic Item Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Magic Items/WandofSecrets.webp"
+				},
+				"width": 1647,
+				"height": 2149
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "DMG",
+					"name": "Wand of Secrets",
+					"style": "inset"
+				}
+			]
+		},
+		{
+			"name": "Medal of Muscle",
+			"source": "CRCotN",
+			"set": "Medals of Merit",
+			"page": 217,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CRCotN/Medals of Merit/Medal of Muscle.webp"
+				},
+				"width": 563,
+				"height": 787
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "CRCotN",
+					"name": "Medal of Muscle",
+					"page": 217
+				}
+			]
+		},
+		{
+			"name": "Medal of the Conch",
+			"source": "CRCotN",
+			"set": "Medals of Merit",
+			"page": 217,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CRCotN/Medals of Merit/Medal of the Conch.webp"
+				},
+				"width": 563,
+				"height": 787
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "CRCotN",
+					"name": "Medal of the Conch",
+					"page": 217
+				}
+			]
+		},
+		{
+			"name": "Medal of the Horizonback",
+			"source": "CRCotN",
+			"set": "Medals of Merit",
+			"page": 217,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CRCotN/Medals of Merit/Medal of the Horizonback.webp"
+				},
+				"width": 563,
+				"height": 787
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "CRCotN",
+					"name": "Medal of the Horizonback",
+					"page": 217
+				}
+			]
+		},
+		{
+			"name": "Medal of the Maze",
+			"source": "CRCotN",
+			"set": "Medals of Merit",
+			"page": 217,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CRCotN/Medals of Merit/Medal of the Maze.webp"
+				},
+				"width": 563,
+				"height": 787
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "CRCotN",
+					"name": "Medal of the Maze",
+					"page": 217
+				}
+			]
+		},
+		{
+			"name": "Medal of the Meat Pie",
+			"source": "CRCotN",
+			"set": "Medals of Merit",
+			"page": 217,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CRCotN/Medals of Merit/Medal of the Meat Pie.webp"
+				},
+				"width": 563,
+				"height": 787
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "CRCotN",
+					"name": "Medal of the Meat Pie",
+					"page": 217
+				}
+			]
+		},
+		{
+			"name": "Medal of the Wetlands",
+			"source": "CRCotN",
+			"set": "Medals of Merit",
+			"page": 217,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CRCotN/Medals of Merit/Medal of the Wetlands.webp"
+				},
+				"width": 563,
+				"height": 787
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "CRCotN",
+					"name": "Medal of the Wetlands",
+					"page": 217
+				}
+			]
+		},
+		{
+			"name": "Medal of Wit",
+			"source": "CRCotN",
+			"set": "Medals of Merit",
+			"page": 217,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CRCotN/Medals of Merit/Medal of Wit.webp"
+				},
+				"width": 563,
+				"height": 787
+			},
+			"entries": [
+				{
+					"type": "statblock",
+					"tag": "item",
+					"source": "CRCotN",
+					"name": "Medal of Wit",
+					"page": 217
+				}
+			]
+		},
+		{
+			"name": "Using the Cards",
+			"source": "CRCotN",
+			"set": "Medals of Merit",
+			"page": 217,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/CRCotN/Medals of Merit/Using the Cards.webp"
+				},
+				"width": 563,
+				"height": 787
+			},
+			"entries": [
+				"The cards on this page are meant to be photocopied and given to players whose characters win {@deck Medals of Merit|CRCotN} in {@adventure chapter 1|CRCotN|1} (see that chapter for contest rules).",
+				"The cards in {@adventure appendix D|CRCotN|11} are meant to be given to players whose characters gain {@deck Fragments of Suffering|CRCotN} in {@adventure chapter 6|CRCotN|6} (see that chapter for more information)."
+			]
+		},
+		{
+			"name": "Axeholm",
+			"source": "DIP",
+			"set": "Quest Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Quests/061-7.png"
+				},
+				"width": 838,
+				"height": 1103
+			},
+			"entries": [
+				"Embedded in a mountain south of Phandalin is the ancient dwarven fortress of Axeholm, which has been sealed for years. If a dragon attack is imminent, the people of Phandalin can evacuate and take refuge in Axeholm. To that end, someone needs to open the fortress and make it safe for habitation. Once you accomplish these tasks, return to Townmaster Wester to collect a reward of 250 gp."
+			]
+		},
+		{
+			"name": "Butterskull Ranch",
+			"source": "DIP",
+			"set": "Quest Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Quests/058-4.png"
+				},
+				"width": 838,
+				"height": 1103
+			},
+			"entries": [
+				"Orcs have attacked Butterskull Ranch, five miles east of Conyberry along the Triboar Trail! Travel there with haste, assess the damage, and help any way you can. Alfonse Kalazorn, the ranch owner, is a retired sheriff who can reward you for your efforts. If he's dead, return to Townmaster Harbin Wester with proof of Kalazorn's demise to receive a reward of 100 gp."
+			]
+		},
+		{
+			"name": "Dragon Barrow",
+			"source": "DIP",
+			"set": "Quest Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Quests/062-8.png"
+				},
+				"width": 838,
+				"height": 1103
+			},
+			"entries": [
+				"The dragon that besets us is not the first to threaten this region. Between here and Neverwinter lies the barrow mound of a warrior whose magical dragon-slaying sword helped fell a green dragon terrorizing the High Road a century ago. Rumor has it the {@item dragon slayer} sword is buried there, too. Retrieve it, and let the sword be its own reward!"
+			]
+		},
+		{
+			"name": "Dwarven Excavation",
+			"source": "DIP",
+			"set": "Quest Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Quests/055-1.png"
+				},
+				"width": 838,
+				"height": 1103
+			},
+			"entries": [
+				"Dwarf prospectors found ancient dwarven ruins in the mountains southwest of here and have begun an archaeological dig for treasure and relics. They need to be warned that a white dragon has moved into the area. Take the warning to them, then return to Townmaster Harbin Wester to collect a reward of 50 gp."
+			]
+		},
+		{
+			"name": "Gnomengarde",
+			"source": "DIP",
+			"set": "Quest Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Quests/056-2.png"
+				},
+				"width": 838,
+				"height": 1103
+			},
+			"entries": [
+				"A clan of reclusive rock gnomes resides in a small network of caves in the mountains to the southeast. The gnomes of Gnomengarde are known for their magical inventions. They might have something with which to defeat the dragon. Get whatever you can from them. If you bring back something useful and don't want to keep it for yourselves, Townmaster Harbin Wester will pay you 50 gp for it."
+			]
+		},
+		{
+			"name": "Loggers' Camp",
+			"source": "DIP",
+			"set": "Quest Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Quests/059-5.png"
+				},
+				"width": 838,
+				"height": 1103
+			},
+			"entries": [
+				"Deep in Neverwinter Wood, along the river that flows west toward Neverwinter, is a logging camp. Every two months, Phandalin delivers fresh supplies to the camp, which is run by the half-brother of Phandalin's townmaster, Harbin Wester. Barthen, the local provisioner, has prepared a new delivery. He needs someone to bear the supplies safely to the camp. Return to Harbin Wester with a notice of delivery signed by his half-brother, Tibor Wester, to claim your reward of 100 gp."
+			]
+		},
+		{
+			"name": "Mountain's Toe",
+			"source": "DIP",
+			"set": "Quest Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Quests/060-6.png"
+				},
+				"width": 838,
+				"height": 1103
+			},
+			"entries": [
+				"The Mountain's Toe Gold Mine lies fifteen miles northeast of Phandalin. The new overseer, Don-Jon Raskin, just made the trip from Neverwinter to Phandalin and needs to be escorted to the mine. There's no telling what dangers lie between here and there. Once you deliver Raskin safe and sound, return to Townmaster Harbin Wester to collect a reward of 100 gp."
+			]
+		},
+		{
+			"name": "Umbrage Hill",
+			"source": "DIP",
+			"set": "Quest Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Quests/057-3.png"
+				},
+				"width": 838,
+				"height": 1103
+			},
+			"entries": [
+				"The local midwife\u2014an acolyte of {@deity Chauntea|Faerûnian|SCAG} named Adabra Gwynn\u2014lives by herself in a stone windmill on the side of a hill a few miles south of Phandalin. With dragon sightings becoming common, it's not safe for her to be alone. Urge Adabra to return to Phandalin. Once she's safe, visit Townmaster Harbin Wester to claim a reward of 25 gp."
+			]
+		},
+		{
+			"name": "Woodland Manse",
+			"source": "DIP",
+			"set": "Quest Cards",
+			"page": 3,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Quests/063-9.png"
+				},
+				"width": 838,
+				"height": 1103
+			},
+			"entries": [
+				"The orcs have fallen under the sway of evil spellcasters in Neverwinter Wood and have been sighted in growing numbers near Falcon's Hunting Lodge. The spellcasters dwell in a ruined manse. Falcon needs someone to make a preemptive strike against it. Destroy the evil in the manse, then expect him to reward you."
 			]
 		},
 		{
@@ -6172,6 +8885,843 @@
 								"\"My mother, Baba Yaga, warned me that arrogance would be my undoing, 'as sure as stars light the night sky.' She might be right.\""
 							]
 						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Arcturiadoom",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/Arcturiadoom.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"One of Halaster's apprentices was a human transmuter named Arcturia, who created all manner of new monsters and often made herself the subject of her own horrid magical transformations. She claimed an entire level of Undermountain as her lair and polymorphed prisoners into monsters to guard it. It's likely that Arcturia resides in Undermountain still, in one form or another."
+			]
+		},
+		{
+			"name": "Dark Elf Menace",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/DarkElfMenace.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"Recent conflicts in Menzoberranzan have left weakened drow houses fearing for their future. Drow are coming to Undermountain in droves to carve out sanctuaries for one house or another. Halaster can't be happy to see them return in force, but who knows? Maybe the Mad Mage orchestrated the upheaval to bring the dark elves scurrying back for reasons beyond the comprehension of the sane."
+			]
+		},
+		{
+			"name": "Death Tyrant",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/DeathTyrant.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"The Mad Mage has transformed an entire level of Undermountain into a proving ground for adventurers who seek to reach the deepest layers of the dungeon and the treasures hidden within. At the end of this underground obstacle course waits the greatest challenge of all: Netherskull the Death Tyrant, an undead beholder that hates wizards above all."
+			]
+		},
+		{
+			"name": "Dwarfcraft",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/Dwarfcraft.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"Much of Undermountain was built long ago by the shield dwarves of the Melairkyn clan. These dwarves were masters of stonework and hid many of their rooms behind secret doors. They also dug deep in search of precious metals. These mines were later stripped by duergar invaders, leaving a maze of worthless tunnels and cav- erns for monsters to inhabit."
+			]
+		},
+		{
+			"name": "Emerald Blade",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/EmeraldBlade.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"Waterdeep was erected atop the bones of a dwarven kingdom built on the dust of a much older elven kingdom. It is said that a relic of the elves still waits to be found in Undermountain: a magic sword so sharp that its edge can slice through stone. Many adventurers have vanished during their hunt for the weapon, which, it is said, the elves blessed with the heart of a warrior and the soul of a poet."
+			]
+		},
+		{
+			"name": "Gith Who's Coming to Dinner?",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/GithWhosComingToDinner.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"Githyanki have invaded Undermountain. Perhaps they seek to destroy a mind flayer colony hidden in the depths of the dungeon, or perhaps they are planning to attack and plunder Waterdeep. There's one other possibility: the githyanki might be building a creche\u2014a stronghold away from the timeless Astral Plane where they can raise their young and train them in the art of war."
+			]
+		},
+		{
+			"name": "Guild of Many Eyes",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/GuildofManyEyes.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"A thieves' guild that was driven from Waterdeep long ago still lurks in Undermountain, waiting and scheming to win back power in the city above. These villains make the sewers unsafe for honest folk to venture into. They have recently taken over Skullport, a subterranean town connected to Undermountain."
+			]
+		},
+		{
+			"name": "Immortal Insanity",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/ImmortalInsanity.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"The Mad Mage of Undermountain has destroyed himself or been destroyed many times, but his demise is always short-lived. Folk say the dungeon cannot exist without him, and so it magically re-creates the archmage whenever he meets his end within its crumbling halls. Each time Halaster returns, less of his sanity remains."
+			]
+		},
+		{
+			"name": "Mad House",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/MadHouse.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"The Shadowdusks were a Waterdavian noble family whose quest for political supremacy ended centuries ago after Shadowdusk wizards opened portals to the Far Realm. Twisted by madness and driven from their home, they sought assistance from Halaster and sank into the depths of Undermountain, never to be seen again\u2014yet vestiges of the noble house undoubtedly remain."
+			]
+		},
+		{
+			"name": "Nester's Fate",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/NestersFate.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"Halaster brought seven apprentices with him to Undermountain. One of them, Nester, became a lich using spells and methods of his own devising. But his process was flawed, and over time Nester's phylactery and body disintegrated until only his floating skull and skeletal arms remained. Driven mad by his failure to achieve true lichdom, Nester continues to haunt Undermountain in this weakened form."
+			]
+		},
+		{
+			"name": "Scavenger",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/Scavenger.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"The Sea of Swords has borne its share of pirate ships, none stranger than the {@i Scavenger}. This vessel could travel below the waves and through the air. No one has seen it in years. Perhaps it sank or was lost in the starry maelstrom of the night sky, but divination spells suggest it found its way into Undermountain. Others have searched for it below Waterdeep, but no one has found it and lived to tell the tale."
+			]
+		},
+		{
+			"name": "School of Magic",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/SchoolOfMagic.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"Rumor has it that a wizards' academy has opened on one of Undermountain's levels. It's not known who runs this academy\u2014perhaps one of Halaster's apprentices or the Mad Mage himself\u2014but many mages have been drawn down to it. What wizard wouldn't want to glimpse the powerful magic gathering dust in the depths of Undermountain?"
+			]
+		},
+		{
+			"name": "Skullport",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/Skullport.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"Skullport overlooks the Sargauth River, a watery thoroughfare that cuts through the third level of Undermountain. Pirates once used the subterranean settlement as a trade port, but now it's a monster-infested haunt where spies and assassins hone their craft. Beware the fortress overlooking the river! Its garrison is commanded by an evil knight with a wyvern mount."
+			]
+		},
+		{
+			"name": "Spire and Snail",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/SpireandSnail.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"Deep within Undermountain is a vast cavern containing a giant stalagmite that has been hollowed out to serve as a wizard's tower, perhaps even a refuge for the Mad Mage himself. The tower is guarded by stone constructs. No one knows what dwells inside. Not far from this tower lurks a most peculiar creature: a giant snail with a shell of pure gold."
+			]
+		},
+		{
+			"name": "Tangled Web",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/TangledWeb.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"Secret temples exist in great numbers in Undermountain, particularly those of evil gods not welcomed in the city above. The vile servants of these deities are locked in an endless war for supremacy in the dark dungeon. Lolth, the Demon Queen of Spiders, is the fiendish mastermind behind many of these bloody conflicts."
+			]
+		},
+		{
+			"name": "Trobriand's Army",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/TrobriandsArmy.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"Trobriand was one of Halaster's most promising and demented apprentices. Fascinated by machines, he carved out a level of the Mad Mage's dungeon for himself and set to work building an army of constructs there. It is said that Trobriand controls his creations with a metal ring, and that he crafted similar rings of lesser power for his apprentices, to protect them in the event that his constructs went insane."
+			]
+		},
+		{
+			"name": "Underground Forest",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/UndergroundForest.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"The River of the Depths connects the fourth and fifth levels of Undermountain, skirting the edges of vast caverns filled with trees, shrubs, birds, other animals, and sunlight. An entire forest, as real as any found on the surface, waits to be explored, but an archdruid protects it. And explorers traveling downriver have seen a huge green dragon as well, perched on a tower near a bridge that spans the river."
+			]
+		},
+		{
+			"name": "What Drow Fear",
+			"source": "WDMM",
+			"set": "Secrets Deck",
+			"page": 319,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/WDMM/Secrets/WhatDrowFear.webp"
+				},
+				"width": 674,
+				"height": 916
+			},
+			"entries": [
+				"Part of Undermountain was carved out by the drow. Muiral, said to be a former bodyguard and apprentice of Halaster's, claims this domain and hunts trespass- ers for sport. These halls are littered with the bones of the slaughtered. Even the dark elves speak of Muiral in hushed tones. Anyone who can terrify the drow should be avoided at all costs."
+			]
+		},
+		{
+			"name": "Donnabella Fiasco",
+			"source": "DIP",
+			"set": "Sidekick Cards",
+			"page": 66,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/DonnabellaFiasco.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/DonnabellaFiascoBack.webp"
+				},
+				"width": 1693,
+				"height": 2160
+			},
+			"entries": [
+				"{@i Human Spellcaster}",
+				"Donnabella is a young magic-user who wears a papier-mâché unicorn mask because it makes her feel more magical.",
+				"Use the {@creature Spellcaster|ESK} sidekick stat block to represent her.",
+				{
+					"type": "entries",
+					"name": "Personality",
+					"entries": [
+						"\"I'd rather talk to a book than most people.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Ideal",
+					"entries": [
+						"\"We all have a little magic in us. The trick is finding it and bringing it forth.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Bond",
+					"entries": [
+						"\"I want to join a prestigious wizards' academy one day. I just hope they accept unicorns!\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Flaw",
+					"entries": [
+						"\"I can't keep a secret to save my life\u2014or anyone else's.\""
+					]
+				}
+			]
+		},
+		{
+			"name": "Galandro Luna",
+			"source": "DIP",
+			"set": "Sidekick Cards",
+			"page": 66,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/GalandroLuna.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/GalandroLunaBack.webp"
+				},
+				"width": 1695,
+				"height": 2160
+			},
+			"entries": [
+				"{@i Human Expert}",
+				"Galandro's most treasured possession is a fiddle that he tunes and plucks constantly.",
+				"Use the {@creature Expert|ESK} sidekick stat block to represent him.",
+				{
+					"type": "entries",
+					"name": "Personality",
+					"entries": [
+						"\"I love a good insult, even one directed at me.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Ideal",
+					"entries": [
+						"\"I like seeing the smiles on people's faces when I perform. That plus their adoration is all that matters.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Bond",
+					"entries": [
+						"\"My fiddle was gifted to me by a good friend. I cherish it above all other things.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Flaw",
+					"entries": [
+						"\"I'll do anything to win fame and renown.\""
+					]
+				}
+			]
+		},
+		{
+			"name": "Inverna Nightbreeze",
+			"source": "DIP",
+			"set": "Sidekick Cards",
+			"page": 66,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/InvernaNightbreeze.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/InvernaNightbreezeBack.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"entries": [
+				"{@i Moon Elf Warrior}",
+				"Inverna has a scar on her cheek where she was grazed by an orc's javelin. She is cautious by nature and suspicious of strangers.",
+				"Use the {@creature Warrior|ESK} sidekick stat block to represent her.",
+				{
+					"type": "entries",
+					"name": "Personality",
+					"entries": [
+						"\"I choose my words very carefully. Sarcasm, I'm told, is my sharpest weapon.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Ideal",
+					"entries": [
+						"\"All people deserve to be treated with dignity, regardless of their station. Of course, orcs aren't people.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Bond",
+					"entries": [
+						"\"Orcs are a blight on the land. For the sake of the natural and civilized worlds, I kill them on sight.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Flaw",
+					"entries": [
+						"\"I can't admit when I'm wrong.\""
+					]
+				}
+			]
+		},
+		{
+			"name": "Nib Addlespur",
+			"source": "DIP",
+			"set": "Sidekick Cards",
+			"page": 66,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/NibAddlespur.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/NibAddlespurBack.webp"
+				},
+				"width": 1693,
+				"height": 2194
+			},
+			"entries": [
+				"{@i Lightfoot Halfling Spellcaster}",
+				"Nib is a happy-go-lucky gambler who keeps a deck of Three-Dragon Ante cards in her vest pocket. She also has a goldfinch named Lil.",
+				"Use the {@creature Spellcaster|ESK} sidekick stat block to represent her.",
+				{
+					"type": "entries",
+					"name": "Personality",
+					"entries": [
+						"\"I can't resist a sure bet or a friendly wager.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Ideal",
+					"entries": [
+						"\"The more complicated the scheme, the better.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Bond",
+					"entries": [
+						"\"I love birds and will do what I can to look after them.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Flaw",
+					"entries": [
+						"\"Deep water terrifies me. I would rather be swallowed by a dragon than get in a boat or go for a swim.\""
+					]
+				}
+			]
+		},
+		{
+			"name": "Pickled Pete",
+			"source": "DIP",
+			"set": "Sidekick Cards",
+			"page": 66,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/PickledPete.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/PickledPeteBack.webp"
+				},
+				"width": 1695,
+				"height": 2194
+			},
+			"entries": [
+				"{@i Human Expert}",
+				"Pete likes ale and tends to function better while tipsy. At his best, he's quite the handyman and comes up with all sorts of crazy ways to get things done.",
+				"Use the {@creature Expert|esk} sidekick stat block to represent him.",
+				{
+					"type": "entries",
+					"name": "Personality",
+					"entries": [
+						"\"My friends know they can rely on me, no matter what.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Ideal",
+					"entries": [
+						"\"I like coming up with new ways to do things. What problem can't be solved with a little ingenuity?\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Bond",
+					"entries": [
+						"\"A full flask of wine is worth ten pockets full of gold.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Flaw",
+					"entries": [
+						"\"All this drinking is bad for my memory. Seriously, I can't remember my last name.\""
+					]
+				}
+			]
+		},
+		{
+			"name": "Quinn Hightopple",
+			"source": "DIP",
+			"set": "Sidekick Cards",
+			"page": 66,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/QuinnHightopple.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/QuinnHightoppleBack.webp"
+				},
+				"width": 1652,
+				"height": 2194
+			},
+			"entries": [
+				"{@i Lightfoot Halfling Warrior}",
+				"Quinn is a happy little scrapper who likes to punch people in the groin.",
+				"Use the {@creature Warrior|esk} sidekick stat block to represent him.",
+				{
+					"type": "entries",
+					"name": "Personality",
+					"entries": [
+						"\"Nice set of teeth you got there. Be a shame if something bad happened to 'em.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Ideal",
+					"entries": [
+						"\"No challenge is too big to overcome. As Papa Bartho always says, the bigger they are, the harder they fall.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Bond",
+					"entries": [
+						"\"Nothing's more important than friendship. That's why I'll never leave a friend behind.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Flaw",
+					"entries": [
+						"\"I can't resist punching tall folk in the groin. I call it the Halfling Hello.\""
+					]
+				}
+			]
+		},
+		{
+			"name": "Ruby Hammerwhacker",
+			"source": "DIP",
+			"set": "Sidekick Cards",
+			"page": 66,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/RubyHammerwhacker.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/RubyHammerwhackerBack.webp"
+				},
+				"width": 1693,
+				"height": 2173
+			},
+			"entries": [
+				"{@i Shield Dwarf Warrior}",
+				"Ruby lacks the customary dwarven stoicism and greets every day with a warm smile and a renewed sense of optimism.",
+				"Use the {@creature Warrior|esk} sidekick stat block to represent her.",
+				{
+					"type": "entries",
+					"name": "Personality",
+					"entries": [
+						"\"Nothing can shake my optimistic attitude.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Ideal",
+					"entries": [
+						"\"We should all seek the betterment of ourselves. There's always room for improvement.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Bond",
+					"entries": [
+						"\"I fight for those who cannot fight for themselves\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Flaw",
+					"entries": [
+						"\"\"Tell me I can't do something, and I must prove you wrong.\""
+					]
+				}
+			]
+		},
+		{
+			"name": "Shanjan Kwan",
+			"source": "DIP",
+			"set": "Sidekick Cards",
+			"page": 66,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/ShanjanKwan.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/ShanjanKwanBack.webp"
+				},
+				"width": 1695,
+				"height": 2173
+			},
+			"entries": [
+				"{@i Human Spellcaster}",
+				"Kwan died and was raised from the dead as an infant, whereupon a tiny black glyph\u2014the symbol of necromancy\u2014appeared on his forehead.",
+				"Use the {@creature Spellcaster|esk} sidekick stat block to represent him.",
+				{
+					"type": "entries",
+					"name": "Personality",
+					"entries": [
+						"\"I've cheated death once. I can do it again.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Ideal",
+					"entries": [
+						"\"Great beauty can hide great ugliness. The reverse is also true.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Bond",
+					"entries": [
+						"\"I've been searching my whole life for the answer to a simple question: Am I a god?\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Flaw",
+					"entries": [
+						"\"I don't like mysteries. Unraveling them keeps me up at night.\""
+					]
+				}
+			]
+		},
+		{
+			"name": "Talon Thornwild",
+			"source": "DIP",
+			"set": "Sidekick Cards",
+			"page": 66,
+			"face": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/TalonThornwild.webp"
+				},
+				"width": 1652,
+				"height": 2160
+			},
+			"back": {
+				"type": "image",
+				"href": {
+					"type": "internal",
+					"path": "decks/DIP/Sidekicks/TalonThornwildBack.webp"
+				},
+				"width": 1652,
+				"height": 2173
+			},
+			"entries": [
+				"{@i Human Expert}",
+				"Talon loves gold and adventure, and dreams of being a famous gold prospector.",
+				"Use the {@creature Expert|esk} sidekick stat block to represent them.",
+				{
+					"type": "entries",
+					"name": "Personality",
+					"entries": [
+						"\"Yes, I eat like a pig and have bad manners, but those are my only flaws, I swear. I'm darn near perfect otherwise.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Ideal",
+					"entries": [
+						"\"The low are lifted up, and the high and mighty are brought down. Change is the nature of things.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Bond",
+					"entries": [
+						"\"I like gold. I like its color, its texture, its majestic gleam.\""
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Flaw",
+					"entries": [
+						"\"It's not stealing if I need it more than someone else.\""
 					]
 				}
 			]

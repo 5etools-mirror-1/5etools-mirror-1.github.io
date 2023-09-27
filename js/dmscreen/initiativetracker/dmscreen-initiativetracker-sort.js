@@ -1,25 +1,21 @@
 import {InitiativeTrackerConst} from "./dmscreen-initiativetracker-consts.js";
 
 export class InitiativeTrackerSort {
-	static _sortRowsGetFirstSecond ({sortDir, rowA, rowB}) {
-		const first = sortDir === InitiativeTrackerConst.SORT_DIR_DESC ? rowB : rowA;
-		const second = first === rowA ? rowB : rowA;
-		return {first, second};
+	static _getSortMultiplier ({sortDir}) {
+		return sortDir === InitiativeTrackerConst.SORT_DIR_DESC ? -1 : 1;
 	}
 
 	static _sortRowsNameBasic ({sortDir}, rowA, rowB) {
-		const {first, second} = this._sortRowsGetFirstSecond({sortDir, rowA, rowB});
-		return SortUtil.ascSortLower(
-			first.entity.customName || first.entity.name,
-			second.entity.customName || second.entity.name,
+		return this._getSortMultiplier({sortDir}) * SortUtil.ascSortLower(
+			rowA.entity.customName || rowA.entity.name || "",
+			rowB.entity.customName || rowB.entity.name || "",
 		);
 	}
 
 	static _sortRowsInitiativeBasic ({sortDir}, rowA, rowB) {
-		const {first, second} = this._sortRowsGetFirstSecond({sortDir, rowA, rowB});
-		return SortUtil.ascSort(
-			first.entity.initiative || 0,
-			second.entity.initiative || 0,
+		return this._getSortMultiplier({sortDir}) * SortUtil.ascSort(
+			rowA.entity.initiative || 0,
+			rowB.entity.initiative || 0,
 		);
 	}
 

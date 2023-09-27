@@ -162,6 +162,7 @@
 				"constitution",
 				"strength"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -264,6 +265,7 @@
 				"constitution",
 				"dexterity"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -386,6 +388,7 @@
 			"savingThrowForced": [
 				"wisdom"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -531,6 +534,7 @@
 			"savingThrowForcedSpell": [
 				"wisdom"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -641,6 +645,7 @@
 			"savingThrowForced": [
 				"wisdom"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -758,6 +763,7 @@
 			"savingThrowForced": [
 				"dexterity"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -880,6 +886,7 @@
 				"constitution",
 				"dexterity"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -971,6 +978,7 @@
 				"MW",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1098,6 +1106,7 @@
 				"constitution",
 				"strength"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1249,6 +1258,7 @@
 			"savingThrowForcedSpell": [
 				"wisdom"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1393,6 +1403,7 @@
 			"savingThrowForced": [
 				"dexterity"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1554,6 +1565,7 @@
 				"dexterity",
 				"strength"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1686,11 +1698,10 @@
 					]
 				}
 			],
+			"reactionHeader": [
+				"The high fae can take up to three reactions per round but only one per turn"
+			],
 			"reaction": [
-				{
-					"name": "The high fae can take up to three reactions per round but only one per turn",
-					"entries": []
-				},
 				{
 					"name": "Capricious Step",
 					"entries": [
@@ -1736,6 +1747,7 @@
 				"charisma",
 				"wisdom"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1789,31 +1801,41 @@
 				{
 					"name": "Knightly Virtue",
 					"entries": [
-						"The knight has one of the following traits, depending on the court it serves:"
-					]
-				},
-				{
-					"name": "Courage (Embereth)",
-					"entries": [
-						"The knight has advantage on Wisdom checks and Wisdom saving throws."
-					]
-				},
-				{
-					"name": "Knowledge (Vantress)",
-					"entries": [
-						"The knight has advantage on Intelligence checks and Intelligence saving throws."
-					]
-				},
-				{
-					"name": "Loyalty (Ardenvale)",
-					"entries": [
-						"The knight has advantage on Charisma checks and Charisma saving throws."
-					]
-				},
-				{
-					"name": "Persistence (Locthwain)",
-					"entries": [
-						"The knight has advantage on Constitution saving throws. Strength (Garenbrig). The knight has advantage on Strength checks and Strength saving throws."
+						"The knight has one of the following traits, depending on the court it serves:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Courage (Embereth)",
+									"entries": [
+										"The knight has advantage on Wisdom checks and Wisdom saving throws."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Knowledge (Vantress)",
+									"entries": [
+										"The knight has advantage on Intelligence checks and Intelligence saving throws."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Loyalty (Ardenvale)",
+									"entries": [
+										"The knight has advantage on Charisma checks and Charisma saving throws."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Persistence (Locthwain)",
+									"entries": [
+										"The knight has advantage on Constitution saving throws. Strength (Garenbrig). The knight has advantage on Strength checks and Strength saving throws."
+									]
+								}
+							]
+						}
 					]
 				}
 			],
@@ -1856,6 +1878,7 @@
 				"RCH",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1976,6 +1999,7 @@
 			"savingThrowForced": [
 				"strength"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2120,6 +2144,7 @@
 				"constitution",
 				"strength"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2243,6 +2268,7 @@
 				"dexterity",
 				"strength"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2345,6 +2371,7 @@
 			"savingThrowForced": [
 				"constitution"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2459,6 +2486,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2592,6 +2620,7 @@
 				"constitution",
 				"strength"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2695,6 +2724,7 @@
 			"savingThrowForced": [
 				"wisdom"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2819,6 +2849,7 @@
 				"dexterity",
 				"strength"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2978,6 +3009,7 @@
 			"savingThrowForcedSpell": [
 				"constitution"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3093,17 +3125,17 @@
 							"type": "list",
 							"items": [
 								"The target must use its reaction to make a melee attack against another creature of the witchkite's choice that is within the target's reach.",
-								"The target takes 13 ({@damage 2d12}) psychic damage. On a successful save, the target takes half as much damage only."
+								"The target takes 13 ({@damage 2d12}) psychic damage."
 							]
-						}
+						},
+						"On a successful save, the target takes half as much damage only."
 					]
 				}
 			],
+			"reactionHeader": [
+				"The witchkite can take up to two reactions per round but only one per turn"
+			],
 			"reaction": [
-				{
-					"name": "The witchkite can take up to two reactions per round but only one per turn",
-					"entries": []
-				},
 				{
 					"name": "Enchanting Gaze",
 					"entries": [
@@ -3157,6 +3189,7 @@
 			"savingThrowForcedSpell": [
 				"wisdom"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3268,6 +3301,7 @@
 			"savingThrowForced": [
 				"strength"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		}

@@ -254,6 +254,28 @@
 			"hasToken": true
 		},
 		{
+			"name": "Banrion",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "IMR",
+			"page": 91,
+			"_copy": {
+				"name": "Unicorn",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the unicorn",
+						"with": "Banrion",
+						"flags": "i"
+					}
+				}
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"name": "Barbatos",
 			"isNpc": true,
 			"isNamedCreature": true,

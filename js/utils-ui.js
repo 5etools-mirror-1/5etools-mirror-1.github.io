@@ -3953,8 +3953,13 @@ class _RenderableCollectionGenericRowsSyncAsyncUtils {
 
 		const eleA = $eles.get(ixA);
 		const eleB = $eles.get(ixB);
+
+		const eleActive = document.activeElement;
+
 		$(eleA).insertAfter(eleB);
 		$(eleB).insertBefore($eles.get(ixA + 1));
+
+		if (eleActive) eleActive.focus();
 	}
 
 	doReorderExistingComponent (renderedMeta, entity, i) {

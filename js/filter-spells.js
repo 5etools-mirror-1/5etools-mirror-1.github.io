@@ -275,10 +275,6 @@ class PageFilterSpells extends PageFilter {
 		return true;
 	}
 
-	static getFltrSpellLevelStr (level) {
-		return level === 0 ? Parser.spLevelToFull(level) : `${Parser.spLevelToFull(level)} level`;
-	}
-
 	static getRangeType (range) {
 		switch (range.type) {
 			case Parser.RNG_SPECIAL: return PageFilterSpells.F_RNG_SPECIAL;
@@ -344,7 +340,7 @@ class PageFilterSpells extends PageFilter {
 			items: [
 				0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
 			],
-			displayFn: PageFilterSpells.getFltrSpellLevelStr,
+			displayFn: (lvl) => Parser.spLevelToFullLevelText(lvl, {isPluralCantrips: false}),
 		});
 		this._variantClassFilter = new VariantClassFilter();
 		this._classAndSubclassFilter = new MultiFilterClasses({

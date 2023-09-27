@@ -5201,21 +5201,7 @@
 				"A feat represents a talent or an area of expertise that gives a character special capabilities. It embodies training, experience, and abilities beyond what a class provides.",
 				"At certain levels, your class gives you the Ability Score Improvement feature. Using the optional feats rule, you can forgo taking that feature to take a feat of your choice instead. You can take each feat only once, unless the feat's description says otherwise.",
 				"You must meet any prerequisite specified in a feat to take that feat. If you ever lose a feat's prerequisite, you can't use that feat until you regain the prerequisite. For example, the Grappler feat requires you to have a Strength of 13 or higher. If your Strength is reduced below 13 somehow\u2014perhaps by a withering curse\u2014you can't benefit from the Grappler feat until your Strength is restored.",
-				{
-					"type": "inline",
-					"entries": [
-						"See the ",
-						{
-							"type": "link",
-							"href": {
-								"type": "internal",
-								"path": "feats.html"
-							},
-							"text": "Feats section"
-						},
-						" for more information."
-					]
-				}
+				"See the {@5etools Feats section|feats.html} for more information."
 			]
 		},
 		{
@@ -8807,7 +8793,8 @@
 								"path": "variantrules/GoS/096-za-06-ocean-environs-p203.png"
 							},
 							"width": 708,
-							"height": 1000
+							"height": 1000,
+							"credit": "Jim Nelson"
 						},
 						{
 							"type": "entries",
@@ -9322,7 +9309,8 @@
 										"path": "variantrules/GoS/097-za-07-p206.png"
 									},
 									"width": 1000,
-									"height": 960
+									"height": 960,
+									"credit": "Slawomir Maniak"
 								},
 								"When a creature moves into a whirlpool or starts its turn there, it must make a Strength ({@skill Athletics}) check with a DC determined by the whirlpool's rank. On a success, the creature can move normally. On a failure, the creature is immediately moved toward the vortex's center at the whirlpool's velocity, and the creature is {@condition restrained} by the whirlpool until the start of its next turn. If the creature reaches the whirlpool's center, the creature is pulled under the surface and either appears at a special location (see \"{@adventure Whirlpool Destinations|GoS|8|Whirlpool Destinations}\" below) or plunges a number of feet underwater equal to the whirlpool's velocity."
 							]
@@ -10649,7 +10637,8 @@
 										"path": "variantrules/GoS/098-za-08-ghost-ship-p210.png"
 									},
 									"width": 852,
-									"height": 1000
+									"height": 1000,
+									"credit": "Wayne England"
 								}
 							]
 						},
@@ -15248,7 +15237,8 @@
 								"path": "variantrules/GoS/095-za-05-travel-at-sea-p199.png"
 							},
 							"width": 772,
-							"height": 1000
+							"height": 1000,
+							"credit": "Wayne England"
 						},
 						"The activities available to a ship's crew and passengers are a bit different from the options available to a group traveling by land. Refer to \"{@book Activity While Traveling|PHB|8|Activity While Traveling}\" in chapter 8 of the {@book Player's Handbook|PHB} for more information on some of the topics discussed below.",
 						"A number of activities are restricted to certain officers, unless the DM rules otherwise. For example, a DM might allow a bard to engage in the Raise Morale activity by playing bawdy songs on deck to lift the crew's spirits.",
@@ -15988,7 +15978,7 @@
 											"Strength ({@item carpenter's tools|PHB})"
 										],
 										[
-											"Quartermaster ",
+											"Quartermaster",
 											"Wisdom ({@skill Nature})"
 										],
 										[

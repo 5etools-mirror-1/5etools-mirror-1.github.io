@@ -997,8 +997,8 @@ Parser.getArticle = function (str) {
 	return /^[aeiou]/i.test(str) ? "an" : "a";
 };
 
-Parser.spLevelToFullLevelText = function (level, dash) {
-	return `${Parser.spLevelToFull(level)}${(level === 0 ? "s" : `${dash ? "-" : " "}level`)}`;
+Parser.spLevelToFullLevelText = function (level, {isDash = false, isPluralCantrips = true} = {}) {
+	return `${Parser.spLevelToFull(level)}${(level === 0 ? (isPluralCantrips ? "s" : "") : `${isDash ? "-" : " "}level`)}`;
 };
 
 Parser.spLevelToSpellPoints = function (lvl) {
@@ -2630,6 +2630,7 @@ Parser.SRC_SjA = "SjA";
 Parser.SRC_HAT_TG = "HAT-TG";
 Parser.SRC_HAT_LMI = "HAT-LMI";
 Parser.SRC_GotSF = "GotSF";
+Parser.SRC_LK = "LK";
 
 Parser.SRC_AL_PREFIX = "AL";
 
@@ -2860,6 +2861,7 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SjA] = "Spelljammer Academy";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_HAT_TG] = "Honor Among Thieves: Thieves' Gallery";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_HAT_LMI] = "Honor Among Thieves: Legendary Magic Items";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_GotSF] = "Giants of the Star Forge";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_LK] = "Lightning Keep";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_ALCoS] = `${Parser.AL_PREFIX}Curse of Strahd`;
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_ALEE] = `${Parser.AL_PREFIX}Elemental Evil`;
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_ALRoD] = `${Parser.AL_PREFIX}Rage of Demons`;
@@ -3067,6 +3069,7 @@ Parser.SOURCE_JSON_TO_ABV[Parser.SRC_SjA] = "SjA";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_HAT_TG] = "HAT-TG";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_HAT_LMI] = "HAT-LMI";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_GotSF] = "GotSF";
+Parser.SOURCE_JSON_TO_ABV[Parser.SRC_LK] = "LK";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_ALCoS] = "ALCoS";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_ALEE] = "ALEE";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_ALRoD] = "ALRoD";
@@ -3273,6 +3276,7 @@ Parser.SOURCE_JSON_TO_DATE[Parser.SRC_SjA] = "2022-07-11"; // pt1; pt2 2022-07-1
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_HAT_TG] = "2023-03-06";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_HAT_LMI] = "2023-03-31";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_GotSF] = "2023-08-01";
+Parser.SOURCE_JSON_TO_DATE[Parser.SRC_LK] = "2023-09-26";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_ALCoS] = "2016-03-15";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_ALEE] = "2015-04-07";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_ALRoD] = "2015-09-15";
@@ -3438,6 +3442,7 @@ Parser.SOURCES_ADVENTURES = new Set([
 	Parser.SRC_KftGV,
 	Parser.SRC_GotSF,
 	Parser.SRC_PaBTSO,
+	Parser.SRC_LK,
 
 	Parser.SRC_AWM,
 ]);
@@ -3480,6 +3485,7 @@ Parser.SOURCES_NON_STANDARD_WOTC = new Set([
 	Parser.SRC_MCV3MC,
 	Parser.SRC_MCV4EC,
 	Parser.SRC_MisMV1,
+	Parser.SRC_LK,
 ]);
 Parser.SOURCES_PARTNERED_WOTC = new Set([
 	Parser.SRC_RMBRE,
@@ -3532,6 +3538,7 @@ Parser.SOURCES_COMEDY = new Set([
 	Parser.SRC_HAT_LMI,
 	Parser.SRC_MCV3MC,
 	Parser.SRC_MisMV1,
+	Parser.SRC_LK,
 ]);
 
 // Any opinionated set of sources that are "other settings"
@@ -3563,6 +3570,7 @@ Parser.SOURCES_NON_FR = new Set([
 	Parser.SRC_DSotDQ,
 	Parser.SRC_TDCSR,
 	Parser.SRC_MCV4EC,
+	Parser.SRC_LK,
 ]);
 
 // endregion
@@ -3684,6 +3692,7 @@ Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE = {};
 	Parser.SRC_KftGV,
 	Parser.SRC_GotSF,
 	Parser.SRC_PaBTSO,
+	Parser.SRC_LK,
 ].forEach(src => {
 	Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE[src] = src;
 	Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE[src.toLowerCase()] = src;

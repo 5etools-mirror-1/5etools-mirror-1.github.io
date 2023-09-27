@@ -13948,7 +13948,7 @@
 							"The creature sprinkled with dust gains a flying speed of 60 feet for 10 minutes."
 						],
 						[
-							"71-80 ",
+							"71-80",
 							"The creature sprinkled with dust must succeed on a DC 11 Constitution saving throw or fall {@condition unconscious} for 1 minute. The creature awakens if it takes damage or if it is shaken or slapped as an action."
 						],
 						[
@@ -29108,7 +29108,7 @@
 			"tier": "minor",
 			"rarity": "very rare",
 			"entries": [
-				"When you drink this potion, your physical age is reduced by {@dice 1d6 + 6} years, to a minimum of 13 years. Each time you subsequently drink a potion of longevity, there is 10 percent cumulative chance that you instead age by {@dice 1d6 + 6} years. Suspended in this amber liquid are a scorpion's tail, an adder's fang, a dead spider, and a tiny heart that, against all reason, is still beating. These ingredients vanish when the potion is opened."
+				"When you drink this potion, your physical age is reduced by {@dice 1d6 + 6} years, to a minimum of 13 years. Each time you subsequently drink a potion of longevity, there is a {@chance 10|10 percent||You grow older!|You become younger} cumulative chance that you instead age by {@dice 1d6 + 6} years. Suspended in this amber liquid are a scorpion's tail, an adder's fang, a dead spider, and a tiny heart that, against all reason, is still beating. These ingredients vanish when the potion is opened."
 			],
 			"lootTables": [
 				"Magic Item Table D"
@@ -47331,6 +47331,9 @@
 				"Vst"
 			],
 			"recharge": "dawn",
+			"entries": [
+				"The Jewel of Three Prayers is a Vestige of Divergence (see the \"Vestiges of Divergence\" sidebar). In ancient times, Alyxian the Apotheon bore this amulet as a symbol of his covenant with three Prime Deities: Sehanine the Moon Weaver, Avandra the Change Bringer, and Corellon the Arch Heart. When the jewel is found, only Sehanine's power thrums within its dormant heart. The power of the other two deities waits to be reawakened by a hero\u2014or heroes\u2014who can follow in Alyxian's footsteps."
+			],
 			"items": [
 				"Jewel of Three Prayers (Dormant)|CRCotN",
 				"Jewel of Three Prayers (Awakened)|CRCotN",
@@ -47844,7 +47847,7 @@
 			"rarity": "rare",
 			"reqAttune": true,
 			"entries": [
-				"You have resistance to one damage type while wearing this ring. The gem in the ring indicates the type, which the DM chooses or determines randomly. ",
+				"You have resistance to one damage type while wearing this ring. The gem in the ring indicates the type, which the DM chooses or determines randomly.",
 				{
 					"type": "table",
 					"colStyles": [

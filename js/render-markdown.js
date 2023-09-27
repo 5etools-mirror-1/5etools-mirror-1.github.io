@@ -196,7 +196,12 @@ class RendererMarkdown {
 				Math.max(...mdHeaderRows.map(mdHeaderRow => mdHeaderRow.length)),
 			),
 		]
-			.map((_, i) => Math.max(...mdHeaderRows.map(mdHeaderRow => (mdHeaderRow[i] || "").length)));
+			.map((_, i) => {
+				return Math.max(
+					...mdHeaderRows.map(mdHeaderRow => (mdHeaderRow[i] || "").length),
+					RendererMarkdown._md_getPaddedStyleText({style: (styles || [])[i] || ""}).length,
+				);
+			});
 
 		// region Build 2d array of table cells
 		const mdTable = [];
@@ -255,11 +260,7 @@ class RendererMarkdown {
 		const mdStyles = [];
 		if (styles) {
 			styles.forEach((style, i) => {
-				const w = widths[i];
-
-				if (style.includes("text-center")) mdStyles.push(`:${"-".repeat(Math.max(w - 2, 3))}:`);
-				else if (style.includes("text-right")) mdStyles.push(`${"-".repeat(Math.max(w - 1, 3))}:`);
-				else mdStyles.push("-".repeat(Math.max(w, 3)));
+				mdStyles.push(RendererMarkdown._md_getPaddedStyleText({style, width: widths[i]}));
 			});
 		}
 		// endregion
@@ -305,6 +306,14 @@ class RendererMarkdown {
 		if (styles?.[ixCell]?.includes("text-center")) return text.padStart(Math.floor((width - text.length) / 2) + text.length, " ").padEnd(width, " ");
 		if (styles?.[ixCell]?.includes("text-right")) return text.padStart(width, " ");
 		return text.padEnd(width, " ");
+	}
+
+	static _md_getPaddedStyleText ({style, width = null}) {
+		width = width ?? 0; // If there is no specific width requirement, minimize style widths
+
+		if (style.includes("text-center")) return `:${"-".repeat(Math.max(width - 2, 3))}:`;
+		if (style.includes("text-right")) return `${"-".repeat(Math.max(width - 1, 3))}:`;
+		return "-".repeat(Math.max(width, 3));
 	}
 
 	/*
@@ -1160,6 +1169,75 @@ RendererMarkdown.legendaryGroup = class {
 
 		const lgRender = subStack.join("").trim();
 		return `\n${lgRender}\n\n`;
+	}
+};
+
+RendererMarkdown.table = class {
+	static getCompactRenderedString (tbl, opts = {}) {
+		const meta = opts.meta || {};
+
+		const subStack = [""];
+		RendererMarkdown.get().recursiveRender(tbl, subStack, meta, {suffix: "\n"});
+		return `\n${subStack.join("").trim()}\n\n`;
+	}
+};
+
+RendererMarkdown.tableGroup = class {
+	static getCompactRenderedString (tbl, opts = {}) {
+		return RendererMarkdown.table.getCompactRenderedString(tbl, opts);
+	}
+};
+
+RendererMarkdown.cult = class {
+	static getCompactRenderedString (ent, opts = {}) {
+		return RendererMarkdown.generic.getCompactRenderedString(ent, opts);
+	}
+};
+
+RendererMarkdown.boon = class {
+	static getCompactRenderedString (ent, opts = {}) {
+		return RendererMarkdown.generic.getCompactRenderedString(ent, opts);
+	}
+};
+
+RendererMarkdown.charoption = class {
+	static getCompactRenderedString (ent, opts = {}) {
+		return RendererMarkdown.generic.getCompactRenderedString(ent, opts);
+	}
+};
+
+RendererMarkdown.action = class {
+	static getCompactRenderedString (ent, opts = {}) {
+		return RendererMarkdown.generic.getCompactRenderedString(ent, opts);
+	}
+};
+
+RendererMarkdown.condition = class {
+	static getCompactRenderedString (ent, opts = {}) {
+		return RendererMarkdown.generic.getCompactRenderedString(ent, opts);
+	}
+};
+
+RendererMarkdown.disease = class {
+	static getCompactRenderedString (ent, opts = {}) {
+		return RendererMarkdown.generic.getCompactRenderedString(ent, opts);
+	}
+};
+
+RendererMarkdown.status = class {
+	static getCompactRenderedString (ent, opts = {}) {
+		return RendererMarkdown.generic.getCompactRenderedString(ent, opts);
+	}
+};
+
+RendererMarkdown.generic = class {
+	static getCompactRenderedString (ent, opts = {}) {
+		const meta = opts.meta || {};
+
+		const subStack = [""];
+		subStack[0] += `#### ${ent._displayName || ent.name}\n\n`;
+		RendererMarkdown.get().recursiveRender({type: "entries", entries: ent.entries}, subStack, meta, {suffix: "\n"});
+		return `\n${subStack.join("").trim()}\n\n`;
 	}
 };
 

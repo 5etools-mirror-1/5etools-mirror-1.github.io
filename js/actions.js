@@ -39,6 +39,8 @@ class ActionsPage extends ListPage {
 
 			dataProps: ["action"],
 
+			isMarkdownPopout: true,
+
 			isPreviewable: true,
 		});
 	}

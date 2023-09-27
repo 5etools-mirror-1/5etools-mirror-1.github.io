@@ -46,6 +46,8 @@ class CultsBoonsPage extends ListPage {
 			listClass: "cultsboons",
 
 			dataProps: ["cult", "boon"],
+
+			isMarkdownPopout: true,
 		});
 	}
 
