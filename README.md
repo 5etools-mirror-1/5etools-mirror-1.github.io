@@ -15,3 +15,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 ## License
 
 This project is licensed under the terms of the MIT license.
+
+## Funrther Info
+
+This repo is my personal modifications and additions, and in no way reprisents the views or opinions of the 5e.tool team
