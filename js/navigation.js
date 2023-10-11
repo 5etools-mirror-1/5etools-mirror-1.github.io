@@ -80,6 +80,7 @@ class NavBar {
 		this._addElement_li(NavBar._CAT_DUNGEON_MASTER, "lootgen.html", "Loot Generator");
 		this._addElement_divider(NavBar._CAT_DUNGEON_MASTER);
 		this._addElement_li(NavBar._CAT_DUNGEON_MASTER, "maps.html", "Maps");
+		this._addElement_li(NavBar._CAT_DUNGEON_MASTER, "EncCalc.html", "Encounter Balance tools");
 
 		this._addElement_dropdown(null, NavBar._CAT_REFERENCES);
 		this._addElement_li(NavBar._CAT_REFERENCES, "actions.html", "Actions");
