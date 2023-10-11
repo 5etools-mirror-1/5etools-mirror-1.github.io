@@ -47,20 +47,37 @@ function xpMultiplier(monCount) {
 }
 
 //calculate the monster XP level
-function monsterXP(){
-	let ret = 0;
-	let tmp = 0;
-	tmp = MonXpValues[document.getElementById("MonCR1").value];
-	ret += (tmp * xpMultiplier(document.getElementById("MonCount1").value))*document.getElementById("MonCount1").value;
-	tmp = MonXpValues[document.getElementById("MonCR2").value];
-	ret += (tmp * xpMultiplier(document.getElementById("MonCount2").value))*document.getElementById("MonCount2").value;
-	tmp = MonXpValues[document.getElementById("MonCR3").value];
-	ret += (tmp * xpMultiplier(document.getElementById("MonCount3").value))*document.getElementById("MonCount3").value;
-	tmp = MonXpValues[document.getElementById("MonCR4").value];
-	ret += (tmp * xpMultiplier(document.getElementById("MonCount4").value))*document.getElementById("MonCount4").value;
-	tmp = MonXpValues[document.getElementById("MonCR5").value];
-	ret += (tmp * xpMultiplier(document.getElementById("MonCount5").value))*document.getElementById("MonCount5").value;
-	return ret;
+function monsterXP() {
+  let totalMonsterCount = 0;
+  let ret = 0;
+
+  for (let i = 1; i <= 5; i++) {
+    const countElement = document.getElementById(`MonCount${i}`);
+
+    if (countElement) {
+      const countValue = parseInt(countElement.value, 10);
+      if (!isNaN(countValue)) {
+        totalMonsterCount += countValue;
+      }
+    }
+  }
+
+  for (let i = 1; i <= 5; i++) {
+    const crElement = document.getElementById(`MonCR${i}`);
+    const countElement = document.getElementById(`MonCount${i}`);
+
+    if (crElement && countElement) {
+      const crValue = MonXpValues[crElement.value];
+      const countValue = parseInt(countElement.value, 10);
+      const multiplier = xpMultiplier(totalMonsterCount);
+
+      if (!isNaN(crValue) && !isNaN(countValue)) {
+        ret += crValue * countValue * multiplier;
+      }
+    }
+  }
+
+  return ret;
 }
 
 //calculate the players XP tollerence
