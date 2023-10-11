@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!--5ETOOLS_CMP-->
+	<!--5ETOOLS_ANALYTICS-->
+	<!--5ETOOLS_ADCODE-->
+	<meta charset="utf-8">
+	<meta name="description" content="A suite of browser-based tools for 5th Edition  Dungeons &amp; Dragons players and Dungeon Masters.">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<title>5etools</title>
+
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/fontawesome.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/index.css">
+
+	<!-- Favicons -->
+	<link rel="icon" type="image/svg+xml" href="favicon.svg">
+	<link rel="icon" type="image/png" sizes="256x256" href="favicon-256x256.png">
+	<link rel="icon" type="image/png" sizes="144x144" href="favicon-144x144.png">
+	<link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+	<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+	<!-- Chrome Web App Icons -->
+	<link rel="manifest" href="manifest.webmanifest">
+	<meta name="application-name" content="5etools">
+	<meta name="theme-color" content="#006bc4">
+
+	<!-- Windows Start Menu tiles -->
+	<meta name="msapplication-config" content="browserconfig.xml"/>
+	<meta name="msapplication-TileColor" content="#006bc4">
+
+	<!-- Apple Touch Icons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+	<link rel="apple-touch-icon" sizes="360x360" href="apple-touch-icon-360x360.png">
+	<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+	<meta name="apple-mobile-web-app-title" content="5etools">
+
+	<!-- macOS Safari Pinned Tab and Touch Bar -->
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
+
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
+	<script type="text/javascript" src="sw-injector.js"></script>
+
+	<script type="text/javascript" src="js/styleswitch.js"></script>
+	<script type="text/javascript" src="js/navigation.js"></script>
+	<script type="text/javascript" src="js/browsercheck.js"></script>
+</head>
+<body>
+<header class="hidden-xs hidden-sm page__header">
+	<div class="container ve-flex-v-baseline">
+		<h1 class="page__title no-wrap my-0 page__title no-wrap my-0--home">5e<span>tools</span></h1>
+		<p class="page__subtitle no-wrap my-0" id="page__subtitle">A suite of tools for 5th Edition  Dungeons &amp; Dragons players and Dungeon Masters.</p>
+	</div>
+</header>
+
+<nav class="container page__nav" id="navigation">
+	<ul class="nav nav-pills page__nav-inner" id="navbar">
+	</ul>
+</nav>
+
+<div class="cancer__wrp-sidebar-rhs cancer__wrp-sidebar-rhs--scrolling-page cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--top"><!--5ETOOLS_AD_RIGHT_1--></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--bottom"><!--5ETOOLS_AD_RIGHT_2--></div></div>
+
+<style>
+table{
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 80%
+}
+th, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  width: 4%;
+}
+.encalc{
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 50%
+}
+</style>
+<body>
+    <h1 id="name">5e Encounter Size Calculator</h1> <br><br>
+
+    I'd like to make 
+
+    <select id="difficulty">
+        <option value="any">any difficulty</option>
+        <option value="easy">an easy</option>
+        <option value="medium">a medium</option>
+        <option value="hard">a hard</option>
+    </select>
+
+    Encounter for my party of <input type="number" id="PCount" min="1" value="4"> players
+
+    <button onclick="EncCalc()">Produce Table</button><button onclick="clearTable()">Clear</button><br><br>
+    <div id="EncTable"></div>
+	<br>
+	<hr>
+	<br>
+	Would you rather check an existing encounter for balance? Fill in the form below
+
+	<table class="encalc">
+		<tr>
+			<td colspan="2"><b>Players</b></td>
+		</tr>
+		<tr>
+			<td>
+				Player Count
+			</td>
+			<td>
+				<input type="number" id="PlayerCount" min="1" value="4" style="width: 80%;">
+			</td>
+		</tr>
+				<tr>
+			<td>
+				Party Level
+			</td>
+			<td>
+				<input type="number" id="PartyLVL" min="1" value="4" max="20" style="width: 80%;">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Monsters</b></td>
+		</tr>
+		<tr>
+			<td>
+				Monster Count <input type="number" id="MonCount1" min="1" value="4" style="width: 80%;">
+			</td>
+			<td>
+				Monster CR 
+				<select id="MonCR1" style="width: 80%;">
+					<option value=0>0</option>
+					<option value=1>1/8</option>
+					<option value=2>1/4</option>
+					<option value=3>1/2</option>
+					<option value=4>1</option>
+					<option value=5>2</option>
+					<option value=6>3</option>
+					<option value=7>4</option>
+					<option value=8>5</option>
+					<option value=9>6</option>
+					<option value=10>7</option>
+					<option value=11>8</option>
+					<option value=12>9</option>
+					<option value=13>10</option>
+					<option value=14>11</option>
+					<option value=15>12</option>
+					<option value=16>13</option>
+					<option value=17>14</option>
+					<option value=18>15</option>
+					<option value=19>16</option>
+					<option value=20>17</option>
+					<option value=21>18</option>
+					<option value=22>19</option>
+					<option value=23>20</option>
+					<option value=24>21</option>
+					<option value=25>22</option>
+					<option value=26>23</option>
+					<option value=27>24</option>
+					<option value=28>25</option>
+					<option value=29>26</option>
+					<option value=30>27</option>
+					<option value=31>28</option>
+					<option value=32>29</option>
+					<option value=33>30</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Monster Count <input type="number" id="MonCount2" min="0" value="0" style="width: 80%;">
+			</td>
+			<td>
+				Monster CR 
+				<select id="MonCR2" style="width: 80%;">
+					<option value=0>0</option>
+					<option value=1>1/8</option>
+					<option value=2>1/4</option>
+					<option value=3>1/2</option>
+					<option value=4>1</option>
+					<option value=5>2</option>
+					<option value=6>3</option>
+					<option value=7>4</option>
+					<option value=8>5</option>
+					<option value=9>6</option>
+					<option value=10>7</option>
+					<option value=11>8</option>
+					<option value=12>9</option>
+					<option value=13>10</option>
+					<option value=14>11</option>
+					<option value=15>12</option>
+					<option value=16>13</option>
+					<option value=17>14</option>
+					<option value=18>15</option>
+					<option value=19>16</option>
+					<option value=20>17</option>
+					<option value=21>18</option>
+					<option value=22>19</option>
+					<option value=23>20</option>
+					<option value=24>21</option>
+					<option value=25>22</option>
+					<option value=26>23</option>
+					<option value=27>24</option>
+					<option value=28>25</option>
+					<option value=29>26</option>
+					<option value=30>27</option>
+					<option value=31>28</option>
+					<option value=32>29</option>
+					<option value=33>30</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Monster Count <input type="number" id="MonCount3" min="0" value="0" style="width: 80%;">
+			</td>
+			<td>
+				Monster CR 
+				<select id="MonCR3" style="width: 80%;">
+					<option value=0>0</option>
+					<option value=1>1/8</option>
+					<option value=2>1/4</option>
+					<option value=3>1/2</option>
+					<option value=4>1</option>
+					<option value=5>2</option>
+					<option value=6>3</option>
+					<option value=7>4</option>
+					<option value=8>5</option>
+					<option value=9>6</option>
+					<option value=10>7</option>
+					<option value=11>8</option>
+					<option value=12>9</option>
+					<option value=13>10</option>
+					<option value=14>11</option>
+					<option value=15>12</option>
+					<option value=16>13</option>
+					<option value=17>14</option>
+					<option value=18>15</option>
+					<option value=19>16</option>
+					<option value=20>17</option>
+					<option value=21>18</option>
+					<option value=22>19</option>
+					<option value=23>20</option>
+					<option value=24>21</option>
+					<option value=25>22</option>
+					<option value=26>23</option>
+					<option value=27>24</option>
+					<option value=28>25</option>
+					<option value=29>26</option>
+					<option value=30>27</option>
+					<option value=31>28</option>
+					<option value=32>29</option>
+					<option value=33>30</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Monster Count <input type="number" id="MonCount4" min="0" value="0" style="width: 80%;">
+			</td>
+			<td>
+				Monster CR 
+				<select id="MonCR4" style="width: 80%;">
+					<option value=0>0</option>
+					<option value=1>1/8</option>
+					<option value=2>1/4</option>
+					<option value=3>1/2</option>
+					<option value=4>1</option>
+					<option value=5>2</option>
+					<option value=6>3</option>
+					<option value=7>4</option>
+					<option value=8>5</option>
+					<option value=9>6</option>
+					<option value=10>7</option>
+					<option value=11>8</option>
+					<option value=12>9</option>
+					<option value=13>10</option>
+					<option value=14>11</option>
+					<option value=15>12</option>
+					<option value=16>13</option>
+					<option value=17>14</option>
+					<option value=18>15</option>
+					<option value=19>16</option>
+					<option value=20>17</option>
+					<option value=21>18</option>
+					<option value=22>19</option>
+					<option value=23>20</option>
+					<option value=24>21</option>
+					<option value=25>22</option>
+					<option value=26>23</option>
+					<option value=27>24</option>
+					<option value=28>25</option>
+					<option value=29>26</option>
+					<option value=30>27</option>
+					<option value=31>28</option>
+					<option value=32>29</option>
+					<option value=33>30</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Monster Count <input type="number" id="MonCount5" min="0" value="0" style="width: 80%;">
+			</td>
+			<td>
+				Monster CR 
+				<select id="MonCR5" style="width: 80%;">
+					<option value=0>0</option>
+					<option value=1>1/8</option>
+					<option value=2>1/4</option>
+					<option value=3>1/2</option>
+					<option value=4>1</option>
+					<option value=5>2</option>
+					<option value=6>3</option>
+					<option value=7>4</option>
+					<option value=8>5</option>
+					<option value=9>6</option>
+					<option value=10>7</option>
+					<option value=11>8</option>
+					<option value=12>9</option>
+					<option value=13>10</option>
+					<option value=14>11</option>
+					<option value=15>12</option>
+					<option value=16>13</option>
+					<option value=17>14</option>
+					<option value=18>15</option>
+					<option value=19>16</option>
+					<option value=20>17</option>
+					<option value=21>18</option>
+					<option value=22>19</option>
+					<option value=23>20</option>
+					<option value=24>21</option>
+					<option value=25>22</option>
+					<option value=26>23</option>
+					<option value=27>24</option>
+					<option value=28>25</option>
+					<option value=29>26</option>
+					<option value=30>27</option>
+					<option value=31>28</option>
+					<option value=32>29</option>
+					<option value=33>30</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<button onclick="BalanceCalc()">Calculate</button>
+				<br>
+				<p id="CalcOut"></p><br>
+				<p id="CalcMethod"></p>
+
+			</td>
+		</tr>
+	</table>	
+
+    <script src="js/EncCalc.js"></script>
+	<script src="js/BalanceCalc.js"></script>
+
+	
+
+</main>
+<footer class="container">
+	<p class="ve-text-center">
+		Version
+		<a id="version_number" href="#">?</a>
+		| <span style="text-decoration: red line-through">&nbsp;&copy;&nbsp;</span><span id="current_year">2019</span> 5etools
+		| <a href="privacy-policy.html">Privacy Policy</a>
+		<a id='unic-gdpr' onclick='__tcfapi("openunic");return false;' style='display:none;cursor:pointer;'>Change Ad Consent</a>
+		<a id='unic-ccpa' onclick="window.__uspapi('openunic')" style='display:none;cursor:pointer;'>Do not sell my data</a>
+		<br>
+		<i>5etools&reg; is a Registered Trademark of The Norr Group Ltd. All rights reserved.</i>
+	</p>
+</footer>
+<div class="cancer__footer-pad"></div>
+<!--5ETOOLS_SCRIPT_ANCHOR-->
+<!--5ETOOLS_AD_ADHESION-->
+<script type="text/javascript" src="js/parser.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/utils-ui.js"></script>
+<script type="text/javascript" src="lib/localforage.js"></script>
+<script type="text/javascript" src="js/omnidexer.js"></script>
+<script type="text/javascript" src="js/omnisearch.js"></script>
+<script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/utils-dataloader.js"></script>
+<script type="text/javascript" src="js/utils-brew.js"></script>
+<script type="text/javascript" src="js/render.js"></script>
+<script type="text/javascript" src="js/render-dice.js"></script>
+<script type="text/javascript" src="js/scalecreature.js"></script>
+<script type="text/javascript" src="js/hist.js"></script>
+<script type="text/javascript" src="lib/jquery.js"></script>
+<script type="text/javascript" src="lib/elasticlunr.js"></script>
+<script>
+	(async () => {
+		await Promise.all([
+			PrereleaseUtil.pInit(),
+			BrewUtil2.pInit(),
+		]);
+		ExcludeUtil.pInitialise().then(null);
+
+		const $demoRoller = $(`#demo_roller`);
+		$demoRoller.html(Renderer.get().render(`{@dice ${$demoRoller.html()}}`));
+
+		$(`#current_year`).text((new Date).getFullYear());
+
+		$(`#version_number`).text(VERSION_NUMBER).attr("href", `https://github.com/5etools-mirror-1/5etools-mirror-1.github.io/releases/latest`);
+
+		const $lnkB20 = $(`#betteR20_link`);
+		$lnkB20.attr("href", `${$lnkB20.attr("href")}?v=${VERSION_NUMBER}_${Date.now()}`);
+
+		window.__cmp2 = () => {
+			alert("This only works on a live version of the site!");
+		};
+
+		// TAG Disabled until further notice
+		/*
+		(async () => {
+			if (!await _Donate.pNotDonating()) {
+				const $wrpDon = $(`#don-wrapper`).show();
+				$(`<div><span class="glyphicon glyphicon-remove"></span></div>`).css({
+					position: "absolute",
+					top: 0,
+					right: 2,
+					cursor: "pointer"
+				}).click(() => {
+					StorageUtil.pSet("notDonating", true);
+					$wrpDon.remove();
+				}).appendTo($wrpDon);
+				_Donate.init();
+			}
+		})();
+		*/
+	})();
+</script>
+</body>
+</html>
