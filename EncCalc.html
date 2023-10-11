@@ -73,26 +73,28 @@
 <div class="cancer__wrp-sidebar-rhs cancer__wrp-sidebar-rhs--scrolling-page cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--top"><!--5ETOOLS_AD_RIGHT_1--></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--bottom"><!--5ETOOLS_AD_RIGHT_2--></div></div>
 
 <style>
-table{
-	border: 1px solid black;
-	border-collapse: collapse;
-	width: 80%;
-	display: flex;
-   justify-content: center;
-   align-items: center;
-   height: 100vh; /* Adjust the height as needed */
-}
-th, td{
-  border: 1px solid black;
-  border-collapse: collapse;
-  text-align: center;
-  width: 4%;
-}
-.encalc{
-  border: 1px solid black;
-  border-collapse: collapse;
-  width: 50%
-}
+	table{
+		border: 1px solid black;
+		border-collapse: collapse;
+		width: 80%;
+	}
+	th, td{
+		border: 1px solid black;
+		border-collapse: collapse;
+		text-align: center;
+		width: 4%;
+	}
+	.encalc{
+		border: 1px solid black;
+		border-collapse: collapse;
+		width: 50%
+	}
+	.center-table {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh; /* Adjust the height as needed */
+	}
 </style>
 <body>
    <h1 id="name" style="text-align: center;">5e Encounter Size Calculator</h1> <br><br>
@@ -109,13 +111,13 @@ th, td{
     Encounter for my party of <input type="number" id="PCount" min="1" value="4"> players
 
     <button onclick="EncCalc()">Produce Table</button><button onclick="clearTable()">Clear</button><br><br>
-    <div id="EncTable"></div></div>
+    <div class="center-table"><div id="EncTable"></div></div></div>
 	<br>
 	<hr>
 	<br>
 	Would you rather check an existing encounter for balance? Fill in the form below
 
-	<table class="encalc">
+	<div class="center-table"><table class="encalc">
 		<tr>
 			<td colspan="2"><b>Players</b></td>
 		</tr>
@@ -367,7 +369,7 @@ th, td{
 
 			</td>
 		</tr>
-	</table>	
+	</table>	</div>
 
     <script src="js/EncCalc.js"></script>
 	<script src="js/BalanceCalc.js"></script>
