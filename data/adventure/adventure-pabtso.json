@@ -221,7 +221,16 @@
 													"title": "Sword Coast region surrounding Phandalin",
 													"credit": "Mike Schley",
 													"width": 1700,
-													"height": 2216
+													"height": 2216,
+													"id": "4CD",
+													"grid": {
+														"type": "hexColsOdd",
+														"size": 240,
+														"offsetX": 17,
+														"offsetY": -35,
+														"scale": 3,
+														"units": "miles"
+													}
 												},
 												{
 													"type": "image",
@@ -232,7 +241,18 @@
 													"imageType": "mapPlayer",
 													"title": "Unlabeled Version",
 													"width": 1700,
-													"height": 2216
+													"height": 2216,
+													"mapParent": {
+														"id": "4CD"
+													},
+													"grid": {
+														"type": "hexColsOdd",
+														"size": 240,
+														"offsetX": 17,
+														"offsetY": -35,
+														"scale": 3,
+														"units": "miles"
+													}
 												}
 											]
 										}
@@ -654,7 +674,14 @@
 											"credit": "Mike Schley",
 											"width": 1002,
 											"height": 1369,
-											"id": "49b"
+											"id": "49b",
+											"grid": {
+												"type": "square",
+												"size": 150,
+												"offsetX": 84,
+												"offsetY": 31,
+												"scale": 3
+											}
 										},
 										{
 											"type": "image",
@@ -669,7 +696,14 @@
 											"mapParent": {
 												"id": "49b"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 150,
+												"offsetX": 84,
+												"offsetY": 31,
+												"scale": 3
+											}
 										}
 									]
 								},
@@ -3652,6 +3686,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/012-map-1.02-cragmaw-hideout.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 213,
+												"offsetX": 17,
+												"offsetY": 160,
+												"scale": 3
 											}
 										},
 										{
@@ -3667,7 +3708,14 @@
 											"mapParent": {
 												"id": "49c"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 213,
+												"offsetX": 17,
+												"offsetY": 160,
+												"scale": 3
+											}
 										}
 									]
 								},
@@ -4714,6 +4762,11 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/PaBTSO/thumbnail/018-map-2.01-phandalin.webp"
+									},
+									"grid": {
+										"type": "none",
+										"size": 90,
+										"distance": 50
 									}
 								},
 								{
@@ -4729,7 +4782,12 @@
 									"mapParent": {
 										"id": "49d"
 									},
-									"credit": "Mike Schley"
+									"credit": "Mike Schley",
+									"grid": {
+										"type": "none",
+										"size": 90,
+										"distance": 50
+									}
 								}
 							]
 						},
@@ -5943,6 +6001,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/027-map-2.02-redbrand-hideout.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 212,
+												"offsetX": -63,
+												"offsetY": -25,
+												"scale": 3
 											}
 										},
 										{
@@ -5958,7 +6023,14 @@
 											"mapParent": {
 												"id": "49e"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 212,
+												"offsetX": -63,
+												"offsetY": -25,
+												"scale": 3
+											}
 										}
 									]
 								},
@@ -6798,7 +6870,14 @@
 							"credit": "Mike Schley",
 							"width": 1002,
 							"height": 1369,
-							"imageType": "map"
+							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 167,
+								"offsetX": 74,
+								"offsetY": 53,
+								"scale": 3
+							}
 						},
 						"Twelve {@creature Zombie||zombies} lurk inside the crumbled shell of the old watchtower and can't be seen from outside. However, any character who succeeds on a DC 15 Wisdom ({@skill Perception}) check smells a deathly odor wafting from the tower's direction.",
 						"When characters approach the tower or the tent, the zombies shamble from the tower. If a battle breaks out, Hamun Kost, a human {@creature mage}, emerges from his tent and asks, \"What is the meaning of this?\"",
@@ -7330,6 +7409,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/037-map-3.02-ruins-of-thundertree.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 105,
+												"offsetX": 29,
+												"offsetY": 77,
+												"scale": 3
 											}
 										},
 										{
@@ -7345,7 +7431,14 @@
 											"mapParent": {
 												"id": "49f"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 105,
+												"offsetX": 29,
+												"offsetY": 77,
+												"scale": 3
+											}
 										}
 									]
 								},
@@ -7748,7 +7841,14 @@
 									"credit": "Mike Schley",
 									"width": 1010,
 									"height": 1372,
-									"imageType": "map"
+									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 158,
+										"offsetX": 95,
+										"offsetY": 76,
+										"scale": 3
+									}
 								},
 								"The camp is depicted on map 3.3. When the characters find the camp, read the following:",
 								{
@@ -8808,6 +8908,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/044-map-3.04-cragmaw-castle.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 201,
+												"offsetX": 44,
+												"offsetY": 69,
+												"scale": 3
 											}
 										},
 										{
@@ -8823,7 +8930,14 @@
 											"mapParent": {
 												"id": "4a0"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 201,
+												"offsetX": 44,
+												"offsetY": 69,
+												"scale": 3
+											}
 										}
 									]
 								},
@@ -13351,6 +13465,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/048-map-4.01-wave-echo-cave.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 118,
+												"offsetX": 35,
+												"offsetY": 4,
+												"scale": 4
 											}
 										},
 										{
@@ -13366,7 +13487,14 @@
 											"mapParent": {
 												"id": "4a1"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 118,
+												"offsetX": 35,
+												"offsetY": 4,
+												"scale": 4
+											}
 										}
 									]
 								},
@@ -14395,7 +14523,14 @@
 													"credit": "Mike Schley",
 													"width": 1002,
 													"height": 1369,
-													"id": "4a2"
+													"id": "4a2",
+													"grid": {
+														"type": "square",
+														"size": 194,
+														"offsetX": 44,
+														"offsetY": 24,
+														"scale": 3
+													}
 												},
 												{
 													"type": "image",
@@ -14410,7 +14545,14 @@
 													"mapParent": {
 														"id": "4a2"
 													},
-													"credit": "Mike Schley"
+													"credit": "Mike Schley",
+													"grid": {
+														"type": "square",
+														"size": 194,
+														"offsetX": 44,
+														"offsetY": 24,
+														"scale": 3
+													}
 												}
 											]
 										},
@@ -14538,7 +14680,14 @@
 											"credit": "Mike Schley",
 											"width": 1010,
 											"height": 1372,
-											"imageType": "map"
+											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 150,
+												"offsetX": -62,
+												"offsetY": 33,
+												"scale": 3
+											}
 										},
 										"The makeshift camp, shown on map 5.2, consists of a few tents and a small fire. The camp is situated in the center of a small clearing. As the characters approach the camp, they overhear one of the goblins complaining about their leader in Common:",
 										{
@@ -14638,7 +14787,14 @@
 															"credit": "Mike Schley",
 															"width": 1002,
 															"height": 1369,
-															"id": "4a3"
+															"id": "4a3",
+															"grid": {
+																"type": "square",
+																"size": 188,
+																"offsetX": -90,
+																"offsetY": -102,
+																"scale": 3
+															}
 														},
 														{
 															"type": "image",
@@ -14653,7 +14809,14 @@
 															"mapParent": {
 																"id": "4a3"
 															},
-															"credit": "Mike Schley"
+															"credit": "Mike Schley",
+															"grid": {
+																"type": "square",
+																"size": 188,
+																"offsetX": -90,
+																"offsetY": -102,
+																"scale": 3
+															}
 														}
 													]
 												}
@@ -14828,7 +14991,14 @@
 													"credit": "Mike Schley",
 													"width": 1002,
 													"height": 1369,
-													"id": "4a4"
+													"id": "4a4",
+													"grid": {
+														"type": "square",
+														"size": 162,
+														"offsetX": -36,
+														"offsetY": -48,
+														"scale": 3
+													}
 												},
 												{
 													"type": "image",
@@ -14843,7 +15013,14 @@
 													"mapParent": {
 														"id": "4a4"
 													},
-													"credit": "Mike Schley"
+													"credit": "Mike Schley",
+													"grid": {
+														"type": "square",
+														"size": 162,
+														"offsetX": -36,
+														"offsetY": -48,
+														"scale": 3
+													}
 												}
 											]
 										},
@@ -17413,6 +17590,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/069-map-5.05-zorzulas-rest.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 189,
+												"offsetX": 79,
+												"offsetY": 60,
+												"scale": 3
 											}
 										},
 										{
@@ -17428,7 +17612,14 @@
 											"mapParent": {
 												"id": "4a5"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 189,
+												"offsetX": 79,
+												"offsetY": 60,
+												"scale": 3
+											}
 										}
 									]
 								},
@@ -18071,7 +18262,14 @@
 											"credit": "Mike Schley",
 											"width": 1010,
 											"height": 1372,
-											"id": "4a6"
+											"id": "4a6",
+											"grid": {
+												"type": "square",
+												"size": 143,
+												"offsetX": 4,
+												"offsetY": 55,
+												"scale": 3
+											}
 										},
 										{
 											"type": "image",
@@ -18086,7 +18284,14 @@
 											"mapParent": {
 												"id": "4a6"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 143,
+												"offsetX": 4,
+												"offsetY": 55,
+												"scale": 3
+											}
 										}
 									]
 								},
@@ -18305,7 +18510,10 @@
 									"credit": "Hex Sharpe",
 									"width": 1173,
 									"height": 1626,
-									"imageType": "map"
+									"imageType": "map",
+									"grid": {
+										"type": "none"
+									}
 								},
 								"The characters learned in {@adventure chapter 5|PaBTSO|5} about four obelisk shards around Phandalin that the Sawplee goblins gathered. The mind flayer fanatics possess these shards now, but the fanatics need as many obelisk fragments as possible to ensure their ritual will succeed.",
 								"The Sawplees' map reveals the locations of three other fragments: an abandoned dwarven temple called Talhundereth, the crypt beneath it, and a subterranean trading nexus called Gibbet Crossing. These locations are in the Starmetal Hills, several days northeast of Phandalin.",
@@ -18511,7 +18719,14 @@
 															"credit": "Mike Schley",
 															"width": 1006,
 															"height": 1372,
-															"id": "4a7"
+															"id": "4a7",
+															"grid": {
+																"type": "square",
+																"size": 322,
+																"offsetX": 55,
+																"offsetY": -79,
+																"scale": 3
+															}
 														},
 														{
 															"type": "image",
@@ -18526,7 +18741,14 @@
 															"mapParent": {
 																"id": "4a7"
 															},
-															"credit": "Mike Schley"
+															"credit": "Mike Schley",
+															"grid": {
+																"type": "square",
+																"size": 322,
+																"offsetX": 55,
+																"offsetY": -79,
+																"scale": 3
+															}
 														}
 													]
 												},
@@ -18628,7 +18850,14 @@
 													"credit": "Mike Schley",
 													"width": 1378,
 													"height": 1002,
-													"imageType": "map"
+													"imageType": "map",
+													"grid": {
+														"type": "square",
+														"size": 189,
+														"offsetX": 82,
+														"offsetY": 80,
+														"scale": 3
+													}
 												},
 												{
 													"type": "insetReadaloud",
@@ -19928,6 +20157,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/086-map-6.03-talhundereth.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 339,
+												"offsetX": 105,
+												"offsetY": -100,
+												"scale": 3
 											}
 										},
 										{
@@ -19943,7 +20179,14 @@
 											"mapParent": {
 												"id": "4a8"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 339,
+												"offsetX": 105,
+												"offsetY": -100,
+												"scale": 3
+											}
 										}
 									]
 								},
@@ -22005,6 +22248,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/092-map-6.04-crypt-of-the-talhund.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 125,
+												"offsetX": 77,
+												"offsetY": 51,
+												"scale": 3
 											}
 										},
 										{
@@ -22020,7 +22270,14 @@
 											"mapParent": {
 												"id": "4a9"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 125,
+												"offsetX": 77,
+												"offsetY": 51,
+												"scale": 3
+											}
 										}
 									]
 								},
@@ -27457,6 +27714,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/098-map-6.05-gibbet-crossing.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 121,
+												"offsetX": -17,
+												"offsetY": -35,
+												"scale": 4
 											}
 										},
 										{
@@ -27472,7 +27736,14 @@
 											"mapParent": {
 												"id": "4aa"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 121,
+												"offsetX": -17,
+												"offsetY": -35,
+												"scale": 4
+											}
 										}
 									]
 								},
@@ -30696,6 +30967,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/106-map-7.01-tunnels-of-the-deep.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 121,
+												"offsetX": -14,
+												"offsetY": -32,
+												"scale": 3
 											}
 										},
 										{
@@ -30711,7 +30989,14 @@
 											"mapParent": {
 												"id": "4ab"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 121,
+												"offsetX": -14,
+												"offsetY": -32,
+												"scale": 3
+											}
 										}
 									]
 								},
@@ -32323,6 +32608,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/111-map-7.02-illithinoch.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 193,
+												"offsetX": -58,
+												"offsetY": 56,
+												"scale": 3
 											}
 										},
 										{
@@ -32338,7 +32630,14 @@
 											"mapParent": {
 												"id": "4ac"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 193,
+												"offsetX": -58,
+												"offsetY": 56,
+												"scale": 3
+											}
 										}
 									]
 								},
@@ -33673,6 +33972,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/119-map-7.03-feeder-trenches.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 200,
+												"offsetX": 64,
+												"offsetY": 93,
+												"scale": 3
 											}
 										},
 										{
@@ -33688,7 +33994,14 @@
 											"mapParent": {
 												"id": "4ad"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 200,
+												"offsetX": 64,
+												"offsetY": 93,
+												"scale": 3
+											}
 										}
 									]
 								},
@@ -35633,6 +35946,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/121-map-7.04-spawn-hollow.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 181,
+												"offsetX": 79,
+												"offsetY": 94,
+												"scale": 3
 											}
 										},
 										{
@@ -35648,7 +35968,14 @@
 											"mapParent": {
 												"id": "4ae"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 181,
+												"offsetX": 79,
+												"offsetY": 94,
+												"scale": 3
+											}
 										}
 									]
 								},
@@ -36091,6 +36418,12 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/123-map-7.05-labyrinth-of-eyes.webp"
+											},
+											"grid": {
+												"type": "square",
+												"offsetX": 17,
+												"offsetY": 81,
+												"scale": 3
 											}
 										},
 										{
@@ -36106,7 +36439,13 @@
 											"mapParent": {
 												"id": "4af"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"offsetX": 17,
+												"offsetY": 81,
+												"scale": 3
+											}
 										}
 									]
 								},
@@ -36533,6 +36872,12 @@
 															"hrefThumbnail": {
 																"type": "internal",
 																"path": "adventure/PaBTSO/thumbnail/125-map-7.06-labyrinth-of-eyes-alternate-configuration.webp"
+															},
+															"grid": {
+																"type": "square",
+																"offsetX": 17,
+																"offsetY": 81,
+																"scale": 3
 															}
 														},
 														{
@@ -36548,7 +36893,13 @@
 															"mapParent": {
 																"id": "4b0"
 															},
-															"credit": "Mike Schley"
+															"credit": "Mike Schley",
+															"grid": {
+																"type": "square",
+																"offsetX": 17,
+																"offsetY": 81,
+																"scale": 3
+															}
 														}
 													]
 												}
@@ -40618,6 +40969,11 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/130-map-8.01-briny-maze.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 94,
+												"scale": 3
 											}
 										},
 										{
@@ -40633,7 +40989,12 @@
 											"mapParent": {
 												"id": "4b2"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 94,
+												"scale": 3
+											}
 										}
 									]
 								},
@@ -41597,7 +41958,14 @@
 									"credit": "Mike Schley",
 									"width": 1002,
 									"height": 1369,
-									"imageType": "map"
+									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 90,
+										"offsetX": -28,
+										"offsetY": -15,
+										"scale": 3
+									}
 								},
 								{
 									"type": "insetReadaloud",
@@ -41679,7 +42047,14 @@
 									"credit": "Mike Schley",
 									"width": 1010,
 									"height": 1372,
-									"imageType": "map"
+									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 90,
+										"offsetX": -15,
+										"offsetY": -17,
+										"scale": 3
+									}
 								},
 								{
 									"type": "insetReadaloud",
@@ -42016,6 +42391,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/139-map-8.04-mire-of-doubt.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 115,
+												"offsetX": -9,
+												"offsetY": -17,
+												"scale": 4
 											}
 										},
 										{
@@ -42031,7 +42413,14 @@
 											"mapParent": {
 												"id": "4b3"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 115,
+												"offsetX": -9,
+												"offsetY": -17,
+												"scale": 4
+											}
 										}
 									]
 								},
@@ -42633,6 +43022,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/141-map-8.05-the-nematode.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 115,
+												"offsetX": 7,
+												"offsetY": -17,
+												"scale": 4
 											}
 										},
 										{
@@ -42648,7 +43044,14 @@
 											"mapParent": {
 												"id": "4b4"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 115,
+												"offsetX": 7,
+												"offsetY": -17,
+												"scale": 4
+											}
 										}
 									]
 								},
@@ -42788,7 +43191,14 @@
 									"credit": "Mike Schley",
 									"width": 1002,
 									"height": 1369,
-									"imageType": "map"
+									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 106,
+										"offsetX": 37,
+										"offsetY": 49,
+										"scale": 4
+									}
 								},
 								{
 									"type": "insetReadaloud",
@@ -42832,7 +43242,14 @@
 									"credit": "Mike Schley",
 									"width": 1010,
 									"height": 1373,
-									"imageType": "map"
+									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 121,
+										"offsetX": 16,
+										"offsetY": 14,
+										"scale": 4
+									}
 								},
 								{
 									"type": "insetReadaloud",
@@ -42977,6 +43394,12 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/145-map-8.08-wailing-battlefield.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 109,
+												"offsetY": -60,
+												"scale": 4
 											}
 										},
 										{
@@ -42992,7 +43415,13 @@
 											"mapParent": {
 												"id": "4b5"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 109,
+												"offsetY": -60,
+												"scale": 4
+											}
 										}
 									]
 								},
@@ -44484,6 +44913,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/PaBTSO/thumbnail/147-map-8.09-ilvaashs-anima.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 165,
+												"offsetX": -44,
+												"offsetY": -65,
+												"scale": 4
 											}
 										},
 										{
@@ -44499,7 +44935,14 @@
 											"mapParent": {
 												"id": "4b6"
 											},
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"grid": {
+												"type": "square",
+												"size": 165,
+												"offsetX": -44,
+												"offsetY": -65,
+												"scale": 4
+											}
 										}
 									]
 								},

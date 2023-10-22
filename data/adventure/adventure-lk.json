@@ -794,6 +794,13 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/LK/thumbnail/000-map-0.01-lightning-keep.webp"
+									},
+									"grid": {
+										"type": "square",
+										"size": 289,
+										"offsetX": 29,
+										"offsetY": 124,
+										"scale": 3
 									}
 								},
 								{
@@ -809,7 +816,14 @@
 									"mapParent": {
 										"id": "040"
 									},
-									"credit": "Sean Macdonald"
+									"credit": "Sean Macdonald",
+									"grid": {
+										"type": "square",
+										"size": 289,
+										"offsetX": 29,
+										"offsetY": 124,
+										"scale": 3
+									}
 								}
 							]
 						},
