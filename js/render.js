@@ -4581,7 +4581,7 @@ Renderer.tag = class {
 
 	static TagRecipe = class extends this._TagPipedDisplayTextThird {
 		tagName = "recipe";
-		defaultSource = Parser.SRC_HEROES_FEAST;
+		defaultSource = Parser.SRC_HF;
 		page = UrlUtil.PG_RECIPES;
 	};
 
@@ -10341,6 +10341,7 @@ Renderer.recipe = class {
 		"cup",
 		"handful",
 		"ounce",
+		"packet",
 		"piece",
 		"pound",
 		"slice",

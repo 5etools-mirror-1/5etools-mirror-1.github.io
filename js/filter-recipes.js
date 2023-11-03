@@ -8,6 +8,7 @@ class PageFilterRecipes extends PageFilter {
 	};
 	static _MISC_TAG_TO_FULL = {
 		"alcohol": "Contains Alcohol",
+		"feast": "Feast Dish",
 	};
 
 	constructor () {

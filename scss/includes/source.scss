@@ -75,6 +75,7 @@
 	$rgb-source-TDCSR: #642e4b;
 	$rgb-source-PaBTSO: #b2b34e;
 	$rgb-source-PAitM: #a23087;
+	$rgb-source-HFFotM: #7b702c;
 
 	// region Categories
 
@@ -575,6 +576,12 @@
 		color: $rgb-source-PAitM !important;
 		border-color: $rgb-source-PAitM !important;
 		text-decoration-color: $rgb-source-PAitM !important;
+	}
+
+	&HFFotM {
+		color: $rgb-source-HFFotM !important;
+		border-color: $rgb-source-HFFotM !important;
+		text-decoration-color: $rgb-source-HFFotM !important;
 	}
 	// endregion
 }
