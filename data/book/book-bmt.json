@@ -4986,7 +4986,14 @@
 											"credit": "Mike Schley",
 											"width": 1700,
 											"height": 2227,
-											"id": "072"
+											"id": "072",
+											"grid": {
+												"type": "square",
+												"size": 130,
+												"offsetX": 80,
+												"offsetY": 77,
+												"scale": 3
+											}
 										},
 										{
 											"type": "image",
@@ -5001,6 +5008,13 @@
 											"credit": "Mike Schley",
 											"mapParent": {
 												"id": "072"
+											},
+											"grid": {
+												"type": "square",
+												"size": 130,
+												"offsetX": 80,
+												"offsetY": 77,
+												"scale": 3
 											}
 										}
 									]
@@ -5546,7 +5560,14 @@
 													"credit": "Mike Schley",
 													"width": 1700,
 													"height": 1196,
-													"id": "073"
+													"id": "073",
+													"grid": {
+														"type": "square",
+														"size": 110,
+														"offsetX": 50,
+														"offsetY": 40,
+														"scale": 2
+													}
 												},
 												{
 													"type": "image",
@@ -5561,6 +5582,13 @@
 													"credit": "Mike Schley",
 													"mapParent": {
 														"id": "073"
+													},
+													"grid": {
+														"type": "square",
+														"size": 110,
+														"offsetX": 50,
+														"offsetY": 40,
+														"scale": 2
 													}
 												}
 											]
@@ -6446,7 +6474,14 @@
 											"credit": "Mike Schley",
 											"width": 1700,
 											"height": 1198,
-											"id": "074"
+											"id": "074",
+											"grid": {
+												"type": "square",
+												"size": 108,
+												"offsetX": 28,
+												"offsetY": 47,
+												"scale": 4
+											}
 										},
 										{
 											"type": "image",
@@ -6461,6 +6496,13 @@
 											"credit": "Mike Schley",
 											"mapParent": {
 												"id": "074"
+											},
+											"grid": {
+												"type": "square",
+												"size": 108,
+												"offsetX": 28,
+												"offsetY": 47,
+												"scale": 4
 											}
 										}
 									]
@@ -6696,7 +6738,10 @@
 									"credit": "Francesca Baerald",
 									"width": 1700,
 									"height": 1194,
-									"id": "075"
+									"id": "075",
+									"grid": {
+										"type": "none"
+									}
 								},
 								{
 									"type": "image",
@@ -6711,6 +6756,9 @@
 									"credit": "Francesca Baerald",
 									"mapParent": {
 										"id": "075"
+									},
+									"grid": {
+										"type": "none"
 									}
 								}
 							]
@@ -7458,7 +7506,14 @@
 											"credit": "Mike Schley",
 											"width": 1700,
 											"height": 2225,
-											"id": "076"
+											"id": "076",
+											"grid": {
+												"type": "square",
+												"size": 106,
+												"offsetX": 1,
+												"offsetY": 40,
+												"scale": 5
+											}
 										},
 										{
 											"type": "image",
@@ -7473,6 +7528,13 @@
 											"credit": "Mike Schley",
 											"mapParent": {
 												"id": "076"
+											},
+											"grid": {
+												"type": "square",
+												"size": 106,
+												"offsetX": 1,
+												"offsetY": 40,
+												"scale": 5
 											}
 										}
 									]
@@ -7875,7 +7937,10 @@
 									"credit": "Mike Schley",
 									"width": 1700,
 									"height": 2230,
-									"id": "077"
+									"id": "077",
+									"grid": {
+										"type": "none"
+									}
 								},
 								{
 									"type": "image",
@@ -7890,6 +7955,9 @@
 									"credit": "Mike Schley",
 									"mapParent": {
 										"id": "077"
+									},
+									"grid": {
+										"type": "none"
 									}
 								}
 							]
@@ -8107,7 +8175,14 @@
 											"credit": "Mike Schley",
 											"width": 1700,
 											"height": 1192,
-											"id": "078"
+											"id": "078",
+											"grid": {
+												"type": "square",
+												"size": 107,
+												"offsetX": -9,
+												"offsetY": -6,
+												"scale": 6
+											}
 										},
 										{
 											"type": "image",
@@ -8122,6 +8197,13 @@
 											"credit": "Mike Schley",
 											"mapParent": {
 												"id": "078"
+											},
+											"grid": {
+												"type": "square",
+												"size": 107,
+												"offsetX": -9,
+												"offsetY": -6,
+												"scale": 6
 											}
 										}
 									]
@@ -8189,7 +8271,10 @@
 									"title": "Map 17.1: Donjon Sphere",
 									"credit": "Mike Schley",
 									"width": 1700,
-									"height": 2391
+									"height": 2391,
+									"grid": {
+										"type": "none"
+									}
 								},
 								"A character with a {@item Deck of Many Things} can deduce the Donjon Sphere's location by spending 8 hours studying the night sky and using the cards as a divination tool. Afterward, the character must succeed on a DC 22 Intelligence ({@skill Arcana}) check to determine the sphere's coordinates in the Astral Sea. On a failed check, the character fails to calculate the sphere's location but can try again the next day, reducing the DC of the check by 1 for each consecutive attempt. Other methods of finding the sphere are detailed in the \"Adventure Hooks\" section below.",
 								"Once the sphere is located in the Astral Sea, the characters must reach it, probably using teleportation magic or a spelljamming vessel.",
@@ -8537,7 +8622,14 @@
 									"credit": "Mike Schley",
 									"width": 1700,
 									"height": 2226,
-									"id": "079"
+									"id": "079",
+									"grid": {
+										"type": "square",
+										"size": 112,
+										"offsetX": -51,
+										"offsetY": 52,
+										"scale": 8
+									}
 								},
 								{
 									"type": "image",
@@ -8552,6 +8644,13 @@
 									"credit": "Mike Schley",
 									"mapParent": {
 										"id": "079"
+									},
+									"grid": {
+										"type": "square",
+										"size": 112,
+										"offsetX": -51,
+										"offsetY": 52,
+										"scale": 8
 									}
 								}
 							]
@@ -9313,7 +9412,14 @@
 											"credit": "Mike Schley",
 											"width": 1700,
 											"height": 1194,
-											"id": "07a"
+											"id": "07a",
+											"grid": {
+												"type": "square",
+												"size": 119,
+												"offsetX": -4,
+												"offsetY": 62,
+												"scale": 5
+											}
 										},
 										{
 											"type": "image",
@@ -9328,6 +9434,13 @@
 											"credit": "Mike Schley",
 											"mapParent": {
 												"id": "07a"
+											},
+											"grid": {
+												"type": "square",
+												"size": 119,
+												"offsetX": -4,
+												"offsetY": 62,
+												"scale": 5
 											}
 										}
 									]
@@ -10191,7 +10304,10 @@
 											"credit": "Mike Schley",
 											"width": 1700,
 											"height": 1196,
-											"id": "07b"
+											"id": "07b",
+											"grid": {
+												"type": "none"
+											}
 										},
 										{
 											"type": "image",
@@ -10207,6 +10323,9 @@
 											"mapParent": {
 												"id": "07b",
 												"autoScale": true
+											},
+											"grid": {
+												"type": "none"
 											}
 										}
 									]
@@ -10544,7 +10663,10 @@
 											"credit": "Mike Schley",
 											"width": 1700,
 											"height": 1196,
-											"id": "07c"
+											"id": "07c",
+											"grid": {
+												"type": "none"
+											}
 										},
 										{
 											"type": "image",
@@ -10560,6 +10682,9 @@
 											"mapParent": {
 												"id": "07c",
 												"autoScale": true
+											},
+											"grid": {
+												"type": "none"
 											}
 										}
 									]
@@ -11236,7 +11361,14 @@
 											"credit": "Mike Schley",
 											"width": 1700,
 											"height": 1196,
-											"id": "07d"
+											"id": "07d",
+											"grid": {
+												"type": "square",
+												"size": 125,
+												"offsetX": -41,
+												"offsetY": -36,
+												"scale": 4
+											}
 										},
 										{
 											"type": "image",
@@ -11251,6 +11383,13 @@
 											"credit": "Mike Schley",
 											"mapParent": {
 												"id": "07d"
+											},
+											"grid": {
+												"type": "square",
+												"size": 125,
+												"offsetX": -41,
+												"offsetY": -36,
+												"scale": 4
 											}
 										}
 									]

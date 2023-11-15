@@ -3133,7 +3133,11 @@
 									"width": 1611,
 									"height": 2195,
 									"imageType": "map",
-									"id": "362"
+									"id": "362",
+									"grid": {
+										"type": "none",
+										"size": 105
+									}
 								},
 								{
 									"type": "image",
@@ -3141,13 +3145,17 @@
 										"type": "internal",
 										"path": "adventure/CoA/041-0.webp"
 									},
-									"title": "(Player Version)",
+									"title": "Player Version",
 									"credit": "John Stevenson",
 									"width": 1611,
 									"height": 2195,
 									"imageType": "mapPlayer",
 									"mapParent": {
 										"id": "362"
+									},
+									"grid": {
+										"type": "none",
+										"size": 105
 									}
 								}
 							]
@@ -3497,6 +3505,9 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoA/thumbnail/044-0-dm.webp"
+									},
+									"grid": {
+										"type": "none"
 									}
 								},
 								{
@@ -3508,10 +3519,13 @@
 									"credit": "John Stevenson",
 									"width": 3443,
 									"height": 2253,
-									"title": "(Player Version)",
+									"title": "Player Version",
 									"imageType": "mapPlayer",
 									"mapParent": {
 										"id": "363"
+									},
+									"grid": {
+										"type": "none"
 									}
 								}
 							]
@@ -5518,7 +5532,10 @@
 									"width": 1623,
 									"height": 1160,
 									"imageType": "map",
-									"id": "364"
+									"id": "364",
+									"grid": {
+										"type": "none"
+									}
 								},
 								{
 									"type": "image",
@@ -5526,13 +5543,16 @@
 										"type": "internal",
 										"path": "adventure/CoA/070-0.webp"
 									},
-									"title": "(Player Version)",
+									"title": "Player Version",
 									"credit": "John Stevenson",
 									"imageType": "mapPlayer",
 									"width": 1623,
 									"height": 1160,
 									"mapParent": {
 										"id": "364"
+									},
+									"grid": {
+										"type": "none"
 									}
 								}
 							]
@@ -5762,6 +5782,12 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoA/thumbnail/072-0-dm.webp"
+											},
+											"grid": {
+												"type": "none",
+												"size": 75,
+												"distance": 0.5,
+												"units": "miles"
 											}
 										},
 										{
@@ -5770,13 +5796,19 @@
 												"type": "internal",
 												"path": "adventure/CoA/072-0.webp"
 											},
-											"title": "(Player Version)",
+											"title": "Player Version",
 											"credit": "John Stevenson",
 											"width": 1633,
 											"height": 1304,
 											"imageType": "mapPlayer",
 											"mapParent": {
 												"id": "365"
+											},
+											"grid": {
+												"type": "none",
+												"size": 75,
+												"distance": 0.5,
+												"units": "miles"
 											}
 										}
 									]
@@ -6023,7 +6055,10 @@
 													"width": 868,
 													"height": 923,
 													"imageType": "map",
-													"id": "366"
+													"id": "366",
+													"grid": {
+														"type": "none"
+													}
 												},
 												{
 													"type": "image",
@@ -6031,13 +6066,16 @@
 														"type": "internal",
 														"path": "adventure/CoA/075-0.webp"
 													},
-													"title": "(Player Version)",
+													"title": "Player Version",
 													"credit": "John Stevenson",
 													"width": 868,
 													"height": 923,
 													"imageType": "mapPlayer",
 													"mapParent": {
 														"id": "366"
+													},
+													"grid": {
+														"type": "none"
 													}
 												}
 											]
@@ -6650,6 +6688,9 @@
 													"hrefThumbnail": {
 														"type": "internal",
 														"path": "adventure/CoA/thumbnail/077-1-dm.webp"
+													},
+													"grid": {
+														"type": "none"
 													}
 												},
 												{
@@ -6658,13 +6699,16 @@
 														"type": "internal",
 														"path": "adventure/CoA/077-1.webp"
 													},
-													"title": "(Player Version)",
+													"title": "Player Version",
 													"credit": "John Stevenson",
 													"width": 850,
 													"height": 1013,
 													"imageType": "mapPlayer",
 													"mapParent": {
 														"id": "367"
+													},
+													"grid": {
+														"type": "none"
 													}
 												}
 											]
@@ -7092,7 +7136,10 @@
 									"width": 1612,
 									"height": 1148,
 									"imageType": "map",
-									"id": "368"
+									"id": "368",
+									"grid": {
+										"type": "none"
+									}
 								},
 								{
 									"type": "image",
@@ -7100,13 +7147,16 @@
 										"type": "internal",
 										"path": "adventure/CoA/083-0.webp"
 									},
-									"title": "(Player Version)",
+									"title": "Player Version",
 									"credit": "John Stevenson",
 									"width": 1612,
 									"height": 1148,
 									"imageType": "mapPlayer",
 									"mapParent": {
 										"id": "368"
+									},
+									"grid": {
+										"type": "none"
 									}
 								}
 							]
@@ -7496,6 +7546,11 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoA/thumbnail/086-0-dm.webp"
+											},
+											"grid": {
+												"type": "none",
+												"size": 83,
+												"distance": 50
 											}
 										},
 										{
@@ -7504,13 +7559,18 @@
 												"type": "internal",
 												"path": "adventure/CoA/086-0.webp"
 											},
-											"title": "(Player Version)",
+											"title": "Player Version",
 											"credit": "John Stevenson",
 											"width": 1601,
 											"height": 2185,
 											"imageType": "mapPlayer",
 											"mapParent": {
 												"id": "369"
+											},
+											"grid": {
+												"type": "none",
+												"size": 83,
+												"distance": 50
 											}
 										}
 									]
@@ -8349,7 +8409,10 @@
 									"width": 1594,
 									"height": 1144,
 									"imageType": "map",
-									"id": "36a"
+									"id": "36a",
+									"grid": {
+										"type": "none"
+									}
 								},
 								{
 									"type": "image",
@@ -8357,13 +8420,16 @@
 										"type": "internal",
 										"path": "adventure/CoA/098-0.webp"
 									},
-									"title": "(Player Version)",
+									"title": "Player Version",
 									"credit": "John Stevenson",
 									"width": 1594,
 									"height": 1144,
 									"imageType": "mapPlayer",
 									"mapParent": {
 										"id": "36a"
+									},
+									"grid": {
+										"type": "none"
 									}
 								}
 							]
@@ -8577,6 +8643,12 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoA/thumbnail/101-0-dm.webp"
+											},
+											"grid": {
+												"type": "none",
+												"size": 75,
+												"distance": 0.5,
+												"units": "miles"
 											}
 										},
 										{
@@ -8585,13 +8657,19 @@
 												"type": "internal",
 												"path": "adventure/CoA/101-0.webp"
 											},
-											"title": "(Player Version)",
+											"title": "Player Version",
 											"credit": "John Stevenson",
 											"width": 1606,
 											"height": 2172,
 											"imageType": "mapPlayer",
 											"mapParent": {
 												"id": "36b"
+											},
+											"grid": {
+												"type": "none",
+												"size": 75,
+												"distance": 0.5,
+												"units": "miles"
 											}
 										}
 									]
@@ -9210,7 +9288,10 @@
 									"width": 1609,
 									"height": 1138,
 									"imageType": "map",
-									"id": "36c"
+									"id": "36c",
+									"grid": {
+										"type": "none"
+									}
 								},
 								{
 									"type": "image",
@@ -9218,13 +9299,16 @@
 										"type": "internal",
 										"path": "adventure/CoA/110-0.webp"
 									},
-									"title": "(Player Version)",
+									"title": "Player Version",
 									"credit": "John Stevenson",
 									"width": 1609,
 									"height": 1138,
 									"imageType": "mapPlayer",
 									"mapParent": {
 										"id": "36c"
+									},
+									"grid": {
+										"type": "none"
 									}
 								}
 							]
@@ -9569,6 +9653,12 @@
 													"hrefThumbnail": {
 														"type": "internal",
 														"path": "adventure/CoA/thumbnail/115-0-dm.webp"
+													},
+													"grid": {
+														"type": "none",
+														"scale": 2,
+														"distance": 1,
+														"units": "miles"
 													}
 												},
 												{
@@ -9577,13 +9667,19 @@
 														"type": "internal",
 														"path": "adventure/CoA/115-0.webp"
 													},
-													"title": "(Player Version)",
+													"title": "Player Version",
 													"credit": "John Stevenson",
 													"width": 1589,
 													"height": 2171,
 													"imageType": "mapPlayer",
 													"mapParent": {
 														"id": "36d"
+													},
+													"grid": {
+														"type": "none",
+														"scale": 2,
+														"distance": 1,
+														"units": "miles"
 													}
 												}
 											]
@@ -10196,7 +10292,10 @@
 									"width": 1646,
 									"height": 1174,
 									"imageType": "map",
-									"id": "36e"
+									"id": "36e",
+									"grid": {
+										"type": "none"
+									}
 								},
 								{
 									"type": "image",
@@ -10204,13 +10303,16 @@
 										"type": "internal",
 										"path": "adventure/CoA/125-0.webp"
 									},
-									"title": "(Player Version)",
+									"title": "Player Version",
 									"credit": "John Stevenson",
 									"width": 1646,
 									"height": 1174,
 									"imageType": "mapPlayer",
 									"mapParent": {
 										"id": "36e"
+									},
+									"grid": {
+										"type": "none"
 									}
 								}
 							]
@@ -10859,6 +10961,11 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoA/thumbnail/126-0-dm.webp"
+											},
+											"grid": {
+												"type": "none",
+												"size": 91,
+												"distance": 50
 											}
 										},
 										{
@@ -10867,13 +10974,18 @@
 												"type": "internal",
 												"path": "adventure/CoA/126-0.webp"
 											},
-											"title": "(Player Version)",
+											"title": "Player Version",
 											"credit": "John Stevenson",
 											"width": 1627,
 											"height": 2175,
 											"imageType": "mapPlayer",
 											"mapParent": {
 												"id": "36f"
+											},
+											"grid": {
+												"type": "none",
+												"size": 91,
+												"distance": 50
 											}
 										}
 									]
@@ -11444,7 +11556,10 @@
 									"width": 1625,
 									"height": 1163,
 									"imageType": "map",
-									"id": "370"
+									"id": "370",
+									"grid": {
+										"type": "none"
+									}
 								},
 								{
 									"type": "image",
@@ -11452,13 +11567,16 @@
 										"type": "internal",
 										"path": "adventure/CoA/137-0.webp"
 									},
-									"title": "(Player Version)",
+									"title": "Player Version",
 									"credit": "John Stevenson",
 									"width": 1625,
 									"height": 1163,
 									"imageType": "mapPlayer",
 									"mapParent": {
 										"id": "370"
+									},
+									"grid": {
+										"type": "none"
 									}
 								}
 							]
@@ -12331,6 +12449,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoA/thumbnail/139-0-dm.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 112,
+												"offsetX": -50,
+												"offsetY": 8,
+												"scale": 5
 											}
 										},
 										{
@@ -12339,13 +12464,20 @@
 												"type": "internal",
 												"path": "adventure/CoA/139-0.webp"
 											},
-											"title": "(Player Version)",
+											"title": "Player Version",
 											"credit": "John Stevenson",
 											"width": 1602,
 											"height": 2174,
 											"imageType": "mapPlayer",
 											"mapParent": {
 												"id": "371"
+											},
+											"grid": {
+												"type": "square",
+												"size": 112,
+												"offsetX": -50,
+												"offsetY": 8,
+												"scale": 5
 											}
 										}
 									]
@@ -13026,7 +13158,10 @@
 									"width": 1633,
 									"height": 1156,
 									"imageType": "map",
-									"id": "372"
+									"id": "372",
+									"grid": {
+										"type": "none"
+									}
 								},
 								{
 									"type": "image",
@@ -13034,13 +13169,16 @@
 										"type": "internal",
 										"path": "adventure/CoA/150-0.webp"
 									},
-									"title": "(Player Version)",
+									"title": "Player Version",
 									"credit": "John Stevenson",
 									"width": 1633,
 									"height": 1156,
 									"imageType": "mapPlayer",
 									"mapParent": {
 										"id": "372"
+									},
+									"grid": {
+										"type": "none"
 									}
 								}
 							]
@@ -13549,6 +13687,11 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoA/thumbnail/154-0-dm.webp"
+											},
+											"grid": {
+												"type": "none",
+												"size": 57,
+												"distance": 25
 											}
 										},
 										{
@@ -13557,13 +13700,18 @@
 												"type": "internal",
 												"path": "adventure/CoA/154-0.webp"
 											},
-											"title": "(Player Version)",
+											"title": "Player Version",
 											"credit": "John Stevenson",
 											"width": 1611,
 											"height": 2191,
 											"imageType": "mapPlayer",
 											"mapParent": {
 												"id": "373"
+											},
+											"grid": {
+												"type": "none",
+												"size": 57,
+												"distance": 25
 											}
 										}
 									]
@@ -14136,7 +14284,10 @@
 									"width": 1642,
 									"height": 1166,
 									"imageType": "map",
-									"id": "375"
+									"id": "375",
+									"grid": {
+										"type": "none"
+									}
 								},
 								{
 									"type": "image",
@@ -14144,13 +14295,16 @@
 										"type": "internal",
 										"path": "adventure/CoA/164-0.webp"
 									},
-									"title": "(Player Version)",
+									"title": "Player Version",
 									"credit": "John Stevenson",
 									"width": 1642,
 									"height": 1166,
 									"imageType": "mapPlayer",
 									"mapParent": {
 										"id": "375"
+									},
+									"grid": {
+										"type": "none"
 									}
 								}
 							]
@@ -14756,6 +14910,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoA/thumbnail/169-0-dm.webp"
+											},
+											"grid": {
+												"type": "square",
+												"size": 124,
+												"offsetX": -10,
+												"offsetY": -13,
+												"scale": 8
 											}
 										},
 										{
@@ -14764,13 +14925,20 @@
 												"type": "internal",
 												"path": "adventure/CoA/169-0.webp"
 											},
-											"title": "(Player Version)",
+											"title": "Player Version",
 											"credit": "John Stevenson",
 											"width": 1626,
 											"height": 2214,
 											"imageType": "mapPlayer",
 											"mapParent": {
 												"id": "376"
+											},
+											"grid": {
+												"type": "square",
+												"size": 124,
+												"offsetX": -10,
+												"offsetY": -13,
+												"scale": 8
 											}
 										}
 									]
@@ -16563,6 +16731,11 @@
 													"hrefThumbnail": {
 														"type": "internal",
 														"path": "adventure/CoA/thumbnail/181-0-dm.webp"
+													},
+													"grid": {
+														"type": "none",
+														"size": 78,
+														"scale": 2
 													}
 												},
 												{
@@ -16571,13 +16744,18 @@
 														"type": "internal",
 														"path": "adventure/CoA/181-0.webp"
 													},
-													"title": "(Player Version)",
+													"title": "Player Version",
 													"credit": "John Stevenson",
 													"width": 1617,
 													"height": 2196,
 													"imageType": "mapPlayer",
 													"mapParent": {
 														"id": "377"
+													},
+													"grid": {
+														"type": "none",
+														"size": 78,
+														"scale": 2
 													}
 												}
 											]
@@ -17335,6 +17513,11 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/CoA/thumbnail/190-0-dm.webp"
+									},
+									"grid": {
+										"type": "none",
+										"size": 78,
+										"scale": 2
 									}
 								},
 								{
@@ -17343,13 +17526,18 @@
 										"type": "internal",
 										"path": "adventure/CoA/190-0.webp"
 									},
-									"title": "(Player Version)",
+									"title": "Player Version",
 									"credit": "John Stevenson",
 									"width": 1607,
 									"height": 2182,
 									"imageType": "mapPlayer",
 									"mapParent": {
 										"id": "378"
+									},
+									"grid": {
+										"type": "none",
+										"size": 78,
+										"scale": 2
 									}
 								}
 							]
@@ -17824,7 +18012,10 @@
 									"width": 1622,
 									"height": 1155,
 									"imageType": "map",
-									"id": "379"
+									"id": "379",
+									"grid": {
+										"type": "none"
+									}
 								},
 								{
 									"type": "image",
@@ -17832,13 +18023,16 @@
 										"type": "internal",
 										"path": "adventure/CoA/196-0.webp"
 									},
-									"title": "(Player Version)",
+									"title": "Player Version",
 									"credit": "John Stevenson",
 									"width": 1622,
 									"height": 1155,
 									"imageType": "mapPlayer",
 									"mapParent": {
 										"id": "379"
+									},
+									"grid": {
+										"type": "none"
 									}
 								}
 							]
@@ -18233,6 +18427,11 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/CoA/thumbnail/203-0-dm.webp"
+											},
+											"grid": {
+												"type": "none",
+												"size": 91,
+												"distance": 50
 											}
 										},
 										{
@@ -18241,13 +18440,18 @@
 												"type": "internal",
 												"path": "adventure/CoA/203-0.webp"
 											},
-											"title": "(Player Version)",
+											"title": "Player Version",
 											"credit": "John Stevenson",
 											"width": 1618,
 											"height": 2192,
 											"imageType": "mapPlayer",
 											"mapParent": {
 												"id": "37a"
+											},
+											"grid": {
+												"type": "none",
+												"size": 91,
+												"distance": 50
 											}
 										}
 									]
@@ -19561,7 +19765,13 @@
 									"credit": "John Stevenson",
 									"imageType": "map",
 									"width": 1585,
-									"height": 1230
+									"height": 1230,
+									"grid": {
+										"type": "none",
+										"size": 75,
+										"distance": 0.5,
+										"units": "miles"
+									}
 								},
 								{
 									"type": "image",
@@ -19573,7 +19783,13 @@
 									"credit": "John Stevenson",
 									"imageType": "map",
 									"width": 1578,
-									"height": 2082
+									"height": 2082,
+									"grid": {
+										"type": "none",
+										"size": 75,
+										"distance": 0.5,
+										"units": "miles"
+									}
 								},
 								{
 									"type": "image",
@@ -19585,7 +19801,13 @@
 									"credit": "John Stevenson",
 									"imageType": "map",
 									"width": 1585,
-									"height": 2081
+									"height": 2081,
+									"grid": {
+										"type": "none",
+										"scale": 2,
+										"distance": 1,
+										"units": "miles"
+									}
 								},
 								{
 									"type": "image",
@@ -19597,7 +19819,12 @@
 									"credit": "John Stevenson",
 									"imageType": "map",
 									"width": 1578,
-									"height": 2083
+									"height": 2083,
+									"grid": {
+										"type": "none",
+										"size": 91,
+										"distance": 50
+									}
 								}
 							]
 						}
@@ -19623,7 +19850,12 @@
 									"credit": "John Stevenson",
 									"imageType": "map",
 									"width": 1578,
-									"height": 2082
+									"height": 2082,
+									"grid": {
+										"type": "none",
+										"size": 83,
+										"distance": 50
+									}
 								},
 								{
 									"type": "image",
@@ -19635,7 +19867,12 @@
 									"credit": "John Stevenson",
 									"imageType": "map",
 									"width": 1578,
-									"height": 2082
+									"height": 2082,
+									"grid": {
+										"type": "none",
+										"size": 57,
+										"distance": 25
+									}
 								}
 							]
 						}
