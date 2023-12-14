@@ -18,7 +18,7 @@ function addFile (path) {
 	allFiles.push({json, path});
 }
 
-async function pMutImageDimensions (imgEntry) {
+async function pMutInternalImageDimensions (imgEntry) {
 	const path = `img/${imgEntry.href.path}`;
 	try {
 		const input = fs.createReadStream(path);
@@ -32,10 +32,24 @@ async function pMutImageDimensions (imgEntry) {
 	}
 }
 
+async function pMutExternalImageDimensions (imgEntry) {
+	const url = imgEntry.href.url;
+	try {
+		const dimensions = await probe(url);
+
+		imgEntry.width = dimensions.width;
+		imgEntry.height = dimensions.height;
+	} catch (e) {
+		console.error(`Failed to set dimensions for ${url} -- ${e.message}`);
+	}
+}
+
 const _PROMISES = [];
 function addMutImageDimensions (obj) {
 	if (obj.type === "image" && obj.href && obj.href.type === "internal") {
-		_PROMISES.push(pMutImageDimensions(obj));
+		_PROMISES.push(pMutInternalImageDimensions(obj));
+	} else if (obj.type === "image" && obj.href && obj.href.type === "external") {
+		_PROMISES.push(pMutExternalImageDimensions(obj));
 	}
 	return obj;
 }
