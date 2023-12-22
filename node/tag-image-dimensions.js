@@ -29,7 +29,15 @@ function getProbeTarget (imgEntry, {isAllowExternal = false}) {
 	}
 
 	if (imgEntry.href.type === "external") {
-		if (!isAllowExternal) {
+		if (localBrewDir && imgEntry.href.url.startsWith(`${VeCt.URL_ROOT_BREW}`)) {
+			const path = decodeURI(imgEntry.href.url.replace(`${VeCt.URL_ROOT_BREW}_img`, `${localBrewDir}/_img`));
+			const target = fs.createReadStream(path);
+			return {
+				target,
+				location: path,
+				fnCleanup: () => target.destroy(), // stream cleanup
+			};
+		} else if (!isAllowExternal) { // Local files are not truly "external"
 			console.warn(`Skipping "external" image (URL was "${imgEntry.href.url}"); run with the "--allow-external" option if you wish to probe external URLs.`);
 			return null;
 		}
@@ -111,6 +119,7 @@ const program = new Command()
 	.option("--file <file...>", `Input files`)
 	.option("--dir <dir...>", `Input directories`)
 	.option("--allow-external", "Allow external URLs to be probed.")
+	.option("--local-brew-dir <localBrewDir>", "Use local homebrew directory for relevant URLs.")
 ;
 
 program.parse(process.argv);
@@ -118,6 +127,8 @@ const params = program.opts();
 
 const dirs = [...(params.dir || [])];
 const files = [...(params.file || [])];
+
+const localBrewDir = params.localBrewDir;
 
 // If no options specified, use default selection
 if (!dirs.length && !files.length) {
@@ -131,5 +142,6 @@ main({
 	dirs,
 	files,
 	isAllowExternal: params.allowExternal,
+	localBrewDir,
 })
 	.catch(e => console.error(e));
