@@ -151,10 +151,13 @@
 										"path": "adventure/GHLoE/001-map-1.01-bone-house.webp"
 									},
 									"imageType": "map",
-									"title": "Map: Bone House",
+									"title": "Map 1: Bone House",
 									"width": 3000,
 									"height": 3000,
-									"id": "02c"
+									"id": "02c",
+									"grid": {
+										"type": "square"
+									}
 								},
 								{
 									"type": "image",
@@ -168,6 +171,9 @@
 									"height": 3000,
 									"mapParent": {
 										"id": "02c"
+									},
+									"grid": {
+										"type": "square"
 									}
 								}
 							]
@@ -487,10 +493,13 @@
 										"path": "adventure/GHLoE/010-map-2.02-farens-rest.webp"
 									},
 									"imageType": "map",
-									"title": "Map: Faren's Rest",
+									"title": "Map 2: Faren's Rest",
 									"width": 3000,
 									"height": 3000,
-									"id": "02d"
+									"id": "02d",
+									"grid": {
+										"type": "square"
+									}
 								},
 								{
 									"type": "image",
@@ -504,6 +513,9 @@
 									"height": 3000,
 									"mapParent": {
 										"id": "02d"
+									},
+									"grid": {
+										"type": "square"
 									}
 								}
 							]
@@ -930,10 +942,13 @@
 												"path": "adventure/GHLoE/014-map-3.01-leatherhollow.webp"
 											},
 											"imageType": "map",
-											"title": "Map: Leatherhollow",
+											"title": "Map 3: Leatherhollow",
 											"width": 3000,
 											"height": 3000,
-											"id": "02e"
+											"id": "02e",
+											"grid": {
+												"type": "square"
+											}
 										},
 										{
 											"type": "image",
@@ -947,6 +962,9 @@
 											"height": 3000,
 											"mapParent": {
 												"id": "02e"
+											},
+											"grid": {
+												"type": "square"
 											}
 										}
 									]
@@ -1334,10 +1352,14 @@
 										"path": "adventure/GHLoE/022-map-4.01-apostate-temple.webp"
 									},
 									"imageType": "map",
-									"title": "Map: Apostate Temple",
+									"title": "Map 4: Apostate Temple",
 									"width": 2160,
 									"height": 2160,
-									"id": "02f"
+									"id": "02f",
+									"grid": {
+										"type": "square",
+										"size": 72
+									}
 								},
 								{
 									"type": "image",
@@ -1351,6 +1373,10 @@
 									"height": 2160,
 									"mapParent": {
 										"id": "02f"
+									},
+									"grid": {
+										"type": "square",
+										"size": 72
 									}
 								}
 							]
@@ -1719,10 +1745,13 @@
 										"path": "adventure/GHLoE/028-map-5.01-gloomrock-caverns.webp"
 									},
 									"imageType": "map",
-									"title": "Map: Gloomrock Caverns",
+									"title": "Map 5: Gloomrock Caverns",
 									"width": 3000,
 									"height": 3000,
-									"id": "030"
+									"id": "030",
+									"grid": {
+										"type": "square"
+									}
 								},
 								{
 									"type": "image",
@@ -1736,6 +1765,9 @@
 									"height": 3000,
 									"mapParent": {
 										"id": "030"
+									},
+									"grid": {
+										"type": "square"
 									}
 								}
 							]
@@ -2123,10 +2155,13 @@
 										"path": "adventure/GHLoE/035-map-6.01-boulderwood-path.webp"
 									},
 									"imageType": "map",
-									"title": "Map: Boulderwood Path",
+									"title": "Map 6: Boulderwood Path",
 									"width": 3000,
 									"height": 3000,
-									"id": "031"
+									"id": "031",
+									"grid": {
+										"type": "square"
+									}
 								},
 								{
 									"type": "image",
@@ -2140,6 +2175,9 @@
 									"height": 3000,
 									"mapParent": {
 										"id": "031"
+									},
+									"grid": {
+										"type": "square"
 									}
 								}
 							]
@@ -2458,10 +2496,13 @@
 										"path": "adventure/GHLoE/043-map-7.01-flamegrit-iron-mine.webp"
 									},
 									"imageType": "map",
-									"title": "Map: Flamegrit Iron Mine",
+									"title": "Map 7: Flamegrit Iron Mine",
 									"width": 3000,
 									"height": 3000,
-									"id": "032"
+									"id": "032",
+									"grid": {
+										"type": "square"
+									}
 								},
 								{
 									"type": "image",
@@ -2475,6 +2516,9 @@
 									"height": 3000,
 									"mapParent": {
 										"id": "032"
+									},
+									"grid": {
+										"type": "square"
 									}
 								}
 							]
@@ -2901,10 +2945,13 @@
 										"path": "adventure/GHLoE/052-map-8.01-shadowsteel-citadel.webp"
 									},
 									"imageType": "map",
-									"title": "Map: Shadowsteel Citadel",
+									"title": "Map 8: Shadowsteel Citadel",
 									"width": 3000,
 									"height": 3000,
-									"id": "033"
+									"id": "033",
+									"grid": {
+										"type": "square"
+									}
 								},
 								{
 									"type": "image",
@@ -2918,6 +2965,9 @@
 									"height": 3000,
 									"mapParent": {
 										"id": "033"
+									},
+									"grid": {
+										"type": "square"
 									}
 								}
 							]
@@ -3474,10 +3524,13 @@
 										"path": "adventure/GHLoE/063-map-9.01-storm-sanctuary.webp"
 									},
 									"imageType": "map",
-									"title": "Map: storm sanctuary",
+									"title": "Map 9: Storm Sanctuary",
 									"width": 3000,
 									"height": 3000,
-									"id": "034"
+									"id": "034",
+									"grid": {
+										"type": "square"
+									}
 								},
 								{
 									"type": "image",
@@ -3491,6 +3544,9 @@
 									"height": 3000,
 									"mapParent": {
 										"id": "034"
+									},
+									"grid": {
+										"type": "square"
 									}
 								}
 							]
@@ -3838,10 +3894,13 @@
 										"path": "adventure/GHLoE/073-map-10.01-sardonyx-necropolis.webp"
 									},
 									"imageType": "map",
-									"title": "Map: Sardonyx Necropolis",
+									"title": "Map 10: Sardonyx Necropolis",
 									"width": 3000,
 									"height": 3000,
-									"id": "035"
+									"id": "035",
+									"grid": {
+										"type": "square"
+									}
 								},
 								{
 									"type": "image",
@@ -3855,6 +3914,9 @@
 									"height": 3000,
 									"mapParent": {
 										"id": "035"
+									},
+									"grid": {
+										"type": "square"
 									}
 								}
 							]
@@ -4302,10 +4364,13 @@
 										"path": "adventure/GHLoE/079-map-11.01-foulest-truths.webp"
 									},
 									"imageType": "map",
-									"title": "Map: foulest truths",
+									"title": "Map 11: Foulest Truths",
 									"width": 3000,
 									"height": 3000,
-									"id": "036"
+									"id": "036",
+									"grid": {
+										"type": "square"
+									}
 								},
 								{
 									"type": "image",
@@ -4319,6 +4384,9 @@
 									"height": 3000,
 									"mapParent": {
 										"id": "036"
+									},
+									"grid": {
+										"type": "square"
 									}
 								}
 							]
@@ -4681,10 +4749,13 @@
 																"path": "adventure/GHLoE/086-map-12.01-flicker-and-shadow.webp"
 															},
 															"imageType": "map",
-															"title": "Map: The Tower of Flicker and Shadow",
+															"title": "Map 12: The Tower of Flicker and Shadow",
 															"width": 3000,
 															"height": 3000,
-															"id": "037"
+															"id": "037",
+															"grid": {
+																"type": "square"
+															}
 														},
 														{
 															"type": "image",
@@ -4698,6 +4769,9 @@
 															"height": 3000,
 															"mapParent": {
 																"id": "037"
+															},
+															"grid": {
+																"type": "square"
 															}
 														}
 													]
@@ -5026,10 +5100,13 @@
 										"path": "adventure/GHLoE/092-map-13.01-swamp-of-fate.webp"
 									},
 									"imageType": "map",
-									"title": "Map: Swamp of Fate",
+									"title": "Map 13: Swamp of Fate",
 									"width": 3000,
 									"height": 3000,
-									"id": "038"
+									"id": "038",
+									"grid": {
+										"type": "square"
+									}
 								},
 								{
 									"type": "image",
@@ -5043,6 +5120,9 @@
 									"height": 3000,
 									"mapParent": {
 										"id": "038"
+									},
+									"grid": {
+										"type": "square"
 									}
 								}
 							]
@@ -5311,10 +5391,13 @@
 										"path": "adventure/GHLoE/098-map-14.01-street-prophet.webp"
 									},
 									"imageType": "map",
-									"title": "Map: street prophet",
+									"title": "Map 14: Street Prophet",
 									"width": 3000,
 									"height": 3000,
-									"id": "039"
+									"id": "039",
+									"grid": {
+										"type": "square"
+									}
 								},
 								{
 									"type": "image",
@@ -5328,6 +5411,9 @@
 									"height": 3000,
 									"mapParent": {
 										"id": "039"
+									},
+									"grid": {
+										"type": "square"
 									}
 								}
 							]
@@ -5641,10 +5727,13 @@
 										"path": "adventure/GHLoE/106-map-15.01-thundering-hills.webp"
 									},
 									"imageType": "map",
-									"title": "Map: thundering hills",
+									"title": "Map 15: Thundering Hills",
 									"width": 3000,
 									"height": 3000,
-									"id": "03a"
+									"id": "03a",
+									"grid": {
+										"type": "square"
+									}
 								},
 								{
 									"type": "image",
@@ -5658,6 +5747,9 @@
 									"height": 3000,
 									"mapParent": {
 										"id": "03a"
+									},
+									"grid": {
+										"type": "square"
 									}
 								}
 							]
@@ -5933,10 +6025,13 @@
 										"path": "adventure/GHLoE/112-map-16.01-stillborn.webp"
 									},
 									"imageType": "map",
-									"title": "Map: Stillborn",
+									"title": "Map 16: Stillborn",
 									"width": 3000,
 									"height": 3000,
-									"id": "03b"
+									"id": "03b",
+									"grid": {
+										"type": "square"
+									}
 								},
 								{
 									"type": "image",
@@ -5950,6 +6045,9 @@
 									"height": 3000,
 									"mapParent": {
 										"id": "03b"
+									},
+									"grid": {
+										"type": "square"
 									}
 								}
 							]
@@ -6244,10 +6342,13 @@
 																"path": "adventure/GHLoE/120-map-17.01-rising-sands.webp"
 															},
 															"imageType": "map",
-															"title": "Map: Rising Sands",
+															"title": "Map 17: Rising Sands",
 															"width": 3000,
 															"height": 3000,
-															"id": "03c"
+															"id": "03c",
+															"grid": {
+																"type": "square"
+															}
 														},
 														{
 															"type": "image",
@@ -6261,6 +6362,9 @@
 															"height": 3000,
 															"mapParent": {
 																"id": "03c"
+															},
+															"grid": {
+																"type": "square"
 															}
 														}
 													]
@@ -6613,10 +6717,13 @@
 										"path": "adventure/GHLoE/126-map-18.01-mayhem-crossroads.webp"
 									},
 									"imageType": "map",
-									"title": "Map : mayhem crossroads",
+									"title": "Map 18: Mayhem Crossroads",
 									"width": 3000,
 									"height": 3000,
-									"id": "065"
+									"id": "065",
+									"grid": {
+										"type": "square"
+									}
 								},
 								{
 									"type": "image",
@@ -6630,6 +6737,9 @@
 									"height": 3000,
 									"mapParent": {
 										"id": "065"
+									},
+									"grid": {
+										"type": "square"
 									}
 								}
 							]
@@ -6927,10 +7037,13 @@
 										"path": "adventure/GHLoE/133-map-19.01-prison-of-good-intent.webp"
 									},
 									"imageType": "map",
-									"title": "Map: Prison of Good Intent",
+									"title": "Map 19: Prison of Good Intent",
 									"width": 3000,
 									"height": 3000,
-									"id": "066"
+									"id": "066",
+									"grid": {
+										"type": "square"
+									}
 								},
 								{
 									"type": "image",
@@ -6944,6 +7057,9 @@
 									"height": 3000,
 									"mapParent": {
 										"id": "066"
+									},
+									"grid": {
+										"type": "square"
 									}
 								}
 							]
@@ -7247,10 +7363,13 @@
 										"path": "adventure/GHLoE/141-map-20.01-top-of-the-world.webp"
 									},
 									"imageType": "map",
-									"title": "Map: Top of the World",
+									"title": "Map 20: Top of the World",
 									"width": 3000,
 									"height": 3000,
-									"id": "067"
+									"id": "067",
+									"grid": {
+										"type": "square"
+									}
 								},
 								{
 									"type": "image",
@@ -7264,6 +7383,9 @@
 									"height": 3000,
 									"mapParent": {
 										"id": "067"
+									},
+									"grid": {
+										"type": "square"
 									}
 								}
 							]

@@ -5565,10 +5565,18 @@
 										"path": "adventure/DoDk/037-map-3.01-emberwood-village-map.webp"
 									},
 									"imageType": "map",
-									"title": "Emberwood Village Map",
+									"title": "Map 3.01: Emberwood Village Map",
 									"width": 3000,
 									"height": 2183,
-									"id": "63b"
+									"id": "63b",
+									"grid": {
+										"type": "square",
+										"size": 164,
+										"offsetX": 32,
+										"offsetY": 101,
+										"scale": 3,
+										"distance": 20
+									}
 								},
 								{
 									"type": "image",
@@ -5582,6 +5590,14 @@
 									"height": 2183,
 									"mapParent": {
 										"id": "63b"
+									},
+									"grid": {
+										"type": "square",
+										"size": 164,
+										"offsetX": 32,
+										"offsetY": 101,
+										"scale": 3,
+										"distance": 20
 									}
 								}
 							]
@@ -6174,9 +6190,16 @@
 								"path": "adventure/DoDk/042-map-4.01-city-street-and-sewers--map.webp"
 							},
 							"imageType": "map",
-							"title": "Drakkenheim City street and Sewers Map",
+							"title": "Map 4.01: Drakkenheim City Street and Sewers Map",
 							"width": 3000,
-							"height": 4843
+							"height": 4843,
+							"grid": {
+								"type": "square",
+								"size": 202,
+								"offsetX": 7,
+								"offsetY": 113,
+								"scale": 3
+							}
 						},
 						{
 							"type": "entries",
@@ -8031,10 +8054,17 @@
 												"path": "adventure/DoDk/046-map-5.01-black-ivory-inn.webp"
 											},
 											"imageType": "map",
-											"title": "Black Ivory Inn",
+											"title": "Map 5.01: Black Ivory Inn",
 											"width": 3000,
 											"height": 1742,
-											"id": "63c"
+											"id": "63c",
+											"grid": {
+												"type": "square",
+												"size": 139,
+												"offsetX": 68,
+												"offsetY": 113,
+												"scale": 3
+											}
 										},
 										{
 											"type": "image",
@@ -8048,6 +8078,13 @@
 											"height": 1742,
 											"mapParent": {
 												"id": "63c"
+											},
+											"grid": {
+												"type": "square",
+												"size": 139,
+												"offsetX": 68,
+												"offsetY": 113,
+												"scale": 3
 											}
 										}
 									]
@@ -8324,10 +8361,17 @@
 												"path": "adventure/DoDk/050-map-5.02-buckle-down-row.webp"
 											},
 											"imageType": "map",
-											"title": "Buckle Down Row",
+											"title": "Map 5.02: Buckle Down Row",
 											"width": 3000,
 											"height": 7210,
-											"id": "63d"
+											"id": "63d",
+											"grid": {
+												"type": "square",
+												"size": 175,
+												"offsetX": -27,
+												"offsetY": 102,
+												"scale": 2
+											}
 										},
 										{
 											"type": "image",
@@ -8341,6 +8385,13 @@
 											"height": 7210,
 											"mapParent": {
 												"id": "63d"
+											},
+											"grid": {
+												"type": "square",
+												"size": 175,
+												"offsetX": -27,
+												"offsetY": 102,
+												"scale": 2
 											}
 										}
 									]
@@ -8800,10 +8851,15 @@
 												"path": "adventure/DoDk/056-map-5.03-chapel-of-st-brena.webp"
 											},
 											"imageType": "map",
-											"title": "Chapel of Saint Brenna",
+											"title": "Map 5.03: Chapel of Saint Brenna",
 											"width": 3000,
 											"height": 7263,
-											"id": "63e"
+											"id": "63e",
+											"grid": {
+												"type": "square",
+												"size": 93,
+												"offsetY": 35
+											}
 										},
 										{
 											"type": "image",
@@ -8817,6 +8873,11 @@
 											"height": 7263,
 											"mapParent": {
 												"id": "63e"
+											},
+											"grid": {
+												"type": "square",
+												"size": 93,
+												"offsetY": 35
 											}
 										}
 									]
@@ -9495,10 +9556,16 @@
 												"path": "adventure/DoDk/063-map-5.04-ratling-burrow.webp"
 											},
 											"imageType": "map",
-											"title": "Ratling Burrow",
+											"title": "Map 5.04: Ratling Burrow",
 											"width": 3000,
 											"height": 4316,
-											"id": "63f"
+											"id": "63f",
+											"grid": {
+												"type": "square",
+												"size": 69,
+												"offsetX": 19,
+												"offsetY": 17
+											}
 										},
 										{
 											"type": "image",
@@ -9512,6 +9579,12 @@
 											"height": 4316,
 											"mapParent": {
 												"id": "63f"
+											},
+											"grid": {
+												"type": "square",
+												"size": 69,
+												"offsetX": 19,
+												"offsetY": 17
 											}
 										}
 									]
@@ -10079,10 +10152,16 @@
 												"path": "adventure/DoDk/066-map-5.05-reed-manor.webp"
 											},
 											"imageType": "map",
-											"title": "Reed Manor",
+											"title": "Map 5.05: Reed Manor",
 											"width": 3000,
 											"height": 8079,
-											"id": "640"
+											"id": "640",
+											"grid": {
+												"type": "square",
+												"size": 117,
+												"offsetX": -12,
+												"offsetY": 9
+											}
 										},
 										{
 											"type": "image",
@@ -10096,6 +10175,12 @@
 											"height": 8079,
 											"mapParent": {
 												"id": "640"
+											},
+											"grid": {
+												"type": "square",
+												"size": 117,
+												"offsetX": -12,
+												"offsetY": 9
 											}
 										}
 									]
@@ -10846,10 +10931,16 @@
 												"path": "adventure/DoDk/072-map-5.06-spokes-smithy.webp"
 											},
 											"imageType": "map",
-											"title": "Spokes Smithy",
+											"title": "Map 5.06: Spokes Smithy",
 											"width": 3000,
 											"height": 3764,
-											"id": "641"
+											"id": "641",
+											"grid": {
+												"type": "square",
+												"size": 125,
+												"offsetX": -19,
+												"offsetY": 39
+											}
 										},
 										{
 											"type": "image",
@@ -10863,6 +10954,12 @@
 											"height": 3764,
 											"mapParent": {
 												"id": "641"
+											},
+											"grid": {
+												"type": "square",
+												"size": 125,
+												"offsetX": -19,
+												"offsetY": 39
 											}
 										}
 									]
@@ -11290,9 +11387,16 @@
 												"path": "adventure/DoDk/077-map-6.01-gate-houses.webp"
 											},
 											"imageType": "map",
-											"title": "The Gate Houses",
+											"title": "Map 6.01: The Gate Houses",
 											"width": 3000,
-											"height": 2565
+											"height": 2565,
+											"grid": {
+												"type": "square",
+												"size": 95,
+												"offsetX": 39,
+												"offsetY": -8,
+												"scale": 2
+											}
 										},
 										{
 											"type": "entries",
@@ -11712,9 +11816,16 @@
 										"path": "adventure/DoDk/081-map-6.02-cosmological-clocktower.webp"
 									},
 									"imageType": "map",
-									"title": "Cosmological Clocktower",
+									"title": "Map 6.02: Cosmological Clocktower",
 									"width": 3000,
-									"height": 1540
+									"height": 1540,
+									"grid": {
+										"type": "square",
+										"size": 113,
+										"offsetX": -21,
+										"offsetY": -30,
+										"scale": 2
+									}
 								},
 								{
 									"type": "entries",
@@ -12583,10 +12694,17 @@
 												"path": "adventure/DoDk/087-map-6.03-kleinberg-estate.webp"
 											},
 											"imageType": "map",
-											"title": "Kleinberg Estate",
+											"title": "Map 6.03: Kleinberg Estate",
 											"width": 3000,
 											"height": 7241,
-											"id": "642"
+											"id": "642",
+											"grid": {
+												"type": "square",
+												"size": 110,
+												"offsetX": -11,
+												"offsetY": -26,
+												"scale": 2
+											}
 										},
 										{
 											"type": "image",
@@ -12600,6 +12718,13 @@
 											"height": 7241,
 											"mapParent": {
 												"id": "642"
+											},
+											"grid": {
+												"type": "square",
+												"size": 110,
+												"offsetX": -11,
+												"offsetY": -26,
+												"scale": 2
 											}
 										}
 									]
@@ -13304,10 +13429,17 @@
 												"path": "adventure/DoDk/090-map-6.04-old-town-cistern.webp"
 											},
 											"imageType": "map",
-											"title": "Old Town Cistern",
+											"title": "Map 6.04: Old Town Cistern",
 											"width": 3000,
 											"height": 4023,
-											"id": "643"
+											"id": "643",
+											"grid": {
+												"type": "square",
+												"size": 145,
+												"offsetX": 61,
+												"offsetY": -43,
+												"scale": 3
+											}
 										},
 										{
 											"type": "image",
@@ -13321,6 +13453,13 @@
 											"height": 4023,
 											"mapParent": {
 												"id": "643"
+											},
+											"grid": {
+												"type": "square",
+												"size": 145,
+												"offsetX": 61,
+												"offsetY": -43,
+												"scale": 3
 											}
 										}
 									]
@@ -13904,9 +14043,15 @@
 										"path": "adventure/DoDk/094-map-6.05-royal-grotto-tiered-garden.webp"
 									},
 									"imageType": "map",
-									"title": "Royal Grotto Tiered Garden",
+									"title": "Map 6.05: Royal Grotto Tiered Garden",
 									"width": 3000,
-									"height": 1792
+									"height": 1792,
+									"grid": {
+										"type": "square",
+										"size": 66,
+										"offsetX": 21,
+										"offsetY": 41
+									}
 								},
 								{
 									"type": "entries",
@@ -13942,9 +14087,16 @@
 												"path": "adventure/DoDk/095-map-6.06-royal-grotto.webp"
 											},
 											"imageType": "map",
-											"title": "royal grotto",
+											"title": "Map 6.06: Royal Grotto",
 											"width": 3000,
-											"height": 1245
+											"height": 1245,
+											"grid": {
+												"type": "square",
+												"size": 95,
+												"offsetX": -11,
+												"offsetY": -51,
+												"scale": 2
+											}
 										}
 									]
 								},
@@ -14632,10 +14784,17 @@
 												"path": "adventure/DoDk/101-map-6.07-st-vitruvios.webp"
 											},
 											"imageType": "map",
-											"title": "Saint Vitruvio's Cathedral",
+											"title": "Map 6.07: Saint Vitruvio's Cathedral",
 											"width": 3000,
 											"height": 4082,
-											"id": "644"
+											"id": "644",
+											"grid": {
+												"type": "square",
+												"size": 176,
+												"offsetX": 69,
+												"offsetY": 3,
+												"scale": 3
+											}
 										},
 										{
 											"type": "image",
@@ -14649,6 +14808,13 @@
 											"height": 4082,
 											"mapParent": {
 												"id": "644"
+											},
+											"grid": {
+												"type": "square",
+												"size": 176,
+												"offsetX": 69,
+												"offsetY": 3,
+												"scale": 3
 											}
 										}
 									]
@@ -14821,10 +14987,17 @@
 																"path": "adventure/DoDk/104-map-6.08-cathedral-catacombs.webp"
 															},
 															"imageType": "map",
-															"title": "Saint Vitruvio's Cathedral Catacombs",
+															"title": "Map 6.08: Saint Vitruvio's Cathedral Catacombs",
 															"width": 3000,
 															"height": 1973,
-															"id": "645"
+															"id": "645",
+															"grid": {
+																"type": "square",
+																"size": 132,
+																"offsetX": -6,
+																"offsetY": 21,
+																"scale": 4
+															}
 														},
 														{
 															"type": "image",
@@ -14838,6 +15011,13 @@
 															"height": 1973,
 															"mapParent": {
 																"id": "645"
+															},
+															"grid": {
+																"type": "square",
+																"size": 132,
+																"offsetX": -6,
+																"offsetY": 21,
+																"scale": 4
 															}
 														}
 													]
@@ -15417,10 +15597,17 @@
 												"path": "adventure/DoDk/109-map-7.01-camp-dawn.webp"
 											},
 											"imageType": "map",
-											"title": "Camp Dawn",
+											"title": "Map 7.01: Camp Dawn",
 											"width": 3000,
 											"height": 4308,
-											"id": "646"
+											"id": "646",
+											"grid": {
+												"type": "square",
+												"size": 111,
+												"offsetX": 26,
+												"offsetY": -6,
+												"distance": 10
+											}
 										},
 										{
 											"type": "image",
@@ -15434,6 +15621,13 @@
 											"height": 4308,
 											"mapParent": {
 												"id": "646"
+											},
+											"grid": {
+												"type": "square",
+												"size": 111,
+												"offsetX": 26,
+												"offsetY": -6,
+												"distance": 10
 											}
 										}
 									]
@@ -15682,10 +15876,17 @@
 												"path": "adventure/DoDk/113-map-7.02-theives-throne-room.webp"
 											},
 											"imageType": "map",
-											"title": "The Under Tavern",
+											"title": "Map 7.02: The Under Tavern",
 											"width": 3000,
 											"height": 7320,
-											"id": "647"
+											"id": "647",
+											"grid": {
+												"type": "square",
+												"size": 122,
+												"offsetX": -35,
+												"offsetY": -42,
+												"scale": 2
+											}
 										},
 										{
 											"type": "image",
@@ -15699,6 +15900,13 @@
 											"height": 7320,
 											"mapParent": {
 												"id": "647"
+											},
+											"grid": {
+												"type": "square",
+												"size": 122,
+												"offsetX": -35,
+												"offsetY": -42,
+												"scale": 2
 											}
 										}
 									]
@@ -16374,10 +16582,17 @@
 												"path": "adventure/DoDk/118-map-7.03-garrison.webp"
 											},
 											"imageType": "map",
-											"title": "Drakkenheim garrison",
+											"title": "Map 7.03: Drakkenheim Garrison",
 											"width": 3000,
 											"height": 2388,
-											"id": "648"
+											"id": "648",
+											"grid": {
+												"type": "square",
+												"size": 108,
+												"offsetX": 40,
+												"offsetY": 23,
+												"distance": 10
+											}
 										},
 										{
 											"type": "image",
@@ -16391,6 +16606,13 @@
 											"height": 2388,
 											"mapParent": {
 												"id": "648"
+											},
+											"grid": {
+												"type": "square",
+												"size": 108,
+												"offsetX": 40,
+												"offsetY": 23,
+												"distance": 10
 											}
 										}
 									]
@@ -17454,10 +17676,17 @@
 												"path": "adventure/DoDk/126-map-7.04-saint-selenas.webp"
 											},
 											"imageType": "map",
-											"title": "Saint Selina's Monastery",
+											"title": "Map 7.04: Saint Selina's Monastery",
 											"width": 3000,
 											"height": 2197,
-											"id": "649"
+											"id": "649",
+											"grid": {
+												"type": "square",
+												"size": 72,
+												"offsetX": 37,
+												"offsetY": -23,
+												"distance": 10
+											}
 										},
 										{
 											"type": "image",
@@ -17472,6 +17701,13 @@
 											"mapParent": {
 												"id": "649",
 												"autoScale": true
+											},
+											"grid": {
+												"type": "square",
+												"size": 70,
+												"offsetX": 36,
+												"offsetY": -19,
+												"distance": 10
 											}
 										}
 									]
@@ -17860,10 +18096,13 @@
 										"path": "adventure/DoDk/130-map-8.01-castle-drakken.webp"
 									},
 									"imageType": "map",
-									"title": "Castle Drakken",
+									"title": "Map 8.01: Castle Drakken",
 									"width": 3000,
 									"height": 1953,
-									"id": "64a"
+									"id": "64a",
+									"grid": {
+										"type": "none"
+									}
 								},
 								{
 									"type": "image",
@@ -17877,6 +18116,9 @@
 									"height": 1953,
 									"mapParent": {
 										"id": "64a"
+									},
+									"grid": {
+										"type": "none"
 									}
 								}
 							]
@@ -18603,10 +18845,17 @@
 												"path": "adventure/DoDk/134-map-8.02-castle-drakken-towers.webp"
 											},
 											"imageType": "map",
-											"title": "Castle Drakken Towers",
+											"title": "Map 8.02: Castle Drakken Towers",
 											"width": 3000,
 											"height": 5910,
-											"id": "64b"
+											"id": "64b",
+											"grid": {
+												"type": "square",
+												"size": 220,
+												"offsetX": 76,
+												"offsetY": 88,
+												"scale": 4
+											}
 										},
 										{
 											"type": "image",
@@ -18620,6 +18869,13 @@
 											"height": 5910,
 											"mapParent": {
 												"id": "64b"
+											},
+											"grid": {
+												"type": "square",
+												"size": 220,
+												"offsetX": 76,
+												"offsetY": 88,
+												"scale": 4
 											}
 										}
 									]
@@ -19022,10 +19278,17 @@
 												"path": "adventure/DoDk/137-map-8.03-castle-drakken-main.webp"
 											},
 											"imageType": "map",
-											"title": "Castle Drakken Main Level",
+											"title": "Map 8.03: Castle Drakken Main Level",
 											"width": 3000,
 											"height": 3792,
-											"id": "64c"
+											"id": "64c",
+											"grid": {
+												"type": "square",
+												"size": 146,
+												"offsetX": -24,
+												"offsetY": -4,
+												"scale": 3
+											}
 										},
 										{
 											"type": "image",
@@ -19040,6 +19303,13 @@
 											"mapParent": {
 												"id": "64c",
 												"autoScale": true
+											},
+											"grid": {
+												"type": "square",
+												"size": 167,
+												"offsetX": 36,
+												"offsetY": -15,
+												"scale": 3
 											}
 										}
 									]
@@ -19131,10 +19401,17 @@
 																"path": "adventure/DoDk/139-map-8.04-castle-drakken-dungeons.webp"
 															},
 															"imageType": "map",
-															"title": "Castle Drakken Dungeon",
+															"title": "Map 8.04: Castle Drakken Dungeon",
 															"width": 3000,
 															"height": 4172,
-															"id": "64d"
+															"id": "64d",
+															"grid": {
+																"type": "square",
+																"size": 107,
+																"offsetX": -11,
+																"offsetY": -9,
+																"scale": 2
+															}
 														},
 														{
 															"type": "image",
@@ -19148,6 +19425,13 @@
 															"height": 4172,
 															"mapParent": {
 																"id": "64d"
+															},
+															"grid": {
+																"type": "square",
+																"size": 107,
+																"offsetX": -11,
+																"offsetY": -9,
+																"scale": 2
 															}
 														}
 													]
@@ -20618,7 +20902,15 @@
 							},
 							"width": 1700,
 							"height": 2192,
-							"imageType": "map"
+							"imageType": "map",
+							"title": "Realms of the Continent",
+							"grid": {
+								"type": "none",
+								"size": 128,
+								"scale": 4,
+								"distance": 25,
+								"units": "kilometers"
+							}
 						},
 						{
 							"type": "entries",
@@ -21328,9 +21620,15 @@
 								"path": "adventure/DoDk/189-map-0.01-drakkenheim.webp"
 							},
 							"imageType": "map",
-							"title": "Drakkenheim: City Map",
+							"title": "Map 0.01: Drakkenheim: City Map",
 							"width": 5000,
-							"height": 5000
+							"height": 5000,
+							"id": "72b",
+							"grid": {
+								"type": "none",
+								"size": 111,
+								"distance": 500
+							}
 						},
 						{
 							"type": "image",
@@ -21339,9 +21637,17 @@
 								"path": "adventure/DoDk/190-map-0.01-drakkenheim-player.webp"
 							},
 							"imageType": "mapPlayer",
-							"title": "Unlabeled Version",
+							"title": "Player Version",
 							"width": 5000,
-							"height": 5000
+							"height": 5000,
+							"mapParent": {
+								"id": "72b"
+							},
+							"grid": {
+								"type": "none",
+								"size": 111,
+								"distance": 500
+							}
 						}
 					]
 				},
@@ -21355,9 +21661,15 @@
 								"path": "adventure/DoDk/191-map-0.01-drakkenheim-delrium.webp"
 							},
 							"imageType": "map",
-							"title": "Drakkenheim: Deep Haze Map",
+							"title": "Map 0.01: Drakkenheim: Deep Haze Map",
 							"width": 5000,
-							"height": 5000
+							"height": 5000,
+							"id": "72c",
+							"grid": {
+								"type": "none",
+								"size": 111,
+								"distance": 500
+							}
 						},
 						{
 							"type": "image",
@@ -21366,9 +21678,17 @@
 								"path": "adventure/DoDk/192-map-0.01-drakkenheim-delrium-player.webp"
 							},
 							"imageType": "mapPlayer",
-							"title": "Unlabeled Version",
+							"title": "Player Version",
 							"width": 5000,
-							"height": 5000
+							"height": 5000,
+							"mapParent": {
+								"id": "72c"
+							},
+							"grid": {
+								"type": "none",
+								"size": 111,
+								"distance": 500
+							}
 						}
 					]
 				}
