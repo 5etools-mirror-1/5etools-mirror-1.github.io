@@ -2629,6 +2629,11 @@
 					"page": true
 				}
 			},
+			"modifySpeed": {
+				"equal": {
+					"fly": "walk"
+				}
+			}
 			"rarity": "legendary",
 			"entries": [
 				"This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon's scale, tooth, or claw, or it incorporates images in those shapes.",
@@ -51513,11 +51518,6 @@
 			"reqAttune": true,
 			"wondrous": true,
 			"bonusAc": "+1",
-			"modifySpeed": {
-				"equal": {
-					"fly": "walk"
-				}
-			},
 			"entries": [
 				"This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon's scale, tooth, or claw, or it incorporates images in those shapes."
 			],
